@@ -11,8 +11,9 @@
 import { Suspense, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { buildMockQuestions, MOCKS, trustedOnlyCount } from "@/lib/data";
-import { loadSession } from "@/lib/tracking";
+import { buildMockQuestions, isTrusted, MOCKS, trustedOnlyCount } from "@/lib/data";
+import { loadReviews, loadSession } from "@/lib/tracking";
+import { resolveScoring, scoringLabel } from "@/lib/scoring";
 import QuizRunner from "@/components/QuizRunner";
 
 function MockRunInner() {
@@ -22,15 +23,29 @@ function MockRunInner() {
   const mock = MOCKS.find((m) => m.id === id);
   const trustedOnly = search.get("mode") === "trusted";
   const scope = `mock:${id}:${trustedOnly ? "trusted" : "provisional"}`;
+  // Stage 1 P0.2 — the owner's local review decisions. Trusted Mode fills
+  // only from items the owner verified; the same overrides drive the
+  // "Provisional — not verified" badge on the results screen.
+  const [reviews] = useState(() => loadReviews());
+  const overrides: Record<string, string> = {};
+  for (const [qid, r] of Object.entries(reviews)) overrides[qid] = r.reviewStatus;
+  // Stage 1 P0.1 — the mock page's ?penalty= override ("zero" / "0.25"),
+  // resolved against this mock's own config (or the zero-penalty default).
+  const { config: scoring, source: scoringSource } = resolveScoring(
+    mock?.scoring,
+    search.get("penalty"),
+  );
 
   const [questionSeed] = useState(() => {
     const live = loadSession(scope);
     return live?.questionSeed ? live.questionSeed : String(Date.now());
   });
   const questions = useMemo(
-    () => (mock ? buildMockQuestions(mock, questionSeed, { trustedOnly }) : []),
+    () => (mock ? buildMockQuestions(mock, questionSeed, { trustedOnly, overrides }) : []),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [mock, questionSeed, trustedOnly],
   );
+  const allItemsVerified = questions.length > 0 && questions.every((q) => isTrusted(q, overrides));
 
   if (!mock) {
     return (
@@ -43,8 +58,9 @@ function MockRunInner() {
     );
   }
   const note = trustedOnly
-    ? `Trusted-only: ${questions.length} of ${mock.total} questions — only owner-reviewed/approved items (${trustedOnlyCount(mock)} reviewed in this mock); the shortfall is not filled. ${mock.note}`
+    ? `Trusted-only: ${questions.length} of ${mock.total} questions — only owner-reviewed/approved items (${trustedOnlyCount(mock, overrides)} reviewed in this mock); the shortfall is not filled. ${mock.note}`
     : mock.note;
+  const scoringNote = `Scoring for this run: ${scoringLabel(scoring)}${scoringSource === "override-zero" || scoringSource === "override-penalty" ? " (you overrode the mock default on the mock list)" : ""}. ${scoring.policyNote}`;
   return (
     <QuizRunner
       key={scope}
@@ -54,8 +70,10 @@ function MockRunInner() {
       mode="mock"
       mockId={mock.id}
       trackId={mock.track}
-      note={note}
+      note={`${note} ${scoringNote}`}
       trustedOnly={trustedOnly}
+      scoring={scoring}
+      allItemsVerified={allItemsVerified}
       sessionScope={scope}
       questionSeed={questionSeed}
     />
