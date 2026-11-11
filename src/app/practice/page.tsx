@@ -1,132 +1,123 @@
-// Library — notes with "Recall first" prompts.
-// Stage 1 P0.3 — owner annotations: a private text field on each note,
-// stored locally only. Annotations are NEVER sent to the AI tutor unless
-// the owner enables the opt-in below (default OFF).
+// Practice — topic quizzes, 20 per attempt, shuffled, instant feedback.
 "use client";
 
-import { useMemo, useState } from "react";
-import { NOTES } from "@/lib/data";
-import {
-  loadAnnotationOptIn,
-  loadAnnotations,
-  saveAnnotation,
-  setAnnotationOptIn,
-} from "@/lib/tracking";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { BY_SUBJECT, hashSeed, isTrusted, mulberry32, shuffled, SUBJECT_LABELS } from "@/lib/data";
+import { loadReviews } from "@/lib/tracking";
+import QuizRunner from "@/components/QuizRunner";
+import { Suspense } from "react";
 
-export default function Library() {
-  const subjects = useMemo(() => Object.keys(NOTES).sort(), []);
-  const [subject, setSubject] = useState(subjects[0] ?? "");
-  const [query, setQuery] = useState("");
-  const [hidden, setHidden] = useState<Record<string, boolean>>({});
-  const [annotations, setAnnotations] = useState<Record<string, string>>(() => loadAnnotations());
-  const [optIn, setOptIn] = useState(() => loadAnnotationOptIn());
-  const [drafts, setDrafts] = useState<Record<string, string>>({});
-  const [savedTick, setSavedTick] = useState<Record<string, number>>({});
+// The current subject/round/seed is persisted so a reload resumes the SAME
+// 20-question set (and QuizRunner resumes its saved session for that scope)
+// instead of silently shuffling a new set. "New set" bumps the round and
+// stores a fresh seed.
+const PRACTICE_STATE_KEY = "etea_practice_state_next";
 
-  const notes = useMemo(() => {
-    const list = (NOTES[subject] ?? []).map((n) => ({
-      ...n,
-      key: `${subject}||${n.title}`,
-    }));
-    if (!query.trim()) return list;
-    const q = query.toLowerCase();
-    return list.filter((n) => (n.title + " " + n.body).toLowerCase().includes(q));
-  }, [subject, query]);
+type PracticeState = { subjectKey: string; round: number; seed: number };
 
-  function toggleOptIn(on: boolean) {
-    setOptIn(on);
-    setAnnotationOptIn(on);
+function loadPracticeState(fallbackSubject: string): PracticeState {
+  if (typeof window === "undefined") return { subjectKey: fallbackSubject, round: 0, seed: Date.now() };
+  try {
+    const raw = localStorage.getItem(PRACTICE_STATE_KEY);
+    if (raw) {
+      const p = JSON.parse(raw) as Partial<PracticeState>;
+      if (typeof p.subjectKey === "string" && typeof p.round === "number" && typeof p.seed === "number") {
+        return { subjectKey: p.subjectKey, round: p.round, seed: p.seed };
+      }
+    }
+  } catch {
+    // fall through to a fresh state
   }
+  return { subjectKey: fallbackSubject, round: 0, seed: Date.now() };
+}
 
-  function saveNoteAnnotation(key: string) {
-    const text = drafts[key] ?? annotations[key] ?? "";
-    saveAnnotation(key, text);
-    setAnnotations(loadAnnotations());
-    setSavedTick((s) => ({ ...s, [key]: Date.now() }));
+function PracticeInner() {
+  const params = useSearchParams();
+  const initial = params.get("subject") ?? "";
+  const subjects = useMemo(() => Object.keys(BY_SUBJECT).sort(), []);
+  const [stored] = useState(() => loadPracticeState(initial || "islamiyat"));
+  const [subjectKey, setSubjectKey] = useState(() =>
+    initial && BY_SUBJECT[initial] ? initial : stored.subjectKey,
+  );
+  const [round, setRound] = useState(() =>
+    initial && BY_SUBJECT[initial] && initial === stored.subjectKey ? stored.round : 0,
+  );
+  const [seed, setSeed] = useState(() =>
+    initial && BY_SUBJECT[initial] && initial === stored.subjectKey ? stored.seed : Date.now(),
+  );
+
+  useEffect(() => {
+    localStorage.setItem(PRACTICE_STATE_KEY, JSON.stringify({ subjectKey, round, seed }));
+  }, [subjectKey, round, seed]);
+
+  const labelByKey: Record<string, string> = SUBJECT_LABELS;
+  const subjectLabel = labelByKey[subjectKey] ?? subjectKey;
+
+  const questions = useMemo(() => {
+    const bank = BY_SUBJECT[subjectKey] ?? [];
+    const rand = mulberry32(hashSeed(`${subjectKey}-${round}-${seed}`));
+    return shuffled(bank, rand).slice(0, 20);
+  }, [subjectKey, round, seed]);
+
+  // Stage 1 P0.2 — the results screen shows "Provisional — not verified"
+  // unless every question in this set is owner-reviewed/approved.
+  const [reviews] = useState(() => loadReviews());
+  const overrides: Record<string, string> = {};
+  for (const [qid, r] of Object.entries(reviews)) overrides[qid] = r.reviewStatus;
+  const allItemsVerified = questions.length > 0 && questions.every((q) => isTrusted(q, overrides));
+
+  function newSet() {
+    setRound((r) => r + 1);
+    setSeed(Date.now());
   }
 
   return (
     <div>
-      <h1>Library — Notes</h1>
+      <h1>Practice — Topic Quizzes</h1>
       <p className="muted">
-        Short, exam-focused, original notes. <b>Recall first:</b> cover the note, recall it from
-        memory, then read. Plain re-reading is low-utility; retrieval practice is high-utility.
+        20 questions per attempt, shuffled every time. Instant feedback after each question. All
+        questions are original practice questions, labelled “AI-generated — not verified” (drafted by
+        AI, structurally checked). They are <b>not</b> ETEA questions.
       </p>
-      <div className="card">
-        <label style={{ display: "block" }}>
-          <input
-            type="checkbox"
-            checked={optIn}
-            onChange={(e) => toggleOptIn(e.target.checked)}
-          />{" "}
-          <b>Include my note annotations in tutor answers</b>
-        </label>
-        <p className="muted">
-          Off by default. Your annotations are private notes stored on this device only — they are
-          NOT sent to the AI tutor unless you enable this. When enabled, the tutor sees them as
-          your own notes alongside the library.
-        </p>
-      </div>
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <select aria-label="Subject" value={subject} onChange={(e) => setSubject(e.target.value)}>
-          {subjects.map((s) => (
-            <option key={s} value={s}>
-              {s} ({NOTES[s].length})
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+        <select
+          aria-label="Subject"
+          value={subjectKey}
+          onChange={(e) => {
+            setSubjectKey(e.target.value);
+            setRound(0);
+            setSeed(Date.now());
+          }}
+        >
+          {subjects.map((k) => (
+            <option key={k} value={k}>
+              {labelByKey[k] ?? k} ({BY_SUBJECT[k].length})
             </option>
           ))}
         </select>
-        <input
-          type="text"
-          placeholder="Search notes…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          aria-label="Search notes"
-        />
+        <button className="secondary" onClick={newSet}>
+          New set (shuffle again)
+        </button>
       </div>
-      {notes.length === 0 && <p>No notes match that search.</p>}
-      {notes.map((n) => {
-        const isHidden = hidden[n.key] ?? true;
-        const draft = drafts[n.key] ?? annotations[n.key] ?? "";
-        return (
-          <div className="card" key={n.key}>
-            <h3>{n.title}</h3>
-            {n.source && <p className="muted">{n.source}</p>}
-            {isHidden ? (
-              <button className="secondary" onClick={() => setHidden((h) => ({ ...h, [n.key]: false }))}>
-                Recall first — tap to reveal
-              </button>
-            ) : (
-              <>
-                <p>{n.body}</p>
-                <button className="secondary" onClick={() => setHidden((h) => ({ ...h, [n.key]: true }))}>
-                  Hide again
-                </button>
-              </>
-            )}
-            <div style={{ marginTop: 12 }}>
-              <label>
-                <span className="muted">Owner annotation (private — not sent to the tutor unless enabled above)</span>
-                <textarea
-                  aria-label={`Owner annotation for ${n.title}`}
-                  value={draft}
-                  onChange={(e) => setDrafts((d) => ({ ...d, [n.key]: e.target.value }))}
-                  rows={2}
-                  style={{ display: "block", width: "100%", marginTop: 4 }}
-                  placeholder="Your own note on this topic — a correction, a reminder, a link to check…"
-                />
-              </label>
-              <div style={{ display: "flex", gap: 8, marginTop: 6, alignItems: "center" }}>
-                <button className="secondary" onClick={() => saveNoteAnnotation(n.key)}>
-                  Save annotation
-                </button>
-                {savedTick[n.key] && (
-                  <span className="muted">Saved privately on this device.</span>
-                )}
-              </div>
-            </div>
-          </div>
-        );
-      })}
+      <QuizRunner
+        key={`${subjectKey}-${round}`}
+        title={`${subjectLabel} quiz — 20 questions`}
+        questions={questions}
+        mode="practice"
+        subject={subjectLabel}
+        allItemsVerified={allItemsVerified}
+        sessionScope={`practice:${subjectKey}:${round}`}
+        questionSeed={String(seed)}
+      />
     </div>
+  );
+}
+
+export default function Practice() {
+  return (
+    <Suspense>
+      <PracticeInner />
+    </Suspense>
   );
 }
