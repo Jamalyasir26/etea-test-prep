@@ -1,12 +1,12 @@
 // ETEA Prep Library v3 — data layer.
 // All content migrated verbatim from v2 (~/workspace/etea-prep-v2):
-// 540 MCQs (banks_norm), 95 notes, 70 flashcards, 19 tracks, 20 mocks,
+// 590 MCQs (banks_norm), 95 notes, 70 flashcards, 19 tracks, 20 mocks,
 // pattern selector, 21-day plan, vacancies, official links.
 // Nothing here is invented: patterns, BPS and dates are exactly as in v2.
 import content from "../data/content.json";
 
 import arabic from "../data/banks/arabic.json";
-import drawingPe from "../data/banks/drawing_pe.json";
+import drawing from "../data/banks/drawing.json";
 import english from "../data/banks/english.json";
 import gk from "../data/banks/gk.json";
 import islamiyat from "../data/banks/islamiyat.json";
@@ -15,8 +15,10 @@ import maths from "../data/banks/maths.json";
 import pakstudies from "../data/banks/pakstudies.json";
 import pastpapers from "../data/banks/pastpapers.json";
 import pastpapersReworded from "../data/banks/pastpapers_reworded.json";
+import pe from "../data/banks/pe.json";
 import pedagogy from "../data/banks/pedagogy.json";
 import science from "../data/banks/science.json";
+import socialstudies from "../data/banks/socialstudies.json";
 import tajweed from "../data/banks/tajweed.json";
 import urdu from "../data/banks/urdu.json";
 
@@ -35,6 +37,11 @@ export type Question = {
   pastPaperRef: string | null;
   verified: boolean;
   source: string;
+  // Phase 2 review labels (additive). Absent reviewStatus means "draft"
+  // (unreviewed). Only "owner-reviewed" / "approved" count as trusted.
+  reviewStatus?: string;
+  reviewedBy?: string | null;
+  reviewedAt?: string | null;
 };
 
 export type Note = { title: string; body: string };
@@ -70,7 +77,7 @@ export type Vacancy = {
 
 const BANKS: Record<string, Question[]> = {
   arabic: arabic as Question[],
-  drawing_pe: drawingPe as Question[],
+  drawing: drawing as Question[],
   english: english as Question[],
   gk: gk as Question[],
   islamiyat: islamiyat as Question[],
@@ -79,11 +86,15 @@ const BANKS: Record<string, Question[]> = {
   pakstudies: pakstudies as Question[],
   pastpapers: pastpapers as Question[],
   pastpapers_reworded: pastpapersReworded as Question[],
+  pe: pe as Question[],
   pedagogy: pedagogy as Question[],
   science: science as Question[],
+  socialstudies: socialstudies as Question[],
   tajweed: tajweed as Question[],
   urdu: urdu as Question[],
 };
+// NOTE: drawing_pe.json stays on disk but is deliberately NOT registered:
+// its 20 items are split into the separate drawing.json and pe.json banks.
 
 export const QUESTIONS: Question[] = Object.values(BANKS).flat();
 export const BY_ID: Record<string, Question> = Object.fromEntries(
@@ -173,19 +184,62 @@ export function shuffled<T>(arr: T[], rand: () => number): T[] {
   return a;
 }
 
+/** Phase 2 trusted gating. Trusted = owner-reviewed or approved.
+ *  A missing reviewStatus counts as NOT trusted (draft / unreviewed). */
+export function isTrusted(q: Question): boolean {
+  return q.reviewStatus === "owner-reviewed" || q.reviewStatus === "approved";
+}
+
+/** How many questions of a mock's composition are trusted (reviewed).
+ *  Fixed mocks: trusted items among the stored id list. Dynamic mocks:
+ *  per subject, min(requested count, trusted items in that bank).
+ *  Legacy comp key "drawing_pe" is no longer used by any live comp
+ *  (DM/PET comps in content.json use "drawing" / "pe"); the alias is kept
+ *  only as a safety net and draws from the split drawing + pe banks. */
+export function trustedOnlyCount(mock: MockDef): number {
+  if (mock.fixed && ZAM_FIXED[mock.fixed]) {
+    return ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter((q) => q && isTrusted(q)).length;
+  }
+  let n = 0;
+  for (const [subjectKey, count] of Object.entries(mock.comp ?? {})) {
+    const pool =
+      subjectKey === "drawing_pe"
+        ? [...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? [])]
+        : (BY_SUBJECT[subjectKey] ?? []);
+    n += Math.min(count, pool.filter(isTrusted).length);
+  }
+  return n;
+}
+
 /** Build the question list for a mock. Fixed ZamungKor mocks use the stored
  *  disjoint id lists; dynamic mocks sample without replacement per subject
- *  composition from the shared bank (no duplicates within a mock). */
-export function buildMockQuestions(mock: MockDef, seedSuffix = ""): Question[] {
+ *  composition from the shared bank (no duplicates within a mock).
+ *  With opts.trustedOnly, only trusted (reviewed) items are used and the
+ *  shortfall is NEVER filled with unreviewed items — the mock returns
+ *  fewer questions instead. */
+export function buildMockQuestions(
+  mock: MockDef,
+  seedSuffix = "",
+  opts?: { trustedOnly?: boolean },
+): Question[] {
+  const trustedOnly = opts?.trustedOnly === true;
   if (mock.fixed && ZAM_FIXED[mock.fixed]) {
-    return ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter(Boolean);
+    const qs = ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter(Boolean);
+    return trustedOnly ? qs.filter(isTrusted) : qs;
   }
   const rand = mulberry32(hashSeed(mock.id + seedSuffix));
   const out: Question[] = [];
   const comp = mock.comp ?? {};
   for (const [subjectKey, count] of Object.entries(comp)) {
-    const bank = BY_SUBJECT[subjectKey] ?? [];
-    const picked = shuffled(bank, rand).slice(0, count);
+    // Legacy comp key "drawing_pe" (no live comp uses it any more; kept as
+    // a safety net) draws from the split drawing + pe banks, not the
+    // unregistered old file.
+    const bank =
+      subjectKey === "drawing_pe"
+        ? [...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? [])]
+        : (BY_SUBJECT[subjectKey] ?? []);
+    const pool = trustedOnly ? bank.filter(isTrusted) : bank;
+    const picked = shuffled(pool, rand).slice(0, count);
     out.push(...picked);
   }
   return shuffled(out, rand);
