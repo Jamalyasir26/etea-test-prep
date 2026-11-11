@@ -95,3 +95,14 @@ No deploy; local changes only.
    `buildMockQuestions`: dm-B 100 (20 drawing, 0 PE), pet-B 100 (20 PE,
    0 drawing), all 20 mocks at advertised totals; `next start` home page
    serves "590 MCQs" (HTTP 200).
+
+# Stage 0 — Tutor diagnosis + SDK migration (2026-11-12, local only, NOT deployed)
+
+1. `src/lib/ai.ts` — per-provider error logging (Stage 0): `scrubSecrets` (redacts AIza…/AQ.Ab8…/gsk_…/sk-or-v1-…/Bearer/key= before any log), `classifyProviderError` (stable classes: invalid_key/quota/model_not_found/timeout/network/empty_response/payment/not_configured/http_<status>/unknown; message tokens checked before numeric status), `timedCall` wrapper logging one JSON line per attempt (provider, model, durationMs, ok, errorClass, truncated ≤200-char message), `probeProviders` + `ProviderHealth` (one tiny generation per provider, 10 s bound each, parallel). Reason: the tutor failed silently — only the first error was kept, fallback reasons discarded, zero logging.
+2. `src/lib/ai.ts` — **root cause + fix:** `GEMINI_MODEL` `gemini-2.0-flash` → **`gemini-3.6-flash`**. Reason: Google shut down `gemini-2.0-flash` on 1 June 2026 (ai.google.dev/gemini-api/docs/deprecations); every Gemini call 404'd and collapsed to the generic message. `gemini-3.6-flash` is Google's recommended replacement (Stable, released 21 Jul 2026, no shutdown announced).
+3. `src/lib/ai.ts` — Gemini SDK migrated `@google/generative-ai` 0.24.1 → **`@google/genai` 3.2.0** (`GoogleGenAI`, `ai.models.generateContent`, `response.text` property). Reason: old SDK deprecated (sunset 30 Nov 2025). Groq/OpenRouter paths untouched; same order, same response contract.
+4. `src/app/api/tutor/health/route.ts` (new) — `GET /api/tutor/health` probes each configured provider's responsiveness (not just key presence) and returns per-provider status/latency/errorClass + overall verdict; no key material in the response; `maxDuration = 30`.
+5. `src/app/api/tutor/route.ts` — GET response adds `health: "/api/tutor/health"` pointer. Reason: the old GET reported key presence only.
+6. `package.json` / `package-lock.json` — `@google/genai` ^3.2.0 in, `@google/generative-ai` out; added `"engines": {"node": ">=22"}` (new SDK requirement; local Node 24.22.1).
+7. Classifier fix found during the eval: status was checked before the message, misclassifying a wrapped provider 401 as `http_502`; bare `401` in a message was missed. Fixed to message-first. Reason: the first local eval run exposed it; re-verified 11/11 unit cases + live log lines.
+8. Reports: `DIAGNOSIS-tutor-stage0.md` (root cause + full eval), `VERIFY-stage0.md` (tests + results). Backup: `~/workspace/etea-prep-next-backup-pre-stage0/`.
