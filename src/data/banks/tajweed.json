@@ -808,5 +808,545 @@
   "reviewStatus": "draft",
   "reviewedBy": null,
   "reviewedAt": null
+ },
+ {
+  "id": "TAJ-031",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many letters trigger Ikhfa Haqiqi (the hiding rule for Noon Sakinah)?",
+  "options": [
+   "6 letters",
+   "10 letters",
+   "15 letters",
+   "28 letters"
+  ],
+  "correctIndex": 2,
+  "explanation": "Ikhfa Haqiqi applies before 15 letters: ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك. The Noon is hidden with Ghunnah for two counts.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riyad al-Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-032",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which rule applies when Noon Sakinah or Tanween is followed by Ba (ب)?",
+  "options": [
+   "Izhar",
+   "Idgham",
+   "Iqlab",
+   "Ikhfa"
+  ],
+  "correctIndex": 2,
+  "explanation": "Iqlab applies before Ba only: the Noon sound turns into a hidden Meem sound with Ghunnah for two counts.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Wafa Institute",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-033",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Ikhfa Shafawi happens when a still Meem (Meem Sakinah) is followed by which letter?",
+  "options": [
+   "Meem",
+   "Ba",
+   "Waw",
+   "Fa"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ikhfa Shafawi is a still Meem followed only by Ba: the Meem is softly hidden with Ghunnah for two counts.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riyad al-Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-034",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How long is the Ghunnah (nasal sound) in Ikhfa?",
+  "options": [
+   "1 count",
+   "2 counts",
+   "4 counts",
+   "6 counts"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Ghunnah in Ikhfa is held for about two counts.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riyad al-Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-035",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which two letters give Idgham WITHOUT Ghunnah?",
+  "options": [
+   "Ya and Waw",
+   "Meem and Noon",
+   "Lam and Ra",
+   "Ba and Ta"
+  ],
+  "correctIndex": 2,
+  "explanation": "Idgham is without Ghunnah for Lam and Ra only; the other four Idgham letters (Ya, Noon, Meem, Waw) carry Ghunnah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riwaq Al Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-036",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many Idgham letters are there in total?",
+  "options": [
+   "4 letters",
+   "5 letters",
+   "6 letters",
+   "15 letters"
+  ],
+  "correctIndex": 2,
+  "explanation": "There are 6 Idgham letters, remembered by the word Yarmaloon: Ya, Ra, Meem, Lam, Waw and Noon.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riwaq Al Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-037",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "What does the word Yarmaloon (يَرْمَلُون) collect?",
+  "options": [
+   "The Izhar letters",
+   "The Idgham letters",
+   "The Qalqalah letters",
+   "The Ikhfa letters"
+  ],
+  "correctIndex": 1,
+  "explanation": "Yarmaloon collects the six Idgham letters: Ya, Ra, Meem, Lam, Waw and Noon.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riwaq Al Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-038",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "A still Meem followed by another Meem is which rule?",
+  "options": [
+   "Ikhfa Shafawi",
+   "Idgham Shafawi",
+   "Izhar Shafawi",
+   "Iqlab"
+  ],
+  "correctIndex": 1,
+  "explanation": "Idgham Shafawi is a still Meem followed by another Meem: the two merge into one doubled Meem with Ghunnah for two counts.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Quranica",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-039",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many Qalqalah letters are there?",
+  "options": [
+   "3 letters",
+   "5 letters",
+   "6 letters",
+   "15 letters"
+  ],
+  "correctIndex": 1,
+  "explanation": "There are 5 Qalqalah letters, remembered by the phrase Qutb Jad: Qaf, Ta, Ba, Jeem and Dal.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Quranica",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-040",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which phrase collects the Qalqalah letters?",
+  "options": [
+   "Yarmaloon",
+   "Qutb Jad",
+   "Yanmu",
+   "Huroof Halq"
+  ],
+  "correctIndex": 1,
+  "explanation": "Qutb Jad collects the five Qalqalah letters: Qaf, Ta, Ba, Jeem and Dal.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Quranica",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-041",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "When is the Qalqalah bounce strongest?",
+  "options": [
+   "In the middle of a word",
+   "When stopping on the letter",
+   "Before a vowel",
+   "After a Madd letter"
+  ],
+  "correctIndex": 1,
+  "explanation": "Qalqalah Kubra, the stronger bounce, happens when the reader stops on a word ending in a Qalqalah letter.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Quranica",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-042",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which letter is NOT a Qalqalah letter?",
+  "options": [
+   "Qaf",
+   "Ta",
+   "Ba",
+   "Seen"
+  ],
+  "correctIndex": 3,
+  "explanation": "Seen is not a Qalqalah letter. The five Qalqalah letters are Qaf, Ta, Ba, Jeem and Dal.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Quranica",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-043",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many counts is Madd Tabi'i (natural Madd)?",
+  "options": [
+   "1 count",
+   "2 counts",
+   "4 counts",
+   "6 counts"
+  ],
+  "correctIndex": 1,
+  "explanation": "Madd Tabi'i is always two counts: it is the basic Madd with no Hamzah or Sukoon after it.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Hekma Academy",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-044",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which Madd is always six counts?",
+  "options": [
+   "Madd Tabi'i",
+   "Madd Badal",
+   "Madd Lazim",
+   "Madd Arid"
+  ],
+  "correctIndex": 2,
+  "explanation": "Madd Lazim is always six counts: a Madd letter followed by a permanent Sukoon or a Shaddah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Hekma Academy",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-045",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "A Madd letter followed by Hamzah in the SAME word is which type of Madd?",
+  "options": [
+   "Madd Munfasil",
+   "Madd Muttasil",
+   "Madd Badal",
+   "Madd Lazim"
+  ],
+  "correctIndex": 1,
+  "explanation": "Madd Muttasil (connected) is a Madd letter followed by Hamzah in the same word, stretched four or five counts.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Hekma Academy",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-046",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many counts is Madd Badal?",
+  "options": [
+   "2 counts",
+   "4 counts",
+   "5 counts",
+   "6 counts"
+  ],
+  "correctIndex": 0,
+  "explanation": "Madd Badal is two counts: Hamzah comes before the Madd letter.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Hekma Academy",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-047",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many rules govern Noon Sakinah and Tanween?",
+  "options": [
+   "2 rules",
+   "3 rules",
+   "4 rules",
+   "6 rules"
+  ],
+  "correctIndex": 2,
+  "explanation": "Four rules govern Noon Sakinah and Tanween: Izhar, Idgham, Iqlab and Ikhfa.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Wafa Institute",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-048",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many Izhar (throat) letters are there?",
+  "options": [
+   "5 letters",
+   "6 letters",
+   "15 letters",
+   "28 letters"
+  ],
+  "correctIndex": 1,
+  "explanation": "There are 6 Izhar letters, the throat letters: Hamza, Ha, Ain, Ha, Ghain and Kha.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Wafa Institute",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-049",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many rules are there for Meem Sakinah?",
+  "options": [
+   "2 rules",
+   "3 rules",
+   "4 rules",
+   "6 rules"
+  ],
+  "correctIndex": 1,
+  "explanation": "There are 3 Meem Sakinah rules: Ikhfa Shafawi, Idgham Shafawi and Izhar Shafawi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Quranica",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "TAJ-050",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "A still Meem followed by any of the remaining 26 letters is which rule?",
+  "options": [
+   "Ikhfa Shafawi",
+   "Idgham Shafawi",
+   "Izhar Shafawi",
+   "Iqlab"
+  ],
+  "correctIndex": 2,
+  "explanation": "Izhar Shafawi is a still Meem followed by any of the remaining 26 letters: the Meem is said clearly.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Quranica",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  }
 ]

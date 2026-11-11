@@ -1558,5 +1558,525 @@
   "reviewStatus": "draft",
   "reviewedBy": null,
   "reviewedAt": null
+ },
+ {
+  "id": "ARB-061",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What case is Al-Fa'il (the doer) always in?",
+  "options": [
+   "Mansub",
+   "Majrur",
+   "Marfu'",
+   "Sukoon"
+  ],
+  "correctIndex": 2,
+  "explanation": "Al-Fa'il (الفاعل) is always Marfu' (in the nominative, Raf' state) in Nahw (النحو). (in the nominative, Raf' state).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-062",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the sign of Raf' for a dual noun as Fa'il?",
+  "options": [
+   "Damma",
+   "Waw",
+   "Alif",
+   "Fatha"
+  ],
+  "correctIndex": 2,
+  "explanation": "Alif is the sign of Raf' for a dual noun as Fa'il (الفاعل).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-063",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the sign of Raf' for a sound masculine plural as Fa'il?",
+  "options": [
+   "Damma",
+   "Waw",
+   "Alif",
+   "Ya"
+  ],
+  "correctIndex": 1,
+  "explanation": "Waw is the sign of Raf' for a sound masculine plural as Fa'il (الفاعل).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-064",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In the sentence كَتَبَ عَلِيٌّ اَلدَّرْسَ (Ali wrote the lesson), who is the Fa'il?",
+  "options": [
+   "Kataba",
+   "Aliyyun",
+   "Ad-darsa",
+   "Al-dars"
+  ],
+  "correctIndex": 1,
+  "explanation": "Aliyyun is the Fa'il (الفاعل): it is the noun that does the action of the verb kataba.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-065",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What case is Al-Maf'ul Bihi (the direct object) always in?",
+  "options": [
+   "Marfu'",
+   "Mansub",
+   "Majrur",
+   "Sukoon"
+  ],
+  "correctIndex": 1,
+  "explanation": "Al-Maf'ul Bihi (المفعول به) is always Mansub (in the accusative, Nasb state).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Teachy.ai",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-066",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the usual sign of Nasb for Al-Maf'ul Bihi?",
+  "options": [
+   "Damma",
+   "Fatha",
+   "Kasra",
+   "Waw"
+  ],
+  "correctIndex": 1,
+  "explanation": "Fatha is the usual sign of Nasb for Maf'ul Bihi (المفعول به), for a singular noun and a broken plural.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Teachy.ai",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-067",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What marks Nasb for a sound feminine plural object?",
+  "options": [
+   "Fatha",
+   "Damma",
+   "Kasra",
+   "Waw"
+  ],
+  "correctIndex": 2,
+  "explanation": "Kasra marks Nasb for a sound feminine plural as Maf'ul Bihi (المفعول به) — an exception to the usual Fatha.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Teachy.ai",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-068",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What role does ad-darsa play in كَتَبَ عَلِيٌّ اَلدَّرْسَ (Ali wrote the lesson)?",
+  "options": [
+   "Fa'il",
+   "Maf'ul Bihi",
+   "Mubtada'",
+   "Khabar"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ad-darsa is the Maf'ul Bihi (المفعول به): it is what the action of writing falls upon.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Teachy.ai",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-069",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What are the two parts of a nominal sentence (Jumla Ismiyya)?",
+  "options": [
+   "Fi'l and Fa'il",
+   "Mubtada' and Khabar",
+   "Fa'il and Maf'ul",
+   "Harf and Ism"
+  ],
+  "correctIndex": 1,
+  "explanation": "A nominal sentence is made of Mubtada' (المبتدأ, the topic) and Khabar (الخبر, what is said about it).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from IlmHub",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-070",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What case are Al-Mubtada' and Al-Khabar both in?",
+  "options": [
+   "Mansub",
+   "Majrur",
+   "Marfu'",
+   "Sukoon"
+  ],
+  "correctIndex": 2,
+  "explanation": "Both Mubtada' (المبتدأ) and Khabar (الخبر) are always Marfu'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from IlmHub",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-071",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Does a nominal sentence need a verb?",
+  "options": [
+   "Yes, always",
+   "No, it needs no verb",
+   "Only in the past tense",
+   "Only with a pronoun"
+  ],
+  "correctIndex": 1,
+  "explanation": "A nominal sentence (الجملة الاسمية) starts with a noun and needs no verb: Mubtada' plus Khabar complete the meaning.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from IlmHub",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-072",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In the sentence اَلْكِتَابُ كَبِيرٌ (the book is big), what is al-kitabu?",
+  "options": [
+   "Khabar",
+   "Mubtada'",
+   "Fa'il",
+   "Maf'ul Bihi"
+  ],
+  "correctIndex": 1,
+  "explanation": "Al-kitabu is the Mubtada' (المبتدأ): it is the topic, and kabirun is the Khabar said about it.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from IlmHub",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-073",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "How many letters are in the commonest Arabic root?",
+  "options": [
+   "Two letters",
+   "Three letters",
+   "Four letters",
+   "Five letters"
+  ],
+  "correctIndex": 1,
+  "explanation": "Most Arabic words come from a three-letter root, shown by the pattern ف ع ل in Sarf (صرف).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Arabify",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-074",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is 'kataba' (كَتَبَ)?",
+  "options": [
+   "Present tense — he writes",
+   "Past tense — he wrote",
+   "Command — write!",
+   "A noun — writer"
+  ],
+  "correctIndex": 1,
+  "explanation": "Kataba is the past tense (Madi) in Sarf (صرف): he wrote.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Arabify",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-075",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is 'uktub' (اُكْتُبْ)?",
+  "options": [
+   "Past tense — he wrote",
+   "Present tense — he writes",
+   "Command — write!",
+   "A noun — book"
+  ],
+  "correctIndex": 2,
+  "explanation": "Uktub is the command (Amr) in Sarf (صرف): write!",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Arabify",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-076",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the pattern (Wazn) ف ع ل show?",
+  "options": [
+   "The case ending of a word",
+   "The root pattern of a word",
+   "The plural of a noun",
+   "The tense of a verb"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Wazn ف ع ل shows the root pattern of a word in Sarf (صرف): most Arabic words grow from a three-letter root.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Arabify",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-077",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the sign of Raf' for a singular noun?",
+  "options": [
+   "Fatha",
+   "Kasra",
+   "Damma",
+   "Ya"
+  ],
+  "correctIndex": 2,
+  "explanation": "Damma is the usual sign of Raf' in I'rab (إعراب) for a singular noun.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-078",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which sign marks Jarr (the genitive case)?",
+  "options": [
+   "Damma",
+   "Fatha",
+   "Kasra",
+   "Waw"
+  ],
+  "correctIndex": 2,
+  "explanation": "Kasra is the usual sign of Jarr in I'rab (إعراب) for a singular noun.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-079",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is Sarf mainly about?",
+  "options": [
+   "Sentence structure",
+   "Word shapes and formation from roots",
+   "Pronunciation of letters",
+   "Case endings"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sarf (صرف) is the study of word shapes: how one root grows into many related words.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Arabify",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ARB-080",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is Nahw mainly about?",
+  "options": [
+   "Word shapes from roots",
+   "Sentence structure and case endings",
+   "The history of Arabic",
+   "Poetry metres"
+  ],
+  "correctIndex": 1,
+  "explanation": "Nahw (النحو) studies how words work in a sentence: structure and the case endings (I'rab) of words.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  }
 ]

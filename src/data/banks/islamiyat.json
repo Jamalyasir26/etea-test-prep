@@ -2788,5 +2788,470 @@
   "reviewStatus": "draft",
   "reviewedBy": null,
   "reviewedAt": null
+ },
+ {
+  "id": "ISL-091",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Count the Surahs: how many are there in the Holy Quran?",
+  "options": [
+   "110",
+   "112",
+   "114",
+   "116"
+  ],
+  "correctIndex": 2,
+  "explanation": "There are 114 Surahs in the Holy Quran, from Al-Fatiha to An-Nas.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riwaq Al Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-092",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah has the most verses in the Holy Quran?",
+  "options": [
+   "Al-Fatiha",
+   "Al-Baqarah",
+   "Aal-e-Imran",
+   "An-Nisa"
+  ],
+  "correctIndex": 1,
+  "explanation": "Al-Baqarah has the most verses of any Surah, with 286 verses.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riwaq Al Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-093",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah has the fewest verses in the Holy Quran?",
+  "options": [
+   "Al-Ikhlas",
+   "Al-Kawthar",
+   "An-Nasr",
+   "Al-Asr"
+  ],
+  "correctIndex": 1,
+  "explanation": "Al-Kawthar has the fewest verses of any Surah, with 3 verses.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riwaq Al Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-094",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Into how many parts (Juz) is the Holy Quran divided?",
+  "options": [
+   "7",
+   "10",
+   "30",
+   "40"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Quran is divided into 30 parts (Juz) for reading across a month.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riwaq Al Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-095",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The first revealed verses belong to which Surah?",
+  "options": [
+   "Al-Fatiha",
+   "Al-Alaq",
+   "Al-Muddathir",
+   "Al-Baqarah"
+  ],
+  "correctIndex": 1,
+  "explanation": "The first revealed verses were the opening five verses of Surah Al-Alaq, beginning with the command to read.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Riwaq Al Quran",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-096",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many books are there in Sihah Sitta (the Six Books)?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "correctIndex": 2,
+  "explanation": "Sihah Sitta, also called Kutub al-Sittah, has six canonical Sunni Hadith collections.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Wikipedia (Kutub al-Sittah)",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-097",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which two books are together called the Sahihayn (the Two Sahihs)?",
+  "options": [
+   "Bukhari and Tirmidhi",
+   "Bukhari and Muslim",
+   "Muslim and Abu Dawud",
+   "Nasa'i and Ibn Majah"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sahih al-Bukhari and Sahih Muslim together are called the Sahihayn; both aimed to include only authenticated narrations.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Wikipedia (Kutub al-Sittah)",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-098",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who compiled Sunan Abi Dawud?",
+  "options": [
+   "Imam al-Bukhari",
+   "Imam Muslim",
+   "Abu Dawud",
+   "Al-Tirmidhi"
+  ],
+  "correctIndex": 2,
+  "explanation": "Sunan Abi Dawud was compiled by Abu Dawud.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Wikipedia (Kutub al-Sittah)",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-099",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which year did the Hijrah (migration to Madinah) take place?",
+  "options": [
+   "610 CE",
+   "619 CE",
+   "622 CE",
+   "630 CE"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Hijrah took place in 622 CE — Year 1 of the Hijri calendar.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from QuranicMA",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-100",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The Battle of Badr took place in which year?",
+  "options": [
+   "622 CE / 1 AH",
+   "624 CE / 2 AH",
+   "625 CE / 3 AH",
+   "627 CE / 5 AH"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Battle of Badr took place in 624 CE (2 AH): about 313 Muslims faced a Quraysh force of about 1,000.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from QuranicMA",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-101",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The Battle of Uhud took place in which year?",
+  "options": [
+   "624 CE / 2 AH",
+   "625 CE / 3 AH",
+   "627 CE / 5 AH",
+   "630 CE / 8 AH"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Battle of Uhud took place in 625 CE (3 AH).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from QuranicMA",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-102",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many primary sources of Fiqh are commonly listed?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "correctIndex": 2,
+  "explanation": "Four primary sources of Fiqh are commonly listed: Quran, Sunnah, Ijma and Qiyas.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Jibreel.app",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-103",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who founded the Hanafi school of Fiqh?",
+  "options": [
+   "Imam Malik ibn Anas",
+   "Imam Abu Hanifa",
+   "Imam al-Shafi'i",
+   "Imam Ahmad ibn Hanbal"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Hanafi school was founded by Imam Abu Hanifa, of Kufa in Iraq.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Jibreel.app",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-104",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who systematised the four sources of Fiqh in his work Al-Risala?",
+  "options": [
+   "Imam Abu Hanifa",
+   "Imam Malik ibn Anas",
+   "Imam al-Shafi'i",
+   "Imam Ahmad ibn Hanbal"
+  ],
+  "correctIndex": 2,
+  "explanation": "Imam al-Shafi'i systematised the four-source list in his work Al-Risala.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Jibreel.app",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "ISL-105",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which school of Fiqh gives great weight to the practice of the people of Madinah?",
+  "options": [
+   "Hanafi",
+   "Maliki",
+   "Shafi'i",
+   "Hanbali"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Maliki school, founded by Imam Malik ibn Anas of Madinah, gives great weight to the practice of the people of Madinah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Jibreel.app",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  }
 ]
