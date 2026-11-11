@@ -36,10 +36,22 @@ export async function POST(req: NextRequest) {
     const historyText = history
       .map((m: { role?: string; text?: string }) => `${m.role === "user" ? "Student" : "Ustad"}: ${String(m.text ?? "").slice(0, 500)}`)
       .join("\n");
+    // Stage 1 P0.3 — owner annotations arrive ONLY when the owner enabled
+    // the opt-in in the Library (default off). Validate shape and cap size;
+    // anything malformed is dropped, never trusted blindly.
+    const annotations = Array.isArray(body.annotations)
+      ? body.annotations
+          .slice(0, 20)
+          .map((a: { note?: unknown; text?: unknown }) => ({
+            note: String(a?.note ?? "").slice(0, 200),
+            text: String(a?.text ?? "").slice(0, 1000),
+          }))
+          .filter((a: { note: string; text: string }) => a.note.length > 0 && a.text.trim().length > 0)
+      : [];
     const prompt = historyText
       ? `Previous conversation (for context only):\n${historyText}\n\nNew question:\n${message}`
       : message;
-    const { text, provider } = await generateTutorAnswer(prompt, lang);
+    const { text, provider } = await generateTutorAnswer(prompt, lang, annotations);
     const { notes, questions } = retrieve(message, 3, 3);
     return NextResponse.json({
       answer: text,
