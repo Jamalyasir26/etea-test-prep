@@ -831,9 +831,9 @@
   "pastPaperRef": null,
   "verified": false,
   "source": "ai-generated",
-  "reviewStatus": "draft",
-  "reviewedBy": null,
-  "reviewedAt": null
+  "reviewStatus": "owner-reviewed",
+  "reviewedBy": "owner",
+  "reviewedAt": "2026-11-11T22:23:00Z"
  },
  {
   "id": "MAT-023",
