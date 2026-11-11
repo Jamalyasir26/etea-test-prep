@@ -2,11 +2,17 @@
 // Keys are read only from process.env on the server and are never logged,
 // returned, or embedded in any response. If a key is invalid, the caller gets
 // a clear message — never a fake answer and never the key itself.
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 import Groq from "groq-sdk";
 import { retrieve, PLAN21, type Question } from "./data";
 
-export const GEMINI_MODEL = "gemini-2.0-flash";
+// Stage 0 re-pin (2026-11-12): `gemini-2.0-flash` was SHUT DOWN by Google on
+// 1 June 2026 (ai.google.dev/gemini-api/docs/deprecations) — that dead model
+// is why the live tutor never answered. Google's recommended replacement is
+// `gemini-3.6-flash` (Stable, released 21 July 2026, no shutdown announced).
+// SDK migrated at the same time: @google/generative-ai 0.24.1 (deprecated,
+// sunset 30 Nov 2025) → @google/genai 3.2.0 (requires Node >= 22).
+export const GEMINI_MODEL = "gemini-3.6-flash";
 export const GROQ_MODEL = "llama-3.3-70b-versatile";
 // OpenRouter third fallback — a FREE model only (pricing $0 prompt / $0
 // completion, verified against https://openrouter.ai/api/v1/models on
@@ -54,6 +60,240 @@ export function providerStatus() {
   };
 }
 
+// ---------------------------------------------------------------------------
+// Stage 0 — per-provider diagnostics (added 2026-11-12).
+// Every provider attempt is logged as ONE JSON line to stdout (Vercel runtime
+// logs capture it): provider, model, durationMs, ok, and — on failure — an
+// error class + a TRUNCATED, secret-scrubbed error message (max 200 chars).
+// NEVER logged: any key material, key prefix/suffix, or full credential.
+// Error messages are scrubbed for key-shaped strings before logging, so even
+// an SDK that echoes a credential in its error text cannot leak it.
+// ---------------------------------------------------------------------------
+
+export type ProviderName = "gemini" | "groq" | "openrouter";
+
+export type ProviderAttempt = {
+  provider: ProviderName;
+  model: string;
+  ok: boolean;
+  durationMs: number;
+  errorClass?: string;
+  errorMessage?: string;
+};
+
+/** Redact anything shaped like an API key/credential from a string. */
+export function scrubSecrets(text: string): string {
+  let out = text;
+  // Google AI Studio keys (legacy AIza… and current AQ.Ab8… auth keys).
+  out = out.replace(/AIza[0-9A-Za-z_\-]{10,}/g, "[REDACTED_KEY]");
+  out = out.replace(/AQ\.Ab8[0-9A-Za-z_\-]{10,}/g, "[REDACTED_KEY]");
+  // Groq keys.
+  out = out.replace(/gsk_[0-9A-Za-z]{10,}/g, "[REDACTED_KEY]");
+  // OpenRouter keys.
+  out = out.replace(/sk-or-v1-[0-9A-Za-z_\-]{10,}/g, "[REDACTED_KEY]");
+  // Bearer tokens and key= query values.
+  out = out.replace(/Bearer\s+[0-9A-Za-z_\-.~+/=]{10,}/gi, "Bearer [REDACTED_KEY]");
+  out = out.replace(/([?&](?:key|api_key|apikey)=)[^&\s]{6,}/gi, "$1[REDACTED_KEY]");
+  return out;
+}
+
+/**
+ * Map a thrown error to a short, stable error class (no key material).
+ * Message tokens are checked FIRST: some errors wrap an upstream status
+ * (e.g. our own AiError carries status 502 while its message reports a
+ * 401 from the provider), so the numeric status alone would misclassify.
+ */
+export function classifyProviderError(err: unknown): string {
+  const msg = err instanceof Error ? err.message : String(err);
+  const code = (err as { code?: unknown; status?: unknown; statusCode?: unknown } | null);
+  const status =
+    typeof code?.status === "number"
+      ? code.status
+      : typeof code?.statusCode === "number"
+        ? code.statusCode
+        : undefined;
+  const codeStr = typeof code?.code === "string" ? code.code : "";
+  if (/NO_(GEMINI|GROQ|OPENROUTER)_KEY/.test(msg)) return "not_configured";
+  if (
+    status === 401 ||
+    status === 403 ||
+    /(^|[^0-9])401([^0-9]|$)/.test(msg) ||
+    /(^|[^0-9])403([^0-9]|$)/.test(msg) ||
+    /API_KEY_INVALID|API key not valid|invalid_api_key|invalid api key|invalid key|unauthenticated|ACCESS_TOKEN_TYPE_UNSUPPORTED|User not found/i.test(msg)
+  ) {
+    return "invalid_key";
+  }
+  if (status === 429 || /(^|[^0-9])429([^0-9]|$)/.test(msg) || /quota|RESOURCE_EXHAUSTED|rate.?limit/i.test(msg)) return "quota";
+  if (status === 404 || /(^|[^0-9])404([^0-9]|$)/.test(msg) || /model not found|NOT_FOUND/i.test(msg)) return "model_not_found";
+  if (/timeout|timed out|AbortError|aborted/i.test(msg) || codeStr === "ETIMEDOUT") return "timeout";
+  if (/fetch failed|network|connection error|ENOTFOUND|EAI_AGAIN|ECONNREFUSED|ECONNRESET|socket hang up|EPROTO|wrong version number/i.test(msg)) return "network";
+  if (/Empty response/i.test(msg)) return "empty_response";
+  if (status === 402 || /payment|insufficient.*credit/i.test(msg)) return "payment";
+  if (status !== undefined) return `http_${status}`;
+  return "unknown";
+}
+
+function logAttempt(a: ProviderAttempt): void {
+  // One JSON line per attempt; safe to grep in Vercel runtime logs.
+  console.log(JSON.stringify({ event: "tutor_provider_attempt", ...a }));
+}
+
+/** Time one provider call, log the attempt (success or failure), rethrow errors. */
+async function timedCall<T>(provider: ProviderName, model: string, fn: () => Promise<T>): Promise<T> {
+  const started = Date.now();
+  try {
+    const result = await fn();
+    logAttempt({ provider, model, ok: true, durationMs: Date.now() - started });
+    return result;
+  } catch (err) {
+    const raw = err instanceof Error ? err.message : String(err);
+    logAttempt({
+      provider,
+      model,
+      ok: false,
+      durationMs: Date.now() - started,
+      errorClass: classifyProviderError(err),
+      errorMessage: scrubSecrets(raw).slice(0, 200),
+    });
+    throw err;
+  }
+}
+
+/** Reject after `ms` with a timeout error (used only by probes/eval, never the answer path). */
+export function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => {
+    if (timer) clearTimeout(timer);
+  });
+}
+
+export type ProviderHealth = {
+  configured: boolean;
+  status: "ok" | "error" | "not_configured";
+  latencyMs: number;
+  model: string;
+  errorClass?: string;
+  errorMessage?: string;
+};
+
+const PROBE_PROMPT = "Reply with exactly the word OK and nothing else.";
+
+async function probeGemini(): Promise<Omit<ProviderHealth, "configured">> {
+  const started = Date.now();
+  try {
+    const key = process.env.GEMINI_API_KEY;
+    if (!key) return { status: "not_configured", latencyMs: 0, model: GEMINI_MODEL };
+    const ai = new GoogleGenAI({ apiKey: key });
+    const response = await withTimeout(
+      ai.models.generateContent({ model: GEMINI_MODEL, contents: PROBE_PROMPT }),
+      10000,
+      "Gemini probe",
+    );
+    const text = response.text ?? "";
+    return { status: "ok", latencyMs: Date.now() - started, model: GEMINI_MODEL, errorMessage: scrubSecrets(text).slice(0, 50) };
+  } catch (err) {
+    return {
+      status: "error",
+      latencyMs: Date.now() - started,
+      model: GEMINI_MODEL,
+      errorClass: classifyProviderError(err),
+      errorMessage: scrubSecrets(err instanceof Error ? err.message : String(err)).slice(0, 200),
+    };
+  }
+}
+
+async function probeGroq(): Promise<Omit<ProviderHealth, "configured">> {
+  const started = Date.now();
+  try {
+    const key = process.env.GROQ_API_KEY;
+    if (!key) return { status: "not_configured", latencyMs: 0, model: GROQ_MODEL };
+    const groq = new Groq({ apiKey: key });
+    const chat = await withTimeout(
+      groq.chat.completions.create({
+        model: GROQ_MODEL,
+        messages: [{ role: "user", content: PROBE_PROMPT }],
+        temperature: 0,
+        max_tokens: 5,
+      }),
+      10000,
+      "Groq probe",
+    );
+    const text = chat.choices[0]?.message?.content ?? "";
+    if (!text) throw new Error("Empty response from Groq");
+    return { status: "ok", latencyMs: Date.now() - started, model: GROQ_MODEL };
+  } catch (err) {
+    return {
+      status: "error",
+      latencyMs: Date.now() - started,
+      model: GROQ_MODEL,
+      errorClass: classifyProviderError(err),
+      errorMessage: scrubSecrets(err instanceof Error ? err.message : String(err)).slice(0, 200),
+    };
+  }
+}
+
+async function probeOpenRouter(): Promise<Omit<ProviderHealth, "configured">> {
+  const started = Date.now();
+  try {
+    const key = process.env.OPENROUTER_API_KEY;
+    if (!key) return { status: "not_configured", latencyMs: 0, model: OPENROUTER_MODEL };
+    const res = await fetch(OPENROUTER_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://etea-test-prep.vercel.app/",
+        "X-Title": "ETEA Prep Library",
+      },
+      body: JSON.stringify({
+        model: OPENROUTER_MODEL,
+        messages: [{ role: "user", content: PROBE_PROMPT }],
+        temperature: 0,
+        max_tokens: 5,
+      }),
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      throw new Error(`OpenRouter HTTP ${res.status}: ${body.slice(0, 200)}`);
+    }
+    const json = (await res.json()) as { choices?: { message?: { content?: string } }[] };
+    const text = json.choices?.[0]?.message?.content ?? "";
+    if (!text) throw new Error("Empty response from OpenRouter");
+    return { status: "ok", latencyMs: Date.now() - started, model: OPENROUTER_MODEL };
+  } catch (err) {
+    return {
+      status: "error",
+      latencyMs: Date.now() - started,
+      model: OPENROUTER_MODEL,
+      errorClass: classifyProviderError(err),
+      errorMessage: scrubSecrets(err instanceof Error ? err.message : String(err)).slice(0, 200),
+    };
+  }
+}
+
+/**
+ * Probe each configured provider's RESPONSIVENESS (not just key presence).
+ * Cheap: one tiny generation per provider, 10 s bound each, run in parallel.
+ * Returns per-provider status; never includes key material.
+ */
+export async function probeProviders(): Promise<Record<ProviderName, ProviderHealth>> {
+  const status = providerStatus();
+  const [gemini, groq, openrouter] = await Promise.all([
+    probeGemini(),
+    probeGroq(),
+    probeOpenRouter(),
+  ]);
+  return {
+    gemini: { configured: status.gemini, ...gemini },
+    groq: { configured: status.groq, ...groq },
+    openrouter: { configured: status.openrouter, ...openrouter },
+  };
+}
+
 export class AiError extends Error {
   status: number;
   constructor(status: number, message: string) {
@@ -94,55 +334,63 @@ function langInstruction(lang: string) {
 }
 
 async function callGemini(prompt: string): Promise<string> {
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) throw new AiError(503, "NO_GEMINI_KEY");
-  const genAI = new GoogleGenerativeAI(key);
-  const model = genAI.getGenerativeModel({ model: GEMINI_MODEL, systemInstruction: SYSTEM });
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
-  if (!text) throw new Error("Empty response from Gemini");
-  return text;
+  return timedCall("gemini", GEMINI_MODEL, async () => {
+    const key = process.env.GEMINI_API_KEY;
+    if (!key) throw new AiError(503, "NO_GEMINI_KEY");
+    const ai = new GoogleGenAI({ apiKey: key });
+    const response = await ai.models.generateContent({
+      model: GEMINI_MODEL,
+      contents: prompt,
+      config: { systemInstruction: SYSTEM },
+    });
+    const text = response.text;
+    if (!text) throw new Error("Empty response from Gemini");
+    return text;
+  });
 }
 
 async function callGroq(prompt: string): Promise<string> {
-  const key = process.env.GROQ_API_KEY;
-  if (!key) throw new AiError(503, "NO_GROQ_KEY");
-  const groq = new Groq({ apiKey: key });
-  const chat = await groq.chat.completions.create({
-    model: GROQ_MODEL,
-    messages: [
-      { role: "system", content: SYSTEM },
-      { role: "user", content: prompt },
-    ],
-    temperature: 0.3,
-    max_tokens: 1200,
-  });
-  const text = chat.choices[0]?.message?.content ?? "";
-  if (!text) throw new Error("Empty response from Groq");
-  return text;
-}
-
-async function callOpenRouter(prompt: string): Promise<string> {
-  const key = process.env.OPENROUTER_API_KEY;
-  if (!key) throw new AiError(503, "NO_OPENROUTER_KEY");
-  const res = await fetch(OPENROUTER_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${key}`,
-      "Content-Type": "application/json",
-      "HTTP-Referer": "https://etea-test-prep.vercel.app/",
-      "X-Title": "ETEA Prep Library",
-    },
-    body: JSON.stringify({
-      model: OPENROUTER_MODEL,
+  return timedCall("groq", GROQ_MODEL, async () => {
+    const key = process.env.GROQ_API_KEY;
+    if (!key) throw new AiError(503, "NO_GROQ_KEY");
+    const groq = new Groq({ apiKey: key });
+    const chat = await groq.chat.completions.create({
+      model: GROQ_MODEL,
       messages: [
         { role: "system", content: SYSTEM },
         { role: "user", content: prompt },
       ],
       temperature: 0.3,
       max_tokens: 1200,
-    }),
+    });
+    const text = chat.choices[0]?.message?.content ?? "";
+    if (!text) throw new Error("Empty response from Groq");
+    return text;
   });
+}
+
+async function callOpenRouter(prompt: string): Promise<string> {
+  return timedCall("openrouter", OPENROUTER_MODEL, async () => {
+    const key = process.env.OPENROUTER_API_KEY;
+    if (!key) throw new AiError(503, "NO_OPENROUTER_KEY");
+    const res = await fetch(OPENROUTER_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://etea-test-prep.vercel.app/",
+        "X-Title": "ETEA Prep Library",
+      },
+      body: JSON.stringify({
+        model: OPENROUTER_MODEL,
+        messages: [
+          { role: "system", content: SYSTEM },
+          { role: "user", content: prompt },
+        ],
+        temperature: 0.3,
+        max_tokens: 1200,
+      }),
+    });
   if (!res.ok) {
     const body = await res.text().catch(() => "");
     if (res.status === 401) {
@@ -166,7 +414,8 @@ async function callOpenRouter(prompt: string): Promise<string> {
   if (json.error?.message) throw new Error(`OpenRouter error: ${json.error.message}`);
   const text = json.choices?.[0]?.message?.content ?? "";
   if (!text) throw new Error("Empty response from OpenRouter");
-  return text;
+    return text;
+  });
 }
 
 function classifyGeminiError(err: unknown): AiError {
