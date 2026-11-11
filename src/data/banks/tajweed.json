@@ -1,0 +1,722 @@
+[
+ {
+  "id": "TAJ-001",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many general Makharij (places of articulation) are there?",
+  "options": [
+   "3",
+   "5",
+   "7",
+   "17"
+  ],
+  "correctIndex": 1,
+  "explanation": "There are 5 general Makharij: Jawf (empty space of mouth), Halq (throat), Lisan (tongue), Shafatan (lips) and Khayshum (nose).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-002",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many detailed Makharij are there in total?",
+  "options": [
+   "5",
+   "10",
+   "17",
+   "29"
+  ],
+  "correctIndex": 2,
+  "explanation": "There are 17 detailed Makharij: Jawf 1, Halq 3, tongue 10, lips 2 and nose 1.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-003",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which letters come from the Jawf?",
+  "options": [
+   "Alif, Waw and Ya (Madd letters)",
+   "Ba, Meem and Fa",
+   "Qaf and Kaf",
+   "Seen and Saad"
+  ],
+  "correctIndex": 0,
+  "explanation": "The Jawf (empty space of the mouth and throat) is the Makhraj of the three Madd letters: Alif, Waw and Ya.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-004",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many letters come from the throat (Halq)?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "correctIndex": 2,
+  "explanation": "The six throat letters are Hamzah, Ha, Ayn, Haa, Ghayn and Kha.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-005",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many of the 17 detailed Makharij are from the tongue?",
+  "options": [
+   "6",
+   "10",
+   "12",
+   "17"
+  ],
+  "correctIndex": 1,
+  "explanation": "Out of the 17 detailed Makharij, 10 are from the tongue (Lisan).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-006",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which letters come from the lips (Shafatan)?",
+  "options": [
+   "Ba and Meem only",
+   "Fa, Ba and Meem",
+   "Fa, Ba, Meem and Waw",
+   "Qaf, Kaf and Jeem"
+  ],
+  "correctIndex": 2,
+  "explanation": "The four lip letters are Fa, Ba, Meem and Waw.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-007",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "What comes from the Khayshum (nasal passage)?",
+  "options": [
+   "Ghunnah (nasal sound)",
+   "Qalqalah",
+   "Madd",
+   "Ikhfa"
+  ],
+  "correctIndex": 0,
+  "explanation": "Khayshum is the nasal passage. Ghunnah, the nasal sound of Noon and Meem, comes from it.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-008",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many rules of Noon Sakinah and Tanween are there?",
+  "options": [
+   "2",
+   "3",
+   "5",
+   "4"
+  ],
+  "correctIndex": 3,
+  "explanation": "Noon Sakinah and Tanween have 4 rules: Izhar, Idgham, Iqlab and Ikhfa.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-009",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which letters cause Izhar after Noon Sakinah or Tanween?",
+  "options": [
+   "Yarmaloon",
+   "Hamzah, Ha, Ayn, Haa, Ghayn, Kha",
+   "Ba and Meem",
+   "Qaaf and Kaf"
+  ],
+  "correctIndex": 1,
+  "explanation": "The 6 Izhar letters are Hamzah, Ha, Ayn, Haa, Ghayn and Kha — the throat letters.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-010",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "What does Izhar mean?",
+  "options": [
+   "To pronounce clearly",
+   "To merge",
+   "To hide",
+   "To change into Meem"
+  ],
+  "correctIndex": 0,
+  "explanation": "Izhar means to pronounce clearly, without Ghunnah — the Noon is read clearly.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-011",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which letters cause Idgham after Noon Sakinah or Tanween?",
+  "options": [
+   "Throat letters",
+   "Ba and Meem",
+   "Ya, Ra, Meem, Lam, Waw, Noon",
+   "Qalqalah letters"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Idgham letters are Ya, Ra, Meem, Lam, Waw and Noon — collected in the word Yarmaloon.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-012",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Idgham with Ghunnah happens with which letters?",
+  "options": [
+   "Lam and Ra",
+   "Ya, Noon, Meem and Waw",
+   "Ba only",
+   "Throat letters"
+  ],
+  "correctIndex": 1,
+  "explanation": "Idgham with Ghunnah happens with Ya, Noon, Meem and Waw — collected in the word Yanmoo.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-013",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Idgham without Ghunnah happens with which letters?",
+  "options": [
+   "Lam and Ra",
+   "Ya and Waw",
+   "Noon and Meem",
+   "Ba and Ta"
+  ],
+  "correctIndex": 0,
+  "explanation": "Idgham without Ghunnah happens only with Lam and Ra.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-014",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Iqlab happens when Noon Sakinah or Tanween is followed by which letter?",
+  "options": [
+   "Hamzah",
+   "Ba",
+   "Ra",
+   "Kha"
+  ],
+  "correctIndex": 1,
+  "explanation": "Iqlab means changing Noon Sakinah or Tanween into Meem when followed by Ba, with Ghunnah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-015",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many Ikhfa letters are there?",
+  "options": [
+   "6",
+   "10",
+   "15",
+   "20"
+  ],
+  "correctIndex": 2,
+  "explanation": "There are 15 Ikhfa letters — all letters except the 6 Izhar, 6 Idgham and 1 Iqlab letters (28 - 13 = 15).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-016",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many rules of Meem Sakinah are there?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "correctIndex": 0,
+  "explanation": "Meem Sakinah has 3 rules: Ikhfa Shafawi, Idgham Shafawi and Izhar Shafawi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-017",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Ikhfa Shafawi happens when Meem Sakinah is followed by which letter?",
+  "options": [
+   "Meem",
+   "Ba",
+   "Ra",
+   "Hamzah"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ikhfa Shafawi happens when Meem Sakinah is followed by Ba, and it is read with Ghunnah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-018",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Idgham Shafawi happens when Meem Sakinah is followed by which letter?",
+  "options": [
+   "Ba",
+   "Lam",
+   "Meem",
+   "Noon"
+  ],
+  "correctIndex": 2,
+  "explanation": "Idgham Shafawi happens when Meem Sakinah is followed by another Meem, and they merge with Ghunnah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-019",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "When does Izhar Shafawi happen?",
+  "options": [
+   "Any letter except Ba and Meem",
+   "Only Ba",
+   "Only Meem",
+   "Only throat letters"
+  ],
+  "correctIndex": 0,
+  "explanation": "Izhar Shafawi happens when Meem Sakinah is followed by any letter except Ba and Meem — it is read clearly.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-020",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How long is Madd Asli stretched?",
+  "options": [
+   "1 Harakah",
+   "2 Harakah",
+   "4 Harakah",
+   "6 Harakah"
+  ],
+  "correctIndex": 1,
+  "explanation": "Madd Asli (natural Madd) is stretched for 2 Harakah (counts).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-021",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How long is Madd Lazim stretched?",
+  "options": [
+   "2 Harakah",
+   "4 Harakah",
+   "6 Harakah",
+   "8 Harakah"
+  ],
+  "correctIndex": 2,
+  "explanation": "Madd Lazim is stretched for 6 Harakah — it is the longest Madd.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-022",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "What is Madd Muttasil?",
+  "options": [
+   "Madd letter followed by Hamzah in the same word",
+   "Madd letter followed by Hamzah in the next word",
+   "Madd before a Sukoon at a stop",
+   "Madd before a Shaddah"
+  ],
+  "correctIndex": 0,
+  "explanation": "Madd Muttasil is when a Madd letter is followed by Hamzah in the same word.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-023",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "What is Madd Munfasil?",
+  "options": [
+   "Madd in the same word",
+   "Madd letter followed by Hamzah in the next word",
+   "Madd before a Sukoon",
+   "Madd of 6 Harakah"
+  ],
+  "correctIndex": 1,
+  "explanation": "Madd Munfasil is when a Madd letter at the end of one word is followed by Hamzah at the start of the next word.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-024",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How long can Madd Aarid Lis Sukoon be stretched?",
+  "options": [
+   "Only 2 Harakah",
+   "Only 6 Harakah",
+   "2, 4 or 6 Harakah",
+   "Only 4 Harakah"
+  ],
+  "correctIndex": 2,
+  "explanation": "Madd Aarid Lis Sukoon is stretched 2, 4 or 6 Harakah when stopping on a word.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-025",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "Which letters are the Qalqalah letters?",
+  "options": [
+   "Throat letters",
+   "Qaf, Ta, Ba, Jeem, Dal",
+   "Ya, Ra, Meem, Lam, Waw, Noon",
+   "Fa, Ba, Meem, Waw"
+  ],
+  "correctIndex": 1,
+  "explanation": "The 5 Qalqalah letters are Qaf, Ta, Ba, Jeem and Dal — collected in the word Qutb Jad.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-026",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How long is the Ghunnah of a Mushaddad Noon or Meem held?",
+  "options": [
+   "No Ghunnah",
+   "1 Harakah",
+   "2 Harakah",
+   "6 Harakah"
+  ],
+  "correctIndex": 2,
+  "explanation": "When Noon or Meem has a Shaddah, Ghunnah is held for 2 Harakah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-027",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "What does Waqf mean in Tajweed?",
+  "options": [
+   "To stop",
+   "To start",
+   "To merge",
+   "To hide"
+  ],
+  "correctIndex": 0,
+  "explanation": "Waqf means to stop — to pause the voice and breath at the end of a word while reciting.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-028",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "What does the Waqf sign Meem (م) mean?",
+  "options": [
+   "Stopping is forbidden",
+   "Stopping is necessary (Waqf Lazim)",
+   "Stopping is allowed",
+   "Continue without stopping"
+  ],
+  "correctIndex": 1,
+  "explanation": "The sign Meem (م) means Waqf Lazim — stopping is necessary.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-029",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "What is the meaning of Tajweed?",
+  "options": [
+   "To memorise the Quran",
+   "To recite the Quran correctly with its rules",
+   "To translate the Quran",
+   "To write the Quran beautifully"
+  ],
+  "correctIndex": 1,
+  "explanation": "Tajweed means reciting the Quran correctly, giving every letter its due right and place. Tajweed ka matlab hai Quran ko us ke qawaid ke sath durust parhna.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "TAJ-030",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed",
+  "question": "How many Juz (parts) is the Holy Quran divided into?",
+  "options": [
+   "30",
+   "25",
+   "40",
+   "114"
+  ],
+  "correctIndex": 0,
+  "explanation": "The Holy Quran is divided into 30 Juz (parts).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ }
+]

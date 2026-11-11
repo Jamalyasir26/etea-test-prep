@@ -1,0 +1,812 @@
+[
+ {
+  "id": "SCI-001",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which disease is caused by the deficiency of Vitamin C?",
+  "options": [
+   "Scurvy",
+   "Night blindness",
+   "Rickets",
+   "Beriberi"
+  ],
+  "correctIndex": 0,
+  "explanation": "Vitamin C ki kami se scurvy hota hai — masoorhon se khoon aana is ki aik alamat hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-002",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which vitamin deficiency causes rickets in children?",
+  "options": [
+   "Vitamin A",
+   "Vitamin C",
+   "Vitamin D",
+   "Vitamin B"
+  ],
+  "correctIndex": 2,
+  "explanation": "Vitamin D ki kami se bachon mein rickets hota hai; dhoop se jism mein Vitamin D banta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-003",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Deficiency of which vitamin causes night blindness?",
+  "options": [
+   "Vitamin A",
+   "Vitamin C",
+   "Vitamin D",
+   "Vitamin K"
+  ],
+  "correctIndex": 0,
+  "explanation": "Vitamin A ki kami se raat ko dekhna mushkil ho jata hai — isay night blindness kehte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-004",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Kwashiorkor is a disease caused by the deficiency of:",
+  "options": [
+   "Proteins",
+   "Vitamins",
+   "Fats",
+   "Water"
+  ],
+  "correctIndex": 0,
+  "explanation": "Kwashiorkor protein ki kami se hota hai — bachon ki nashonuma ruk jati hai aur pait phool sakta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-005",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Deficiency of iron in the body causes which disease?",
+  "options": [
+   "Scurvy",
+   "Goitre",
+   "Anaemia",
+   "Rickets"
+  ],
+  "correctIndex": 2,
+  "explanation": "Iron ki kami se khoon mein haemoglobin kam ho jata hai, jis se anaemia hota hai aur thakawat mehsoos hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-006",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which mineral helps make bones and teeth strong?",
+  "options": [
+   "Iodine",
+   "Iron",
+   "Calcium",
+   "Sodium"
+  ],
+  "correctIndex": 2,
+  "explanation": "Calcium haddiyon aur daanton ko mazboot banata hai — doodh aur dahi calcium ke achay zariye hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-007",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which type of muscle is attached to bones and helps us move our arms and legs?",
+  "options": [
+   "Skeletal muscle",
+   "Involuntary muscle",
+   "Cardiac muscle",
+   "Smooth muscle"
+  ],
+  "correctIndex": 0,
+  "explanation": "Skeletal muscles haddiyon se juray hotay hain aur hamari marzi se harkat karte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-008",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "In which part of the body does digestion of food begin?",
+  "options": [
+   "Liver",
+   "Stomach",
+   "Mouth",
+   "Small intestine"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hazaam munh se shuru hota hai — daant khana cheenjte hain aur thook (saliva) usay naram karta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-009",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "In which part of the body are most nutrients from digested food absorbed into the blood?",
+  "options": [
+   "Stomach",
+   "Food pipe",
+   "Large intestine",
+   "Small intestine"
+  ],
+  "correctIndex": 3,
+  "explanation": "Chhoti aant (small intestine) mein khane ke ghizai ajza khoon mein jazb hotay hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-010",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "What is the process by which green plants make their own food using sunlight?",
+  "options": [
+   "Respiration",
+   "Digestion",
+   "Pollination",
+   "Photosynthesis"
+  ],
+  "correctIndex": 3,
+  "explanation": "Photosynthesis mein poda dhoop, pani aur carbon dioxide se khana banata hai aur oxygen kharij karta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-011",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which green pigment in leaves traps sunlight for photosynthesis?",
+  "options": [
+   "Carotene",
+   "Haemoglobin",
+   "Melanin",
+   "Chlorophyll"
+  ],
+  "correctIndex": 3,
+  "explanation": "Chlorophyll pattay ka sabz rang hai jo dhoop ki roshni ko jazb karta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-012",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "What is the transfer of pollen from one flower to another called?",
+  "options": [
+   "Fertilisation",
+   "Pollination",
+   "Germination",
+   "Photosynthesis"
+  ],
+  "correctIndex": 1,
+  "explanation": "Pollination mein pollen aik phool se doosray phool tak pohanchta hai — makhiyan aur hawa is mein madad karte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-013",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "In a food chain, which living thing is called a producer?",
+  "options": [
+   "A goat",
+   "A fungus",
+   "A green plant",
+   "A lion"
+  ],
+  "correctIndex": 2,
+  "explanation": "Producer woh hai jo apna khana khud banata hai — sabz poday food chain ke producer hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-014",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which of these animals is a herbivore?",
+  "options": [
+   "Snake",
+   "Eagle",
+   "Goat",
+   "Lion"
+  ],
+  "correctIndex": 2,
+  "explanation": "Herbivore sirf poday khata hai — bakri ghaas aur pattay khati hai, is liye herbivore hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-015",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which gas is present in the largest amount in the air we breathe?",
+  "options": [
+   "Hydrogen",
+   "Oxygen",
+   "Carbon dioxide",
+   "Nitrogen"
+  ],
+  "correctIndex": 3,
+  "explanation": "Hawa mein sab se zyada nitrogen hoti hai, phir oxygen; carbon dioxide bohat kam miqdar mein hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-016",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "What is the chemical formula of water?",
+  "options": [
+   "CO2",
+   "NaCl",
+   "O2",
+   "H2O"
+  ],
+  "correctIndex": 3,
+  "explanation": "Pani H2O hai — aik molecule mein hydrogen ke 2 atoms aur oxygen ka 1 atom hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-017",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which gas is needed for things to burn?",
+  "options": [
+   "Hydrogen",
+   "Oxygen",
+   "Carbon dioxide",
+   "Nitrogen"
+  ],
+  "correctIndex": 1,
+  "explanation": "Aag jalnay ke liye oxygen zaroori hai — oxygen ke baghair aag bujh jati hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-018",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "What is the change of a liquid into a gas called?",
+  "options": [
+   "Evaporation",
+   "Condensation",
+   "Freezing",
+   "Melting"
+  ],
+  "correctIndex": 0,
+  "explanation": "Evaporation mein liquid gas mein badal jata hai — jaisay dhoop mein pani sookh jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-019",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which planet is nearest to the Sun?",
+  "options": [
+   "Mercury",
+   "Earth",
+   "Venus",
+   "Mars"
+  ],
+  "correctIndex": 0,
+  "explanation": "Mercury Suraj ke sab se qareeb sayyara hai, is liye woh sab se chhota orbit rakhta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-020",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which planet is the hottest in the solar system?",
+  "options": [
+   "Mars",
+   "Venus",
+   "Mercury",
+   "Jupiter"
+  ],
+  "correctIndex": 1,
+  "explanation": "Venus sab se garam sayyara hai — us ki ghani hawa garmi ko qaid kar leti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-021",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which is the largest planet in the solar system?",
+  "options": [
+   "Saturn",
+   "Jupiter",
+   "Earth",
+   "Neptune"
+  ],
+  "correctIndex": 1,
+  "explanation": "Jupiter nizam-e-shamsi ka sab se bara sayyara hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-022",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which is the largest ocean in the world?",
+  "options": [
+   "Arctic Ocean",
+   "Atlantic Ocean",
+   "Pacific Ocean",
+   "Indian Ocean"
+  ],
+  "correctIndex": 2,
+  "explanation": "Pacific Ocean duniya ka sab se bara samandar hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-023",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which of these is a renewable source of energy?",
+  "options": [
+   "Petrol",
+   "Coal",
+   "Natural gas",
+   "Solar energy"
+  ],
+  "correctIndex": 3,
+  "explanation": "Solar energy renewable hai — Suraj ki roshni khatam nahi hoti, jab ke koyla aur petrol aik din khatam ho jayenge.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-024",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which of these is a non-renewable source of energy?",
+  "options": [
+   "Wind energy",
+   "Solar energy",
+   "Hydroelectric energy",
+   "Coal"
+  ],
+  "correctIndex": 3,
+  "explanation": "Koyla fossil fuel hai aur non-renewable hai — aik dafa istemal ho jaye to dobara nahi banta.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-025",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "What is the SI unit of force?",
+  "options": [
+   "Pascal",
+   "Newton",
+   "Joule",
+   "Watt"
+  ],
+  "correctIndex": 1,
+  "explanation": "Force ki SI unit Newton hai — is ka naam scientist Isaac Newton ke naam par rakha gaya hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-026",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Sound cannot travel through which of these?",
+  "options": [
+   "Iron",
+   "Vacuum",
+   "Water",
+   "Air"
+  ],
+  "correctIndex": 1,
+  "explanation": "Awaz ko safar ke liye koi medium chahiye hota hai — khala (vacuum) mein awaz nahi chal sakti.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-027",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which of these is a good conductor of electricity?",
+  "options": [
+   "Rubber",
+   "Wood",
+   "Plastic",
+   "Copper"
+  ],
+  "correctIndex": 3,
+  "explanation": "Copper bijli ka acha conductor hai, is liye taarain aksar copper ki bani hoti hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-028",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "We are able to see objects because light is:",
+  "options": [
+   "Destroyed by them",
+   "Reflected from them",
+   "Blocked by them",
+   "Absorbed by them"
+  ],
+  "correctIndex": 1,
+  "explanation": "Roshni cheezon se takra kar hamari aankhon tak reflect hoti hai, tabhi hum unhein dekh patay hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-029",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which material is a good conductor of heat?",
+  "options": [
+   "Iron",
+   "Cloth",
+   "Wood",
+   "Plastic"
+  ],
+  "correctIndex": 0,
+  "explanation": "Iron (loha) garmi ka acha conductor hai — garam bartan ka lohay ka handle jaldi garam ho jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "SCI-030",
+  "post": [
+   "pst",
+   "ct",
+   "dm",
+   "pet",
+   "sst-etea"
+  ],
+  "subject": "General Science",
+  "subjectKey": "science",
+  "topic": "General Science",
+  "question": "Which device converts electrical energy into light energy?",
+  "options": [
+   "Fan",
+   "Electric bulb",
+   "Heater",
+   "Motor"
+  ],
+  "correctIndex": 1,
+  "explanation": "Electric bulb bijli ki energy ko roshni mein badal deta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ }
+]

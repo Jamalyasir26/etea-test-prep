@@ -1,0 +1,482 @@
+[
+ {
+  "id": "DRW-001",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "Which of the following are the three primary colours?",
+  "options": [
+   "Red, blue and yellow",
+   "Red, green and orange",
+   "Blue, green and purple",
+   "Yellow, black and white"
+  ],
+  "correctIndex": 0,
+  "explanation": "Primary colours cannot be made by mixing other colours. Roman Urdu: bunyadi rang teen hain — laal, neela aur peela.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-002",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "Which colour is made by mixing red and yellow?",
+  "options": [
+   "Green",
+   "Purple",
+   "Orange",
+   "Brown"
+  ],
+  "correctIndex": 2,
+  "explanation": "Red + yellow = orange, a secondary colour. Roman Urdu: laal aur peele se narangi banta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-003",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "Which colour is made by mixing blue and yellow?",
+  "options": [
+   "Orange",
+   "Green",
+   "Purple",
+   "Pink"
+  ],
+  "correctIndex": 1,
+  "explanation": "Blue + yellow = green. Roman Urdu: neele aur peele se sabz banta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-004",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "Which colour is made by mixing red and blue?",
+  "options": [
+   "Orange",
+   "Green",
+   "Purple",
+   "Grey"
+  ],
+  "correctIndex": 2,
+  "explanation": "Red + blue = purple, a secondary colour. Roman Urdu: laal aur neele se jamni banta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-005",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "Which colours are called warm colours?",
+  "options": [
+   "Blue, green and purple",
+   "Red, orange and yellow",
+   "Black, white and grey",
+   "Green, blue and brown"
+  ],
+  "correctIndex": 1,
+  "explanation": "Warm colours remind us of fire and sunlight. Roman Urdu: garam rang aag aur dhoop ki yaad dilate hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-006",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "What is the point in a perspective drawing where parallel lines appear to meet?",
+  "options": [
+   "Horizon line",
+   "Vanishing point",
+   "Centre point",
+   "Focal point"
+  ],
+  "correctIndex": 1,
+  "explanation": "In perspective, parallel lines seem to meet at the vanishing point on the horizon line.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-007",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "In drawing, what is shading used for?",
+  "options": [
+   "To make a drawing flat",
+   "To show light, shadow and depth",
+   "To remove colour from a drawing",
+   "To make the paper smooth"
+  ],
+  "correctIndex": 1,
+  "explanation": "Shading shows where light falls and gives a flat drawing a three-dimensional look.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-008",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "What is hatching in drawing?",
+  "options": [
+   "Drawing with parallel lines to show shade",
+   "Painting with water",
+   "Cutting paper into shapes",
+   "Mixing colours on a palette"
+  ],
+  "correctIndex": 0,
+  "explanation": "Hatching uses closely spaced parallel lines; closer lines make a darker shade.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-009",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "What is a sketch?",
+  "options": [
+   "A finished oil painting",
+   "A quick, rough drawing",
+   "A framed photograph",
+   "A printed poster"
+  ],
+  "correctIndex": 1,
+  "explanation": "A sketch is a quick rough drawing, often made with a pencil before the final work.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-010",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "What is a palette used for in painting?",
+  "options": [
+   "To hold and mix paints",
+   "To cut paper",
+   "To stretch canvas",
+   "To sharpen pencils"
+  ],
+  "correctIndex": 0,
+  "explanation": "An artist mixes colours on a palette before applying them with a brush.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-011",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "How many players are there in a cricket team on the field?",
+  "options": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "correctIndex": 2,
+  "explanation": "A cricket team has 11 players. Roman Urdu: cricket mein aik team mein 11 khilari hote hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-012",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "How many balls are there in one over in cricket?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "correctIndex": 2,
+  "explanation": "One over has 6 legal balls. Roman Urdu: aik over mein 6 gendain hoti hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-013",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "How many players are there in a football (soccer) team on the field?",
+  "options": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "correctIndex": 2,
+  "explanation": "A football team has 11 players, including the goalkeeper.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-014",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "How long is a standard football (soccer) match, excluding extra time?",
+  "options": [
+   "60 minutes",
+   "80 minutes",
+   "90 minutes",
+   "120 minutes"
+  ],
+  "correctIndex": 2,
+  "explanation": "A football match has two halves of 45 minutes, making 90 minutes in total.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-015",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "How many players are there in a hockey team on the field?",
+  "options": [
+   "9",
+   "10",
+   "11",
+   "7"
+  ],
+  "correctIndex": 2,
+  "explanation": "A field hockey team has 11 players on the field, including the goalkeeper.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-016",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "How often are the Olympic Games held?",
+  "options": [
+   "Every 2 years",
+   "Every 3 years",
+   "Every 4 years",
+   "Every 5 years"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Olympic Games are held every four years. Roman Urdu: Olympics har chaar saal baad hote hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-017",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "What is the standard distance of a marathon race?",
+  "options": [
+   "26 km",
+   "32 km",
+   "42 km (about 42.195 km)",
+   "50 km"
+  ],
+  "correctIndex": 2,
+  "explanation": "A marathon is about 42.195 kilometres long.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-018",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "Why is warming up before exercise important?",
+  "options": [
+   "It makes muscles cold",
+   "It prepares the body and reduces the risk of injury",
+   "It stops the heart from beating",
+   "It makes exercise unnecessary"
+  ],
+  "correctIndex": 1,
+  "explanation": "A warm-up slowly raises heart rate and loosens muscles, so injury is less likely.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-019",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "How many bones are there in the skeleton of a normal adult human?",
+  "options": [
+   "106",
+   "206",
+   "306",
+   "406"
+  ],
+  "correctIndex": 1,
+  "explanation": "An adult human skeleton normally has 206 bones. Roman Urdu: baaligh insaan mein 206 haddiyan hoti hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "DRW-020",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing/PE",
+  "subjectKey": "drawing_pe",
+  "topic": "Drawing/PE",
+  "question": "Which of the following is the best example of regular aerobic exercise?",
+  "options": [
+   "Watching television",
+   "Brisk walking or jogging",
+   "Sleeping",
+   "Sitting for a long time"
+  ],
+  "correctIndex": 1,
+  "explanation": "Brisk walking and jogging raise the heart rate and improve fitness; the others do not exercise the body.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ }
+]

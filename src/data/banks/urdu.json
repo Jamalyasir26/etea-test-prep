@@ -1,0 +1,1307 @@
+[
+ {
+  "id": "URD-001",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'دوست'?",
+  "options": [
+   "ساتھی",
+   "دشمن",
+   "اجنبی",
+   "حریف"
+  ],
+  "correctIndex": 0,
+  "explanation": "'دوست' ka matlab hai saathi. Roman Urdu: dost ka hum-ma'ni saathi hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-002",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'دوست'?",
+  "options": [
+   "ساتھی",
+   "دشمن",
+   "رفیق",
+   "ہمراہی"
+  ],
+  "correctIndex": 1,
+  "explanation": "'دوست' ka opposite 'دشمن' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-003",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'خوشی'?",
+  "options": [
+   "غم",
+   "دکھ",
+   "مسرت",
+   "تکلیف"
+  ],
+  "correctIndex": 2,
+  "explanation": "'خوشی' ka hum-ma'ni 'مسرت' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-004",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'خوشی'?",
+  "options": [
+   "مسرت",
+   "شادمانی",
+   "خوشحالی",
+   "غم"
+  ],
+  "correctIndex": 3,
+  "explanation": "'خوشی' ka opposite 'غم' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-005",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'روشنی'?",
+  "options": [
+   "اجالا",
+   "تاریکی",
+   "اندھیرا",
+   "رات"
+  ],
+  "correctIndex": 0,
+  "explanation": "'روشنی' ka hum-ma'ni 'اجالا' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-006",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'روشنی'?",
+  "options": [
+   "اجالا",
+   "تاریکی",
+   "نور",
+   "چاندنی"
+  ],
+  "correctIndex": 1,
+  "explanation": "'روشنی' ka opposite 'تاریکی' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-007",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'سچ'?",
+  "options": [
+   "جھوٹ",
+   "فریب",
+   "سچائی",
+   "دھوکا"
+  ],
+  "correctIndex": 2,
+  "explanation": "'سچ' ka hum-ma'ni 'سچائی' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-008",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'سچ'?",
+  "options": [
+   "سچائی",
+   "حق",
+   "صداقت",
+   "جھوٹ"
+  ],
+  "correctIndex": 3,
+  "explanation": "'سچ' ka opposite 'جھوٹ' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-009",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'محبت'?",
+  "options": [
+   "پیار",
+   "نفرت",
+   "عداوت",
+   "دشمنی"
+  ],
+  "correctIndex": 0,
+  "explanation": "'محبت' ka hum-ma'ni 'پیار' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-010",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'محبت'?",
+  "options": [
+   "پیار",
+   "نفرت",
+   "الفت",
+   "چاہت"
+  ],
+  "correctIndex": 1,
+  "explanation": "'محبت' ka opposite 'نفرت' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-011",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'بہادر'?",
+  "options": [
+   "بزدل",
+   "ڈرپوک",
+   "دلیر",
+   "کمزور"
+  ],
+  "correctIndex": 2,
+  "explanation": "'بہادر' ka hum-ma'ni 'دلیر' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-012",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'بہادر'?",
+  "options": [
+   "دلیر",
+   "شجاع",
+   "نڈر",
+   "بزدل"
+  ],
+  "correctIndex": 3,
+  "explanation": "'بہادر' ka opposite 'بزدل' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-013",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'شروع'?",
+  "options": [
+   "آغاز",
+   "اختتام",
+   "انجام",
+   "خاتمہ"
+  ],
+  "correctIndex": 0,
+  "explanation": "'شروع' ka hum-ma'ni 'آغاز' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-014",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'شروع'?",
+  "options": [
+   "آغاز",
+   "اختتام",
+   "ابتدا",
+   "آرام"
+  ],
+  "correctIndex": 1,
+  "explanation": "'شروع' ka opposite 'اختتام' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-015",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'آسان'?",
+  "options": [
+   "مشکل",
+   "کٹھن",
+   "سہل",
+   "دشوار"
+  ],
+  "correctIndex": 2,
+  "explanation": "'آسان' ka hum-ma'ni 'سہل' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-016",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'آسان'?",
+  "options": [
+   "سہل",
+   "آرام",
+   "سادہ",
+   "مشکل"
+  ],
+  "correctIndex": 3,
+  "explanation": "'آسان' ka opposite 'مشکل' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-017",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'علم'?",
+  "options": [
+   "دانش",
+   "جہالت",
+   "ناواقفی",
+   "اندھیرا"
+  ],
+  "correctIndex": 0,
+  "explanation": "'علم' ka hum-ma'ni 'دانش' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-018",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'علم'?",
+  "options": [
+   "دانش",
+   "جہالت",
+   "آگاہی",
+   "شعور"
+  ],
+  "correctIndex": 1,
+  "explanation": "'علم' ka opposite 'جہالت' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-019",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'امیر'?",
+  "options": [
+   "غریب",
+   "مفلس",
+   "دولت مند",
+   "نادار"
+  ],
+  "correctIndex": 2,
+  "explanation": "'امیر' ka hum-ma'ni 'دولت مند' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-020",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'امیر'?",
+  "options": [
+   "دولت مند",
+   "مالدار",
+   "خوشحال",
+   "غریب"
+  ],
+  "correctIndex": 3,
+  "explanation": "'امیر' ka opposite 'غریب' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-021",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'نیا'?",
+  "options": [
+   "پرانا",
+   "جدید",
+   "تازہ",
+   "نوجوان"
+  ],
+  "correctIndex": 0,
+  "explanation": "'نیا' ka opposite 'پرانا' hai. Taza aur jadeed 'نیا' ke hum-ma'ni hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-022",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'گرم'?",
+  "options": [
+   "تپتا",
+   "ٹھنڈا",
+   "گرمی",
+   "آگ"
+  ],
+  "correctIndex": 1,
+  "explanation": "'گرم' ka opposite 'ٹھنڈا' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-023",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'کامیابی'?",
+  "options": [
+   "جیت",
+   "کامیاب",
+   "ناکامی",
+   "ترقی"
+  ],
+  "correctIndex": 2,
+  "explanation": "'کامیابی' ka opposite 'ناکامی' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-024",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'امن'?",
+  "options": [
+   "سکون",
+   "شانتی",
+   "آرام",
+   "جنگ"
+  ],
+  "correctIndex": 3,
+  "explanation": "'امن' ka opposite 'جنگ' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-025",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'زندگی'?",
+  "options": [
+   "موت",
+   "حیات",
+   "سانس",
+   "عمر"
+  ],
+  "correctIndex": 0,
+  "explanation": "'زندگی' ka opposite 'موت' hai. Hayat 'زندگی' ka hum-ma'ni hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-026",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "In Urdu grammar, 'کتاب' is an example of what?",
+  "options": [
+   "فعل",
+   "اسم",
+   "حرف",
+   "صفت"
+  ],
+  "correctIndex": 1,
+  "explanation": "'کتاب' kisi cheez ka naam hai, is liye ye 'اسم' (noun) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-027",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "In Urdu grammar, 'کھیلنا' is an example of what?",
+  "options": [
+   "اسم",
+   "صفت",
+   "فعل",
+   "حرف"
+  ],
+  "correctIndex": 2,
+  "explanation": "'کھیلنا' kisi kaam ko zahir karta hai, is liye ye 'فعل' (verb) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-028",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "In Urdu grammar, 'وہ' is an example of what?",
+  "options": [
+   "اسم",
+   "حرف",
+   "صفت",
+   "ضمیر"
+  ],
+  "correctIndex": 3,
+  "explanation": "'وہ' naam ki jagah use hota hai, is liye ye 'ضمیر' (pronoun) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-029",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "In 'خوبصورت پھول', the word 'خوبصورت' is what?",
+  "options": [
+   "صفت",
+   "فعل",
+   "اسم",
+   "ضمیر"
+  ],
+  "correctIndex": 0,
+  "explanation": "'خوبصورت' phool ki khoobi batata hai, is liye ye 'صفت' (adjective) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-030",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "In 'گھر سے', the word 'سے' is what?",
+  "options": [
+   "اسم",
+   "حرف",
+   "فعل",
+   "صفت"
+  ],
+  "correctIndex": 1,
+  "explanation": "'سے' do lafzon ko jorta hai, is liye ye 'حرف' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-031",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the plural (جمع) of 'کتاب'?",
+  "options": [
+   "کتابا",
+   "کتابوں",
+   "کتابیں",
+   "کتابی"
+  ],
+  "correctIndex": 2,
+  "explanation": "'کتاب' ki jama 'کتابیں' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-032",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the plural (جمع) of 'لڑکا'?",
+  "options": [
+   "لڑکی",
+   "لڑکوں",
+   "لڑکیاں",
+   "لڑکے"
+  ],
+  "correctIndex": 3,
+  "explanation": "'لڑکا' ki jama 'لڑکے' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-033",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the singular (واحد) of 'بچے'?",
+  "options": [
+   "بچہ",
+   "بچوں",
+   "بچیاں",
+   "بچپن"
+  ],
+  "correctIndex": 0,
+  "explanation": "'بچے' ka wahid (singular) 'بچہ' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-034",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the plural (جمع) of 'استاد'?",
+  "options": [
+   "استادوں",
+   "اساتذہ",
+   "استادی",
+   "استادین"
+  ],
+  "correctIndex": 1,
+  "explanation": "'استاد' ki jama 'اساتذہ' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-035",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "'قلم' is masculine (مذکر) or feminine (مونث)?",
+  "options": [
+   "دونوں",
+   "مونث",
+   "مذکر",
+   "کوئی نہیں"
+  ],
+  "correctIndex": 2,
+  "explanation": "'قلم' mazakkar (masculine) hai. Hum kehte hain: ye qalam hai, mera qalam.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-036",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "'کتاب' is masculine (مذکر) or feminine (مونث)?",
+  "options": [
+   "مذکر",
+   "کوئی نہیں",
+   "دونوں",
+   "مونث"
+  ],
+  "correctIndex": 3,
+  "explanation": "'کتاب' moannas (feminine) hai. Hum kehte hain: ye kitab hai, meri kitab.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-037",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "'کرسی' is masculine (مذکر) or feminine (مونث)?",
+  "options": [
+   "مونث",
+   "مذکر",
+   "دونوں",
+   "کوئی نہیں"
+  ],
+  "correctIndex": 0,
+  "explanation": "'کرسی' moannas (feminine) hai. Hum kehte hain: meri kursi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-038",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "'پنکھا' is masculine (مذکر) or feminine (مونث)?",
+  "options": [
+   "مونث",
+   "مذکر",
+   "دونوں",
+   "کوئی نہیں"
+  ],
+  "correctIndex": 1,
+  "explanation": "'پنکھا' mazakkar (masculine) hai. Hum kehte hain: mera pankha.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-039",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "Which sentence is in the past tense (فعل ماضی)?",
+  "options": [
+   "وہ پڑھتا ہے",
+   "وہ پڑھے گا",
+   "اس نے پڑھا",
+   "وہ پڑھ رہا ہے"
+  ],
+  "correctIndex": 2,
+  "explanation": "'اس نے پڑھا' guzra hua waqt batata hai, ye 'فعل ماضی' (past tense) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-040",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "Which sentence is in the future tense (فعل مستقبل)?",
+  "options": [
+   "وہ گیا",
+   "وہ جاتا ہے",
+   "وہ جا رہا ہے",
+   "وہ جائے گا"
+  ],
+  "correctIndex": 3,
+  "explanation": "'وہ جائے گا' aane wala waqt batata hai, ye 'فعل مستقبل' (future tense) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-041",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "Which sentence is in the present tense (فعل حال)?",
+  "options": [
+   "وہ پڑھتا ہے",
+   "اس نے پڑھا",
+   "وہ پڑھے گا",
+   "وہ گیا"
+  ],
+  "correctIndex": 0,
+  "explanation": "'وہ پڑھتا ہے' maujooda waqt batata hai, ye 'فعل حال' (present tense) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-042",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "'احمد' is an example of what kind of noun (اسم)?",
+  "options": [
+   "اسم نکرہ",
+   "اسم علم",
+   "اسم ضمیر",
+   "اسم صفت"
+  ],
+  "correctIndex": 1,
+  "explanation": "'احمد' kisi khaas shakhs ka naam hai, is liye ye 'اسم علم' (proper noun) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-043",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "'شہر' is an example of what kind of noun (اسم)?",
+  "options": [
+   "اسم علم",
+   "اسم ضمیر",
+   "اسم نکرہ",
+   "اسم فعل"
+  ],
+  "correctIndex": 2,
+  "explanation": "'شہر' kisi aam cheez ka naam hai, is liye ye 'اسم نکرہ' (common noun) hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-044",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the synonym of 'دن'?",
+  "options": [
+   "رات",
+   "اندھیرا",
+   "شب",
+   "روز"
+  ],
+  "correctIndex": 3,
+  "explanation": "'دن' ka hum-ma'ni 'روز' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "URD-045",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari",
+   "sst-kppsc",
+   "police",
+   "forest"
+  ],
+  "subject": "Urdu",
+  "subjectKey": "urdu",
+  "topic": "Urdu",
+  "question": "What is the antonym of 'دن'?",
+  "options": [
+   "رات",
+   "صبح",
+   "روز",
+   "دوپہر"
+  ],
+  "correctIndex": 0,
+  "explanation": "'دن' ka opposite 'رات' hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ }
+]

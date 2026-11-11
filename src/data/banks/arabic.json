@@ -1,0 +1,1382 @@
+[
+ {
+  "id": "ARB-001",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the science of Nahw mainly study?",
+  "options": [
+   "Word formation from roots",
+   "Sentence structure and the case endings (i'rab) of words",
+   "The history of Arabic literature",
+   "The pronunciation of letters only"
+  ],
+  "correctIndex": 1,
+  "explanation": "Nahw sentence ki tarkeeb aur i'rab parhta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-002",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the science of Sarf mainly study?",
+  "options": [
+   "Sentence structure and i'rab",
+   "How words are formed from roots and patterns",
+   "Arabic calligraphy styles",
+   "The meanings of Qur'anic verses only"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sarf lafzon ki banawat aur wazan parhta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-003",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which of the following is an Ism (noun)?",
+  "options": [
+   "Kataba (he wrote)",
+   "Kitab (book)",
+   "Fi (in)",
+   "Yaktubu (he writes)"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ism kisi shakhs, cheez ya jagah ka naam hota hai; kitab ek ism hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-004",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which of the following is a Fi'l (verb)?",
+  "options": [
+   "Bayt (house)",
+   "Mu'allim (teacher)",
+   "Kataba (he wrote)",
+   "Al-kitab (the book)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Fi'l woh lafz hai jo kisi kaam aur waqt ko bataye; kataba madi fi'l hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-005",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which of the following is a Harf (particle)?",
+  "options": [
+   "Qalam (pen)",
+   "Madrasa (school)",
+   "Fi (in)",
+   "Rajab (a month's name)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Harf ka akela mukammal matlab nahi hota; fi ek harf-e-jarr hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-006",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "A word in the Marfu' case most commonly ends with which vowel sign?",
+  "options": [
+   "Fatha",
+   "Kasra",
+   "Damma",
+   "Sukun"
+  ],
+  "correctIndex": 2,
+  "explanation": "Marfu' ki alamat aam tor par damma hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-007",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "A word in the Mansub case most commonly ends with which vowel sign?",
+  "options": [
+   "Damma",
+   "Fatha",
+   "Kasra",
+   "Shadda"
+  ],
+  "correctIndex": 1,
+  "explanation": "Mansub ki alamat aam tor par fatha hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-008",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "A word in the Majrur case most commonly ends with which vowel sign?",
+  "options": [
+   "Damma",
+   "Fatha",
+   "Kasra",
+   "Tanween only"
+  ],
+  "correctIndex": 2,
+  "explanation": "Majrur ki alamat aam tor par kasra hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-009",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "A Jumlah Ismiyyah (nominal sentence) begins with what?",
+  "options": [
+   "A verb",
+   "A particle",
+   "An Ism (noun)",
+   "An interrogative word"
+  ],
+  "correctIndex": 2,
+  "explanation": "Jumlah Ismiyyah ism se shuru hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-010",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In a Jumlah Ismiyyah, what is the first part called?",
+  "options": [
+   "Fa'il",
+   "Maf'ul bihi",
+   "Mubtada'",
+   "Khabar"
+  ],
+  "correctIndex": 2,
+  "explanation": "Pehla hissa Mubtada' kehlata hai, jis ke baare mein khabar di jati hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-011",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In a Jumlah Ismiyyah, what is the Khabar?",
+  "options": [
+   "The doer of the action",
+   "The object of the verb",
+   "The information given about the Mubtada'",
+   "A preposition"
+  ],
+  "correctIndex": 2,
+  "explanation": "Khabar Mubtada' ke baare mein maloomat deti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-012",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In the sentence 'Al-kitabu mufidun' (The book is useful), which word is the Mubtada'?",
+  "options": [
+   "Mufidun",
+   "Al-kitabu",
+   "Al-",
+   "Mufid"
+  ],
+  "correctIndex": 1,
+  "explanation": "Al-kitabu pehla ism hai, is liye woh Mubtada' hai; mufidun Khabar hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-013",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "A Jumlah Fi'liyyah (verbal sentence) begins with what?",
+  "options": [
+   "An Ism (noun)",
+   "A Fi'l (verb)",
+   "A Harf-e-Jarr",
+   "A pronoun"
+  ],
+  "correctIndex": 1,
+  "explanation": "Jumlah Fi'liyyah fi'l se shuru hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-014",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In a Jumlah Fi'liyyah, what is the Fa'il?",
+  "options": [
+   "The object of the verb",
+   "The doer of the action",
+   "The predicate of a noun sentence",
+   "A preposition"
+  ],
+  "correctIndex": 1,
+  "explanation": "Fa'il woh hai jo kaam kare; woh marfu' hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-015",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the usual case of the Fa'il?",
+  "options": [
+   "Mansub",
+   "Majrur",
+   "Marfu'",
+   "It has no case"
+  ],
+  "correctIndex": 2,
+  "explanation": "Fa'il hamesha marfu' hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-016",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In a Jumlah Fi'liyyah, what is the Maf'ul bihi?",
+  "options": [
+   "The doer of the action",
+   "The object on which the action is done",
+   "The first noun of a nominal sentence",
+   "A question word"
+  ],
+  "correctIndex": 1,
+  "explanation": "Maf'ul bihi woh cheez hai jis par fi'l ka asar ho; woh mansub hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-017",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the usual case of the Maf'ul bihi?",
+  "options": [
+   "Marfu'",
+   "Majrur",
+   "Mansub",
+   "It has no case"
+  ],
+  "correctIndex": 2,
+  "explanation": "Maf'ul bihi hamesha mansub hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-018",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the normal word order of a Jumlah Fi'liyyah?",
+  "options": [
+   "Fa'il + Fi'l + Maf'ul bihi",
+   "Fi'l + Fa'il + Maf'ul bihi",
+   "Maf'ul bihi + Fi'l + Fa'il",
+   "Fi'l + Maf'ul bihi + Fa'il"
+  ],
+  "correctIndex": 1,
+  "explanation": "Aam tartib VSO hai: pehle fi'l, phir fa'il, phir maf'ul bihi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-019",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which tense does a Madi verb show?",
+  "options": [
+   "Present time",
+   "Future time",
+   "Past time",
+   "A command"
+  ],
+  "correctIndex": 2,
+  "explanation": "Madi guzre hue waqt ko batata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-020",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which tense does a Mudari' verb show?",
+  "options": [
+   "Past time only",
+   "Present or future time",
+   "A command only",
+   "No time at all"
+  ],
+  "correctIndex": 1,
+  "explanation": "Mudari' haal ya mustaqbil ko batata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-021",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does an Amr (imperative) verb express?",
+  "options": [
+   "A past action",
+   "A present action",
+   "A command or request",
+   "A question"
+  ],
+  "correctIndex": 2,
+  "explanation": "Amr hukm ya darkhwast ke liye istemal hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-022",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "The verb 'Kataba' (he wrote) is in which tense?",
+  "options": [
+   "Mudari'",
+   "Amr",
+   "Madi",
+   "Masdar"
+  ],
+  "correctIndex": 2,
+  "explanation": "Kataba madi hai — us ne likha.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-023",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "The verb 'Yaktubu' (he writes / he will write) is in which tense?",
+  "options": [
+   "Madi",
+   "Mudari'",
+   "Amr",
+   "Nahy"
+  ],
+  "correctIndex": 1,
+  "explanation": "Yaktubu mudari' hai — woh likhta hai / likhe ga.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-024",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "The verb 'Uktub' (write!) is in which form?",
+  "options": [
+   "Madi",
+   "Mudari'",
+   "Amr (imperative)",
+   "Masdar"
+  ],
+  "correctIndex": 2,
+  "explanation": "Uktub amr hai — likho!",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-025",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the singular of 'Kutub' (books)?",
+  "options": [
+   "Katib",
+   "Kitab",
+   "Maktaba",
+   "Kutayyib"
+  ],
+  "correctIndex": 1,
+  "explanation": "Kutub kitab ki jama hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-026",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the dual of 'Kitab' (book)?",
+  "options": [
+   "Kitabani",
+   "Kutub",
+   "Katibani",
+   "Maktabani"
+  ],
+  "correctIndex": 0,
+  "explanation": "Do kitab ke liye kitabani kehte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-027",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What is the plural of 'Mu'allim' (teacher, masculine)?",
+  "options": [
+   "Mu'allimat",
+   "Mu'allimun",
+   "Mu'allimani",
+   "Mu'allima"
+  ],
+  "correctIndex": 1,
+  "explanation": "Mu'allim ki jama mu'allimun hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-028",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "The word 'Mu'allima' (female teacher) is feminine mainly because of what?",
+  "options": [
+   "The prefix al-",
+   "The ending ta marbuta",
+   "The dual ending -ani",
+   "The plural ending -un"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ta marbuta aam tor par mu'annath (feminine) ki alamat hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-029",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which word is feminine in Arabic?",
+  "options": [
+   "Qalam (pen)",
+   "Bayt (house)",
+   "Madrasa (school)",
+   "Kitab (book)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Madrasa ta marbuta ki wajah se mu'annath hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-030",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the prefix 'Al-' (ال) do to a noun?",
+  "options": [
+   "It makes it plural",
+   "It makes it definite (the)",
+   "It makes it feminine",
+   "It makes it a verb"
+  ],
+  "correctIndex": 1,
+  "explanation": "Al- ism ko ma'rifa (definite) banata hai, jaise al-kitab — the book.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-031",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does Tanween (double vowel ending, e.g. kitabun) usually show?",
+  "options": [
+   "The noun is definite",
+   "The noun is indefinite (a / an)",
+   "The noun is dual",
+   "The noun is a verb"
+  ],
+  "correctIndex": 1,
+  "explanation": "Tanween nakira (indefinite) ki alamat hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-032",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which pronoun means 'he'?",
+  "options": [
+   "Hiya",
+   "Huwa",
+   "Anta",
+   "Nahnu"
+  ],
+  "correctIndex": 1,
+  "explanation": "Huwa ka matlab hai 'woh (muzakkar)' — he.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-033",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which pronoun means 'she'?",
+  "options": [
+   "Huwa",
+   "Hiya",
+   "Anta",
+   "Hum"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hiya ka matlab hai 'woh (mu'annath)' — she.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-034",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which pronoun means 'you' (masculine singular)?",
+  "options": [
+   "Anti",
+   "Anta",
+   "Ana",
+   "Nahnu"
+  ],
+  "correctIndex": 1,
+  "explanation": "Anta ka matlab hai 'tum (muzakkar)' — you.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-035",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which pronoun means 'you' (feminine singular)?",
+  "options": [
+   "Anta",
+   "Anti",
+   "Ana",
+   "Antum"
+  ],
+  "correctIndex": 1,
+  "explanation": "Anti ka matlab hai 'tum (mu'annath)' — you.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-036",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which pronoun means 'we'?",
+  "options": [
+   "Ana",
+   "Nahnu",
+   "Huwa",
+   "Huma"
+  ],
+  "correctIndex": 1,
+  "explanation": "Nahnu ka matlab hai 'hum' — we.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-037",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which demonstrative means 'this' (masculine singular)?",
+  "options": [
+   "Hadhihi",
+   "Dhalika",
+   "Hadha",
+   "Tilka"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hadha (هذا) ka matlab hai 'yeh (muzakkar)' — this.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-038",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which demonstrative means 'this' (feminine singular)?",
+  "options": [
+   "Hadha",
+   "Hadhihi",
+   "Dhalika",
+   "Ula'ika"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hadhihi (هذه) ka matlab hai 'yeh (mu'annath)' — this.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-039",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which demonstrative means 'that' (masculine singular)?",
+  "options": [
+   "Hadha",
+   "Hadhihi",
+   "Dhalika",
+   "Ha'ula'i"
+  ],
+  "correctIndex": 2,
+  "explanation": "Dhalika (ذلك) ka matlab hai 'woh (muzakkar)' — that.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-040",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which demonstrative means 'that' (feminine singular)?",
+  "options": [
+   "Dhalika",
+   "Tilka",
+   "Hadha",
+   "Hadhihi"
+  ],
+  "correctIndex": 1,
+  "explanation": "Tilka (تلك) ka matlab hai 'woh (mu'annath)' — that.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-041",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "Which of the following is a Harf-e-Jarr (preposition)?",
+  "options": [
+   "Kataba",
+   "Kitab",
+   "Fi",
+   "Mu'allim"
+  ],
+  "correctIndex": 2,
+  "explanation": "Fi (in) ek harf-e-jarr hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-042",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the preposition 'Min' mean?",
+  "options": [
+   "To",
+   "In",
+   "From",
+   "On"
+  ],
+  "correctIndex": 2,
+  "explanation": "Min ka matlab hai 'se' — from.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-043",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the preposition 'Ila' mean?",
+  "options": [
+   "From",
+   "To / towards",
+   "On",
+   "In"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ila ka matlab hai 'ki taraf / ko' — to.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-044",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "A Harf-e-Jarr makes the noun after it in which case?",
+  "options": [
+   "Marfu'",
+   "Mansub",
+   "Majrur",
+   "It does not change the case"
+  ],
+  "correctIndex": 2,
+  "explanation": "Harf-e-jarr ke baad wala ism majrur hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-045",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "The interrogative word 'Hal' is used to ask what kind of question?",
+  "options": [
+   "A 'what' question",
+   "A 'who' question",
+   "A yes/no question",
+   "A 'where' question"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hal se haan ya na mein jawab wala sawal poocha jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-046",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the interrogative word 'Ma' mean?",
+  "options": [
+   "Who",
+   "What",
+   "Where",
+   "When"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ma ka matlab hai 'kya' — what.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-047",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the interrogative word 'Man' mean?",
+  "options": [
+   "What",
+   "Who",
+   "Where",
+   "How"
+  ],
+  "correctIndex": 1,
+  "explanation": "Man ka matlab hai 'kaun' — who.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-048",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the interrogative word 'Ayna' mean?",
+  "options": [
+   "When",
+   "Where",
+   "How",
+   "Why"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ayna ka matlab hai 'kahan' — where.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-049",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the interrogative word 'Kayfa' mean?",
+  "options": [
+   "How",
+   "Who",
+   "Where",
+   "How many"
+  ],
+  "correctIndex": 0,
+  "explanation": "Kayfa ka matlab hai 'kaise' — how.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-050",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the interrogative word 'Kam' mean?",
+  "options": [
+   "How",
+   "When",
+   "How many / how much",
+   "Why"
+  ],
+  "correctIndex": 2,
+  "explanation": "Kam ka matlab hai 'kitne / kitna' — how many.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-051",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "The three-letter root K-T-B (k-t-b) is mainly connected with which idea?",
+  "options": [
+   "Reading aloud",
+   "Writing",
+   "Teaching",
+   "Travelling"
+  ],
+  "correctIndex": 1,
+  "explanation": "K-T-B se likhne se mutalliq lafz bante hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-052",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "From the root K-T-B, what does 'Katib' mean?",
+  "options": [
+   "Book",
+   "Writer",
+   "Library",
+   "Written"
+  ],
+  "correctIndex": 1,
+  "explanation": "Katib ka matlab hai 'likhne wala' — writer.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-053",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "From the root K-T-B, what does 'Maktub' mean?",
+  "options": [
+   "Library",
+   "Book",
+   "Written / a letter",
+   "Writer"
+  ],
+  "correctIndex": 2,
+  "explanation": "Maktub ka matlab hai 'likha hua' ya 'khat' — written / letter.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-054",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "From the root K-T-B, what does 'Maktaba' mean?",
+  "options": [
+   "Book",
+   "Writer",
+   "Library",
+   "School"
+  ],
+  "correctIndex": 2,
+  "explanation": "Maktaba ka matlab hai 'library'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-055",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "The word 'Madrasa' (school) comes from the root D-R-S, which is connected with which idea?",
+  "options": [
+   "Writing",
+   "Studying / learning",
+   "Building",
+   "Reading a letter"
+  ],
+  "correctIndex": 1,
+  "explanation": "D-R-S se parhne aur seekhne se mutalliq lafz bante hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-056",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "The word 'Mu'allim' (teacher) comes from the root '-L-M, which is connected with which idea?",
+  "options": [
+   "Writing",
+   "Knowledge / learning",
+   "Travelling",
+   "Building"
+  ],
+  "correctIndex": 1,
+  "explanation": "'-L-M se ilm se mutalliq lafz bante hain, jaise 'ilm aur mu'allim.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-057",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the Arabic word 'Bayt' mean?",
+  "options": [
+   "School",
+   "House",
+   "Book",
+   "Mosque"
+  ],
+  "correctIndex": 1,
+  "explanation": "Bayt ka matlab hai 'ghar' — house.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-058",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "What does the Arabic word 'Shams' mean?",
+  "options": [
+   "Moon",
+   "Star",
+   "Sun",
+   "Sky"
+  ],
+  "correctIndex": 2,
+  "explanation": "Shams ka matlab hai 'suraj' — sun.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-059",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In Islamic history, 'Badr' is the name of what?",
+  "options": [
+   "A famous early battle",
+   "A month of the Islamic calendar",
+   "A city in Egypt",
+   "A type of prayer"
+  ],
+  "correctIndex": 0,
+  "explanation": "Badr ek mashhoor ibtidai jang ka naam hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ARB-060",
+  "post": [
+   "at"
+  ],
+  "subject": "Arabic",
+  "subjectKey": "arabic",
+  "topic": "Arabic",
+  "question": "In Islamic history, 'Uhud' is the name of what?",
+  "options": [
+   "A famous mountain and battle",
+   "A book of Hadith",
+   "A month of fasting",
+   "A type of prayer"
+  ],
+  "correctIndex": 0,
+  "explanation": "Uhud ek mashhoor pahar aur jang ka naam hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ }
+]

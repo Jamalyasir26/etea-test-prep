@@ -1,0 +1,522 @@
+[
+ {
+  "id": "PPR-001",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "The name 'Muhammad' (peace be upon him) appears in the Holy Quran a total of how many times?",
+  "options": [
+   "6 times",
+   "5 times",
+   "3 times",
+   "4 times"
+  ],
+  "correctIndex": 3,
+  "explanation": "The name Muhammad is mentioned 4 times in the Holy Quran.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-002",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Sahih Bukhari and Sahih Muslim are jointly called what?",
+  "options": [
+   "Sihah Sitta",
+   "Sahihain",
+   "Kutub-e-Arba",
+   "Muwatta"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sahih Bukhari and Sahih Muslim are the two most authentic Hadith books and are together called Sahihain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-003",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Which Khalifa married two daughters of the Prophet (SAW) and is therefore called Zun-Nurain?",
+  "options": [
+   "Hazrat Ali (RA)",
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)"
+  ],
+  "correctIndex": 3,
+  "explanation": "Hazrat Usman (RA) married two daughters of the Prophet (SAW), so he is called Zun-Nurain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-004",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Without which rite is the Hajj considered incomplete?",
+  "options": [
+   "Sa'i between Safa and Marwa",
+   "Wuquf at Arafat",
+   "Tawaf of the Kaaba",
+   "Staying at Mina"
+  ],
+  "correctIndex": 1,
+  "explanation": "The standing at Arafat (Wuquf) on 9 Zil Hajj is the most important rite of Hajj.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-005",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Who was the first person to believe in the message of Islam?",
+  "options": [
+   "Hazrat Ali (RA)",
+   "Hazrat Bilal (RA)",
+   "Hazrat Khadija (RA)",
+   "Hazrat Abu Bakr (RA)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hazrat Khadija (RA), the first wife of the Prophet (SAW), was the first person to accept Islam.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-006",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Fill in the blank: He got admission in ___ university.",
+  "options": [
+   "an university",
+   "no article",
+   "the university",
+   "a university"
+  ],
+  "correctIndex": 3,
+  "explanation": "The word 'university' begins with a consonant 'yoo' sound, so it takes 'a', not 'an'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-007",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "She is capable ___ hard work. Choose the right preposition.",
+  "options": [
+   "to",
+   "for",
+   "of",
+   "in"
+  ],
+  "correctIndex": 2,
+  "explanation": "'Capable' is followed by 'of' — capable of doing something.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-008",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Change to passive voice: 'She cleaned the room.'",
+  "options": [
+   "The room was cleaned by her",
+   "The room is cleaned by her",
+   "The room has been cleaned by her",
+   "The room cleans by her"
+  ],
+  "correctIndex": 0,
+  "explanation": "Past simple passive: 'The room was cleaned by her.'",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-009",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Which word means the opposite of 'abundant'?",
+  "options": [
+   "Ample",
+   "Plentiful",
+   "Scarce",
+   "Sufficient"
+  ],
+  "correctIndex": 2,
+  "explanation": "'Abundant' means plentiful; its opposite is 'scarce'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-010",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Pick the grammatically correct sentence.",
+  "options": [
+   "Neither of the answers is correct",
+   "Neither of the answers are correct",
+   "Neither of the answers were correct",
+   "Neither of the answers have correct"
+  ],
+  "correctIndex": 0,
+  "explanation": "'Neither' is singular, so the correct verb is 'is', not 'are'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-011",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "'کتاب' کی جمع کے لیے درست لفظ کون سا ہے؟",
+  "options": [
+   "کتابے",
+   "کتابات",
+   "کتابیں",
+   "کتابوں"
+  ],
+  "correctIndex": 2,
+  "explanation": "The word for the plural of 'کتاب' is 'کتابیں'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-012",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "محاورہ 'آنکھوں کا تارا' کس کے لیے استعمال ہوتا ہے؟",
+  "options": [
+   "بہت پیارے کے لیے",
+   "دشمن کے لیے",
+   "اندھے کے لیے",
+   "دور کے رشتے دار کے لیے"
+  ],
+  "correctIndex": 0,
+  "explanation": "'آنکھوں کا تارا' means someone very dear or beloved.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-013",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "کس شاعر کو 'شاعر مشرق' کہا جاتا ہے؟",
+  "options": [
+   "مرزا غالب",
+   "احمد فراز",
+   "علامہ اقبال",
+   "میر تقی میر"
+  ],
+  "correctIndex": 2,
+  "explanation": "Allama Iqbal is known as 'Shair-e-Mashriq' (Poet of the East).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-014",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "The Objectives Resolution was passed in which year?",
+  "options": [
+   "1956",
+   "1947",
+   "1949",
+   "1948"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Objectives Resolution was adopted by the first Constituent Assembly in March 1949.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-015",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Which constitutional amendment gave the provinces more autonomy in 2010?",
+  "options": [
+   "17th Amendment",
+   "18th Amendment",
+   "13th Amendment",
+   "10th Amendment"
+  ],
+  "correctIndex": 1,
+  "explanation": "The 18th Amendment (2010) gave the provinces greater autonomy.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-016",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Pakistan is connected with Afghanistan through which pass?",
+  "options": [
+   "Khunjerab Pass",
+   "Lowari Pass",
+   "Bolan Pass",
+   "Khyber Pass"
+  ],
+  "correctIndex": 3,
+  "explanation": "The Khyber Pass connects Pakistan with Afghanistan.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-017",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "Find the sum of the LCM and HCF of 8 and 12.",
+  "options": [
+   "36",
+   "24",
+   "20",
+   "28"
+  ],
+  "correctIndex": 3,
+  "explanation": "LCM of 8 and 12 is 24; HCF is 4; 24 + 4 = 28.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-018",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "An item costs Rs 250. Its price is raised by 20%. What is the new price?",
+  "options": [
+   "Rs 320",
+   "Rs 300",
+   "Rs 270",
+   "Rs 290"
+  ],
+  "correctIndex": 1,
+  "explanation": "20% of 250 = 50; 250 + 50 = 300.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-019",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "A father is three times as old as his son. After 5 years, he will be twice as old as his son. What is the father's present age?",
+  "options": [
+   "25 years",
+   "20 years",
+   "15 years",
+   "10 years"
+  ],
+  "correctIndex": 2,
+  "explanation": "Father's age now is 3x; in 5 years 3x + 5 = 2(x + 5) gives x = 5, so the father is 15 years old.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPR-020",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics (Reworded)",
+  "subjectKey": "pastpapers_reworded",
+  "topic": "Past-Paper Topics (Reworded)",
+  "question": "A teacher gives a student temporary help and slowly removes it as the student learns. What is this called?",
+  "options": [
+   "Scaffolding",
+   "Repeating the lesson",
+   "Giving the full answer",
+   "Leaving the student alone"
+  ],
+  "correctIndex": 0,
+  "explanation": "Scaffolding is temporary support inside the ZPD, removed gradually as the learner becomes independent.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ }
+]

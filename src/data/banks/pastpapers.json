@@ -1,0 +1,522 @@
+[
+ {
+  "id": "PPT-001",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "How many times is the name 'Muhammad' (peace be upon him) mentioned in the Holy Quran?",
+  "options": [
+   "3 times",
+   "4 times",
+   "5 times",
+   "6 times"
+  ],
+  "correctIndex": 1,
+  "explanation": "The name Muhammad is mentioned 4 times in the Holy Quran. Quran mein Hazrat Muhammad (SAW) ka naam 4 martaba aya hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-002",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Which two Hadith books are together known as Sahihain?",
+  "options": [
+   "Sunan Abu Dawood and Jami Tirmidhi",
+   "Sahih Bukhari and Sahih Muslim",
+   "Sunan Nasai and Sunan Ibn Majah",
+   "Jami Tirmidhi and Sunan Nasai"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sahih Bukhari and Sahih Muslim are the two most authentic books and are together called Sahihain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-003",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Which Caliph is known by the title Zun-Nurain?",
+  "options": [
+   "Hazrat Usman (RA)",
+   "Hazrat Umar (RA)",
+   "Hazrat Ali (RA)",
+   "Hazrat Abu Bakr (RA)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Hazrat Usman (RA) was given the title Zun-Nurain because he married two daughters of the Prophet (SAW).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-004",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Which rite is considered the most important part of Hajj?",
+  "options": [
+   "Tawaf of the Kaaba",
+   "Sa'i between Safa and Marwa",
+   "Staying at Mina",
+   "Wuquf at Arafat"
+  ],
+  "correctIndex": 3,
+  "explanation": "The standing at Arafat (Wuquf) on 9 Zil Hajj is the most important rite of Hajj.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-005",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Who was the first person to accept Islam?",
+  "options": [
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Khadija (RA)",
+   "Hazrat Ali (RA)",
+   "Hazrat Bilal (RA)"
+  ],
+  "correctIndex": 1,
+  "explanation": "The first wife of the Prophet (SAW), Hazrat Khadija (RA), was the first person to accept Islam.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-006",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Choose the correct sentence: 'He got admission in ___ university.'",
+  "options": [
+   "an university",
+   "the university",
+   "a university",
+   "no article"
+  ],
+  "correctIndex": 2,
+  "explanation": "The word 'university' begins with a consonant 'yoo' sound, so it takes 'a', not 'an'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-007",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Fill in the blank: She is capable ___ solving difficult problems.",
+  "options": [
+   "of",
+   "in",
+   "to",
+   "for"
+  ],
+  "correctIndex": 0,
+  "explanation": "'Capable' is followed by 'of' — capable of doing something.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-008",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Choose the correct passive form: 'She cleaned the room.'",
+  "options": [
+   "The room is cleaned by her",
+   "The room has been cleaned by her",
+   "The room cleans by her",
+   "The room was cleaned by her"
+  ],
+  "correctIndex": 3,
+  "explanation": "Past simple passive: 'The room was cleaned by her.'",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-009",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "What is the antonym of 'abundant'?",
+  "options": [
+   "Plentiful",
+   "Scarce",
+   "Ample",
+   "Sufficient"
+  ],
+  "correctIndex": 1,
+  "explanation": "'Abundant' means plentiful; its opposite is 'scarce'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-010",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Choose the correct sentence.",
+  "options": [
+   "Neither of the answers are correct",
+   "Neither of the answers were correct",
+   "Neither of the answers is correct",
+   "Neither of the answers have correct"
+  ],
+  "correctIndex": 2,
+  "explanation": "'Neither' is singular, so the correct verb is 'is', not 'are'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-011",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "'کتاب' کی جمع کیا ہے؟",
+  "options": [
+   "کتابوں",
+   "کتابیں",
+   "کتابات",
+   "کتابے"
+  ],
+  "correctIndex": 1,
+  "explanation": "The word for the plural of 'کتاب' is 'کتابیں'.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-012",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "محاورہ 'آنکھوں کا تارا' کا کیا مطلب ہے؟",
+  "options": [
+   "دشمن",
+   "بہت پیارا",
+   "اندھا",
+   "دور کا رشتہ دار"
+  ],
+  "correctIndex": 1,
+  "explanation": "'آنکھوں کا تارا' means someone very dear or beloved.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-013",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "'شاعر مشرق' کس شاعر کو کہا جاتا ہے؟",
+  "options": [
+   "علامہ اقبال",
+   "مرزا غالب",
+   "میر تقی میر",
+   "احمد فراز"
+  ],
+  "correctIndex": 0,
+  "explanation": "Allama Iqbal is known as 'Shair-e-Mashriq' (Poet of the East).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-014",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "In which year was the Objectives Resolution adopted?",
+  "options": [
+   "1947",
+   "1948",
+   "1949",
+   "1956"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Objectives Resolution was adopted by the first Constituent Assembly in March 1949.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-015",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Which amendment to the 1973 Constitution gave provinces greater autonomy?",
+  "options": [
+   "10th Amendment",
+   "13th Amendment",
+   "17th Amendment",
+   "18th Amendment"
+  ],
+  "correctIndex": 3,
+  "explanation": "The 18th Amendment (2010) gave the provinces greater autonomy.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-016",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Which pass connects Pakistan with Afghanistan?",
+  "options": [
+   "Bolan Pass",
+   "Khyber Pass",
+   "Lowari Pass",
+   "Khunjerab Pass"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Khyber Pass connects Pakistan with Afghanistan.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-017",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "The LCM of 8 and 12 is added to their HCF. What is the result?",
+  "options": [
+   "28",
+   "20",
+   "36",
+   "24"
+  ],
+  "correctIndex": 0,
+  "explanation": "LCM of 8 and 12 is 24; HCF is 4; 24 + 4 = 28.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-018",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "A shopkeeper increases the price of a Rs 250 item by 20%. What is the new price?",
+  "options": [
+   "270",
+   "290",
+   "300",
+   "320"
+  ],
+  "correctIndex": 2,
+  "explanation": "20% of 250 = 50; 250 + 50 = 300.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-019",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "A father is 3 times as old as his son. In 5 years he will be twice as old as his son. How old is the father now?",
+  "options": [
+   "10 years",
+   "15 years",
+   "20 years",
+   "25 years"
+  ],
+  "correctIndex": 1,
+  "explanation": "Father's age now is 3x; in 5 years 3x + 5 = 2(x + 5) gives x = 5, so the father is 15 years old.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "PPT-020",
+  "post": [
+   "zamungkor",
+   "tt",
+   "at",
+   "qari"
+  ],
+  "subject": "Past-Paper Topics",
+  "subjectKey": "pastpapers",
+  "topic": "Past-Paper Topics",
+  "question": "Which of the following best describes scaffolding?",
+  "options": [
+   "Giving the student the full answer",
+   "Letting the student work alone from the start",
+   "Repeating the same lesson daily",
+   "Giving temporary support that is gradually removed"
+  ],
+  "correctIndex": 3,
+  "explanation": "Scaffolding is temporary support inside the ZPD, removed gradually as the learner becomes independent.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": "Original practice question based on past-paper topics — not the actual paper",
+  "verified": false,
+  "source": "ai-generated"
+ }
+]

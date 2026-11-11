@@ -1,0 +1,782 @@
+[
+ {
+  "id": "ITC-001",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which part of the computer is called its brain?",
+  "options": [
+   "CPU",
+   "Keyboard",
+   "Monitor",
+   "RAM"
+  ],
+  "correctIndex": 0,
+  "explanation": "CPU ko computer ka dimagh kaha jata hai — woh tamam instructions ko process karta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-002",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which memory is temporary and loses its data when the computer is switched off?",
+  "options": [
+   "RAM",
+   "USB drive",
+   "ROM",
+   "Hard disk"
+  ],
+  "correctIndex": 0,
+  "explanation": "RAM temporary memory hai — computer band hotay hi is ka data khatam ho jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-003",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which memory permanently stores the basic instructions needed to start a computer?",
+  "options": [
+   "RAM",
+   "Cache memory",
+   "ROM",
+   "Hard disk"
+  ],
+  "correctIndex": 2,
+  "explanation": "ROM permanent memory hai — is mein computer ko start karnay ki zaroori instructions mehfooz hoti hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-004",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which of these is an input device?",
+  "options": [
+   "Monitor",
+   "Keyboard",
+   "Speaker",
+   "Printer"
+  ],
+  "correctIndex": 1,
+  "explanation": "Keyboard input device hai — is se hum computer mein likh kar data daaltay hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-005",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which device is used to point and click on the computer screen?",
+  "options": [
+   "Mouse",
+   "Monitor",
+   "Printer",
+   "Speaker"
+  ],
+  "correctIndex": 0,
+  "explanation": "Mouse pointing device hai — is se hum screen par cursor ko harkat dete hain aur click karte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-006",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which of these is an output device?",
+  "options": [
+   "Keyboard",
+   "Monitor",
+   "Scanner",
+   "Mouse"
+  ],
+  "correctIndex": 1,
+  "explanation": "Monitor output device hai — is par computer ka result aur tasveerain nazar aati hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-007",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "In which part is data stored permanently in a computer?",
+  "options": [
+   "ROM",
+   "RAM",
+   "Hard disk",
+   "Cache memory"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hard disk mein data mustaqil mehfooz rehta hai — computer band honay ke baad bhi data nahi mita.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-008",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "How many bits are there in 1 byte?",
+  "options": [
+   "32 bits",
+   "16 bits",
+   "4 bits",
+   "8 bits"
+  ],
+  "correctIndex": 3,
+  "explanation": "1 byte mein 8 bits hotay hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-009",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "How many bytes are there in 1 kilobyte (KB)?",
+  "options": [
+   "100 bytes",
+   "1024 bits",
+   "1000 bits",
+   "1024 bytes"
+  ],
+  "correctIndex": 3,
+  "explanation": "1 kilobyte (KB) mein 1024 bytes hotay hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-010",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which is the largest storage unit among these?",
+  "options": [
+   "Terabyte (TB)",
+   "Kilobyte (KB)",
+   "Megabyte (MB)",
+   "Gigabyte (GB)"
+  ],
+  "correctIndex": 0,
+  "explanation": "TB (terabyte) in mein sab se bara hai — 1 TB mein 1024 GB hotay hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-011",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "What is the file extension of a Microsoft Word document?",
+  "options": [
+   ".docx",
+   ".mp3",
+   ".pptx",
+   ".xlsx"
+  ],
+  "correctIndex": 0,
+  "explanation": ".docx MS Word ki file ka extension hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-012",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "What is the file extension of a Microsoft Excel file?",
+  "options": [
+   ".txt",
+   ".docx",
+   ".xlsx",
+   ".pptx"
+  ],
+  "correctIndex": 2,
+  "explanation": ".xlsx MS Excel ki file ka extension hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-013",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "What is the file extension of a Microsoft PowerPoint presentation?",
+  "options": [
+   ".xlsx",
+   ".pptx",
+   ".docx",
+   ".pdf"
+  ],
+  "correctIndex": 1,
+  "explanation": ".pptx MS PowerPoint ki presentation ka extension hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-014",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which shortcut is used to save a file?",
+  "options": [
+   "Ctrl+C",
+   "Ctrl+V",
+   "Ctrl+P",
+   "Ctrl+S"
+  ],
+  "correctIndex": 3,
+  "explanation": "Ctrl+S dabane se file save hoti hai — kaam karte waqt waqtan fawaqtan save karna chahiye.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-015",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which shortcut is used to copy selected text?",
+  "options": [
+   "Ctrl+X",
+   "Ctrl+C",
+   "Ctrl+Z",
+   "Ctrl+V"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ctrl+C se selected text ya file copy hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-016",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which shortcut is used to paste copied text?",
+  "options": [
+   "Ctrl+Z",
+   "Ctrl+X",
+   "Ctrl+C",
+   "Ctrl+V"
+  ],
+  "correctIndex": 3,
+  "explanation": "Ctrl+V se copy ya cut ki hui cheez paste hoti hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-017",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which shortcut is used to cut selected text?",
+  "options": [
+   "Ctrl+Z",
+   "Ctrl+C",
+   "Ctrl+X",
+   "Ctrl+V"
+  ],
+  "correctIndex": 2,
+  "explanation": "Ctrl+X se selected cheez cut hoti hai — woh apni purani jagah se hat jati hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-018",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which shortcut is used to undo the last action?",
+  "options": [
+   "Ctrl+S",
+   "Ctrl+P",
+   "Ctrl+Z",
+   "Ctrl+Y"
+  ],
+  "correctIndex": 2,
+  "explanation": "Ctrl+Z se aakhri kaam undo ho jata hai — ghalti ho jaye to is se wapas aa sakte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-019",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which shortcut is used to print a document?",
+  "options": [
+   "Ctrl+S",
+   "Ctrl+C",
+   "Ctrl+V",
+   "Ctrl+P"
+  ],
+  "correctIndex": 3,
+  "explanation": "Ctrl+P dabane se print dialog khulta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-020",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which shortcut is used to switch between open windows?",
+  "options": [
+   "Ctrl+S",
+   "Ctrl+Z",
+   "Alt+Tab",
+   "Ctrl+C"
+  ],
+  "correctIndex": 2,
+  "explanation": "Alt+Tab se aik khuli hui window se doosri window par switch karte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-021",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which of these is an operating system?",
+  "options": [
+   "MS Word",
+   "Windows",
+   "Google Chrome",
+   "MS Excel"
+  ],
+  "correctIndex": 1,
+  "explanation": "Windows operating system hai — woh computer ke hardware aur software ko manage karta hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-022",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which Excel function is used to add a group of numbers?",
+  "options": [
+   "SUM",
+   "COUNT",
+   "AVERAGE",
+   "MAX"
+  ],
+  "correctIndex": 0,
+  "explanation": "Excel mein SUM function numbers ko jama (add) karta hai — jaisay =SUM(A1:A5).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-023",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "In MS Excel, every formula must begin with which symbol?",
+  "options": [
+   "#",
+   "=",
+   "@",
+   "+"
+  ],
+  "correctIndex": 1,
+  "explanation": "Excel mein har formula = ke nishan se shuru hota hai — jaisay =A1+B1.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-024",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "In MS Excel, the intersection of a row and a column is called:",
+  "options": [
+   "A column only",
+   "A worksheet",
+   "A row only",
+   "A cell"
+  ],
+  "correctIndex": 3,
+  "explanation": "Cell row aur column ke milne ki jagah hoti hai — jaisay B3 mein column B aur row 3 milte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-025",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "A single page of a PowerPoint presentation is called a:",
+  "options": [
+   "Workbook",
+   "Worksheet",
+   "Slide",
+   "Document"
+  ],
+  "correctIndex": 2,
+  "explanation": "PowerPoint presentation ka aik page slide kehlata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-026",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "What does WWW stand for?",
+  "options": [
+   "World Wide Web",
+   "Web World Wide",
+   "Wide World Web",
+   "World Web Window"
+  ],
+  "correctIndex": 0,
+  "explanation": "WWW ka matlab World Wide Web hai — websites isi par chalti hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-027",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which of these is a web browser?",
+  "options": [
+   "Google Chrome",
+   "MS Excel",
+   "Notepad",
+   "MS Word"
+  ],
+  "correctIndex": 0,
+  "explanation": "Browser woh program hai jis se websites kholi jati hain — Google Chrome aik browser hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-028",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which symbol must be present in every email address?",
+  "options": [
+   "#",
+   "@",
+   "$",
+   "%"
+  ],
+  "correctIndex": 1,
+  "explanation": "Email address mein @ ka nishan lazmi hota hai — jaisay name@example.com.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-029",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which of these is a search engine?",
+  "options": [
+   "MS Word",
+   "Facebook",
+   "Google",
+   "Windows"
+  ],
+  "correctIndex": 2,
+  "explanation": "Google aik search engine hai — is se hum internet par maloomat talash karte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ITC-030",
+  "post": [
+   "ctit",
+   "junior-clerk",
+   "computer-operator",
+   "lhv"
+  ],
+  "subject": "IT",
+  "subjectKey": "it",
+  "topic": "IT",
+  "question": "Which software protects a computer from viruses?",
+  "options": [
+   "MS Word",
+   "MS Excel",
+   "PowerPoint",
+   "Antivirus"
+  ],
+  "correctIndex": 3,
+  "explanation": "Antivirus software computer ko virus aur nuqsan-deh programs se bachata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ }
+]
