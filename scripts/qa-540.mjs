@@ -75,6 +75,22 @@ const onDiskTotal = Object.values(banks).reduce((s, items) => s + items.length, 
 console.log(`INFO  on-disk total incl. legacy drawing_pe.json: ${onDiskTotal}`);
 
 // ---------- 2. per-item shape (all files incl. legacy) ----------
+// Stage 1 P0.1 (2026-11-12): the owner personally reviewed + approved 15
+// items — ISL-001 on the /review dashboard (2026-11-11T22:01:56Z) and the
+// 14 structural-check flags in chat (~03:23 PKT 2026-11-12). Those 15 are
+// stored owner-reviewed at BANK level (visible on every device); every
+// other item stays draft. Vocabulary: draft / needs-review / disputed /
+// owner-reviewed / approved — there is no bare "verified" status.
+const OWNER_REVIEWED_15 = {
+  "ISL-001": "2026-11-11T22:01:56Z",
+  "ENG-005": "2026-11-11T22:23:00Z", "ENG-006": "2026-11-11T22:23:00Z",
+  "ENG-008": "2026-11-11T22:23:00Z", "ENG-012": "2026-11-11T22:23:00Z",
+  "ENG-013": "2026-11-11T22:23:00Z", "ENG-019": "2026-11-11T22:23:00Z",
+  "ENG-020": "2026-11-11T22:23:00Z", "ENG-025": "2026-11-11T22:23:00Z",
+  "ENG-026": "2026-11-11T22:23:00Z", "ISL-029": "2026-11-11T22:23:00Z",
+  "ISL-055": "2026-11-11T22:23:00Z", "MAT-022": "2026-11-11T22:23:00Z",
+  "PAK-008": "2026-11-11T22:23:00Z", "URD-001": "2026-11-11T22:23:00Z",
+};
 let shapeBad = [];
 let reviewBad = [];
 for (const [key, items] of Object.entries(banks)) {
@@ -88,15 +104,20 @@ for (const [key, items] of Object.entries(banks)) {
     if (!okOpts || !okCi || !okQ || !okExpl) {
       shapeBad.push(`${it.id || "?"} (${key}): opts4distinct=${okOpts} correctIndex=${okCi} question=${okQ} explanation=${okExpl}`);
     }
-    if (it.reviewStatus !== "draft" || !("reviewedBy" in it) || !("reviewedAt" in it)) {
+    const expectedAt = OWNER_REVIEWED_15[it.id];
+    if (expectedAt !== undefined) {
+      if (it.reviewStatus !== "owner-reviewed" || it.reviewedBy !== "owner" || it.reviewedAt !== expectedAt) {
+        reviewBad.push(`${it.id || "?"} (${key}): expected owner-reviewed by owner @ ${expectedAt}, got ${it.reviewStatus} / ${it.reviewedBy} / ${it.reviewedAt}`);
+      }
+    } else if (it.reviewStatus !== "draft" || !("reviewedBy" in it) || !("reviewedAt" in it)) {
       reviewBad.push(`${it.id || "?"} (${key})`);
     }
   }
 }
 check("every item: 4 distinct options, correctIndex 0–3, non-empty question + explanation", shapeBad.length === 0,
   shapeBad.length ? `${shapeBad.length} bad: ${shapeBad.slice(0, 5).join(" | ")}` : `${onDiskTotal} items checked`);
-check("every item carries reviewStatus=draft + reviewedBy/reviewedAt fields", reviewBad.length === 0,
-  reviewBad.length ? `${reviewBad.length} bad: ${reviewBad.slice(0, 5).join(", ")}` : `${onDiskTotal} items checked`);
+check("review status: exactly the 15 owner-approved items are owner-reviewed (by owner, with timestamps); all others draft", reviewBad.length === 0,
+  reviewBad.length ? `${reviewBad.length} bad: ${reviewBad.slice(0, 5).join(" | ")}` : `${onDiskTotal} items checked, 15 owner-reviewed`);
 
 // ---------- 3. unique IDs (active banks; legacy ids intentionally overlap the split) ----------
 {
@@ -238,6 +259,17 @@ const content = loadJson(CONTENT_PATH);
     return ids.some((id) => id.startsWith("PAK-"));
   });
   check("ZamungKor fixed mocks still draw on PAK-### (Pak Studies) items", zamKept);
+
+  // Stage 1 P0.1: trusted-only count for ZamungKor Mock 1 + Mock 2 must be
+  // exactly the 15 owner-reviewed items (bank-level status; no localStorage
+  // overrides involved here — this is the raw bank count Trusted Mode fills
+  // from on a fresh device).
+  const byId = {};
+  for (const items of Object.values(banks)) for (const it of items) byId[it.id] = it;
+  const zam12Trusted = ["zam1", "zam2"].flatMap((mid) => (content.zamFixed || {})[mid] || [])
+    .filter((id) => byId[id] && (byId[id].reviewStatus === "owner-reviewed" || byId[id].reviewStatus === "approved"));
+  check("trusted-only count for ZamungKor Mock 1 + Mock 2 is 15 (owner-reviewed at bank level)", zam12Trusted.length === 15,
+    `${zam12Trusted.length} trusted: ${zam12Trusted.slice().sort().join(", ")}`);
 
   // Every comp key used by any mock / compB / compMD / compA must resolve to a bank
   // (or be the legacy drawing_pe key, which no active comp should use any more).
