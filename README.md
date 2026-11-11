@@ -1,21 +1,22 @@
-# ETEA Test Preparation — ZamungKor 2026
+# ETEA Test Preparation Library — v2 (ZamungKor 2026 + ESED/KPPSC posts)
 
-Temporary study + test website for ETEA test preparation (Khyber Pakhtunkhwa, Pakistan).
+Preparation library for Khyber Pakhtunkhwa government jobs tested by ETEA and KPPSC.
 
-Posts: Theology / Religious Teacher (BPS-16) and Qari / Imam Masjid (BPS-12).
-Test: 100-MCQ screening test by ETEA.
-
-> **Expected pattern — ETEA has not published the official 2026 syllabus.**
-> Pattern used: Islamiyat 30%, English 15%, Urdu 15%, Pak Studies 15%, Maths 15%, Pedagogy 10%, plus Tajweed for Qari.
+> **Corrections:** ZamungKor 2026 (Project 891, last date 20 Nov 2026) has NO BPS and NO published syllabus — 30 posts, 1-year contract on fixed pay. ESED Theology Teacher (TT) is BPS-15. SST: ETEA 100 MCQs vs KPPSC 45 MCQs. ETEA sets paper composition per project — always verify against your specific advertisement / roll number slip.
 
 ## Contents
 
-- `index.html` — single self-contained static site (all CSS/JS/data inline, no backend, no external resources, works offline after first load)
-- Home dashboard: 3-week study plan, 2–3 hours/day, daily tasks + progress bar
-- Subject notes (53), topic quizzes (20 per attempt, shuffled, instant feedback)
-- 3 full mock tests, 100 MCQs each, 100 minutes timed, score report per subject
-- Tajweed section + quiz, past-paper-style practice (20), flashcards (40)
-- Progress tracking in browser localStorage, no login/signup
+- `index.html` — single self-contained static site (all CSS/JS/data inline, no backend, works offline after first load, no login)
+- 540 distinct MCQs, 95 notes, 70 flashcards, 19 post tracks, 20 mocks/practice tests
+- Tracks: ZamungKor Theology + Qari, TT BPS-15, AT BPS-15, PST, CT, CT-IT, DM, PET, Qari, SST (ETEA + KPPSC), Lecturer, Junior Clerk, Computer Operator, Police Constable, Forest Guard, LHV/Medical Technician, Rescue 1122, Social Welfare Theology BPS-16
+- Pattern selector: ETEA Version B (453 PDF, primary), Merged-Districts variant (user-supplied, NOT VERIFIED — not found on etea.online), Version A (2020, archive)
+- Library, Practice, Mock, Flashcards (SM-2-style), AI Tutor (offline, on-device — answers from this library only; live Gemini/Groq tutoring needs an API key + a Next.js server proxy, not included), Weak Areas heatmap, Study Plans (3/6/12-week, sample timetable), Practice from Past-Paper Topics (original + reworded, no past papers hosted), Quick Revision, Vacancy Tracker, Official Links
+- Language switch: English / Roman Urdu / اردو (RTL); dark mode (system + toggle); both saved in the browser
+- Progress saved in the browser only (localStorage). No login, no signup, no data leaves your device.
+
+## Past papers
+
+No past-paper documents, PDFs, or verbatim questions are hosted. Past-paper material is used only as topics: original practice questions, plus reworded variants of the same concepts in a different style.
 
 ## Run locally
 
