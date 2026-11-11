@@ -39,6 +39,9 @@ export default function Nav() {
           <Link href="/issues" className={pathname === "/issues" ? "active" : ""}>
             Issues
           </Link>
+          <Link href="/review" className={pathname === "/review" ? "active" : ""}>
+            Review
+          </Link>
         </nav>
         <div className="controls">
           <select

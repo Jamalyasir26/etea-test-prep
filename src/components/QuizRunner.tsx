@@ -29,6 +29,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { hashSeed, mulberry32, shuffleOptions, type Question } from "@/lib/data";
 import {
+  computeExamScore,
+  DEFAULT_SCORING,
+  scoringLabel,
+  type ScoringConfig,
+} from "@/lib/scoring";
+import {
   clearSession,
   KEY_VERSION,
   loadSession,
@@ -54,6 +60,11 @@ type Props = {
   note?: string;
   /** Trusted-only run: only owner-reviewed/approved questions were passed in. Default false (provisional). */
   trustedOnly?: boolean;
+  /** Stage 1 P0.1 — scoring config for this run (default: zero penalty, policy unknown). */
+  scoring?: ScoringConfig;
+  /** Stage 1 P0.2 — true when every question in this run is owner-reviewed/approved.
+   *  Drives the "Provisional — not verified" badge on the results screen. */
+  allItemsVerified?: boolean;
   /** Scope id for the persisted session, e.g. "mock:zam1:trusted". Defaults to `quiz:<title>`. */
   sessionScope?: string;
   /** Seed the parent used to pick/order the questions; stored in the session so a reload reuses it. */
@@ -159,6 +170,8 @@ export default function QuizRunner({
   trackId,
   note,
   trustedOnly = false,
+  scoring = DEFAULT_SCORING,
+  allItemsVerified = false,
   sessionScope,
   questionSeed,
 }: Props) {
@@ -253,6 +266,27 @@ export default function QuizRunner({
     [firstPass, prepared],
   );
 
+  // Stage 1 P0.1 — raw accuracy and exam score are two separate numbers,
+  // computed from the same first-pass counts under this run's scoring config.
+  const wrongCount = useMemo(
+    () =>
+      prepared.filter((p) => {
+        const a = firstPass[p.question.id];
+        return a !== undefined && a !== p.correctIndex;
+      }).length,
+    [firstPass, prepared],
+  );
+  const examResult = useMemo(
+    () =>
+      computeExamScore(scoring, {
+        correct: firstPassCount,
+        wrong: wrongCount,
+        unanswered: unansweredCount,
+        total,
+      }),
+    [scoring, firstPassCount, wrongCount, unansweredCount, total],
+  );
+
   function buildSession(submitted: boolean): QuizSession {
     return {
       version: 2,
@@ -325,6 +359,11 @@ export default function QuizRunner({
       correct: firstPassCount,
       seconds: Math.round((Date.now() - startTs) / 1000),
       perSubject,
+      // Stage 1 P0.1: the exam score under this run's scoring config,
+      // stored alongside the raw first-pass count (never replacing it).
+      examScore: examResult.examScore,
+      examTotal: examResult.examTotal,
+      scoringPolicy: examResult.config.policyStatus,
       itemRecords: buildItemRecords(),
       retryCount: retries.length,
     });
@@ -371,16 +410,41 @@ export default function QuizRunner({
 
   if (done) {
     const pct = total ? Math.round((firstPassCount / total) * 100) : 0;
+    const showProvisionalBadge = !trustedOnly && !allItemsVerified;
     return (
       <div>
         <div className="card">
           <h2>
             {t("score")}: {firstPassCount} / {total} ({pct}%)
           </h2>
+          {/* Stage 1 P0.2 — provisional badge while the items in this quiz are not verified. */}
+          {showProvisionalBadge ? (
+            <p>
+              <span className="badge red">Provisional — not verified</span>
+            </p>
+          ) : (
+            <p>
+              <span className="badge green">Verified items — owner-reviewed</span>
+            </p>
+          )}
           <p className="muted">
             {title} · {Math.round((Date.now() - startTs) / 60000)} min
             {trustedOnly ? " · Trusted-only (owner-reviewed/approved questions)" : ""}
           </p>
+          {/* Stage 1 P0.1 — raw accuracy and exam score are two separate numbers. */}
+          <h3>Raw accuracy vs exam score</h3>
+          <p>
+            <b>Raw accuracy: {firstPassCount} / {total} ({pct}%)</b> — correct answers only,
+            no penalty.
+          </p>
+          <p>
+            <b>
+              Exam score: {examResult.examScore} / {examResult.examTotal} marks
+            </b>{" "}
+            — {scoringLabel(examResult.config)}
+            {examResult.floored ? " (floored at 0 — the raw score was negative)" : ""}
+          </p>
+          <p className="muted">{examResult.config.policyNote}</p>
           <p className="muted">
             Score counts your <b>first answer</b> to each question. Changing an answer afterwards
             is a retry: it is recorded for learning, but it does not change the score.
@@ -447,7 +511,14 @@ export default function QuizRunner({
               )}
               <p className="muted">{p.question.explanation}</p>
               {p.question.pastPaperRef && <p className="muted">{p.question.pastPaperRef}</p>}
-              <p className="muted">AI-generated — not verified</p>
+              <p className="muted">
+                {p.question.source}
+                {" — "}
+                {p.question.reviewStatus === "owner-reviewed" ||
+                p.question.reviewStatus === "approved"
+                  ? "owner-reviewed"
+                  : "not verified"}
+              </p>
               <IssueForm qid={p.question.id} subject={p.question.subject} />
             </div>
           );
@@ -593,6 +664,7 @@ export default function QuizRunner({
           ? " · The timer ends at a fixed time — reloading the page does not reset it."
           : ""}
       </p>
+      <p className="muted">Scoring: {scoringLabel(scoring)}</p>
     </div>
   );
 }
