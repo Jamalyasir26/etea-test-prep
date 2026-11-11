@@ -94,13 +94,14 @@ export default function Tutor() {
       <p className="muted">
         <b>On-device study assistant is gone — this is the live tutor.</b> It answers from this
         library only (RAG), in your selected language. If a question is outside the library, it
-        says so instead of inventing. AI-generated content is labelled and never enters mocks.
+        says so instead of inventing. Mocks are provisional practice built from
+        unreviewed AI-generated questions; Trusted mode uses reviewed items only.
       </p>
       <div className={`alert ${status?.live ? "green" : "red"}`}>
         {status === null
           ? "Checking live AI status…"
           : status.live
-            ? `Live AI is configured — Gemini: ${status.gemini ? "yes" : "no"}, Groq fallback: ${status.groq ? "yes" : "not set"}, OpenRouter fallback: ${status.openrouter ? "yes" : "not set"}.`
+            ? `Live AI keys are configured — Gemini: ${status.gemini ? "yes" : "no"}, Groq fallback: ${status.groq ? "yes" : "not set"}, OpenRouter fallback: ${status.openrouter ? "yes" : "not set"}. Keys configured — live responsiveness not health-checked.`
             : "Live AI is NOT configured on the server (no API key). The offline library search below still works."}
       </div>
 
