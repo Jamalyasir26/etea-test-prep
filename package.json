@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@google/generative-ai": "0.24.1",
+    "@google/genai": "^3.2.0",
     "groq-sdk": "0.32.0",
     "next": "15.5.29",
     "react": "19.3.1",
@@ -15,6 +15,7 @@
   },
   "name": "etea-prep-next",
   "private": true,
+  "engines": { "node": ">=22" },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
