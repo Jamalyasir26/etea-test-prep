@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "ETEA Prep Library — KP Government Jobs",
   description:
-    "Personal preparation library for KP government job tests (ETEA / KPPSC): 590 MCQs, notes, flashcards, mocks, live AI tutor and preparation tracking.",
+    "Personal preparation library for KP government job tests (ETEA / KPPSC): 645 MCQs, notes, flashcards, mocks, live AI tutor and preparation tracking.",
   // Supplemental only: ask search engines not to index. This is NOT access
   // control — anyone with the link can still open the site.
   robots: { index: false },

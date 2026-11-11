@@ -8,7 +8,7 @@ import { computeStats, loadAttempts, loadPlanState, type Stats } from "@/lib/tra
 import { useLang } from "@/lib/i18n";
 
 const QUICK = [
-  { href: "/library", key: "library", desc: "95 notes with recall-first prompts" },
+  { href: "/library", key: "library", desc: "110 notes with recall-first prompts" },
   { href: "/practice", key: "practice", desc: "Topic quizzes, 20 per attempt" },
   { href: "/mock", key: "mocks", desc: "20 timed mocks / practice tests" },
   { href: "/flashcards", key: "flashcards", desc: "70 cards, simple spaced-review schedule" },
