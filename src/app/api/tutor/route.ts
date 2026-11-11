@@ -17,7 +17,8 @@ export async function GET() {
     groq: s.groq,
     openrouter: s.openrouter,
     limits: { perDay: 100, perMinute: 10 },
-    note: "Keys are server-side only. If no provider is configured, the offline Study Assistant on the site still works.",
+    health: "/api/tutor/health",
+    note: "Keys are server-side only. If no provider is configured, the offline Study Assistant on the site still works. This endpoint reports key presence only — use /api/tutor/health for live responsiveness.",
   });
 }
 
