@@ -315,7 +315,7 @@ Rules you must follow:
 - Never claim to be ETEA, KPPSC or any official body. You are a practice tutor, not an official source.
 - Keep answers short, exam-focused, and end with one quick self-test question when it fits.`;
 
-function contextBlock(query: string): string {
+function contextBlock(query: string, ownerAnnotations?: { note: string; text: string }[]): string {
   const { notes, questions } = retrieve(query, 5, 5);
   const n = notes
     .map((x) => `- [Note: ${x.title}] ${x.body.slice(0, 600)}`)
@@ -326,7 +326,16 @@ function contextBlock(query: string): string {
         `- [MCQ ${x.id} (${x.subject})] ${x.question} Answer: ${x.options[x.correctIndex]}. ${x.explanation.slice(0, 300)}`,
     )
     .join("\n");
-  return `LIBRARY EXCERPTS (use only these):\nNOTES:\n${n || "(none found)"}\nMCQs:\n${q || "(none found)"}`;
+  // Stage 1 P0.3 — owner annotations, included ONLY because the owner
+  // enabled the opt-in. They are the owner's own notes, labelled as such,
+  // not library facts; the model must not present them as verified facts.
+  const a =
+    ownerAnnotations && ownerAnnotations.length > 0
+      ? `\nOWNER ANNOTATIONS (the owner's own private notes, included only because the owner enabled this — treat them as the owner's notes, not as verified library facts):\n${ownerAnnotations
+          .map((x) => `- [Owner note on: ${x.note}] ${x.text.slice(0, 500)}`)
+          .join("\n")}`
+      : "";
+  return `LIBRARY EXCERPTS (use only these):\nNOTES:\n${n || "(none found)"}\nMCQs:\n${q || "(none found)"}${a}`;
 }
 
 function langInstruction(lang: string) {
@@ -435,10 +444,13 @@ function classifyGeminiError(err: unknown): AiError {
   return new AiError(502, "Gemini could not answer right now. Please try again in a moment.");
 }
 
-/** Try Gemini first, then Groq, then OpenRouter (free model). Never returns a fake answer. */
+/** Try Gemini first, then Groq, then OpenRouter (free model). Never returns a fake answer.
+ *  ownerAnnotations (Stage 1 P0.3): the owner's private note annotations,
+ *  passed ONLY when the owner enabled the opt-in — otherwise []. */
 export async function generateTutorAnswer(
   userPrompt: string,
   lang: string,
+  ownerAnnotations: { note: string; text: string }[] = [],
 ): Promise<{ text: string; provider: "gemini" | "groq" | "openrouter" }> {
   const status = providerStatus();
   if (!status.gemini && !status.groq && !status.openrouter) {
@@ -447,7 +459,7 @@ export async function generateTutorAnswer(
       "Live AI is not configured yet — no API key is set on the server. The offline Study Assistant on this site still works (it searches this library).",
     );
   }
-  const prompt = `${contextBlock(userPrompt)}\n\n${langInstruction(lang)}\n\nUSER QUESTION:\n${userPrompt}`;
+  const prompt = `${contextBlock(userPrompt, ownerAnnotations)}\n\n${langInstruction(lang)}\n\nUSER QUESTION:\n${userPrompt}`;
   // Try each configured provider in order; keep the first error for the final message.
   let firstError: unknown = null;
   let firstErrorProvider: "gemini" | "groq" | "openrouter" | null = null;

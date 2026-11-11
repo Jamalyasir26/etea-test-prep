@@ -4,6 +4,7 @@
 // pattern selector, 21-day plan, vacancies, official links.
 // Nothing here is invented: patterns, BPS and dates are exactly as in v2.
 import content from "../data/content.json";
+import type { ScoringConfig } from "./scoring";
 
 import arabic from "../data/banks/arabic.json";
 import drawing from "../data/banks/drawing.json";
@@ -44,7 +45,13 @@ export type Question = {
   reviewedAt?: string | null;
 };
 
-export type Note = { title: string; body: string };
+export type Note = {
+  title: string;
+  body: string;
+  // Stage 1 P0.3 — provenance label, e.g. "Original content —
+  // concept-extracted from <source name>". Absent on pre-P0.3 notes.
+  source?: string;
+};
 export type Flashcard = { front: string; back: string; category: string };
 export type Track = {
   id: string;
@@ -65,6 +72,10 @@ export type MockDef = {
   total: number;
   comp?: Record<string, number>;
   note: string;
+  // Stage 1 P0.1 — per-mock scoring config (optional). Absent = the
+  // zero-penalty default (policy unknown). Only sst-kppsc carries a
+  // config today (0.25 penalty, labelled "unverified assumption").
+  scoring?: ScoringConfig;
 };
 export type Vacancy = {
   post: string;
@@ -184,10 +195,27 @@ export function shuffled<T>(arr: T[], rand: () => number): T[] {
   return a;
 }
 
+/** Stage 1 P0.2 — owner review decisions held in localStorage
+ *  (question id -> reviewStatus string). The bank JSONs are static
+ *  content; the owner's decisions live in `etea_reviews_next_v1` and are
+ *  passed in as overrides wherever trust is computed. When no overrides
+ *  are passed, the bank's own reviewStatus is used (all "draft" today). */
+export type ReviewOverrides = Record<string, string>;
+
+/** Effective review status of a question: the owner's local decision
+ *  wins over the bank's stored status. */
+export function effectiveReviewStatus(q: Question, overrides?: ReviewOverrides): string {
+  if (overrides && Object.prototype.hasOwnProperty.call(overrides, q.id)) {
+    return overrides[q.id];
+  }
+  return q.reviewStatus ?? "draft";
+}
+
 /** Phase 2 trusted gating. Trusted = owner-reviewed or approved.
  *  A missing reviewStatus counts as NOT trusted (draft / unreviewed). */
-export function isTrusted(q: Question): boolean {
-  return q.reviewStatus === "owner-reviewed" || q.reviewStatus === "approved";
+export function isTrusted(q: Question, overrides?: ReviewOverrides): boolean {
+  const s = effectiveReviewStatus(q, overrides);
+  return s === "owner-reviewed" || s === "approved";
 }
 
 /** How many questions of a mock's composition are trusted (reviewed).
@@ -196,9 +224,9 @@ export function isTrusted(q: Question): boolean {
  *  Legacy comp key "drawing_pe" is no longer used by any live comp
  *  (DM/PET comps in content.json use "drawing" / "pe"); the alias is kept
  *  only as a safety net and draws from the split drawing + pe banks. */
-export function trustedOnlyCount(mock: MockDef): number {
+export function trustedOnlyCount(mock: MockDef, overrides?: ReviewOverrides): number {
   if (mock.fixed && ZAM_FIXED[mock.fixed]) {
-    return ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter((q) => q && isTrusted(q)).length;
+    return ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter((q) => q && isTrusted(q, overrides)).length;
   }
   let n = 0;
   for (const [subjectKey, count] of Object.entries(mock.comp ?? {})) {
@@ -206,7 +234,7 @@ export function trustedOnlyCount(mock: MockDef): number {
       subjectKey === "drawing_pe"
         ? [...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? [])]
         : (BY_SUBJECT[subjectKey] ?? []);
-    n += Math.min(count, pool.filter(isTrusted).length);
+    n += Math.min(count, pool.filter((q) => isTrusted(q, overrides)).length);
   }
   return n;
 }
@@ -220,12 +248,13 @@ export function trustedOnlyCount(mock: MockDef): number {
 export function buildMockQuestions(
   mock: MockDef,
   seedSuffix = "",
-  opts?: { trustedOnly?: boolean },
+  opts?: { trustedOnly?: boolean; overrides?: ReviewOverrides },
 ): Question[] {
   const trustedOnly = opts?.trustedOnly === true;
+  const overrides = opts?.overrides;
   if (mock.fixed && ZAM_FIXED[mock.fixed]) {
     const qs = ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter(Boolean);
-    return trustedOnly ? qs.filter(isTrusted) : qs;
+    return trustedOnly ? qs.filter((q) => isTrusted(q, overrides)) : qs;
   }
   const rand = mulberry32(hashSeed(mock.id + seedSuffix));
   const out: Question[] = [];
@@ -238,7 +267,7 @@ export function buildMockQuestions(
       subjectKey === "drawing_pe"
         ? [...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? [])]
         : (BY_SUBJECT[subjectKey] ?? []);
-    const pool = trustedOnly ? bank.filter(isTrusted) : bank;
+    const pool = trustedOnly ? bank.filter((q) => isTrusted(q, overrides)) : bank;
     const picked = shuffled(pool, rand).slice(0, count);
     out.push(...picked);
   }

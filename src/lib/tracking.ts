@@ -27,6 +27,12 @@ export type Attempt = {
   seconds: number;
   date: string; // ISO timestamp
   perSubject?: Record<string, [number, number]>; // [correct, total]
+  // Stage 1 P0.1 (additive, optional): exam score under the scoring
+  // config that was in force for this attempt. `correct` stays the
+  // first-pass raw count; examScore is the separate exam number.
+  examScore?: number;
+  examTotal?: number;
+  scoringPolicy?: string; // e.g. "unknown" | "unverified-assumption" | "official"
   // Phase 2 (additive, optional): per-item records. `correct` is always the
   // FIRST-PASS score; retries never change it (see QuizRunner).
   itemRecords?: ItemRecord[];
@@ -69,6 +75,120 @@ const ISSUES_LEGACY_KEY = "etea_issues_next";
 const SESSION_KEY = "etea_session_next_v2";
 const LANG_KEY = "etea_lang_next";
 const THEME_KEY = "etea_theme_next";
+// Stage 1 P0.2 — owner review decisions (one record per question id).
+const REVIEWS_KEY = "etea_reviews_next_v1";
+// Stage 1 P0.3 — owner annotations on notes (key: "<subject>||<title>").
+const ANNOTATIONS_KEY = "etea_annotations_next_v1";
+const ANNOTATIONS_OPTIN_KEY = "etea_annotations_tutor_optin_v1";
+
+/** Stage 1 P0.2 — review-status vocabulary (Phase 2, D2). "draft" is the
+ *  bank default (unreviewed). Only "owner-reviewed" and "approved" count
+ *  as trusted (see isTrusted in src/lib/data.ts). The owner is the only
+ *  reviewer: religious content is verified by the owner, never by the AI. */
+export type ReviewStatus =
+  | "draft"
+  | "needs-review"
+  | "disputed"
+  | "owner-reviewed"
+  | "approved";
+
+export const REVIEW_STATUSES: ReviewStatus[] = [
+  "draft",
+  "needs-review",
+  "disputed",
+  "owner-reviewed",
+  "approved",
+];
+
+export function isReviewStatus(v: unknown): v is ReviewStatus {
+  return (
+    v === "draft" ||
+    v === "needs-review" ||
+    v === "disputed" ||
+    v === "owner-reviewed" ||
+    v === "approved"
+  );
+}
+
+export type ReviewRecord = {
+  reviewStatus: ReviewStatus;
+  reviewedBy: string; // "owner" — the owner is the only reviewer
+  reviewedAt: string; // ISO timestamp
+};
+
+function asReviewRecord(raw: unknown): ReviewRecord | null {
+  if (!raw || typeof raw !== "object") return null;
+  const r = raw as Record<string, unknown>;
+  if (!isReviewStatus(r.reviewStatus)) return null;
+  if (typeof r.reviewedBy !== "string" || !r.reviewedBy) return null;
+  if (typeof r.reviewedAt !== "string" || !r.reviewedAt) return null;
+  return { reviewStatus: r.reviewStatus, reviewedBy: r.reviewedBy, reviewedAt: r.reviewedAt };
+}
+
+/** Load all owner review decisions (question id -> record). */
+export function loadReviews(): Record<string, ReviewRecord> {
+  if (typeof window === "undefined") return {};
+  const raw = safeParse<Record<string, unknown>>(localStorage.getItem(REVIEWS_KEY), {});
+  const out: Record<string, ReviewRecord> = {};
+  for (const [qid, rec] of Object.entries(raw)) {
+    const clean = asReviewRecord(rec);
+    if (clean) out[qid] = clean;
+  }
+  return out;
+}
+
+export function saveReviews(reviews: Record<string, ReviewRecord>) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews));
+}
+
+/** Record one owner review decision. Returns the updated map. */
+export function setReview(
+  qid: string,
+  reviewStatus: ReviewStatus,
+  reviewedBy = "owner",
+): Record<string, ReviewRecord> {
+  const all = loadReviews();
+  all[qid] = { reviewStatus, reviewedBy, reviewedAt: new Date().toISOString() };
+  saveReviews(all);
+  return all;
+}
+
+export function getReview(qid: string): ReviewRecord | null {
+  return loadReviews()[qid] ?? null;
+}
+
+// ---- owner annotations on notes (Stage 1 P0.3) ----
+// Private text the owner writes on a note. Stored locally only. It is
+// NEVER sent to the AI tutor unless the owner explicitly enables the
+// opt-in below (default OFF).
+
+export function loadAnnotations(): Record<string, string> {
+  if (typeof window === "undefined") return {};
+  const raw = safeParse<Record<string, unknown>>(localStorage.getItem(ANNOTATIONS_KEY), {});
+  const out: Record<string, string> = {};
+  for (const [k, v] of Object.entries(raw)) if (typeof v === "string") out[k] = v;
+  return out;
+}
+
+export function saveAnnotation(noteKey: string, text: string) {
+  if (typeof window === "undefined") return;
+  const all = loadAnnotations();
+  if (text.trim()) all[noteKey] = text;
+  else delete all[noteKey];
+  localStorage.setItem(ANNOTATIONS_KEY, JSON.stringify(all));
+}
+
+/** Opt-in: include my annotations in tutor requests. Default false (off). */
+export function loadAnnotationOptIn(): boolean {
+  if (typeof window === "undefined") return false;
+  return localStorage.getItem(ANNOTATIONS_OPTIN_KEY) === "1";
+}
+
+export function setAnnotationOptIn(on: boolean) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(ANNOTATIONS_OPTIN_KEY, on ? "1" : "0");
+}
 
 function safeParse<T>(raw: string | null, fallback: T): T {
   if (!raw) return fallback;
@@ -528,7 +648,11 @@ export function loadPreferences(): Preferences {
 export function exportProgress(): string {
   const payload = {
     app: "etea-prep-next",
-    version: 4,
+    // Stage 1 P0.2 — version 5 adds `reviews` (owner review decisions)
+    // and `annotations` (owner note annotations + tutor opt-in). Version 4
+    // files (no reviews/annotations) still restore: importProgress treats
+    // the missing fields as empty.
+    version: 5,
     exportedAt: new Date().toISOString(),
     attempts: loadAttempts(),
     plan: loadPlanState(),
@@ -536,6 +660,8 @@ export function exportProgress(): string {
     issues: loadIssues(),
     preferences: loadPreferences(),
     sessions: loadSessions(),
+    reviews: loadReviews(),
+    annotations: { notes: loadAnnotations(), includeInTutor: loadAnnotationOptIn() },
     lastDay: typeof window === "undefined" ? null : localStorage.getItem(DAY_KEY),
   };
   return JSON.stringify(payload, null, 2);
@@ -589,6 +715,9 @@ export type ImportResult = {
     sessions: number;
     sessionsSkipped: number;
     preferencesApplied: boolean;
+    reviews: number;
+    reviewsSkipped: number;
+    annotations: number;
   };
 };
 
@@ -598,6 +727,11 @@ export type ImportResult = {
  *  sessions are imported only for scopes with no live session already
  *  stored (a live in-progress session is never overwritten by an import);
  *  preferences overwrite the stored language/theme when valid.
+ *  Stage 1 P0.2 (v5): `reviews` are merged with imported records winning
+ *  per question id (a restore restores the owner's decisions); `annotations`
+ *  are merged the same way, and the tutor opt-in flag is restored when
+ *  present. Version 4 files (no reviews/annotations) restore exactly as
+ *  before. Version 6+ files are rejected (newer than this build).
  *  Validation: valid JSON, app marker "etea-prep-next", numeric version,
  *  per-record shape checks (invalid records are skipped and counted).
  *  Unknown future fields are ignored. */
@@ -606,6 +740,9 @@ export function importProgress(json: string): ImportResult {
     const p = JSON.parse(json) as Record<string, unknown>;
     if (!p || p.app !== "etea-prep-next" || typeof p.version !== "number" || !Array.isArray(p.attempts)) {
       return { ok: false, error: "Not a valid ETEA Prep export file (needs the app marker, a version number and an attempts list)." };
+    }
+    if (p.version > 5) {
+      return { ok: false, error: `This backup is version ${p.version}, newer than this build (v5). Please update the app before restoring it.` };
     }
     const counts: NonNullable<ImportResult["counts"]> = {
       attempts: 0,
@@ -617,6 +754,9 @@ export function importProgress(json: string): ImportResult {
       sessions: 0,
       sessionsSkipped: 0,
       preferencesApplied: false,
+      reviews: 0,
+      reviewsSkipped: 0,
+      annotations: 0,
     };
     const existing = loadAttempts();
     const seen = new Set(existing.map((a) => a.id));
@@ -711,6 +851,39 @@ export function importProgress(json: string): ImportResult {
         applied = true;
       }
       counts.preferencesApplied = applied;
+    }
+    // Stage 1 P0.2 (v5) — owner review decisions. Imported records win
+    // per question id; invalid records are skipped and counted. A v4 file
+    // has no `reviews` field and restores exactly as before.
+    if (p.reviews && typeof p.reviews === "object") {
+      const merged = loadReviews();
+      for (const [qid, raw] of Object.entries(p.reviews as Record<string, unknown>)) {
+        const clean = asReviewRecord(raw);
+        if (clean) {
+          merged[qid] = clean;
+          counts.reviews += 1;
+        } else {
+          counts.reviewsSkipped += 1;
+        }
+      }
+      saveReviews(merged);
+    }
+    // Stage 1 P0.3 (v5) — owner note annotations + tutor opt-in.
+    if (p.annotations && typeof p.annotations === "object") {
+      const ann = p.annotations as Record<string, unknown>;
+      if (ann.notes && typeof ann.notes === "object") {
+        const merged = loadAnnotations();
+        for (const [k, v] of Object.entries(ann.notes as Record<string, unknown>)) {
+          if (typeof v === "string" && v.trim()) {
+            merged[k] = v;
+            counts.annotations += 1;
+          }
+        }
+        localStorage.setItem(ANNOTATIONS_KEY, JSON.stringify(merged));
+      }
+      if (typeof ann.includeInTutor === "boolean") {
+        setAnnotationOptIn(ann.includeInTutor);
+      }
     }
     return { ok: true, imported: fresh.length, counts };
   } catch {
