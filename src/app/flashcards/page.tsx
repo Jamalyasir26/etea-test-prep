@@ -1,133 +1,205 @@
-// Home — preparation dashboard (live numbers from real attempts only).
+// Flashcards — simple spaced-review schedule (Again/Hard/Good/Easy).
+// The due queue is FROZEN ONCE at session start (buildSessionQueue) and is
+// never re-sorted by grading: gradeCard only appends an "again" card to the
+// end of the session (same-session relearning). Future-due cards are not in
+// the live queue unless the user explicitly picks cram mode. Card ids are
+// stable hashes of front+back (never array indices), so stored scheduling
+// state survives content edits; pre-Phase-2 `card-N` state is migrated
+// once on load. Every grade is stored locally and feeds the Analysis page
+// (flashcard attempts are self-ratings and are NOT mixed into MCQ accuracy).
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { CORRECTIONS, COUNTS, PATTERN_BANNER, PATTERNS } from "@/lib/data";
-import { computeStats, loadAttempts, loadPlanState, type Stats } from "@/lib/tracking";
-import { useLang } from "@/lib/i18n";
+import { useEffect, useMemo, useState } from "react";
+import { FLASHCARDS } from "@/lib/data";
+import {
+  buildSessionQueue,
+  flashcardId,
+  gradeButtonLabel,
+  gradeCard,
+  loadFlashState,
+  migrateFlashState,
+  nextDue,
+  recordAttempt,
+  saveFlashState,
+  type FlashGrade,
+  type FlashState,
+} from "@/lib/tracking";
 
-const QUICK = [
-  { href: "/library", key: "library", desc: "95 notes with recall-first prompts" },
-  { href: "/practice", key: "practice", desc: "Topic quizzes, 20 per attempt" },
-  { href: "/mock", key: "mocks", desc: "20 timed mocks / practice tests" },
-  { href: "/flashcards", key: "flashcards", desc: "70 cards, simple spaced-review schedule" },
-  { href: "/tutor", key: "tutor", desc: "Live AI tutor (Gemini, Groq + OpenRouter fallbacks)" },
-  { href: "/plan", key: "plan", desc: "3 / 6 / 12-week study plans" },
-  { href: "/analysis", key: "analysis", desc: "Live accuracy, trends, weak areas" },
-  { href: "/tracks", key: "tracks", desc: "19 post tracks with patterns" },
-];
+type CardWithId = { id: string; front: string; back: string; category: string };
 
-export default function Home() {
-  const { t } = useLang();
-  const [stats, setStats] = useState<Stats | null>(null);
-  const [planDone, setPlanDone] = useState(0);
-  const [pattern, setPattern] = useState("B");
+export default function FlashcardsPage() {
+  const [state, setState] = useState<FlashState>({});
+  const [loaded, setLoaded] = useState(false);
+  const [category, setCategory] = useState("All");
+  const [cram, setCram] = useState(false);
+  // Frozen session queue: set ONLY at session start and by gradeCard's
+  // append. It is never recomputed from `state` during the session.
+  const [queue, setQueue] = useState<string[]>([]);
+  const [pos, setPos] = useState(0);
+  const [dueTotal, setDueTotal] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const [session, setSession] = useState({ correct: 0, total: 0 });
+  const [sessionStart, setSessionStart] = useState(() => Date.now());
+  const [done, setDone] = useState(false);
+
+  const cards: CardWithId[] = useMemo(
+    () => FLASHCARDS.map((c) => ({ ...c, id: flashcardId(c.front, c.back) })),
+    [],
+  );
+  const byId = useMemo(() => new Map(cards.map((c) => [c.id, c])), [cards]);
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(FLASHCARDS.map((c) => c.category))).sort()],
+    [],
+  );
+  const today = new Date().toISOString().slice(0, 10);
+
+  function startSession(cat: string, cramMode: boolean, flash: FlashState) {
+    const q = buildSessionQueue(cards, flash, today, { category: cat, cram: cramMode });
+    setQueue(q);
+    setDueTotal(q.length);
+    setPos(0);
+    setFlipped(false);
+    setSession({ correct: 0, total: 0 });
+    setSessionStart(Date.now());
+    setDone(false);
+  }
 
   useEffect(() => {
-    setStats(computeStats(loadAttempts()));
-    setPlanDone(Object.values(loadPlanState()).filter(Boolean).length);
+    const raw = loadFlashState();
+    const { state: migrated, migrated: didMigrate } = migrateFlashState(raw, FLASHCARDS);
+    if (didMigrate) saveFlashState(migrated);
+    setState(migrated);
+    setLoaded(true);
+    startSession("All", false, migrated);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const p = PATTERNS[pattern];
+  const card = queue[pos] !== undefined ? byId.get(queue[pos]) : undefined;
+
+  function grade(g: FlashGrade) {
+    if (!card) return;
+    const prev = state[card.id];
+    const { due, interval } = nextDue(g, prev?.interval ?? 0);
+    const next = { ...state, [card.id]: { grade: g, due, interval, reps: (prev?.reps ?? 0) + 1 } };
+    setState(next);
+    saveFlashState(next);
+    const good = g === "good" || g === "easy";
+    const newSession = { correct: session.correct + (good ? 1 : 0), total: session.total + 1 };
+    setSession(newSession);
+    const res = gradeCard(queue, pos, g);
+    if (res.nextIndex >= res.queue.length) {
+      setQueue(res.queue);
+      setPos(res.nextIndex);
+      setDone(true);
+      recordAttempt({
+        kind: "flash",
+        subject: category === "All" ? undefined : category,
+        title: `Flashcards — ${category}${cram ? " (cram)" : ""}`,
+        total: newSession.total,
+        correct: newSession.correct,
+        seconds: Math.round((Date.now() - sessionStart) / 1000),
+      });
+    } else {
+      setQueue(res.queue);
+      setPos(res.nextIndex);
+      setFlipped(false);
+    }
+  }
+
+  const prevInterval = card ? (state[card.id]?.interval ?? 0) : 0;
+
   return (
     <div>
-      <h1>ETEA Prep Library — KP Government Jobs</h1>
+      <h1>Flashcards — simple spaced-review schedule</h1>
       <p className="muted">
-        Personal preparation — everything for upcoming KP tests in one place. {COUNTS.total} MCQs ·{" "}
-        {COUNTS.notes} notes · {COUNTS.cards} flashcards · {COUNTS.tracks} post tracks · {COUNTS.mocks}{" "}
-        mocks.
+        Answer <b>before</b> flipping the card (retrieval practice). Grade yourself: Again / Hard
+        / Good / Easy. This is a simple spaced-review schedule (a fixed interval ladder, not
+        SM-2): Hard returns in 2 days, Good in 3–14 days, Easy in 7–30 days. “Again” brings the
+        card back later <b>this session</b> and keeps it due today. Only cards due today are in
+        the session — future-due cards stay out unless you turn on cram mode.
       </p>
-
-      <div className="alert red">
-        <b>⚠️ Corrections — read first.</b>
-        <ul>
-          {CORRECTIONS.map((c) => (
-            <li key={c}>{c}</li>
-          ))}
-        </ul>
-        <p>
-          <b>{PATTERN_BANNER}</b>
-        </p>
-      </div>
-
-      {stats && (
-        <div className="grid">
-          <div className="card stat">
-            <b>{stats.totalAttempts}</b>
-            <span>{t("attempts")}</span>
-          </div>
-          <div className="card stat">
-            <b>{stats.hasData ? `${Math.round(stats.accuracy)}%` : "—"}</b>
-            <span>{t("accuracy")}</span>
-          </div>
-          <div className="card stat">
-            <b>{stats.streakDays}</b>
-            <span>{t("streak")}</span>
-          </div>
-          <div className="card stat">
-            <b>
-              {planDone} / 63
-            </b>
-            <span>Plan tasks done</span>
-          </div>
-          <div className="card stat">
-            <b>{stats.totalMinutes} min</b>
-            <span>{t("timeSpent")}</span>
-          </div>
-        </div>
-      )}
-      {stats && !stats.hasData && <p className="muted">{t("noAttempts")}</p>}
-      {stats && stats.weakest.length > 0 && (
-        <div className="card">
-          <h3>{t("weakAreas")}</h3>
-          {stats.weakest.map((w) => (
-            <p key={w.subject}>
-              <span className={`heat ${w.accuracy < 50 ? "red" : w.accuracy < 70 ? "yellow" : "green"}`} />
-              {w.subject} — {Math.round(w.accuracy)}% ({w.total} Q){" "}
-              <Link href={`/practice?subject=${encodeURIComponent(w.subject)}`}>{t("drill")} →</Link>
-            </p>
-          ))}
-          <p>
-            <Link href="/analysis">Full analysis →</Link>
-          </p>
-        </div>
-      )}
-
-      <h2>Pattern selector — pick the version your advert follows</h2>
-      <div className="card">
-        <select aria-label="Pattern version" value={pattern} onChange={(e) => setPattern(e.target.value)}>
-          {Object.entries(PATTERNS).map(([k, v]) => (
-            <option key={k} value={k}>
-              {v.name}
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+        <select
+          aria-label="Category"
+          value={category}
+          onChange={(e) => {
+            setCategory(e.target.value);
+            startSession(e.target.value, cram, state);
+          }}
+        >
+          {categories.map((c) => (
+            <option key={c} value={c}>
+              {c}
             </option>
           ))}
         </select>
+        <label style={{ display: "flex", gap: 6, alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={cram}
+            onChange={(e) => {
+              setCram(e.target.checked);
+              startSession(category, e.target.checked, state);
+            }}
+          />
+          Cram mode (also show future-due cards)
+        </label>
+        <span className="muted">
+          Due today: <b>{dueTotal}</b> · Session: {session.correct}/{session.total} recalled
+        </span>
+      </div>
+      {!loaded ? (
+        <p>Loading…</p>
+      ) : done ? (
+        <div className="card">
+          <h2>Session finished</h2>
+          <p>
+            Recalled {session.correct} of {session.total} cards. “Again” cards were shown once
+            more this session; the rest return on their scheduled day. Flashcard self-ratings are
+            kept separate from quiz/mock accuracy on the Analysis page.
+          </p>
+          <button
+            onClick={() => {
+              startSession(category, cram, state);
+            }}
+          >
+            Review again
+          </button>
+        </div>
+      ) : card ? (
+        <div>
+          <p className="muted">
+            Card {pos + 1} of {queue.length} · {card.category}
+            {state[card.id]
+              ? ` · last grade: ${state[card.id].grade}, next due ${state[card.id].due}`
+              : " · new card"}
+          </p>
+          <div className="card flashcard" onClick={() => setFlipped(!flipped)} role="button" tabIndex={0}>
+            {flipped ? card.back : card.front}
+          </div>
+          {!flipped ? (
+            <button onClick={() => setFlipped(true)}>Flip card</button>
+          ) : (
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <button className="secondary" onClick={() => grade("again")}>
+                {gradeButtonLabel("again", prevInterval)}
+              </button>
+              <button className="secondary" onClick={() => grade("hard")}>
+                {gradeButtonLabel("hard", prevInterval)}
+              </button>
+              <button onClick={() => grade("good")}>{gradeButtonLabel("good", prevInterval)}</button>
+              <button onClick={() => grade("easy")}>{gradeButtonLabel("easy", prevInterval)}</button>
+            </div>
+          )}
+        </div>
+      ) : (
         <p>
-          <b>{p.name}</b>
+          No cards due today in this category.
+          {cram
+            ? ""
+            : " Turn on cram mode to also review future-due cards, or pick another category."}
         </p>
-        <p className="muted">Source: {p.source}</p>
-        <p>
-          <span className={`badge ${pattern === "MD" ? "red" : "green"}`}>{p.confidence}</span>
-        </p>
-      </div>
-
-      <h2>{t("dashboard")}</h2>
-      <div className="grid">
-        {QUICK.map((q) => (
-          <Link key={q.href} href={q.href} className="card" style={{ textDecoration: "none", color: "inherit" }}>
-            <b>{t(q.key)}</b>
-            <p className="muted">{q.desc}</p>
-          </Link>
-        ))}
-      </div>
-
-      <div className="alert">
-        <b>AI Tutor — live, answered via fallback.</b> The tutor calls Gemini (primary) with
-        Groq and OpenRouter (free model) as fallbacks, server-side only. It has answered live via a
-        fallback provider; the primary Gemini key status is unverified. If a saved key is rejected,
-        the page will say so clearly — and the offline Study Assistant (library search) still works.
-      </div>
+      )}
     </div>
   );
 }
