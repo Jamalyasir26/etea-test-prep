@@ -5,8 +5,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "Which of the following are the three primary colours?",
   "options": [
@@ -21,7 +21,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-002",
@@ -29,8 +32,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "Which colour is made by mixing red and yellow?",
   "options": [
@@ -45,7 +48,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-003",
@@ -53,8 +59,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "Which colour is made by mixing blue and yellow?",
   "options": [
@@ -69,7 +75,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-004",
@@ -77,8 +86,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "Which colour is made by mixing red and blue?",
   "options": [
@@ -93,7 +102,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-005",
@@ -101,8 +113,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "Which colours are called warm colours?",
   "options": [
@@ -117,7 +129,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-006",
@@ -125,8 +140,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "What is the point in a perspective drawing where parallel lines appear to meet?",
   "options": [
@@ -141,7 +156,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-007",
@@ -149,8 +167,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "In drawing, what is shading used for?",
   "options": [
@@ -165,7 +183,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-008",
@@ -173,8 +194,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "What is hatching in drawing?",
   "options": [
@@ -189,7 +210,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-009",
@@ -197,8 +221,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "What is a sketch?",
   "options": [
@@ -213,7 +237,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-010",
@@ -221,8 +248,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Drawing",
+  "subjectKey": "drawing",
   "topic": "Drawing/PE",
   "question": "What is a palette used for in painting?",
   "options": [
@@ -237,7 +264,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-011",
@@ -245,8 +275,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "How many players are there in a cricket team on the field?",
   "options": [
@@ -261,7 +291,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-012",
@@ -269,8 +302,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "How many balls are there in one over in cricket?",
   "options": [
@@ -285,7 +318,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-013",
@@ -293,8 +329,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "How many players are there in a football (soccer) team on the field?",
   "options": [
@@ -309,7 +345,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-014",
@@ -317,8 +356,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "How long is a standard football (soccer) match, excluding extra time?",
   "options": [
@@ -333,7 +372,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-015",
@@ -341,8 +383,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "How many players are there in a hockey team on the field?",
   "options": [
@@ -357,7 +399,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-016",
@@ -365,8 +410,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "How often are the Olympic Games held?",
   "options": [
@@ -381,7 +426,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-017",
@@ -389,8 +437,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "What is the standard distance of a marathon race?",
   "options": [
@@ -405,7 +453,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-018",
@@ -413,8 +464,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "Why is warming up before exercise important?",
   "options": [
@@ -429,7 +480,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-019",
@@ -437,8 +491,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "How many bones are there in the skeleton of a normal adult human?",
   "options": [
@@ -453,7 +507,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "DRW-020",
@@ -461,8 +518,8 @@
    "dm",
    "pet"
   ],
-  "subject": "Drawing/PE",
-  "subjectKey": "drawing_pe",
+  "subject": "Physical Education",
+  "subjectKey": "pe",
   "topic": "Drawing/PE",
   "question": "Which of the following is the best example of regular aerobic exercise?",
   "options": [
@@ -477,6 +534,9 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  }
 ]

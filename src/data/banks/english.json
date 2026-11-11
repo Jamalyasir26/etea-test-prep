@@ -37,7 +37,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-002",
@@ -77,7 +80,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-003",
@@ -117,7 +123,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-004",
@@ -157,7 +166,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-005",
@@ -197,7 +209,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-006",
@@ -237,7 +252,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-007",
@@ -277,7 +295,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-008",
@@ -317,7 +338,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-009",
@@ -357,7 +381,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-010",
@@ -397,7 +424,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-011",
@@ -437,7 +467,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-012",
@@ -477,7 +510,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-013",
@@ -517,7 +553,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-014",
@@ -557,7 +596,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-015",
@@ -597,7 +639,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-016",
@@ -637,7 +682,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-017",
@@ -677,7 +725,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-018",
@@ -717,7 +768,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-019",
@@ -757,7 +811,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-020",
@@ -797,7 +854,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-021",
@@ -837,7 +897,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-022",
@@ -877,7 +940,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-023",
@@ -917,7 +983,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-024",
@@ -957,7 +1026,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-025",
@@ -997,7 +1069,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-026",
@@ -1037,7 +1112,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-027",
@@ -1077,7 +1155,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-028",
@@ -1117,7 +1198,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-029",
@@ -1157,7 +1241,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-030",
@@ -1197,7 +1284,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-031",
@@ -1237,7 +1327,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-032",
@@ -1277,7 +1370,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-033",
@@ -1317,7 +1413,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-034",
@@ -1357,7 +1456,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-035",
@@ -1397,7 +1499,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-036",
@@ -1437,7 +1542,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-037",
@@ -1477,7 +1585,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-038",
@@ -1517,7 +1628,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-039",
@@ -1557,7 +1671,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-040",
@@ -1597,7 +1714,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-041",
@@ -1637,7 +1757,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-042",
@@ -1677,7 +1800,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-043",
@@ -1717,7 +1843,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-044",
@@ -1757,7 +1886,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ENG-045",
@@ -1797,6 +1929,9 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  }
 ]

@@ -34,7 +34,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-002",
@@ -71,7 +74,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-003",
@@ -108,7 +114,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-004",
@@ -145,7 +154,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-005",
@@ -182,7 +194,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-006",
@@ -219,7 +234,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-007",
@@ -256,7 +274,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-008",
@@ -293,7 +314,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-009",
@@ -330,7 +354,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-010",
@@ -367,7 +394,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-011",
@@ -404,7 +434,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-012",
@@ -441,7 +474,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-013",
@@ -478,7 +514,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-014",
@@ -515,7 +554,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-015",
@@ -552,7 +594,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-016",
@@ -589,7 +634,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-017",
@@ -626,7 +674,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-018",
@@ -663,7 +714,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-019",
@@ -700,7 +754,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-020",
@@ -737,7 +794,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-021",
@@ -774,7 +834,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-022",
@@ -811,7 +874,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-023",
@@ -848,7 +914,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-024",
@@ -885,7 +954,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-025",
@@ -922,7 +994,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-026",
@@ -959,7 +1034,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-027",
@@ -996,7 +1074,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-028",
@@ -1033,7 +1114,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-029",
@@ -1070,7 +1154,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-030",
@@ -1107,7 +1194,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-031",
@@ -1144,7 +1234,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-032",
@@ -1181,7 +1274,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-033",
@@ -1218,7 +1314,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-034",
@@ -1255,7 +1354,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-035",
@@ -1292,7 +1394,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-036",
@@ -1329,7 +1434,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-037",
@@ -1366,7 +1474,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-038",
@@ -1403,7 +1514,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-039",
@@ -1440,7 +1554,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-040",
@@ -1477,7 +1594,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-041",
@@ -1514,7 +1634,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-042",
@@ -1551,7 +1674,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-043",
@@ -1588,7 +1714,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-044",
@@ -1625,7 +1754,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PAK-045",
@@ -1662,6 +1794,9 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  }
 ]

@@ -23,7 +23,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-002",
@@ -49,7 +52,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-003",
@@ -75,7 +81,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-004",
@@ -101,7 +110,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-005",
@@ -127,7 +139,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-006",
@@ -153,7 +168,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-007",
@@ -179,7 +197,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-008",
@@ -205,7 +226,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-009",
@@ -231,7 +255,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-010",
@@ -257,7 +284,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-011",
@@ -283,7 +313,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-012",
@@ -309,7 +342,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-013",
@@ -335,7 +371,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-014",
@@ -361,7 +400,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-015",
@@ -387,7 +429,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-016",
@@ -413,7 +458,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-017",
@@ -439,7 +487,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-018",
@@ -465,7 +516,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-019",
@@ -491,7 +545,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-020",
@@ -517,7 +574,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-021",
@@ -543,7 +603,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-022",
@@ -569,7 +632,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-023",
@@ -595,7 +661,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-024",
@@ -621,7 +690,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-025",
@@ -647,7 +719,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-026",
@@ -673,7 +748,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-027",
@@ -699,7 +777,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-028",
@@ -725,7 +806,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-029",
@@ -751,7 +835,10 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "ITC-030",
@@ -777,6 +864,9 @@
   "difficulty": "medium",
   "pastPaperRef": null,
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  }
 ]
