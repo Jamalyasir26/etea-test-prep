@@ -35,6 +35,10 @@ export default function Nav() {
               {t(l.key)}
             </Link>
           ))}
+          {/* "issues" has no i18n string (t() would fall back to lowercase "issues"), so it is a plain label. */}
+          <Link href="/issues" className={pathname === "/issues" ? "active" : ""}>
+            Issues
+          </Link>
         </nav>
         <div className="controls">
           <select

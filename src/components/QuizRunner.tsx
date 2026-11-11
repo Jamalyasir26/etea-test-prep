@@ -2,11 +2,45 @@
 // Practice mode: instant feedback after each answer.
 // Mock mode: no feedback until submit; timed, auto-submits at 0.
 // Records every attempt (localStorage) for the live Analysis dashboard.
+//
+// Phase 2 behaviour:
+// - FIRST-PASS SCORING: the first response per question is recorded
+//   immutably (firstPass, set on first choose() only, never overwritten).
+//   Changing an answer afterwards (Back + re-pick in practice, re-pick in
+//   mock) is a corrected retry: recorded in `retries`, never overwriting
+//   firstPass. The final score and per-subject table are first-pass only;
+//   retries are shown separately and do not change the score.
+// - SESSION PERSISTENCE: live state is saved per answer to the versioned
+//   key `etea_session_next_v2` (one JSON object keyed by scope). Reload
+//   resumes the same seeded question/option order. Mock timing uses an
+//   ABSOLUTE deadline (deadlineTs, ms epoch); the countdown derives from
+//   deadlineTs - Date.now(), so reload/background/sleep cannot reset it.
+// - IDEMPOTENT SUBMIT: a persisted `submitted` flag; finish() is a no-op
+//   once submitted, so timeout and manual submit record exactly one attempt.
+// - ITEM-LEVEL RECORDS: every attempt stores per-item first/final answers,
+//   correctness, mode, topic, source, key version and response time.
+// - Mock mode: the picked option gets a neutral "picked" style (teal
+//   outline). Green is only for actually-correct options after reveal in
+//   practice mode — never for a mere pick in mock mode.
+// - "Report an issue" saves privately on this device only (Issues inbox);
+//   the copy never implies anything was sent anywhere.
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { hashSeed, mulberry32, shuffleOptions, type Question } from "@/lib/data";
-import { recordAttempt } from "@/lib/tracking";
+import {
+  clearSession,
+  KEY_VERSION,
+  loadSession,
+  loadSessionRaw,
+  recordAttempt,
+  reportIssueDetailed,
+  saveSession,
+  type ItemRecord,
+  type IssueReason,
+  type QuizSession,
+} from "@/lib/tracking";
+import { ISSUE_REASONS } from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
 
 type Props = {
@@ -18,19 +52,129 @@ type Props = {
   mockId?: string;
   trackId?: string;
   note?: string;
+  /** Trusted-only run: only owner-reviewed/approved questions were passed in. Default false (provisional). */
+  trustedOnly?: boolean;
+  /** Scope id for the persisted session, e.g. "mock:zam1:trusted". Defaults to `quiz:<title>`. */
+  sessionScope?: string;
+  /** Seed the parent used to pick/order the questions; stored in the session so a reload reuses it. */
+  questionSeed?: string;
 };
 
-export default function QuizRunner({ title, questions, minutes = 0, mode, subject, mockId, trackId, note }: Props) {
+function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
+  const [open, setOpen] = useState(false);
+  const [reason, setReason] = useState<IssueReason | "">("");
+  const [correction, setCorrection] = useState("");
+  const [source, setSource] = useState("");
+  const [saved, setSaved] = useState(false);
+
+  if (saved) {
+    return (
+      <p className="muted">
+        Saved privately on this device only — nothing was sent. See the Issues page to review or
+        export it.
+      </p>
+    );
+  }
+  if (!open) {
+    return (
+      <button className="secondary" onClick={() => setOpen(true)}>
+        Report an issue
+      </button>
+    );
+  }
+  return (
+    <div className="card">
+      <p>
+        <b>Report an issue</b>
+      </p>
+      <p className="muted">Saved privately on this device only — nothing is sent anywhere.</p>
+      <label>
+        Reason
+        <select
+          aria-label="Issue reason"
+          value={reason}
+          onChange={(e) => setReason(e.target.value as IssueReason | "")}
+          style={{ display: "block", width: "100%", margin: "4px 0 8px" }}
+        >
+          <option value="">Choose a reason…</option>
+          {ISSUE_REASONS.map((r) => (
+            <option key={r.value} value={r.value}>
+              {r.label}
+            </option>
+          ))}
+        </select>
+      </label>
+      <label>
+        Proposed correction
+        <textarea
+          aria-label="Proposed correction"
+          value={correction}
+          onChange={(e) => setCorrection(e.target.value)}
+          rows={3}
+          style={{ display: "block", width: "100%", margin: "4px 0 8px" }}
+          placeholder="What should it say instead?"
+        />
+      </label>
+      <label>
+        Source (optional)
+        <input
+          type="text"
+          aria-label="Source"
+          value={source}
+          onChange={(e) => setSource(e.target.value)}
+          style={{ display: "block", width: "100%", margin: "4px 0 8px" }}
+          placeholder="e.g. ETEA advert, textbook page"
+        />
+      </label>
+      <div style={{ display: "flex", gap: 8 }}>
+        <button
+          onClick={() => {
+            reportIssueDetailed({
+              qid,
+              subject,
+              reason: reason === "" ? null : reason,
+              proposedCorrection: correction,
+              source,
+            });
+            setSaved(true);
+          }}
+        >
+          Save privately
+        </button>
+        <button className="secondary" onClick={() => setOpen(false)}>
+          Cancel
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default function QuizRunner({
+  title,
+  questions,
+  minutes = 0,
+  mode,
+  subject,
+  mockId,
+  trackId,
+  note,
+  trustedOnly = false,
+  sessionScope,
+  questionSeed,
+}: Props) {
   const { t } = useLang();
-  const [startTs] = useState(() => Date.now());
-  const [idx, setIdx] = useState(0);
-  const [picked, setPicked] = useState<number | null>(null); // index into displayed options
-  const [answers, setAnswers] = useState<Record<string, number>>({}); // qid -> displayed option index
-  const [revealed, setRevealed] = useState(false);
-  const [done, setDone] = useState(false);
-  const [secondsLeft, setSecondsLeft] = useState(minutes * 60);
-  const [issueNote, setIssueNote] = useState("");
-  const recorded = useRef(false);
+  const scope = sessionScope ?? `quiz:${title}`;
+
+  // Restore a live session for this scope (null when none, submitted, or expired).
+  const [initialSession] = useState<QuizSession | null>(() => loadSession(scope));
+  const [resumed] = useState(() => initialSession !== null);
+  const [startTs, setStartTs] = useState(() => initialSession?.startedAt ?? Date.now());
+  const [deadlineTs, setDeadlineTs] = useState<number | null>(() => {
+    if (initialSession?.deadlineTs) return initialSession.deadlineTs;
+    if (mode === "mock" && minutes > 0) return startTs + minutes * 60 * 1000;
+    return null;
+  });
+  const [now, setNow] = useState(() => Date.now());
 
   const prepared = useMemo(
     () =>
@@ -41,85 +185,220 @@ export default function QuizRunner({ title, questions, minutes = 0, mode, subjec
     [questions, startTs],
   );
 
-  // timer (mock mode only)
-  useEffect(() => {
-    if (mode !== "mock" || minutes <= 0 || done) return;
-    const iv = setInterval(() => setSecondsLeft((s) => Math.max(0, s - 1)), 1000);
-    return () => clearInterval(iv);
-  }, [mode, minutes, done]);
+  const [answers, setAnswers] = useState<Record<string, number>>(() => initialSession?.answers ?? {});
+  const [firstPass, setFirstPass] = useState<Record<string, number>>(() => initialSession?.firstPass ?? {});
+  const [retries, setRetries] = useState<{ qid: string; answer: number; at: string }[]>(
+    () => initialSession?.retries ?? [],
+  );
+  const [answeredAt, setAnsweredAt] = useState<Record<string, string>>(
+    () => initialSession?.answeredAt ?? {},
+  );
+  const [responseMs, setResponseMs] = useState<Record<string, number>>(
+    () => initialSession?.responseMs ?? {},
+  );
+  const [idx, setIdx] = useState(() =>
+    Math.min(initialSession?.idx ?? 0, Math.max(0, prepared.length - 1)),
+  );
+  const [picked, setPicked] = useState<number | null>(() => {
+    const id = prepared[Math.min(initialSession?.idx ?? 0, Math.max(0, prepared.length - 1))]?.question.id;
+    return id !== undefined ? (initialSession?.answers[id] ?? null) : null;
+  });
+  const [revealed, setRevealed] = useState(false);
+  const [done, setDone] = useState(false);
+  const submittedRef = useRef(false);
+  const shownAtRef = useRef<Record<string, number>>({});
 
   const q = prepared[idx];
   const total = prepared.length;
 
-  const correctCount = useMemo(() => {
+  // Per-item response time: when the current question became current.
+  useEffect(() => {
+    const id = prepared[idx]?.question.id;
+    if (id) shownAtRef.current[id] = Date.now();
+  }, [idx, prepared]);
+
+  // Absolute-deadline countdown: tick from the wall clock, not a decrement.
+  useEffect(() => {
+    if (mode !== "mock" || minutes <= 0 || done) return;
+    const iv = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(iv);
+  }, [mode, minutes, done]);
+
+  const secondsLeft = deadlineTs === null ? minutes * 60 : Math.max(0, Math.ceil((deadlineTs - now) / 1000));
+
+  // First-pass score (immutable first responses only).
+  const firstPassCount = useMemo(() => {
     let c = 0;
     for (const p of prepared) {
-      const a = answers[p.question.id];
+      const a = firstPass[p.question.id];
       if (a !== undefined && a === p.correctIndex) c++;
     }
     return c;
-  }, [answers, prepared]);
+  }, [firstPass, prepared]);
 
   const perSubject = useMemo(() => {
     const m: Record<string, [number, number]> = {};
     for (const p of prepared) {
-      const a = answers[p.question.id];
+      const a = firstPass[p.question.id];
       const e = m[p.question.subject] ?? [0, 0];
       e[1] += 1;
       if (a !== undefined && a === p.correctIndex) e[0] += 1;
       m[p.question.subject] = e;
     }
     return m;
-  }, [answers, prepared]);
+  }, [firstPass, prepared]);
 
-  function finish() {
-    if (!recorded.current) {
-      recorded.current = true;
-      recordAttempt({
-        kind: mode === "mock" ? "mock" : "quiz",
-        subject,
-        mockId,
-        trackId,
-        title,
-        total,
-        correct: correctCount,
-        seconds: Math.round((Date.now() - startTs) / 1000),
-        perSubject,
-      });
-    }
-    setDone(true);
+  const unansweredCount = useMemo(
+    () => prepared.filter((p) => firstPass[p.question.id] === undefined).length,
+    [firstPass, prepared],
+  );
+
+  function buildSession(submitted: boolean): QuizSession {
+    return {
+      version: 2,
+      scope,
+      mode,
+      title,
+      questionIds: prepared.map((p) => p.question.id),
+      questionSeed: questionSeed ?? "",
+      optionSeed: startTs,
+      answers,
+      firstPass,
+      retries,
+      answeredAt,
+      responseMs,
+      idx,
+      startedAt: startTs,
+      deadlineTs,
+      minutes,
+      submitted,
+      trustedOnly,
+    };
   }
 
+  // Save live state per answer (and on navigation / submit).
   useEffect(() => {
-    if (mode === "mock" && minutes > 0 && secondsLeft === 0 && !done) finish();
+    saveSession(buildSession(submittedRef.current));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [secondsLeft]);
+  }, [answers, firstPass, retries, answeredAt, responseMs, idx, done, prepared]);
 
-  function reportIssue(qid: string) {
-    const raw = localStorage.getItem("etea_issues_next");
-    const list = raw ? JSON.parse(raw) : [];
-    list.push({ qid, date: new Date().toISOString() });
-    localStorage.setItem("etea_issues_next", JSON.stringify(list));
-    setIssueNote("Thanks — noted. (Report an issue)");
+  function buildItemRecords(): ItemRecord[] {
+    return prepared.map((p) => {
+      const fp = firstPass[p.question.id];
+      const fin = answers[p.question.id];
+      return {
+        questionId: p.question.id,
+        question: p.question.question,
+        topic: p.question.topic,
+        firstAnswer: fp !== undefined ? p.options[fp] : null,
+        finalAnswer: fin !== undefined ? p.options[fin] : null,
+        correctAnswer: p.options[p.correctIndex],
+        correct: fp !== undefined && fp === p.correctIndex,
+        mode,
+        source: p.question.source,
+        keyVersion: KEY_VERSION,
+        answeredAt: answeredAt[p.question.id] ?? null,
+        responseMs: responseMs[p.question.id],
+      };
+    });
+  }
+
+  function finish() {
+    // Idempotent submit: in-memory flag + persisted submitted flag.
+    if (submittedRef.current) {
+      setDone(true);
+      return;
+    }
+    if (loadSessionRaw(scope)?.submitted) {
+      submittedRef.current = true;
+      setDone(true);
+      return;
+    }
+    submittedRef.current = true;
+    recordAttempt({
+      kind: mode === "mock" ? "mock" : "quiz",
+      subject,
+      mockId,
+      trackId,
+      title,
+      total,
+      correct: firstPassCount,
+      seconds: Math.round((Date.now() - startTs) / 1000),
+      perSubject,
+      itemRecords: buildItemRecords(),
+      retryCount: retries.length,
+    });
+    saveSession(buildSession(true));
+    setDone(true);
+  }
+  const finishRef = useRef(finish);
+  finishRef.current = finish;
+
+  // Auto-submit at the absolute deadline (timeout path uses the same
+  // idempotent finish() as the manual Submit button).
+  useEffect(() => {
+    if (mode === "mock" && minutes > 0 && deadlineTs !== null && secondsLeft === 0 && !done) {
+      finishRef.current();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [secondsLeft, done]);
+
+  function restart() {
+    if (
+      !window.confirm(
+        "Discard this in-progress session and start again? Your recorded attempts are not affected.",
+      )
+    ) {
+      return;
+    }
+    clearSession(scope);
+    submittedRef.current = false;
+    const fresh = Date.now();
+    setStartTs(fresh);
+    setDeadlineTs(mode === "mock" && minutes > 0 ? fresh + minutes * 60 * 1000 : null);
+    setAnswers({});
+    setFirstPass({});
+    setRetries([]);
+    setAnsweredAt({});
+    setResponseMs({});
+    setIdx(0);
+    setPicked(null);
+    setRevealed(false);
+    setDone(false);
   }
 
   if (total === 0) return <p>No questions available for this set.</p>;
 
   if (done) {
-    const pct = Math.round((correctCount / total) * 100);
+    const pct = total ? Math.round((firstPassCount / total) * 100) : 0;
     return (
       <div>
         <div className="card">
           <h2>
-            {t("score")}: {correctCount} / {total} ({pct}%)
+            {t("score")}: {firstPassCount} / {total} ({pct}%)
           </h2>
           <p className="muted">
             {title} · {Math.round((Date.now() - startTs) / 60000)} min
+            {trustedOnly ? " · Trusted-only (owner-reviewed/approved questions)" : ""}
           </p>
+          <p className="muted">
+            Score counts your <b>first answer</b> to each question. Changing an answer afterwards
+            is a retry: it is recorded for learning, but it does not change the score.
+          </p>
+          {retries.length > 0 && (
+            <p className="muted">
+              Corrected retries: <b>{retries.length}</b> (not counted in the score).
+            </p>
+          )}
+          {unansweredCount > 0 && (
+            <p className="muted">
+              Unanswered: <b>{unansweredCount}</b>
+            </p>
+          )}
           <div className="bar" role="img" aria-label={`${pct}% correct`}>
             <i style={{ width: `${pct}%` }} />
           </div>
-          <h3>Per subject</h3>
+          <h3>Per subject (first-pass)</h3>
           <table>
             <thead>
               <tr>
@@ -141,30 +420,38 @@ export default function QuizRunner({ title, questions, minutes = 0, mode, subjec
         </div>
         <h3>Review</h3>
         {prepared.map((p, i) => {
-          const a = answers[p.question.id];
-          const ok = a === p.correctIndex;
+          const fp = firstPass[p.question.id];
+          const fin = answers[p.question.id];
+          const ok = fp !== undefined && fp === p.correctIndex;
           return (
             <div className="card" key={p.question.id}>
               <p>
                 <b>Q{i + 1}.</b> {p.question.question}{" "}
-                <span className={`badge ${ok ? "green" : "red"}`}>{ok ? "Correct" : "Wrong"}</span>
+                <span className={`badge ${fp === undefined ? "grey" : ok ? "green" : "red"}`}>
+                  {fp === undefined ? "Unanswered" : ok ? "Correct (first try)" : "Wrong (first try)"}
+                </span>
               </p>
               {p.options.map((o, oi) => (
                 <p key={oi} style={{ margin: "4px 0" }}>
-                  {oi === p.correctIndex ? "✅ " : a === oi ? "❌ " : "· "}
+                  {oi === p.correctIndex ? "✅ " : fp === oi ? "❌ " : "· "}
                   {o}
+                  {fp === oi ? " — your first answer" : ""}
+                  {fin !== undefined && fin !== fp && fin === oi ? " — your final answer" : ""}
                 </p>
               ))}
+              {fin !== undefined && fp !== undefined && fin !== fp && (
+                <p className="muted">
+                  You changed this answer after feedback. First answer: {p.options[fp]} · Final
+                  answer: {p.options[fin]} · Score uses the first answer.
+                </p>
+              )}
               <p className="muted">{p.question.explanation}</p>
               {p.question.pastPaperRef && <p className="muted">{p.question.pastPaperRef}</p>}
               <p className="muted">AI-generated — not verified</p>
-              <button className="secondary" onClick={() => reportIssue(p.question.id)}>
-                Report an issue
-              </button>
+              <IssueForm qid={p.question.id} subject={p.question.subject} />
             </div>
           );
         })}
-        {issueNote && <p className="muted">{issueNote}</p>}
       </div>
     );
   }
@@ -174,30 +461,60 @@ export default function QuizRunner({ title, questions, minutes = 0, mode, subjec
   const pickedCorrect = picked !== null && picked === q.correctIndex;
 
   function choose(i: number) {
-    if (mode === "practice") {
-      if (revealed) return;
-      setPicked(i);
-      setAnswers((prev) => ({ ...prev, [q.question.id]: i }));
-      setRevealed(true);
-    } else {
-      setPicked(i);
-      setAnswers((prev) => ({ ...prev, [q.question.id]: i }));
+    const qid = q.question.id;
+    if (mode === "practice" && revealed) return; // go Back first to retry
+    const nowMs = Date.now();
+    setPicked(i);
+    setAnswers((prev) => ({ ...prev, [qid]: i }));
+    if (firstPass[qid] === undefined) {
+      // First response: immutable from here on.
+      setFirstPass((prev) => ({ ...prev, [qid]: i }));
+      setAnsweredAt((prev) => ({ ...prev, [qid]: new Date(nowMs).toISOString() }));
+      setResponseMs((prev) => {
+        if (prev[qid] !== undefined) return prev;
+        const shown = shownAtRef.current[qid] ?? nowMs;
+        return { ...prev, [qid]: Math.max(0, nowMs - shown) };
+      });
+    } else if (answers[qid] !== i) {
+      // Corrected retry: a separate learning event, never overwrites firstPass.
+      setRetries((prev) => [...prev, { qid, answer: i, at: new Date(nowMs).toISOString() }]);
     }
+    if (mode === "practice") setRevealed(true);
+  }
+
+  function goTo(n: number) {
+    setIdx(n);
+    setPicked(answers[prepared[n].question.id] ?? null);
+    setRevealed(false);
   }
 
   function next() {
     if (idx + 1 >= total) finish();
-    else {
-      setIdx(idx + 1);
-      setPicked(answers[prepared[idx + 1].question.id] ?? null);
-      setRevealed(false);
-    }
+    else goTo(idx + 1);
   }
+
+  // In practice mode Next needs a reveal — unless this question already has
+  // a first-pass answer (e.g. after resuming), so a resumed run is not
+  // forced to re-pick every answered question to move on.
+  const canAdvance =
+    mode === "mock" || revealed || firstPass[q.question.id] !== undefined;
 
   return (
     <div>
       <h2>{title}</h2>
       {note && <div className="alert">{note}</div>}
+      {resumed && (
+        <div className="alert">
+          Resumed your in-progress session — answers, first-pass scores and the timer were
+          restored.{" "}
+          <button className="secondary" onClick={restart}>
+            Restart (discard session)
+          </button>
+        </div>
+      )}
+      {trustedOnly && (
+        <p className="muted">Trusted-only: only owner-reviewed/approved questions.</p>
+      )}
       <p className="muted">
         Question {idx + 1} of {total}
         {mode === "mock" && minutes > 0 && (
@@ -219,13 +536,28 @@ export default function QuizRunner({ title, questions, minutes = 0, mode, subjec
         {q.options.map((o, i) => {
           let cls = "opt";
           if (mode === "practice" && revealed) {
+            // Green only for the actually-correct option after reveal.
             if (i === q.correctIndex) cls += " picked-correct";
             else if (i === picked) cls += " picked-wrong";
-          } else if (mode === "mock" && picked === i) {
-            cls += " show-correct";
+          } else if (picked === i) {
+            // Neutral "picked" style in both modes before reveal: a pick is
+            // not a correct answer, so it must never look green.
+            cls += " picked";
           }
+          const isPicked = picked === i;
           return (
-            <button key={i} className={cls} onClick={() => choose(i)} disabled={mode === "practice" && revealed}>
+            <button
+              key={i}
+              className={cls}
+              style={
+                mode === "mock" && isPicked
+                  ? { borderColor: "var(--teal)", borderWidth: 2 }
+                  : undefined
+              }
+              aria-pressed={isPicked}
+              onClick={() => choose(i)}
+              disabled={mode === "practice" && revealed}
+            >
               {String.fromCharCode(65 + i)}. {o}
             </button>
           );
@@ -235,33 +567,32 @@ export default function QuizRunner({ title, questions, minutes = 0, mode, subjec
             <p>
               <b>{pickedCorrect ? t("correct") : t("wrong")}</b> — {q.question.explanation}
             </p>
-            <button className="secondary" onClick={() => reportIssue(q.question.id)}>
-              Report an issue
-            </button>
-            {issueNote && <p className="muted">{issueNote}</p>}
+            <IssueForm qid={q.question.id} subject={q.question.subject} />
           </div>
         )}
       </div>
-      <div style={{ display: "flex", gap: 8 }}>
-        <button
-          className="secondary"
-          disabled={idx === 0}
-          onClick={() => {
-            setIdx(idx - 1);
-            setPicked(answers[prepared[idx - 1].question.id] ?? null);
-            setRevealed(false);
-          }}
-        >
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <button className="secondary" disabled={idx === 0} onClick={() => goTo(idx - 1)}>
           {t("back")}
         </button>
         {mode === "practice" ? (
-          <button disabled={!revealed} onClick={next}>
+          <button disabled={!canAdvance} onClick={next}>
             {idx + 1 >= total ? t("submit") : t("next")}
           </button>
         ) : (
           <button onClick={next}>{idx + 1 >= total ? t("submit") : t("next")}</button>
         )}
+        <button className="secondary" onClick={restart}>
+          Restart (discard session)
+        </button>
       </div>
+      <p className="muted">
+        First-pass score so far: {firstPassCount} correct
+        {retries.length > 0 ? ` · ${retries.length} corrected retr${retries.length === 1 ? "y" : "ies"} (not counted)` : ""}
+        {mode === "mock" && minutes > 0
+          ? " · The timer ends at a fixed time — reloading the page does not reset it."
+          : ""}
+      </p>
     </div>
   );
 }
