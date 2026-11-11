@@ -141,3 +141,30 @@ Backup: `~/workspace/etea-prep-next-backup-pre-stage1p0/`. Full evidence: `VERIF
 - Tests: scoring 39/39, reviews 37/37, retrieval 28/28, flashcards 29/29, structural 186/14/0, qa 51/51.
 - Local prod server: home "645 MCQs · 110 notes · 70 flashcards · 19 post tracks · 20 mocks"; /review, /library, /mock, /practice, /tutor, /issues, /analysis, /flashcards all HTTP 200.
 - NOT done here (honest): no real-browser click-through (code-inspected only); live tutor answers not re-tested (needs a live call after deploy); no item verified yet (owner's job on /review); Groq/OpenRouter/cold-start fixes are P1.
+
+# Stage 1 P0.1 — Owner verification record: 15 items verified at bank level (2026-11-12, local only, NOT deployed)
+
+Backup: `~/workspace/etea-prep-next-backup-pre-p1t0/` (flat copy, diff-verified). Full evidence: `VERIFY-p1t0-verified15.md`.
+
+The owner personally reviewed and approved the 14 "needs-review" items from the structural check (`src/data/structural-checks.json`: 186 pass / 14 needs-review / 0 problems) and asked for them to be marked verified, plus ISL-001 (already verified on the /review dashboard, which lived only in that browser's localStorage). Verification is now stored at BANK level so it shows on every device, not just one browser.
+
+## The 15 items (reviewStatus "owner-reviewed", reviewedBy "owner")
+- ISL-001 — reviewedAt "2026-11-11T22:01:56Z" (its /review dashboard timestamp, 03:01:56 AM PKT 2026-11-12).
+- The 14 flags — reviewedAt "2026-11-11T22:23:00Z" (owner's approval in chat, ~03:23 PKT 2026-11-12): ENG-005, ENG-006, ENG-008, ENG-012, ENG-013, ENG-019, ENG-020, ENG-025, ENG-026, ISL-029, ISL-055, MAT-022, PAK-008, URD-001.
+- Vocabulary note: there is no bare "verified" status. The dashboard's Verify action sets "owner-reviewed", and the UI's "verified" counter counts owner-reviewed + approved items — so "owner-reviewed" is the correct stored value for all 15. The legacy `verified: false` field on the items was left untouched (it is not read by the trusted logic).
+
+## Files changed
+1. `src/data/banks/english.json` — 9 items (ENG-005/006/008/012/013/019/020/025/026): reviewStatus draft → owner-reviewed, reviewedBy null → "owner", reviewedAt null → "2026-11-11T22:23:00Z".
+2. `src/data/banks/islamiyat.json` — 3 items: ISL-001 (reviewedAt "2026-11-11T22:01:56Z"), ISL-029, ISL-055 (reviewedAt "2026-11-11T22:23:00Z").
+3. `src/data/banks/maths.json` — MAT-022. `src/data/banks/pakstudies.json` — PAK-008. `src/data/banks/urdu.json` — URD-001 (same three-field change, "2026-11-11T22:23:00Z").
+4. `scripts/qa-540.mjs` — the review-status check now asserts exactly these 15 items are owner-reviewed (by owner, with the exact timestamps above) and every other item is draft; new check: trusted-only count for ZamungKor Mock 1 + Mock 2 is 15.
+5. No change needed in `src/lib/data.ts`: the Question type already allows optional `reviewedBy`/`reviewedAt`, and `isTrusted` already counts bank-level owner-reviewed as trusted; `effectiveReviewStatus` keeps letting a localStorage override win over the bank value.
+
+## Verification (local)
+- Trusted-build check (real compiled `src/lib/data.ts`, `/tmp/check-trusted15.mjs`): zam1 trusted-only = 9, zam2 trusted-only = 6, together exactly the 15 IDs, no duplicates; `trustedOnlyCount` sums to 15; override path still works both ways (draft override un-trusts, owner-reviewed override trusts); provisional zam1/zam2 builds still 100 each. 13/13 PASS.
+- `npm run qa` 52/52 PASS (was 51/51 — the new trusted-count check added). `node scripts/test-reviews.mjs` 37/37, `test-scoring.mjs` 39/39, `test-retrieval.mjs` 28/28, `test-flashcards.mjs` 29/29. `npm run build` PASS (21/21 pages). `npx tsc --noEmit` clean.
+
+## Expected live behaviour after deploy
+- /review header reads "15 / 200 verified" for ZamungKor Mock 1 + 2 (was 1/200 from the single browser's localStorage).
+- Trusted Mode now fills from 15 items (was 0 on a fresh device). A trusted-only ZamungKor Mock 1 returns 9 questions, Mock 2 returns 6 — the shortfall is never filled with unreviewed items.
+- Full mocks (200–300 verified items) still need the owner to keep verifying on /review during P1; the agent's job remains structural checks + the dashboard only.
