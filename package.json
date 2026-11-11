@@ -21,7 +21,10 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "qa": "node scripts/qa-540.mjs"
+    "qa": "node scripts/qa-540.mjs",
+    "test:scoring": "node scripts/test-scoring.mjs",
+    "test:reviews": "node scripts/test-reviews.mjs",
+    "test:retrieval": "node scripts/test-retrieval.mjs"
   },
   "version": "3.0.0"
 }

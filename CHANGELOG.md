@@ -106,3 +106,38 @@ No deploy; local changes only.
 6. `package.json` / `package-lock.json` — `@google/genai` ^3.2.0 in, `@google/generative-ai` out; added `"engines": {"node": ">=22"}` (new SDK requirement; local Node 24.22.1).
 7. Classifier fix found during the eval: status was checked before the message, misclassifying a wrapped provider 401 as `http_502`; bare `401` in a message was missed. Fixed to message-first. Reason: the first local eval run exposed it; re-verified 11/11 unit cases + live log lines.
 8. Reports: `DIAGNOSIS-tutor-stage0.md` (root cause + full eval), `VERIFY-stage0.md` (tests + results). Backup: `~/workspace/etea-prep-next-backup-pre-stage0/`.
+
+# Stage 1 P0 — Negative marking, verification queue, concept-extraction content (2026-11-12, local only, NOT deployed)
+
+Backup: `~/workspace/etea-prep-next-backup-pre-stage1p0/`. Full evidence: `VERIFY-stage1-p0.md`.
+
+## P0.1 — Negative marking + configurable scoring
+1. `src/lib/scoring.ts` (new) — `DEFAULT_SCORING` (zero penalty, policyStatus "unknown": ETEA has published no negative-marking policy), `KPPSC_UNVERIFIED_SCORING` (0.25, policyStatus "unverified-assumption"), `computeExamScore` (raw accuracy and exam score separate; floor at 0; unanswered = 0), `resolveScoring` (per-run override > mock config > default), `scoringLabel`, `isValidScoringConfig`.
+2. `src/lib/data.ts` — `MockDef.scoring?` (optional per-mock config).
+3. `src/data/content.json` — `sst-kppsc` carries the 0.25 unverified config; all other mocks use the default.
+4. `src/components/QuizRunner.tsx` — results show Raw accuracy AND Exam score separately with the policy note; exam score stored on the attempt (`examScore`/`examTotal`/`scoringPolicy`); per-question source line is now dynamic (was hardcoded "AI-generated — not verified").
+5. `src/app/mock/page.tsx` — per-mock "Scoring for this run" select (default / zero / 0.25), carried in `?penalty=`; `src/app/mock/[id]/page.tsx` resolves it and passes it to QuizRunner.
+6. Tests: `scripts/test-scoring.mjs` 39/39 PASS (zero-penalty default, 0.25 penalty, unanswered, raw-vs-exam separation, floor at zero, resolve precedence).
+
+## P0.2 — Verification queue (mock-first, TT + Qari)
+1. `src/lib/tracking.ts` — review store `etea_reviews_next_v1` (`loadReviews`/`setReview`/`getReview`, vocabulary draft/needs-review/disputed/owner-reviewed/approved); **export v5** adds `reviews` + `annotations` (v4 restores unchanged; v6+ rejected); owner annotations store + tutor opt-in (default off).
+2. `src/lib/data.ts` — `ReviewOverrides`, `effectiveReviewStatus`, `isTrusted(q, overrides?)`, `trustedOnlyCount(mock, overrides?)`, `buildMockQuestions(..., {trustedOnly, overrides})`. Trusted Mode fills ONLY from owner-reviewed/approved items.
+3. `src/app/review/page.tsx` (new) — dashboard: filters by mock (zam1+zam2 default), post (TT/Qari first), status, structural result; actions Verify/Approve/Needs review/Disputed/Reset to draft; zam1+zam2 progress header.
+4. `scripts/structural-check-mocks.mjs` (new) — zam1+zam2 (200 items): **186 pass, 14 needs-review (soft), 0 problems**. No item marked verified by the agent; all stay draft until the owner verifies them. Writes `src/data/structural-checks.json` (consumed by /review).
+5. `src/components/QuizRunner.tsx` — results show a red "Provisional — not verified" badge unless the run was trusted-only or every item is verified.
+6. Tests: `scripts/test-reviews.mjs` 37/37 PASS (round-trip, v5/v4 restore, future-version rejection, annotations); trusted-mode harness 11/11 PASS (5 reviewed → trusted build returns exactly those 5).
+
+## P0.3 — Concept-extraction content (fills the Stage 0 Ikhfa / Al-Fa'il gaps)
+1. `src/data/content.json` — 15 new notes (Tajweed 6, Arabic 5, Islamiyat 4); counts 590 → **645 MCQs**, 95 → **110 notes**.
+2. `src/data/banks/tajweed.json` TAJ-031..050 (20), `arabic.json` ARB-061..080 (20), `islamiyat.json` ISL-091..105 (15) — 55 new MCQs, all draft, unverified, one correct answer, explanation names the answer, source "Original content — concept-extracted from <source name>". Sources named only (Riyad al-Quran, Riwaq Al Quran, Quranica, Hekma Academy, Al-Wafa Institute, Al-Muqaddimah al-Ajurrumiyyah, Teachy.ai, IlmHub, Arabify, Wikipedia (Kutub al-Sittah), QuranicMA, Jibreel.app). No PDF downloaded/hosted, no lines copied, no Hadith/verse numbers invented. 4 duplicate stems found and reworded; final duplicate count 0.
+3. `src/lib/data.ts` — `Note.source?` (provenance label).
+4. `src/app/library/page.tsx` — source label per note; per-note owner annotation field (private, local only) + opt-in "Include my note annotations in tutor answers" (default OFF).
+5. `src/app/tutor/page.tsx` + `src/app/api/tutor/route.ts` + `src/lib/ai.ts` — annotations are sent to the tutor ONLY when the opt-in is on (validated, capped); `contextBlock` labels them as the owner's own notes, not verified library facts.
+6. Tests: `scripts/test-retrieval.mjs` 28/28 PASS — V-L3 Ikhfa note + new TAJ MCQ retrieved; V-L4 Al-Fa'il note + Fa'il MCQ retrieved (was zero before); Qalqalah/Maf'ul/Madd/Seerat retrieved; V-L1 regression ok; V-L6 out-of-scope sanity ok.
+7. `scripts/qa-540.mjs` counts updated 590 → 645: **51/51 PASS**.
+
+## Verification (final state)
+- `npm run build` PASS (21/21 pages incl. new `/review`); `npx tsc --noEmit` clean (TS strict NOT enabled — P1).
+- Tests: scoring 39/39, reviews 37/37, retrieval 28/28, flashcards 29/29, structural 186/14/0, qa 51/51.
+- Local prod server: home "645 MCQs · 110 notes · 70 flashcards · 19 post tracks · 20 mocks"; /review, /library, /mock, /practice, /tutor, /issues, /analysis, /flashcards all HTTP 200.
+- NOT done here (honest): no real-browser click-through (code-inspected only); live tutor answers not re-tested (needs a live call after deploy); no item verified yet (owner's job on /review); Groq/OpenRouter/cold-start fixes are P1.
