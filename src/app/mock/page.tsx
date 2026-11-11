@@ -1,123 +1,124 @@
-// Practice — topic quizzes, 20 per attempt, shuffled, instant feedback.
+// Mock Tests — list of all 20 mocks / practice tests.
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { BY_SUBJECT, hashSeed, isTrusted, mulberry32, shuffled, SUBJECT_LABELS } from "@/lib/data";
+import { useState } from "react";
+import Link from "next/link";
+import { MOCKS, PATTERN_BANNER, trustedOnlyCount } from "@/lib/data";
 import { loadReviews } from "@/lib/tracking";
-import QuizRunner from "@/components/QuizRunner";
-import { Suspense } from "react";
+import { DEFAULT_SCORING, scoringLabel, type ScoringConfig } from "@/lib/scoring";
 
-// The current subject/round/seed is persisted so a reload resumes the SAME
-// 20-question set (and QuizRunner resumes its saved session for that scope)
-// instead of silently shuffling a new set. "New set" bumps the round and
-// stores a fresh seed.
-const PRACTICE_STATE_KEY = "etea_practice_state_next";
-
-type PracticeState = { subjectKey: string; round: number; seed: number };
-
-function loadPracticeState(fallbackSubject: string): PracticeState {
-  if (typeof window === "undefined") return { subjectKey: fallbackSubject, round: 0, seed: Date.now() };
-  try {
-    const raw = localStorage.getItem(PRACTICE_STATE_KEY);
-    if (raw) {
-      const p = JSON.parse(raw) as Partial<PracticeState>;
-      if (typeof p.subjectKey === "string" && typeof p.round === "number" && typeof p.seed === "number") {
-        return { subjectKey: p.subjectKey, round: p.round, seed: p.seed };
-      }
-    }
-  } catch {
-    // fall through to a fresh state
-  }
-  return { subjectKey: fallbackSubject, round: 0, seed: Date.now() };
-}
-
-function PracticeInner() {
-  const params = useSearchParams();
-  const initial = params.get("subject") ?? "";
-  const subjects = useMemo(() => Object.keys(BY_SUBJECT).sort(), []);
-  const [stored] = useState(() => loadPracticeState(initial || "islamiyat"));
-  const [subjectKey, setSubjectKey] = useState(() =>
-    initial && BY_SUBJECT[initial] ? initial : stored.subjectKey,
-  );
-  const [round, setRound] = useState(() =>
-    initial && BY_SUBJECT[initial] && initial === stored.subjectKey ? stored.round : 0,
-  );
-  const [seed, setSeed] = useState(() =>
-    initial && BY_SUBJECT[initial] && initial === stored.subjectKey ? stored.seed : Date.now(),
-  );
-
-  useEffect(() => {
-    localStorage.setItem(PRACTICE_STATE_KEY, JSON.stringify({ subjectKey, round, seed }));
-  }, [subjectKey, round, seed]);
-
-  const labelByKey: Record<string, string> = SUBJECT_LABELS;
-  const subjectLabel = labelByKey[subjectKey] ?? subjectKey;
-
-  const questions = useMemo(() => {
-    const bank = BY_SUBJECT[subjectKey] ?? [];
-    const rand = mulberry32(hashSeed(`${subjectKey}-${round}-${seed}`));
-    return shuffled(bank, rand).slice(0, 20);
-  }, [subjectKey, round, seed]);
-
-  // Stage 1 P0.2 — the results screen shows "Provisional — not verified"
-  // unless every question in this set is owner-reviewed/approved.
+export default function MockList() {
+  // Provisional = today's behaviour: mocks built from the full bank, which
+  // is unreviewed AI-generated practice material. Trusted = reviewed items
+  // only (never silently filled with unreviewed items).
+  const [mode, setMode] = useState<"provisional" | "trusted">("provisional");
+  // Stage 1 P0.2 — the owner's local review decisions. Trusted counts are
+  // computed against these overrides, so a Verify on /review immediately
+  // unlocks the item in Trusted Mode.
   const [reviews] = useState(() => loadReviews());
   const overrides: Record<string, string> = {};
   for (const [qid, r] of Object.entries(reviews)) overrides[qid] = r.reviewStatus;
-  const allItemsVerified = questions.length > 0 && questions.every((q) => isTrusted(q, overrides));
+  // Stage 1 P0.1 — per-mock scoring override for this run only. "default"
+  // = the mock's own config (or the zero-penalty default, policy unknown).
+  // "zero" / "0.25" override it for this run; the choice is carried in the
+  // Start link's ?penalty= query param and actually changes the score.
+  const [penaltyOverride, setPenaltyOverride] = useState<Record<string, string>>({});
 
-  function newSet() {
-    setRound((r) => r + 1);
-    setSeed(Date.now());
+  function mockScoring(m: (typeof MOCKS)[number]): ScoringConfig {
+    return m.scoring ?? DEFAULT_SCORING;
+  }
+  function startHref(m: (typeof MOCKS)[number]): string {
+    const base = `/mock/${m.id}${mode === "trusted" ? "?mode=trusted" : ""}`;
+    const ov = penaltyOverride[m.id];
+    if (!ov || ov === "default") return base;
+    return `${base}${mode === "trusted" ? "&" : "?"}penalty=${ov}`;
   }
 
   return (
     <div>
-      <h1>Practice — Topic Quizzes</h1>
+      <h1>Mock Tests</h1>
+      <div className="alert">
+        <b>{PATTERN_BANNER}</b>
+      </div>
       <p className="muted">
-        20 questions per attempt, shuffled every time. Instant feedback after each question. All
-        questions are original practice questions, labelled “AI-generated — not verified” (drafted by
-        AI, structurally checked). They are <b>not</b> ETEA questions.
+        Each mock states which pattern variant it follows. ZamungKor mocks are disjoint (no question
+        repeats across them). Track mocks draw from the <b>shared practice bank</b> — questions may
+        repeat across track mocks; this is stated on each mock because the 645-question bank cannot
+        supply 8+ disjoint 100-question mocks. All mocks are <b>practice mocks, not official ETEA
+        papers</b>.
       </p>
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
-        <select
-          aria-label="Subject"
-          value={subjectKey}
-          onChange={(e) => {
-            setSubjectKey(e.target.value);
-            setRound(0);
-            setSeed(Date.now());
-          }}
+      <p className="muted">
+        Mocks are <b>provisional practice</b> built from unreviewed AI-generated questions.
+        <b> Trusted mode</b> uses reviewed questions only and returns fewer questions when not
+        enough have been reviewed yet — it never fills the gap with unreviewed items.
+      </p>
+      <div style={{ display: "flex", gap: 8, marginBottom: 16 }} role="group" aria-label="Mock mode">
+        <button
+          className={mode === "provisional" ? "" : "secondary"}
+          onClick={() => setMode("provisional")}
+          aria-pressed={mode === "provisional"}
         >
-          {subjects.map((k) => (
-            <option key={k} value={k}>
-              {labelByKey[k] ?? k} ({BY_SUBJECT[k].length})
-            </option>
-          ))}
-        </select>
-        <button className="secondary" onClick={newSet}>
-          New set (shuffle again)
+          Provisional (all questions)
+        </button>
+        <button
+          className={mode === "trusted" ? "" : "secondary"}
+          onClick={() => setMode("trusted")}
+          aria-pressed={mode === "trusted"}
+        >
+          Trusted (reviewed only)
         </button>
       </div>
-      <QuizRunner
-        key={`${subjectKey}-${round}`}
-        title={`${subjectLabel} quiz — 20 questions`}
-        questions={questions}
-        mode="practice"
-        subject={subjectLabel}
-        allItemsVerified={allItemsVerified}
-        sessionScope={`practice:${subjectKey}:${round}`}
-        questionSeed={String(seed)}
-      />
+      {MOCKS.map((m) => {
+        const trusted = trustedOnlyCount(m, overrides);
+        const trustedDisabled = mode === "trusted" && trusted === 0;
+        return (
+          <div className="card" key={m.id}>
+            <h3>
+              {m.title}{" "}
+              <span className="badge teal">{m.total} Q</span>
+              <span className="badge grey">{m.minutes} min</span>
+            </h3>
+            <p className="muted">{m.note}</p>
+            <p className="muted">
+              {trusted > 0
+                ? `${trusted} of ${m.total} reviewed questions available in Trusted mode.`
+                : "No reviewed questions yet — provisional practice only."}
+            </p>
+            <p className="muted">
+              Scoring: {scoringLabel(mockScoring(m))}
+              {m.scoring
+                ? " — this mock's own config."
+                : " — ETEA has published no negative-marking policy for these projects."}
+            </p>
+            <label>
+              <span className="muted">Scoring for this run: </span>
+              <select
+                aria-label={`Scoring for ${m.title}`}
+                value={penaltyOverride[m.id] ?? "default"}
+                onChange={(e) =>
+                  setPenaltyOverride((prev) => ({ ...prev, [m.id]: e.target.value }))
+                }
+              >
+                <option value="default">Mock default ({scoringLabel(mockScoring(m))})</option>
+                <option value="zero">No penalty (policy unknown)</option>
+                <option value="0.25">−0.25 per wrong answer (unverified assumption)</option>
+              </select>
+            </label>
+            {trustedDisabled ? (
+              <button className="btn" disabled>
+                Start mock (Trusted)
+              </button>
+            ) : (
+              <Link
+                className="btn"
+                href={startHref(m)}
+              >
+                Start mock{mode === "trusted" ? " (Trusted)" : ""}
+              </Link>
+            )}
+          </div>
+        );
+      })}
     </div>
-  );
-}
-
-export default function Practice() {
-  return (
-    <Suspense>
-      <PracticeInner />
-    </Suspense>
   );
 }
