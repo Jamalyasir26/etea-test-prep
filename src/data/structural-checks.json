@@ -1,0 +1,843 @@
+{
+  "generatedAt": "2026-11-11T21:30:12.181Z",
+  "scope": [
+    "zam1",
+    "zam2"
+  ],
+  "counts": {
+    "total": 200,
+    "pass": 186,
+    "needsReview": 14,
+    "problem": 0
+  },
+  "items": {
+    "ISL-001": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-004": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-005": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-006": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-008": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-011": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-012": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-013": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-014": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-015": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-016": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-017": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-018": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-019": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-020": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-021": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-022": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-023": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-024": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-025": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-026": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-027": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-028": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-029": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ISL-030": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-001": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-004": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-005": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-006": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-008": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-011": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-012": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-013": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-014": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-015": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-001": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "URD-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-004": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-005": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-006": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-008": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-011": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-012": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-013": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-014": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-015": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-001": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-004": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-005": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-006": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-008": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "PAK-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-011": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-012": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-013": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-014": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-015": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-001": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-004": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-005": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-006": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-008": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-011": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-012": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-013": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-014": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-015": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-001": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-004": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-005": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-006": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-008": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-031": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-032": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-033": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-034": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-035": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-036": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-037": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-038": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-039": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-040": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-041": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-042": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-043": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-044": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-045": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-046": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-047": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-048": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-049": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-050": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-051": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-052": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-053": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-054": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-055": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ISL-056": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-057": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-058": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-059": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-060": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-016": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-017": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-018": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-019": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-020": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-021": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-022": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-023": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-024": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-025": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-026": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ENG-027": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-028": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-029": {
+      "status": "pass",
+      "issues": []
+    },
+    "ENG-030": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-016": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-017": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-018": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-019": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-020": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-021": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-022": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-023": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-024": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-025": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-026": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-027": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-028": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-029": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-030": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-016": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-017": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-018": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-019": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-020": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-021": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-022": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-023": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-024": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-025": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-026": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-027": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-028": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-029": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-030": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-016": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-017": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-018": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-019": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-020": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-021": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-022": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "MAT-023": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-024": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-025": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-026": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-027": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-028": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-029": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-030": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-011": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-012": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-013": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-014": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-015": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-016": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-017": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-018": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-019": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-020": {
+      "status": "pass",
+      "issues": []
+    }
+  }
+}
