@@ -1,218 +1,205 @@
-// Analysis — LIVE dashboard. Every number is computed from real stored
-// attempts. Empty states say "no attempts yet". No sample data anywhere.
+// Flashcards — simple spaced-review schedule (Again/Hard/Good/Easy).
+// The due queue is FROZEN ONCE at session start (buildSessionQueue) and is
+// never re-sorted by grading: gradeCard only appends an "again" card to the
+// end of the session (same-session relearning). Future-due cards are not in
+// the live queue unless the user explicitly picks cram mode. Card ids are
+// stable hashes of front+back (never array indices), so stored scheduling
+// state survives content edits; pre-Phase-2 `card-N` state is migrated
+// once on load. Every grade is stored locally and feeds the Analysis page
+// (flashcard attempts are self-ratings and are NOT mixed into MCQ accuracy).
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
+import { FLASHCARDS } from "@/lib/data";
 import {
-  clearAttempts,
-  computeStats,
-  download,
-  exportProgress,
-  importProgress,
-  loadAttempts,
-  type Stats,
+  buildSessionQueue,
+  flashcardId,
+  gradeButtonLabel,
+  gradeCard,
+  loadFlashState,
+  migrateFlashState,
+  nextDue,
+  recordAttempt,
+  saveFlashState,
+  type FlashGrade,
+  type FlashState,
 } from "@/lib/tracking";
-import { useLang } from "@/lib/i18n";
 
-function heat(acc: number) {
-  return acc < 50 ? "red" : acc < 70 ? "yellow" : "green";
-}
+type CardWithId = { id: string; front: string; back: string; category: string };
 
-export default function Analysis() {
-  const { t } = useLang();
-  const [stats, setStats] = useState<Stats | null>(null);
-  const [msg, setMsg] = useState("");
-  const fileRef = useRef<HTMLInputElement>(null);
+export default function FlashcardsPage() {
+  const [state, setState] = useState<FlashState>({});
+  const [loaded, setLoaded] = useState(false);
+  const [category, setCategory] = useState("All");
+  const [cram, setCram] = useState(false);
+  // Frozen session queue: set ONLY at session start and by gradeCard's
+  // append. It is never recomputed from `state` during the session.
+  const [queue, setQueue] = useState<string[]>([]);
+  const [pos, setPos] = useState(0);
+  const [dueTotal, setDueTotal] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const [session, setSession] = useState({ correct: 0, total: 0 });
+  const [sessionStart, setSessionStart] = useState(() => Date.now());
+  const [done, setDone] = useState(false);
 
-  function refresh() {
-    setStats(computeStats(loadAttempts()));
+  const cards: CardWithId[] = useMemo(
+    () => FLASHCARDS.map((c) => ({ ...c, id: flashcardId(c.front, c.back) })),
+    [],
+  );
+  const byId = useMemo(() => new Map(cards.map((c) => [c.id, c])), [cards]);
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(FLASHCARDS.map((c) => c.category))).sort()],
+    [],
+  );
+  const today = new Date().toISOString().slice(0, 10);
+
+  function startSession(cat: string, cramMode: boolean, flash: FlashState) {
+    const q = buildSessionQueue(cards, flash, today, { category: cat, cram: cramMode });
+    setQueue(q);
+    setDueTotal(q.length);
+    setPos(0);
+    setFlipped(false);
+    setSession({ correct: 0, total: 0 });
+    setSessionStart(Date.now());
+    setDone(false);
   }
-  useEffect(refresh, []);
 
-  function doExport() {
-    download(`etea-prep-progress-${new Date().toISOString().slice(0, 10)}.json`, exportProgress());
-    setMsg("Progress exported as a JSON file.");
-  }
-  function doImport(file: File) {
-    const r = new FileReader();
-    r.onload = () => {
-      const res = importProgress(String(r.result ?? ""));
-      setMsg(res.ok ? `Imported ${res.imported ?? 0} new attempts.` : res.error ?? "Import failed.");
-      refresh();
-    };
-    r.readAsText(file);
+  useEffect(() => {
+    const raw = loadFlashState();
+    const { state: migrated, migrated: didMigrate } = migrateFlashState(raw, FLASHCARDS);
+    if (didMigrate) saveFlashState(migrated);
+    setState(migrated);
+    setLoaded(true);
+    startSession("All", false, migrated);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const card = queue[pos] !== undefined ? byId.get(queue[pos]) : undefined;
+
+  function grade(g: FlashGrade) {
+    if (!card) return;
+    const prev = state[card.id];
+    const { due, interval } = nextDue(g, prev?.interval ?? 0);
+    const next = { ...state, [card.id]: { grade: g, due, interval, reps: (prev?.reps ?? 0) + 1 } };
+    setState(next);
+    saveFlashState(next);
+    const good = g === "good" || g === "easy";
+    const newSession = { correct: session.correct + (good ? 1 : 0), total: session.total + 1 };
+    setSession(newSession);
+    const res = gradeCard(queue, pos, g);
+    if (res.nextIndex >= res.queue.length) {
+      setQueue(res.queue);
+      setPos(res.nextIndex);
+      setDone(true);
+      recordAttempt({
+        kind: "flash",
+        subject: category === "All" ? undefined : category,
+        title: `Flashcards — ${category}${cram ? " (cram)" : ""}`,
+        total: newSession.total,
+        correct: newSession.correct,
+        seconds: Math.round((Date.now() - sessionStart) / 1000),
+      });
+    } else {
+      setQueue(res.queue);
+      setPos(res.nextIndex);
+      setFlipped(false);
+    }
   }
 
-  if (!stats) return <p>Loading…</p>;
-  const last14 = stats.daily.slice(-14);
-  const maxDay = Math.max(1, ...last14.map((d) => d.total));
+  const prevInterval = card ? (state[card.id]?.interval ?? 0) : 0;
 
   return (
     <div>
-      <h1>{t("analysis")} — live</h1>
-      {!stats.hasData && (
-        <div className="alert">
-          <b>{t("noAttempts")}</b>
-        </div>
-      )}
-      <div className="grid">
-        <div className="card stat">
-          <b>{stats.totalAttempts}</b>
-          <span>{t("attempts")}</span>
-        </div>
-        <div className="card stat">
-          <b>{stats.hasData ? `${Math.round(stats.accuracy)}%` : "—"}</b>
-          <span>{t("accuracy")}</span>
-        </div>
-        <div className="card stat">
-          <b>
-            {stats.totalCorrect}/{stats.totalQuestions}
-          </b>
-          <span>Questions correct</span>
-        </div>
-        <div className="card stat">
-          <b>{stats.streakDays}</b>
-          <span>{t("streak")}</span>
-        </div>
-        <div className="card stat">
-          <b>{stats.totalMinutes} min</b>
-          <span>{t("timeSpent")}</span>
-        </div>
-      </div>
-
-      <h2>Per-subject accuracy</h2>
-      {Object.keys(stats.perSubject).length === 0 ? (
-        <p className="muted">No subject data yet.</p>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Subject</th>
-              <th>Accuracy</th>
-              <th>Correct</th>
-              <th>Total</th>
-              <th>Attempts</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(stats.perSubject)
-              .sort((a, b) => a[1].accuracy - b[1].accuracy)
-              .map(([s, v]) => (
-                <tr key={s}>
-                  <td>
-                    <span className={`heat ${heat(v.accuracy)}`} />
-                    {s}
-                  </td>
-                  <td>{Math.round(v.accuracy)}%</td>
-                  <td>{v.correct}</td>
-                  <td>{v.total}</td>
-                  <td>{v.attempts}</td>
-                  <td>
-                    <Link href={`/practice?subject=${encodeURIComponent(s)}`}>{t("drill")}</Link>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-      )}
-
-      <h2>Weak-area heatmap</h2>
-      {stats.weakest.length === 0 ? (
-        <p className="muted">Need at least 5 questions per subject before weak areas show.</p>
-      ) : (
-        stats.weakest.map((w) => (
-          <p key={w.subject}>
-            <span className={`heat ${heat(w.accuracy)}`} />
-            {w.subject} — {Math.round(w.accuracy)}% over {w.total} questions{" "}
-            <Link href={`/practice?subject=${encodeURIComponent(w.subject)}`}>{t("drill")} →</Link>
-          </p>
-        ))
-      )}
-
-      <h2>Last 14 days (questions per day)</h2>
-      {last14.length === 0 ? (
-        <p className="muted">No activity yet.</p>
-      ) : (
-        <div>
-          {last14.map((d) => (
-            <div key={d.date} style={{ display: "flex", alignItems: "center", gap: 8, margin: "4px 0" }}>
-              <span style={{ width: 96 }}>{d.date.slice(5)}</span>
-              <div className="bar" style={{ flex: 1 }}>
-                <i style={{ width: `${(d.total / maxDay) * 100}%` }} />
-              </div>
-              <span>
-                {d.correct}/{d.total} ({d.attempts} attempts)
-              </span>
-            </div>
-          ))}
-        </div>
-      )}
-
-      <h2>Mock history</h2>
-      {stats.mockHistory.length === 0 ? (
-        <p className="muted">No mocks taken yet.</p>
-      ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Mock</th>
-              <th>Score</th>
-              <th>Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            {stats.mockHistory.slice(0, 20).map((m) => (
-              <tr key={m.id}>
-                <td>{m.date.slice(0, 10)}</td>
-                <td>{m.title}</td>
-                <td>
-                  {m.correct}/{m.total} ({Math.round((m.correct / m.total) * 100)}%)
-                </td>
-                <td>{Math.round(m.seconds / 60)} min</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-
-      <h2>Your data</h2>
+      <h1>Flashcards — simple spaced-review schedule</h1>
       <p className="muted">
-        Progress lives in this browser only (localStorage). Export it regularly so a cleared browser
-        never loses your history.
+        Answer <b>before</b> flipping the card (retrieval practice). Grade yourself: Again / Hard
+        / Good / Easy. This is a simple spaced-review schedule (a fixed interval ladder, not
+        SM-2): Hard returns in 2 days, Good in 3–14 days, Easy in 7–30 days. “Again” brings the
+        card back later <b>this session</b> and keeps it due today. Only cards due today are in
+        the session — future-due cards stay out unless you turn on cram mode.
       </p>
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <button onClick={doExport}>{t("export")}</button>
-        <button className="secondary" onClick={() => fileRef.current?.click()}>
-          {t("import")}
-        </button>
-        <input
-          ref={fileRef}
-          type="file"
-          accept="application/json"
-          style={{ display: "none" }}
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
+        <select
+          aria-label="Category"
+          value={category}
           onChange={(e) => {
-            const f = e.target.files?.[0];
-            if (f) doImport(f);
-            e.target.value = "";
-          }}
-        />
-        <button
-          className="secondary"
-          onClick={() => {
-            if (window.confirm("Delete all recorded attempts? This cannot be undone (export first if you want a copy).")) {
-              clearAttempts();
-              refresh();
-              setMsg("All attempts deleted.");
-            }
+            setCategory(e.target.value);
+            startSession(e.target.value, cram, state);
           }}
         >
-          Delete all attempts
-        </button>
+          {categories.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
+          ))}
+        </select>
+        <label style={{ display: "flex", gap: 6, alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={cram}
+            onChange={(e) => {
+              setCram(e.target.checked);
+              startSession(category, e.target.checked, state);
+            }}
+          />
+          Cram mode (also show future-due cards)
+        </label>
+        <span className="muted">
+          Due today: <b>{dueTotal}</b> · Session: {session.correct}/{session.total} recalled
+        </span>
       </div>
-      {msg && <p className="muted">{msg}</p>}
+      {!loaded ? (
+        <p>Loading…</p>
+      ) : done ? (
+        <div className="card">
+          <h2>Session finished</h2>
+          <p>
+            Recalled {session.correct} of {session.total} cards. “Again” cards were shown once
+            more this session; the rest return on their scheduled day. Flashcard self-ratings are
+            kept separate from quiz/mock accuracy on the Analysis page.
+          </p>
+          <button
+            onClick={() => {
+              startSession(category, cram, state);
+            }}
+          >
+            Review again
+          </button>
+        </div>
+      ) : card ? (
+        <div>
+          <p className="muted">
+            Card {pos + 1} of {queue.length} · {card.category}
+            {state[card.id]
+              ? ` · last grade: ${state[card.id].grade}, next due ${state[card.id].due}`
+              : " · new card"}
+          </p>
+          <div className="card flashcard" onClick={() => setFlipped(!flipped)} role="button" tabIndex={0}>
+            {flipped ? card.back : card.front}
+          </div>
+          {!flipped ? (
+            <button onClick={() => setFlipped(true)}>Flip card</button>
+          ) : (
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              <button className="secondary" onClick={() => grade("again")}>
+                {gradeButtonLabel("again", prevInterval)}
+              </button>
+              <button className="secondary" onClick={() => grade("hard")}>
+                {gradeButtonLabel("hard", prevInterval)}
+              </button>
+              <button onClick={() => grade("good")}>{gradeButtonLabel("good", prevInterval)}</button>
+              <button onClick={() => grade("easy")}>{gradeButtonLabel("easy", prevInterval)}</button>
+            </div>
+          )}
+        </div>
+      ) : (
+        <p>
+          No cards due today in this category.
+          {cram
+            ? ""
+            : " Turn on cram mode to also review future-due cards, or pick another category."}
+        </p>
+      )}
     </div>
   );
 }
