@@ -1,0 +1,2522 @@
+[
+ {
+  "id": "ISL-001",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many Surahs are there in the Holy Quran?",
+  "options": [
+   "110",
+   "112",
+   "114",
+   "116"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Holy Quran has 114 Surahs. Quran mein kul 114 Suratein hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-002",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many Parahs (Juz) are there in the Holy Quran?",
+  "options": [
+   "28",
+   "29",
+   "30",
+   "33"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Quran is divided into 30 Parahs. Quran 30 Paron mein taqseem hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-003",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which is the first Surah of the Holy Quran?",
+  "options": [
+   "Al-Baqarah",
+   "Al-Fatiha",
+   "Al-Ikhlas",
+   "An-Nas"
+  ],
+  "correctIndex": 1,
+  "explanation": "Al-Fatiha is the first Surah. Pehli Surah Al-Fatiha hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-004",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which is the last Surah of the Holy Quran?",
+  "options": [
+   "Al-Falaq",
+   "Al-Ikhlas",
+   "Al-Kausar",
+   "An-Nas"
+  ],
+  "correctIndex": 3,
+  "explanation": "An-Nas is the last Surah. Aakhri Surah An-Nas hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-005",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which is the longest Surah of the Holy Quran?",
+  "options": [
+   "Al-Imran",
+   "Al-Baqarah",
+   "An-Nisa",
+   "Al-Maidah"
+  ],
+  "correctIndex": 1,
+  "explanation": "Al-Baqarah is the longest Surah. Sab se lambi Surah Al-Baqarah hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-006",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which is the shortest Surah of the Holy Quran?",
+  "options": [
+   "Al-Asr",
+   "Al-Ikhlas",
+   "Al-Kausar",
+   "An-Nasr"
+  ],
+  "correctIndex": 2,
+  "explanation": "Al-Kausar is the shortest Surah, with 3 verses. Sab se chhoti Surah Al-Kausar hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-007",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah is called the Heart of the Quran?",
+  "options": [
+   "Al-Rahman",
+   "Yasin",
+   "Al-Mulk",
+   "Al-Kahf"
+  ],
+  "correctIndex": 1,
+  "explanation": "Surah Yasin is called the Heart of the Quran. Surah Yasin ko Quran ka Dil kaha jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-008",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah is known as Umm-ul-Kitab (Mother of the Book)?",
+  "options": [
+   "Al-Fatiha",
+   "Al-Baqarah",
+   "Al-Ikhlas",
+   "Al-Rahman"
+  ],
+  "correctIndex": 0,
+  "explanation": "Al-Fatiha is called Umm-ul-Kitab. Al-Fatiha ko Umm-ul-Kitab kaha jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-009",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah does NOT begin with Bismillah?",
+  "options": [
+   "Al-Anfal",
+   "Al-Taubah",
+   "Al-Hajj",
+   "Al-Nahl"
+  ],
+  "correctIndex": 1,
+  "explanation": "Surah At-Taubah does not begin with Bismillah. Surah Taubah ke shuru mein Bismillah nahi hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-010",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many times does the word Bismillah appear in the Holy Quran in total?",
+  "options": [
+   "113",
+   "114",
+   "115",
+   "116"
+  ],
+  "correctIndex": 1,
+  "explanation": "Bismillah appears 114 times in total, including once inside Surah An-Naml. Kul 114 martaba Bismillah aayi hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-011",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What were the first revealed verses of the Holy Quran?",
+  "options": [
+   "Surah Al-Fatiha",
+   "Iqra (Surah Al-Alaq)",
+   "Surah An-Nasr",
+   "Surah Al-Ikhlas"
+  ],
+  "correctIndex": 1,
+  "explanation": "The first revelation was 'Iqra' from Surah Al-Alaq. Pehli Wahi 'Iqra' thi, Surah Al-Alaq se.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-012",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The Holy Quran was revealed over how many years?",
+  "options": [
+   "20 years",
+   "21 years",
+   "23 years",
+   "25 years"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Quran was revealed over 23 years. Quran 23 saal mein nazil hua.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-013",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many Makki Surahs are there in the Holy Quran according to standard Pakistani textbooks?",
+  "options": [
+   "82",
+   "84",
+   "86",
+   "88"
+  ],
+  "correctIndex": 2,
+  "explanation": "There are 86 Makki Surahs revealed before Hijrat. Makki Suratein 86 hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-014",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many Madani Surahs are there in the Holy Quran?",
+  "options": [
+   "26",
+   "28",
+   "30",
+   "32"
+  ],
+  "correctIndex": 1,
+  "explanation": "There are 28 Madani Surahs revealed after Hijrat. Madani Suratein 28 hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-015",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which month was the Holy Quran first revealed?",
+  "options": [
+   "Shawwal",
+   "Ramadan",
+   "Muharram",
+   "Zil Hajj"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Quran was first revealed in Ramadan. Quran Ramadan mein nazil hona shuru hua.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-016",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "On which night was the Holy Quran first revealed?",
+  "options": [
+   "Shab-e-Barat",
+   "Laylatul Qadr",
+   "Shab-e-Miraj",
+   "Laylatul Jumuah"
+  ],
+  "correctIndex": 1,
+  "explanation": "The first revelation was on Laylatul Qadr. Pehli Wahi Laylatul Qadr mein aayi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-017",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Ayat-ul-Kursi is in which Surah?",
+  "options": [
+   "Al-Imran",
+   "Al-Baqarah",
+   "An-Nisa",
+   "Al-Maidah"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ayat-ul-Kursi is in Surah Al-Baqarah. Ayat-ul-Kursi Surah Al-Baqarah mein hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-018",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah is called the Bride of the Quran?",
+  "options": [
+   "Al-Rahman",
+   "Al-Mulk",
+   "Al-Waqiah",
+   "Al-Hadid"
+  ],
+  "correctIndex": 0,
+  "explanation": "Surah Ar-Rahman is called the Bride of the Quran. Surah Rahman ko Quran ki Dulhan kaha jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-019",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Reciting Surah Al-Ikhlas is equal in reward to reciting which part of the Quran?",
+  "options": [
+   "One fourth",
+   "One third",
+   "One half",
+   "One tenth"
+  ],
+  "correctIndex": 1,
+  "explanation": "Surah Al-Ikhlas equals one third of the Quran in reward. Surah Ikhlas aik tihai Quran ke barabar hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-020",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which was the last complete Surah revealed?",
+  "options": [
+   "An-Nasr",
+   "Al-Fatiha",
+   "Al-Kausar",
+   "Al-Maun"
+  ],
+  "correctIndex": 0,
+  "explanation": "Surah An-Nasr was the last complete Surah revealed. Aakhri mukammal Surah An-Nasr nazil hui.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-021",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The 30th Parah of the Holy Quran is also known as?",
+  "options": [
+   "Juz Amma",
+   "Juz Tabarak",
+   "Juz Qad Sami",
+   "Juz Alam Tara"
+  ],
+  "correctIndex": 0,
+  "explanation": "The 30th Parah is called Juz Amma. Teeswein Pare ko Juz Amma kehte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-022",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who headed the committee for the compilation of the Quran under Hazrat Abu Bakr (RA)?",
+  "options": [
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)",
+   "Zaid bin Sabit (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Zaid bin Sabit (RA) headed the compilation work. Zaid bin Sabit (RA) ne tadveen ki sarbarahi ki.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-023",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who standardized the copies of the Holy Quran and sent them to different regions?",
+  "options": [
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hazrat Usman (RA) standardized the Quranic text. Hazrat Usman (RA) ne Quran ke nuskhe standard kiye.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-024",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the first Hafiz of the Holy Quran?",
+  "options": [
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Zaid bin Sabit (RA)",
+   "Prophet Muhammad (SAW)",
+   "Hazrat Ali (RA)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Prophet Muhammad (SAW) was the first Hafiz of the Quran. Pehle Hafiz-e-Quran Hazrat Muhammad (SAW) the.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-025",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah is called the heart of the Holy Quran?",
+  "options": [
+   "Surah Yaseen",
+   "Surah Ar-Rahman",
+   "Surah Al-Mulk",
+   "Surah Al-Fatiha"
+  ],
+  "correctIndex": 0,
+  "explanation": "Surah Yaseen is known as the heart of the Holy Quran. Surah Yaseen ko Quran ka dil kaha jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-026",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah is known as Umm-ul-Quran (the Mother of the Quran)?",
+  "options": [
+   "Surah Al-Fatiha",
+   "Surah Al-Baqarah",
+   "Surah Yaseen",
+   "Surah Al-Ikhlas"
+  ],
+  "correctIndex": 0,
+  "explanation": "Surah Al-Fatiha is called Umm-ul-Quran, the Mother of the Quran. Surah Al-Fatiha ko Umm-ul-Quran kaha jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-027",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which angel brought the revelation to Prophet Muhammad (peace be upon him)?",
+  "options": [
+   "Hazrat Jibreel (AS)",
+   "Hazrat Mikael (AS)",
+   "Hazrat Israfeel (AS)",
+   "Hazrat Izraeel (AS)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Hazrat Jibreel (AS) brought the revelation to the Prophet (SAW). Wahi Hazrat Jibreel (AS) le kar aate thay.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-028",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which Surah does Bismillah appear twice, once at the start and once inside the text?",
+  "options": [
+   "Al-Baqarah",
+   "An-Naml",
+   "Al-Kahf",
+   "Al-Rahman"
+  ],
+  "correctIndex": 1,
+  "explanation": "In Surah An-Naml Bismillah appears in the letter of Hazrat Sulaiman (AS) as well. Surah Naml mein Bismillah do martaba hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-029",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Makki Surahs are those revealed in Makkah before which event?",
+  "options": [
+   "Battle of Badr",
+   "Hijrat to Madinah",
+   "Fatah Makkah",
+   "Hajjatul Wida"
+  ],
+  "correctIndex": 1,
+  "explanation": "Makki Surahs were revealed before the Hijrat. Makki Suratein Hijrat se pehle nazil huin.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-030",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which Surah is recommended to be recited on Friday?",
+  "options": [
+   "Al-Kahf",
+   "Al-Mulk",
+   "Al-Waqiah",
+   "Al-Yasin"
+  ],
+  "correctIndex": 0,
+  "explanation": "Surah Al-Kahf is recommended on Friday. Jummah ke din Surah Kahf parhna mustahab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-031",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many books are there in Sihah Sitta?",
+  "options": [
+   "Four",
+   "Five",
+   "Six",
+   "Seven"
+  ],
+  "correctIndex": 2,
+  "explanation": "Sihah Sitta means the six authentic books of Hadith. Sihah Sitta mein chhe kitabein hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-032",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which is the most authentic book of Hadith after the Holy Quran?",
+  "options": [
+   "Sahih Muslim",
+   "Sunan Abu Dawood",
+   "Sahih Bukhari",
+   "Jami Tirmidhi"
+  ],
+  "correctIndex": 2,
+  "explanation": "Sahih Bukhari is considered the most authentic Hadith book. Sahih Bukhari sab se mustanad kitab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-033",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who is the author of Sahih Bukhari?",
+  "options": [
+   "Imam Muslim",
+   "Imam Bukhari",
+   "Imam Tirmidhi",
+   "Imam Nasai"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sahih Bukhari was written by Imam Muhammad ibn Ismail al-Bukhari. Sahih Bukhari Imam Bukhari ki kitab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-034",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who is the author of Sahih Muslim?",
+  "options": [
+   "Imam Bukhari",
+   "Imam Muslim ibn al-Hajjaj",
+   "Imam Abu Dawood",
+   "Imam Ibn Majah"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sahih Muslim was written by Imam Muslim ibn al-Hajjaj. Sahih Muslim Imam Muslim ki kitab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-035",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which of the following is NOT a book of Sihah Sitta?",
+  "options": [
+   "Sahih Bukhari",
+   "Sunan Ibn Majah",
+   "Muwatta Imam Malik",
+   "Sunan Nasai"
+  ],
+  "correctIndex": 2,
+  "explanation": "Muwatta Imam Malik is a famous early book but not part of Sihah Sitta. Muwatta Sihah Sitta mein shamil nahi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-036",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Imam Bukhari was born in which city?",
+  "options": [
+   "Nishapur",
+   "Baghdad",
+   "Bukhara",
+   "Madinah"
+  ],
+  "correctIndex": 2,
+  "explanation": "Imam Bukhari was born in Bukhara. Imam Bukhari Bukhara mein paida hue.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-037",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which Hijri year was Imam Bukhari born?",
+  "options": [
+   "194 AH",
+   "204 AH",
+   "184 AH",
+   "214 AH"
+  ],
+  "correctIndex": 0,
+  "explanation": "Imam Bukhari was born in 194 AH. Imam Bukhari 194 Hijri mein paida hue.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-038",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What does the word Hadith mean in Islamic terminology?",
+  "options": [
+   "Only the Quran",
+   "Sayings, actions and approvals of the Prophet (SAW)",
+   "Only the Sunnah of the Sahaba",
+   "Islamic law only"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hadith means the sayings, actions and approvals of Prophet Muhammad (SAW). Hadith se murad Nabi (SAW) ke aqwal, afaal aur taqreerat hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-039",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who is the author of Sunan Abu Dawood?",
+  "options": [
+   "Imam Abu Dawood",
+   "Imam Malik",
+   "Imam Shafi",
+   "Imam Ahmad"
+  ],
+  "correctIndex": 0,
+  "explanation": "Sunan Abu Dawood was written by Imam Abu Dawood. Sunan Abu Dawood Imam Abu Dawood ki kitab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-040",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who is the author of Jami Tirmidhi?",
+  "options": [
+   "Imam Nasai",
+   "Imam Tirmidhi",
+   "Imam Ibn Majah",
+   "Imam Bukhari"
+  ],
+  "correctIndex": 1,
+  "explanation": "Jami Tirmidhi was written by Imam Tirmidhi. Jami Tirmidhi Imam Tirmidhi ki kitab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-041",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who is the author of Sunan Nasai?",
+  "options": [
+   "Imam Nasai",
+   "Imam Muslim",
+   "Imam Malik",
+   "Imam Shafi"
+  ],
+  "correctIndex": 0,
+  "explanation": "Sunan Nasai was written by Imam Nasai. Sunan Nasai Imam Nasai ki kitab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-042",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who is the author of Sunan Ibn Majah?",
+  "options": [
+   "Imam Ibn Majah",
+   "Imam Abu Dawood",
+   "Imam Tirmidhi",
+   "Imam Ahmad"
+  ],
+  "correctIndex": 0,
+  "explanation": "Sunan Ibn Majah was written by Imam Ibn Majah. Sunan Ibn Majah Imam Ibn Majah ki kitab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-043",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who is the author of Muwatta?",
+  "options": [
+   "Imam Malik ibn Anas",
+   "Imam Abu Hanifa",
+   "Imam Shafi",
+   "Imam Bukhari"
+  ],
+  "correctIndex": 0,
+  "explanation": "Muwatta was written by Imam Malik ibn Anas. Muwatta Imam Malik ki kitab hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-044",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What is Hadith Qudsi?",
+  "options": [
+   "A Hadith whose meaning is from Allah but words are of the Prophet (SAW)",
+   "A Hadith in the Quran",
+   "A weak Hadith",
+   "A Hadith about prayer only"
+  ],
+  "correctIndex": 0,
+  "explanation": "In Hadith Qudsi the meaning is from Allah and the words are of the Prophet (SAW). Hadith Qudsi mein mafhoom Allah ka aur alfaz Nabi (SAW) ke hote hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-045",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What does Sunnah mean?",
+  "options": [
+   "The way and practice of the Prophet (SAW)",
+   "Only Fard prayers",
+   "Islamic history",
+   "A book of Fiqh"
+  ],
+  "correctIndex": 0,
+  "explanation": "Sunnah is the way and practice of Prophet Muhammad (SAW). Sunnah Nabi (SAW) ka tareeqa hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-046",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which year was Prophet Muhammad (SAW) born?",
+  "options": [
+   "570 AD",
+   "571 AD",
+   "572 AD",
+   "575 AD"
+  ],
+  "correctIndex": 1,
+  "explanation": "Prophet Muhammad (SAW) was born in 571 AD, the Year of the Elephant. Aap (SAW) 571 AD mein paida hue.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-047",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Prophet Muhammad (SAW) was born in which city?",
+  "options": [
+   "Madinah",
+   "Taif",
+   "Makkah",
+   "Jerusalem"
+  ],
+  "correctIndex": 2,
+  "explanation": "Prophet Muhammad (SAW) was born in Makkah. Aap (SAW) Makkah mein paida hue.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-048",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The year of the birth of Prophet Muhammad (SAW) is known as?",
+  "options": [
+   "Year of the Elephant",
+   "Year of Sorrow",
+   "Year of Hijrat",
+   "Year of Victory"
+  ],
+  "correctIndex": 0,
+  "explanation": "571 AD is called the Year of the Elephant (Aam-ul-Feel). 571 AD ko Aam-ul-Feel kehte hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-049",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What was the name of the father of Prophet Muhammad (SAW)?",
+  "options": [
+   "Abdul Muttalib",
+   "Abu Talib",
+   "Abdullah",
+   "Hamza"
+  ],
+  "correctIndex": 2,
+  "explanation": "His father was Abdullah, who died before his birth. Aap (SAW) ke walid ka naam Abdullah tha.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-050",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What was the name of the mother of Prophet Muhammad (SAW)?",
+  "options": [
+   "Halima",
+   "Amina bint Wahb",
+   "Khadija",
+   "Fatima"
+  ],
+  "correctIndex": 1,
+  "explanation": "His mother was Amina bint Wahb. Aap (SAW) ki walida ka naam Amina bint Wahb tha.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-051",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the foster mother of Prophet Muhammad (SAW)?",
+  "options": [
+   "Hazrat Khadija (RA)",
+   "Halima Saadia (RA)",
+   "Hazrat Amina (RA)",
+   "Hazrat Asma (RA)"
+  ],
+  "correctIndex": 1,
+  "explanation": "Halima Saadia (RA) was his foster mother. Halima Saadia (RA) Aap (SAW) ki razai maa thin.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-052",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the grandfather of Prophet Muhammad (SAW)?",
+  "options": [
+   "Abu Talib",
+   "Abdul Muttalib",
+   "Abdullah",
+   "Abbas"
+  ],
+  "correctIndex": 1,
+  "explanation": "His grandfather was Abdul Muttalib. Aap (SAW) ke dada Abdul Muttalib the.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-053",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who raised Prophet Muhammad (SAW) after his grandfather?",
+  "options": [
+   "Hazrat Hamza (RA)",
+   "Abu Talib",
+   "Hazrat Abbas (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "correctIndex": 1,
+  "explanation": "His uncle Abu Talib raised him. Abu Talib ne Aap (SAW) ki parvarish ki.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-054",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the first wife of Prophet Muhammad (SAW)?",
+  "options": [
+   "Hazrat Aisha (RA)",
+   "Hazrat Khadija (RA)",
+   "Hazrat Hafsa (RA)",
+   "Hazrat Sawda (RA)"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hazrat Khadija (RA) was his first wife. Pehli biwi Hazrat Khadija (RA) thin.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-055",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "At what age did Prophet Muhammad (SAW) receive the first revelation?",
+  "options": [
+   "35 years",
+   "38 years",
+   "40 years",
+   "43 years"
+  ],
+  "correctIndex": 2,
+  "explanation": "He received the first revelation at the age of 40. Pehli Wahi 40 saal ki umar mein aayi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-056",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which year did Prophet Muhammad (SAW) receive the first revelation?",
+  "options": [
+   "608 AD",
+   "610 AD",
+   "612 AD",
+   "622 AD"
+  ],
+  "correctIndex": 1,
+  "explanation": "The first revelation came in 610 AD. Pehli Wahi 610 AD mein aayi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-057",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which cave did Prophet Muhammad (SAW) receive the first revelation?",
+  "options": [
+   "Cave Thawr",
+   "Cave Hira",
+   "Cave Uhud",
+   "Cave Safa"
+  ],
+  "correctIndex": 1,
+  "explanation": "The first revelation came in Cave Hira. Pehli Wahi Ghar-e-Hira mein aayi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-058",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which angel brought the revelation to Prophet Muhammad (SAW)?",
+  "options": [
+   "Mikail (AS)",
+   "Israfil (AS)",
+   "Jibrael (AS)",
+   "Izrail (AS)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Angel Jibrael (AS) brought the revelation. Wahi Hazrat Jibrael (AS) le kar aaye.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-059",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the first adult man to accept Islam?",
+  "options": [
+   "Hazrat Umar (RA)",
+   "Hazrat Ali (RA)",
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Usman (RA)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hazrat Abu Bakr (RA) was the first adult man to accept Islam. Pehle mard Hazrat Abu Bakr (RA) the.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-060",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the first woman to accept Islam?",
+  "options": [
+   "Hazrat Aisha (RA)",
+   "Hazrat Fatima (RA)",
+   "Hazrat Khadija (RA)",
+   "Hazrat Hafsa (RA)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hazrat Khadija (RA) was the first woman to accept Islam. Pehli khatoon Hazrat Khadija (RA) thin.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-061",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the first child to accept Islam?",
+  "options": [
+   "Hazrat Hasan (RA)",
+   "Hazrat Ali (RA)",
+   "Hazrat Zaid (RA)",
+   "Hazrat Usman (RA)"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hazrat Ali (RA) was the first child to accept Islam. Pehle bachche Hazrat Ali (RA) the.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-062",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which year did the Hijrat (migration) to Madinah take place?",
+  "options": [
+   "620 AD",
+   "621 AD",
+   "622 AD",
+   "624 AD"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Hijrat took place in 622 AD. Hijrat 622 AD mein hui.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-063",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What was the old name of Madinah?",
+  "options": [
+   "Taif",
+   "Yathrib",
+   "Kufa",
+   "Basra"
+  ],
+  "correctIndex": 1,
+  "explanation": "Madinah was earlier called Yathrib. Madinah ka purana naam Yathrib tha.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-064",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which was the first mosque built in Islam?",
+  "options": [
+   "Masjid Nabawi",
+   "Masjid Quba",
+   "Masjid Aqsa",
+   "Masjid Haram"
+  ],
+  "correctIndex": 1,
+  "explanation": "Masjid Quba was the first mosque built. Pehli masjid Masjid Quba thi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-065",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The Battle of Badr took place in which Hijri year?",
+  "options": [
+   "1 AH",
+   "2 AH",
+   "3 AH",
+   "5 AH"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Battle of Badr took place in 2 AH. Ghazwa Badr 2 Hijri mein hua.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-066",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many Muslims took part in the Battle of Badr?",
+  "options": [
+   "313",
+   "1000",
+   "3000",
+   "10000"
+  ],
+  "correctIndex": 0,
+  "explanation": "313 Muslims took part in Badr. Badr mein 313 Musalman the.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-067",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The Battle of Uhud took place in which Hijri year?",
+  "options": [
+   "2 AH",
+   "3 AH",
+   "4 AH",
+   "5 AH"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Battle of Uhud took place in 3 AH. Ghazwa Uhud 3 Hijri mein hua.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-068",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The Battle of Khandaq (Trench) took place in which Hijri year?",
+  "options": [
+   "3 AH",
+   "4 AH",
+   "5 AH",
+   "6 AH"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Battle of Khandaq took place in 5 AH. Ghazwa Khandaq 5 Hijri mein hua.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-069",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Fatah Makkah (Conquest of Makkah) took place in which Hijri year?",
+  "options": [
+   "6 AH",
+   "7 AH",
+   "8 AH",
+   "10 AH"
+  ],
+  "correctIndex": 2,
+  "explanation": "Fatah Makkah took place in 8 AH. Fatah Makkah 8 Hijri mein hui.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-070",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "The Treaty of Hudaybiyyah was signed in which Hijri year?",
+  "options": [
+   "5 AH",
+   "6 AH",
+   "7 AH",
+   "8 AH"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Treaty of Hudaybiyyah was signed in 6 AH. Sulah Hudaybiyyah 6 Hijri mein hui.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-071",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Hajjatul Wida (Farewell Pilgrimage) took place in which Hijri year?",
+  "options": [
+   "8 AH",
+   "9 AH",
+   "10 AH",
+   "11 AH"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hajjatul Wida took place in 10 AH. Hajjatul Wida 10 Hijri mein hua.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-072",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Prophet Muhammad (SAW) passed away in which year?",
+  "options": [
+   "630 AD",
+   "631 AD",
+   "632 AD",
+   "634 AD"
+  ],
+  "correctIndex": 2,
+  "explanation": "He passed away in 632 AD (11 AH). Aap (SAW) ka wisal 632 AD mein hua.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-073",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "At what age did Prophet Muhammad (SAW) pass away?",
+  "options": [
+   "60 years",
+   "61 years",
+   "63 years",
+   "65 years"
+  ],
+  "correctIndex": 2,
+  "explanation": "He passed away at the age of 63. Wisal ke waqt umar 63 saal thi.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-074",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many Ghazwat (battles led by the Prophet SAW) are counted in standard textbooks?",
+  "options": [
+   "19",
+   "23",
+   "27",
+   "31"
+  ],
+  "correctIndex": 2,
+  "explanation": "Standard textbooks count 27 Ghazwat. Kitabon mein Ghazwat ki tadad 27 batayi jati hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-075",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which was the last Ghazwa of Prophet Muhammad (SAW)?",
+  "options": [
+   "Badr",
+   "Tabuk",
+   "Uhud",
+   "Khandaq"
+  ],
+  "correctIndex": 1,
+  "explanation": "Ghazwa Tabuk in 9 AH was the last Ghazwa. Aakhri Ghazwa Tabuk tha, 9 Hijri mein.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-076",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the first Khalifa of Islam?",
+  "options": [
+   "Hazrat Umar (RA)",
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hazrat Abu Bakr (RA) was the first Khalifa. Pehle Khalifa Hazrat Abu Bakr (RA) the.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-077",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Hazrat Abu Bakr (RA) is known by which title?",
+  "options": [
+   "Farooq",
+   "Siddiq",
+   "Ghani",
+   "Haider"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hazrat Abu Bakr (RA) is known as Siddiq. Hazrat Abu Bakr (RA) ka laqab Siddiq hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-078",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the second Khalifa of Islam?",
+  "options": [
+   "Hazrat Ali (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Umar (RA)",
+   "Hazrat Abu Bakr (RA)"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hazrat Umar (RA) was the second Khalifa. Dusre Khalifa Hazrat Umar (RA) the.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-079",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Hazrat Usman (RA) is known by which title?",
+  "options": [
+   "Farooq",
+   "Siddiq",
+   "Dhun-Nurayn",
+   "Haider"
+  ],
+  "correctIndex": 2,
+  "explanation": "Hazrat Usman (RA) is known as Dhun-Nurayn. Hazrat Usman (RA) ka laqab Dhun-Nurayn hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-080",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who was the fourth Khalifa of Islam?",
+  "options": [
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "correctIndex": 3,
+  "explanation": "Hazrat Ali (RA) was the fourth Khalifa. Chauthe Khalifa Hazrat Ali (RA) the.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-081",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What is the correct order of Khulafa-e-Rashideen?",
+  "options": [
+   "Abu Bakr, Umar, Usman, Ali",
+   "Umar, Abu Bakr, Ali, Usman",
+   "Abu Bakr, Usman, Umar, Ali",
+   "Ali, Abu Bakr, Umar, Usman"
+  ],
+  "correctIndex": 0,
+  "explanation": "The order is Abu Bakr, Umar, Usman and Ali (RA). Tarteeb Abu Bakr, Umar, Usman, Ali hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-082",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Who started the Hijri calendar?",
+  "options": [
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hazrat Umar (RA) started the Hijri calendar. Hijri calendar Hazrat Umar (RA) ne shuru kiya.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-083",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many Pillars (Arkan) of Islam are there?",
+  "options": [
+   "Four",
+   "Five",
+   "Six",
+   "Seven"
+  ],
+  "correctIndex": 1,
+  "explanation": "There are five Pillars of Islam. Islam ke paanch Arkan hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-084",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "What is the rate of Zakat on cash and trade goods?",
+  "options": [
+   "2.5 percent",
+   "5 percent",
+   "7.5 percent",
+   "10 percent"
+  ],
+  "correctIndex": 0,
+  "explanation": "Zakat is 2.5 percent on cash and trade goods. Zakat ki sharah 2.5 feesad hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-085",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "In which Islamic month do Muslims fast?",
+  "options": [
+   "Shaban",
+   "Ramadan",
+   "Shawwal",
+   "Muharram"
+  ],
+  "correctIndex": 1,
+  "explanation": "Muslims fast in Ramadan, the 9th Islamic month. Roze Ramadan mein rakhe jate hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-086",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Hajj is performed in which Islamic month?",
+  "options": [
+   "Ramadan",
+   "Shawwal",
+   "Zil Qad",
+   "Zil Hajj"
+  ],
+  "correctIndex": 3,
+  "explanation": "Hajj is performed in Zil Hajj. Hajj Zil Hajj mein ada kiya jata hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-087",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Wuquf-e-Arafat (standing at Arafat) takes place on which date?",
+  "options": [
+   "8 Zil Hajj",
+   "9 Zil Hajj",
+   "10 Zil Hajj",
+   "11 Zil Hajj"
+  ],
+  "correctIndex": 1,
+  "explanation": "Wuquf-e-Arafat is on 9 Zil Hajj. Wuquf-e-Arafat 9 Zil Hajj ko hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-088",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "How many rounds (circuits) are there in Tawaf of the Kaaba?",
+  "options": [
+   "Five",
+   "Six",
+   "Seven",
+   "Eight"
+  ],
+  "correctIndex": 2,
+  "explanation": "Tawaf has seven rounds around the Kaaba. Tawaf mein saat chakkar hote hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-089",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Imam Abu Hanifa is the founder of which school of Fiqh?",
+  "options": [
+   "Shafi school",
+   "Maliki school",
+   "Hanafi school",
+   "Hanbali school"
+  ],
+  "correctIndex": 2,
+  "explanation": "Imam Abu Hanifa founded the Hanafi school. Imam Abu Hanifa Hanafi mazhab ke baani hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ },
+ {
+  "id": "ISL-090",
+  "post": [
+   "zamungkor",
+   "tt",
+   "qari",
+   "swse-theology",
+   "police",
+   "forest"
+  ],
+  "subject": "Islamiyat",
+  "subjectKey": "islamiyat",
+  "topic": "Islamiyat",
+  "question": "Which school of Fiqh is most followed in Pakistan?",
+  "options": [
+   "Shafi",
+   "Maliki",
+   "Hanbali",
+   "Hanafi"
+  ],
+  "correctIndex": 3,
+  "explanation": "The Hanafi school is most followed in Pakistan. Pakistan mein aksar Hanafi mazhab par amal hota hai.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated"
+ }
+]
