@@ -1,121 +1,129 @@
-// Mock Tests — list of all 20 mocks / practice tests.
+// Library — notes with "Recall first" prompts.
+// Stage 1 P0.3 — owner annotations: a private text field on each note,
+// stored locally only. Annotations are NEVER sent to the AI tutor unless
+// the owner enables the opt-in below (default OFF).
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { MOCKS, PATTERN_BANNER, trustedOnlyCount } from "@/lib/data";
-import { loadReviews } from "@/lib/tracking";
-import { DEFAULT_SCORING, scoringLabel, type ScoringConfig } from "@/lib/scoring";
+import { useMemo, useState } from "react";
+import { NOTES } from "@/lib/data";
+import {
+  loadAnnotationOptIn,
+  loadAnnotations,
+  saveAnnotation,
+  setAnnotationOptIn,
+} from "@/lib/tracking";
 
-export default function MockList() {
-  // Provisional = today's behaviour: mocks built from the full bank, which
-  // is unreviewed AI-generated practice material. Trusted = reviewed items
-  // only (never silently filled with unreviewed items).
-  const [mode, setMode] = useState<"provisional" | "trusted">("provisional");
-  // Stage 1 P0.2 — the owner's local review decisions. Trusted counts are
-  // computed against these overrides, so a Verify on /review immediately
-  // unlocks the item in Trusted Mode.
-  const [reviews] = useState(() => loadReviews());
-  const overrides: Record<string, string> = {};
-  for (const [qid, r] of Object.entries(reviews)) overrides[qid] = r.reviewStatus;
-  // Stage 1 P0.1 — per-mock scoring override for this run only. "default"
-  // = the mock's own config (or the zero-penalty default, policy unknown).
-  // "zero" / "0.25" override it for this run; the choice is carried in the
-  // Start link's ?penalty= query param and actually changes the score.
-  const [penaltyOverride, setPenaltyOverride] = useState<Record<string, string>>({});
+export default function Library() {
+  const subjects = useMemo(() => Object.keys(NOTES).sort(), []);
+  const [subject, setSubject] = useState(subjects[0] ?? "");
+  const [query, setQuery] = useState("");
+  const [hidden, setHidden] = useState<Record<string, boolean>>({});
+  const [annotations, setAnnotations] = useState<Record<string, string>>(() => loadAnnotations());
+  const [optIn, setOptIn] = useState(() => loadAnnotationOptIn());
+  const [drafts, setDrafts] = useState<Record<string, string>>({});
+  const [savedTick, setSavedTick] = useState<Record<string, number>>({});
 
-  function mockScoring(m: (typeof MOCKS)[number]): ScoringConfig {
-    return m.scoring ?? DEFAULT_SCORING;
+  const notes = useMemo(() => {
+    const list = (NOTES[subject] ?? []).map((n) => ({
+      ...n,
+      key: `${subject}||${n.title}`,
+    }));
+    if (!query.trim()) return list;
+    const q = query.toLowerCase();
+    return list.filter((n) => (n.title + " " + n.body).toLowerCase().includes(q));
+  }, [subject, query]);
+
+  function toggleOptIn(on: boolean) {
+    setOptIn(on);
+    setAnnotationOptIn(on);
   }
-  function startHref(m: (typeof MOCKS)[number]): string {
-    const base = `/mock/${m.id}${mode === "trusted" ? "?mode=trusted" : ""}`;
-    const ov = penaltyOverride[m.id];
-    if (!ov || ov === "default") return base;
-    return `${base}${mode === "trusted" ? "&" : "?"}penalty=${ov}`;
+
+  function saveNoteAnnotation(key: string) {
+    const text = drafts[key] ?? annotations[key] ?? "";
+    saveAnnotation(key, text);
+    setAnnotations(loadAnnotations());
+    setSavedTick((s) => ({ ...s, [key]: Date.now() }));
   }
 
   return (
     <div>
-      <h1>Mock Tests</h1>
-      <div className="alert">
-        <b>{PATTERN_BANNER}</b>
-      </div>
+      <h1>Library — Notes</h1>
       <p className="muted">
-        Each mock states which pattern variant it follows. ZamungKor mocks are disjoint (no question
-        repeats across them). Track mocks draw from the <b>shared practice bank</b> — questions may
-        repeat across track mocks; this is stated on each mock because the 645-question bank cannot
-        supply 8+ disjoint 100-question mocks. All mocks are <b>practice mocks, not official ETEA
-        papers</b>.
+        Short, exam-focused, original notes. <b>Recall first:</b> cover the note, recall it from
+        memory, then read. Plain re-reading is low-utility; retrieval practice is high-utility.
       </p>
-      <p className="muted">
-        Mocks are <b>provisional practice</b> built from unreviewed AI-generated questions.
-        <b> Trusted mode</b> uses reviewed questions only and returns fewer questions when not
-        enough have been reviewed yet — it never fills the gap with unreviewed items.
-      </p>
-      <div style={{ display: "flex", gap: 8, marginBottom: 16 }} role="group" aria-label="Mock mode">
-        <button
-          className={mode === "provisional" ? "" : "secondary"}
-          onClick={() => setMode("provisional")}
-          aria-pressed={mode === "provisional"}
-        >
-          Provisional (all questions)
-        </button>
-        <button
-          className={mode === "trusted" ? "" : "secondary"}
-          onClick={() => setMode("trusted")}
-          aria-pressed={mode === "trusted"}
-        >
-          Trusted (reviewed only)
-        </button>
+      <div className="card">
+        <label style={{ display: "block" }}>
+          <input
+            type="checkbox"
+            checked={optIn}
+            onChange={(e) => toggleOptIn(e.target.checked)}
+          />{" "}
+          <b>Include my note annotations in tutor answers</b>
+        </label>
+        <p className="muted">
+          Off by default. Your annotations are private notes stored on this device only — they are
+          NOT sent to the AI tutor unless you enable this. When enabled, the tutor sees them as
+          your own notes alongside the library.
+        </p>
       </div>
-      {MOCKS.map((m) => {
-        const trusted = trustedOnlyCount(m, overrides);
-        const trustedDisabled = mode === "trusted" && trusted === 0;
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <select aria-label="Subject" value={subject} onChange={(e) => setSubject(e.target.value)}>
+          {subjects.map((s) => (
+            <option key={s} value={s}>
+              {s} ({NOTES[s].length})
+            </option>
+          ))}
+        </select>
+        <input
+          type="text"
+          placeholder="Search notes…"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          aria-label="Search notes"
+        />
+      </div>
+      {notes.length === 0 && <p>No notes match that search.</p>}
+      {notes.map((n) => {
+        const isHidden = hidden[n.key] ?? true;
+        const draft = drafts[n.key] ?? annotations[n.key] ?? "";
         return (
-          <div className="card" key={m.id}>
-            <h3>
-              {m.title}{" "}
-              <span className="badge teal">{m.total} Q</span>
-              <span className="badge grey">{m.minutes} min</span>
-            </h3>
-            <p className="muted">{m.note}</p>
-            <p className="muted">
-              {trusted > 0
-                ? `${trusted} of ${m.total} reviewed questions available in Trusted mode.`
-                : "No reviewed questions yet — provisional practice only."}
-            </p>
-            <p className="muted">
-              Scoring: {scoringLabel(mockScoring(m))}
-              {m.scoring
-                ? " — this mock's own config."
-                : " — ETEA has published no negative-marking policy for these projects."}
-            </p>
-            <label>
-              <span className="muted">Scoring for this run: </span>
-              <select
-                aria-label={`Scoring for ${m.title}`}
-                value={penaltyOverride[m.id] ?? "default"}
-                onChange={(e) =>
-                  setPenaltyOverride((prev) => ({ ...prev, [m.id]: e.target.value }))
-                }
-              >
-                <option value="default">Mock default ({scoringLabel(mockScoring(m))})</option>
-                <option value="zero">No penalty (policy unknown)</option>
-                <option value="0.25">−0.25 per wrong answer (unverified assumption)</option>
-              </select>
-            </label>
-            {trustedDisabled ? (
-              <button className="btn" disabled>
-                Start mock (Trusted)
+          <div className="card" key={n.key}>
+            <h3>{n.title}</h3>
+            {n.source && <p className="muted">{n.source}</p>}
+            {isHidden ? (
+              <button className="secondary" onClick={() => setHidden((h) => ({ ...h, [n.key]: false }))}>
+                Recall first — tap to reveal
               </button>
             ) : (
-              <Link
-                className="btn"
-                href={startHref(m)}
-              >
-                Start mock{mode === "trusted" ? " (Trusted)" : ""}
-              </Link>
+              <>
+                <p>{n.body}</p>
+                <button className="secondary" onClick={() => setHidden((h) => ({ ...h, [n.key]: true }))}>
+                  Hide again
+                </button>
+              </>
             )}
+            <div style={{ marginTop: 12 }}>
+              <label>
+                <span className="muted">Owner annotation (private — not sent to the tutor unless enabled above)</span>
+                <textarea
+                  aria-label={`Owner annotation for ${n.title}`}
+                  value={draft}
+                  onChange={(e) => setDrafts((d) => ({ ...d, [n.key]: e.target.value }))}
+                  rows={2}
+                  style={{ display: "block", width: "100%", marginTop: 4 }}
+                  placeholder="Your own note on this topic — a correction, a reminder, a link to check…"
+                />
+              </label>
+              <div style={{ display: "flex", gap: 8, marginTop: 6, alignItems: "center" }}>
+                <button className="secondary" onClick={() => saveNoteAnnotation(n.key)}>
+                  Save annotation
+                </button>
+                {savedTick[n.key] && (
+                  <span className="muted">Saved privately on this device.</span>
+                )}
+              </div>
+            </div>
           </div>
         );
       })}
