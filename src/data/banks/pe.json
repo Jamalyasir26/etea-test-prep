@@ -1,0 +1,552 @@
+[
+ {
+  "id": "DRW-011",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "How many players are there in a cricket team on the field?",
+  "options": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "correctIndex": 2,
+  "explanation": "A cricket team has 11 players. Roman Urdu: cricket mein aik team mein 11 khilari hote hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-012",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "How many balls are there in one over in cricket?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "correctIndex": 2,
+  "explanation": "One over has 6 legal balls. Roman Urdu: aik over mein 6 gendain hoti hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-013",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "How many players are there in a football (soccer) team on the field?",
+  "options": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "correctIndex": 2,
+  "explanation": "A football team has 11 players, including the goalkeeper.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-014",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "How long is a standard football (soccer) match, excluding extra time?",
+  "options": [
+   "60 minutes",
+   "80 minutes",
+   "90 minutes",
+   "120 minutes"
+  ],
+  "correctIndex": 2,
+  "explanation": "A football match has two halves of 45 minutes, making 90 minutes in total.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-015",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "How many players are there in a hockey team on the field?",
+  "options": [
+   "9",
+   "10",
+   "11",
+   "7"
+  ],
+  "correctIndex": 2,
+  "explanation": "A field hockey team has 11 players on the field, including the goalkeeper.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-016",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "How often are the Olympic Games held?",
+  "options": [
+   "Every 2 years",
+   "Every 3 years",
+   "Every 4 years",
+   "Every 5 years"
+  ],
+  "correctIndex": 2,
+  "explanation": "The Olympic Games are held every four years. Roman Urdu: Olympics har chaar saal baad hote hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-017",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "What is the standard distance of a marathon race?",
+  "options": [
+   "26 km",
+   "32 km",
+   "42 km (about 42.195 km)",
+   "50 km"
+  ],
+  "correctIndex": 2,
+  "explanation": "A marathon is about 42.195 kilometres long.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-018",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "Why is warming up before exercise important?",
+  "options": [
+   "It makes muscles cold",
+   "It prepares the body and reduces the risk of injury",
+   "It stops the heart from beating",
+   "It makes exercise unnecessary"
+  ],
+  "correctIndex": 1,
+  "explanation": "A warm-up slowly raises heart rate and loosens muscles, so injury is less likely.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-019",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "How many bones are there in the skeleton of a normal adult human?",
+  "options": [
+   "106",
+   "206",
+   "306",
+   "406"
+  ],
+  "correctIndex": 1,
+  "explanation": "An adult human skeleton normally has 206 bones. Roman Urdu: baaligh insaan mein 206 haddiyan hoti hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "DRW-020",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Drawing/PE",
+  "question": "Which of the following is the best example of regular aerobic exercise?",
+  "options": [
+   "Watching television",
+   "Brisk walking or jogging",
+   "Sleeping",
+   "Sitting for a long time"
+  ],
+  "correctIndex": 1,
+  "explanation": "Brisk walking and jogging raise the heart rate and improve fitness; the others do not exercise the body.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
+ },
+ {
+  "id": "PE-001",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — basketball",
+  "question": "How many players are there in a basketball team on the court?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "correctIndex": 1,
+  "explanation": "A basketball team has 5 players on the court. Roman Urdu: basketball mein aik team ke 5 khilari court par hote hain.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-002",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — volleyball",
+  "question": "How many players are there in a volleyball team on the court?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "correctIndex": 2,
+  "explanation": "A volleyball team has 6 players on the court.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-003",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Racket games — badminton",
+  "question": "In badminton, what is the shuttlecock also called?",
+  "options": [
+   "Bird",
+   "Birdie",
+   "Ball",
+   "Shuttle bat"
+  ],
+  "correctIndex": 1,
+  "explanation": "The shuttlecock, the light cone players hit over the net, is also called a birdie.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-004",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Athletics — sprints",
+  "question": "Which race is known as the shortest sprint in athletics?",
+  "options": [
+   "200 metres",
+   "400 metres",
+   "100 metres",
+   "800 metres"
+  ],
+  "correctIndex": 2,
+  "explanation": "The 100-metre race is the shortest sprint in athletics.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-005",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Fitness components — flexibility",
+  "question": "Which component of physical fitness is tested by the sit-and-reach test?",
+  "options": [
+   "Flexibility",
+   "Strength",
+   "Speed",
+   "Balance"
+  ],
+  "correctIndex": 0,
+  "explanation": "The sit-and-reach test measures how far a person can bend forward, which shows flexibility.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-006",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Exercise — cooling down",
+  "question": "Why is cooling down after exercise important?",
+  "options": [
+   "It makes muscles bigger at once",
+   "It helps the body return to its normal state gradually",
+   "It stops sweating immediately",
+   "It replaces the need for sleep"
+  ],
+  "correctIndex": 1,
+  "explanation": "Cooling down with slow movement and stretching lets the heart rate and breathing return to normal gradually.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-007",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — kabaddi",
+  "question": "How many players are there in a kabaddi team on the court?",
+  "options": [
+   "5",
+   "6",
+   "9",
+   "7"
+  ],
+  "correctIndex": 3,
+  "explanation": "A kabaddi team has 7 players on the court.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-008",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Athletics — field events",
+  "question": "In which athletics event is a heavy metal ball thrown as far as possible?",
+  "options": [
+   "Javelin throw",
+   "Discus throw",
+   "Shot put",
+   "Hammer throw"
+  ],
+  "correctIndex": 2,
+  "explanation": "In shot put, the athlete pushes a heavy metal ball from the shoulder as far as possible.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-009",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Exercise physiology — heart rate",
+  "question": "What does heart rate measure?",
+  "options": [
+   "The number of heartbeats per minute",
+   "The amount of blood in the body",
+   "The size of the heart",
+   "The speed of running"
+  ],
+  "correctIndex": 0,
+  "explanation": "Heart rate is the number of times the heart beats in one minute.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-010",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Sportsmanship and fair play",
+  "question": "What does good sportsmanship mean in a game?",
+  "options": [
+   "Winning by any means",
+   "Playing fairly and respecting opponents and officials",
+   "Refusing to play against strong teams",
+   "Arguing with the referee"
+  ],
+  "correctIndex": 1,
+  "explanation": "Good sportsmanship means playing by the rules, respecting opponents and officials, and accepting the result gracefully.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "sourceNote": "AI-drafted; unreviewed"
+ }
+]

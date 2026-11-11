@@ -23,7 +23,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-002",
@@ -49,7 +52,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-003",
@@ -75,7 +81,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-004",
@@ -101,7 +110,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-005",
@@ -127,7 +139,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-006",
@@ -153,7 +168,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-007",
@@ -179,7 +197,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-008",
@@ -205,7 +226,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-009",
@@ -231,7 +255,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-010",
@@ -257,7 +284,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-011",
@@ -283,7 +313,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-012",
@@ -309,7 +342,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-013",
@@ -335,7 +371,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-014",
@@ -361,7 +400,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-015",
@@ -387,7 +429,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-016",
@@ -413,7 +458,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-017",
@@ -439,7 +487,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-018",
@@ -465,7 +516,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-019",
@@ -491,7 +545,10 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  },
  {
   "id": "PPR-020",
@@ -517,6 +574,9 @@
   "difficulty": "medium",
   "pastPaperRef": "Same concept as a past-paper question, reworded in a different style — not the actual paper",
   "verified": false,
-  "source": "ai-generated"
+  "source": "ai-generated",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null
  }
 ]
