@@ -1,6 +1,6 @@
 // qa-540.mjs — structural + consistency-heuristic QA for the ETEA Prep banks.
 // NOTE: the filename is historical — it dates from when the bank held 540
-// items. The active total is now 590; the name is kept so existing
+// items. The active total is now 645 (Stage 1 P0.3 added 55); the name is kept so existing
 // references (`npm run qa`, QA-540.md, VERIFY-phase2.md) keep working.
 // Plain node, no dependencies. Run: npm run qa  (node scripts/qa-540.mjs)
 // Exit code 0 = all checks pass; 1 = any check fails.
@@ -8,7 +8,7 @@
 // SCOPE: this is STRUCTURAL + consistency-heuristic QA only. It checks counts,
 // option shape, ID uniqueness, near-duplicate stems, the PED-009 regression and
 // mock-composition consistency. It does NOT declare the bank subject-matter
-// verified — full subject verification of all 590 items is out of scope.
+// verified — full subject verification of all 645 items is out of scope.
 //
 // Bank layout note: drawing_pe.json is LEGACY — kept on disk, superseded by
 // drawing.json (DRW-001..DRW-030) + pe.json (DRW-011..020 + PE-001..PE-010).
@@ -25,11 +25,11 @@ const CONTENT_PATH = join(ROOT, "src/data/content.json");
 
 // Expected ACTIVE per-bank counts (drawing_pe.json excluded — legacy).
 const EXPECTED = {
-  arabic: 60, drawing: 20, pe: 20, english: 45, gk: 30, islamiyat: 90,
+  arabic: 80, drawing: 20, pe: 20, english: 45, gk: 30, islamiyat: 105,
   it: 30, maths: 45, pakstudies: 45, pastpapers: 20, pastpapers_reworded: 20,
-  pedagogy: 30, science: 30, socialstudies: 30, tajweed: 30, urdu: 45,
+  pedagogy: 30, science: 30, socialstudies: 30, tajweed: 50, urdu: 45,
 };
-const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 590
+const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 645
 const LEGACY_FILE = "drawing_pe.json";
 
 const results = []; // { name, pass, detail }
@@ -255,9 +255,9 @@ const content = loadJson(CONTENT_PATH);
 
   // content.json counts agree with the banks.
   const counts = content.counts || {};
-  check("content.json counts.total = 590 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
+  check("content.json counts.total = 645 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
   const bySubjectSum = (counts.bySubject || []).reduce((s, [, n]) => s + n, 0);
-  check("content.json counts.bySubject sums to 590", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
+  check("content.json counts.bySubject sums to 645", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
   const bySubject = content.bySubject || {};
   const indexBad = [];
   for (const [key, expected] of Object.entries(EXPECTED)) {
