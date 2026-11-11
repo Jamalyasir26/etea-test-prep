@@ -4,8 +4,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { retrieve } from "@/lib/data";
-import { computeStats, loadAttempts } from "@/lib/tracking";
+import { retrieve, tokenize } from "@/lib/data";
+import {
+  computeStats,
+  loadAnnotationOptIn,
+  loadAnnotations,
+  loadAttempts,
+} from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
 
 type Msg = { role: "user" | "ai" | "sys"; text: string };
@@ -24,6 +29,15 @@ export default function Tutor() {
   const [explainId, setExplainId] = useState("");
   const [explainOut, setExplainOut] = useState("");
   const [weakest, setWeakest] = useState<string>("");
+  // Stage 1 P0.3 — owner annotations are included in tutor requests ONLY
+  // when the owner enabled the opt-in in the Library (default OFF).
+  const [annotationsOn, setAnnotationsOn] = useState(false);
+  const [annotations, setAnnotations] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    setAnnotationsOn(loadAnnotationOptIn());
+    setAnnotations(loadAnnotations());
+  }, []);
 
   useEffect(() => {
     fetch("/api/tutor")
@@ -41,21 +55,40 @@ export default function Tutor() {
     const history = msgs.filter((m) => m.role !== "sys").map((m) => ({ role: m.role, text: m.text }));
     setMsgs((m) => [...m, { role: "user", text: q }]);
     setBusy(true);
+    // Stage 1 P0.3 — annotations leave this device ONLY when the owner
+    // enabled the opt-in in the Library. Otherwise nothing is sent.
+    const annotationsToSend = annotationsOn
+      ? Object.entries(annotations)
+          .map(([key, text]) => ({ note: key.split("||")[1] ?? key, text: text.slice(0, 1000) }))
+          .slice(0, 20)
+      : [];
     try {
       const res = await fetch("/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: q, history, lang }),
+        body: JSON.stringify({ message: q, history, lang, annotations: annotationsToSend }),
       });
       const j = await res.json();
       if (!res.ok) {
         // Offline fallback: search the library directly.
         const { notes, questions } = retrieve(q, 3, 3);
+        const terms = tokenize(q);
+        const matchingAnnotations = annotationsOn
+          ? Object.entries(annotations)
+              .filter(([key, text]) => {
+                const hay = `${key} ${text}`.toLowerCase();
+                return terms.some((t) => hay.includes(t));
+              })
+              .slice(0, 3)
+          : [];
         const fb = [
           j.error ?? "Live AI is unavailable right now.",
           notes.length || questions.length
             ? `\n\nOffline search in this library found:\n${notes.map((n) => `• Note: ${n.title}`).join("\n")}\n${questions.map((x) => `• MCQ ${x.id}: ${x.question} — ${x.options[x.correctIndex]}`).join("\n")}`
             : "\n\nNo matching note or question was found in this library either — try rephrasing, or use the Library section.",
+          matchingAnnotations.length
+            ? `\n\nYour annotations on this topic:\n${matchingAnnotations.map(([key, text]) => `• ${key.split("||")[1] ?? key}: ${text}`).join("\n")}`
+            : "",
         ].join("");
         setMsgs((m) => [...m, { role: "ai", text: fb }]);
       } else {
@@ -104,6 +137,12 @@ export default function Tutor() {
             ? `Live AI keys are configured — Gemini: ${status.gemini ? "yes" : "no"}, Groq fallback: ${status.groq ? "yes" : "not set"}, OpenRouter fallback: ${status.openrouter ? "yes" : "not set"}. Keys configured — live responsiveness not health-checked.`
             : "Live AI is NOT configured on the server (no API key). The offline library search below still works."}
       </div>
+      {annotationsOn && (
+        <p className="muted">
+          Your private note annotations are included in this chat (you enabled this in the
+          Library). Turn it off there any time.
+        </p>
+      )}
 
       <div className="chatlog" aria-live="polite">
         {msgs.map((m, i) => (
