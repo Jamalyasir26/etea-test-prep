@@ -11,6 +11,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { FLASHCARDS } from "@/lib/data";
+import { lri, useLang } from "@/lib/i18n";
 import {
   buildSessionQueue,
   flashcardId,
@@ -28,6 +29,7 @@ import {
 type CardWithId = { id: string; front: string; back: string; category: string };
 
 export default function FlashcardsPage() {
+  const { lang, t, tf } = useLang();
   const [state, setState] = useState<FlashState>({});
   const [loaded, setLoaded] = useState(false);
   const [category, setCategory] = useState("All");
@@ -110,17 +112,11 @@ export default function FlashcardsPage() {
 
   return (
     <div>
-      <h1>Flashcards — simple spaced-review schedule</h1>
-      <p className="muted">
-        Answer <b>before</b> flipping the card (retrieval practice). Grade yourself: Again / Hard
-        / Good / Easy. This is a simple spaced-review schedule (a fixed interval ladder, not
-        SM-2): Hard returns in 2 days, Good in 3–14 days, Easy in 7–30 days. “Again” brings the
-        card back later <b>this session</b> and keeps it due today. Only cards due today are in
-        the session — future-due cards stay out unless you turn on cram mode.
-      </p>
+      <h1>{t("flashTitle")}</h1>
+      <p className="muted">{t("flashIntro")}</p>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
         <select
-          aria-label="Category"
+          aria-label={t("categoryLabel")}
           value={category}
           onChange={(e) => {
             setCategory(e.target.value);
@@ -142,50 +138,46 @@ export default function FlashcardsPage() {
               startSession(category, e.target.checked, state);
             }}
           />
-          Cram mode (also show future-due cards)
+          {t("cramLabel")}
         </label>
         <span className="muted">
-          Due today: <b>{dueTotal}</b> · Session:{" "}
+          {t("dueToday")} <b>{dueTotal}</b> · {t("sessionLabel")}{" "}
           {/* Stage 1 P1 Tier 4 (B03) — session fraction isolated LTR. */}
           <span dir="ltr">
             {session.correct}/{session.total}
           </span>{" "}
-          recalled
+          {t("recalledLabel")}
         </span>
       </div>
       {!loaded ? (
-        <p>Loading…</p>
+        <p>{t("loading")}</p>
       ) : done ? (
         <div className="card">
-          <h2>Session finished</h2>
+          <h2>{t("sessionFinished")}</h2>
           <p>
-            Recalled{" "}
-            <span dir="ltr">
-              {session.correct} of {session.total}
-            </span>{" "}
-            cards. “Again” cards were shown once more this session; the rest return on their
-            scheduled day. Flashcard self-ratings are kept separate from quiz/mock accuracy on
-            the Analysis page.
+            {tf("sessionFinishedBody", {
+              fraction: lri(`${session.correct} of ${session.total}`),
+            })}
           </p>
           <button
             onClick={() => {
               startSession(category, cram, state);
             }}
           >
-            Review again
+            {t("reviewAgain")}
           </button>
         </div>
       ) : card ? (
         <div>
           <p className="muted">
-            Card{" "}
+            {t("cardLabel")}{" "}
             <span dir="ltr">
               {pos + 1} of {queue.length}
             </span>{" "}
-            · {card.category}
+            · <span dir="ltr">{card.category}</span>
             {state[card.id]
-              ? ` · last grade: ${state[card.id].grade}, next due ${state[card.id].due}`
-              : " · new card"}
+              ? ` · ${tf("lastGrade", { grade: lri(state[card.id].grade), due: lri(state[card.id].due) })}`
+              : ` · ${t("newCard")}`}
           </p>
           {/* Stage 1 P1 Tier 4 (B05) — the card surface is a native
               <button>: Enter/Space flip it for free, with a visible
@@ -193,31 +185,31 @@ export default function FlashcardsPage() {
               aria-label: the card text itself is the button's
               accessible name, so screen readers hear the question /
               answer. The separate native "Flip card" button below is
-              preserved. */}
+              preserved. Localization Pass 1 — card content is
+              dir="auto" so English and future Urdu/Arabic card text
+              both render with their punctuation on the right side. */}
           <button type="button" className="card flashcard" onClick={() => setFlipped(!flipped)}>
-            {flipped ? card.back : card.front}
+            <span dir="auto">{flipped ? card.back : card.front}</span>
           </button>
           {!flipped ? (
-            <button onClick={() => setFlipped(true)}>Flip card</button>
+            <button onClick={() => setFlipped(true)}>{t("flipCard")}</button>
           ) : (
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               <button className="secondary" onClick={() => grade("again")}>
-                {gradeButtonLabel("again", prevInterval)}
+                {gradeButtonLabel("again", prevInterval, lang)}
               </button>
               <button className="secondary" onClick={() => grade("hard")}>
-                {gradeButtonLabel("hard", prevInterval)}
+                {gradeButtonLabel("hard", prevInterval, lang)}
               </button>
-              <button onClick={() => grade("good")}>{gradeButtonLabel("good", prevInterval)}</button>
-              <button onClick={() => grade("easy")}>{gradeButtonLabel("easy", prevInterval)}</button>
+              <button onClick={() => grade("good")}>{gradeButtonLabel("good", prevInterval, lang)}</button>
+              <button onClick={() => grade("easy")}>{gradeButtonLabel("easy", prevInterval, lang)}</button>
             </div>
           )}
         </div>
       ) : (
         <p>
-          No cards due today in this category.
-          {cram
-            ? ""
-            : " Turn on cram mode to also review future-due cards, or pick another category."}
+          {t("noCardsDue")}
+          {cram ? "" : ` ${t("noCardsDueHint")}`}
         </p>
       )}
     </div>
