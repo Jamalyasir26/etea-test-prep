@@ -1,10 +1,10 @@
 // Mock Tests — list of all 20 mocks / practice tests.
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { MOCKS, PATTERN_BANNER, trustedOnlyCount } from "@/lib/data";
-import { loadReviews } from "@/lib/tracking";
+import { loadReviews, type ReviewRecord } from "@/lib/tracking";
 import { DEFAULT_SCORING, scoringLabel, type ScoringConfig } from "@/lib/scoring";
 
 export default function MockList() {
@@ -15,7 +15,14 @@ export default function MockList() {
   // Stage 1 P0.2 — the owner's local review decisions. Trusted counts are
   // computed against these overrides, so a Verify on /review immediately
   // unlocks the item in Trusted Mode.
-  const [reviews] = useState(() => loadReviews());
+  // Stage 1 P2 (B07) — loaded after mount, not in the state initializer:
+  // loadReviews() returns {} during SSR but the stored decisions on the
+  // client, which mismatched the prerendered trusted counts whenever a
+  // local decision existed.
+  const [reviews, setReviews] = useState<Record<string, ReviewRecord>>({});
+  useEffect(() => {
+    setReviews(loadReviews());
+  }, []);
   const overrides: Record<string, string> = {};
   for (const [qid, r] of Object.entries(reviews)) overrides[qid] = r.reviewStatus;
   // Stage 1 P0.1 — per-mock scoring override for this run only. "default"
