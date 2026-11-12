@@ -19,15 +19,28 @@
 // added: Vercel limits Hobby crons to once per day, and an instance stays
 // warm only minutes after an invocation, so a daily ping cannot keep the
 // function warm for an on-demand check.
-import { NextResponse } from "next/server";
-import { probeProviders, type ProviderHealth } from "@/lib/ai";
+import { NextRequest, NextResponse } from "next/server";
+import { probeProviders, rateLimitOk, type ProviderHealth } from "@/lib/ai";
+import { clientIpFromHeaders, isSameOriginRequest } from "@/lib/apiGuard";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 let instanceWarmed = false;
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  // Stage 1 P1 Tier 3 — each probe is a real (tiny) provider call, so the
+  // health check gets the same-origin guard and the same rate limit as the
+  // AI routes. GET with no Origin/Referer (directly opening this URL in a
+  // browser tab) is still allowed — see src/lib/apiGuard.ts.
+  if (!isSameOriginRequest(req.headers, "GET")) {
+    return NextResponse.json(
+      { error: "This API only accepts requests from the ETEA Prep site itself." },
+      { status: 403 }
+    );
+  }
+  const rl = rateLimitOk(clientIpFromHeaders(req.headers));
+  if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
   const started = Date.now();
   const coldStart = !instanceWarmed;
   instanceWarmed = true;
