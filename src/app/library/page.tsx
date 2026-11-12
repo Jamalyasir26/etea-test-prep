@@ -5,7 +5,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { NOTES } from "@/lib/data";
+import { NOTES, localizeNote } from "@/lib/data";
+import { lri, useLang } from "@/lib/i18n";
 import ProvenanceBadge from "@/components/ProvenanceBadge";
 import {
   loadAnnotationOptIn,
@@ -15,6 +16,7 @@ import {
 } from "@/lib/tracking";
 
 export default function Library() {
+  const { lang, t, tf } = useLang();
   const subjects = useMemo(() => Object.keys(NOTES).sort(), []);
   const [subject, setSubject] = useState(subjects[0] ?? "");
   const [query, setQuery] = useState("");
@@ -58,10 +60,9 @@ export default function Library() {
 
   return (
     <div>
-      <h1>Library — Notes</h1>
+      <h1>{t("libraryTitle")}</h1>
       <p className="muted">
-        Short, exam-focused, original notes. <b>Recall first:</b> cover the note, recall it from
-        memory, then read. Plain re-reading is low-utility; retrieval practice is high-utility.
+        {t("libraryIntro1")} <b>{t("recallFirst")}</b> {t("libraryIntro2")}
       </p>
       <div className="card">
         <label style={{ display: "block" }}>
@@ -70,16 +71,12 @@ export default function Library() {
             checked={optIn}
             onChange={(e) => toggleOptIn(e.target.checked)}
           />{" "}
-          <b>Include my note annotations in tutor answers</b>
+          <b>{t("optInLabel")}</b>
         </label>
-        <p className="muted">
-          Off by default. Your annotations are private notes stored on this device only — they are
-          NOT sent to the AI tutor unless you enable this. When enabled, the tutor sees them as
-          your own notes alongside the library.
-        </p>
+        <p className="muted">{t("optInDesc")}</p>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-        <select aria-label="Subject" value={subject} onChange={(e) => setSubject(e.target.value)}>
+        <select aria-label={t("subjectWord")} value={subject} onChange={(e) => setSubject(e.target.value)}>
           {subjects.map((s) => (
             <option key={s} value={s}>
               {s} ({NOTES[s].length})
@@ -88,53 +85,65 @@ export default function Library() {
         </select>
         <input
           type="text"
-          placeholder="Search notes…"
+          placeholder={t("searchNotesPlaceholder")}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          aria-label="Search notes"
+          aria-label={t("searchNotesLabel")}
         />
       </div>
-      {notes.length === 0 && <p>No notes match that search.</p>}
+      {notes.length === 0 && <p>{t("noNotesMatch")}</p>}
       {notes.map((n) => {
         const isHidden = hidden[n.key] ?? true;
         const draft = drafts[n.key] ?? annotations[n.key] ?? "";
+        // Localization Pass 1 — TRI-LANGUAGE PROOF OF CONCEPT: the
+        // rendered title/body go through localizeNote(), which falls
+        // back to the English fields whenever no ur/roman translation
+        // exists (today: every note — behaviour is unchanged). The
+        // storage key and annotation lookup stay on the ORIGINAL
+        // English title, so stored annotations are unaffected by the
+        // display language.
+        const shown = localizeNote(n, lang);
         return (
           <div className="card" key={n.key}>
-            <h3>{n.title}</h3>
+            <h3 dir="auto">{shown.title}</h3>
             {/* Stage 1 P2 — provenance badge (renders only when the note
                 carries a sourceKind, e.g. the 15 concept-extracted notes). */}
             <ProvenanceBadge source={n.source} sourceKind={n.sourceKind} syllabusClause={n.syllabusClause} />
-            {n.source && <p className="muted">{n.source}</p>}
+            {n.source && (
+              <p className="muted">
+                <span dir="auto">{n.source}</span>
+              </p>
+            )}
             {isHidden ? (
               <button className="secondary" onClick={() => setHidden((h) => ({ ...h, [n.key]: false }))}>
-                Recall first — tap to reveal
+                {t("recallReveal")}
               </button>
             ) : (
               <>
-                <p>{n.body}</p>
+                <p dir="auto">{shown.body}</p>
                 <button className="secondary" onClick={() => setHidden((h) => ({ ...h, [n.key]: true }))}>
-                  Hide again
+                  {t("hideAgain")}
                 </button>
               </>
             )}
             <div style={{ marginTop: 12 }}>
               <label>
-                <span className="muted">Owner annotation (private — not sent to the tutor unless enabled above)</span>
+                <span className="muted">{t("annotationLabel")}</span>
                 <textarea
-                  aria-label={`Owner annotation for ${n.title}`}
+                  aria-label={tf("annotationAria", { title: lri(n.title) })}
                   value={draft}
                   onChange={(e) => setDrafts((d) => ({ ...d, [n.key]: e.target.value }))}
                   rows={2}
                   style={{ display: "block", width: "100%", marginTop: 4 }}
-                  placeholder="Your own note on this topic — a correction, a reminder, a link to check…"
+                  placeholder={t("annotationPlaceholder")}
                 />
               </label>
               <div style={{ display: "flex", gap: 8, marginTop: 6, alignItems: "center" }}>
                 <button className="secondary" onClick={() => saveNoteAnnotation(n.key)}>
-                  Save annotation
+                  {t("saveAnnotation")}
                 </button>
                 {savedTick[n.key] && (
-                  <span className="muted">Saved privately on this device.</span>
+                  <span className="muted">{t("annotationSaved")}</span>
                 )}
               </div>
             </div>
