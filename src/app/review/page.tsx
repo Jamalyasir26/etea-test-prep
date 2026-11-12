@@ -9,7 +9,7 @@
 // (src/data/structural-checks.json); re-run that script to refresh them.
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   BY_ID,
   BY_SUBJECT,
@@ -27,6 +27,7 @@ import {
   type ReviewRecord,
   type ReviewStatus,
 } from "@/lib/tracking";
+import ProvenanceBadge from "@/components/ProvenanceBadge";
 
 type StructuralStatus = "pass" | "needs-review" | "problem";
 const STRUCTURAL: Record<string, { status: StructuralStatus; issues: string[] }> =
@@ -77,7 +78,21 @@ const STATUS_FILTERS: { value: string; label: string }[] = [
 ];
 
 export default function ReviewDashboard() {
-  const [reviews, setReviews] = useState<Record<string, ReviewRecord>>(() => loadReviews());
+  // Stage 1 P2 (B07) — hydration safety. This page is prerendered, so
+  // the first client render must match the server HTML exactly. Two
+  // things broke that: (1) loadReviews() returns {} on the server but
+  // the stored decisions on the client, so any stored decision changed
+  // the counts/statuses between server and client render; (2) the
+  // attribution timestamp used toLocaleString(), which renders in the
+  // server's timezone (UTC) but the browser's timezone locally. Both
+  // are now mount-gated: the first render uses the bank data only, and
+  // local decisions + the local-time timestamp appear after mount.
+  const [reviews, setReviews] = useState<Record<string, ReviewRecord>>({});
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setReviews(loadReviews());
+    setMounted(true);
+  }, []);
   const [mockFilter, setMockFilter] = useState("zam1+zam2");
   const [postFilter, setPostFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -217,7 +232,10 @@ export default function ReviewDashboard() {
             <p>
               <b>{q.id}</b> · {q.question}{" "}
               <span className="badge grey">{q.subject}</span>{" "}
-              <span className="badge grey">{q.topic}</span>
+              <span className="badge grey">{q.topic}</span>{" "}
+              {/* Stage 1 P2 — provenance badge (renders only when the item
+                  carries a sourceKind). */}
+              <ProvenanceBadge source={q.source} sourceKind={q.sourceKind} syllabusClause={q.syllabusClause} />
             </p>
             {q.options.map((o, i) => (
               <p key={i} style={{ margin: "4px 0" }}>
@@ -228,7 +246,16 @@ export default function ReviewDashboard() {
             <p className="muted">{q.explanation}</p>
             <p className="muted">
               Status: <b>{status}</b>
-              {by && at ? ` · by ${by} · ${new Date(at).toLocaleString()}` : " · unreviewed"}
+              {/* Stage 1 P2 (B07) — the timestamp renders only after
+                  mount: toLocaleString() is timezone-dependent, so
+                  rendering it during SSR/hydration mismatched. Before
+                  mount, only the reviewer name shows (identical on
+                  server and client). */}
+              {by && at
+                ? mounted
+                  ? ` · by ${by} · ${new Date(at).toLocaleString()}`
+                  : ` · by ${by}`
+                : " · unreviewed"}
               {" · "}
               Structural: <b>{st.status}</b>
               {st.issues.length > 0 ? ` — ${st.issues.join("; ")}` : ""}
