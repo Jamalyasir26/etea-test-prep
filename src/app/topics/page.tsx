@@ -3,40 +3,33 @@
 "use client";
 
 import { BY_SUBJECT } from "@/lib/data";
+import { useLang } from "@/lib/i18n";
 import QuizRunner from "@/components/QuizRunner";
 
 export default function Topics() {
+  const { t, tf } = useLang();
   const original = BY_SUBJECT["pastpapers"] ?? [];
   const reworded = BY_SUBJECT["pastpapers_reworded"] ?? [];
   return (
     <div>
-      <h1>Practice from Past-Paper Topics</h1>
+      <h1>{t("topicsTitle")}</h1>
       <div className="alert">
-        <b>No past-paper documents or PDFs are hosted here, and no past-paper question is copied
-        verbatim.</b>{" "}
-        Past papers were used only as a source for <b>what topics and facts are tested</b>. Every
-        question below is written in our own words.
+        <b>{t("topicsAlertBold")}</b> {t("topicsAlertRest")}
       </div>
       <ul>
-        <li>
-          Original practice questions are labelled: “Original practice question based on past-paper
-          topics — not the actual paper”.
-        </li>
-        <li>
-          Reworded versions are labelled: “Same concept as a past-paper question, reworded in a
-          different style — not the actual paper”.
-        </li>
+        <li dir="auto">{t("topicsLi1")}</li>
+        <li dir="auto">{t("topicsLi2")}</li>
       </ul>
-      <h2>Original practice — {original.length} questions</h2>
+      <h2>{tf("topicsOrigHeading", { n: original.length })}</h2>
       <QuizRunner
-        title="Past-paper topics — original practice (20 questions)"
+        title={t("topicsOrigTitle")}
         questions={original}
         mode="practice"
         subject="Past-Paper Topics"
       />
-      <h2>Same concepts, reworded — {reworded.length} questions</h2>
+      <h2>{tf("topicsRewordHeading", { n: reworded.length })}</h2>
       <QuizRunner
-        title="Past-paper topics — same concepts, reworded (20 questions)"
+        title={t("topicsRewordTitle")}
         questions={reworded}
         mode="practice"
         subject="Past-Paper Topics (Reworded)"
