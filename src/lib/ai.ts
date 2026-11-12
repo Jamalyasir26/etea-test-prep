@@ -13,12 +13,30 @@ import { retrieve, PLAN21, type Question } from "./data";
 // SDK migrated at the same time: @google/generative-ai 0.24.1 (deprecated,
 // sunset 30 Nov 2025) → @google/genai 3.2.0 (requires Node >= 22).
 export const GEMINI_MODEL = "gemini-3.6-flash";
-export const GROQ_MODEL = "llama-3.3-70b-versatile";
-// OpenRouter third fallback — a FREE model only (pricing $0 prompt / $0
-// completion, verified against https://openrouter.ai/api/v1/models on
-// 2026-11-11). A ":free" model can never incur a charge, so the key's
-// spending limit is never touched by tutor calls.
-export const OPENROUTER_MODEL = "google/gemma-4-26b-a4b-it:free";
+// Stage 1 P1 Tier 1 (2026-11-12): `llama-3.3-70b-versatile` was SHUT DOWN
+// for free/developer accounts on 16 Aug 2026 and is now Enterprise-only
+// (Groq docs: console.groq.com/docs/deprecations — Groq's own recommended
+// replacement is `openai/gpt-oss-120b`; models page confirms it is a
+// Production model on the Developer plan, 500 tok/s, 131K context).
+// GPT-OSS is a REASONING model: it spends the output-token budget on
+// reasoning first, so the health probe must allow more than a few tokens
+// or the visible reply comes back empty — see probeGroq (max_tokens 128).
+// Free-plan limits for GPT-OSS (Groq free-plan guide): 30 RPM / 1K RPD,
+// 8K TPM shared input+output — ample for a single-user fallback.
+export const GROQ_MODEL = "openai/gpt-oss-120b";
+// OpenRouter third fallback — a FREE model only. Stage 1 P1 Tier 1
+// (2026-11-12): the previous `google/gemma-4-26b-a4b-it:free` is STILL on
+// OpenRouter's free list (verified against the public
+// https://openrouter.ai/api/v1/models on 2026-11-12: 13 free models,
+// pricing $0/$0), but its upstream provider rate-limited it (HTTP 429)
+// on two consecutive live health runs. Switched to the sibling
+// `google/gemma-4-31b-it:free` — same Gemma 4 family, also $0/$0 on the
+// same list, 262K context, but a separate upstream capacity pool. If this
+// one 429s live too, the next option is the `openrouter/free` router
+// (auto-picks a free model with capacity) — not adopted now because the
+// health probe should report one deterministic model. A ":free" model can
+// never incur a charge, so the key's spending limit is never touched.
+export const OPENROUTER_MODEL = "google/gemma-4-31b-it:free";
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 // Generous single-user limits (personal use: one person prepares here).
@@ -177,7 +195,33 @@ export type ProviderHealth = {
   model: string;
   errorClass?: string;
   errorMessage?: string;
+  // Stage 1 P1 Tier 1: set only when errorClass is "timeout". A probe
+  // timeout on a cold instance is usually warm-up, not a dead provider —
+  // the health response says so plainly instead of just reporting "down".
+  timeoutHint?: string;
 };
+
+// Stage 1 P1 Tier 1 (2026-11-12) — probe bound 10 s → 15 s. The old 10 s
+// bound timed out Gemini on the first (cold) health call while warm calls
+// answer in ~2 s. The bound — not the platform — was the problem:
+// Vercel's official Functions limits (vercel.com/docs/functions/limits,
+// updated 2026-08-24) give Hobby 300 s default AND maximum duration with
+// Fluid compute, so the old "10 s Hobby timeout" in third-party blogs is
+// outdated. This route sets maxDuration = 30 and the three probes run in
+// parallel, so a 15 s bound finishes in ~15 s worst case — inside the
+// route budget with margin, inside the Hobby budget by 20x.
+// NO warm-up cron was added: Vercel's own cron docs
+// (vercel.com/docs/cron-jobs/usage-and-pricing) limit Hobby crons to once
+// per day, while a serverless instance stays warm only minutes after an
+// invocation — a daily ping cannot keep the function warm for an on-demand
+// health check, so it would burn a cron slot and fix nothing. The honest
+// fix is the longer bound + the coldStart flag in the health route.
+export const PROBE_TIMEOUT_MS = 15000;
+
+// Shown on a provider whose probe timed out: a timeout on a cold
+// instance is usually warm-up, not a dead provider — retry once.
+export const TIMEOUT_HINT =
+  "Probe hit its 15s bound — on a cold instance this is usually warm-up, not a dead provider; wait a few seconds and retry once.";
 
 const PROBE_PROMPT = "Reply with exactly the word OK and nothing else.";
 
@@ -189,18 +233,20 @@ async function probeGemini(): Promise<Omit<ProviderHealth, "configured">> {
     const ai = new GoogleGenAI({ apiKey: key });
     const response = await withTimeout(
       ai.models.generateContent({ model: GEMINI_MODEL, contents: PROBE_PROMPT }),
-      10000,
+      PROBE_TIMEOUT_MS,
       "Gemini probe",
     );
     const text = response.text ?? "";
     return { status: "ok", latencyMs: Date.now() - started, model: GEMINI_MODEL, errorMessage: scrubSecrets(text).slice(0, 50) };
   } catch (err) {
+    const errorClass = classifyProviderError(err);
     return {
       status: "error",
       latencyMs: Date.now() - started,
       model: GEMINI_MODEL,
-      errorClass: classifyProviderError(err),
+      errorClass,
       errorMessage: scrubSecrets(err instanceof Error ? err.message : String(err)).slice(0, 200),
+      ...(errorClass === "timeout" ? { timeoutHint: TIMEOUT_HINT } : {}),
     };
   }
 }
@@ -216,21 +262,27 @@ async function probeGroq(): Promise<Omit<ProviderHealth, "configured">> {
         model: GROQ_MODEL,
         messages: [{ role: "user", content: PROBE_PROMPT }],
         temperature: 0,
-        max_tokens: 5,
+        // GPT-OSS is a reasoning model: it spends the output budget on
+        // reasoning before the visible reply, so max_tokens: 5 (fine for
+        // Llama) would come back empty. 128 leaves room for a short
+        // reasoning trace + "OK".
+        max_tokens: 128,
       }),
-      10000,
+      PROBE_TIMEOUT_MS,
       "Groq probe",
     );
     const text = chat.choices[0]?.message?.content ?? "";
     if (!text) throw new Error("Empty response from Groq");
     return { status: "ok", latencyMs: Date.now() - started, model: GROQ_MODEL };
   } catch (err) {
+    const errorClass = classifyProviderError(err);
     return {
       status: "error",
       latencyMs: Date.now() - started,
       model: GROQ_MODEL,
-      errorClass: classifyProviderError(err),
+      errorClass,
       errorMessage: scrubSecrets(err instanceof Error ? err.message : String(err)).slice(0, 200),
+      ...(errorClass === "timeout" ? { timeoutHint: TIMEOUT_HINT } : {}),
     };
   }
 }
@@ -254,7 +306,7 @@ async function probeOpenRouter(): Promise<Omit<ProviderHealth, "configured">> {
         temperature: 0,
         max_tokens: 5,
       }),
-      signal: AbortSignal.timeout(10000),
+      signal: AbortSignal.timeout(PROBE_TIMEOUT_MS),
     });
     if (!res.ok) {
       const body = await res.text().catch(() => "");
@@ -265,12 +317,14 @@ async function probeOpenRouter(): Promise<Omit<ProviderHealth, "configured">> {
     if (!text) throw new Error("Empty response from OpenRouter");
     return { status: "ok", latencyMs: Date.now() - started, model: OPENROUTER_MODEL };
   } catch (err) {
+    const errorClass = classifyProviderError(err);
     return {
       status: "error",
       latencyMs: Date.now() - started,
       model: OPENROUTER_MODEL,
-      errorClass: classifyProviderError(err),
+      errorClass,
       errorMessage: scrubSecrets(err instanceof Error ? err.message : String(err)).slice(0, 200),
+      ...(errorClass === "timeout" ? { timeoutHint: TIMEOUT_HINT } : {}),
     };
   }
 }
@@ -446,11 +500,32 @@ function classifyGeminiError(err: unknown): AiError {
 
 /** Try Gemini first, then Groq, then OpenRouter (free model). Never returns a fake answer.
  *  ownerAnnotations (Stage 1 P0.3): the owner's private note annotations,
- *  passed ONLY when the owner enabled the opt-in — otherwise []. */
+ *  passed ONLY when the owner enabled the opt-in — otherwise [].
+ *  `impls` (Stage 1 P1 Tier 1): test seam only — the three provider calls
+ *  as an injectable object so node tests can stub failures and prove the
+ *  fallback order (Gemini → Groq → OpenRouter) without live keys or
+ *  network. Production callers never pass it; the default is the real
+ *  provider calls. NO live kill-switch is added anywhere: the health
+ *  probe already tests each provider independently, so a health run
+ *  showing Groq ok IS the per-provider proof — disabling Gemini live to
+ *  test a fallback is unnecessary. */
+export type TutorProviderImpls = {
+  gemini: (prompt: string) => Promise<string>;
+  groq: (prompt: string) => Promise<string>;
+  openrouter: (prompt: string) => Promise<string>;
+};
+
+const defaultTutorImpls: TutorProviderImpls = {
+  gemini: callGemini,
+  groq: callGroq,
+  openrouter: callOpenRouter,
+};
+
 export async function generateTutorAnswer(
   userPrompt: string,
   lang: string,
   ownerAnnotations: { note: string; text: string }[] = [],
+  impls: TutorProviderImpls = defaultTutorImpls,
 ): Promise<{ text: string; provider: "gemini" | "groq" | "openrouter" }> {
   const status = providerStatus();
   if (!status.gemini && !status.groq && !status.openrouter) {
@@ -465,7 +540,7 @@ export async function generateTutorAnswer(
   let firstErrorProvider: "gemini" | "groq" | "openrouter" | null = null;
   if (status.gemini) {
     try {
-      const text = await callGemini(prompt);
+      const text = await impls.gemini(prompt);
       return { text, provider: "gemini" };
     } catch (e) {
       if (e instanceof AiError && e.message === "NO_GEMINI_KEY") {
@@ -478,7 +553,7 @@ export async function generateTutorAnswer(
   }
   if (status.groq) {
     try {
-      const text = await callGroq(prompt);
+      const text = await impls.groq(prompt);
       return { text, provider: "groq" };
     } catch (e) {
       if (e instanceof AiError && e.message === "NO_GROQ_KEY") {
@@ -491,7 +566,7 @@ export async function generateTutorAnswer(
   }
   if (status.openrouter) {
     try {
-      const text = await callOpenRouter(prompt);
+      const text = await impls.openrouter(prompt);
       return { text, provider: "openrouter" };
     } catch (e) {
       // Keep the FIRST provider's error as the final message — it is the
