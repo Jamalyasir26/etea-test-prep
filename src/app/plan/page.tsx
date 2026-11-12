@@ -8,7 +8,7 @@ import { computeStats, loadAttempts, loadPlanState, savePlanState } from "@/lib/
 import { useLang } from "@/lib/i18n";
 
 export default function PlanPage() {
-  const { lang } = useLang();
+  const { lang, t, tf } = useLang();
   const [weeks, setWeeks] = useState<3 | 6 | 12>(3);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [aiPlan, setAiPlan] = useState("");
@@ -24,7 +24,7 @@ export default function PlanPage() {
   const totalDays = 21 * spread;
   const totalTasks = useMemo(() => PLAN21.reduce((s, [, t]) => s + t.length, 0), []);
   const doneCount = useMemo(() => Object.values(checked).filter(Boolean).length, [checked]);
-  const dailyLoad = weeks === 3 ? "2–3 hours" : weeks === 6 ? "about 1–1.5 hours" : "about 45 minutes";
+  const dailyLoad = weeks === 3 ? t("load3") : weeks === 6 ? t("load6") : t("load12");
 
   function toggle(id: string) {
     const next = { ...checked, [id]: !checked[id] };
@@ -34,7 +34,7 @@ export default function PlanPage() {
 
   async function generateAiPlan() {
     setBusy(true);
-    setAiPlan("Generating your plan…");
+    setAiPlan(t("generatingPlan"));
     try {
       const res = await fetch("/api/plan", {
         method: "POST",
@@ -42,9 +42,9 @@ export default function PlanPage() {
         body: JSON.stringify({ weeks, lang, weakSubjects }),
       });
       const j = await res.json();
-      setAiPlan(res.ok ? j.plan : j.error ?? "Could not generate a plan right now.");
+      setAiPlan(res.ok ? j.plan : j.error ?? t("planError"));
     } catch {
-      setAiPlan("Could not reach the tutor.");
+      setAiPlan(t("reachTutorError"));
     } finally {
       setBusy(false);
     }
@@ -52,51 +52,57 @@ export default function PlanPage() {
 
   return (
     <div>
-      <h1>Study Plan</h1>
+      <h1>{t("studyPlanHeading")}</h1>
       <div className="alert">
-        <b>Sample timetable — adjust to your schedule.</b> No credible source prescribes 2–3
-        hours/day for ETEA. The base plan is 21 days, 2–3 hours/day, 63 tasks (~50 hours).
+        <b>{t("planAlertTitle")}</b> <span dir="auto">{t("planAlertBody")}</span>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
         {[3, 6, 12].map((w) => (
           <button key={w} className={weeks === w ? "" : "secondary"} onClick={() => setWeeks(w as 3 | 6 | 12)}>
-            {w} weeks
+            {tf("weeksLabel", { n: w })}
           </button>
         ))}
         <span className="muted">
-          {totalDays} days · {dailyLoad}/day ·{" "}
+          {totalDays} {t("daysWord")} · {dailyLoad}
+          {t("perDay")} ·{" "}
           {/* Stage 1 P1 Tier 4 (B03) — the progress fraction isolated LTR:
               it rendered reversed ("63/0") in RTL (Urdu) mode. */}
           <span dir="ltr">
             {doneCount}/{totalTasks}
           </span>{" "}
-          tasks done
+          {t("tasksDone")}
         </span>
         <button className="secondary" onClick={generateAiPlan} disabled={busy}>
-          Generate AI plan
+          {t("generateAiPlan")}
         </button>
       </div>
       {/* Stage 1 P2 — API privacy disclosure, shown before the AI plan
           form: the request leaves this device for the AI providers. */}
-      <p className="muted">
-        Privacy: generating an AI plan sends your chosen length and weakest subjects to Gemini,
-        Groq or OpenRouter (the AI providers). Don&apos;t share sensitive personal data.
-      </p>
-      <div className="bar" role="img" aria-label={`${doneCount} of ${totalTasks} tasks done`}>
+      <p className="muted">{t("planPrivacy")}</p>
+      <div className="bar" role="img" aria-label={tf("tasksDoneAria", { done: doneCount, total: totalTasks })}>
         <i style={{ width: `${(doneCount / totalTasks) * 100}%` }} />
       </div>
       {aiPlan && (
         <div className="card">
-          <h3>AI-generated plan ({weeks} weeks)</h3>
-          <p className="muted">AI-generated — not verified. Sample timetable; adjust to your schedule.</p>
-          <p style={{ whiteSpace: "pre-wrap" }}>{aiPlan}</p>
+          <h3>{tf("aiPlanHeading", { weeks })}</h3>
+          <p className="muted">{t("aiPlanNote")}</p>
+          {/* Localization Pass 1 (RTL) — the AI plan may be English,
+              Urdu or Arabic depending on the answer language; dir="auto"
+              follows the text's own first strong character. */}
+          <p dir="auto" style={{ whiteSpace: "pre-wrap" }}>
+            {aiPlan}
+          </p>
         </div>
       )}
       {PLAN21.map(([day, tasks], di) => (
         <div className="card" key={day}>
           <h3>
-            {day}
-            {spread > 1 && <span className="muted"> — spread over {spread} days</span>}
+            {/* Day headings and task text are English content — isolated
+                so their punctuation cannot jump in RTL mode. */}
+            <span dir="auto">{day}</span>
+            {spread > 1 && (
+              <span className="muted"> — {tf("spreadOver", { spread })}</span>
+            )}
           </h3>
           {tasks.map(([mins, text], ti) => {
             const id = `d${di}-t${ti}`;
@@ -104,7 +110,7 @@ export default function PlanPage() {
               <label key={id} style={{ display: "flex", gap: 8, alignItems: "flex-start", padding: "6px 0" }}>
                 <input type="checkbox" checked={!!checked[id]} onChange={() => toggle(id)} style={{ marginTop: 6 }} />
                 <span>
-                  <b>{mins} min</b> — {text}
+                  <b>{tf("minsLabel", { mins })}</b> — <span dir="auto">{text}</span>
                 </span>
               </label>
             );
