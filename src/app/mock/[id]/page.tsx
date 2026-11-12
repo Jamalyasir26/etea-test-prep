@@ -12,11 +12,13 @@ import { Suspense, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { buildMockQuestions, isTrusted, MOCKS, trustedOnlyCount } from "@/lib/data";
+import { useLang } from "@/lib/i18n";
 import { loadReviews, loadSession } from "@/lib/tracking";
-import { resolveScoring, scoringLabel } from "@/lib/scoring";
+import { localizedScoringLabel, resolveScoring } from "@/lib/scoring";
 import QuizRunner from "@/components/QuizRunner";
 
 function MockRunInner() {
+  const { lang, t, tf } = useLang();
   const params = useParams();
   const search = useSearchParams();
   const id = String(params.id ?? "");
@@ -50,9 +52,9 @@ function MockRunInner() {
   if (!mock) {
     return (
       <div>
-        <h1>Mock not found</h1>
+        <h1>{t("mockNotFound")}</h1>
         <p>
-          <Link href="/mock">Back to all mocks</Link>
+          <Link href="/mock">{t("backToMocks")}</Link>
         </p>
       </div>
     );
@@ -60,20 +62,30 @@ function MockRunInner() {
   // Stage 1 P1 Tier 4 (B03) — the trusted-only counts are isolated LTR
   // so they cannot reverse in RTL (Urdu) mode; the note prop is a
   // ReactNode for exactly this reason (see QuizRunner Props).
+  // Localization Pass 1 — the mock note is English content, isolated
+  // with dir="auto"; the scoring note is JSX so the (English) policy
+  // note can be isolated LTR while the label is translated.
   const note = trustedOnly ? (
     <>
-      Trusted-only:{" "}
+      {t("trustedOnlyLabel")}{" "}
       <span dir="ltr">
         {questions.length} of {mock.total}
       </span>{" "}
-      questions — only owner-reviewed/approved items (
-      <span dir="ltr">{trustedOnlyCount(mock, overrides)} reviewed</span> in this mock); the
-      shortfall is not filled. {mock.note}
+      {t("trustedNoteRest")} —{" "}
+      <span dir="ltr">{trustedOnlyCount(mock, overrides)}</span> {t("reviewedWord")}{" "}
+      {t("trustedNoteInMock")}. {t("trustedNoteShortfall")} <span dir="auto">{mock.note}</span>
     </>
   ) : (
-    mock.note
+    <span dir="auto">{mock.note}</span>
   );
-  const scoringNote = `Scoring for this run: ${scoringLabel(scoring)}${scoringSource === "override-zero" || scoringSource === "override-penalty" ? " (you overrode the mock default on the mock list)" : ""}. ${scoring.policyNote}`;
+  const scoringNote = (
+    <>
+      {t("scoringForRun")} {localizedScoringLabel(scoring, lang)}
+      {scoringSource === "override-zero" || scoringSource === "override-penalty" ? t("overrideSuffix") : ""}
+      {" "}
+      <span dir="ltr">{scoring.policyNote}</span>
+    </>
+  );
   return (
     <QuizRunner
       key={scope}
