@@ -1,7 +1,7 @@
 // POST /api/explain — explain one MCQ: why the correct answer is right
 // and why the other options are wrong, grounded in the library.
 import { NextRequest, NextResponse } from "next/server";
-import { AiError, generateTutorAnswer, rateLimitOk } from "@/lib/ai";
+import { AiError, generateTutorAnswer, normalizeTutorLang, rateLimitOk } from "@/lib/ai";
 import { BY_ID } from "@/lib/data";
 
 function clientIp(req: NextRequest): string {
@@ -14,7 +14,9 @@ export async function POST(req: NextRequest) {
     const rl = rateLimitOk(clientIp(req));
     if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
     const body = await req.json().catch(() => ({}));
-    const lang = ["en", "roman", "ur"].includes(body.lang) ? body.lang : "en";
+    // Stage 1 P1 Tier 2: shares the tutor generation path, so it accepts
+    // the same languages (including "ar"); unknown values fall back to "en".
+    const lang = normalizeTutorLang(body.lang);
     const q = BY_ID[String(body.questionId ?? "")];
     if (!q) return NextResponse.json({ error: "Question not found." }, { status: 404 });
     const prompt =
