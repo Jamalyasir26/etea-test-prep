@@ -4,6 +4,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { BY_SUBJECT, hashSeed, isTrusted, mulberry32, shuffled, SUBJECT_LABELS } from "@/lib/data";
+import { lri, useLang } from "@/lib/i18n";
 import { loadReviews, safeWrite } from "@/lib/tracking";
 import QuizRunner from "@/components/QuizRunner";
 import { Suspense } from "react";
@@ -33,6 +34,7 @@ function loadPracticeState(fallbackSubject: string): PracticeState {
 }
 
 function PracticeInner() {
+  const { t, tf } = useLang();
   const params = useSearchParams();
   const initial = params.get("subject") ?? "";
   const subjects = useMemo(() => Object.keys(BY_SUBJECT).sort(), []);
@@ -75,15 +77,13 @@ function PracticeInner() {
 
   return (
     <div>
-      <h1>Practice — Topic Quizzes</h1>
+      <h1>{t("practiceTitle")}</h1>
       <p className="muted">
-        20 questions per attempt, shuffled every time. Instant feedback after each question. All
-        questions are original practice questions, labelled “AI-generated — not verified” (drafted by
-        AI, structurally checked). They are <b>not</b> ETEA questions.
+        {t("practiceIntro1")} {t("notEteaQuestions")}
       </p>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
         <select
-          aria-label="Subject"
+          aria-label={t("subjectWord")}
           value={subjectKey}
           onChange={(e) => {
             setSubjectKey(e.target.value);
@@ -98,12 +98,12 @@ function PracticeInner() {
           ))}
         </select>
         <button className="secondary" onClick={newSet}>
-          New set (shuffle again)
+          {t("newSet")}
         </button>
       </div>
       <QuizRunner
         key={`${subjectKey}-${round}`}
-        title={`${subjectLabel} quiz — 20 questions`}
+        title={tf("quizTitle", { subject: lri(subjectLabel) })}
         questions={questions}
         mode="practice"
         subject={subjectLabel}
