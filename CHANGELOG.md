@@ -201,3 +201,31 @@ Backup: `~/workspace/etea-prep-next-backup-pre-p1t1/` (FLAT copy, diff-verified 
 ## Expected live behaviour after deploy
 - GET /api/tutor/health: groq `ok` with model `openai/gpt-oss-120b` (was model_not_found); openrouter `ok` with model `google/gemma-4-31b-it:free` (was quota/429) — or a new, specific error class if the replacement also fails (402 payment on Groq, 429 again on OpenRouter). First health call after deploy reports coldStart: true and a 15 s bound; a cold timeout shows timeoutHint instead of a bare "down" reading.
 - /review: all 15 verified items show "by owner · <timestamp>" (was "unreviewed" for the 14 bank-verified ones).
+
+## Stage 1 P1 Tier 2 — reliability + data safety (local, 2026-11-12; NOT deployed)
+
+### 1. Provider timeouts + retries — `src/lib/ai.ts`
+- New constants `PROVIDER_TIMEOUT_MS = 8000`, `ANSWER_DEADLINE_MS = 15000`, `MAX_PROVIDER_ATTEMPTS = 2`. New `isTransientErrorClass()` (transient: timeout, network, quota, http_5xx; never retried: invalid_key, model_not_found, payment, not_configured, unknown, empty_response, http_4xx), driven by the existing `classifyProviderError` classes.
+- `ProviderCallOptions {signal?, attempt?}`; Gemini wires `abortSignal` into the generateContent config, Groq passes `{signal}` as the 2nd SDK arg, OpenRouter passes `signal` to fetch. New `DeadlineError extends AiError` (502) naming the deadline.
+- `generateTutorAnswer` gained a 5th `bounds` param (test seam, defaults 8000/15000) and an internal `tryProvider` helper: per-attempt bound = `min(providerTimeoutMs, remainingMs())` via `AbortSignal.timeout` AND the `withTimeout` race; at most one retry, only for transient errors with time remaining; `NO_*_KEY` errors never retried; `DeadlineError` stops the chain. First-error preservation and final error mapping unchanged; fallback order Gemini → Groq → OpenRouter and the response contract unchanged. Health probe untouched.
+- `timedCall` exported, accepts `{attempt, retry}`; `ProviderAttempt` gained `attempt?`/`retry?` — retries log as separate `tutor_provider_attempt` JSON lines with a retry marker. New suite `scripts/test-timeouts.mjs` (43/43). `package.json` gains `test:timeouts`.
+
+### 2. Storage corruption safety — `src/lib/tracking.ts` + Analysis UI
+- New quarantine store `etea_quarantine_next_v1`: malformed JSON is stored verbatim as `{key, raw, at}`, deduped by (key, raw); the original key is NEVER cleared. `loadQuarantine()` / `exportQuarantine()` (separate from the v5 backup shape) / `clearQuarantine()` (explicit user action only). A corrupt quarantine store preserves its own raw text as a record.
+- Exported `safeRead` / `safeWrite` (boolean, catches QuotaExceededError/SecurityError/DOMException) / `safeRemove`; all tracking.ts callers migrated. In-memory `storageWarnings` deduped by (type, key, detail) per page load, `console.warn` + `getStorageWarnings()` / `clearStorageWarnings()`. `safeParse` rewritten to a key-based signature that quarantines on failure and never deletes.
+- `src/app/analysis/page.tsx`: red warning alert above the stats grid (affected keys, write-failed nudge), "Download quarantined data" + confirm-gated "Dismiss and clear quarantined data"; "Your data" copy explains quarantine. `src/lib/i18n.tsx` and `src/app/practice/page.tsx` routed through safe read/write (consistency; no import cycle). Export stays v5; v4/v5 restore, v6+ rejected. New suite `scripts/test-storage.mjs` (35/35). `package.json` gains `test:storage`. (One real bug found by the suite and fixed: warning dedup ignored the detail, so a SecurityError after a QuotaExceededError on the same key was swallowed.)
+
+### 3. Arabic language option — API routes + tutor UI
+- `src/lib/ai.ts`: `LANG_NAME.ar = "Arabic (العربية)"`, `TUTOR_LANGS = ["en","roman","ur","ar"]`, `normalizeTutorLang()` (unknown → "en"); the generation prompt gains "Answer in Arabic (العربية)." for lang=ar, library excerpts unchanged.
+- `src/app/api/tutor/route.ts`, `src/app/api/explain/route.ts`, `src/app/api/plan/route.ts`: all three validate via `normalizeTutorLang(body.lang)` (shared generation path — explain/plan accept ar too). `src/app/tutor/page.tsx`: labelled language `<select>` with an العربية option, persisted under `etea_tutor_lang_next` (null = follow site language = previous behaviour), sent as `lang` in both POST bodies. Site-wide toggle untouched. New suite `scripts/test-tutor-lang.mjs` (30/30). `package.json` gains `test:lang`.
+
+### Verification (local; no keys here, live confirmation after deploy)
+- `npm run build` PASS (21/21 routes). `npx tsc --noEmit` clean (TS strict NOT enabled — Tier 3).
+- Suites: test-scoring 39/39, test-reviews 37/37, test-retrieval 28/28, test-fallback-chain 24/24, test-flashcards 29/29, qa 52/52, test-timeouts 43/43, test-storage 35/35, test-tutor-lang 30/30.
+- Local prod server: home + /library /mock /practice /tutor /review /analysis /flashcards /plan all HTTP 200; home shows 645 MCQs; tutor HTML contains the العربية option; GET /api/tutor/health reports all providers not_configured (expected) with the new model ids; POST tutor/explain/plan with lang=ar and garbage lang return the honest 503 in <60 ms.
+- NOT done here (honest): no live provider calls (no keys locally); no real-browser click-through — Analysis warning UI and tutor language selector are code-inspected + node-tested only. Live Arabic answering, the quarantine banner, and retry/deadline behaviour against real providers need post-deploy live checks.
+
+### Expected live behaviour after deploy
+- Tutor answers within the 15 s bound; slow providers aborted at 8 s and retried once only for transient errors; runtime logs show `attempt`/`retry` markers.
+- /analysis shows no storage warning in normal use; corrupt stored values quarantine with a download option instead of vanishing.
+- /tutor offers العربية; picking it makes the tutor answer in Arabic; the choice persists; other languages unchanged.
