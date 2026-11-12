@@ -170,7 +170,11 @@ export default function Analysis() {
         </div>
         <div className="card stat">
           <b>
-            {stats.totalCorrect}/{stats.totalQuestions}
+            {/* Stage 1 P1 Tier 4 (B03) — fractions isolated LTR so they
+                cannot reverse in RTL (Urdu) mode. */}
+            <span dir="ltr">
+              {stats.totalCorrect}/{stats.totalQuestions}
+            </span>
           </b>
           <span>MCQ questions correct (first-pass)</span>
         </div>
@@ -184,7 +188,9 @@ export default function Analysis() {
         </div>
         <div className="card stat">
           <b>
-            {stats.flashRecalled}/{stats.flashReviewed}
+            <span dir="ltr">
+              {stats.flashRecalled}/{stats.flashReviewed}
+            </span>
           </b>
           <span>
             Flashcards recalled ({stats.flashAttempts} session{stats.flashAttempts === 1 ? "" : "s"} — self-rated, not in MCQ accuracy)
@@ -257,7 +263,7 @@ export default function Analysis() {
               <div className="bar" style={{ flex: 1 }}>
                 <i style={{ width: `${(d.total / maxDay) * 100}%` }} />
               </div>
-              <span>
+              <span dir="ltr">
                 {d.correct}/{d.total} ({d.attempts} attempts)
               </span>
             </div>
@@ -289,7 +295,9 @@ export default function Analysis() {
                 <td>{m.date.slice(0, 10)}</td>
                 <td>{m.title}</td>
                 <td>
-                  {m.correct}/{m.total} ({Math.round((m.correct / m.total) * 100)}%)
+                  <span dir="ltr">
+                    {m.correct}/{m.total} ({Math.round((m.correct / m.total) * 100)}%)
+                  </span>
                 </td>
                 <td>{Math.round(m.seconds / 60)} min</td>
               </tr>
@@ -324,7 +332,9 @@ export default function Analysis() {
                 <td>{a.kind}</td>
                 <td>{a.title}</td>
                 <td>
-                  {a.correct}/{a.total}
+                  <span dir="ltr">
+                    {a.correct}/{a.total}
+                  </span>
                 </td>
                 <td>{a.kind === "flash" ? "—" : (a.retryCount ?? 0)}</td>
               </tr>
@@ -339,13 +349,21 @@ export default function Analysis() {
             Attempt detail — {selected.title} ({selected.date.slice(0, 10)})
           </h3>
           <p className="muted">
-            {selected.kind === "flash"
-              ? "Flashcard session (self-rated). No per-item MCQ table applies."
-              : `First-pass score ${selected.correct}/${selected.total}` +
-                (selected.retryCount
+            {selected.kind === "flash" ? (
+              "Flashcard session (self-rated). No per-item MCQ table applies."
+            ) : (
+              <>
+                First-pass score{" "}
+                {/* Stage 1 P1 Tier 4 (B03) — fraction isolated LTR. */}
+                <span dir="ltr">
+                  {selected.correct}/{selected.total}
+                </span>
+                {selected.retryCount
                   ? ` · ${selected.retryCount} corrected retr${selected.retryCount === 1 ? "y" : "ies"} (not counted in the score)`
-                  : " · no corrected retries") +
-                ` · ${Math.round(selected.seconds / 60)} min`}
+                  : " · no corrected retries"}{" "}
+                · {Math.round(selected.seconds / 60)} min
+              </>
+            )}
             {" · "}
             <button className="secondary" style={{ minHeight: 36, padding: "4px 10px" }} onClick={() => setSelected(null)}>
               Close
