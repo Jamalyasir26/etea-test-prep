@@ -2,7 +2,7 @@
   "dependencies": {
     "@google/genai": "^3.2.0",
     "groq-sdk": "0.32.0",
-    "next": "15.5.29",
+    "next": "16.4.6",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },
@@ -15,11 +15,12 @@
   },
   "name": "etea-prep-next",
   "private": true,
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
     "start": "next start",
     "qa": "node scripts/qa-540.mjs",
     "test:scoring": "node scripts/test-scoring.mjs",
@@ -28,7 +29,8 @@
     "test:fallback": "node scripts/test-fallback-chain.mjs",
     "test:timeouts": "node scripts/test-timeouts.mjs",
     "test:storage": "node scripts/test-storage.mjs",
-    "test:lang": "node scripts/test-tutor-lang.mjs"
+    "test:lang": "node scripts/test-tutor-lang.mjs",
+    "test:guard": "node scripts/test-api-guard.mjs"
   },
   "version": "3.0.0"
 }
