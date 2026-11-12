@@ -40,6 +40,15 @@ export const OPENROUTER_MODEL = "google/gemma-4-31b-it:free";
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 // Generous single-user limits (personal use: one person prepares here).
+// Stage 1 P1 Tier 3 — limiter contract: (a) callers must pass the identity
+// from clientIpFromHeaders (src/lib/apiGuard.ts), which trusts Vercel's
+// `x-vercel-forwarded-for` over the spoofable `x-forwarded-for`; (b) routes
+// call rateLimitOk() only AFTER request validation, so invalid requests
+// never consume quota; (c) buckets are in-memory per server instance — on
+// Vercel Fluid several instances may each hold their own bucket, so the
+// effective limit is per-instance, not global. A shared atomic limiter
+// (Upstash Redis) would fix that but needs owner-approved env setup —
+// documented as a future option in VERIFY-p1-tier3.md, not adopted here.
 export const LIMITS = { perDay: 100, perMinute: 10 };
 
 type Bucket = { day: string; dayCount: number; minute: number; minuteCount: number };
