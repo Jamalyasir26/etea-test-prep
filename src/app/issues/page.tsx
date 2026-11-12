@@ -16,6 +16,11 @@ import {
   type IssueReason,
   type IssueReport,
 } from "@/lib/tracking";
+import {
+  clearTelemetry,
+  loadTelemetry,
+  type TelemetryEntry,
+} from "@/lib/telemetry";
 
 function csvCell(v: string | null): string {
   const s = v ?? "";
@@ -27,9 +32,13 @@ export default function IssuesPage() {
   const [reasonFilter, setReasonFilter] = useState<IssueReason | "all" | "__none">("all");
   const [subjectFilter, setSubjectFilter] = useState("");
   const [msg, setMsg] = useState("");
+  // Stage 1 P2 (B07) — on-device client-error telemetry (hydration
+  // errors etc.), recorded with the route where they happened.
+  const [telemetry, setTelemetry] = useState<TelemetryEntry[]>([]);
 
   function refresh() {
     setIssues(loadIssues());
+    setTelemetry(loadTelemetry());
   }
   useEffect(refresh, []);
 
@@ -167,6 +176,56 @@ export default function IssuesPage() {
                     Delete
                   </button>
                 </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+
+      {/* Stage 1 P2 (B07) — client-error telemetry. Recorded on this
+          device only, never sent anywhere. Hydration failures (#418 /
+          #425) can only be observed in a real browser, so this list is
+          where they surface, with the route attached. */}
+      <h2>Client errors (this device only)</h2>
+      <p className="muted">
+        Browser errors and hydration failures recorded on this device, newest first (kept: latest
+        50). Nothing here was sent anywhere. An empty list means no client error has been recorded
+        since the list was last cleared.
+      </p>
+      <button
+        className="secondary"
+        disabled={telemetry.length === 0}
+        onClick={() => {
+          if (window.confirm(`Delete all ${telemetry.length} recorded client error(s)? This cannot be undone.`)) {
+            clearTelemetry();
+            refresh();
+            setMsg("Client-error telemetry cleared.");
+          }
+        }}
+      >
+        Clear client errors
+      </button>
+      {telemetry.length === 0 ? (
+        <p className="muted">No client errors recorded.</p>
+      ) : (
+        <table>
+          <thead>
+            <tr>
+              <th>Time (UTC)</th>
+              <th>Route</th>
+              <th>Type</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            {telemetry.map((t, i) => (
+              <tr key={`${t.at}-${i}`}>
+                <td>{t.at.replace("T", " ").slice(0, 19)}</td>
+                <td>
+                  <code>{t.route}</code>
+                </td>
+                <td>{t.kind}</td>
+                <td style={{ overflowWrap: "break-word" }}>{t.message}</td>
               </tr>
             ))}
           </tbody>
