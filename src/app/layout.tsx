@@ -1,7 +1,31 @@
 import type { Metadata } from "next";
+import { Noto_Nastaliq_Urdu, Noto_Sans_Arabic } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
 import Nav from "@/components/Nav";
+import TelemetryListener from "@/components/TelemetryListener";
 import "./globals.css";
+
+// Stage 1 P2 — fonts (owner's FINAL decision): headings Noto Nastaliq
+// Urdu, body Noto Sans Arabic. next/font/google downloads the files at
+// BUILD time and serves them from this site's own origin (/_next/static),
+// so no runtime request to Google Fonts ever happens — required, because
+// the CSP allows font-src 'self' data: only. display: swap keeps text
+// readable with system fallbacks while a font loads. If the build
+// environment cannot reach Google Fonts, `next build` fails here with a
+// clear fetch error (the Vercel build has network access); never fall
+// back to external <link> font tags.
+const nastaliq = Noto_Nastaliq_Urdu({
+  subsets: ["arabic"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+  variable: "--font-nastaliq",
+});
+const sansArabic = Noto_Sans_Arabic({
+  subsets: ["arabic", "latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-sans-arabic",
+});
 
 export const metadata: Metadata = {
   title: "ETEA Prep Library — KP Government Jobs",
@@ -14,8 +38,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${nastaliq.variable} ${sansArabic.variable}`}>
       <body>
+        {/* Stage 1 P2 (B07) — records client/hydration errors with their
+            route, on-device only, viewable on /issues. Renders nothing. */}
+        <TelemetryListener />
         <LangProvider>
           <Nav />
           <main className="container">{children}</main>

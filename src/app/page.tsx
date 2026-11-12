@@ -6,6 +6,7 @@ import Link from "next/link";
 import { CORRECTIONS, COUNTS, PATTERN_BANNER, PATTERNS } from "@/lib/data";
 import { computeStats, loadAttempts, loadPlanState, type Stats } from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
+import TutorHealth from "@/components/TutorHealth";
 
 const QUICK = [
   { href: "/library", key: "library", desc: "110 notes with recall-first prompts" },
@@ -122,11 +123,15 @@ export default function Home() {
         ))}
       </div>
 
+      {/* Stage 1 P2 (B06) — the stale Stage 0 wording ("answered via
+          fallback … key status is unverified") is replaced by accurate
+          wording plus the LIVE health status below. No historical claims. */}
       <div className="alert">
-        <b>AI Tutor — live, answered via fallback.</b> The tutor calls Gemini (primary) with
-        Groq and OpenRouter (free model) as fallbacks, server-side only. It has answered live via a
-        fallback provider; the primary Gemini key status is unverified. If a saved key is rejected,
-        the page will say so clearly — and the offline Study Assistant (library search) still works.
+        <b>AI Tutor — live.</b> The tutor calls Gemini (primary) with Groq and OpenRouter (free
+        model) as fallbacks, server-side only. It answers from this library only, and says so when
+        a question is outside the library. If live AI is down, the offline Study Assistant (library
+        search) still works.
+        <TutorHealth variant="summary" />
       </div>
     </div>
   );

@@ -29,12 +29,24 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Stage 1 P2 — body font is Noto Sans Arabic, self-hosted via
+     next/font (see layout.tsx). The literal name + system stack stay as
+     fallbacks so text still renders if a font file fails to load. */
+  font-family: var(--font-sans-arabic), "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
 }
 a { color: var(--teal); }
 [data-theme="dark"] a { color: #7fd4d8; }
-h1, h2, h3 { line-height: 1.3; margin: 0.4em 0; }
+/* Stage 1 P2 — headings in Noto Nastaliq Urdu (self-hosted via
+   next/font). Nastaliq has no Latin glyphs, so Latin headings fall
+   through to Noto Sans Arabic and then the system stack. In Urdu mode
+   the headings get the taller line-height Nastaliq's ascenders and
+   diacritics need; Latin headings keep the compact default. */
+h1, h2, h3 {
+  font-family: var(--font-nastaliq), "Noto Nastaliq Urdu", var(--font-sans-arabic), "Noto Sans Arabic", system-ui, sans-serif;
+  line-height: 1.3; margin: 0.4em 0;
+}
+html[lang="ur"] h1, html[lang="ur"] h2, html[lang="ur"] h3 { line-height: 2; }
 .container { max-width: 1020px; margin: 0 auto; padding: 0 16px 96px; }
 .topbar {
   position: sticky; top: 0; z-index: 20;
