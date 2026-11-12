@@ -1,7 +1,7 @@
 // POST /api/tutor — live AI Tutor (Gemini primary, Groq fallback, OpenRouter free-model fallback).
 // GET /api/tutor — provider availability only (no key material, ever).
 import { NextRequest, NextResponse } from "next/server";
-import { AiError, generateTutorAnswer, providerStatus, rateLimitOk } from "@/lib/ai";
+import { AiError, generateTutorAnswer, normalizeTutorLang, providerStatus, rateLimitOk } from "@/lib/ai";
 import { retrieve } from "@/lib/data";
 
 function clientIp(req: NextRequest): string {
@@ -28,7 +28,9 @@ export async function POST(req: NextRequest) {
     if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
     const body = await req.json().catch(() => ({}));
     const message = String(body.message ?? "").trim();
-    const lang = ["en", "roman", "ur"].includes(body.lang) ? body.lang : "en";
+    // Stage 1 P1 Tier 2: "ar" (Arabic) is a valid tutor answer language;
+    // unknown values fall back to "en" (the previous default).
+    const lang = normalizeTutorLang(body.lang);
     if (!message) return NextResponse.json({ error: "Please type a question first." }, { status: 400 });
     if (message.length > 2000)
       return NextResponse.json({ error: "Please keep the question under 2000 characters." }, { status: 400 });
