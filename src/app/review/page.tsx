@@ -142,7 +142,14 @@ export default function ReviewDashboard() {
       </div>
       <div className="card">
         <p>
-          <b>ZamungKor Mock 1 + 2 progress: {zamProgress.verified} / {zamProgress.total} verified</b>
+          <b>
+            ZamungKor Mock 1 + 2 progress:{" "}
+            {/* Stage 1 P1 Tier 4 (B03) — progress fraction isolated LTR. */}
+            <span dir="ltr">
+              {zamProgress.verified} / {zamProgress.total}
+            </span>{" "}
+            verified
+          </b>
           {zamProgress.verified === 0
             ? " — Trusted Mode has no verified items yet, so it returns 0 questions. Verify items below to unlock it."
             : " — these items are available in Trusted Mode."}
@@ -190,7 +197,11 @@ export default function ReviewDashboard() {
         </label>
       </div>
       <p className="muted">
-        Showing {shown.length} of {filtered.length} items in this filter.
+        Showing{" "}
+        <span dir="ltr">
+          {shown.length} of {filtered.length}
+        </span>{" "}
+        items in this filter.
       </p>
       {shown.length === 0 && <p>No items match this filter.</p>}
       {shown.map((q) => {
@@ -242,7 +253,8 @@ export default function ReviewDashboard() {
       })}
       {visible < filtered.length && (
         <button onClick={() => setVisible((v) => v + 25)}>
-          Show 25 more ({filtered.length - visible} left)
+          Show 25 more{" "}
+          <span dir="ltr">({filtered.length - visible} left)</span>
         </button>
       )}
     </div>
