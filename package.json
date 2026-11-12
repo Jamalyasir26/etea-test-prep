@@ -24,7 +24,8 @@
     "qa": "node scripts/qa-540.mjs",
     "test:scoring": "node scripts/test-scoring.mjs",
     "test:reviews": "node scripts/test-reviews.mjs",
-    "test:retrieval": "node scripts/test-retrieval.mjs"
+    "test:retrieval": "node scripts/test-retrieval.mjs",
+    "test:fallback": "node scripts/test-fallback-chain.mjs"
   },
   "version": "3.0.0"
 }
