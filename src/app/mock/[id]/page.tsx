@@ -57,9 +57,22 @@ function MockRunInner() {
       </div>
     );
   }
-  const note = trustedOnly
-    ? `Trusted-only: ${questions.length} of ${mock.total} questions — only owner-reviewed/approved items (${trustedOnlyCount(mock, overrides)} reviewed in this mock); the shortfall is not filled. ${mock.note}`
-    : mock.note;
+  // Stage 1 P1 Tier 4 (B03) — the trusted-only counts are isolated LTR
+  // so they cannot reverse in RTL (Urdu) mode; the note prop is a
+  // ReactNode for exactly this reason (see QuizRunner Props).
+  const note = trustedOnly ? (
+    <>
+      Trusted-only:{" "}
+      <span dir="ltr">
+        {questions.length} of {mock.total}
+      </span>{" "}
+      questions — only owner-reviewed/approved items (
+      <span dir="ltr">{trustedOnlyCount(mock, overrides)} reviewed</span> in this mock); the
+      shortfall is not filled. {mock.note}
+    </>
+  ) : (
+    mock.note
+  );
   const scoringNote = `Scoring for this run: ${scoringLabel(scoring)}${scoringSource === "override-zero" || scoringSource === "override-penalty" ? " (you overrode the mock default on the mock list)" : ""}. ${scoring.policyNote}`;
   return (
     <QuizRunner
@@ -70,7 +83,11 @@ function MockRunInner() {
       mode="mock"
       mockId={mock.id}
       trackId={mock.track}
-      note={`${note} ${scoringNote}`}
+      note={
+        <>
+          {note} {scoringNote}
+        </>
+      }
       trustedOnly={trustedOnly}
       scoring={scoring}
       allItemsVerified={allItemsVerified}
