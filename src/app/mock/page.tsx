@@ -4,10 +4,12 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { MOCKS, PATTERN_BANNER, trustedOnlyCount } from "@/lib/data";
+import { lri, useLang } from "@/lib/i18n";
 import { loadReviews, type ReviewRecord } from "@/lib/tracking";
-import { DEFAULT_SCORING, scoringLabel, type ScoringConfig } from "@/lib/scoring";
+import { DEFAULT_SCORING, localizedScoringLabel, type ScoringConfig } from "@/lib/scoring";
 
 export default function MockList() {
+  const { lang, t, tf } = useLang();
   // Provisional = today's behaviour: mocks built from the full bank, which
   // is unreviewed AI-generated practice material. Trusted = reviewed items
   // only (never silently filled with unreviewed items).
@@ -43,38 +45,36 @@ export default function MockList() {
 
   return (
     <div>
-      <h1>Mock Tests</h1>
+      <h1>{t("mocks")}</h1>
       <div className="alert">
-        <b>{PATTERN_BANNER}</b>
+        {/* Factual banner stays English (precision); isolated LTR so its
+            punctuation cannot jump in RTL mode. */}
+        <b>
+          <span dir="ltr">{PATTERN_BANNER}</span>
+        </b>
       </div>
       <p className="muted">
-        Each mock states which pattern variant it follows. ZamungKor mocks are disjoint (no question
-        repeats across them). Track mocks draw from the <b>shared practice bank</b> — questions may
-        repeat across track mocks; this is stated on each mock because the 645-question bank cannot
-        supply 8+ disjoint 100-question mocks. All mocks are <b>practice mocks, not official ETEA
-        papers</b>.
+        {t("mockIntroA")} <b>{t("mockIntroB")}</b> {t("mockIntroC")} <b>{t("mockIntroD")}</b>
       </p>
       <p className="muted">
-        Mocks are <b>provisional practice</b> built from unreviewed AI-generated questions.
-        <b> Trusted mode</b> uses reviewed questions only and returns fewer questions when not
-        enough have been reviewed yet — it never fills the gap with unreviewed items.
+        {t("mockProv1")} <b>{t("trustedModeLabel")}</b> {t("mockProv2")}
       </p>
       {/* Stage 1 P1 Tier 4 (B01) — the two long mode buttons overflowed at
           360px without wrapping; they now stack instead of running off-screen. */}
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }} role="group" aria-label="Mock mode">
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }} role="group" aria-label={t("mockModeGroup")}>
         <button
           className={mode === "provisional" ? "" : "secondary"}
           onClick={() => setMode("provisional")}
           aria-pressed={mode === "provisional"}
         >
-          Provisional (all questions)
+          {t("provisionalMode")}
         </button>
         <button
           className={mode === "trusted" ? "" : "secondary"}
           onClick={() => setMode("trusted")}
           aria-pressed={mode === "trusted"}
         >
-          Trusted (reviewed only)
+          {t("trustedMode")}
         </button>
       </div>
       {MOCKS.map((m) => {
@@ -83,11 +83,17 @@ export default function MockList() {
         return (
           <div className="card" key={m.id}>
             <h3>
-              {m.title}{" "}
-              <span className="badge teal">{m.total} Q</span>
-              <span className="badge grey">{m.minutes} min</span>
+              <span dir="auto">{m.title}</span>{" "}
+              <span dir="ltr" className="badge teal">
+                {m.total} Q
+              </span>{" "}
+              <span dir="ltr" className="badge grey">
+                {tf("minsLabel", { mins: m.minutes })}
+              </span>
             </h3>
-            <p className="muted">{m.note}</p>
+            <p className="muted">
+              <span dir="auto">{m.note}</span>
+            </p>
             <p className="muted">
               {trusted > 0 ? (
                 <>
@@ -96,42 +102,42 @@ export default function MockList() {
                   <span dir="ltr">
                     {trusted} of {m.total}
                   </span>{" "}
-                  reviewed questions available in Trusted mode.
+                  {t("trustedAvailableRest")}
                 </>
               ) : (
-                "No reviewed questions yet — provisional practice only."
+                t("noReviewedYet")
               )}
             </p>
             <p className="muted">
-              Scoring: {scoringLabel(mockScoring(m))}
-              {m.scoring
-                ? " — this mock's own config."
-                : " — ETEA has published no negative-marking policy for these projects."}
+              {t("scoringWord")} {localizedScoringLabel(mockScoring(m), lang)}
+              {m.scoring ? t("mockOwnConfig") : t("noPolicyNote")}
             </p>
             <label>
-              <span className="muted">Scoring for this run: </span>
+              <span className="muted">{t("scoringForRun")}</span>
               <select
-                aria-label={`Scoring for ${m.title}`}
+                aria-label={tf("scoringForAria", { title: lri(m.title) })}
                 value={penaltyOverride[m.id] ?? "default"}
                 onChange={(e) =>
                   setPenaltyOverride((prev) => ({ ...prev, [m.id]: e.target.value }))
                 }
               >
-                <option value="default">Mock default ({scoringLabel(mockScoring(m))})</option>
-                <option value="zero">No penalty (policy unknown)</option>
-                <option value="0.25">−0.25 per wrong answer (unverified assumption)</option>
+                <option value="default">
+                  {tf("scoringDefaultOption", { label: localizedScoringLabel(mockScoring(m), lang) })}
+                </option>
+                <option value="zero">{t("scoringZeroOption")}</option>
+                <option value="0.25">{t("scoringPenaltyOption")}</option>
               </select>
             </label>
             {trustedDisabled ? (
               <button className="btn" disabled>
-                Start mock (Trusted)
+                {t("startMockTrusted")}
               </button>
             ) : (
               <Link
                 className="btn"
                 href={startHref(m)}
               >
-                Start mock{mode === "trusted" ? " (Trusted)" : ""}
+                {mode === "trusted" ? t("startMockTrusted") : t("startMock")}
               </Link>
             )}
           </div>
