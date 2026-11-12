@@ -1,16 +1,26 @@
 // Track detail — /tracks/[id]
-import Link from "next/link";
-import { MOCKS, TRACKS } from "@/lib/data";
+// Localization Pass 1 — converted to a client component (useParams
+// instead of the async params prop) so the UI strings can go through
+// i18n.tsx. Track content stays English (see LOCALIZATION-PLAN.md)
+// and is bidi-isolated.
+"use client";
 
-export default async function TrackDetail({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { MOCKS, TRACKS } from "@/lib/data";
+import { useLang } from "@/lib/i18n";
+
+export default function TrackDetail() {
+  const { t, tf } = useLang();
+  const params = useParams();
+  const id = String(params.id ?? "");
   const tr = TRACKS.find((t) => t.id === id);
   if (!tr) {
     return (
       <div>
-        <h1>Track not found</h1>
+        <h1>{t("trackNotFound")}</h1>
         <p>
-          <Link href="/tracks">Back to all tracks</Link>
+          <Link href="/tracks">{t("backToTracks")}</Link>
         </p>
       </div>
     );
@@ -19,41 +29,51 @@ export default async function TrackDetail({ params }: { params: Promise<{ id: st
   return (
     <div>
       <h1>
-        {tr.name} <span className="badge teal">{tr.bps}</span>
+        <span dir="auto">{tr.name}</span>{" "}
+        <span dir="ltr" className="badge teal">
+          {tr.bps}
+        </span>
       </h1>
       <div className="card">
-        <h3>Eligibility</h3>
-        <p>{tr.elig}</p>
-        <h3>Pattern</h3>
-        <p>{tr.pattern}</p>
+        <h3>{t("eligibilityHeading")}</h3>
+        <p dir="auto">{tr.elig}</p>
+        <h3>{t("patternHeading")}</h3>
+        <p dir="auto">{tr.pattern}</p>
         <p>
-          <span className={`badge ${tr.conf.includes("NOT VERIFIED") || tr.conf.includes("JOB-SITE") ? "red" : "green"}`}>
+          <span
+            dir="ltr"
+            className={`badge ${tr.conf.includes("NOT VERIFIED") || tr.conf.includes("JOB-SITE") ? "red" : "green"}`}
+          >
             {tr.conf}
           </span>
         </p>
       </div>
-      <h2>Mocks for this track</h2>
+      <h2>{t("mocksForTrack")}</h2>
       {mocks.length === 0 ? (
-        <p className="muted">
-          No mock yet — subject bank not built. Use the Library + Practice sections for the
-          subjects in this pattern.
-        </p>
+        <p className="muted">{t("noMockYet")}</p>
       ) : (
         mocks.map((m) => (
           <div className="card" key={m.id}>
             <h3>
-              {m.title} <span className="badge teal">{m.total} Q</span>{" "}
-              <span className="badge grey">{m.minutes} min</span>
+              <span dir="auto">{m.title}</span>{" "}
+              <span dir="ltr" className="badge teal">
+                {m.total} Q
+              </span>{" "}
+              <span dir="ltr" className="badge grey">
+                {tf("minsLabel", { mins: m.minutes })}
+              </span>
             </h3>
-            <p className="muted">{m.note}</p>
+            <p className="muted">
+              <span dir="auto">{m.note}</span>
+            </p>
             <Link className="btn" href={`/mock/${m.id}`}>
-              Start mock
+              {t("startMock")}
             </Link>
           </div>
         ))
       )}
       <p>
-        <Link href="/tracks">← All tracks</Link>
+        <Link href="/tracks">{t("allTracksLink")}</Link>
       </p>
     </div>
   );
