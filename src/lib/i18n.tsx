@@ -3,6 +3,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { safeRead, safeWrite } from "./tracking";
 
 export type Lang = "en" | "roman" | "ur";
 export type Theme = "light" | "dark";
@@ -71,8 +72,11 @@ export function LangProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const l = localStorage.getItem("etea_lang_next") as Lang | null;
-    const th = localStorage.getItem("etea_theme_next") as Theme | null;
+    // Stage 1 P1 Tier 2: safeRead/safeWrite never throw on blocked or
+    // full storage — a SecurityError/QuotaExceededError is recorded as
+    // a warning instead of crashing the effect.
+    const l = safeRead("etea_lang_next") as Lang | null;
+    const th = safeRead("etea_theme_next") as Theme | null;
     if (l === "en" || l === "roman" || l === "ur") setLangState(l);
     if (th === "light" || th === "dark") setThemeState(th);
     else if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) setThemeState("dark");
@@ -84,8 +88,8 @@ export function LangProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang === "ur" ? "ur" : "en";
     document.documentElement.dir = lang === "ur" ? "rtl" : "ltr";
     document.documentElement.dataset.theme = theme;
-    localStorage.setItem("etea_lang_next", lang);
-    localStorage.setItem("etea_theme_next", theme);
+    safeWrite("etea_lang_next", lang);
+    safeWrite("etea_theme_next", theme);
   }, [lang, theme, ready]);
 
   const setLang = (l: Lang) => setLangState(l);
