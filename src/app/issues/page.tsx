@@ -21,6 +21,18 @@ import {
   loadTelemetry,
   type TelemetryEntry,
 } from "@/lib/telemetry";
+import { lri, useLang } from "@/lib/i18n";
+
+// Localization Pass 1 — stored issue-reason values are stable English
+// keys; only their DISPLAY labels are translated (via i18n.tsx). Same
+// mapping as the QuizRunner IssueForm.
+const REASON_KEY: Record<IssueReason, string> = {
+  "wrong-answer": "issueReasonWrongAnswer",
+  "wrong-explanation": "issueReasonWrongExplanation",
+  typo: "issueReasonTypo",
+  outdated: "issueReasonOutdated",
+  other: "issueReasonOther",
+};
 
 function csvCell(v: string | null): string {
   const s = v ?? "";
@@ -28,6 +40,7 @@ function csvCell(v: string | null): string {
 }
 
 export default function IssuesPage() {
+  const { t, tf } = useLang();
   const [issues, setIssues] = useState<IssueReport[]>([]);
   const [reasonFilter, setReasonFilter] = useState<IssueReason | "all" | "__none">("all");
   const [subjectFilter, setSubjectFilter] = useState("");
@@ -57,7 +70,7 @@ export default function IssuesPage() {
 
   function exportJson() {
     download(`etea-prep-issues-${new Date().toISOString().slice(0, 10)}.json`, JSON.stringify(filtered, null, 2));
-    setMsg(`Exported ${filtered.length} report(s) as JSON.`);
+    setMsg(tf("exportedJsonMsg", { n: filtered.length }));
   }
 
   function exportCsv() {
@@ -77,103 +90,97 @@ export default function IssuesPage() {
       [header, ...rows].join("\n"),
       "text/csv",
     );
-    setMsg(`Exported ${filtered.length} report(s) as CSV.`);
+    setMsg(tf("exportedCsvMsg", { n: filtered.length }));
   }
 
   return (
     <div>
-      <h1>Issues — private correction inbox</h1>
-      <p className="muted">
-        Reports saved privately on this device only — nothing was sent anywhere. Review them here,
-        fix the bank, then delete the resolved ones. Legacy reports (from before the reason /
-        correction fields existed) show “—” for the missing fields.
-      </p>
+      <h1>{t("issuesTitle")}</h1>
+      <p className="muted">{t("issuesIntro")}</p>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
         <select
-          aria-label="Filter by reason"
+          aria-label={t("filterReasonAria")}
           value={reasonFilter}
           onChange={(e) => setReasonFilter(e.target.value as IssueReason | "all" | "__none")}
         >
-          <option value="all">All reasons ({issues.length})</option>
+          <option value="all">{tf("allReasons", { n: issues.length })}</option>
           {ISSUE_REASONS.map((r) => (
             <option key={r.value} value={r.value}>
-              {r.label}
+              {t(REASON_KEY[r.value])}
             </option>
           ))}
-          <option value="__none">No reason given</option>
+          <option value="__none">{t("noReason")}</option>
         </select>
         <input
           type="text"
-          aria-label="Filter by subject or question id"
-          placeholder="Filter by subject or question id"
+          aria-label={t("filterPlaceholder")}
+          placeholder={t("filterPlaceholder")}
           value={subjectFilter}
           onChange={(e) => setSubjectFilter(e.target.value)}
         />
         <button className="secondary" onClick={exportJson} disabled={filtered.length === 0}>
-          Export JSON
+          {t("exportJsonLabel")}
         </button>
         <button className="secondary" onClick={exportCsv} disabled={filtered.length === 0}>
-          Export CSV
+          {t("exportCsvLabel")}
         </button>
         <button
           className="secondary"
           disabled={issues.length === 0}
           onClick={() => {
-            if (
-              window.confirm(
-                `Delete all ${issues.length} issue report(s)? This cannot be undone (export first if you want a copy).`,
-              )
-            ) {
+            if (window.confirm(tf("deleteAllConfirm", { n: issues.length }))) {
               clearIssues();
               refresh();
-              setMsg("All issue reports deleted.");
+              setMsg(t("allDeletedMsg"));
             }
           }}
         >
-          Delete all
+          {t("deleteAll")}
         </button>
       </div>
-      {msg && <p className="muted">{msg}</p>}
-      {filtered.length === 0 ? (
-        <p className="muted">
-          {issues.length === 0 ? "No issue reports yet." : "No reports match this filter."}
+      {msg && (
+        <p dir="auto" className="muted">
+          {msg}
         </p>
+      )}
+      {filtered.length === 0 ? (
+        <p className="muted">{issues.length === 0 ? t("noReports") : t("noReportsMatch")}</p>
       ) : (
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Question</th>
-              <th>Subject</th>
-              <th>Reason</th>
-              <th>Proposed correction</th>
-              <th>Source</th>
+              <th>{t("dateWord")}</th>
+              <th>{t("questionWord")}</th>
+              <th>{t("subjectWord")}</th>
+              <th>{t("reasonWord")}</th>
+              <th>{t("proposedCorrectionWord")}</th>
+              <th>{t("sourceWord")}</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             {filtered.map((i) => (
               <tr key={i.id}>
-                <td>{i.date.slice(0, 10)}</td>
+                <td dir="ltr">{i.date.slice(0, 10)}</td>
                 <td>
-                  <code>{i.qid}</code>
+                  <code dir="ltr">{i.qid}</code>
                 </td>
-                <td>{i.subject ?? "—"}</td>
-                <td>{ISSUE_REASONS.find((r) => r.value === i.reason)?.label ?? "—"}</td>
-                <td>{i.proposedCorrection ?? "—"}</td>
-                <td>{i.source ?? "—"}</td>
+                <td dir="ltr">{i.subject ?? "—"}</td>
+                <td>{i.reason ? t(REASON_KEY[i.reason]) : "—"}</td>
+                <td dir="auto">{i.proposedCorrection ?? "—"}</td>
+                <td dir="auto">{i.source ?? "—"}</td>
                 <td>
                   <button
                     className="secondary"
                     style={{ minHeight: 36, padding: "4px 10px" }}
                     onClick={() => {
-                      if (window.confirm(`Delete this report (${i.qid})?`)) {
+                      if (window.confirm(tf("deleteConfirm", { qid: lri(i.qid) }))) {
                         deleteIssue(i.id);
                         refresh();
                       }
                     }}
                   >
-                    Delete
+                    {t("deleteWord")}
                   </button>
                 </td>
               </tr>
@@ -186,46 +193,44 @@ export default function IssuesPage() {
           device only, never sent anywhere. Hydration failures (#418 /
           #425) can only be observed in a real browser, so this list is
           where they surface, with the route attached. */}
-      <h2>Client errors (this device only)</h2>
-      <p className="muted">
-        Browser errors and hydration failures recorded on this device, newest first (kept: latest
-        50). Nothing here was sent anywhere. An empty list means no client error has been recorded
-        since the list was last cleared.
-      </p>
+      <h2>{t("telemetryHeading")}</h2>
+      <p className="muted">{t("telemetryIntro")}</p>
       <button
         className="secondary"
         disabled={telemetry.length === 0}
         onClick={() => {
-          if (window.confirm(`Delete all ${telemetry.length} recorded client error(s)? This cannot be undone.`)) {
+          if (window.confirm(tf("clearTelemetryConfirm", { n: telemetry.length }))) {
             clearTelemetry();
             refresh();
-            setMsg("Client-error telemetry cleared.");
+            setMsg(t("telemetryClearedMsg"));
           }
         }}
       >
-        Clear client errors
+        {t("clearTelemetry")}
       </button>
       {telemetry.length === 0 ? (
-        <p className="muted">No client errors recorded.</p>
+        <p className="muted">{t("noTelemetry")}</p>
       ) : (
         <table>
           <thead>
             <tr>
-              <th>Time (UTC)</th>
-              <th>Route</th>
-              <th>Type</th>
-              <th>Message</th>
+              <th>{t("timeUtcWord")}</th>
+              <th>{t("routeWord")}</th>
+              <th>{t("typeWord")}</th>
+              <th>{t("messageWord")}</th>
             </tr>
           </thead>
           <tbody>
             {telemetry.map((t, i) => (
               <tr key={`${t.at}-${i}`}>
-                <td>{t.at.replace("T", " ").slice(0, 19)}</td>
+                <td dir="ltr">{t.at.replace("T", " ").slice(0, 19)}</td>
                 <td>
-                  <code>{t.route}</code>
+                  <code dir="ltr">{t.route}</code>
                 </td>
-                <td>{t.kind}</td>
-                <td style={{ overflowWrap: "break-word" }}>{t.message}</td>
+                <td dir="ltr">{t.kind}</td>
+                <td dir="auto" style={{ overflowWrap: "break-word" }}>
+                  {t.message}
+                </td>
               </tr>
             ))}
           </tbody>
