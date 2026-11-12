@@ -10,8 +10,27 @@ import {
   loadAnnotationOptIn,
   loadAnnotations,
   loadAttempts,
+  safeRead,
+  safeWrite,
 } from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
+
+// Stage 1 P1 Tier 2 — the tutor's ANSWER language, separate from the
+// site-wide UI toggle (en/roman/ur, untouched). Persisted under its own
+// key; when the owner has never chosen one, the tutor follows the site
+// language. Arabic ("ar") answers in Arabic; the library excerpts stay
+// as they are.
+const TUTOR_LANG_KEY = "etea_tutor_lang_next";
+const TUTOR_LANG_OPTIONS = [
+  { value: "en", label: "English" },
+  { value: "roman", label: "Roman Urdu" },
+  { value: "ur", label: "اردو" },
+  { value: "ar", label: "العربية (Arabic)" },
+] as const;
+
+function isTutorLang(v: string | null): v is (typeof TUTOR_LANG_OPTIONS)[number]["value"] {
+  return v === "en" || v === "roman" || v === "ur" || v === "ar";
+}
 
 type Msg = { role: "user" | "ai" | "sys"; text: string };
 
@@ -33,6 +52,21 @@ export default function Tutor() {
   // when the owner enabled the opt-in in the Library (default OFF).
   const [annotationsOn, setAnnotationsOn] = useState(false);
   const [annotations, setAnnotations] = useState<Record<string, string>>({});
+  // Stage 1 P1 Tier 2 — explicit tutor answer language, or null to
+  // follow the site language (the previous behaviour).
+  const [tutorLang, setTutorLangState] = useState<string | null>(null);
+  const effectiveTutorLang = tutorLang ?? lang;
+
+  useEffect(() => {
+    const saved = safeRead(TUTOR_LANG_KEY);
+    if (isTutorLang(saved)) setTutorLangState(saved);
+  }, []);
+
+  function setTutorLang(l: string) {
+    if (!isTutorLang(l)) return;
+    setTutorLangState(l);
+    safeWrite(TUTOR_LANG_KEY, l);
+  }
 
   useEffect(() => {
     setAnnotationsOn(loadAnnotationOptIn());
@@ -66,7 +100,7 @@ export default function Tutor() {
       const res = await fetch("/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: q, history, lang, annotations: annotationsToSend }),
+        body: JSON.stringify({ message: q, history, lang: effectiveTutorLang, annotations: annotationsToSend }),
       });
       const j = await res.json();
       if (!res.ok) {
@@ -112,7 +146,7 @@ export default function Tutor() {
       const res = await fetch("/api/explain", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ questionId: id, lang }),
+        body: JSON.stringify({ questionId: id, lang: effectiveTutorLang }),
       });
       const j = await res.json();
       setExplainOut(res.ok ? j.explanation : j.error ?? "Could not explain right now.");
@@ -143,6 +177,26 @@ export default function Tutor() {
           Library). Turn it off there any time.
         </p>
       )}
+      <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 10 }}>
+        <label htmlFor="tutor-lang">
+          <b>Answer language:</b>
+        </label>
+        <select
+          id="tutor-lang"
+          value={effectiveTutorLang}
+          onChange={(e) => setTutorLang(e.target.value)}
+          aria-label="Tutor answer language"
+        >
+          {TUTOR_LANG_OPTIONS.map((o) => (
+            <option key={o.value} value={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </select>
+        <span className="muted">
+          Answers come back in this language. The rest of the site keeps your selected language.
+        </span>
+      </div>
 
       <div className="chatlog" aria-live="polite">
         {msgs.map((m, i) => (
