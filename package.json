@@ -35,7 +35,10 @@
     "test:provenance": "node scripts/test-provenance.mjs",
     "test:backup": "node scripts/test-backup-versioning.mjs",
     "test:telemetry": "node scripts/test-telemetry.mjs",
-    "test:fonts": "node scripts/test-fonts.mjs"
+    "test:fonts": "node scripts/test-fonts.mjs",
+    "test:i18n": "node scripts/test-i18n.mjs",
+    "test:rtl": "node scripts/test-rtl.mjs",
+    "test:trilanguage": "node scripts/test-trilanguage.mjs"
   },
   "version": "3.0.0"
 }

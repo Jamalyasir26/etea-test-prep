@@ -334,3 +334,31 @@ Backup: `~/workspace/etea-prep-next-backup-pre-p1t1/` (FLAT copy, diff-verified 
 - Home + tutor show the live per-provider health status; privacy lines visible before both AI forms.
 - No console hydration errors on /review in a PKT browser; /issues shows an empty client-errors list.
 - Headings render in Nastaliq (Urdu) with Latin falling back to Sans Arabic; body in Noto Sans Arabic; no external font requests.
+
+# Localization Pass 1 — Urdu UI, RTL isolation, Sans-Arabic-only fonts, tri-language scaffold (2026-11-12, local only, NOT deployed)
+
+Owner decisions (2026-11-12 ~11:10 PKT, from the owner's own mobile testing): fonts — ONLY Noto Sans Arabic, the earlier Nastaliq decision CANCELLED; RTL punctuation bug — English text inside RTL flow isolated; Urdu UI translation — every UI string via i18n.tsx; tri-language content structure — plan + scaffold only. NOTE: the P2 deploy (commit 9f29935, live 2026-11-12 ~11:28 PKT) includes Nastaliq — this correction removes it in the NEXT deploy. Full evidence in VERIFY-localization-pass1.md; content-translation plan in LOCALIZATION-PLAN.md.
+
+### 1. Fonts — Nastaliq cancelled, Sans Arabic only
+- `src/app/layout.tsx` — `Noto_Nastaliq_Urdu` removed entirely; only `Noto_Sans_Arabic` (arabic+latin subsets, weights 400–700, `display: swap`, `--font-sans-arabic`) via `next/font/google`, served from `/_next/static` (CSP `font-src 'self' data:`).
+- `src/app/globals.css` — headings use the Sans Arabic variable; the Urdu `line-height: 2` rule was Nastaliq-specific and is DROPPED (Sans Arabic reads comfortably at the default heading line-height).
+- Grep-verified: ZERO Nastaliq references remain in `src/` (the word appears only in this changelog and the Pass 1 report, explaining the cancellation).
+
+### 2. RTL punctuation bug — isolation sweep (extends B03)
+- Principle: identifiers/counts/codes → `dir="ltr"`; free-form mixed-script content (questions, options, explanations, notes, flashcards, chat, AI output) → `dir="auto"`; plain-text constructed messages → `lri()` (Unicode LRI/PDI via explicit `"\u2066"`/`"\u2069"` escapes — never raw characters; a raw typed isolate was once U+0085 NEL).
+- Sweep covered ALL pages and components (tutor, QuizRunner, library, home, mock list/runner, plan, flashcards, analysis, review, issues, vacancies, tracks, topics, links, Nav, TutorHealth). Counters keep the "N of M" English format inside isolated spans in all languages.
+
+### 3. Urdu UI translation (UI strings only — no content translated)
+- `src/lib/i18n.tsx` — STRINGS expanded to 423 keys, every key with non-empty `en` + `ur` (test-enforced); `roman` for short chrome, falling back to English for long paragraphs per the documented rule (current language → English → key). New `tf(key, vars)`; missing values become `""`, never a raw `{name}`. Deliberate English exceptions documented in the file header (proper names, acronyms, ids, scoring policy notes, CORRECTIONS/PATTERN_BANNER, format examples).
+- Tutor page translated completely (greeting via a `__GREETING__` sentinel rendered through `t()`, so it matches the current language); all other pages, QuizRunner, TutorHealth and the new `src/components/Footer.tsx` translated. Vacancies/tracks/tracks-[id]/links converted server→client (first render still English on server and client; no new hydration risk).
+- `localizedScoringLabel()` (`src/lib/scoring.ts`), `gradeButtonLabel(..., lang)` (`src/lib/tracking.ts`, default keeps English), `provenanceBadge(..., lang)` Urdu variant (`src/lib/data.ts`; source names/clauses stay English, LRI/PDI-wrapped).
+
+### 4. Tri-language scaffold (plan + scaffold only, zero translated content)
+- Optional `ur`/`roman` fields on Question (question/options/explanation) and Note (title/body); `localizeQuestion`/`localizeNote` (per-field fallback, never mutate) + `hasTranslation` in `src/lib/data.ts`. Options fall back as a whole array unless lengths match exactly.
+- ONE proof-of-concept render path: library note rendering via `localizeNote()`; storage keys/annotations stay on the original English title. No bank JSON changed; no machine translation. Phased plan (TT/Qari core first, religious translations through the owner review queue, never auto-approved) in LOCALIZATION-PLAN.md.
+
+### Verification (local; no keys here, live confirmation after deploy)
+- `npm run build` PASS (20 pages; `/tracks/[id]` now dynamic like `/mock/[id]`). `npx tsc --noEmit` clean with `strict: true`.
+- Suites: qa 52/52, flashcards 29/29, scoring 39/39, reviews 37/37, retrieval 28/28, fallback-chain 24/24, timeouts 43/43, storage 36/36, tutor-lang 30/30, api-guard 60/60, tier4 46/46, provenance 33/33, backup-versioning 33/33, telemetry 28/28, fonts 21/21 (rewritten Sans-Arabic-only), i18n 40/40 (new), rtl 59/59 (new), trilanguage 28/28 (new). Total 666 checks, 0 failures.
+- Local prod server: 16 routes HTTP 200; home shows 645 MCQs; served CSS has 0 Nastaliq refs, 27 Noto Sans Arabic @font-face rules, 40 local woff2 refs, 0 gstatic refs; health endpoint returns honest "down" with no keys.
+- NOT done here (honest): visual RTL/font confirmation needs a real browser post-deploy (owner's phone); QuizRunner/flashcard tri-language wiring is a later phase per LOCALIZATION-PLAN.md.
