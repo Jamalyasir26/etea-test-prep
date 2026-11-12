@@ -214,7 +214,10 @@ export default function Tutor() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && send()}
           aria-label="Ask the tutor"
-          style={{ flex: 1 }}
+          // Stage 1 P1 Tier 4 (B01) — flex items refuse to shrink below
+          // their content width unless min-width is 0; without it the
+          // input + Ask button ran off-screen at 360px.
+          style={{ flex: 1, minWidth: 0 }}
         />
         <button onClick={() => send()} disabled={busy || !input.trim()}>
           Ask
@@ -238,10 +241,20 @@ export default function Tutor() {
         <h3>Explain one MCQ</h3>
         <p className="muted">Enter a question ID (e.g. ISL-001) to get a full explanation.</p>
         <div style={{ display: "flex", gap: 8 }}>
-          <input type="text" placeholder="e.g. ISL-001" value={explainId} onChange={(e) => setExplainId(e.target.value)} aria-label="Question ID" />
+          <input
+            type="text"
+            placeholder="e.g. ISL-001"
+            value={explainId}
+            onChange={(e) => setExplainId(e.target.value)}
+            aria-label="Question ID"
+            // Stage 1 P1 Tier 4 (B01) — same min-width: 0 fix as the ask
+            // row: the input must shrink so the Explain button stays
+            // on-screen at 360px.
+            style={{ flex: 1, minWidth: 0 }}
+          />
           <button className="secondary" onClick={explainQuestion}>Explain</button>
         </div>
-        {explainOut && <p style={{ whiteSpace: "pre-wrap" }}>{explainOut}</p>}
+        {explainOut && <p style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word" }}>{explainOut}</p>}
       </div>
     </div>
   );
