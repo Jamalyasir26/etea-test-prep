@@ -145,7 +145,12 @@ export default function FlashcardsPage() {
           Cram mode (also show future-due cards)
         </label>
         <span className="muted">
-          Due today: <b>{dueTotal}</b> · Session: {session.correct}/{session.total} recalled
+          Due today: <b>{dueTotal}</b> · Session:{" "}
+          {/* Stage 1 P1 Tier 4 (B03) — session fraction isolated LTR. */}
+          <span dir="ltr">
+            {session.correct}/{session.total}
+          </span>{" "}
+          recalled
         </span>
       </div>
       {!loaded ? (
@@ -154,9 +159,13 @@ export default function FlashcardsPage() {
         <div className="card">
           <h2>Session finished</h2>
           <p>
-            Recalled {session.correct} of {session.total} cards. “Again” cards were shown once
-            more this session; the rest return on their scheduled day. Flashcard self-ratings are
-            kept separate from quiz/mock accuracy on the Analysis page.
+            Recalled{" "}
+            <span dir="ltr">
+              {session.correct} of {session.total}
+            </span>{" "}
+            cards. “Again” cards were shown once more this session; the rest return on their
+            scheduled day. Flashcard self-ratings are kept separate from quiz/mock accuracy on
+            the Analysis page.
           </p>
           <button
             onClick={() => {
@@ -169,14 +178,25 @@ export default function FlashcardsPage() {
       ) : card ? (
         <div>
           <p className="muted">
-            Card {pos + 1} of {queue.length} · {card.category}
+            Card{" "}
+            <span dir="ltr">
+              {pos + 1} of {queue.length}
+            </span>{" "}
+            · {card.category}
             {state[card.id]
               ? ` · last grade: ${state[card.id].grade}, next due ${state[card.id].due}`
               : " · new card"}
           </p>
-          <div className="card flashcard" onClick={() => setFlipped(!flipped)} role="button" tabIndex={0}>
+          {/* Stage 1 P1 Tier 4 (B05) — the card surface is a native
+              <button>: Enter/Space flip it for free, with a visible
+              focus outline (see :focus-visible in globals.css). No
+              aria-label: the card text itself is the button's
+              accessible name, so screen readers hear the question /
+              answer. The separate native "Flip card" button below is
+              preserved. */}
+          <button type="button" className="card flashcard" onClick={() => setFlipped(!flipped)}>
             {flipped ? card.back : card.front}
-          </div>
+          </button>
           {!flipped ? (
             <button onClick={() => setFlipped(true)}>Flip card</button>
           ) : (
