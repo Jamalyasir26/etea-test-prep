@@ -50,6 +50,9 @@ h1, h2, h3 { line-height: 1.3; margin: 0.4em 0; }
   font-size: 0.9rem; min-height: 36px; display: inline-flex; align-items: center;
 }
 .nav a:hover, .nav a.active { background: rgba(255, 255, 255, 0.16); color: #fff; }
+/* Stage 1 P1 Tier 4 (B02) — hamburger toggle for the mobile menu. Hidden
+   on desktop; shown only inside the max-width media query below. */
+.nav-toggle { display: none; }
 .controls { display: flex; gap: 6px; align-items: center; }
 select, input[type="text"], textarea {
   font: inherit; color: var(--ink); background: var(--card);
@@ -66,7 +69,13 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 .card {
   background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 16px; margin: 12px 0;
+  /* Stage 1 P1 Tier 4 (B01) — long unbroken strings (URLs pasted into
+     annotations/issues) wrap instead of overflowing the card on mobile. */
+  overflow-wrap: break-word;
 }
+/* Stage 1 P1 Tier 4 (B01) — horizontal-scroll region for wide tables on
+   mobile (vacancy table). The table keeps its layout; the region scrolls. */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .stat { text-align: center; }
 .stat b { display: block; font-size: 1.8rem; line-height: 1.2; }
@@ -87,6 +96,13 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 .badge.green { background: var(--green); color: #fff; }
 .badge.grey { background: #e3e8e7; color: #334; }
 [data-theme="dark"] .badge.grey { background: #2c3f42; color: #cfe0e0; }
+/* Stage 1 P1 Tier 4 (B04) — dark-mode green/red badges failed contrast
+   with white text (green 2.22:1, red 2.28:1). Dark foregrounds on the
+   same bright backgrounds: green #06231a on #4cc38a = 7.51:1, red
+   #3d0a06 on #ff8a80 = 7.39:1 (both 4.5:1+). Light-mode pairs already
+   pass (green 5.15:1, red 6.54:1) and are untouched. */
+[data-theme="dark"] .badge.green { background: var(--green); color: #06231a; }
+[data-theme="dark"] .badge.red { background: var(--red); color: #3d0a06; }
 .muted { color: var(--muted); font-size: 0.9rem; }
 table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 th, td { border-bottom: 1px solid var(--line); padding: 8px 6px; text-align: start; vertical-align: top; }
@@ -104,16 +120,45 @@ th { font-weight: 700; }
 .bar { height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; }
 .bar > i { display: block; height: 100%; background: var(--teal); }
 .chatlog { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; }
-.msg { padding: 10px 12px; border-radius: 12px; max-width: 92%; white-space: pre-wrap; }
+.msg {
+  padding: 10px 12px; border-radius: 12px; max-width: 92%; white-space: pre-wrap;
+  /* Stage 1 P1 Tier 4 (B01) — long URLs in tutor answers wrap instead of
+     pushing the message bubble off-screen on narrow viewports. */
+  overflow-wrap: break-word;
+}
 .msg.user { align-self: flex-end; background: var(--teal); color: #fff; }
 .msg.ai { align-self: flex-start; background: var(--card); border: 1px solid var(--line); }
 .msg.sys { align-self: center; background: color-mix(in srgb, var(--amber) 14%, var(--card)); font-size: 0.9rem; }
 .flashcard {
   min-height: 180px; display: flex; align-items: center; justify-content: center;
   text-align: center; font-size: 1.15rem; cursor: pointer; padding: 24px;
+  /* Stage 1 P1 Tier 4 (B05) — the card surface is a native <button> now;
+     the button rule sets white text, which would be invisible on the card
+     background. The card background/border already win over the button
+     rule by specificity; the ink colour must be set explicitly. */
+  color: var(--ink); width: 100%;
 }
+/* Stage 1 P1 Tier 4 (B02/B05) — visible keyboard focus everywhere. Teal
+   on light backgrounds, light teal on dark backgrounds, white inside the
+   teal header bar. Mouse users see no change (:focus-visible only). */
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+[data-theme="dark"] :focus-visible { outline-color: #7fd4d8; }
+.topbar :focus-visible { outline-color: #fff; }
 footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
 @media (max-width: 640px) {
   .nav a { padding: 6px 7px; font-size: 0.83rem; }
   .container { padding-bottom: 120px; }
+  /* Stage 1 P1 Tier 4 (B02) — the 14 nav links wrapped into ~299px of
+     sticky header on mobile. On narrow viewports the links collapse
+     behind the hamburger toggle: hidden until .open, then a full-width
+     vertical list on their own row. Desktop layout is unchanged. */
+  .nav-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 36px; min-width: 44px; padding: 4px 10px;
+    border-color: #fff; background: transparent; color: #fff;
+    margin-inline-start: auto;
+  }
+  .nav { display: none; width: 100%; flex-direction: column; gap: 2px; margin-inline-start: 0; }
+  .nav.open { display: flex; }
+  .nav.open a { min-height: 44px; }
 }
