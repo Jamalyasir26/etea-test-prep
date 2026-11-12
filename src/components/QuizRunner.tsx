@@ -32,7 +32,7 @@ import ProvenanceBadge from "@/components/ProvenanceBadge";
 import {
   computeExamScore,
   DEFAULT_SCORING,
-  scoringLabel,
+  localizedScoringLabel,
   type ScoringConfig,
 } from "@/lib/scoring";
 import {
@@ -49,6 +49,16 @@ import {
 } from "@/lib/tracking";
 import { ISSUE_REASONS } from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
+
+// Localization Pass 1 — stored issue-reason values are stable English
+// keys; only their DISPLAY labels are translated (via i18n.tsx).
+const REASON_KEY: Record<IssueReason, string> = {
+  "wrong-answer": "issueReasonWrongAnswer",
+  "wrong-explanation": "issueReasonWrongExplanation",
+  typo: "issueReasonTypo",
+  outdated: "issueReasonOutdated",
+  other: "issueReasonOther",
+};
 
 type Props = {
   title: string;
@@ -76,6 +86,7 @@ type Props = {
 };
 
 function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
+  const { t } = useLang();
   const [open, setOpen] = useState(false);
   const [reason, setReason] = useState<IssueReason | "">("");
   const [correction, setCorrection] = useState("");
@@ -83,62 +94,57 @@ function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
   const [saved, setSaved] = useState(false);
 
   if (saved) {
-    return (
-      <p className="muted">
-        Saved privately on this device only — nothing was sent. See the Issues page to review or
-        export it.
-      </p>
-    );
+    return <p className="muted">{t("issueSaved")}</p>;
   }
   if (!open) {
     return (
       <button className="secondary" onClick={() => setOpen(true)}>
-        Report an issue
+        {t("reportIssue")}
       </button>
     );
   }
   return (
     <div className="card">
       <p>
-        <b>Report an issue</b>
+        <b>{t("reportIssue")}</b>
       </p>
-      <p className="muted">Saved privately on this device only — nothing is sent anywhere.</p>
+      <p className="muted">{t("issuePrivateNote")}</p>
       <label>
-        Reason
+        {t("reasonWord")}
         <select
-          aria-label="Issue reason"
+          aria-label={t("reasonWord")}
           value={reason}
           onChange={(e) => setReason(e.target.value as IssueReason | "")}
           style={{ display: "block", width: "100%", margin: "4px 0 8px" }}
         >
-          <option value="">Choose a reason…</option>
+          <option value="">{t("chooseReason")}</option>
           {ISSUE_REASONS.map((r) => (
             <option key={r.value} value={r.value}>
-              {r.label}
+              {t(REASON_KEY[r.value])}
             </option>
           ))}
         </select>
       </label>
       <label>
-        Proposed correction
+        {t("correctionWord")}
         <textarea
-          aria-label="Proposed correction"
+          aria-label={t("correctionWord")}
           value={correction}
           onChange={(e) => setCorrection(e.target.value)}
           rows={3}
           style={{ display: "block", width: "100%", margin: "4px 0 8px" }}
-          placeholder="What should it say instead?"
+          placeholder={t("correctionPlaceholder")}
         />
       </label>
       <label>
-        Source (optional)
+        {t("sourceOptional")}
         <input
           type="text"
-          aria-label="Source"
+          aria-label={t("sourceWord")}
           value={source}
           onChange={(e) => setSource(e.target.value)}
           style={{ display: "block", width: "100%", margin: "4px 0 8px" }}
-          placeholder="e.g. ETEA advert, textbook page"
+          placeholder={t("sourcePlaceholder")}
         />
       </label>
       <div style={{ display: "flex", gap: 8 }}>
@@ -154,10 +160,10 @@ function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
             setSaved(true);
           }}
         >
-          Save privately
+          {t("savePrivately")}
         </button>
         <button className="secondary" onClick={() => setOpen(false)}>
-          Cancel
+          {t("cancel")}
         </button>
       </div>
     </div>
@@ -179,7 +185,7 @@ export default function QuizRunner({
   sessionScope,
   questionSeed,
 }: Props) {
-  const { t } = useLang();
+  const { t, tf, lang } = useLang();
   const scope = sessionScope ?? `quiz:${title}`;
 
   // Restore a live session for this scope (null when none, submitted, or expired).
@@ -387,11 +393,7 @@ export default function QuizRunner({
   }, [secondsLeft, done]);
 
   function restart() {
-    if (
-      !window.confirm(
-        "Discard this in-progress session and start again? Your recorded attempts are not affected.",
-      )
-    ) {
+    if (!window.confirm(t("restartConfirm"))) {
       return;
     }
     clearSession(scope);
@@ -410,7 +412,7 @@ export default function QuizRunner({
     setDone(false);
   }
 
-  if (total === 0) return <p>No questions available for this set.</p>;
+  if (total === 0) return <p>{t("noQuestions")}</p>;
 
   if (done) {
     const pct = total ? Math.round((firstPassCount / total) * 100) : 0;
@@ -429,69 +431,73 @@ export default function QuizRunner({
           {/* Stage 1 P0.2 — provisional badge while the items in this quiz are not verified. */}
           {showProvisionalBadge ? (
             <p>
-              <span className="badge red">Provisional — not verified</span>
+              <span className="badge red">{t("provisionalBadge")}</span>
             </p>
           ) : (
             <p>
-              <span className="badge green">Verified items — owner-reviewed</span>
+              <span className="badge green">{t("verifiedBadge")}</span>
             </p>
           )}
           <p className="muted">
-            {title} · {Math.round((Date.now() - startTs) / 60000)} min
-            {trustedOnly ? " · Trusted-only (owner-reviewed/approved questions)" : ""}
+            {/* Localization Pass 1 (RTL) — the run title may be English
+                or translated depending on the caller; dir="auto" picks
+                the direction from its first strong character. */}
+            <span dir="auto">{title}</span> · {tf("minsLabel", { mins: Math.round((Date.now() - startTs) / 60000) })}
+            {trustedOnly ? ` · ${t("trustedOnlyNote")}` : ""}
           </p>
           {/* Stage 1 P0.1 — raw accuracy and exam score are two separate numbers. */}
-          <h3>Raw accuracy vs exam score</h3>
+          <h3>{t("rawVsExam")}</h3>
           <p>
             <b>
-              Raw accuracy:{" "}
+              {t("rawAccuracyWord")}{" "}
               <span dir="ltr">
                 {firstPassCount} / {total} ({pct}%)
               </span>
             </b>{" "}
-            — correct answers only, no penalty.
+            — {t("rawAccuracyNote")}
           </p>
           <p>
             <b>
-              Exam score:{" "}
+              {t("examScoreWord")}{" "}
               <span dir="ltr">
-                {examResult.examScore} / {examResult.examTotal} marks
-              </span>
+                {examResult.examScore} / {examResult.examTotal}
+              </span>{" "}
+              {t("marksLabel")}
             </b>{" "}
-            — {scoringLabel(examResult.config)}
-            {examResult.floored ? " (floored at 0 — the raw score was negative)" : ""}
+            — {localizedScoringLabel(examResult.config, lang)}
+            {examResult.floored ? t("flooredNote") : ""}
           </p>
-          <p className="muted">{examResult.config.policyNote}</p>
+          {/* Localization Pass 1 (RTL) — the policy note stays English
+              (factual precision statement); isolated LTR so its
+              trailing period cannot jump in RTL mode. */}
           <p className="muted">
-            Score counts your <b>first answer</b> to each question. Changing an answer afterwards
-            is a retry: it is recorded for learning, but it does not change the score.
+            <span dir="ltr">{examResult.config.policyNote}</span>
           </p>
+          <p className="muted">{t("qrFirstAnswerNote")}</p>
           {retries.length > 0 && (
-            <p className="muted">
-              Corrected retries: <b>{retries.length}</b> (not counted in the score).
-            </p>
+            <p className="muted">{tf("retriesLine", { n: retries.length })}</p>
           )}
           {unansweredCount > 0 && (
             <p className="muted">
-              Unanswered: <b>{unansweredCount}</b>
+              {t("unansweredWord")}: <b>{unansweredCount}</b>
             </p>
           )}
-          <div className="bar" role="img" aria-label={`${pct}% correct`}>
+          <div className="bar" role="img" aria-label={`${pct}% ${t("correctCount")}`}>
             <i style={{ width: `${pct}%` }} />
           </div>
-          <h3>Per subject (first-pass)</h3>
+          <h3>{t("perSubjectFirst")}</h3>
           <table>
             <thead>
               <tr>
-                <th>Subject</th>
-                <th>Correct</th>
-                <th>Total</th>
+                <th>{t("subjectWord")}</th>
+                <th>{t("correctWord")}</th>
+                <th>{t("totalWord")}</th>
               </tr>
             </thead>
             <tbody>
               {Object.entries(perSubject).map(([s, [c, tt]]) => (
                 <tr key={s}>
-                  <td>{s}</td>
+                  <td dir="ltr">{s}</td>
                   <td>{c}</td>
                   <td>{tt}</td>
                 </tr>
@@ -499,7 +505,7 @@ export default function QuizRunner({
             </tbody>
           </table>
         </div>
-        <h3>Review</h3>
+        <h3>{t("review")}</h3>
         {prepared.map((p, i) => {
           const fp = firstPass[p.question.id];
           const fin = answers[p.question.id];
@@ -507,34 +513,43 @@ export default function QuizRunner({
           return (
             <div className="card" key={p.question.id}>
               <p>
-                <b>Q{i + 1}.</b> {p.question.question}{" "}
+                <span dir="ltr">
+                  <b>Q{i + 1}.</b>
+                </span>{" "}
+                <span dir="auto">{p.question.question}</span>{" "}
                 <span className={`badge ${fp === undefined ? "grey" : ok ? "green" : "red"}`}>
-                  {fp === undefined ? "Unanswered" : ok ? "Correct (first try)" : "Wrong (first try)"}
+                  {fp === undefined ? t("badgeUnanswered") : ok ? t("badgeCorrectFirst") : t("badgeWrongFirst")}
                 </span>
               </p>
               {p.options.map((o, oi) => (
                 <p key={oi} style={{ margin: "4px 0" }}>
                   {oi === p.correctIndex ? "✅ " : fp === oi ? "❌ " : "· "}
-                  {o}
-                  {fp === oi ? " — your first answer" : ""}
-                  {fin !== undefined && fin !== fp && fin === oi ? " — your final answer" : ""}
+                  <span dir="auto">{o}</span>
+                  {fp === oi ? t("yourFirstAnswer") : ""}
+                  {fin !== undefined && fin !== fp && fin === oi ? t("yourFinalAnswer") : ""}
                 </p>
               ))}
               {fin !== undefined && fp !== undefined && fin !== fp && (
                 <p className="muted">
-                  You changed this answer after feedback. First answer: {p.options[fp]} · Final
-                  answer: {p.options[fin]} · Score uses the first answer.
+                  {t("changedAnswer1")} <span dir="auto">{p.options[fp]}</span> {t("changedAnswerMid")}{" "}
+                  <span dir="auto">{p.options[fin]}</span> {t("changedAnswerEnd")}
                 </p>
               )}
-              <p className="muted">{p.question.explanation}</p>
-              {p.question.pastPaperRef && <p className="muted">{p.question.pastPaperRef}</p>}
               <p className="muted">
-                {p.question.source}
+                <span dir="auto">{p.question.explanation}</span>
+              </p>
+              {p.question.pastPaperRef && (
+                <p className="muted">
+                  <span dir="auto">{p.question.pastPaperRef}</span>
+                </p>
+              )}
+              <p className="muted">
+                <span dir="auto">{p.question.source}</span>
                 {" — "}
                 {p.question.reviewStatus === "owner-reviewed" ||
                 p.question.reviewStatus === "approved"
-                  ? "owner-reviewed"
-                  : "not verified"}
+                  ? t("ownerReviewedLabel")
+                  : t("notVerifiedLabel")}
               </p>
               <IssueForm qid={p.question.id} subject={p.question.subject} />
             </div>
@@ -589,42 +604,55 @@ export default function QuizRunner({
 
   return (
     <div>
-      <h2>{title}</h2>
+      <h2>
+        <span dir="auto">{title}</span>
+      </h2>
       {note && <div className="alert">{note}</div>}
       {resumed && (
         <div className="alert">
-          Resumed your in-progress session — answers, first-pass scores and the timer were
-          restored.{" "}
+          {t("resumedAlert")}{" "}
           <button className="secondary" onClick={restart}>
-            Restart (discard session)
+            {t("restartButton")}
           </button>
         </div>
       )}
-      {trustedOnly && (
-        <p className="muted">Trusted-only: only owner-reviewed/approved questions.</p>
-      )}
+      {trustedOnly && <p className="muted">{t("trustedOnlyLine")}</p>}
       <p className="muted">
         {/* Stage 1 P1 Tier 4 (B03) — question counter and timer isolated
             LTR so neither can reverse in RTL (Urdu) mode. */}
-        Question{" "}
+        {t("questionWord")}{" "}
         <span dir="ltr">
           {idx + 1} of {total}
         </span>
         {mode === "mock" && minutes > 0 && (
           <>
-            {" · "}⏱ <span dir="ltr">{mm}:{ss}</span> left
+            {" · "}⏱ <span dir="ltr">{mm}:{ss}</span> {t("timeLeft")}
           </>
         )}
-        {mode === "mock" && " · Practice mock — shares the practice bank; questions may repeat across track mocks."}
+        {mode === "mock" && (
+          <>
+            {" · "}
+            {t("practiceMockNote")}
+          </>
+        )}
       </p>
-      <div className="bar" role="img" aria-label={`Question ${idx + 1} of ${total}`}>
+      <div className="bar" role="img" aria-label={`${t("questionWord")} ${idx + 1} of ${total}`}>
         <i style={{ width: `${((idx + 1) / total) * 100}%` }} />
       </div>
       <div className="card">
         <p>
-          <b>Q{idx + 1}.</b> {q.question.question}{" "}
-          <span className="badge grey">{q.question.subject}</span>
-          {q.question.pastPaperRef && <span className="badge">{q.question.pastPaperRef.includes("reworded") ? "Reworded" : "Original"}</span>}
+          <span dir="ltr">
+            <b>Q{idx + 1}.</b>
+          </span>{" "}
+          <span dir="auto">{q.question.question}</span>{" "}
+          <span dir="ltr" className="badge grey">
+            {q.question.subject}
+          </span>
+          {q.question.pastPaperRef && (
+            <span className="badge">
+              {q.question.pastPaperRef.includes("reworded") ? t("rewordedBadge") : t("originalBadge")}
+            </span>
+          )}
           {/* Stage 1 P2 — provenance badge (renders only when the item
               carries a sourceKind). */}
           <ProvenanceBadge source={q.question.source} sourceKind={q.question.sourceKind} syllabusClause={q.question.syllabusClause} />
@@ -654,14 +682,20 @@ export default function QuizRunner({
               onClick={() => choose(i)}
               disabled={mode === "practice" && revealed}
             >
-              {String.fromCharCode(65 + i)}. {o}
+              {/* Localization Pass 1 (RTL) — the option letter is an
+                  LTR identifier; the option text is content (dir="auto"
+                  so English and future Urdu/Arabic options both render
+                  with their punctuation on the right side). */}
+              <span dir="ltr">{String.fromCharCode(65 + i)}.</span>{" "}
+              <span dir="auto">{o}</span>
             </button>
           );
         })}
         {mode === "practice" && revealed && (
           <div className="alert green">
             <p>
-              <b>{pickedCorrect ? t("correct") : t("wrong")}</b> — {q.question.explanation}
+              <b>{pickedCorrect ? t("correct") : t("wrong")}</b> —{" "}
+              <span dir="auto">{q.question.explanation}</span>
             </p>
             <IssueForm qid={q.question.id} subject={q.question.subject} />
           </div>
@@ -679,17 +713,19 @@ export default function QuizRunner({
           <button onClick={next}>{idx + 1 >= total ? t("submit") : t("next")}</button>
         )}
         <button className="secondary" onClick={restart}>
-          Restart (discard session)
+          {t("restartButton")}
         </button>
       </div>
       <p className="muted">
-        First-pass score so far: {firstPassCount} correct
-        {retries.length > 0 ? ` · ${retries.length} corrected retr${retries.length === 1 ? "y" : "ies"} (not counted)` : ""}
-        {mode === "mock" && minutes > 0
-          ? " · The timer ends at a fixed time — reloading the page does not reset it."
+        {t("firstPassSoFar")} {firstPassCount} {t("correctCount")}
+        {retries.length > 0
+          ? ` · ${tf("retriesNotCounted", { n: retries.length, plural: retries.length === 1 ? "y" : "ies" })}`
           : ""}
+        {mode === "mock" && minutes > 0 ? ` · ${t("timerNote")}` : ""}
       </p>
-      <p className="muted">Scoring: {scoringLabel(scoring)}</p>
+      <p className="muted">
+        {t("scoringWord")} {localizedScoringLabel(scoring, lang)}
+      </p>
     </div>
   );
 }

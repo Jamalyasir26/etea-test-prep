@@ -44,8 +44,10 @@ export default function Nav() {
     <header className="topbar">
       <div className="topbar-inner">
         <Link href="/" className="brand" onClick={() => setMenuOpen(false)}>
-          📚 ETEA Prep Library
-          <small>KP Government Jobs — personal preparation</small>
+          {/* Localization Pass 1 (RTL) — the brand is a proper name kept
+              in English; isolated LTR so it cannot reorder in RTL mode. */}
+          <span dir="ltr">📚 ETEA Prep Library</span>
+          <small>{t("brandTagline")}</small>
         </Link>
         <button
           ref={toggleRef}
@@ -53,7 +55,7 @@ export default function Nav() {
           className="nav-toggle"
           aria-expanded={menuOpen}
           aria-controls="main-nav"
-          aria-label="Navigation menu"
+          aria-label={t("navMenuLabel")}
           onClick={() => setMenuOpen((o) => !o)}
         >
           {menuOpen ? "✕" : "☰"}
@@ -61,7 +63,7 @@ export default function Nav() {
         <nav
           id="main-nav"
           className={menuOpen ? "nav open" : "nav"}
-          aria-label="Main"
+          aria-label={t("mainNavLabel")}
           onClick={() => setMenuOpen(false)}
         >
           {LINKS.map((l) => (
@@ -69,17 +71,16 @@ export default function Nav() {
               {t(l.key)}
             </Link>
           ))}
-          {/* "issues" has no i18n string (t() would fall back to lowercase "issues"), so it is a plain label. */}
           <Link href="/issues" className={pathname === "/issues" ? "active" : ""}>
-            Issues
+            {t("issues")}
           </Link>
           <Link href="/review" className={pathname === "/review" ? "active" : ""}>
-            Review
+            {t("review")}
           </Link>
         </nav>
         <div className="controls">
           <select
-            aria-label="Language"
+            aria-label={t("languageLabel")}
             value={lang}
             onChange={(e) => setLang(e.target.value as "en" | "roman" | "ur")}
           >
@@ -91,9 +92,9 @@ export default function Nav() {
             className="secondary"
             style={{ minHeight: 36, padding: "4px 10px", borderColor: "#fff", color: "#fff" }}
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            aria-label="Toggle dark mode"
+            aria-label={t("toggleDarkLabel")}
           >
-            {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+            {theme === "dark" ? `☀️ ${t("light")}` : `🌙 ${t("dark")}`}
           </button>
         </div>
       </div>
