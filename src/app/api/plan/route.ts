@@ -1,7 +1,7 @@
 // POST /api/plan — AI study plan (3/6/12 weeks) built on the 21-day base
 // plan and the user's own weak subjects from saved scores.
 import { NextRequest, NextResponse } from "next/server";
-import { AiError, generateTutorAnswer, planContext, rateLimitOk } from "@/lib/ai";
+import { AiError, generateTutorAnswer, normalizeTutorLang, planContext, rateLimitOk } from "@/lib/ai";
 
 function clientIp(req: NextRequest): string {
   const fwd = req.headers.get("x-forwarded-for");
@@ -13,7 +13,9 @@ export async function POST(req: NextRequest) {
     const rl = rateLimitOk(clientIp(req));
     if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
     const body = await req.json().catch(() => ({}));
-    const lang = ["en", "roman", "ur"].includes(body.lang) ? body.lang : "en";
+    // Stage 1 P1 Tier 2: shares the tutor generation path, so it accepts
+    // the same languages (including "ar"); unknown values fall back to "en".
+    const lang = normalizeTutorLang(body.lang);
     const weeks = [3, 6, 12].includes(Number(body.weeks)) ? Number(body.weeks) : 3;
     const weakSubjects = Array.isArray(body.weakSubjects)
       ? body.weakSubjects.filter((s: unknown) => typeof s === "string").slice(0, 5)
