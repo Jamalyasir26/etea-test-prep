@@ -28,7 +28,7 @@ import {
   type Stats,
   type StorageWarning,
 } from "@/lib/tracking";
-import { useLang } from "@/lib/i18n";
+import { lri, useLang } from "@/lib/i18n";
 
 function heat(acc: number) {
   return acc < 50 ? "red" : acc < 70 ? "yellow" : "green";
@@ -40,7 +40,7 @@ function fmtMs(ms?: number) {
 }
 
 export default function Analysis() {
-  const { t } = useLang();
+  const { t, tf } = useLang();
   const [stats, setStats] = useState<Stats | null>(null);
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   const [selected, setSelected] = useState<Attempt | null>(null);
@@ -64,55 +64,61 @@ export default function Analysis() {
 
   function doExportQuarantine() {
     download(`etea-prep-quarantine-${new Date().toISOString().slice(0, 10)}.json`, exportQuarantine());
-    setMsg("Quarantined data downloaded as a JSON file (raw stored text, verbatim). Nothing was deleted.");
+    setMsg(t("quarantineDownloadedMsg"));
   }
   function doDismissQuarantine() {
-    if (
-      window.confirm(
-        "Clear the quarantined data and dismiss this warning? Only do this after downloading a copy — the raw text will be removed.",
-      )
-    ) {
+    if (window.confirm(t("quarantineClearConfirm"))) {
       clearQuarantine();
       clearStorageWarnings();
       refresh();
-      setMsg("Quarantined data cleared by your choice.");
+      setMsg(t("quarantineClearedMsg"));
     }
   }
 
   function doExport() {
     download(`etea-prep-progress-${new Date().toISOString().slice(0, 10)}.json`, exportProgress());
-    setMsg("Progress exported as a JSON file (attempts, plan, flashcards, issues, preferences, in-progress sessions).");
+    setMsg(t("exportMsg"));
   }
   function doImport(file: File) {
     const r = new FileReader();
     r.onload = () => {
       const res = importProgress(String(r.result ?? ""));
       if (!res.ok) {
-        setMsg(res.error ?? "Import failed.");
+        setMsg(res.error ?? t("importFailed"));
       } else if (res.counts) {
         const c = res.counts;
         setMsg(
-          `Imported ${c.attempts} new attempt(s), ${c.issues} issue(s), ${c.sessions} session(s)` +
-            `; merged ${c.planKeys} plan key(s), ${c.flashcardKeys} flashcard(s)` +
-            `${c.preferencesApplied ? "; preferences applied" : ""}` +
-            `${c.attemptsSkipped + c.issuesSkipped + c.sessionsSkipped > 0 ? `; skipped ${c.attemptsSkipped + c.issuesSkipped + c.sessionsSkipped} invalid record(s)` : ""}.`,
+          tf("importMsg", {
+            a: c.attempts,
+            i: c.issues,
+            s: c.sessions,
+            p: c.planKeys,
+            f: c.flashcardKeys,
+          }) +
+            (c.preferencesApplied ? t("importPrefs") : "") +
+            (c.attemptsSkipped + c.issuesSkipped + c.sessionsSkipped > 0
+              ? tf("importSkipped", { n: c.attemptsSkipped + c.issuesSkipped + c.sessionsSkipped })
+              : "") +
+            ".",
         );
       } else {
-        setMsg(`Imported ${res.imported ?? 0} new attempts.`);
+        setMsg(tf("importSimple", { n: res.imported ?? 0 }));
       }
       refresh();
     };
     r.readAsText(file);
   }
 
-  if (!stats) return <p>Loading…</p>;
+  if (!stats) return <p>{t("loading")}</p>;
   const last14 = stats.daily.slice(-14);
   const maxDay = Math.max(1, ...last14.map((d) => d.total));
   const recent = [...attempts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 20);
 
   return (
     <div>
-      <h1>{t("analysis")} — live</h1>
+      <h1>
+        {t("analysis")} {t("liveSuffix")}
+      </h1>
       {!stats.hasData && (
         <div className="alert">
           <b>{t("noAttempts")}</b>
@@ -120,41 +126,43 @@ export default function Analysis() {
       )}
       {(warnings.length > 0 || quarantine.length > 0) && (
         <div className="alert red">
-          <b>Saved-data problem — nothing was deleted.</b>
+          <b>{t("storageWarningTitle")}</b>
           {quarantine.length > 0 && (
             <p>
-              {quarantine.length} stored value{quarantine.length === 1 ? "" : "s"} could not be
-              read (keys: {[...new Set(quarantine.map((q) => q.key))].join(", ")}). The raw text
-              was quarantined verbatim — download it below to inspect or recover it by hand. The
-              affected section shows its empty state until the stored value is repaired or
-              replaced.
+              {tf("quarantineBody", {
+                n: quarantine.length,
+                keys: lri([...new Set(quarantine.map((q) => q.key))].join(", ")),
+              })}
             </p>
           )}
           {warnings.some((w) => w.type === "write-failed") && (
             <p>
-              A save failed (
-              {warnings
-                .filter((w) => w.type === "write-failed")
-                .map((w) => `${w.key}: ${w.detail}`)
-                .join("; ")}
-              ). Your progress may not have been stored — export it now from &quot;Your
-              data&quot; below, then free up browser storage and try again.
+              {t("writeFailedA")} (
+              <span dir="ltr">
+                {warnings
+                  .filter((w) => w.type === "write-failed")
+                  .map((w) => `${w.key}: ${w.detail}`)
+                  .join("; ")}
+              </span>
+              ). {t("writeFailedB")}
             </p>
           )}
           {warnings.some((w) => w.type === "read-failed") && (
             <p>
-              A stored value could not be read (
-              {warnings
-                .filter((w) => w.type === "read-failed")
-                .map((w) => `${w.key}: ${w.detail}`)
-                .join("; ")}
-              ). Check that this browser allows local storage for this site.
+              {t("readFailedA")} (
+              <span dir="ltr">
+                {warnings
+                  .filter((w) => w.type === "read-failed")
+                  .map((w) => `${w.key}: ${w.detail}`)
+                  .join("; ")}
+              </span>
+              ). {t("readFailedB")}
             </p>
           )}
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 8 }}>
-            {quarantine.length > 0 && <button onClick={doExportQuarantine}>Download quarantined data</button>}
+            {quarantine.length > 0 && <button onClick={doExportQuarantine}>{t("downloadQuarantine")}</button>}
             <button className="secondary" onClick={doDismissQuarantine}>
-              Dismiss and clear quarantined data
+              {t("dismissQuarantine")}
             </button>
           </div>
         </div>
@@ -166,7 +174,9 @@ export default function Analysis() {
         </div>
         <div className="card stat">
           <b>{stats.hasData && stats.totalQuestions > 0 ? `${Math.round(stats.accuracy)}%` : "—"}</b>
-          <span>{t("accuracy")} (MCQ only)</span>
+          <span>
+            {t("accuracy")} {t("mcqOnly")}
+          </span>
         </div>
         <div className="card stat">
           <b>
@@ -176,14 +186,14 @@ export default function Analysis() {
               {stats.totalCorrect}/{stats.totalQuestions}
             </span>
           </b>
-          <span>MCQ questions correct (first-pass)</span>
+          <span>{t("mcqCorrectLabel")}</span>
         </div>
         <div className="card stat">
           <b>{stats.streakDays}</b>
           <span>{t("streak")}</span>
         </div>
         <div className="card stat">
-          <b>{stats.totalMinutes} min</b>
+          <b>{tf("minsLabel", { mins: stats.totalMinutes })}</b>
           <span>{t("timeSpent")}</span>
         </div>
         <div className="card stat">
@@ -192,28 +202,23 @@ export default function Analysis() {
               {stats.flashRecalled}/{stats.flashReviewed}
             </span>
           </b>
-          <span>
-            Flashcards recalled ({stats.flashAttempts} session{stats.flashAttempts === 1 ? "" : "s"} — self-rated, not in MCQ accuracy)
-          </span>
+          <span>{tf("flashRecalledLabel", { n: stats.flashAttempts })}</span>
         </div>
       </div>
-      <p className="muted">
-        Scores count your first answer to each question; corrected retries never change a score.
-        Flashcard self-ratings are kept separate from MCQ accuracy.
-      </p>
+      <p className="muted">{t("firstAnswerNote")}</p>
 
-      <h2>Per-subject accuracy</h2>
+      <h2>{t("perSubjectHeading")}</h2>
       {Object.keys(stats.perSubject).length === 0 ? (
-        <p className="muted">No subject data yet.</p>
+        <p className="muted">{t("noSubjectData")}</p>
       ) : (
         <table>
           <thead>
             <tr>
-              <th>Subject</th>
-              <th>Accuracy</th>
-              <th>Correct</th>
-              <th>Total</th>
-              <th>Attempts</th>
+              <th>{t("subjectWord")}</th>
+              <th>{t("accuracy")}</th>
+              <th>{t("correctWord")}</th>
+              <th>{t("totalWord")}</th>
+              <th>{t("attempts")}</th>
               <th></th>
             </tr>
           </thead>
@@ -224,7 +229,7 @@ export default function Analysis() {
                 <tr key={s}>
                   <td>
                     <span className={`heat ${heat(v.accuracy)}`} />
-                    {s}
+                    <span dir="ltr">{s}</span>
                   </td>
                   <td>{Math.round(v.accuracy)}%</td>
                   <td>{v.correct}</td>
@@ -239,49 +244,56 @@ export default function Analysis() {
         </table>
       )}
 
-      <h2>Weak-area heatmap</h2>
+      <h2>{t("weakHeatmap")}</h2>
       {stats.weakest.length === 0 ? (
-        <p className="muted">Need at least 5 questions per subject before weak areas show.</p>
+        <p className="muted">{t("weakNeedData")}</p>
       ) : (
         stats.weakest.map((w) => (
           <p key={w.subject}>
             <span className={`heat ${heat(w.accuracy)}`} />
-            {w.subject} — {Math.round(w.accuracy)}% over {w.total} questions{" "}
-            <Link href={`/practice?subject=${encodeURIComponent(w.subject)}`}>{t("drill")} →</Link>
+            <span dir="ltr">{w.subject}</span> —{" "}
+            <span dir="ltr">{Math.round(w.accuracy)}%</span> {tf("weakOver", { total: w.total })}{" "}
+            <Link href={`/practice?subject=${encodeURIComponent(w.subject)}`}>{t("drillArrow")}</Link>
           </p>
         ))
       )}
 
-      <h2>Last 14 days (MCQ questions per day)</h2>
+      <h2>{t("last14Heading")}</h2>
       {last14.length === 0 ? (
-        <p className="muted">No activity yet.</p>
+        <p className="muted">{t("noActivity")}</p>
       ) : (
         <div>
           {last14.map((d) => (
             <div key={d.date} style={{ display: "flex", alignItems: "center", gap: 8, margin: "4px 0" }}>
-              <span style={{ width: 96 }}>{d.date.slice(5)}</span>
+              <span dir="ltr" style={{ width: 96 }}>
+                {d.date.slice(5)}
+              </span>
               <div className="bar" style={{ flex: 1 }}>
                 <i style={{ width: `${(d.total / maxDay) * 100}%` }} />
               </div>
+              {/* Localization Pass 1 (RTL) — the fraction stays an
+                  isolated LTR span; the attempts count is a translated
+                  word, kept outside the span. */}
               <span dir="ltr">
-                {d.correct}/{d.total} ({d.attempts} attempts)
-              </span>
+                {d.correct}/{d.total}
+              </span>{" "}
+              ({d.attempts} {t("attempts")})
             </div>
           ))}
         </div>
       )}
 
-      <h2>Mock history</h2>
+      <h2>{t("mockHistoryHeading")}</h2>
       {stats.mockHistory.length === 0 ? (
-        <p className="muted">No mocks taken yet.</p>
+        <p className="muted">{t("noMocks")}</p>
       ) : (
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Mock</th>
-              <th>Score</th>
-              <th>Time</th>
+              <th>{t("dateWord")}</th>
+              <th>{t("mockWord")}</th>
+              <th>{t("scoreWord")}</th>
+              <th>{t("timeWord")}</th>
             </tr>
           </thead>
           <tbody>
@@ -290,34 +302,34 @@ export default function Analysis() {
                 key={m.id}
                 onClick={() => setSelected(m)}
                 style={{ cursor: "pointer" }}
-                title="Click to see the per-item table"
+                title={t("clickDetailTitle")}
               >
-                <td>{m.date.slice(0, 10)}</td>
-                <td>{m.title}</td>
+                <td dir="ltr">{m.date.slice(0, 10)}</td>
+                <td dir="auto">{m.title}</td>
                 <td>
                   <span dir="ltr">
                     {m.correct}/{m.total} ({Math.round((m.correct / m.total) * 100)}%)
                   </span>
                 </td>
-                <td>{Math.round(m.seconds / 60)} min</td>
+                <td>{tf("minsLabel", { mins: Math.round(m.seconds / 60) })}</td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
 
-      <h2>All attempts (latest 20)</h2>
+      <h2>{t("allAttemptsHeading")}</h2>
       {recent.length === 0 ? (
-        <p className="muted">No attempts yet.</p>
+        <p className="muted">{t("noAttemptsYet")}</p>
       ) : (
         <table>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Type</th>
-              <th>Title</th>
-              <th>Score</th>
-              <th>Retries</th>
+              <th>{t("dateWord")}</th>
+              <th>{t("typeWord")}</th>
+              <th>{t("titleWord")}</th>
+              <th>{t("scoreWord")}</th>
+              <th>{t("retriesWord")}</th>
             </tr>
           </thead>
           <tbody>
@@ -326,11 +338,11 @@ export default function Analysis() {
                 key={a.id}
                 onClick={() => setSelected(a)}
                 style={{ cursor: "pointer" }}
-                title="Click to see the per-item table"
+                title={t("clickDetailTitle")}
               >
-                <td>{a.date.slice(0, 10)}</td>
-                <td>{a.kind}</td>
-                <td>{a.title}</td>
+                <td dir="ltr">{a.date.slice(0, 10)}</td>
+                <td dir="ltr">{a.kind}</td>
+                <td dir="auto">{a.title}</td>
                 <td>
                   <span dir="ltr">
                     {a.correct}/{a.total}
@@ -346,64 +358,64 @@ export default function Analysis() {
       {selected && (
         <div className="card">
           <h3>
-            Attempt detail — {selected.title} ({selected.date.slice(0, 10)})
+            {tf("attemptDetailHeading", {
+              title: lri(selected.title),
+              date: lri(selected.date.slice(0, 10)),
+            })}
           </h3>
           <p className="muted">
             {selected.kind === "flash" ? (
-              "Flashcard session (self-rated). No per-item MCQ table applies."
+              t("flashSessionNote")
             ) : (
               <>
-                First-pass score{" "}
+                {t("firstPassScore")}{" "}
                 {/* Stage 1 P1 Tier 4 (B03) — fraction isolated LTR. */}
                 <span dir="ltr">
                   {selected.correct}/{selected.total}
                 </span>
                 {selected.retryCount
-                  ? ` · ${selected.retryCount} corrected retr${selected.retryCount === 1 ? "y" : "ies"} (not counted in the score)`
-                  : " · no corrected retries"}{" "}
-                · {Math.round(selected.seconds / 60)} min
+                  ? ` · ${tf("retriesCounted", { n: selected.retryCount, plural: selected.retryCount === 1 ? "y" : "ies" })}`
+                  : ` · ${t("noRetries")}`}{" "}
+                · {tf("minsLabel", { mins: Math.round(selected.seconds / 60) })}
               </>
             )}
             {" · "}
             <button className="secondary" style={{ minHeight: 36, padding: "4px 10px" }} onClick={() => setSelected(null)}>
-              Close
+              {t("closeWord")}
             </button>
           </p>
           {selected.kind !== "flash" &&
             (!selected.itemRecords || selected.itemRecords.length === 0 ? (
-              <p className="muted">
-                No per-item data recorded for this attempt — it was recorded before item-level
-                tracking existed.
-              </p>
+              <p className="muted">{t("noItemData")}</p>
             ) : (
               <table>
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Question</th>
-                    <th>Topic</th>
-                    <th>First answer</th>
-                    <th>Final answer</th>
-                    <th>Correct</th>
-                    <th>Mode</th>
-                    <th>Key</th>
-                    <th>Answered at</th>
-                    <th>Response time</th>
+                    <th>{t("questionWord")}</th>
+                    <th>{t("topicWord")}</th>
+                    <th>{t("firstAnswerWord")}</th>
+                    <th>{t("finalAnswerWord")}</th>
+                    <th>{t("correctWord")}</th>
+                    <th>{t("modeWord")}</th>
+                    <th>{t("keyWord")}</th>
+                    <th>{t("answeredAtWord")}</th>
+                    <th>{t("responseTimeWord")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {selected.itemRecords.map((r, i) => (
                     <tr key={r.questionId}>
                       <td>{i + 1}</td>
-                      <td>{r.question}</td>
-                      <td>{r.topic}</td>
-                      <td>{r.firstAnswer ?? "—"}</td>
-                      <td>{r.finalAnswer ?? "—"}</td>
+                      <td dir="auto">{r.question}</td>
+                      <td dir="auto">{r.topic}</td>
+                      <td dir="auto">{r.firstAnswer ?? "—"}</td>
+                      <td dir="auto">{r.finalAnswer ?? "—"}</td>
                       <td>{r.correct ? "✅" : "❌"}</td>
-                      <td>{r.mode}</td>
-                      <td>{r.keyVersion}</td>
-                      <td>{r.answeredAt ? r.answeredAt.slice(11, 19) : "—"}</td>
-                      <td>{fmtMs(r.responseMs)}</td>
+                      <td dir="ltr">{r.mode}</td>
+                      <td dir="ltr">{r.keyVersion}</td>
+                      <td dir="ltr">{r.answeredAt ? r.answeredAt.slice(11, 19) : "—"}</td>
+                      <td dir="ltr">{fmtMs(r.responseMs)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -412,16 +424,8 @@ export default function Analysis() {
         </div>
       )}
 
-      <h2>Your data</h2>
-      <p className="muted">
-        Progress lives in this browser only (localStorage). Export it regularly so a cleared browser
-        never loses your history. A full backup covers attempts, plan, flashcards, issues,
-        preferences (language/theme) and in-progress sessions — and never contains API keys (there
-        are none client-side). Import merges into what is already stored (attempts deduplicated by
-        id; a live in-progress session is never overwritten by an import). If a stored value ever
-        fails to parse, its raw text is quarantined — never deleted — and a warning appears at the
-        top of this page with a download option.
-      </p>
+      <h2>{t("yourDataHeading")}</h2>
+      <p className="muted">{t("yourDataBody")}</p>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         <button onClick={doExport}>{t("export")}</button>
         <button className="secondary" onClick={() => fileRef.current?.click()}>
@@ -441,17 +445,21 @@ export default function Analysis() {
         <button
           className="secondary"
           onClick={() => {
-            if (window.confirm("Delete all recorded attempts? This cannot be undone (export first if you want a copy).")) {
+            if (window.confirm(t("deleteAttemptsConfirm"))) {
               clearAttempts();
               refresh();
-              setMsg("All attempts deleted.");
+              setMsg(t("attemptsDeletedMsg"));
             }
           }}
         >
-          Delete all attempts
+          {t("deleteAttempts")}
         </button>
       </div>
-      {msg && <p className="muted">{msg}</p>}
+      {msg && (
+        <p dir="auto" className="muted">
+          {msg}
+        </p>
+      )}
     </div>
   );
 }
