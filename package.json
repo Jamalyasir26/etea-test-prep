@@ -25,7 +25,10 @@
     "test:scoring": "node scripts/test-scoring.mjs",
     "test:reviews": "node scripts/test-reviews.mjs",
     "test:retrieval": "node scripts/test-retrieval.mjs",
-    "test:fallback": "node scripts/test-fallback-chain.mjs"
+    "test:fallback": "node scripts/test-fallback-chain.mjs",
+    "test:timeouts": "node scripts/test-timeouts.mjs",
+    "test:storage": "node scripts/test-storage.mjs",
+    "test:lang": "node scripts/test-tutor-lang.mjs"
   },
   "version": "3.0.0"
 }
