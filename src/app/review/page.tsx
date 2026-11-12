@@ -21,6 +21,7 @@ import {
   type Question,
 } from "@/lib/data";
 import structural from "@/data/structural-checks.json";
+import { useLang } from "@/lib/i18n";
 import {
   loadReviews,
   setReview,
@@ -37,15 +38,15 @@ function structuralOf(qid: string): { status: StructuralStatus; issues: string[]
   return STRUCTURAL[qid] ?? { status: "pass", issues: [] };
 }
 
-const MOCK_FILTERS: { value: string; label: string }[] = [
-  { value: "zam1+zam2", label: "ZamungKor Mock 1 + 2 (200) — TT + Qari first" },
-  { value: "zam1", label: "ZamungKor Mock 1 (100)" },
-  { value: "zam2", label: "ZamungKor Mock 2 (100)" },
-  { value: "zam3", label: "ZamungKor Mock 3 (100)" },
-  { value: "tt-B", label: "TT Mock — Version B (pool)" },
-  { value: "qari-B", label: "Qari Mock — Version B (pool)" },
-  { value: "at-B", label: "AT Mock — Version B (pool)" },
-  { value: "all", label: "All draft items (whole bank)" },
+const MOCK_FILTERS: { value: string; labelKey: string }[] = [
+  { value: "zam1+zam2", labelKey: "mockFilterZam12" },
+  { value: "zam1", labelKey: "mockFilterZam1" },
+  { value: "zam2", labelKey: "mockFilterZam2" },
+  { value: "zam3", labelKey: "mockFilterZam3" },
+  { value: "tt-B", labelKey: "mockFilterTTB" },
+  { value: "qari-B", labelKey: "mockFilterQariB" },
+  { value: "at-B", labelKey: "mockFilterATB" },
+  { value: "all", labelKey: "mockFilterAll" },
 ];
 
 function mockPool(mockId: string): Question[] {
@@ -68,16 +69,33 @@ function mockPool(mockId: string): Question[] {
   return [...new Map(out.map((q) => [q.id, q])).values()];
 }
 
-const STATUS_FILTERS: { value: string; label: string }[] = [
-  { value: "all", label: "All statuses" },
-  { value: "draft", label: "Draft" },
-  { value: "needs-review", label: "Needs review" },
-  { value: "disputed", label: "Disputed" },
-  { value: "owner-reviewed", label: "Owner-reviewed" },
-  { value: "approved", label: "Approved" },
+const STATUS_FILTERS: { value: string; labelKey: string }[] = [
+  { value: "all", labelKey: "allStatuses" },
+  { value: "draft", labelKey: "statusDraft" },
+  { value: "needs-review", labelKey: "statusNeedsReview" },
+  { value: "disputed", labelKey: "statusDisputed" },
+  { value: "owner-reviewed", labelKey: "statusOwnerReviewed" },
+  { value: "approved", labelKey: "statusApproved" },
 ];
 
+// Localization Pass 1 — stored status values are stable English keys;
+// only their DISPLAY labels are translated. effectiveReviewStatus
+// returns string, so the map is keyed by string.
+const STATUS_DISPLAY_KEY: Record<string, string> = {
+  draft: "statusDraft",
+  "needs-review": "statusNeedsReview",
+  disputed: "statusDisputed",
+  "owner-reviewed": "statusOwnerReviewed",
+  approved: "statusApproved",
+};
+const STRUCTURAL_DISPLAY_KEY: Record<StructuralStatus, string> = {
+  pass: "structuralPass",
+  "needs-review": "structuralNeedsReview",
+  problem: "structuralProblem",
+};
+
 export default function ReviewDashboard() {
+  const { t, tf } = useLang();
   // Stage 1 P2 (B07) — hydration safety. This page is prerendered, so
   // the first client render must match the server HTML exactly. Two
   // things broke that: (1) loadReviews() returns {} on the server but
@@ -148,77 +166,79 @@ export default function ReviewDashboard() {
 
   return (
     <div>
-      <h1>Review Queue — Verification Dashboard</h1>
+      <h1>{t("reviewTitle")}</h1>
       <div className="alert">
-        <b>You are the verifier.</b> Religious content (Islamiyat, Tajweed, Arabic, Fiqh) is
-        verified by you, the owner — never by the AI. Items that pass the structural check stay{" "}
-        <b>draft</b> until you verify them here. Verified items feed Trusted Mode; everything
-        else stays provisional.
+        <b>{t("reviewAlertTitle")}</b> {t("reviewAlertBody1")} <b>{t("draftWord")}</b>{" "}
+        {t("reviewAlertBody2")}
       </div>
       <div className="card">
         <p>
           <b>
-            ZamungKor Mock 1 + 2 progress:{" "}
+            {t("zamProgressLabel")}{" "}
             {/* Stage 1 P1 Tier 4 (B03) — progress fraction isolated LTR. */}
             <span dir="ltr">
               {zamProgress.verified} / {zamProgress.total}
             </span>{" "}
-            verified
+            {t("verifiedWord")}
           </b>
-          {zamProgress.verified === 0
-            ? " — Trusted Mode has no verified items yet, so it returns 0 questions. Verify items below to unlock it."
-            : " — these items are available in Trusted Mode."}
+          {zamProgress.verified === 0 ? ` — ${t("zamProgressNone")}` : ` — ${t("zamProgressSome")}`}
         </p>
         <p className="muted">
-          Current filter: {counts.total} items — {counts.draft} draft · {counts.needsReview} needs
-          review · {counts.disputed} disputed · {counts.verified} verified. Structural check:{" "}
-          {counts.structuralPass} pass · {counts.structuralNeeds} needs review ·{" "}
-          {counts.structuralProblem} problem.
+          {tf("countsLine", {
+            total: counts.total,
+            draft: counts.draft,
+            needs: counts.needsReview,
+            disputed: counts.disputed,
+            verified: counts.verified,
+            pass: counts.structuralPass,
+            sNeeds: counts.structuralNeeds,
+            prob: counts.structuralProblem,
+          })}
         </p>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
         <label>
-          Mock{" "}
-          <select aria-label="Mock filter" value={mockFilter} onChange={(e) => { setMockFilter(e.target.value); setVisible(25); }}>
+          {t("mockFilterLabel")}{" "}
+          <select aria-label={t("mockFilterLabel")} value={mockFilter} onChange={(e) => { setMockFilter(e.target.value); setVisible(25); }}>
             {MOCK_FILTERS.map((f) => (
-              <option key={f.value} value={f.value}>{f.label}</option>
+              <option key={f.value} value={f.value}>{t(f.labelKey)}</option>
             ))}
           </select>
         </label>
         <label>
-          Post{" "}
-          <select aria-label="Post filter" value={postFilter} onChange={(e) => { setPostFilter(e.target.value); setVisible(25); }}>
-            <option value="all">All posts</option>
-            <option value="tt">TT (Theology Teacher) first</option>
-            <option value="qari">Qari / Imam Masjid first</option>
+          {t("postFilterLabel")}{" "}
+          <select aria-label={t("postFilterLabel")} value={postFilter} onChange={(e) => { setPostFilter(e.target.value); setVisible(25); }}>
+            <option value="all">{t("allPosts")}</option>
+            <option value="tt">{t("postTTFirst")}</option>
+            <option value="qari">{t("postQariFirst")}</option>
           </select>
         </label>
         <label>
-          Status{" "}
-          <select aria-label="Status filter" value={statusFilter} onChange={(e) => { setStatusFilter(e.target.value); setVisible(25); }}>
+          {t("statusFilterLabel")}{" "}
+          <select aria-label={t("statusFilterLabel")} value={statusFilter} onChange={(e) => { setStatusFilter(e.target.value); setVisible(25); }}>
             {STATUS_FILTERS.map((f) => (
-              <option key={f.value} value={f.value}>{f.label}</option>
+              <option key={f.value} value={f.value}>{t(f.labelKey)}</option>
             ))}
           </select>
         </label>
         <label>
-          Structural{" "}
-          <select aria-label="Structural filter" value={structuralFilter} onChange={(e) => { setStructuralFilter(e.target.value); setVisible(25); }}>
-            <option value="all">All</option>
-            <option value="pass">Pass</option>
-            <option value="needs-review">Needs review</option>
-            <option value="problem">Problem</option>
+          {t("structuralFilterLabel")}{" "}
+          <select aria-label={t("structuralFilterLabel")} value={structuralFilter} onChange={(e) => { setStructuralFilter(e.target.value); setVisible(25); }}>
+            <option value="all">{t("allWord")}</option>
+            <option value="pass">{t("passWord")}</option>
+            <option value="needs-review">{t("statusNeedsReview")}</option>
+            <option value="problem">{t("problemWord")}</option>
           </select>
         </label>
       </div>
       <p className="muted">
-        Showing{" "}
+        {t("showingWord")}{" "}
         <span dir="ltr">
           {shown.length} of {filtered.length}
         </span>{" "}
-        items in this filter.
+        {t("showingRest")}
       </p>
-      {shown.length === 0 && <p>No items match this filter.</p>}
+      {shown.length === 0 && <p>{t("noItemsMatch")}</p>}
       {shown.map((q) => {
         const status = effectiveReviewStatus(q, overrides);
         const st = structuralOf(q.id);
@@ -230,9 +250,16 @@ export default function ReviewDashboard() {
         return (
           <div className="card" key={q.id}>
             <p>
-              <b>{q.id}</b> · {q.question}{" "}
-              <span className="badge grey">{q.subject}</span>{" "}
-              <span className="badge grey">{q.topic}</span>{" "}
+              <b>
+                <span dir="ltr">{q.id}</span>
+              </b>{" "}
+              · <span dir="auto">{q.question}</span>{" "}
+              <span dir="ltr" className="badge grey">
+                {q.subject}
+              </span>{" "}
+              <span dir="ltr" className="badge grey">
+                {q.topic}
+              </span>{" "}
               {/* Stage 1 P2 — provenance badge (renders only when the item
                   carries a sourceKind). */}
               <ProvenanceBadge source={q.source} sourceKind={q.sourceKind} syllabusClause={q.syllabusClause} />
@@ -240,39 +267,59 @@ export default function ReviewDashboard() {
             {q.options.map((o, i) => (
               <p key={i} style={{ margin: "4px 0" }}>
                 {i === q.correctIndex ? "✅ " : "· "}
-                {o}
+                <span dir="auto">{o}</span>
               </p>
             ))}
-            <p className="muted">{q.explanation}</p>
             <p className="muted">
-              Status: <b>{status}</b>
+              <span dir="auto">{q.explanation}</span>
+            </p>
+            <p className="muted">
+              {t("statusWord")}: <b>{t(STATUS_DISPLAY_KEY[status])}</b>
               {/* Stage 1 P2 (B07) — the timestamp renders only after
                   mount: toLocaleString() is timezone-dependent, so
                   rendering it during SSR/hydration mismatched. Before
                   mount, only the reviewer name shows (identical on
                   server and client). */}
-              {by && at
-                ? mounted
-                  ? ` · by ${by} · ${new Date(at).toLocaleString()}`
-                  : ` · by ${by}`
-                : " · unreviewed"}
+              {by && at ? (
+                mounted ? (
+                  <>
+                    {" · "}
+                    {t("byWord")} <span dir="ltr">{by}</span> ·{" "}
+                    <span dir="ltr">{new Date(at).toLocaleString()}</span>
+                  </>
+                ) : (
+                  <>
+                    {" · "}
+                    {t("byWord")} <span dir="ltr">{by}</span>
+                  </>
+                )
+              ) : (
+                <> · {t("unreviewedWord")}</>
+              )}
               {" · "}
-              Structural: <b>{st.status}</b>
-              {st.issues.length > 0 ? ` — ${st.issues.join("; ")}` : ""}
+              {t("structuralWord")}: <b>{t(STRUCTURAL_DISPLAY_KEY[st.status])}</b>
+              {st.issues.length > 0 ? (
+                <>
+                  {" — "}
+                  <span dir="auto">{st.issues.join("; ")}</span>
+                </>
+              ) : (
+                ""
+              )}
             </p>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <button onClick={() => act(q.id, "owner-reviewed")}>Verify</button>
+              <button onClick={() => act(q.id, "owner-reviewed")}>{t("verifyAction")}</button>
               {status === "owner-reviewed" && (
-                <button onClick={() => act(q.id, "approved")}>Approve</button>
+                <button onClick={() => act(q.id, "approved")}>{t("approveAction")}</button>
               )}
               <button className="secondary" onClick={() => act(q.id, "needs-review")}>
-                Needs review
+                {t("needsReviewAction")}
               </button>
               <button className="secondary" onClick={() => act(q.id, "disputed")}>
-                Disputed
+                {t("disputedAction")}
               </button>
               <button className="secondary" onClick={() => act(q.id, "draft")}>
-                Reset to draft
+                {t("resetDraftAction")}
               </button>
             </div>
           </div>
@@ -280,8 +327,8 @@ export default function ReviewDashboard() {
       })}
       {visible < filtered.length && (
         <button onClick={() => setVisible((v) => v + 25)}>
-          Show 25 more{" "}
-          <span dir="ltr">({filtered.length - visible} left)</span>
+          {t("showMore")}{" "}
+          <span dir="ltr">{tf("leftCount", { left: filtered.length - visible })}</span>
         </button>
       )}
     </div>
