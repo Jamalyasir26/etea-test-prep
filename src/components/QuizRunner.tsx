@@ -26,7 +26,7 @@
 //   the copy never implies anything was sent anywhere.
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { hashSeed, mulberry32, shuffleOptions, type Question } from "@/lib/data";
 import {
   computeExamScore,
@@ -57,7 +57,10 @@ type Props = {
   subject?: string;
   mockId?: string;
   trackId?: string;
-  note?: string;
+  /** Stage 1 P1 Tier 4 (B03) — a ReactNode (not a plain string) so the
+   *  caller can isolate counts with dir="ltr" spans; rendered verbatim
+   *  in the alert box below the title. */
+  note?: ReactNode;
   /** Trusted-only run: only owner-reviewed/approved questions were passed in. Default false (provisional). */
   trustedOnly?: boolean;
   /** Stage 1 P0.1 — scoring config for this run (default: zero penalty, policy unknown). */
@@ -415,7 +418,12 @@ export default function QuizRunner({
       <div>
         <div className="card">
           <h2>
-            {t("score")}: {firstPassCount} / {total} ({pct}%)
+            {/* Stage 1 P1 Tier 4 (B03) — score fractions isolated LTR so
+                they cannot reverse in RTL (Urdu) mode. */}
+            {t("score")}:{" "}
+            <span dir="ltr">
+              {firstPassCount} / {total} ({pct}%)
+            </span>
           </h2>
           {/* Stage 1 P0.2 — provisional badge while the items in this quiz are not verified. */}
           {showProvisionalBadge ? (
@@ -434,12 +442,20 @@ export default function QuizRunner({
           {/* Stage 1 P0.1 — raw accuracy and exam score are two separate numbers. */}
           <h3>Raw accuracy vs exam score</h3>
           <p>
-            <b>Raw accuracy: {firstPassCount} / {total} ({pct}%)</b> — correct answers only,
-            no penalty.
+            <b>
+              Raw accuracy:{" "}
+              <span dir="ltr">
+                {firstPassCount} / {total} ({pct}%)
+              </span>
+            </b>{" "}
+            — correct answers only, no penalty.
           </p>
           <p>
             <b>
-              Exam score: {examResult.examScore} / {examResult.examTotal} marks
+              Exam score:{" "}
+              <span dir="ltr">
+                {examResult.examScore} / {examResult.examTotal} marks
+              </span>
             </b>{" "}
             — {scoringLabel(examResult.config)}
             {examResult.floored ? " (floored at 0 — the raw score was negative)" : ""}
@@ -587,10 +603,15 @@ export default function QuizRunner({
         <p className="muted">Trusted-only: only owner-reviewed/approved questions.</p>
       )}
       <p className="muted">
-        Question {idx + 1} of {total}
+        {/* Stage 1 P1 Tier 4 (B03) — question counter and timer isolated
+            LTR so neither can reverse in RTL (Urdu) mode. */}
+        Question{" "}
+        <span dir="ltr">
+          {idx + 1} of {total}
+        </span>
         {mode === "mock" && minutes > 0 && (
           <>
-            {" · "}⏱ {mm}:{ss} left
+            {" · "}⏱ <span dir="ltr">{mm}:{ss}</span> left
           </>
         )}
         {mode === "mock" && " · Practice mock — shares the practice bank; questions may repeat across track mocks."}
