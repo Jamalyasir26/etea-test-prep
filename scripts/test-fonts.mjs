@@ -1,9 +1,12 @@
-// Font delivery tests (Stage 1 P2) — plain node, no dependencies.
+// Font delivery tests (Localization Pass 1) — plain node, no dependencies.
 // Static checks over the real source: next/font/google is used (no
 // external font <link> anywhere, as the CSP allows font-src 'self'
-// data: only), the owner's FINAL fonts are wired (Nastaliq headings,
-// Sans Arabic body) via CSS variables, and the built output — when a
-// build exists — serves the fonts from the site's own origin.
+// data: only), and the owner's UPDATED font decision is wired: ONLY
+// Noto Sans Arabic — headings, body and UI, in all languages. The
+// earlier Noto Nastaliq Urdu decision was CANCELLED by the owner on
+// 2026-11-12 (his own mobile testing); zero Nastaliq references may
+// remain in src/. The built output — when a build exists — serves the
+// font from the site's own origin.
 // Run: node scripts/test-fonts.mjs  (exit 0 = all pass)
 import fs from "node:fs";
 import { dirname, join } from "node:path";
@@ -25,19 +28,35 @@ const layout = fs.readFileSync(join(ROOT, "src/app/layout.tsx"), "utf8");
 const css = fs.readFileSync(join(ROOT, "src/app/globals.css"), "utf8");
 
 check("layout imports next/font/google", layout.includes('from "next/font/google"'));
-check("Noto Nastaliq Urdu configured", layout.includes("Noto_Nastaliq_Urdu"));
 check("Noto Sans Arabic configured", layout.includes("Noto_Sans_Arabic"));
-check("Nastaliq variable declared", layout.includes('"--font-nastaliq"'));
+check("no Nastaliq font configured in layout", !layout.includes("Noto_Nastaliq_Urdu"));
 check("Sans Arabic variable declared", layout.includes('"--font-sans-arabic"'));
-check("font variables applied to <html>", layout.includes("nastaliq.variable") && layout.includes("sansArabic.variable"));
+check("no Nastaliq variable declared", !layout.includes("--font-nastaliq"));
+check("font variable applied to <html>", layout.includes("sansArabic.variable"));
 check("fonts use display: swap", layout.includes('display: "swap"'));
-check("Nastaliq uses the arabic subset", /Noto_Nastaliq_Urdu\(\{\s*subsets: \["arabic"\]/s.test(layout));
 check("Sans Arabic uses arabic + latin subsets", /Noto_Sans_Arabic\(\{\s*subsets: \["arabic", "latin"\]/s.test(layout));
-check("headings use the Nastaliq variable", css.includes("var(--font-nastaliq)"));
+check("Sans Arabic weights 400-700", /weight: \["400", "500", "600", "700"\]/.test(layout));
+check("headings use the Sans Arabic variable", /h1, h2, h3 \{[^}]*var\(--font-sans-arabic\)/s.test(css));
 check("body uses the Sans Arabic variable", css.includes("var(--font-sans-arabic)"));
-check("heading rule falls back to Sans Arabic", /h1, h2, h3 \{[^}]*var\(--font-sans-arabic\)/s.test(css));
+check("no Nastaliq-specific Urdu line-height rule", !css.includes('html[lang="ur"] h1'));
 check("system fallbacks kept in body stack", css.includes("system-ui, -apple-system"));
-check("Urdu-mode headings get taller line-height", css.includes('html[lang="ur"] h1') && css.includes("line-height: 2"));
+
+// ZERO Nastaliq references anywhere under src/ (comments included:
+// the cancellation is documented in CHANGELOG.md and the report, not
+// in source comments).
+const nastaliqHits = [];
+function walkSrc(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) walkSrc(p);
+    else {
+      const src = fs.readFileSync(p, "utf8");
+      if (/nastaliq/i.test(src)) nastaliqHits.push(p);
+    }
+  }
+}
+walkSrc(join(ROOT, "src"));
+check("zero Nastaliq references in src/", nastaliqHits.length === 0, nastaliqHits.join(", "));
 
 // No external font loading anywhere in the source.
 let externalFontRefs = [];
@@ -80,7 +99,9 @@ if (fs.existsSync(nextDir)) {
   })(join(nextDir, "static"));
   const cssText = cssFiles.map((f) => fs.readFileSync(f, "utf8")).join("\n");
   check("built CSS references local font files only", !/fonts\.gstatic\.com/.test(cssText));
-  check("built CSS defines the font variables", cssText.includes("--font-nastaliq") && cssText.includes("--font-sans-arabic"));
+  check("built CSS defines the Sans Arabic variable", cssText.includes("--font-sans-arabic"));
+  check("built CSS has no Nastaliq variable", !cssText.includes("--font-nastaliq"));
+  check("built CSS has no Nastaliq font reference", !/nastaliq/i.test(cssText));
 } else {
   console.log("SKIP  built-output checks (no .next — run `npm run build` first)");
 }

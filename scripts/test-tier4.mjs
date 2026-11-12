@@ -35,8 +35,12 @@ const analysis = read("src/app/analysis/page.tsx");
 const review = read("src/app/review/page.tsx");
 
 // ---------------------------------------------------------------- B01
-check("B01: tutor ask-row input has minWidth 0", /aria-label="Ask the tutor"[\s\S]{0,500}minWidth: 0/.test(tutor));
-check("B01: tutor explain-row input has flex:1 + minWidth 0", /aria-label="Question ID"[\s\S]{0,500}flex: 1, minWidth: 0/.test(tutor));
+// Localization Pass 1 — the tutor inputs' aria-labels are translated
+// (t("askLabel") / t("explainIdLabel")); the minWidth assertions below
+// anchor on the translated attribute instead of the old English
+// literals. Intent unchanged: the inputs must still shrink at 360px.
+check("B01: tutor ask-row input has minWidth 0", /aria-label=\{t\("askLabel"\)\}[\s\S]{0,500}minWidth: 0/.test(tutor));
+check("B01: tutor explain-row input has flex:1 + minWidth 0", /aria-label=\{t\("explainIdLabel"\)\}[\s\S]{0,500}flex: 1, minWidth: 0/.test(tutor));
 check("B01: .msg wraps long URLs", /\.msg \{[\s\S]*?overflow-wrap: break-word/.test(css));
 check("B01: .card wraps long unbroken strings", /\.card \{[\s\S]*?overflow-wrap: break-word/.test(css));
 check("B01: .table-scroll is a horizontal-scroll region", /\.table-scroll \{[^}]*overflow-x: auto/.test(css));
@@ -44,11 +48,12 @@ check(
   "B01: vacancy table is wrapped in the scroll region",
   vacancies.includes('<div className="table-scroll"') &&
     vacancies.includes('role="region"') &&
-    vacancies.includes('aria-label="Vacancy table"') &&
+    // Localization Pass 1 — the region label is translated.
+    vacancies.includes('aria-label={t("vacTableAria")}') &&
     vacancies.includes("tabIndex={0}") &&
     vacancies.includes("<table>"),
 );
-check("B01: mock mode buttons row wraps", /role="group" aria-label="Mock mode"/.test(mockList) && /display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16/.test(mockList));
+check("B01: mock mode buttons row wraps", /role="group" aria-label=\{t\("mockModeGroup"\)\}/.test(mockList) && /display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16/.test(mockList));
 
 // No fixed width above 360px anywhere (widths that would force
 // horizontal overflow on a 360px phone). max-width is exempt: it only
@@ -84,7 +89,7 @@ check(
     nav.includes('href="/review"') &&
     (nav.match(/<Link /g) ?? []).length === 4, // brand + map + issues + review
 );
-check("B02: language selector + theme toggle untouched", nav.includes('aria-label="Language"') && nav.includes('aria-label="Toggle dark mode"'));
+check("B02: language selector + theme toggle untouched", nav.includes('aria-label={t("languageLabel")}') && nav.includes('aria-label={t("toggleDarkLabel")}'));
 check("B02: focus-visible style exists (keyboard focus visible)", /:focus-visible \{ outline: 2px solid var\(--teal\)/.test(css) && /\.topbar :focus-visible \{ outline-color: #fff; \}/.test(css));
 
 // ---------------------------------------------------------------- B03
@@ -169,7 +174,7 @@ check(
   /<button type="button" className="card flashcard" onClick=\{\(\) => setFlipped\(!flipped\)\}>/.test(flashcards),
 );
 check("B05: no role=button/tabIndex hack left on the card", !flashcards.includes('role="button"') && !flashcards.includes("tabIndex={0}"));
-check("B05: native Flip card button preserved", flashcards.includes(">Flip card</button>"));
+check("B05: native Flip card button preserved", flashcards.includes('{t("flipCard")}</button>'));
 check("B05: no aria-label hiding the card text (content is the name)", !/className="card flashcard"[\s\S]{0,120}aria-label/.test(flashcards));
 check("B05: .flashcard sets ink text colour (button rule sets white)", /\.flashcard \{[\s\S]*?color: var\(--ink\)/.test(css));
 check("B05: grade buttons untouched", flashcards.includes('grade("again")') && flashcards.includes('grade("easy")'));

@@ -157,7 +157,10 @@ check(
 );
 check(
   "telemetry section on /issues",
-  fs.readFileSync(join(ROOT, "src/app/issues/page.tsx"), "utf8").includes("Client errors (this device only)"),
+  // Localization Pass 1 — the heading is translated via t(); the
+  // English wording lives in i18n.tsx under telemetryHeading.
+  fs.readFileSync(join(ROOT, "src/app/issues/page.tsx"), "utf8").includes('{t("telemetryHeading")}') &&
+    fs.readFileSync(join(ROOT, "src/lib/i18n.tsx"), "utf8").includes('"Client errors (this device only)"'),
 );
 check(
   "listener wraps console.error once with a guard",
