@@ -229,3 +229,34 @@ Backup: `~/workspace/etea-prep-next-backup-pre-p1t1/` (FLAT copy, diff-verified 
 - Tutor answers within the 15 s bound; slow providers aborted at 8 s and retried once only for transient errors; runtime logs show `attempt`/`retry` markers.
 - /analysis shows no storage warning in normal use; corrupt stored values quarantine with a download option instead of vanishing.
 - /tutor offers العربية; picking it makes the tutor answer in Arabic; the choice persists; other languages unchanged.
+
+## Stage 1 P1 Tier 3 — security + code quality (local, 2026-11-12; NOT deployed)
+
+### 1. AI API access restriction — new `src/lib/apiGuard.ts` + 4 routes
+- New server-only guard module (no Next.js imports, node-testable): `isAllowedOrigin()` (production origin, Vercel preview deployments of this project, localhost/127.0.0.1), `isSameOriginRequest()` (Origin must be ours; else Referer must be ours; neither header → GET allowed, POST rejected — browsers always send Origin on POST fetches), `clientIpFromHeaders()`. Honest limitation documented in the module header and VERIFY-p1-tier3.md: Origin/Referer are spoofable by a determined curl caller, so this deters casual abuse/hot-linking but is NOT access control. No IP allowlist (owner uses a phone on a dynamic mobile IP — it would lock him out); no client-side token (no real security). A real tutor-only token needs a Vercel env var + UI entry = separate owner decision, documented only.
+- All four API routes (`tutor` GET+POST, `explain`, `plan`, `health`) reject cross-origin requests with 403 before body parsing/validation/quota. Health also gains the shared rate limit (each probe is a real provider call). New suite `scripts/test-api-guard.mjs` (60/60). `package.json` gains `test:guard`.
+
+### 2. Rate limiter fix — trusted header + validate-before-limit
+- `clientIpFromHeaders()` prefers Vercel's `x-vercel-forwarded-for` (edge-set, not spoofable) over the client-supplied `x-forwarded-for` (fallback for local dev only, then `"local"`). All three route-local `clientIp()` helpers deleted; no direct `x-forwarded-for` read remains.
+- Route order is now: same-origin check → parse + validate (400/404) → rate limit → generate, so invalid requests never consume quota. Limits unchanged (100/day + 10/min per IP, same 429 messages); `rateLimitOk` itself unchanged (comment documents the contract). Known limitation: buckets are in-memory per instance — a shared atomic limiter (Upstash Redis) needs owner-approved env setup, documented as a future option. Live-proven on the local server: 11 invalid POSTs → all 400, then 10 valid → all 503 (no keys), 11th valid → 429.
+
+### 3. Vulnerable dependencies — Next.js 16.4.6
+- `next` 15.5.29 → **16.4.6** (exact pin); `postcss` 8.4.31 → **8.5.23** (transitive via Next — the PostCSS chain fix); lockfile regenerated (changes are exactly the Next 16.4.6 tree + one new transitive dep). `lint` script removed — Next 16 dropped the `next lint` command (no ESLint config exists here). `tsconfig.json`/`next-env.d.ts` rewritten by Next 16's build (jsx react-jsx, new type references) and kept as generated. No code change needed for the major upgrade (no removed APIs used). `npm audit` could NOT run in the sandbox (registry audit endpoint 403 policy_denied, verified twice) — no audit count to report; version record above is the evidence.
+
+### 4. Security headers — `next.config.mjs`
+- Added: `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()`, `X-Frame-Options: DENY`, `Content-Security-Policy` (default-src 'self'; script/style 'self' 'unsafe-inline' — required by React inline styles + Next.js inline hydration scripts, documented as weakening CSP with nonce-based CSP as future work; img/font 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri/form-action 'self'; object-src 'none'). `X-Robots-Tag: noindex` kept. Verified on the local prod server: all six headers on page + API responses, all pages 200, no resource the site loads is blocked (same-origin fetches only, no images/fonts/CSS imports).
+
+### 5. TypeScript strict mode — `tsconfig.json`
+- `"strict": true`. Zero errors to fix — the codebase was already strict-clean; no `@ts-ignore`/`@ts-expect-error` added (grep-verified none exist). No `typescript.ignoreBuildErrors` escape hatch in next.config. Gate proven: a deliberate type-error probe fails `next build` (exit 1) and is caught by `npx tsc --noEmit` including strictNullChecks (TS18048); probe removed, final tsc clean.
+
+### Verification (local; no keys here, live confirmation after deploy)
+- `npm run build` PASS (21/21 routes). `npx tsc --noEmit` clean with `strict: true`.
+- Suites: test-scoring 39/39, test-reviews 37/37, test-retrieval 28/28, test-fallback-chain 24/24, test-flashcards 29/29, qa 52/52, test-timeouts 43/43, test-storage 36/36, test-tutor-lang 30/30, test-api-guard 60/60 (new). Total 378 checks, 0 failures.
+- Local prod server: 14 pages HTTP 200 with security headers active; home shows 645 MCQs; tutor page contains the العربية option; guard/limiter behaviour proven live by curl (403 cross-origin, 403 headerless POST, 503 same-origin no-keys, 400s consume no quota, 429 at 11th valid request, health GET 200 no-headers / 403 cross-origin).
+- NOT done here (honest): no live provider calls (no keys locally); no real-browser click-through — CSP behaviour in a real browser needs a post-deploy check; `npm audit` blocked in sandbox; per-instance limiter + spoofable-Origin limitations documented, not solved.
+
+### Expected live behaviour after deploy
+- Tutor/explain/plan answer normally from the site; cross-origin POSTs get 403; invalid requests get 400/404 without consuming quota; 11th tutor request in a minute gets 429.
+- Health shows per-provider status as before; direct browser opens still work; cross-origin health fetches get 403.
+- All six security headers present on every response; no CSP console errors in the browser.
+- Vercel build runs on Next 16.4.6 with strict type-checking enforced.
