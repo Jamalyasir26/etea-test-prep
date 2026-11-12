@@ -1,6 +1,10 @@
 // AI Tutor — live chat (Gemini primary, Groq fallback, OpenRouter free-model fallback) with offline fallback.
 // The tutor never invents: answers are grounded in the local library (RAG).
 // If live AI is down or unconfigured, the page falls back to library search.
+// Localization Pass 1 — every UI string via i18n.tsx (the owner found the
+// tutor page untranslated in Urdu mode). The quick-ask buttons SEND
+// English questions (the tutor answers in the selected answer language
+// regardless); only their labels are translated.
 "use client";
 
 import { useEffect, useState } from "react";
@@ -13,7 +17,7 @@ import {
   safeRead,
   safeWrite,
 } from "@/lib/tracking";
-import { useLang } from "@/lib/i18n";
+import { lri, useLang } from "@/lib/i18n";
 import TutorHealth from "@/components/TutorHealth";
 
 // Stage 1 P1 Tier 2 — the tutor's ANSWER language, separate from the
@@ -33,16 +37,17 @@ function isTutorLang(v: string | null): v is (typeof TUTOR_LANG_OPTIONS)[number]
   return v === "en" || v === "roman" || v === "ur" || v === "ar";
 }
 
+// Localization Pass 1 — the greeting is stored as a sentinel and
+// translated at RENDER time, so it always matches the current UI
+// language (a useState initializer would freeze the first-render
+// language, which is always English before the stored language loads).
+const GREETING = "__GREETING__";
+
 type Msg = { role: "user" | "ai" | "sys"; text: string };
 
 export default function Tutor() {
-  const { lang } = useLang();
-  const [msgs, setMsgs] = useState<Msg[]>([
-    {
-      role: "sys",
-      text: "Ustad — your AI tutor. Ask about any topic in this library, ask it to explain a wrong answer, or ask for a revision plan. Answers come from this library only.",
-    },
-  ]);
+  const { lang, t, tf } = useLang();
+  const [msgs, setMsgs] = useState<Msg[]>([{ role: "sys", text: GREETING }]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
   const [explainId, setExplainId] = useState("");
@@ -105,7 +110,9 @@ export default function Tutor() {
       });
       const j = await res.json();
       if (!res.ok) {
-        // Offline fallback: search the library directly.
+        // Offline fallback: search the library directly. Content runs
+        // (note titles, MCQ text) are wrapped in bidi isolates so their
+        // punctuation cannot jump when the bubble is RTL.
         const { notes, questions } = retrieve(q, 3, 3);
         const terms = tokenize(q);
         const matchingAnnotations = annotationsOn
@@ -117,23 +124,25 @@ export default function Tutor() {
               .slice(0, 3)
           : [];
         const fb = [
-          j.error ?? "Live AI is unavailable right now.",
+          j.error ?? t("liveUnavailable"),
           notes.length || questions.length
-            ? `\n\nOffline search in this library found:\n${notes.map((n) => `• Note: ${n.title}`).join("\n")}\n${questions.map((x) => `• MCQ ${x.id}: ${x.question} — ${x.options[x.correctIndex]}`).join("\n")}`
-            : "\n\nNo matching note or question was found in this library either — try rephrasing, or use the Library section.",
+            ? `\n\n${t("offlineFound")}\n${notes.map((n) => `• ${t("offlineNoteLabel")}: ${lri(n.title)}`).join("\n")}\n${questions.map((x) => `• ${t("offlineMcqLabel")} ${lri(x.id)}: ${lri(x.question)} — ${lri(x.options[x.correctIndex])}`).join("\n")}`
+            : `\n\n${t("noMatchFallback")}`,
           matchingAnnotations.length
-            ? `\n\nYour annotations on this topic:\n${matchingAnnotations.map(([key, text]) => `• ${key.split("||")[1] ?? key}: ${text}`).join("\n")}`
+            ? `\n\n${t("yourAnnotations")}\n${matchingAnnotations.map(([key, text]) => `• ${lri(key.split("||")[1] ?? key)}: ${text}`).join("\n")}`
             : "",
         ].join("");
         setMsgs((m) => [...m, { role: "ai", text: fb }]);
       } else {
+        const providerName =
+          j.provider === "gemini" ? "Gemini" : j.provider === "groq" ? "Groq" : "OpenRouter (free model)";
         setMsgs((m) => [
           ...m,
-          { role: "ai", text: `${j.answer}\n\n— via ${j.provider === "gemini" ? "Gemini" : j.provider === "groq" ? "Groq" : "OpenRouter (free model)"} (live AI)` },
+          { role: "ai", text: `${j.answer}\n\n${tf("viaLine", { provider: lri(providerName) })}` },
         ]);
       }
     } catch {
-      setMsgs((m) => [...m, { role: "ai", text: "Could not reach the tutor. Check your connection and try again." }]);
+      setMsgs((m) => [...m, { role: "ai", text: t("reachTutorRetry") }]);
     } finally {
       setBusy(false);
     }
@@ -142,7 +151,7 @@ export default function Tutor() {
   async function explainQuestion() {
     const id = explainId.trim().toUpperCase();
     if (!id) return;
-    setExplainOut("Explaining…");
+    setExplainOut(t("explaining"));
     try {
       const res = await fetch("/api/explain", {
         method: "POST",
@@ -150,44 +159,30 @@ export default function Tutor() {
         body: JSON.stringify({ questionId: id, lang: effectiveTutorLang }),
       });
       const j = await res.json();
-      setExplainOut(res.ok ? j.explanation : j.error ?? "Could not explain right now.");
+      setExplainOut(res.ok ? j.explanation : (j.error ?? t("explainError")));
     } catch {
-      setExplainOut("Could not reach the tutor.");
+      setExplainOut(t("reachTutorError"));
     }
   }
 
   return (
     <div>
-      <h1>AI Tutor — Ustad</h1>
-      <p className="muted">
-        This is the live tutor. It answers from this library only (RAG), in your selected language.
-        If a question is outside the library, it says so instead of inventing. Mocks are
-        provisional practice built from unreviewed AI-generated questions; Trusted mode uses
-        reviewed items only.
-      </p>
+      <h1>{t("tutorTitle")}</h1>
+      <p className="muted">{t("tutorIntro")}</p>
       <TutorHealth variant="full" />
       {/* Stage 1 P2 — API privacy disclosure, shown before the chat form:
           the question leaves this device for the AI providers. */}
-      <p className="muted">
-        Privacy: your question goes to Gemini, Groq or OpenRouter (the AI providers) to generate
-        the answer. Don&apos;t share sensitive personal data. Your questions are not stored on this
-        site.
-      </p>
-      {annotationsOn && (
-        <p className="muted">
-          Your private note annotations are included in this chat (you enabled this in the
-          Library). Turn it off there any time.
-        </p>
-      )}
+      <p className="muted">{t("tutorPrivacy")}</p>
+      {annotationsOn && <p className="muted">{t("tutorAnnotationsOn")}</p>}
       <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", marginBottom: 10 }}>
         <label htmlFor="tutor-lang">
-          <b>Answer language:</b>
+          <b>{t("answerLanguage")}</b>
         </label>
         <select
           id="tutor-lang"
           value={effectiveTutorLang}
           onChange={(e) => setTutorLang(e.target.value)}
-          aria-label="Tutor answer language"
+          aria-label={t("tutorLangAria")}
         >
           {TUTOR_LANG_OPTIONS.map((o) => (
             <option key={o.value} value={o.value}>
@@ -195,68 +190,81 @@ export default function Tutor() {
             </option>
           ))}
         </select>
-        <span className="muted">
-          Answers come back in this language. The rest of the site keeps your selected language.
-        </span>
+        <span className="muted">{t("answerLanguageHint")}</span>
       </div>
 
       <div className="chatlog" aria-live="polite">
         {msgs.map((m, i) => (
-          <div key={i} className={`msg ${m.role}`}>
-            {m.text}
+          // Localization Pass 1 (RTL) — dir="auto": the bubble direction
+          // follows the message's own first strong character, so English
+          // and Urdu/Arabic answers both keep their punctuation.
+          <div key={i} dir="auto" className={`msg ${m.role}`}>
+            {m.text === GREETING ? t("tutorGreeting") : m.text}
           </div>
         ))}
-        {busy && <div className="msg ai">Ustad is thinking…</div>}
+        {busy && (
+          <div dir="auto" className="msg ai">
+            {t("thinking")}
+          </div>
+        )}
       </div>
       <div style={{ display: "flex", gap: 8 }}>
         <input
           type="text"
-          placeholder="Ask a question… e.g. What is scaffolding in pedagogy?"
+          placeholder={t("askPlaceholder")}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && send()}
-          aria-label="Ask the tutor"
+          aria-label={t("askLabel")}
           // Stage 1 P1 Tier 4 (B01) — flex items refuse to shrink below
           // their content width unless min-width is 0; without it the
           // input + Ask button ran off-screen at 360px.
           style={{ flex: 1, minWidth: 0 }}
         />
         <button onClick={() => send()} disabled={busy || !input.trim()}>
-          Ask
+          {t("askButton")}
         </button>
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 10 }}>
         <button className="secondary" onClick={() => send("Explain Bloom's Taxonomy with an example.")}>
-          Explain Bloom's Taxonomy
+          {t("quickBloom")}
         </button>
         <button className="secondary" onClick={() => send("How many Surahs are in the Holy Quran?")}>
-          Surahs in the Quran?
+          {t("quickSurahs")}
         </button>
         {weakest && (
           <button className="secondary" onClick={() => send(`My weakest subject is ${weakest}. Give me a focused revision drill for it.`)}>
-            Drill my weakest subject ({weakest})
+            {t("drillWeakest")} <span dir="ltr">({weakest})</span>
           </button>
         )}
       </div>
 
       <div className="card">
-        <h3>Explain one MCQ</h3>
-        <p className="muted">Enter a question ID (e.g. ISL-001) to get a full explanation.</p>
+        <h3>{t("explainHeading")}</h3>
+        <p className="muted">{t("explainDesc")}</p>
         <div style={{ display: "flex", gap: 8 }}>
           <input
             type="text"
+            // Format example ("e.g. ISL-001") kept literal in all
+            // languages — it shows the ID format, not a sentence.
             placeholder="e.g. ISL-001"
             value={explainId}
             onChange={(e) => setExplainId(e.target.value)}
-            aria-label="Question ID"
+            aria-label={t("explainIdLabel")}
             // Stage 1 P1 Tier 4 (B01) — same min-width: 0 fix as the ask
             // row: the input must shrink so the Explain button stays
             // on-screen at 360px.
             style={{ flex: 1, minWidth: 0 }}
           />
-          <button className="secondary" onClick={explainQuestion}>Explain</button>
+          <button className="secondary" onClick={explainQuestion}>
+            {t("explainButton")}
+          </button>
         </div>
-        {explainOut && <p style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word" }}>{explainOut}</p>}
+        {explainOut && (
+          <p dir="auto" style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word" }}>
+            {explainOut}
+          </p>
+        )}
       </div>
     </div>
   );
