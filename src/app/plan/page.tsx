@@ -76,6 +76,12 @@ export default function PlanPage() {
           Generate AI plan
         </button>
       </div>
+      {/* Stage 1 P2 — API privacy disclosure, shown before the AI plan
+          form: the request leaves this device for the AI providers. */}
+      <p className="muted">
+        Privacy: generating an AI plan sends your chosen length and weakest subjects to Gemini,
+        Groq or OpenRouter (the AI providers). Don&apos;t share sensitive personal data.
+      </p>
       <div className="bar" role="img" aria-label={`${doneCount} of ${totalTasks} tasks done`}>
         <i style={{ width: `${(doneCount / totalTasks) * 100}%` }} />
       </div>
