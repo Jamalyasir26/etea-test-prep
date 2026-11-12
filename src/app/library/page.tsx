@@ -4,8 +4,9 @@
 // the owner enables the opt-in below (default OFF).
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { NOTES } from "@/lib/data";
+import ProvenanceBadge from "@/components/ProvenanceBadge";
 import {
   loadAnnotationOptIn,
   loadAnnotations,
@@ -18,8 +19,18 @@ export default function Library() {
   const [subject, setSubject] = useState(subjects[0] ?? "");
   const [query, setQuery] = useState("");
   const [hidden, setHidden] = useState<Record<string, boolean>>({});
-  const [annotations, setAnnotations] = useState<Record<string, string>>(() => loadAnnotations());
-  const [optIn, setOptIn] = useState(() => loadAnnotationOptIn());
+  // Stage 1 P2 (B07) — annotations + opt-in load after mount, not in the
+  // state initializers: the loaders return empty/false during SSR but
+  // the stored values on the client, which mismatched the prerendered
+  // textarea values and the opt-in checkbox whenever stored values
+  // existed. The first render matches the server HTML; stored values
+  // appear immediately after mount.
+  const [annotations, setAnnotations] = useState<Record<string, string>>({});
+  const [optIn, setOptIn] = useState(false);
+  useEffect(() => {
+    setAnnotations(loadAnnotations());
+    setOptIn(loadAnnotationOptIn());
+  }, []);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const [savedTick, setSavedTick] = useState<Record<string, number>>({});
 
@@ -90,6 +101,9 @@ export default function Library() {
         return (
           <div className="card" key={n.key}>
             <h3>{n.title}</h3>
+            {/* Stage 1 P2 — provenance badge (renders only when the note
+                carries a sourceKind, e.g. the 15 concept-extracted notes). */}
+            <ProvenanceBadge source={n.source} sourceKind={n.sourceKind} syllabusClause={n.syllabusClause} />
             {n.source && <p className="muted">{n.source}</p>}
             {isHidden ? (
               <button className="secondary" onClick={() => setHidden((h) => ({ ...h, [n.key]: false }))}>
