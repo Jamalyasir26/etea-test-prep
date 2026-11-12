@@ -211,6 +211,23 @@ export function effectiveReviewStatus(q: Question, overrides?: ReviewOverrides):
   return q.reviewStatus ?? "draft";
 }
 
+/** Stage 1 P1 Tier 1 — review attribution for the /review dashboard.
+ *  Who verified this item, and when? The owner's live decision (a
+ *  localStorage record) wins; otherwise fall back to the bank JSON's own
+ *  reviewedBy/reviewedAt (the 15 owner-verified items are stored there
+ *  since the P1T0 deploy). Before this helper, /review read ONLY the
+ *  localStorage map, so bank-verified items rendered "· unreviewed" even
+ *  though their status, counts and Trusted Mode were correct. Returns
+ *  nulls when neither source has an attribution (draft / unreviewed). */
+export function reviewAttribution(
+  q: Question,
+  override?: { reviewedBy?: string | null; reviewedAt?: string | null } | null,
+): { by: string | null; at: string | null } {
+  const by = override?.reviewedBy ?? q.reviewedBy ?? null;
+  const at = override?.reviewedAt ?? q.reviewedAt ?? null;
+  return { by: by || null, at: at || null };
+}
+
 /** Phase 2 trusted gating. Trusted = owner-reviewed or approved.
  *  A missing reviewStatus counts as NOT trusted (draft / unreviewed). */
 export function isTrusted(q: Question, overrides?: ReviewOverrides): boolean {
