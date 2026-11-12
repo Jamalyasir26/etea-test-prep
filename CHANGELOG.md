@@ -295,3 +295,42 @@ Backup: `~/workspace/etea-prep-next-backup-pre-p1t1/` (FLAT copy, diff-verified 
 - At 360px the tutor rows, mock mode buttons and vacancy table fit/scroll without page overflow; the header is short with a working hamburger menu (click, link-click, Escape, Tab).
 - In Urdu (RTL) mode every count/fraction reads in logical order; in dark mode the green/red badges are readable.
 - Flashcards flip on Enter/Space when focused, with a visible outline; the Flip card button still works as before.
+
+## Stage 1 P2 — provenance, backup versioning, B06 wording, B07 hydration, privacy disclosure, fonts (local, 2026-11-12; NOT deployed)
+
+### 1. Provenance / concept IDs
+- `src/lib/data.ts` — `Question` and `Note` gain optional `conceptId?`, `syllabusClause?`, `sourceKind?` (`SourceKind = "official" | "concept-extracted" | "proxy" | "partial"`); new `provenanceBadge()` helper (null when no sourceKind; per-kind label + detail + tone; concept-extracted names its source).
+- `src/components/ProvenanceBadge.tsx` (new) — pure presentational badge, renders null without a sourceKind, SSR-safe.
+- Badges wired into `src/app/library/page.tsx` (notes), `src/components/QuizRunner.tsx` (every question — practice + mocks), `src/app/review/page.tsx` (every card).
+- Data: the 55 P0.3 MCQs + 15 P0.3 notes get `concept-extracted` provenance (conceptId + Pattern B (ESED-453) section clause); the 15 owner-reviewed MCQs get `proxy` provenance (PAK-008 honestly has no clause — ambiguous section). Everything else has no provenance fields and no badge; zero items are marked "official". Same-concept items share one conceptId (e.g. passive-voice ×4, qalqalah-letters ×3 + note, ISL-001 + ISL-091 surah-count). Bank diffs purely additive; formats preserved. No question/answer/explanation text changed. Full mapping in VERIFY-p1-p2.md.
+
+### 2. Backup versioning
+- `src/lib/tracking.ts` — `BACKUP_VERSION = 5`, `SUPPORTED_BACKUP_VERSIONS = [4, 5]`, pure `migrateBackupPayload()` (v5 identity; older versions gain empty `reviews`/`annotations` defaults, input never mutated), `validateBackupPayload()` (app marker + numeric version + attempts list; newer versions rejected). `importProgress()` is now validate → migrate → merge; the merge body, v5 shape, stored keys and merge semantics are unchanged. `exportProgress()` stamps the constant. Version policy documented in code.
+
+### 3. B06 — wording alignment + live health indicator
+- `src/components/TutorHealth.tsx` (new) — fetches GET /api/tutor/health once on mount (no polling — probes cost quota), 28 s timeout, manual Refresh; loading / loaded (per-provider status + model + latency + errorClass, cold-start note) / failed states, never crashes the page. Full variant on /tutor, one-line summary on home.
+- `src/app/page.tsx` — stale "answered via fallback … key status is unverified" alert replaced with accurate wording + live summary. `src/app/tutor/page.tsx` — old key-presence status box + "responsiveness not health-checked" wording replaced by the live indicator; "On-device study assistant is gone" → present-tense wording. No historical claims remain in user-facing copy (grep-verified).
+
+### 4. API privacy disclosure
+- `src/app/tutor/page.tsx` (before the chat form) and `src/app/plan/page.tsx` (before the AI plan form): the request goes to Gemini, Groq or OpenRouter; don't share sensitive personal data; questions are not stored on the site (tutor).
+
+### 5. B07 — hydration investigation + telemetry + fixes
+- Root cause PROVEN: old `src/app/review/page.tsx` rendered `new Date(at).toLocaleString()` during SSR — UTC on the server vs the visitor's timezone in the browser (same instant: "11/11/2026, 10:23:00 PM" vs "11/12/2026, 3:23:00 AM" in PKT) = React text-content hydration mismatch. Latent second cause: `loadReviews()`/`loadAnnotations()` in state initializers on prerendered pages (empty on server, stored values on client).
+- Fixes (mount-gated, local-time display preserved): `src/app/review/page.tsx` (reviews + timestamp), `src/app/mock/page.tsx` (reviews), `src/app/library/page.tsx` (annotations + opt-in). Ruled out with evidence: practice/mock/[id] seeds (client-rendered Suspense boundaries — built practice.html has zero quiz content), flashcards, LangProvider.
+- `src/lib/telemetry.ts` (new) + `src/components/TelemetryListener.tsx` (new, mounted in layout) — route-bound, on-device-only client-error telemetry (window error/unhandledrejection + a guarded once-only console.error wrap so React #418/#425 hydration failures are captured); capped at 50, never throws, SSR-safe. Viewable + clearable in the new "Client errors" section on `src/app/issues/page.tsx`.
+
+### 6. Font delivery
+- `src/app/layout.tsx` — `next/font/google`: Noto Nastaliq Urdu (arabic subset, 400/600/700) + Noto Sans Arabic (arabic + latin, 400/500/600/700), `display: swap`, CSS variables on `<html>`. Fonts are build-time downloaded and served from the site's own origin (CSP `font-src 'self' data:`); no external font links anywhere.
+- `src/app/globals.css` — body uses the Sans Arabic variable (+ fallbacks); headings use the Nastaliq variable falling through to Sans Arabic + system; Urdu-mode headings get `line-height: 2`.
+
+### Verification (local; no keys here, live confirmation after deploy)
+- `npm run build` PASS (22 routes, same table as Tier 3). `npx tsc --noEmit` clean with `strict: true`.
+- Suites: qa 52/52, test-scoring 39/39, test-reviews 37/37, test-retrieval 28/28, test-fallback-chain 24/24, test-timeouts 43/43, test-storage 36/36, test-tutor-lang 30/30, test-api-guard 60/60, test-tier4 46/46, test-flashcards 29/29, test-provenance 33/33 (new), test-backup-versioning 33/33 (new), test-telemetry 28/28 (new), test-fonts 19/19 (new). Total 537 checks, 0 failures.
+- Local prod server: 14 pages HTTP 200; home shows 645 MCQs + health loading state; woff2 served same-origin (31 @font-face rules, zero Google Fonts URLs in served HTML/CSS); provenance badges in served library/review HTML; telemetry section on /issues; privacy lines on /tutor + /plan; stale wording absent; review SSR payloads contain no rendered timestamps; health endpoint returns honest "down" with no keys.
+- NOT done here (honest): no live provider calls (TutorHealth loaded state needs the post-deploy check); no real-browser render (Nastaliq visuals, timestamp pop-in, 360px checks); B07 confirmation is an empty telemetry list after deploy, not a proof in advance. Full evidence in VERIFY-p1-p2.md.
+
+### Expected live behaviour after deploy
+- Provenance badges visible in library / practice / review with source + pattern-section tooltips; backup export/import unchanged in behaviour.
+- Home + tutor show the live per-provider health status; privacy lines visible before both AI forms.
+- No console hydration errors on /review in a PKT browser; /issues shows an empty client-errors list.
+- Headings render in Nastaliq (Urdu) with Latin falling back to Sans Arabic; body in Noto Sans Arabic; no external font requests.
