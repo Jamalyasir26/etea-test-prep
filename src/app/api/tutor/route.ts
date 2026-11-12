@@ -2,14 +2,21 @@
 // GET /api/tutor — provider availability only (no key material, ever).
 import { NextRequest, NextResponse } from "next/server";
 import { AiError, generateTutorAnswer, normalizeTutorLang, providerStatus, rateLimitOk } from "@/lib/ai";
+import { clientIpFromHeaders, isSameOriginRequest } from "@/lib/apiGuard";
 import { retrieve } from "@/lib/data";
 
-function clientIp(req: NextRequest): string {
-  const fwd = req.headers.get("x-forwarded-for");
-  return fwd ? fwd.split(",")[0].trim() : "local";
-}
-
-export async function GET() {
+// Stage 1 P1 Tier 3 — request order on POST: (1) same-origin check, so
+// cross-origin callers never reach validation or consume quota; (2) parse
+// + validate, so invalid requests do NOT consume quota; (3) rate limit
+// (trusted Vercel header identity); (4) generate. See src/lib/apiGuard.ts
+// for the honest limits of the same-origin check (it is not access control).
+export async function GET(req: NextRequest) {
+  if (!isSameOriginRequest(req.headers, "GET")) {
+    return NextResponse.json(
+      { error: "This API only accepts requests from the ETEA Prep site itself." },
+      { status: 403 }
+    );
+  }
   const s = providerStatus();
   return NextResponse.json({
     live: s.gemini || s.groq || s.openrouter,
@@ -24,8 +31,12 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
-    const rl = rateLimitOk(clientIp(req));
-    if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
+    if (!isSameOriginRequest(req.headers, "POST")) {
+      return NextResponse.json(
+        { error: "This API only accepts requests from the ETEA Prep site itself." },
+        { status: 403 }
+      );
+    }
     const body = await req.json().catch(() => ({}));
     const message = String(body.message ?? "").trim();
     // Stage 1 P1 Tier 2: "ar" (Arabic) is a valid tutor answer language;
@@ -34,6 +45,9 @@ export async function POST(req: NextRequest) {
     if (!message) return NextResponse.json({ error: "Please type a question first." }, { status: 400 });
     if (message.length > 2000)
       return NextResponse.json({ error: "Please keep the question under 2000 characters." }, { status: 400 });
+    // Rate limit AFTER validation: invalid requests above never consumed quota.
+    const rl = rateLimitOk(clientIpFromHeaders(req.headers));
+    if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
     const history = Array.isArray(body.history) ? body.history.slice(-6) : [];
     const historyText = history
       .map((m: { role?: string; text?: string }) => `${m.role === "user" ? "Student" : "Ustad"}: ${String(m.text ?? "").slice(0, 500)}`)
