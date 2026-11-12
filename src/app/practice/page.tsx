@@ -4,7 +4,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { BY_SUBJECT, hashSeed, isTrusted, mulberry32, shuffled, SUBJECT_LABELS } from "@/lib/data";
-import { loadReviews } from "@/lib/tracking";
+import { loadReviews, safeWrite } from "@/lib/tracking";
 import QuizRunner from "@/components/QuizRunner";
 import { Suspense } from "react";
 
@@ -48,7 +48,8 @@ function PracticeInner() {
   );
 
   useEffect(() => {
-    localStorage.setItem(PRACTICE_STATE_KEY, JSON.stringify({ subjectKey, round, seed }));
+    // Stage 1 P1 Tier 2: safeWrite never throws on full/blocked storage.
+    safeWrite(PRACTICE_STATE_KEY, JSON.stringify({ subjectKey, round, seed }));
   }, [subjectKey, round, seed]);
 
   const labelByKey: Record<string, string> = SUBJECT_LABELS;
