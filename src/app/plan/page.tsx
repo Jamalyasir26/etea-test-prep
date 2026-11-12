@@ -64,7 +64,13 @@ export default function PlanPage() {
           </button>
         ))}
         <span className="muted">
-          {totalDays} days · {dailyLoad}/day · {doneCount}/{totalTasks} tasks done
+          {totalDays} days · {dailyLoad}/day ·{" "}
+          {/* Stage 1 P1 Tier 4 (B03) — the progress fraction isolated LTR:
+              it rendered reversed ("63/0") in RTL (Urdu) mode. */}
+          <span dir="ltr">
+            {doneCount}/{totalTasks}
+          </span>{" "}
+          tasks done
         </span>
         <button className="secondary" onClick={generateAiPlan} disabled={busy}>
           Generate AI plan
