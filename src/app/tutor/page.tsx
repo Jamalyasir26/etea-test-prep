@@ -14,6 +14,7 @@ import {
   safeWrite,
 } from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
+import TutorHealth from "@/components/TutorHealth";
 
 // Stage 1 P1 Tier 2 — the tutor's ANSWER language, separate from the
 // site-wide UI toggle (en/roman/ur, untouched). Persisted under its own
@@ -36,7 +37,6 @@ type Msg = { role: "user" | "ai" | "sys"; text: string };
 
 export default function Tutor() {
   const { lang } = useLang();
-  const [status, setStatus] = useState<{ live: boolean; gemini: boolean; groq: boolean; openrouter: boolean } | null>(null);
   const [msgs, setMsgs] = useState<Msg[]>([
     {
       role: "sys",
@@ -74,10 +74,11 @@ export default function Tutor() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/tutor")
-      .then((r) => r.json())
-      .then((j) => setStatus({ live: j.live, gemini: j.gemini, groq: j.groq, openrouter: j.openrouter ?? false }))
-      .catch(() => setStatus({ live: false, gemini: false, groq: false, openrouter: false }));
+    // Stage 1 P2 (B06) — the old key-presence check (GET /api/tutor) and
+    // its "keys configured — responsiveness not health-checked" wording
+    // are gone; live responsiveness now comes from <TutorHealth />, which
+    // fetches /api/tutor/health. This effect only computes the weakest
+    // subject for the drill button.
     const s = computeStats(loadAttempts());
     setWeakest(s.weakest.length ? s.weakest[0].subject : "");
   }, []);
@@ -159,18 +160,19 @@ export default function Tutor() {
     <div>
       <h1>AI Tutor — Ustad</h1>
       <p className="muted">
-        <b>On-device study assistant is gone — this is the live tutor.</b> It answers from this
-        library only (RAG), in your selected language. If a question is outside the library, it
-        says so instead of inventing. Mocks are provisional practice built from
-        unreviewed AI-generated questions; Trusted mode uses reviewed items only.
+        This is the live tutor. It answers from this library only (RAG), in your selected language.
+        If a question is outside the library, it says so instead of inventing. Mocks are
+        provisional practice built from unreviewed AI-generated questions; Trusted mode uses
+        reviewed items only.
       </p>
-      <div className={`alert ${status?.live ? "green" : "red"}`}>
-        {status === null
-          ? "Checking live AI status…"
-          : status.live
-            ? `Live AI keys are configured — Gemini: ${status.gemini ? "yes" : "no"}, Groq fallback: ${status.groq ? "yes" : "not set"}, OpenRouter fallback: ${status.openrouter ? "yes" : "not set"}. Keys configured — live responsiveness not health-checked.`
-            : "Live AI is NOT configured on the server (no API key). The offline library search below still works."}
-      </div>
+      <TutorHealth variant="full" />
+      {/* Stage 1 P2 — API privacy disclosure, shown before the chat form:
+          the question leaves this device for the AI providers. */}
+      <p className="muted">
+        Privacy: your question goes to Gemini, Groq or OpenRouter (the AI providers) to generate
+        the answer. Don&apos;t share sensitive personal data. Your questions are not stored on this
+        site.
+      </p>
       {annotationsOn && (
         <p className="muted">
           Your private note annotations are included in this chat (you enabled this in the
