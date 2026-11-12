@@ -317,7 +317,9 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "pakstudies-first-governor-general",
+  "sourceKind": "proxy"
  },
  {
   "id": "PAK-009",

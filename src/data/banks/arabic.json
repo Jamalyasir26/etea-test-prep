@@ -1583,7 +1583,10 @@
   "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-al-fail-case",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-062",
@@ -1609,7 +1612,10 @@
   "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-raf-signs",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-063",
@@ -1635,7 +1641,10 @@
   "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-raf-signs",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-064",
@@ -1661,7 +1670,10 @@
   "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-al-fail-identification",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-065",
@@ -1687,7 +1699,10 @@
   "source": "Original content — concept-extracted from Teachy.ai",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-al-maful-bihi-case",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-066",
@@ -1713,7 +1728,10 @@
   "source": "Original content — concept-extracted from Teachy.ai",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-nasb-signs",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-067",
@@ -1739,7 +1757,10 @@
   "source": "Original content — concept-extracted from Teachy.ai",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-nasb-signs",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-068",
@@ -1765,7 +1786,10 @@
   "source": "Original content — concept-extracted from Teachy.ai",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-al-maful-bihi-identification",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-069",
@@ -1791,7 +1815,10 @@
   "source": "Original content — concept-extracted from IlmHub",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-jumla-ismiyya-parts",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-070",
@@ -1817,7 +1844,10 @@
   "source": "Original content — concept-extracted from IlmHub",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-mubtada-khabar-case",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-071",
@@ -1843,7 +1873,10 @@
   "source": "Original content — concept-extracted from IlmHub",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-jumla-ismiyya-parts",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-072",
@@ -1869,7 +1902,10 @@
   "source": "Original content — concept-extracted from IlmHub",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-mubtada-identification",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-073",
@@ -1895,7 +1931,10 @@
   "source": "Original content — concept-extracted from Arabify",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-root-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-074",
@@ -1921,7 +1960,10 @@
   "source": "Original content — concept-extracted from Arabify",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-verb-forms",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-075",
@@ -1947,7 +1989,10 @@
   "source": "Original content — concept-extracted from Arabify",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-verb-forms",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-076",
@@ -1973,7 +2018,10 @@
   "source": "Original content — concept-extracted from Arabify",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-wazn-pattern",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-077",
@@ -1999,7 +2047,10 @@
   "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-raf-signs",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-078",
@@ -2025,7 +2076,10 @@
   "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-jarr-sign",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-079",
@@ -2051,7 +2105,10 @@
   "source": "Original content — concept-extracted from Arabify",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-sarf-scope",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ARB-080",
@@ -2077,6 +2134,9 @@
   "source": "Original content — concept-extracted from Al-Muqaddimah al-Ajurrumiyyah",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "arabic-nahw-scope",
+  "syllabusClause": "Pattern B (ESED-453) — Arabic section (30)",
+  "sourceKind": "concept-extracted"
  }
 ]

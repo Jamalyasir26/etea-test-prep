@@ -212,7 +212,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-passive-voice",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-006",
@@ -255,7 +258,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-indirect-speech",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-007",
@@ -341,7 +347,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-subject-verb-agreement",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-009",
@@ -513,7 +522,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-passive-voice",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-013",
@@ -556,7 +568,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-indirect-speech",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-014",
@@ -814,7 +829,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-passive-voice",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-020",
@@ -857,7 +875,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-indirect-speech",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-021",
@@ -1072,7 +1093,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-passive-voice",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-026",
@@ -1115,7 +1139,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "english-indirect-speech",
+  "syllabusClause": "Pattern B (ESED-453) — English section (20)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ENG-027",

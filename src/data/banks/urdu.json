@@ -29,7 +29,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "urdu-synonyms",
+  "syllabusClause": "Pattern B (ESED-453) — Urdu section (10)",
+  "sourceKind": "proxy"
  },
  {
   "id": "URD-002",

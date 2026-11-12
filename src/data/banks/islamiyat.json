@@ -28,7 +28,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:01:56Z"
+  "reviewedAt": "2026-11-11T22:01:56Z",
+  "conceptId": "islamiyat-quran-surah-count",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ISL-002",
@@ -896,7 +899,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "islamiyat-makki-surahs",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ISL-030",
@@ -1702,7 +1708,10 @@
   "source": "ai-generated",
   "reviewStatus": "owner-reviewed",
   "reviewedBy": "owner",
-  "reviewedAt": "2026-11-11T22:23:00Z"
+  "reviewedAt": "2026-11-11T22:23:00Z",
+  "conceptId": "islamiyat-first-revelation-age",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "proxy"
  },
  {
   "id": "ISL-056",
@@ -2818,7 +2827,10 @@
   "source": "Original content — concept-extracted from Riwaq Al Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-quran-surah-count",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-092",
@@ -2849,7 +2861,10 @@
   "source": "Original content — concept-extracted from Riwaq Al Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-quran-longest-surah",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-093",
@@ -2880,7 +2895,10 @@
   "source": "Original content — concept-extracted from Riwaq Al Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-quran-shortest-surah",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-094",
@@ -2911,7 +2929,10 @@
   "source": "Original content — concept-extracted from Riwaq Al Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-quran-juz-count",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-095",
@@ -2942,7 +2963,10 @@
   "source": "Original content — concept-extracted from Riwaq Al Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-first-revelation-surah",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-096",
@@ -2973,7 +2997,10 @@
   "source": "Original content — concept-extracted from Wikipedia (Kutub al-Sittah)",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-sihah-sitta-count",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-097",
@@ -3004,7 +3031,10 @@
   "source": "Original content — concept-extracted from Wikipedia (Kutub al-Sittah)",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-sahihayn",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-098",
@@ -3035,7 +3065,10 @@
   "source": "Original content — concept-extracted from Wikipedia (Kutub al-Sittah)",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-sunan-abi-dawud-compiler",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-099",
@@ -3066,7 +3099,10 @@
   "source": "Original content — concept-extracted from QuranicMA",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-hijrah-year",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-100",
@@ -3097,7 +3133,10 @@
   "source": "Original content — concept-extracted from QuranicMA",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-battle-of-badr-year",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-101",
@@ -3128,7 +3167,10 @@
   "source": "Original content — concept-extracted from QuranicMA",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-battle-of-uhud-year",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-102",
@@ -3159,7 +3201,10 @@
   "source": "Original content — concept-extracted from Jibreel.app",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-fiqh-sources",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-103",
@@ -3190,7 +3235,10 @@
   "source": "Original content — concept-extracted from Jibreel.app",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-hanafi-founder",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-104",
@@ -3221,7 +3269,10 @@
   "source": "Original content — concept-extracted from Jibreel.app",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-al-risala-author",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "ISL-105",
@@ -3252,6 +3303,9 @@
   "source": "Original content — concept-extracted from Jibreel.app",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "islamiyat-maliki-madinah-practice",
+  "syllabusClause": "Pattern B (ESED-453) — Islamiyat section (30)",
+  "sourceKind": "concept-extracted"
  }
 ]

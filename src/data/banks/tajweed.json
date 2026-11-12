@@ -834,7 +834,10 @@
   "source": "Original content — concept-extracted from Riyad al-Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-ikhfa-haqiqi",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-032",
@@ -861,7 +864,10 @@
   "source": "Original content — concept-extracted from Al-Wafa Institute",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-iqlab",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-033",
@@ -888,7 +894,10 @@
   "source": "Original content — concept-extracted from Riyad al-Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-ikhfa-shafawi",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-034",
@@ -915,7 +924,10 @@
   "source": "Original content — concept-extracted from Riyad al-Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-ghunnah-duration",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-035",
@@ -942,7 +954,10 @@
   "source": "Original content — concept-extracted from Riwaq Al Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-idgham-bila-ghunnah",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-036",
@@ -969,7 +984,10 @@
   "source": "Original content — concept-extracted from Riwaq Al Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-idgham-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-037",
@@ -996,7 +1014,10 @@
   "source": "Original content — concept-extracted from Riwaq Al Quran",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-idgham-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-038",
@@ -1023,7 +1044,10 @@
   "source": "Original content — concept-extracted from Quranica",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-idgham-shafawi",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-039",
@@ -1050,7 +1074,10 @@
   "source": "Original content — concept-extracted from Quranica",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-qalqalah-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-040",
@@ -1077,7 +1104,10 @@
   "source": "Original content — concept-extracted from Quranica",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-qalqalah-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-041",
@@ -1104,7 +1134,10 @@
   "source": "Original content — concept-extracted from Quranica",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-qalqalah-strength",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-042",
@@ -1131,7 +1164,10 @@
   "source": "Original content — concept-extracted from Quranica",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-qalqalah-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-043",
@@ -1158,7 +1194,10 @@
   "source": "Original content — concept-extracted from Hekma Academy",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-madd-tabii",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-044",
@@ -1185,7 +1224,10 @@
   "source": "Original content — concept-extracted from Hekma Academy",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-madd-lazim",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-045",
@@ -1212,7 +1254,10 @@
   "source": "Original content — concept-extracted from Hekma Academy",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-madd-muttasil",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-046",
@@ -1239,7 +1284,10 @@
   "source": "Original content — concept-extracted from Hekma Academy",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-madd-badal",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-047",
@@ -1266,7 +1314,10 @@
   "source": "Original content — concept-extracted from Al-Wafa Institute",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-noon-sakinah-rules",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-048",
@@ -1293,7 +1344,10 @@
   "source": "Original content — concept-extracted from Al-Wafa Institute",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-izhar-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-049",
@@ -1320,7 +1374,10 @@
   "source": "Original content — concept-extracted from Quranica",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-meem-sakinah-rules",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  },
  {
   "id": "TAJ-050",
@@ -1347,6 +1404,9 @@
   "source": "Original content — concept-extracted from Quranica",
   "reviewStatus": "draft",
   "reviewedBy": null,
-  "reviewedAt": null
+  "reviewedAt": null,
+  "conceptId": "tajweed-izhar-shafawi",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
+  "sourceKind": "concept-extracted"
  }
 ]
