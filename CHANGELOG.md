@@ -168,3 +168,36 @@ The owner personally reviewed and approved the 14 "needs-review" items from the 
 - /review header reads "15 / 200 verified" for ZamungKor Mock 1 + 2 (was 1/200 from the single browser's localStorage).
 - Trusted Mode now fills from 15 items (was 0 on a fresh device). A trusted-only ZamungKor Mock 1 returns 9 questions, Mock 2 returns 6 — the shortfall is never filled with unreviewed items.
 - Full mocks (200–300 verified items) still need the owner to keep verifying on /review during P1; the agent's job remains structural checks + the dashboard only.
+
+# Stage 1 P1 Tier 1 — Fallback resilience (2026-11-12, local only, NOT deployed)
+
+Backup: `~/workspace/etea-prep-next-backup-pre-p1t1/` (FLAT copy, diff-verified — no nested directory). Full evidence: `VERIFY-p1-tier1.md`.
+
+## 1. Groq model fix — `llama-3.3-70b-versatile` was dead
+- Groq shut it down for free/developer accounts on 16 Aug 2026; it is now Enterprise-only (Groq docs: console.groq.com/docs/deprecations — Groq's own recommended replacement is `openai/gpt-oss-120b`). Re-pinned `GROQ_MODEL` to `openai/gpt-oss-120b` (Production model, Developer plan, 500 tok/s, 131K context; free-plan limits 30 RPM / 1K RPD / 8K TPM).
+- GPT-OSS is a reasoning model: it spends the output budget on reasoning before the visible reply, so the health probe's `max_tokens: 5` would come back empty — raised to 128 in `probeGroq` only. Answer path unchanged (temperature 0.3, max_tokens 1200; temperature 0–2 is supported).
+- Risk noted, not hidden: GPT-OSS is pay-per-token on Groq ($0.15/$0.60 per 1M). If the owner's key has no usable balance, live calls fail with 402, which the classifier already reports as `payment` (unit-tested) — the health probe will show it plainly after deploy.
+
+## 2. OpenRouter quota fix — alternative free model
+- The old `google/gemma-4-26b-a4b-it:free` is STILL on OpenRouter's free list (verified against the public https://openrouter.ai/api/v1/models on 2026-11-12: 466 models, 13 free, pricing $0/$0), but its upstream provider rate-limited it (HTTP 429) on two consecutive live health runs. Switched `OPENROUTER_MODEL` to the sibling `google/gemma-4-31b-it:free` — same Gemma 4 family, also $0/$0 on the same list, 262K context, separate upstream pool. No paid model enabled (owner's decision). If 31b also 429s live, the documented next option is the `openrouter/free` router (auto-picks a free model with capacity).
+
+## 3. Cold-start timeout fix — 15 s probe bound + honest reporting, NO cron
+- Root cause was the probe's own 10 s bound, not the platform: Vercel's official Functions limits (vercel.com/docs/functions/limits, updated 2026-08-24) give Hobby 300 s default AND maximum duration with Fluid compute — the "10 s Hobby timeout" in old blogs is outdated. The route sets maxDuration = 30 and probes run in parallel, so a 15 s bound finishes in ~15 s worst case — inside both budgets. `PROBE_TIMEOUT_MS = 15000` (single constant, all three probes).
+- NO warm-up cron added, deliberately: Vercel's own cron docs (vercel.com/docs/cron-jobs/usage-and-pricing) limit Hobby crons to once per day, while a serverless instance stays warm only minutes after an invocation — a daily ping cannot keep the function warm for an on-demand health check. Instead the health response now reports `coldStart` (module-level flag: true on an instance's first invocation) and a `timeoutHint` on any provider that times out ("retry once — usually warm-up, not a dead provider").
+- NO live Gemini kill-switch added: the health probe already tests each provider independently, so health showing Groq ok IS the per-provider proof.
+
+## 4. P0.1 follow-up — /review attribution fix
+- `src/lib/data.ts`: new `reviewAttribution(q, override)` — localStorage decision wins, else the bank JSON's reviewedBy/reviewedAt. `src/app/review/page.tsx` uses it. Before, the page read ONLY the localStorage map, so the 14 bank-verified items rendered "· unreviewed" while their status/counts/Trusted Mode were correct. Node test proves all 15 verified items now render owner attribution from bank fields.
+
+## 5. Fallback-chain test seam
+- `generateTutorAnswer` gained an optional 4th `impls` parameter (default = the real provider calls) so node tests can stub failures and prove the order Gemini → Groq → OpenRouter. Production callers never pass it; no behaviour change. New suite `scripts/test-fallback-chain.mjs` (24/24): chain order, first error preserved (mapped to its user-facing message), unconfigured providers skipped, model constants, 15 s bound, timeout hint, attribution fallback incl. all 15 real items. `package.json` gains `test:fallback`.
+
+## Verification (local; no keys here, live confirmation after deploy)
+- `npm run build` PASS (21/21 pages). `npx tsc --noEmit` clean (TS strict NOT enabled — Tier 3).
+- Suites: test-scoring 39/39, test-reviews 37/37, test-retrieval 28/28, test-fallback-chain 24/24, test-flashcards 29/29, qa 52/52.
+- Local prod server: home + /library /mock /practice /tutor /review /analysis /flashcards all HTTP 200; /review prerendered HTML shows 25 items with ISL-001 "by owner" (the only verified item in the first 25) and the rest "unreviewed"; GET /api/tutor/health call 1 returns coldStart: true, call 2 returns coldStart: false (flag flips correctly); all three providers not_configured locally (expected — no keys in this environment) with the NEW model ids reported.
+- NOT done here (honest): no live provider calls (no keys locally); Groq ok / OpenRouter ok / cold-start behaviour can only be confirmed live after deploy via GET /api/tutor/health. No real-browser click-through (code-inspected + node-tested only).
+
+## Expected live behaviour after deploy
+- GET /api/tutor/health: groq `ok` with model `openai/gpt-oss-120b` (was model_not_found); openrouter `ok` with model `google/gemma-4-31b-it:free` (was quota/429) — or a new, specific error class if the replacement also fails (402 payment on Groq, 429 again on OpenRouter). First health call after deploy reports coldStart: true and a 15 s bound; a cold timeout shows timeoutHint instead of a bare "down" reading.
+- /review: all 15 verified items show "by owner · <timestamp>" (was "unreviewed" for the 14 bank-verified ones).
