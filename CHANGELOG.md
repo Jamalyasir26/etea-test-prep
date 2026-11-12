@@ -260,3 +260,38 @@ Backup: `~/workspace/etea-prep-next-backup-pre-p1t1/` (FLAT copy, diff-verified 
 - Health shows per-provider status as before; direct browser opens still work; cross-origin health fetches get 403.
 - All six security headers present on every response; no CSP console errors in the browser.
 - Vercel build runs on Next 16.4.6 with strict type-checking enforced.
+
+## Stage 1 P1 Tier 4 — UI/accessibility fixes B01–B05 (local, 2026-11-12; NOT deployed)
+
+### 1. B01 — Tutor overflow at 360px + vacancy table
+- `src/app/tutor/page.tsx` — both the ask-row and explain-row inputs get `flex: 1; min-width: 0` so they shrink inside their flex rows and the buttons stay on-screen; the explain output wraps long strings (`overflowWrap: break-word`).
+- `src/app/globals.css` — `.card` and `.msg` gain `overflow-wrap: break-word` (long URLs wrap instead of overflowing); new `.table-scroll` class (`overflow-x: auto`, touch scrolling).
+- `src/app/vacancies/page.tsx` — the 6-column table is wrapped in a keyboard-focusable scroll region (`role="region"`, `aria-label="Vacancy table"`, `tabIndex={0}`).
+- `src/app/mock/page.tsx` — the mock mode button row gains `flexWrap: "wrap"` (same overflow class: the two long buttons overflowed at 360px).
+- Honest limit: no real 360px render exists locally — the 360px layout is a post-deploy browser check. Scope note: the analysis/issues/QuizRunner tables are the same overflow class but were not in the Tier 4 list — future work, not done here.
+
+### 2. B02 — 299px sticky mobile header → accessible hamburger menu
+- `src/components/Nav.tsx` — native `<button type="button" className="nav-toggle">` with `aria-expanded`, `aria-controls="main-nav"`, `aria-label="Navigation menu"` (☰/✕); the menu closes on link click (delegated onClick + brand link) and on Escape (listener active only while open, returns focus to the toggle). All 14 links, the language selector and the theme toggle are unchanged.
+- `src/app/globals.css` — `.nav-toggle { display: none; }` on desktop; inside `@media (max-width: 640px)` the toggle is shown (44px touch target, white outline on the teal bar) and `.nav` is hidden until `.open`, then a full-width vertical list with 44px links. Desktop layout is unchanged; the header's look is not redesigned.
+- `src/app/globals.css` — `:focus-visible` outlines (teal / light teal on dark / white in the topbar) so keyboard focus is visible on the toggle and every control; mouse users see no change.
+
+### 3. B03 — RTL counter reversal
+- Every rendered count/fraction is isolated with an explicit `dir="ltr"` span: plan progress (the reported "0/63" bug), QuizRunner results score + raw accuracy + exam score + "Question X of Y" + mm:ss timer, mock list trusted count, mock runner note counts, review progress + "Showing X of Y" + "Show 25 more (N left)", flashcard session + recalled + card counters, and all six analysis fractions (stat cards, daily row, mock history, attempt score, attempt detail). `QuizRunner`'s `note` prop widened from `string` to `ReactNode` so the caller can pass the isolated spans (only mock/[id] passes a note). A sweep test proves no bare `{a}/{b}` fraction remains in any `.tsx`. Single numbers with units, dates, bare percentages and aria-labels were inspected and left unchanged (single LTR runs, cannot reorder).
+
+### 4. B04 — Dark badge contrast
+- `src/app/globals.css` — dark-mode overrides only: green badge `#4CC38A` now with `#06231A` text = **7.51:1** (was white, 2.22:1); red badge `#FF8A80` now with `#3D0A06` text = **7.39:1** (was white, 2.28:1 — a second failure found by the same audit and fixed the same way). All 10 badge pairs (5 variants × 2 themes) audited — the other 8 already passed (5.15:1–9.99:1) and are untouched. `--green`/`--red` variables unchanged (they feed non-text elements, out of scope).
+
+### 5. B05 — Flashcard keyboard fix
+- `src/app/flashcards/page.tsx` — the card surface is now a native `<button type="button" className="card flashcard">` (was a `div` with `role="button"` + `tabIndex` and no key handler — Enter/Space did nothing). It flips on Enter/Space when focused, with a visible focus outline. Deliberately NO aria-label: the card text itself is the button's accessible name, so screen readers hear the question/answer. The native "Flip card" button, grade buttons and frozen-queue logic are untouched.
+- `src/app/globals.css` — `.flashcard` gains `color: var(--ink); width: 100%` (the global `button` rule sets white text, which would be invisible on the card background).
+
+### Verification (local; no keys here, live confirmation after deploy)
+- `npm run build` PASS (full 22-route table, same as Tier 3). `npx tsc --noEmit` clean with `strict: true`.
+- Suites: test-scoring 39/39, test-reviews 37/37, test-retrieval 28/28, test-fallback-chain 24/24, test-timeouts 43/43, test-storage 36/36, test-tutor-lang 30/30, test-api-guard 60/60, test-flashcards 29/29, test-tier4 46/46 (new), qa 52/52. Total 424 checks, 0 failures.
+- Local prod server: 14 pages HTTP 200; home shows 645 MCQs; served HTML contains the nav-toggle/main-nav, table-scroll wrapper, dir="ltr" spans and min-width:0; built CSS contains all new rules; production JS bundle contains the flashcard button and the nav toggle with ARIA attributes.
+- NOT done here (honest): no real 360px browser render, no real-browser keyboard/Escape/Tab check, no visual screenshot — all are post-deploy browser checks listed in VERIFY-p1-tier4.md.
+
+### Expected live behaviour after deploy
+- At 360px the tutor rows, mock mode buttons and vacancy table fit/scroll without page overflow; the header is short with a working hamburger menu (click, link-click, Escape, Tab).
+- In Urdu (RTL) mode every count/fraction reads in logical order; in dark mode the green/red badges are readable.
+- Flashcards flip on Enter/Space when focused, with a visible outline; the Flip card button still works as before.
