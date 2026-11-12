@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/i18n";
 
 const LINKS = [
@@ -22,14 +23,47 @@ const LINKS = [
 export default function Nav() {
   const { t, lang, setLang, theme, setTheme } = useLang();
   const pathname = usePathname();
+  // Stage 1 P1 Tier 4 (B02) — mobile menu disclosure. On narrow
+  // viewports the 14 nav links collapse behind the hamburger toggle
+  // (see globals.css .nav-toggle / .nav.open). Desktop is unchanged:
+  // the toggle is hidden and the links always show.
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!menuOpen) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        toggleRef.current?.focus();
+      }
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
   return (
     <header className="topbar">
       <div className="topbar-inner">
-        <Link href="/" className="brand">
+        <Link href="/" className="brand" onClick={() => setMenuOpen(false)}>
           📚 ETEA Prep Library
           <small>KP Government Jobs — personal preparation</small>
         </Link>
-        <nav className="nav" aria-label="Main">
+        <button
+          ref={toggleRef}
+          type="button"
+          className="nav-toggle"
+          aria-expanded={menuOpen}
+          aria-controls="main-nav"
+          aria-label="Navigation menu"
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
+        <nav
+          id="main-nav"
+          className={menuOpen ? "nav open" : "nav"}
+          aria-label="Main"
+          onClick={() => setMenuOpen(false)}
+        >
           {LINKS.map((l) => (
             <Link key={l.href} href={l.href} className={pathname === l.href ? "active" : ""}>
               {t(l.key)}
