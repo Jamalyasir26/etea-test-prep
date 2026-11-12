@@ -97,6 +97,11 @@ export type ProviderAttempt = {
   durationMs: number;
   errorClass?: string;
   errorMessage?: string;
+  // Stage 1 P1 Tier 2 — attempt numbering for the bounded retry: 1 is the
+  // first try, 2 is the single retry. `retry: true` marks retry attempts
+  // so the logs stay truthful about what was tried and when.
+  attempt?: number;
+  retry?: boolean;
 };
 
 /** Redact anything shaped like an API key/credential from a string. */
@@ -156,12 +161,21 @@ function logAttempt(a: ProviderAttempt): void {
   console.log(JSON.stringify({ event: "tutor_provider_attempt", ...a }));
 }
 
-/** Time one provider call, log the attempt (success or failure), rethrow errors. */
-async function timedCall<T>(provider: ProviderName, model: string, fn: () => Promise<T>): Promise<T> {
+/** Time one provider call, log the attempt (success or failure), rethrow errors.
+ *  `extra` carries the Tier 2 attempt number / retry marker into the log
+ *  line. Exported for the node test suite (scripts/test-timeouts.mjs),
+ *  which proves the retry marker is logged — production callers use the
+ *  provider functions below, never this directly. */
+export async function timedCall<T>(
+  provider: ProviderName,
+  model: string,
+  fn: () => Promise<T>,
+  extra?: { attempt?: number; retry?: boolean },
+): Promise<T> {
   const started = Date.now();
   try {
     const result = await fn();
-    logAttempt({ provider, model, ok: true, durationMs: Date.now() - started });
+    logAttempt({ provider, model, ok: true, durationMs: Date.now() - started, ...extra });
     return result;
   } catch (err) {
     const raw = err instanceof Error ? err.message : String(err);
@@ -172,6 +186,7 @@ async function timedCall<T>(provider: ProviderName, model: string, fn: () => Pro
       durationMs: Date.now() - started,
       errorClass: classifyProviderError(err),
       errorMessage: scrubSecrets(raw).slice(0, 200),
+      ...extra,
     });
     throw err;
   }
@@ -222,6 +237,36 @@ export const PROBE_TIMEOUT_MS = 15000;
 // instance is usually warm-up, not a dead provider — retry once.
 export const TIMEOUT_HINT =
   "Probe hit its 15s bound — on a cold instance this is usually warm-up, not a dead provider; wait a few seconds and retry once.";
+
+// Stage 1 P1 Tier 2 (2026-11-12) — ANSWER-path bounds. The health probe
+// keeps its own separate 15 s PROBE_TIMEOUT_MS above — untouched.
+// Per-provider bound: 8 s on EVERY provider call in the answer path.
+// Overall deadline: 15 s for the whole attempt across providers, so a
+// slow provider plus its one retry can never hang the tutor past it.
+// Both fit easily inside the Vercel Hobby 300 s Fluid-compute budget
+// (vercel.com/docs/functions/limits) and the answer route's budget.
+export const PROVIDER_TIMEOUT_MS = 8000;
+export const ANSWER_DEADLINE_MS = 15000;
+// At most ONE retry per provider (2 attempts total), and only for
+// transient errors — see isTransientErrorClass below.
+export const MAX_PROVIDER_ATTEMPTS = 2;
+
+/**
+ * Transient error classes: safe to retry ONCE. Everything else must
+ * NEVER be retried — retrying an invalid key, a dead model, a payment
+ * failure or a bad request only burns quota and delays the honest
+ * answer. Transient: timeout, network, quota (429), and any 5xx
+ * (http_5xx). Non-transient: invalid_key, model_not_found, payment,
+ * not_configured, unknown, empty_response, http_4xx.
+ */
+export function isTransientErrorClass(errorClass: string): boolean {
+  return (
+    errorClass === "timeout" ||
+    errorClass === "network" ||
+    errorClass === "quota" ||
+    /^http_5\d\d$/.test(errorClass)
+  );
+}
 
 const PROBE_PROMPT = "Reply with exactly the word OK and nothing else.";
 
@@ -356,11 +401,39 @@ export class AiError extends Error {
   }
 }
 
+/** Thrown when the overall answer deadline (Tier 2) is hit. The chain
+ *  stops immediately on this error instead of trying the next provider —
+ *  there is no time left for it. An AiError, so routes return 502 with
+ *  the honest message. */
+export class DeadlineError extends AiError {
+  constructor(deadlineMs: number) {
+    super(
+      502,
+      `The tutor took too long to answer (${Math.round(deadlineMs / 1000)}s overall deadline). Please try again in a moment.`,
+    );
+    this.name = "DeadlineError";
+  }
+}
+
 const LANG_NAME: Record<string, string> = {
   en: "English",
   roman: "Roman Urdu (Urdu written in Latin letters)",
   ur: "Urdu (اردو)",
+  // Stage 1 P1 Tier 2 — Arabic answer language. The library excerpts
+  // stay as they are; the ANSWER comes back in Arabic.
+  ar: "Arabic (العربية)",
 };
+
+// Stage 1 P1 Tier 2 — the tutor's answer languages. The API routes
+// (tutor / explain / plan) validate `lang` through this helper; unknown
+// values fall back to "en" (the previous default). The site-wide UI
+// toggle (en/roman/ur) is untouched — Arabic is a TUTOR answer language
+// only, chosen on the tutor page itself.
+export const TUTOR_LANGS = ["en", "roman", "ur", "ar"] as const;
+export type TutorLang = (typeof TUTOR_LANGS)[number];
+export function normalizeTutorLang(value: unknown): TutorLang {
+  return value === "en" || value === "roman" || value === "ur" || value === "ar" ? value : "en";
+}
 
 const SYSTEM = `You are Ustad, a study tutor for KP government job tests (ETEA / KPPSC: ZamungKor, ESED TT/AT/PST/CT/Qari, SST).
 Rules you must follow:
@@ -396,89 +469,130 @@ function langInstruction(lang: string) {
   return `Answer in ${LANG_NAME[lang] ?? "English"}.`;
 }
 
-async function callGemini(prompt: string): Promise<string> {
-  return timedCall("gemini", GEMINI_MODEL, async () => {
-    const key = process.env.GEMINI_API_KEY;
-    if (!key) throw new AiError(503, "NO_GEMINI_KEY");
-    const ai = new GoogleGenAI({ apiKey: key });
-    const response = await ai.models.generateContent({
-      model: GEMINI_MODEL,
-      contents: prompt,
-      config: { systemInstruction: SYSTEM },
-    });
-    const text = response.text;
-    if (!text) throw new Error("Empty response from Gemini");
-    return text;
-  });
+/** Options passed from the answer chain into each provider call (Tier 2):
+ *  `signal` aborts the underlying request at the bound; `attempt` is 1
+ *  for the first try, 2 for the single bounded retry (logged). */
+export type ProviderCallOptions = {
+  signal?: AbortSignal;
+  attempt?: number;
+};
+
+/** Attempt marker for the log line: attempt 1 = first try, 2 = retry. */
+function attemptMarker(opts?: ProviderCallOptions): { attempt: number; retry: boolean } {
+  const attempt = opts?.attempt ?? 1;
+  return { attempt, retry: attempt > 1 };
 }
 
-async function callGroq(prompt: string): Promise<string> {
-  return timedCall("groq", GROQ_MODEL, async () => {
-    const key = process.env.GROQ_API_KEY;
-    if (!key) throw new AiError(503, "NO_GROQ_KEY");
-    const groq = new Groq({ apiKey: key });
-    const chat = await groq.chat.completions.create({
-      model: GROQ_MODEL,
-      messages: [
-        { role: "system", content: SYSTEM },
-        { role: "user", content: prompt },
-      ],
-      temperature: 0.3,
-      max_tokens: 1200,
-    });
-    const text = chat.choices[0]?.message?.content ?? "";
-    if (!text) throw new Error("Empty response from Groq");
-    return text;
-  });
+async function callGemini(prompt: string, opts?: ProviderCallOptions): Promise<string> {
+  return timedCall(
+    "gemini",
+    GEMINI_MODEL,
+    async () => {
+      const key = process.env.GEMINI_API_KEY;
+      if (!key) throw new AiError(503, "NO_GEMINI_KEY");
+      const ai = new GoogleGenAI({ apiKey: key });
+      const response = await ai.models.generateContent({
+        model: GEMINI_MODEL,
+        contents: prompt,
+        // Tier 2: abortSignal cancels the request client-side at the
+        // bound (GenerateContentConfig supports it in @google/genai
+        // 3.2.0). The withTimeout race in the chain is the backstop.
+        config: {
+          systemInstruction: SYSTEM,
+          ...(opts?.signal ? { abortSignal: opts.signal } : {}),
+        },
+      });
+      const text = response.text;
+      if (!text) throw new Error("Empty response from Gemini");
+      return text;
+    },
+    attemptMarker(opts),
+  );
 }
 
-async function callOpenRouter(prompt: string): Promise<string> {
-  return timedCall("openrouter", OPENROUTER_MODEL, async () => {
-    const key = process.env.OPENROUTER_API_KEY;
-    if (!key) throw new AiError(503, "NO_OPENROUTER_KEY");
-    const res = await fetch(OPENROUTER_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${key}`,
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://etea-test-prep.vercel.app/",
-        "X-Title": "ETEA Prep Library",
-      },
-      body: JSON.stringify({
-        model: OPENROUTER_MODEL,
-        messages: [
-          { role: "system", content: SYSTEM },
-          { role: "user", content: prompt },
-        ],
-        temperature: 0.3,
-        max_tokens: 1200,
-      }),
-    });
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    if (res.status === 401) {
-      throw new AiError(
-        502,
-        "The saved OpenRouter API key was rejected (invalid key). Please check the key in OpenRouter and update OPENROUTER_API_KEY in Vercel.",
+async function callGroq(prompt: string, opts?: ProviderCallOptions): Promise<string> {
+  return timedCall(
+    "groq",
+    GROQ_MODEL,
+    async () => {
+      const key = process.env.GROQ_API_KEY;
+      if (!key) throw new AiError(503, "NO_GROQ_KEY");
+      const groq = new Groq({ apiKey: key });
+      const chat = await groq.chat.completions.create(
+        {
+          model: GROQ_MODEL,
+          messages: [
+            { role: "system", content: SYSTEM },
+            { role: "user", content: prompt },
+          ],
+          temperature: 0.3,
+          max_tokens: 1200,
+        },
+        // Tier 2: the SDK's RequestOptions carry the abort signal.
+        opts?.signal ? { signal: opts.signal } : undefined,
       );
-    }
-    if (res.status === 402) {
-      throw new AiError(
-        502,
-        "OpenRouter reported a payment/credit problem. The tutor uses a free model only, so please check the key's limits in OpenRouter.",
-      );
-    }
-    throw new Error(`OpenRouter HTTP ${res.status}: ${body.slice(0, 200)}`);
-  }
-  const json = (await res.json()) as {
-    choices?: { message?: { content?: string } }[];
-    error?: { message?: string };
-  };
-  if (json.error?.message) throw new Error(`OpenRouter error: ${json.error.message}`);
-  const text = json.choices?.[0]?.message?.content ?? "";
-  if (!text) throw new Error("Empty response from OpenRouter");
-    return text;
-  });
+      const text = chat.choices[0]?.message?.content ?? "";
+      if (!text) throw new Error("Empty response from Groq");
+      return text;
+    },
+    attemptMarker(opts),
+  );
+}
+
+async function callOpenRouter(prompt: string, opts?: ProviderCallOptions): Promise<string> {
+  return timedCall(
+    "openrouter",
+    OPENROUTER_MODEL,
+    async () => {
+      const key = process.env.OPENROUTER_API_KEY;
+      if (!key) throw new AiError(503, "NO_OPENROUTER_KEY");
+      const res = await fetch(OPENROUTER_URL, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${key}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "https://etea-test-prep.vercel.app/",
+          "X-Title": "ETEA Prep Library",
+        },
+        body: JSON.stringify({
+          model: OPENROUTER_MODEL,
+          messages: [
+            { role: "system", content: SYSTEM },
+            { role: "user", content: prompt },
+          ],
+          temperature: 0.3,
+          max_tokens: 1200,
+        }),
+        // Tier 2: fetch aborts promptly at the bound.
+        ...(opts?.signal ? { signal: opts.signal } : {}),
+      });
+      if (!res.ok) {
+        const body = await res.text().catch(() => "");
+        if (res.status === 401) {
+          throw new AiError(
+            502,
+            "The saved OpenRouter API key was rejected (invalid key). Please check the key in OpenRouter and update OPENROUTER_API_KEY in Vercel.",
+          );
+        }
+        if (res.status === 402) {
+          throw new AiError(
+            502,
+            "OpenRouter reported a payment/credit problem. The tutor uses a free model only, so please check the key's limits in OpenRouter.",
+          );
+        }
+        throw new Error(`OpenRouter HTTP ${res.status}: ${body.slice(0, 200)}`);
+      }
+      const json = (await res.json()) as {
+        choices?: { message?: { content?: string } }[];
+        error?: { message?: string };
+      };
+      if (json.error?.message) throw new Error(`OpenRouter error: ${json.error.message}`);
+      const text = json.choices?.[0]?.message?.content ?? "";
+      if (!text) throw new Error("Empty response from OpenRouter");
+      return text;
+    },
+    attemptMarker(opts),
+  );
 }
 
 function classifyGeminiError(err: unknown): AiError {
@@ -508,11 +622,26 @@ function classifyGeminiError(err: unknown): AiError {
  *  provider calls. NO live kill-switch is added anywhere: the health
  *  probe already tests each provider independently, so a health run
  *  showing Groq ok IS the per-provider proof — disabling Gemini live to
- *  test a fallback is unnecessary. */
+ *  test a fallback is unnecessary.
+ *  Tier 2 bounds: every provider attempt is bounded by min(8s, remaining
+ *  overall budget) via an AbortSignal AND a race (the signal cancels
+ *  fetch/Groq/Gemini promptly; the race enforces the bound even if an
+ *  SDK ignored the signal). Each provider gets at most ONE retry, only
+ *  for transient errors (timeout/network/quota/5xx). The whole attempt
+ *  is capped by the 15s overall deadline: when it hits, the chain stops
+ *  and returns the honest deadline error — it never hangs.
+ *  `bounds` (Tier 2): test seam only — node tests inject tiny bounds so
+ *  the timeout/retry/deadline behaviour is proven in milliseconds
+ *  instead of real seconds. Production callers never pass it. */
 export type TutorProviderImpls = {
-  gemini: (prompt: string) => Promise<string>;
-  groq: (prompt: string) => Promise<string>;
-  openrouter: (prompt: string) => Promise<string>;
+  gemini: (prompt: string, opts?: ProviderCallOptions) => Promise<string>;
+  groq: (prompt: string, opts?: ProviderCallOptions) => Promise<string>;
+  openrouter: (prompt: string, opts?: ProviderCallOptions) => Promise<string>;
+};
+
+export type TutorAnswerBounds = {
+  providerTimeoutMs?: number;
+  answerDeadlineMs?: number;
 };
 
 const defaultTutorImpls: TutorProviderImpls = {
@@ -526,6 +655,7 @@ export async function generateTutorAnswer(
   lang: string,
   ownerAnnotations: { note: string; text: string }[] = [],
   impls: TutorProviderImpls = defaultTutorImpls,
+  bounds: TutorAnswerBounds = {},
 ): Promise<{ text: string; provider: "gemini" | "groq" | "openrouter" }> {
   const status = providerStatus();
   if (!status.gemini && !status.groq && !status.openrouter) {
@@ -534,15 +664,58 @@ export async function generateTutorAnswer(
       "Live AI is not configured yet — no API key is set on the server. The offline Study Assistant on this site still works (it searches this library).",
     );
   }
+  const providerTimeoutMs = bounds.providerTimeoutMs ?? PROVIDER_TIMEOUT_MS;
+  const answerDeadlineMs = bounds.answerDeadlineMs ?? ANSWER_DEADLINE_MS;
+  const startedAt = Date.now();
+  const remainingMs = () => answerDeadlineMs - (Date.now() - startedAt);
   const prompt = `${contextBlock(userPrompt, ownerAnnotations)}\n\n${langInstruction(lang)}\n\nUSER QUESTION:\n${userPrompt}`;
+
+  // Try ONE provider with at most one bounded retry for transient
+  // errors. The attempt's AbortSignal bound is min(8s, remaining
+  // overall budget), so a slow provider plus its retry can never blow
+  // past the 15s deadline. Retries are logged as separate attempts
+  // with the retry marker (see timedCall / attemptMarker).
+  const tryProvider = async (
+    name: ProviderName,
+    call: (prompt: string, opts?: ProviderCallOptions) => Promise<string>,
+  ): Promise<string> => {
+    let lastError: unknown = null;
+    for (let attempt = 1; attempt <= MAX_PROVIDER_ATTEMPTS; attempt++) {
+      if (remainingMs() <= 0) throw new DeadlineError(answerDeadlineMs);
+      const bound = Math.min(providerTimeoutMs, remainingMs());
+      try {
+        return await withTimeout(
+          call(prompt, { signal: AbortSignal.timeout(bound), attempt }),
+          bound,
+          `${name} answer`,
+        );
+      } catch (e) {
+        lastError = e;
+        // NO_*_KEY: the provider is not really configured — never retry,
+        // fall through immediately (existing behaviour).
+        if (e instanceof AiError && /^NO_(GEMINI|GROQ|OPENROUTER)_KEY$/.test(e.message)) throw e;
+        // Deadline hit: stop the whole chain now, do not try the next provider.
+        if (e instanceof DeadlineError) throw e;
+        const canRetry =
+          attempt < MAX_PROVIDER_ATTEMPTS &&
+          isTransientErrorClass(classifyProviderError(e)) &&
+          remainingMs() > 0;
+        if (!canRetry) throw e;
+        // Otherwise loop once: the single bounded retry.
+      }
+    }
+    throw lastError;
+  };
+
   // Try each configured provider in order; keep the first error for the final message.
   let firstError: unknown = null;
   let firstErrorProvider: "gemini" | "groq" | "openrouter" | null = null;
   if (status.gemini) {
     try {
-      const text = await impls.gemini(prompt);
+      const text = await tryProvider("gemini", impls.gemini);
       return { text, provider: "gemini" };
     } catch (e) {
+      if (e instanceof DeadlineError) throw e;
       if (e instanceof AiError && e.message === "NO_GEMINI_KEY") {
         // fall through to the next provider
       } else {
@@ -553,9 +726,10 @@ export async function generateTutorAnswer(
   }
   if (status.groq) {
     try {
-      const text = await impls.groq(prompt);
+      const text = await tryProvider("groq", impls.groq);
       return { text, provider: "groq" };
     } catch (e) {
+      if (e instanceof DeadlineError) throw e;
       if (e instanceof AiError && e.message === "NO_GROQ_KEY") {
         // fall through to the next provider
       } else if (!firstError) {
@@ -566,9 +740,10 @@ export async function generateTutorAnswer(
   }
   if (status.openrouter) {
     try {
-      const text = await impls.openrouter(prompt);
+      const text = await tryProvider("openrouter", impls.openrouter);
       return { text, provider: "openrouter" };
     } catch (e) {
+      if (e instanceof DeadlineError) throw e;
       // Keep the FIRST provider's error as the final message — it is the
       // most actionable (usually the Gemini key). OpenRouter's own clear
       // 401/402 message is used only when it is the only failure.
