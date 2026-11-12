@@ -28,6 +28,7 @@
 
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { hashSeed, mulberry32, shuffleOptions, type Question } from "@/lib/data";
+import ProvenanceBadge from "@/components/ProvenanceBadge";
 import {
   computeExamScore,
   DEFAULT_SCORING,
@@ -624,6 +625,9 @@ export default function QuizRunner({
           <b>Q{idx + 1}.</b> {q.question.question}{" "}
           <span className="badge grey">{q.question.subject}</span>
           {q.question.pastPaperRef && <span className="badge">{q.question.pastPaperRef.includes("reworded") ? "Reworded" : "Original"}</span>}
+          {/* Stage 1 P2 — provenance badge (renders only when the item
+              carries a sourceKind). */}
+          <ProvenanceBadge source={q.question.source} sourceKind={q.question.sourceKind} syllabusClause={q.question.syllabusClause} />
         </p>
         {q.options.map((o, i) => {
           let cls = "opt";
