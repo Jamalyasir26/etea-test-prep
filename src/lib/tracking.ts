@@ -80,6 +80,10 @@ const REVIEWS_KEY = "etea_reviews_next_v1";
 // Stage 1 P0.3 — owner annotations on notes (key: "<subject>||<title>").
 const ANNOTATIONS_KEY = "etea_annotations_next_v1";
 const ANNOTATIONS_OPTIN_KEY = "etea_annotations_tutor_optin_v1";
+// Stage 1 P1 Tier 2 — quarantine store for unreadable saved data. When a
+// stored value fails JSON.parse, the raw text is preserved here VERBATIM
+// (never edited, never deleted) so it can be downloaded and inspected.
+const QUARANTINE_KEY = "etea_quarantine_next_v1";
 
 /** Stage 1 P0.2 — review-status vocabulary (Phase 2, D2). "draft" is the
  *  bank default (unreviewed). Only "owner-reviewed" and "approved" count
@@ -128,7 +132,7 @@ function asReviewRecord(raw: unknown): ReviewRecord | null {
 /** Load all owner review decisions (question id -> record). */
 export function loadReviews(): Record<string, ReviewRecord> {
   if (typeof window === "undefined") return {};
-  const raw = safeParse<Record<string, unknown>>(localStorage.getItem(REVIEWS_KEY), {});
+  const raw = safeParse<Record<string, unknown>>(REVIEWS_KEY, {});
   const out: Record<string, ReviewRecord> = {};
   for (const [qid, rec] of Object.entries(raw)) {
     const clean = asReviewRecord(rec);
@@ -139,7 +143,7 @@ export function loadReviews(): Record<string, ReviewRecord> {
 
 export function saveReviews(reviews: Record<string, ReviewRecord>) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews));
+  safeWrite(REVIEWS_KEY, JSON.stringify(reviews));
 }
 
 /** Record one owner review decision. Returns the updated map. */
@@ -165,7 +169,7 @@ export function getReview(qid: string): ReviewRecord | null {
 
 export function loadAnnotations(): Record<string, string> {
   if (typeof window === "undefined") return {};
-  const raw = safeParse<Record<string, unknown>>(localStorage.getItem(ANNOTATIONS_KEY), {});
+  const raw = safeParse<Record<string, unknown>>(ANNOTATIONS_KEY, {});
   const out: Record<string, string> = {};
   for (const [k, v] of Object.entries(raw)) if (typeof v === "string") out[k] = v;
   return out;
@@ -176,32 +180,210 @@ export function saveAnnotation(noteKey: string, text: string) {
   const all = loadAnnotations();
   if (text.trim()) all[noteKey] = text;
   else delete all[noteKey];
-  localStorage.setItem(ANNOTATIONS_KEY, JSON.stringify(all));
+  safeWrite(ANNOTATIONS_KEY, JSON.stringify(all));
 }
 
 /** Opt-in: include my annotations in tutor requests. Default false (off). */
 export function loadAnnotationOptIn(): boolean {
   if (typeof window === "undefined") return false;
-  return localStorage.getItem(ANNOTATIONS_OPTIN_KEY) === "1";
+  return safeRead(ANNOTATIONS_OPTIN_KEY) === "1";
 }
 
 export function setAnnotationOptIn(on: boolean) {
   if (typeof window === "undefined") return;
-  localStorage.setItem(ANNOTATIONS_OPTIN_KEY, on ? "1" : "0");
+  safeWrite(ANNOTATIONS_OPTIN_KEY, on ? "1" : "0");
 }
 
-function safeParse<T>(raw: string | null, fallback: T): T {
+// ---------------------------------------------------------------------------
+// Stage 1 P1 Tier 2 — storage corruption safety.
+// Two guarantees:
+// 1. Malformed stored JSON NEVER deletes the user's data. The raw text is
+//    QUARANTINED (verbatim, with the original key + timestamp) under
+//    QUARANTINE_KEY, the loader returns its safe default, and a warning
+//    is recorded for the Analysis page. The quarantined text is
+//    downloadable (exportQuarantine) so nothing is ever lost silently.
+//    The original key's value is left untouched — the next load sees the
+//    same corrupt text, so quarantine records are deduplicated by
+//    (key, raw) and never pile up.
+// 2. Storage exceptions (QuotaExceededError, SecurityError, any other
+//    DOMException) on reads/writes are CAUGHT, recorded as warnings,
+//    and never crash the page or silently drop a write. safeWrite
+//    returns false on failure so callers can react; the warning list
+//    (getStorageWarnings) is the user-visible surface on Analysis.
+// ---------------------------------------------------------------------------
+
+export type QuarantineRecord = {
+  key: string; // the original storage key whose value failed to parse
+  raw: string; // the raw stored text, preserved VERBATIM — never edited
+  at: string; // ISO timestamp of the quarantine
+};
+
+export type StorageWarning = {
+  type: "quarantine" | "write-failed" | "read-failed";
+  key: string;
+  at: string; // ISO timestamp
+  detail: string; // error name only — never the stored content
+};
+
+// In-memory warnings for this page load (the quarantine store itself is
+// persistent; these are the transient conditions worth showing).
+const storageWarnings: StorageWarning[] = [];
+
+function recordWarning(w: StorageWarning) {
+  // Deduplicate by (type, key, detail) per page load: loaders run many
+  // times and the same corrupt key would otherwise flood the warning
+  // list — but a DIFFERENT failure on the same key (e.g.
+  // QuotaExceededError, then SecurityError) still surfaces, because the
+  // detail is part of the dedup key.
+  if (storageWarnings.some((x) => x.type === w.type && x.key === w.key && x.detail === w.detail)) return;
+  storageWarnings.push(w);
+  if (typeof console !== "undefined") {
+    console.warn(`[storage] ${w.type} on ${w.key}: ${w.detail}`);
+  }
+}
+
+/** Warnings recorded this page load (quarantines + failed reads/writes). */
+export function getStorageWarnings(): StorageWarning[] {
+  return [...storageWarnings];
+}
+
+export function clearStorageWarnings() {
+  storageWarnings.length = 0;
+}
+
+function errorName(e: unknown): string {
+  return e instanceof Error ? e.name || e.message : String(e);
+}
+
+/** localStorage read that never throws: a SecurityError (blocked
+ *  storage) returns null and records a warning instead of crashing. */
+export function safeRead(key: string): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    return localStorage.getItem(key);
+  } catch (e) {
+    recordWarning({ type: "read-failed", key, at: new Date().toISOString(), detail: errorName(e) });
+    return null;
+  }
+}
+
+/** localStorage write that never throws: QuotaExceededError /
+ *  SecurityError (or any DOMException) is caught, recorded as a
+ *  warning, and reported via the false return — never a crash, never
+ *  a silently dropped write. */
+export function safeWrite(key: string, value: string): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch (e) {
+    recordWarning({ type: "write-failed", key, at: new Date().toISOString(), detail: errorName(e) });
+    return false;
+  }
+}
+
+/** localStorage remove that never throws (same guarantee as safeWrite). */
+export function safeRemove(key: string) {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.removeItem(key);
+  } catch (e) {
+    recordWarning({ type: "write-failed", key, at: new Date().toISOString(), detail: errorName(e) });
+  }
+}
+
+function isQuarantineRecord(v: unknown): v is QuarantineRecord {
+  if (!v || typeof v !== "object") return false;
+  const r = v as Record<string, unknown>;
+  return typeof r.key === "string" && typeof r.raw === "string" && typeof r.at === "string";
+}
+
+/** Read the quarantine store WITHOUT safeParse: quarantining a corrupt
+ *  quarantine store would recurse. If the store itself is corrupt JSON,
+ *  its raw text is preserved as a record of its own — nothing is lost. */
+function loadQuarantineRaw(): QuarantineRecord[] {
+  const raw = safeRead(QUARANTINE_KEY);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(isQuarantineRecord);
+  } catch {
+    return [{ key: QUARANTINE_KEY, raw, at: new Date().toISOString() }];
+  }
+}
+
+function quarantine(key: string, raw: string) {
+  const list = loadQuarantineRaw();
+  // Deduplicate: the same corrupt value is quarantined ONCE. Loaders run
+  // on every page load and the original key is left untouched, so
+  // without this the quarantine would grow on every load.
+  if (!list.some((r) => r.key === key && r.raw === raw)) {
+    list.push({ key, raw, at: new Date().toISOString() });
+    // Direct write (not safeWrite): a failed quarantine write must not
+    // overwrite the warning below with a second, misleading one — the
+    // quarantine warning fires either way.
+    try {
+      localStorage.setItem(QUARANTINE_KEY, JSON.stringify(list));
+    } catch {
+      // The warning below still fires; the raw text is still in its
+      // original key (never deleted), so it can be recovered by hand.
+    }
+  }
+  recordWarning({
+    type: "quarantine",
+    key,
+    at: new Date().toISOString(),
+    detail: "stored value failed to parse — raw text quarantined, nothing deleted",
+  });
+}
+
+/** All quarantined raw values (newest last). Empty when nothing ever
+ *  failed to parse. */
+export function loadQuarantine(): QuarantineRecord[] {
+  if (typeof window === "undefined") return [];
+  return loadQuarantineRaw();
+}
+
+/** Downloadable JSON of the quarantined raw values, so corrupt stored
+ *  data can be inspected or recovered by hand. Deliberately separate
+ *  from exportProgress: the v5 backup shape is unchanged. */
+export function exportQuarantine(): string {
+  return JSON.stringify(
+    {
+      app: "etea-prep-next",
+      kind: "quarantine",
+      exportedAt: new Date().toISOString(),
+      records: loadQuarantine(),
+    },
+    null,
+    2,
+  );
+}
+
+/** Clear the quarantine store. Only ever called from an explicit user
+ *  action on the Analysis page ("dismiss and clear") — never silently. */
+export function clearQuarantine() {
+  safeRemove(QUARANTINE_KEY);
+}
+
+/** Parse a stored value. On malformed JSON the raw text is QUARANTINED
+ *  (verbatim, deduplicated) and the fallback is returned — the original
+ *  key is NEVER cleared, so the data survives for manual recovery. */
+function safeParse<T>(key: string, fallback: T): T {
+  const raw = safeRead(key);
   if (!raw) return fallback;
   try {
     return JSON.parse(raw) as T;
   } catch {
+    quarantine(key, raw);
     return fallback;
   }
 }
 
 export function loadAttempts(): Attempt[] {
   if (typeof window === "undefined") return [];
-  return safeParse<Attempt[]>(localStorage.getItem(ATTEMPTS_KEY), []);
+  return safeParse<Attempt[]>(ATTEMPTS_KEY, []);
 }
 
 export function recordAttempt(a: Omit<Attempt, "id" | "date"> & { date?: string }): Attempt {
@@ -212,22 +394,22 @@ export function recordAttempt(a: Omit<Attempt, "id" | "date"> & { date?: string 
   };
   const all = loadAttempts();
   all.push(rec);
-  localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(all));
-  localStorage.setItem(DAY_KEY, new Date().toISOString().slice(0, 10));
+  safeWrite(ATTEMPTS_KEY, JSON.stringify(all));
+  safeWrite(DAY_KEY, new Date().toISOString().slice(0, 10));
   return rec;
 }
 
 export function clearAttempts() {
-  localStorage.removeItem(ATTEMPTS_KEY);
+  safeRemove(ATTEMPTS_KEY);
 }
 
 // ---- study plan checkboxes ----
 export function loadPlanState(): Record<string, boolean> {
   if (typeof window === "undefined") return {};
-  return safeParse<Record<string, boolean>>(localStorage.getItem(PLAN_KEY), {});
+  return safeParse<Record<string, boolean>>(PLAN_KEY, {});
 }
 export function savePlanState(s: Record<string, boolean>) {
-  localStorage.setItem(PLAN_KEY, JSON.stringify(s));
+  safeWrite(PLAN_KEY, JSON.stringify(s));
 }
 
 // ---- flashcards: stable IDs + frozen session queue (pure logic) ----
@@ -341,10 +523,10 @@ export function gradeButtonLabel(grade: FlashGrade, interval: number): string {
 // ---- flashcards: stored scheduling state ----
 export function loadFlashState(): FlashState {
   if (typeof window === "undefined") return {};
-  return safeParse<FlashState>(localStorage.getItem(FLASH_KEY), {});
+  return safeParse<FlashState>(FLASH_KEY, {});
 }
 export function saveFlashState(s: FlashState) {
-  localStorage.setItem(FLASH_KEY, JSON.stringify(s));
+  safeWrite(FLASH_KEY, JSON.stringify(s));
 }
 
 /** Simple spaced-review schedule (plain JS, fixed ladder — NOT SM-2):
@@ -426,12 +608,12 @@ function asIssueReport(raw: unknown): IssueReport | null {
  *  the missing fields set to null; the legacy key is left untouched. */
 export function loadIssues(): IssueReport[] {
   if (typeof window === "undefined") return [];
-  const raw = localStorage.getItem(ISSUES_KEY);
-  if (raw !== null) return safeParse<unknown[]>(raw, []).map(asIssueReport).filter((x): x is IssueReport => x !== null);
+  const raw = safeRead(ISSUES_KEY);
+  if (raw !== null) return safeParse<unknown[]>(ISSUES_KEY, []).map(asIssueReport).filter((x): x is IssueReport => x !== null);
   // First load: migrate the legacy key.
-  const legacy = safeParse<unknown[]>(localStorage.getItem(ISSUES_LEGACY_KEY), []);
+  const legacy = safeParse<unknown[]>(ISSUES_LEGACY_KEY, []);
   const migrated = legacy.map(asIssueReport).filter((x): x is IssueReport => x !== null);
-  localStorage.setItem(ISSUES_KEY, JSON.stringify(migrated));
+  safeWrite(ISSUES_KEY, JSON.stringify(migrated));
   return migrated;
 }
 
@@ -453,16 +635,16 @@ export function reportIssueDetailed(input: {
   };
   const all = loadIssues();
   all.push(rec);
-  localStorage.setItem(ISSUES_KEY, JSON.stringify(all));
+  safeWrite(ISSUES_KEY, JSON.stringify(all));
   return rec;
 }
 
 export function deleteIssue(id: string) {
-  localStorage.setItem(ISSUES_KEY, JSON.stringify(loadIssues().filter((i) => i.id !== id)));
+  safeWrite(ISSUES_KEY, JSON.stringify(loadIssues().filter((i) => i.id !== id)));
 }
 
 export function clearIssues() {
-  localStorage.removeItem(ISSUES_KEY);
+  safeRemove(ISSUES_KEY);
 }
 
 // ---- in-progress quiz / mock sessions (versioned, resumable) ----
@@ -490,7 +672,7 @@ export type QuizSession = {
 
 export function loadSessions(): Record<string, QuizSession> {
   if (typeof window === "undefined") return {};
-  return safeParse<Record<string, QuizSession>>(localStorage.getItem(SESSION_KEY), {});
+  return safeParse<Record<string, QuizSession>>(SESSION_KEY, {});
 }
 
 /** A session is live when it exists, is not submitted, and its absolute
@@ -515,19 +697,19 @@ export function saveSession(s: QuizSession) {
   if (typeof window === "undefined") return;
   const all = loadSessions();
   all[s.scope] = s;
-  localStorage.setItem(SESSION_KEY, JSON.stringify(all));
+  safeWrite(SESSION_KEY, JSON.stringify(all));
 }
 
 export function clearSession(scope: string) {
   if (typeof window === "undefined") return;
   const all = loadSessions();
   delete all[scope];
-  localStorage.setItem(SESSION_KEY, JSON.stringify(all));
+  safeWrite(SESSION_KEY, JSON.stringify(all));
 }
 
 export function clearAllSessions() {
   if (typeof window === "undefined") return;
-  localStorage.removeItem(SESSION_KEY);
+  safeRemove(SESSION_KEY);
 }
 
 // ---- live stats, computed only from real attempts ----
@@ -640,8 +822,8 @@ export type Preferences = { language: string | null; theme: string | null };
 export function loadPreferences(): Preferences {
   if (typeof window === "undefined") return { language: null, theme: null };
   return {
-    language: localStorage.getItem(LANG_KEY),
-    theme: localStorage.getItem(THEME_KEY),
+    language: safeRead(LANG_KEY),
+    theme: safeRead(THEME_KEY),
   };
 }
 
@@ -662,7 +844,7 @@ export function exportProgress(): string {
     sessions: loadSessions(),
     reviews: loadReviews(),
     annotations: { notes: loadAnnotations(), includeInTutor: loadAnnotationOptIn() },
-    lastDay: typeof window === "undefined" ? null : localStorage.getItem(DAY_KEY),
+    lastDay: typeof window === "undefined" ? null : safeRead(DAY_KEY),
   };
   return JSON.stringify(payload, null, 2);
 }
@@ -732,6 +914,13 @@ export type ImportResult = {
  *  are merged the same way, and the tutor opt-in flag is restored when
  *  present. Version 4 files (no reviews/annotations) restore exactly as
  *  before. Version 6+ files are rejected (newer than this build).
+ *  Stage 1 P1 Tier 2 (v5, unchanged): the current export version stays
+ *  5; v4 files restore exactly as before (missing reviews/annotations
+ *  treated as empty) and v6+ files are still rejected as newer than
+ *  this build. All import writes go through safeWrite, so a quota or
+ *  security failure during an import is caught and warned, never a
+ *  crash. The quarantine store is deliberately NOT part of the backup
+ *  payload — exportQuarantine() downloads it separately.
  *  Validation: valid JSON, app marker "etea-prep-next", numeric version,
  *  per-record shape checks (invalid records are skipped and counted).
  *  Unknown future fields are ignored. */
@@ -771,7 +960,7 @@ export function importProgress(json: string): ImportResult {
         counts.attemptsSkipped += 1;
       }
     }
-    localStorage.setItem(ATTEMPTS_KEY, JSON.stringify([...existing, ...fresh]));
+    safeWrite(ATTEMPTS_KEY, JSON.stringify([...existing, ...fresh]));
     counts.attempts = fresh.length;
     if (p.plan && typeof p.plan === "object") {
       const plan = p.plan as Record<string, unknown>;
@@ -814,7 +1003,7 @@ export function importProgress(json: string): ImportResult {
         }
       }
       if (freshIssues.length) {
-        localStorage.setItem(ISSUES_KEY, JSON.stringify([...loadIssues(), ...freshIssues]));
+        safeWrite(ISSUES_KEY, JSON.stringify([...loadIssues(), ...freshIssues]));
       }
       counts.issues = freshIssues.length;
     }
@@ -836,18 +1025,18 @@ export function importProgress(json: string): ImportResult {
         stored[scope] = s;
         added += 1;
       }
-      localStorage.setItem(SESSION_KEY, JSON.stringify(stored));
+      safeWrite(SESSION_KEY, JSON.stringify(stored));
       counts.sessions = added;
     }
     if (p.preferences && typeof p.preferences === "object") {
       const pref = p.preferences as Record<string, unknown>;
       let applied = false;
       if (pref.language === "en" || pref.language === "roman" || pref.language === "ur") {
-        localStorage.setItem(LANG_KEY, pref.language);
+        safeWrite(LANG_KEY, pref.language);
         applied = true;
       }
       if (pref.theme === "light" || pref.theme === "dark") {
-        localStorage.setItem(THEME_KEY, pref.theme);
+        safeWrite(THEME_KEY, pref.theme);
         applied = true;
       }
       counts.preferencesApplied = applied;
@@ -879,7 +1068,7 @@ export function importProgress(json: string): ImportResult {
             counts.annotations += 1;
           }
         }
-        localStorage.setItem(ANNOTATIONS_KEY, JSON.stringify(merged));
+        safeWrite(ANNOTATIONS_KEY, JSON.stringify(merged));
       }
       if (typeof ann.includeInTutor === "boolean") {
         setAnnotationOptIn(ann.includeInTutor);
