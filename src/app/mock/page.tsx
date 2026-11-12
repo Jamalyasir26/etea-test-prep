@@ -52,7 +52,9 @@ export default function MockList() {
         <b> Trusted mode</b> uses reviewed questions only and returns fewer questions when not
         enough have been reviewed yet — it never fills the gap with unreviewed items.
       </p>
-      <div style={{ display: "flex", gap: 8, marginBottom: 16 }} role="group" aria-label="Mock mode">
+      {/* Stage 1 P1 Tier 4 (B01) — the two long mode buttons overflowed at
+          360px without wrapping; they now stack instead of running off-screen. */}
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }} role="group" aria-label="Mock mode">
         <button
           className={mode === "provisional" ? "" : "secondary"}
           onClick={() => setMode("provisional")}
@@ -80,9 +82,18 @@ export default function MockList() {
             </h3>
             <p className="muted">{m.note}</p>
             <p className="muted">
-              {trusted > 0
-                ? `${trusted} of ${m.total} reviewed questions available in Trusted mode.`
-                : "No reviewed questions yet — provisional practice only."}
+              {trusted > 0 ? (
+                <>
+                  {/* Stage 1 P1 Tier 4 (B03) — count isolated LTR so it
+                      cannot reverse in RTL (Urdu) mode. */}
+                  <span dir="ltr">
+                    {trusted} of {m.total}
+                  </span>{" "}
+                  reviewed questions available in Trusted mode.
+                </>
+              ) : (
+                "No reviewed questions yet — provisional practice only."
+              )}
             </p>
             <p className="muted">
               Scoring: {scoringLabel(mockScoring(m))}
