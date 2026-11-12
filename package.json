@@ -30,7 +30,8 @@
     "test:timeouts": "node scripts/test-timeouts.mjs",
     "test:storage": "node scripts/test-storage.mjs",
     "test:lang": "node scripts/test-tutor-lang.mjs",
-    "test:guard": "node scripts/test-api-guard.mjs"
+    "test:guard": "node scripts/test-api-guard.mjs",
+    "test:tier4": "node scripts/test-tier4.mjs"
   },
   "version": "3.0.0"
 }
