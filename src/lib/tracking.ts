@@ -502,20 +502,27 @@ export function gradeCard(queue: string[], index: number, grade: FlashGrade): Gr
 
 /** Honest label for a grade button, showing the resulting interval.
  *  "again" has no day interval: the card comes back later this session and
- *  stays due today (see nextDue). */
-export function gradeButtonLabel(grade: FlashGrade, interval: number): string {
+ *  stays due today (see nextDue).
+ *  Localization Pass 1 — optional `lang`: "ur" renders the Urdu label;
+ *  "roman"/omitted keeps the English label (the i18n fallback rule). */
+export function gradeButtonLabel(
+  grade: FlashGrade,
+  interval: number,
+  lang: "en" | "roman" | "ur" = "en",
+): string {
+  const ur = lang === "ur";
   switch (grade) {
     case "again":
-      return "Again — review again this session";
+      return ur ? "دوبارہ — اسی سیشن میں دوبارہ جائزہ" : "Again — review again this session";
     case "hard":
-      return "Hard — 2 days";
+      return ur ? "مشکل — 2 دن" : "Hard — 2 days";
     case "good": {
       const d = interval < 3 ? 3 : interval < 7 ? 7 : 14;
-      return `Good — ${d} days`;
+      return ur ? `اچھا — ${d} دن` : `Good — ${d} days`;
     }
     case "easy": {
       const d = interval < 7 ? 7 : interval < 14 ? 14 : 30;
-      return `Easy — ${d} days`;
+      return ur ? `آسان — ${d} دن` : `Easy — ${d} days`;
     }
   }
 }

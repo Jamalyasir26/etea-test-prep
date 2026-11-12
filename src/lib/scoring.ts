@@ -100,7 +100,34 @@ export function computeExamScore(config: ScoringConfig, input: ScoreInput): Scor
 
 /** One-line label for a config, shown next to every score. */
 export function scoringLabel(config: ScoringConfig): string {
+  return localizedScoringLabel(config, "en");
+}
+
+/** Localization Pass 1 — the same one-line label in the UI language.
+ *  `lang` is "en" | "roman" | "ur"; roman falls back to English (the
+ *  i18n fallback rule). The policy WORDS are translated, but the full
+ *  policyNote stays English (a factual precision statement — see
+ *  i18n.tsx exceptions) and is rendered LTR-isolated where shown. */
+export function localizedScoringLabel(
+  config: ScoringConfig,
+  lang: "en" | "roman" | "ur",
+): string {
   const cfg = isValidScoringConfig(config) ? config : DEFAULT_SCORING;
+  if (lang !== "ur") return scoringLabelEn(cfg);
+  const penalty =
+    cfg.wrongPenalty === 0
+      ? "کوئی کٹوتی نہیں"
+      : `ہر غلط جواب پر ${cfg.wrongPenalty} کٹوتی`;
+  const policy =
+    cfg.policyStatus === "unknown"
+      ? "پالیسی نامعلوم"
+      : cfg.policyStatus === "unverified-assumption"
+        ? "غیر مصدقہ مفروضہ"
+        : "سرکاری پالیسی";
+  return `${cfg.correctMarks} نمبر فی درست جواب · ${penalty} (${policy})`;
+}
+
+function scoringLabelEn(cfg: ScoringConfig): string {
   const penalty =
     cfg.wrongPenalty === 0 ? "no penalty" : `−${cfg.wrongPenalty} per wrong answer`;
   const policy =

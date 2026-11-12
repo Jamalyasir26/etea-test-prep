@@ -53,6 +53,29 @@ export type Question = {
   conceptId?: string;
   syllabusClause?: string;
   sourceKind?: SourceKind;
+  // Localization Pass 1 — tri-language content scaffold (see
+  // LOCALIZATION-PLAN.md). Optional translations of this item's text.
+  // Absent = English only (today's behaviour, unchanged). No item
+  // carries a translation yet; translations arrive in later phases and
+  // religious-content translations go through the owner review queue.
+  ur?: QuestionTranslation;
+  roman?: QuestionTranslation;
+};
+
+/** Localization Pass 1 — one item's translated text. Every field is
+ *  optional and falls back to English independently (see
+ *  localizeQuestion/localizeNote). `options` is used ONLY when it has
+ *  exactly the same length as the English options — a partial options
+ *  translation would silently drop choices, so it falls back wholesale. */
+export type QuestionTranslation = {
+  question?: string;
+  options?: string[];
+  explanation?: string;
+};
+
+export type NoteTranslation = {
+  title?: string;
+  body?: string;
 };
 
 /** Stage 1 P2 — where an item's content comes from. "official": from an
@@ -73,6 +96,10 @@ export type Note = {
   conceptId?: string;
   syllabusClause?: string;
   sourceKind?: SourceKind;
+  // Localization Pass 1 — tri-language content scaffold (see above and
+  // LOCALIZATION-PLAN.md). Absent = English only.
+  ur?: NoteTranslation;
+  roman?: NoteTranslation;
 };
 export type Flashcard = { front: string; back: string; category: string };
 export type Track = {
@@ -233,20 +260,78 @@ export function effectiveReviewStatus(q: Question, overrides?: ReviewOverrides):
   return q.reviewStatus ?? "draft";
 }
 
+/** Localization Pass 1 — content language for localizeQuestion /
+ *  localizeNote / provenanceBadge. Mirrors the UI Lang type without
+ *  importing the client i18n module (this file must stay importable
+ *  from plain node tests). */
+export type ContentLang = "en" | "roman" | "ur";
+
+// Unicode bidi isolates for plain-text strings (badge tooltips): wrap a
+// Latin-script run so its punctuation cannot jump in RTL context. Same
+// characters as lri() in i18n.tsx, defined locally to keep this module
+// dependency-free.
+const LRI = "\u2066";
+const PDI = "\u2069";
+
+/** Return the item with its text in `lang`, falling back to English
+ *  per field. With no translation present (every item today) the
+ *  returned object is field-identical to the input. Never mutates. */
+export function localizeQuestion(q: Question, lang: ContentLang): Question {
+  if (lang === "en") return q;
+  const tr = lang === "ur" ? q.ur : q.roman;
+  if (!tr) return q;
+  const options =
+    tr.options && tr.options.length === q.options.length ? tr.options : q.options;
+  return {
+    ...q,
+    question: tr.question ?? q.question,
+    options,
+    explanation: tr.explanation ?? q.explanation,
+  };
+}
+
+/** Same fallback rule for notes. The proof-of-concept render path is
+ *  the library: it renders localizeNote(note, lang) while keying
+ *  annotations by the original (English) title, so stored data is
+ *  unaffected by the display language. */
+export function localizeNote(note: Note, lang: ContentLang): Note {
+  if (lang === "en") return note;
+  const tr = lang === "ur" ? note.ur : note.roman;
+  if (!tr) return note;
+  return { ...note, title: tr.title ?? note.title, body: tr.body ?? note.body };
+}
+
+/** Does this item carry ANY translation content for `lang`? Used for
+ *  translation-coverage reporting (see LOCALIZATION-PLAN.md). */
+export function hasTranslation(item: Question | Note, lang: "roman" | "ur"): boolean {
+  const tr = item[lang];
+  if (!tr) return false;
+  return Object.values(tr).some((v) =>
+    Array.isArray(v) ? v.some((s) => s.trim().length > 0) : typeof v === "string" && v.trim().length > 0,
+  );
+}
+
 /** Stage 1 P2 — provenance badge for one item. Returns null when the
  *  item carries no sourceKind (no provenance claimed, no badge). The
  *  label is the badge text; detail is the plain-language explanation
  *  shown as the badge's title/tooltip and next to it where space allows.
  *  "concept-extracted" always names its source (the data guarantees a
  *  non-empty `source`; if one were missing, the label degrades to the
- *  generic wording rather than inventing a source name). */
-export function provenanceBadge(item: {
-  source?: string | null;
-  sourceKind?: SourceKind;
-  syllabusClause?: string;
-}): { label: string; detail: string; tone: "teal" | "green" | "grey" } | null {
+ *  generic wording rather than inventing a source name).
+ *  Localization Pass 1 — optional `lang`: "ur" renders Urdu
+ *  label/detail (source names and clauses stay English, wrapped in
+ *  bidi isolates); "roman"/omitted keeps English (fallback rule). */
+export function provenanceBadge(
+  item: {
+    source?: string | null;
+    sourceKind?: SourceKind;
+    syllabusClause?: string;
+  },
+  lang: ContentLang = "en",
+): { label: string; detail: string; tone: "teal" | "green" | "grey" } | null {
   const kind = item.sourceKind;
   if (!kind) return null;
+  if (lang === "ur") return provenanceBadgeUr(item);
   const clause = item.syllabusClause ? ` Maps to: ${item.syllabusClause}.` : "";
   switch (kind) {
     case "official":
@@ -275,6 +360,44 @@ export function provenanceBadge(item: {
       return {
         label: "Partial coverage",
         detail: `Covers only part of this topic.${clause}`,
+        tone: "grey",
+      };
+  }
+}
+
+function provenanceBadgeUr(item: {
+  source?: string | null;
+  sourceKind?: SourceKind;
+  syllabusClause?: string;
+}): { label: string; detail: string; tone: "teal" | "green" | "grey" } | null {
+  const kind = item.sourceKind;
+  if (!kind) return null;
+  const clause = item.syllabusClause
+    ? ` نصاب حوالہ: ${LRI}${item.syllabusClause}${PDI}۔`
+    : "";
+  switch (kind) {
+    case "official":
+      return { label: "سرکاری ماخذ", detail: `سرکاری ماخذ سے۔${clause}`, tone: "green" };
+    case "concept-extracted": {
+      const src = (item.source ?? "").replace(/^Original content — concept-extracted from\s*/, "").trim();
+      return {
+        label: "تصور سے اخذ شدہ",
+        detail: src
+          ? `اپنے الفاظ میں اصل مواد — ${LRI}${src}${PDI} سے تصورات اخذ کیے گئے، نقل نہیں۔${clause}`
+          : `اپنے الفاظ میں اصل مواد — نام والے ماخذ سے تصورات اخذ کیے گئے، نقل نہیں۔${clause}`,
+        tone: "teal",
+      };
+    }
+    case "proxy":
+      return {
+        label: "مشقی متبادل",
+        detail: `اس تصور کی مشق کرواتا ہے؛ سرکاری پرچے سے نہیں۔${clause}`,
+        tone: "grey",
+      };
+    case "partial":
+      return {
+        label: "جزوی احاطہ",
+        detail: `اس موضوع کے صرف ایک حصے کا احاطہ کرتا ہے۔${clause}`,
         tone: "grey",
       };
   }
