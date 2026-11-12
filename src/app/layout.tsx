@@ -1,25 +1,23 @@
 import type { Metadata } from "next";
-import { Noto_Nastaliq_Urdu, Noto_Sans_Arabic } from "next/font/google";
+import { Noto_Sans_Arabic } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import TelemetryListener from "@/components/TelemetryListener";
 import "./globals.css";
 
-// Stage 1 P2 — fonts (owner's FINAL decision): headings Noto Nastaliq
-// Urdu, body Noto Sans Arabic. next/font/google downloads the files at
-// BUILD time and serves them from this site's own origin (/_next/static),
-// so no runtime request to Google Fonts ever happens — required, because
-// the CSP allows font-src 'self' data: only. display: swap keeps text
-// readable with system fallbacks while a font loads. If the build
-// environment cannot reach Google Fonts, `next build` fails here with a
-// clear fetch error (the Vercel build has network access); never fall
-// back to external <link> font tags.
-const nastaliq = Noto_Nastaliq_Urdu({
-  subsets: ["arabic"],
-  weight: ["400", "600", "700"],
-  display: "swap",
-  variable: "--font-nastaliq",
-});
+// Localization Pass 1 — fonts (owner's UPDATED decision, 2026-11-12:
+// the earlier two-font decision is CANCELLED). The site uses ONLY Noto
+// Sans Arabic — headings, body text and UI, in all languages. next/font/google
+// downloads the files at BUILD time and serves them from this site's
+// own origin (/_next/static), so no runtime request to Google Fonts ever
+// happens — required, because the CSP allows font-src 'self' data:
+// only. display: swap keeps text readable with system fallbacks while
+// a font loads. If the build environment cannot reach Google Fonts,
+// `next build` fails here with a clear fetch error (the Vercel build
+// has network access); never fall back to external <link> font tags.
+// NOTE: the P2 deploy (Nov 2026) shipped the cancelled heading font
+// — this correction removes it in the next deploy.
 const sansArabic = Noto_Sans_Arabic({
   subsets: ["arabic", "latin"],
   weight: ["400", "500", "600", "700"],
@@ -38,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${nastaliq.variable} ${sansArabic.variable}`}>
+    <html lang="en" className={sansArabic.variable}>
       <body>
         {/* Stage 1 P2 (B07) — records client/hydration errors with their
             route, on-device only, viewable on /issues. Renders nothing. */}
@@ -46,25 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LangProvider>
           <Nav />
           <main className="container">{children}</main>
-          <footer className="container">
-            <p>
-              All questions are original practice questions, not ETEA papers. Patterns are
-              labelled per project — ETEA sets paper composition per project. Always verify
-              against your specific advertisement / roll number slip.
-            </p>
-            <p>
-              AI Tutor answers are generated from this library only. All practice
-              questions are AI-generated and unreviewed unless marked reviewed — mocks
-              are provisional practice built from those unreviewed items. Trusted mode
-              uses reviewed items only. No Hadith numbers, references, dates or quotes
-              are invented on this site.
-            </p>
-            <p>
-              Search engines are asked not to index this site (robots.txt / noindex),
-              but that is not access control: anyone with the link can open it, and a
-              real access gate is future work.
-            </p>
-          </footer>
+          <Footer />
         </LangProvider>
       </body>
     </html>

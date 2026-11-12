@@ -9,18 +9,18 @@ import { useLang } from "@/lib/i18n";
 import TutorHealth from "@/components/TutorHealth";
 
 const QUICK = [
-  { href: "/library", key: "library", desc: "110 notes with recall-first prompts" },
-  { href: "/practice", key: "practice", desc: "Topic quizzes, 20 per attempt" },
-  { href: "/mock", key: "mocks", desc: "20 timed mocks / practice tests" },
-  { href: "/flashcards", key: "flashcards", desc: "70 cards, simple spaced-review schedule" },
-  { href: "/tutor", key: "tutor", desc: "Live AI tutor (Gemini, Groq + OpenRouter fallbacks)" },
-  { href: "/plan", key: "plan", desc: "3 / 6 / 12-week study plans" },
-  { href: "/analysis", key: "analysis", desc: "Live accuracy, trends, weak areas" },
-  { href: "/tracks", key: "tracks", desc: "19 post tracks with patterns" },
+  { href: "/library", key: "library", descKey: "quickLibraryDesc" },
+  { href: "/practice", key: "practice", descKey: "quickPracticeDesc" },
+  { href: "/mock", key: "mocks", descKey: "quickMocksDesc" },
+  { href: "/flashcards", key: "flashcards", descKey: "quickFlashDesc" },
+  { href: "/tutor", key: "tutor", descKey: "quickTutorDesc" },
+  { href: "/plan", key: "plan", descKey: "quickPlanDesc" },
+  { href: "/analysis", key: "analysis", descKey: "quickAnalysisDesc" },
+  { href: "/tracks", key: "tracks", descKey: "quickTracksDesc" },
 ];
 
 export default function Home() {
-  const { t } = useLang();
+  const { t, tf } = useLang();
   const [stats, setStats] = useState<Stats | null>(null);
   const [planDone, setPlanDone] = useState(0);
   const [pattern, setPattern] = useState("B");
@@ -33,22 +33,36 @@ export default function Home() {
   const p = PATTERNS[pattern];
   return (
     <div>
-      <h1>ETEA Prep Library — KP Government Jobs</h1>
+      {/* Localization Pass 1 (RTL) — the site name is a proper name kept
+          in English; isolated LTR so it cannot reorder in RTL mode. */}
+      <h1>
+        <span dir="ltr">ETEA Prep Library — KP Government Jobs</span>
+      </h1>
       <p className="muted">
-        Personal preparation — everything for upcoming KP tests in one place. {COUNTS.total} MCQs ·{" "}
-        {COUNTS.notes} notes · {COUNTS.cards} flashcards · {COUNTS.tracks} post tracks · {COUNTS.mocks}{" "}
-        mocks.
+        {tf("homeIntro", {
+          total: COUNTS.total,
+          notes: COUNTS.notes,
+          cards: COUNTS.cards,
+          tracks: COUNTS.tracks,
+          mocks: COUNTS.mocks,
+        })}
       </p>
 
       <div className="alert red">
-        <b>⚠️ Corrections — read first.</b>
+        <b>{t("correctionsHeading")}</b>
         <ul>
           {CORRECTIONS.map((c) => (
-            <li key={c}>{c}</li>
+            // Factual correction statements stay English (precision) and
+            // are isolated LTR so their punctuation cannot jump in RTL.
+            <li key={c} dir="ltr">
+              {c}
+            </li>
           ))}
         </ul>
         <p>
-          <b>{PATTERN_BANNER}</b>
+          <b>
+            <span dir="ltr">{PATTERN_BANNER}</span>
+          </b>
         </p>
       </div>
 
@@ -70,10 +84,10 @@ export default function Home() {
             <b>
               {planDone} / 63
             </b>
-            <span>Plan tasks done</span>
+            <span>{t("planTasksDone")}</span>
           </div>
           <div className="card stat">
-            <b>{stats.totalMinutes} min</b>
+            <b>{tf("minsLabel", { mins: stats.totalMinutes })}</b>
             <span>{t("timeSpent")}</span>
           </div>
         </div>
@@ -85,19 +99,22 @@ export default function Home() {
           {stats.weakest.map((w) => (
             <p key={w.subject}>
               <span className={`heat ${w.accuracy < 50 ? "red" : w.accuracy < 70 ? "yellow" : "green"}`} />
-              {w.subject} — {Math.round(w.accuracy)}% ({w.total} Q){" "}
-              <Link href={`/practice?subject=${encodeURIComponent(w.subject)}`}>{t("drill")} →</Link>
+              <span dir="ltr">{w.subject}</span> —{" "}
+              <span dir="ltr">
+                {Math.round(w.accuracy)}% ({w.total} Q)
+              </span>{" "}
+              <Link href={`/practice?subject=${encodeURIComponent(w.subject)}`}>{t("drillArrow")}</Link>
             </p>
           ))}
           <p>
-            <Link href="/analysis">Full analysis →</Link>
+            <Link href="/analysis">{t("fullAnalysis")}</Link>
           </p>
         </div>
       )}
 
-      <h2>Pattern selector — pick the version your advert follows</h2>
+      <h2>{t("patternSelectorHeading")}</h2>
       <div className="card">
-        <select aria-label="Pattern version" value={pattern} onChange={(e) => setPattern(e.target.value)}>
+        <select aria-label={t("patternHeading")} value={pattern} onChange={(e) => setPattern(e.target.value)}>
           {Object.entries(PATTERNS).map(([k, v]) => (
             <option key={k} value={k}>
               {v.name}
@@ -105,11 +122,17 @@ export default function Home() {
           ))}
         </select>
         <p>
-          <b>{p.name}</b>
+          <b>
+            <span dir="auto">{p.name}</span>
+          </b>
         </p>
-        <p className="muted">Source: {p.source}</p>
+        <p className="muted">
+          {t("sourceLabel")} <span dir="ltr">{p.source}</span>
+        </p>
         <p>
-          <span className={`badge ${pattern === "MD" ? "red" : "green"}`}>{p.confidence}</span>
+          <span dir="ltr" className={`badge ${pattern === "MD" ? "red" : "green"}`}>
+            {p.confidence}
+          </span>
         </p>
       </div>
 
@@ -118,7 +141,7 @@ export default function Home() {
         {QUICK.map((q) => (
           <Link key={q.href} href={q.href} className="card" style={{ textDecoration: "none", color: "inherit" }}>
             <b>{t(q.key)}</b>
-            <p className="muted">{q.desc}</p>
+            <p className="muted">{t(q.descKey)}</p>
           </Link>
         ))}
       </div>
@@ -127,10 +150,7 @@ export default function Home() {
           fallback … key status is unverified") is replaced by accurate
           wording plus the LIVE health status below. No historical claims. */}
       <div className="alert">
-        <b>AI Tutor — live.</b> The tutor calls Gemini (primary) with Groq and OpenRouter (free
-        model) as fallbacks, server-side only. It answers from this library only, and says so when
-        a question is outside the library. If live AI is down, the offline Study Assistant (library
-        search) still works.
+        <b>{t("tutorLiveHeading")}</b> {t("tutorLiveBody")}
         <TutorHealth variant="summary" />
       </div>
     </div>
