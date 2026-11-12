@@ -13,13 +13,20 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   clearAttempts,
+  clearQuarantine,
+  clearStorageWarnings,
   computeStats,
   download,
   exportProgress,
+  exportQuarantine,
+  getStorageWarnings,
   importProgress,
   loadAttempts,
+  loadQuarantine,
   type Attempt,
+  type QuarantineRecord,
   type Stats,
+  type StorageWarning,
 } from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
 
@@ -39,12 +46,38 @@ export default function Analysis() {
   const [selected, setSelected] = useState<Attempt | null>(null);
   const [msg, setMsg] = useState("");
   const fileRef = useRef<HTMLInputElement>(null);
+  // Stage 1 P1 Tier 2 — storage warnings: quarantined (unreadable) data
+  // and failed saves surface HERE, the data-management page, with a
+  // download/recovery option. Nothing is ever deleted silently.
+  const [warnings, setWarnings] = useState<StorageWarning[]>([]);
+  const [quarantine, setQuarantine] = useState<QuarantineRecord[]>([]);
 
   function refresh() {
     setStats(computeStats(loadAttempts()));
     setAttempts(loadAttempts());
+    // Read warnings AFTER the loads above: a corrupt store is only
+    // discovered (and quarantined) when it is read.
+    setWarnings(getStorageWarnings());
+    setQuarantine(loadQuarantine());
   }
   useEffect(refresh, []);
+
+  function doExportQuarantine() {
+    download(`etea-prep-quarantine-${new Date().toISOString().slice(0, 10)}.json`, exportQuarantine());
+    setMsg("Quarantined data downloaded as a JSON file (raw stored text, verbatim). Nothing was deleted.");
+  }
+  function doDismissQuarantine() {
+    if (
+      window.confirm(
+        "Clear the quarantined data and dismiss this warning? Only do this after downloading a copy — the raw text will be removed.",
+      )
+    ) {
+      clearQuarantine();
+      clearStorageWarnings();
+      refresh();
+      setMsg("Quarantined data cleared by your choice.");
+    }
+  }
 
   function doExport() {
     download(`etea-prep-progress-${new Date().toISOString().slice(0, 10)}.json`, exportProgress());
@@ -83,6 +116,47 @@ export default function Analysis() {
       {!stats.hasData && (
         <div className="alert">
           <b>{t("noAttempts")}</b>
+        </div>
+      )}
+      {(warnings.length > 0 || quarantine.length > 0) && (
+        <div className="alert red">
+          <b>Saved-data problem — nothing was deleted.</b>
+          {quarantine.length > 0 && (
+            <p>
+              {quarantine.length} stored value{quarantine.length === 1 ? "" : "s"} could not be
+              read (keys: {[...new Set(quarantine.map((q) => q.key))].join(", ")}). The raw text
+              was quarantined verbatim — download it below to inspect or recover it by hand. The
+              affected section shows its empty state until the stored value is repaired or
+              replaced.
+            </p>
+          )}
+          {warnings.some((w) => w.type === "write-failed") && (
+            <p>
+              A save failed (
+              {warnings
+                .filter((w) => w.type === "write-failed")
+                .map((w) => `${w.key}: ${w.detail}`)
+                .join("; ")}
+              ). Your progress may not have been stored — export it now from &quot;Your
+              data&quot; below, then free up browser storage and try again.
+            </p>
+          )}
+          {warnings.some((w) => w.type === "read-failed") && (
+            <p>
+              A stored value could not be read (
+              {warnings
+                .filter((w) => w.type === "read-failed")
+                .map((w) => `${w.key}: ${w.detail}`)
+                .join("; ")}
+              ). Check that this browser allows local storage for this site.
+            </p>
+          )}
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 8 }}>
+            {quarantine.length > 0 && <button onClick={doExportQuarantine}>Download quarantined data</button>}
+            <button className="secondary" onClick={doDismissQuarantine}>
+              Dismiss and clear quarantined data
+            </button>
+          </div>
         </div>
       )}
       <div className="grid">
@@ -326,7 +400,9 @@ export default function Analysis() {
         never loses your history. A full backup covers attempts, plan, flashcards, issues,
         preferences (language/theme) and in-progress sessions — and never contains API keys (there
         are none client-side). Import merges into what is already stored (attempts deduplicated by
-        id; a live in-progress session is never overwritten by an import).
+        id; a live in-progress session is never overwritten by an import). If a stored value ever
+        fails to parse, its raw text is quarantined — never deleted — and a warning appears at the
+        top of this page with a download option.
       </p>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         <button onClick={doExport}>{t("export")}</button>
