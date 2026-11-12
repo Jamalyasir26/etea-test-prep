@@ -17,6 +17,7 @@ import {
   QUESTIONS,
   ZAM_FIXED,
   effectiveReviewStatus,
+  reviewAttribution,
   type Question,
 } from "@/lib/data";
 import structural from "@/data/structural-checks.json";
@@ -195,7 +196,11 @@ export default function ReviewDashboard() {
       {shown.map((q) => {
         const status = effectiveReviewStatus(q, overrides);
         const st = structuralOf(q.id);
-        const rec = reviews[q.id];
+        // Stage 1 P1 Tier 1 — attribution falls back to the bank JSON's
+        // reviewedBy/reviewedAt when no local decision exists (the 15
+        // owner-verified items live in the bank since the P1T0 deploy;
+        // reading only the localStorage map rendered them "unreviewed").
+        const { by, at } = reviewAttribution(q, reviews[q.id]);
         return (
           <div className="card" key={q.id}>
             <p>
@@ -212,7 +217,7 @@ export default function ReviewDashboard() {
             <p className="muted">{q.explanation}</p>
             <p className="muted">
               Status: <b>{status}</b>
-              {rec ? ` · by ${rec.reviewedBy} · ${new Date(rec.reviewedAt).toLocaleString()}` : " · unreviewed"}
+              {by && at ? ` · by ${by} · ${new Date(at).toLocaleString()}` : " · unreviewed"}
               {" · "}
               Structural: <b>{st.status}</b>
               {st.issues.length > 0 ? ` — ${st.issues.join("; ")}` : ""}
