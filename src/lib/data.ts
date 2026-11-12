@@ -43,7 +43,25 @@ export type Question = {
   reviewStatus?: string;
   reviewedBy?: string | null;
   reviewedAt?: string | null;
+  // Stage 1 P2 — provenance (additive, optional). Absent = no provenance
+  // claimed and no badge renders. conceptId groups items testing the SAME
+  // concept (e.g. all passive-voice items share one id); syllabusClause
+  // maps the item to a section of a named pattern document for study
+  // organisation — it is NOT a claim that any specific advert uses that
+  // pattern (ZamungKor has no published syllabus). sourceKind is never
+  // "official" unless the item genuinely comes from an official source.
+  conceptId?: string;
+  syllabusClause?: string;
+  sourceKind?: SourceKind;
 };
+
+/** Stage 1 P2 — where an item's content comes from. "official": from an
+ *  official ETEA/official source (none in the bank today — nothing here
+ *  is an official paper). "concept-extracted": original words written
+ *  from a named source (must carry `source`). "proxy": practises the
+ *  concept but is not from an official paper. "partial": covers only
+ *  part of a topic. */
+export type SourceKind = "official" | "concept-extracted" | "proxy" | "partial";
 
 export type Note = {
   title: string;
@@ -51,6 +69,10 @@ export type Note = {
   // Stage 1 P0.3 — provenance label, e.g. "Original content —
   // concept-extracted from <source name>". Absent on pre-P0.3 notes.
   source?: string;
+  // Stage 1 P2 — same provenance fields as Question (see above).
+  conceptId?: string;
+  syllabusClause?: string;
+  sourceKind?: SourceKind;
 };
 export type Flashcard = { front: string; back: string; category: string };
 export type Track = {
@@ -209,6 +231,53 @@ export function effectiveReviewStatus(q: Question, overrides?: ReviewOverrides):
     return overrides[q.id];
   }
   return q.reviewStatus ?? "draft";
+}
+
+/** Stage 1 P2 — provenance badge for one item. Returns null when the
+ *  item carries no sourceKind (no provenance claimed, no badge). The
+ *  label is the badge text; detail is the plain-language explanation
+ *  shown as the badge's title/tooltip and next to it where space allows.
+ *  "concept-extracted" always names its source (the data guarantees a
+ *  non-empty `source`; if one were missing, the label degrades to the
+ *  generic wording rather than inventing a source name). */
+export function provenanceBadge(item: {
+  source?: string | null;
+  sourceKind?: SourceKind;
+  syllabusClause?: string;
+}): { label: string; detail: string; tone: "teal" | "green" | "grey" } | null {
+  const kind = item.sourceKind;
+  if (!kind) return null;
+  const clause = item.syllabusClause ? ` Maps to: ${item.syllabusClause}.` : "";
+  switch (kind) {
+    case "official":
+      return {
+        label: "Official source",
+        detail: `From an official source.${clause}`,
+        tone: "green",
+      };
+    case "concept-extracted": {
+      const src = (item.source ?? "").replace(/^Original content — concept-extracted from\s*/, "").trim();
+      return {
+        label: "Concept-extracted",
+        detail: src
+          ? `Original content in our own words — concepts extracted from ${src}, not copied.${clause}`
+          : `Original content in our own words — concepts extracted from a named source, not copied.${clause}`,
+        tone: "teal",
+      };
+    }
+    case "proxy":
+      return {
+        label: "Practice proxy",
+        detail: `Practises this concept; not from an official paper.${clause}`,
+        tone: "grey",
+      };
+    case "partial":
+      return {
+        label: "Partial coverage",
+        detail: `Covers only part of this topic.${clause}`,
+        tone: "grey",
+      };
+  }
 }
 
 /** Stage 1 P1 Tier 1 — review attribution for the /review dashboard.

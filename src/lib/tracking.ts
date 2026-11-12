@@ -834,7 +834,7 @@ export function exportProgress(): string {
     // and `annotations` (owner note annotations + tutor opt-in). Version 4
     // files (no reviews/annotations) still restore: importProgress treats
     // the missing fields as empty.
-    version: 5,
+    version: BACKUP_VERSION,
     exportedAt: new Date().toISOString(),
     attempts: loadAttempts(),
     plan: loadPlanState(),
@@ -903,6 +903,54 @@ export type ImportResult = {
   };
 };
 
+// ---- backup versioning (Stage 1 P2) ----
+// Version policy: exports are stamped with BACKUP_VERSION. Imports accept
+// SUPPORTED_BACKUP_VERSIONS and migrate them to the current shape with
+// migrateBackupPayload() BEFORE any merge runs; anything newer is
+// rejected (it may contain fields this build cannot interpret), and
+// anything failing the shape check is rejected without touching stored
+// data. Versions older than 4 (pre-v4 exports) take the same lenient
+// path they always did — missing fields default to empty — via the
+// v4 migration; the merge code below guards every optional field.
+/** Current backup format version. Bump only with a matching migration. */
+export const BACKUP_VERSION = 5;
+/** Backup versions this build restores (each has an explicit migration). */
+export const SUPPORTED_BACKUP_VERSIONS = [4, 5] as const;
+
+/** Migrate a parsed backup payload to the current (v5) shape. Pure: it
+ *  never mutates its input. v5 payloads pass through unchanged; older
+ *  payloads gain the v5-only fields (`reviews`, `annotations`) as empty
+ *  defaults so the merge below sees one shape. Callers must validate the
+ *  payload (app marker, numeric version, attempts list) and reject
+ *  versions newer than BACKUP_VERSION before calling this. */
+export function migrateBackupPayload(
+  p: Record<string, unknown>,
+): Record<string, unknown> {
+  if (typeof p.version === "number" && p.version >= BACKUP_VERSION) return p;
+  return {
+    ...p,
+    version: BACKUP_VERSION,
+    reviews: p.reviews ?? {},
+    annotations: p.annotations ?? { notes: {}, includeInTutor: false },
+  };
+}
+
+/** Shape-check a parsed backup payload. Returns an error message, or
+ *  null when the payload may proceed to migration + merge. Rejection
+ *  happens BEFORE any stored data is read for writing, so a rejected
+ *  file can never partially restore. */
+export function validateBackupPayload(p: unknown): string | null {
+  if (!p || typeof p !== "object") return "Not a valid ETEA Prep export file (needs the app marker, a version number and an attempts list).";
+  const r = p as Record<string, unknown>;
+  if (r.app !== "etea-prep-next" || typeof r.version !== "number" || !Array.isArray(r.attempts)) {
+    return "Not a valid ETEA Prep export file (needs the app marker, a version number and an attempts list).";
+  }
+  if (r.version > BACKUP_VERSION) {
+    return `This backup is version ${r.version}, newer than this build (v${BACKUP_VERSION}). Please update the app before restoring it.`;
+  }
+  return null;
+}
+
 /** Import a backup file. Merge behaviour (unchanged from v3, now documented):
  *  attempts are merged, deduplicated by id; plan/flashcards are shallow-
  *  merged (imported keys overwrite); issues are merged, deduplicated by id;
@@ -926,13 +974,12 @@ export type ImportResult = {
  *  Unknown future fields are ignored. */
 export function importProgress(json: string): ImportResult {
   try {
-    const p = JSON.parse(json) as Record<string, unknown>;
-    if (!p || p.app !== "etea-prep-next" || typeof p.version !== "number" || !Array.isArray(p.attempts)) {
-      return { ok: false, error: "Not a valid ETEA Prep export file (needs the app marker, a version number and an attempts list)." };
-    }
-    if (p.version > 5) {
-      return { ok: false, error: `This backup is version ${p.version}, newer than this build (v5). Please update the app before restoring it.` };
-    }
+    const raw = JSON.parse(json) as Record<string, unknown>;
+    // Stage 1 P2 — validate, then migrate to the v5 shape, then merge.
+    // The merge below is unchanged: it sees exactly one shape.
+    const invalid = validateBackupPayload(raw);
+    if (invalid) return { ok: false, error: invalid };
+    const p = migrateBackupPayload(raw);
     const counts: NonNullable<ImportResult["counts"]> = {
       attempts: 0,
       attemptsSkipped: 0,
