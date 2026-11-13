@@ -3,10 +3,12 @@
 // Empty state = "no attempts yet". Never invented sample data.
 // Export/import (JSON file) so progress is never trapped in one browser.
 //
-// Phase 2 notes:
-// - Flashcard scheduling is a "simple spaced-review schedule" (fixed
-//   interval ladder, no easiness factor). It is NOT SM-2; no copy in this
-//   file calls it SM-2-style.
+// Stage 2 notes:
+// - Flashcard scheduling is FSRS-7 (ts-fsrs 6.0.0, adaptive intervals
+//   from per-card stability/difficulty; see src/lib/fsrs.ts). It
+//   replaced the pre-Stage-2 fixed interval ladder; stored state is the
+//   ts-fsrs v6 card shape, migrated from the old shape with due dates
+//   preserved (see runFlashMigration below).
 // - Flashcard attempts (kind "flash") are self-ratings, NOT objective MCQ
 //   results: computeStats excludes them from MCQ accuracy/totals and
 //   reports them separately (flashAttempts / flashReviewed / flashRecalled).
@@ -14,6 +16,17 @@
 //   (attempts, plan, flashcards, issues, preferences, sessions) — never
 //   credentials. Verified by grep: no key/token/secret values in src/.
 "use client";
+
+import {
+  freshFsrsCard,
+  isFsrsCardState,
+  isLearningOrRelearning,
+  isLegacyFlashEntry,
+  seedFsrsCardFromLegacy,
+  type SerializedFsrsCard,
+} from "./fsrs.ts";
+
+export type { FlashGrade, SerializedFsrsCard } from "./fsrs.ts";
 
 export type Attempt = {
   id: string;
@@ -63,12 +76,16 @@ export type ItemRecord = {
 export const KEY_VERSION = "v3";
 
 export type FlashState = {
-  [cardId: string]: { grade: "again" | "hard" | "good" | "easy"; due: string; interval: number; reps: number };
+  [cardId: string]: SerializedFsrsCard;
 };
 
 const ATTEMPTS_KEY = "etea_attempts_next";
 const PLAN_KEY = "etea_plan_next";
 const FLASH_KEY = "etea_flash_next";
+// Stage 2 — verbatim backup of the pre-FSRS flash state. Written ONCE,
+// before the first migration save, and never overwritten: the original
+// fixed-ladder state survives even if the migration is re-run.
+const FLASH_V5_BACKUP_KEY = "etea_flashcards_v5_backup";
 const DAY_KEY = "etea_last_day_next";
 const ISSUES_KEY = "etea_issues_v2";
 const ISSUES_LEGACY_KEY = "etea_issues_next";
@@ -347,7 +364,7 @@ export function loadQuarantine(): QuarantineRecord[] {
 
 /** Downloadable JSON of the quarantined raw values, so corrupt stored
  *  data can be inspected or recovered by hand. Deliberately separate
- *  from exportProgress: the v5 backup shape is unchanged. */
+ *  from exportProgress: the backup shape is unchanged. */
 export function exportQuarantine(): string {
   return JSON.stringify(
     {
@@ -412,7 +429,7 @@ export function savePlanState(s: Record<string, boolean>) {
   safeWrite(PLAN_KEY, JSON.stringify(s));
 }
 
-// ---- flashcards: stable IDs + frozen session queue (pure logic) ----
+// ---- flashcards: stable IDs + FSRS scheduling (pure logic) ----
 
 /** Stable flashcard id: 'fc-' + a small FNV-1a hash of front + '|' + back.
  *  Never use the array index as the id (order/content edits would silently
@@ -427,104 +444,227 @@ export function flashcardId(front: string, back: string): string {
   return `fc-${(h >>> 0).toString(36)}`;
 }
 
-/** One-time migration of pre-Phase-2 flash state, whose keys were
- *  `card-<array index>`, onto stable ids. `cards` is the current card list
- *  in its stored order, so `card-N` maps to cards[N]. On a collision the
- *  entry with the later due date wins (the more recently scheduled one).
- *  Returns the migrated state and whether anything moved. */
-export function migrateFlashState(
-  state: FlashState,
+export type FlashMigrationCounts = {
+  /** Old-shape entries converted with their due date preserved. */
+  migrated: number;
+  /** Stored entries with no usable state, replaced by a fresh FSRS card. */
+  reset: number;
+  /** Entries already in FSRS shape, passed through untouched. */
+  kept: number;
+};
+
+function dueKeyOf(entry: unknown): string {
+  if (!entry || typeof entry !== "object") return "";
+  const e = entry as Record<string, unknown>;
+  if (typeof e.due === "string") return e.due;
+  if (typeof e.dueAt === "string") return e.dueAt;
+  return "";
+}
+
+/** Pure conversion of a stored flash-state object to FSRS shape. Never
+ *  touches storage; safe to run on every load (idempotent: FSRS-shaped
+ *  entries pass through, so a second run reports changed=false).
+ *  Steps: (1) legacy `card-<array index>` keys map onto stable ids
+ *  (the pre-Phase-2 migration precedent — `card-N` maps to cards[N];
+ *  on a collision the entry with the later due key wins); (2) each
+ *  entry converts by shape — FSRS-shaped kept, legacy-shaped seeded
+ *  with its due date preserved (see seedFsrsCardFromLegacy), anything
+ *  else replaced by a fresh card and counted as reset. `now` is
+ *  injectable for tests; fresh seeds are due at `now`. */
+export function convertFlashStateToFsrs(
+  raw: Record<string, unknown>,
   cards: { front: string; back: string }[],
-): { state: FlashState; migrated: boolean } {
-  let migrated = false;
-  const out: FlashState = {};
-  for (const [key, entry] of Object.entries(state)) {
+  now: Date,
+): { state: FlashState; counts: FlashMigrationCounts; changed: boolean } {
+  const mapped: Record<string, unknown> = {};
+  // Non-object input (null, a string, an array) carries no entries at
+  // all — treat as empty state rather than crashing (a corrupt backup
+  // file can reach here through convertBackupFlashcards).
+  const entries: [string, unknown][] =
+    raw !== null && typeof raw === "object" && !Array.isArray(raw) ? Object.entries(raw) : [];
+  for (const [key, entry] of entries) {
     let id = key;
     const m = /^card-(\d+)$/.exec(key);
     if (m) {
       const card = cards[Number(m[1])];
       if (!card) continue; // index no longer exists; drop the stale entry
       id = flashcardId(card.front, card.back);
-      migrated = true;
     }
-    const prev = out[id];
-    if (!prev || entry.due > prev.due) out[id] = entry;
+    const prev = mapped[id];
+    if (prev === undefined || dueKeyOf(entry) > dueKeyOf(prev)) mapped[id] = entry;
   }
-  return { state: out, migrated };
+  const state: FlashState = {};
+  const counts: FlashMigrationCounts = { migrated: 0, reset: 0, kept: 0 };
+  for (const [id, entry] of Object.entries(mapped)) {
+    if (isFsrsCardState(entry)) {
+      state[id] = entry;
+      counts.kept += 1;
+    } else if (isLegacyFlashEntry(entry)) {
+      state[id] = seedFsrsCardFromLegacy(entry);
+      counts.migrated += 1;
+    } else {
+      state[id] = freshFsrsCard(now);
+      counts.reset += 1;
+    }
+  }
+  return { state, counts, changed: counts.migrated > 0 || counts.reset > 0 };
 }
 
-export type FlashGrade = "again" | "hard" | "good" | "easy";
+export type FlashMigrationInfo = FlashMigrationCounts & {
+  /** True when the verbatim v5 backup was written by this run. */
+  backupWritten: boolean;
+  /** True when the backup write failed: the converted state was NOT
+   *  saved (the old text stays in place) and the next load retries. */
+  backupFailed: boolean;
+  at: string; // ISO timestamp of this migration run
+};
 
-/** Build the frozen due queue for one flashcard session. Computed ONCE at
- *  session start from the stored state; grading never re-sorts or rebuilds
- *  it (see gradeCard). Due-only by default: cards whose stored due date is
- *  today or earlier, plus never-seen cards. Future-due cards are excluded
- *  unless opts.cram is true (explicit user choice only). Order is the card
- *  list order — due cards first, in list order. */
-export function buildSessionQueue(
+/** Run the one-time FSRS migration against stored flash state.
+ *  Safety (Tier 2 pattern): the pre-migration raw text is preserved
+ *  VERBATIM under FLASH_V5_BACKUP_KEY before any state change, and the
+ *  backup is written only when absent — never overwritten. If the
+ *  backup write fails, the converted state is returned for in-memory
+ *  use but NOT saved, so the next load retries the backup. When the
+ *  stored state is already FSRS-shaped, nothing is written and info is
+ *  null (idempotent). Corrupt stored JSON takes the normal quarantine
+ *  path (via loadFlashState) and yields an empty state. */
+export function runFlashMigration(
+  cards: { front: string; back: string }[],
+  now: Date = new Date(),
+): { state: FlashState; info: FlashMigrationInfo | null } {
+  if (typeof window === "undefined") return { state: {}, info: null };
+  const rawText = safeRead(FLASH_KEY);
+  if (!rawText) return { state: {}, info: null };
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(rawText) as unknown;
+  } catch {
+    loadFlashState(); // quarantine the corrupt text, keep the old path
+    return { state: {}, info: null };
+  }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+    return { state: {}, info: null };
+  }
+  const { state, counts, changed } = convertFlashStateToFsrs(
+    parsed as Record<string, unknown>,
+    cards,
+    now,
+  );
+  if (!changed) return { state, info: null };
+  let backupWritten = false;
+  let backupFailed = false;
+  if (safeRead(FLASH_V5_BACKUP_KEY) === null) {
+    backupWritten = safeWrite(FLASH_V5_BACKUP_KEY, rawText);
+    backupFailed = !backupWritten;
+  }
+  const info: FlashMigrationInfo = {
+    ...counts,
+    backupWritten,
+    backupFailed,
+    at: now.toISOString(),
+  };
+  if (backupFailed) return { state, info }; // old text stays; retry next load
+  saveFlashState(state);
+  return { state, info };
+}
+
+/** Build the FSRS review queue for one flashcard session. Due-based
+ *  ordering, stated explicitly: (1) due cards first — stored cards
+ *  whose dueAt is now or earlier, earliest due first (bank order breaks
+ *  ties); (2) new cards — ids with no stored state, in bank order, with
+ *  NO daily cap (70-card bank, single user). Future-due cards are
+ *  excluded unless opts.cram is true (explicit user choice only), in
+ *  which case they append at the end, earliest due first. The queue is
+ *  computed at session start; grading appends learning/relearning cards
+ *  via advanceReviewQueue but never re-sorts the live queue. */
+export function buildReviewQueue(
   cards: { id: string; category: string }[],
   state: FlashState,
-  today: string, // YYYY-MM-DD
+  now: Date,
   opts?: { category?: string; cram?: boolean },
 ): string[] {
   const list = cards.filter(
     (c) => !opts?.category || opts.category === "All" || c.category === opts.category,
   );
-  const due = list.filter((c) => !state[c.id] || state[c.id].due <= today).map((c) => c.id);
-  if (opts?.cram) {
-    const future = list.filter((c) => state[c.id] && state[c.id].due > today).map((c) => c.id);
-    return [...due, ...future];
+  const due: { id: string; dueAt: string }[] = [];
+  const fresh: string[] = [];
+  const future: { id: string; dueAt: string }[] = [];
+  for (const c of list) {
+    const entry = state[c.id];
+    if (!entry) {
+      fresh.push(c.id);
+    } else if (new Date(entry.dueAt).getTime() <= now.getTime()) {
+      due.push({ id: c.id, dueAt: entry.dueAt });
+    } else {
+      future.push({ id: c.id, dueAt: entry.dueAt });
+    }
   }
-  return due;
+  // Stable sort: earliest due first; bank order breaks ties.
+  due.sort((a, b) => (a.dueAt < b.dueAt ? -1 : a.dueAt > b.dueAt ? 1 : 0));
+  future.sort((a, b) => (a.dueAt < b.dueAt ? -1 : a.dueAt > b.dueAt ? 1 : 0));
+  const queue = [...due.map((d) => d.id), ...fresh];
+  if (opts?.cram) queue.push(...future.map((f) => f.id));
+  return queue;
 }
 
-export type GradeResult = {
-  queue: string[]; // the (possibly extended) frozen queue — never re-sorted
+export type AdvanceResult = {
+  queue: string[]; // the (possibly extended) queue — never re-sorted
   nextIndex: number; // index of the next card to show: always index + 1
-  requeued: boolean; // true only for "again"
+  requeued: boolean; // true only when the card stays in this session
 };
 
-/** Grade one card in a frozen session queue. Pure: grading never re-sorts
- *  the live queue and never double-advances (nextIndex is always index+1).
- *  "again" = same-session relearning: the card is appended to the END of
- *  the current session queue, so it is shown once more after every other
- *  due card — it is not merely given a +1-day due date. Any other grade
- *  leaves the queue untouched. */
-export function gradeCard(queue: string[], index: number, grade: FlashGrade): GradeResult {
+/** Advance the session queue after one FSRS review. Pure: grading never
+ *  re-sorts the live queue and never double-advances (nextIndex is
+ *  always index+1). A card that lands in Learning or Relearning state
+ *  is appended to the END of the current session queue (same-day
+ *  relearning — its FSRS step elapses in minutes, so it comes back
+ *  after every other due card); a card that lands in Review state is
+ *  done until its scheduled day. `reviewedState` is the FSRS State enum
+ *  value of the card AFTER the review. */
+export function advanceReviewQueue(
+  queue: string[],
+  index: number,
+  reviewedState: number,
+): AdvanceResult {
   if (index < 0 || index >= queue.length) {
     return { queue: [...queue], nextIndex: index, requeued: false };
   }
-  if (grade === "again") {
+  if (isLearningOrRelearning(reviewedState)) {
     return { queue: [...queue, queue[index]], nextIndex: index + 1, requeued: true };
   }
   return { queue: [...queue], nextIndex: index + 1, requeued: false };
 }
 
-/** Honest label for a grade button, showing the resulting interval.
- *  "again" has no day interval: the card comes back later this session and
- *  stays due today (see nextDue).
- *  Localization Pass 1 — optional `lang`: "ur" renders the Urdu label;
- *  "roman"/omitted keeps the English label (the i18n fallback rule). */
+/** Honest label for a grade button: the grade name plus the FSRS-computed
+ *  interval for THIS card (pre-formatted by formatFsrsInterval, e.g.
+ *  "10m" / "3d"). The interval is computed, never hardcoded.
+ *  Localization Pass 1 — optional `lang`: "ur" renders the Urdu grade
+ *  name; "roman"/omitted keeps the English grade name (the i18n
+ *  fallback rule). The interval label itself is already lang-formatted
+ *  by the caller. */
 export function gradeButtonLabel(
-  grade: FlashGrade,
-  interval: number,
+  grade: "again" | "hard" | "good" | "easy",
+  intervalLabel: string,
   lang: "en" | "roman" | "ur" = "en",
 ): string {
   const ur = lang === "ur";
-  switch (grade) {
-    case "again":
-      return ur ? "دوبارہ — اسی سیشن میں دوبارہ جائزہ" : "Again — review again this session";
-    case "hard":
-      return ur ? "مشکل — 2 دن" : "Hard — 2 days";
-    case "good": {
-      const d = interval < 3 ? 3 : interval < 7 ? 7 : 14;
-      return ur ? `اچھا — ${d} دن` : `Good — ${d} days`;
-    }
-    case "easy": {
-      const d = interval < 7 ? 7 : interval < 14 ? 14 : 30;
-      return ur ? `آسان — ${d} دن` : `Easy — ${d} days`;
-    }
-  }
+  const name =
+    grade === "again"
+      ? ur
+        ? "دوبارہ"
+        : "Again"
+      : grade === "hard"
+        ? ur
+          ? "مشکل"
+          : "Hard"
+        : grade === "good"
+          ? ur
+            ? "اچھا"
+            : "Good"
+          : ur
+            ? "آسان"
+            : "Easy";
+  return `${name} — ${intervalLabel}`;
 }
 
 // ---- flashcards: stored scheduling state ----
@@ -536,34 +676,19 @@ export function saveFlashState(s: FlashState) {
   safeWrite(FLASH_KEY, JSON.stringify(s));
 }
 
-/** Simple spaced-review schedule (plain JS, fixed ladder — NOT SM-2):
- *  Again = due today (0 days) + same-session relearning; Hard = 2d;
- *  Good = 3d → 7d → 14d; Easy = 7d → 14d → 30d.
- *  `now` is injectable for tests; defaults to the current date. */
-export function nextDue(
-  grade: FlashGrade,
-  interval: number,
-  now?: Date,
-): { due: string; interval: number } {
-  const days =
-    grade === "again"
-      ? 0
-      : grade === "hard"
-        ? 2
-        : grade === "good"
-          ? interval < 3
-            ? 3
-            : interval < 7
-              ? 7
-              : 14
-          : interval < 7
-            ? 7
-            : interval < 14
-              ? 14
-              : 30;
-  const d = now ? new Date(now) : new Date();
-  d.setDate(d.getDate() + days);
-  return { due: d.toISOString().slice(0, 10), interval: days };
+/** Count cards waiting for review right now (home dashboard): the
+ *  due-now + new queue length, computed from stored state with the
+ *  migration applied IN MEMORY ONLY — this never writes, so the home
+ *  page cannot trigger or disturb the migration. Returns 0 when
+ *  nothing is due and no card is new. */
+export function countDueFlashcards(
+  cards: { front: string; back: string; category: string }[],
+  now: Date = new Date(),
+): number {
+  const withIds = cards.map((c) => ({ ...c, id: flashcardId(c.front, c.back) }));
+  const raw = loadFlashState() as unknown as Record<string, unknown>;
+  const { state } = convertFlashStateToFsrs(raw, cards, now);
+  return buildReviewQueue(withIds, state, now).length;
 }
 
 // ---- "Report an issue" — honest private inbox (never sent anywhere) ----
@@ -840,7 +965,8 @@ export function exportProgress(): string {
     // Stage 1 P0.2 — version 5 adds `reviews` (owner review decisions)
     // and `annotations` (owner note annotations + tutor opt-in). Version 4
     // files (no reviews/annotations) still restore: importProgress treats
-    // the missing fields as empty.
+    // the missing fields as empty. Stage 2 — version 6 stores `flashcards`
+    // in FSRS shape (see migrateBackupPayload for the v4/v5 path).
     version: BACKUP_VERSION,
     exportedAt: new Date().toISOString(),
     attempts: loadAttempts(),
@@ -918,28 +1044,62 @@ export type ImportResult = {
 // anything failing the shape check is rejected without touching stored
 // data. Versions older than 4 (pre-v4 exports) take the same lenient
 // path they always did — missing fields default to empty — via the
-// v4 migration; the merge code below guards every optional field.
+// chained v4->v5->v6 migration; the merge code below guards every
+// optional field.
 /** Current backup format version. Bump only with a matching migration. */
-export const BACKUP_VERSION = 5;
+export const BACKUP_VERSION = 6;
 /** Backup versions this build restores (each has an explicit migration). */
-export const SUPPORTED_BACKUP_VERSIONS = [4, 5] as const;
+export const SUPPORTED_BACKUP_VERSIONS = [4, 5, 6] as const;
 
-/** Migrate a parsed backup payload to the current (v5) shape. Pure: it
- *  never mutates its input. v5 payloads pass through unchanged; older
- *  payloads gain the v5-only fields (`reviews`, `annotations`) as empty
- *  defaults so the merge below sees one shape. Callers must validate the
- *  payload (app marker, numeric version, attempts list) and reject
- *  versions newer than BACKUP_VERSION before calling this. */
-export function migrateBackupPayload(
-  p: Record<string, unknown>,
-): Record<string, unknown> {
-  if (typeof p.version === "number" && p.version >= BACKUP_VERSION) return p;
+/** v4 -> v5: add the v5-only fields (`reviews`, `annotations`) as empty
+ *  defaults so later stages see one shape. Pure: never mutates input. */
+export function migrateV4ToV5(p: Record<string, unknown>): Record<string, unknown> {
   return {
     ...p,
-    version: BACKUP_VERSION,
+    version: 5,
     reviews: p.reviews ?? {},
     annotations: p.annotations ?? { notes: {}, includeInTutor: false },
   };
+}
+
+/** Convert a backup payload's `flashcards` map to the v6 (FSRS) shape.
+ *  FSRS-shaped entries pass through; legacy fixed-ladder entries seed
+ *  FSRS cards with their due date preserved (see
+ *  seedFsrsCardFromLegacy); anything else passes through untouched so
+ *  the merge's shape validation skips and counts it. Pure. */
+function convertBackupFlashcards(p: Record<string, unknown>): Record<string, unknown> {
+  const fc = p.flashcards;
+  if (!fc || typeof fc !== "object" || Array.isArray(fc)) return p.flashcards as Record<string, unknown>;
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(fc as Record<string, unknown>)) {
+    if (isFsrsCardState(v)) out[k] = v;
+    else if (isLegacyFlashEntry(v)) out[k] = seedFsrsCardFromLegacy(v);
+    else out[k] = v;
+  }
+  return out;
+}
+
+/** v5 -> v6: convert stored flash state from the fixed-ladder shape to
+ *  the FSRS shape (due dates preserved). Pure: never mutates input. */
+export function migrateV5ToV6(p: Record<string, unknown>): Record<string, unknown> {
+  return {
+    ...p,
+    version: 6,
+    flashcards: convertBackupFlashcards(p),
+  };
+}
+
+/** Migrate a parsed backup payload to the current (v6) shape. Pure: it
+ *  never mutates its input. v6 payloads pass through unchanged; v5
+ *  payloads take v5->v6; older payloads chain v4->v5->v6 (the v3-and-
+ *  older lenient path keeps working: missing fields default to empty).
+ *  Callers must validate the payload (app marker, numeric version,
+ *  attempts list) and reject versions newer than BACKUP_VERSION before
+ *  calling this. */
+export function migrateBackupPayload(p: Record<string, unknown>): Record<string, unknown> {
+  if (typeof p.version === "number" && p.version >= BACKUP_VERSION) return p;
+  if (p.version === 5) return migrateV5ToV6(p);
+  return migrateV5ToV6(migrateV4ToV5(p));
 }
 
 /** Shape-check a parsed backup payload. Returns an error message, or
@@ -968,11 +1128,12 @@ export function validateBackupPayload(p: unknown): string | null {
  *  per question id (a restore restores the owner's decisions); `annotations`
  *  are merged the same way, and the tutor opt-in flag is restored when
  *  present. Version 4 files (no reviews/annotations) restore exactly as
- *  before. Version 6+ files are rejected (newer than this build).
- *  Stage 1 P1 Tier 2 (v5, unchanged): the current export version stays
- *  5; v4 files restore exactly as before (missing reviews/annotations
- *  treated as empty) and v6+ files are still rejected as newer than
- *  this build. All import writes go through safeWrite, so a quota or
+ *  before. Version 7+ files are rejected (newer than this build).
+ *  Stage 2 (v6): `flashcards` are stored in FSRS shape; v4/v5 files have
+ *  their fixed-ladder flash entries converted (due dates preserved) by
+ *  migrateBackupPayload before the merge, and the merge below accepts
+ *  only FSRS-shaped entries (anything else is skipped and counted).
+ *  Stage 1 P1 Tier 2 (unchanged): all import writes go through safeWrite, so a quota or
  *  security failure during an import is caught and warned, never a
  *  crash. The quarantine store is deliberately NOT part of the backup
  *  payload — exportQuarantine() downloads it separately.
@@ -982,7 +1143,7 @@ export function validateBackupPayload(p: unknown): string | null {
 export function importProgress(json: string): ImportResult {
   try {
     const raw = JSON.parse(json) as Record<string, unknown>;
-    // Stage 1 P2 — validate, then migrate to the v5 shape, then merge.
+    // Stage 2 — validate, then migrate to the v6 shape, then merge.
     // The merge below is unchanged: it sees exactly one shape.
     const invalid = validateBackupPayload(raw);
     if (invalid) return { ok: false, error: invalid };
@@ -1027,17 +1188,10 @@ export function importProgress(json: string): ImportResult {
       const fc = p.flashcards as Record<string, unknown>;
       const clean: FlashState = {};
       for (const [k, v] of Object.entries(fc)) {
-        if (v && typeof v === "object") {
-          const e = v as Record<string, unknown>;
-          if (
-            (e.grade === "again" || e.grade === "hard" || e.grade === "good" || e.grade === "easy") &&
-            typeof e.due === "string" &&
-            typeof e.interval === "number" &&
-            typeof e.reps === "number"
-          ) {
-            clean[k] = { grade: e.grade, due: e.due, interval: e.interval, reps: e.reps };
-          }
-        }
+        // Stage 2: the merge accepts FSRS-shaped entries only — v4/v5
+        // legacy entries were already converted by migrateBackupPayload,
+        // so anything failing the guard here is unusable and skipped.
+        if (isFsrsCardState(v)) clean[k] = v;
       }
       counts.flashcardKeys = Object.keys(clean).length;
       saveFlashState({ ...loadFlashState(), ...clean });

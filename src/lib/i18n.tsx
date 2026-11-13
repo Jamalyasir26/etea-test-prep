@@ -159,9 +159,9 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "20 وقت والے موک / مشقی ٹیسٹ",
   },
   quickFlashDesc: {
-    en: "70 cards, simple spaced-review schedule",
-    roman: "70 cards, simple spaced-review schedule",
-    ur: "70 کارڈ، سادہ وقفہ جائزہ شیڈول",
+    en: "70 cards, FSRS-7 adaptive spaced repetition",
+    roman: "70 cards, FSRS-7 adaptive spaced repetition",
+    ur: "70 کارڈ، FSRS-7 مطابقتی وقفہ تکرار",
   },
   quickTutorDesc: {
     en: "Live AI tutor (Gemini, Groq + OpenRouter fallbacks)",
@@ -525,13 +525,13 @@ const STRINGS: Record<string, StrEntry> = {
 
   // ---- Flashcards ----
   flashTitle: {
-    en: "Flashcards — simple spaced-review schedule",
-    roman: "Flashcards — simple spaced-review schedule",
-    ur: "فلیش کارڈز — سادہ وقفہ جائزہ شیڈول",
+    en: "Flashcards — FSRS-7 (adaptive spaced repetition)",
+    roman: "Flashcards — FSRS-7 (adaptive spaced repetition)",
+    ur: "فلیش کارڈز — FSRS-7 (مطابقتی وقفہ تکرار)",
   },
   flashIntro: {
-    en: "Answer before flipping the card (retrieval practice). Grade yourself: Again / Hard / Good / Easy. This is a simple spaced-review schedule (a fixed interval ladder, not SM-2): Hard returns in 2 days, Good in 3–14 days, Easy in 7–30 days. “Again” brings the card back later this session and keeps it due today. Only cards due today are in the session — future-due cards stay out unless you turn on cram mode.",
-    ur: "کارڈ پلٹنے سے پہلے جواب دیں (حافظے سے یاد کرنے کی مشق)۔ خود کو درجہ دیں: دوبارہ / مشکل / اچھا / آسان۔ یہ ایک سادہ وقفہ جائزہ شیڈول ہے (ایک مقررہ وقفہ سیڑھی، SM-2 نہیں): مشکل 2 دن میں واپس آتا ہے، اچھا 3–14 دن میں، آسان 7–30 دن میں۔ “دوبارہ” کارڈ کو اسی سیشن میں بعد میں واپس لاتا ہے اور آج واجب رکھتا ہے۔ سیشن میں صرف آج واجب کارڈ ہوتے ہیں — مستقبل میں واجب کارڈ باہر رہتے ہیں جب تک آپ کرام موڈ فعال نہ کریں۔",
+    en: "Answer before flipping the card (retrieval practice). Grade yourself: Again / Hard / Good / Easy. FSRS-7 adapts each card's interval from its stability and difficulty: new cards start with short same-day steps (about 1 and 10 minutes), and each grade button shows the exact interval that grade will set. Only cards due now (plus new cards) are in the session — future-due cards stay out unless you turn on cram mode.",
+    ur: "کارڈ پلٹنے سے پہلے جواب دیں (حافظے سے یاد کرنے کی مشق)۔ خود کو درجہ دیں: دوبارہ / مشکل / اچھا / آسان۔ FSRS-7 ہر کارڈ کا وقفہ اس کے استحکام اور مشکل کے مطابق بناتا ہے: نئے کارڈ مختصر ہم روزہ مراحل (تقریباً 1 اور 10 منٹ) سے شروع ہوتے ہیں، اور ہر درجہ بٹن وہ درست وقفہ دکھاتا ہے جو وہ درجہ مقرر کرے گا۔ سیشن میں صرف ابھی واجب کارڈ (اور نئے کارڈ) ہوتے ہیں — مستقبل میں واجب کارڈ باہر رہتے ہیں جب تک آپ کرام موڈ فعال نہ کریں۔",
   },
   categoryLabel: { en: "Category", roman: "Category", ur: "زمرہ" },
   cramLabel: {
@@ -544,12 +544,32 @@ const STRINGS: Record<string, StrEntry> = {
   recalledLabel: { en: "recalled", roman: "recalled", ur: "یاد کیے گئے" },
   sessionFinished: { en: "Session finished", roman: "Session mukammal", ur: "سیشن مکمل" },
   sessionFinishedBody: {
-    en: "Recalled {fraction} cards. “Again” cards were shown once more this session; the rest return on their scheduled day. Flashcard self-ratings are kept separate from quiz/mock accuracy on the Analysis page.",
-    ur: "{fraction} کارڈ یاد کیے گئے۔ “دوبارہ” والے کارڈ اس سیشن میں ایک بار پھر دکھائے گئے؛ باقی اپنے مقررہ دن واپس آئیں گے۔ فلیش کارڈ کی خود درجہ بندی تجزیہ صفحے پر کوئز/موک درستگی سے الگ رکھی جاتی ہے۔",
+    en: "Recalled {fraction} cards. Cards still in learning were shown again this session; the rest return on their FSRS-scheduled day. Flashcard self-ratings are kept separate from quiz/mock accuracy on the Analysis page.",
+    ur: "{fraction} کارڈ یاد کیے گئے۔ سیکھنے کے مرحلے میں موجود کارڈ اس سیشن میں دوبارہ دکھائے گئے؛ باقی اپنے FSRS مقررہ دن واپس آئیں گے۔ فلیش کارڈ کی خود درجہ بندی تجزیہ صفحے پر کوئز/موک درستگی سے الگ رکھی جاتی ہے۔",
   },
   reviewAgain: { en: "Review again", roman: "Dobara review karein", ur: "دوبارہ جائزہ لیں" },
   cardLabel: { en: "Card", roman: "Card", ur: "کارڈ" },
-  lastGrade: { en: "last grade: {grade}, next due {due}", roman: "last grade: {grade}, next due {due}", ur: "آخری درجہ: {grade}، اگلی تاریخ {due}" },
+  // Stage 2 — FSRS card state line + migration notice. State names are
+  // short chrome (roman included); the migration notice is a long
+  // paragraph, so roman falls back to English per the fallback rule.
+  stateNew: { en: "New", roman: "Naya", ur: "نیا" },
+  stateLearning: { en: "Learning", roman: "Learning", ur: "سیکھنا" },
+  stateReview: { en: "Review", roman: "Review", ur: "جائزہ" },
+  stateRelearning: { en: "Relearning", roman: "Dobara seekhna", ur: "دوبارہ سیکھنا" },
+  fsrsStateLine: {
+    en: "FSRS: {state} · next review {due}",
+    roman: "FSRS: {state} · agla review {due}",
+    ur: "FSRS: {state} · اگلا جائزہ {due}",
+  },
+  flashMigratedNotice: {
+    en: "Your flashcard schedule moved to FSRS-7 (adaptive spaced repetition). {migrated} card(s) kept their due dates (intervals restarted); {reset} card(s) had no usable schedule and started fresh. Your previous schedule was saved unchanged as a backup.",
+    ur: "آپ کا فلیش کارڈ شیڈول FSRS-7 (مطابقتی وقفہ تکرار) پر منتقل ہو گیا۔ {migrated} کارڈ کی واجب تاریخیں برقرار رہیں (وقفے دوبارہ شروع ہوئے)؛ {reset} کارڈ کا کوئی قابل استعمال شیڈول نہیں تھا اور وہ نئے سرے سے شروع ہوئے۔ آپ کا پچھلا شیڈول بغیر تبدیلی کے بیک اپ کے طور پر محفوظ کر لیا گیا۔",
+  },
+  flashMigrationBackupFailed: {
+    en: "The backup of your previous schedule could not be saved, so your previous schedule was left unchanged — the migration will retry on your next visit.",
+    ur: "آپ کے پچھلے شیڈول کا بیک اپ محفوظ نہیں ہو سکا، اس لیے پچھلا شیڈول بغیر تبدیلی کے چھوڑ دیا گیا — اگلی بار منتقلی دوبارہ کوشش کرے گی۔",
+  },
+  cardsDueLabel: { en: "Cards due today", roman: "Cards due aaj", ur: "آج واجب کارڈز" },
   newCard: { en: "new card", roman: "naya card", ur: "نیا کارڈ" },
   flipCard: { en: "Flip card", roman: "Card paltein", ur: "کارڈ پلٹیں" },
   noCardsDue: { en: "No cards due today in this category.", roman: "Is category mein aaj koi card due nahi.", ur: "اس زمرے میں آج کوئی کارڈ واجب نہیں۔" },

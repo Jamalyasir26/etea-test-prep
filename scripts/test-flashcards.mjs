@@ -1,21 +1,84 @@
-// Flashcard queue regression test — plain node, no dependencies.
-// Imports the real pure functions from src/lib/tracking.ts (Node 23.6+
-// strips types on .ts imports; tracking.ts has no runtime imports and
-// touches localStorage only inside functions, so importing it is safe).
-// Proves the Phase 1 audit bug is fixed: 4 new cards are each shown
-// exactly once, in order, under grades Again/Hard/Good/Easy — grading
-// never re-sorts the live queue and never double-advances. "Again" appends
-// the card to the END of the session (same-session relearning) instead of
-// jumping the queue.
+// Flashcard queue suite (Stage 2: FSRS) — plain node, no dependencies.
+// Imports the real pure functions from src/lib/tracking.ts and
+// src/lib/fsrs.ts (Node 23.6+ strips types on .ts imports) and the REAL
+// ts-fsrs scheduler for the grading simulation. Proves: the session
+// queue is built once (due cards earliest-first, then new cards), grading
+// never re-sorts it and advances exactly one step, Learning/Relearning
+// cards append to the END of the session (same-session relearning),
+// Review cards do not, future-due cards stay out unless cram mode is on,
+// and grade buttons show FSRS-computed intervals.
 // Run: node scripts/test-flashcards.mjs  (exit 0 = all pass)
+//
+// REWORK NOTES (Stage 2) — every changed/deleted assertion from the old
+// 29-check frozen-queue suite, and why:
+// - DELETED: all 6 `nextDue` checks ("again" due today, "hard" 2 days,
+//   "good" 3/7/14 ladder, "easy" 7/14/30 ladder). The fixed interval
+//   ladder is INTENTIONALLY replaced by FSRS: intervals are computed by
+//   the scheduler from stability/difficulty. Coverage moves to
+//   test-fsrs.mjs (real transitions + due behavior) and to the
+//   preview/grade-label checks below (buttons show computed intervals).
+// - DELETED: the 2 old-signature `gradeButtonLabel(g, prevInterval)`
+//   checks ("Again — review again this session", "Hard — 2 days"...).
+//   The function now takes a pre-formatted FSRS interval label:
+//   gradeButtonLabel(grade, intervalLabel, lang). Replaced by the
+//   new-signature checks below (label embeds the given interval; Urdu
+//   translations; no "SM-2").
+// - CHANGED: the 2 `migrateFlashState` checks. The old function migrated
+//   legacy `card-N` keys into the OLD shape; it is replaced by
+//   convertFlashStateToFsrs, which migrates into the FSRS shape (due
+//   preserved as an ISO datetime, counts reported). The `card-0` mapping
+//   check below uses the new function; full migration coverage (counts,
+//   idempotency, backup) lives in test-fsrs.mjs.
+// - CHANGED: `buildSessionQueue(queue, state, todayString)` ->
+//   `buildReviewQueue(cards, state, now: Date, opts)`. Same contract
+//   (due-only default, cram appends future-due at the end), but due is
+//   now a datetime, due cards sort earliest-first, and new cards follow
+//   in bank order. The future-due/cram checks below use the new API.
+// - CHANGED: `gradeCard(queue, pos, grade)` -> `advanceReviewQueue(queue,
+//   pos, reviewedState)`. Advancement now depends on the POST-review
+//   FSRS state, not the grade: Learning (1) and Relearning (3) append,
+//   Review (2) does not. The 4-card simulation below drives it with REAL
+//   scheduler results, so "hard" on a new card ALSO re-queues (Hard
+//   leaves a new card in Learning) — the old suite's "only Again
+//   re-queues" expectation was a fixed-ladder artifact, not a rule.
+// - KEPT UNCHANGED: stable-id checks, no-re-sort / +1-advance /
+//   end-of-session / out-of-range no-op checks (same invariants, new
+//   function names).
+
 import {
-  buildSessionQueue,
+  advanceReviewQueue,
+  buildReviewQueue,
+  convertFlashStateToFsrs,
+  countDueFlashcards,
   flashcardId,
   gradeButtonLabel,
-  gradeCard,
-  migrateFlashState,
-  nextDue,
+  saveFlashState,
 } from "../src/lib/tracking.ts";
+import {
+  formatFsrsInterval,
+  freshFsrsCard,
+  initFsrsScheduler,
+  previewFsrsGrades,
+  reviewFsrsCard,
+} from "../src/lib/fsrs.ts";
+
+const scheduler = await initFsrsScheduler();
+
+// In-memory browser stub for countDueFlashcards (it reads stored state
+// through loadFlashState). tracking.ts touches localStorage only inside
+// functions, so installing the stub here — before any call — is enough.
+const store = new Map();
+globalThis.window = globalThis;
+globalThis.localStorage = {
+  getItem: (k) => (store.has(k) ? store.get(k) : null),
+  setItem: (k, v) => store.set(k, String(v)),
+  removeItem: (k) => store.delete(k),
+  clear: () => store.clear(),
+  get length() {
+    return store.size;
+  },
+  key: (i) => [...store.keys()][i] ?? null,
+};
 
 let failures = 0;
 function check(name, cond, detail = "") {
@@ -27,11 +90,11 @@ function check(name, cond, detail = "") {
   }
 }
 
-const TODAY = "2026-11-11";
+const NOW = new Date("2026-11-12T09:00:00.000Z");
 const cards = [1, 2, 3, 4].map((n) => ({
   front: `Card ${n} front`,
   back: `Card ${n} back`,
-  category: "Pedagogy",
+  category: n <= 2 ? "Pedagogy" : "Arabic",
 }));
 const ids = cards.map((c) => flashcardId(c.front, c.back));
 const withIds = cards.map((c, i) => ({ ...c, id: ids[i] }));
@@ -41,37 +104,59 @@ check("stable id is deterministic", flashcardId("a", "b") === flashcardId("a", "
 check("stable id differs per card", new Set(ids).size === 4, `ids: ${ids.join(", ")}`);
 check("stable id has fc- prefix", ids.every((id) => id.startsWith("fc-")));
 
-// Legacy index-key migration: card-0 maps onto the first card's stable id.
+// Legacy index-key migration: card-0 maps onto the first card's stable id,
+// due preserved as an ISO datetime, counts reported.
 const legacy = { "card-0": { grade: "good", due: "2026-11-14", interval: 3, reps: 1 } };
-const mig = migrateFlashState(legacy, cards);
-check("legacy card-0 migrates to stable id", mig.state[ids[0]]?.due === "2026-11-14");
-check("legacy migration reports migrated=true", mig.migrated === true);
+const mig = convertFlashStateToFsrs(legacy, cards, NOW);
+check("legacy card-0 migrates to stable id", mig.state[ids[0]]?.dueAt === "2026-11-14T00:00:00.000Z", mig.state[ids[0]]?.dueAt);
+check("legacy migration reports migrated=1", mig.counts.migrated === 1, JSON.stringify(mig.counts));
 
-// Due-only default: a future-due card is NOT in the live queue.
-const stateWithFuture = { [ids[1]]: { grade: "good", due: "2026-11-20", interval: 3, reps: 1 } };
-const dueOnly = buildSessionQueue(withIds, stateWithFuture, TODAY);
-check("future-due card excluded by default", !dueOnly.includes(ids[1]) && dueOnly.length === 3);
-const cram = buildSessionQueue(withIds, stateWithFuture, TODAY, { cram: true });
-check("cram mode appends future-due cards at the end", cram.length === 4 && cram[3] === ids[1]);
+// --- Queue ordering: due earliest-first, then new cards, future-due out ---
+function fsrsDue(dueAt, state = 2) {
+  return { ...freshFsrsCard(NOW), dueAt, state };
+}
+const stateMixed = {
+  [ids[1]]: fsrsDue("2026-11-20T00:00:00.000Z"), // future-due
+  [ids[3]]: fsrsDue("2026-11-10T00:00:00.000Z"), // due, earliest
+  [ids[0]]: fsrsDue("2026-11-12T08:00:00.000Z"), // due, later
+  // ids[2]: no entry -> new card
+};
+const q = buildReviewQueue(withIds, stateMixed, NOW);
+check("due cards come first, earliest dueAt first", q[0] === ids[3] && q[1] === ids[0], JSON.stringify(q));
+check("new cards follow due cards in bank order", q[2] === ids[2], JSON.stringify(q));
+check("future-due card excluded by default", !q.includes(ids[1]) && q.length === 3, JSON.stringify(q));
+const cramQ = buildReviewQueue(withIds, stateMixed, NOW, { cram: true });
+check("cram mode appends future-due cards at the end", cramQ.length === 4 && cramQ[3] === ids[1], JSON.stringify(cramQ));
+const catQ = buildReviewQueue(withIds, stateMixed, NOW, { category: "Arabic" });
+check("category filter restricts the queue", JSON.stringify(catQ) === JSON.stringify([ids[3], ids[2]]), JSON.stringify(catQ));
+check("all-new bank has no cap: every new card is queued", buildReviewQueue(withIds, {}, NOW).length === 4);
+check("due exactly now counts as due", buildReviewQueue(withIds, { [ids[0]]: fsrsDue(NOW.toISOString()) }, NOW).includes(ids[0]));
+check("countDueFlashcards counts due + new (empty store -> all new)", countDueFlashcards(cards, NOW) === 4);
+saveFlashState(Object.fromEntries(ids.map((id) => [id, fsrsDue("2026-12-01T00:00:00.000Z")])));
+check("countDueFlashcards is 0 when every card is future-due", countDueFlashcards(cards, NOW) === 0);
+store.clear();
 
-// --- Core regression: 4 new cards, grades Again/Hard/Good/Easy ---
-const queue0 = buildSessionQueue(withIds, {}, TODAY);
+// --- Core regression: 4 new cards, real FSRS grades Again/Hard/Good/Easy ---
+const queue0 = buildReviewQueue(withIds, {}, NOW);
 check("session queue holds all 4 new cards in order", JSON.stringify(queue0) === JSON.stringify(ids));
 
 const grades = ["again", "hard", "good", "easy"];
 let queue = queue0;
 let pos = 0;
+let state = {};
 const firstPassShown = [];
 for (const g of grades) {
   const before = [...queue];
-  firstPassShown.push(queue[pos]);
-  const res = gradeCard(queue, pos, g);
-  // No re-sort: the queue prefix is unchanged by grading.
+  const id = queue[pos];
+  firstPassShown.push(id);
+  // Real scheduler result drives the advance, exactly like the page.
+  const updated = reviewFsrsCard(scheduler, state[id] ?? null, g, NOW);
+  state = { ...state, [id]: updated };
+  const res = advanceReviewQueue(queue, pos, updated.state);
   check(
     `grade "${g}" does not re-sort the queue`,
-    res.queue.slice(0, before.length).every((id, i) => id === before[i]),
+    res.queue.slice(0, before.length).every((x, i) => x === before[i]),
   );
-  // No double-advance: the next card is exactly the immediate successor.
   check(`grade "${g}" advances exactly one step`, res.nextIndex === pos + 1, `nextIndex=${res.nextIndex}, pos=${pos}`);
   queue = res.queue;
   pos = res.nextIndex;
@@ -82,36 +167,61 @@ check(
   `shown: ${JSON.stringify(firstPassShown)}`,
 );
 check(
-  '"again" re-queues the card at the END of the session',
-  queue.length === 5 && queue[4] === ids[0],
+  "Learning cards (Again + Hard on new cards) re-queue at the END",
+  queue.length === 6 && queue[4] === ids[0] && queue[5] === ids[1],
   `queue: ${JSON.stringify(queue)}`,
 );
 check("relearning tail is shown after the first pass, not mid-queue", queue[pos] === ids[0]);
-// Finish the relearning tail: grading it again ends the session.
-const tail = gradeCard(queue, pos, "good");
-check("session ends after the relearning tail", tail.nextIndex === queue.length && tail.queue.length === 5);
+// Finish the tail: Easy graduates a Learning card to Review (no re-append).
+const tailNow = new Date(NOW.getTime() + 60_000);
+for (let t = 0; t < 2; t++) {
+  const id = queue[pos];
+  const updated = reviewFsrsCard(scheduler, state[id] ?? null, "easy", tailNow);
+  check(`tail card graduates to Review on Easy (state ${updated.state})`, updated.state === 2, `state=${updated.state}`);
+  const res = advanceReviewQueue(queue, pos, updated.state);
+  queue = res.queue;
+  pos = res.nextIndex;
+}
+check("session ends after the relearning tail", pos === queue.length && queue.length === 6, `pos=${pos}, len=${queue.length}`);
 
-// Out-of-range grading is a no-op (never crashes the session).
-const oob = gradeCard(queue, 99, "good");
-check("out-of-range grade is a no-op", oob.nextIndex === 99 && oob.queue.length === 5);
+// advanceReviewQueue rules, driven directly by post-review state.
+const base = ["a", "b", "c"];
+const advReview = advanceReviewQueue(base, 0, 2);
+check("Review state (2) does not append", JSON.stringify(advReview.queue) === JSON.stringify(base) && advReview.nextIndex === 1 && advReview.requeued === false);
+const advLearning = advanceReviewQueue(base, 0, 1);
+check("Learning state (1) appends to the end", JSON.stringify(advLearning.queue) === JSON.stringify(["a", "b", "c", "a"]) && advLearning.requeued === true);
+const advRelearning = advanceReviewQueue(base, 1, 3);
+check("Relearning state (3) appends to the end", JSON.stringify(advRelearning.queue) === JSON.stringify(["a", "b", "c", "b"]) && advRelearning.requeued === true);
+check("New state (0) does not append", advanceReviewQueue(base, 0, 0).queue.length === 3);
 
-// Scheduling + honest labels.
-check('"again" is due today (0 days), not +1 day', nextDue("again", 0, new Date(`${TODAY}T00:00:00Z`)).due === TODAY);
-check('"again" interval is 0', nextDue("again", 5).interval === 0);
-check('"hard" is 2 days', nextDue("hard", 0).interval === 2);
-check('"good" from new is 3 days', nextDue("good", 0).interval === 3);
-check('"good" ladder reaches 7 then 14', nextDue("good", 3).interval === 7 && nextDue("good", 7).interval === 14);
-check('"easy" ladder is 7/14/30', nextDue("easy", 0).interval === 7 && nextDue("easy", 7).interval === 14 && nextDue("easy", 14).interval === 30);
+// Out-of-range advance is a no-op (never crashes the session).
+const oob = advanceReviewQueue(queue, 99, 2);
+check("out-of-range advance is a no-op", oob.nextIndex === 99 && oob.queue.length === 6);
+
+// --- Grade buttons show FSRS-computed intervals ---
+const previews = previewFsrsGrades(scheduler, null, NOW);
+const againLabel = formatFsrsInterval(previews.find((p) => p.grade === "again").dueAt - NOW, "en");
+const easyLabel = formatFsrsInterval(previews.find((p) => p.grade === "easy").dueAt - NOW, "en");
+check("preview Again interval for a new card is 1m", againLabel === "1m", againLabel);
 check(
-  "grade buttons show the resulting interval",
-  gradeButtonLabel("again", 0) === "Again — review again this session" &&
-    gradeButtonLabel("hard", 0) === "Hard — 2 days" &&
-    gradeButtonLabel("good", 0) === "Good — 3 days" &&
-    gradeButtonLabel("easy", 0) === "Easy — 7 days",
+  "grade buttons embed the computed interval",
+  gradeButtonLabel("again", againLabel, "en") === "Again — 1m" &&
+    gradeButtonLabel("easy", easyLabel, "en") === `Easy — ${easyLabel}`,
+  `${gradeButtonLabel("again", againLabel, "en")} / ${gradeButtonLabel("easy", easyLabel, "en")}`,
+);
+check(
+  "grade buttons translate the grade name (ur)",
+  gradeButtonLabel("again", "1m", "ur").startsWith("دوبارہ") && gradeButtonLabel("good", "3d", "ur").startsWith("اچھا"),
+  gradeButtonLabel("again", "1m", "ur"),
+);
+check(
+  "grade buttons fall back to English for roman",
+  gradeButtonLabel("hard", "2d", "roman") === "Hard — 2d",
+  gradeButtonLabel("hard", "2d", "roman"),
 );
 check(
   'no "SM-2" wording in grade labels',
-  ["again", "hard", "good", "easy"].every((g) => !gradeButtonLabel(g, 0).includes("SM-2")),
+  ["again", "hard", "good", "easy"].every((g) => !gradeButtonLabel(g, "1d", "en").includes("SM-2")),
 );
 
 if (failures > 0) {

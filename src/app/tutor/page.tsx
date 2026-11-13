@@ -19,6 +19,7 @@ import {
 } from "@/lib/tracking";
 import { lri, useLang } from "@/lib/i18n";
 import TutorHealth from "@/components/TutorHealth";
+import BoldText from "@/components/BoldText";
 
 // Stage 1 P1 Tier 2 — the tutor's ANSWER language, separate from the
 // site-wide UI toggle (en/roman/ur, untouched). Persisted under its own
@@ -199,7 +200,9 @@ export default function Tutor() {
           // follows the message's own first strong character, so English
           // and Urdu/Arabic answers both keep their punctuation.
           <div key={i} dir="auto" className={`msg ${m.role}`}>
-            {m.text === GREETING ? t("tutorGreeting") : m.text}
+            {/* Stage 2 — `**bold**` in answers renders as <strong>
+                (BoldText: React text nodes, XSS-safe by construction). */}
+            {m.text === GREETING ? t("tutorGreeting") : <BoldText text={m.text} />}
           </div>
         ))}
         {busy && (
@@ -262,7 +265,7 @@ export default function Tutor() {
         </div>
         {explainOut && (
           <p dir="auto" style={{ whiteSpace: "pre-wrap", overflowWrap: "break-word" }}>
-            {explainOut}
+            <BoldText text={explainOut} />
           </p>
         )}
       </div>

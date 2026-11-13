@@ -3,7 +3,7 @@
 // Arabic, Fiqh) is verified here by the owner, never by the AI. Items
 // that pass the structural check stay "draft" until the owner verifies
 // them on this page. Decisions are stored in localStorage
-// (`etea_reviews_next_v1`), included in the v5 backup export, and feed
+// (`etea_reviews_next_v1`), included in the v6 backup export, and feed
 // Trusted Mode (see src/lib/data.ts — isTrusted with overrides).
 // Structural badges come from scripts/structural-check-mocks.mjs
 // (src/data/structural-checks.json); re-run that script to refresh them.

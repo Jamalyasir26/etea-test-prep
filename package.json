@@ -4,7 +4,8 @@
     "groq-sdk": "0.32.0",
     "next": "16.4.6",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "ts-fsrs": "6.0.0"
   },
   "description": "ETEA Prep Library — Next.js version (personal use, single user). Static v2 content + live AI Tutor (Gemini primary, Groq fallback) + preparation tracking and live analysis.",
   "devDependencies": {
@@ -16,7 +17,7 @@
   "name": "etea-prep-next",
   "private": true,
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "scripts": {
     "build": "next build",
@@ -38,7 +39,10 @@
     "test:fonts": "node scripts/test-fonts.mjs",
     "test:i18n": "node scripts/test-i18n.mjs",
     "test:rtl": "node scripts/test-rtl.mjs",
-    "test:trilanguage": "node scripts/test-trilanguage.mjs"
+    "test:trilanguage": "node scripts/test-trilanguage.mjs",
+    "test:fsrs": "node scripts/test-fsrs.mjs",
+    "test:flashcards": "node scripts/test-flashcards.mjs",
+    "test:markdown": "node scripts/test-markdown.mjs"
   },
   "version": "3.0.0"
 }

@@ -81,11 +81,14 @@ check("plan: day heading dir=auto", plan.includes('<span dir="auto">{day}</span>
 check("plan: task text dir=auto", plan.includes('<span dir="auto">{text}</span>'));
 check("plan: AI plan output dir=auto", plan.includes('<p dir="auto" style={{ whiteSpace: "pre-wrap" }}>'));
 
-// ---- Flashcards: card content, category, last grade ----
+// ---- Flashcards: card content, category, FSRS state line ----
 const flash = read("src/app/flashcards/page.tsx");
 check("flashcards: card content dir=auto", flash.includes('<span dir="auto">{flipped ? card.back : card.front}</span>'));
 check("flashcards: category isolated LTR", flash.includes('<span dir="ltr">{card.category}</span>'));
-check("flashcards: last-grade values wrapped in lri()", flash.includes('grade: lri(state[card.id].grade), due: lri(state[card.id].due)'));
+// Stage 2: the old last-grade line is replaced by the FSRS state line;
+// the due value (a date or interval label) is wrapped in lri() so it
+// cannot flip the Urdu sentence order.
+check("flashcards: FSRS state-line due value wrapped in lri()", flash.includes('tf("fsrsStateLine"') && flash.includes("due: lri("));
 
 // ---- Analysis: data cells + messages ----
 const analysis = read("src/app/analysis/page.tsx");

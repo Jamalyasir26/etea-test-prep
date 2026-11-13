@@ -7,9 +7,9 @@
 // demand, so the failure paths are exercised for real.
 // Covers: malformed JSON is quarantined verbatim (never deleted,
 // deduplicated), defaults are returned, warnings surface; writes that
-// throw are caught + reported with page state intact; export stays v5;
-// v4/v5 imports restore; v6+ is rejected; a corrupt quarantine store
-// preserves its own raw text.
+// throw are caught + reported with page state intact; export is v6
+// (Stage 2); v4/v5/v6 imports restore; v7+ is rejected; a corrupt
+// quarantine store preserves its own raw text.
 // Run: node scripts/test-storage.mjs  (exit 0 = all pass)
 
 // --- controllable browser stub (must exist before the import runs) ---
@@ -145,10 +145,11 @@ check("Failed read returns the safe default", Array.isArray(readResult) && readR
 check("Failed read surfaces as a read-failed warning", getStorageWarnings().some((w) => w.type === "read-failed" && w.detail === "SecurityError"));
 stub.throwOnRead = null;
 
-// --- Export version stays v5; v4/v5 restore; v6+ rejected ---
+// --- Export version is v6 (Stage 2: FSRS flash shape); v4/v5 restore via
+// migration; v7+ rejected ---
 reset();
 const exported = JSON.parse(exportProgress());
-check("Export version is still 5", exported.version === 5, String(exported.version));
+check("Export version is 6", exported.version === 6, String(exported.version));
 check("Export payload does not carry the quarantine store", !("quarantine" in exported));
 const v4 = {
   app: "etea-prep-next",
@@ -176,8 +177,11 @@ const r5 = importProgress(JSON.stringify(v5));
 check("v5 file imports OK", r5.ok === true, r5.error ?? "");
 check("v5 attempts merged with v4 (no duplicates, no loss)", loadAttempts().length === 2, String(loadAttempts().length));
 const r6 = importProgress(JSON.stringify({ ...v5, version: 6 }));
-check("v6 file rejected as newer than this build", r6.ok === false && /version 6/i.test(r6.error ?? ""), r6.error ?? "");
-check("Rejected v6 import changed nothing", loadAttempts().length === 2);
+check("v6 file imports OK", r6.ok === true, r6.error ?? "");
+check("v6 import dedupes (attempts still 2)", loadAttempts().length === 2, String(loadAttempts().length));
+const r7 = importProgress(JSON.stringify({ ...v5, version: 7 }));
+check("v7 file rejected as newer than this build", r7.ok === false && /version 7/i.test(r7.error ?? ""), r7.error ?? "");
+check("Rejected v7 import changed nothing", loadAttempts().length === 2);
 
 // --- A corrupt quarantine store preserves its own raw text ---
 reset();

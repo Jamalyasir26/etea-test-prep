@@ -1,40 +1,59 @@
-// Flashcards — simple spaced-review schedule (Again/Hard/Good/Easy).
-// The due queue is FROZEN ONCE at session start (buildSessionQueue) and is
-// never re-sorted by grading: gradeCard only appends an "again" card to the
-// end of the session (same-session relearning). Future-due cards are not in
-// the live queue unless the user explicitly picks cram mode. Card ids are
-// stable hashes of front+back (never array indices), so stored scheduling
-// state survives content edits; pre-Phase-2 `card-N` state is migrated
-// once on load. Every grade is stored locally and feeds the Analysis page
-// (flashcard attempts are self-ratings and are NOT mixed into MCQ accuracy).
+// Flashcards — FSRS-7 adaptive spaced repetition (Again/Hard/Good/Easy).
+// Scheduling is ts-fsrs 6.0.0 (see src/lib/fsrs.ts): each card carries
+// stability/difficulty, due is a datetime, and learning steps are 1m/10m
+// (same-day reviews). The session queue is built ONCE at session start
+// (buildReviewQueue: due cards earliest-first, then new cards in bank
+// order) and is never re-sorted by grading: advanceReviewQueue only
+// appends a Learning/Relearning card to the end of the session
+// (same-session relearning). Future-due cards are not in the live queue
+// unless the user explicitly picks cram mode. Card ids are stable hashes
+// of front+back (never array indices), so stored scheduling state
+// survives content edits. On first load after Stage 2, the old
+// fixed-ladder state is migrated (due dates preserved, intervals
+// restarted) with the original state saved verbatim as a backup — see
+// runFlashMigration in src/lib/tracking.ts. Every grade is stored
+// locally and feeds the Analysis page (flashcard attempts are
+// self-ratings and are NOT mixed into MCQ accuracy).
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
 import { FLASHCARDS } from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
 import {
-  buildSessionQueue,
+  advanceReviewQueue,
+  buildReviewQueue,
   flashcardId,
   gradeButtonLabel,
-  gradeCard,
-  loadFlashState,
-  migrateFlashState,
-  nextDue,
   recordAttempt,
+  runFlashMigration,
   saveFlashState,
   type FlashGrade,
+  type FlashMigrationInfo,
   type FlashState,
 } from "@/lib/tracking";
+import {
+  formatFsrsInterval,
+  initFsrsScheduler,
+  previewFsrsGrades,
+  reviewFsrsCard,
+  type FsrsPreview,
+  type FsrsScheduler,
+} from "@/lib/fsrs";
 
 type CardWithId = { id: string; front: string; back: string; category: string };
 
+const STATE_KEY = ["stateNew", "stateLearning", "stateReview", "stateRelearning"] as const;
+
 export default function FlashcardsPage() {
   const { lang, t, tf } = useLang();
+  const [scheduler, setScheduler] = useState<FsrsScheduler | null>(null);
   const [state, setState] = useState<FlashState>({});
   const [loaded, setLoaded] = useState(false);
+  const [migration, setMigration] = useState<FlashMigrationInfo | null>(null);
+  const [migrationDismissed, setMigrationDismissed] = useState(false);
   const [category, setCategory] = useState("All");
   const [cram, setCram] = useState(false);
-  // Frozen session queue: set ONLY at session start and by gradeCard's
+  // Session queue: set ONLY at session start and by advanceReviewQueue's
   // append. It is never recomputed from `state` during the session.
   const [queue, setQueue] = useState<string[]>([]);
   const [pos, setPos] = useState(0);
@@ -53,10 +72,9 @@ export default function FlashcardsPage() {
     () => ["All", ...Array.from(new Set(FLASHCARDS.map((c) => c.category))).sort()],
     [],
   );
-  const today = new Date().toISOString().slice(0, 10);
 
   function startSession(cat: string, cramMode: boolean, flash: FlashState) {
-    const q = buildSessionQueue(cards, flash, today, { category: cat, cram: cramMode });
+    const q = buildReviewQueue(cards, flash, new Date(), { category: cat, cram: cramMode });
     setQueue(q);
     setDueTotal(q.length);
     setPos(0);
@@ -67,28 +85,52 @@ export default function FlashcardsPage() {
   }
 
   useEffect(() => {
-    const raw = loadFlashState();
-    const { state: migrated, migrated: didMigrate } = migrateFlashState(raw, FLASHCARDS);
-    if (didMigrate) saveFlashState(migrated);
-    setState(migrated);
-    setLoaded(true);
-    startSession("All", false, migrated);
+    let cancelled = false;
+    (async () => {
+      // Scheduler creation is async (cached); the session starts only
+      // once it is ready, so grade previews are always available.
+      const s = await initFsrsScheduler();
+      if (cancelled) return;
+      setScheduler(s);
+      const { state: migrated, info } = runFlashMigration(FLASHCARDS);
+      if (cancelled) return;
+      setMigration(info);
+      setState(migrated);
+      setLoaded(true);
+      startSession("All", false, migrated);
+    })();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const card = queue[pos] !== undefined ? byId.get(queue[pos]) : undefined;
+  const cardState = card ? state[card.id] : undefined;
+
+  // FSRS-computed intervals for the current card, one per grade. Pure
+  // and fast (preview never mutates the card); recomputed on every
+  // render so the labels always match the current card + state. Fuzz is
+  // off, so these are exactly the intervals grading will apply.
+  const previews: FsrsPreview[] | null =
+    scheduler && card ? previewFsrsGrades(scheduler, cardState ?? null, new Date()) : null;
+  const previewNow = Date.now();
+  function intervalLabel(g: FlashGrade): string {
+    const p = previews?.find((x) => x.grade === g);
+    if (!p) return "";
+    return formatFsrsInterval(p.dueAt.getTime() - previewNow, lang);
+  }
 
   function grade(g: FlashGrade) {
-    if (!card) return;
-    const prev = state[card.id];
-    const { due, interval } = nextDue(g, prev?.interval ?? 0);
-    const next = { ...state, [card.id]: { grade: g, due, interval, reps: (prev?.reps ?? 0) + 1 } };
+    if (!card || !scheduler) return;
+    const updated = reviewFsrsCard(scheduler, cardState ?? null, g, new Date());
+    const next = { ...state, [card.id]: updated };
     setState(next);
     saveFlashState(next);
     const good = g === "good" || g === "easy";
     const newSession = { correct: session.correct + (good ? 1 : 0), total: session.total + 1 };
     setSession(newSession);
-    const res = gradeCard(queue, pos, g);
+    const res = advanceReviewQueue(queue, pos, updated.state);
     if (res.nextIndex >= res.queue.length) {
       setQueue(res.queue);
       setPos(res.nextIndex);
@@ -108,12 +150,24 @@ export default function FlashcardsPage() {
     }
   }
 
-  const prevInterval = card ? (state[card.id]?.interval ?? 0) : 0;
-
   return (
     <div>
       <h1>{t("flashTitle")}</h1>
       <p className="muted">{t("flashIntro")}</p>
+      {migration && !migrationDismissed && (
+        <div className="alert">
+          <p>
+            {tf("flashMigratedNotice", {
+              migrated: migration.migrated,
+              reset: migration.reset,
+            })}
+          </p>
+          {migration.backupFailed && <p>{t("flashMigrationBackupFailed")}</p>}
+          <button className="secondary" onClick={() => setMigrationDismissed(true)}>
+            {t("closeWord")}
+          </button>
+        </div>
+      )}
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
         <select
           aria-label={t("categoryLabel")}
@@ -175,8 +229,15 @@ export default function FlashcardsPage() {
               {pos + 1} of {queue.length}
             </span>{" "}
             · <span dir="ltr">{card.category}</span>
-            {state[card.id]
-              ? ` · ${tf("lastGrade", { grade: lri(state[card.id].grade), due: lri(state[card.id].due) })}`
+            {cardState
+              ? ` · ${tf("fsrsStateLine", {
+                  state: t(STATE_KEY[cardState.state] ?? "stateNew"),
+                  due: lri(
+                    cardState.state === 1 || cardState.state === 3
+                      ? formatFsrsInterval(new Date(cardState.dueAt).getTime() - Date.now(), lang)
+                      : cardState.dueAt.slice(0, 10),
+                  ),
+                })}`
               : ` · ${t("newCard")}`}
           </p>
           {/* Stage 1 P1 Tier 4 (B05) — the card surface is a native
@@ -193,18 +254,18 @@ export default function FlashcardsPage() {
           </button>
           {!flipped ? (
             <button onClick={() => setFlipped(true)}>{t("flipCard")}</button>
-          ) : (
+          ) : previews ? (
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               <button className="secondary" onClick={() => grade("again")}>
-                {gradeButtonLabel("again", prevInterval, lang)}
+                {gradeButtonLabel("again", intervalLabel("again"), lang)}
               </button>
               <button className="secondary" onClick={() => grade("hard")}>
-                {gradeButtonLabel("hard", prevInterval, lang)}
+                {gradeButtonLabel("hard", intervalLabel("hard"), lang)}
               </button>
-              <button onClick={() => grade("good")}>{gradeButtonLabel("good", prevInterval, lang)}</button>
-              <button onClick={() => grade("easy")}>{gradeButtonLabel("easy", prevInterval, lang)}</button>
+              <button onClick={() => grade("good")}>{gradeButtonLabel("good", intervalLabel("good"), lang)}</button>
+              <button onClick={() => grade("easy")}>{gradeButtonLabel("easy", intervalLabel("easy"), lang)}</button>
             </div>
-          )}
+          ) : null}
         </div>
       ) : (
         <p>

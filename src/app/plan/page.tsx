@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 import { PLAN21 } from "@/lib/data";
 import { computeStats, loadAttempts, loadPlanState, savePlanState } from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
+import BoldText from "@/components/BoldText";
 
 export default function PlanPage() {
   const { lang, t, tf } = useLang();
@@ -90,7 +91,8 @@ export default function PlanPage() {
               Urdu or Arabic depending on the answer language; dir="auto"
               follows the text's own first strong character. */}
           <p dir="auto" style={{ whiteSpace: "pre-wrap" }}>
-            {aiPlan}
+            {/* Stage 2 — same bold-only renderer as the tutor chat. */}
+            <BoldText text={aiPlan} />
           </p>
         </div>
       )}

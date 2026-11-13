@@ -63,7 +63,7 @@ check("reset to draft works", loadReviews()["TAJ-001"]?.reviewStatus === "draft"
 
 // --- export v5 ---
 const exported = JSON.parse(exportProgress());
-check("export version is 5", exported.version === 5);
+check("export version is 6", exported.version === 6);
 check("export carries reviews", exported.reviews?.["ISL-009"]?.reviewStatus === "needs-review");
 check("export carries annotations block", typeof exported.annotations === "object");
 check("export annotations default includeInTutor false", exported.annotations.includeInTutor === false);
@@ -99,9 +99,9 @@ check("v4 import leaves reviews empty", Object.keys(loadReviews()).length === 0)
 check("v4 import counts zero reviews", imp4.counts?.reviews === 0);
 
 // --- future version rejected ---
-const v6 = { ...v4, version: 6 };
-const imp6 = importProgress(JSON.stringify(v6));
-check("v6 import rejected", imp6.ok === false && /newer/.test(imp6.error ?? ""), imp6.error ?? "");
+const v7 = { ...v4, version: 7 };
+const imp7 = importProgress(JSON.stringify(v7));
+check("v7 import rejected", imp7.ok === false && /newer/.test(imp7.error ?? ""), imp7.error ?? "");
 
 // --- annotations: private, opt-in off by default ---
 check("annotation opt-in defaults off", loadAnnotationOptIn() === false);

@@ -3,8 +3,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { CORRECTIONS, COUNTS, PATTERN_BANNER, PATTERNS } from "@/lib/data";
-import { computeStats, loadAttempts, loadPlanState, type Stats } from "@/lib/tracking";
+import { CORRECTIONS, COUNTS, FLASHCARDS, PATTERN_BANNER, PATTERNS } from "@/lib/data";
+import {
+  computeStats,
+  countDueFlashcards,
+  loadAttempts,
+  loadPlanState,
+  type Stats,
+} from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
 import TutorHealth from "@/components/TutorHealth";
 
@@ -23,11 +29,15 @@ export default function Home() {
   const { t, tf } = useLang();
   const [stats, setStats] = useState<Stats | null>(null);
   const [planDone, setPlanDone] = useState(0);
+  const [dueCards, setDueCards] = useState(0);
   const [pattern, setPattern] = useState("B");
 
   useEffect(() => {
     setStats(computeStats(loadAttempts()));
     setPlanDone(Object.values(loadPlanState()).filter(Boolean).length);
+    // Stage 2 — FSRS due count (due-now + new cards, 0 when none due).
+    // Pure in-memory read: it never writes or migrates stored state.
+    setDueCards(countDueFlashcards(FLASHCARDS, new Date()));
   }, []);
 
   const p = PATTERNS[pattern];
@@ -90,6 +100,11 @@ export default function Home() {
             <b>{tf("minsLabel", { mins: stats.totalMinutes })}</b>
             <span>{t("timeSpent")}</span>
           </div>
+          <Link href="/flashcards" className="card stat" style={{ textDecoration: "none", color: "inherit" }}>
+            {/* Stage 2 (B03 pattern) — the count is isolated LTR. */}
+            <b dir="ltr">{dueCards}</b>
+            <span>{t("cardsDueLabel")}</span>
+          </Link>
         </div>
       )}
       {stats && !stats.hasData && <p className="muted">{t("noAttempts")}</p>}

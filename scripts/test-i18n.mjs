@@ -241,15 +241,15 @@ check(
   penaltyLabel,
 );
 
-check("grade label default (no lang) stays English", gradeButtonLabel("again", 0) === "Again — review again this session");
+check("grade label default (no lang) stays English", gradeButtonLabel("again", "1m") === "Again — 1m");
 check(
   "grade labels (ur) translated",
-  gradeButtonLabel("again", 0, "ur").includes("دوبارہ") &&
-    gradeButtonLabel("hard", 0, "ur").includes("مشکل") &&
-    gradeButtonLabel("good", 3, "ur").includes("اچھا") &&
-    gradeButtonLabel("easy", 7, "ur").includes("آسان"),
+  gradeButtonLabel("again", "1m", "ur").includes("دوبارہ") &&
+    gradeButtonLabel("hard", "2d", "ur").includes("مشکل") &&
+    gradeButtonLabel("good", "3d", "ur").includes("اچھا") &&
+    gradeButtonLabel("easy", "7d", "ur").includes("آسان"),
 );
-check("grade labels (roman) fall back to English", gradeButtonLabel("good", 3, "roman") === gradeButtonLabel("good", 3, "en"));
+check("grade labels (roman) fall back to English", gradeButtonLabel("good", "3d", "roman") === gradeButtonLabel("good", "3d", "en"));
 
 // ---------- Provenance badge Urdu variant (compiled data.ts) ----------
 const OUT = "/tmp/loc1-i18n";
