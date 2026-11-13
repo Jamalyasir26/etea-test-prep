@@ -16,13 +16,16 @@
 // self-ratings and are NOT mixed into MCQ accuracy).
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import { FLASHCARDS } from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
 import {
   advanceReviewQueue,
   buildReviewQueue,
+  download,
+  exportProgress,
   flashcardId,
   gradeButtonLabel,
   recordAttempt,
@@ -34,6 +37,7 @@ import {
 } from "@/lib/tracking";
 import {
   formatFsrsInterval,
+  formatLocalDueDate,
   initFsrsScheduler,
   previewFsrsGrades,
   reviewFsrsCard,
@@ -46,8 +50,17 @@ type CardWithId = { id: string; front: string; back: string; category: string };
 const STATE_KEY = ["stateNew", "stateLearning", "stateReview", "stateRelearning"] as const;
 
 export default function FlashcardsPage() {
+  return (
+    <Suspense>
+      <FlashcardsInner />
+    </Suspense>
+  );
+}
+
+function FlashcardsInner() {
   const { lang, t, tf } = useLang();
-  // Stage 3 part 2 — reduced-motion users get the plain instant-swap
+  const search = useSearchParams();
+  // Step 2b — reduced-motion users get the plain instant-swap
   // card (no 3D rotation); everyone else gets the motion flip below.
   const reduceMotion = useReducedMotion();
   const [scheduler, setScheduler] = useState<FsrsScheduler | null>(null);
@@ -55,17 +68,30 @@ export default function FlashcardsPage() {
   const [loaded, setLoaded] = useState(false);
   const [migration, setMigration] = useState<FlashMigrationInfo | null>(null);
   const [migrationDismissed, setMigrationDismissed] = useState(false);
-  const [category, setCategory] = useState("All");
+  // Step 2b — ?category= deep link (Library "related flashcards"
+  // links point here). Validated against the real categories; an
+  // unknown value falls back to "All", never a guessed category.
+  const [category, setCategory] = useState(() => {
+    const c = search.get("category");
+    return c && FLASHCARDS.some((f) => f.category === c) ? c : "All";
+  });
   const [cram, setCram] = useState(false);
   // Session queue: set ONLY at session start and by advanceReviewQueue's
   // append. It is never recomputed from `state` during the session.
   const [queue, setQueue] = useState<string[]>([]);
   const [pos, setPos] = useState(0);
-  const [dueTotal, setDueTotal] = useState(0);
+  // Step 2b — session composition, snapshotted at session start: new
+  // cards vs due reviews in THIS session's queue. Separate numbers,
+  // never conflated into one single total.
+  const [composition, setComposition] = useState({ fresh: 0, due: 0 });
   const [flipped, setFlipped] = useState(false);
   const [session, setSession] = useState({ correct: 0, total: 0 });
   const [sessionStart, setSessionStart] = useState(() => Date.now());
   const [done, setDone] = useState(false);
+  // Step 2b — failed-save warning: set when a grade's save fails, with
+  // retry + export actions. Cleared by the next successful save.
+  const [saveFailed, setSaveFailed] = useState(false);
+  const [saveRecovered, setSaveRecovered] = useState(false);
 
   const cards: CardWithId[] = useMemo(
     () => FLASHCARDS.map((c) => ({ ...c, id: flashcardId(c.front, c.back) })),
@@ -80,12 +106,19 @@ export default function FlashcardsPage() {
   function startSession(cat: string, cramMode: boolean, flash: FlashState) {
     const q = buildReviewQueue(cards, flash, new Date(), { category: cat, cram: cramMode });
     setQueue(q);
-    setDueTotal(q.length);
+    // Step 2b — snapshot the session composition from the built queue:
+    // unique cards with no stored state are New; the rest are due
+    // reviews. Computed from the same queue + state the session uses.
+    const unique = [...new Set(q)];
+    const fresh = unique.filter((id) => !flash[id]).length;
+    setComposition({ fresh, due: unique.length - fresh });
     setPos(0);
     setFlipped(false);
     setSession({ correct: 0, total: 0 });
     setSessionStart(Date.now());
     setDone(false);
+    setSaveFailed(false);
+    setSaveRecovered(false);
   }
 
   useEffect(() => {
@@ -101,7 +134,7 @@ export default function FlashcardsPage() {
       setMigration(info);
       setState(migrated);
       setLoaded(true);
-      startSession("All", false, migrated);
+      startSession(category, false, migrated);
     })();
     return () => {
       cancelled = true;
@@ -130,7 +163,13 @@ export default function FlashcardsPage() {
     const updated = reviewFsrsCard(scheduler, cardState ?? null, g, new Date());
     const next = { ...state, [card.id]: updated };
     setState(next);
-    saveFlashState(next);
+    // Step 2b — the save result is no longer ignored: a failed save
+    // shows the warning banner (retry/export) instead of silently
+    // losing the grade. The in-memory state still advances, so grading
+    // is never blocked; retry saves the latest state.
+    const saved = saveFlashState(next);
+    setSaveFailed(!saved);
+    if (saved) setSaveRecovered(false);
     const good = g === "good" || g === "easy";
     const newSession = { correct: session.correct + (good ? 1 : 0), total: session.total + 1 };
     setSession(newSession);
@@ -199,14 +238,46 @@ export default function FlashcardsPage() {
           {t("cramLabel")}
         </label>
         <span className="muted">
-          {t("dueToday")} <b>{dueTotal}</b> · {t("sessionLabel")}{" "}
-          {/* Stage 1 P1 Tier 4 (B03) — session fraction isolated LTR. */}
+          {/* Step 2b — New / Due reviews / Session total as SEPARATE
+              numbers: the composition snapshot (this session's queue)
+              plus the session's own reviewed/recalled counts. */}
+          {t("flashNewLabel")}: <b>{composition.fresh}</b> · {t("flashDueReviewsLabel")}:{" "}
+          <b>{composition.due}</b> · {t("sessionLabel")}{" "}
           <span dir="ltr">
-            {session.correct}/{session.total}
+            {session.total}
+          </span>{" "}
+          {t("flashSessionReviewed")} ·{" "}
+          <span dir="ltr">
+            {session.correct}
           </span>{" "}
           {t("recalledLabel")}
         </span>
       </div>
+      {saveFailed && (
+        <div className="alert red">
+          <p>{t("flashSaveFailed")}</p>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <button
+              onClick={() => {
+                const ok = saveFlashState(state);
+                setSaveFailed(!ok);
+                if (ok) setSaveRecovered(true);
+              }}
+            >
+              {t("flashRetrySave")}
+            </button>
+            <button
+              className="secondary"
+              onClick={() =>
+                download(`etea-prep-progress-${new Date().toISOString().slice(0, 10)}.json`, exportProgress())
+              }
+            >
+              {t("export")}
+            </button>
+          </div>
+        </div>
+      )}
+      {saveRecovered && !saveFailed && <p className="muted">{t("flashSaveRecovered")}</p>}
       {!loaded ? (
         <p>{t("loading")}</p>
       ) : done ? (
@@ -239,7 +310,7 @@ export default function FlashcardsPage() {
                   due: lri(
                     cardState.state === 1 || cardState.state === 3
                       ? formatFsrsInterval(new Date(cardState.dueAt).getTime() - Date.now(), lang)
-                      : cardState.dueAt.slice(0, 10),
+                      : formatLocalDueDate(cardState.dueAt),
                   ),
                 })}`
               : ` · ${t("newCard")}`}

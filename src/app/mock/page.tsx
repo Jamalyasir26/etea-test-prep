@@ -3,10 +3,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { MOCKS, PATTERN_BANNER, trustedOnlyCount } from "@/lib/data";
+import { MOCKS, PATTERN_BANNER, mockLabels } from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
 import { loadReviews, type ReviewRecord } from "@/lib/tracking";
 import { DEFAULT_SCORING, localizedScoringLabel, type ScoringConfig } from "@/lib/scoring";
+import { StatusBadge } from "@/components/StatusBadges";
 
 export default function MockList() {
   const { lang, t, tf } = useLang();
@@ -78,7 +79,8 @@ export default function MockList() {
         </button>
       </div>
       {MOCKS.map((m) => {
-        const trusted = trustedOnlyCount(m, overrides);
+        const labels = mockLabels(m, overrides);
+        const trusted = labels.trusted;
         const trustedDisabled = mode === "trusted" && trusted === 0;
         return (
           <div className="card" key={m.id}>
@@ -91,6 +93,43 @@ export default function MockList() {
                 {tf("minsLabel", { mins: m.minutes })}
               </span>
             </h3>
+            {/* Step 2b — labels from REAL counts (mockLabels in data.ts;
+                supersedes the Step 2a trusted-coverage badges, which
+                showed the same numbers in a different framing):
+                Full / Partial / Proxy for availability, Reviewed
+                subset when trusted mode is a true subset (full review
+                is stated by the trusted-count line below), and
+                Scoring policy unknown when the mock has no own scoring
+                config. ETEA and KPPSC patterns are never merged: the
+                variant is the mock's own stored string, shown by the
+                pre-start disclosure verbatim. */}
+            <p>
+              {labels.coverage === "proxy" ? (
+                <StatusBadge label={t("mockLabelProxy")} detail={t("mockLabelProxyDetail")} tone="proxy" />
+              ) : labels.coverage === "full" ? (
+                <StatusBadge
+                  label={t("mockLabelFull")}
+                  detail={tf("mockLabelFullDetail", { total: m.total })}
+                  tone="reviewed"
+                />
+              ) : (
+                <StatusBadge
+                  label={t("mockLabelPartial")}
+                  detail={tf("mockLabelPartialDetail", { n: labels.available, total: m.total })}
+                  tone="partial"
+                />
+              )}
+              {trusted > 0 && trusted < m.total && (
+                <StatusBadge
+                  label={t("mockLabelReviewedSubset")}
+                  detail={tf("mockLabelReviewedSubsetDetail", { n: trusted, total: m.total })}
+                  tone="partial"
+                />
+              )}
+              {labels.scoringUnknown && (
+                <StatusBadge label={t("mockScoringUnknown")} detail={t("mockScoringUnknownDetail")} tone="unknown" />
+              )}
+            </p>
             <p className="muted">
               <span dir="auto">{m.note}</span>
             </p>
@@ -137,7 +176,14 @@ export default function MockList() {
                 className="btn"
                 href={startHref(m)}
               >
-                {mode === "trusted" ? t("startMockTrusted") : t("startMock")}
+                {/* Step 2b — reviewed subsets get the explicit CTA with
+                    the real X/Y; full trusted sets and provisional mode
+                    keep the existing labels. */}
+                {mode === "trusted" && trusted < m.total
+                  ? tf("startReviewedPractice", { n: trusted, total: m.total })
+                  : mode === "trusted"
+                    ? t("startMockTrusted")
+                    : t("startMock")}
               </Link>
             )}
           </div>

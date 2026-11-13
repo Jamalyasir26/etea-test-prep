@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { MOCKS, TRACKS } from "@/lib/data";
 import { useLang } from "@/lib/i18n";
+import { TrackConfidenceBadge } from "@/components/StatusBadges";
 
 export default function TrackDetail() {
   const { t, tf } = useLang();
@@ -40,12 +41,8 @@ export default function TrackDetail() {
         <h3>{t("patternHeading")}</h3>
         <p dir="auto">{tr.pattern}</p>
         <p>
-          <span
-            dir="ltr"
-            className={`badge ${tr.conf.includes("NOT VERIFIED") || tr.conf.includes("JOB-SITE") ? "red" : "green"}`}
-          >
-            {tr.conf}
-          </span>
+          {/* Step 2a — semantic confidence badge (see tracks list). */}
+          <TrackConfidenceBadge conf={tr.conf} />
         </p>
       </div>
       <h2>{t("mocksForTrack")}</h2>

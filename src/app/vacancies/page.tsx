@@ -25,7 +25,11 @@ export default function Vacancies() {
       </div>
       {/* Stage 1 P1 Tier 4 (B01) — the 6-column table overflowed on mobile.
           The scroll region keeps the table layout and scrolls horizontally
-          instead; it is keyboard-focusable so keyboard users can scroll it. */}
+          instead; it is keyboard-focusable so keyboard users can scroll it.
+          Step 2a — the visible caption says the table scrolls
+          horizontally (report P1.1 acceptance: the affordance must be
+          visible, not discoverable only by trying). */}
+      <p className="muted">{t("tableScrollHint")}</p>
       <div className="table-scroll" role="region" aria-label={t("vacTableAria")} tabIndex={0}>
         <table>
           <thead>

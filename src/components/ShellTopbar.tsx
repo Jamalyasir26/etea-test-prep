@@ -26,7 +26,8 @@ export default function ShellTopbar({ onOpenMobile, mobileOpen, toggleRef }: She
           ref={toggleRef}
           variant="ghost"
           size="icon"
-          className="tw:md:hidden"
+          // Step 2a — 44px touch target (icon size is 36px).
+          className="tw:size-11 tw:md:hidden"
           aria-expanded={mobileOpen}
           aria-controls="app-sidebar"
           aria-label={t("navMenuLabel")}

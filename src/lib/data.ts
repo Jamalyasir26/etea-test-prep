@@ -214,6 +214,13 @@ export const CORRECTIONS = [
   "SST is two exams: ETEA 100 MCQs vs KPPSC 45 MCQs — never merge them.",
 ];
 
+// Step 2a — version of the correction notice. The home page stores the
+// acknowledged version in localStorage; bump this number whenever a
+// CORRECTIONS line or the PATTERN_BANNER changes, so the full notice
+// shows again on the next visit. The notice is never removed —
+// acknowledgement only compacts it, with a reopen control.
+export const CORRECTIONS_VERSION = 1;
+
 // ---------- deterministic shuffle (stable per seed) ----------
 export function mulberry32(seed: number) {
   let a = seed >>> 0;
@@ -403,6 +410,186 @@ function provenanceBadgeUr(item: {
   }
 }
 
+/** Step 2a — semantic badge tones. One tone per MEANING; tones never
+ *  merge distinct meanings. "official" (success green) is ONLY for
+ *  genuine official-source confirmation; "reviewed" (teal-tinted
+ *  neutral) is local owner review, never certification. */
+export type BadgeTone =
+  | "draft"
+  | "reviewed"
+  | "proxy"
+  | "partial"
+  | "unknown"
+  | "official"
+  | "topic"
+  | "extracted"
+  | "error";
+
+export type BadgeInfo = { label: string; detail: string; tone: BadgeTone };
+
+/** Step 2a — review-status badge for one item. ALWAYS returns a badge
+ *  (unlike provenanceBadge): every item has a review status, and
+ *  "Draft" is the honest default for unreviewed material. Unknown
+ *  status strings map to "Unknown", never to a trusted-looking tone.
+ *  "roman"/omitted keeps English (same fallback rule as
+ *  provenanceBadge); "ur" renders Urdu label/detail. */
+export function reviewStatusBadge(status: string | undefined | null, lang: ContentLang = "en"): BadgeInfo {
+  const s = (status ?? "").trim();
+  if (lang === "ur") {
+    switch (s) {
+      case "owner-reviewed":
+        return {
+          label: "مالک سے جائزہ شدہ",
+          detail: "مالک نے اس آلے پر خود اس کا جائزہ لیا — ذاتی جائزہ، سرکاری تصدیق نہیں۔",
+          tone: "reviewed",
+        };
+      case "approved":
+        return {
+          label: "منظور شدہ",
+          detail: "مالک نے اس آلے پر اسے منظور کیا — ذاتی جائزہ، سرکاری تصدیق نہیں۔",
+          tone: "reviewed",
+        };
+      case "needs-review":
+        return {
+          label: "جائزہ درکار",
+          detail: "مالک نے اسے دوبارہ دیکھنے کے لیے نشان زد کیا ہے۔",
+          tone: "partial",
+        };
+      case "disputed":
+        return {
+          label: "متنازع",
+          detail: "مالک اس کے جواب یا الفاظ سے اختلاف رکھتا ہے۔",
+          tone: "error",
+        };
+      case "draft":
+      case "":
+        return {
+          label: "مسودہ",
+          detail: "غیر جائزہ شدہ مشقی مواد — مالک نے ابھی اسے نہیں دیکھا۔",
+          tone: "draft",
+        };
+      default:
+        return { label: "نامعلوم", detail: "جائزے کی حیثیت پہچانی نہیں گئی۔", tone: "unknown" };
+    }
+  }
+  switch (s) {
+    case "owner-reviewed":
+      return {
+        label: "Owner-reviewed",
+        detail: "Reviewed by the owner on this device — personal review, not official certification.",
+        tone: "reviewed",
+      };
+    case "approved":
+      return {
+        label: "Approved",
+        detail: "Approved by the owner on this device — personal review, not official certification.",
+        tone: "reviewed",
+      };
+    case "needs-review":
+      return {
+        label: "Needs review",
+        detail: "Flagged by the owner as needing another look.",
+        tone: "partial",
+      };
+    case "disputed":
+      return {
+        label: "Disputed",
+        detail: "The owner disputes this item's answer or wording.",
+        tone: "error",
+      };
+    case "draft":
+    case "":
+      return {
+        label: "Draft",
+        detail: "Unreviewed practice material — the owner has not checked this item yet.",
+        tone: "draft",
+      };
+    default:
+      return { label: "Unknown", detail: "Review status is not recognised.", tone: "unknown" };
+  }
+}
+
+/** Step 2a — topic-inspired badge for the 40 past-paper-topic items.
+ *  Returns null when the item carries no pastPaperRef. The English
+ *  detail is the stored ref string itself (the standing disclosure,
+ *  verbatim); the Urdu detail is the matching Urdu disclosure. The
+ *  label always says "Topic-inspired" first, so the item can never be
+ *  mistaken for an actual past paper. */
+export function topicBadge(pastPaperRef: string | null | undefined, lang: ContentLang = "en"): BadgeInfo | null {
+  if (!pastPaperRef) return null;
+  const reworded = pastPaperRef.includes("reworded");
+  if (lang === "ur") {
+    return reworded
+      ? {
+          label: "موضوع سے متاثر · دوبارہ لکھا گیا",
+          detail: "پاسٹ پیپر کے سوال کا وہی تصور، مختلف انداز میں دوبارہ لکھا گیا — اصل پرچہ نہیں۔",
+          tone: "topic",
+        }
+      : {
+          label: "موضوع سے متاثر · اصل",
+          detail: "پاسٹ پیپر کے موضوعات پر مبنی اصل مشقی سوال — اصل پرچہ نہیں۔",
+          tone: "topic",
+        };
+  }
+  return {
+    label: reworded ? "Topic-inspired · Reworded" : "Topic-inspired · Original",
+    detail: pastPaperRef,
+    tone: "topic",
+  };
+}
+
+/** Step 2a — track confidence badge. The LABEL is the track's stored
+ *  `conf` string, verbatim, in every language (it is a factual claim,
+ *  like the CORRECTIONS lines). Only the TONE and the DETAIL are
+ *  derived, from the string's own words: "JOB-SITE", or a claim that
+ *  STARTS with "NOT VERIFIED" (nothing in it is confirmed), means no
+ *  official source backs it (Unknown); "NOT VERIFIED" later in the
+ *  string means part is confirmed and part is not (Partial, e.g. the
+ *  Qari track: pattern confirmed, qualification not); anything else
+ *  names a specific official source (Source Confirmed). Distinct
+ *  meanings are never merged into one green badge. The home pattern
+ *  selector reuses this function for its confidence strings. */
+export function trackConfidenceBadge(conf: string, lang: ContentLang = "en"): BadgeInfo {
+  const unknown = conf.includes("JOB-SITE") || conf.startsWith("NOT VERIFIED");
+  const partial = !unknown && conf.includes("NOT VERIFIED");
+  if (lang === "ur") {
+    if (unknown)
+      return {
+        label: conf,
+        detail: "کسی سرکاری ماخذ سے تصدیق نہیں ہوئی — اسے سرکاری نہ سمجھیں۔",
+        tone: "unknown",
+      };
+    if (partial)
+      return {
+        label: conf,
+        detail: "اس دعوے کا کچھ حصہ سرکاری ماخذ سے تصدیق شدہ ہے، کچھ حصہ نہیں۔",
+        tone: "partial",
+      };
+    return {
+      label: conf,
+      detail: "ماخذ کی تصدیق ایک نام والے سرکاری دستاویز سے ہوئی۔",
+      tone: "official",
+    };
+  }
+  if (unknown)
+    return {
+      label: conf,
+      detail: "Not verified against any official source — do not treat as official.",
+      tone: "unknown",
+    };
+  if (partial)
+    return {
+      label: conf,
+      detail: "Part of this claim is confirmed against an official source; part is not verified.",
+      tone: "partial",
+    };
+  return {
+    label: conf,
+    detail: "Confirmed against a named official source.",
+    tone: "official",
+  };
+}
+
 /** Stage 1 P1 Tier 1 — review attribution for the /review dashboard.
  *  Who verified this item, and when? The owner's live decision (a
  *  localStorage record) wins; otherwise fall back to the bank JSON's own
@@ -483,6 +670,123 @@ export function buildMockQuestions(
   return shuffled(out, rand);
 }
 
+// ---------- Step 2b — mock availability + labels (real counts only) ----------
+
+/** How many questions a mock can actually build in provisional mode:
+ *  fixed mocks use their stored id list; dynamic mocks sample without
+ *  replacement per subject, so each subject contributes
+ *  min(requested, bank size). buildMockQuestions() always returns
+ *  exactly this many — the number is computed, never guessed. */
+export function mockAvailableCount(mock: MockDef): number {
+  if (mock.fixed && ZAM_FIXED[mock.fixed]) {
+    return ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter(Boolean).length;
+  }
+  let n = 0;
+  for (const [subjectKey, count] of Object.entries(mock.comp ?? {})) {
+    const bank =
+      subjectKey === "drawing_pe"
+        ? [...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? [])]
+        : (BY_SUBJECT[subjectKey] ?? []);
+    n += Math.min(count, bank.length);
+  }
+  return n;
+}
+
+export type MockCoverage = "full" | "partial" | "proxy";
+
+export type MockLabels = {
+  /** Availability label: "proxy" when the mock's variant is a proxy
+   *  pattern, else "full" when every question is available, else
+   *  "partial". Never merges ETEA and KPPSC patterns: the variant is
+   *  the mock's own stored string, shown verbatim by the caller. */
+  coverage: MockCoverage;
+  /** Questions actually available (provisional mode). */
+  available: number;
+  /** Owner-reviewed questions available (trusted mode). */
+  trusted: number;
+  /** True when the mock carries no own scoring config (policy unknown). */
+  scoringUnknown: boolean;
+};
+
+/** Step 2b — every label the mock list shows, derived from the real
+ *  bank + the owner's local review decisions. The caller maps
+ *  `coverage` to the Full / Partial / Proxy badge, shows a "Reviewed
+ *  subset" badge when 0 < trusted < total, and a "Scoring policy
+ *  unknown" badge when scoringUnknown. */
+export function mockLabels(mock: MockDef, overrides?: ReviewOverrides): MockLabels {
+  const available = mockAvailableCount(mock);
+  const trusted = trustedOnlyCount(mock, overrides);
+  return {
+    coverage: mock.variant === "proxy" ? "proxy" : available >= mock.total ? "full" : "partial",
+    available,
+    trusted,
+    scoringUnknown: !mock.scoring,
+  };
+}
+
+// ---------- Step 2b — cross-section subject mappings ----------
+
+/** NOTES subject key -> BY_SUBJECT bank key, for Library "related
+ *  practice drill" links. "Drawing/PE" has NO bank key (its items live
+ *  in the split drawing/pe banks) and is deliberately absent: the
+ *  caller omits the drill link rather than pointing at half the
+ *  subject. */
+export const NOTE_BANK_KEY: Record<string, string> = {
+  Islamiyat: "islamiyat",
+  English: "english",
+  Urdu: "urdu",
+  "Pak Studies": "pakstudies",
+  Maths: "maths",
+  Pedagogy: "pedagogy",
+  Tajweed: "tajweed",
+  Arabic: "arabic",
+  "General Science": "science",
+  "IT/Computer": "it",
+  GK: "gk",
+  "Social Studies": "socialstudies",
+};
+
+/** Bank key for a Library subject, or null when no exact bank exists. */
+export function noteBankKey(subject: string): string | null {
+  return NOTE_BANK_KEY[subject] ?? null;
+}
+
+/** Library scope (?subject= value) for a question's subject label, for
+ *  the QuizRunner reveal "source note" link. Most labels ARE Library
+ *  subjects and pass through. The exceptions are mapped explicitly:
+ *  Drawing / Physical Education share the "Drawing/PE" notes, and IT
+ *  questions map to the "IT/Computer" notes. Labels naming no notes
+ *  at all (the past-paper topic banks, which span subjects) map to
+ *  "all" so the topic query searches every subject instead of landing
+ *  on an unrelated one. Never returns an invalid scope. */
+export function libraryScopeForSubjectLabel(label: string): string {
+  if (NOTES[label]) return label;
+  if (label === "Drawing" || label === "Physical Education") return "Drawing/PE";
+  if (label === "IT") return "IT/Computer";
+  return "all";
+}
+
+/** BY_SUBJECT bank key for a subject DISPLAY label (e.g. "Islamiyat"
+ *  -> "islamiyat", "Past-Paper Topics" -> "pastpapers"). Inverts
+ *  SUBJECT_LABELS. Used by the Analysis drill links: per-subject stats
+ *  are keyed by label, but /practice expects a bank key — passing the
+ *  label silently fell back to the stored subject (pre-2b behaviour).
+ *  Null when the label names no bank. */
+export function subjectKeyForLabel(label: string): string | null {
+  for (const [key, value] of Object.entries(SUBJECT_LABELS)) {
+    if (value === label) return key;
+  }
+  return null;
+}
+
+/** Flashcard category matching a Library subject, or null. Only
+ *  subjects that ARE flashcard categories get a deep link
+ *  (/flashcards?category=…); the rest link to the plain flashcards
+ *  page. Computed from the real card bank, never hardcoded. */
+export function flashcardCategoryForNote(subject: string): string | null {
+  return FLASHCARDS.some((c) => c.category === subject) ? subject : null;
+}
+
 /** Shuffle the 4 options of one question, keeping the correct answer tracked. */
 export function shuffleOptions(q: Question, rand: () => number) {
   const order = shuffled([0, 1, 2, 3], rand);
@@ -517,9 +821,19 @@ function score(text: string, terms: string[]): number {
   return s;
 }
 
-export function retrieve(query: string, topNotes = 5, topQuestions = 5) {
+// Step 2b — retrieve() attaches the Library subject to each returned
+// note (it knows which NOTES bucket the note came from). The return
+// type says so explicitly: callers building citation deep links read
+// `subject` off the returned notes.
+export type RetrievedNote = Note & { subject: string };
+
+export function retrieve(
+  query: string,
+  topNotes = 5,
+  topQuestions = 5,
+): { notes: RetrievedNote[]; questions: Question[] } {
   const terms = [...new Set(tokenize(query))];
-  if (terms.length === 0) return { notes: [] as Note[], questions: [] as Question[] };
+  if (terms.length === 0) return { notes: [] as RetrievedNote[], questions: [] as Question[] };
   const noteScores: { note: Note; subject: string; s: number }[] = [];
   for (const [subject, list] of Object.entries(NOTES)) {
     for (const note of list) {

@@ -75,13 +75,23 @@ export default function AppShell({ children }: { children: ReactNode }) {
           mobileOpen={mobileOpen}
           toggleRef={hamburgerRef}
         />
-        <main id="shell-main" className="tw:mx-auto tw:w-full tw:max-w-5xl tw:flex-1 tw:px-4 tw:py-6">
-          {/* Stage 3 part 2 — route entrance (motion, reduced-motion
-              safe). Keyed by pathname so every navigation re-runs the
-              short fade; children themselves are untouched. */}
-          <PageFade key={pathname}>{children}</PageFade>
-        </main>
-        <Footer />
+        {/* Step 2a — while the mobile drawer is open, the page content
+            behind it is inert (no tab stops, no clicks, hidden from
+            assistive tech). The Topbar is deliberately OUTSIDE the
+            inert region: Escape closes the drawer and returns focus to
+            the hamburger in the same tick, and focusing an inert
+            element is a no-op. The Sidebar's focus trap keeps Tab
+            inside the drawer, so the Topbar controls are unreachable
+            by keyboard while it is open. */}
+        <div inert={mobileOpen} className="tw:flex tw:min-w-0 tw:flex-1 tw:flex-col">
+          <main id="shell-main" className="tw:mx-auto tw:w-full tw:max-w-5xl tw:flex-1 tw:px-4 tw:py-6">
+            {/* Stage 3 part 2 — route entrance (motion, reduced-motion
+                safe). Keyed by pathname so every navigation re-runs the
+                short fade; children themselves are untouched. */}
+            <PageFade key={pathname}>{children}</PageFade>
+          </main>
+          <Footer />
+        </div>
       </div>
     </div>
   );

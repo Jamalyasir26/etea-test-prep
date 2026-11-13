@@ -44,7 +44,9 @@ export function DueForecastChart({ cards, state }: { cards: FlashCardLite[]; sta
   return (
     <div className="card">
       <h3>{t("chartDueForecast")}</h3>
-      <div dir="ltr" className="tw:h-64 tw:w-full">
+      {/* Step 2a — the chart is an image with a text alternative: the
+          same data in a table below it, inside a disclosure. */}
+      <div dir="ltr" className="tw:h-64 tw:w-full" role="img" aria-label={t("chartDueAria")}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: -16 }}>
             <CartesianGrid {...GRID} />
@@ -55,6 +57,25 @@ export function DueForecastChart({ cards, state }: { cards: FlashCardLite[]; sta
           </BarChart>
         </ResponsiveContainer>
       </div>
+      <details>
+        <summary>{t("chartViewData")}</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>{t("dateWord")}</th>
+              <th>{t("chartDueWord")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((d) => (
+              <tr key={d.date}>
+                <td dir="ltr">{d.date.slice(5)}</td>
+                <td>{d.due}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </details>
     </div>
   );
 }
@@ -82,7 +103,8 @@ export function AccuracyTrendChart({ daily }: { daily: DailyPoint[] }) {
   return (
     <div className="card">
       <h3>{t("chartAccuracyTrend")}</h3>
-      <div dir="ltr" className="tw:h-64 tw:w-full">
+      {/* Step 2a — same text-alternative pattern as the forecast chart. */}
+      <div dir="ltr" className="tw:h-64 tw:w-full" role="img" aria-label={t("chartAccuracyAria")}>
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart data={points} margin={{ top: 8, right: 8, bottom: 0, left: -16 }}>
             <CartesianGrid {...GRID} />
@@ -95,6 +117,29 @@ export function AccuracyTrendChart({ daily }: { daily: DailyPoint[] }) {
           </ComposedChart>
         </ResponsiveContainer>
       </div>
+      <details>
+        <summary>{t("chartViewData")}</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>{t("dateWord")}</th>
+              <th>{t("chartAccuracyWord")}</th>
+              <th>{t("chartQuestionsWord")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {points.map((p) => (
+              <tr key={p.date}>
+                <td dir="ltr">{p.date}</td>
+                <td>
+                  <span dir="ltr">{p.accuracy}%</span>
+                </td>
+                <td>{p.questions}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </details>
     </div>
   );
 }

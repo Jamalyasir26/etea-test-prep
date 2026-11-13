@@ -53,10 +53,14 @@ check("quiz: changed-answer options isolated", (qr.match(/<span dir="auto">\{p\.
 // ---- Library: note title/body/source ----
 const library = read("src/app/library/page.tsx");
 check("library: note title dir=auto", library.includes("<h3 dir=\"auto\">{shown.title}</h3>"));
-check("library: note body dir=auto", library.includes('<p dir="auto">{shown.body}</p>'));
+check("library: note body dir=auto", library.includes('<p dir="auto" id={bodyId} hidden={isHidden}>') && library.includes("{shown.body}"));
+check("library: reveal control has aria-expanded + aria-controls", library.includes("aria-expanded={!isHidden}") && library.includes("aria-controls={bodyId}"));
 check("library: source line dir=auto", library.includes('<span dir="auto">{n.source}</span>'));
 check("library: annotation aria-label wraps title in lri()", library.includes("tf(\"annotationAria\", { title: lri(n.title) })"));
-check("library: storage key stays on the original title", library.includes("key: `${subject}||${n.title}`"));
+// Step 2b — the key is built in the scoped-notes memo (loop variable
+// `s`, original note `n` from NOTES); annotations still look up by
+// that key, never by the localized title.
+check("library: storage key stays on the original title", library.includes("key: `${s}||${n.title}`") && library.includes("annotations[e.key]"));
 
 // ---- Home: brand, corrections, banner, weak areas, pattern ----
 const home = read("src/app/page.tsx");
@@ -65,7 +69,15 @@ check("home: correction items dir=ltr", home.includes('<li key={c} dir="ltr">'))
 check("home: pattern banner isolated LTR", home.includes('<span dir="ltr">{PATTERN_BANNER}</span>'));
 check("home: weak-area subject isolated LTR", home.includes('<span dir="ltr">{w.subject}</span>'));
 check("home: pattern name dir=auto", home.includes('<span dir="auto">{p.name}</span>'));
-check("home: confidence badge isolated LTR", home.includes('<span dir="ltr" className={`badge'));
+// Step 2a — the confidence badge is now the semantic TrackConfidenceBadge;
+// the LTR isolation lives inside that component (dir="ltr" wrapper).
+const statusBadges = read("src/components/StatusBadges.tsx");
+check(
+  "home: confidence badge isolated LTR",
+  home.includes("<TrackConfidenceBadge conf={p.confidence} />") &&
+    statusBadges.includes('<span dir="ltr">') &&
+    statusBadges.includes("<StatusBadge label={badge.label}"),
+);
 
 // ---- Mock list + runner ----
 const mockList = read("src/app/mock/page.tsx");
@@ -108,7 +120,10 @@ check("review: structural issues dir=auto", review.includes('<span dir="auto">{s
 // ---- Issues: ids/dates LTR, free text auto ----
 const issues = read("src/app/issues/page.tsx");
 check("issues: date/qid/subject isolated LTR", issues.includes('<td dir="ltr">{i.date.slice(0, 10)}</td>') && issues.includes('<code dir="ltr">{i.qid}</code>') && issues.includes('<td dir="ltr">{i.subject ?? "—"}</td>'));
-check("issues: correction/source dir=auto", issues.includes('<td dir="auto">{i.proposedCorrection ?? "—"}</td>') && issues.includes('<td dir="auto">{i.source ?? "—"}</td>'));
+// Step 2b — the correction cell keeps dir="auto" and the "—" fallback,
+// with the explicit no-suggested-correction choice rendered instead
+// of an empty dash when the reporter chose it.
+check("issues: correction/source dir=auto", issues.includes('i.noSuggestedCorrection ? t("noSuggestedCorrectionLabel") : (i.proposedCorrection ?? "—")') && issues.includes('<td dir="auto">{i.source ?? "—"}</td>') && issues.includes("<td dir=\"auto\">"));
 check("issues: telemetry message dir=auto", issues.includes('<td dir="auto" style={{ overflowWrap: "break-word" }}>'));
 
 // ---- Vacancies / tracks / topics / links ----
@@ -153,6 +168,37 @@ function walk(dir) {
 }
 walk(join(ROOT, "src"));
 check("no raw isolate/control characters in src/", rawHits.length === 0, rawHits.join(", "));
+
+// ---- Step 2a — duration isolation: every minsLabel render must sit
+// inside a dir="ltr" span (a bare duration lets its number jump in RTL
+// mode). Each file's render is checked against its own wrapping code.
+function isolatedBefore(src, needle, windowChars = 120) {
+  const i = src.indexOf(needle);
+  if (i < 0) return false;
+  return src.slice(Math.max(0, i - windowChars), i).includes('dir="ltr"');
+}
+const planPage = read("src/app/plan/page.tsx");
+const analysisPage = read("src/app/analysis/page.tsx");
+check("rtl: home time card duration isolated", isolatedBefore(home, 'tf("minsLabel", { mins: stats.totalMinutes })'));
+check("rtl: plan task duration isolated", isolatedBefore(planPage, 'tf("minsLabel", { mins })'));
+check("rtl: quiz results duration isolated", isolatedBefore(qr, 'tf("minsLabel", { mins: Math.round((Date.now() - startTs) / 60000) })'));
+check("rtl: analysis time stat duration isolated", isolatedBefore(analysisPage, 'tf("minsLabel", { mins: stats.totalMinutes })'));
+check("rtl: analysis mock-history duration isolated", isolatedBefore(analysisPage, 'tf("minsLabel", { mins: Math.round(m.seconds / 60) })'));
+check("rtl: analysis detail duration isolated", isolatedBefore(analysisPage, 'tf("minsLabel", { mins: Math.round(selected.seconds / 60) })'));
+const mockListPage = read("src/app/mock/page.tsx");
+const trackDetailPage = read("src/app/tracks/[id]/page.tsx");
+check("rtl: mock card duration isolated", isolatedBefore(mockListPage, 'tf("minsLabel", { mins: m.minutes })'));
+check("rtl: track detail duration isolated", isolatedBefore(trackDetailPage, 'tf("minsLabel", { mins: m.minutes })'));
+// Percentages: the per-subject accuracy cell and the chart table cell.
+check("rtl: analysis per-subject percentage isolated", analysisPage.includes("<span dir=\"ltr\">{Math.round(v.accuracy)}%</span>"));
+const charts = read("src/components/AnalysisCharts.tsx");
+check("rtl: chart table percentage isolated", charts.includes("<span dir=\"ltr\">{p.accuracy}%</span>"));
+// Meaning icons are never flipped: scaleX(-1) appears exactly once,
+// on the collapse chevron only (.shell-flip-rtl).
+const css = read("src/app/globals.css");
+check("rtl: only the collapse chevron flips", (css.match(/scaleX\(-1\)/g) ?? []).length === 1 && css.includes(".shell-flip-rtl"));
+// "0 / 63" regression: the home plan fraction stays an isolated span.
+check("rtl: home plan fraction stays isolated (0/63 regression)", home.includes("<span dir=\"ltr\">") && home.includes("{planDone} / 63"));
 
 console.log(failures === 0 ? `\nAll RTL tests passed.` : `\n${failures} FAILURE(S)`);
 process.exit(failures === 0 ? 0 : 1);

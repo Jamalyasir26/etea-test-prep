@@ -1,11 +1,12 @@
-// Stage 1 P2 (B06) — live AI tutor health indicator. Fetches
-// GET /api/tutor/health ONCE on mount (no polling: every probe is a
-// real tiny provider call and counts against quota) and shows the
-// per-provider status. Handles loading, timeout, HTTP errors and
-// malformed responses gracefully and never crashes the page if the
-// endpoint is down. A manual Refresh button re-checks on demand.
-// Renders the same "checking" state on the server and on first client
-// render, so it cannot cause a hydration mismatch.
+// Stage 1 P2 (B06) — live AI tutor health indicator. Step 2b: probes
+// go through the shared cache in src/lib/tutorHealth.ts (5-minute TTL
+// for automatic loads, in-flight dedup across mounts, manual refresh
+// with a 30 s cooldown), and BOTH variants render the ONE capability
+// line from summarizeHealth(), so the home page and the tutor page can
+// never disagree. Handles loading, timeout, HTTP errors and malformed
+// responses gracefully and never crashes the page if the endpoint is
+// down. Renders the same "checking" state on the server and on first
+// client render, so it cannot cause a hydration mismatch.
 // Localization Pass 1 — all strings via i18n.tsx; provider/model names
 // and error classes stay English (proper names / identifiers) and are
 // isolated LTR in RTL mode.
@@ -13,40 +14,24 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { lri, useLang } from "@/lib/i18n";
-
-type ProviderEntry = {
-  configured?: boolean;
-  status?: string;
-  latencyMs?: number;
-  model?: string;
-  errorClass?: string;
-};
-
-type HealthData = {
-  overall?: string;
-  checkedAt?: string;
-  coldStart?: boolean;
-  providers?: Record<string, ProviderEntry>;
-};
+import {
+  checkedAgeKey,
+  fetchTutorHealth,
+  formatCapabilityLine,
+  HEALTH_REFRESH_COOLDOWN_MS,
+  PROVIDER_LABELS,
+  summarizeHealth,
+  type TutorHealthData,
+  type TutorProviderEntry,
+} from "@/lib/tutorHealth";
 
 type State =
   | { kind: "loading" }
-  | { kind: "loaded"; data: HealthData }
+  | { kind: "loaded"; data: TutorHealthData; fetchedAt: number }
   | { kind: "failed"; reason: string };
 
-const PROVIDER_LABELS: Record<string, string> = {
-  gemini: "Gemini",
-  groq: "Groq",
-  openrouter: "OpenRouter",
-};
-
-// The health route probes each provider with a 15 s bound and the route
-// itself allows 30 s; 28 s keeps us inside the route budget while still
-// surviving a cold start.
-const FETCH_TIMEOUT_MS = 28000;
-
 function statusLabel(
-  p: ProviderEntry,
+  p: TutorProviderEntry,
   t: (key: string) => string,
   tf: (key: string, vars: Record<string, string | number>) => string,
 ): { text: string; tone: "green" | "red" | "grey" } {
@@ -62,48 +47,62 @@ export default function TutorHealth({ variant }: { variant: "full" | "summary" }
   const { t, tf } = useLang();
   const [state, setState] = useState<State>({ kind: "loading" });
   const [refreshing, setRefreshing] = useState(false);
-  const abortRef = useRef<AbortController | null>(null);
+  const [cooldownUntil, setCooldownUntil] = useState(0);
+  // Ticks every 60 s while loaded so the checked-at age stays truthful,
+  // and once when the refresh cooldown expires so the button re-enables.
+  const [tick, setTick] = useState(() => Date.now());
+  const cancelledRef = useRef(false);
 
-  const load = useCallback(async () => {
-    abortRef.current?.abort();
-    const ctrl = new AbortController();
-    abortRef.current = ctrl;
-    const timer = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
-    try {
-      const res = await fetch("/api/tutor/health", { signal: ctrl.signal });
-      if (!res.ok) {
-        setState({ kind: "failed", reason: tf("reasonHttp", { status: res.status }) });
-        return;
+  const load = useCallback(
+    async (force: boolean) => {
+      setRefreshing(true);
+      try {
+        const { data, fetchedAt } = await fetchTutorHealth({ force });
+        if (cancelledRef.current) return;
+        setState({ kind: "loaded", data, fetchedAt });
+        setCooldownUntil(Date.now() + HEALTH_REFRESH_COOLDOWN_MS);
+      } catch (e) {
+        if (cancelledRef.current) return;
+        const msg = e instanceof Error ? e.message : "";
+        const http = /^HTTP (\d+)/.exec(msg);
+        const reason = http
+          ? tf("reasonHttp", { status: Number(http[1]) })
+          : msg === "unexpected response"
+            ? t("reasonUnexpected")
+            : e instanceof DOMException && e.name === "AbortError"
+              ? t("reasonTimeout")
+              : t("reasonUnreachable");
+        setState({ kind: "failed", reason });
+      } finally {
+        if (!cancelledRef.current) setRefreshing(false);
       }
-      const data = (await res.json()) as HealthData;
-      if (!data || typeof data !== "object" || !data.providers || typeof data.providers !== "object") {
-        setState({ kind: "failed", reason: t("reasonUnexpected") });
-        return;
-      }
-      setState({ kind: "loaded", data });
-    } catch (e) {
-      if (ctrl.signal.aborted) {
-        setState({ kind: "failed", reason: t("reasonTimeout") });
-      } else {
-        setState({ kind: "failed", reason: t("reasonUnreachable") });
-      }
-      void e;
-    } finally {
-      clearTimeout(timer);
-      setRefreshing(false);
-    }
-  }, [t, tf]);
+    },
+    [t, tf],
+  );
 
   useEffect(() => {
-    load();
-    return () => abortRef.current?.abort();
+    cancelledRef.current = false;
+    load(false);
+    return () => {
+      cancelledRef.current = true;
+    };
   }, [load]);
 
+  // Re-render when the cooldown expires (re-enables Refresh) and every
+  // 60 s while loaded (keeps the checked-at age fresh).
+  useEffect(() => {
+    if (state.kind !== "loaded") return;
+    const delay = Math.max(0, Math.min(60000, cooldownUntil - Date.now()));
+    const timer = setTimeout(() => setTick(Date.now()), delay === 0 ? 60000 : delay);
+    return () => clearTimeout(timer);
+  }, [state.kind, cooldownUntil, tick]);
+
   function refresh() {
-    setRefreshing(true);
     setState({ kind: "loading" });
-    load();
+    load(true);
   }
+
+  const inCooldown = cooldownUntil > Date.now();
 
   if (state.kind === "loading") {
     return variant === "summary" ? (
@@ -123,40 +122,33 @@ export default function TutorHealth({ variant }: { variant: "full" | "summary" }
     ) : (
       <div className="alert red">
         {msg}{" "}
-        <button className="secondary" disabled={refreshing} onClick={refresh}>
+        <button className="secondary" disabled={refreshing || inCooldown} onClick={refresh}>
           {t("refreshStatus")}
         </button>
+        {inCooldown && !refreshing && <p className="muted">{t("refreshCooldownNote")}</p>}
       </div>
     );
   }
 
-  const entries = Object.entries(state.data.providers ?? {});
-  const okCount = entries.filter(([, p]) => p.status === "ok").length;
-  const overall = state.data.overall ?? (okCount > 0 ? "degraded" : "down");
-  const overallText =
-    overall === "ok" ? t("healthOk") : overall === "degraded" ? t("healthDegraded") : t("healthDown");
+  const summary = summarizeHealth(state.data);
+  const capabilityLine = formatCapabilityLine(summary, t, tf, lri);
+  const age = checkedAgeKey(state.fetchedAt, tick);
+  const ageText = age.key === "checkedAgeMin" ? tf(age.key, age.vars) : t(age.key);
 
   if (variant === "summary") {
-    const okNames = entries.filter(([, p]) => p.status === "ok").map(([k]) => PROVIDER_LABELS[k] ?? k);
-    const downNames = entries
-      .filter(([, p]) => p.status !== "ok")
-      .map(([k, p]) => `${PROVIDER_LABELS[k] ?? k}${p.errorClass ? ` (${p.errorClass})` : ""}`);
     return (
       <p className="muted">
-        {t("liveStatusNow")}{" "}
-        {okCount === 0
-          ? t("noProvider")
-          : `${tf("summaryResponding", { names: lri(okNames.join(", ")) })}${downNames.length ? `; ${tf("summaryNotResponding", { names: lri(downNames.join(", ")) })}` : ""}.`}{" "}
-        {t("checkedJustNow")}
+        {capabilityLine} {ageText}
       </p>
     );
   }
 
+  const entries = Object.entries(state.data.providers ?? {});
   return (
-    <div className={`alert ${overall === "ok" ? "green" : overall === "degraded" ? "" : "red"}`}>
+    <div className={`alert ${summary.overall === "ok" ? "green" : summary.overall === "degraded" ? "" : "red"}`}>
       <p style={{ margin: "0 0 8px" }}>
-        <b>{tf("fullStatusLine", { overall: overallText, ok: okCount, total: entries.length })}</b>
-        {state.data.coldStart ? ` ${t("coldStartNote")}` : ""}
+        <b>{capabilityLine}</b> {ageText}
+        {summary.coldStart ? ` ${t("coldStartNote")}` : ""}
       </p>
       <ul style={{ margin: 0, paddingInlineStart: 18 }}>
         {entries.map(([key, p]) => {
@@ -182,9 +174,12 @@ export default function TutorHealth({ variant }: { variant: "full" | "summary" }
         })}
       </ul>
       <p style={{ margin: "8px 0 0" }}>
-        <button className="secondary" disabled={refreshing} onClick={refresh}>
+        <button className="secondary" disabled={refreshing || inCooldown} onClick={refresh}>
           {t("refreshStatus")}
         </button>
+        {inCooldown && !refreshing && (
+          <span className="muted"> {t("refreshCooldownNote")}</span>
+        )}
       </p>
     </div>
   );

@@ -345,19 +345,6 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "{names} jawab nahi de raha",
     ur: "{names} جواب نہیں دے رہا",
   },
-  checkedJustNow: {
-    en: "Checked just now — see the tutor page for details.",
-    roman: "Abhi check hua — tafseel ke liye tutor page dekhein.",
-    ur: "ابھی چیک ہوا — تفصیل کے لیے استاد کا صفحہ دیکھیں۔",
-  },
-  fullStatusLine: {
-    en: "Live AI status: {overall} — {ok} of {total} provider(s) responding.",
-    roman: "Live AI status: {overall} — {total} mein se {ok} provider(s) responding.",
-    ur: "براہ راست اے آئی کی حالت: {overall} — {total} میں سے {ok} فراہم کنندہ جواب دے رہا ہے۔",
-  },
-  healthOk: { en: "ok", roman: "ok", ur: "ٹھیک" },
-  healthDegraded: { en: "degraded", roman: "degraded", ur: "جزوی" },
-  healthDown: { en: "down", roman: "down", ur: "بند" },
   coldStartNote: {
     en: "This check ran on a cold instance — a timeout here usually clears on retry.",
     ur: "یہ جانچ کولڈ انسٹینس پر چلی — یہاں کا ٹائم آؤٹ عام طور پر دوبارہ کوشش پر صاف ہو جاتا ہے۔",
@@ -520,10 +507,6 @@ const STRINGS: Record<string, StrEntry> = {
     en: "No credible source prescribes 2–3 hours/day for ETEA. The base plan is 21 days, 2–3 hours/day, 63 tasks (~50 hours).",
     ur: "کوئی معتبر ماخذ ETEA کے لیے روزانہ 2–3 گھنٹے تجویز نہیں کرتا۔ بنیادی منصوبہ 21 دن، روزانہ 2–3 گھنٹے، 63 کام (~50 گھنٹے) ہے۔",
   },
-  load3: { en: "2–3 hours", roman: "2–3 ghantay", ur: "2–3 گھنٹے" },
-  load6: { en: "about 1–1.5 hours", roman: "taqreeban 1–1.5 ghantay", ur: "تقریباً 1–1.5 گھنٹے" },
-  load12: { en: "about 45 minutes", roman: "taqreeban 45 minutes", ur: "تقریباً 45 منٹ" },
-  perDay: { en: "/day", roman: "/day", ur: " فی دن" },
   tasksDone: { en: "tasks done", roman: "tasks done", ur: "کام مکمل" },
   generateAiPlan: { en: "Generate AI plan", roman: "AI plan banayein", ur: "اے آئی منصوبہ بنائیں" },
   planPrivacy: {
@@ -538,7 +521,6 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "AI-generated — not verified. Sample timetable; apne schedule ke mutabiq adjust karein.",
     ur: "اے آئی سے بنایا گیا — تصدیق نہیں ہوئی۔ نمونہ ٹائم ٹیبل؛ اپنے شیڈول کے مطابق بدلیں۔",
   },
-  spreadOver: { en: "spread over {spread} days", roman: "{spread} dinon mein phela hua", ur: "{spread} دنوں میں پھیلا ہوا" },
   tasksDoneAria: { en: "{done} of {total} tasks done", roman: "{done} of {total} tasks done", ur: "{total} میں سے {done} کام مکمل" },
 
   // ---- Flashcards ----
@@ -557,7 +539,6 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Cram mode (future-due cards bhi dikhayein)",
     ur: "کرام موڈ (مستقبل میں واجب کارڈ بھی دکھائیں)",
   },
-  dueToday: { en: "Due today:", roman: "Aaj due:", ur: "آج واجب:" },
   sessionLabel: { en: "Session:", roman: "Session:", ur: "سیشن:" },
   recalledLabel: { en: "recalled", roman: "recalled", ur: "یاد کیے گئے" },
   sessionFinished: { en: "Session finished", roman: "Session mukammal", ur: "سیشن مکمل" },
@@ -716,7 +697,11 @@ const STRINGS: Record<string, StrEntry> = {
   importSimple: { en: "Imported {n} new attempts.", roman: "{n} naye attempts import ho gaye.", ur: "{n} نئی کوششیں درآمد ہوئیں۔" },
 
   // ---- Review ----
-  reviewTitle: { en: "Review Queue — Verification Dashboard", roman: "Review Queue — Verification Dashboard", ur: "جائزہ قطار — تصدیقی ڈیش بورڈ" },
+  reviewTitle: {
+    en: "Local owner-review workspace — this device only",
+    roman: "Local owner-review workspace — sirf is device par",
+    ur: "مقامی مالک جائزہ ورک اسپیس — صرف اس ڈیوائس پر",
+  },
   reviewAlertTitle: { en: "You are the verifier.", roman: "Aap verifier hain.", ur: "آپ تصدیق کنندہ ہیں۔" },
   reviewAlertBody1: {
     en: "Religious content (Islamiyat, Tajweed, Arabic, Fiqh) is verified by you, the owner — never by the AI. Items that pass the structural check stay",
@@ -961,11 +946,6 @@ const STRINGS: Record<string, StrEntry> = {
   changedAnswerEnd: { en: "· Score uses the first answer.", roman: "· Score pehle jawab par hai.", ur: "· نمبر پہلے جواب پر ہے۔" },
   ownerReviewedLabel: { en: "owner-reviewed", roman: "owner-reviewed", ur: "مالک سے جائزہ شدہ" },
   notVerifiedLabel: { en: "not verified", roman: "not verified", ur: "تصدیق نہیں ہوئی" },
-  resumedAlert: {
-    en: "Resumed your in-progress session — answers, first-pass scores and the timer were restored.",
-    roman: "Aap ka in-progress session resume ho gaya — jawab, first-pass scores aur timer restore ho gaye.",
-    ur: "آپ کا جاری سیشن بحال ہو گیا — جوابات، پہلی کوشش کے نمبر اور ٹائمر بحال ہو گئے۔",
-  },
   restartButton: { en: "Restart (discard session)", roman: "Restart (session discard karein)", ur: "دوبارہ شروع کریں (سیشن ختم کریں)" },
   trustedOnlyLine: {
     en: "Trusted-only: only owner-reviewed/approved questions.",
@@ -996,6 +976,284 @@ const STRINGS: Record<string, StrEntry> = {
   },
   originalBadge: { en: "Original", roman: "Original", ur: "اصل" },
   rewordedBadge: { en: "Reworded", roman: "Reworded", ur: "دوبارہ لکھا گیا" },
+
+  // ---- Step 2a — semantic badges, Start Here, nav groups, scroll regions, chart alternatives ----
+  provisionalBadgeDetail: {
+    en: "These items are unreviewed practice material — the owner has not checked them yet.",
+    ur: "یہ سوالات غیر جائزہ شدہ مشقی مواد ہیں — مالک نے ابھی انہیں نہیں دیکھا۔",
+  },
+  verifiedBadgeDetail: {
+    en: "All items in this run were reviewed by the owner on this device — personal review, not official certification.",
+    ur: "اس رن کے تمام سوالات مالک نے اس آلے پر دیکھے — ذاتی جائزہ، سرکاری تصدیق نہیں۔",
+  },
+  mockScoringUnknown: { en: "Scoring policy unknown", roman: "Scoring policy unknown", ur: "اسکورنگ پالیسی نامعلوم" },
+  mockScoringUnknownDetail: {
+    en: "No official scoring policy is published for this mock; the zero-penalty default is used.",
+    ur: "اس ٹیسٹ کی کوئی سرکاری اسکورنگ پالیسی شائع نہیں؛ صفر جرمانہ ڈیفالٹ استعمال ہوتا ہے۔",
+  },
+  navGroupStudy: { en: "Study", roman: "Study", ur: "مطالعہ" },
+  navGroupProgress: { en: "Progress", roman: "Progress", ur: "پیش رفت" },
+  navGroupResources: { en: "Exam Resources", roman: "Exam Resources", ur: "امتحانی وسائل" },
+  navGroupQuality: { en: "Quality", roman: "Quality", ur: "معیار" },
+  startHereHeading: { en: "Start here", roman: "Yahan se shuru karein", ur: "یہاں سے شروع کریں" },
+  startHereFresh: {
+    en: "Pick where to begin — everything below is built from your own study data.",
+    ur: "منتخب کریں کہ کہاں سے شروع کرنا ہے — نیچے سب کچھ آپ کے اپنے مطالعے کے ڈیٹا سے بنایا گیا ہے۔",
+  },
+  startHereReturning: {
+    en: "Pick up where you left off — these actions come from your saved progress.",
+    ur: "جہاں چھوڑا تھا وہیں سے جاری رکھیں — یہ اقدامات آپ کی محفوظ پیش رفت سے ہیں۔",
+  },
+  startHerePractice: { en: "Start topic practice", roman: "Topic practice shuru karein", ur: "موضوع کی مشق شروع کریں" },
+  startHereMock: { en: "Choose mock", roman: "Mock chunein", ur: "ٹیسٹ منتخب کریں" },
+  startHereCards: { en: "Review due cards", roman: "Due cards review karein", ur: "واجب کارڈز کا جائزہ لیں" },
+  startHerePlan: { en: "Build study plan", roman: "Study plan banayein", ur: "مطالعہ منصوبہ بنائیں" },
+  startHereContinuePlan: { en: "Continue plan", roman: "Plan jaari rakhein", ur: "منصوبہ جاری رکھیں" },
+  resumeSession: { en: "Resume: {title}", ur: "جاری رکھیں: {title}" },
+  continuePractice: { en: "Continue practice: {subject}", ur: "مشق جاری رکھیں: {subject}" },
+  cardsDueNew: { en: "{due} due · {fresh} new", ur: "{due} واجب · {fresh} نئے" },
+  planNextLabel: { en: "Next:", roman: "Agla:", ur: "اگلا:" },
+  planComplete: { en: "Study plan complete — all 63 tasks done.", ur: "مطالعہ منصوبہ مکمل — تمام 63 کام مکمل۔" },
+  attemptsScope: { en: "{mcq} MCQ questions · {flash} flashcard reviews", ur: "{mcq} ایم سی کیو سوالات · {flash} فلیش کارڈ جائزے" },
+  accuracySample: { en: "{correct} of {total} first-pass answers", ur: "پہلی کوشش کے {total} جوابات میں سے {correct} درست" },
+  accuracyNoData: { en: "No answers yet", roman: "Abhi koi jawab nahi", ur: "ابھی کوئی جواب نہیں" },
+  streakRule: { en: "Consecutive days with any study", ur: "مسلسل دن جن میں کوئی مطالعہ ہوا" },
+  timeScope: { en: "Across all attempts", roman: "Tamam koshishon mein", ur: "تمام کوششوں میں" },
+  correctionsAck: { en: "I have read these corrections", ur: "میں نے یہ تصحیحات پڑھ لی ہیں" },
+  correctionsShowFull: { en: "Show full notice", roman: "Mukammal notice dikhayein", ur: "مکمل نوٹس دکھائیں" },
+  correctionsShowCompact: { en: "Show compact notice", roman: "Mukhtasar notice dikhayein", ur: "مختصر نوٹس دکھائیں" },
+  tableScrollHint: {
+    en: "This table scrolls horizontally on narrow screens.",
+    ur: "یہ جدول تنگ اسکرین پر افقی طور پر اسکرول ہوتی ہے۔",
+  },
+  perSubjectTableAria: { en: "Per-subject results table", ur: "فی مضمون نتائج کی جدول" },
+  issuesTableAria: { en: "Reported issues table", ur: "رپورٹ شدہ مسائل کی جدول" },
+  telemetryTableAria: { en: "On-device error telemetry table", ur: "آلے پر خرابی ٹیلی میٹری کی جدول" },
+  analysisPerSubjectAria: { en: "Per-subject accuracy table", ur: "فی مضمون درستگی کی جدول" },
+  mockHistoryTableAria: { en: "Mock history table", ur: "ٹیسٹ تاریخ کی جدول" },
+  allAttemptsTableAria: { en: "All attempts table", ur: "تمام کوششوں کی جدول" },
+  itemRecordsTableAria: { en: "Per-question attempt detail table", ur: "فی سوال کوشش کی تفصیل کی جدول" },
+  chartViewData: { en: "View data as a table", roman: "Data table ki soorat mein dekhein", ur: "ڈیٹا جدول کی صورت میں دیکھیں" },
+  chartDueAria: {
+    en: "Bar chart: flashcards due each day for the next 7 days. The same data is in the table below.",
+    ur: "بار چارٹ: اگلے 7 دنوں میں ہر دن واجب فلیش کارڈ۔ وہی ڈیٹا نیچے دی گئی جدول میں ہے۔",
+  },
+  chartAccuracyAria: {
+    en: "Chart: daily MCQ accuracy and questions attempted over the last 14 days with attempts. The same data is in the table below.",
+    ur: "چارٹ: پچھلے 14 دنوں میں روزانہ ایم سی کیو درستگی اور حل شدہ سوالات۔ وہی ڈیٹا نیچے دی گئی جدول میں ہے۔",
+  },
+
+  // ---- Step 2b — pre-start disclosure + session compatibility ----
+  prestartHeading: { en: "Before you start", roman: "Shuru karne se pehle", ur: "شروع کرنے سے پہلے" },
+  prestartSubjectLabel: { en: "Subject", roman: "Subject", ur: "مضمون" },
+  prestartPatternLabel: { en: "Pattern", roman: "Pattern", ur: "پیٹرن" },
+  prestartNoPattern: {
+    en: "Subject drill — no exam pattern is claimed for this set.",
+    ur: "مضمون کی ڈرل — اس سیٹ کے لیے کسی امتحانی پیٹرن کا دعویٰ نہیں۔",
+  },
+  prestartQuestions: { en: "{n} questions", roman: "{n} sawal", ur: "{n} سوالات" },
+  prestartReviewed: { en: "{n} of {total} owner-reviewed", ur: "{n} از {total} مالک سے جائزہ شدہ" },
+  prestartProvisional: {
+    en: "{n} provisional (not owner-reviewed)",
+    ur: "{n} عارضی (مالک سے جائزہ شدہ نہیں)",
+  },
+  prestartDurationLabel: { en: "Duration", roman: "Duration", ur: "دورانیہ" },
+  prestartNoTimer: { en: "No timer", roman: "Koi timer nahi", ur: "کوئی ٹائمر نہیں" },
+  prestartUnanswered: { en: "Unanswered questions score {marks} marks.", ur: "بلا جواب سوالات کے {marks} نمبر ملتے ہیں۔" },
+  prestartAllocation: { en: "Questions by subject", roman: "Subject ke mutabiq sawal", ur: "مضمون کے مطابق سوالات" },
+  prestartResumeNote: {
+    en: "You have an unfinished session for this exact set.",
+    ur: "اس عین سیٹ کے لیے آپ کا ایک نامکمل سیشن موجود ہے۔",
+  },
+  prestartIncompatible: {
+    en: "Your previous session does not match this set ({reason}), so it will not be applied. Start fresh to begin with the current questions.",
+    ur: "آپ کا پچھلا سیشن اس سیٹ سے مطابقت نہیں رکھتا ({reason})، اس لیے اسے لاگو نہیں کیا جائے گا۔ موجودہ سوالات سے شروع کرنے کے لیے نئے سرے سے شروع کریں۔",
+  },
+  incompatReasonVersion: { en: "the session format changed", ur: "سیشن کی شکل بدل گئی" },
+  incompatReasonScope: { en: "the session belongs to a different quiz", ur: "سیشن کسی اور کوئز کا ہے" },
+  incompatReasonSubject: { en: "the subject changed", ur: "مضمون بدل گیا" },
+  incompatReasonMock: { en: "the mock changed", ur: "موک بدل گیا" },
+  incompatReasonSeed: { en: "the question set changed", ur: "سوالات کا سیٹ بدل گیا" },
+  incompatReasonQuestions: { en: "the questions changed", ur: "سوالات بدل گئے" },
+  incompatReasonRevision: { en: "the answer-key version changed", ur: "جوابی کلید کا ورژن بدل گیا" },
+  resumeButton: { en: "Resume", roman: "Resume karein", ur: "جاری رکھیں" },
+  startFreshButton: { en: "Start fresh", roman: "Naye sire se shuru karein", ur: "نئے سرے سے شروع کریں" },
+  questionMapToggle: { en: "Question map", roman: "Sawalon ka map", ur: "سوالات کا نقشہ" },
+  questionMapLabel: { en: "Question map — jump to a question", ur: "سوالات کا نقشہ — کسی سوال پر جائیں" },
+  questionMapAnswered: { en: "answered", roman: "answered", ur: "جواب دیا گیا" },
+  questionMapCurrent: { en: "current", roman: "current", ur: "موجودہ" },
+  questionMapFlagged: { en: "flagged", roman: "flagged", ur: "نشان زد" },
+  questionMapUnanswered: { en: "unanswered", roman: "unanswered", ur: "بلا جواب" },
+  flagButton: { en: "Flag for review", roman: "Review ke liye flag karein", ur: "جائزے کے لیے نشان زد کریں" },
+  flaggedButton: { en: "Flagged — tap to unflag", roman: "Flagged — hatane ke liye tap karein", ur: "نشان زد — ہٹانے کے لیے تھپتھپائیں" },
+  yourAnswerLine: { en: "Your answer: {answer}", ur: "آپ کا جواب: {answer}" },
+  yourBlankLine: { en: "You left this blank.", roman: "Aap ne ise khaali chhoda.", ur: "آپ نے اسے خالی چھوڑا۔" },
+  correctAnswerLine: { en: "Correct answer: {answer}", ur: "درست جواب: {answer}" },
+  revealReasonLabel: { en: "Why", roman: "Kyun", ur: "کیوں" },
+  sourceNoteLink: { en: "Open the related note in the Library", roman: "Mutalliqa note Library mein kholein", ur: "متعلقہ نوٹ لائبریری میں کھولیں" },
+  firstPassAccuracyLine: {
+    en: "First-pass accuracy: {correct} of {answered} answered ({pct}%)",
+    ur: "پہلی کوشش کی درستگی: {answered} جواب شدہ میں سے {correct} درست ({pct}٪)",
+  },
+  provisionalContentLine: {
+    en: "Provisional content: {n} of {total} questions are not owner-reviewed.",
+    ur: "عارضی مواد: {total} سوالات میں سے {n} مالک سے جائزہ شدہ نہیں۔",
+  },
+  flaggedResultsLine: { en: "Flagged for review: {list}", ur: "جائزے کے لیے نشان زد: {list}" },
+  noCorrectionChoice: {
+    en: "I have no suggested correction",
+    roman: "Mere paas koi tajweez shuda tasheeh nahi",
+    ur: "میرے پاس کوئی تجویز شدہ تصحیح نہیں ہے",
+  },
+  issueValidationError: {
+    en: "Choose a reason, and either write a correction or tick “I have no suggested correction”.",
+    ur: "ایک وجہ چنیں، اور یا تو تصحیح لکھیں یا “میرے پاس کوئی تجویز شدہ تصحیح نہیں ہے” پر نشان لگائیں۔",
+  },
+  noSuggestedCorrectionLabel: { en: "No suggested correction", roman: "Koi tajweez shuda tasheeh nahi", ur: "کوئی تجویز شدہ تصحیح نہیں" },
+
+  // ---- Step 2b — mock labels ----
+  mockLabelFull: { en: "Full", roman: "Full", ur: "مکمل" },
+  mockLabelFullDetail: {
+    en: "All {total} questions are available in this mock.",
+    ur: "اس موک میں تمام {total} سوالات دستیاب ہیں۔",
+  },
+  mockLabelPartial: { en: "Partial", roman: "Partial", ur: "جزوی" },
+  mockLabelPartialDetail: {
+    en: "Only {n} of {total} questions are available in this mock.",
+    ur: "اس موک میں {total} میں سے صرف {n} سوالات دستیاب ہیں۔",
+  },
+  mockLabelProxy: { en: "Proxy", roman: "Proxy", ur: "متبادل" },
+  mockLabelProxyDetail: {
+    en: "A proxy mock: practises the pattern from practice items — not an official paper, and ZamungKor has no published syllabus.",
+    ur: "متبادل موک: مشقی سوالات سے پیٹرن کی مشق کرواتا ہے — سرکاری پرچہ نہیں، اور زمونگ کور کا کوئی شائع شدہ نصاب نہیں۔",
+  },
+  mockLabelReviewedSubset: { en: "Reviewed subset", roman: "Reviewed subset", ur: "جائزہ شدہ حصہ" },
+  mockLabelReviewedSubsetDetail: {
+    en: "{n} of {total} questions are owner-reviewed; trusted mode uses only those.",
+    ur: "{total} میں سے {n} سوالات مالک سے جائزہ شدہ ہیں؛ قابل اعتماد موڈ صرف انہی کو استعمال کرتا ہے۔",
+  },
+  startReviewedPractice: {
+    en: "Start short reviewed practice — {n}/{total} available",
+    roman: "Mukhtasar reviewed practice shuru karein — {n}/{total} dastiyab",
+    ur: "مختصر جائزہ شدہ مشق شروع کریں — {n}/{total} دستیاب",
+  },
+
+  // ---- Step 2b — tutor warnings, citations, failure recovery ----
+  tutorWarningFallback: {
+    en: "Fallback order: Gemini first, then Groq, then OpenRouter (free model). If one provider fails, the next is tried automatically.",
+    ur: "متبادل ترتیب: پہلے Gemini، پھر Groq، پھر OpenRouter (مفت ماڈل)۔ اگر ایک فراہم کنندہ ناکام ہو جائے تو اگلے کو خودکار طور پر آزمایا جاتا ہے۔",
+  },
+  tutorWarningRetention: {
+    en: "Retention: the providers may process and keep your question under their own policies — this site does not control or see that retention. Your questions are not stored on this site.",
+    ur: "برقرار رکھنا: فراہم کنندگان آپ کا سوال اپنی پالیسیوں کے تحت پروسیس اور رکھ سکتے ہیں — اس سائٹ کا اس پر کوئی کنٹرول یا نظر نہیں۔ آپ کے سوالات اس سائٹ پر محفوظ نہیں ہوتے۔",
+  },
+  citationsHeading: { en: "Sources from this library", roman: "Is library ke sources", ur: "اس لائبریری کے ماخذ" },
+  citationNoteLabel: { en: "Note", roman: "Note", ur: "نوٹ" },
+  aiNotAuthority: {
+    en: "AI explanations are study help, not the answer key — always check the library note or question yourself.",
+    ur: "اے آئی وضاحتیں مطالعے میں مدد ہیں، جوابی کلید نہیں — ہمیشہ لائبریری نوٹ یا سوال خود چیک کریں۔",
+  },
+  requestCancelled: {
+    en: "Request cancelled — your question is back in the box below.",
+    ur: "درخواست منسوخ — آپ کا سوال نیچے والے خانے میں واپس آ گیا ہے۔",
+  },
+  retryButton: { en: "Retry", roman: "Dobara koshish karein", ur: "دوبارہ کوشش کریں" },
+  offlineSearchButton: { en: "Search the library offline", roman: "Library offline talaash karein", ur: "لائبریری آف لائن تلاش کریں" },
+  tutorFailedNote: {
+    en: "The live tutor could not answer. Your question is preserved below — retry, or search the library offline.",
+    ur: "براہ راست استاد جواب نہیں دے سکا۔ آپ کا سوال نیچے محفوظ ہے — دوبارہ کوشش کریں، یا لائبریری آف لائن تلاش کریں۔",
+  },
+  checkedAgeNow: { en: "Checked just now.", roman: "Abhi check hua.", ur: "ابھی چیک ہوا۔" },
+  checkedAgeMin: { en: "Checked {n} min ago.", roman: "{n} min pehle check hua.", ur: "{n} منٹ پہلے چیک ہوا۔" },
+  checkedAgeOld: { en: "Checked over an hour ago.", roman: "Aik ghantay se zyada pehle check hua.", ur: "ایک گھنٹے سے زیادہ پہلے چیک ہوا۔" },
+  refreshCooldownNote: {
+    en: "Refresh is available again shortly — probes are rate-limited to protect provider quota.",
+    ur: "ریفریش جلد دوبارہ دستیاب ہوگا — فراہم کنندہ کوٹہ بچانے کے لیے جانچ محدود ہے۔",
+  },
+
+  // ---- Step 2b — study plan: pacing, calendar, deep links ----
+  planPacing3: { en: "21 study units paced over 21 days", ur: "21 مطالعہ یونٹس 21 دنوں میں" },
+  planPacing6: { en: "21 study units paced over 42 days", ur: "21 مطالعہ یونٹس 42 دنوں میں" },
+  planPacing12: { en: "21 study units · two cycles paced over 84 days", ur: "21 مطالعہ یونٹس · دو مراحل میں 84 دنوں میں" },
+  planCalendarSpan: {
+    en: "{study} study days + {rest} rest days over {total} calendar days",
+    ur: "{total} کیلنڈر دنوں میں {study} مطالعہ دن + {rest} آرام دن",
+  },
+  planRestDay: { en: "Rest day", roman: "Aaram ka din", ur: "آرام کا دن" },
+  planRestDayNote: { en: "No tasks — rest and recover.", roman: "Koi task nahi — aaram karein.", ur: "کوئی کام نہیں — آرام کریں۔" },
+  planCatchUpLabel: { en: "Catch-up day", roman: "Catch-up din", ur: "تلافی کا دن" },
+  planCatchUpNote: {
+    en: "Redo anything missed before moving on.",
+    roman: "Aage barhne se pehle chhoota hua kaam mukammal karein.",
+    ur: "آگے بڑھنے سے پہلے چھوٹا ہوا کام مکمل کریں۔",
+  },
+  planCycle2Label: { en: "Cycle 2 revisit", roman: "Cycle 2 revisit", ur: "دوسرے مرحلے میں دہرائی" },
+  planCycle2Note: {
+    en: "Revisit this unit with unseen items and mixed practice — not the same questions repeated.",
+    ur: "اس یونٹ کو نئے سوالات اور مخلوط مشق کے ساتھ دہرائیں — وہی سوالات دہرائے نہیں جاتے۔",
+  },
+  planCycle2Banner: {
+    en: "12-week plan: two cycles. Cycle 1 builds the units; Cycle 2 revisits each unit with unseen items and mixed practice. One checkbox per task — checking it marks the task done in both cycles.",
+    ur: "12 ہفتوں کا منصوبہ: دو مراحل۔ پہلا مرحلہ یونٹس بناتا ہے؛ دوسرا مرحلہ ہر یونٹ کو نئے سوالات اور مخلوط مشق کے ساتھ دہراتا ہے۔ ہر کام کے لیے ایک چیک باکس — اسے نشان زد کرنے سے کام دونوں مرحلوں میں مکمل شمار ہوتا ہے۔",
+  },
+  planWorkloadWord: { en: "Workload", roman: "Workload", ur: "کام کا بوجھ" },
+  planStartDate: { en: "Plan starts: {date}", ur: "منصوبہ شروع: {date}" },
+  planResetDates: { en: "Restart plan dates from today", roman: "Plan ki tareekhein aaj se dobara shuru karein", ur: "منصوبے کی تاریخیں آج سے دوبارہ شروع کریں" },
+  planResetDatesNote: {
+    en: "Only the dates change — your completed tasks stay checked.",
+    ur: "صرف تاریخیں بدلتی ہیں — آپ کے مکمل شدہ کام نشان زد رہتے ہیں۔",
+  },
+  planTaskLinkLibrary: { en: "Open in Library", roman: "Library mein kholein", ur: "لائبریری میں کھولیں" },
+  planTaskLinkPractice: { en: "Open practice drill", roman: "Practice drill kholein", ur: "مشقی ڈرل کھولیں" },
+  planTaskLinkFlashcards: { en: "Open flashcards", roman: "Flashcards kholein", ur: "فلیش کارڈز کھولیں" },
+  planTaskLinkMock: { en: "Open mock tests", roman: "Mock tests kholein", ur: "موک ٹیسٹ کھولیں" },
+  planTaskLinkAnalysis: { en: "Open analysis", roman: "Analysis kholein", ur: "تجزیہ کھولیں" },
+
+  // ---- Step 2b — flashcards counters + save failure ----
+  flashNewLabel: { en: "New", roman: "New", ur: "نئے" },
+  flashDueReviewsLabel: { en: "Due reviews", roman: "Due reviews", ur: "واجب دہرائی" },
+  flashSessionReviewed: { en: "reviewed this session", roman: "is session mein reviewed", ur: "اس سیشن میں دہرائے گئے" },
+  flashSaveFailed: {
+    en: "Could not save this grade — the card's progress is not stored yet. Retry, or export your progress first.",
+    ur: "یہ درجہ محفوظ نہیں ہو سکا — کارڈ کی پیش رفت ابھی محفوظ نہیں ہوئی۔ دوبارہ کوشش کریں، یا پہلے اپنی پیش رفت برآمد کریں۔",
+  },
+  flashRetrySave: { en: "Retry save", roman: "Save dobara karein", ur: "محفوظ کرنے کی دوبارہ کوشش کریں" },
+  flashSaveRecovered: { en: "Saved.", roman: "Save ho gaya.", ur: "محفوظ ہو گیا۔" },
+
+  // ---- Step 2b — analysis: denominators, provisional, filters, data ----
+  analysisDenominators: {
+    en: "Accuracy {pct}% is over {questions} questions in {attempts} MCQ attempts. Flashcard numbers are self-ratings and are never mixed into MCQ accuracy.",
+    ur: "درستگی {pct}٪ {attempts} ایم سی کیو کوششوں کے {questions} سوالات پر مبنی ہے۔ فلیش کارڈ نمبر خود درجہ بندی ہیں اور کبھی ایم سی کیو درستگی میں نہیں ملائے جاتے۔",
+  },
+  provisionalHeading: { en: "Provisional — small sample", roman: "Provisional — chhota sample", ur: "عارضی — چھوٹا نمونہ" },
+  provisionalSmallSample: { en: "provisional—small sample", roman: "provisional—chhota sample", ur: "عارضی—چھوٹا نمونہ" },
+  provisionalIntro: {
+    en: "These subjects have fewer than 5 answered questions, so their accuracy is provisional. They are shown here, not hidden.",
+    ur: "ان مضامین کے 5 سے کم جواب شدہ سوالات ہیں، اس لیے ان کی درستگی عارضی ہے۔ انہیں یہاں دکھایا گیا ہے، چھپایا نہیں گیا۔",
+  },
+  run10Drill: { en: "Run 10-question drill", roman: "10 sawalon ki drill chalayein", ur: "10 سوالات کی ڈرل چلائیں" },
+  filterDateAll: { en: "All time", roman: "Tamam waqt", ur: "تمام وقت" },
+  filterDate7: { en: "Last 7 days", roman: "Pichhle 7 din", ur: "پچھلے 7 دن" },
+  filterDate30: { en: "Last 30 days", roman: "Pichhle 30 din", ur: "پچھلے 30 دن" },
+  filterTrackLabel: { en: "Track", roman: "Track", ur: "ٹریک" },
+  filterAllSubjects: { en: "All subjects", roman: "Tamam subjects", ur: "تمام مضامین" },
+  filterAllTracks: { en: "All tracks", roman: "Tamam tracks", ur: "تمام ٹریک" },
+  filtersHeading: { en: "Filters", roman: "Filters", ur: "فلٹر" },
+  filteredNote: { en: "Showing {n} of {total} attempts.", ur: "{total} میں سے {n} کوششیں دکھائی جا رہی ہیں۔" },
+  lastExportLine: { en: "Last export: {date}", ur: "آخری برآمد: {date}" },
+  lastImportLine: { en: "Last import: {date}", ur: "آخری درآمد: {date}" },
+  neverExported: { en: "Never exported yet.", roman: "Abhi tak export nahi hua.", ur: "ابھی تک برآمد نہیں ہوا۔" },
+  neverImported: { en: "Never imported yet.", roman: "Abhi tak import nahi hua.", ur: "ابھی تک درآمد نہیں ہوا۔" },
+
+  // ---- Step 2b — library: scoped search, source text, related links ----
+  searchAllSubjects: { en: "Search all subjects", roman: "Tamam subjects talaash karein", ur: "تمام مضامین تلاش کریں" },
+  libraryMatchCount: { en: "{n} of {total} notes", ur: "{total} میں سے {n} نوٹ" },
+  libraryMatchCountQuery: { en: "{n} notes match “{q}”", ur: "“{q}” سے {n} نوٹ ملتے ہیں" },
+  englishSourceText: { en: "English source text", roman: "English source text", ur: "انگریزی ماخذ متن" },
+  relatedLabel: { en: "Related:", roman: "Mutalliqa:", ur: "متعلقہ:" },
+  relatedPractice: { en: "Related practice drill", roman: "Mutalliqa practice drill", ur: "متعلقہ مشقی ڈرل" },
+  relatedFlashcards: { en: "Related flashcards", roman: "Mutalliqa flashcards", ur: "متعلقہ فلیش کارڈز" },
+  relatedPlan: { en: "Related plan day", roman: "Mutalliqa plan din", ur: "متعلقہ منصوبہ دن" },
 };
 
 type Ctx = {

@@ -389,3 +389,14 @@ export function formatFsrsInterval(ms: number, lang: "en" | "roman" | "ur" = "en
   const years = days / 365;
   return `${Math.round(years * 10) / 10}${unit("y", " سال")}`;
 }
+
+/** Step 2b — an FSRS due datetime as a LOCAL calendar date. The stored
+ *  dueAt is an ISO (UTC) string; slicing its first 10 characters showed
+ *  the UTC date, which can be a day ahead of the owner's local date.
+ *  toLocaleDateString() formats in the browser's local timezone. An
+ *  unparseable value falls back to the raw string, never crashes. */
+export function formatLocalDueDate(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+}

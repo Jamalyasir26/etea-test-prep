@@ -9,6 +9,7 @@
 import Link from "next/link";
 import { MOCKS, PATTERN_BANNER, TRACKS } from "@/lib/data";
 import { useLang } from "@/lib/i18n";
+import { TrackConfidenceBadge } from "@/components/StatusBadges";
 
 export default function Tracks() {
   const { t, tf } = useLang();
@@ -36,12 +37,12 @@ export default function Tracks() {
               <span dir="auto">{tr.pattern}</span>
             </p>
             <p>
-              <span
-                dir="ltr"
-                className={`badge ${tr.conf.includes("NOT VERIFIED") || tr.conf.includes("JOB-SITE") ? "red" : "green"}`}
-              >
-                {tr.conf}
-              </span>
+              {/* Step 2a — the conf string is shown verbatim, but the
+                  tone is semantic: source-confirmed (official) only
+                  when a named official source is cited; partial when
+                  part is NOT VERIFIED; unknown for JOB-SITE-only.
+                  The old green/red merge is gone. */}
+              <TrackConfidenceBadge conf={tr.conf} />
               {mocks.length > 0 && (
                 <span className="muted"> · {tf("mocksCount", { n: mocks.length })}</span>
               )}

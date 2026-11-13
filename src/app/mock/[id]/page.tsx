@@ -86,6 +86,31 @@ function MockRunInner() {
       <span dir="ltr">{scoring.policyNote}</span>
     </>
   );
+  // Step 2b — pre-start disclosure extras: the ACTUAL subject
+  // allocation of the built question set (grouped from the real
+  // questions, in bank order), shown on QuizRunner's disclosure
+  // screen. The pattern identity is the mock's stored variant string,
+  // shown verbatim — ETEA and KPPSC variants are never merged.
+  const allocation = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const q of questions) m.set(q.subject, (m.get(q.subject) ?? 0) + 1);
+    return [...m.entries()];
+  }, [questions]);
+  const disclosureExtra = (
+    <>
+      <p>
+        <b>{t("prestartAllocation")}:</b>
+      </p>
+      <ul style={{ marginTop: 0 }}>
+        {allocation.map(([s, n]) => (
+          <li key={s}>
+            <span dir="ltr">{s}</span>:{" "}
+            <span dir="ltr">{tf("prestartQuestions", { n })}</span>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
   return (
     <QuizRunner
       key={scope}
@@ -105,6 +130,8 @@ function MockRunInner() {
       allItemsVerified={allItemsVerified}
       sessionScope={scope}
       questionSeed={questionSeed}
+      disclosureExtra={disclosureExtra}
+      patternLabel={mock.variant}
     />
   );
 }

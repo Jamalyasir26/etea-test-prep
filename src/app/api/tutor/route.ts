@@ -72,8 +72,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       answer: text,
       provider,
+      // Step 2b — citations: note titles WITH their Library subject
+      // (retrieve() attaches it) so the tutor page can deep-link each
+      // citation; question ids link to the explain deep link.
       sources: {
-        notes: notes.map((n) => n.title),
+        notes: notes.map((n) => ({ title: n.title, subject: n.subject })),
         questions: questions.map((q) => q.id),
       },
     });

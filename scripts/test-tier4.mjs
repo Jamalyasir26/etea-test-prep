@@ -90,7 +90,7 @@ check(
     (nav.match(/<Link /g) ?? []).length === 4, // brand + map + issues + review
 );
 check("B02: language selector + theme toggle untouched", nav.includes('aria-label={t("languageLabel")}') && nav.includes('aria-label={t("toggleDarkLabel")}'));
-check("B02: focus-visible style exists (keyboard focus visible)", /:focus-visible \{ outline: 2px solid var\(--teal\)/.test(css) && /\.topbar :focus-visible \{ outline-color: #fff; \}/.test(css));
+check("B02: focus-visible style exists (keyboard focus visible)", /:focus-visible \{ outline: 2px solid var\(--focus-ring\)/.test(css) && /\.topbar :focus-visible \{ outline-color: #fff; \}/.test(css));
 
 // ---------------------------------------------------------------- B03
 function countDirLtr(src) {

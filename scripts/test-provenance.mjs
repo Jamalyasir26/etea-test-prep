@@ -215,7 +215,9 @@ for (const [file, label] of [
 }
 check(
   "badge component renders null without sourceKind",
-  fs.readFileSync(join(ROOT, "src/components/ProvenanceBadge.tsx"), "utf8").includes("if (!badge) return null"),
+  // Step 2a — the guard is now explicit (no badge OR no sourceKind);
+  // the behaviour (null when nothing is claimed) is unchanged.
+  fs.readFileSync(join(ROOT, "src/components/ProvenanceBadge.tsx"), "utf8").includes("if (!badge || !sourceKind) return null"),
 );
 
 console.log(failures === 0 ? `\nAll provenance tests passed.` : `\n${failures} FAILURE(S)`);

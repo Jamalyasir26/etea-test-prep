@@ -279,8 +279,14 @@ th { font-weight: 700; }
 .flip-back { transform: rotateY(180deg); }
 /* Stage 1 P1 Tier 4 (B02/B05) — visible keyboard focus everywhere. Teal
    on light backgrounds, light teal on dark backgrounds, white inside the
-   teal header bar. Mouse users see no change (:focus-visible only). */
-:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+   teal header bar. Mouse users see no change (:focus-visible only).
+   Step 2a — the colour now comes from the --focus-ring semantic token
+   (same values: teal #09555e light / #7fd4d8 dark). The report's
+   suggested purple (#7C3AED, 5.49:1) was evaluated and NOT adopted:
+   the existing teal pair has HIGHER contrast (8.19:1 light, 10.45:1
+   dark — computed, see scripts/test-contrast.mjs) and changing it
+   would be a wholesale visual change for no accessibility gain. */
+:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 [data-theme="dark"] :focus-visible { outline-color: #7fd4d8; }
 .topbar :focus-visible { outline-color: #fff; }
 footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
@@ -301,6 +307,119 @@ footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
   .nav.open { display: flex; }
   .nav.open a { min-height: 44px; }
 }
+
+  /* ---- Step 2a — semantic token system (report's exact values).
+     No wholesale redesign: tokens alias the existing brand variables
+     wherever the value matches (--paper/--ink/--teal/--muted). Values
+     that differ from legacy variables (--border, dark --surface-card,
+     dark --text-secondary) are defined EXACTLY as the report specifies
+     and are used by NEW styles only; legacy components keep rendering
+     from --line/--card/--muted unchanged. Every pair's contrast ratio
+     is COMPUTED (not rounded) in scripts/test-contrast.mjs, including
+     the report's claimed ratios and the old 2.22:1 badge regression. */
+  :root {
+    --surface-page: var(--paper);
+    --surface-card: var(--card);
+    --surface-raised: #f7f8f5;
+    --text-primary: var(--ink);
+    --text-secondary: var(--muted);
+    --border: #a9b8b9;
+    --brand-primary: var(--teal);
+    --on-primary: #ffffff;
+    --link: #09555e;
+    --selected-bg: #d9f0ef;
+    --selected-text: #1b272b;
+    --focus-ring: #09555e;
+    --status-warning-bg: #fff4d6;
+    --status-warning-text: #7a4b00;
+    --status-success-bg: #dcfce7;
+    --status-success-text: #14532d;
+    --status-error-bg: #fde2e2;
+    --status-error-text: #8b1e1e;
+    --status-neutral-bg: #e3e8e7;
+    --status-neutral-text: #333344;
+    /* Owner-reviewed is LOCAL personal review, never certification:
+       its pair is a teal-tinted neutral, deliberately NOT the success
+       green. Computed 7.80:1 (light) / 10.33:1 (dark). */
+    --status-reviewed-bg: #dce9e7;
+    --status-reviewed-text: #1f4a52;
+    --disabled-text: #667477;
+    --disabled-bg: #f1f0e8;
+  }
+  [data-theme="dark"] {
+    --surface-page: var(--paper);
+    --surface-card: #172326;
+    --surface-raised: #202a2d;
+    --text-primary: var(--ink);
+    --text-secondary: #b5c5c7;
+    --border: #587276;
+    --brand-primary: #7fd4d8;
+    --on-primary: #10191c;
+    --link: #7fd4d8;
+    --selected-bg: #12383d;
+    --selected-text: #d5f5f3;
+    --focus-ring: #7fd4d8;
+    --status-warning-bg: #3b2800;
+    --status-warning-text: #ffd166;
+    --status-success-bg: #12351f;
+    --status-success-text: #9be7b0;
+    --status-error-bg: #4a1713;
+    --status-error-text: #ffb4ab;
+    --status-neutral-bg: #2c3f42;
+    --status-neutral-text: #cfe0e0;
+    --status-reviewed-bg: #1e3236;
+    --status-reviewed-text: #c9e8e6;
+    --disabled-text: #718084;
+    --disabled-bg: #202a2d;
+  }
+
+  /* Step 2a — semantic status badges. Text + icon + explanation (title
+     + aria-label in the component); hue is NEVER the only signal.
+     Tones never merge distinct meanings: official/source-confirmed is
+     the ONLY success-green tone; owner-reviewed uses the reviewed
+     neutral; draft/proxy share the neutral family but differ in text,
+     icon AND border style (proxy is dashed); partial/unknown share the
+     warning family but differ in text, icon AND border style (unknown
+     is dotted). */
+  .sbadge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 0.75rem; font-weight: 700; padding: 2px 8px;
+    border-radius: 999px; border: 1px solid transparent;
+    margin-inline-end: 6px; white-space: nowrap;
+  }
+  .sbadge svg { flex-shrink: 0; }
+  .sbadge-draft { background: var(--status-neutral-bg); color: var(--status-neutral-text); }
+  .sbadge-reviewed { background: var(--status-reviewed-bg); color: var(--status-reviewed-text); }
+  .sbadge-proxy { background: var(--status-neutral-bg); color: var(--status-neutral-text); border-style: dashed; border-color: var(--status-neutral-text); }
+  .sbadge-partial { background: var(--status-warning-bg); color: var(--status-warning-text); }
+  .sbadge-unknown { background: var(--status-warning-bg); color: var(--status-warning-text); border-style: dotted; border-color: var(--status-warning-text); }
+  .sbadge-official { background: var(--status-success-bg); color: var(--status-success-text); }
+  .sbadge-topic { background: var(--selected-bg); color: var(--selected-text); }
+  .sbadge-extracted { background: var(--selected-bg); color: var(--selected-text); border-style: dashed; border-color: var(--selected-text); }
+  .sbadge-error { background: var(--status-error-bg); color: var(--status-error-text); }
+
+  /* Step 2a — sidebar active link: selected surface + 2px LOGICAL
+     border (inline-start side, correct in LTR and RTL) + aria-current
+     in the JSX. Hue alone never marks the current route. */
+  .shell-nav-active {
+    background: var(--selected-bg) !important;
+    color: var(--selected-text) !important;
+    border-inline-start: 2px solid var(--teal);
+  }
+  [data-theme="dark"] .shell-nav-active {
+    border-inline-start-color: #7fd4d8;
+  }
+
+  /* Step 2a (P1.1) — selects never exceed their container (the home
+     pattern select's long option labels stretched its card at 360px).
+     A standalone rule: the legacy select/input/textarea rule above is
+     left verbatim. */
+  select { max-width: 100%; }
+  /* Step 2a (P1.1) — flex children shrink below content width by
+     default in the rows the report flagged (tutor/library/issues);
+     the row-level min-width:0 is set inline where the row lives, and
+     this guards any other flex input against the same overflow. */
+  input[type="text"], input[type="search"], textarea { min-width: 0; }
 
   /* ---- Stage 3 shell helpers (plain CSS for the two
      direction-sensitive bits that Tailwind logical properties cannot

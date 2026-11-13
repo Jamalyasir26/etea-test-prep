@@ -101,6 +101,11 @@ const ANNOTATIONS_OPTIN_KEY = "etea_annotations_tutor_optin_v1";
 // stored value fails JSON.parse, the raw text is preserved here VERBATIM
 // (never edited, never deleted) so it can be downloaded and inspected.
 const QUARANTINE_KEY = "etea_quarantine_next_v1";
+// Step 2b — last backup export/import timestamps (ISO), shown in the
+// Analysis data-management panel so the owner can see how stale the
+// last backup is. Not part of the backup payload itself.
+const LAST_EXPORT_KEY = "etea_last_export_next";
+const LAST_IMPORT_KEY = "etea_last_import_next";
 
 /** Stage 1 P0.2 — review-status vocabulary (Phase 2, D2). "draft" is the
  *  bank default (unreviewed). Only "owner-reviewed" and "approved" count
@@ -672,8 +677,11 @@ export function loadFlashState(): FlashState {
   if (typeof window === "undefined") return {};
   return safeParse<FlashState>(FLASH_KEY, {});
 }
-export function saveFlashState(s: FlashState) {
-  safeWrite(FLASH_KEY, JSON.stringify(s));
+export function saveFlashState(s: FlashState): boolean {
+  // Step 2b — returns the safeWrite result so the flashcards page can
+  // warn (with retry/export) when a grade fails to save. Callers that
+  // ignore the return value are unaffected.
+  return safeWrite(FLASH_KEY, JSON.stringify(s));
 }
 
 /** Count cards waiting for review right now (home dashboard): the
@@ -689,6 +697,28 @@ export function countDueFlashcards(
   const raw = loadFlashState() as unknown as Record<string, unknown>;
   const { state } = convertFlashStateToFsrs(raw, cards, now);
   return buildReviewQueue(withIds, state, now).length;
+}
+
+/** Step 2a — the New/Due split behind countDueFlashcards, for the home
+ *  "Start here" card. Same read-only, in-memory-migration read as
+ *  countDueFlashcards, and the same classification as
+ *  buildReviewQueue (no category filter: home covers all categories).
+ *  fresh + due === countDueFlashcards(cards, now) for the same inputs;
+ *  cards due in the future are in neither bucket. */
+export function countFlashcardBuckets(
+  cards: { front: string; back: string; category: string }[],
+  now: Date = new Date(),
+): { fresh: number; due: number } {
+  const raw = loadFlashState() as unknown as Record<string, unknown>;
+  const { state } = convertFlashStateToFsrs(raw, cards, now);
+  let fresh = 0;
+  let due = 0;
+  for (const c of cards) {
+    const entry = state[flashcardId(c.front, c.back)];
+    if (!entry) fresh++;
+    else if (new Date(entry.dueAt).getTime() <= now.getTime()) due++;
+  }
+  return { fresh, due };
 }
 
 export type DueForecastDay = { date: string; label: string; due: number };
@@ -753,6 +783,10 @@ export type IssueReport = {
   reason: IssueReason | null;
   proposedCorrection: string | null;
   source: string | null;
+  /** Step 2b — the reporter explicitly chose "no suggested
+   *  correction" (the issue is a flag, not a fix). Absent on older
+   *  reports, which never offered the choice. */
+  noSuggestedCorrection?: boolean;
 };
 
 function isIssueReason(v: unknown): v is IssueReason {
@@ -774,6 +808,7 @@ function asIssueReport(raw: unknown): IssueReport | null {
     reason: isIssueReason(r.reason) ? r.reason : null,
     proposedCorrection: typeof r.proposedCorrection === "string" ? r.proposedCorrection : null,
     source: typeof r.source === "string" ? r.source : null,
+    noSuggestedCorrection: r.noSuggestedCorrection === true ? true : undefined,
   };
 }
 
@@ -797,6 +832,8 @@ export function reportIssueDetailed(input: {
   reason?: IssueReason | null;
   proposedCorrection?: string;
   source?: string;
+  /** Step 2b — the reporter explicitly chose "no suggested correction". */
+  noSuggestedCorrection?: boolean;
 }): IssueReport {
   const rec: IssueReport = {
     id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -806,6 +843,7 @@ export function reportIssueDetailed(input: {
     reason: input.reason ?? null,
     proposedCorrection: input.proposedCorrection?.trim() ? input.proposedCorrection.trim() : null,
     source: input.source?.trim() ? input.source.trim() : null,
+    noSuggestedCorrection: input.noSuggestedCorrection === true ? true : undefined,
   };
   const all = loadIssues();
   all.push(rec);
@@ -822,9 +860,14 @@ export function clearIssues() {
 }
 
 // ---- in-progress quiz / mock sessions (versioned, resumable) ----
-
+// Step 2b — SESSION VERSION 3: a session now carries a stable id, the
+// subject/mock identity, and the content revision (KEY_VERSION), so a
+// stored session can be CHECKED against the current run before any
+// answer is applied. Version 2 sessions (no identity/revision fields)
+// stay readable: they are compatible only on an exact scope + seed +
+// question-ids match, which is the content guarantee for legacy runs.
 export type QuizSession = {
-  version: 2;
+  version: 2 | 3;
   scope: string; // e.g. "mock:zam1:trusted" or "practice:islamiyat:0"
   mode: "practice" | "mock";
   title: string;
@@ -842,7 +885,27 @@ export type QuizSession = {
   minutes: number;
   submitted: boolean; // persisted: finish() is a no-op once this is true
   trustedOnly: boolean;
+  // --- version 3 fields (absent on legacy version 2 sessions) ---
+  /** Stable id for this run: scope + start time. Stable across every
+   *  save of the same run, unique per start. */
+  id?: string;
+  /** Subject label (practice) — part of the compatibility fingerprint. */
+  subject?: string;
+  /** Mock/track identity (mock mode) — part of the fingerprint. */
+  mockId?: string;
+  trackId?: string;
+  /** Content revision (KEY_VERSION) the questions were built from. */
+  contentRevision?: string;
+  /** Flagged-for-review questions (qid -> true). */
+  flags?: Record<string, boolean>;
 };
+
+/** Session versions this build reads. Version 1 never existed (the
+ *  key name carries v2 from the start); unknown versions are never
+ *  resumed. */
+export function isSessionVersion(v: unknown): v is 2 | 3 {
+  return v === 2 || v === 3;
+}
 
 export function loadSessions(): Record<string, QuizSession> {
   if (typeof window === "undefined") return {};
@@ -854,7 +917,7 @@ export function loadSessions(): Record<string, QuizSession> {
  *  resumed; callers should clear them and start fresh. */
 export function loadSession(scope: string): QuizSession | null {
   const s = loadSessions()[scope];
-  if (!s || s.version !== 2 || typeof s.scope !== "string") return null;
+  if (!s || !isSessionVersion(s.version) || typeof s.scope !== "string") return null;
   if (s.submitted) return null;
   if (s.deadlineTs !== null && s.deadlineTs !== undefined && s.deadlineTs <= Date.now()) return null;
   return s;
@@ -863,8 +926,80 @@ export function loadSession(scope: string): QuizSession | null {
 /** Raw read (including submitted/expired sessions) for idempotency checks. */
 export function loadSessionRaw(scope: string): QuizSession | null {
   const s = loadSessions()[scope];
-  if (!s || s.version !== 2) return null;
+  if (!s || !isSessionVersion(s.version)) return null;
   return s;
+}
+
+/** Step 2a — every LIVE session (same liveness rules as loadSession:
+ *  version 2 or 3, string scope, not submitted, deadline not passed), most
+ *  recently started first. Read-only: the home "Start here" card uses
+ *  it to offer a genuine Resume action; it never writes or clears. */
+export function liveSessions(): QuizSession[] {
+  const now = Date.now();
+  return Object.values(loadSessions())
+    .filter(
+      (s) =>
+        s &&
+        isSessionVersion(s.version) &&
+        typeof s.scope === "string" &&
+        !s.submitted &&
+        (s.deadlineTs === null || s.deadlineTs === undefined || s.deadlineTs > now),
+    )
+    .sort((a, b) => b.startedAt - a.startedAt);
+}
+
+/** Step 2b — the fingerprint a run is checked against before a stored
+ *  session is resumed. Built by QuizRunner from its props + the
+ *  questions it was given; nothing here is guessed. */
+export type SessionFingerprint = {
+  scope: string;
+  subject?: string;
+  mockId?: string;
+  trackId?: string;
+  questionSeed: string;
+  questionIds: string[];
+  contentRevision: string;
+};
+
+export type IncompatibilityReason =
+  | "version"
+  | "scope"
+  | "subject"
+  | "mock"
+  | "seed"
+  | "questions"
+  | "revision";
+
+/** Step 2b — is this stored session safe to resume for THIS run?
+ *  NEVER silently apply stale answers to the wrong set: every field
+ *  of the fingerprint must match. Legacy version 2 sessions carry no
+ *  identity/revision fields, so they match on scope + seed + the exact
+ *  question-id list only — the ids themselves are the content
+ *  guarantee (a changed bank produces a different id list). Returns
+ *  the first mismatch reason so the UI can say WHY the old session
+ *  was not applied. Pure: no storage access. */
+export function checkSessionCompatibility(
+  stored: QuizSession,
+  current: SessionFingerprint,
+): { compatible: boolean; reason?: IncompatibilityReason } {
+  if (!isSessionVersion(stored.version)) return { compatible: false, reason: "version" };
+  if (stored.scope !== current.scope) return { compatible: false, reason: "scope" };
+  if (
+    stored.questionIds.length !== current.questionIds.length ||
+    stored.questionIds.some((id, i) => id !== current.questionIds[i])
+  ) {
+    return { compatible: false, reason: "questions" };
+  }
+  if (stored.questionSeed !== current.questionSeed) return { compatible: false, reason: "seed" };
+  if (stored.version === 3) {
+    if ((stored.subject ?? "") !== (current.subject ?? ""))
+      return { compatible: false, reason: "subject" };
+    if ((stored.mockId ?? "") !== (current.mockId ?? "") || (stored.trackId ?? "") !== (current.trackId ?? ""))
+      return { compatible: false, reason: "mock" };
+    if (stored.contentRevision !== current.contentRevision)
+      return { compatible: false, reason: "revision" };
+  }
+  return { compatible: true };
 }
 
 export function saveSession(s: QuizSession) {
@@ -893,6 +1028,9 @@ export function clearAllSessions() {
 // (MCQ or flashcards).
 export type Stats = {
   totalAttempts: number; // all kinds, including flashcards
+  /** Step 2b — MCQ attempts only (quiz + mock), the denominator behind
+   *  the accuracy headline. */
+  mcqAttempts: number;
   totalQuestions: number; // MCQ only (quiz + mock)
   totalCorrect: number; // MCQ only, first-pass scores
   accuracy: number; // MCQ only, 0..100 (0 when no MCQ attempts)
@@ -904,6 +1042,10 @@ export type Stats = {
   daily: { date: string; correct: number; total: number; attempts: number }[];
   weakest: { subject: string; accuracy: number; total: number }[];
   strongest: { subject: string; accuracy: number; total: number }[];
+  /** Step 2b — subjects with 1–4 answered questions: too small a
+   *  sample for the weakest list, shown as provisional instead of
+   *  suppressed silently. Sorted worst-first, like `weakest`. */
+  provisional: { subject: string; accuracy: number; total: number }[];
   hasData: boolean;
   flashAttempts: number;
   flashReviewed: number;
@@ -966,8 +1108,16 @@ export function computeStats(attempts: Attempt[]): Stats {
     .map(([subject, v]) => ({ subject, accuracy: v.accuracy, total: v.total }))
     .filter((x) => x.total >= 5)
     .sort((a, b) => a.accuracy - b.accuracy);
+  // Step 2b — small samples (1–4 questions) are surfaced as
+  // provisional, never suppressed: the Analysis page labels them and
+  // offers a 10-question drill for each.
+  const provisionalList = Object.entries(perSubject)
+    .map(([subject, v]) => ({ subject, accuracy: v.accuracy, total: v.total }))
+    .filter((x) => x.total >= 1 && x.total < 5)
+    .sort((a, b) => a.accuracy - b.accuracy);
   return {
     totalAttempts: attempts.length,
+    mcqAttempts: mcq.length,
     totalQuestions,
     totalCorrect,
     accuracy: totalQuestions ? (totalCorrect / totalQuestions) * 100 : 0,
@@ -979,6 +1129,7 @@ export function computeStats(attempts: Attempt[]): Stats {
     daily,
     weakest: subjList.slice(0, 5),
     strongest: [...subjList].reverse().slice(0, 5),
+    provisional: provisionalList,
     hasData,
     flashAttempts: flash.length,
     flashReviewed: flash.reduce((s, a) => s + a.total, 0),
@@ -991,6 +1142,22 @@ export function computeStats(attempts: Attempt[]): Stats {
 // (language/theme), in-progress sessions, last study day. No API keys:
 // there are no client-side keys in this app (tutor keys live server-side
 // in Vercel env vars); nothing credential-like is read or written here.
+
+/** Step 2b — last backup export/import timestamps (ISO strings, null
+ *  when never). Recorded by the Analysis page's export/import actions,
+ *  displayed in the data-management panel. */
+export function loadLastExport(): string | null {
+  return safeRead(LAST_EXPORT_KEY);
+}
+export function recordExport() {
+  safeWrite(LAST_EXPORT_KEY, new Date().toISOString());
+}
+export function loadLastImport(): string | null {
+  return safeRead(LAST_IMPORT_KEY);
+}
+export function recordImport() {
+  safeWrite(LAST_IMPORT_KEY, new Date().toISOString());
+}
 export type Preferences = { language: string | null; theme: string | null };
 
 export function loadPreferences(): Preferences {
@@ -1046,7 +1213,7 @@ function isValidSession(s: unknown): s is QuizSession {
   if (!s || typeof s !== "object") return false;
   const r = s as Record<string, unknown>;
   return (
-    r.version === 2 &&
+    isSessionVersion(r.version) &&
     typeof r.scope === "string" &&
     !!r.scope &&
     Array.isArray(r.questionIds) &&

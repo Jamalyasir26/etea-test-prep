@@ -1,4 +1,5 @@
-// Practice — topic quizzes, 20 per attempt, shuffled, instant feedback.
+// Practice — topic quizzes, 20 per attempt by default (?count= sets
+// the drill size, 5–20), shuffled, instant feedback.
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -37,6 +38,13 @@ function PracticeInner() {
   const { t, tf } = useLang();
   const params = useSearchParams();
   const initial = params.get("subject") ?? "";
+  // Step 2b — ?count= sets the drill size (the Analysis page's "Run
+  // 10-question drill" links here with count=10). Clamped to 5–20: a
+  // smaller set is not a drill, and 20 is the standard set size. The
+  // count is part of the session scope (only when it differs from the
+  // default 20, so existing stored sessions keep working).
+  const countParam = Number(params.get("count") ?? "20");
+  const count = Number.isFinite(countParam) ? Math.min(20, Math.max(5, Math.floor(countParam))) : 20;
   const subjects = useMemo(() => Object.keys(BY_SUBJECT).sort(), []);
   const [stored] = useState(() => loadPracticeState(initial || "islamiyat"));
   const [subjectKey, setSubjectKey] = useState(() =>
@@ -60,8 +68,8 @@ function PracticeInner() {
   const questions = useMemo(() => {
     const bank = BY_SUBJECT[subjectKey] ?? [];
     const rand = mulberry32(hashSeed(`${subjectKey}-${round}-${seed}`));
-    return shuffled(bank, rand).slice(0, 20);
-  }, [subjectKey, round, seed]);
+    return shuffled(bank, rand).slice(0, count);
+  }, [subjectKey, round, seed, count]);
 
   // Stage 1 P0.2 — the results screen shows "Provisional — not verified"
   // unless every question in this set is owner-reviewed/approved.
@@ -102,13 +110,13 @@ function PracticeInner() {
         </button>
       </div>
       <QuizRunner
-        key={`${subjectKey}-${round}`}
+        key={`${subjectKey}-${round}-${count}`}
         title={tf("quizTitle", { subject: lri(subjectLabel) })}
         questions={questions}
         mode="practice"
         subject={subjectLabel}
         allItemsVerified={allItemsVerified}
-        sessionScope={`practice:${subjectKey}:${round}`}
+        sessionScope={count === 20 ? `practice:${subjectKey}:${round}` : `practice:${subjectKey}:${round}:c${count}`}
         questionSeed={String(seed)}
       />
     </div>

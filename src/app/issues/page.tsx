@@ -117,6 +117,9 @@ export default function IssuesPage() {
           placeholder={t("filterPlaceholder")}
           value={subjectFilter}
           onChange={(e) => setSubjectFilter(e.target.value)}
+          // Step 2a (P1.1) — the filter input shrinks inside the
+          // viewport instead of pushing the buttons off-screen.
+          style={{ flex: 1, minWidth: 0 }}
         />
         <button className="secondary" onClick={exportJson} disabled={filtered.length === 0}>
           {t("exportJsonLabel")}
@@ -146,7 +149,13 @@ export default function IssuesPage() {
       {filtered.length === 0 ? (
         <p className="muted">{issues.length === 0 ? t("noReports") : t("noReportsMatch")}</p>
       ) : (
-        <table>
+        <>
+          {/* Step 2a (P1.1) — labelled, keyboard-accessible scoped
+              horizontal scroll region; the caption tells narrow-screen
+              readers the table scrolls. */}
+          <p className="muted">{t("tableScrollHint")}</p>
+          <div className="table-scroll" role="region" aria-label={t("issuesTableAria")} tabIndex={0}>
+          <table>
           <thead>
             <tr>
               <th>{t("dateWord")}</th>
@@ -167,7 +176,13 @@ export default function IssuesPage() {
                 </td>
                 <td dir="ltr">{i.subject ?? "—"}</td>
                 <td>{i.reason ? t(REASON_KEY[i.reason]) : "—"}</td>
-                <td dir="auto">{i.proposedCorrection ?? "—"}</td>
+                {/* Step 2b — an issue filed with the explicit "no
+                    suggested correction" choice shows that choice, not
+                    an empty dash (the two are different: one is a
+                    decision, the other is missing data). */}
+                <td dir="auto">
+                  {i.noSuggestedCorrection ? t("noSuggestedCorrectionLabel") : (i.proposedCorrection ?? "—")}
+                </td>
                 <td dir="auto">{i.source ?? "—"}</td>
                 <td>
                   <button
@@ -186,7 +201,9 @@ export default function IssuesPage() {
               </tr>
             ))}
           </tbody>
-        </table>
+          </table>
+          </div>
+        </>
       )}
 
       {/* Stage 1 P2 (B07) — client-error telemetry. Recorded on this
@@ -211,7 +228,11 @@ export default function IssuesPage() {
       {telemetry.length === 0 ? (
         <p className="muted">{t("noTelemetry")}</p>
       ) : (
-        <table>
+        <>
+          {/* Step 2a (P1.1) — same scroll-region pattern as the issues table. */}
+          <p className="muted">{t("tableScrollHint")}</p>
+          <div className="table-scroll" role="region" aria-label={t("telemetryTableAria")} tabIndex={0}>
+          <table>
           <thead>
             <tr>
               <th>{t("timeUtcWord")}</th>
@@ -235,6 +256,8 @@ export default function IssuesPage() {
             ))}
           </tbody>
         </table>
+          </div>
+        </>
       )}
     </div>
   );
