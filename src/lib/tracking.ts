@@ -691,6 +691,48 @@ export function countDueFlashcards(
   return buildReviewQueue(withIds, state, now).length;
 }
 
+export type DueForecastDay = { date: string; label: string; due: number };
+
+/** Stage 3 part 2 — due forecast for the next `days` calendar days,
+ *  for the Recharts bar chart on /analysis. Pure (takes state, never
+ *  reads storage): new cards (no stored state) and cards already due
+ *  count toward day 0 (today); a card due on a later calendar day
+ *  counts toward that day; cards due beyond the window are not
+ *  counted. Day boundaries are LOCAL calendar dates (same "today" the
+ *  rest of the app uses). `date` is YYYY-MM-DD, `label` is MM-DD for
+ *  the chart axis. Never invents data: with no cards it returns
+ *  `days` zero-count days. */
+export function forecastDue(
+  cards: { front: string; back: string; category: string }[],
+  state: FlashState,
+  now: Date = new Date(),
+  days = 7,
+): DueForecastDay[] {
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const out: DueForecastDay[] = [];
+  for (let i = 0; i < days; i++) {
+    const d = new Date(startOfToday.getTime() + i * 86400000);
+    const yyyy = d.getFullYear();
+    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    const dd = String(d.getDate()).padStart(2, "0");
+    out.push({ date: `${yyyy}-${mm}-${dd}`, label: `${mm}-${dd}`, due: 0 });
+  }
+  const withIds = cards.map((c) => ({ ...c, id: flashcardId(c.front, c.back) }));
+  for (const c of withIds) {
+    const entry = state[c.id];
+    let day = 0; // new cards and already-due cards: today.
+    if (entry) {
+      const dueDate = new Date(entry.dueAt);
+      if (!Number.isNaN(dueDate.getTime()) && dueDate.getTime() > now.getTime()) {
+        const dueDay = new Date(dueDate.getFullYear(), dueDate.getMonth(), dueDate.getDate());
+        day = Math.round((dueDay.getTime() - startOfToday.getTime()) / 86400000);
+      }
+    }
+    if (day >= 0 && day < days) out[day].due++;
+  }
+  return out;
+}
+
 // ---- "Report an issue" — honest private inbox (never sent anywhere) ----
 
 export type IssueReason = "wrong-answer" | "wrong-explanation" | "typo" | "outdated" | "other";

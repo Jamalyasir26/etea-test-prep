@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Arabic } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import AppShell from "@/components/AppShell";
 import TelemetryListener from "@/components/TelemetryListener";
 import "./globals.css";
 
@@ -42,9 +41,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             route, on-device only, viewable on /issues. Renders nothing. */}
         <TelemetryListener />
         <LangProvider>
-          <Nav />
-          <main className="container">{children}</main>
-          <Footer />
+          {/* Stage 3 foundation — AppShell renders the new sidebar shell
+              on the home page and the legacy Nav + .container chrome on
+              every other page (see src/components/AppShell.tsx). */}
+          <AppShell>{children}</AppShell>
         </LangProvider>
       </body>
     </html>

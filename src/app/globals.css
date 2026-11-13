@@ -1,3 +1,118 @@
+/* ETEA Prep Library v3 — Tailwind CSS v4 + legacy design system.
+ *
+ * COEXISTENCE (Stage 3 foundation): the hand-rolled design system
+ * below (brand: teal #09555E, off-white #FDFBF1, amber #F5A10B,
+ * charcoal #1B272B) keeps working unchanged. Tailwind is added
+ * WITHOUT its preflight reset and WITH the `tw` prefix, and every
+ * legacy rule is wrapped in `@layer base` below the `utilities`
+ * layer — so Tailwind utilities win only on elements that actually
+ * use them (the new shell), and old pages render as before. */
+
+/* Cascade layer order, declared before the imports (the CSS spec
+   allows @layer statements to precede @import). */
+@layer theme, base, components, utilities;
+
+/* Tailwind v4 WITHOUT preflight: theme + utilities only. Preflight is
+   deliberately NOT imported — its reset (body margin, h1-h3 sizes,
+   button/input defaults, border styles) would override the legacy
+   rules below. The `tw` prefix keeps generated utilities
+   (tw:flex, tw:bg-background, ...) from colliding with legacy class
+   names (.container, .grid, .card, .badge). */
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" layer(utilities) prefix(tw);
+
+/* Brand tokens: the site's palette + its ONLY font. The font value
+   references the next/font variable set on <html> by layout.tsx, so
+   the self-hosted font files are used (no external requests). */
+@theme {
+  --color-brand-teal: #09555e;
+  --color-brand-teal-dark: #07424a;
+  --color-brand-paper: #fdfbf1;
+  --color-brand-amber: #f5a10b;
+  --color-brand-ink: #1b272b;
+  --color-brand-muted: #5a6b70;
+  --color-brand-line: #dfe7e5;
+  --font-sans: var(--font-sans-arabic), "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* shadcn theme mapping. Values reference the LEGACY variables where
+   the meaning matches (paper/ink/card/line/teal/amber/red/muted), so
+   the existing [data-theme="dark"] block below drives both systems
+   from one source of truth. Only variables with no legacy equivalent
+   (--secondary, --muted-surface, --destructive-foreground, --ring,
+   --chart-*) are defined in the :root / dark blocks in @layer base.
+   NOTE: --muted is deliberately NOT redefined — in the legacy system
+   it is the muted TEXT color, while shadcn's muted is a surface; the
+   mapping below uses --muted for muted-foreground and the new
+   --muted-surface for the muted surface. */
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-card: var(--card);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--teal);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--muted-surface);
+  --color-muted-foreground: var(--muted);
+  --color-accent: var(--amber);
+  --color-accent-foreground: var(--ink);
+  --color-destructive: var(--red);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* Dark variant driven by the EXISTING theme system: LangProvider sets
+   data-theme="dark" on <html> (src/lib/i18n.tsx). The dark: variant
+   therefore follows the site's own toggle, not the OS setting. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  /* shadcn variables with no legacy equivalent (see the mapping note
+     above). Light values here, dark values in the [data-theme="dark"]
+     block below; the legacy :root / dark blocks that follow define
+     the shared variables (--paper, --ink, --card, --line, --teal,
+     --amber, --red, --muted, --radius). */
+  :root {
+    --secondary: #e3e8e7;
+    --muted-surface: #efece2;
+    --destructive-foreground: #ffffff;
+    --ring: #09555e;
+    --chart-1: #09555e;
+    --chart-2: #f5a10b;
+    --chart-3: #1e7d46;
+    --chart-4: #5a6b70;
+    --chart-5: #1b272b;
+  }
+  [data-theme="dark"] {
+    --secondary: #2c3f42;
+    --muted-surface: #223236;
+    --destructive-foreground: #3d0a06;
+    --ring: #7fd4d8;
+    --chart-1: #2e8b96;
+    --chart-2: #f5a10b;
+    --chart-3: #4cc38a;
+    --chart-4: #9fb3b5;
+    --chart-5: #e8efef;
+  }
+
+  /* ---- Legacy design system, VERBATIM (the Tier 4 / font test
+     suites match the exact text of the rules below). Only the
+     @layer base wrapper is new. ---- */
 /* ETEA Prep Library v3 — brand: teal #09555E, off-white #FDFBF1, amber #F5A10B, charcoal #1B272B */
 :root {
   --teal: #09555e;
@@ -149,6 +264,19 @@ th { font-weight: 700; }
      rule by specificity; the ink colour must be set explicitly. */
   color: var(--ink); width: 100%;
 }
+/* Stage 3 part 2 — 3D flashcard flip (see src/app/flashcards/page.tsx).
+   .flip-scene supplies the perspective; .flip-inner (the <button>
+   itself) rotates on the Y axis via motion; both faces share one grid
+   cell so the card height is the taller face, and the hidden face is
+   removed from view (backface-visibility) and from the accessibility
+   tree (aria-hidden in the JSX). .flip-inner comes AFTER .flashcard
+   in this file on purpose: same specificity, so its display:grid wins
+   over .flashcard's display:flex. Reduced-motion users never see
+   this: the page renders the plain instant-swap button instead. */
+.flip-scene { perspective: 1200px; }
+.flip-inner { display: grid; transform-style: preserve-3d; }
+.flip-face { grid-area: 1 / 1; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.flip-back { transform: rotateY(180deg); }
 /* Stage 1 P1 Tier 4 (B02/B05) — visible keyboard focus everywhere. Teal
    on light backgrounds, light teal on dark backgrounds, white inside the
    teal header bar. Mouse users see no change (:focus-visible only). */
@@ -173,3 +301,37 @@ footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
   .nav.open { display: flex; }
   .nav.open a { min-height: 44px; }
 }
+
+  /* ---- Stage 3 shell helpers (plain CSS for the two
+     direction-sensitive bits that Tailwind logical properties cannot
+     express on their own). ---- */
+  /* Directional icons (collapse chevron) flip in RTL so they keep
+     pointing "inward". Applied via className="shell-flip-rtl". */
+  [dir="rtl"] .shell-flip-rtl {
+    transform: scaleX(-1);
+  }
+  /* Skip link: visually hidden until keyboard focus, then a visible
+     fixed chip at the inline-start corner (logical inset: correct
+     side in both LTR and RTL). */
+  .shell-skip-link {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+  .shell-skip-link:focus-visible {
+    position: fixed;
+    top: 8px;
+    inset-inline-start: 8px;
+    width: auto;
+    height: auto;
+    clip: auto;
+    z-index: 50;
+    background: var(--teal);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+  }
+} /* end @layer base */

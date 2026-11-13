@@ -3,6 +3,17 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import {
+  BarChart3,
+  BookOpen,
+  Briefcase,
+  CalendarDays,
+  FileText,
+  GraduationCap,
+  Layers,
+  PenLine,
+  type LucideIcon,
+} from "lucide-react";
 import { CORRECTIONS, COUNTS, FLASHCARDS, PATTERN_BANNER, PATTERNS } from "@/lib/data";
 import {
   computeStats,
@@ -13,16 +24,18 @@ import {
 } from "@/lib/tracking";
 import { useLang } from "@/lib/i18n";
 import TutorHealth from "@/components/TutorHealth";
+import { Card } from "@/components/ui/card";
+import { FadeIn } from "@/components/motion";
 
-const QUICK = [
-  { href: "/library", key: "library", descKey: "quickLibraryDesc" },
-  { href: "/practice", key: "practice", descKey: "quickPracticeDesc" },
-  { href: "/mock", key: "mocks", descKey: "quickMocksDesc" },
-  { href: "/flashcards", key: "flashcards", descKey: "quickFlashDesc" },
-  { href: "/tutor", key: "tutor", descKey: "quickTutorDesc" },
-  { href: "/plan", key: "plan", descKey: "quickPlanDesc" },
-  { href: "/analysis", key: "analysis", descKey: "quickAnalysisDesc" },
-  { href: "/tracks", key: "tracks", descKey: "quickTracksDesc" },
+const QUICK: { href: string; key: string; descKey: string; Icon: LucideIcon }[] = [
+  { href: "/library", key: "library", descKey: "quickLibraryDesc", Icon: BookOpen },
+  { href: "/practice", key: "practice", descKey: "quickPracticeDesc", Icon: PenLine },
+  { href: "/mock", key: "mocks", descKey: "quickMocksDesc", Icon: FileText },
+  { href: "/flashcards", key: "flashcards", descKey: "quickFlashDesc", Icon: Layers },
+  { href: "/tutor", key: "tutor", descKey: "quickTutorDesc", Icon: GraduationCap },
+  { href: "/plan", key: "plan", descKey: "quickPlanDesc", Icon: CalendarDays },
+  { href: "/analysis", key: "analysis", descKey: "quickAnalysisDesc", Icon: BarChart3 },
+  { href: "/tracks", key: "tracks", descKey: "quickTracksDesc", Icon: Briefcase },
 ];
 
 export default function Home() {
@@ -76,35 +89,68 @@ export default function Home() {
         </p>
       </div>
 
+      {/* Stage 3 part 2 — Command Center: the same 6 live stats as
+          before (same data, same values), now shadcn Cards with a
+          staggered entrance. The plan card adds a progress bar
+          (planDone / 63). The due-today card links to /flashcards. */}
       {stats && (
         <div className="grid">
-          <div className="card stat">
-            <b>{stats.totalAttempts}</b>
-            <span>{t("attempts")}</span>
-          </div>
-          <div className="card stat">
-            <b>{stats.hasData ? `${Math.round(stats.accuracy)}%` : "—"}</b>
-            <span>{t("accuracy")}</span>
-          </div>
-          <div className="card stat">
-            <b>{stats.streakDays}</b>
-            <span>{t("streak")}</span>
-          </div>
-          <div className="card stat">
-            <b>
-              {planDone} / 63
-            </b>
-            <span>{t("planTasksDone")}</span>
-          </div>
-          <div className="card stat">
-            <b>{tf("minsLabel", { mins: stats.totalMinutes })}</b>
-            <span>{t("timeSpent")}</span>
-          </div>
-          <Link href="/flashcards" className="card stat" style={{ textDecoration: "none", color: "inherit" }}>
-            {/* Stage 2 (B03 pattern) — the count is isolated LTR. */}
-            <b dir="ltr">{dueCards}</b>
-            <span>{t("cardsDueLabel")}</span>
-          </Link>
+          <FadeIn delay={0}>
+            <Card className="tw:h-full tw:gap-1 tw:p-4">
+              <p className="tw:m-0 tw:text-3xl tw:font-bold">{stats.totalAttempts}</p>
+              <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t("attempts")}</p>
+            </Card>
+          </FadeIn>
+          <FadeIn delay={0.05}>
+            <Card className="tw:h-full tw:gap-1 tw:p-4">
+              <p className="tw:m-0 tw:text-3xl tw:font-bold">{stats.hasData ? `${Math.round(stats.accuracy)}%` : "—"}</p>
+              <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t("accuracy")}</p>
+            </Card>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <Card className="tw:h-full tw:gap-1 tw:p-4">
+              <p className="tw:m-0 tw:text-3xl tw:font-bold">{stats.streakDays}</p>
+              <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t("streak")}</p>
+            </Card>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <Card className="tw:h-full tw:gap-1 tw:p-4">
+              <p className="tw:m-0 tw:text-3xl tw:font-bold">
+                {/* Stage 3 part 2 — LIVE DEFECT (a): this fraction was NOT
+                    isolated, so in Urdu (RTL) mode the bidi algorithm
+                    displayed "63 / 0" instead of "0 / 63". Same B03
+                    pattern as the other fractions on this page. */}
+                <span dir="ltr">
+                  {planDone} / 63
+                </span>
+              </p>
+              <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t("planTasksDone")}</p>
+              <div
+                className="tw:mt-2 tw:h-2 tw:w-full tw:overflow-hidden tw:rounded-full tw:bg-muted"
+                role="img"
+                aria-label={`${t("planProgressLabel")}: ${planDone} / 63`}
+              >
+                <div className="tw:h-full tw:rounded-full tw:bg-primary" style={{ width: `${(planDone / 63) * 100}%` }} />
+              </div>
+            </Card>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <Card className="tw:h-full tw:gap-1 tw:p-4">
+              <p className="tw:m-0 tw:text-3xl tw:font-bold">{tf("minsLabel", { mins: stats.totalMinutes })}</p>
+              <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t("timeSpent")}</p>
+            </Card>
+          </FadeIn>
+          <FadeIn delay={0.25}>
+            <Link href="/flashcards" className="tw:block tw:h-full" style={{ textDecoration: "none", color: "inherit" }}>
+              <Card className="tw:h-full tw:gap-1 tw:p-4">
+                <p className="tw:m-0 tw:text-3xl tw:font-bold">
+                  {/* Stage 2 (B03 pattern) — the count is isolated LTR. */}
+                  <span dir="ltr">{dueCards}</span>
+                </p>
+                <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t("cardsDueLabel")}</p>
+              </Card>
+            </Link>
+          </FadeIn>
         </div>
       )}
       {stats && !stats.hasData && <p className="muted">{t("noAttempts")}</p>}
@@ -153,11 +199,18 @@ export default function Home() {
 
       <h2>{t("dashboard")}</h2>
       <div className="grid">
-        {QUICK.map((q) => (
-          <Link key={q.href} href={q.href} className="card" style={{ textDecoration: "none", color: "inherit" }}>
-            <b>{t(q.key)}</b>
-            <p className="muted">{t(q.descKey)}</p>
-          </Link>
+        {QUICK.map((q, i) => (
+          <FadeIn key={q.href} delay={i * 0.04}>
+            <Link href={q.href} className="tw:block tw:h-full" style={{ textDecoration: "none", color: "inherit" }}>
+              <Card className="tw:h-full tw:gap-1 tw:p-4">
+                <p className="tw:m-0 tw:flex tw:items-center tw:gap-2 tw:text-base tw:font-semibold">
+                  <q.Icon className="tw:size-5 tw:shrink-0 tw:text-brand-teal" aria-hidden="true" />
+                  {t(q.key)}
+                </p>
+                <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t(q.descKey)}</p>
+              </Card>
+            </Link>
+          </FadeIn>
         ))}
       </div>
 

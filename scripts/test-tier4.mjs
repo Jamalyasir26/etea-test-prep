@@ -169,9 +169,18 @@ check(
 );
 
 // ---------------------------------------------------------------- B05
+// Stage 3 part 2 — the card surface is now TWO native buttons: a plain
+// <button> for reduced-motion users and a <motion.button> (same native
+// <button> element) for the 3D flip. Both keep type=button + the flip
+// handler + aria-pressed. The old exact-string check matched only the
+// single-button form, so it is replaced by the two branch checks below.
 check(
-  "B05: card surface is a native button with type=button + flip handler",
-  /<button type="button" className="card flashcard" onClick=\{\(\) => setFlipped\(!flipped\)\}>/.test(flashcards),
+  "B05: card surface is a native button with type=button + flip handler (reduced-motion branch)",
+  /<button type="button" className="card flashcard" onClick=\{\(\) => setFlipped\(!flipped\)\} aria-pressed=\{flipped\}>/.test(flashcards),
+);
+check(
+  "B05: 3D flip surface is a native motion.button with type=button + flip handler",
+  /<motion\.button\n?\s*type="button"\n?\s*className="card flashcard flip-inner"\n?\s*onClick=\{\(\) => setFlipped\(!flipped\)\}\n?\s*aria-pressed=\{flipped\}/.test(flashcards),
 );
 check("B05: no role=button/tabIndex hack left on the card", !flashcards.includes('role="button"') && !flashcards.includes("tabIndex={0}"));
 check("B05: native Flip card button preserved", flashcards.includes('{t("flipCard")}</button>'));

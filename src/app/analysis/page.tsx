@@ -11,6 +11,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { FLASHCARDS } from "@/lib/data";
 import {
   clearAttempts,
   clearQuarantine,
@@ -22,13 +23,16 @@ import {
   getStorageWarnings,
   importProgress,
   loadAttempts,
+  loadFlashState,
   loadQuarantine,
   type Attempt,
+  type FlashState,
   type QuarantineRecord,
   type Stats,
   type StorageWarning,
 } from "@/lib/tracking";
 import { lri, useLang } from "@/lib/i18n";
+import { AccuracyTrendChart, DueForecastChart } from "@/components/AnalysisCharts";
 
 function heat(acc: number) {
   return acc < 50 ? "red" : acc < 70 ? "yellow" : "green";
@@ -51,10 +55,14 @@ export default function Analysis() {
   // download/recovery option. Nothing is ever deleted silently.
   const [warnings, setWarnings] = useState<StorageWarning[]>([]);
   const [quarantine, setQuarantine] = useState<QuarantineRecord[]>([]);
+  // Stage 3 part 2 — stored FSRS flash state for the due-forecast
+  // chart (read here, never written).
+  const [flashState, setFlashState] = useState<FlashState>({});
 
   function refresh() {
     setStats(computeStats(loadAttempts()));
     setAttempts(loadAttempts());
+    setFlashState(loadFlashState());
     // Read warnings AFTER the loads above: a corrupt store is only
     // discovered (and quarantined) when it is read.
     setWarnings(getStorageWarnings());
@@ -206,6 +214,15 @@ export default function Analysis() {
         </div>
       </div>
       <p className="muted">{t("firstAnswerNote")}</p>
+
+      {/* Stage 3 part 2 — Recharts, real local data only. Due forecast
+          from the stored FSRS state; accuracy trend from the same
+          daily MCQ stats as the tables below. Empty states are
+          honest (see AnalysisCharts). */}
+      <div className="grid">
+        <DueForecastChart cards={FLASHCARDS} state={flashState} />
+        <AccuracyTrendChart daily={stats.daily} />
+      </div>
 
       <h2>{t("perSubjectHeading")}</h2>
       {Object.keys(stats.perSubject).length === 0 ? (

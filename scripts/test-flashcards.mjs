@@ -51,6 +51,7 @@ import {
   convertFlashStateToFsrs,
   countDueFlashcards,
   flashcardId,
+  forecastDue,
   gradeButtonLabel,
   saveFlashState,
 } from "../src/lib/tracking.ts";
@@ -222,6 +223,55 @@ check(
 check(
   'no "SM-2" wording in grade labels',
   ["again", "hard", "good", "easy"].every((g) => !gradeButtonLabel(g, "1d", "en").includes("SM-2")),
+);
+
+// ---- forecastDue (Stage 3 part 2 — due-forecast chart data) ----
+// Fixture "now" is a fixed LOCAL noon (timezone-proof: noon stays on
+// the same calendar day in every zone). Cards: A due in 2 days, B
+// overdue, C new (no state), D due in 10 days (beyond the 7-day
+// window). State entries carry only dueAt — forecastDue reads nothing
+// else from them.
+const FC_NOW = new Date(2026, 10, 13, 12, 0, 0); // 13 Nov 2026, noon local
+const isoAtNoon = (y, m, d) => new Date(y, m, d, 12, 0, 0).toISOString();
+const fcCards = [
+  { front: "A?", back: "A!", category: "Test" },
+  { front: "B?", back: "B!", category: "Test" },
+  { front: "C?", back: "C!", category: "Test" },
+  { front: "D?", back: "D!", category: "Test" },
+];
+const fcState = {
+  [flashcardId("A?", "A!")]: { dueAt: isoAtNoon(2026, 10, 15) },
+  [flashcardId("B?", "B!")]: { dueAt: isoAtNoon(2026, 10, 10) },
+  [flashcardId("D?", "D!")]: { dueAt: isoAtNoon(2026, 10, 23) },
+};
+const fc = forecastDue(fcCards, fcState, FC_NOW, 7);
+check("forecastDue returns 7 days", fc.length === 7, JSON.stringify(fc));
+check(
+  "forecastDue day labels start today (local)",
+  fc[0].date === "2026-11-13" && fc[0].label === "11-13" && fc[6].date === "2026-11-19",
+  JSON.stringify(fc.map((d) => d.date)),
+);
+check(
+  "forecastDue: overdue + new cards count toward today",
+  fc[0].due === 2, // B (overdue) + C (new)
+  JSON.stringify(fc[0]),
+);
+check("forecastDue: card due in 2 days lands on day 2", fc[2].due === 1, JSON.stringify(fc[2]));
+check(
+  "forecastDue: no cards on the other days",
+  fc[1].due === 0 && fc[3].due === 0 && fc[4].due === 0 && fc[5].due === 0 && fc[6].due === 0,
+  JSON.stringify(fc),
+);
+check(
+  "forecastDue: card beyond the window is not counted (total = 3, not 4)",
+  fc.reduce((s, d) => s + d.due, 0) === 3,
+  JSON.stringify(fc.map((d) => d.due)),
+);
+const fcEmpty = forecastDue([], {}, FC_NOW, 7);
+check(
+  "forecastDue: empty bank returns 7 zero-count days (never invents data)",
+  fcEmpty.length === 7 && fcEmpty.every((d) => d.due === 0),
+  JSON.stringify(fcEmpty),
 );
 
 if (failures > 0) {

@@ -55,6 +55,16 @@ const STRINGS: Record<string, StrEntry> = {
   light: { en: "Light", roman: "Light", ur: "روشن" },
   dark: { en: "Dark", roman: "Dark", ur: "تاریک" },
 
+  // ---- App shell (Stage 3 foundation) ----
+  sidebarCollapse: { en: "Collapse sidebar", roman: "Sidebar sametein", ur: "سائڈبار سمیٹیں" },
+  sidebarExpand: { en: "Expand sidebar", roman: "Sidebar phelaein", ur: "سائڈبار پھیلائیں" },
+  sidebarNavFilter: { en: "Filter navigation…", roman: "Navigation chhantein…", ur: "رہنمائی چھانٹیں…" },
+  sidebarNavFilterLabel: { en: "Filter navigation links", roman: "Navigation links chhantein", ur: "رہنمائی روابط چھانٹیں" },
+  closeMenu: { en: "Close navigation menu", roman: "Navigation menu band karein", ur: "رہنمائی مینیو بند کریں" },
+  skipToContent: { en: "Skip to main content", roman: "Markazi mawad par jaein", ur: "مرکزی مواد پر جائیں" },
+  reviewNow: { en: "Review now", roman: "Abhi dohraein", ur: "ابھی دہرائیں" },
+  noNavResults: { en: "No matching pages", roman: "Koi mutabiq safha nahi", ur: "کوئی مطابق صفحہ نہیں" },
+
   // ---- Footer ----
   footerP1: {
     en: "All questions are original practice questions, not ETEA papers. Patterns are labelled per project — ETEA sets paper composition per project. Always verify against your specific advertisement / roll number slip.",
@@ -132,6 +142,14 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "⚠️ تصحیحات — پہلے پڑھیں۔",
   },
   planTasksDone: { en: "Plan tasks done", roman: "Plan tasks done", ur: "منصوبے کے کام مکمل" },
+  // Stage 3 part 2 — Command Center (home) + analysis charts.
+  planProgressLabel: { en: "Plan progress", roman: "Plan progress", ur: "منصوبے کی پیش رفت" },
+  chartDueForecast: { en: "Cards due — next 7 days", roman: "Cards due — agle 7 din", ur: "واجب کارڈز — اگلے 7 دن" },
+  chartAccuracyTrend: { en: "Accuracy trend — last 14 days", roman: "Accuracy trend — aakhri 14 din", ur: "درستگی کا رجحان — آخری 14 دن" },
+  chartNoData: { en: "No data for this chart yet.", roman: "Is chart ke liye abhi koi data nahi.", ur: "اس چارٹ کے لیے ابھی کوئی ڈیٹا نہیں۔" },
+  chartDueWord: { en: "Due", roman: "Due", ur: "واجب" },
+  chartAccuracyWord: { en: "Accuracy", roman: "Accuracy", ur: "درستگی" },
+  chartQuestionsWord: { en: "Questions", roman: "Questions", ur: "سوالات" },
   fullAnalysis: { en: "Full analysis →", roman: "Full analysis →", ur: "← مکمل تجزیہ" },
   patternSelectorHeading: {
     en: "Pattern selector — pick the version your advert follows",

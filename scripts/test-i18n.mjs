@@ -116,6 +116,133 @@ for (const k of keys) {
 }
 check("ur/roman placeholders are subsets of en placeholders", placeholderViolations.length === 0, placeholderViolations.join("; "));
 
+// ---------- 7. tf() call-site coverage (Stage 3 part 2 — LIVE DEFECT (b)) ----------
+// replaceVars() is case-sensitive: a template placeholder {sneeds} is
+// only filled when the call site passes a var literally named `sneeds`.
+// The /review countsLine template used {sneeds} while the call passed
+// `sNeeds`, so the count rendered blank — and the §2 subset check could
+// NOT catch it (en/ur templates agreed with each other; the caller was
+// the odd one out). This section parses every tf("KEY", { ... }) call
+// site and requires the passed var keys to cover every placeholder in
+// the en template, case-sensitively. Shorthand properties ({ weeks })
+// count. Comments and template-literal ${...} interpolations inside
+// the object are handled by the scanners below.
+function findObjectEnd(text, startIdx) {
+  let i = startIdx, depth = 0, mode = "code", quote = null, esc = false;
+  const interpStack = [];
+  while (i < text.length) {
+    const ch = text[i], nx = text[i + 1];
+    if (mode === "code") {
+      if (ch === "'" || ch === '"') { mode = "str"; quote = ch; }
+      else if (ch === "`") mode = "tpl";
+      else if (ch === "/" && nx === "/") { mode = "line"; i++; }
+      else if (ch === "/" && nx === "*") { mode = "block"; i++; }
+      else if (ch === "{") depth++;
+      else if (ch === "}") {
+        depth--;
+        if (interpStack.length && depth === interpStack[interpStack.length - 1]) { interpStack.pop(); mode = "tpl"; }
+        else if (depth === 0 && interpStack.length === 0) return i + 1;
+      }
+    } else if (mode === "str") {
+      if (esc) esc = false; else if (ch === "\\") esc = true; else if (ch === quote) mode = "code";
+    } else if (mode === "line") { if (ch === "\n") mode = "code"; }
+    else if (mode === "block") { if (ch === "*" && nx === "/") { mode = "code"; i++; } }
+    else if (mode === "tpl") {
+      if (esc) esc = false; else if (ch === "\\") esc = true;
+      else if (ch === "`") mode = "code";
+      else if (ch === "$" && nx === "{") { interpStack.push(depth); depth++; mode = "code"; i++; }
+    }
+    i++;
+  }
+  return -1;
+}
+function stripLiterals(text) {
+  let out = "", mode = "code", quote = null, esc = false, depth = 0;
+  const interpStack = [];
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i], nx = text[i + 1];
+    if (mode === "code") {
+      if (ch === "'" || ch === '"' || ch === "`") { mode = ch === "`" ? "tpl" : "str"; quote = ch; out += " "; }
+      else if (ch === "/" && nx === "/") { mode = "line"; out += "  "; i++; }
+      else if (ch === "/" && nx === "*") { mode = "block"; out += "  "; i++; }
+      else {
+        if (ch === "{") depth++;
+        else if (ch === "}") { depth--; if (interpStack.length && depth === interpStack[interpStack.length - 1]) { interpStack.pop(); mode = "tpl"; } }
+        out += ch;
+      }
+    } else if (mode === "str") {
+      if (esc) esc = false; else if (ch === "\\") esc = true; else if (ch === quote) mode = "code";
+      out += " ";
+    } else if (mode === "line") { out += ch === "\n" ? "\n" : " "; if (ch === "\n") mode = "code"; }
+    else if (mode === "block") {
+      if (ch === "*" && nx === "/") { mode = "code"; out += "  "; i++; }
+      else out += ch === "\n" ? "\n" : " ";
+    } else if (mode === "tpl") {
+      if (esc) esc = false; else if (ch === "\\") esc = true;
+      else if (ch === "`") mode = "code";
+      else if (ch === "$" && nx === "{") { interpStack.push(depth); depth++; mode = "code"; out += "  "; i++; continue; }
+      out += " ";
+    }
+  }
+  return out;
+}
+function passedKeys(objText) {
+  const stripped = stripLiterals(objText);
+  const segs = [];
+  let d = 0, cur = "";
+  for (const c of stripped) {
+    if (c === "{" || c === "[" || c === "(") d++;
+    else if (c === "}" || c === "]" || c === ")") d--;
+    if (c === "," && d === 1) { segs.push(cur); cur = ""; } else cur += c;
+  }
+  segs.push(cur);
+  const keys = new Set();
+  const unparsed = [];
+  for (let s of segs) {
+    s = s.trim().replace(/^\{|\}$/g, "").trim();
+    if (!s) continue;
+    if (s.startsWith("...")) continue;
+    const ex = s.match(/^([A-Za-z_$][A-Za-z0-9_$]*)\s*:/);
+    if (ex) { keys.add(ex[1]); continue; }
+    const sh = s.match(/^([A-Za-z_$][A-Za-z0-9_$]*)$/);
+    if (sh) { keys.add(sh[1]); continue; }
+    unparsed.push(s);
+  }
+  return { keys, unparsed };
+}
+const tfProblems = [];
+let tfSites = 0;
+for (const p of walkSrc(join(ROOT, "src"))) {
+  if (!p.endsWith(".tsx")) continue;
+  const t = fs.readFileSync(p, "utf8");
+  const re = /tf\("([A-Za-z0-9_]+)",\s*\{/g;
+  let mm;
+  while ((mm = re.exec(t))) {
+    tfSites++;
+    const end = findObjectEnd(t, re.lastIndex - 1);
+    if (end === -1) { tfProblems.push(`${p}: tf("${mm[1]}") brace-match failed`); continue; }
+    const { keys: passed, unparsed } = passedKeys(t.slice(re.lastIndex - 1, end));
+    for (const s of unparsed) tfProblems.push(`${p}: tf("${mm[1]}") unparsed segment ${JSON.stringify(s)}`);
+    const need = placeholders(STRINGS[mm[1]]?.en);
+    for (const n of need) {
+      if (!passed.has(n)) tfProblems.push(`${p}: tf("${mm[1]}") missing {${n}} (passed: ${[...passed].join(", ") || "none"})`);
+    }
+  }
+}
+check(`tf() call sites cover their template placeholders (${tfSites} sites)`, tfProblems.length === 0, tfProblems.join("; "));
+// Regression anchor for the exact live defect: countsLine renders its
+// structural-needs count (14 on the ZamungKor Mock 1+2 pool) — simulate
+// replaceVars with the review page's exact vars in all three languages.
+function replaceVars(template, vars) {
+  return template.replace(/\{(\w+)\}/g, (_, name) => (vars[name] === undefined ? "" : String(vars[name])));
+}
+const countsVars = { total: 200, draft: 185, needs: 0, disputed: 0, verified: 15, pass: 186, sneeds: 14, prob: 0 };
+const countsRendersOk = ["en", "roman", "ur"].every((lang) => {
+  const rendered = replaceVars(STRINGS.countsLine[lang] ?? STRINGS.countsLine.en, countsVars);
+  return !rendered.includes("{") && rendered.includes("14");
+});
+check("countsLine renders the structural-needs count in all languages (defect b)", countsRendersOk);
+
 // ---------- Every used key exists ----------
 function walkSrc(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {

@@ -184,6 +184,13 @@ export default function ReviewDashboard() {
           {zamProgress.verified === 0 ? ` — ${t("zamProgressNone")}` : ` — ${t("zamProgressSome")}`}
         </p>
         <p className="muted">
+          {/* Stage 3 part 2 — LIVE DEFECT (b) ROOT CAUSE: the template
+              uses {sneeds} (lowercase) but the call used to pass
+              `sNeeds` (camelCase). replaceVars() is case-sensitive, so
+              vars["sneeds"] was undefined and rendered as "" — the
+              middle count showed blank ("186 pass · needs review ·
+              0 problem."). Fixed by matching the template name exactly
+              below. */}
           {tf("countsLine", {
             total: counts.total,
             draft: counts.draft,
@@ -191,7 +198,7 @@ export default function ReviewDashboard() {
             disputed: counts.disputed,
             verified: counts.verified,
             pass: counts.structuralPass,
-            sNeeds: counts.structuralNeeds,
+            sneeds: counts.structuralNeeds,
             prob: counts.structuralProblem,
           })}
         </p>

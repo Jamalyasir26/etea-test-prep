@@ -17,6 +17,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { FLASHCARDS } from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
 import {
@@ -46,6 +47,9 @@ const STATE_KEY = ["stateNew", "stateLearning", "stateReview", "stateRelearning"
 
 export default function FlashcardsPage() {
   const { lang, t, tf } = useLang();
+  // Stage 3 part 2 — reduced-motion users get the plain instant-swap
+  // card (no 3D rotation); everyone else gets the motion flip below.
+  const reduceMotion = useReducedMotion();
   const [scheduler, setScheduler] = useState<FsrsScheduler | null>(null);
   const [state, setState] = useState<FlashState>({});
   const [loaded, setLoaded] = useState(false);
@@ -240,18 +244,40 @@ export default function FlashcardsPage() {
                 })}`
               : ` · ${t("newCard")}`}
           </p>
-          {/* Stage 1 P1 Tier 4 (B05) — the card surface is a native
-              <button>: Enter/Space flip it for free, with a visible
-              focus outline (see :focus-visible in globals.css). No
-              aria-label: the card text itself is the button's
-              accessible name, so screen readers hear the question /
-              answer. The separate native "Flip card" button below is
-              preserved. Localization Pass 1 — card content is
-              dir="auto" so English and future Urdu/Arabic card text
-              both render with their punctuation on the right side. */}
-          <button type="button" className="card flashcard" onClick={() => setFlipped(!flipped)}>
-            <span dir="auto">{flipped ? card.back : card.front}</span>
-          </button>
+          {/* Stage 3 part 2 — REAL 3D FLIP. The card surface is still
+              a native <button> (Stage 1 P1 Tier 4, B05): Enter/Space
+              flip it for free, with a visible focus outline. The
+              button itself rotates on the Y axis (motion); both faces
+              share one grid cell so the card height is the taller
+              face, and the hidden face is aria-hidden so a screen
+              reader hears only the visible side. aria-pressed reports
+              the flip state. Reduced-motion renders the plain
+              instant-swap button above this comment's branch.
+              Card content stays dir="auto" (English + future
+              Urdu/Arabic card text). */}
+          {reduceMotion ? (
+            <button type="button" className="card flashcard" onClick={() => setFlipped(!flipped)} aria-pressed={flipped}>
+              <span dir="auto">{flipped ? card.back : card.front}</span>
+            </button>
+          ) : (
+            <div className="flip-scene">
+              <motion.button
+                type="button"
+                className="card flashcard flip-inner"
+                onClick={() => setFlipped(!flipped)}
+                aria-pressed={flipped}
+                animate={{ rotateY: flipped ? 180 : 0 }}
+                transition={{ duration: 0.45, ease: "easeInOut" }}
+              >
+                <span dir="auto" className="flip-face flip-front" aria-hidden={flipped}>
+                  {card.front}
+                </span>
+                <span dir="auto" className="flip-face flip-back" aria-hidden={!flipped}>
+                  {card.back}
+                </span>
+              </motion.button>
+            </div>
+          )}
           {!flipped ? (
             <button onClick={() => setFlipped(true)}>{t("flipCard")}</button>
           ) : previews ? (
