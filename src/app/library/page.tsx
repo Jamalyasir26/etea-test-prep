@@ -23,6 +23,7 @@ import {
 } from "@/lib/data";
 import { planDayForSubject } from "@/lib/plan";
 import { lri, useLang } from "@/lib/i18n";
+import NoteAudioExamples from "@/components/NoteAudioExamples";
 import ProvenanceBadge from "@/components/ProvenanceBadge";
 import {
   loadAnnotationOptIn,
@@ -208,6 +209,12 @@ function LibraryInner() {
             >
               {isHidden ? t("recallReveal") : t("hideAgain")}
             </button>
+            {/* Stage 4B (Quran audio) — approved example ayahs with
+                Play buttons, on Tajweed notes only (keyed by the
+                ORIGINAL English title; renders nothing elsewhere).
+                Always visible, below the recall-gated body, so the
+                audio is reachable without revealing the note text. */}
+            <NoteAudioExamples title={n.title} />
             <p className="muted">
               {t("relatedLabel")}{" "}
               {bankKey && (

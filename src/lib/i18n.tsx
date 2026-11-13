@@ -99,6 +99,67 @@ const STRINGS: Record<string, StrEntry> = {
   // Phase 4A — Home stats loading skeleton (shown only until the real
   // computed values load after mount; never a fake number).
   statsLoading: { en: "Loading...", roman: "Loading...", ur: "لوڈ ہو رہا ہے..." },
+  // Stage 4A (PWA) — install affordance, offline badge, tutor offline
+  // state, and the service-worker update notice.
+  pwaInstallTitle: { en: "Install the app", roman: "App install karein", ur: "ایپ انسٹال کریں" },
+  pwaInstallBody: {
+    en: "Add ETEA Prep Library to your home screen for offline study.",
+    roman: "ETEA Prep Library ko home screen par add karein taake offline parh sakein.",
+    ur: "ای ٹی ای اے پریپ لائبریری کو ہوم اسکرین پر شامل کریں تاکہ آف لائن پڑھ سکیں۔",
+  },
+  pwaInstallButton: { en: "Install App", roman: "App Install Karein", ur: "ایپ انسٹال کریں" },
+  pwaInstallDismiss: { en: "Not now", roman: "Abhi nahi", ur: "ابھی نہیں" },
+  pwaIosHint: {
+    en: "On iPhone/iPad: tap Share, then “Add to Home Screen”.",
+    roman: "iPhone/iPad par: Share dabayein, phir “Add to Home Screen” muntakhib karein.",
+    ur: "آئی فون / آئی پیڈ پر: شیئر دبائیں، پھر ”Add to Home Screen“ منتخب کریں۔",
+  },
+  pwaOfflineBadge: { en: "Offline", roman: "Offline", ur: "آف لائن" },
+  pwaOfflineTutor: {
+    en: "You are offline. The live AI tutor needs an internet connection, so new questions cannot be sent right now. Notes, flashcards and practice questions keep working offline, and you can still search the library below.",
+    roman: "Aap offline hain. Live AI tutor ko internet chahiye, is liye abhi naye sawal nahi bheje ja sakte. Notes, flashcards aur practice sawal offline chalte rahenge, aur aap neeche library search kar sakte hain.",
+    ur: "آپ آف لائن ہیں۔ لائیو اے آئی استاد کو انٹرنیٹ درکار ہے، اس لیے ابھی نئے سوالات نہیں بھیجے جا سکتے۔ نوٹس، فلیش کارڈز اور مشقی سوالات آف لائن چلتے رہیں گے، اور آپ نیچے لائبریری تلاش کر سکتے ہیں۔",
+  },
+  pwaUpdateAvailable: {
+    en: "A new version is available.",
+    roman: "Naya version dastiyab hai.",
+    ur: "نیا ورژن دستیاب ہے۔",
+  },
+  pwaUpdateRefresh: {
+    en: "Refresh to update",
+    roman: "Update ke liye refresh karein",
+    ur: "اپڈیٹ کے لیے ریفریش کریں",
+  },
+  pwaUpdateDismiss: { en: "Later", roman: "Baad mein", ur: "بعد میں" },
+  // Stage 4B (Quran audio) — example recitation blocks on Tajweed
+  // notes + the sticky mini player. Rule labels and Surah names are
+  // content (proper names / approved labels) and stay in English.
+  quranListenHeading: { en: "Example recitation", roman: "Misaal tilawat", ur: "مثال تلاوت" },
+  quranListenIntro: {
+    en: "Listen to the example ayah, recited by Mishary Alafasy. Audio streams from a free CDN and needs an internet connection.",
+    roman: "Misaal ayat sunein, Mishary Alafasy ki tilawat. Audio muft CDN se stream hoti hai aur internet chahiye.",
+    ur: "مثال آیت سنیں، Mishary Alafasy کی تلاوت۔ آڈیو مفت CDN سے سٹریم ہوتی ہے اور انٹرنیٹ درکار ہے۔",
+  },
+  quranPlayAudio: { en: "Play Audio", roman: "Audio chalayein", ur: "آڈیو چلائیں" },
+  quranPlay: { en: "Play", roman: "Chalayein", ur: "چلائیں" },
+  quranPause: { en: "Pause", roman: "Rokein", ur: "روکیں" },
+  quranRetry: { en: "Retry", roman: "Dobara koshish", ur: "دوبارہ کوشش" },
+  quranRepeat: { en: "Repeat", roman: "Repeat", ur: "تکرار" },
+  quranClosePlayer: { en: "Close player", roman: "Player band karein", ur: "پلیئر بند کریں" },
+  quranPlayerLabel: { en: "Quran audio player", roman: "Quran audio player", ur: "قرآن آڈیو پلیئر" },
+  quranSpeedToggle: { en: "Playback speed: {speed}", roman: "Raftar: {speed}", ur: "رفتار: {speed}" },
+  quranAyahRef: { en: "Surah {surah}, Ayah {ayah}", roman: "Surah {surah}, Ayat {ayah}", ur: "سورۃ {surah}، آیت {ayah}" },
+  quranDemoWord: { en: "Example word", roman: "Misaal lafz", ur: "مثال لفظ" },
+  quranAudioNeedsInternet: {
+    en: "Audio needs an internet connection. Notes keep working offline.",
+    roman: "Audio ke liye internet chahiye. Notes offline chalte rahenge.",
+    ur: "آڈیو کے لیے انٹرنیٹ چاہیے۔ نوٹس آف لائن چلتے رہیں گے۔",
+  },
+  quranAudioUnavailable: {
+    en: "Audio could not be loaded. Check your connection and try again.",
+    roman: "Audio load nahi ho saki. Connection check kar ke dobara koshish karein.",
+    ur: "آڈیو لوڈ نہیں ہو سکی۔ کنکشن چیک کر کے دوبارہ کوشش کریں۔",
+  },
   timeSpent: { en: "Time spent", roman: "Time spent", ur: "وقت" },
   weakAreas: { en: "Weak Areas", roman: "Weak Areas", ur: "کمزور حصے" },
   drill: { en: "Drill", roman: "Drill", ur: "مشق" },

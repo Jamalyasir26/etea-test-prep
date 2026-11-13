@@ -61,7 +61,9 @@
     "test:step3b-audit2": "node scripts/test-step3b-audit2.mjs",
     "test:phase4a": "node scripts/test-phase4a.mjs",
     "test:phase4b1": "node scripts/test-phase4b1.mjs",
-    "test:phase4b2": "node scripts/test-phase4b2.mjs"
+    "test:phase4b2": "node scripts/test-phase4b2.mjs",
+    "test:stage4a-pwa": "node scripts/test-stage4a-pwa.mjs",
+    "test:stage4b-audio": "node scripts/test-stage4b-audio.mjs"
   },
   "version": "3.0.0"
 }

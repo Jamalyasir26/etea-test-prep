@@ -244,10 +244,25 @@ check("F21: .sbadge has min-width: 0", /min-width:\s*0/.test(sbadgeBlock));
 check("F21: .sbadge has no nowrap", !/white-space:\s*nowrap/.test(sbadgeBlock));
 check("F21: badge icon still never shrinks", /\.sbadge svg \{ flex-shrink: 0; \}/.test(css));
 const nowrapRules = [...css.matchAll(/([^{]+)\{[^}]*white-space:\s*nowrap[^}]*\}/g)].map((m) => m[1].trim().split("\n").pop().trim());
+// Stage 4B — one justified addition: .quran-player-label uses nowrap
+// for single-line ellipsis truncation inside the fixed player bar. It
+// is bounded (flex item, min-width: 0, overflow: hidden, ellipsis),
+// so it cannot overflow at 360px the way the badge nowrap did; the
+// check below pins those bounding properties alongside the allowlist.
+const playerLabelBlock = /\.quran-player-label \{[^}]*\}/.exec(css)?.[0] ?? "";
 check(
-  "F21: the only nowrap left in globals.css is the skip link",
-  nowrapRules.length === 1 && nowrapRules[0] === ".shell-skip-link",
+  "F21: the only nowrap left in globals.css is the skip link + the bounded player label",
+  nowrapRules.length === 2 &&
+    nowrapRules.includes(".shell-skip-link") &&
+    nowrapRules.includes(".quran-player-label"),
   nowrapRules.join(" | "),
+);
+check(
+  "F21: player label nowrap is bounded (flex shrink + ellipsis)",
+  /min-width:\s*0/.test(playerLabelBlock) &&
+    /overflow:\s*hidden/.test(playerLabelBlock) &&
+    /text-overflow:\s*ellipsis/.test(playerLabelBlock),
+  playerLabelBlock,
 );
 const content = readJson("src/data/content.json");
 const confStrings = [

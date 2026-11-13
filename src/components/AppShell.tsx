@@ -27,6 +27,10 @@ import {
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import ShellTopbar from "./ShellTopbar";
+import PwaProvider from "./PwaProvider";
+import PwaUpdateBanner from "./PwaUpdateBanner";
+import QuranAudioProvider from "./QuranAudioProvider";
+import StickyPlayer from "./StickyPlayer";
 import { PageFade } from "./motion";
 
 // Persisted collapse preference (desktop rail). "1" = collapsed.
@@ -87,6 +91,15 @@ export default function AppShell({ children }: { children: ReactNode }) {
   const effectiveCollapsed = collapsed && !mobileOpen;
 
   return (
+    // Stage 4A (PWA) — the provider wraps the whole shell so the
+    // topbar (offline badge), sidebar (install affordance) and pages
+    // (tutor offline state) all read the same PWA state.
+    <PwaProvider>
+    {/* Stage 4B (Quran audio) — one global player for the whole shell,
+        so recitation survives navigation; the sticky mini player
+        renders after the shell (outside the inert region), with an
+        in-flow spacer so it never covers page content. */}
+    <QuranAudioProvider>
     <div className="tw:flex tw:min-h-screen tw:font-sans">
       <a href="#shell-main" className="shell-skip-link">
         {t("skipToContent")}
@@ -121,6 +134,9 @@ export default function AppShell({ children }: { children: ReactNode }) {
             by keyboard while it is open. */}
         <div inert={mobileOpen} className="tw:flex tw:min-w-0 tw:flex-1 tw:flex-col">
           <main id="shell-main" className="tw:mx-auto tw:w-full tw:max-w-5xl tw:flex-1 tw:px-4 tw:py-6">
+            {/* Stage 4A (PWA) — new-version notice, next to the storage
+                banners. Renders nothing unless an update is waiting. */}
+            <PwaUpdateBanner />
             {storageFailed && (
               <div className="alert red" role="alert">
                 <p>{t("storageSaveFailed")}</p>
@@ -162,5 +178,8 @@ export default function AppShell({ children }: { children: ReactNode }) {
         </div>
       </div>
     </div>
+    <StickyPlayer />
+    </QuranAudioProvider>
+    </PwaProvider>
   );
 }

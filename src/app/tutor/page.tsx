@@ -30,6 +30,7 @@ import { lri, useLang } from "@/lib/i18n";
 import { providerDisplayName } from "@/lib/tutorHealth";
 import TutorHealth from "@/components/TutorHealth";
 import BoldText from "@/components/BoldText";
+import { usePwa } from "@/components/PwaProvider";
 
 // Stage 1 P1 Tier 2 — the tutor's ANSWER language, separate from the
 // site-wide UI toggle (en/roman/ur, untouched). Persisted under its own
@@ -84,6 +85,9 @@ function normalizeSources(raw: unknown): MsgSources {
 
 function TutorInner() {
   const { lang, t, tf } = useLang();
+  // Stage 4A (PWA) — offline state for the "needs internet" banner
+  // below; mount-gated in the provider, so SSR never claims offline.
+  const { mounted, online } = usePwa();
   const search = useSearchParams();
   const [msgs, setMsgs] = useState<Msg[]>([{ role: "sys", text: GREETING }]);
   const [input, setInput] = useState("");
@@ -281,6 +285,15 @@ function TutorInner() {
     <div>
       <h1>{t("tutorTitle")}</h1>
       <p className="muted">{t("tutorIntro")}</p>
+      {/* Stage 4A (PWA) — clear "needs internet" state when offline,
+          instead of letting a send fail silently. The offline library
+          search below keeps working; this banner only states the
+          live-AI limit honestly. */}
+      {mounted && !online && (
+        <div className="alert" role="status">
+          <p>{t("pwaOfflineTutor")}</p>
+        </div>
+      )}
       <TutorHealth variant="full" />
       {/* Stage 1 P2 — API privacy disclosure, shown before the chat form:
           the question leaves this device for the AI providers. Step 2b

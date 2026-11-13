@@ -48,6 +48,7 @@ import { Card, CardAction, CardContent, CardFooter, CardHeader, CardTitle } from
 import { Badge } from "./ui/badge";
 import { Input } from "./ui/input";
 import { Skeleton } from "./ui/skeleton";
+import PwaInstall from "./PwaInstall";
 
 // Same 14 links as src/components/Nav.tsx (same hrefs, same keys).
 // Step 2a — navigation GROUPS (report §7): Home stays top-level;
@@ -285,8 +286,7 @@ export default function Sidebar({
       </nav>
 
       {!collapsed && (
-        <Card className="tw:mx-3 tw:mb-3 tw:gap-3 tw:py-4">
-          <CardHeader className="tw:px-4">
+        <Card className="tw:mx-3 tw:mb-3 tw:gap-3 tw:py-4">          <CardHeader className="tw:px-4">
             <CardTitle className="tw:text-sm">{t("cardsDueLabel")}</CardTitle>
             <CardAction>
               {/* FSRS-7 is a version literal (ID/code), not UI text. */}
@@ -313,6 +313,11 @@ export default function Sidebar({
           </CardFooter>
         </Card>
       )}
+
+      {/* Stage 4A (PWA) — install affordance, expanded sidebar only
+          (the collapsed rail has no room; PwaInstall itself renders
+          nothing unless an install path exists). */}
+      {!collapsed && <PwaInstall />}
 
       <div className="tw:hidden tw:border-t tw:border-border tw:p-3 tw:md:block">
         <Button

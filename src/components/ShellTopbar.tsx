@@ -7,9 +7,10 @@
 
 import Link from "next/link";
 import type { RefObject } from "react";
-import { BookOpen, Menu, Moon, Sun } from "lucide-react";
+import { BookOpen, Menu, Moon, Sun, WifiOff } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { Button } from "./ui/button";
+import { usePwa } from "./PwaProvider";
 
 type ShellTopbarProps = {
   onOpenMobile: () => void;
@@ -19,6 +20,7 @@ type ShellTopbarProps = {
 
 export default function ShellTopbar({ onOpenMobile, mobileOpen, toggleRef }: ShellTopbarProps) {
   const { t, lang, setLang, theme, setTheme } = useLang();
+  const { mounted, online } = usePwa();
   return (
     <header className="tw:sticky tw:top-0 tw:z-20 tw:border-b tw:border-border tw:bg-background/80 tw:backdrop-blur">
       <div className="tw:flex tw:h-14 tw:items-center tw:gap-2 tw:px-3 tw:md:px-4">
@@ -43,6 +45,17 @@ export default function ShellTopbar({ onOpenMobile, mobileOpen, toggleRef }: She
           <span dir="ltr">ETEA Prep Library</span>
         </Link>
         <div className="tw:ms-auto tw:flex tw:items-center tw:gap-2">
+          {/* Stage 4A (PWA) — honest offline badge, mount-gated so the
+              server render never claims a state it cannot know. */}
+          {mounted && !online && (
+            <span
+              role="status"
+              className="tw:flex tw:items-center tw:gap-1.5 tw:rounded-full tw:border tw:border-border tw:px-2 tw:py-1 tw:text-xs tw:font-medium tw:text-muted-foreground"
+            >
+              <WifiOff className="tw:size-3.5" aria-hidden="true" />
+              {t("pwaOfflineBadge")}
+            </span>
+          )}
           <select
             aria-label={t("languageLabel")}
             value={lang}

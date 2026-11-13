@@ -32,6 +32,14 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Stage 4A (PWA) — the service worker file itself must NEVER
+        // be cached: a cached sw.js would pin the old worker (and old
+        // cache version) in the browser indefinitely. no-store forces
+        // a fresh check on every load, which is how updates are found.
+        source: "/sw.js",
+        headers: [{ key: "Cache-Control", value: "no-store" }],
+      },
+      {
         source: "/:path*",
         headers: [
           // Supplemental only: ask search engines not to index any response.

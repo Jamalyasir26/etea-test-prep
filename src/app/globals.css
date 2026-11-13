@@ -460,4 +460,62 @@ footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
     padding: 8px 14px;
     border-radius: 8px;
   }
+  /* Stage 4B (Quran audio) — sticky mini player + note example
+     blocks. The bar is ONE row at every width: the label truncates
+     with an ellipsis (min-width: 0 + nowrap) and the buttons never
+     shrink, so at 360px nothing wraps and the bar stays ~61px tall.
+     The in-flow spacer (72px) below the shell keeps the last page
+     content scrollable above the fixed bar. Safe-area padding keeps
+     the bar clear of the iPhone home indicator. */
+  .quran-player {
+    position: fixed;
+    bottom: 0;
+    inset-inline: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card);
+    border-top: 1px solid var(--line);
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.12);
+  }
+  .quran-player button {
+    padding: 8px 10px;
+    min-width: 44px;
+    flex-shrink: 0;
+  }
+  .quran-player-label {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+  .quran-repeat-on {
+    background: var(--teal);
+    color: #fff;
+  }
+  .quran-player-spacer {
+    height: 72px;
+  }
+  .quran-examples {
+    margin-top: 12px;
+  }
+  .quran-example {
+    border-top: 1px solid var(--line);
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+  /* Ayah text: the site's Arabic font stack (Noto Sans Arabic, the
+     only font — see layout.tsx), larger with generous line-height
+     for the fully-vocalized Uthmani script. Direction comes from
+     dir="rtl" on the element, never from CSS. */
+  .quran-ayah {
+    font-size: 1.3rem;
+    line-height: 2;
+    margin: 8px 0;
+  }
 } /* end @layer base */

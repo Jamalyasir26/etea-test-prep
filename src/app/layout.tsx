@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_Arabic } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
 import AppShell from "@/components/AppShell";
@@ -28,9 +28,30 @@ export const metadata: Metadata = {
   title: "ETEA Prep Library — KP Government Jobs",
   description:
     "Personal preparation library for KP government job tests (ETEA / KPPSC): 763 MCQs, notes, flashcards, mocks, live AI tutor and preparation tracking.",
+  // Stage 4A (PWA) — the manifest + iOS home-screen metadata. The
+  // manifest and icons live in public/ and are served same-origin.
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "ETEA Prep",
+    statusBarStyle: "default",
+  },
+  icons: {
+    icon: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }],
+  },
   // Supplemental only: ask search engines not to index. This is NOT access
   // control — anyone with the link can still open the site.
   robots: { index: false },
+};
+
+// Stage 4A (PWA) — browser chrome / splash colour: the site's brand
+// teal (same value as the manifest theme_color).
+export const viewport: Viewport = {
+  themeColor: "#09555E",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

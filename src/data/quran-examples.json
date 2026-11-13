@@ -1,0 +1,315 @@
+{
+ "_meta": {
+  "source": "Owner-approved list ~/workspace/tajweed-ayah-proposals.md (approved 2026-11-14); ayah text verified verbatim against api.quran.com (text_uthmani) at batch time. Generated programmatically — never hand-typed.",
+  "verifiedAtUtc": "2026-11-13T19:51:02.487292+00:00",
+  "reciter": "Mishary Rashid Alafasy (everyayah.com Alafasy_128kbps primary; cdn.islamic.network ar.alafasy fallback)",
+  "demoWordNote": "demoWord is shown only when the approved demo word appears verbatim (NFC) in the mushaf text; null for #3 Idgham without Ghunnah because the mushaf writes the assimilated form."
+ },
+ "verses": {
+  "1:1": {
+   "surah": 1,
+   "ayah": 1,
+   "surahName": "Al-Fatihah",
+   "surahNameArabic": "الفاتحة",
+   "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ",
+   "globalAyah": 1
+  },
+  "1:2": {
+   "surah": 1,
+   "ayah": 2,
+   "surahName": "Al-Fatihah",
+   "surahNameArabic": "الفاتحة",
+   "text": "ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ",
+   "globalAyah": 2
+  },
+  "1:7": {
+   "surah": 1,
+   "ayah": 7,
+   "surahName": "Al-Fatihah",
+   "surahNameArabic": "الفاتحة",
+   "text": "صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ",
+   "globalAyah": 7
+  },
+  "2:5": {
+   "surah": 2,
+   "ayah": 5,
+   "surahName": "Al-Baqarah",
+   "surahNameArabic": "البقرة",
+   "text": "أُو۟لَـٰٓئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ ۖ وَأُو۟لَـٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ",
+   "globalAyah": 12
+  },
+  "2:8": {
+   "surah": 2,
+   "ayah": 8,
+   "surahName": "Al-Baqarah",
+   "surahNameArabic": "البقرة",
+   "text": "وَمِنَ ٱلنَّاسِ مَن يَقُولُ ءَامَنَّا بِٱللَّهِ وَبِٱلْيَوْمِ ٱلْـَٔاخِرِ وَمَا هُم بِمُؤْمِنِينَ",
+   "globalAyah": 15
+  },
+  "2:21": {
+   "surah": 2,
+   "ayah": 21,
+   "surahName": "Al-Baqarah",
+   "surahNameArabic": "البقرة",
+   "text": "يَـٰٓأَيُّهَا ٱلنَّاسُ ٱعْبُدُوا۟ رَبَّكُمُ ٱلَّذِى خَلَقَكُمْ وَٱلَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ",
+   "globalAyah": 28
+  },
+  "2:27": {
+   "surah": 2,
+   "ayah": 27,
+   "surahName": "Al-Baqarah",
+   "surahNameArabic": "البقرة",
+   "text": "ٱلَّذِينَ يَنقُضُونَ عَهْدَ ٱللَّهِ مِنۢ بَعْدِ مِيثَـٰقِهِۦ وَيَقْطَعُونَ مَآ أَمَرَ ٱللَّهُ بِهِۦٓ أَن يُوصَلَ وَيُفْسِدُونَ فِى ٱلْأَرْضِ ۚ أُو۟لَـٰٓئِكَ هُمُ ٱلْخَـٰسِرُونَ",
+   "globalAyah": 34
+  },
+  "2:49": {
+   "surah": 2,
+   "ayah": 49,
+   "surahName": "Al-Baqarah",
+   "surahNameArabic": "البقرة",
+   "text": "وَإِذْ نَجَّيْنَـٰكُم مِّنْ ءَالِ فِرْعَوْنَ يَسُومُونَكُمْ سُوٓءَ ٱلْعَذَابِ يُذَبِّحُونَ أَبْنَآءَكُمْ وَيَسْتَحْيُونَ نِسَآءَكُمْ ۚ وَفِى ذَٰلِكُم بَلَآءٌ مِّن رَّبِّكُمْ عَظِيمٌ",
+   "globalAyah": 56
+  },
+  "4:17": {
+   "surah": 4,
+   "ayah": 17,
+   "surahName": "An-Nisa",
+   "surahNameArabic": "النساء",
+   "text": "إِنَّمَا ٱلتَّوْبَةُ عَلَى ٱللَّهِ لِلَّذِينَ يَعْمَلُونَ ٱلسُّوٓءَ بِجَهَـٰلَةٍ ثُمَّ يَتُوبُونَ مِن قَرِيبٍ فَأُو۟لَـٰٓئِكَ يَتُوبُ ٱللَّهُ عَلَيْهِمْ ۗ وَكَانَ ٱللَّهُ عَلِيمًا حَكِيمًا",
+   "globalAyah": 510
+  },
+  "36:52": {
+   "surah": 36,
+   "ayah": 52,
+   "surahName": "Ya-Sin",
+   "surahNameArabic": "يس",
+   "text": "قَالُوا۟ يَـٰوَيْلَنَا مَنۢ بَعَثَنَا مِن مَّرْقَدِنَا ۜ ۗ هَـٰذَا مَا وَعَدَ ٱلرَّحْمَـٰنُ وَصَدَقَ ٱلْمُرْسَلُونَ",
+   "globalAyah": 3757
+  },
+  "91:1": {
+   "surah": 91,
+   "ayah": 1,
+   "surahName": "Ash-Shams",
+   "surahNameArabic": "الشمس",
+   "text": "وَٱلشَّمْسِ وَضُحَىٰهَا",
+   "globalAyah": 6044
+  },
+  "104:8": {
+   "surah": 104,
+   "ayah": 8,
+   "surahName": "Al-Humazah",
+   "surahNameArabic": "الهمزة",
+   "text": "إِنَّهَا عَلَيْهِم مُّؤْصَدَةٌ",
+   "globalAyah": 6187
+  },
+  "105:4": {
+   "surah": 105,
+   "ayah": 4,
+   "surahName": "Al-Fil",
+   "surahNameArabic": "الفيل",
+   "text": "تَرْمِيهِم بِحِجَارَةٍ مِّن سِجِّيلٍ",
+   "globalAyah": 6192
+  },
+  "106:4": {
+   "surah": 106,
+   "ayah": 4,
+   "surahName": "Quraysh",
+   "surahNameArabic": "قريش",
+   "text": "ٱلَّذِىٓ أَطْعَمَهُم مِّن جُوعٍ وَءَامَنَهُم مِّنْ خَوْفٍۭ",
+   "globalAyah": 6197
+  },
+  "110:1": {
+   "surah": 110,
+   "ayah": 1,
+   "surahName": "An-Nasr",
+   "surahNameArabic": "النصر",
+   "text": "إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ",
+   "globalAyah": 6214
+  },
+  "113:1": {
+   "surah": 113,
+   "ayah": 1,
+   "surahName": "Al-Falaq",
+   "surahNameArabic": "الفلق",
+   "text": "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ",
+   "globalAyah": 6226
+  },
+  "113:2": {
+   "surah": 113,
+   "ayah": 2,
+   "surahName": "Al-Falaq",
+   "surahNameArabic": "الفلق",
+   "text": "مِن شَرِّ مَا خَلَقَ",
+   "globalAyah": 6227
+  },
+  "114:1": {
+   "surah": 114,
+   "ayah": 1,
+   "surahName": "An-Nas",
+   "surahNameArabic": "الناس",
+   "text": "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+   "globalAyah": 6231
+  }
+ },
+ "examples": {
+  "1": {
+   "ruleLabel": "Izhar (Noon Sakinah)",
+   "verseKey": "1:7",
+   "demoWord": "أَنْعَمْتَ"
+  },
+  "2": {
+   "ruleLabel": "Idgham with Ghunnah",
+   "verseKey": "2:8",
+   "demoWord": "مَن يَقُولُ"
+  },
+  "3": {
+   "ruleLabel": "Idgham without Ghunnah",
+   "verseKey": "2:5",
+   "demoWord": null
+  },
+  "4": {
+   "ruleLabel": "Iqlab",
+   "verseKey": "2:27",
+   "demoWord": "مِنۢ بَعْدِ"
+  },
+  "5": {
+   "ruleLabel": "Ikhfa",
+   "verseKey": "113:2",
+   "demoWord": "مِن شَرِّ"
+  },
+  "6": {
+   "ruleLabel": "Ikhfa Shafawi (Meem Sakinah)",
+   "verseKey": "105:4",
+   "demoWord": "تَرْمِيهِم بِحِجَارَةٍ"
+  },
+  "7": {
+   "ruleLabel": "Idgham Shafawi (Meem Sakinah)",
+   "verseKey": "104:8",
+   "demoWord": "عَلَيْهِم مُّؤْصَدَةٌ"
+  },
+  "8": {
+   "ruleLabel": "Izhar Shafawi (Meem Sakinah)",
+   "verseKey": "1:7",
+   "demoWord": "عَلَيْهِمْ غَيْرِ"
+  },
+  "9": {
+   "ruleLabel": "Qalqalah",
+   "verseKey": "113:1",
+   "demoWord": "ٱلْفَلَقِ"
+  },
+  "10": {
+   "ruleLabel": "Madd Tabee'i (Asli)",
+   "verseKey": "1:2",
+   "demoWord": "ٱلْعَـٰلَمِينَ"
+  },
+  "11": {
+   "ruleLabel": "Madd Muttasil",
+   "verseKey": "110:1",
+   "demoWord": "جَآءَ"
+  },
+  "12": {
+   "ruleLabel": "Madd Munfasil",
+   "verseKey": "2:21",
+   "demoWord": "يَـٰٓأَيُّهَا"
+  },
+  "13": {
+   "ruleLabel": "Madd Leen",
+   "verseKey": "106:4",
+   "demoWord": "خَوْفٍ"
+  },
+  "14": {
+   "ruleLabel": "Madd Iwaz",
+   "verseKey": "4:17",
+   "demoWord": "عَلِيمًا"
+  },
+  "15": {
+   "ruleLabel": "Tafkheem (heavy Raa)",
+   "verseKey": "1:2",
+   "demoWord": "رَبِّ"
+  },
+  "16": {
+   "ruleLabel": "Tarqeeq (light Raa)",
+   "verseKey": "2:49",
+   "demoWord": "فِرْعَوْنَ"
+  },
+  "17": {
+   "ruleLabel": "Laam Qamariyyah (moon)",
+   "verseKey": "1:2",
+   "demoWord": "ٱلْحَمْدُ"
+  },
+  "18": {
+   "ruleLabel": "Laam Shamsiyyah (sun)",
+   "verseKey": "91:1",
+   "demoWord": "وَٱلشَّمْسِ"
+  },
+  "19": {
+   "ruleLabel": "Hamzatul Wasl",
+   "verseKey": "1:1",
+   "demoWord": "بِسْمِ"
+  },
+  "20": {
+   "ruleLabel": "Ghunnah (Noon/Meem Mushaddad)",
+   "verseKey": "114:1",
+   "demoWord": "ٱلنَّاسِ"
+  },
+  "21": {
+   "ruleLabel": "Saktah (Waqf)",
+   "verseKey": "36:52",
+   "demoWord": null
+  }
+ },
+ "noteAudio": {
+  "Noon Sakinah and Tanween — Four Rules": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "20"
+  ],
+  "Meem Sakinah — Three Rules": [
+   "6",
+   "7",
+   "8"
+  ],
+  "Madd — Lengthening the Sound": [
+   "10"
+  ],
+  "Ikhfa — Hiding the Noon Sound (إخفاء)": [
+   "5"
+  ],
+  "Idgham — Merging into the Next Letter (إدغام)": [
+   "2",
+   "3"
+  ],
+  "Qalqalah — The Echo Letters (قلقلة)": [
+   "9"
+  ],
+  "Madd Types Compared — How Long to Stretch (مد)": [
+   "10",
+   "11",
+   "12"
+  ],
+  "Iqlab — Turning Noon into Meem (إقلاب)": [
+   "4"
+  ],
+  "Heavy and Light — Tafkheem, Tarqeeq, Raa and Laam": [
+   "15",
+   "16"
+  ],
+  "Sun and Moon Letters — Laam Qamariyyah and Shamsiyyah": [
+   "17",
+   "18"
+  ],
+  "Hamzatul Wasl and Hamzatul Qat'": [
+   "19"
+  ],
+  "More Madd Types — Leen, Iwaz, Silah and Far'i": [
+   "13",
+   "14"
+  ],
+  "Waqf Signs in the Mushaf — Ja, La, Sali, Qali and Saktah": [
+   "21"
+  ]
+ }
+}
