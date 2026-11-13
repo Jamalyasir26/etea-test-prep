@@ -18,7 +18,6 @@ import {
   ZAM_FIXED,
   displayExplanation,
   effectiveReviewStatus,
-  pendingEnglishExplanations,
   reviewAttribution,
   type Question,
 } from "@/lib/data";
@@ -116,10 +115,6 @@ export default function ReviewDashboard() {
   // Step 3b-audit2 (F12) — durable flags, loaded after mount (B07:
   // storage reads in initializers would mismatch the server HTML).
   const [flags, setFlags] = useState<DurableFlag[]>([]);
-  // Step 3b-audit2 (F02) — pending-English queue paging (static bank
-  // data, so no mount gate needed; the initial count is identical on
-  // server and client).
-  const [pendingVisible, setPendingVisible] = useState(10);
   useEffect(() => {
     setReviews(loadReviews());
     setFlags(loadFlags());
@@ -186,11 +181,6 @@ export default function ReviewDashboard() {
     clearFlags();
     setFlags([]);
   }
-
-  // Step 3b-audit2 (F02) — the owner-review queue for English
-  // explanations: Roman Urdu explanations with no English version yet.
-  const pendingEnglish = useMemo(() => pendingEnglishExplanations(), []);
-  const pendingShown = pendingEnglish.slice(0, pendingVisible);
 
   const shown = filtered.slice(0, visible);
 
@@ -280,32 +270,6 @@ export default function ReviewDashboard() {
           )}
         </div>
       )}
-      {/* Step 3b-audit2 (F02) — English explanations pending owner
-          review. Static bank data: safe to render before mount. */}
-      <div className="card">
-        <h2>{t("pendingEnglishHeading")}</h2>
-        <p className="muted">{tf("pendingEnglishIntro", { count: pendingEnglish.length })}</p>
-        {pendingShown.map((q) => (
-          <p key={q.id} style={{ margin: "8px 0" }}>
-            <b>
-              <span dir="ltr">{q.id}</span>
-            </b>{" "}
-            <span dir="ltr" className="badge grey">
-              {q.subject}
-            </span>{" "}
-            <span dir="ltr" className="badge grey">
-              {q.topic}
-            </span>{" "}
-            <span dir="auto">{q.explanation}</span>{" "}
-            <span className="badge grey">{t("explanationPendingLabel")}</span>
-          </p>
-        ))}
-        {pendingVisible < pendingEnglish.length && (
-          <button onClick={() => setPendingVisible((v) => v + 25)}>
-            {tf("pendingEnglishShowMore", { left: pendingEnglish.length - pendingVisible })}
-          </button>
-        )}
-      </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
         <label>
           {t("mockFilterLabel")}{" "}

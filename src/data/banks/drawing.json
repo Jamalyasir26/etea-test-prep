@@ -556,5 +556,905 @@
   "reviewedBy": null,
   "reviewedAt": null,
   "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "DRW-031",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Line — types",
+  "question": "Which line runs straight up and down on a page?",
+  "options": [
+   "Horizontal line",
+   "Vertical line",
+   "Diagonal line",
+   "Curved line"
+  ],
+  "correctIndex": 1,
+  "explanation": "A vertical line runs straight up and down. A horizontal line runs straight across, and a diagonal line slants.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-line-types",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-032",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Line — contour",
+  "question": "What is a contour line in drawing?",
+  "options": [
+   "A line that colours a shape",
+   "A line that follows the edge of an object",
+   "A line used only for shading",
+   "A line drawn with a ruler"
+  ],
+  "correctIndex": 1,
+  "explanation": "A contour line follows the outer edge of an object and shows its shape.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-contour",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-033",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Shape and form",
+  "question": "What is the difference between shape and form in art?",
+  "options": [
+   "Shapes are three-dimensional and forms are flat",
+   "Shapes are flat and forms have depth",
+   "Shapes use colour and forms do not",
+   "There is no difference between them"
+  ],
+  "correctIndex": 1,
+  "explanation": "A shape is flat, with length and width. A form has depth as well, so it looks three-dimensional.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-shape-form",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-034",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Form — solid forms",
+  "question": "Which of these is a three-dimensional form?",
+  "options": [
+   "Circle",
+   "Square",
+   "Triangle",
+   "Sphere"
+  ],
+  "correctIndex": 3,
+  "explanation": "A sphere has length, width and depth. Circles, squares and triangles are flat shapes.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-solid-forms",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-035",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Shape — square",
+  "question": "Which shape has four equal sides and four right angles?",
+  "options": [
+   "Rectangle",
+   "Triangle",
+   "Square",
+   "Oval"
+  ],
+  "correctIndex": 2,
+  "explanation": "A square has four equal sides and four right angles of 90 degrees each.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-square",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-036",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Value — meaning",
+  "question": "In drawing, what does 'value' mean?",
+  "options": [
+   "The price of a drawing",
+   "How light or dark a tone is",
+   "The size of a drawing",
+   "The age of a drawing"
+  ],
+  "correctIndex": 1,
+  "explanation": "Value means how light or dark a tone is, from white through greys to black.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-value",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-037",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Value — highlight",
+  "question": "In a shaded drawing, what is the highlight?",
+  "options": [
+   "The darkest part",
+   "The lightest part, where light hits first",
+   "The shadow on the ground",
+   "The outline of the object"
+  ],
+  "correctIndex": 1,
+  "explanation": "The highlight is the lightest area, where the light source strikes the object most directly.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-highlight",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-038",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Value — cast shadow",
+  "question": "What is a cast shadow?",
+  "options": [
+   "The shadow on the object itself",
+   "The shadow thrown onto a surface behind or below the object",
+   "The darkest line in a sketch",
+   "A shadow made with an eraser"
+  ],
+  "correctIndex": 1,
+  "explanation": "A cast shadow is the shadow an object throws onto the surface behind or below it.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-cast-shadow",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-039",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Shading — cross-hatching",
+  "question": "What is cross-hatching?",
+  "options": [
+   "Shading with dots",
+   "Shading with layers of crossed lines",
+   "Shading with an eraser",
+   "Shading with paint"
+  ],
+  "correctIndex": 1,
+  "explanation": "Cross-hatching builds tone with sets of parallel lines drawn across each other; closer lines make a darker tone.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-cross-hatch",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-040",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Shading — stippling",
+  "question": "What is stippling in drawing?",
+  "options": [
+   "Shading with small dots",
+   "Shading with straight lines",
+   "Rubbing with a finger",
+   "Drawing with a ruler"
+  ],
+  "correctIndex": 0,
+  "explanation": "Stippling creates tone with small dots; dots placed closer together look darker.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-stipple",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-041",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Shading — blending",
+  "question": "Which tool is used to blend pencil shading smoothly?",
+  "options": [
+   "A compass",
+   "A blending stump (tortillon)",
+   "A set square",
+   "A protractor"
+  ],
+  "correctIndex": 1,
+  "explanation": "A blending stump, also called a tortillon, is a rolled paper tool used to smooth and blend pencil tones.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-blend-stump",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-042",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Perspective — one-point",
+  "question": "In one-point perspective, how many vanishing points are used?",
+  "options": [
+   "One",
+   "Two",
+   "Three",
+   "None"
+  ],
+  "correctIndex": 0,
+  "explanation": "One-point perspective uses a single vanishing point, often for a view looking straight down a road or corridor.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-one-point",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-043",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Perspective — two-point",
+  "question": "Two-point perspective is most often used to draw what?",
+  "options": [
+   "A flat circle",
+   "The corner of a building",
+   "A portrait face",
+   "A still life bowl"
+  ],
+  "correctIndex": 1,
+  "explanation": "Two-point perspective suits the corner of a building, with one vanishing point on each side.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-two-point",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-044",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Perspective — eye level",
+  "question": "In perspective drawing, the horizon line sits at the same height as what?",
+  "options": [
+   "The ground",
+   "The viewer's eye level",
+   "The top of the paper",
+   "The base of the object"
+  ],
+  "correctIndex": 1,
+  "explanation": "The horizon line sits at the viewer's eye level. Objects above it are seen from below, and objects below it are seen from above.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-eye-level",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-045",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Colour — wheel order",
+  "question": "Which order follows the colour wheel correctly?",
+  "options": [
+   "Red, orange, yellow, green, blue, purple",
+   "Red, green, yellow, blue, purple, orange",
+   "Blue, red, green, orange, yellow, purple",
+   "Yellow, purple, red, green, blue, orange"
+  ],
+  "correctIndex": 0,
+  "explanation": "Around the colour wheel the order is red, orange, yellow, green, blue, purple, and back to red.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-wheel-order",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-046",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Colour — analogous",
+  "question": "What are analogous colours?",
+  "options": [
+   "Colours opposite each other on the wheel",
+   "Colours next to each other on the colour wheel",
+   "Colours made only with black",
+   "Colours that cannot be mixed"
+  ],
+  "correctIndex": 1,
+  "explanation": "Analogous colours sit next to each other on the colour wheel, such as blue, blue-green and green.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-analogous",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-047",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Colour — neutrals",
+  "question": "Which group lists neutral colours?",
+  "options": [
+   "Red, yellow, blue",
+   "Black, white, grey and brown",
+   "Orange, green, purple",
+   "Pink, gold and silver"
+  ],
+  "correctIndex": 1,
+  "explanation": "Neutrals — black, white, grey and brown — sit outside the colour wheel and soften bright colours.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-neutrals",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-048",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Colour — monochromatic",
+  "question": "What is a monochromatic colour scheme?",
+  "options": [
+   "Many bright colours together",
+   "One colour in different tints and shades",
+   "Only black and white",
+   "Colours opposite on the wheel"
+  ],
+  "correctIndex": 1,
+  "explanation": "A monochromatic scheme uses one colour, varied with tints (adding white) and shades (adding black).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-monochrome",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-049",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Colour — tertiary",
+  "question": "How is a tertiary colour made?",
+  "options": [
+   "Mixing two primary colours",
+   "Mixing a primary colour with the secondary colour beside it",
+   "Mixing black with white",
+   "Mixing all three primary colours"
+  ],
+  "correctIndex": 1,
+  "explanation": "A tertiary colour comes from mixing a primary colour with the secondary colour beside it, such as red-orange.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-tertiary",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-050",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Colour — complements",
+  "question": "Which colour is the complement of blue?",
+  "options": [
+   "Green",
+   "Purple",
+   "Orange",
+   "Yellow"
+  ],
+  "correctIndex": 2,
+  "explanation": "Blue's complement is orange. Complements sit opposite each other on the colour wheel.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-complement-blue",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-051",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Colour — complements",
+  "question": "Which colour is the complement of yellow?",
+  "options": [
+   "Orange",
+   "Purple",
+   "Green",
+   "Red"
+  ],
+  "correctIndex": 1,
+  "explanation": "Yellow's complement is purple. Complements sit opposite each other on the colour wheel.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-complement-yellow",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-052",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Tools — pencil grades",
+  "question": "In pencil grades, what mark does a 'B' pencil give?",
+  "options": [
+   "A hard, light mark",
+   "A soft, dark mark",
+   "No mark at all",
+   "A coloured mark"
+  ],
+  "correctIndex": 1,
+  "explanation": "B pencils are soft and give dark marks. H pencils are hard and give light marks, and HB sits in the middle.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-pencil-b",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-053",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Tools — H pencils",
+  "question": "Which pencil grade is best for light construction lines?",
+  "options": [
+   "6B",
+   "2H",
+   "8B",
+   "HB"
+  ],
+  "correctIndex": 1,
+  "explanation": "A 2H pencil is hard and light, so it suits light construction lines that guide a drawing without darkening it.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-pencil-h",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-054",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Tools — kneaded eraser",
+  "question": "What is a kneaded eraser used for?",
+  "options": [
+   "Erasing ink only",
+   "Lifting graphite gently and shaping into points for small areas",
+   "Sharpening pencils",
+   "Measuring angles"
+  ],
+  "correctIndex": 1,
+  "explanation": "A kneaded eraser is soft and mouldable. It lifts graphite gently and can be shaped to erase small areas or lift highlights.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-kneaded-eraser",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-055",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Tools — set square",
+  "question": "What angles does a 45-degree set square have?",
+  "options": [
+   "90, 60 and 30",
+   "90, 45 and 45",
+   "90, 50 and 40",
+   "60, 60 and 60"
+  ],
+  "correctIndex": 1,
+  "explanation": "A 45-degree set square is a right-angled triangle with angles of 90, 45 and 45 degrees.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-set-square",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-056",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Construction — bisector",
+  "question": "What does bisecting a line mean?",
+  "options": [
+   "Extending it",
+   "Dividing it into two equal parts",
+   "Doubling its length",
+   "Drawing it in ink"
+  ],
+  "correctIndex": 1,
+  "explanation": "To bisect a line is to divide it into two equal parts, usually with arcs drawn from each end using a compass.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-bisector",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-057",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Construction — compass",
+  "question": "Which tool draws circles and arcs in geometric construction?",
+  "options": [
+   "Protractor",
+   "Compass",
+   "Set square",
+   "T-square"
+  ],
+  "correctIndex": 1,
+  "explanation": "A compass, with one fixed point and one pencil point, draws circles and arcs of a set radius.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-compass",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-058",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Construction — angles",
+  "question": "Bisecting a 90-degree angle with a compass gives two angles of what size?",
+  "options": [
+   "30 degrees",
+   "45 degrees",
+   "60 degrees",
+   "120 degrees"
+  ],
+  "correctIndex": 1,
+  "explanation": "Bisecting a right angle of 90 degrees gives two angles of 45 degrees each.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-bisect-angle",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-059",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Composition — foreground",
+  "question": "In a landscape drawing, which part is drawn largest and lowest on the page?",
+  "options": [
+   "The background",
+   "The foreground",
+   "The sky",
+   "The horizon"
+  ],
+  "correctIndex": 1,
+  "explanation": "The foreground is nearest the viewer, so its objects are drawn larger and lower. Distant objects are smaller and higher.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-foreground",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "DRW-060",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Drawing",
+  "subjectKey": "drawing",
+  "topic": "Figure — head unit",
+  "question": "In figure drawing, what unit is used to measure body height?",
+  "options": [
+   "The foot",
+   "The head",
+   "The arm",
+   "The hand"
+  ],
+  "correctIndex": 1,
+  "explanation": "The head is the measuring unit. An adult figure is commonly drawn about seven and a half heads tall.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Drawing Fundamentals Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "drw-head-unit",
+  "syllabusClause": "Pattern B (ESED-453) — DM: Drawing section (20)",
+  "sourceKind": "concept-extracted"
  }
 ]

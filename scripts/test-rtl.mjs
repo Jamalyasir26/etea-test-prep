@@ -117,9 +117,11 @@ check("analysis: quarantine keys wrapped in lri()", analysis.includes("keys: lri
 const review = read("src/app/review/page.tsx");
 check("review: question id isolated LTR", review.includes('<span dir="ltr">{q.id}</span>'));
 // Step 3b-audit2 (F02) — the review card renders the display
-// explanation (expl.text); the pending-English queue renders the raw
-// Roman Urdu explanation. Both must stay in dir=auto spans.
-check("review: question/options/explanation dir=auto", review.includes('<span dir="auto">{q.question}</span>') && review.includes('<span dir="auto">{o}</span>') && review.includes('<span dir="auto">{expl.text}</span>') && review.includes('<span dir="auto">{q.explanation}</span>'));
+// explanation (expl.text) in a dir=auto span. Phase 4A removed the
+// pending-English queue, so its raw-explanation span
+// (<span dir="auto">{q.explanation}</span>) no longer exists; the
+// card isolation below is unchanged.
+check("review: question/options/explanation dir=auto", review.includes('<span dir="auto">{q.question}</span>') && review.includes('<span dir="auto">{o}</span>') && review.includes('<span dir="auto">{expl.text}</span>'));
 check("review: reviewer + timestamp isolated LTR", review.includes('<span dir="ltr">{by}</span>') && review.includes('<span dir="ltr">{new Date(at).toLocaleString()}</span>'));
 check("review: structural issues dir=auto", review.includes('<span dir="auto">{st.issues.join("; ")}</span>'));
 

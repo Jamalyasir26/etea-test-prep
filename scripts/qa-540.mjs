@@ -1,6 +1,6 @@
 // qa-540.mjs — structural + consistency-heuristic QA for the ETEA Prep banks.
 // NOTE: the filename is historical — it dates from when the bank held 540
-// items. The active total is now 645 (Stage 1 P0.3 added 55); the name is kept so existing
+// items. The active total is now 763 (Phase 4B2 added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
 // references (`npm run qa`, QA-540.md, VERIFY-phase2.md) keep working.
 // Plain node, no dependencies. Run: npm run qa  (node scripts/qa-540.mjs)
 // Exit code 0 = all checks pass; 1 = any check fails.
@@ -8,10 +8,10 @@
 // SCOPE: this is STRUCTURAL + consistency-heuristic QA only. It checks counts,
 // option shape, ID uniqueness, near-duplicate stems, the PED-009 regression and
 // mock-composition consistency. It does NOT declare the bank subject-matter
-// verified — full subject verification of all 645 items is out of scope.
+// verified — full subject verification of all 763 items is out of scope.
 //
 // Bank layout note: drawing_pe.json is LEGACY — kept on disk, superseded by
-// drawing.json (DRW-001..DRW-030) + pe.json (DRW-011..020 + PE-001..PE-010).
+// drawing.json (DRW-001..DRW-010 + DRW-021..DRW-060) + pe.json (DRW-011..020 + PE-001..PE-036).
 // It is still parsed and structurally checked, and asserted to equal the
 // ORIGINAL 20 split items (DRW-001..DRW-020), but it is EXCLUDED from the
 // active totals.
@@ -25,11 +25,11 @@ const CONTENT_PATH = join(ROOT, "src/data/content.json");
 
 // Expected ACTIVE per-bank counts (drawing_pe.json excluded — legacy).
 const EXPECTED = {
-  arabic: 80, drawing: 20, pe: 20, english: 45, gk: 30, islamiyat: 105,
-  it: 30, maths: 45, pakstudies: 45, pastpapers: 20, pastpapers_reworded: 20,
-  pedagogy: 30, science: 30, socialstudies: 30, tajweed: 50, urdu: 45,
+  arabic: 80, drawing: 50, pe: 46, english: 45, gk: 30, islamiyat: 105,
+  it: 60, maths: 45, pakstudies: 45, pastpapers: 20, pastpapers_reworded: 20,
+  pedagogy: 30, science: 30, socialstudies: 30, tajweed: 82, urdu: 45,
 };
-const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 645
+const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 763
 const LEGACY_FILE = "drawing_pe.json";
 
 const results = []; // { name, pass, detail }
@@ -168,9 +168,9 @@ check("review status: exactly the 15 owner-approved items are owner-reviewed (by
   const legacy = banks.drawing_pe || [];
   const drawingIds = drawing.map((x) => x.id);
   const peIds = pe.map((x) => x.id);
-  check("drawing.json = DRW-001..DRW-010 + DRW-021..DRW-030", JSON.stringify(drawingIds) === JSON.stringify([...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 1).padStart(3, "0")}`), ...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 21).padStart(3, "0")}`)]),
+  check("drawing.json = DRW-001..DRW-010 + DRW-021..DRW-060", JSON.stringify(drawingIds) === JSON.stringify([...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 1).padStart(3, "0")}`), ...Array.from({ length: 40 }, (_, i) => `DRW-${String(i + 21).padStart(3, "0")}`)]),
     `got ${drawingIds.join(",")}`);
-  check("pe.json = DRW-011..DRW-020 + PE-001..PE-010", JSON.stringify(peIds) === JSON.stringify([...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 11).padStart(3, "0")}`), ...Array.from({ length: 10 }, (_, i) => `PE-${String(i + 1).padStart(3, "0")}`)]),
+  check("pe.json = DRW-011..DRW-020 + PE-001..PE-036", JSON.stringify(peIds) === JSON.stringify([...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 11).padStart(3, "0")}`), ...Array.from({ length: 36 }, (_, i) => `PE-${String(i + 1).padStart(3, "0")}`)]),
     `got ${peIds.join(",")}`);
   const legacyIds = legacy.map((x) => x.id);
   const originalIds = [...drawingIds.slice(0, 10), ...peIds.slice(0, 10)];
@@ -188,13 +188,16 @@ check("review status: exactly the 15 owner-approved items are owner-reviewed (by
   const legacyContentMatches = JSON.stringify(strip(legacy)) === JSON.stringify([...strip(drawing.slice(0, 10)), ...strip(pe.slice(0, 10))]);
   check("legacy drawing_pe.json content = original 20 split items (ignoring review fields)", legacyContentMatches);
   // Post-verification fix (2026-11-11): 10 new drawing + 10 new PE items.
-  const newItems = [...drawing.slice(10), ...pe.slice(10)];
+  // (Phase 4B1 appended PE-011..PE-036 and Phase 4B2 appended DRW-031..DRW-060
+  // after them, so the post-fix slices are bounded to indices 10..19 — the
+  // original 20 post-fix items.)
+  const newItems = [...drawing.slice(10, 20), ...pe.slice(10, 20)];
   const newOk = newItems.length === 20 &&
     newItems.every((x) => x.sourceNote === "AI-drafted; unreviewed" && x.reviewStatus === "draft" && x.verified === false && x.source === "ai-generated");
   check("20 post-fix items (DRW-021..030, PE-001..PE-010): AI-drafted, draft, unverified", newOk,
     `got ${newItems.length} items: ${newItems.map((x) => x.id).join(",")}`);
   const newDrawingOk = drawing.slice(10).every((x) => x.subject === "Drawing" && x.subjectKey === "drawing");
-  const newPeOk = pe.slice(10).every((x) => x.subject === "Physical Education" && x.subjectKey === "pe");
+  const newPeOk = pe.slice(10, 20).every((x) => x.subject === "Physical Education" && x.subjectKey === "pe");
   check("new items carry split labels (drawing / pe, not drawing_pe)", newDrawingOk && newPeOk);
   // new SS bank
   const ss = banks.socialstudies || [];
@@ -291,9 +294,9 @@ const content = loadJson(CONTENT_PATH);
 
   // content.json counts agree with the banks.
   const counts = content.counts || {};
-  check("content.json counts.total = 645 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
+  check("content.json counts.total = 763 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
   const bySubjectSum = (counts.bySubject || []).reduce((s, [, n]) => s + n, 0);
-  check("content.json counts.bySubject sums to 645", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
+  check("content.json counts.bySubject sums to 763", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
   const bySubject = content.bySubject || {};
   const indexBad = [];
   for (const [key, expected] of Object.entries(EXPECTED)) {

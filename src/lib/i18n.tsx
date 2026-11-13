@@ -96,6 +96,9 @@ const STRINGS: Record<string, StrEntry> = {
   accuracy: { en: "Accuracy", roman: "Accuracy", ur: "درستگی" },
   attempts: { en: "Attempts", roman: "Attempts", ur: "کوششیں" },
   streak: { en: "Day streak", roman: "Day streak", ur: "مسلسل دن" },
+  // Phase 4A — Home stats loading skeleton (shown only until the real
+  // computed values load after mount; never a fake number).
+  statsLoading: { en: "Loading...", roman: "Loading...", ur: "لوڈ ہو رہا ہے..." },
   timeSpent: { en: "Time spent", roman: "Time spent", ur: "وقت" },
   weakAreas: { en: "Weak Areas", roman: "Weak Areas", ur: "کمزور حصے" },
   drill: { en: "Drill", roman: "Drill", ur: "مشق" },
@@ -162,9 +165,9 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "استاد Gemini (بنیادی) کو پکارتا ہے، اور Groq اور OpenRouter (مفت ماڈل) متبادل کے طور پر ہیں، صرف سرور پر۔ وہ صرف اس لائبریری سے جواب دیتا ہے، اور جب سوال لائبریری سے باہر ہو تو بتا دیتا ہے۔ اگر براہ راست اے آئی بند ہو تو آف لائن معاون (لائبریری تلاش) پھر بھی کام کرتا ہے۔",
   },
   quickLibraryDesc: {
-    en: "110 notes with recall-first prompts",
-    roman: "110 notes, recall-first prompts ke saath",
-    ur: "110 نوٹس، پہلے یاد کرنے کی ترغیب کے ساتھ",
+    en: "151 notes with recall-first prompts",
+    roman: "151 notes, recall-first prompts ke saath",
+    ur: "151 نوٹس، پہلے یاد کرنے کی ترغیب کے ساتھ",
   },
   quickPracticeDesc: {
     en: "Topic quizzes, 20 per attempt",
@@ -432,8 +435,8 @@ const STRINGS: Record<string, StrEntry> = {
   },
   mockIntroB: { en: "shared practice bank", roman: "shared practice bank", ur: "مشترکہ مشقی بینک" },
   mockIntroC: {
-    en: "— questions may repeat across track mocks; this is stated on each mock because the 645-question bank cannot supply 8+ disjoint 100-question mocks.",
-    ur: "سے بنتے ہیں — ٹریک موکوں میں سوالات دہرائے جا سکتے ہیں؛ یہ ہر موک پر لکھا ہے کیونکہ 645 سوالوں کا بینک 8 سے زیادہ الگ الگ 100 سوالوں والے موک نہیں دے سکتا۔",
+    en: "— questions may repeat across track mocks; this is stated on each mock because the 763-question bank cannot supply 8+ disjoint 100-question mocks.",
+    ur: "سے بنتے ہیں — ٹریک موکوں میں سوالات دہرائے جا سکتے ہیں؛ یہ ہر موک پر لکھا ہے کیونکہ 763 سوالوں کا بینک 8 سے زیادہ الگ الگ 100 سوالوں والے موک نہیں دے سکتا۔",
   },
   mockIntroD: {
     en: "All mocks are practice mocks, not official ETEA papers.",
@@ -1344,17 +1347,13 @@ const STRINGS: Record<string, StrEntry> = {
   relatedFlashcards: { en: "Related flashcards", roman: "Mutalliqa flashcards", ur: "متعلقہ فلیش کارڈز" },
   relatedPlan: { en: "Related plan day", roman: "Mutalliqa plan din", ur: "متعلقہ منصوبہ دن" },
 
-  // ---- Step 3b-audit2 (F02) — English explanations pending owner review ----
+  // ---- Step 3b-audit2 (F02) — pending-English explanation label.
+  // Phase 4A: the /review queue section (heading/intro/show-more) was
+  // removed per owner decision; only the display-only label remains. ----
   explanationPendingLabel: {
     en: "Roman Urdu explanation — English version pending owner review",
     ur: "رومن اردو وضاحت — انگریزی نسخہ مالک کے جائزے کا منتظر ہے",
   },
-  pendingEnglishHeading: { en: "English explanations pending owner review", ur: "انگریزی وضاحتیں مالک کے جائزے کی منتظر ہیں" },
-  pendingEnglishIntro: {
-    en: "These {count} questions have Roman Urdu explanations with no English version yet. In English mode they show with a label, never presented as English. Religious-content translations are the owner's decision — nothing here was auto-translated.",
-    ur: "ان {count} سوالات کی وضاحتیں رومن اردو میں ہیں اور ان کا انگریزی نسخہ ابھی موجود نہیں۔ انگریزی موڈ میں وہ لیبل کے ساتھ دکھائی دیتی ہیں، انگریزی کے طور پر پیش نہیں کی جاتیں۔ مذہبی مواد کے ترجمے مالک کا فیصلہ ہیں — یہاں کچھ بھی خودکار ترجمہ نہیں کیا گیا۔",
-  },
-  pendingEnglishShowMore: { en: "Show more ({left} left)", ur: "مزید دکھائیں ({left} باقی ہیں)" },
 
   // ---- Step 3b-audit2 (F12) — durable flagged questions ----
   flagsHeading: { en: "Flagged questions", roman: "Flagged sawalat", ur: "نشاندہ سوالات" },

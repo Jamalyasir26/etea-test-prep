@@ -47,7 +47,7 @@ const REVIEWED15 = [
 
 // 1. Backward compat: the bank loads at full size and items without the
 // new fields get no badge (null) instead of crashing.
-check("bank loads: 645 MCQs", QUESTIONS.length === 645, `got ${QUESTIONS.length}`);
+check("bank loads: 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
 const legacy = QUESTIONS.find((q) => !q.sourceKind);
 check("legacy items exist without sourceKind", !!legacy);
 check("legacy item gets no badge", provenanceBadge(legacy) === null);
@@ -92,7 +92,7 @@ check(
 );
 
 // 5. The 15 P0.3 notes: all concept-extracted with conceptId + clause.
-check("15 concept-extracted notes", sourcedNotes.length === 15, `got ${sourcedNotes.length}`);
+check("56 concept-extracted notes", sourcedNotes.length === 56, `got ${sourcedNotes.length}`);
 check(
   "all 15 notes have conceptId + clause",
   sourcedNotes.every((n) => !!n.conceptId && !!n.syllabusClause),

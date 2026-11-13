@@ -36,11 +36,11 @@ function check(name, cond, detail = "") {
 }
 
 // ---------- Zero translated content today (behaviour unchanged) ----------
-check("bank loads: 645 MCQs", QUESTIONS.length === 645, `got ${QUESTIONS.length}`);
+check("bank loads: 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
 const translatedMcqs = QUESTIONS.filter((q) => q.ur || q.roman);
 check("zero MCQs carry a ur/roman translation today", translatedMcqs.length === 0, translatedMcqs.slice(0, 3).map((q) => q.id).join(", "));
 const allNotes = Object.values(NOTES).flat();
-check("notes load: 110 notes", allNotes.length === 110, `got ${allNotes.length}`);
+check("notes load: 151 notes", allNotes.length === 151, `got ${allNotes.length}`);
 const translatedNotes = allNotes.filter((n) => n.ur || n.roman);
 check("zero notes carry a ur/roman translation today", translatedNotes.length === 0);
 check(

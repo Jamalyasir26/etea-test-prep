@@ -127,8 +127,8 @@ const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 const tracking = await import("../src/lib/tracking.ts");
 
-check("counts: 645 MCQs", data.QUESTIONS.length === 645, `got ${data.QUESTIONS.length}`);
-check("counts: 110 notes", Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 110);
+check("counts: 763 MCQs", data.QUESTIONS.length === 763, `got ${data.QUESTIONS.length}`);
+check("counts: 151 notes", Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 151);
 check("counts: 70 flashcards", data.FLASHCARDS.length === 70, `got ${data.FLASHCARDS.length}`);
 check("counts: 19 tracks", data.TRACKS.length === 19, `got ${data.TRACKS.length}`);
 check("counts: 20 mocks", data.MOCKS.length === 20, `got ${data.MOCKS.length}`);

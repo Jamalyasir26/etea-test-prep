@@ -42,6 +42,7 @@ import { useLang } from "@/lib/i18n";
 import TutorHealth from "@/components/TutorHealth";
 import { TrackConfidenceBadge } from "@/components/StatusBadges";
 import { Card } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { FadeIn } from "@/components/motion";
 
 // Step 2a — the acknowledged correction-notice version. The stored
@@ -287,7 +288,7 @@ export default function Home() {
           Step 2a — every metric now shows its denominator/scope
           (sample size, streak rule, time scope, New/Due split), so no
           number stands alone without its meaning. */}
-      {stats && (
+      {stats ? (
         <div className="grid">
           <FadeIn delay={0}>
             <Card className="tw:h-full tw:gap-1 tw:p-4">
@@ -383,6 +384,24 @@ export default function Home() {
               </Card>
             </Link>
           </FadeIn>
+        </div>
+      ) : (
+        /* Phase 4A — loading skeleton: shown only while stats/plan/due
+           data is still loading (pre-mount null state), so no
+           transient or zero values flash before the real computed
+           values arrive. Same 6-card grid shape, so the swap causes
+           no layout shift beyond the values themselves. */
+        <div aria-busy="true">
+          <p role="status" className="muted">{t("statsLoading")}</p>
+          <div className="grid" aria-hidden="true">
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <Card key={i} className="tw:h-full tw:gap-1 tw:p-4">
+                <Skeleton className="tw:h-9 tw:w-24" />
+                <Skeleton className="tw:h-4 tw:w-32" />
+                <Skeleton className="tw:h-3 tw:w-40" />
+              </Card>
+            ))}
+          </div>
         </div>
       )}
       {/* Step 2a — the empty state gets an immediate action, not just zeros. */}

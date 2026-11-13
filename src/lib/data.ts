@@ -404,9 +404,12 @@ export function displayExplanation(q: Question, lang: ContentLang): ExplanationD
 }
 
 /** Step 3b-audit2 (F02) — items whose English explanation is pending
- *  owner review (explanationLang === "roman"), sorted by id. The
- *  /review queue renders this list; religious-content translations
- *  are the owner's decision, never auto-generated. */
+ *  owner review (explanationLang === "roman"), sorted by id.
+ *  Phase 4A: the /review queue UI that rendered this list was removed
+ *  (owner decision — personal use, no manual verification needed); the
+ *  helper is retained for the test suites' F02 accounting. The pending
+ *  labels on explanations are unaffected. Religious-content
+ *  translations are the owner's decision, never auto-generated. */
 export function pendingEnglishExplanations(): Question[] {
   return QUESTIONS.filter((q) => q.explanationLang === "roman").sort((a, b) =>
     a.id.localeCompare(b.id),

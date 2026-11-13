@@ -153,7 +153,7 @@ for (const id of newIds) {
 }
 check("all 55 new MCQs present, draft, unverified, 4 distinct options, valid correctIndex", draftBad.length === 0, draftBad.slice(0, 5).join(", "));
 check("all 55 new MCQs carry the concept-extraction source label", sourceBad.length === 0, sourceBad.slice(0, 5).join(", "));
-check("bank total is 645", QUESTIONS.length === 645, `got ${QUESTIONS.length}`);
+check("bank total is 763", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
 
 console.log(failures === 0 ? "\nAll retrieval tests passed." : `\n${failures} retrieval test(s) FAILED.`);
 process.exit(failures === 0 ? 0 : 1);

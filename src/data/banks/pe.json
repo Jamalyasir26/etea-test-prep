@@ -553,5 +553,785 @@
   "reviewedBy": null,
   "reviewedAt": null,
   "sourceNote": "AI-drafted; unreviewed"
+ },
+ {
+  "id": "PE-011",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — hockey",
+  "question": "How long is a standard field hockey match?",
+  "options": [
+   "40 minutes",
+   "50 minutes",
+   "60 minutes",
+   "90 minutes"
+  ],
+  "correctIndex": 2,
+  "explanation": "A standard hockey match lasts 60 minutes, played as four quarters of 15 minutes each.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-hockey-duration",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-012",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — hockey",
+  "question": "Field hockey is usually played on:",
+  "options": [
+   "Grass",
+   "Clay",
+   "Astroturf (artificial turf)",
+   "Wood"
+  ],
+  "correctIndex": 2,
+  "explanation": "Modern field hockey is usually played on astroturf, a smooth artificial surface that keeps the ball rolling fast.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-hockey-surface",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-013",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Racket games — tennis",
+  "question": "In tennis, the points are counted in which order?",
+  "options": [
+   "10, 20, 30",
+   "15, 30, 40",
+   "1, 2, 3",
+   "5, 10, 15"
+  ],
+  "correctIndex": 1,
+  "explanation": "Tennis points are counted as 15, 30 and 40; winning the next point after 40 wins the game.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-tennis-scoring",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-014",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Racket games — tennis",
+  "question": "A tennis match with two players on each side is called:",
+  "options": [
+   "Singles",
+   "Doubles",
+   "Mixed",
+   "Relay"
+  ],
+  "correctIndex": 1,
+  "explanation": "Doubles is played with two players on each side; singles has one player on each side.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-tennis-doubles",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-015",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Racket games — table tennis",
+  "question": "In table tennis, how many points must a player win to take a game (with a lead of 2)?",
+  "options": [
+   "7",
+   "9",
+   "11",
+   "21"
+  ],
+  "correctIndex": 2,
+  "explanation": "A table tennis game is won by the first player to reach 11 points with a lead of at least 2.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-table-tennis-points",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-016",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Racket games — badminton",
+  "question": "In badminton, how many points make a game under rally scoring?",
+  "options": [
+   "11",
+   "15",
+   "21",
+   "25"
+  ],
+  "correctIndex": 2,
+  "explanation": "Under rally scoring, a badminton game goes to 21 points; every rally scores a point.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-badminton-points",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-017",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — volleyball",
+  "question": "What is the height of the net in men's volleyball?",
+  "options": [
+   "2.24 metres",
+   "2.43 metres",
+   "2.55 metres",
+   "3.05 metres"
+  ],
+  "correctIndex": 1,
+  "explanation": "The men's volleyball net is 2.43 metres high at the centre; the women's net is 2.24 metres.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-volleyball-net",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-018",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — basketball",
+  "question": "How high is a basketball hoop above the floor?",
+  "options": [
+   "8 feet",
+   "9 feet",
+   "10 feet",
+   "11 feet"
+  ],
+  "correctIndex": 2,
+  "explanation": "The basketball rim is 10 feet (3.05 metres) above the floor.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-basketball-hoop",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-019",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — cricket",
+  "question": "How many stumps are there in a cricket wicket?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "correctIndex": 1,
+  "explanation": "A wicket has three stumps with two bails resting on top.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-cricket-stumps",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-020",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — cricket",
+  "question": "How many overs per side are played in a One Day International (ODI) cricket match?",
+  "options": [
+   "20",
+   "40",
+   "50",
+   "60"
+  ],
+  "correctIndex": 2,
+  "explanation": "An ODI gives each side a maximum of 50 overs.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-odi-overs",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-021",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — cricket",
+  "question": "How many overs per side are played in a Twenty20 (T20) cricket match?",
+  "options": [
+   "10",
+   "15",
+   "20",
+   "25"
+  ],
+  "correctIndex": 2,
+  "explanation": "A T20 match gives each side a maximum of 20 overs.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-t20-overs",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-022",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — football",
+  "question": "In football, a penalty kick is taken from a distance of:",
+  "options": [
+   "6 yards",
+   "10 yards",
+   "12 yards",
+   "18 yards"
+  ],
+  "correctIndex": 2,
+  "explanation": "The penalty spot is 12 yards (11 metres) from the goal line.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-penalty-distance",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-023",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — football",
+  "question": "In football, which player is allowed to handle the ball inside the penalty area?",
+  "options": [
+   "The captain",
+   "The goalkeeper",
+   "The striker",
+   "The referee"
+  ],
+  "correctIndex": 1,
+  "explanation": "Only the goalkeeper may use hands, and only inside the team's own penalty area.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-goalkeeper",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-024",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Team games — football",
+  "question": "In football, what does a red card mean for a player?",
+  "options": [
+   "A warning",
+   "A free kick",
+   "The player is sent off",
+   "A penalty kick"
+  ],
+  "correctIndex": 2,
+  "explanation": "A red card sends the player off for the rest of the match; a yellow card is a warning.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-red-card",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-025",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Athletics — track events",
+  "question": "One lap of a standard athletics track is:",
+  "options": [
+   "200 metres",
+   "300 metres",
+   "400 metres",
+   "800 metres"
+  ],
+  "correctIndex": 2,
+  "explanation": "A standard athletics track measures 400 metres around one lap.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-track-lap",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-026",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Athletics — track events",
+  "question": "How many runners are in a 4 × 100 m relay team?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "correctIndex": 2,
+  "explanation": "Four runners each run 100 metres, passing a baton between them.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-relay-runners",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-027",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Athletics — field events",
+  "question": "In which athletics event is a long spear thrown as far as possible?",
+  "options": [
+   "Shot put",
+   "Discus",
+   "Javelin",
+   "Hammer"
+  ],
+  "correctIndex": 2,
+  "explanation": "In the javelin throw, the athlete throws a long spear; the farthest legal throw wins.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-javelin",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-028",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Athletics — field events",
+  "question": "In which athletics event is a heavy disc thrown?",
+  "options": [
+   "Shot put",
+   "Discus",
+   "Javelin",
+   "High jump"
+  ],
+  "correctIndex": 1,
+  "explanation": "In the discus throw, the athlete spins and releases a heavy disc; distance decides the winner.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-discus",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-029",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Athletics — field events",
+  "question": "In the long jump, the athlete takes off from:",
+  "options": [
+   "A springboard",
+   "A take-off board",
+   "A trampoline",
+   "A starting block"
+  ],
+  "correctIndex": 1,
+  "explanation": "The long jumper runs down the runway and takes off from a fixed take-off board.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-long-jump-board",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-030",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Exercise physiology — heart rate",
+  "question": "A normal resting heart rate for a healthy adult is about:",
+  "options": [
+   "20–40 beats per minute",
+   "40–60 beats per minute",
+   "60–100 beats per minute",
+   "120–150 beats per minute"
+  ],
+  "correctIndex": 2,
+  "explanation": "A resting adult heart usually beats 60 to 100 times per minute; trained athletes are often lower.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-resting-heart-rate",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-031",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Exercise physiology — heart rate",
+  "question": "Where is the pulse most often felt to count the heart rate?",
+  "options": [
+   "The elbow",
+   "The wrist",
+   "The knee",
+   "The ankle"
+  ],
+  "correctIndex": 1,
+  "explanation": "The pulse is easiest to feel at the wrist, where an artery runs close to the skin.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-pulse-wrist",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-032",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Human body — bones and muscles",
+  "question": "Which is the longest bone in the human body?",
+  "options": [
+   "Humerus",
+   "Tibia",
+   "Femur",
+   "Radius"
+  ],
+  "correctIndex": 2,
+  "explanation": "The femur, the thigh bone, is the longest and strongest bone in the body.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-femur",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-033",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Human body — bones and muscles",
+  "question": "Which is the smallest bone in the human body?",
+  "options": [
+   "Stapes",
+   "Patella",
+   "Ulna",
+   "Clavicle"
+  ],
+  "correctIndex": 0,
+  "explanation": "The stapes, a tiny bone in the middle ear, is the smallest bone in the body.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-stapes",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-034",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Human body — bones and muscles",
+  "question": "Which is the largest muscle in the human body?",
+  "options": [
+   "Biceps",
+   "Gluteus maximus",
+   "Heart",
+   "Diaphragm"
+  ],
+  "correctIndex": 1,
+  "explanation": "The gluteus maximus, the main muscle of the buttock, is the largest muscle in the body.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-gluteus-maximus",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-035",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Health & nutrition",
+  "question": "Which nutrient is the body's main source of energy?",
+  "options": [
+   "Protein",
+   "Vitamins",
+   "Carbohydrates",
+   "Minerals"
+  ],
+  "correctIndex": 2,
+  "explanation": "Carbohydrates are broken down into glucose, the body's main fuel for work and sport.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-carbohydrates",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "PE-036",
+  "post": [
+   "dm",
+   "pet"
+  ],
+  "subject": "Physical Education",
+  "subjectKey": "pe",
+  "topic": "Health & nutrition",
+  "question": "Which nutrient mainly builds and repairs muscles?",
+  "options": [
+   "Fat",
+   "Protein",
+   "Fibre",
+   "Water"
+  ],
+  "correctIndex": 1,
+  "explanation": "Protein supplies the building blocks that repair muscles after training and help them grow.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Physical Education Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "pe-protein",
+  "syllabusClause": "Pattern B (ESED-453) — PET: Physical Education section (20)",
+  "sourceKind": "concept-extracted"
  }
 ]

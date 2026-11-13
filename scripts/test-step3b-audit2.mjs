@@ -230,9 +230,9 @@ const data = require(join(OUT, "lib/data.js"));
 const { QUESTIONS, NOTES, FLASHCARDS, VISIBLE_TRACKS, VISIBLE_MOCKS } = data;
 const { displayExplanation, pendingEnglishExplanations } = data;
 
-check("F02 bank still 645 MCQs", QUESTIONS.length === 645);
+check("F02 bank still 763 MCQs", QUESTIONS.length === 763);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
-check("F02 notes still 110", notesTotal === 110);
+check("F02 notes still 151", notesTotal === 151);
 check("F02 flashcards still 70", FLASHCARDS.length === 70);
 check("F02 visible tracks still 12", VISIBLE_TRACKS.length === 12);
 check("F02 visible mocks still 16", VISIBLE_MOCKS.length === 16);
@@ -294,9 +294,12 @@ check("F02 TAJ-029 is marked pending", displayExplanation(byId["TAJ-029"], "en")
 check("F02 TAJ-028 (English + Arabic letter) is NOT pending", !displayExplanation(byId["TAJ-028"], "en").pendingEnglish);
 check("F02 ISL-091 (English) is NOT pending", !displayExplanation(byId["ISL-091"], "en").pendingEnglish);
 check("F02 plain English item shows original, not pending", displayExplanation(byId["GKN-001"] ?? QUESTIONS.find((q) => q.subjectKey === "gk"), "en").pendingEnglish === false);
+// Phase 4A: the /review queue UI is gone (owner decision), but the
+// helper still lists the 196 marked items for F02 accounting — the
+// pending labels on explanations are unchanged.
 const pending = pendingEnglishExplanations();
-check("F02 pending queue has 196 items", pending.length === 196);
-check("F02 pending queue sorted by id", pending.every((q, i) => i === 0 || pending[i - 1].id <= q.id));
+check("F02 pendingEnglishExplanations still lists 196 marked items", pending.length === 196);
+check("F02 pending list sorted by id", pending.every((q, i) => i === 0 || pending[i - 1].id <= q.id));
 check("F02 exactly one correct answer preserved on translated items", withEn.every((q) => q.options.length >= 2 && q.correctIndex >= 0 && q.correctIndex < q.options.length));
 check("F02 answers/options untouched: all items still valid", QUESTIONS.every((q) => q.options.length >= 2 && q.correctIndex >= 0 && q.correctIndex < q.options.length && typeof q.question === "string" && q.question.length > 0));
 
@@ -308,7 +311,10 @@ check("F07 IssueForm keeps the form open on failed save", qr.includes("issueSave
 check("F02 QuizRunner renders displayExplanation + pending label", qr.includes("displayExplanation(p.question, lang)") && qr.includes("currentExpl") && qr.includes("explanationPendingLabel"));
 const review = read("src/app/review/page.tsx");
 check("F12 review page lists durable flags", review.includes("loadFlags()") && review.includes("flagsHeading") && review.includes("flagsRemove") && review.includes("flagsClearAll"));
-check("F02 review page lists the pending-English queue", review.includes("pendingEnglishExplanations()") && review.includes("pendingEnglishHeading"));
+// Phase 4A — the queue section is REMOVED (owner decision: personal
+// use, no manual verification needed); the pending labels stay.
+check("F02 review page has NO pending-English queue section", !review.includes("pendingEnglishHeading") && !review.includes("pendingEnglishIntro") && !review.includes("pendingEnglishShowMore") && !review.includes("pendingVisible") && !review.includes("pendingEnglishExplanations()"));
+check("F02 review cards still show the pending label", review.includes("explanationPendingLabel"));
 check("F02 review page renders displayExplanation", review.includes("displayExplanation(q, lang)"));
 const shell = read("src/components/AppShell.tsx");
 check("F07 AppShell shows the storage-failure banner", shell.includes("etea-storage-warning") && shell.includes("storageSaveFailed"));
@@ -320,7 +326,7 @@ check("Batch1 health cache still wired", healthRoute.includes("createProbeCache"
 const home = read("src/app/page.tsx");
 check("Batch1 dashboard counts still derived from VISIBLE_COUNTS", home.includes("VISIBLE_COUNTS"));
 const i18n = read("src/lib/i18n.tsx");
-for (const k of ["explanationPendingLabel", "pendingEnglishHeading", "pendingEnglishIntro", "pendingEnglishShowMore", "flagsHeading", "flagsIntro", "flagsEmpty", "flagsRemove", "flagsClearAll", "flagsFromMock", "flagsFromPractice", "flagsFlaggedOn", "storageSaveFailed", "storageOtherTab", "storageReload", "storageDismiss", "attemptSaveFailed", "attemptRetrySave", "attemptDownloadResult", "attemptSaveRecovered", "issueSaveFailed"]) {
+for (const k of ["explanationPendingLabel", "flagsHeading", "flagsIntro", "flagsEmpty", "flagsRemove", "flagsClearAll", "flagsFromMock", "flagsFromPractice", "flagsFlaggedOn", "storageSaveFailed", "storageOtherTab", "storageReload", "storageDismiss", "attemptSaveFailed", "attemptRetrySave", "attemptDownloadResult", "attemptSaveRecovered", "issueSaveFailed"]) {
   check(`i18n key present: ${k}`, i18n.includes(`${k}:`));
 }
 

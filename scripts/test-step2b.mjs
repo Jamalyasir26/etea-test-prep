@@ -214,11 +214,11 @@ const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 const plan = require(join(OUT, "lib/plan.js"));
 
-// Counts unchanged by Step 2b.
-check("counts: 645 MCQs", data.QUESTIONS.length === 645, `got ${data.QUESTIONS.length}`);
+// Counts as of Phase 4B1 (Step 2b itself added none; 4B1 added 56 MCQs + 21 notes).
+check("counts: 763 MCQs", data.QUESTIONS.length === 763, `got ${data.QUESTIONS.length}`);
 check(
-  "counts: 110 notes",
-  Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 110,
+  "counts: 151 notes",
+  Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 151,
 );
 check("counts: 70 flashcards", data.FLASHCARDS.length === 70, `got ${data.FLASHCARDS.length}`);
 check("counts: 19 tracks", data.TRACKS.length === 19, `got ${data.TRACKS.length}`);

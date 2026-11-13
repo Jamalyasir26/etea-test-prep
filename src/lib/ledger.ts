@@ -344,8 +344,8 @@ const LEDGER_DEFS: LedgerDef[] = [
       w("gk", "10 Q"),
     ],
     sharedMockIds: [],
-    missing: "IT/CS depth — 30 MCQs and 6 notes for a 25-question portion.",
-    nextAction: "Step 3b adds IT/CS notes and MCQs (concept extraction only).",
+    missing: "No missing blueprint subject. IT/CS depth was grown in Phase 4B1 — see per-subject counts above; no practical computer-lab module.",
+    nextAction: "Practise the CT-IT Version B mock; owner verification of the new draft items via /review.",
   },
   {
     trackId: "dm",
@@ -366,8 +366,8 @@ const LEDGER_DEFS: LedgerDef[] = [
       w("pedagogy", "10 Q"),
     ],
     sharedMockIds: [],
-    missing: "Drawing depth — 4 notes shared with Physical Education, 20 MCQs; no practical drawing module.",
-    nextAction: "Step 3b adds Drawing notes and MCQs.",
+    missing: "No missing blueprint subject. Drawing depth was grown in Phase 4B2 — see per-subject counts above; no practical drawing module.",
+    nextAction: "Practise the DM Version B mock; owner verification of the new draft items via /review.",
   },
   {
     trackId: "pet",
@@ -388,8 +388,8 @@ const LEDGER_DEFS: LedgerDef[] = [
       w("pedagogy", "10 Q"),
     ],
     sharedMockIds: [],
-    missing: "Physical Education depth — 4 notes shared with Drawing, 20 MCQs; no physical/practical module.",
-    nextAction: "Step 3b adds Physical Education notes and MCQs.",
+    missing: "No missing blueprint subject. Physical Education depth was grown in Phase 4B1 — see per-subject counts above; no physical/practical module.",
+    nextAction: "Practise the PET Version B mock; owner verification of the new draft items via /review.",
   },
   {
     trackId: "qari",
@@ -412,8 +412,8 @@ const LEDGER_DEFS: LedgerDef[] = [
       w("gk", "10 Q"),
     ],
     sharedMockIds: [],
-    missing: "Hifz component — no memorisation material; Tajweed rules only. Qualification ambiguous (see track).",
-    nextAction: "Hifz revision via Quran audio (Stage 4); Tajweed notes and MCQs grow in Step 3b.",
+    missing: "No missing blueprint subject. Hifz revision material was added in Phase 4B2 — see per-subject counts above; Quran audio revision arrives in Stage 4. Qualification ambiguous (see track).",
+    nextAction: "Practise the Qari Version B mock; owner verification of the new draft items via /review. Hifz revision via Quran audio (Stage 4).",
   },
   {
     trackId: "swse",

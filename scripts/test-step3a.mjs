@@ -143,11 +143,11 @@ check(
   JSON.stringify(data.VISIBLE_VACANCIES.map((v) => v.post)),
 );
 check(
-  "VISIBLE_COUNTS: 12 tracks / 16 mocks, bank counts unchanged",
+  "VISIBLE_COUNTS: 12 tracks / 16 mocks, bank counts as of Phase 4B1",
   data.VISIBLE_COUNTS.tracks === 12 &&
     data.VISIBLE_COUNTS.mocks === 16 &&
-    data.VISIBLE_COUNTS.total === 645 &&
-    data.VISIBLE_COUNTS.notes === 110 &&
+    data.VISIBLE_COUNTS.total === 763 &&
+    data.VISIBLE_COUNTS.notes === 151 &&
     data.VISIBLE_COUNTS.cards === 70,
   JSON.stringify(data.VISIBLE_COUNTS),
 );

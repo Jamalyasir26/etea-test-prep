@@ -1409,5 +1409,965 @@
   "conceptId": "tajweed-izhar-shafawi",
   "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat section (30 combined)",
   "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-051",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Sifaat",
+  "question": "What does Hams mean as a quality of a letter?",
+  "options": [
+   "The sound stops completely",
+   "Breath flows with the letter",
+   "The tongue rises",
+   "The letter echoes"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hams means breath flows while the letter is pronounced. Its opposite is Jahr, where the breath does not flow.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-sifaat-hams",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-052",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Sifaat",
+  "question": "How many letters carry the quality of Hams?",
+  "options": [
+   "Five",
+   "Eight",
+   "Ten",
+   "Fifteen"
+  ],
+  "correctIndex": 2,
+  "explanation": "Ten letters carry Hams. The remaining letters carry Jahr, where the breath does not flow.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-hams-count",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-053",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Sifaat",
+  "question": "What does Shiddah mean as a quality of a letter?",
+  "options": [
+   "The sound flows freely",
+   "The sound stops and is held back",
+   "The letter is read lightly",
+   "The letter is stretched"
+  ],
+  "correctIndex": 1,
+  "explanation": "Shiddah means the sound is stopped and held back at the place of articulation. Its opposite is Rakhawah, where the sound flows.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-shiddah",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-054",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Sifaat",
+  "question": "How many letters carry the quality of Shiddah?",
+  "options": [
+   "Five",
+   "Eight",
+   "Ten",
+   "Twelve"
+  ],
+  "correctIndex": 1,
+  "explanation": "Eight letters carry Shiddah. The rest are Rakhawah, or in between (Tawassut).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-shiddah-count",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-055",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Sifaat",
+  "question": "How many letters are heavy (Mufakhkhamah) through Isti'la?",
+  "options": [
+   "Five",
+   "Seven",
+   "Nine",
+   "Eleven"
+  ],
+  "correctIndex": 1,
+  "explanation": "Seven letters are heavy: Kha, Sad, Dad, Ghain, Ta, Qaf and Za. The rest are light.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-istila-count",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-056",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Tafkheem",
+  "question": "What does Tafkheem mean in Tajweed?",
+  "options": [
+   "Reading a letter lightly",
+   "Reading a letter heavily, with a full mouth",
+   "Stretching a letter",
+   "Hiding a letter"
+  ],
+  "correctIndex": 1,
+  "explanation": "Tafkheem means reading a letter heavily, with the mouth full. Tarqeeq is its opposite: reading lightly.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-tafkheem",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-057",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Raa",
+  "question": "A Raa carrying a Fatha is read in which way?",
+  "options": [
+   "Light (Tarqeeq)",
+   "Heavy (Tafkheem)",
+   "Stretched",
+   "Silent"
+  ],
+  "correctIndex": 1,
+  "explanation": "Raa with a Fatha, or with a Dammah, is read heavy. Raa with a Kasrah is read light.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-raa-fatha",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-058",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Raa",
+  "question": "A Raa carrying a Kasrah is read in which way?",
+  "options": [
+   "Heavy (Tafkheem)",
+   "Light (Tarqeeq)",
+   "With Qalqalah",
+   "With Ghunnah"
+  ],
+  "correctIndex": 1,
+  "explanation": "Raa with a Kasrah is read light (Tarqeeq). With a Fatha or Dammah it is read heavy.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-raa-kasrah",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-059",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Laam",
+  "question": "When the Laam in the name of Allah follows a Fatha, how is it read?",
+  "options": [
+   "Light",
+   "Heavy",
+   "Silent",
+   "Stretched"
+  ],
+  "correctIndex": 1,
+  "explanation": "The Laam in the name of Allah is read heavy after a Fatha or a Dammah, and light after a Kasrah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-laam-fatha",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-060",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Laam",
+  "question": "When the Laam in the name of Allah follows a Kasrah, how is it read?",
+  "options": [
+   "Heavy",
+   "Light",
+   "With Ikhfa",
+   "With Idgham"
+  ],
+  "correctIndex": 1,
+  "explanation": "After a Kasrah, the Laam in the name of Allah is read light (Tarqeeq).",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-laam-kasrah",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-061",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Sun letters",
+  "question": "How many sun letters (Huruf Shamsiyyah) are there?",
+  "options": [
+   "Ten",
+   "Twelve",
+   "Fourteen",
+   "Sixteen"
+  ],
+  "correctIndex": 2,
+  "explanation": "Fourteen letters are sun letters. The Laam of 'Al-' merges into them and is not pronounced.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-sun-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-062",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Moon letters",
+  "question": "Before a moon letter (Qamariyyah), how is the Laam of 'Al-' read?",
+  "options": [
+   "It merges and falls silent",
+   "It is pronounced clearly",
+   "It turns into a Meem",
+   "It is stretched"
+  ],
+  "correctIndex": 1,
+  "explanation": "Before the fourteen moon letters, the Laam of 'Al-' is pronounced clearly.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-moon-letters",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-063",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Hamzah",
+  "question": "What happens to Hamzatul Wasl when words are joined in recitation?",
+  "options": [
+   "It is always pronounced",
+   "It is dropped in joining and pronounced only when starting",
+   "It turns into a Madd",
+   "It is stretched six counts"
+  ],
+  "correctIndex": 1,
+  "explanation": "Hamzatul Wasl is dropped when words are joined, and pronounced only when starting on that word. Hamzatul Qat' is always pronounced.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-hamzah-wasl",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-064",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Madd",
+  "question": "What is Madd Leen?",
+  "options": [
+   "A Madd caused by a Hamzah",
+   "A soft lengthening of Waw or Yaa Sakinah after a Fatha, at a stop",
+   "A Madd of exactly two counts",
+   "A Madd inside one word only"
+  ],
+  "correctIndex": 1,
+  "explanation": "Madd Leen is the soft lengthening of a still Waw or Yaa preceded by a Fatha, when stopping. It may be stretched two, four or six counts.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-madd-leen",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-065",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Madd",
+  "question": "What is Madd Iwaz?",
+  "options": [
+   "Tanween Fathatain at a stop is read as an Alif, stretched two counts",
+   "A Madd before a Hamzah",
+   "A Madd of six counts",
+   "A Madd in the middle of a word"
+  ],
+  "correctIndex": 0,
+  "explanation": "At a stop, a word ending in Tanween Fathatain is read with an Alif in place of the Tanween, stretched two counts. This is Madd Iwaz.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-madd-iwaz",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-066",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Madd",
+  "question": "Madd Silah lengthens which letter?",
+  "options": [
+   "The Haa of the pronoun (Haa Kinasayah)",
+   "The Noon Sakinah",
+   "The Meem Sakinah",
+   "The Laam of 'Al-'"
+  ],
+  "correctIndex": 0,
+  "explanation": "Madd Silah lengthens the Haa of the pronoun when it sits between two vowels: two counts normally, and longer before a Hamzah.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-madd-silah",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-067",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Waqf signs",
+  "question": "What does the Waqf sign Jaa (ج) in the Mushaf mean?",
+  "options": [
+   "Do not stop",
+   "Stopping here is allowed",
+   "You must stop",
+   "Pause without breathing"
+  ],
+  "correctIndex": 1,
+  "explanation": "The sign Jaa (ج) means stopping is allowed, and continuing is also fine.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-waqf-jaa",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-068",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Waqf signs",
+  "question": "What does the Waqf sign Laa (لا) in the Mushaf mean?",
+  "options": [
+   "Stop here",
+   "Do not stop here",
+   "Pause briefly",
+   "Stretch the sound"
+  ],
+  "correctIndex": 1,
+  "explanation": "The sign Laa (لا) means do not stop at this place, because the meaning is incomplete without what follows.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-waqf-laa",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-069",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Waqf signs",
+  "question": "What does the Waqf sign Sali (صلى) in the Mushaf mean?",
+  "options": [
+   "It is better to stop",
+   "It is better to continue",
+   "Do not stop",
+   "Pause without breathing"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sali (صلى) means it is better to continue, though stopping is allowed. Qali (قلى) means it is better to stop.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-waqf-sali",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-070",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Tajweed — Waqf categories",
+  "question": "Which stop (Waqf) is complete in meaning and grammar, so stopping there is best?",
+  "options": [
+   "Waqf Qabeeh",
+   "Waqf Hasan",
+   "Waqf Taam",
+   "Waqf Kaafi"
+  ],
+  "correctIndex": 2,
+  "explanation": "Waqf Taam is a complete stop: the meaning and the grammar are both complete. Kaafi is sufficient, Hasan is good, and Qabeeh is a bad stop that distorts the meaning.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "taj-waqf-categories",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-071",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Sabq",
+  "question": "In the Hifz system, what is 'Sabq'?",
+  "options": [
+   "Revision of old portions",
+   "The new lesson memorised each day",
+   "Listening to a Qari",
+   "The final exam"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sabq is the new portion memorised each day. It is then revised as Sabqi, and later as Amukhta.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-sabq",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-072",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Sabqi",
+  "question": "What is 'Sabqi' in Hifz practice?",
+  "options": [
+   "The new lesson",
+   "Revision of recently memorised portions",
+   "Memorising without a teacher",
+   "Writing from memory"
+  ],
+  "correctIndex": 1,
+  "explanation": "Sabqi is the revision of recently memorised portions, usually the last few lessons, to fix them before they fade.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-sabqi",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-073",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Amukhta",
+  "question": "What is 'Amukhta' in Hifz practice?",
+  "options": [
+   "The new lesson",
+   "Revision of old, long-memorised portions",
+   "A type of Tajweed rule",
+   "Listening to recitation"
+  ],
+  "correctIndex": 1,
+  "explanation": "Amukhta is the revision of old portions memorised long ago. Without it, old Hifz weakens.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-amukhta",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-074",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Repetition",
+  "question": "What is the first step in memorising a new verse?",
+  "options": [
+   "Recite it from memory at once",
+   "Repeat it many times while looking at the page",
+   "Write it without looking",
+   "Listen once and move on"
+  ],
+  "correctIndex": 1,
+  "explanation": "A new verse is repeated many times while looking, until the tongue knows it, and only then recited from memory.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-repetition",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-075",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Revision",
+  "question": "Which habit most protects memorised portions from being forgotten?",
+  "options": [
+   "Learning many new pages daily",
+   "Regular revision of old portions",
+   "Memorising silently",
+   "Skipping revision on busy days"
+  ],
+  "correctIndex": 1,
+  "explanation": "Regular revision of old portions is what keeps Hifz strong. New lessons without revision fade quickly.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-revision",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-076",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Listening",
+  "question": "How does listening to a skilled Qari help Hifz?",
+  "options": [
+   "It replaces revision",
+   "It fixes the words and Tajweed in memory through the ear",
+   "It counts as the new lesson",
+   "It shortens the Mushaf"
+  ],
+  "correctIndex": 1,
+  "explanation": "Listening fixes both the words and their correct Tajweed in memory. The ear supports the eye and the tongue.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-listening",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-077",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Teacher",
+  "question": "Why should a student recite memorised portions to a teacher?",
+  "options": [
+   "To finish faster",
+   "So mistakes are caught and corrected early",
+   "To avoid revision",
+   "To learn new rules only"
+  ],
+  "correctIndex": 1,
+  "explanation": "A teacher catches small mistakes early. Errors memorised alone become habits that are hard to correct later.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-teacher",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-078",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — One Mushaf",
+  "question": "Why do Hifz teachers advise using the same Mushaf every day?",
+  "options": [
+   "Other copies are incorrect",
+   "The same page layout builds visual memory of where verses sit",
+   "It is lighter to carry",
+   "It has bigger print"
+  ],
+  "correctIndex": 1,
+  "explanation": "Using one Mushaf builds visual memory: the student remembers where each verse sits on the page.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-one-mushaf",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-079",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Meaning",
+  "question": "How does understanding the meaning of verses help Hifz?",
+  "options": [
+   "It replaces repetition",
+   "It gives the memory hooks, so verses are easier to recall and connect",
+   "It removes the need for a teacher",
+   "It shortens revision time to zero"
+  ],
+  "correctIndex": 1,
+  "explanation": "Knowing the meaning gives the memory hooks to recall and link verses. Understanding supports memorisation but does not replace repetition.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-meaning",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-080",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Consistency",
+  "question": "Which approach builds strong Hifz over time?",
+  "options": [
+   "A large portion once a week",
+   "A small portion every day without gaps",
+   "Only revising before tests",
+   "Memorising only easy Surahs"
+  ],
+  "correctIndex": 1,
+  "explanation": "A small daily portion, without gaps, builds stronger Hifz than large irregular efforts. Consistency beats quantity.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-consistency",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-081",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Linking",
+  "question": "What does 'linking' mean in Hifz practice?",
+  "options": [
+   "Joining two Mushafs",
+   "Connecting the end of one verse to the start of the next while reciting",
+   "Listening to two Qaris at once",
+   "Writing two pages together"
+  ],
+  "correctIndex": 1,
+  "explanation": "Linking means practising the join between verses, so recitation flows from one verse into the next without stopping.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-linking",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
+ },
+ {
+  "id": "TAJ-082",
+  "post": [
+   "zamungkor-qari",
+   "qari"
+  ],
+  "subject": "Tajweed",
+  "subjectKey": "tajweed",
+  "topic": "Hifz — Aloud",
+  "question": "Why is reciting aloud recommended when memorising?",
+  "options": [
+   "It is faster than silent reading",
+   "Speaking the words engages the tongue and ear, fixing them more firmly",
+   "It needs no Mushaf",
+   "It impresses listeners"
+  ],
+  "correctIndex": 1,
+  "explanation": "Reciting aloud engages the tongue and the ear together, which fixes the words more firmly than silent reading.",
+  "explanationUrdu": null,
+  "difficulty": "medium",
+  "pastPaperRef": null,
+  "verified": false,
+  "source": "Original content — concept-extracted from Standard Tajweed and Hifz Curriculum",
+  "reviewStatus": "draft",
+  "reviewedBy": null,
+  "reviewedAt": null,
+  "conceptId": "hifz-aloud",
+  "syllabusClause": "Pattern B (ESED-453) — Qari: Tajweed/Hifz + Islamiyat block (30)",
+  "sourceKind": "concept-extracted"
  }
 ]
