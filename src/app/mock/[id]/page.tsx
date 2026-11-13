@@ -11,7 +11,7 @@
 import { Suspense, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { buildMockQuestions, isTrusted, MOCKS, trustedOnlyCount } from "@/lib/data";
+import { buildMockQuestions, isTrusted, VISIBLE_MOCKS, trustedOnlyCount } from "@/lib/data";
 import { useLang } from "@/lib/i18n";
 import { loadReviews, loadSession } from "@/lib/tracking";
 import { localizedScoringLabel, resolveScoring } from "@/lib/scoring";
@@ -22,7 +22,10 @@ function MockRunInner() {
   const params = useParams();
   const search = useSearchParams();
   const id = String(params.id ?? "");
-  const mock = MOCKS.find((m) => m.id === id);
+  // Step 3a — hidden mocks resolve to the not-found screen below
+  // (same behaviour as an unknown id): they are hidden everywhere
+  // users browse, including direct navigation.
+  const mock = VISIBLE_MOCKS.find((m) => m.id === id);
   const trustedOnly = search.get("mode") === "trusted";
   const scope = `mock:${id}:${trustedOnly ? "trusted" : "provisional"}`;
   // Stage 1 P0.2 — the owner's local review decisions. Trusted Mode fills

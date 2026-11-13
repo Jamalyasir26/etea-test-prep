@@ -1,9 +1,11 @@
-// Mock Tests — list of all 20 mocks / practice tests.
+// Mock Tests — list of the 16 visible teaching mocks / practice tests
+// (4 non-teaching mocks hidden — see the Step 3a visibility list in
+// src/lib/data.ts; hidden data stays in content.json).
 "use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { MOCKS, PATTERN_BANNER, mockLabels } from "@/lib/data";
+import { VISIBLE_MOCKS, PATTERN_BANNER, mockLabels } from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
 import { loadReviews, type ReviewRecord } from "@/lib/tracking";
 import { DEFAULT_SCORING, localizedScoringLabel, type ScoringConfig } from "@/lib/scoring";
@@ -34,10 +36,10 @@ export default function MockList() {
   // Start link's ?penalty= query param and actually changes the score.
   const [penaltyOverride, setPenaltyOverride] = useState<Record<string, string>>({});
 
-  function mockScoring(m: (typeof MOCKS)[number]): ScoringConfig {
+  function mockScoring(m: (typeof VISIBLE_MOCKS)[number]): ScoringConfig {
     return m.scoring ?? DEFAULT_SCORING;
   }
-  function startHref(m: (typeof MOCKS)[number]): string {
+  function startHref(m: (typeof VISIBLE_MOCKS)[number]): string {
     const base = `/mock/${m.id}${mode === "trusted" ? "?mode=trusted" : ""}`;
     const ov = penaltyOverride[m.id];
     if (!ov || ov === "default") return base;
@@ -60,6 +62,8 @@ export default function MockList() {
       <p className="muted">
         {t("mockProv1")} <b>{t("trustedModeLabel")}</b> {t("mockProv2")}
       </p>
+      {/* Step 3a — teaching-only scope, stated plainly. */}
+      <p className="muted">{t("teachingOnlyNote")}</p>
       {/* Stage 1 P1 Tier 4 (B01) — the two long mode buttons overflowed at
           360px without wrapping; they now stack instead of running off-screen. */}
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }} role="group" aria-label={t("mockModeGroup")}>
@@ -78,7 +82,7 @@ export default function MockList() {
           {t("trustedMode")}
         </button>
       </div>
-      {MOCKS.map((m) => {
+      {VISIBLE_MOCKS.map((m) => {
         const labels = mockLabels(m, overrides);
         const trusted = labels.trusted;
         const trustedDisabled = mode === "trusted" && trusted === 0;

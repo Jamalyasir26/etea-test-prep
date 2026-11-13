@@ -1,4 +1,6 @@
-// Post Tracks — 19 tracks with BPS, eligibility, pattern, confidence.
+// Post Tracks — 12 visible teaching tracks (7 hidden — see the
+// Step 3a visibility list in src/lib/data.ts; hidden data stays in
+// content.json and can be shown again with a one-line change).
 // Localization Pass 1 — converted to a client component so the UI
 // strings can go through i18n.tsx (first render is English on server
 // and client, then the stored language applies after mount — no new
@@ -7,7 +9,7 @@
 "use client";
 
 import Link from "next/link";
-import { MOCKS, PATTERN_BANNER, TRACKS } from "@/lib/data";
+import { VISIBLE_MOCKS, PATTERN_BANNER, VISIBLE_TRACKS } from "@/lib/data";
 import { useLang } from "@/lib/i18n";
 import { TrackConfidenceBadge } from "@/components/StatusBadges";
 
@@ -21,8 +23,14 @@ export default function Tracks() {
           <span dir="ltr">{PATTERN_BANNER}</span>
         </b>
       </div>
-      {TRACKS.map((tr) => {
-        const mocks = MOCKS.filter((m) => m.track === tr.id);
+      {/* Step 3a — the teaching-only scope is stated plainly, with a
+          link to the vacancy coverage ledger on the Vacancies page. */}
+      <p className="muted">{t("teachingOnlyNote")}</p>
+      <p>
+        <Link href="/vacancies#ledger">{t("tracksLedgerLink")}</Link>
+      </p>
+      {VISIBLE_TRACKS.map((tr) => {
+        const mocks = VISIBLE_MOCKS.filter((m) => m.track === tr.id);
         return (
           <div className="card" key={tr.id}>
             <h3>

@@ -205,6 +205,80 @@ export const COUNTS = content.counts as {
   mocks: number;
 };
 
+// ---------- Step 3a — teaching-only visibility ----------
+
+/** Step 3a — the teaching-only scope (owner order: HIDE non-teaching
+ *  content, never delete it). TEACHING_TRACK_IDS is the ONE source of
+ *  truth: every browse surface (tracks list/detail, mock list/detail,
+ *  vacancies, home counts, coverage ledger) reads VISIBLE_TRACKS /
+ *  VISIBLE_MOCKS / VISIBLE_VACANCIES, which are filtered from the FULL
+ *  data. The full TRACKS / MOCKS / VACANCIES arrays stay intact in
+ *  content.json and in this module: hidden data remains in the repo
+ *  files, in exports/backups, and in data-level helpers
+ *  (buildMockQuestions, trustedOnlyCount, mockLabels). Re-showing a
+ *  track is a one-line change: add its id to this list.
+ *
+ *  Classification (verified against the actual track data — see
+ *  VERIFY-step3a.md for the full table):
+ *  - Visible (12): the owner's named teaching set.
+ *  - Hidden (7): junior-clerk, computer-operator, police, forest, lhv,
+ *    rescue (non-teaching) + lecturer. Lecturer is a teaching post by
+ *    nature (KPPSC BPS-17) but is NOT in the owner's named teaching
+ *    set, has no mock and no subject bank ("No mock yet — subject bank
+ *    not built"), so it is hidden with the rest; add "lecturer" here
+ *    to show it again. */
+export const TEACHING_TRACK_IDS: readonly string[] = [
+  "zamungkor",
+  "tt",
+  "at",
+  "pst",
+  "ct",
+  "ctit",
+  "dm",
+  "pet",
+  "qari",
+  "swse",
+  "sst-etea",
+  "sst-kppsc",
+];
+
+/** Is this track id in the visible teaching set? Unknown ids are NOT
+ *  visible: a track added to content.json later stays hidden until it
+ *  is deliberately added to TEACHING_TRACK_IDS. */
+export function isTrackVisible(trackId: string): boolean {
+  return TEACHING_TRACK_IDS.includes(trackId);
+}
+
+/** Tracks the user can browse. Full data: TRACKS (unchanged). */
+export const VISIBLE_TRACKS: Track[] = TRACKS.filter((t) => isTrackVisible(t.id));
+
+/** Mocks the user can browse: a mock is visible iff its track is.
+ *  Full data: MOCKS (unchanged). */
+export const VISIBLE_MOCKS: MockDef[] = MOCKS.filter((m) => isTrackVisible(m.track));
+
+/** Vacancy rows have no track id, so the hidden row is matched by its
+ *  exact stored `post` string (copied verbatim from content.json).
+ *  Only the Rescue 1122 row is non-teaching; the other four rows are
+ *  teaching vacancies and stay visible. */
+export const HIDDEN_VACANCY_POSTS: ReadonlySet<string> = new Set([
+  "Rescue 1122 KP — EMT, Fire Rescuer, Driver",
+]);
+
+/** Vacancy rows the user can browse. Full data: VACANCIES (unchanged). */
+export const VISIBLE_VACANCIES: Vacancy[] = VACANCIES.filter(
+  (v) => !HIDDEN_VACANCY_POSTS.has(v.post),
+);
+
+/** Home-page counts with the visible teaching scope. The bank counts
+ *  (total/notes/cards) are subject-based and unchanged; only the
+ *  track/mock counts drop to the visible set. COUNTS itself keeps the
+ *  full-bank figures (19 tracks / 20 mocks) for data-level use. */
+export const VISIBLE_COUNTS = {
+  ...COUNTS,
+  tracks: VISIBLE_TRACKS.length,
+  mocks: VISIBLE_MOCKS.length,
+};
+
 export const PATTERN_BANNER =
   "ETEA sets paper composition per project. Always verify against your specific advertisement / roll number slip.";
 

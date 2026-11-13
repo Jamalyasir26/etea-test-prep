@@ -133,8 +133,8 @@ const STRINGS: Record<string, StrEntry> = {
 
   // ---- Home ----
   homeIntro: {
-    en: "Personal preparation — everything for upcoming KP tests in one place. {total} MCQs · {notes} notes · {cards} flashcards · {tracks} post tracks · {mocks} mocks.",
-    ur: "ذاتی تیاری — آنے والے کے پی ٹیسٹوں کے لیے سب کچھ ایک جگہ۔ {total} ایم سی کیوز · {notes} نوٹس · {cards} فلیش کارڈز · {tracks} پوسٹ ٹریکس · {mocks} موک۔",
+    en: "Personal preparation — everything for upcoming KP tests in one place. {total} MCQs · {notes} notes · {cards} flashcards · {tracks} teaching post tracks · {mocks} mocks.",
+    ur: "ذاتی تیاری — آنے والے کے پی ٹیسٹوں کے لیے سب کچھ ایک جگہ۔ {total} ایم سی کیوز · {notes} نوٹس · {cards} فلیش کارڈز · {tracks} تدریسی پوسٹ ٹریکس · {mocks} موک۔",
   },
   correctionsHeading: {
     en: "⚠️ Corrections — read first.",
@@ -834,6 +834,90 @@ const STRINGS: Record<string, StrEntry> = {
   lastDateWord: { en: "Last date", roman: "Last date", ur: "آخری تاریخ" },
   eligibilityWord: { en: "Eligibility", roman: "Eligibility", ur: "اہلیت" },
   vacTableAria: { en: "Vacancy table", roman: "Vacancy table", ur: "آسامیوں کی جدول" },
+
+  // ---- Step 3a — teaching-only scope + coverage ledger ----
+  teachingOnlyNote: {
+    en: "Teaching posts only: non-teaching tracks, mocks and vacancy rows are hidden in this personal teaching-prep build. Their data is retained in the files and can be shown again.",
+    ur: "صرف تدریسی عہدے: اس ذاتی تدریسی تیاری کے نسخے میں غیر تدریسی ٹریکس، موک اور آسامیوں کی قطاریں چھپائی گئی ہیں۔ ان کا ڈیٹا فائلوں میں محفوظ ہے اور دوبارہ دکھایا جا سکتا ہے۔",
+  },
+  tracksLedgerLink: {
+    en: "See the vacancy coverage ledger",
+    roman: "Vacancy coverage ledger dekhein",
+    ur: "آسامیوں کے احاطے کی فہرست دیکھیں",
+  },
+  ledgerHeading: {
+    en: "Vacancy Coverage Ledger",
+    roman: "Vacancy Coverage Ledger",
+    ur: "آسامیوں کے احاطے کی فہرست",
+  },
+  ledgerIntro: {
+    en: "One row per teaching post. “Exact” means every blueprint subject has at least one note and one practice question — it is not a claim of depth or sufficiency; the per-subject counts show how thin or deep the material is. Sources were last verified on 11 Nov 2026; always re-check your own advertisement and roll-number slip.",
+    ur: "ہر تدریسی عہدے کے لیے ایک قطار۔ “Exact” کا مطلب ہے کہ ہر نصابی مضمون کے لیے کم از کم ایک نوٹ اور ایک مشقی سوال موجود ہے — یہ گہرائی یا کفایت کا دعویٰ نہیں؛ ہر مضمون کی گنتی بتاتی ہے کہ مواد کتنا کم یا زیادہ ہے۔ ماخذ کی آخری تصدیق 11 نومبر 2026 کو ہوئی؛ ہمیشہ اپنا اشتہار اور رول نمبر سلپ دوبارہ دیکھیں۔",
+  },
+  ledgerSourceLabel: { en: "Official source", roman: "Official source", ur: "سرکاری ماخذ" },
+  ledgerLastVerified: { en: "Last verified", roman: "Last verified", ur: "آخری تصدیق" },
+  ledgerTotalLabel: { en: "Total", roman: "Total", ur: "کل" },
+  ledgerTimeLabel: { en: "Time", roman: "Time", ur: "وقت" },
+  ledgerLanguageLabel: { en: "Language", roman: "Language", ur: "زبان" },
+  ledgerNegativeLabel: { en: "Negative marking", roman: "Negative marking", ur: "منفی نمبر" },
+  ledgerAvailableLabel: {
+    en: "Available material per subject",
+    roman: "Available material per subject",
+    ur: "ہر مضمون کے لیے دستیاب مواد",
+  },
+  ledgerSubjectCounts: {
+    en: "{notes} notes · {mcqs} MCQs · {cards} cards",
+    ur: "{notes} نوٹس · {mcqs} ایم سی کیوز · {cards} کارڈز",
+  },
+  ledgerMocksLabel: { en: "Mocks", roman: "Mocks", ur: "موک" },
+  ledgerSharedMock: { en: "shared", roman: "shared", ur: "مشترکہ" },
+  ledgerNoMock: { en: "No mock yet", roman: "Abhi koi mock nahi", ur: "ابھی کوئی موک نہیں" },
+  ledgerBankReview: {
+    en: "Owner-reviewed in bank: {n} of {total} MCQs (bank data — your on-device decisions may add more).",
+    ur: "بینک میں مالک سے جائزہ شدہ: {total} ایم سی کیوز میں سے {n} (بینک کا ڈیٹا — آپ کے آلے کے فیصلے مزید شامل کر سکتے ہیں)۔",
+  },
+  ledgerMissingLabel: { en: "Missing", roman: "Missing", ur: "کمی" },
+  ledgerNextLabel: { en: "Next action", roman: "Next action", ur: "اگلا اقدام" },
+  ledgerViewTrack: { en: "View track", roman: "Track dekhein", ur: "ٹریک دیکھیں" },
+  ledgerCoverageExact: { en: "Exact", roman: "Exact", ur: "عین مطابق" },
+  ledgerCoverageExactDetail: {
+    en: "Every blueprint subject has at least one note and one practice question, and a mock exists. Not a claim of depth.",
+    ur: "ہر نصابی مضمون کے لیے کم از کم ایک نوٹ اور ایک مشقی سوال موجود ہے، اور موک بھی ہے۔ گہرائی کا دعویٰ نہیں۔",
+  },
+  ledgerCoverageProxy: { en: "Proxy", roman: "Proxy", ur: "متبادل" },
+  ledgerCoverageProxyDetail: {
+    en: "No official pattern — preparing on another post's pattern.",
+    ur: "کوئی سرکاری پیٹرن نہیں — دوسرے عہدے کے پیٹرن پر تیاری۔",
+  },
+  ledgerCoveragePartial: { en: "Partial", roman: "Partial", ur: "جزوی" },
+  ledgerCoveragePartialDetail: {
+    en: "Pattern confirmed or provisional, but some subject has no material, or no mock exists.",
+    ur: "پیٹرن مصدقہ یا عارضی ہے، لیکن کسی مضمون کا مواد نہیں یا موک نہیں۔",
+  },
+  ledgerCoverageUnknown: { en: "Unknown", roman: "Unknown", ur: "نامعلوم" },
+  ledgerCoverageUnknownDetail: {
+    en: "No verified pattern source.",
+    ur: "پیٹرن کا کوئی مصدقہ ماخذ نہیں۔",
+  },
+  ledgerSourceConfirmed: { en: "Source Confirmed", roman: "Source Confirmed", ur: "ماخذ مصدقہ" },
+  ledgerSourceConfirmedDetail: {
+    en: "Pattern confirmed against a named official source.",
+    ur: "پیٹرن کی تصدیق نام والے سرکاری ماخذ سے ہوئی۔",
+  },
+  ledgerSourceProvisional: { en: "Provisional", roman: "Provisional", ur: "عارضی" },
+  ledgerSourceProvisionalDetail: {
+    en: "Pattern breakdown provisional — verify against the official document.",
+    ur: "پیٹرن کی تفصیل عارضی ہے — سرکاری دستاویز سے تصدیق کریں۔",
+  },
+  ledgerSourceUnavailable: {
+    en: "Official scope unavailable",
+    roman: "Official scope unavailable",
+    ur: "سرکاری دائرہ دستیاب نہیں",
+  },
+  ledgerSourceUnavailableDetail: {
+    en: "No published syllabus or pattern for this post.",
+    ur: "اس عہدے کے لیے کوئی شائع شدہ نصاب یا پیٹرن نہیں۔",
+  },
 
   // ---- Tracks ----
   mocksCount: { en: "{n} mock(s)", roman: "{n} mock(s)", ur: "{n} موک" },

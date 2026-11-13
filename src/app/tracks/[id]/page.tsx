@@ -7,7 +7,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { MOCKS, TRACKS } from "@/lib/data";
+import { VISIBLE_MOCKS, VISIBLE_TRACKS } from "@/lib/data";
 import { useLang } from "@/lib/i18n";
 import { TrackConfidenceBadge } from "@/components/StatusBadges";
 
@@ -15,7 +15,10 @@ export default function TrackDetail() {
   const { t, tf } = useLang();
   const params = useParams();
   const id = String(params.id ?? "");
-  const tr = TRACKS.find((t) => t.id === id);
+  // Step 3a — hidden tracks resolve to the not-found screen below
+  // (same behaviour as an unknown id): they are hidden everywhere
+  // users browse, including direct navigation.
+  const tr = VISIBLE_TRACKS.find((t) => t.id === id);
   if (!tr) {
     return (
       <div>
@@ -26,7 +29,7 @@ export default function TrackDetail() {
       </div>
     );
   }
-  const mocks = MOCKS.filter((m) => m.track === tr.id);
+  const mocks = VISIBLE_MOCKS.filter((m) => m.track === tr.id);
   return (
     <div>
       <h1>

@@ -23,6 +23,8 @@ import {
   PATTERNS,
   PLAN21,
   SUBJECT_LABELS,
+  VISIBLE_COUNTS,
+  VISIBLE_MOCKS,
 } from "@/lib/data";
 import {
   computeStats,
@@ -128,7 +130,10 @@ export default function Home() {
   let resumeAction: { href: string; label: string } | null = null;
   if (resumeSession) {
     const parts = resumeSession.scope.split(":");
-    if (parts[0] === "mock" && parts[1]) {
+    // Step 3a — a stored session for a HIDDEN mock must not offer a
+    // Resume link into the not-found screen: only visible mocks resume
+    // from here. Practice scopes are subject-based and unaffected.
+    if (parts[0] === "mock" && parts[1] && VISIBLE_MOCKS.some((m) => m.id === parts[1])) {
       resumeAction = {
         href: `/mock/${parts[1]}${parts[2] === "trusted" ? "?mode=trusted" : ""}`,
         label: tf("resumeSession", { title: resumeSession.title }),
@@ -154,10 +159,13 @@ export default function Home() {
           total: COUNTS.total,
           notes: COUNTS.notes,
           cards: COUNTS.cards,
-          tracks: COUNTS.tracks,
-          mocks: COUNTS.mocks,
+          tracks: VISIBLE_COUNTS.tracks,
+          mocks: VISIBLE_COUNTS.mocks,
         })}
       </p>
+      {/* Step 3a — the counts above are the VISIBLE teaching scope;
+          the note states it plainly. */}
+      <p className="muted">{t("teachingOnlyNote")}</p>
 
       {/* Step 2a — "Start here": the dominant first card. Fresh learners
           get the three starting actions; returning learners get Resume
