@@ -217,6 +217,35 @@ for (const f of fs.readdirSync(bankDir)) {
 check("4B no audio references inside bank files", banksClean);
 check("4B data.ts untouched by audio (no quran import)", !read("src/lib/data.ts").includes("quran"));
 
+// --------------------------------- §9 CSP allows the two audio CDNs (Stage 4B fix, 2026-11-14)
+// Live failure: default-src 'self' with no media-src blocked ALL
+// in-app <audio> loads (both CDNs played fine in a direct tab).
+// media-src must name exactly the two approved CDNs — no wildcard,
+// no bare https: — and every other directive must stay as before.
+const nextConfigSrc = read("next.config.mjs");
+const mediaSrc = nextConfigSrc.match(/"media-src ([^"]+)"/);
+check("4B CSP: media-src directive present", mediaSrc !== null);
+check(
+  "4B CSP: media-src names exactly the two approved CDNs",
+  mediaSrc !== null &&
+    mediaSrc[1] === "'self' https://everyayah.com https://cdn.islamic.network",
+  mediaSrc ? mediaSrc[1] : "absent",
+);
+for (const directive of [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data:",
+  "font-src 'self' data:",
+  "connect-src 'self'",
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+]) {
+  check(`4B CSP: other directive unchanged (${directive.split(" ")[0]})`, nextConfigSrc.includes(`"${directive}"`));
+}
+
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);
   process.exit(1);
