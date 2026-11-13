@@ -54,7 +54,8 @@
     "test:stage3": "node scripts/test-stage3.mjs",
     "test:contrast": "node scripts/test-contrast.mjs",
     "test:step2a": "node scripts/test-step2a.mjs",
-    "test:step2b": "node scripts/test-step2b.mjs"
+    "test:step2b": "node scripts/test-step2b.mjs",
+    "test:step2fixes": "node scripts/test-step2fixes.mjs"
   },
   "version": "3.0.0"
 }

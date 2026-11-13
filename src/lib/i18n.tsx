@@ -560,6 +560,11 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "FSRS: {state} · agla review {due}",
     ur: "FSRS: {state} · اگلا جائزہ {due}",
   },
+  flashGradedNextReview: {
+    en: "Last card graded — next review {date} ({interval})",
+    roman: "Pichla card grade ho gaya — agla review {date} ({interval})",
+    ur: "پچھلا کارڈ درجہ بند ہو گیا — اگلا جائزہ {date} ({interval})",
+  },
   flashMigratedNotice: {
     en: "Your flashcard schedule moved to FSRS-7 (adaptive spaced repetition). {migrated} card(s) kept their due dates (intervals restarted); {reset} card(s) had no usable schedule and started fresh. Your previous schedule was saved unchanged as a backup.",
     ur: "آپ کا فلیش کارڈ شیڈول FSRS-7 (مطابقتی وقفہ تکرار) پر منتقل ہو گیا۔ {migrated} کارڈ کی واجب تاریخیں برقرار رہیں (وقفے دوبارہ شروع ہوئے)؛ {reset} کارڈ کا کوئی قابل استعمال شیڈول نہیں تھا اور وہ نئے سرے سے شروع ہوئے۔ آپ کا پچھلا شیڈول بغیر تبدیلی کے بیک اپ کے طور پر محفوظ کر لیا گیا۔",

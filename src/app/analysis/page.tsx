@@ -426,7 +426,7 @@ export default function Analysis() {
           <p key={w.subject}>
             <span className={`heat ${heat(w.accuracy)}`} />
             <span dir="ltr">{w.subject}</span> —{" "}
-            <span dir="ltr">{Math.round(w.accuracy)}%</span> {tf("weakOver", { total: w.total })}{" "}
+            <span dir="ltr">{Math.round(w.accuracy)}%</span>{" "}{tf("weakOver", { total: w.total })}{" "}
             <Link href={drillHref(w.subject)}>{t("drillArrow")}</Link>
           </p>
         ))
@@ -444,7 +444,7 @@ export default function Analysis() {
             <p key={p.subject}>
               <span className={`heat ${heat(p.accuracy)}`} />
               <span dir="ltr">{p.subject}</span> —{" "}
-              <span dir="ltr">{Math.round(p.accuracy)}%</span> {tf("weakOver", { total: p.total })}{" "}
+              <span dir="ltr">{Math.round(p.accuracy)}%</span>{" "}{tf("weakOver", { total: p.total })}{" "}
               <span className="badge grey">{t("provisionalSmallSample")}</span>{" "}
               <Link href={drillHref(p.subject, 10)}>{t("run10Drill")}</Link>
             </p>

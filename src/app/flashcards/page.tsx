@@ -92,6 +92,12 @@ function FlashcardsInner() {
   // retry + export actions. Cleared by the next successful save.
   const [saveFailed, setSaveFailed] = useState(false);
   const [saveRecovered, setSaveRecovered] = useState(false);
+  // Step 2 fixes — the most recently graded card's next review: the
+  // stored due datetime + the interval grading scheduled, captured at
+  // grade time (the interval must not shrink as the clock moves).
+  // Rendered as a local calendar date + the relative interval, and
+  // cleared by startSession so it never describes a previous session.
+  const [lastGraded, setLastGraded] = useState<{ dueAt: string; intervalMs: number } | null>(null);
 
   const cards: CardWithId[] = useMemo(
     () => FLASHCARDS.map((c) => ({ ...c, id: flashcardId(c.front, c.back) })),
@@ -119,6 +125,7 @@ function FlashcardsInner() {
     setDone(false);
     setSaveFailed(false);
     setSaveRecovered(false);
+    setLastGraded(null);
   }
 
   useEffect(() => {
@@ -160,7 +167,13 @@ function FlashcardsInner() {
 
   function grade(g: FlashGrade) {
     if (!card || !scheduler) return;
-    const updated = reviewFsrsCard(scheduler, cardState ?? null, g, new Date());
+    const now = new Date();
+    const updated = reviewFsrsCard(scheduler, cardState ?? null, g, now);
+    // Step 2 fixes — remember this grade's scheduled next review so the
+    // page shows the graded card's next-due calendar date (local
+    // timezone) + the relative interval, instead of only the interval
+    // that was on the grade button.
+    setLastGraded({ dueAt: updated.dueAt, intervalMs: new Date(updated.dueAt).getTime() - now.getTime() });
     const next = { ...state, [card.id]: updated };
     setState(next);
     // Step 2b — the save result is no longer ignored: a failed save
@@ -253,6 +266,18 @@ function FlashcardsInner() {
           {t("recalledLabel")}
         </span>
       </div>
+      {/* Step 2 fixes — the graded card's next review as a local
+          calendar date + the relative interval. Rendered outside the
+          card/done conditional so it stays visible on the finished
+          screen too; startSession clears it. */}
+      {lastGraded && (
+        <p className="muted">
+          {tf("flashGradedNextReview", {
+            date: lri(formatLocalDueDate(lastGraded.dueAt)),
+            interval: lri(formatFsrsInterval(lastGraded.intervalMs, lang)),
+          })}
+        </p>
+      )}
       {saveFailed && (
         <div className="alert red">
           <p>{t("flashSaveFailed")}</p>
@@ -307,9 +332,13 @@ function FlashcardsInner() {
             {cardState
               ? ` · ${tf("fsrsStateLine", {
                   state: t(STATE_KEY[cardState.state] ?? "stateNew"),
+                  // Step 2 fixes — Learning/Relearning cards showed
+                  // only the relative interval; the local calendar
+                  // date now rides alongside it, so the current
+                  // card's due date is visible in every state.
                   due: lri(
                     cardState.state === 1 || cardState.state === 3
-                      ? formatFsrsInterval(new Date(cardState.dueAt).getTime() - Date.now(), lang)
+                      ? `${formatFsrsInterval(new Date(cardState.dueAt).getTime() - Date.now(), lang)} · ${formatLocalDueDate(cardState.dueAt)}`
                       : formatLocalDueDate(cardState.dueAt),
                   ),
                 })}`

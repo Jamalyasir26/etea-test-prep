@@ -6,33 +6,10 @@ import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { BY_SUBJECT, hashSeed, isTrusted, mulberry32, shuffled, SUBJECT_LABELS } from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
+import { loadPracticeState, PRACTICE_STATE_KEY, resolvePracticeInitial } from "@/lib/practice";
 import { loadReviews, safeWrite } from "@/lib/tracking";
 import QuizRunner from "@/components/QuizRunner";
 import { Suspense } from "react";
-
-// The current subject/round/seed is persisted so a reload resumes the SAME
-// 20-question set (and QuizRunner resumes its saved session for that scope)
-// instead of silently shuffling a new set. "New set" bumps the round and
-// stores a fresh seed.
-const PRACTICE_STATE_KEY = "etea_practice_state_next";
-
-type PracticeState = { subjectKey: string; round: number; seed: number };
-
-function loadPracticeState(fallbackSubject: string): PracticeState {
-  if (typeof window === "undefined") return { subjectKey: fallbackSubject, round: 0, seed: Date.now() };
-  try {
-    const raw = localStorage.getItem(PRACTICE_STATE_KEY);
-    if (raw) {
-      const p = JSON.parse(raw) as Partial<PracticeState>;
-      if (typeof p.subjectKey === "string" && typeof p.round === "number" && typeof p.seed === "number") {
-        return { subjectKey: p.subjectKey, round: p.round, seed: p.seed };
-      }
-    }
-  } catch {
-    // fall through to a fresh state
-  }
-  return { subjectKey: fallbackSubject, round: 0, seed: Date.now() };
-}
 
 function PracticeInner() {
   const { t, tf } = useLang();
@@ -46,16 +23,18 @@ function PracticeInner() {
   const countParam = Number(params.get("count") ?? "20");
   const count = Number.isFinite(countParam) ? Math.min(20, Math.max(5, Math.floor(countParam))) : 20;
   const subjects = useMemo(() => Object.keys(BY_SUBJECT).sort(), []);
-  const [stored] = useState(() => loadPracticeState(initial || "islamiyat"));
-  const [subjectKey, setSubjectKey] = useState(() =>
-    initial && BY_SUBJECT[initial] ? initial : stored.subjectKey,
-  );
-  const [round, setRound] = useState(() =>
-    initial && BY_SUBJECT[initial] && initial === stored.subjectKey ? stored.round : 0,
-  );
-  const [seed, setSeed] = useState(() =>
-    initial && BY_SUBJECT[initial] && initial === stored.subjectKey ? stored.seed : Date.now(),
-  );
+  // Step 2 fixes — the initial subject/round/seed resolve through one
+  // pure function (src/lib/practice.ts): the bare URL restores the
+  // stored round + seed, so a reload resumes the SAME set and the
+  // stored session. A ?subject= naming a different subject starts
+  // fresh (per-scope sessions are the design).
+  const [practiceInit] = useState(() => {
+    const stored = loadPracticeState(initial || "islamiyat");
+    return resolvePracticeInitial(initial, stored, (k) => Boolean(BY_SUBJECT[k]), Date.now());
+  });
+  const [subjectKey, setSubjectKey] = useState(practiceInit.subjectKey);
+  const [round, setRound] = useState(practiceInit.round);
+  const [seed, setSeed] = useState(practiceInit.seed);
 
   useEffect(() => {
     // Stage 1 P1 Tier 2: safeWrite never throws on full/blocked storage.
