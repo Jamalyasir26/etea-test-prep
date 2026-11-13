@@ -56,7 +56,9 @@
     "test:step2a": "node scripts/test-step2a.mjs",
     "test:step2b": "node scripts/test-step2b.mjs",
     "test:step2fixes": "node scripts/test-step2fixes.mjs",
-    "test:step3a": "node scripts/test-step3a.mjs"
+    "test:step3a": "node scripts/test-step3a.mjs",
+    "test:step3b-audit1": "node scripts/test-step3b-audit1.mjs",
+    "test:step3b-audit2": "node scripts/test-step3b-audit2.mjs"
   },
   "version": "3.0.0"
 }

@@ -45,9 +45,12 @@ check("quiz: question text in dir=auto span", qr.includes('<span dir="auto">{q.q
 check("quiz: Q prefix isolated LTR", /<span dir="ltr">\s*<b>Q\{idx \+ 1\}\.<\/b>/.test(qr));
 check("quiz: subject badge isolated LTR", qr.includes('<span dir="ltr" className="badge grey">'));
 check("quiz: option letter LTR + option text auto", qr.includes('<span dir="ltr">{String.fromCharCode(65 + i)}.</span>') && qr.includes('<span dir="auto">{o}</span>'));
-check("quiz: feedback explanation in dir=auto span", qr.includes('<span dir="auto">{q.question.explanation}</span>'));
+// Step 3b-audit2 (F02) — the explanation renders go through
+// displayExplanation; the dir=auto isolation is unchanged, only the
+// expression inside the span differs.
+check("quiz: feedback explanation in dir=auto span", qr.includes('<span dir="auto">{currentExpl?.text ?? q.question.explanation}</span>'));
 check("quiz: policy note isolated LTR", qr.includes('<span dir="ltr">{examResult.config.policyNote}</span>'));
-check("quiz: review question/options/explanation isolated", qr.includes('<span dir="auto">{p.question.question}</span>') && qr.includes('<span dir="auto">{p.question.explanation}</span>') && qr.includes('<span dir="auto">{p.question.pastPaperRef}</span>'));
+check("quiz: review question/options/explanation isolated", qr.includes('<span dir="auto">{p.question.question}</span>') && qr.includes('<span dir="auto">{expl.text}</span>') && qr.includes('<span dir="auto">{p.question.pastPaperRef}</span>'));
 check("quiz: changed-answer options isolated", (qr.match(/<span dir="auto">\{p\.options\[/g) ?? []).length === 2);
 
 // ---- Library: note title/body/source ----
@@ -113,7 +116,10 @@ check("analysis: quarantine keys wrapped in lri()", analysis.includes("keys: lri
 // ---- Review: ids, content, attribution ----
 const review = read("src/app/review/page.tsx");
 check("review: question id isolated LTR", review.includes('<span dir="ltr">{q.id}</span>'));
-check("review: question/options/explanation dir=auto", review.includes('<span dir="auto">{q.question}</span>') && review.includes('<span dir="auto">{o}</span>') && review.includes('<span dir="auto">{q.explanation}</span>'));
+// Step 3b-audit2 (F02) — the review card renders the display
+// explanation (expl.text); the pending-English queue renders the raw
+// Roman Urdu explanation. Both must stay in dir=auto spans.
+check("review: question/options/explanation dir=auto", review.includes('<span dir="auto">{q.question}</span>') && review.includes('<span dir="auto">{o}</span>') && review.includes('<span dir="auto">{expl.text}</span>') && review.includes('<span dir="auto">{q.explanation}</span>'));
 check("review: reviewer + timestamp isolated LTR", review.includes('<span dir="ltr">{by}</span>') && review.includes('<span dir="ltr">{new Date(at).toLocaleString()}</span>'));
 check("review: structural issues dir=auto", review.includes('<span dir="auto">{st.issues.join("; ")}</span>'));
 

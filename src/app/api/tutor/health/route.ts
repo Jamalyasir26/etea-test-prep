@@ -22,11 +22,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { probeProviders, rateLimitOk, type ProviderHealth } from "@/lib/ai";
 import { clientIpFromHeaders, isSameOriginRequest } from "@/lib/apiGuard";
+import { createProbeCache } from "@/lib/healthCache";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 
 let instanceWarmed = false;
+
+// Step 3b-audit F14/F18 — server-side 5-minute probe cache (per
+// instance). The client already caches 5 minutes (tutorHealth.ts);
+// the TTLs match, so a manual Refresh inside the window returns the
+// cached probe WITH its original checkedAt — the UI's checked-at age
+// stays honest. Cache-Control: private, max-age=300 lets the browser
+// reuse the response too; the guard + rate limit below still run on
+// every request (the handler always executes — only the probe is
+// skipped on a cache hit).
+const HEALTH_TTL_MS = 5 * 60 * 1000;
+const healthCache = createProbeCache<{
+  overall: string;
+  checkedAt: string;
+  durationMs: number;
+  providers: Record<string, ProviderHealth>;
+}>(HEALTH_TTL_MS);
 
 export async function GET(req: NextRequest) {
   // Stage 1 P1 Tier 3 — each probe is a real (tiny) provider call, so the
@@ -41,25 +58,37 @@ export async function GET(req: NextRequest) {
   }
   const rl = rateLimitOk(clientIpFromHeaders(req.headers));
   if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
-  const started = Date.now();
   const coldStart = !instanceWarmed;
   instanceWarmed = true;
-  const providers = await probeProviders();
-  const entries = Object.values(providers) as ProviderHealth[];
-  const configured = entries.filter((p) => p.configured);
-  const okCount = configured.filter((p) => p.status === "ok").length;
-  const overall =
-    configured.length === 0 ? "down" : okCount === configured.length ? "ok" : okCount > 0 ? "degraded" : "down";
-  return NextResponse.json({
-    overall,
-    checkedAt: new Date().toISOString(),
-    durationMs: Date.now() - started,
-    coldStart,
-    note:
-      "Responsiveness probe (one tiny generation per provider), not key presence. No key material is ever included in this response." +
-      (coldStart
-        ? " This call ran on a cold instance — if a provider shows a timeout here, wait a few seconds and retry once; it usually answers warm."
-        : ""),
-    providers,
+  const { value: base, cached } = await healthCache.load(async () => {
+    const started = Date.now();
+    const providers = await probeProviders();
+    const entries = Object.values(providers) as ProviderHealth[];
+    const configured = entries.filter((p) => p.configured);
+    const okCount = configured.filter((p) => p.status === "ok").length;
+    const overall =
+      configured.length === 0 ? "down" : okCount === configured.length ? "ok" : okCount > 0 ? "degraded" : "down";
+    return {
+      overall,
+      checkedAt: new Date().toISOString(),
+      durationMs: Date.now() - started,
+      providers,
+    };
   });
+  return NextResponse.json(
+    {
+      ...base,
+      // A cache hit ran on an already-warm instance by definition (this
+      // instance probed before); never report it as a cold start.
+      coldStart: cached ? false : coldStart,
+      cached,
+      note:
+        "Responsiveness probe (one tiny generation per provider), not key presence. No key material is ever included in this response." +
+        (!cached && coldStart
+          ? " This call ran on a cold instance — if a provider shows a timeout here, wait a few seconds and retry once; it usually answers warm."
+          : "") +
+        (cached ? " Served from the 5-minute server cache; checkedAt is the original probe time." : ""),
+    },
+    { headers: { "Cache-Control": "private, max-age=300, must-revalidate" } },
+  );
 }

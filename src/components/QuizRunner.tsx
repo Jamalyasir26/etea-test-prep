@@ -46,6 +46,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import {
+  displayExplanation,
   effectiveReviewStatus,
   hashSeed,
   isTrusted,
@@ -66,13 +67,17 @@ import {
 import {
   checkSessionCompatibility,
   clearSession,
+  download,
   KEY_VERSION,
   loadReviews,
   loadSession,
   loadSessionRaw,
   recordAttempt,
+  removeFlag,
   reportIssueDetailed,
+  saveFlag,
   saveSession,
+  type Attempt,
   type IncompatibilityReason,
   type ItemRecord,
   type IssueReason,
@@ -136,6 +141,10 @@ function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
   const [noCorrection, setNoCorrection] = useState(false);
   const [error, setError] = useState(false);
   const [saved, setSaved] = useState(false);
+  // Step 3b-audit2 (F07) — the report is only "saved" when storage
+  // accepted it; a failed write keeps the form open with a retry
+  // message instead of a false confirmation.
+  const [saveFailed, setSaveFailed] = useState(false);
 
   if (saved) {
     return <p className="muted">{t("issueSaved")}</p>;
@@ -205,6 +214,11 @@ function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
           {t("issueValidationError")}
         </p>
       )}
+      {saveFailed && (
+        <p role="alert" className="muted">
+          {t("issueSaveFailed")}
+        </p>
+      )}
       <div style={{ display: "flex", gap: 8 }}>
         <button
           onClick={() => {
@@ -212,7 +226,7 @@ function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
               setError(true);
               return;
             }
-            reportIssueDetailed({
+            const res = reportIssueDetailed({
               qid,
               subject,
               reason,
@@ -220,7 +234,13 @@ function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
               source,
               noSuggestedCorrection: noCorrection,
             });
-            setSaved(true);
+            if (res.saved) {
+              setSaved(true);
+            } else {
+              // Storage refused the write: keep the form (and the
+              // user's text) open so they can retry.
+              setSaveFailed(true);
+            }
           }}
         >
           {t("savePrivately")}
@@ -276,6 +296,14 @@ export default function QuizRunner({
   // flags a question.
   const [flags, setFlags] = useState<Record<string, boolean>>({});
   const [mapOpen, setMapOpen] = useState(false);
+
+  // Step 3b-audit2 (F07) — the submitted attempt is only "saved" when
+  // storage accepted it. When the write fails, the results screen
+  // shows an error with retry/download instead of acting as if the
+  // result were stored; pendingAttempt holds the record for both.
+  const [attemptSaveFailed, setAttemptSaveFailed] = useState(false);
+  const [attemptSaveRecovered, setAttemptSaveRecovered] = useState(false);
+  const [pendingAttempt, setPendingAttempt] = useState<Attempt | null>(null);
 
   // Step 2a — per-question review-status badges use the EFFECTIVE
   // status (bank status overridden by this device's /review decisions,
@@ -345,6 +373,10 @@ export default function QuizRunner({
 
   const q = prepared[idx];
   const total = prepared.length;
+  // Step 3b-audit2 (F02) — the current question's display explanation
+  // (English text when one exists; Roman Urdu text + pending label
+  // otherwise, in English mode only).
+  const currentExpl = q ? displayExplanation(q.question, lang) : null;
 
   // Per-item response time: when the current question became current.
   useEffect(() => {
@@ -526,7 +558,7 @@ export default function QuizRunner({
       return;
     }
     submittedRef.current = true;
-    recordAttempt({
+    const res = recordAttempt({
       kind: mode === "mock" ? "mock" : "quiz",
       subject,
       mockId,
@@ -544,8 +576,35 @@ export default function QuizRunner({
       itemRecords: buildItemRecords(),
       retryCount: retries.length,
     });
+    // Step 3b-audit2 (F07) — never act as if a failed save succeeded:
+    // the results screen offers retry + download when saved is false.
+    setPendingAttempt(res.attempt);
+    setAttemptSaveFailed(!res.saved);
+    if (res.saved) setAttemptSaveRecovered(false);
     saveSession(buildSession(true));
     setDone(true);
+  }
+
+  // Step 3b-audit2 (F07) — retry storing the submitted attempt after
+  // a failed save. The first write never landed (safeWrite is atomic
+  // per key), so re-recording cannot duplicate anything.
+  function retryAttemptSave() {
+    if (!pendingAttempt) return;
+    const { id: _id, ...input } = pendingAttempt;
+    const res = recordAttempt(input);
+    setPendingAttempt(res.attempt);
+    setAttemptSaveFailed(!res.saved);
+    if (res.saved) setAttemptSaveRecovered(true);
+  }
+
+  // Step 3b-audit2 (F12) — toggle the session flag AND mirror it into
+  // the durable store, so the flag survives submit + reload and shows
+  // on /review. Unflagging removes it from both.
+  function toggleFlag(qid: string) {
+    const next = !flags[qid];
+    setFlags((prev) => ({ ...prev, [qid]: next }));
+    if (next) saveFlag(qid, mode, title);
+    else removeFlag(qid);
   }
   const finishRef = useRef(finish);
   finishRef.current = finish;
@@ -705,6 +764,38 @@ export default function QuizRunner({
               {firstPassCount} / {total} ({pct}%)
             </span>
           </h2>
+          {/* Step 3b-audit2 (F07) — the save failed: say so BEFORE the
+              result is lost, with retry + download. The answers above
+              stay on screen either way. */}
+          {attemptSaveFailed && pendingAttempt && (
+            <div className="alert red" role="alert">
+              <p>{t("attemptSaveFailed")}</p>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <button onClick={retryAttemptSave}>{t("attemptRetrySave")}</button>
+                <button
+                  className="secondary"
+                  onClick={() =>
+                    download(
+                      `etea-prep-result-${new Date().toISOString().slice(0, 10)}.json`,
+                      JSON.stringify(
+                        {
+                          app: "etea-prep-next",
+                          kind: "attempt",
+                          exportedAt: new Date().toISOString(),
+                          attempt: pendingAttempt,
+                        },
+                        null,
+                        2,
+                      ),
+                    )
+                  }
+                >
+                  {t("attemptDownloadResult")}
+                </button>
+              </div>
+            </div>
+          )}
+          {attemptSaveRecovered && !attemptSaveFailed && <p className="muted">{t("attemptSaveRecovered")}</p>}
           {/* Stage 1 P0.2 — provisional badge while the items in this quiz are not verified.
               Step 2a — semantic badges: the verified badge uses the
               REVIEWED tone, never success green (local owner review is
@@ -831,6 +922,10 @@ export default function QuizRunner({
           const fp = firstPass[p.question.id];
           const fin = answers[p.question.id];
           const ok = fp !== undefined && fp === p.correctIndex;
+          // Step 3b-audit2 (F02) — English mode shows the faithful
+          // English explanation; untranslated Roman Urdu text carries
+          // the honest pending label.
+          const expl = displayExplanation(p.question, lang);
           return (
             <div className="card" key={p.question.id}>
               <p>
@@ -857,7 +952,13 @@ export default function QuizRunner({
                 </p>
               )}
               <p className="muted">
-                <span dir="auto">{p.question.explanation}</span>
+                <span dir="auto">{expl.text}</span>
+                {expl.pendingEnglish && (
+                  <>
+                    {" "}
+                    <span className="badge grey">{t("explanationPendingLabel")}</span>
+                  </>
+                )}
               </p>
               {p.question.pastPaperRef && (
                 <p className="muted">
@@ -1098,7 +1199,14 @@ export default function QuizRunner({
               </span>
             </p>
             <p>
-              <b>{t("revealReasonLabel")}:</b> <span dir="auto">{q.question.explanation}</span>
+              <b>{t("revealReasonLabel")}:</b>{" "}
+              <span dir="auto">{currentExpl?.text ?? q.question.explanation}</span>
+              {currentExpl?.pendingEnglish && (
+                <>
+                  {" "}
+                  <span className="badge grey">{t("explanationPendingLabel")}</span>
+                </>
+              )}
             </p>
             <p className="muted">
               {t("sourceLabel")} <span dir="auto">{q.question.source}</span>
@@ -1127,7 +1235,7 @@ export default function QuizRunner({
         <button
           className="secondary"
           aria-pressed={!!flags[q.question.id]}
-          onClick={() => setFlags((prev) => ({ ...prev, [q.question.id]: !prev[q.question.id] }))}
+          onClick={() => toggleFlag(q.question.id)}
         >
           {flags[q.question.id] ? t("flaggedButton") : t("flagButton")}
         </button>

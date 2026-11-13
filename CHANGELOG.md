@@ -480,3 +480,18 @@ Built in the SEPARATE folder `~/workspace/etea-prep-next-stage3/` after the Stag
 - Local prod server (port 3103, stopped after): all 14 static routes + 5 dynamic routes HTTP 200; served HTML confirms 12 tracks / 16 mocks / 4 vacancy rows visible, 7 tracks / 4 mocks / Rescue row hidden, ledger + badges + last-verified + UNVERIFIED present, home "12 teaching post tracks · 16 mocks", hidden detail routes render not-found screens; counts 645 · 110 · 70 unchanged.
 - NOT verified here (needs a real browser post-deploy): hydrated Urdu ledger/RTL, /review 15/200, 360px ledger cards, hidden-mock Resume guard on a hydrated page. See VERIFY-step3a.md §8.
 - Full report: `VERIFY-step3a.md`.
+
+## Step 3b-audit Batch 1 — F21 badge overflow, F14/F18 health cache + attribution, F10 local-timezone streaks, stale dashboard counts (local, 2026-11-13; NOT deployed)
+
+1. F21 — `src/app/globals.css` `.sbadge`: `white-space: normal`, `max-width: 100%`, `min-width: 0`, `overflow-wrap: break-word`. The verbatim 137-char Pattern B confidence string rendered ~869px wide with nowrap and broke the 360px screen; it now wraps. One fix covers every page (all semantic badges share `.sbadge`); the only remaining nowrap in globals.css is the skip link; the nowrap shadcn Badge is unused on badge pages.
+2. F14/F18 — new `src/lib/healthCache.ts` (`createProbeCache`: 5-min TTL + in-flight sharing + failed probes never poison the cache); `src/app/api/tutor/health/route.ts` serves probes through it with `Cache-Control: private, max-age=300, must-revalidate`, `cached` flag, and `coldStart: false` on cache hits; guard + rate limit still run per request. Client TTL already 5 minutes (coherent). Attribution: `generateTutorAnswer` already returns the answering provider (test-proven); new `providerDisplayName()` in `src/lib/tutorHealth.ts` returns null for unknown values and `src/app/tutor/page.tsx` omits the via-line instead of defaulting to OpenRouter.
+3. F10 — `src/lib/tracking.ts`: new `localDayKey()` (local getters); `dayKey()` returns the LOCAL day of each ISO instant; streak extracted as pure `countStreakDays()` on local keys; `DAY_KEY` written local. `src/app/analysis/page.tsx`: 7/30-day filter cutoff + comparison use local keys. Rate-limit day key (server-side) and export filenames stay UTC by design; per-row UTC date displays left (display-only, out of scope).
+4. Stale counts — `quickMocksDesc`/`quickTracksDesc` in `src/lib/i18n.tsx` parameterized (`{mocks}`/`{tracks}`, en + roman + ur); `src/app/page.tsx` renders them via `tf()` with `descParams` from `VISIBLE_COUNTS` (16 mocks / 12 tracks). No new i18n keys.
+5. Tests — `scripts/test-step3b-audit1.mjs` (new, 92 checks: real tracking.ts + TZ-pinned children, healthCache TTL/dedup/failure, route + attribution source assertions, badge CSS, counts derivation). `package.json` gains `test:step3b-audit1`.
+
+### Verification (local; live confirmation after deploy)
+- `npm run build` PASS. `npx tsc --noEmit` clean with `strict: true`.
+- Suites: all 27 green — **2130 checks, 0 failures** (baseline 2038 → +92, test-step3b-audit1).
+- Local prod server (port 3131, stopped after): all 14 routes HTTP 200; served HTML confirms "16 timed mocks", "12 post tracks", headline counts, review heading, zero stale literals; built CSS confirms the badge wrap rules; health double-hit confirms the server cache (hit 2 `cached:true`, identical `checkedAt`, `Cache-Control` header; no keys configured locally, zero quota spent).
+- NOT verified here (needs a real browser post-deploy + owner phone check): 360px badge rendering (final arbiter: owner's phone), live health cache with real providers, streak behaviour across a real PKT midnight. See VERIFY-step3b-audit1.md §5.
+- Full report: `VERIFY-step3b-audit1.md`.

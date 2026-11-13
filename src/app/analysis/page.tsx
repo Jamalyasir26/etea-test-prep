@@ -17,6 +17,7 @@ import {
   clearQuarantine,
   clearStorageWarnings,
   computeStats,
+  dayKey,
   download,
   exportProgress,
   exportQuarantine,
@@ -27,6 +28,7 @@ import {
   loadLastExport,
   loadLastImport,
   loadQuarantine,
+  localDayKey,
   recordExport,
   recordImport,
   type Attempt,
@@ -137,10 +139,12 @@ export default function Analysis() {
     r.readAsText(file);
   }
 
-  // Step 2b — filtered attempts + stats. The date filter compares the
-  // stored ISO date (yyyy-mm-dd) against a cutoff day; the subject
-  // filter matches the attempt's subject label or any per-subject key;
-  // the track filter matches the attempt's track id.
+  // Step 2b — filtered attempts + stats. The date filter compares
+  // the attempt's LOCAL day key (dayKey) against a local cutoff day
+  // (Step 3b-audit F10: never UTC slices — "last 7 days" means the
+  // user's last 7 local days); the subject filter matches the
+  // attempt's subject label or any per-subject key; the track filter
+  // matches the attempt's track id.
   const filteredAttempts = useMemo(() => {
     const cutoff =
       dateFilter === "all"
@@ -148,10 +152,10 @@ export default function Analysis() {
         : (() => {
             const d = new Date();
             d.setDate(d.getDate() - (dateFilter === "7" ? 7 : 30));
-            return d.toISOString().slice(0, 10);
+            return localDayKey(d);
           })();
     return attempts.filter((a) => {
-      if (cutoff && a.date.slice(0, 10) < cutoff) return false;
+      if (cutoff && dayKey(a.date) < cutoff) return false;
       if (subjectFilter) {
         const labels = new Set(Object.keys(a.perSubject ?? {}));
         if (a.subject) labels.add(a.subject);

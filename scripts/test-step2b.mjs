@@ -126,13 +126,15 @@ globalThis.localStorage.setItem = realSetItem;
 // Issue reports: the explicit "no suggested correction" choice survives
 // storage AND the backup export/import round-trip.
 store.delete("etea_issues_v2");
-const noCorr = tracking.reportIssueDetailed({ qid: "ISL-001", reason: "wrong-answer", noSuggestedCorrection: true });
+// Step 3b-audit2 (F07) — reportIssueDetailed returns {rec, saved}; the
+// record itself is unchanged, only the return shape reports the write.
+const noCorr = tracking.reportIssueDetailed({ qid: "ISL-001", reason: "wrong-answer", noSuggestedCorrection: true }).rec;
 check("issue: noSuggestedCorrection stored", tracking.loadIssues().find((i) => i.id === noCorr.id)?.noSuggestedCorrection === true);
 check(
   "issue: noSuggestedCorrection report has no correction text",
   tracking.loadIssues().find((i) => i.id === noCorr.id)?.proposedCorrection === null,
 );
-const withCorr = tracking.reportIssueDetailed({ qid: "ISL-002", reason: "typo", proposedCorrection: "fix it" });
+const withCorr = tracking.reportIssueDetailed({ qid: "ISL-002", reason: "typo", proposedCorrection: "fix it" }).rec;
 const withCorrLoaded = tracking.loadIssues().find((i) => i.id === withCorr.id);
 check(
   "issue: correction report keeps text, no flag",

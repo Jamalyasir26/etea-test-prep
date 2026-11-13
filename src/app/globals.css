@@ -385,7 +385,14 @@ footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line);
     display: inline-flex; align-items: center; gap: 4px;
     font-size: 0.75rem; font-weight: 700; padding: 2px 8px;
     border-radius: 999px; border: 1px solid transparent;
-    margin-inline-end: 6px; white-space: nowrap;
+    margin-inline-end: 6px;
+    /* Step 3b-audit F21 — badges WRAP. The verbatim confidence
+       strings (up to 137 chars) rendered ~869px wide with nowrap
+       and broke the 360px screen. max-width + min-width: 0 keep
+       the badge inside any flex/grid ancestor; the text wraps
+       onto its own lines instead of forcing horizontal overflow. */
+    white-space: normal; max-width: 100%; min-width: 0;
+    overflow-wrap: break-word; text-align: start;
   }
   .sbadge svg { flex-shrink: 0; }
   .sbadge-draft { background: var(--status-neutral-bg); color: var(--status-neutral-text); }

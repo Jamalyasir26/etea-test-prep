@@ -16,15 +16,21 @@ import {
   MOCKS,
   QUESTIONS,
   ZAM_FIXED,
+  displayExplanation,
   effectiveReviewStatus,
+  pendingEnglishExplanations,
   reviewAttribution,
   type Question,
 } from "@/lib/data";
 import structural from "@/data/structural-checks.json";
 import { useLang } from "@/lib/i18n";
 import {
+  clearFlags,
+  loadFlags,
   loadReviews,
+  removeFlag,
   setReview,
+  type DurableFlag,
   type ReviewRecord,
   type ReviewStatus,
 } from "@/lib/tracking";
@@ -95,7 +101,7 @@ const STRUCTURAL_DISPLAY_KEY: Record<StructuralStatus, string> = {
 };
 
 export default function ReviewDashboard() {
-  const { t, tf } = useLang();
+  const { t, tf, lang } = useLang();
   // Stage 1 P2 (B07) — hydration safety. This page is prerendered, so
   // the first client render must match the server HTML exactly. Two
   // things broke that: (1) loadReviews() returns {} on the server but
@@ -107,8 +113,16 @@ export default function ReviewDashboard() {
   // local decisions + the local-time timestamp appear after mount.
   const [reviews, setReviews] = useState<Record<string, ReviewRecord>>({});
   const [mounted, setMounted] = useState(false);
+  // Step 3b-audit2 (F12) — durable flags, loaded after mount (B07:
+  // storage reads in initializers would mismatch the server HTML).
+  const [flags, setFlags] = useState<DurableFlag[]>([]);
+  // Step 3b-audit2 (F02) — pending-English queue paging (static bank
+  // data, so no mount gate needed; the initial count is identical on
+  // server and client).
+  const [pendingVisible, setPendingVisible] = useState(10);
   useEffect(() => {
     setReviews(loadReviews());
+    setFlags(loadFlags());
     setMounted(true);
   }, []);
   const [mockFilter, setMockFilter] = useState("zam1+zam2");
@@ -162,6 +176,22 @@ export default function ReviewDashboard() {
     setReviews(setReview(qid, status));
   }
 
+  // Step 3b-audit2 (F12) — flag removal refreshes from storage so the
+  // list always shows what is actually stored.
+  function unflag(qid: string) {
+    removeFlag(qid);
+    setFlags(loadFlags());
+  }
+  function unflagAll() {
+    clearFlags();
+    setFlags([]);
+  }
+
+  // Step 3b-audit2 (F02) — the owner-review queue for English
+  // explanations: Roman Urdu explanations with no English version yet.
+  const pendingEnglish = useMemo(() => pendingEnglishExplanations(), []);
+  const pendingShown = pendingEnglish.slice(0, pendingVisible);
+
   const shown = filtered.slice(0, visible);
 
   return (
@@ -202,6 +232,79 @@ export default function ReviewDashboard() {
             prob: counts.structuralProblem,
           })}
         </p>
+      </div>
+      {/* Step 3b-audit2 (F12) — durable flags. Mount-gated: the list
+          comes from localStorage, so it renders only after mount to
+          keep the first render identical to the server HTML. */}
+      {mounted && (
+        <div className="card">
+          <h2>{t("flagsHeading")}</h2>
+          <p className="muted">{t("flagsIntro")}</p>
+          {flags.length === 0 ? (
+            <p className="muted">{t("flagsEmpty")}</p>
+          ) : (
+            <>
+              {flags.map((f) => {
+                const q = BY_ID[f.qid];
+                return (
+                  <p key={f.qid} style={{ margin: "8px 0" }}>
+                    <b>
+                      <span dir="ltr">{f.qid}</span>
+                    </b>{" "}
+                    {q && (
+                      <>
+                        <span dir="ltr" className="badge grey">
+                          {q.subject}
+                        </span>{" "}
+                        <span dir="ltr" className="badge grey">
+                          {q.topic}
+                        </span>{" "}
+                        <span dir="auto">{q.question}</span>{" "}
+                      </>
+                    )}
+                    <span className="muted">
+                      · {f.source === "mock" ? t("flagsFromMock") : t("flagsFromPractice")} ·{" "}
+                      <span dir="auto">{f.title}</span> ·{" "}
+                      {tf("flagsFlaggedOn", { date: new Date(f.flaggedAt).toLocaleString() })}
+                    </span>{" "}
+                    <button className="secondary" onClick={() => unflag(f.qid)}>
+                      {t("flagsRemove")}
+                    </button>
+                  </p>
+                );
+              })}
+              <button className="secondary" onClick={unflagAll}>
+                {t("flagsClearAll")}
+              </button>
+            </>
+          )}
+        </div>
+      )}
+      {/* Step 3b-audit2 (F02) — English explanations pending owner
+          review. Static bank data: safe to render before mount. */}
+      <div className="card">
+        <h2>{t("pendingEnglishHeading")}</h2>
+        <p className="muted">{tf("pendingEnglishIntro", { count: pendingEnglish.length })}</p>
+        {pendingShown.map((q) => (
+          <p key={q.id} style={{ margin: "8px 0" }}>
+            <b>
+              <span dir="ltr">{q.id}</span>
+            </b>{" "}
+            <span dir="ltr" className="badge grey">
+              {q.subject}
+            </span>{" "}
+            <span dir="ltr" className="badge grey">
+              {q.topic}
+            </span>{" "}
+            <span dir="auto">{q.explanation}</span>{" "}
+            <span className="badge grey">{t("explanationPendingLabel")}</span>
+          </p>
+        ))}
+        {pendingVisible < pendingEnglish.length && (
+          <button onClick={() => setPendingVisible((v) => v + 25)}>
+            {tf("pendingEnglishShowMore", { left: pendingEnglish.length - pendingVisible })}
+          </button>
+        )}
       </div>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
         <label>
@@ -249,6 +352,10 @@ export default function ReviewDashboard() {
       {shown.map((q) => {
         const status = effectiveReviewStatus(q, overrides);
         const st = structuralOf(q.id);
+        // Step 3b-audit2 (F02) — English mode shows the faithful
+        // English explanation; untranslated Roman Urdu text carries
+        // the honest pending label.
+        const expl = displayExplanation(q, lang);
         // Stage 1 P1 Tier 1 — attribution falls back to the bank JSON's
         // reviewedBy/reviewedAt when no local decision exists (the 15
         // owner-verified items live in the bank since the P1T0 deploy;
@@ -278,7 +385,13 @@ export default function ReviewDashboard() {
               </p>
             ))}
             <p className="muted">
-              <span dir="auto">{q.explanation}</span>
+              <span dir="auto">{expl.text}</span>
+              {expl.pendingEnglish && (
+                <>
+                  {" "}
+                  <span className="badge grey">{t("explanationPendingLabel")}</span>
+                </>
+              )}
             </p>
             <p className="muted">
               {t("statusWord")}: <b>{t(STATUS_DISPLAY_KEY[status])}</b>

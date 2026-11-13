@@ -106,6 +106,13 @@ const QUARANTINE_KEY = "etea_quarantine_next_v1";
 // last backup is. Not part of the backup payload itself.
 const LAST_EXPORT_KEY = "etea_last_export_next";
 const LAST_IMPORT_KEY = "etea_last_import_next";
+// Step 3b-audit2 (F12) — durable flagged questions. Written when the
+// user flags a question in a quiz/mock run; survives submit, session
+// clear and reload. Deliberately NOT part of the versioned backup
+// export (v6): flags are lightweight pointers, re-flaggable, and
+// adding them would need a backup version bump + migration. They are
+// device-local durable state, listed on /review.
+const FLAGS_KEY = "etea_flags_next_v1";
 
 /** Stage 1 P0.2 — review-status vocabulary (Phase 2, D2). "draft" is the
  *  bank default (unreviewed). Only "owner-reviewed" and "approved" count
@@ -163,21 +170,27 @@ export function loadReviews(): Record<string, ReviewRecord> {
   return out;
 }
 
-export function saveReviews(reviews: Record<string, ReviewRecord>) {
-  if (typeof window === "undefined") return;
-  safeWrite(REVIEWS_KEY, JSON.stringify(reviews));
+export function saveReviews(reviews: Record<string, ReviewRecord>): boolean {
+  if (typeof window === "undefined") return false;
+  return safeWrite(REVIEWS_KEY, JSON.stringify(reviews));
 }
 
-/** Record one owner review decision. Returns the updated map. */
+/** Record one owner review decision. Returns the updated map (same
+ *  shape as before; callers keep working). Step 3b-audit2 (F07/F08):
+ *  the write is a compare-and-swap update, and a failed write is
+ *  recorded as a warning (surfaced by the shell banner) instead of
+ *  failing silently — the returned map is the in-memory decision, so
+ *  the UI stays responsive and the banner tells the user to retry. */
 export function setReview(
   qid: string,
   reviewStatus: ReviewStatus,
   reviewedBy = "owner",
 ): Record<string, ReviewRecord> {
-  const all = loadReviews();
-  all[qid] = { reviewStatus, reviewedBy, reviewedAt: new Date().toISOString() };
-  saveReviews(all);
-  return all;
+  const record: ReviewRecord = { reviewStatus, reviewedBy, reviewedAt: new Date().toISOString() };
+  const current = loadReviews();
+  const next = { ...current, [qid]: record };
+  atomicUpdateJSON<Record<string, unknown>>(REVIEWS_KEY, {}, (raw) => ({ ...raw, [qid]: record }));
+  return next;
 }
 
 export function getReview(qid: string): ReviewRecord | null {
@@ -197,12 +210,17 @@ export function loadAnnotations(): Record<string, string> {
   return out;
 }
 
-export function saveAnnotation(noteKey: string, text: string) {
-  if (typeof window === "undefined") return;
-  const all = loadAnnotations();
-  if (text.trim()) all[noteKey] = text;
-  else delete all[noteKey];
-  safeWrite(ANNOTATIONS_KEY, JSON.stringify(all));
+export function saveAnnotation(noteKey: string, text: string): boolean {
+  if (typeof window === "undefined") return false;
+  const trimmed = text.trim();
+  // Step 3b-audit2 (F08): compare-and-swap update — another tab's
+  // annotation on a different note is never overwritten.
+  return atomicUpdateJSON<Record<string, unknown>>(ANNOTATIONS_KEY, {}, (raw) => {
+    const next = { ...raw };
+    if (trimmed) next[noteKey] = text;
+    else delete next[noteKey];
+    return next;
+  }).ok;
 }
 
 /** Opt-in: include my annotations in tutor requests. Default false (off). */
@@ -211,9 +229,9 @@ export function loadAnnotationOptIn(): boolean {
   return safeRead(ANNOTATIONS_OPTIN_KEY) === "1";
 }
 
-export function setAnnotationOptIn(on: boolean) {
-  if (typeof window === "undefined") return;
-  safeWrite(ANNOTATIONS_OPTIN_KEY, on ? "1" : "0");
+export function setAnnotationOptIn(on: boolean): boolean {
+  if (typeof window === "undefined") return false;
+  return safeWrite(ANNOTATIONS_OPTIN_KEY, on ? "1" : "0");
 }
 
 // ---------------------------------------------------------------------------
@@ -241,7 +259,10 @@ export type QuarantineRecord = {
 };
 
 export type StorageWarning = {
-  type: "quarantine" | "write-failed" | "read-failed";
+  // Step 3b-audit2 (F08/F09) — "write-conflict": a compare-and-swap
+  // update was abandoned after retries because another tab kept
+  // changing the same key; no data was overwritten.
+  type: "quarantine" | "write-failed" | "read-failed" | "write-conflict";
   key: string;
   at: string; // ISO timestamp
   detail: string; // error name only — never the stored content
@@ -261,6 +282,16 @@ function recordWarning(w: StorageWarning) {
   storageWarnings.push(w);
   if (typeof console !== "undefined") {
     console.warn(`[storage] ${w.type} on ${w.key}: ${w.detail}`);
+  }
+  // Step 3b-audit2 (F07) — wake the shell banner the moment a save
+  // fails, so the user sees the error on the page they are on instead
+  // of only on /analysis. Best-effort: never throws.
+  if (typeof window !== "undefined" && typeof window.dispatchEvent === "function") {
+    try {
+      window.dispatchEvent(new CustomEvent("etea-storage-warning"));
+    } catch {
+      // Non-DOM test stubs: the warning list is still the record.
+    }
   }
 }
 
@@ -403,22 +434,116 @@ function safeParse<T>(key: string, fallback: T): T {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Step 3b-audit2 (F08/F09) — multi-tab safety: compare-and-swap updates
+// + cross-tab change detection.
+//
+// localStorage gives no transactions: two tabs doing read-modify-write
+// on the same key can silently overwrite each other (last write wins,
+// the other tab's change is lost). Two defences:
+// 1. atomicUpdateJSON: re-reads the raw value immediately before
+//    writing; if it changed since the first read, the update is
+//    re-applied to the FRESH value (up to 3 attempts) instead of
+//    overwriting the other tab's write. If every attempt collides, the
+//    write is abandoned and a "write-conflict" warning is recorded —
+//    nothing is overwritten, and the shell banner tells the user.
+//    Updaters must be pure functions of the current value (they run
+//    again on retry); ids/timestamps are generated OUTSIDE the updater
+//    by callers so a retry never duplicates a record.
+// 2. isManagedStorageKey + the AppShell `storage` listener: the
+//    platform fires `storage` events only in OTHER tabs, so any event
+//    for a managed key means another tab changed the user's data — the
+//    shell shows a reload warning instead of letting this tab
+//    silently overwrite it.
+// ---------------------------------------------------------------------------
+
+export type AtomicUpdateResult = { ok: boolean; conflict: boolean };
+
+export function atomicUpdateJSON<T>(
+  key: string,
+  fallback: T,
+  updater: (current: T) => T,
+  maxAttempts = 3,
+): AtomicUpdateResult {
+  if (typeof window === "undefined") return { ok: false, conflict: false };
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    const before = safeRead(key);
+    let current: T;
+    if (!before) {
+      current = fallback;
+    } else {
+      try {
+        current = JSON.parse(before) as T;
+      } catch {
+        // Same guarantee as safeParse: corrupt text is quarantined
+        // verbatim and the fallback is used; the write below replaces
+        // the corrupt value exactly as today's save paths do.
+        quarantine(key, before);
+        current = fallback;
+      }
+    }
+    const next = updater(current);
+    // Another tab wrote between our read and this write: retry from
+    // the fresh value instead of overwriting its change.
+    if (safeRead(key) !== before) continue;
+    if (!safeWrite(key, JSON.stringify(next))) return { ok: false, conflict: false };
+    return { ok: true, conflict: false };
+  }
+  recordWarning({
+    type: "write-conflict",
+    key,
+    at: new Date().toISOString(),
+    detail: "concurrent modification — write abandoned after retries, no data overwritten",
+  });
+  return { ok: false, conflict: true };
+}
+
+/** Storage keys that hold user study data. A `storage` event for one
+ *  of these means ANOTHER tab changed the user's data (the platform
+ *  never fires the event in the writing tab). Preference keys
+ *  (language/theme/sidebar) are deliberately excluded: another tab
+ *  changing the theme is not a data-overwrite risk. */
+export const MANAGED_STORAGE_KEYS: readonly string[] = [
+  ATTEMPTS_KEY,
+  PLAN_KEY,
+  FLASH_KEY,
+  SESSION_KEY,
+  REVIEWS_KEY,
+  ISSUES_KEY,
+  ANNOTATIONS_KEY,
+  DAY_KEY,
+  FLAGS_KEY,
+];
+
+/** True when a `storage` event key means another tab changed study
+ *  data (null key = storage.clear(), which also counts). Pure. */
+export function isManagedStorageKey(key: string | null): boolean {
+  if (key === null) return true;
+  return (MANAGED_STORAGE_KEYS as readonly string[]).includes(key);
+}
+
 export function loadAttempts(): Attempt[] {
   if (typeof window === "undefined") return [];
   return safeParse<Attempt[]>(ATTEMPTS_KEY, []);
 }
 
-export function recordAttempt(a: Omit<Attempt, "id" | "date"> & { date?: string }): Attempt {
+/** Step 3b-audit2 (F07) — recordAttempt reports whether the attempt
+ *  was actually stored. `saved: false` means localStorage refused the
+ *  write (quota/full/blocked): the caller MUST show the user an error
+ *  with retry/export instead of acting as if the result were saved.
+ *  The record itself is built once, outside the compare-and-swap
+ *  updater, so a multi-tab retry never duplicates it. */
+export type RecordAttemptResult = { attempt: Attempt; saved: boolean };
+
+export function recordAttempt(a: Omit<Attempt, "id" | "date"> & { date?: string }): RecordAttemptResult {
   const rec: Attempt = {
     ...a,
     id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     date: a.date ?? new Date().toISOString(),
   };
-  const all = loadAttempts();
-  all.push(rec);
-  safeWrite(ATTEMPTS_KEY, JSON.stringify(all));
-  safeWrite(DAY_KEY, new Date().toISOString().slice(0, 10));
-  return rec;
+  const res = atomicUpdateJSON<Attempt[]>(ATTEMPTS_KEY, [], (all) => [...all, rec]);
+  safeWrite(DAY_KEY, localDayKey(new Date()));
+  return { attempt: rec, saved: res.ok };
 }
 
 export function clearAttempts() {
@@ -430,8 +555,11 @@ export function loadPlanState(): Record<string, boolean> {
   if (typeof window === "undefined") return {};
   return safeParse<Record<string, boolean>>(PLAN_KEY, {});
 }
-export function savePlanState(s: Record<string, boolean>) {
-  safeWrite(PLAN_KEY, JSON.stringify(s));
+export function savePlanState(s: Record<string, boolean>): boolean {
+  // Step 3b-audit2 (F07): returns the safeWrite result so callers can
+  // react; failures also surface via the shell storage banner.
+  if (typeof window === "undefined") return false;
+  return safeWrite(PLAN_KEY, JSON.stringify(s));
 }
 
 // ---- flashcards: stable IDs + FSRS scheduling (pure logic) ----
@@ -826,6 +954,11 @@ export function loadIssues(): IssueReport[] {
   return migrated;
 }
 
+/** Step 3b-audit2 (F07) — reportIssueDetailed reports whether the
+ *  report was actually stored, so the form can show a retry state
+ *  instead of a false "saved" message when storage is full. */
+export type ReportIssueResult = { rec: IssueReport; saved: boolean };
+
 export function reportIssueDetailed(input: {
   qid: string;
   subject?: string;
@@ -834,7 +967,7 @@ export function reportIssueDetailed(input: {
   source?: string;
   /** Step 2b — the reporter explicitly chose "no suggested correction". */
   noSuggestedCorrection?: boolean;
-}): IssueReport {
+}): ReportIssueResult {
   const rec: IssueReport = {
     id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     qid: input.qid,
@@ -845,14 +978,13 @@ export function reportIssueDetailed(input: {
     source: input.source?.trim() ? input.source.trim() : null,
     noSuggestedCorrection: input.noSuggestedCorrection === true ? true : undefined,
   };
-  const all = loadIssues();
-  all.push(rec);
-  safeWrite(ISSUES_KEY, JSON.stringify(all));
-  return rec;
+  const res = atomicUpdateJSON<IssueReport[]>(ISSUES_KEY, [], (all) => [...all, rec]);
+  return { rec, saved: res.ok };
 }
 
-export function deleteIssue(id: string) {
-  safeWrite(ISSUES_KEY, JSON.stringify(loadIssues().filter((i) => i.id !== id)));
+export function deleteIssue(id: string): boolean {
+  if (typeof window === "undefined") return false;
+  return atomicUpdateJSON<IssueReport[]>(ISSUES_KEY, [], (all) => all.filter((i) => i.id !== id)).ok;
 }
 
 export function clearIssues() {
@@ -1002,23 +1134,93 @@ export function checkSessionCompatibility(
   return { compatible: true };
 }
 
-export function saveSession(s: QuizSession) {
-  if (typeof window === "undefined") return;
-  const all = loadSessions();
-  all[s.scope] = s;
-  safeWrite(SESSION_KEY, JSON.stringify(all));
+export function saveSession(s: QuizSession): boolean {
+  // Step 3b-audit2 (F07/F08): compare-and-swap map upsert — another
+  // tab's live session for a different scope is never overwritten —
+  // and the result is reported (the shell banner surfaces failures).
+  if (typeof window === "undefined") return false;
+  return atomicUpdateJSON<Record<string, QuizSession>>(SESSION_KEY, {}, (all) => ({
+    ...all,
+    [s.scope]: s,
+  })).ok;
 }
 
-export function clearSession(scope: string) {
-  if (typeof window === "undefined") return;
-  const all = loadSessions();
-  delete all[scope];
-  safeWrite(SESSION_KEY, JSON.stringify(all));
+export function clearSession(scope: string): boolean {
+  if (typeof window === "undefined") return false;
+  return atomicUpdateJSON<Record<string, QuizSession>>(SESSION_KEY, {}, (all) => {
+    const next = { ...all };
+    delete next[scope];
+    return next;
+  }).ok;
 }
 
 export function clearAllSessions() {
   if (typeof window === "undefined") return;
   safeRemove(SESSION_KEY);
+}
+
+// ---- durable flagged questions (Step 3b-audit2, F12) ----
+// Flags set during a quiz/mock run used to live ONLY in the run's
+// session: submitting (or clearing) the session deleted them. These
+// functions keep a separate, durable store: a flag survives submit,
+// session clear and reload, and is listed on /review until the owner
+// removes it. Session flags (QuizRunner state) are unchanged — the
+// durable store is written alongside them on every toggle, so the
+// two can never silently disagree about a flag the user just set.
+// Practice and mock flags share this store; `source` says which run
+// flagged the question, and `title` is the run's display title.
+export type DurableFlag = {
+  qid: string;
+  flaggedAt: string; // ISO timestamp of the most recent flagging
+  source: "mock" | "practice";
+  title: string; // run title at flag time (mock title / subject label)
+};
+
+function asDurableFlag(v: unknown): DurableFlag | null {
+  if (!v || typeof v !== "object") return null;
+  const r = v as Record<string, unknown>;
+  if (typeof r.qid !== "string" || !r.qid) return null;
+  if (typeof r.flaggedAt !== "string" || !r.flaggedAt) return null;
+  if (r.source !== "mock" && r.source !== "practice") return null;
+  if (typeof r.title !== "string") return null;
+  return { qid: r.qid, flaggedAt: r.flaggedAt, source: r.source, title: r.title };
+}
+
+/** All durable flags, newest first. Malformed stored entries are
+ *  skipped (the quarantine path handles corrupt JSON as everywhere). */
+export function loadFlags(): DurableFlag[] {
+  if (typeof window === "undefined") return [];
+  return safeParse<unknown[]>(FLAGS_KEY, [])
+    .map(asDurableFlag)
+    .filter((f): f is DurableFlag => f !== null)
+    .sort((a, b) => (a.flaggedAt < b.flaggedAt ? 1 : a.flaggedAt > b.flaggedAt ? -1 : a.qid.localeCompare(b.qid)));
+}
+
+/** Flag a question durably (re-flagging refreshes the timestamp).
+ *  Returns whether the write succeeded. Malformed stored entries are
+ *  dropped by the updater, never allowed to crash the write. */
+export function saveFlag(qid: string, source: "mock" | "practice", title: string): boolean {
+  if (typeof window === "undefined") return false;
+  const rec: DurableFlag = { qid, flaggedAt: new Date().toISOString(), source, title };
+  return atomicUpdateJSON<unknown[]>(FLAGS_KEY, [], (raw) => [
+    ...raw.map(asDurableFlag).filter((f): f is DurableFlag => f !== null && f.qid !== qid),
+    rec,
+  ]).ok;
+}
+
+/** Remove one durable flag. Returns whether the write succeeded.
+ *  Malformed stored entries are dropped by the updater, never allowed
+ *  to crash the write. */
+export function removeFlag(qid: string): boolean {
+  if (typeof window === "undefined") return false;
+  return atomicUpdateJSON<unknown[]>(FLAGS_KEY, [], (raw) =>
+    raw.map(asDurableFlag).filter((f): f is DurableFlag => f !== null && f.qid !== qid),
+  ).ok;
+}
+
+/** Remove all durable flags (explicit user action on /review only). */
+export function clearFlags() {
+  safeRemove(FLAGS_KEY);
 }
 
 // ---- live stats, computed only from real attempts ----
@@ -1052,8 +1254,37 @@ export type Stats = {
   flashRecalled: number;
 };
 
+/** Step 3b-audit F10 — local-timezone day key (YYYY-MM-DD). Day
+ *  boundaries are the USER's local days (PKT for the owner), never
+ *  UTC: an attempt at 01:00 PKT belongs to the new local day even
+ *  though its ISO timestamp still says the previous UTC day. Uses
+ *  the local getters, like forecastDue(). */
+export function localDayKey(d: Date): string {
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 export function dayKey(iso: string) {
-  return iso.slice(0, 10);
+  const d = new Date(iso);
+  // Unparseable input keeps the old slice behaviour (never crash on
+  // corrupt stored data); every valid ISO timestamp keys LOCAL.
+  return Number.isNaN(d.getTime()) ? iso.slice(0, 10) : localDayKey(d);
+}
+
+/** Step 3b-audit F10 — consecutive local days ending today (or
+ *  yesterday if no attempt today yet). Pure over the day-key set so
+ *  TZ-pinned tests can pin "today"; computeStats passes new Date(). */
+export function countStreakDays(daySet: Set<string>, today: Date): number {
+  let streakDays = 0;
+  const cursor = new Date(today.getTime());
+  if (!daySet.has(localDayKey(cursor))) cursor.setDate(cursor.getDate() - 1);
+  while (daySet.has(localDayKey(cursor))) {
+    streakDays++;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  return streakDays;
 }
 
 export function computeStats(attempts: Attempt[]): Stats {
@@ -1095,15 +1326,11 @@ export function computeStats(attempts: Attempt[]): Stats {
     .map(([date, v]) => ({ date, ...v }))
     .sort((a, b) => a.date.localeCompare(b.date));
   // streak: consecutive days ending today (or yesterday if no attempt today yet).
-  // Any study counts — MCQ or flashcard sessions.
+  // Any study counts — MCQ or flashcard sessions. Day keys are LOCAL
+  // (F10): the cursor steps local days and compares local keys, never
+  // UTC slices.
   const daySet = new Set(attempts.map((a) => dayKey(a.date)));
-  let streakDays = 0;
-  const cursor = new Date();
-  if (!daySet.has(cursor.toISOString().slice(0, 10))) cursor.setDate(cursor.getDate() - 1);
-  while (daySet.has(cursor.toISOString().slice(0, 10))) {
-    streakDays++;
-    cursor.setDate(cursor.getDate() - 1);
-  }
+  const streakDays = countStreakDays(daySet, new Date());
   const subjList = Object.entries(perSubject)
     .map(([subject, v]) => ({ subject, accuracy: v.accuracy, total: v.total }))
     .filter((x) => x.total >= 5)

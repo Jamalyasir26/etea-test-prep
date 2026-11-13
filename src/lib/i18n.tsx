@@ -172,9 +172,9 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "موضوعی کوئز، ہر کوشش میں 20",
   },
   quickMocksDesc: {
-    en: "20 timed mocks / practice tests",
-    roman: "20 timed mocks / practice tests",
-    ur: "20 وقت والے موک / مشقی ٹیسٹ",
+    en: "{mocks} timed mocks / practice tests",
+    roman: "{mocks} timed mocks / practice tests",
+    ur: "{mocks} وقت والے موک / مشقی ٹیسٹ",
   },
   quickFlashDesc: {
     en: "70 cards, FSRS-7 adaptive spaced repetition",
@@ -197,9 +197,9 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "براہ راست درستگی، رجحانات، کمزور حصے",
   },
   quickTracksDesc: {
-    en: "19 post tracks with patterns",
-    roman: "19 post tracks, patterns ke saath",
-    ur: "19 پوسٹ ٹریکس، پیٹرن کے ساتھ",
+    en: "{tracks} post tracks with patterns",
+    roman: "{tracks} post tracks, patterns ke saath",
+    ur: "{tracks} پوسٹ ٹریکس، پیٹرن کے ساتھ",
   },
 
   // ---- Tutor ----
@@ -1343,6 +1343,57 @@ const STRINGS: Record<string, StrEntry> = {
   relatedPractice: { en: "Related practice drill", roman: "Mutalliqa practice drill", ur: "متعلقہ مشقی ڈرل" },
   relatedFlashcards: { en: "Related flashcards", roman: "Mutalliqa flashcards", ur: "متعلقہ فلیش کارڈز" },
   relatedPlan: { en: "Related plan day", roman: "Mutalliqa plan din", ur: "متعلقہ منصوبہ دن" },
+
+  // ---- Step 3b-audit2 (F02) — English explanations pending owner review ----
+  explanationPendingLabel: {
+    en: "Roman Urdu explanation — English version pending owner review",
+    ur: "رومن اردو وضاحت — انگریزی نسخہ مالک کے جائزے کا منتظر ہے",
+  },
+  pendingEnglishHeading: { en: "English explanations pending owner review", ur: "انگریزی وضاحتیں مالک کے جائزے کی منتظر ہیں" },
+  pendingEnglishIntro: {
+    en: "These {count} questions have Roman Urdu explanations with no English version yet. In English mode they show with a label, never presented as English. Religious-content translations are the owner's decision — nothing here was auto-translated.",
+    ur: "ان {count} سوالات کی وضاحتیں رومن اردو میں ہیں اور ان کا انگریزی نسخہ ابھی موجود نہیں۔ انگریزی موڈ میں وہ لیبل کے ساتھ دکھائی دیتی ہیں، انگریزی کے طور پر پیش نہیں کی جاتیں۔ مذہبی مواد کے ترجمے مالک کا فیصلہ ہیں — یہاں کچھ بھی خودکار ترجمہ نہیں کیا گیا۔",
+  },
+  pendingEnglishShowMore: { en: "Show more ({left} left)", ur: "مزید دکھائیں ({left} باقی ہیں)" },
+
+  // ---- Step 3b-audit2 (F12) — durable flagged questions ----
+  flagsHeading: { en: "Flagged questions", roman: "Flagged sawalat", ur: "نشاندہ سوالات" },
+  flagsIntro: {
+    en: "Questions you flagged during practice and mocks. Flags survive submitting the test and reloading the page. Remove them here when done.",
+    ur: "وہ سوالات جنہیں آپ نے مشق اور موک ٹیسٹ کے دوران نشان زد کیا۔ نشان ٹیسٹ جمع کرانے اور صفحہ دوبارہ لوڈ کرنے کے بعد بھی رہتے ہیں۔ مکمل ہونے پر یہاں سے ہٹا دیں۔",
+  },
+  flagsEmpty: {
+    en: "No flagged questions yet. Flag a question during practice or a mock to keep it here.",
+    ur: "ابھی کوئی نشاندہ سوال نہیں ہے۔ کسی سوال کو یہاں رکھنے کے لیے مشق یا موک کے دوران اسے نشان زد کریں۔",
+  },
+  flagsRemove: { en: "Remove", roman: "Hata dein", ur: "ہٹا دیں" },
+  flagsClearAll: { en: "Clear all flags", roman: "Tamam flags saaf karein", ur: "تمام نشانات صاف کریں" },
+  flagsFromMock: { en: "Mock", roman: "Mock", ur: "موک" },
+  flagsFromPractice: { en: "Practice", roman: "Practice", ur: "مشق" },
+  flagsFlaggedOn: { en: "Flagged {date}", ur: "{date} کو نشان زد کیا گیا" },
+
+  // ---- Step 3b-audit2 (F07/F08/F09) — storage failure + multi-tab warnings ----
+  storageSaveFailed: {
+    en: "A save failed — your latest changes may not be stored (storage may be full or blocked). Download a backup copy, free up space, then retry.",
+    ur: "محفوظ کرنا ناکام ہو گیا — آپ کی تازہ ترین تبدیلیاں محفوظ نہیں ہوئی ہوں گی (اسٹوریج بھری ہوئی یا بند ہو سکتی ہے)۔ بیک اپ کی کاپی ڈاؤن لوڈ کریں، جگہ خالی کریں، پھر دوبارہ کوشش کریں۔",
+  },
+  storageOtherTab: {
+    en: "Your study data was changed in another open tab. Reload this page to see the latest version before continuing — otherwise your changes here may overwrite it.",
+    ur: "آپ کا مطالعاتی ڈیٹا کسی دوسرے کھلے ٹیب میں تبدیل ہو گیا ہے۔ جاری رکھنے سے پہلے تازہ ترین نسخہ دیکھنے کے لیے یہ صفحہ دوبارہ لوڈ کریں — ورنہ یہاں کی تبدیلیاں اسے مٹا سکتی ہیں۔",
+  },
+  storageReload: { en: "Reload page", roman: "Page dobara load karein", ur: "صفحہ دوبارہ لوڈ کریں" },
+  storageDismiss: { en: "Dismiss", roman: "Band karein", ur: "بند کریں" },
+  attemptSaveFailed: {
+    en: "This result could not be saved — storage may be full. Your answers above are still on screen. Retry the save, or download this result so it is not lost.",
+    ur: "یہ نتیجہ محفوظ نہیں ہو سکا — اسٹوریج بھری ہوئی ہو سکتی ہے۔ آپ کے جوابات اوپر اسکرین پر موجود ہیں۔ محفوظ کرنے کی دوبارہ کوشش کریں، یا یہ نتیجہ ڈاؤن لوڈ کریں تاکہ ضائع نہ ہو۔",
+  },
+  attemptRetrySave: { en: "Retry save", roman: "Save dobara karein", ur: "دوبارہ محفوظ کریں" },
+  attemptDownloadResult: { en: "Download this result", roman: "Yeh natija download karein", ur: "یہ نتیجہ ڈاؤن لوڈ کریں" },
+  attemptSaveRecovered: { en: "Result saved.", roman: "Natija save ho gaya.", ur: "نتیجہ محفوظ ہو گیا۔" },
+  issueSaveFailed: {
+    en: "This report could not be saved — storage may be full. Your text is still here. Try saving again.",
+    ur: "یہ رپورٹ محفوظ نہیں ہو سکی — اسٹوریج بھری ہوئی ہو سکتی ہے۔ آپ کا متن یہیں موجود ہے۔ دوبارہ محفوظ کرنے کی کوشش کریں۔",
+  },
 };
 
 type Ctx = {

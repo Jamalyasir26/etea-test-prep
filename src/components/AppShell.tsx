@@ -16,7 +16,14 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { useLang } from "@/lib/i18n";
-import { safeRead, safeWrite } from "@/lib/tracking";
+import {
+  download,
+  exportProgress,
+  getStorageWarnings,
+  isManagedStorageKey,
+  safeRead,
+  safeWrite,
+} from "@/lib/tracking";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 import ShellTopbar from "./ShellTopbar";
@@ -31,6 +38,35 @@ export default function AppShell({ children }: { children: ReactNode }) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+
+  // Step 3b-audit2 (F07/F09) — storage safety banners, shown on every
+  // page. (1) A failed write (quota/full/blocked) anywhere in the app
+  // wakes this banner via the "etea-storage-warning" event, so the
+  // user sees the error on the page they are on — never silently
+  // lost. Dismissing hides it until the NEXT failure. (2) A `storage`
+  // event for a managed key means ANOTHER tab changed the user's
+  // study data (the platform never fires it in the writing tab), so
+  // the user is warned to reload before their own changes overwrite
+  // it. Both are mount-gated: no localStorage access during SSR.
+  const [storageFailed, setStorageFailed] = useState(false);
+  const [otherTabChanged, setOtherTabChanged] = useState(false);
+  useEffect(() => {
+    const hasFailure = () =>
+      getStorageWarnings().some((w) => w.type === "write-failed" || w.type === "write-conflict");
+    if (hasFailure()) setStorageFailed(true);
+    const onWarning = () => {
+      if (hasFailure()) setStorageFailed(true);
+    };
+    const onStorage = (e: StorageEvent) => {
+      if (isManagedStorageKey(e.key)) setOtherTabChanged(true);
+    };
+    window.addEventListener("etea-storage-warning", onWarning);
+    window.addEventListener("storage", onStorage);
+    return () => {
+      window.removeEventListener("etea-storage-warning", onWarning);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
 
   // Collapse preference is read after mount (localStorage is client
   // only); the first render is always expanded, so there is no
@@ -85,6 +121,38 @@ export default function AppShell({ children }: { children: ReactNode }) {
             by keyboard while it is open. */}
         <div inert={mobileOpen} className="tw:flex tw:min-w-0 tw:flex-1 tw:flex-col">
           <main id="shell-main" className="tw:mx-auto tw:w-full tw:max-w-5xl tw:flex-1 tw:px-4 tw:py-6">
+            {storageFailed && (
+              <div className="alert red" role="alert">
+                <p>{t("storageSaveFailed")}</p>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  <button
+                    className="secondary"
+                    onClick={() =>
+                      download(
+                        `etea-prep-progress-${new Date().toISOString().slice(0, 10)}.json`,
+                        exportProgress(),
+                      )
+                    }
+                  >
+                    {t("export")}
+                  </button>
+                  <button className="secondary" onClick={() => setStorageFailed(false)}>
+                    {t("storageDismiss")}
+                  </button>
+                </div>
+              </div>
+            )}
+            {otherTabChanged && (
+              <div className="alert" role="alert">
+                <p>{t("storageOtherTab")}</p>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  <button onClick={() => window.location.reload()}>{t("storageReload")}</button>
+                  <button className="secondary" onClick={() => setOtherTabChanged(false)}>
+                    {t("storageDismiss")}
+                  </button>
+                </div>
+              </div>
+            )}
             {/* Stage 3 part 2 — route entrance (motion, reduced-motion
                 safe). Keyed by pathname so every navigation re-runs the
                 short fade; children themselves are untouched. */}

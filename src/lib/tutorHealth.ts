@@ -24,6 +24,9 @@ export type TutorHealthData = {
   overall?: string;
   checkedAt?: string;
   coldStart?: boolean;
+  /** Step 3b-audit F14/F18 — true when the server served the cached
+   *  probe (checkedAt is the original probe time). */
+  cached?: boolean;
   providers?: Record<string, TutorProviderEntry>;
 };
 
@@ -41,6 +44,23 @@ export const PROVIDER_LABELS: Record<string, string> = {
   groq: "Groq",
   openrouter: "OpenRouter",
 };
+
+/** Step 3b-audit F14/F18 — the answer footer names ONLY a provider the
+ *  /api/tutor response actually reported (generateTutorAnswer returns
+ *  the provider that answered; the fallback chain is test-proven in
+ *  test-fallback-chain.mjs). Unknown/missing values return null so the
+ *  footer omits the name instead of misattributing — the old code
+ *  defaulted every unknown value to "OpenRouter (free model)". The
+ *  footer is per-answer truth at answer time; the health panel shows
+ *  the last probe (up to 5 minutes old, and per-minute quota errors
+ *  are transient), so the two can legitimately differ across time —
+ *  but the footer must never name a provider the API did not report. */
+export function providerDisplayName(provider: unknown): string | null {
+  if (provider === "gemini") return "Gemini";
+  if (provider === "groq") return "Groq";
+  if (provider === "openrouter") return "OpenRouter (free model)";
+  return null;
+}
 
 /** Automatic loads reuse a cached probe for 5 minutes (the cooldown:
  *  navigating between pages never re-probes within the window). */

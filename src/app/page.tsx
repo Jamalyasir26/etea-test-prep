@@ -49,15 +49,35 @@ import { FadeIn } from "@/components/motion";
 // re-shows the full notice.
 const CORRECTIONS_ACK_KEY = "etea_corrections_ack_v1";
 
-const QUICK: { href: string; key: string; descKey: string; Icon: LucideIcon }[] = [
+const QUICK: {
+  href: string;
+  key: string;
+  descKey: string;
+  Icon: LucideIcon;
+  /** Step 3b-audit — dashboard subtitles derived from the visible
+   *  teaching-only counts, never hardcoded numbers. */
+  descParams?: Record<string, string | number>;
+}[] = [
   { href: "/library", key: "library", descKey: "quickLibraryDesc", Icon: BookOpen },
   { href: "/practice", key: "practice", descKey: "quickPracticeDesc", Icon: PenLine },
-  { href: "/mock", key: "mocks", descKey: "quickMocksDesc", Icon: FileText },
+  {
+    href: "/mock",
+    key: "mocks",
+    descKey: "quickMocksDesc",
+    Icon: FileText,
+    descParams: { mocks: VISIBLE_COUNTS.mocks },
+  },
   { href: "/flashcards", key: "flashcards", descKey: "quickFlashDesc", Icon: Layers },
   { href: "/tutor", key: "tutor", descKey: "quickTutorDesc", Icon: GraduationCap },
   { href: "/plan", key: "plan", descKey: "quickPlanDesc", Icon: CalendarDays },
   { href: "/analysis", key: "analysis", descKey: "quickAnalysisDesc", Icon: BarChart3 },
-  { href: "/tracks", key: "tracks", descKey: "quickTracksDesc", Icon: Briefcase },
+  {
+    href: "/tracks",
+    key: "tracks",
+    descKey: "quickTracksDesc",
+    Icon: Briefcase,
+    descParams: { tracks: VISIBLE_COUNTS.tracks },
+  },
 ];
 
 export default function Home() {
@@ -429,7 +449,9 @@ export default function Home() {
                   <q.Icon className="tw:size-5 tw:shrink-0 tw:text-brand-teal" aria-hidden="true" />
                   {t(q.key)}
                 </p>
-                <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t(q.descKey)}</p>
+                <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">
+                  {q.descParams ? tf(q.descKey, q.descParams) : t(q.descKey)}
+                </p>
               </Card>
             </Link>
           </FadeIn>

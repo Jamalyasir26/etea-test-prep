@@ -176,7 +176,11 @@ check("review status: exactly the 15 owner-approved items are owner-reviewed (by
   const originalIds = [...drawingIds.slice(0, 10), ...peIds.slice(0, 10)];
   check("legacy drawing_pe.json IDs = original DRW-001..DRW-020", JSON.stringify(legacyIds) === JSON.stringify(originalIds),
     `legacy ${legacyIds.length}, original ${originalIds.length}`);
-  const strip = (items) => items.map(({ reviewStatus, reviewedBy, reviewedAt, ...rest }) => rest);
+  // Step 3b-audit2 (F02) — the legacy file predates the additive
+  // explanationEn/explanationLang fields and is never loaded; the
+  // comparison ignores them (as it already ignores review fields) so
+  // the original content still has to match exactly.
+  const strip = (items) => items.map(({ reviewStatus, reviewedBy, reviewedAt, explanationEn, explanationLang, ...rest }) => rest);
   // Legacy holds only the ORIGINAL 20 items (DRW-001..020); the 20 items
   // added in the post-verification fix (DRW-021..030, PE-001..PE-010) are
   // in the split banks only, so the legacy file is compared against the

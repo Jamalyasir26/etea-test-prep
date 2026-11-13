@@ -27,6 +27,7 @@ import {
   safeWrite,
 } from "@/lib/tracking";
 import { lri, useLang } from "@/lib/i18n";
+import { providerDisplayName } from "@/lib/tutorHealth";
 import TutorHealth from "@/components/TutorHealth";
 import BoldText from "@/components/BoldText";
 
@@ -209,13 +210,18 @@ function TutorInner() {
         setInput(q);
         setFailedPrompt(q);
       } else {
-        const providerName =
-          j.provider === "gemini" ? "Gemini" : j.provider === "groq" ? "Groq" : "OpenRouter (free model)";
+        // Step 3b-audit F14/F18 — name only a provider the API
+        // actually reported; unknown values omit the via-line rather
+        // than misattributing the answer.
+        const providerName = providerDisplayName(j.provider);
+        const answerText = providerName
+          ? `${j.answer}\n\n${tf("viaLine", { provider: lri(providerName) })}`
+          : j.answer;
         setMsgs((m) => [
           ...m,
           {
             role: "ai",
-            text: `${j.answer}\n\n${tf("viaLine", { provider: lri(providerName) })}`,
+            text: answerText,
             sources: normalizeSources(j.sources),
           },
         ]);

@@ -34,6 +34,21 @@ export type Question = {
   correctIndex: number;
   explanation: string;
   explanationUrdu: string | null;
+  // Step 3b-audit2 (F02) — faithful English explanation. Present ONLY
+  // where the bank's `explanation` is Roman Urdu and an English version
+  // exists: hand-translated for Science/IT, or the verbatim English
+  // sentence already in the bank for bilingual items. Absent =
+  // `explanation` is already English, or no English version exists yet
+  // (see explanationLang). Translations preserve the original's facts
+  // exactly; answers/options are never touched.
+  explanationEn?: string;
+  // Step 3b-audit2 (F02) — marks a NON-English `explanation` with no
+  // English version yet (religious/language content: Islamiyat,
+  // Tajweed, Arabic, Urdu). Absent = English (or explanationEn
+  // present). In English mode the UI shows the honest "pending owner
+  // review" label for these instead of presenting Roman Urdu as
+  // English; the items are queued on /review for the owner.
+  explanationLang?: "roman";
   difficulty: string;
   pastPaperRef: string | null;
   verified: boolean;
@@ -369,6 +384,33 @@ export function localizeQuestion(q: Question, lang: ContentLang): Question {
     options,
     explanation: tr.explanation ?? q.explanation,
   };
+}
+
+/** Step 3b-audit2 (F02) — the explanation to DISPLAY for one item in
+ *  `lang`, with whether an English version is still pending. English
+ *  mode shows the faithful English text whenever one exists
+ *  (explanationEn), and NEVER presents a Roman Urdu explanation as
+ *  English: untranslated Roman Urdu text is returned with
+ *  pendingEnglish=true so the UI labels it honestly. Roman/Urdu modes
+ *  keep today's behaviour (the bank's `explanation` verbatim, plus any
+ *  tri-language translation override). Pure; never mutates. */
+export type ExplanationDisplay = { text: string; pendingEnglish: boolean };
+export function displayExplanation(q: Question, lang: ContentLang): ExplanationDisplay {
+  const localized = localizeQuestion(q, lang);
+  if (lang !== "en") return { text: localized.explanation, pendingEnglish: false };
+  if (q.explanationEn) return { text: q.explanationEn, pendingEnglish: false };
+  if (q.explanationLang === "roman") return { text: q.explanation, pendingEnglish: true };
+  return { text: q.explanation, pendingEnglish: false };
+}
+
+/** Step 3b-audit2 (F02) — items whose English explanation is pending
+ *  owner review (explanationLang === "roman"), sorted by id. The
+ *  /review queue renders this list; religious-content translations
+ *  are the owner's decision, never auto-generated. */
+export function pendingEnglishExplanations(): Question[] {
+  return QUESTIONS.filter((q) => q.explanationLang === "roman").sort((a, b) =>
+    a.id.localeCompare(b.id),
+  );
 }
 
 /** Same fallback rule for notes. The proof-of-concept render path is
