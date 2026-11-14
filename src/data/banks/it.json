@@ -1,6 +1,22 @@
 [
  {
   "id": "ITC-001",
+  "question_ur": "کمپیوٹر کے کس حصے کو اس کا دماغ کہا جاتا ہے؟",
+  "question_roman": "Computer ke kis hisse ko us ka dimagh kaha jata hai?",
+  "options_ur": [
+   "CPU",
+   "Keyboard",
+   "Monitor",
+   "RAM"
+  ],
+  "options_roman": [
+   "CPU",
+   "Keyboard",
+   "Monitor",
+   "RAM"
+  ],
+  "explanation_ur": "CPU کو کمپیوٹر کا دماغ کہا جاتا ہے — وہ تمام instructions کو process کرتا ہے۔",
+  "explanation_roman": "CPU ko computer ka dimagh kaha jata hai — woh tamam instructions ko process karta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -31,6 +47,22 @@
  },
  {
   "id": "ITC-002",
+  "question_ur": "کون سی memory عارضی ہے اور کمپیوٹر بند ہونے پر اس کا data ضائع ہو جاتا ہے؟",
+  "question_roman": "Kaun si memory temporary hai aur computer band honay par us ka data khatam ho jata hai?",
+  "options_ur": [
+   "RAM",
+   "USB drive",
+   "ROM",
+   "Hard disk"
+  ],
+  "options_roman": [
+   "RAM",
+   "USB drive",
+   "ROM",
+   "Hard disk"
+  ],
+  "explanation_ur": "RAM temporary memory ہے — کمپیوٹر بند ہوتے ہی اس کا data ختم ہو جاتا ہے۔",
+  "explanation_roman": "RAM temporary memory hai — computer band hotay hi is ka data khatam ho jata hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -61,6 +93,22 @@
  },
  {
   "id": "ITC-003",
+  "question_ur": "کون سی memory کمپیوٹر کو start کرنے کے لیے درکار بنیادی instructions کو مستقل طور پر محفوظ رکھتی ہے؟",
+  "question_roman": "Kaun si memory computer ko start karnay ke liye darkar bunyadi instructions ko mustaqil tor par mehfooz rakhti hai?",
+  "options_ur": [
+   "RAM",
+   "Cache memory",
+   "ROM",
+   "Hard disk"
+  ],
+  "options_roman": [
+   "RAM",
+   "Cache memory",
+   "ROM",
+   "Hard disk"
+  ],
+  "explanation_ur": "ROM permanent memory ہے — اس میں کمپیوٹر کو start کرنے کی ضروری instructions محفوظ ہوتی ہیں۔",
+  "explanation_roman": "ROM permanent memory hai — is mein computer ko start karnay ki zaroori instructions mehfooz hoti hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -91,6 +139,22 @@
  },
  {
   "id": "ITC-004",
+  "question_ur": "ان میں سے کون سا input device ہے؟",
+  "question_roman": "In mein se kaun sa input device hai?",
+  "options_ur": [
+   "Monitor",
+   "Keyboard",
+   "Speaker",
+   "Printer"
+  ],
+  "options_roman": [
+   "Monitor",
+   "Keyboard",
+   "Speaker",
+   "Printer"
+  ],
+  "explanation_ur": "Keyboard input device ہے — اس سے ہم کمپیوٹر میں لکھ کر data ڈالتے ہیں۔",
+  "explanation_roman": "Keyboard input device hai — is se hum computer mein likh kar data daaltay hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -121,6 +185,22 @@
  },
  {
   "id": "ITC-005",
+  "question_ur": "کمپیوٹر کی screen پر point اور click کرنے کے لیے کون سا device استعمال ہوتا ہے؟",
+  "question_roman": "Computer ki screen par point aur click karnay ke liye kaun sa device istemal hota hai?",
+  "options_ur": [
+   "Mouse",
+   "Monitor",
+   "Printer",
+   "Speaker"
+  ],
+  "options_roman": [
+   "Mouse",
+   "Monitor",
+   "Printer",
+   "Speaker"
+  ],
+  "explanation_ur": "Mouse pointing device ہے — اس سے ہم screen پر cursor کو حرکت دیتے ہیں اور click کرتے ہیں۔",
+  "explanation_roman": "Mouse pointing device hai — is se hum screen par cursor ko harkat dete hain aur click karte hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -151,6 +231,22 @@
  },
  {
   "id": "ITC-006",
+  "question_ur": "ان میں سے کون سا output device ہے؟",
+  "question_roman": "In mein se kaun sa output device hai?",
+  "options_ur": [
+   "Keyboard",
+   "Monitor",
+   "Scanner",
+   "Mouse"
+  ],
+  "options_roman": [
+   "Keyboard",
+   "Monitor",
+   "Scanner",
+   "Mouse"
+  ],
+  "explanation_ur": "Monitor output device ہے — اس پر کمپیوٹر کا result اور تصویریں نظر آتی ہیں۔",
+  "explanation_roman": "Monitor output device hai — is par computer ka result aur tasveerain nazar aati hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -181,6 +277,22 @@
  },
  {
   "id": "ITC-007",
+  "question_ur": "کمپیوٹر میں data کس حصے میں مستقل طور پر محفوظ ہوتا ہے؟",
+  "question_roman": "Computer mein data kis hisse mein mustaqil tor par mehfooz hota hai?",
+  "options_ur": [
+   "ROM",
+   "RAM",
+   "Hard disk",
+   "Cache memory"
+  ],
+  "options_roman": [
+   "ROM",
+   "RAM",
+   "Hard disk",
+   "Cache memory"
+  ],
+  "explanation_ur": "Hard disk میں data مستقل محفوظ رہتا ہے — کمپیوٹر بند ہونے کے بعد بھی data نہیں مٹتا۔",
+  "explanation_roman": "Hard disk mein data mustaqil mehfooz rehta hai — computer band honay ke baad bhi data nahi mita.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -211,6 +323,22 @@
  },
  {
   "id": "ITC-008",
+  "question_ur": "1 byte میں کتنے bits ہوتے ہیں؟",
+  "question_roman": "1 byte mein kitnay bits hotay hain?",
+  "options_ur": [
+   "32 bits",
+   "16 bits",
+   "4 bits",
+   "8 bits"
+  ],
+  "options_roman": [
+   "32 bits",
+   "16 bits",
+   "4 bits",
+   "8 bits"
+  ],
+  "explanation_ur": "1 byte میں 8 bits ہوتے ہیں۔",
+  "explanation_roman": "1 byte mein 8 bits hotay hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -241,6 +369,22 @@
  },
  {
   "id": "ITC-009",
+  "question_ur": "1 kilobyte (KB) میں کتنے bytes ہوتے ہیں؟",
+  "question_roman": "1 kilobyte (KB) mein kitnay bytes hotay hain?",
+  "options_ur": [
+   "100 bytes",
+   "1024 bits",
+   "1000 bits",
+   "1024 bytes"
+  ],
+  "options_roman": [
+   "100 bytes",
+   "1024 bits",
+   "1000 bits",
+   "1024 bytes"
+  ],
+  "explanation_ur": "1 kilobyte (KB) میں 1024 bytes ہوتے ہیں۔",
+  "explanation_roman": "1 kilobyte (KB) mein 1024 bytes hotay hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -271,6 +415,22 @@
  },
  {
   "id": "ITC-010",
+  "question_ur": "ان میں سے سب سے بڑا storage unit کون سا ہے؟",
+  "question_roman": "In mein se sab se bara storage unit kaun sa hai?",
+  "options_ur": [
+   "Terabyte (TB)",
+   "Kilobyte (KB)",
+   "Megabyte (MB)",
+   "Gigabyte (GB)"
+  ],
+  "options_roman": [
+   "Terabyte (TB)",
+   "Kilobyte (KB)",
+   "Megabyte (MB)",
+   "Gigabyte (GB)"
+  ],
+  "explanation_ur": "TB (terabyte) ان میں سب سے بڑا ہے — 1 TB میں 1024 GB ہوتے ہیں۔",
+  "explanation_roman": "TB (terabyte) in mein sab se bara hai — 1 TB mein 1024 GB hotay hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -301,6 +461,22 @@
  },
  {
   "id": "ITC-011",
+  "question_ur": "Microsoft Word document کا file extension کیا ہے؟",
+  "question_roman": "Microsoft Word document ka file extension kya hai?",
+  "options_ur": [
+   ".docx",
+   ".mp3",
+   ".pptx",
+   ".xlsx"
+  ],
+  "options_roman": [
+   ".docx",
+   ".mp3",
+   ".pptx",
+   ".xlsx"
+  ],
+  "explanation_ur": ".docx MS Word کی file کا extension ہے۔",
+  "explanation_roman": ".docx MS Word ki file ka extension hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -331,6 +507,22 @@
  },
  {
   "id": "ITC-012",
+  "question_ur": "Microsoft Excel file کا file extension کیا ہے؟",
+  "question_roman": "Microsoft Excel file ka file extension kya hai?",
+  "options_ur": [
+   ".txt",
+   ".docx",
+   ".xlsx",
+   ".pptx"
+  ],
+  "options_roman": [
+   ".txt",
+   ".docx",
+   ".xlsx",
+   ".pptx"
+  ],
+  "explanation_ur": ".xlsx MS Excel کی file کا extension ہے۔",
+  "explanation_roman": ".xlsx MS Excel ki file ka extension hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -361,6 +553,22 @@
  },
  {
   "id": "ITC-013",
+  "question_ur": "Microsoft PowerPoint presentation کا file extension کیا ہے؟",
+  "question_roman": "Microsoft PowerPoint presentation ka file extension kya hai?",
+  "options_ur": [
+   ".xlsx",
+   ".pptx",
+   ".docx",
+   ".pdf"
+  ],
+  "options_roman": [
+   ".xlsx",
+   ".pptx",
+   ".docx",
+   ".pdf"
+  ],
+  "explanation_ur": ".pptx MS PowerPoint کی presentation کا extension ہے۔",
+  "explanation_roman": ".pptx MS PowerPoint ki presentation ka extension hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -391,6 +599,22 @@
  },
  {
   "id": "ITC-014",
+  "question_ur": "File کو save کرنے کے لیے کون سا shortcut استعمال ہوتا ہے؟",
+  "question_roman": "File ko save karnay ke liye kaun sa shortcut istemal hota hai?",
+  "options_ur": [
+   "Ctrl+C",
+   "Ctrl+V",
+   "Ctrl+P",
+   "Ctrl+S"
+  ],
+  "options_roman": [
+   "Ctrl+C",
+   "Ctrl+V",
+   "Ctrl+P",
+   "Ctrl+S"
+  ],
+  "explanation_ur": "Ctrl+S دبانے سے file save ہوتی ہے — کام کرتے وقت وقتاً فوقتاً save کرنا چاہیے۔",
+  "explanation_roman": "Ctrl+S dabane se file save hoti hai — kaam karte waqt waqtan fawaqtan save karna chahiye.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -421,6 +645,22 @@
  },
  {
   "id": "ITC-015",
+  "question_ur": "Selected text کو copy کرنے کے لیے کون سا shortcut استعمال ہوتا ہے؟",
+  "question_roman": "Selected text ko copy karnay ke liye kaun sa shortcut istemal hota hai?",
+  "options_ur": [
+   "Ctrl+X",
+   "Ctrl+C",
+   "Ctrl+Z",
+   "Ctrl+V"
+  ],
+  "options_roman": [
+   "Ctrl+X",
+   "Ctrl+C",
+   "Ctrl+Z",
+   "Ctrl+V"
+  ],
+  "explanation_ur": "Ctrl+C سے selected text یا file copy ہوتی ہے۔",
+  "explanation_roman": "Ctrl+C se selected text ya file copy hoti hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -451,6 +691,22 @@
  },
  {
   "id": "ITC-016",
+  "question_ur": "کاپی شدہ متن کو paste کرنے کے لیے کون سا shortcut استعمال ہوتا ہے؟",
+  "question_roman": "Copy kiye hue text ko paste karne ke liye kaun sa shortcut istemal hota hai?",
+  "options_ur": [
+   "Ctrl+Z",
+   "Ctrl+X",
+   "Ctrl+C",
+   "Ctrl+V"
+  ],
+  "options_roman": [
+   "Ctrl+Z",
+   "Ctrl+X",
+   "Ctrl+C",
+   "Ctrl+V"
+  ],
+  "explanation_ur": "Ctrl+V سے copy یا cut کی ہوئی چیز paste ہوتی ہے۔",
+  "explanation_roman": "Ctrl+V se copy ya cut ki hui cheez paste hoti hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -481,6 +737,22 @@
  },
  {
   "id": "ITC-017",
+  "question_ur": "منتخب شدہ متن کو cut کرنے کے لیے کون سا shortcut استعمال ہوتا ہے؟",
+  "question_roman": "Selected text ko cut karne ke liye kaun sa shortcut istemal hota hai?",
+  "options_ur": [
+   "Ctrl+Z",
+   "Ctrl+C",
+   "Ctrl+X",
+   "Ctrl+V"
+  ],
+  "options_roman": [
+   "Ctrl+Z",
+   "Ctrl+C",
+   "Ctrl+X",
+   "Ctrl+V"
+  ],
+  "explanation_ur": "Ctrl+X سے selected چیز cut ہوتی ہے — وہ اپنی پرانی جگہ سے ہٹ جاتی ہے۔",
+  "explanation_roman": "Ctrl+X se selected cheez cut hoti hai — woh apni purani jagah se hat jati hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -511,6 +783,22 @@
  },
  {
   "id": "ITC-018",
+  "question_ur": "آخری عمل کو undo کرنے کے لیے کون سا shortcut استعمال ہوتا ہے؟",
+  "question_roman": "Aakhri action ko undo karne ke liye kaun sa shortcut istemal hota hai?",
+  "options_ur": [
+   "Ctrl+S",
+   "Ctrl+P",
+   "Ctrl+Z",
+   "Ctrl+Y"
+  ],
+  "options_roman": [
+   "Ctrl+S",
+   "Ctrl+P",
+   "Ctrl+Z",
+   "Ctrl+Y"
+  ],
+  "explanation_ur": "Ctrl+Z سے آخری کام undo ہو جاتا ہے — غلطی ہو جائے تو اس سے واپس آ سکتے ہیں۔",
+  "explanation_roman": "Ctrl+Z se aakhri kaam undo ho jata hai — ghalti ho jaye to is se wapas aa sakte hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -541,6 +829,22 @@
  },
  {
   "id": "ITC-019",
+  "question_ur": "دستاویز کو print کرنے کے لیے کون سا shortcut استعمال ہوتا ہے؟",
+  "question_roman": "Document ko print karne ke liye kaun sa shortcut istemal hota hai?",
+  "options_ur": [
+   "Ctrl+S",
+   "Ctrl+C",
+   "Ctrl+V",
+   "Ctrl+P"
+  ],
+  "options_roman": [
+   "Ctrl+S",
+   "Ctrl+C",
+   "Ctrl+V",
+   "Ctrl+P"
+  ],
+  "explanation_ur": "Ctrl+P دبانے سے print dialog کھلتا ہے۔",
+  "explanation_roman": "Ctrl+P dabane se print dialog khulta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -571,6 +875,22 @@
  },
  {
   "id": "ITC-020",
+  "question_ur": "کھلی ہوئی windows کے درمیان switch کرنے کے لیے کون سا shortcut استعمال ہوتا ہے؟",
+  "question_roman": "Khuli hui windows ke darmiyan switch karne ke liye kaun sa shortcut istemal hota hai?",
+  "options_ur": [
+   "Ctrl+S",
+   "Ctrl+Z",
+   "Alt+Tab",
+   "Ctrl+C"
+  ],
+  "options_roman": [
+   "Ctrl+S",
+   "Ctrl+Z",
+   "Alt+Tab",
+   "Ctrl+C"
+  ],
+  "explanation_ur": "Alt+Tab سے ایک کھلی ہوئی window سے دوسری window پر switch کرتے ہیں۔",
+  "explanation_roman": "Alt+Tab se aik khuli hui window se doosri window par switch karte hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -601,6 +921,22 @@
  },
  {
   "id": "ITC-021",
+  "question_ur": "ان میں سے کون سا operating system ہے؟",
+  "question_roman": "In mein se kaun sa operating system hai?",
+  "options_ur": [
+   "MS Word",
+   "Windows",
+   "Google Chrome",
+   "MS Excel"
+  ],
+  "options_roman": [
+   "MS Word",
+   "Windows",
+   "Google Chrome",
+   "MS Excel"
+  ],
+  "explanation_ur": "Windows operating system ہے — وہ computer کے hardware اور software کو manage کرتا ہے۔",
+  "explanation_roman": "Windows operating system hai — woh computer ke hardware aur software ko manage karta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -631,6 +967,22 @@
  },
  {
   "id": "ITC-022",
+  "question_ur": "اعداد کے ایک گروپ کو جمع کرنے کے لیے Excel کا کون سا function استعمال ہوتا ہے؟",
+  "question_roman": "Numbers ke aik group ko jama karne ke liye Excel ka kaun sa function istemal hota hai?",
+  "options_ur": [
+   "SUM",
+   "COUNT",
+   "AVERAGE",
+   "MAX"
+  ],
+  "options_roman": [
+   "SUM",
+   "COUNT",
+   "AVERAGE",
+   "MAX"
+  ],
+  "explanation_ur": "Excel میں SUM function numbers کو جمع (add) کرتا ہے — جیسے =SUM(A1:A5)۔",
+  "explanation_roman": "Excel mein SUM function numbers ko jama (add) karta hai — jaisay =SUM(A1:A5).",
   "post": [
    "ctit",
    "junior-clerk",
@@ -661,6 +1013,22 @@
  },
  {
   "id": "ITC-023",
+  "question_ur": "MS Excel میں ہر formula کس symbol سے شروع ہونا چاہیے؟",
+  "question_roman": "MS Excel mein har formula kis symbol se shuru hona chahiye?",
+  "options_ur": [
+   "#",
+   "=",
+   "@",
+   "+"
+  ],
+  "options_roman": [
+   "#",
+   "=",
+   "@",
+   "+"
+  ],
+  "explanation_ur": "Excel میں ہر formula = کے نشان سے شروع ہوتا ہے — جیسے =A1+B1۔",
+  "explanation_roman": "Excel mein har formula = ke nishan se shuru hota hai — jaisay =A1+B1.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -691,6 +1059,22 @@
  },
  {
   "id": "ITC-024",
+  "question_ur": "MS Excel میں row اور column کے ملنے کی جگہ کو کیا کہتے ہیں؟",
+  "question_roman": "MS Excel mein row aur column ke milne ki jagah ko kya kehte hain?",
+  "options_ur": [
+   "صرف ایک column",
+   "ایک worksheet",
+   "صرف ایک row",
+   "ایک cell"
+  ],
+  "options_roman": [
+   "Sirf aik column",
+   "Aik worksheet",
+   "Sirf aik row",
+   "Aik cell"
+  ],
+  "explanation_ur": "Cell row اور column کے ملنے کی جگہ ہوتی ہے — جیسے B3 میں column B اور row 3 ملتے ہیں۔",
+  "explanation_roman": "Cell row aur column ke milne ki jagah hoti hai — jaisay B3 mein column B aur row 3 milte hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -721,6 +1105,22 @@
  },
  {
   "id": "ITC-025",
+  "question_ur": "PowerPoint presentation کے ایک صفحے کو کیا کہتے ہیں؟",
+  "question_roman": "PowerPoint presentation ke aik page ko kya kehte hain?",
+  "options_ur": [
+   "Workbook",
+   "Worksheet",
+   "Slide",
+   "Document"
+  ],
+  "options_roman": [
+   "Workbook",
+   "Worksheet",
+   "Slide",
+   "Document"
+  ],
+  "explanation_ur": "PowerPoint presentation کا ایک page slide کہلاتا ہے۔",
+  "explanation_roman": "PowerPoint presentation ka aik page slide kehlata hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -751,6 +1151,22 @@
  },
  {
   "id": "ITC-026",
+  "question_ur": "WWW کا مطلب کیا ہے؟",
+  "question_roman": "WWW ka matlab kya hai?",
+  "options_ur": [
+   "World Wide Web",
+   "Web World Wide",
+   "Wide World Web",
+   "World Web Window"
+  ],
+  "options_roman": [
+   "World Wide Web",
+   "Web World Wide",
+   "Wide World Web",
+   "World Web Window"
+  ],
+  "explanation_ur": "WWW کا مطلب World Wide Web ہے — websites اسی پر چلتی ہیں۔",
+  "explanation_roman": "WWW ka matlab World Wide Web hai — websites isi par chalti hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -781,6 +1197,22 @@
  },
  {
   "id": "ITC-027",
+  "question_ur": "ان میں سے کون سا web browser ہے؟",
+  "question_roman": "In mein se kaun sa web browser hai?",
+  "options_ur": [
+   "Google Chrome",
+   "MS Excel",
+   "Notepad",
+   "MS Word"
+  ],
+  "options_roman": [
+   "Google Chrome",
+   "MS Excel",
+   "Notepad",
+   "MS Word"
+  ],
+  "explanation_ur": "Browser وہ program ہے جس سے websites کھولی جاتی ہیں — Google Chrome ایک browser ہے۔",
+  "explanation_roman": "Browser woh program hai jis se websites kholi jati hain — Google Chrome aik browser hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -811,6 +1243,22 @@
  },
  {
   "id": "ITC-028",
+  "question_ur": "ہر email address میں کون سا symbol ہونا ضروری ہے؟",
+  "question_roman": "Har email address mein kaun sa symbol hona zaroori hai?",
+  "options_ur": [
+   "#",
+   "@",
+   "$",
+   "%"
+  ],
+  "options_roman": [
+   "#",
+   "@",
+   "$",
+   "%"
+  ],
+  "explanation_ur": "Email address میں @ کا نشان لازمی ہوتا ہے — جیسے name@example.com۔",
+  "explanation_roman": "Email address mein @ ka nishan lazmi hota hai — jaisay name@example.com.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -841,6 +1289,22 @@
  },
  {
   "id": "ITC-029",
+  "question_ur": "ان میں سے کون سا search engine ہے؟",
+  "question_roman": "In mein se kaun sa search engine hai?",
+  "options_ur": [
+   "MS Word",
+   "Facebook",
+   "Google",
+   "Windows"
+  ],
+  "options_roman": [
+   "MS Word",
+   "Facebook",
+   "Google",
+   "Windows"
+  ],
+  "explanation_ur": "Google ایک search engine ہے — اس سے ہم internet پر معلومات تلاش کرتے ہیں۔",
+  "explanation_roman": "Google aik search engine hai — is se hum internet par maloomat talash karte hain.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -871,6 +1335,22 @@
  },
  {
   "id": "ITC-030",
+  "question_ur": "کون سا software computer کو viruses سے بچاتا ہے؟",
+  "question_roman": "Kaun sa software computer ko viruses se bachata hai?",
+  "options_ur": [
+   "MS Word",
+   "MS Excel",
+   "PowerPoint",
+   "Antivirus"
+  ],
+  "options_roman": [
+   "MS Word",
+   "MS Excel",
+   "PowerPoint",
+   "Antivirus"
+  ],
+  "explanation_ur": "Antivirus software computer کو virus اور نقصان دہ programs سے بچاتا ہے۔",
+  "explanation_roman": "Antivirus software computer ko virus aur nuqsan-deh programs se bachata hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -901,6 +1381,22 @@
  },
  {
   "id": "ITC-031",
+  "question_ur": "operating system کا اصل کام کیا ہے؟",
+  "question_roman": "Operating system ka asal kaam kya hai?",
+  "options_ur": [
+   "کمپیوٹر کے hardware اور software کو سنبھالنا",
+   "انٹرنیٹ براؤز کرنا",
+   "دستاویزات پرنٹ کرنا",
+   "ویب پیجز ڈیزائن کرنا"
+  ],
+  "options_roman": [
+   "Computer ke hardware aur software ko sambhalna",
+   "Internet browse karna",
+   "Dastavezat print karna",
+   "Web pages design karna"
+  ],
+  "explanation_ur": "operating system، hardware اور software کے وسائل کو سنبھالتا ہے اور صارف کو کمپیوٹر پر قابو پانے دیتا ہے۔",
+  "explanation_roman": "Operating system, hardware aur software ke wasail ko sambhalta hai aur user ko computer par qabu pane deta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -933,6 +1429,22 @@
  },
  {
   "id": "ITC-032",
+  "question_ur": "GUI کا مطلب کیا ہے؟",
+  "question_roman": "GUI ka matlab kya hai?",
+  "options_ur": [
+   "General User Interface",
+   "Graphical User Interface",
+   "Guided Utility Interface",
+   "Global User Internet"
+  ],
+  "options_roman": [
+   "General User Interface",
+   "Graphical User Interface",
+   "Guided Utility Interface",
+   "Global User Internet"
+  ],
+  "explanation_ur": "GUI کا مطلب Graphical User Interface ہے — windows، icons اور menus جن پر صارف کلک کرتا ہے۔",
+  "explanation_roman": "GUI ka matlab Graphical User Interface hai — windows, icons aur menus jin par user click karta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -965,6 +1477,22 @@
  },
  {
   "id": "ITC-033",
+  "question_ur": "Windows میں، حذف شدہ فائلیں سب سے پہلے کہاں جاتی ہیں؟",
+  "question_roman": "Windows mein, hazf shuda files sab se pehle kahan jati hain?",
+  "options_ur": [
+   "Recycle Bin",
+   "Control Panel",
+   "Taskbar",
+   "Desktop"
+  ],
+  "options_roman": [
+   "Recycle Bin",
+   "Control Panel",
+   "Taskbar",
+   "Desktop"
+  ],
+  "explanation_ur": "حذف شدہ فائلیں سب سے پہلے Recycle Bin میں جاتی ہیں، جہاں سے انہیں بحال کیا جا سکتا ہے یا مستقل طور پر حذف کیا جا سکتا ہے۔",
+  "explanation_roman": "Hazf shuda files sab se pehle Recycle Bin mein jati hain, jahan se unhein bahal kiya ja sakta hai ya mustaqil tor par hazf kiya ja sakta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -997,6 +1525,22 @@
  },
  {
   "id": "ITC-034",
+  "question_ur": "ان میں سے کون سا system software ہے؟",
+  "question_roman": "In mein se kaun sa system software hai?",
+  "options_ur": [
+   "MS Word",
+   "Google Chrome",
+   "ایک operating system",
+   "ایک کمپیوٹر گیم"
+  ],
+  "options_roman": [
+   "MS Word",
+   "Google Chrome",
+   "Ek operating system",
+   "Ek computer game"
+  ],
+  "explanation_ur": "System software کمپیوٹر کو خود چلاتا اور سنبھالتا ہے؛ operating system اس کی اہم مثال ہے۔",
+  "explanation_roman": "System software computer ko khud chalata aur sambhalta hai; operating system is ki ahem misal hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1029,6 +1573,22 @@
  },
  {
   "id": "ITC-035",
+  "question_ur": "MS Word کس کی مثال ہے؟",
+  "question_roman": "MS Word kis ki misal hai?",
+  "options_ur": [
+   "System software",
+   "Application software",
+   "ایک operating system",
+   "ایک utility program"
+  ],
+  "options_roman": [
+   "System software",
+   "Application software",
+   "Ek operating system",
+   "Ek utility program"
+  ],
+  "explanation_ur": "Application software صارف کو لکھنے جیسا کام کرنے میں مدد دیتا ہے؛ MS Word ایک word-processing application ہے۔",
+  "explanation_roman": "Application software user ko likhne jaisa kaam karne mein madad deta hai; MS Word ek word-processing application hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1061,6 +1621,22 @@
  },
  {
   "id": "ITC-036",
+  "question_ur": "کون سا پرنٹر کاغذ پر سیاہی کے چھوٹے چھوٹے قطرے چھڑکتا ہے؟",
+  "question_roman": "Kaun sa printer kagaz par siyahi ke chhote chhote qatre chhidakta hai?",
+  "options_ur": [
+   "Laser printer",
+   "Dot matrix printer",
+   "Inkjet printer",
+   "Thermal printer"
+  ],
+  "options_roman": [
+   "Laser printer",
+   "Dot matrix printer",
+   "Inkjet printer",
+   "Thermal printer"
+  ],
+  "explanation_ur": "Inkjet printer چھوٹے nozzles سے کاغذ پر سیاہی کے چھوٹے قطرے چھڑکتا ہے۔",
+  "explanation_roman": "Inkjet printer chhote nozzles se kagaz par siyahi ke chhote qatre chhidakta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1093,6 +1669,22 @@
  },
  {
   "id": "ITC-037",
+  "question_ur": "Laser printer کس چیز سے پرنٹ کرتا ہے؟",
+  "question_roman": "Laser printer kis cheez se print karta hai?",
+  "options_ur": [
+   "مائع سیاہی",
+   "Toner powder",
+   "ربن",
+   "اسٹینسل"
+  ],
+  "options_roman": [
+   "Maya siyahi",
+   "Toner powder",
+   "Ribbon",
+   "Stencil"
+  ],
+  "explanation_ur": "Laser printer پرنٹ بنانے کے لیے toner powder استعمال کرتا ہے، جو گرمی سے کاغذ پر جما دیا جاتا ہے۔",
+  "explanation_roman": "Laser printer print banane ke liye toner powder istemal karta hai, jo garmi se kagaz par jama diya jata hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1125,6 +1717,22 @@
  },
  {
   "id": "ITC-038",
+  "question_ur": "Scanner کیا کرتا ہے؟",
+  "question_roman": "Scanner kya karta hai?",
+  "options_ur": [
+   "دستاویزات پرنٹ کرتا ہے",
+   "کاغذی دستاویزات اور تصویروں کو ڈیجیٹل شکل میں بدلتا ہے",
+   "Backup فائلیں محفوظ کرتا ہے",
+   "کمپیوٹر کو انٹرنیٹ سے جوڑتا ہے"
+  ],
+  "options_roman": [
+   "Dastavezat print karta hai",
+   "Kagazi dastavezat aur tasveeron ko digital shakal mein badalta hai",
+   "Backup files mehfooz karta hai",
+   "Computer ko internet se jodta hai"
+  ],
+  "explanation_ur": "Scanner کاغذ کا صفحہ یا تصویر پڑھتا ہے اور اسے ڈیجیٹل فائل میں بدل دیتا ہے جسے کمپیوٹر محفوظ کر سکتا ہے۔",
+  "explanation_roman": "Scanner kagaz ka safha ya tasveer padhta hai aur use digital file mein badal deta hai jise computer mehfooz kar sakta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1157,6 +1765,22 @@
  },
  {
   "id": "ITC-039",
+  "question_ur": "کمپیوٹر مانیٹر کو یہ بھی کہا جاتا ہے:",
+  "question_roman": "Computer monitor ko yeh bhi kaha jata hai:",
+  "options_ur": [
+   "CPU",
+   "VDU",
+   "Modem",
+   "Plotter"
+  ],
+  "options_roman": [
+   "CPU",
+   "VDU",
+   "Modem",
+   "Plotter"
+  ],
+  "explanation_ur": "Monitor کو VDU (Visual Display Unit) بھی کہا جاتا ہے کیونکہ یہ بصری آؤٹ پٹ دکھاتا ہے۔",
+  "explanation_roman": "Monitor ko VDU (Visual Display Unit) bhi kaha jata hai kyunke yeh basri output dikhata hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1189,6 +1813,22 @@
  },
  {
   "id": "ITC-040",
+  "question_ur": "USB کا مطلب کیا ہے؟",
+  "question_roman": "USB ka matlab kya hai?",
+  "options_ur": [
+   "Universal Serial Bus",
+   "United System Board",
+   "Universal Service Branch",
+   "Unique Storage Block"
+  ],
+  "options_roman": [
+   "Universal Serial Bus",
+   "United System Board",
+   "Universal Service Branch",
+   "Unique Storage Block"
+  ],
+  "explanation_ur": "USB کا مطلب Universal Serial Bus ہے، جو keyboards، mice اور flash drives کے لیے معیاری port ہے۔",
+  "explanation_roman": "USB ka matlab Universal Serial Bus hai, jo keyboards, mice aur flash drives ke liye mayari port hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1221,6 +1861,22 @@
  },
  {
   "id": "ITC-041",
+  "question_ur": "کون سی storage device میں کوئی حرکت کرنے والا پرزہ نہیں ہوتا اور وہ hard disk سے تیز ہوتی ہے؟",
+  "question_roman": "Kaun si storage device mein koi harkat karne wala purza nahi hota aur woh hard disk se tez hoti hai?",
+  "options_ur": [
+   "Hard disk drive",
+   "SSD",
+   "Floppy disk",
+   "Magnetic tape"
+  ],
+  "options_roman": [
+   "Hard disk drive",
+   "SSD",
+   "Floppy disk",
+   "Magnetic tape"
+  ],
+  "explanation_ur": "SSD (Solid State Drive) ڈیٹا کو flash memory پر محفوظ کرتا ہے جس میں کوئی حرکت کرنے والا پرزہ نہیں ہوتا، اس لیے یہ تیز اور خاموش ہوتا ہے۔",
+  "explanation_roman": "SSD (Solid State Drive) data ko flash memory par mehfooz karta hai jis mein koi harkat karne wala purza nahi hota, is liye yeh tez aur khamosh hota hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1253,6 +1909,22 @@
  },
  {
   "id": "ITC-042",
+  "question_ur": "CD پر موجود ڈیٹا کس سے پڑھا جاتا ہے؟",
+  "question_roman": "CD par mojood data kis se padha jata hai?",
+  "options_ur": [
+   "ایک magnet",
+   "ایک laser beam",
+   "ایک برقی سوئی",
+   "ایک کیمرہ"
+  ],
+  "options_roman": [
+   "Ek magnet",
+   "Ek laser beam",
+   "Ek barqi sui",
+   "Ek camera"
+  ],
+  "explanation_ur": "CD ڈیٹا کو چمکدار ڈسک کی سطح پر محفوظ کرتی ہے جسے laser beam سے پڑھا جاتا ہے۔",
+  "explanation_roman": "CD data ko chamakdar disc ki satah par mehfooz karti hai jise laser beam se padha jata hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1285,6 +1957,22 @@
  },
  {
   "id": "ITC-043",
+  "question_ur": "Storage units کی چھوٹی سے بڑی تک درست ترتیب کون سی ہے؟",
+  "question_roman": "Storage units ki chhoti se badi tak durust tarteeb kaun si hai?",
+  "options_ur": [
+   "GB, MB, KB, TB",
+   "KB, MB, GB, TB",
+   "MB, KB, TB, GB",
+   "TB, GB, MB, KB"
+  ],
+  "options_roman": [
+   "GB, MB, KB, TB",
+   "KB, MB, GB, TB",
+   "MB, KB, TB, GB",
+   "TB, GB, MB, KB"
+  ],
+  "explanation_ur": "Storage units اس طرح بڑھتی ہیں: kilobyte، megabyte، gigabyte اور terabyte — ہر اگلا مرحلہ پچھلے سے تقریباً 1,024 گنا ہوتا ہے۔",
+  "explanation_roman": "Storage units is tarah badhti hain: kilobyte, megabyte, gigabyte aur terabyte — har agla marhala pichhle se taqreeban 1,024 guna hota hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1317,6 +2005,22 @@
  },
  {
   "id": "ITC-044",
+  "question_ur": "1 gigabyte (GB) میں کتنے megabytes (MB) ہوتے ہیں؟",
+  "question_roman": "1 gigabyte (GB) mein kitne megabytes (MB) hote hain?",
+  "options_ur": [
+   "100",
+   "512",
+   "1,000",
+   "1,024"
+  ],
+  "options_roman": [
+   "100",
+   "512",
+   "1,000",
+   "1,024"
+  ],
+  "explanation_ur": "کمپیوٹرز کے استعمال ہونے والے binary system میں 1 gigabyte برابر 1,024 megabytes ہوتا ہے۔",
+  "explanation_roman": "Computers ke istemal hone wale binary system mein 1 gigabyte barabar 1,024 megabytes hota hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1349,6 +2053,22 @@
  },
  {
   "id": "ITC-045",
+  "question_ur": "MS Word میں منتخب شدہ متن کو bold کرنے کے لیے کون سا shortcut ہے؟",
+  "question_roman": "MS Word mein muntakhab shuda matn ko bold karne ke liye kaun sa shortcut hai?",
+  "options_ur": [
+   "Ctrl + I",
+   "Ctrl + B",
+   "Ctrl + U",
+   "Ctrl + L"
+  ],
+  "options_roman": [
+   "Ctrl + I",
+   "Ctrl + B",
+   "Ctrl + U",
+   "Ctrl + L"
+  ],
+  "explanation_ur": "Ctrl + B منتخب شدہ متن کو bold کرتا ہے؛ Ctrl + I italic ہے اور Ctrl + U underline ہے۔",
+  "explanation_roman": "Ctrl + B muntakhab shuda matn ko bold karta hai; Ctrl + I italic hai aur Ctrl + U underline hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1381,6 +2101,22 @@
  },
  {
   "id": "ITC-046",
+  "question_ur": "کون سا shortcut کسی document کے تمام text کو select کرتا ہے؟",
+  "question_roman": "Kaun sa shortcut kisi document ke tamam text ko select karta hai?",
+  "options_ur": [
+   "Ctrl + A",
+   "Ctrl + S",
+   "Ctrl + P",
+   "Ctrl + N"
+  ],
+  "options_roman": [
+   "Ctrl + A",
+   "Ctrl + S",
+   "Ctrl + P",
+   "Ctrl + N"
+  ],
+  "explanation_ur": "Ctrl + A document کی ہر چیز کو select کر لیتا ہے تاکہ اسے ایک ساتھ copy، move یا format کیا جا سکے۔",
+  "explanation_roman": "Ctrl + A document ki har cheez ko select kar leta hai taake usay ek saath copy, move ya format kiya ja sakay.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1413,6 +2149,22 @@
  },
  {
   "id": "ITC-047",
+  "question_ur": "MS Word میں spell check شروع کرنے کے لیے کون سی key دبائی جاتی ہے؟",
+  "question_roman": "MS Word mein spell check shuru karne ke liye kaun si key dabayi jati hai?",
+  "options_ur": [
+   "F1",
+   "F5",
+   "F7",
+   "F12"
+  ],
+  "options_roman": [
+   "F1",
+   "F5",
+   "F7",
+   "F12"
+  ],
+  "explanation_ur": "F7 دبانے سے spell check کھل جاتا ہے، جو spelling اور grammar کی غلطیاں تلاش کرتا ہے۔",
+  "explanation_roman": "F7 dabane se spell check khul jata hai, jo spelling aur grammar ki ghaltiyan talaash karta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1445,6 +2197,22 @@
  },
  {
   "id": "ITC-048",
+  "question_ur": "'Save As' آپ کو کیا کرنے دیتا ہے؟",
+  "question_roman": "'Save As' aap ko kya karne deta hai?",
+  "options_ur": [
+   "File کو print کرنا",
+   "File کو نئے نام سے یا نئی جگہ پر save کرنا",
+   "File کو delete کرنا",
+   "Program کو close کرنا"
+  ],
+  "options_roman": [
+   "File ko print karna",
+   "File ko naye naam se ya nayi jagah par save karna",
+   "File ko delete karna",
+   "Program ko close karna"
+  ],
+  "explanation_ur": "Save As file کی ایک copy نئے نام سے یا مختلف folder میں save کرتا ہے، اور اصل file ویسی کی ویسی رہتی ہے۔",
+  "explanation_roman": "Save As file ki ek copy naye naam se ya mukhtalif folder mein save karta hai, aur asal file waisi ki waisi rehti hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1477,6 +2245,22 @@
  },
  {
   "id": "ITC-049",
+  "question_ur": "Excel کا کون سا function اعداد کے ایک گروہ کا average معلوم کرتا ہے؟",
+  "question_roman": "Excel ka kaun sa function aadaad ke ek giroh ka average maloom karta hai?",
+  "options_ur": [
+   "SUM",
+   "COUNT",
+   "AVERAGE",
+   "TOTAL"
+  ],
+  "options_roman": [
+   "SUM",
+   "COUNT",
+   "AVERAGE",
+   "TOTAL"
+  ],
+  "explanation_ur": "AVERAGE اعداد کو جمع کرتا ہے اور ان کی تعداد سے تقسیم کرتا ہے، جس سے mean value حاصل ہوتی ہے۔",
+  "explanation_roman": "AVERAGE aadaad ko jama karta hai aur un ki tadaad se taqseem karta hai, jis se mean value haasil hoti hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1509,6 +2293,22 @@
  },
  {
   "id": "ITC-050",
+  "question_ur": "Excel کا کون سا function کسی range میں سب سے بڑی value معلوم کرتا ہے؟",
+  "question_roman": "Excel ka kaun sa function kisi range mein sab se bari value maloom karta hai?",
+  "options_ur": [
+   "MIN",
+   "MAX",
+   "SUM",
+   "LARGE"
+  ],
+  "options_roman": [
+   "MIN",
+   "MAX",
+   "SUM",
+   "LARGE"
+  ],
+  "explanation_ur": "MAX منتخب شدہ range میں سب سے بڑا عدد واپس کرتا ہے؛ MIN سب سے چھوٹا عدد واپس کرتا ہے۔",
+  "explanation_roman": "MAX muntakhab shuda range mein sab se bara adad wapas karta hai; MIN sab se chhota adad wapas karta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1541,6 +2341,22 @@
  },
  {
   "id": "ITC-051",
+  "question_ur": "MS Excel میں cell address B5 کا مطلب ہے:",
+  "question_roman": "MS Excel mein cell address B5 ka matlab hai:",
+  "options_ur": [
+   "Row B، column 5",
+   "Column B، row 5",
+   "Sheet B، cell 5",
+   "Column B کا Block 5"
+  ],
+  "options_roman": [
+   "Row B, column 5",
+   "Column B, row 5",
+   "Sheet B, cell 5",
+   "Column B ka Block 5"
+  ],
+  "explanation_ur": "Cell address میں پہلے column کا حرف اور بعد میں row کا نمبر لکھا جاتا ہے، اس لیے B5 کا مطلب ہے column B، row 5۔",
+  "explanation_roman": "Cell address mein pehle column ka harf aur baad mein row ka number likha jata hai, is liye B5 ka matlab hai column B, row 5.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1573,6 +2389,22 @@
  },
  {
   "id": "ITC-052",
+  "question_ur": "MS Excel میں ایک file کو workbook کہا جاتا ہے۔ اس کے اندر ایک sheet کو کیا کہا جاتا ہے؟",
+  "question_roman": "MS Excel mein ek file ko workbook kaha jata hai. Us ke andar ek sheet ko kya kaha jata hai?",
+  "options_ur": [
+   "ایک page",
+   "ایک worksheet",
+   "ایک document",
+   "ایک slide"
+  ],
+  "options_roman": [
+   "Ek page",
+   "Ek worksheet",
+   "Ek document",
+   "Ek slide"
+  ],
+  "explanation_ur": "ایک workbook میں ایک یا زیادہ worksheets ہوتی ہیں؛ ہر worksheet rows اور columns کا ایک grid ہوتی ہے۔",
+  "explanation_roman": "Ek workbook mein ek ya zyada worksheets hoti hain; har worksheet rows aur columns ka ek grid hoti hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1605,6 +2437,22 @@
  },
  {
   "id": "ITC-053",
+  "question_ur": "کون سی key PowerPoint slideshow کو پہلی slide سے شروع کرتی ہے؟",
+  "question_roman": "Kaun si key PowerPoint slideshow ko pehli slide se shuru karti hai?",
+  "options_ur": [
+   "F1",
+   "F3",
+   "F5",
+   "F9"
+  ],
+  "options_roman": [
+   "F1",
+   "F3",
+   "F5",
+   "F9"
+  ],
+  "explanation_ur": "F5 slideshow کو پہلی slide سے شروع کرتا ہے؛ Shift + F5 اسے موجودہ slide سے شروع کرتا ہے۔",
+  "explanation_roman": "F5 slideshow ko pehli slide se shuru karta hai; Shift + F5 usay maujooda slide se shuru karta hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1637,6 +2485,22 @@
  },
  {
   "id": "ITC-054",
+  "question_ur": "URL کس کا مخفف ہے؟",
+  "question_roman": "URL kis ka mukhaffaf hai?",
+  "options_ur": [
+   "Uniform Resource Locator",
+   "Universal Remote Link",
+   "United Resource Library",
+   "Uniform Retrieval Language"
+  ],
+  "options_roman": [
+   "Uniform Resource Locator",
+   "Universal Remote Link",
+   "United Resource Library",
+   "Uniform Retrieval Language"
+  ],
+  "explanation_ur": "URL (Uniform Resource Locator) internet پر کسی page یا file کا address ہوتا ہے۔",
+  "explanation_roman": "URL (Uniform Resource Locator) internet par kisi page ya file ka address hota hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1669,6 +2533,22 @@
  },
  {
   "id": "ITC-055",
+  "question_ur": "HTTPS میں حرف 'S' کس کے لیے ہے:",
+  "question_roman": "HTTPS mein harf 'S' kis ke liye hai:",
+  "options_ur": [
+   "System",
+   "Secure",
+   "Server",
+   "Signal"
+  ],
+  "options_roman": [
+   "System",
+   "Secure",
+   "Server",
+   "Signal"
+  ],
+  "explanation_ur": "HTTPS دراصل HTTP کا secure version ہے؛ S کا مطلب Secure ہے، اور data encrypted ہوتا ہے۔",
+  "explanation_roman": "HTTPS darasal HTTP ka secure version hai; S ka matlab Secure hai, aur data encrypted hota hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1701,6 +2581,22 @@
  },
  {
   "id": "ITC-056",
+  "question_ur": "email میں CC کس کا مخفف ہے:",
+  "question_roman": "Email mein CC kis ka mukhaffaf hai:",
+  "options_ur": [
+   "Copy Control",
+   "Carbon Copy",
+   "Closed Copy",
+   "Common Copy"
+  ],
+  "options_roman": [
+   "Copy Control",
+   "Carbon Copy",
+   "Closed Copy",
+   "Common Copy"
+  ],
+  "explanation_ur": "CC (Carbon Copy) سے message کی ایک copy اصل وصول کنندہ کے علاوہ مزید لوگوں کو بھیجی جاتی ہے۔",
+  "explanation_roman": "CC (Carbon Copy) se message ki ek copy asal wasool kunanda ke ilawa mazeed logon ko bheji jati hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1733,6 +2629,22 @@
  },
  {
   "id": "ITC-057",
+  "question_ur": "Internet سے file کو اپنے computer پر copy کرنا کیا کہلاتا ہے:",
+  "question_roman": "Internet se file ko apne computer par copy karna kya kehlata hai:",
+  "options_ur": [
+   "Uploading",
+   "Downloading",
+   "Browsing",
+   "Streaming"
+  ],
+  "options_roman": [
+   "Uploading",
+   "Downloading",
+   "Browsing",
+   "Streaming"
+  ],
+  "explanation_ur": "Downloading سے file internet سے آپ کے computer پر آ جاتی ہے؛ uploading سے file الٹی سمت میں بھیجی جاتی ہے۔",
+  "explanation_roman": "Downloading se file internet se aap ke computer par aa jati hai; uploading se file ulti simt mein bheji jati hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1765,6 +2677,22 @@
  },
  {
   "id": "ITC-058",
+  "question_ur": "ان میں سے سب سے مضبوط password کون سا ہے؟",
+  "question_roman": "In mein se sab se mazboot password kaun sa hai?",
+  "options_ur": [
+   "ahmed123",
+   "password",
+   "Tr@vel9!Moon",
+   "12345678"
+  ],
+  "options_roman": [
+   "ahmed123",
+   "password",
+   "Tr@vel9!Moon",
+   "12345678"
+  ],
+  "explanation_ur": "مضبوط password لمبا ہوتا ہے اور اس میں upper-case، lower-case، numbers اور symbols ملے ہوتے ہیں، جس سے اس کا اندازہ لگانا مشکل ہوتا ہے۔",
+  "explanation_roman": "Mazboot password lamba hota hai aur us mein upper-case, lower-case, numbers aur symbols mile hotay hain, jis se us ka andaza lagana mushkil hota hai.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1797,6 +2725,22 @@
  },
  {
   "id": "ITC-059",
+  "question_ur": "جعلی email جو آپ کو دھوکے سے اپنا password بتانے پر مجبور کرے، کیا کہلاتی ہے:",
+  "question_roman": "Jaali email jo aap ko dhoke se apna password batane par majboor kare, kya kehlati hai:",
+  "options_ur": [
+   "Spam",
+   "Phishing",
+   "ایک virus",
+   "ایک cookie"
+  ],
+  "options_roman": [
+   "Spam",
+   "Phishing",
+   "Ek virus",
+   "Ek cookie"
+  ],
+  "explanation_ur": "Phishing messages کسی قابلِ اعتماد sender کی طرف سے آنے کا دکھاوا کرتے ہیں تاکہ passwords یا bank details چرا سکیں۔",
+  "explanation_roman": "Phishing messages kisi qabil-e-aitmad sender ki taraf se aane ka dikhawa karte hain taake passwords ya bank details chura sakein.",
   "post": [
    "ctit",
    "junior-clerk",
@@ -1829,6 +2773,22 @@
  },
  {
   "id": "ITC-060",
+  "question_ur": "اہم files کا backup کیوں رکھنا چاہیے؟",
+  "question_roman": "Ahem files ka backup kyun rakhna chahiye?",
+  "options_ur": [
+   "Computer کو تیز کرنے کے لیے",
+   "Files کو واپس حاصل کرنے کے لیے اگر اصل files گم ہو جائیں یا خراب ہو جائیں",
+   "انہیں online share کرنے کے لیے",
+   "انہیں آسانی سے print کرنے کے لیے"
+  ],
+  "options_roman": [
+   "Computer ko tez karne ke liye",
+   "Files ko wapas haasil karne ke liye agar asal files gum ho jayen ya kharab ho jayen",
+   "Unhein online share karne ke liye",
+   "Unhein aasani se print karne ke liye"
+  ],
+  "explanation_ur": "Backup اصل سے الگ رکھی گئی ایک spare copy ہوتی ہے، تاکہ چوری، نقصان یا deletion کی صورت میں بھی کام محفوظ رہے۔",
+  "explanation_roman": "Backup asal se alag rakhi gayi ek spare copy hoti hai, taake chori, nuqsan ya deletion ki soorat mein bhi kaam mehfooz rahay.",
   "post": [
    "ctit",
    "junior-clerk",

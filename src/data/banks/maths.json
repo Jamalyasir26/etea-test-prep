@@ -1,6 +1,22 @@
 [
  {
   "id": "MAT-001",
+  "question_ur": "3/4 + 2/4 کیا ہے؟",
+  "question_roman": "3/4 + 2/4 kya hai?",
+  "options_ur": [
+   "1 1/4",
+   "1",
+   "5/8",
+   "3/2"
+  ],
+  "options_roman": [
+   "1 1/4",
+   "1",
+   "5/8",
+   "3/2"
+  ],
+  "explanation_ur": "3/4 + 2/4 = 5/4 = 1 1/4۔ مخرج ایک جیسا ہے، شمار کنندگان کو جمع کریں۔",
+  "explanation_roman": "3/4 + 2/4 = 5/4 = 1 1/4. Denominator ek jaisa hai, numerators ko jama karein.",
   "post": [
    "zamungkor",
    "tt",
@@ -39,6 +55,22 @@
  },
  {
   "id": "MAT-002",
+  "question_ur": "7/10 - 3/10 کیا ہے؟",
+  "question_roman": "7/10 - 3/10 kya hai?",
+  "options_ur": [
+   "1/2",
+   "2/5",
+   "4/5",
+   "1/5"
+  ],
+  "options_roman": [
+   "1/2",
+   "2/5",
+   "4/5",
+   "1/5"
+  ],
+  "explanation_ur": "7/10 - 3/10 = 4/10 = 2/5۔ شمار کنندگان کو تفریق کریں، پھر مختصر کریں۔",
+  "explanation_roman": "7/10 - 3/10 = 4/10 = 2/5. Numerators ko tafreeq karein, phir mukhtasar karein.",
   "post": [
    "zamungkor",
    "tt",
@@ -77,6 +109,22 @@
  },
  {
   "id": "MAT-003",
+  "question_ur": "2/3 x 3/4 کیا ہے؟",
+  "question_roman": "2/3 x 3/4 kya hai?",
+  "options_ur": [
+   "1/2",
+   "5/7",
+   "1/3",
+   "2/5"
+  ],
+  "options_roman": [
+   "1/2",
+   "5/7",
+   "1/3",
+   "2/5"
+  ],
+  "explanation_ur": "2/3 x 3/4 = 6/12 = 1/2۔ شمار کنندگان اور مخرجوں کو ضرب دیں، پھر مختصر کریں۔",
+  "explanation_roman": "2/3 x 3/4 = 6/12 = 1/2. Numerators aur denominators ko zarb dein, phir mukhtasar karein.",
   "post": [
    "zamungkor",
    "tt",
@@ -115,6 +163,22 @@
  },
  {
   "id": "MAT-004",
+  "question_ur": "3/5 کو 2/5 سے تقسیم کیا جائے تو کیا حاصل ہوتا ہے؟",
+  "question_roman": "3/5 ko 2/5 se taqseem kiya jaye to kya hasil hota hai?",
+  "options_ur": [
+   "3/2",
+   "6/25",
+   "1",
+   "5/2"
+  ],
+  "options_roman": [
+   "3/2",
+   "6/25",
+   "1",
+   "5/2"
+  ],
+  "explanation_ur": "3/5 / 2/5 = 3/5 x 5/2 = 15/10 = 3/2۔ دوسری کسر کو الٹیں اور ضرب دیں۔",
+  "explanation_roman": "3/5 / 2/5 = 3/5 x 5/2 = 15/10 = 3/2. Doosri kasr ko ultain aur zarb dein.",
   "post": [
    "zamungkor",
    "tt",
@@ -153,6 +217,22 @@
  },
  {
   "id": "MAT-005",
+  "question_ur": "2/5 فیصد میں کیا ہوتا ہے؟",
+  "question_roman": "2/5 percentage mein kya hota hai?",
+  "options_ur": [
+   "25%",
+   "20%",
+   "40%",
+   "50%"
+  ],
+  "options_roman": [
+   "25%",
+   "20%",
+   "40%",
+   "50%"
+  ],
+  "explanation_ur": "2/5 x 100 = 40%۔ 2 کو 5 پر تقسیم کرنے سے 0.4 حاصل ہوتا ہے، جو 40% ہے۔",
+  "explanation_roman": "2/5 x 100 = 40%. 2 ko 5 par taqseem karne se 0.4 hasil hota hai, jo 40% hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -191,6 +271,22 @@
  },
  {
   "id": "MAT-006",
+  "question_ur": "12 اور 18 کا LCM کیا ہے؟",
+  "question_roman": "12 aur 18 ka LCM kya hai?",
+  "options_ur": [
+   "6",
+   "18",
+   "36",
+   "72"
+  ],
+  "options_roman": [
+   "6",
+   "18",
+   "36",
+   "72"
+  ],
+  "explanation_ur": "12 کے اضعاف: 12, 24, 36۔ 18 کے اضعاف: 18, 36۔ پہلا مشترک ضعف 36 ہے۔",
+  "explanation_roman": "12 ke multiples: 12, 24, 36. 18 ke multiples: 18, 36. Pehla mushtarik multiple 36 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -229,6 +325,22 @@
  },
  {
   "id": "MAT-007",
+  "question_ur": "24 اور 36 کا HCF کیا ہے؟",
+  "question_roman": "24 aur 36 ka HCF kya hai?",
+  "options_ur": [
+   "6",
+   "12",
+   "8",
+   "18"
+  ],
+  "options_roman": [
+   "6",
+   "12",
+   "8",
+   "18"
+  ],
+  "explanation_ur": "24 کے عاد: 1,2,3,4,6,8,12,24۔ 36 کے عاد: 1,2,3,4,6,9,12,18,36۔ سب سے بڑا مشترک عاد 12 ہے۔",
+  "explanation_roman": "24 ke factors: 1,2,3,4,6,8,12,24. 36 ke factors: 1,2,3,4,6,9,12,18,36. Sab se bara mushtarik factor 12 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -267,6 +379,22 @@
  },
  {
   "id": "MAT-008",
+  "question_ur": "8, 12 اور 20 کا LCM کیا ہے؟",
+  "question_roman": "8, 12 aur 20 ka LCM kya hai?",
+  "options_ur": [
+   "40",
+   "60",
+   "120",
+   "240"
+  ],
+  "options_roman": [
+   "40",
+   "60",
+   "120",
+   "240"
+  ],
+  "explanation_ur": "LCM = 2x2x2x3x5 = 120۔ 8=2^3, 12=2^2x3, 20=2^2x5; سب سے بڑی طاقتیں لیں۔",
+  "explanation_roman": "LCM = 2x2x2x3x5 = 120. 8=2^3, 12=2^2x3, 20=2^2x5; sab se bari powers lein.",
   "post": [
    "zamungkor",
    "tt",
@@ -305,6 +433,22 @@
  },
  {
   "id": "MAT-009",
+  "question_ur": "45 اور 60 کا HCF کیا ہے؟",
+  "question_roman": "45 aur 60 ka HCF kya hai?",
+  "options_ur": [
+   "5",
+   "9",
+   "15",
+   "30"
+  ],
+  "options_roman": [
+   "5",
+   "9",
+   "15",
+   "30"
+  ],
+  "explanation_ur": "45 = 3x3x5, 60 = 2x2x3x5۔ مشترک عاد 3x5 = 15 ہیں۔",
+  "explanation_roman": "45 = 3x3x5, 60 = 2x2x3x5. Mushtarik factors 3x5 = 15 hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -343,6 +487,22 @@
  },
  {
   "id": "MAT-010",
+  "question_ur": "200 کا 15% کیا ہے؟",
+  "question_roman": "200 ka 15% kya hai?",
+  "options_ur": [
+   "20",
+   "25",
+   "30",
+   "45"
+  ],
+  "options_roman": [
+   "20",
+   "25",
+   "30",
+   "45"
+  ],
+  "explanation_ur": "15/100 x 200 = 30۔ 10% برابر 20 ہے اور 5% برابر 10 ہے، اس لیے 15% برابر 30 ہے۔",
+  "explanation_roman": "15/100 x 200 = 30. 10% barabar 20 hai aur 5% barabar 10 hai, is liye 15% barabar 30 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -381,6 +541,22 @@
  },
  {
   "id": "MAT-011",
+  "question_ur": "80 کا 25% کیا ہے؟",
+  "question_roman": "80 ka 25% kya hai?",
+  "options_ur": [
+   "15",
+   "20",
+   "25",
+   "30"
+  ],
+  "options_roman": [
+   "15",
+   "20",
+   "25",
+   "30"
+  ],
+  "explanation_ur": "25% ایک چوتھائی ہے۔ 80 / 4 = 20۔",
+  "explanation_roman": "25% aik chauthai hai. 80 / 4 = 20.",
   "post": [
    "zamungkor",
    "tt",
@@ -419,6 +595,22 @@
  },
  {
   "id": "MAT-012",
+  "question_ur": "ایک کتاب کی قیمت Rs. 500 ہے۔ اس کی قیمت میں 10% اضافہ ہوتا ہے۔ نئی قیمت کیا ہے؟",
+  "question_roman": "Aik kitab ki qeemat Rs. 500 hai. Us ki qeemat mein 10% izafa hota hai. Nai qeemat kya hai?",
+  "options_ur": [
+   "Rs. 510",
+   "Rs. 540",
+   "Rs. 550",
+   "Rs. 600"
+  ],
+  "options_roman": [
+   "Rs. 510",
+   "Rs. 540",
+   "Rs. 550",
+   "Rs. 600"
+  ],
+  "explanation_ur": "10% of 500 = 50۔ نئی قیمت = 500 + 50 = Rs. 550۔",
+  "explanation_roman": "10% of 500 = 50. Nai qeemat = 500 + 50 = Rs. 550.",
   "post": [
    "zamungkor",
    "tt",
@@ -457,6 +649,22 @@
  },
  {
   "id": "MAT-013",
+  "question_ur": "ایک قمیض کی قیمت Rs. 120 ہے۔ اس کی قیمت میں 20% کمی ہوتی ہے۔ نئی قیمت کیا ہے؟",
+  "question_roman": "Aik qameez ki qeemat Rs. 120 hai. Us ki qeemat mein 20% kami hoti hai. Nai qeemat kya hai?",
+  "options_ur": [
+   "Rs. 90",
+   "Rs. 96",
+   "Rs. 100",
+   "Rs. 104"
+  ],
+  "options_roman": [
+   "Rs. 90",
+   "Rs. 96",
+   "Rs. 100",
+   "Rs. 104"
+  ],
+  "explanation_ur": "20% of 120 = 24۔ نئی قیمت = 120 - 24 = Rs. 96۔",
+  "explanation_roman": "20% of 120 = 24. Nai qeemat = 120 - 24 = Rs. 96.",
   "post": [
    "zamungkor",
    "tt",
@@ -495,6 +703,22 @@
  },
  {
   "id": "MAT-014",
+  "question_ur": "دو اعداد 3:5 کی نسبت میں ہیں اور ان کا مجموعہ 40 ہے۔ بڑا عدد کیا ہے؟",
+  "question_roman": "Do adad 3:5 ki nisbat mein hain aur un ka majmooa 40 hai. Bara adad kya hai?",
+  "options_ur": [
+   "15",
+   "20",
+   "25",
+   "30"
+  ],
+  "options_roman": [
+   "15",
+   "20",
+   "25",
+   "30"
+  ],
+  "explanation_ur": "کل حصے = 3+5 = 8۔ ایک حصہ = 40/8 = 5۔ بڑا عدد = 5x5 = 25۔",
+  "explanation_roman": "Kul hisse = 3+5 = 8. Aik hissa = 40/8 = 5. Bara adad = 5x5 = 25.",
   "post": [
    "zamungkor",
    "tt",
@@ -533,6 +757,22 @@
  },
  {
   "id": "MAT-015",
+  "question_ur": "ایک جماعت میں لڑکوں اور لڑکیوں کی نسبت 2:3 ہے۔ اگر کل 50 طلبہ ہیں تو لڑکیاں کتنی ہیں؟",
+  "question_roman": "Aik jamaat mein larkon aur larkiyon ki nisbat 2:3 hai. Agar kul 50 talaba hain to larkiyan kitni hain?",
+  "options_ur": [
+   "20",
+   "25",
+   "30",
+   "35"
+  ],
+  "options_roman": [
+   "20",
+   "25",
+   "30",
+   "35"
+  ],
+  "explanation_ur": "کل حصے = 2+3 = 5۔ ایک حصہ = 50/5 = 10۔ لڑکیاں = 3x10 = 30۔",
+  "explanation_roman": "Kul hisse = 2+3 = 5. Aik hissa = 50/5 = 10. Larkiyan = 3x10 = 30.",
   "post": [
    "zamungkor",
    "tt",
@@ -571,6 +811,22 @@
  },
  {
   "id": "MAT-016",
+  "question_ur": "Rs. 90 کو 1:2:3 کی نسبت سے تقسیم کریں۔ سب سے چھوٹا حصہ کتنا ہے؟",
+  "question_roman": "Rs. 90 ko 1:2:3 ki nisbat se taqseem karen. Sab se chhota hissa kitna hai?",
+  "options_ur": [
+   "Rs. 10",
+   "Rs. 15",
+   "Rs. 20",
+   "Rs. 30"
+  ],
+  "options_roman": [
+   "Rs. 10",
+   "Rs. 15",
+   "Rs. 20",
+   "Rs. 30"
+  ],
+  "explanation_ur": "کل حصے = 1+2+3 = 6۔ ایک حصہ = 90/6 = 15۔ سب سے چھوٹا حصہ = 1x15 = Rs. 15۔",
+  "explanation_roman": "Kul hisse = 1+2+3 = 6. Ek hissa = 90/6 = 15. Sab se chhota hissa = 1x15 = Rs. 15.",
   "post": [
    "zamungkor",
    "tt",
@@ -609,6 +865,22 @@
  },
  {
   "id": "MAT-017",
+  "question_ur": "حل کریں: x + 7 = 15",
+  "question_roman": "Hal karen: x + 7 = 15",
+  "options_ur": [
+   "6",
+   "7",
+   "8",
+   "22"
+  ],
+  "options_roman": [
+   "6",
+   "7",
+   "8",
+   "22"
+  ],
+  "explanation_ur": "x = 15 - 7 = 8۔ جانچ: 8 + 7 = 15۔",
+  "explanation_roman": "x = 15 - 7 = 8. Janch: 8 + 7 = 15.",
   "post": [
    "zamungkor",
    "tt",
@@ -647,6 +919,22 @@
  },
  {
   "id": "MAT-018",
+  "question_ur": "حل کریں: 3x = 27",
+  "question_roman": "Hal karen: 3x = 27",
+  "options_ur": [
+   "6",
+   "9",
+   "12",
+   "24"
+  ],
+  "options_roman": [
+   "6",
+   "9",
+   "12",
+   "24"
+  ],
+  "explanation_ur": "x = 27 / 3 = 9۔ جانچ: 3x9 = 27۔",
+  "explanation_roman": "x = 27 / 3 = 9. Janch: 3x9 = 27.",
   "post": [
    "zamungkor",
    "tt",
@@ -685,6 +973,22 @@
  },
  {
   "id": "MAT-019",
+  "question_ur": "حل کریں: 2x - 5 = 11",
+  "question_roman": "Hal karen: 2x - 5 = 11",
+  "options_ur": [
+   "6",
+   "7",
+   "8",
+   "16"
+  ],
+  "options_roman": [
+   "6",
+   "7",
+   "8",
+   "16"
+  ],
+  "explanation_ur": "2x = 11 + 5 = 16، اس لیے x = 16/2 = 8۔ جانچ: 2x8 - 5 = 11۔",
+  "explanation_roman": "2x = 11 + 5 = 16, is liye x = 16/2 = 8. Janch: 2x8 - 5 = 11.",
   "post": [
    "zamungkor",
    "tt",
@@ -723,6 +1027,22 @@
  },
  {
   "id": "MAT-020",
+  "question_ur": "حل کریں: x/4 = 9",
+  "question_roman": "Hal karen: x/4 = 9",
+  "options_ur": [
+   "13",
+   "36",
+   "5",
+   "32"
+  ],
+  "options_roman": [
+   "13",
+   "36",
+   "5",
+   "32"
+  ],
+  "explanation_ur": "x = 9 x 4 = 36۔ جانچ: 36/4 = 9۔",
+  "explanation_roman": "x = 9 x 4 = 36. Janch: 36/4 = 9.",
   "post": [
    "zamungkor",
    "tt",
@@ -761,6 +1081,22 @@
  },
  {
   "id": "MAT-021",
+  "question_ur": "حل کریں: 5x + 3 = 23",
+  "question_roman": "Hal karen: 5x + 3 = 23",
+  "options_ur": [
+   "3",
+   "4",
+   "5",
+   "20"
+  ],
+  "options_roman": [
+   "3",
+   "4",
+   "5",
+   "20"
+  ],
+  "explanation_ur": "5x = 23 - 3 = 20، اس لیے x = 20/5 = 4۔ جانچ: 5x4 + 3 = 23۔",
+  "explanation_roman": "5x = 23 - 3 = 20, is liye x = 20/5 = 4. Janch: 5x4 + 3 = 23.",
   "post": [
    "zamungkor",
    "tt",
@@ -799,6 +1135,22 @@
  },
  {
   "id": "MAT-022",
+  "question_ur": "ایک باپ اپنے بیٹے سے 4 گنا بڑا ہے۔ ان دونوں کی عمروں کا مجموعہ 35 years ہے۔ بیٹے کی عمر کتنی ہے؟",
+  "question_roman": "Ek baap apne bete se 4 guna bara hai. Un dono ki umron ka majmua 35 years hai. Bete ki umar kitni hai?",
+  "options_ur": [
+   "5 years",
+   "7 years",
+   "9 years",
+   "28 years"
+  ],
+  "options_roman": [
+   "5 years",
+   "7 years",
+   "9 years",
+   "28 years"
+  ],
+  "explanation_ur": "فرض کریں بیٹا = x، باپ = 4x۔ x + 4x = 35، 5x = 35، x = 7۔ بیٹا 7 ہے، باپ 28 ہے۔",
+  "explanation_roman": "Faraz karen beta = x, baap = 4x. x + 4x = 35, 5x = 35, x = 7. Beta 7 hai, baap 28 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -840,6 +1192,22 @@
  },
  {
   "id": "MAT-023",
+  "question_ur": "ایک باپ 36 years کا ہے اور اس کا بیٹا 6 years کا ہے۔ کتنے سالوں کے بعد باپ اپنے بیٹے سے 3 گنا بڑا ہو جائے گا؟",
+  "question_roman": "Ek baap 36 years ka hai aur us ka beta 6 years ka hai. Kitne saalon ke baad baap apne bete se 3 guna bara ho jaye ga?",
+  "options_ur": [
+   "6 years",
+   "9 years",
+   "12 years",
+   "18 years"
+  ],
+  "options_roman": [
+   "6 years",
+   "9 years",
+   "12 years",
+   "18 years"
+  ],
+  "explanation_ur": "فرض کریں years = t۔ 36 + t = 3(6 + t) => 36 + t = 18 + 3t => 18 = 2t => t = 9۔ جانچ: 45 = 3x15۔",
+  "explanation_roman": "Faraz karen years = t. 36 + t = 3(6 + t) => 36 + t = 18 + 3t => 18 = 2t => t = 9. Janch: 45 = 3x15.",
   "post": [
    "zamungkor",
    "tt",
@@ -878,6 +1246,22 @@
  },
  {
   "id": "MAT-024",
+  "question_ur": "ایک ماں اور بیٹی کی عمروں کا مجموعہ 48 years ہے۔ ماں اپنی بیٹی سے 3 گنا بڑی ہے۔ ماں کی عمر کتنی ہے؟",
+  "question_roman": "Ek maa aur beti ki umron ka majmua 48 years hai. Maa apni beti se 3 guna bari hai. Maa ki umar kitni hai?",
+  "options_ur": [
+   "24 years",
+   "30 years",
+   "36 years",
+   "40 years"
+  ],
+  "options_roman": [
+   "24 years",
+   "30 years",
+   "36 years",
+   "40 years"
+  ],
+  "explanation_ur": "فرض کریں بیٹی = x، ماں = 3x۔ 4x = 48، x = 12۔ ماں = 3x12 = 36 years۔",
+  "explanation_roman": "Faraz karen beti = x, maa = 3x. 4x = 48, x = 12. Maa = 3x12 = 36 years.",
   "post": [
    "zamungkor",
    "tt",
@@ -916,6 +1300,22 @@
  },
  {
   "id": "MAT-025",
+  "question_ur": "علی 5 years پہلے 10 years کا تھا۔ 5 years کے بعد وہ کتنے سال کا ہو گا؟",
+  "question_roman": "Ali 5 years pehle 10 years ka tha. 5 years ke baad woh kitne saal ka ho ga?",
+  "options_ur": [
+   "15 years",
+   "20 years",
+   "25 years",
+   "10 years"
+  ],
+  "options_roman": [
+   "15 years",
+   "20 years",
+   "25 years",
+   "10 years"
+  ],
+  "explanation_ur": "علی کی موجودہ عمر = 10 + 5 = 15۔ مزید 5 years کے بعد = 15 + 5 = 20 years۔",
+  "explanation_roman": "Ali ki maujuda umar = 10 + 5 = 15. Mazeed 5 years ke baad = 15 + 5 = 20 years.",
   "post": [
    "zamungkor",
    "tt",
@@ -954,6 +1354,22 @@
  },
  {
   "id": "MAT-026",
+  "question_ur": "اگر 5 قلموں کی قیمت Rs. 100 ہے، تو 1 قلم کی قیمت کتنی ہے؟",
+  "question_roman": "Agar 5 qalmon ki qeemat Rs. 100 hai, to 1 qalam ki qeemat kitni hai?",
+  "options_ur": [
+   "Rs. 15",
+   "Rs. 20",
+   "Rs. 25",
+   "Rs. 50"
+  ],
+  "options_roman": [
+   "Rs. 15",
+   "Rs. 20",
+   "Rs. 25",
+   "Rs. 50"
+  ],
+  "explanation_ur": "1 قلم کی قیمت = 100 / 5 = Rs. 20۔",
+  "explanation_roman": "1 qalam ki qeemat = 100 / 5 = Rs. 20.",
   "post": [
    "zamungkor",
    "tt",
@@ -992,6 +1408,22 @@
  },
  {
   "id": "MAT-027",
+  "question_ur": "اگر 4 kg سیبوں کی قیمت Rs. 320 ہے، تو 1 kg کی قیمت کتنی ہے؟",
+  "question_roman": "Agar 4 kg saibon ki qeemat Rs. 320 hai, to 1 kg ki qeemat kitni hai?",
+  "options_ur": [
+   "Rs. 60",
+   "Rs. 70",
+   "Rs. 80",
+   "Rs. 90"
+  ],
+  "options_roman": [
+   "Rs. 60",
+   "Rs. 70",
+   "Rs. 80",
+   "Rs. 90"
+  ],
+  "explanation_ur": "1 kg کی قیمت = 320 / 4 = Rs. 80۔",
+  "explanation_roman": "1 kg ki qeemat = 320 / 4 = Rs. 80.",
   "post": [
    "zamungkor",
    "tt",
@@ -1030,6 +1462,22 @@
  },
  {
   "id": "MAT-028",
+  "question_ur": "اس مستطیل کا احاطہ کتنا ہے جس کی لمبائی 12 cm اور چوڑائی 8 cm ہے؟",
+  "question_roman": "Us mustateel ka ahata kitna hai jis ki lambai 12 cm aur chorai 8 cm hai?",
+  "options_ur": [
+   "20 cm",
+   "40 cm",
+   "48 cm",
+   "96 cm"
+  ],
+  "options_roman": [
+   "20 cm",
+   "40 cm",
+   "48 cm",
+   "96 cm"
+  ],
+  "explanation_ur": "احاطہ = 2 x (length + width) = 2 x (12 + 8) = 2 x 20 = 40 cm۔",
+  "explanation_roman": "Ahata = 2 x (length + width) = 2 x (12 + 8) = 2 x 20 = 40 cm.",
   "post": [
    "zamungkor",
    "tt",
@@ -1068,6 +1516,22 @@
  },
  {
   "id": "MAT-029",
+  "question_ur": "اس مربع کا رقبہ کتنا ہے جس کا ضلع 9 cm ہے؟",
+  "question_roman": "Us murabba ka raqba kitna hai jis ki side 9 cm hai?",
+  "options_ur": [
+   "18 sq cm",
+   "36 sq cm",
+   "81 sq cm",
+   "90 sq cm"
+  ],
+  "options_roman": [
+   "18 sq cm",
+   "36 sq cm",
+   "81 sq cm",
+   "90 sq cm"
+  ],
+  "explanation_ur": "مربع کا رقبہ = side x side = 9 x 9 = 81 sq cm۔",
+  "explanation_roman": "Murabba ka raqba = side x side = 9 x 9 = 81 sq cm.",
   "post": [
    "zamungkor",
    "tt",
@@ -1106,6 +1570,22 @@
  },
  {
   "id": "MAT-030",
+  "question_ur": "Rs. 1000 پر 5% سالانہ کی شرح سے 2 years کا سادہ سود کتنا ہے؟",
+  "question_roman": "Rs. 1000 par 5% salana ki sharah se 2 years ka saada sood kitna hai?",
+  "options_ur": [
+   "Rs. 50",
+   "Rs. 100",
+   "Rs. 150",
+   "Rs. 200"
+  ],
+  "options_roman": [
+   "Rs. 50",
+   "Rs. 100",
+   "Rs. 150",
+   "Rs. 200"
+  ],
+  "explanation_ur": "سود = (1000 x 5 x 2) / 100 = Rs. 100۔",
+  "explanation_roman": "Sood = (1000 x 5 x 2) / 100 = Rs. 100.",
   "post": [
    "zamungkor",
    "tt",
@@ -1144,6 +1624,22 @@
  },
  {
   "id": "MAT-031",
+  "question_ur": "1/2 + 1/3 کیا ہے؟",
+  "question_roman": "1/2 + 1/3 kya hai?",
+  "options_ur": [
+   "2/5",
+   "5/6",
+   "1/5",
+   "3/5"
+  ],
+  "options_roman": [
+   "2/5",
+   "5/6",
+   "1/5",
+   "3/5"
+  ],
+  "explanation_ur": "مشترکہ مخرج 6 ہے: 3/6 + 2/6 = 5/6۔",
+  "explanation_roman": "Mushtarika makhraj 6 hai: 3/6 + 2/6 = 5/6.",
   "post": [
    "zamungkor",
    "tt",
@@ -1182,6 +1678,22 @@
  },
  {
   "id": "MAT-032",
+  "question_ur": "100 کا 4/5 کیا ہے؟",
+  "question_roman": "100 ka 4/5 kya hai?",
+  "options_ur": [
+   "40",
+   "60",
+   "80",
+   "90"
+  ],
+  "options_roman": [
+   "40",
+   "60",
+   "80",
+   "90"
+  ],
+  "explanation_ur": "4/5 x 100 = 400/5 = 80۔",
+  "explanation_roman": "4/5 x 100 = 400/5 = 80.",
   "post": [
    "zamungkor",
    "tt",
@@ -1220,6 +1732,22 @@
  },
  {
   "id": "MAT-033",
+  "question_ur": "0.75 سادہ ترین شکل میں کسر کے طور پر کیا ہے؟",
+  "question_roman": "0.75 saada tareen shakal mein kasr ke tor par kya hai?",
+  "options_ur": [
+   "1/4",
+   "3/4",
+   "7/5",
+   "2/3"
+  ],
+  "options_roman": [
+   "1/4",
+   "3/4",
+   "7/5",
+   "2/3"
+  ],
+  "explanation_ur": "0.75 = 75/100 = 3/4 ہے، شمار کنندہ اور مخرج کو 25 سے تقسیم کرنے کے بعد۔",
+  "explanation_roman": "0.75 = 75/100 = 3/4 hai, shumar kuninda aur makhraj ko 25 se taqseem karne ke baad.",
   "post": [
    "zamungkor",
    "tt",
@@ -1258,6 +1786,22 @@
  },
  {
   "id": "MAT-034",
+  "question_ur": "6 اور 10 کا LCM کیا ہے؟",
+  "question_roman": "6 aur 10 ka LCM kya hai?",
+  "options_ur": [
+   "20",
+   "30",
+   "60",
+   "15"
+  ],
+  "options_roman": [
+   "20",
+   "30",
+   "60",
+   "15"
+  ],
+  "explanation_ur": "6 کے اضعاف: 6, 12, 18, 24, 30۔ 10 کے اضعاف: 10, 20, 30۔ پہلا مشترک ضعف 30 ہے۔",
+  "explanation_roman": "6 ke azaaf: 6, 12, 18, 24, 30. 10 ke azaaf: 10, 20, 30. Pehla mushtarik zaaf 30 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1296,6 +1840,22 @@
  },
  {
   "id": "MAT-035",
+  "question_ur": "18 اور 27 کا HCF کیا ہے؟",
+  "question_roman": "18 aur 27 ka HCF kya hai?",
+  "options_ur": [
+   "3",
+   "6",
+   "9",
+   "18"
+  ],
+  "options_roman": [
+   "3",
+   "6",
+   "9",
+   "18"
+  ],
+  "explanation_ur": "18 = 2x3x3، 27 = 3x3x3۔ مشترک عوامل 3x3 = 9 ہیں۔",
+  "explanation_roman": "18 = 2x3x3, 27 = 3x3x3. Mushtarik awamil 3x3 = 9 hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -1334,6 +1894,22 @@
  },
  {
   "id": "MAT-036",
+  "question_ur": "150 کا 60% کیا ہے؟",
+  "question_roman": "150 ka 60% kya hai?",
+  "options_ur": [
+   "60",
+   "75",
+   "90",
+   "120"
+  ],
+  "options_roman": [
+   "60",
+   "75",
+   "90",
+   "120"
+  ],
+  "explanation_ur": "60/100 x 150 = 90۔ 10% 15 ہے، اس لیے 60% 6x15 = 90 ہے۔",
+  "explanation_roman": "60/100 x 150 = 90. 10% 15 hai, is liye 60% 6x15 = 90 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1372,6 +1948,22 @@
  },
  {
   "id": "MAT-037",
+  "question_ur": "25 ، 200 کا کتنے فیصد ہے؟",
+  "question_roman": "25, 200 ka kitne feesad hai?",
+  "options_ur": [
+   "10%",
+   "12.5%",
+   "20%",
+   "25%"
+  ],
+  "options_roman": [
+   "10%",
+   "12.5%",
+   "20%",
+   "25%"
+  ],
+  "explanation_ur": "25/200 x 100 = 12.5%۔ 25 ، 200 کا آٹھواں حصہ ہے۔",
+  "explanation_roman": "25/200 x 100 = 12.5%. 25, 200 ka aathwan hissa hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1410,6 +2002,22 @@
  },
  {
   "id": "MAT-038",
+  "question_ur": "نسبت 18:24 کو سادہ کریں۔",
+  "question_roman": "Nisbat 18:24 ko saada karein.",
+  "options_ur": [
+   "2:3",
+   "3:4",
+   "4:5",
+   "6:8"
+  ],
+  "options_roman": [
+   "2:3",
+   "3:4",
+   "4:5",
+   "6:8"
+  ],
+  "explanation_ur": "دونوں عددوں کو ان کے HCF، یعنی 6 سے تقسیم کریں۔ 18/6 = 3 اور 24/6 = 4، اس لیے جواب 3:4 ہے۔",
+  "explanation_roman": "Dono adadon ko un ke HCF, yani 6 se taqseem karein. 18/6 = 3 aur 24/6 = 4, is liye jawab 3:4 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1448,6 +2056,22 @@
  },
  {
   "id": "MAT-039",
+  "question_ur": "اگر x = 5 ہو، تو 2x + 3 کی قیمت کیا ہے؟",
+  "question_roman": "Agar x = 5 ho, to 2x + 3 ki qeemat kya hai?",
+  "options_ur": [
+   "10",
+   "13",
+   "15",
+   "18"
+  ],
+  "options_roman": [
+   "10",
+   "13",
+   "15",
+   "18"
+  ],
+  "explanation_ur": "2x + 3 = 2x5 + 3 = 10 + 3 = 13۔",
+  "explanation_roman": "2x + 3 = 2x5 + 3 = 10 + 3 = 13.",
   "post": [
    "zamungkor",
    "tt",
@@ -1486,6 +2110,22 @@
  },
  {
   "id": "MAT-040",
+  "question_ur": "حل کریں: 4x - 8 = 12",
+  "question_roman": "Hal karein: 4x - 8 = 12",
+  "options_ur": [
+   "3",
+   "4",
+   "5",
+   "20"
+  ],
+  "options_roman": [
+   "3",
+   "4",
+   "5",
+   "20"
+  ],
+  "explanation_ur": "4x = 12 + 8 = 20، اس لیے x = 20/4 = 5۔ جانچ: 4x5 - 8 = 12۔",
+  "explanation_roman": "4x = 12 + 8 = 20, is liye x = 20/4 = 5. Jaanch: 4x5 - 8 = 12.",
   "post": [
    "zamungkor",
    "tt",
@@ -1524,6 +2164,22 @@
  },
  {
   "id": "MAT-041",
+  "question_ur": "دو عدد 4:5 کی نسبت میں ہیں اور ان کا مجموعہ 27 ہے۔ چھوٹا عدد کیا ہے؟",
+  "question_roman": "Do adad 4:5 ki nisbat mein hain aur un ka majmua 27 hai. Chhota adad kya hai?",
+  "options_ur": [
+   "9",
+   "12",
+   "15",
+   "18"
+  ],
+  "options_roman": [
+   "9",
+   "12",
+   "15",
+   "18"
+  ],
+  "explanation_ur": "کل حصے = 4+5 = 9۔ ایک حصہ = 27/9 = 3۔ چھوٹا عدد = 4x3 = 12۔",
+  "explanation_roman": "Kul hisse = 4+5 = 9. Aik hissa = 27/9 = 3. Chhota adad = 4x3 = 12.",
   "post": [
    "zamungkor",
    "tt",
@@ -1562,6 +2218,22 @@
  },
  {
   "id": "MAT-042",
+  "question_ur": "احمد کی عمر 24 سال ہے۔ اس کے بیٹے کی عمر احمد کی عمر کا ایک چوتھائی ہے۔ اس کا بیٹا کتنے سال کا ہے؟",
+  "question_roman": "Ahmed ki umar 24 saal hai. Us ke bete ki umar Ahmed ki umar ka aik chauthai hai. Us ka beta kitne saal ka hai?",
+  "options_ur": [
+   "4 سال",
+   "6 سال",
+   "8 سال",
+   "12 سال"
+  ],
+  "options_roman": [
+   "4 saal",
+   "6 saal",
+   "8 saal",
+   "12 saal"
+  ],
+  "explanation_ur": "بیٹے کی عمر = 24 / 4 = 6 سال ہے۔",
+  "explanation_roman": "Bete ki umar = 24 / 4 = 6 saal hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1600,6 +2272,22 @@
  },
  {
   "id": "MAT-043",
+  "question_ur": "دو متواتر عددوں کا مجموعہ 37 ہے۔ چھوٹا عدد کیا ہے؟",
+  "question_roman": "Do mutawatir adadon ka majmua 37 hai. Chhota adad kya hai?",
+  "options_ur": [
+   "17",
+   "18",
+   "19",
+   "20"
+  ],
+  "options_roman": [
+   "17",
+   "18",
+   "19",
+   "20"
+  ],
+  "explanation_ur": "فرض کریں کہ عدد x اور x+1 ہیں۔ x + x+1 = 37 => 2x = 36 => x = 18۔ عدد 18 اور 19 ہیں۔",
+  "explanation_roman": "Faraz karein ke adad x aur x+1 hain. x + x+1 = 37 => 2x = 36 => x = 18. Adad 18 aur 19 hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -1638,6 +2326,22 @@
  },
  {
   "id": "MAT-044",
+  "question_ur": "تین متواتر عددوں کا مجموعہ 36 ہے۔ درمیانی عدد کیا ہے؟",
+  "question_roman": "Teen mutawatir adadon ka majmua 36 hai. Darmiyani adad kya hai?",
+  "options_ur": [
+   "10",
+   "11",
+   "12",
+   "13"
+  ],
+  "options_roman": [
+   "10",
+   "11",
+   "12",
+   "13"
+  ],
+  "explanation_ur": "فرض کریں کہ عدد x-1، x اور x+1 ہیں۔ ان کا مجموعہ 3x = 36 ہے، اس لیے x = 12 ہے۔ عدد 11، 12 اور 13 ہیں۔",
+  "explanation_roman": "Faraz karein ke adad x-1, x aur x+1 hain. Un ka majmua 3x = 36 hai, is liye x = 12 hai. Adad 11, 12 aur 13 hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -1676,6 +2380,22 @@
  },
  {
   "id": "MAT-045",
+  "question_ur": "ایک طالب علم نے 600 میں سے 450 نمبر حاصل کیے۔ اس کا فیصد کیا ہے؟",
+  "question_roman": "Aik talib-e-ilm ne 600 mein se 450 number hasil kiye. Us ka feesad kya hai?",
+  "options_ur": [
+   "60%",
+   "70%",
+   "75%",
+   "80%"
+  ],
+  "options_roman": [
+   "60%",
+   "70%",
+   "75%",
+   "80%"
+  ],
+  "explanation_ur": "450/600 x 100 = 75%۔ 450 ، 600 کا تین چوتھائی ہے۔",
+  "explanation_roman": "450/600 x 100 = 75%. 450, 600 ka teen chauthai hai.",
   "post": [
    "zamungkor",
    "tt",

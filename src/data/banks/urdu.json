@@ -1,6 +1,22 @@
 [
  {
   "id": "URD-001",
+  "question_ur": "’دوست‘ کا مترادف کیا ہے؟",
+  "question_roman": "'دوست' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "ساتھی",
+   "دشمن",
+   "اجنبی",
+   "حریف"
+  ],
+  "options_roman": [
+   "saathi (ساتھی)",
+   "dushman (دشمن)",
+   "ajnabi (اجنبی)",
+   "hareef (حریف)"
+  ],
+  "explanation_ur": "’دوست‘ کا مطلب ’ساتھی‘ ہے۔ ’دوست‘ کا ہم معنی ’ساتھی‘ ہے۔",
+  "explanation_roman": "'دوست' ka matlab hai saathi. Roman Urdu: dost ka hum-ma'ni saathi hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -37,6 +53,22 @@
  },
  {
   "id": "URD-002",
+  "question_ur": "’دوست‘ کا متضاد کیا ہے؟",
+  "question_roman": "'دوست' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "ساتھی",
+   "دشمن",
+   "رفیق",
+   "ہمراہی"
+  ],
+  "options_roman": [
+   "saathi (ساتھی)",
+   "dushman (دشمن)",
+   "rafeeq (رفیق)",
+   "hamrahi (ہمراہی)"
+  ],
+  "explanation_ur": "’دوست‘ کا متضاد ’دشمن‘ ہے۔",
+  "explanation_roman": "'دوست' ka opposite 'دشمن' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -70,6 +102,22 @@
  },
  {
   "id": "URD-003",
+  "question_ur": "’خوشی‘ کا مترادف کیا ہے؟",
+  "question_roman": "'خوشی' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "غم",
+   "دکھ",
+   "مسرت",
+   "تکلیف"
+  ],
+  "options_roman": [
+   "gham (غم)",
+   "dukh (دکھ)",
+   "masarrat (مسرت)",
+   "takleef (تکلیف)"
+  ],
+  "explanation_ur": "’خوشی‘ کا مترادف ’مسرت‘ ہے۔",
+  "explanation_roman": "'خوشی' ka hum-ma'ni 'مسرت' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -103,6 +151,22 @@
  },
  {
   "id": "URD-004",
+  "question_ur": "’خوشی‘ کا متضاد کیا ہے؟",
+  "question_roman": "'خوشی' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "مسرت",
+   "شادمانی",
+   "خوشحالی",
+   "غم"
+  ],
+  "options_roman": [
+   "masarrat (مسرت)",
+   "shadmani (شادمانی)",
+   "khushhali (خوشحالی)",
+   "gham (غم)"
+  ],
+  "explanation_ur": "’خوشی‘ کا متضاد ’غم‘ ہے۔",
+  "explanation_roman": "'خوشی' ka opposite 'غم' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -136,6 +200,22 @@
  },
  {
   "id": "URD-005",
+  "question_ur": "’روشنی‘ کا مترادف کیا ہے؟",
+  "question_roman": "'روشنی' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "اجالا",
+   "تاریکی",
+   "اندھیرا",
+   "رات"
+  ],
+  "options_roman": [
+   "ujala (اجالا)",
+   "tareeki (تاریکی)",
+   "andhera (اندھیرا)",
+   "raat (رات)"
+  ],
+  "explanation_ur": "’روشنی‘ کا مترادف ’اجالا‘ ہے۔",
+  "explanation_roman": "'روشنی' ka hum-ma'ni 'اجالا' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -169,6 +249,22 @@
  },
  {
   "id": "URD-006",
+  "question_ur": "’روشنی‘ کا متضاد کیا ہے؟",
+  "question_roman": "'روشنی' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "اجالا",
+   "تاریکی",
+   "نور",
+   "چاندنی"
+  ],
+  "options_roman": [
+   "ujala (اجالا)",
+   "tareeki (تاریکی)",
+   "noor (نور)",
+   "chandni (چاندنی)"
+  ],
+  "explanation_ur": "’روشنی‘ کا متضاد ’تاریکی‘ ہے۔",
+  "explanation_roman": "'روشنی' ka opposite 'تاریکی' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -202,6 +298,22 @@
  },
  {
   "id": "URD-007",
+  "question_ur": "’سچ‘ کا مترادف کیا ہے؟",
+  "question_roman": "'سچ' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "جھوٹ",
+   "فریب",
+   "سچائی",
+   "دھوکا"
+  ],
+  "options_roman": [
+   "jhoot (جھوٹ)",
+   "fareb (فریب)",
+   "sachai (سچائی)",
+   "dhoka (دھوکا)"
+  ],
+  "explanation_ur": "’سچ‘ کا مترادف ’سچائی‘ ہے۔",
+  "explanation_roman": "'سچ' ka hum-ma'ni 'سچائی' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -235,6 +347,22 @@
  },
  {
   "id": "URD-008",
+  "question_ur": "’سچ‘ کا متضاد کیا ہے؟",
+  "question_roman": "'سچ' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "سچائی",
+   "حق",
+   "صداقت",
+   "جھوٹ"
+  ],
+  "options_roman": [
+   "sachai (سچائی)",
+   "haq (حق)",
+   "sadaqat (صداقت)",
+   "jhoot (جھوٹ)"
+  ],
+  "explanation_ur": "’سچ‘ کا متضاد ’جھوٹ‘ ہے۔",
+  "explanation_roman": "'سچ' ka opposite 'جھوٹ' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -268,6 +396,22 @@
  },
  {
   "id": "URD-009",
+  "question_ur": "’محبت‘ کا مترادف کیا ہے؟",
+  "question_roman": "'محبت' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "پیار",
+   "نفرت",
+   "عداوت",
+   "دشمنی"
+  ],
+  "options_roman": [
+   "pyaar (پیار)",
+   "nafrat (نفرت)",
+   "adawat (عداوت)",
+   "dushmani (دشمنی)"
+  ],
+  "explanation_ur": "’محبت‘ کا مترادف ’پیار‘ ہے۔",
+  "explanation_roman": "'محبت' ka hum-ma'ni 'پیار' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -301,6 +445,22 @@
  },
  {
   "id": "URD-010",
+  "question_ur": "’محبت‘ کا متضاد کیا ہے؟",
+  "question_roman": "'محبت' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "پیار",
+   "نفرت",
+   "الفت",
+   "چاہت"
+  ],
+  "options_roman": [
+   "pyaar (پیار)",
+   "nafrat (نفرت)",
+   "ulfat (الفت)",
+   "chahat (چاہت)"
+  ],
+  "explanation_ur": "’محبت‘ کا متضاد ’نفرت‘ ہے۔",
+  "explanation_roman": "'محبت' ka opposite 'نفرت' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -334,6 +494,22 @@
  },
  {
   "id": "URD-011",
+  "question_ur": "’بہادر‘ کا مترادف کیا ہے؟",
+  "question_roman": "'بہادر' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "بزدل",
+   "ڈرپوک",
+   "دلیر",
+   "کمزور"
+  ],
+  "options_roman": [
+   "buzdil (بزدل)",
+   "darpok (ڈرپوک)",
+   "diler (دلیر)",
+   "kamzor (کمزور)"
+  ],
+  "explanation_ur": "’بہادر‘ کا مترادف ’دلیر‘ ہے۔",
+  "explanation_roman": "'بہادر' ka hum-ma'ni 'دلیر' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -367,6 +543,22 @@
  },
  {
   "id": "URD-012",
+  "question_ur": "’بہادر‘ کا متضاد کیا ہے؟",
+  "question_roman": "'بہادر' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "دلیر",
+   "شجاع",
+   "نڈر",
+   "بزدل"
+  ],
+  "options_roman": [
+   "diler (دلیر)",
+   "shuja (شجاع)",
+   "nidar (نڈر)",
+   "buzdil (بزدل)"
+  ],
+  "explanation_ur": "’بہادر‘ کا متضاد ’بزدل‘ ہے۔",
+  "explanation_roman": "'بہادر' ka opposite 'بزدل' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -400,6 +592,22 @@
  },
  {
   "id": "URD-013",
+  "question_ur": "’شروع‘ کا مترادف کیا ہے؟",
+  "question_roman": "'شروع' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "آغاز",
+   "اختتام",
+   "انجام",
+   "خاتمہ"
+  ],
+  "options_roman": [
+   "aaghaz (آغاز)",
+   "ikhtitam (اختتام)",
+   "anjaam (انجام)",
+   "khatma (خاتمہ)"
+  ],
+  "explanation_ur": "’شروع‘ کا مترادف ’آغاز‘ ہے۔",
+  "explanation_roman": "'شروع' ka hum-ma'ni 'آغاز' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -433,6 +641,22 @@
  },
  {
   "id": "URD-014",
+  "question_ur": "’شروع‘ کا متضاد کیا ہے؟",
+  "question_roman": "'شروع' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "آغاز",
+   "اختتام",
+   "ابتدا",
+   "آرام"
+  ],
+  "options_roman": [
+   "aaghaz (آغاز)",
+   "ikhtitam (اختتام)",
+   "ibtida (ابتدا)",
+   "aaram (آرام)"
+  ],
+  "explanation_ur": "’شروع‘ کا متضاد ’اختتام‘ ہے۔",
+  "explanation_roman": "'شروع' ka opposite 'اختتام' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -466,6 +690,22 @@
  },
  {
   "id": "URD-015",
+  "question_ur": "’آسان‘ کا مترادف کیا ہے؟",
+  "question_roman": "'آسان' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "مشکل",
+   "کٹھن",
+   "سہل",
+   "دشوار"
+  ],
+  "options_roman": [
+   "mushkil (مشکل)",
+   "kathan (کٹھن)",
+   "sehl (سہل)",
+   "dushwaar (دشوار)"
+  ],
+  "explanation_ur": "’آسان‘ کا مترادف ’سہل‘ ہے۔",
+  "explanation_roman": "'آسان' ka hum-ma'ni 'سہل' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -499,6 +739,22 @@
  },
  {
   "id": "URD-016",
+  "question_ur": "’آسان‘ کا متضاد کیا ہے؟",
+  "question_roman": "'آسان' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "سہل",
+   "آرام",
+   "سادہ",
+   "مشکل"
+  ],
+  "options_roman": [
+   "sehl (سہل)",
+   "aaram (آرام)",
+   "saada (سادہ)",
+   "mushkil (مشکل)"
+  ],
+  "explanation_ur": "’آسان‘ کا متضاد ’مشکل‘ ہے۔",
+  "explanation_roman": "'آسان' ka opposite 'مشکل' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -532,6 +788,22 @@
  },
  {
   "id": "URD-017",
+  "question_ur": "’علم‘ کا مترادف کیا ہے؟",
+  "question_roman": "'علم' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "دانش",
+   "جہالت",
+   "ناواقفی",
+   "اندھیرا"
+  ],
+  "options_roman": [
+   "danish (دانش)",
+   "jahaalat (جہالت)",
+   "nawaqfi (ناواقفی)",
+   "andhera (اندھیرا)"
+  ],
+  "explanation_ur": "’علم‘ کا مترادف ’دانش‘ ہے۔",
+  "explanation_roman": "'علم' ka hum-ma'ni 'دانش' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -565,6 +837,22 @@
  },
  {
   "id": "URD-018",
+  "question_ur": "’علم‘ کا متضاد کیا ہے؟",
+  "question_roman": "'علم' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "دانش",
+   "جہالت",
+   "آگاہی",
+   "شعور"
+  ],
+  "options_roman": [
+   "danish (دانش)",
+   "jahaalat (جہالت)",
+   "aagahi (آگاہی)",
+   "shaoor (شعور)"
+  ],
+  "explanation_ur": "’علم‘ کا متضاد ’جہالت‘ ہے۔",
+  "explanation_roman": "'علم' ka opposite 'جہالت' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -598,6 +886,22 @@
  },
  {
   "id": "URD-019",
+  "question_ur": "’امیر‘ کا مترادف کیا ہے؟",
+  "question_roman": "'امیر' ka mutradif (synonym) kya hai?",
+  "options_ur": [
+   "غریب",
+   "مفلس",
+   "دولت مند",
+   "نادار"
+  ],
+  "options_roman": [
+   "ghareeb (غریب)",
+   "muflis (مفلس)",
+   "daulat mand (دولت مند)",
+   "nadaar (نادار)"
+  ],
+  "explanation_ur": "’امیر‘ کا مترادف ’دولت مند‘ ہے۔",
+  "explanation_roman": "'امیر' ka hum-ma'ni 'دولت مند' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -631,6 +935,22 @@
  },
  {
   "id": "URD-020",
+  "question_ur": "’امیر‘ کا متضاد کیا ہے؟",
+  "question_roman": "'امیر' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "دولت مند",
+   "مالدار",
+   "خوشحال",
+   "غریب"
+  ],
+  "options_roman": [
+   "daulat mand (دولت مند)",
+   "maaldaar (مالدار)",
+   "khushhaal (خوشحال)",
+   "ghareeb (غریب)"
+  ],
+  "explanation_ur": "’امیر‘ کا متضاد ’غریب‘ ہے۔",
+  "explanation_roman": "'امیر' ka opposite 'غریب' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -664,6 +984,22 @@
  },
  {
   "id": "URD-021",
+  "question_ur": "’نیا‘ کا متضاد کیا ہے؟",
+  "question_roman": "'نیا' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "پرانا",
+   "جدید",
+   "تازہ",
+   "نوجوان"
+  ],
+  "options_roman": [
+   "purana (پرانا)",
+   "jadeed (جدید)",
+   "taaza (تازہ)",
+   "naujawan (نوجوان)"
+  ],
+  "explanation_ur": "’نیا‘ کا متضاد ’پرانا‘ ہے۔ ’تازہ‘ اور ’جدید‘ ’نیا‘ کے ہم معنی ہیں۔",
+  "explanation_roman": "'نیا' ka opposite 'پرانا' hai. Taza aur jadeed 'نیا' ke hum-ma'ni hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -697,6 +1033,22 @@
  },
  {
   "id": "URD-022",
+  "question_ur": "’گرم‘ کا متضاد کیا ہے؟",
+  "question_roman": "'گرم' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "تپتا",
+   "ٹھنڈا",
+   "گرمی",
+   "آگ"
+  ],
+  "options_roman": [
+   "tapta (تپتا)",
+   "thanda (ٹھنڈا)",
+   "garmi (گرمی)",
+   "aag (آگ)"
+  ],
+  "explanation_ur": "’گرم‘ کا متضاد ’ٹھنڈا‘ ہے۔",
+  "explanation_roman": "'گرم' ka opposite 'ٹھنڈا' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -730,6 +1082,22 @@
  },
  {
   "id": "URD-023",
+  "question_ur": "’کامیابی‘ کا متضاد کیا ہے؟",
+  "question_roman": "'کامیابی' ka mutzad (antonym) kya hai?",
+  "options_ur": [
+   "جیت",
+   "کامیاب",
+   "ناکامی",
+   "ترقی"
+  ],
+  "options_roman": [
+   "jeet (جیت)",
+   "kaamyab (کامیاب)",
+   "naakaami (ناکامی)",
+   "taraqqi (ترقی)"
+  ],
+  "explanation_ur": "’کامیابی‘ کا متضاد ’ناکامی‘ ہے۔",
+  "explanation_roman": "'کامیابی' ka opposite 'ناکامی' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -763,6 +1131,22 @@
  },
  {
   "id": "URD-024",
+  "question_ur": "’امن‘ کا متضاد کیا ہے؟",
+  "question_roman": "'امن' ka mutazaad (antonym) kya hai?",
+  "options_ur": [
+   "سکون",
+   "شانتی",
+   "آرام",
+   "جنگ"
+  ],
+  "options_roman": [
+   "sukoon (سکون)",
+   "shanti (شانتی)",
+   "aaraam (آرام)",
+   "jang (جنگ)"
+  ],
+  "explanation_ur": "’امن‘ کا متضاد ’جنگ‘ ہے۔",
+  "explanation_roman": "'امن' ka opposite 'جنگ' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -796,6 +1180,22 @@
  },
  {
   "id": "URD-025",
+  "question_ur": "’زندگی‘ کا متضاد کیا ہے؟",
+  "question_roman": "'زندگی' ka mutazaad (antonym) kya hai?",
+  "options_ur": [
+   "موت",
+   "حیات",
+   "سانس",
+   "عمر"
+  ],
+  "options_roman": [
+   "maut (موت)",
+   "hayaat (حیات)",
+   "saans (سانس)",
+   "umar (عمر)"
+  ],
+  "explanation_ur": "’زندگی‘ کا متضاد ’موت‘ ہے۔ حیات ’زندگی‘ کا ہم معنی ہے۔",
+  "explanation_roman": "'زندگی' ka opposite 'موت' hai. Hayat 'زندگی' ka hum-ma'ni hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -829,6 +1229,22 @@
  },
  {
   "id": "URD-026",
+  "question_ur": "اردو قواعد میں ’کتاب‘ کس کی مثال ہے؟",
+  "question_roman": "Urdu grammar mein 'کتاب' kis ki misaal hai?",
+  "options_ur": [
+   "فعل",
+   "اسم",
+   "حرف",
+   "صفت"
+  ],
+  "options_roman": [
+   "fail (فعل)",
+   "ism (اسم)",
+   "harf (حرف)",
+   "sifat (صفت)"
+  ],
+  "explanation_ur": "’کتاب‘ کسی چیز کا نام ہے، اس لیے یہ ’اسم‘ (noun) ہے۔",
+  "explanation_roman": "'کتاب' kisi cheez ka naam hai, is liye ye 'اسم' (noun) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -862,6 +1278,22 @@
  },
  {
   "id": "URD-027",
+  "question_ur": "اردو قواعد میں ’کھیلنا‘ کس کی مثال ہے؟",
+  "question_roman": "Urdu grammar mein 'کھیلنا' kis ki misaal hai?",
+  "options_ur": [
+   "اسم",
+   "صفت",
+   "فعل",
+   "حرف"
+  ],
+  "options_roman": [
+   "ism (اسم)",
+   "sifat (صفت)",
+   "fail (فعل)",
+   "harf (حرف)"
+  ],
+  "explanation_ur": "’کھیلنا‘ کسی کام کو ظاہر کرتا ہے، اس لیے یہ ’فعل‘ (verb) ہے۔",
+  "explanation_roman": "'کھیلنا' kisi kaam ko zahir karta hai, is liye ye 'فعل' (verb) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -895,6 +1327,22 @@
  },
  {
   "id": "URD-028",
+  "question_ur": "اردو قواعد میں ’وہ‘ کس کی مثال ہے؟",
+  "question_roman": "Urdu grammar mein 'وہ' kis ki misaal hai?",
+  "options_ur": [
+   "اسم",
+   "حرف",
+   "صفت",
+   "ضمیر"
+  ],
+  "options_roman": [
+   "ism (اسم)",
+   "harf (حرف)",
+   "sifat (صفت)",
+   "zameer (ضمیر)"
+  ],
+  "explanation_ur": "’وہ‘ نام کی جگہ استعمال ہوتا ہے، اس لیے یہ ’ضمیر‘ (pronoun) ہے۔",
+  "explanation_roman": "'وہ' naam ki jagah use hota hai, is liye ye 'ضمیر' (pronoun) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -928,6 +1376,22 @@
  },
  {
   "id": "URD-029",
+  "question_ur": "’خوبصورت پھول‘ میں لفظ ’خوبصورت‘ کیا ہے؟",
+  "question_roman": "'خوبصورت پھول' mein lafz 'خوبصورت' kya hai?",
+  "options_ur": [
+   "صفت",
+   "فعل",
+   "اسم",
+   "ضمیر"
+  ],
+  "options_roman": [
+   "sifat (صفت)",
+   "fail (فعل)",
+   "ism (اسم)",
+   "zameer (ضمیر)"
+  ],
+  "explanation_ur": "’خوبصورت‘ پھول کی خوبی بتاتا ہے، اس لیے یہ ’صفت‘ (adjective) ہے۔",
+  "explanation_roman": "'خوبصورت' phool ki khoobi batata hai, is liye ye 'صفت' (adjective) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -961,6 +1425,22 @@
  },
  {
   "id": "URD-030",
+  "question_ur": "’گھر سے‘ میں لفظ ’سے‘ کیا ہے؟",
+  "question_roman": "'گھر سے' mein lafz 'سے' kya hai?",
+  "options_ur": [
+   "اسم",
+   "حرف",
+   "فعل",
+   "صفت"
+  ],
+  "options_roman": [
+   "ism (اسم)",
+   "harf (حرف)",
+   "fail (فعل)",
+   "sifat (صفت)"
+  ],
+  "explanation_ur": "’سے‘ دو لفظوں کو جوڑتا ہے، اس لیے یہ ’حرف‘ ہے۔",
+  "explanation_roman": "'سے' do lafzon ko jorta hai, is liye ye 'حرف' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -994,6 +1474,22 @@
  },
  {
   "id": "URD-031",
+  "question_ur": "’کتاب‘ کی جمع کیا ہے؟",
+  "question_roman": "'کتاب' ki jama (جمع) kya hai?",
+  "options_ur": [
+   "کتابا",
+   "کتابوں",
+   "کتابیں",
+   "کتابی"
+  ],
+  "options_roman": [
+   "kitaaba (کتابا)",
+   "kitaabon (کتابوں)",
+   "kitaabein (کتابیں)",
+   "kitaabi (کتابی)"
+  ],
+  "explanation_ur": "’کتاب‘ کی جمع ’کتابیں‘ ہے۔",
+  "explanation_roman": "'کتاب' ki jama 'کتابیں' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1027,6 +1523,22 @@
  },
  {
   "id": "URD-032",
+  "question_ur": "’لڑکا‘ کی جمع کیا ہے؟",
+  "question_roman": "'لڑکا' ki jama (جمع) kya hai?",
+  "options_ur": [
+   "لڑکی",
+   "لڑکوں",
+   "لڑکیاں",
+   "لڑکے"
+  ],
+  "options_roman": [
+   "ladki (لڑکی)",
+   "ladkon (لڑکوں)",
+   "ladkiyaan (لڑکیاں)",
+   "ladke (لڑکے)"
+  ],
+  "explanation_ur": "’لڑکا‘ کی جمع ’لڑکے‘ ہے۔",
+  "explanation_roman": "'لڑکا' ki jama 'لڑکے' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1060,6 +1572,22 @@
  },
  {
   "id": "URD-033",
+  "question_ur": "’بچے‘ کا واحد کیا ہے؟",
+  "question_roman": "'بچے' ka waahid (واحد) kya hai?",
+  "options_ur": [
+   "بچہ",
+   "بچوں",
+   "بچیاں",
+   "بچپن"
+  ],
+  "options_roman": [
+   "bacha (بچہ)",
+   "bachon (بچوں)",
+   "bachiyaan (بچیاں)",
+   "bachpan (بچپن)"
+  ],
+  "explanation_ur": "’بچے‘ کا واحد (singular) ’بچہ‘ ہے۔",
+  "explanation_roman": "'بچے' ka wahid (singular) 'بچہ' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1093,6 +1621,22 @@
  },
  {
   "id": "URD-034",
+  "question_ur": "’استاد‘ کی جمع کیا ہے؟",
+  "question_roman": "'استاد' ki jama (جمع) kya hai?",
+  "options_ur": [
+   "استادوں",
+   "اساتذہ",
+   "استادی",
+   "استادین"
+  ],
+  "options_roman": [
+   "ustaadon (استادوں)",
+   "asaatiza (اساتذہ)",
+   "ustaadi (استادی)",
+   "ustaadeen (استادین)"
+  ],
+  "explanation_ur": "’استاد‘ کی جمع ’اساتذہ‘ ہے۔",
+  "explanation_roman": "'استاد' ki jama 'اساتذہ' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1126,6 +1670,22 @@
  },
  {
   "id": "URD-035",
+  "question_ur": "’قلم‘ مذکر ہے یا مونث؟",
+  "question_roman": "'قلم' mazakkar (مذکر) hai ya moannas (مونث)?",
+  "options_ur": [
+   "دونوں",
+   "مونث",
+   "مذکر",
+   "کوئی نہیں"
+  ],
+  "options_roman": [
+   "donon (دونوں)",
+   "moannas (مونث)",
+   "mazakkar (مذکر)",
+   "koi nahin (کوئی نہیں)"
+  ],
+  "explanation_ur": "’قلم‘ مذکر (masculine) ہے۔ ہم کہتے ہیں: یہ قلم ہے، میرا قلم۔",
+  "explanation_roman": "'قلم' mazakkar (masculine) hai. Hum kehte hain: ye qalam hai, mera qalam.",
   "post": [
    "zamungkor",
    "tt",
@@ -1159,6 +1719,22 @@
  },
  {
   "id": "URD-036",
+  "question_ur": "’کتاب‘ مذکر ہے یا مونث؟",
+  "question_roman": "'کتاب' mazakkar (مذکر) hai ya moannas (مونث)?",
+  "options_ur": [
+   "مذکر",
+   "کوئی نہیں",
+   "دونوں",
+   "مونث"
+  ],
+  "options_roman": [
+   "mazakkar (مذکر)",
+   "koi nahin (کوئی نہیں)",
+   "donon (دونوں)",
+   "moannas (مونث)"
+  ],
+  "explanation_ur": "’کتاب‘ مونث (feminine) ہے۔ ہم کہتے ہیں: یہ کتاب ہے، میری کتاب۔",
+  "explanation_roman": "'کتاب' moannas (feminine) hai. Hum kehte hain: ye kitab hai, meri kitab.",
   "post": [
    "zamungkor",
    "tt",
@@ -1192,6 +1768,22 @@
  },
  {
   "id": "URD-037",
+  "question_ur": "’کرسی‘ مذکر ہے یا مونث؟",
+  "question_roman": "'کرسی' mazakkar (مذکر) hai ya moannas (مونث)?",
+  "options_ur": [
+   "مونث",
+   "مذکر",
+   "دونوں",
+   "کوئی نہیں"
+  ],
+  "options_roman": [
+   "moannas (مونث)",
+   "mazakkar (مذکر)",
+   "donon (دونوں)",
+   "koi nahin (کوئی نہیں)"
+  ],
+  "explanation_ur": "’کرسی‘ مونث (feminine) ہے۔ ہم کہتے ہیں: میری کرسی۔",
+  "explanation_roman": "'کرسی' moannas (feminine) hai. Hum kehte hain: meri kursi.",
   "post": [
    "zamungkor",
    "tt",
@@ -1225,6 +1817,22 @@
  },
  {
   "id": "URD-038",
+  "question_ur": "’پنکھا‘ مذکر ہے یا مونث؟",
+  "question_roman": "'پنکھا' mazakkar (مذکر) hai ya moannas (مونث)?",
+  "options_ur": [
+   "مونث",
+   "مذکر",
+   "دونوں",
+   "کوئی نہیں"
+  ],
+  "options_roman": [
+   "moannas (مونث)",
+   "mazakkar (مذکر)",
+   "donon (دونوں)",
+   "koi nahin (کوئی نہیں)"
+  ],
+  "explanation_ur": "’پنکھا‘ مذکر (masculine) ہے۔ ہم کہتے ہیں: میرا پنکھا۔",
+  "explanation_roman": "'پنکھا' mazakkar (masculine) hai. Hum kehte hain: mera pankha.",
   "post": [
    "zamungkor",
    "tt",
@@ -1258,6 +1866,22 @@
  },
  {
   "id": "URD-039",
+  "question_ur": "کون سا جملہ فعل ماضی میں ہے؟",
+  "question_roman": "Kaun sa jumla past tense (فعل ماضی) mein hai?",
+  "options_ur": [
+   "وہ پڑھتا ہے",
+   "وہ پڑھے گا",
+   "اس نے پڑھا",
+   "وہ پڑھ رہا ہے"
+  ],
+  "options_roman": [
+   "woh padhta hai (وہ پڑھتا ہے)",
+   "woh padhe ga (وہ پڑھے گا)",
+   "us ne padha (اس نے پڑھا)",
+   "woh padh raha hai (وہ پڑھ رہا ہے)"
+  ],
+  "explanation_ur": "’اس نے پڑھا‘ گزرا ہوا وقت بتاتا ہے، یہ ’فعل ماضی‘ (past tense) ہے۔",
+  "explanation_roman": "'اس نے پڑھا' guzra hua waqt batata hai, ye 'فعل ماضی' (past tense) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1291,6 +1915,22 @@
  },
  {
   "id": "URD-040",
+  "question_ur": "کون سا جملہ فعل مستقبل میں ہے؟",
+  "question_roman": "Kaun sa jumla future tense (فعل مستقبل) mein hai?",
+  "options_ur": [
+   "وہ گیا",
+   "وہ جاتا ہے",
+   "وہ جا رہا ہے",
+   "وہ جائے گا"
+  ],
+  "options_roman": [
+   "woh gaya (وہ گیا)",
+   "woh jaata hai (وہ جاتا ہے)",
+   "woh ja raha hai (وہ جا رہا ہے)",
+   "woh jaaye ga (وہ جائے گا)"
+  ],
+  "explanation_ur": "’وہ جائے گا‘ آنے والا وقت بتاتا ہے، یہ ’فعل مستقبل‘ (future tense) ہے۔",
+  "explanation_roman": "'وہ جائے گا' aane wala waqt batata hai, ye 'فعل مستقبل' (future tense) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1324,6 +1964,22 @@
  },
  {
   "id": "URD-041",
+  "question_ur": "کون سا جملہ فعل حال میں ہے؟",
+  "question_roman": "Kaun sa jumla present tense (فعل حال) mein hai?",
+  "options_ur": [
+   "وہ پڑھتا ہے",
+   "اس نے پڑھا",
+   "وہ پڑھے گا",
+   "وہ گیا"
+  ],
+  "options_roman": [
+   "woh padhta hai (وہ پڑھتا ہے)",
+   "us ne padha (اس نے پڑھا)",
+   "woh padhe ga (وہ پڑھے گا)",
+   "woh gaya (وہ گیا)"
+  ],
+  "explanation_ur": "’وہ پڑھتا ہے‘ موجودہ وقت بتاتا ہے، یہ ’فعل حال‘ (present tense) ہے۔",
+  "explanation_roman": "'وہ پڑھتا ہے' maujooda waqt batata hai, ye 'فعل حال' (present tense) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1357,6 +2013,22 @@
  },
  {
   "id": "URD-042",
+  "question_ur": "’احمد‘ کس قسم کے اسم کی مثال ہے؟",
+  "question_roman": "'احمد' kis qism ke ism (اسم) ki misaal hai?",
+  "options_ur": [
+   "اسم نکرہ",
+   "اسم علم",
+   "اسم ضمیر",
+   "اسم صفت"
+  ],
+  "options_roman": [
+   "ism nakira (اسم نکرہ)",
+   "ism alam (اسم علم)",
+   "ism zameer (اسم ضمیر)",
+   "ism sifat (اسم صفت)"
+  ],
+  "explanation_ur": "’احمد‘ کسی خاص شخص کا نام ہے، اس لیے یہ ’اسم علم‘ (proper noun) ہے۔",
+  "explanation_roman": "'احمد' kisi khaas shakhs ka naam hai, is liye ye 'اسم علم' (proper noun) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1390,6 +2062,22 @@
  },
  {
   "id": "URD-043",
+  "question_ur": "’شہر‘ کس قسم کے اسم کی مثال ہے؟",
+  "question_roman": "'شہر' kis qism ke ism (اسم) ki misaal hai?",
+  "options_ur": [
+   "اسم علم",
+   "اسم ضمیر",
+   "اسم نکرہ",
+   "اسم فعل"
+  ],
+  "options_roman": [
+   "ism alam (اسم علم)",
+   "ism zameer (اسم ضمیر)",
+   "ism nakira (اسم نکرہ)",
+   "ism fail (اسم فعل)"
+  ],
+  "explanation_ur": "’شہر‘ کسی عام چیز کا نام ہے، اس لیے یہ ’اسم نکرہ‘ (common noun) ہے۔",
+  "explanation_roman": "'شہر' kisi aam cheez ka naam hai, is liye ye 'اسم نکرہ' (common noun) hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1423,6 +2111,22 @@
  },
  {
   "id": "URD-044",
+  "question_ur": "’دن‘ کا مترادف کیا ہے؟",
+  "question_roman": "'دن' ka mutaraadif (synonym) kya hai?",
+  "options_ur": [
+   "رات",
+   "اندھیرا",
+   "شب",
+   "روز"
+  ],
+  "options_roman": [
+   "raat (رات)",
+   "andhera (اندھیرا)",
+   "shab (شب)",
+   "roz (روز)"
+  ],
+  "explanation_ur": "’دن‘ کا ہم معنی ’روز‘ ہے۔",
+  "explanation_roman": "'دن' ka hum-ma'ni 'روز' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1456,6 +2160,22 @@
  },
  {
   "id": "URD-045",
+  "question_ur": "’دن‘ کا متضاد کیا ہے؟",
+  "question_roman": "'دن' ka mutazaad (antonym) kya hai?",
+  "options_ur": [
+   "رات",
+   "صبح",
+   "روز",
+   "دوپہر"
+  ],
+  "options_roman": [
+   "raat (رات)",
+   "subah (صبح)",
+   "roz (روز)",
+   "dopahar (دوپہر)"
+  ],
+  "explanation_ur": "’دن‘ کا متضاد ’رات‘ ہے۔",
+  "explanation_roman": "'دن' ka opposite 'رات' hai.",
   "post": [
    "zamungkor",
    "tt",

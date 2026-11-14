@@ -1,6 +1,22 @@
 [
  {
   "id": "SCI-001",
+  "question_ur": "وٹامن سی کی کمی سے کون سی بیماری ہوتی ہے؟",
+  "question_roman": "Vitamin C ki kami se kaun si bemari hoti hai?",
+  "options_ur": [
+   "اسکروی",
+   "رات کا اندھا پن",
+   "رکٹس",
+   "بیری بیری"
+  ],
+  "options_roman": [
+   "Scurvy",
+   "Night blindness",
+   "Rickets",
+   "Beriberi"
+  ],
+  "explanation_ur": "وٹامن سی کی کمی سے اسکروی ہوتا ہے — مسوڑھوں سے خون آنا اس کی ایک علامت ہے۔",
+  "explanation_roman": "Vitamin C ki kami se scurvy hota hai — masoorhon se khoon aana is ki aik alamat hai.",
   "post": [
    "pst",
    "ct",
@@ -32,6 +48,22 @@
  },
  {
   "id": "SCI-002",
+  "question_ur": "بچوں میں رکٹس کس وٹامن کی کمی سے ہوتا ہے؟",
+  "question_roman": "Bachon mein rickets kis vitamin ki kami se hota hai?",
+  "options_ur": [
+   "وٹامن اے",
+   "وٹامن سی",
+   "وٹامن ڈی",
+   "وٹامن بی"
+  ],
+  "options_roman": [
+   "Vitamin A",
+   "Vitamin C",
+   "Vitamin D",
+   "Vitamin B"
+  ],
+  "explanation_ur": "وٹامن ڈی کی کمی سے بچوں میں رکٹس ہوتا ہے؛ دھوپ سے جسم میں وٹامن ڈی بنتا ہے۔",
+  "explanation_roman": "Vitamin D ki kami se bachon mein rickets hota hai; dhoop se jism mein Vitamin D banta hai.",
   "post": [
    "pst",
    "ct",
@@ -63,6 +95,22 @@
  },
  {
   "id": "SCI-003",
+  "question_ur": "کس وٹامن کی کمی سے رات کا اندھا پن ہوتا ہے؟",
+  "question_roman": "Kis vitamin ki kami se night blindness hoti hai?",
+  "options_ur": [
+   "وٹامن اے",
+   "وٹامن سی",
+   "وٹامن ڈی",
+   "وٹامن کے"
+  ],
+  "options_roman": [
+   "Vitamin A",
+   "Vitamin C",
+   "Vitamin D",
+   "Vitamin K"
+  ],
+  "explanation_ur": "وٹامن اے کی کمی سے رات کو دیکھنا مشکل ہو جاتا ہے — اسے رات کا اندھا پن کہتے ہیں۔",
+  "explanation_roman": "Vitamin A ki kami se raat ko dekhna mushkil ho jata hai — isay night blindness kehte hain.",
   "post": [
    "pst",
    "ct",
@@ -94,6 +142,22 @@
  },
  {
   "id": "SCI-004",
+  "question_ur": "کواشیورکور کس کی کمی سے ہونے والی بیماری ہے؟",
+  "question_roman": "Kwashiorkor kis ki kami se honay wali bemari hai?",
+  "options_ur": [
+   "پروٹین",
+   "وٹامنز",
+   "چکنائی",
+   "پانی"
+  ],
+  "options_roman": [
+   "Proteins",
+   "Vitamins",
+   "Fats",
+   "Water"
+  ],
+  "explanation_ur": "کواشیورکور پروٹین کی کمی سے ہوتا ہے — بچوں کی نشوونما رک جاتی ہے اور پیٹ پھول سکتا ہے۔",
+  "explanation_roman": "Kwashiorkor protein ki kami se hota hai — bachon ki nashonuma ruk jati hai aur pait phool sakta hai.",
   "post": [
    "pst",
    "ct",
@@ -125,6 +189,22 @@
  },
  {
   "id": "SCI-005",
+  "question_ur": "جسم میں آئرن کی کمی سے کون سی بیماری ہوتی ہے؟",
+  "question_roman": "Jism mein iron ki kami se kaun si bemari hoti hai?",
+  "options_ur": [
+   "اسکروی",
+   "گوئٹر",
+   "انیمیا",
+   "رکٹس"
+  ],
+  "options_roman": [
+   "Scurvy",
+   "Goitre",
+   "Anaemia",
+   "Rickets"
+  ],
+  "explanation_ur": "آئرن کی کمی سے خون میں ہیموگلوبن کم ہو جاتا ہے، جس سے انیمیا ہوتا ہے اور تھکاوٹ محسوس ہوتی ہے۔",
+  "explanation_roman": "Iron ki kami se khoon mein haemoglobin kam ho jata hai, jis se anaemia hota hai aur thakawat mehsoos hoti hai.",
   "post": [
    "pst",
    "ct",
@@ -156,6 +236,22 @@
  },
  {
   "id": "SCI-006",
+  "question_ur": "ہڈیوں اور دانتوں کو مضبوط بنانے میں کون سا معدن مدد کرتا ہے؟",
+  "question_roman": "Haddiyon aur daanton ko mazboot bananay mein kaun sa mineral madad karta hai?",
+  "options_ur": [
+   "آیوڈین",
+   "آئرن",
+   "کیلشیم",
+   "سوڈیم"
+  ],
+  "options_roman": [
+   "Iodine",
+   "Iron",
+   "Calcium",
+   "Sodium"
+  ],
+  "explanation_ur": "کیلشیم ہڈیوں اور دانتوں کو مضبوط بناتا ہے — دودھ اور دہی کیلشیم کے اچھے ذریعے ہیں۔",
+  "explanation_roman": "Calcium haddiyon aur daanton ko mazboot banata hai — doodh aur dahi calcium ke achay zariye hain.",
   "post": [
    "pst",
    "ct",
@@ -187,6 +283,22 @@
  },
  {
   "id": "SCI-007",
+  "question_ur": "پٹھوں کی کون سی قسم ہڈیوں سے جڑی ہوتی ہے اور ہمارے بازوؤں اور ٹانگوں کو حرکت دینے میں مدد کرتی ہے؟",
+  "question_roman": "Muscle ki kaun si qisam haddiyon se juri hoti hai aur hamaray bazoon aur tangon ko harkat denay mein madad karti hai?",
+  "options_ur": [
+   "اسکیلیٹل عضلہ",
+   "غیر ارادی عضلہ",
+   "کارڈیک عضلہ",
+   "ہموار عضلہ"
+  ],
+  "options_roman": [
+   "Skeletal muscle",
+   "Involuntary muscle",
+   "Cardiac muscle",
+   "Smooth muscle"
+  ],
+  "explanation_ur": "اسکیلیٹل عضلات ہڈیوں سے جڑے ہوتے ہیں اور ہماری مرضی سے حرکت کرتے ہیں۔",
+  "explanation_roman": "Skeletal muscles haddiyon se juray hotay hain aur hamari marzi se harkat karte hain.",
   "post": [
    "pst",
    "ct",
@@ -218,6 +330,22 @@
  },
  {
   "id": "SCI-008",
+  "question_ur": "جسم کے کس حصے میں کھانے کا ہضم شروع ہوتا ہے؟",
+  "question_roman": "Jism ke kis hissay mein khanay ka hazam shuru hota hai?",
+  "options_ur": [
+   "جگر",
+   "معدہ",
+   "منہ",
+   "چھوٹی آنت"
+  ],
+  "options_roman": [
+   "Liver",
+   "Stomach",
+   "Mouth",
+   "Small intestine"
+  ],
+  "explanation_ur": "ہضم منہ سے شروع ہوتا ہے — دانت کھانا چباتے ہیں اور تھوک (سلیوا) اسے نرم کرتا ہے۔",
+  "explanation_roman": "Hazaam munh se shuru hota hai — daant khana cheenjte hain aur thook (saliva) usay naram karta hai.",
   "post": [
    "pst",
    "ct",
@@ -249,6 +377,22 @@
  },
  {
   "id": "SCI-009",
+  "question_ur": "جسم کے کس حصے میں ہضم شدہ کھانے کے زیادہ تر غذائی اجزا خون میں جذب ہوتے ہیں؟",
+  "question_roman": "Jism ke kis hissay mein hazam shuda khanay ke zyada tar ghizai ajza khoon mein jazb hotay hain?",
+  "options_ur": [
+   "معدہ",
+   "غذائی نالی",
+   "بڑی آنت",
+   "چھوٹی آنت"
+  ],
+  "options_roman": [
+   "Stomach",
+   "Food pipe",
+   "Large intestine",
+   "Small intestine"
+  ],
+  "explanation_ur": "چھوٹی آنت میں کھانے کے غذائی اجزا خون میں جذب ہوتے ہیں۔",
+  "explanation_roman": "Chhoti aant (small intestine) mein khane ke ghizai ajza khoon mein jazb hotay hain.",
   "post": [
    "pst",
    "ct",
@@ -280,6 +424,22 @@
  },
  {
   "id": "SCI-010",
+  "question_ur": "اس عمل کو کیا کہتے ہیں جس سے سبز پودے سورج کی روشنی استعمال کرتے ہوئے اپنی خوراک خود بناتے ہیں؟",
+  "question_roman": "Us amal ko kya kehte hain jis se sabz poday sooraj ki roshni istemal karte hue apni khurak khud banatay hain?",
+  "options_ur": [
+   "تنفس",
+   "ہضم",
+   "پولینیشن",
+   "فوٹو سنتھیسز"
+  ],
+  "options_roman": [
+   "Respiration",
+   "Digestion",
+   "Pollination",
+   "Photosynthesis"
+  ],
+  "explanation_ur": "فوٹو سنتھیسز میں پودا دھوپ، پانی اور کاربن ڈائی آکسائیڈ سے کھانا بناتا ہے اور آکسیجن خارج کرتا ہے۔",
+  "explanation_roman": "Photosynthesis mein poda dhoop, pani aur carbon dioxide se khana banata hai aur oxygen kharij karta hai.",
   "post": [
    "pst",
    "ct",
@@ -311,6 +471,22 @@
  },
  {
   "id": "SCI-011",
+  "question_ur": "پتوں میں کون سا سبز مادہ دھوپ کو فوٹو سنتھیسز کے لیے جذب کرتا ہے؟",
+  "question_roman": "Patton mein kaun sa sabz pigment photosynthesis ke liye dhoop ko jazb karta hai?",
+  "options_ur": [
+   "کیروٹین",
+   "ہیموگلوبن",
+   "میلانن",
+   "کلوروفل"
+  ],
+  "options_roman": [
+   "Carotene",
+   "Haemoglobin",
+   "Melanin",
+   "Chlorophyll"
+  ],
+  "explanation_ur": "کلوروفل پتے کا سبز رنگ ہے جو دھوپ کی روشنی کو جذب کرتا ہے۔",
+  "explanation_roman": "Chlorophyll pattay ka sabz rang hai jo dhoop ki roshni ko jazb karta hai.",
   "post": [
    "pst",
    "ct",
@@ -342,6 +518,22 @@
  },
  {
   "id": "SCI-012",
+  "question_ur": "ایک پھول سے دوسرے پھول تک پولن کی منتقلی کو کیا کہتے ہیں؟",
+  "question_roman": "Aik phool se doosray phool tak pollen ki muntaqili ko kya kehte hain?",
+  "options_ur": [
+   "فرٹیلائزیشن",
+   "پولینیشن",
+   "جرمینیشن",
+   "فوٹو سنتھیسز"
+  ],
+  "options_roman": [
+   "Fertilisation",
+   "Pollination",
+   "Germination",
+   "Photosynthesis"
+  ],
+  "explanation_ur": "پولینیشن میں پولن ایک پھول سے دوسرے پھول تک پہنچتا ہے — مکھیاں اور ہوا اس میں مدد کرتی ہیں۔",
+  "explanation_roman": "Pollination mein pollen aik phool se doosray phool tak pohanchta hai — makhiyan aur hawa is mein madad karte hain.",
   "post": [
    "pst",
    "ct",
@@ -373,6 +565,22 @@
  },
  {
   "id": "SCI-013",
+  "question_ur": "غذائی زنجیر میں کس جاندار کو پروڈیوسر کہا جاتا ہے؟",
+  "question_roman": "Food chain mein kis jandar ko producer kaha jata hai?",
+  "options_ur": [
+   "ایک بکری",
+   "ایک فنگس",
+   "ایک سبز پودا",
+   "ایک شیر"
+  ],
+  "options_roman": [
+   "Aik bakri",
+   "Aik fungus",
+   "Aik sabz poda",
+   "Aik sher"
+  ],
+  "explanation_ur": "پروڈیوسر وہ ہے جو اپنا کھانا خود بناتا ہے — سبز پودے غذائی زنجیر کے پروڈیوسر ہیں۔",
+  "explanation_roman": "Producer woh hai jo apna khana khud banata hai — sabz poday food chain ke producer hain.",
   "post": [
    "pst",
    "ct",
@@ -404,6 +612,22 @@
  },
  {
   "id": "SCI-014",
+  "question_ur": "ان میں سے کون سا جانور سبزی خور (ہربیوور) ہے؟",
+  "question_roman": "In janwaron mein se kaun sa janwar herbivore hai?",
+  "options_ur": [
+   "سانپ",
+   "عقاب",
+   "بکری",
+   "شیر"
+  ],
+  "options_roman": [
+   "Saanp",
+   "Uqaab",
+   "Bakri",
+   "Sher"
+  ],
+  "explanation_ur": "ہربیوور صرف پودے کھاتا ہے — بکری گھاس اور پتے کھاتی ہے، اس لیے ہربیوور ہے۔",
+  "explanation_roman": "Herbivore sirf poday khata hai — bakri ghaas aur pattay khati hai, is liye herbivore hai.",
   "post": [
    "pst",
    "ct",
@@ -435,6 +659,22 @@
  },
  {
   "id": "SCI-015",
+  "question_ur": "ہم جس ہوا میں سانس لیتے ہیں اس میں سب سے زیادہ مقدار میں کون سی گیس موجود ہوتی ہے؟",
+  "question_roman": "Hum jis hawa mein saans letay hain us mein sab se zyada miqdar mein kaun si gas maujood hoti hai?",
+  "options_ur": [
+   "ہائیڈروجن",
+   "آکسیجن",
+   "کاربن ڈائی آکسائیڈ",
+   "نائٹروجن"
+  ],
+  "options_roman": [
+   "Hydrogen",
+   "Oxygen",
+   "Carbon dioxide",
+   "Nitrogen"
+  ],
+  "explanation_ur": "ہوا میں سب سے زیادہ نائٹروجن ہوتی ہے، پھر آکسیجن؛ کاربن ڈائی آکسائیڈ بہت کم مقدار میں ہوتی ہے۔",
+  "explanation_roman": "Hawa mein sab se zyada nitrogen hoti hai, phir oxygen; carbon dioxide bohat kam miqdar mein hoti hai.",
   "post": [
    "pst",
    "ct",
@@ -466,6 +706,22 @@
  },
  {
   "id": "SCI-016",
+  "question_ur": "پانی کا کیمیائی فارمولا کیا ہے؟",
+  "question_roman": "Pani ka chemical formula kya hai?",
+  "options_ur": [
+   "CO2",
+   "NaCl",
+   "O2",
+   "H2O"
+  ],
+  "options_roman": [
+   "CO2",
+   "NaCl",
+   "O2",
+   "H2O"
+  ],
+  "explanation_ur": "پانی H2O ہے — ایک molecule میں hydrogen کے 2 atoms اور oxygen کا 1 atom ہوتا ہے۔",
+  "explanation_roman": "Pani H2O hai — aik molecule mein hydrogen ke 2 atoms aur oxygen ka 1 atom hota hai.",
   "post": [
    "pst",
    "ct",
@@ -497,6 +753,22 @@
  },
  {
   "id": "SCI-017",
+  "question_ur": "چیزوں کے جلنے کے لیے کون سی gas درکار ہوتی ہے؟",
+  "question_roman": "Cheezon ke jalne ke liye kaun si gas zaroori hoti hai?",
+  "options_ur": [
+   "Hydrogen",
+   "Oxygen",
+   "Carbon dioxide",
+   "Nitrogen"
+  ],
+  "options_roman": [
+   "Hydrogen",
+   "Oxygen",
+   "Carbon dioxide",
+   "Nitrogen"
+  ],
+  "explanation_ur": "آگ جلنے کے لیے oxygen ضروری ہے — oxygen کے بغیر آگ بجھ جاتی ہے۔",
+  "explanation_roman": "Aag jalnay ke liye oxygen zaroori hai — oxygen ke baghair aag bujh jati hai.",
   "post": [
    "pst",
    "ct",
@@ -528,6 +800,22 @@
  },
  {
   "id": "SCI-018",
+  "question_ur": "liquid کے gas میں تبدیل ہونے کو کیا کہتے ہیں؟",
+  "question_roman": "Liquid ke gas mein tabdeel hone ko kya kehte hain?",
+  "options_ur": [
+   "Evaporation",
+   "Condensation",
+   "Freezing",
+   "Melting"
+  ],
+  "options_roman": [
+   "Evaporation",
+   "Condensation",
+   "Freezing",
+   "Melting"
+  ],
+  "explanation_ur": "Evaporation میں liquid gas میں بدل جاتا ہے — جیسے دھوپ میں پانی سوکھ جاتا ہے۔",
+  "explanation_roman": "Evaporation mein liquid gas mein badal jata hai — jaisay dhoop mein pani sookh jata hai.",
   "post": [
    "pst",
    "ct",
@@ -559,6 +847,22 @@
  },
  {
   "id": "SCI-019",
+  "question_ur": "کون سا سیارہ سورج کے سب سے قریب ہے؟",
+  "question_roman": "Kaun sa sayyara Suraj ke sab se qareeb hai?",
+  "options_ur": [
+   "Mercury",
+   "Earth",
+   "Venus",
+   "Mars"
+  ],
+  "options_roman": [
+   "Mercury",
+   "Earth",
+   "Venus",
+   "Mars"
+  ],
+  "explanation_ur": "Mercury سورج کے سب سے قریب سیارہ ہے، اس لیے وہ سب سے چھوٹا orbit رکھتا ہے۔",
+  "explanation_roman": "Mercury Suraj ke sab se qareeb sayyara hai, is liye woh sab se chhota orbit rakhta hai.",
   "post": [
    "pst",
    "ct",
@@ -590,6 +894,22 @@
  },
  {
   "id": "SCI-020",
+  "question_ur": "نظام شمسی میں سب سے گرم سیارہ کون سا ہے؟",
+  "question_roman": "Nizam-e-shamsi mein sab se garam sayyara kaun sa hai?",
+  "options_ur": [
+   "Mars",
+   "Venus",
+   "Mercury",
+   "Jupiter"
+  ],
+  "options_roman": [
+   "Mars",
+   "Venus",
+   "Mercury",
+   "Jupiter"
+  ],
+  "explanation_ur": "Venus سب سے گرم سیارہ ہے — اس کی گھنی ہوا گرمی کو قید کر لیتی ہے۔",
+  "explanation_roman": "Venus sab se garam sayyara hai — us ki ghani hawa garmi ko qaid kar leti hai.",
   "post": [
    "pst",
    "ct",
@@ -621,6 +941,22 @@
  },
  {
   "id": "SCI-021",
+  "question_ur": "نظام شمسی کا سب سے بڑا سیارہ کون سا ہے؟",
+  "question_roman": "Nizam-e-shamsi ka sab se bara sayyara kaun sa hai?",
+  "options_ur": [
+   "Saturn",
+   "Jupiter",
+   "Earth",
+   "Neptune"
+  ],
+  "options_roman": [
+   "Saturn",
+   "Jupiter",
+   "Earth",
+   "Neptune"
+  ],
+  "explanation_ur": "Jupiter نظام شمسی کا سب سے بڑا سیارہ ہے۔",
+  "explanation_roman": "Jupiter nizam-e-shamsi ka sab se bara sayyara hai.",
   "post": [
    "pst",
    "ct",
@@ -652,6 +988,22 @@
  },
  {
   "id": "SCI-022",
+  "question_ur": "دنیا کا سب سے بڑا سمندر کون سا ہے؟",
+  "question_roman": "Duniya ka sab se bara samandar kaun sa hai?",
+  "options_ur": [
+   "Arctic Ocean",
+   "Atlantic Ocean",
+   "Pacific Ocean",
+   "Indian Ocean"
+  ],
+  "options_roman": [
+   "Arctic Ocean",
+   "Atlantic Ocean",
+   "Pacific Ocean",
+   "Indian Ocean"
+  ],
+  "explanation_ur": "Pacific Ocean دنیا کا سب سے بڑا سمندر ہے۔",
+  "explanation_roman": "Pacific Ocean duniya ka sab se bara samandar hai.",
   "post": [
    "pst",
    "ct",
@@ -683,6 +1035,22 @@
  },
  {
   "id": "SCI-023",
+  "question_ur": "ان میں سے کون سا renewable source of energy ہے؟",
+  "question_roman": "In mein se kaun sa renewable source of energy hai?",
+  "options_ur": [
+   "Petrol",
+   "کوئلہ",
+   "Natural gas",
+   "Solar energy"
+  ],
+  "options_roman": [
+   "Petrol",
+   "Koyla",
+   "Natural gas",
+   "Solar energy"
+  ],
+  "explanation_ur": "Solar energy renewable ہے — سورج کی روشنی ختم نہیں ہوتی، جب کہ کوئلہ اور petrol ایک دن ختم ہو جائیں گے۔",
+  "explanation_roman": "Solar energy renewable hai — Suraj ki roshni khatam nahi hoti, jab ke koyla aur petrol aik din khatam ho jayenge.",
   "post": [
    "pst",
    "ct",
@@ -714,6 +1082,22 @@
  },
  {
   "id": "SCI-024",
+  "question_ur": "ان میں سے کون سا non-renewable source of energy ہے؟",
+  "question_roman": "In mein se kaun sa non-renewable source of energy hai?",
+  "options_ur": [
+   "Wind energy",
+   "Solar energy",
+   "Hydroelectric energy",
+   "کوئلہ"
+  ],
+  "options_roman": [
+   "Wind energy",
+   "Solar energy",
+   "Hydroelectric energy",
+   "Koyla"
+  ],
+  "explanation_ur": "کوئلہ fossil fuel ہے اور non-renewable ہے — ایک دفعہ استعمال ہو جائے تو دوبارہ نہیں بنتا۔",
+  "explanation_roman": "Koyla fossil fuel hai aur non-renewable hai — aik dafa istemal ho jaye to dobara nahi banta.",
   "post": [
    "pst",
    "ct",
@@ -745,6 +1129,22 @@
  },
  {
   "id": "SCI-025",
+  "question_ur": "Force کی SI unit کیا ہے؟",
+  "question_roman": "Force ki SI unit kya hai?",
+  "options_ur": [
+   "Pascal",
+   "Newton",
+   "Joule",
+   "Watt"
+  ],
+  "options_roman": [
+   "Pascal",
+   "Newton",
+   "Joule",
+   "Watt"
+  ],
+  "explanation_ur": "Force کی SI unit Newton ہے — اس کا نام scientist Isaac Newton کے نام پر رکھا گیا ہے۔",
+  "explanation_roman": "Force ki SI unit Newton hai — is ka naam scientist Isaac Newton ke naam par rakha gaya hai.",
   "post": [
    "pst",
    "ct",
@@ -776,6 +1176,22 @@
  },
  {
   "id": "SCI-026",
+  "question_ur": "آواز ان میں سے کس کے ذریعے سفر نہیں کر سکتی؟",
+  "question_roman": "Awaz in mein se kis ke zariye safar nahi kar sakti?",
+  "options_ur": [
+   "Iron",
+   "Vacuum",
+   "پانی",
+   "ہوا"
+  ],
+  "options_roman": [
+   "Iron",
+   "Vacuum",
+   "Pani",
+   "Hawa"
+  ],
+  "explanation_ur": "آواز کو سفر کے لیے کوئی medium چاہیے ہوتا ہے — خلا (vacuum) میں آواز نہیں چل سکتی۔",
+  "explanation_roman": "Awaz ko safar ke liye koi medium chahiye hota hai — khala (vacuum) mein awaz nahi chal sakti.",
   "post": [
    "pst",
    "ct",
@@ -807,6 +1223,22 @@
  },
  {
   "id": "SCI-027",
+  "question_ur": "ان میں سے کون سی چیز بجلی کی اچھی conductor ہے؟",
+  "question_roman": "In mein se kaun si cheez bijli ki achi conductor hai?",
+  "options_ur": [
+   "Rubber",
+   "لکڑی",
+   "Plastic",
+   "Copper"
+  ],
+  "options_roman": [
+   "Rubber",
+   "Lakri",
+   "Plastic",
+   "Copper"
+  ],
+  "explanation_ur": "Copper بجلی کا اچھا conductor ہے، اس لیے تاریں اکثر copper کی بنی ہوتی ہیں۔",
+  "explanation_roman": "Copper bijli ka acha conductor hai, is liye taarain aksar copper ki bani hoti hain.",
   "post": [
    "pst",
    "ct",
@@ -838,6 +1270,22 @@
  },
  {
   "id": "SCI-028",
+  "question_ur": "ہم چیزوں کو اس لیے دیکھ پاتے ہیں کیونکہ روشنی:",
+  "question_roman": "Hum cheezon ko is liye dekh patay hain kyun ke roshni:",
+  "options_ur": [
+   "ان سے تباہ ہو جاتی ہے",
+   "ان سے reflect ہوتی ہے",
+   "ان سے رک جاتی ہے",
+   "ان میں جذب ہو جاتی ہے"
+  ],
+  "options_roman": [
+   "Un se tabah ho jati hai",
+   "Un se reflect hoti hai",
+   "Un se ruk jati hai",
+   "Un mein jazb ho jati hai"
+  ],
+  "explanation_ur": "روشنی چیزوں سے ٹکرا کر ہماری آنکھوں تک reflect ہوتی ہے، تبھی ہم انہیں دیکھ پاتے ہیں۔",
+  "explanation_roman": "Roshni cheezon se takra kar hamari aankhon tak reflect hoti hai, tabhi hum unhein dekh patay hain.",
   "post": [
    "pst",
    "ct",
@@ -869,6 +1317,22 @@
  },
  {
   "id": "SCI-029",
+  "question_ur": "کون سا material گرمی کا اچھا conductor ہے؟",
+  "question_roman": "Kaun sa material garmi ka acha conductor hai?",
+  "options_ur": [
+   "Iron",
+   "کپڑا",
+   "لکڑی",
+   "Plastic"
+  ],
+  "options_roman": [
+   "Iron",
+   "Kapra",
+   "Lakri",
+   "Plastic"
+  ],
+  "explanation_ur": "Iron (لوہا) گرمی کا اچھا conductor ہے — گرم برتن کا لوہے کا handle جلدی گرم ہو جاتا ہے۔",
+  "explanation_roman": "Iron (loha) garmi ka acha conductor hai — garam bartan ka lohay ka handle jaldi garam ho jata hai.",
   "post": [
    "pst",
    "ct",
@@ -900,6 +1364,22 @@
  },
  {
   "id": "SCI-030",
+  "question_ur": "کون سا آلہ electrical energy کو light energy میں بدل دیتا ہے؟",
+  "question_roman": "Kaun si device electrical energy ko light energy mein badal deti hai?",
+  "options_ur": [
+   "پنکھا",
+   "Electric bulb",
+   "Heater",
+   "Motor"
+  ],
+  "options_roman": [
+   "Pankha",
+   "Electric bulb",
+   "Heater",
+   "Motor"
+  ],
+  "explanation_ur": "Electric bulb بجلی کی energy کو روشنی میں بدل دیتا ہے۔",
+  "explanation_roman": "Electric bulb bijli ki energy ko roshni mein badal deta hai.",
   "post": [
    "pst",
    "ct",

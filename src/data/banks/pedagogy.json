@@ -1,6 +1,22 @@
 [
  {
   "id": "PED-001",
+  "question_ur": "بلوم کی درجہ بندی کی سب سے نچلی سطح کون سی ہے؟",
+  "question_roman": "Bloom ki darja bandi ki sab se nichli satah kaun si hai?",
+  "options_ur": [
+   "تخلیق کرنا",
+   "جائزہ لینا",
+   "یاد رکھنا",
+   "تجزیہ کرنا"
+  ],
+  "options_roman": [
+   "Takhleeq karna",
+   "Jaiza lena",
+   "Yaad rakhna",
+   "Tajzia karna"
+  ],
+  "explanation_ur": "بلوم کی درجہ بندی میں یاد رکھنا سب سے نچلی سطح ہے — حقائق اور بنیادی تصورات کو یاد کرنا۔",
+  "explanation_roman": "Bloom ki darja bandi mein yaad rakhna sab se nichli satah hai — haqaiq aur bunyadi tasawwurat ko yaad karna.",
   "post": [
    "zamungkor",
    "tt",
@@ -37,6 +53,22 @@
  },
  {
   "id": "PED-002",
+  "question_ur": "بلوم کی درجہ بندی کی سب سے اونچی سطح کون سی ہے؟",
+  "question_roman": "Bloom ki darja bandi ki sab se unchi satah kaun si hai?",
+  "options_ur": [
+   "تخلیق کرنا",
+   "سمجھنا",
+   "اطلاق کرنا",
+   "یاد رکھنا"
+  ],
+  "options_roman": [
+   "Takhleeq karna",
+   "Samajhna",
+   "Itlaaq karna",
+   "Yaad rakhna"
+  ],
+  "explanation_ur": "تخلیق کرنا نظر ثانی شدہ بلوم کی درجہ بندی میں سب سے اونچی سطح ہے — نیا یا اصل کام تیار کرنا۔",
+  "explanation_roman": "Takhleeq karna nazar saani shuda Bloom ki darja bandi mein sab se unchi satah hai — naya ya asal kaam tayyar karna.",
   "post": [
    "zamungkor",
    "tt",
@@ -73,6 +105,22 @@
  },
  {
   "id": "PED-003",
+  "question_ur": "بلوم کی درجہ بندی میں، کسی خیال کو اپنے الفاظ میں بیان کرنا کس سطح کی مثال ہے؟",
+  "question_roman": "Bloom ki darja bandi mein, kisi khayal ko apne alfaaz mein bayan karna kis satah ki misaal hai?",
+  "options_ur": [
+   "یاد رکھنا",
+   "اطلاق کرنا",
+   "سمجھنا",
+   "تخلیق کرنا"
+  ],
+  "options_roman": [
+   "Yaad rakhna",
+   "Itlaaq karna",
+   "Samajhna",
+   "Takhleeq karna"
+  ],
+  "explanation_ur": "سمجھنے کا مطلب ہے خیالات یا تصورات کو اپنے الفاظ میں بیان کرنا۔",
+  "explanation_roman": "Samajhne ka matlab hai khayalat ya tasawwurat ko apne alfaaz mein bayan karna.",
   "post": [
    "zamungkor",
    "tt",
@@ -109,6 +157,22 @@
  },
  {
   "id": "PED-004",
+  "question_ur": "نیا مسئلہ حل کرنے کے لیے سیکھے ہوئے اصول کا استعمال بلوم کی کس سطح کی مثال ہے؟",
+  "question_roman": "Naya masla hal karne ke liye seekhe hue usool ka istemal Bloom ki kis satah ki misaal hai?",
+  "options_ur": [
+   "یاد رکھنا",
+   "اطلاق کرنا",
+   "جائزہ لینا",
+   "تخلیق کرنا"
+  ],
+  "options_roman": [
+   "Yaad rakhna",
+   "Itlaaq karna",
+   "Jaiza lena",
+   "Takhleeq karna"
+  ],
+  "explanation_ur": "اطلاق کرنے کا مطلب ہے علم کو کسی نئی صورتحال میں استعمال کرنا، مثلاً سیکھے ہوئے اصول سے نیا مسئلہ حل کرنا۔",
+  "explanation_roman": "Itlaaq karne ka matlab hai ilm ko kisi nayi surat-e-haal mein istemal karna, masalan seekhe hue usool se naya masla hal karna.",
   "post": [
    "zamungkor",
    "tt",
@@ -145,6 +209,22 @@
  },
  {
   "id": "PED-005",
+  "question_ur": "معلومات کو حصوں میں توڑنا اور ان کے درمیان تعلقات تلاش کرنا کیا کہلاتا ہے؟",
+  "question_roman": "Maloomat ko hisson mein torna aur un ke darmiyan talluqaat talaash karna kya kehlata hai?",
+  "options_ur": [
+   "سمجھنا",
+   "تجزیہ کرنا",
+   "یاد رکھنا",
+   "اطلاق کرنا"
+  ],
+  "options_roman": [
+   "Samajhna",
+   "Tajzia karna",
+   "Yaad rakhna",
+   "Itlaaq karna"
+  ],
+  "explanation_ur": "تجزیہ کرنے کا مطلب ہے معلومات کو حصوں میں توڑنا اور یہ معلوم کرنا کہ حصے ایک دوسرے سے کس طرح متعلق ہیں۔",
+  "explanation_roman": "Tajzia karne ka matlab hai maloomat ko hisson mein torna aur yeh maloom karna ke hisse ek dusre se kis tarah mutalliq hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -181,6 +261,22 @@
  },
  {
   "id": "PED-006",
+  "question_ur": "بلوم کی درجہ بندی میں، کسی خیال کی قدر کا معیار کے مقابلے میں فیصلہ کرنا کیا کہلاتا ہے؟",
+  "question_roman": "Bloom ki darja bandi mein, kisi khayal ki qadar ka meyaar ke muqable mein faisla karna kya kehlata hai?",
+  "options_ur": [
+   "جائزہ لینا",
+   "اطلاق کرنا",
+   "یاد رکھنا",
+   "سمجھنا"
+  ],
+  "options_roman": [
+   "Jaiza lena",
+   "Itlaaq karna",
+   "Yaad rakhna",
+   "Samajhna"
+  ],
+  "explanation_ur": "جائزہ لینے کا مطلب ہے معیار کی بنیاد پر خیالات یا مواد کی قدر کے بارے میں فیصلے کرنا۔",
+  "explanation_roman": "Jaiza lene ka matlab hai meyaar ki bunyad par khayalat ya mawad ki qadar ke bare mein faisle karna.",
   "post": [
    "zamungkor",
    "tt",
@@ -217,6 +313,22 @@
  },
  {
   "id": "PED-007",
+  "question_ur": "پیاجے کے مطابق، بچے کس مرحلے میں حواس اور جسمانی حرکات کے ذریعے سیکھتے ہیں؟",
+  "question_roman": "Piaget ke mutabiq, bachche kis marhale mein hawaas aur jismani harkaat ke zariye seekhte hain?",
+  "options_ur": [
+   "حسی حرکی",
+   "قبل از عملیاتی",
+   "ٹھوس عملیاتی",
+   "رسمی عملیاتی"
+  ],
+  "options_roman": [
+   "Hissi harkati",
+   "Qabl az amaliyati",
+   "Thoos amaliyati",
+   "Rasmi amaliyati"
+  ],
+  "explanation_ur": "حسی حرکی مرحلہ (پیدائش سے تقریباً 2 سال تک) وہ وقت ہے جب شیر خوار بچے حواس اور حرکت کے ذریعے سیکھتے ہیں۔",
+  "explanation_roman": "Hissi harkati marhala (paidaish se taqreeban 2 saal tak) woh waqt hai jab sheer khwar bachche hawaas aur harkat ke zariye seekhte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -253,6 +365,22 @@
  },
  {
   "id": "PED-008",
+  "question_ur": "پیاجے کا قبل از عملیاتی مرحلہ کس عمر کی حد پر محیط ہے؟",
+  "question_roman": "Piaget ka qabl az amaliyati marhala kis umar ki hadd par muheet hai?",
+  "options_ur": [
+   "0-2 سال",
+   "2-7 سال",
+   "7-11 سال",
+   "11 سال اور اس سے زیادہ"
+  ],
+  "options_roman": [
+   "0-2 saal",
+   "2-7 saal",
+   "7-11 saal",
+   "11 saal aur is se zyada"
+  ],
+  "explanation_ur": "قبل از عملیاتی مرحلہ تقریباً 2 سے 7 سال کی عمر کا ہوتا ہے، جب بچے علامات اور زبان استعمال کرتے ہیں لیکن خود مرکزی انداز میں سوچتے ہیں۔",
+  "explanation_roman": "Qabl az amaliyati marhala taqreeban 2 se 7 saal ki umar ka hota hai, jab bachche alamat aur zuban istemal karte hain lekin khud markazi andaaz mein sochte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -289,6 +417,22 @@
  },
  {
   "id": "PED-009",
+  "question_ur": "ایک چھوٹا بچہ جو کسی صورتحال کو دوسرے شخص کے نقطہ نظر سے نہیں دیکھ سکتا، وہ کیا ظاہر کر رہا ہے؟",
+  "question_roman": "Ek chhota bachcha jo kisi surat-e-haal ko dusre shakhs ke nuqta-e-nazar se nahi dekh sakta, woh kya zahir kar raha hai?",
+  "options_ur": [
+   "بقا",
+   "خود مرکزیت",
+   "تجریدی استدلال",
+   "معکوسیت"
+  ],
+  "options_roman": [
+   "Baqa",
+   "Khud markaziat",
+   "Tajridi istedlal",
+   "Makoosiat"
+  ],
+  "explanation_ur": "خود مرکزیت — دوسرے شخص کے نقطہ نظر سے چیزوں کو دیکھنے میں دشواری — قبل از عملیاتی مرحلے کی خصوصیت ہے۔",
+  "explanation_roman": "Khud markaziat — dusre shakhs ke nuqta-e-nazar se cheezon ko dekhne mein dushwari — qabl az amaliyati marhale ki khususiyat hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -325,6 +469,22 @@
  },
  {
   "id": "PED-010",
+  "question_ur": "ایک بچہ جو یہ سمجھتا ہے کہ لمبے گلاس میں ڈالا گیا پانی اب بھی اتنی ہی مقدار میں ہے، اس نے کیا سیکھ لیا ہے؟",
+  "question_roman": "Ek bachcha jo yeh samajhta hai ke lambe glass mein dala gaya pani ab bhi utni hi miqdar mein hai, us ne kya seekh liya hai?",
+  "options_ur": [
+   "خود مرکزیت",
+   "بقا",
+   "فرضی استدلال",
+   "شے کا مستقل وجود"
+  ],
+  "options_roman": [
+   "Khud markaziat",
+   "Baqa",
+   "Farzi istedlal",
+   "Shay ka mustaqil wujood"
+  ],
+  "explanation_ur": "ٹھوس عملیاتی مرحلے (تقریباً 7-11 سال) میں بچے بقا کو سمجھتے ہیں — کہ شکل بدلنے پر بھی مقدار وہی رہتی ہے۔",
+  "explanation_roman": "Thoos amaliyati marhale (taqreeban 7-11 saal) mein bachche baqa ko samajhte hain — ke shakl badalne par bhi miqdar wohi rehti hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -361,6 +521,22 @@
  },
  {
   "id": "PED-011",
+  "question_ur": "پیاجے کے مطابق، تجریدی سوچ اور فرضی استدلال کس مرحلے میں پیدا ہوتے ہیں؟",
+  "question_roman": "Piaget ke mutabiq, tajridi soch aur farzi istedlal kis marhale mein paida hote hain?",
+  "options_ur": [
+   "رسمی عملیاتی",
+   "قبل از عملیاتی",
+   "ٹھوس عملیاتی",
+   "حسی حرکی"
+  ],
+  "options_roman": [
+   "Rasmi amaliyati",
+   "Qabl az amaliyati",
+   "Thoos amaliyati",
+   "Hissi harkati"
+  ],
+  "explanation_ur": "رسمی عملیاتی مرحلہ (تقریباً 11 سال اور اس سے زیادہ) وہ وقت ہے جب بچے تجریدی انداز میں سوچ سکتے ہیں اور مفروضوں کے بارے میں استدلال کر سکتے ہیں۔",
+  "explanation_roman": "Rasmi amaliyati marhala (taqreeban 11 saal aur is se zyada) woh waqt hai jab bachche tajridi andaaz mein soch sakte hain aur mafroozon ke bare mein istedlal kar sakte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -397,6 +573,22 @@
  },
  {
   "id": "PED-012",
+  "question_ur": "پیاجے کے نظریے میں، نئی معلومات کو موجودہ سکیما میں ڈھالنا کیا کہلاتا ہے؟",
+  "question_roman": "Piaget ke nazriye mein, nayi maloomat ko maujooda schema mein dhalna kya kehlata hai?",
+  "options_ur": [
+   "مطابقت",
+   "انضمام",
+   "توازن",
+   "سہار بندی"
+  ],
+  "options_roman": [
+   "Mutabiqat",
+   "Inzimam",
+   "Tawazun",
+   "Sahar bandi"
+  ],
+  "explanation_ur": "انضمام کا مطلب ہے نئی معلومات کو موجودہ سکیما میں ڈھالنا، سکیما کو بدلے بغیر۔",
+  "explanation_roman": "Inzimam ka matlab hai nayi maloomat ko maujooda schema mein dhalna, schema ko badle baghair.",
   "post": [
    "zamungkor",
    "tt",
@@ -433,6 +625,22 @@
  },
  {
   "id": "PED-013",
+  "question_ur": "پیاجے کے نظریے میں، نئی معلومات کے مطابق سکیما کو بدلنا کیا کہلاتا ہے؟",
+  "question_roman": "Piaget ke nazriye mein, nayi maloomat ke mutabiq schema ko badalna kya kehlata hai?",
+  "options_ur": [
+   "مطابقت",
+   "انضمام",
+   "بقا",
+   "خود مرکزیت"
+  ],
+  "options_roman": [
+   "Mutabiqat",
+   "Inzimam",
+   "Baqa",
+   "Khud markaziat"
+  ],
+  "explanation_ur": "مطابقت کا مطلب ہے موجودہ سکیما کو بدلنا، یا نیا سکیما بنانا، تاکہ وہ نئی معلومات کے مطابق ہو جائے۔",
+  "explanation_roman": "Mutabiqat ka matlab hai maujooda schema ko badalna, ya naya schema banana, taake woh nayi maloomat ke mutabiq ho jaye.",
   "post": [
    "zamungkor",
    "tt",
@@ -469,6 +677,22 @@
  },
  {
   "id": "PED-014",
+  "question_ur": "پیاجے کے نظریے میں، سکیما کیا ہے؟",
+  "question_roman": "Piaget ke nazriye mein, schema kya hai?",
+  "options_ur": [
+   "ایک تدریسی معاون",
+   "امتحان کے نمبر",
+   "ایک ذہنی خاکہ",
+   "کلاس روم کا اصول"
+  ],
+  "options_roman": [
+   "Ek tadreesi ma'awin",
+   "Imtihan ke number",
+   "Ek zehni khaka",
+   "Classroom ka usool"
+  ],
+  "explanation_ur": "سکیما ایک ذہنی خاکہ یا سوچ کا منظم نمونہ ہے جو بچے کو دنیا کو سمجھنے میں مدد دیتا ہے۔",
+  "explanation_roman": "Schema ek zehni khaka ya soch ka munazzam namuna hai jo bachche ko duniya ko samajhne mein madad deta hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -505,6 +729,22 @@
  },
  {
   "id": "PED-015",
+  "question_ur": "ایرکسن کے مطابق، شیر خوارگی میں کس کشمکش کا سامنا ہوتا ہے؟",
+  "question_roman": "Erikson ke mutabiq, sheer khwargi mein kis kashmakash ka samna hota hai?",
+  "options_ur": [
+   "اعتماد بمقابلہ بداعتمادی",
+   "خود مختاری بمقابلہ شرم",
+   "پہل بمقابلہ احساسِ جرم",
+   "شناخت بمقابلہ کردار کی الجھن"
+  ],
+  "options_roman": [
+   "Aitmaad vs bad-aitmadi",
+   "Khud mukhtari vs sharam",
+   "Pehal vs ehsaas-e-jurm",
+   "Shanakht vs kirdar ki uljhan"
+  ],
+  "explanation_ur": "اعتماد بمقابلہ بداعتمادی ایرکسن کا پہلا مرحلہ ہے، شیر خوارگی میں، جب بچہ یہ سیکھتا ہے کہ دنیا محفوظ اور قابلِ بھروسا ہے یا نہیں۔",
+  "explanation_roman": "Aitmaad vs bad-aitmadi Erikson ka pehla marhala hai, sheer khwargi mein, jab bachcha yeh seekhta hai ke duniya mehfooz aur qabil-e-bharosa hai ya nahi.",
   "post": [
    "zamungkor",
    "tt",
@@ -541,6 +781,22 @@
  },
  {
   "id": "PED-016",
+  "question_ur": "ایرکسن کے مطابق، خود سے کام کرنا سیکھنے والا چھوٹا بچہ (ٹاڈلر) کس کشاکش کا سامنا کر رہا ہے؟",
+  "question_roman": "Erikson ke mutabiq, khud se kaam karna seekhne wala chhota bachcha (toddler) kis kashakash ka saamna kar raha hai?",
+  "options_ur": [
+   "اعتماد بمقابلہ بے اعتمادی",
+   "خود مختاری بمقابلہ شرم اور شک",
+   "محنت بمقابلہ احساس کمتری",
+   "پیداواریت بمقابلہ جمود"
+  ],
+  "options_roman": [
+   "Aitimaad vs be-aitimaadi",
+   "Khud mukhtaari vs sharm aur shak",
+   "Mehnat vs ehsaas-e-kamtari",
+   "Paidaawaariyat vs jamood"
+  ],
+  "explanation_ur": "خود مختاری بمقابلہ شرم اور شک چھوٹے بچے (ٹاڈلر) کا مرحلہ ہے، جب بچے خود سے کام کرنا سیکھتے ہیں۔",
+  "explanation_roman": "Khud mukhtaari vs sharm aur shak chhote bachche (toddler) ka marhala hai, jab bachche khud se kaam karna seekhte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -577,6 +833,22 @@
  },
  {
   "id": "PED-017",
+  "question_ur": "ایرکسن کے مطابق، تقریباً 3-5 سال کی عمر کے پری اسکول بچوں کو کس کشاکش کا سامنا ہوتا ہے؟",
+  "question_roman": "Erikson ke mutabiq, taqreeban 3-5 saal ki umar ke preschool bachchon ko kis kashakash ka saamna hota hai?",
+  "options_ur": [
+   "اعتماد بمقابلہ بے اعتمادی",
+   "محنت بمقابلہ احساس کمتری",
+   "پہل قدمی بمقابلہ احساس جرم",
+   "شناخت بمقابلہ کردار کی الجھن"
+  ],
+  "options_roman": [
+   "Aitimaad vs be-aitimaadi",
+   "Mehnat vs ehsaas-e-kamtari",
+   "Pehal qadmi vs ehsaas-e-jurm",
+   "Shanakht vs kirdaar ki uljhan"
+  ],
+  "explanation_ur": "پہل قدمی بمقابلہ احساس جرم پری اسکول کا مرحلہ ہے (تقریباً 3-5 سال)، جب بچے سرگرمیوں کی منصوبہ بندی کرنا اور انہیں انجام دینا شروع کرتے ہیں۔",
+  "explanation_roman": "Pehal qadmi vs ehsaas-e-jurm preschool ka marhala hai (taqreeban 3-5 saal), jab bachche sargarmiyon ki mansooba bandi karna aur unhein anjaam dena shuru karte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -613,6 +885,22 @@
  },
  {
   "id": "PED-018",
+  "question_ur": "ایرکسن کے مطابق، اسکول جانے کی عمر کے بچوں کو کس کشاکش کا سامنا ہوتا ہے؟",
+  "question_roman": "Erikson ke mutabiq, school jaane ki umar ke bachchon ko kis kashakash ka saamna hota hai?",
+  "options_ur": [
+   "پہل قدمی بمقابلہ احساس جرم",
+   "محنت بمقابلہ احساس کمتری",
+   "شناخت بمقابلہ کردار کی الجھن",
+   "قربت بمقابلہ تنہائی"
+  ],
+  "options_roman": [
+   "Pehal qadmi vs ehsaas-e-jurm",
+   "Mehnat vs ehsaas-e-kamtari",
+   "Shanakht vs kirdaar ki uljhan",
+   "Qurbat vs tanhaai"
+  ],
+  "explanation_ur": "محنت بمقابلہ احساس کمتری اسکول جانے کی عمر کا مرحلہ ہے، جب بچے مہارتیں سیکھتے ہیں اور اپنا موازنہ دوسروں سے کرتے ہیں۔",
+  "explanation_roman": "Mehnat vs ehsaas-e-kamtari school jaane ki umar ka marhala hai, jab bachche maharatein seekhte hain aur apna muwaazna doosron se karte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -649,6 +937,22 @@
  },
  {
   "id": "PED-019",
+  "question_ur": "ایرکسن کے مطابق، نوعمروں کو کس کشاکش کا سامنا ہوتا ہے؟",
+  "question_roman": "Erikson ke mutabiq, no-umron ko kis kashakash ka saamna hota hai?",
+  "options_ur": [
+   "شناخت بمقابلہ کردار کی الجھن",
+   "محنت بمقابلہ احساس کمتری",
+   "خود مختاری بمقابلہ شرم",
+   "پہل قدمی بمقابلہ احساس جرم"
+  ],
+  "options_roman": [
+   "Shanakht vs kirdaar ki uljhan",
+   "Mehnat vs ehsaas-e-kamtari",
+   "Khud mukhtaari vs sharm",
+   "Pehal qadmi vs ehsaas-e-jurm"
+  ],
+  "explanation_ur": "شناخت بمقابلہ کردار کی الجھن نوعمری کا مرحلہ ہے، جب نوعمر یہ احساس قائم کرتے ہیں کہ وہ کون ہیں۔",
+  "explanation_roman": "Shanakht vs kirdaar ki uljhan no-umri ka marhala hai, jab no-umar ye ehsaas qaim karte hain ke woh kaun hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -685,6 +989,22 @@
  },
  {
   "id": "PED-020",
+  "question_ur": "لیسن پلان کا بنیادی مقصد کیا ہے؟",
+  "question_roman": "Lesson plan ka bunyaadi maqsad kya hai?",
+  "options_ur": [
+   "ریکارڈ بک بھرنے کے لیے",
+   "مہمانوں کو متاثر کرنے کے لیے",
+   "واضح مقاصد اور سرگرمیوں کے ساتھ تدریس کی رہنمائی کرنے کے لیے",
+   "نصاب جلدی ختم کرنے کے لیے"
+  ],
+  "options_roman": [
+   "Record book bharne ke liye",
+   "Mehmaanon ko mutaassir karne ke liye",
+   "Waazeh maqaasid aur sargarmiyon ke saath tadrees ki rehnumaai karne ke liye",
+   "Nisaab jaldi khatam karne ke liye"
+  ],
+  "explanation_ur": "لیسن پلان کا بنیادی مقصد تدریس کی رہنمائی کرنا ہے — یہ سبق کے لیے واضح مقاصد، سرگرمیاں اور جائزہ مقرر کرتا ہے۔",
+  "explanation_roman": "Lesson plan ka bunyaadi maqsad tadrees ki rehnumaai karna hai — ye sabq ke liye waazeh maqaasid, sargarmiyan aur jaaiza muqarrar karta hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -721,6 +1041,22 @@
  },
  {
   "id": "PED-021",
+  "question_ur": "درج ذیل میں سے کون سا لیسن پلان کا ایک ضروری حصہ ہے؟",
+  "question_roman": "Darj zail mein se kaun sa lesson plan ka ek zaroori hissa hai?",
+  "options_ur": [
+   "طلبہ کی فہرست",
+   "لرننگ آبجیکٹیوز",
+   "اسکول کا ٹائم ٹیبل",
+   "استاد کی تنخواہ"
+  ],
+  "options_roman": [
+   "Talaba ki fehrist",
+   "Learning objectives",
+   "School ka timetable",
+   "Ustaad ki tankhwaah"
+  ],
+  "explanation_ur": "لرننگ آبجیکٹیوز واضح طور پر بتاتے ہیں کہ سبق کے اختتام تک طلبہ کو کیا جاننا چاہیے یا وہ کیا کرنے کے قابل ہونے چاہییں۔",
+  "explanation_roman": "Learning objectives waazeh taur par bataate hain ke sabq ke ikhtitaam tak talaba ko kya jaanna chahiye ya woh kya karne ke qaabil hone chahiyein.",
   "post": [
    "zamungkor",
    "tt",
@@ -757,6 +1093,22 @@
  },
  {
   "id": "PED-022",
+  "question_ur": "فیڈ بیک دینے کے لیے تدریس و تعلم کے عمل کے دوران کی جانے والی اسیسمنٹ کو کیا کہا جاتا ہے؟",
+  "question_roman": "Feedback dene ke liye tadrees-o-taallum ke amal ke dauraan ki jaane wali assessment ko kya kaha jata hai?",
+  "options_ur": [
+   "فارمیٹو اسیسمنٹ",
+   "سمٹیو اسیسمنٹ",
+   "سالانہ امتحان",
+   "آخری ٹیسٹ"
+  ],
+  "options_roman": [
+   "Formative assessment",
+   "Summative assessment",
+   "Saalaana imtihaan",
+   "Aakhri test"
+  ],
+  "explanation_ur": "فارمیٹو اسیسمنٹ تعلم کے دوران پیش رفت جانچنے اور فیڈ بیک دینے کے لیے کی جاتی ہے، تاکہ تدریس کو بہتر بنایا جا سکے۔",
+  "explanation_roman": "Formative assessment taallum ke dauraan pesh raft jaanchne aur feedback dene ke liye ki jati hai, taake tadrees ko behtar banaya ja sake.",
   "post": [
    "zamungkor",
    "tt",
@@ -793,6 +1145,22 @@
  },
  {
   "id": "PED-023",
+  "question_ur": "ٹرم کے اختتام پر ہونے والا آخری امتحان کس کی مثال ہے؟",
+  "question_roman": "Term ke ikhtitaam par hone wala aakhri imtihaan kis ki misaal hai?",
+  "options_ur": [
+   "سبق کے دوران کلاس کوئز",
+   "ہوم ورک پر فیڈ بیک",
+   "سمٹیو اسیسمنٹ",
+   "کلاس میں زبانی سوال"
+  ],
+  "options_roman": [
+   "Sabq ke dauraan class quiz",
+   "Homework par feedback",
+   "Summative assessment",
+   "Class mein zabaani sawaal"
+  ],
+  "explanation_ur": "سمٹیو اسیسمنٹ کورس یا ٹرم کے اختتام پر مجموعی کامیابی کو جانچنے کے لیے کی جاتی ہے، مثال کے طور پر آخری امتحان۔",
+  "explanation_roman": "Summative assessment course ya term ke ikhtitaam par majmooi kaamyaabi ko jaanchne ke liye ki jati hai, misaal ke taur par aakhri imtihaan.",
   "post": [
    "zamungkor",
    "tt",
@@ -829,6 +1197,22 @@
  },
  {
   "id": "PED-024",
+  "question_ur": "طلبہ کے سابقہ علم اور مشکلات معلوم کرنے کے لیے تدریس سے پہلے کی جانے والی اسیسمنٹ کو کیا کہا جاتا ہے؟",
+  "question_roman": "Talaba ke saabqa ilm aur mushkilaat maloom karne ke liye tadrees se pehle ki jaane wali assessment ko kya kaha jata hai?",
+  "options_ur": [
+   "سمٹیو اسیسمنٹ",
+   "ڈائیگناسٹک اسیسمنٹ",
+   "فارمیٹو اسیسمنٹ",
+   "سالانہ امتحان"
+  ],
+  "options_roman": [
+   "Summative assessment",
+   "Diagnostic assessment",
+   "Formative assessment",
+   "Saalaana imtihaan"
+  ],
+  "explanation_ur": "ڈائیگناسٹک اسیسمنٹ تدریس سے پہلے یہ معلوم کرنے کے لیے کی جاتی ہے کہ طلبہ پہلے سے کیا جانتے ہیں اور انہیں کہاں مشکلات پیش آتی ہیں۔",
+  "explanation_roman": "Diagnostic assessment tadrees se pehle ye maloom karne ke liye ki jati hai ke talaba pehle se kya jaante hain aur unhein kahan mushkilaat pesh aati hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -865,6 +1249,22 @@
  },
  {
   "id": "PED-025",
+  "question_ur": "تدریس میں اسکیفولڈنگ کیا ہے؟",
+  "question_roman": "Tadrees mein scaffolding kya hai?",
+  "options_ur": [
+   "غلطیوں پر سزا دینا",
+   "عارضی مدد جو سیکھنے والے کی بہتری کے ساتھ آہستہ آہستہ ہٹا لی جاتی ہے",
+   "فوراً آخری جواب دے دینا",
+   "بغیر کسی مدد کے پڑھانا"
+  ],
+  "options_roman": [
+   "Ghaltiyon par saza dena",
+   "Aarzi madad jo seekhne wale ki behtari ke saath aahista aahista hata li jati hai",
+   "Fauran aakhri jawaab de dena",
+   "Baghair kisi madad ke parhaana"
+  ],
+  "explanation_ur": "اسکیفولڈنگ استاد کی طرف سے دی جانے والی عارضی مدد ہے جو آہستہ آہستہ ہٹا لی جاتی ہے جیسے جیسے سیکھنے والا اکیلے کام کرنے کے قابل ہوتا جاتا ہے۔",
+  "explanation_roman": "Scaffolding ustaad ki taraf se di jaane wali aarzi madad hai jo aahista aahista hata li jati hai jaise jaise seekhne wala akele kaam karne ke qaabil hota jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -901,6 +1301,22 @@
  },
  {
   "id": "PED-026",
+  "question_ur": "وائیگاٹسکی کے مطابق، زون آف پراکسیمل ڈیولپمنٹ کیا ہے؟",
+  "question_roman": "Vygotsky ke mutabiq, Zone of Proximal Development kya hai?",
+  "options_ur": [
+   "وہ کام جو بچہ اکیلے کر سکتا ہے",
+   "وہ کام جو بچہ بالکل نہیں کر سکتا",
+   "آزادانہ کارکردگی اور رہنمائی کے ساتھ کارکردگی کے درمیان فرق",
+   "بچے کی عمر کی سطح"
+  ],
+  "options_roman": [
+   "Woh kaam jo bachcha akele kar sakta hai",
+   "Woh kaam jo bachcha bilkul nahin kar sakta",
+   "Aazaadaana kaarkardagi aur rehnumaai ke saath kaarkardagi ke darmiyaan farq",
+   "Bachche ki umar ki satah"
+  ],
+  "explanation_ur": "زون آف پراکسیمل ڈیولپمنٹ (ZPD) وہ فرق ہے جو سیکھنے والے کے اکیلے کرنے کی صلاحیت اور مدد کے ساتھ کرنے کی صلاحیت کے درمیان ہوتا ہے۔",
+  "explanation_roman": "Zone of Proximal Development (ZPD) woh farq hai jo seekhne wale ke akele karne ki salaahiyat aur madad ke saath karne ki salaahiyat ke darmiyaan hota hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -937,6 +1353,22 @@
  },
  {
   "id": "PED-027",
+  "question_ur": "کولیبریٹو لرننگ کیا ہے؟",
+  "question_roman": "Collaborative learning kya hai?",
+  "options_ur": [
+   "طلبہ اکیلے پڑھتے ہیں",
+   "طلبہ گروپوں میں مل کر کام کر کے سیکھتے ہیں",
+   "استاد صرف لیکچر دیتا ہے",
+   "طلبہ ایک دوسرے سے مقابلہ کرتے ہیں"
+  ],
+  "options_roman": [
+   "Talaba akele parhte hain",
+   "Talaba groups mein mil kar kaam kar ke seekhte hain",
+   "Ustaad sirf lecture deta hai",
+   "Talaba ek doosre se muqaabla karte hain"
+  ],
+  "explanation_ur": "کولیبریٹو لرننگ میں طلبہ گروپوں میں مل کر کام کرتے ہیں، خیالات کا تبادلہ کرتے ہیں اور ایک دوسرے سے سیکھتے ہیں۔",
+  "explanation_roman": "Collaborative learning mein talaba groups mein mil kar kaam karte hain, khayalaat ka tabaadla karte hain aur ek doosre se seekhte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -973,6 +1405,22 @@
  },
  {
   "id": "PED-028",
+  "question_ur": "وہ سیکھنے والے جو تصاویر، ڈایاگرام اور چارٹ کے ذریعے سب سے بہتر سمجھتے ہیں، کیا کہلاتے ہیں؟",
+  "question_roman": "Woh seekhne wale jo tasveeron, diagrams aur charts ke zariye sab se behtar samajhte hain, kya kehlate hain?",
+  "options_ur": [
+   "ویژول لرنرز",
+   "آڈیٹری لرنرز",
+   "کنیس تھیٹک لرنرز",
+   "ریڈنگ لرنرز"
+  ],
+  "options_roman": [
+   "Visual learners",
+   "Auditory learners",
+   "Kinesthetic learners",
+   "Reading learners"
+  ],
+  "explanation_ur": "ویژول لرنرز تصاویر، ڈایاگرام، چارٹ اور تحریری مواد کے ذریعے سب سے بہتر سیکھتے ہیں۔",
+  "explanation_roman": "Visual learners tasveeron, diagrams, charts aur tehreeri mawaad ke zariye sab se behtar seekhte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -1009,6 +1457,22 @@
  },
  {
   "id": "PED-029",
+  "question_ur": "وہ سیکھنے والے جو سن کر اور بحث کر کے سب سے بہتر سیکھتے ہیں، کیا کہلاتے ہیں؟",
+  "question_roman": "Woh seekhne wale jo sun kar aur behes kar ke sab se behtar seekhte hain, kya kehlate hain?",
+  "options_ur": [
+   "ویژول لرنرز",
+   "آڈیٹری لرنرز",
+   "کنیس تھیٹک لرنرز",
+   "ٹیکٹائل لرنرز"
+  ],
+  "options_roman": [
+   "Visual learners",
+   "Auditory learners",
+   "Kinesthetic learners",
+   "Tactile learners"
+  ],
+  "explanation_ur": "آڈیٹری لرنرز سن کر، بحث کر کے اور وضاحتیں سن کر سب سے بہتر سیکھتے ہیں۔",
+  "explanation_roman": "Auditory learners sun kar, behes kar ke aur wazaahatein sun kar sab se behtar seekhte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -1045,6 +1509,22 @@
  },
  {
   "id": "PED-030",
+  "question_ur": "وہ سیکھنے والے جو ہینڈز آن سرگرمیوں اور حرکت کے ذریعے سب سے بہتر سیکھتے ہیں، کیا کہلاتے ہیں؟",
+  "question_roman": "Woh seekhne wale jo hands-on sargarmiyon aur harkat ke zariye sab se behtar seekhte hain, kya kehlate hain?",
+  "options_ur": [
+   "ویژول لرنرز",
+   "آڈیٹری لرنرز",
+   "کنیس تھیٹک لرنرز",
+   "وربل لرنرز"
+  ],
+  "options_roman": [
+   "Visual learners",
+   "Auditory learners",
+   "Kinesthetic learners",
+   "Verbal learners"
+  ],
+  "explanation_ur": "کنیس تھیٹک لرنرز عمل کر کے، حرکت کر کے اور ہینڈز آن سرگرمیوں کے ذریعے سب سے بہتر سیکھتے ہیں۔",
+  "explanation_roman": "Kinesthetic learners amal kar ke, harkat kar ke aur hands-on sargarmiyon ke zariye sab se behtar seekhte hain.",
   "post": [
    "zamungkor",
    "tt",

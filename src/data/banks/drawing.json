@@ -1,6 +1,22 @@
 [
  {
   "id": "DRW-001",
+  "question_ur": "مندرجہ ذیل میں سے تین بنیادی رنگ کون سے ہیں؟",
+  "question_roman": "Mandarja zail mein se teen bunyadi rang kaun se hain?",
+  "options_ur": [
+   "سرخ، نیلا اور پیلا",
+   "سرخ، سبز اور نارنجی",
+   "نیلا، سبز اور جامنی",
+   "پیلا، سیاہ اور سفید"
+  ],
+  "options_roman": [
+   "Laal, neela aur peela",
+   "Laal, sabz aur narangi",
+   "Neela, sabz aur jamni",
+   "Peela, kala aur safed"
+  ],
+  "explanation_ur": "بنیادی رنگ تین ہیں — سرخ، نیلا اور پیلا۔",
+  "explanation_roman": "bunyadi rang teen hain — laal, neela aur peela.",
   "post": [
    "dm",
    "pet"
@@ -29,6 +45,22 @@
  },
  {
   "id": "DRW-002",
+  "question_ur": "سرخ اور پیلے رنگ کو ملانے سے کون سا رنگ بنتا ہے؟",
+  "question_roman": "Laal aur peele rang ko milane se kaun sa rang banta hai?",
+  "options_ur": [
+   "سبز",
+   "جامنی",
+   "نارنجی",
+   "بھورا"
+  ],
+  "options_roman": [
+   "Sabz",
+   "Jamni",
+   "Narangi",
+   "Bhura"
+  ],
+  "explanation_ur": "سرخ اور پیلے سے نارنجی بنتا ہے۔",
+  "explanation_roman": "laal aur peele se narangi banta hai.",
   "post": [
    "dm",
    "pet"
@@ -57,6 +89,22 @@
  },
  {
   "id": "DRW-003",
+  "question_ur": "نیلے اور پیلے رنگ کو ملانے سے کون سا رنگ بنتا ہے؟",
+  "question_roman": "Neele aur peele rang ko milane se kaun sa rang banta hai?",
+  "options_ur": [
+   "نارنجی",
+   "سبز",
+   "جامنی",
+   "گلابی"
+  ],
+  "options_roman": [
+   "Narangi",
+   "Sabz",
+   "Jamni",
+   "Gulabi"
+  ],
+  "explanation_ur": "نیلے اور پیلے سے سبز بنتا ہے۔",
+  "explanation_roman": "neele aur peele se sabz banta hai.",
   "post": [
    "dm",
    "pet"
@@ -85,6 +133,22 @@
  },
  {
   "id": "DRW-004",
+  "question_ur": "سرخ اور نیلے رنگ کو ملانے سے کون سا رنگ بنتا ہے؟",
+  "question_roman": "Laal aur neele rang ko milane se kaun sa rang banta hai?",
+  "options_ur": [
+   "نارنجی",
+   "سبز",
+   "جامنی",
+   "سرمئی"
+  ],
+  "options_roman": [
+   "Narangi",
+   "Sabz",
+   "Jamni",
+   "Surmai"
+  ],
+  "explanation_ur": "سرخ اور نیلے سے جامنی بنتا ہے۔",
+  "explanation_roman": "laal aur neele se jamni banta hai.",
   "post": [
    "dm",
    "pet"
@@ -113,6 +177,22 @@
  },
  {
   "id": "DRW-005",
+  "question_ur": "کن رنگوں کو گرم رنگ کہا جاتا ہے؟",
+  "question_roman": "Kin rangon ko garam rang kaha jata hai?",
+  "options_ur": [
+   "نیلا، سبز اور جامنی",
+   "سرخ، نارنجی اور پیلا",
+   "سیاہ، سفید اور سرمئی",
+   "سبز، نیلا اور بھورا"
+  ],
+  "options_roman": [
+   "Neela, sabz aur jamni",
+   "Laal, narangi aur peela",
+   "Kala, safed aur surmai",
+   "Sabz, neela aur bhura"
+  ],
+  "explanation_ur": "گرم رنگ آگ اور دھوپ کی یاد دلاتے ہیں۔",
+  "explanation_roman": "garam rang aag aur dhoop ki yaad dilate hain.",
   "post": [
    "dm",
    "pet"
@@ -141,6 +221,22 @@
  },
  {
   "id": "DRW-006",
+  "question_ur": "پرسپیکٹو ڈرائنگ میں وہ نقطہ کیا کہلاتا ہے جہاں متوازی لکیریں ملتی ہوئی معلوم ہوتی ہیں؟",
+  "question_roman": "Perspective drawing mein woh nuqta kya kehlata hai jahan mutawazi lakeerein milti hui maloom hoti hain?",
+  "options_ur": [
+   "افق کی لکیر",
+   "غائب ہونے کا نقطہ",
+   "مرکزی نقطہ",
+   "فوکل پوائنٹ"
+  ],
+  "options_roman": [
+   "Ufuq ki lakeer",
+   "Ghaib hone ka nuqta",
+   "Markazi nuqta",
+   "Focal point"
+  ],
+  "explanation_ur": "پرسپیکٹو میں متوازی لکیریں افق کی لکیر پر غائب ہونے کے نقطے پر ملتی ہوئی معلوم ہوتی ہیں۔",
+  "explanation_roman": "Perspective mein mutawazi lakeerein ufuq ki lakeer par ghaib hone ke nuqte par milti hui maloom hoti hain.",
   "post": [
    "dm",
    "pet"
@@ -168,6 +264,22 @@
  },
  {
   "id": "DRW-007",
+  "question_ur": "ڈرائنگ میں شیڈنگ کس لیے استعمال ہوتی ہے؟",
+  "question_roman": "Drawing mein shading kis liye istemal hoti hai?",
+  "options_ur": [
+   "ڈرائنگ کو چپٹا بنانے کے لیے",
+   "روشنی، سایہ اور گہرائی دکھانے کے لیے",
+   "ڈرائنگ سے رنگ ہٹانے کے لیے",
+   "کاغذ کو ہموار بنانے کے لیے"
+  ],
+  "options_roman": [
+   "Drawing ko chapta banane ke liye",
+   "Roshni, saya aur gehrai dikhane ke liye",
+   "Drawing se rang hatane ke liye",
+   "Kaghaz ko hamwar banane ke liye"
+  ],
+  "explanation_ur": "شیڈنگ دکھاتی ہے کہ روشنی کہاں پڑتی ہے اور چپٹی ڈرائنگ کو سہ جہتی شکل دیتی ہے۔",
+  "explanation_roman": "Shading dikhati hai ke roshni kahan parti hai aur chapti drawing ko seh-jehti shakal deti hai.",
   "post": [
    "dm",
    "pet"
@@ -195,6 +307,22 @@
  },
  {
   "id": "DRW-008",
+  "question_ur": "ڈرائنگ میں ہیچنگ کیا ہے؟",
+  "question_roman": "Drawing mein hatching kya hai?",
+  "options_ur": [
+   "سایہ دکھانے کے لیے متوازی لکیروں سے ڈرائنگ بنانا",
+   "پانی سے پینٹنگ کرنا",
+   "کاغذ کو شکلوں میں کاٹنا",
+   "پیلیٹ پر رنگ ملانا"
+  ],
+  "options_roman": [
+   "Saya dikhane ke liye mutawazi lakeeron se drawing banana",
+   "Pani se painting karna",
+   "Kaghaz ko shaklon mein kaatna",
+   "Palette par rang milana"
+  ],
+  "explanation_ur": "ہیچنگ میں قریب قریب متوازی لکیریں استعمال ہوتی ہیں؛ لکیریں جتنی قریب ہوں گی سایہ اتنا ہی گہرا ہوگا۔",
+  "explanation_roman": "Hatching mein qareeb qareeb mutawazi lakeerein istemal hoti hain; lakeerein jitni qareeb hon gi saya utna hi gehra hoga.",
   "post": [
    "dm",
    "pet"
@@ -222,6 +350,22 @@
  },
  {
   "id": "DRW-009",
+  "question_ur": "اسکیچ کیا ہے؟",
+  "question_roman": "Sketch kya hai?",
+  "options_ur": [
+   "ایک مکمل آئل پینٹنگ",
+   "ایک جلدی بنائی گئی کچی ڈرائنگ",
+   "ایک فریم شدہ تصویر",
+   "ایک چھپا ہوا پوسٹر"
+  ],
+  "options_roman": [
+   "Ek mukammal oil painting",
+   "Ek jaldi banai gai kachi drawing",
+   "Ek frame shuda tasveer",
+   "Ek chhapa hua poster"
+  ],
+  "explanation_ur": "اسکیچ ایک جلدی بنائی گئی کچی ڈرائنگ ہے جو اکثر حتمی کام سے پہلے پنسل سے بنائی جاتی ہے۔",
+  "explanation_roman": "Sketch ek jaldi banai gai kachi drawing hai jo aksar hatmi kaam se pehle pencil se banai jati hai.",
   "post": [
    "dm",
    "pet"
@@ -249,6 +393,22 @@
  },
  {
   "id": "DRW-010",
+  "question_ur": "پینٹنگ میں پیلیٹ کس لیے استعمال ہوتا ہے؟",
+  "question_roman": "Painting mein palette kis liye istemal hota hai?",
+  "options_ur": [
+   "پینٹ رکھنے اور ملانے کے لیے",
+   "کاغذ کاٹنے کے لیے",
+   "کینوس کھینچنے کے لیے",
+   "پنسلیں تیز کرنے کے لیے"
+  ],
+  "options_roman": [
+   "Paint rakhne aur milane ke liye",
+   "Kaghaz kaatne ke liye",
+   "Canvas kheenchne ke liye",
+   "Pencilain tez karne ke liye"
+  ],
+  "explanation_ur": "فنکار برش سے لگانے سے پہلے پیلیٹ پر رنگ ملاتا ہے۔",
+  "explanation_roman": "Fankaar brush se lagane se pehle palette par rang milata hai.",
   "post": [
    "dm",
    "pet"
@@ -276,6 +436,22 @@
  },
  {
   "id": "DRW-021",
+  "question_ur": "پینٹنگ میں نیلا، سبز اور جامنی رنگوں کے کس گروہ کی مثالیں ہیں؟",
+  "question_roman": "Painting mein neela, sabz aur jamni rangon ke kis giroh ki misalein hain?",
+  "options_ur": [
+   "گرم رنگ",
+   "ٹھنڈے رنگ",
+   "غیر جانبدار رنگ",
+   "بنیادی رنگ"
+  ],
+  "options_roman": [
+   "Garam rang",
+   "Thanday rang",
+   "Ghair janibdar rang",
+   "Bunyadi rang"
+  ],
+  "explanation_ur": "نیلا، سبز اور جامنی ٹھنڈے رنگ ہیں۔",
+  "explanation_roman": "neela, sabz aur jamni thanday rang hain.",
   "post": [
    "dm",
    "pet"
@@ -305,6 +481,22 @@
  },
  {
   "id": "DRW-022",
+  "question_ur": "کلر وہیل پر سرخ رنگ کا تکمیلی رنگ کون سا ہے؟",
+  "question_roman": "Colour wheel par laal rang ka takmeeli rang kaun sa hai?",
+  "options_ur": [
+   "سبز",
+   "نارنجی",
+   "جامنی",
+   "نیلا"
+  ],
+  "options_roman": [
+   "Sabz",
+   "Narangi",
+   "Jamni",
+   "Neela"
+  ],
+  "explanation_ur": "تکمیلی رنگ کلر وہیل پر ایک دوسرے کے مقابل ہوتے ہیں؛ سبز سرخ کے مقابل ہے۔",
+  "explanation_roman": "Takmeeli rang colour wheel par ek dusre ke muqabil hote hain; sabz laal ke muqabil hai.",
   "post": [
    "dm",
    "pet"
@@ -333,6 +525,22 @@
  },
  {
   "id": "DRW-023",
+  "question_ur": "منظر کشی کی ڈرائنگ میں افق کی لکیر کیا ہے؟",
+  "question_roman": "Manzar kashi ki drawing mein ufuq ki lakeer kya hai?",
+  "options_ur": [
+   "وہ لکیر جہاں آسمان زمین سے ملتا ہوا معلوم ہوتا ہے",
+   "ڈرائنگ کی سب سے گہری لکیر",
+   "کاغذ کا کنارہ",
+   "مرکزی چیز کے نیچے والی لکیر"
+  ],
+  "options_roman": [
+   "Woh lakeer jahan aasman zameen se milta hua maloom hota hai",
+   "Drawing ki sab se gehri lakeer",
+   "Kaghaz ka kinara",
+   "Markazi cheez ke neeche wali lakeer"
+  ],
+  "explanation_ur": "افق کی لکیر آنکھ کی سطح والی لکیر ہے جہاں آسمان زمین یا سمندر سے ملتا ہوا معلوم ہوتا ہے۔",
+  "explanation_roman": "Ufuq ki lakeer aankh ki satah wali lakeer hai jahan aasman zameen ya samandar se milta hua maloom hota hai.",
   "post": [
    "dm",
    "pet"
@@ -361,6 +569,22 @@
  },
  {
   "id": "DRW-024",
+  "question_ur": "رنگ میں سفید ملانے سے کیا بنتا ہے؟",
+  "question_roman": "Rang mein safed milane se kya banta hai?",
+  "options_ur": [
+   "ٹنٹ",
+   "شیڈ",
+   "ٹون",
+   "ہیو"
+  ],
+  "options_roman": [
+   "Tint",
+   "Shade",
+   "Tone",
+   "Hue"
+  ],
+  "explanation_ur": "رنگ میں سفید ملانے سے ہلکا رنگ (ٹنٹ) بنتا ہے۔",
+  "explanation_roman": "rang mein safed milane se halka rang (tint) banta hai.",
   "post": [
    "dm",
    "pet"
@@ -390,6 +614,22 @@
  },
  {
   "id": "DRW-025",
+  "question_ur": "رنگ میں سیاہ ملانے سے کیا بنتا ہے؟",
+  "question_roman": "Rang mein kala milane se kya banta hai?",
+  "options_ur": [
+   "ٹنٹ",
+   "شیڈ",
+   "ٹون",
+   "ہیو"
+  ],
+  "options_roman": [
+   "Tint",
+   "Shade",
+   "Tone",
+   "Hue"
+  ],
+  "explanation_ur": "رنگ میں سیاہ ملانے سے گہرا رنگ (شیڈ) بنتا ہے۔",
+  "explanation_roman": "rang mein kala milane se gehra rang (shade) banta hai.",
   "post": [
    "dm",
    "pet"
@@ -419,6 +659,22 @@
  },
  {
   "id": "DRW-026",
+  "question_ur": "اسٹل لائف ڈرائنگ کیا ہوتی ہے؟",
+  "question_roman": "Still life drawing kya hoti hai?",
+  "options_ur": [
+   "حرکت کرتی ہوئی جانور کی ڈرائنگ",
+   "مشہور شخص کی ڈرائنگ",
+   "ایسی چیزوں کی ڈرائنگ جو حرکت نہیں کرتیں، جیسے پھل، برتن اور کتابیں",
+   "یاد سے بنائی گئی عمارت کی ڈرائنگ"
+  ],
+  "options_roman": [
+   "Harkat karte hue janwar ki drawing",
+   "Mashhoor shakhs ki drawing",
+   "Aisi cheezon ki drawing jo harkat nahi kartin, jaise phal, bartan aur kitabein",
+   "Yaad se banayi gayi imarat ki drawing"
+  ],
+  "explanation_ur": "اسٹل لائف میں ایسی چیزیں دکھائی جاتی ہیں جو حرکت نہیں کرتیں اور جنہیں فنکار نے ترتیب دیا ہوتا ہے — مثلاً پھل، ایک جگ یا کتابیں۔",
+  "explanation_roman": "Still life mein aisi cheezein dikhayi jati hain jo harkat nahi kartin aur jinhein fankar ne tartib diya hota hai — masalan phal, aik jug ya kitabein.",
   "post": [
    "dm",
    "pet"
@@ -447,6 +703,22 @@
  },
  {
   "id": "DRW-027",
+  "question_ur": "ڈرائنگ اور پینٹنگ میں پورٹریٹ کیا ہوتا ہے؟",
+  "question_roman": "Drawing aur painting mein portrait kya hota hai?",
+  "options_ur": [
+   "قدرتی منظر کی تصویر",
+   "کسی شخص کی تصویر، جس میں عام طور پر چہرہ دکھایا جاتا ہے",
+   "عمارت کی تصویر",
+   "جنگل میں جانور کی تصویر"
+  ],
+  "options_roman": [
+   "Qudrati manzar ki tasveer",
+   "Kisi shakhs ki tasveer, jis mein aam tor par chehra dikhaya jata hai",
+   "Imarat ki tasveer",
+   "Jungle mein janwar ki tasveer"
+  ],
+  "explanation_ur": "پورٹریٹ کسی شخص کی تصویر ہوتی ہے، جس میں اکثر چہرہ اور تاثرات دکھائے جاتے ہیں۔",
+  "explanation_roman": "Portrait kisi shakhs ki tasveer hoti hai, jis mein aksar chehra aur taasuraat dikhaye jate hain.",
   "post": [
    "dm",
    "pet"
@@ -475,6 +747,22 @@
  },
  {
   "id": "DRW-028",
+  "question_ur": "لینڈ اسکیپ ڈرائنگ میں بنیادی طور پر کیا دکھایا جاتا ہے؟",
+  "question_roman": "Landscape drawing mein bunyadi tor par kya dikhaya jata hai?",
+  "options_ur": [
+   "قدرتی مناظر جیسے پہاڑیاں، درخت اور دریا",
+   "کسی شخص کا چہرہ",
+   "تفصیل کے ساتھ ایک مشین",
+   "دہرائی گئی شکلوں کا نمونہ"
+  ],
+  "options_roman": [
+   "Qudrati manazir jaise pahariyan, darakht aur darya",
+   "Kisi shakhs ka chehra",
+   "Tafseel ke sath aik machine",
+   "Dohrayi gayi shaklon ka namuna"
+  ],
+  "explanation_ur": "لینڈ اسکیپ میں باہر کے قدرتی مناظر دکھائے جاتے ہیں — پہاڑیاں، کھیت، درخت، دریا اور آسمان۔",
+  "explanation_roman": "Landscape mein bahar ke qudrati manazir dikhaye jate hain — pahariyan, khet, darakht, darya aur aasman.",
   "post": [
    "dm",
    "pet"
@@ -503,6 +791,22 @@
  },
  {
   "id": "DRW-029",
+  "question_ur": "ڈرائنگ میں ٹیکسچر کیا ظاہر کرتا ہے؟",
+  "question_roman": "Drawing mein texture kya zahir karta hai?",
+  "options_ur": [
+   "کسی چیز کا سائز",
+   "کسی چیز کا رنگ",
+   "کسی چیز کا فاصلہ",
+   "سطح کیسی محسوس ہوتی ہے یا کیسی دکھائی دیتی ہے، جیسے کھردری یا ہموار"
+  ],
+  "options_roman": [
+   "Kisi cheez ka size",
+   "Kisi cheez ka rang",
+   "Kisi cheez ka fasla",
+   "Satah kaisi mehsoos hoti hai ya kaisi dikhayi deti hai, jaise khurdari ya hamwar"
+  ],
+  "explanation_ur": "ڈرائنگ میں ٹیکسچر سے اندازہ ہوتا ہے کہ سطح کیسی محسوس ہوتی ہے یا کیسی دکھائی دیتی ہے — کھردری چھال، ہموار شیشہ یا نرم کپڑا۔",
+  "explanation_roman": "Drawing mein texture se andaza hota hai ke satah kaisi mehsoos hoti hai ya kaisi dikhayi deti hai — khurdari chhaal, hamwar sheesha ya naram kapra.",
   "post": [
    "dm",
    "pet"
@@ -531,6 +835,22 @@
  },
  {
   "id": "DRW-030",
+  "question_ur": "فگر ڈرائنگ میں تناسب سے کیا مراد ہے؟",
+  "question_roman": "Figure drawing mein tanasub se kya murad hai?",
+  "options_ur": [
+   "صرف ایک رنگ استعمال کرنا",
+   "جسم کے حصوں کے درمیان سائز کا درست تعلق",
+   "بہت تیزی سے ڈرائنگ بنانا",
+   "کاغذ کو دیکھے بغیر ڈرائنگ بنانا"
+  ],
+  "options_roman": [
+   "Sirf aik rang istemal karna",
+   "Jism ke hisson ke darmiyan size ka durust talluq",
+   "Bohat tezi se drawing banana",
+   "Kaghaz ko dekhe baghair drawing banana"
+  ],
+  "explanation_ur": "تناسب کا مطلب ہے کہ فگر کے حصے ایک دوسرے کے مقابلے میں درست سائز کے ہوں — مثلاً جسم کے مقابلے میں سر۔",
+  "explanation_roman": "Tanasub ka matlab hai ke figure ke hisse aik dusre ke muqable mein durust size ke hon — masalan jism ke muqable mein sar.",
   "post": [
    "dm",
    "pet"
@@ -559,6 +879,22 @@
  },
  {
   "id": "DRW-031",
+  "question_ur": "صفحے پر کون سی لکیر سیدھی اوپر سے نیچے جاتی ہے؟",
+  "question_roman": "Safhe par kaun si lakeer seedhi upar se neeche jati hai?",
+  "options_ur": [
+   "افقی لکیر",
+   "عمودی لکیر",
+   "ترچھی لکیر",
+   "خم دار لکیر"
+  ],
+  "options_roman": [
+   "Ufqi lakeer",
+   "Amoodi lakeer",
+   "Tirchhi lakeer",
+   "Khamdaar lakeer"
+  ],
+  "explanation_ur": "عمودی لکیر سیدھی اوپر سے نیچے جاتی ہے۔ افقی لکیر سیدھی آر پار جاتی ہے، اور ترچھی لکیر ڈھلوان ہوتی ہے۔",
+  "explanation_roman": "Amoodi lakeer seedhi upar se neeche jati hai. Ufqi lakeer seedhi aar paar jati hai, aur tirchhi lakeer dhalwan hoti hai.",
   "post": [
    "dm",
    "pet"
@@ -589,6 +925,22 @@
  },
  {
   "id": "DRW-032",
+  "question_ur": "ڈرائنگ میں کنٹور لائن کیا ہوتی ہے؟",
+  "question_roman": "Drawing mein contour line kya hoti hai?",
+  "options_ur": [
+   "وہ لکیر جو شکل کو رنگ دیتی ہے",
+   "وہ لکیر جو کسی چیز کے کنارے کے ساتھ چلتی ہے",
+   "وہ لکیر جو صرف شیڈنگ کے لیے استعمال ہوتی ہے",
+   "رولر سے کھینچی گئی لکیر"
+  ],
+  "options_roman": [
+   "Woh lakeer jo shakal ko rang deti hai",
+   "Woh lakeer jo kisi cheez ke kinare ke sath chalti hai",
+   "Woh lakeer jo sirf shading ke liye istemal hoti hai",
+   "Ruler se khainchi gayi lakeer"
+  ],
+  "explanation_ur": "کنٹور لائن کسی چیز کے بیرونی کنارے کے ساتھ چلتی ہے اور اس کی شکل ظاہر کرتی ہے۔",
+  "explanation_roman": "Contour line kisi cheez ke beruni kinare ke sath chalti hai aur us ki shakal zahir karti hai.",
   "post": [
    "dm",
    "pet"
@@ -619,6 +971,22 @@
  },
  {
   "id": "DRW-033",
+  "question_ur": "فن میں شکل اور فارم میں کیا فرق ہے؟",
+  "question_roman": "Fun mein shape aur form mein kya farq hai?",
+  "options_ur": [
+   "شکلیں تین جہتی ہوتی ہیں اور فارم چپٹے ہوتے ہیں",
+   "شکلیں چپٹی ہوتی ہیں اور فارم میں گہرائی ہوتی ہے",
+   "شکلوں میں رنگ استعمال ہوتا ہے اور فارم میں نہیں",
+   "ان دونوں میں کوئی فرق نہیں ہے"
+  ],
+  "options_roman": [
+   "Shaklein teen jehti hoti hain aur form chapte hote hain",
+   "Shaklein chapti hoti hain aur form mein gehrai hoti hai",
+   "Shaklon mein rang istemal hota hai aur form mein nahi",
+   "In donon mein koi farq nahi hai"
+  ],
+  "explanation_ur": "شکل چپٹی ہوتی ہے، اس کی لمبائی اور چوڑائی ہوتی ہے۔ فارم میں گہرائی بھی ہوتی ہے، اس لیے وہ تین جہتی دکھائی دیتا ہے۔",
+  "explanation_roman": "Shakal chapti hoti hai, us ki lambai aur chorai hoti hai. Form mein gehrai bhi hoti hai, is liye woh teen jehti dikhayi deta hai.",
   "post": [
    "dm",
    "pet"
@@ -649,6 +1017,22 @@
  },
  {
   "id": "DRW-034",
+  "question_ur": "ان میں سے کون سی تین جہتی فارم ہے؟",
+  "question_roman": "In mein se kaun si teen jehti form hai?",
+  "options_ur": [
+   "دائرہ",
+   "مربع",
+   "مثلث",
+   "کرہ"
+  ],
+  "options_roman": [
+   "Daira",
+   "Murabba",
+   "Musallas",
+   "Kurrah"
+  ],
+  "explanation_ur": "کرے کی لمبائی، چوڑائی اور گہرائی ہوتی ہے۔ دائرے، مربع اور مثلث چپٹی شکلیں ہیں۔",
+  "explanation_roman": "Kurre ki lambai, chorai aur gehrai hoti hai. Daire, murabba aur musallas chapti shaklein hain.",
   "post": [
    "dm",
    "pet"
@@ -679,6 +1063,22 @@
  },
  {
   "id": "DRW-035",
+  "question_ur": "کس شکل کی چار برابر سائیڈیں اور چار قائمہ زاویے ہوتے ہیں؟",
+  "question_roman": "Kis shakal ki chaar barabar siden aur chaar qaima zawiye hote hain?",
+  "options_ur": [
+   "مستطیل",
+   "مثلث",
+   "مربع",
+   "بیضوی"
+  ],
+  "options_roman": [
+   "Mustateel",
+   "Musallas",
+   "Murabba",
+   "Baizwi"
+  ],
+  "explanation_ur": "مربع کی چار برابر سائیڈیں اور چار قائمہ زاویے ہوتے ہیں، ہر ایک 90 ڈگری کا ہوتا ہے۔",
+  "explanation_roman": "Murabbe ki chaar barabar siden aur chaar qaima zawiye hote hain, har aik 90 degree ka hota hai.",
   "post": [
    "dm",
    "pet"
@@ -709,6 +1109,22 @@
  },
  {
   "id": "DRW-036",
+  "question_ur": "ڈرائنگ میں 'ویلیو' سے کیا مراد ہے؟",
+  "question_roman": "Drawing mein 'value' se kya murad hai?",
+  "options_ur": [
+   "ڈرائنگ کی قیمت",
+   "ٹون کتنا ہلکا یا گہرا ہے",
+   "ڈرائنگ کا سائز",
+   "ڈرائنگ کی عمر"
+  ],
+  "options_roman": [
+   "Drawing ki qeemat",
+   "Tone kitna halka ya gehra hai",
+   "Drawing ka size",
+   "Drawing ki umar"
+  ],
+  "explanation_ur": "ویلیو کا مطلب ہے کہ ٹون کتنا ہلکا یا گہرا ہے، سفید سے لے کر سرمئی رنگوں سے ہوتے ہوئے سیاہ تک۔",
+  "explanation_roman": "Value ka matlab hai ke tone kitna halka ya gehra hai, safed se le kar surmai rangon se hote hue siyah tak.",
   "post": [
    "dm",
    "pet"
@@ -739,6 +1155,22 @@
  },
  {
   "id": "DRW-037",
+  "question_ur": "شیڈ والی ڈرائنگ میں ہائی لائٹ کیا ہوتی ہے؟",
+  "question_roman": "Shade wali drawing mein highlight kya hoti hai?",
+  "options_ur": [
+   "سب سے گہرا حصہ",
+   "سب سے ہلکا حصہ، جہاں روشنی سب سے پہلے پڑتی ہے",
+   "زمین پر پڑا سایہ",
+   "چیز کا خاکہ"
+  ],
+  "options_roman": [
+   "Sab se gehra hissa",
+   "Sab se halka hissa, jahan roshni sab se pehle parti hai",
+   "Zameen par para saya",
+   "Cheez ka khaka"
+  ],
+  "explanation_ur": "ہائی لائٹ سب سے ہلکا حصہ ہوتا ہے، جہاں روشنی کا ذریعہ چیز پر سب سے زیادہ براہِ راست پڑتا ہے۔",
+  "explanation_roman": "Highlight sab se halka hissa hota hai, jahan roshni ka zariya cheez par sab se zyada barah-e-rast parta hai.",
   "post": [
    "dm",
    "pet"
@@ -769,6 +1201,22 @@
  },
  {
   "id": "DRW-038",
+  "question_ur": "کاسٹ شیڈو کیا ہوتا ہے؟",
+  "question_roman": "Cast shadow kya hota hai?",
+  "options_ur": [
+   "چیز کے اپنے اوپر پڑا سایہ",
+   "چیز کے پیچھے یا نیچے والی سطح پر پڑنے والا سایہ",
+   "خاکے کی سب سے گہری لکیر",
+   "ایریزر سے بنایا گیا سایہ"
+  ],
+  "options_roman": [
+   "Cheez ke apne upar para saya",
+   "Cheez ke peeche ya neeche wali satah par parne wala saya",
+   "Khake ki sab se gehri lakeer",
+   "Eraser se banaya gaya saya"
+  ],
+  "explanation_ur": "کاسٹ شیڈو وہ سایہ ہوتا ہے جو کوئی چیز اپنے پیچھے یا نیچے والی سطح پر ڈالتی ہے۔",
+  "explanation_roman": "Cast shadow woh saya hota hai jo koi cheez apne peeche ya neeche wali satah par dalti hai.",
   "post": [
    "dm",
    "pet"
@@ -799,6 +1247,22 @@
  },
  {
   "id": "DRW-039",
+  "question_ur": "کراس ہیچنگ کیا ہوتی ہے؟",
+  "question_roman": "Cross-hatching kya hoti hai?",
+  "options_ur": [
+   "نقطوں سے شیڈنگ",
+   "ایک دوسرے کو کاٹتی لکیروں کی تہوں سے شیڈنگ",
+   "ایریزر سے شیڈنگ",
+   "پینٹ سے شیڈنگ"
+  ],
+  "options_roman": [
+   "Nuqton se shading",
+   "Aik dusre ko kaatti lakeeron ki tehon se shading",
+   "Eraser se shading",
+   "Paint se shading"
+  ],
+  "explanation_ur": "کراس ہیچنگ میں متوازی لکیروں کے مجموعے ایک دوسرے کے آر پار کھینچ کر ٹون بنایا جاتا ہے؛ قریب قریب لکیریں گہرا ٹون بناتی ہیں۔",
+  "explanation_roman": "Cross-hatching mein mutawazi lakeeron ke majmue aik dusre ke aar paar khainch kar tone banaya jata hai; qareeb qareeb lakeerein gehra tone banati hain.",
   "post": [
    "dm",
    "pet"
@@ -829,6 +1293,22 @@
  },
  {
   "id": "DRW-040",
+  "question_ur": "ڈرائنگ میں اسٹپلنگ کیا ہوتی ہے؟",
+  "question_roman": "Drawing mein stippling kya hoti hai?",
+  "options_ur": [
+   "چھوٹے نقطوں سے شیڈنگ",
+   "سیدھی لکیروں سے شیڈنگ",
+   "انگلی سے رگڑنا",
+   "رولر سے ڈرائنگ بنانا"
+  ],
+  "options_roman": [
+   "Chhote nuqton se shading",
+   "Seedhi lakeeron se shading",
+   "Ungli se ragarna",
+   "Ruler se drawing banana"
+  ],
+  "explanation_ur": "اسٹپلنگ میں چھوٹے نقطوں سے ٹون بنایا جاتا ہے؛ قریب قریب رکھے گئے نقطے زیادہ گہرے دکھائی دیتے ہیں۔",
+  "explanation_roman": "Stippling mein chhote nuqton se tone banaya jata hai; qareeb qareeb rakhe gaye nuqte zyada gehre dikhayi dete hain.",
   "post": [
    "dm",
    "pet"
@@ -859,6 +1339,22 @@
  },
  {
   "id": "DRW-041",
+  "question_ur": "پنسل کی شیڈنگ کو نرمی سے ملانے کے لیے کون سا آلہ استعمال ہوتا ہے؟",
+  "question_roman": "Pencil ki shading ko narmi se milane ke liye kaun sa aala istemal hota hai?",
+  "options_ur": [
+   "ایک پرکار",
+   "ایک بلینڈنگ اسٹمپ (ٹورٹیلون)",
+   "ایک سیٹ اسکوائر",
+   "ایک پروٹریکٹر"
+  ],
+  "options_roman": [
+   "Ek parkar",
+   "Ek blending stump (tortillon)",
+   "Ek set square",
+   "Ek protractor"
+  ],
+  "explanation_ur": "بلینڈنگ اسٹمپ، جسے ٹورٹیلون بھی کہا جاتا ہے، لپیٹے ہوئے کاغذ کا ایک آلہ ہے جو پنسل کے رنگوں کو ہموار کرنے اور ملانے کے لیے استعمال ہوتا ہے۔",
+  "explanation_roman": "Blending stump, jise tortillon bhi kaha jata hai, lapete hue kagaz ka ek aala hai jo pencil ke rangon ko hamwar karne aur milane ke liye istemal hota hai.",
   "post": [
    "dm",
    "pet"
@@ -889,6 +1385,22 @@
  },
  {
   "id": "DRW-042",
+  "question_ur": "ایک نقطہ پرسپیکٹو میں کتنے غائب ہونے والے نقطے استعمال ہوتے ہیں؟",
+  "question_roman": "Ek nuqta perspective mein kitne ghaib hone wale nuqte istemal hote hain?",
+  "options_ur": [
+   "ایک",
+   "دو",
+   "تین",
+   "کوئی نہیں"
+  ],
+  "options_roman": [
+   "Ek",
+   "Do",
+   "Teen",
+   "Koi nahi"
+  ],
+  "explanation_ur": "ایک نقطہ پرسپیکٹو میں ایک ہی غائب ہونے والا نقطہ استعمال ہوتا ہے، جو اکثر سڑک یا راہداری کے ساتھ سیدھا دیکھنے والے منظر کے لیے ہوتا ہے۔",
+  "explanation_roman": "Ek nuqta perspective mein ek hi ghaib hone wala nuqta istemal hota hai, jo aksar sarak ya rahdari ke sath seedha dekhne wale manzar ke liye hota hai.",
   "post": [
    "dm",
    "pet"
@@ -919,6 +1431,22 @@
  },
  {
   "id": "DRW-043",
+  "question_ur": "دو نقطہ پرسپیکٹو اکثر کس چیز کو بنانے کے لیے استعمال ہوتا ہے؟",
+  "question_roman": "Do nuqta perspective aksar kis cheez ko banane ke liye istemal hota hai?",
+  "options_ur": [
+   "ایک چپٹا دائرہ",
+   "کسی عمارت کا کونا",
+   "پورٹریٹ کا چہرہ",
+   "اسٹل لائف کا پیالہ"
+  ],
+  "options_roman": [
+   "Ek chapta daira",
+   "Kisi imarat ka kona",
+   "Portrait ka chehra",
+   "Still life ka pyala"
+  ],
+  "explanation_ur": "دو نقطہ پرسپیکٹو کسی عمارت کے کونے کے لیے موزوں ہے، جس میں ہر طرف ایک غائب ہونے والا نقطہ ہوتا ہے۔",
+  "explanation_roman": "Do nuqta perspective kisi imarat ke kone ke liye mozoon hai, jis mein har taraf ek ghaib hone wala nuqta hota hai.",
   "post": [
    "dm",
    "pet"
@@ -949,6 +1477,22 @@
  },
  {
   "id": "DRW-044",
+  "question_ur": "پرسپیکٹو ڈرائنگ میں افق کی لکیر کس چیز کی بلندی پر ہوتی ہے؟",
+  "question_roman": "Perspective drawing mein ufuq ki lakeer kis cheez ki bulandi par hoti hai?",
+  "options_ur": [
+   "زمین",
+   "دیکھنے والے کی آنکھ کی سطح",
+   "کاغذ کا اوپری حصہ",
+   "چیز کی بنیاد"
+  ],
+  "options_roman": [
+   "Zameen",
+   "Dekhne wale ki aankh ki satah",
+   "Kagaz ka oopri hissa",
+   "Cheez ki bunyad"
+  ],
+  "explanation_ur": "افق کی لکیر دیکھنے والے کی آنکھ کی سطح پر ہوتی ہے۔ اس سے اوپر والی چیزیں نیچے سے دیکھی جاتی ہیں، اور اس سے نیچے والی چیزیں اوپر سے دیکھی جاتی ہیں۔",
+  "explanation_roman": "Ufuq ki lakeer dekhne wale ki aankh ki satah par hoti hai. Is se oopar wali cheezein neeche se dekhi jati hain, aur is se neeche wali cheezein oopar se dekhi jati hain.",
   "post": [
    "dm",
    "pet"
@@ -979,6 +1523,22 @@
  },
  {
   "id": "DRW-045",
+  "question_ur": "کون سی ترتیب رنگوں کے پہیے کے مطابق درست ہے؟",
+  "question_roman": "Kaun si tarteeb rangon ke pahiye ke mutabiq durust hai?",
+  "options_ur": [
+   "سرخ، نارنجی، پیلا، سبز، نیلا، جامنی",
+   "سرخ، سبز، پیلا، نیلا، جامنی، نارنجی",
+   "نیلا، سرخ، سبز، نارنجی، پیلا، جامنی",
+   "پیلا، جامنی، سرخ، سبز، نیلا، نارنجی"
+  ],
+  "options_roman": [
+   "Surkh, narangi, peela, sabz, neela, jamni",
+   "Surkh, sabz, peela, neela, jamni, narangi",
+   "Neela, surkh, sabz, narangi, peela, jamni",
+   "Peela, jamni, surkh, sabz, neela, narangi"
+  ],
+  "explanation_ur": "رنگوں کے پہیے کے گرد ترتیب یہ ہے: سرخ، نارنجی، پیلا، سبز، نیلا، جامنی، اور پھر واپس سرخ۔",
+  "explanation_roman": "Rangon ke pahiye ke gird tarteeb yeh hai: surkh, narangi, peela, sabz, neela, jamni, aur phir wapas surkh.",
   "post": [
    "dm",
    "pet"
@@ -1009,6 +1569,22 @@
  },
  {
   "id": "DRW-046",
+  "question_ur": "مشابہ رنگ کیا ہوتے ہیں؟",
+  "question_roman": "Mushabeh rang kya hote hain?",
+  "options_ur": [
+   "پہیے پر ایک دوسرے کے مخالف رنگ",
+   "رنگوں کے پہیے پر ایک دوسرے کے ساتھ والے رنگ",
+   "صرف کالے سے بنے ہوئے رنگ",
+   "وہ رنگ جو ملائے نہیں جا سکتے"
+  ],
+  "options_roman": [
+   "Pahiye par ek dusre ke mukhalif rang",
+   "Rangon ke pahiye par ek dusre ke sath wale rang",
+   "Sirf kale se bane hue rang",
+   "Woh rang jo milaye nahi ja sakte"
+  ],
+  "explanation_ur": "مشابہ رنگ رنگوں کے پہیے پر ایک دوسرے کے ساتھ ہوتے ہیں، جیسے نیلا، نیلا سبز اور سبز۔",
+  "explanation_roman": "Mushabeh rang rangon ke pahiye par ek dusre ke sath hote hain, jaise neela, neela sabz aur sabz.",
   "post": [
    "dm",
    "pet"
@@ -1039,6 +1615,22 @@
  },
  {
   "id": "DRW-047",
+  "question_ur": "کون سا گروپ غیر جانبدار رنگوں کی فہرست دیتا ہے؟",
+  "question_roman": "Kaun sa group ghair janibdar rangon ki fehrist deta hai?",
+  "options_ur": [
+   "سرخ، پیلا، نیلا",
+   "کالا، سفید، سرمئی اور بھورا",
+   "نارنجی، سبز، جامنی",
+   "گلابی، سنہری اور چاندی"
+  ],
+  "options_roman": [
+   "Surkh, peela, neela",
+   "Kala, safed, surmai aur bhura",
+   "Narangi, sabz, jamni",
+   "Gulabi, sunehri aur chandi"
+  ],
+  "explanation_ur": "غیر جانبدار رنگ — کالا، سفید، سرمئی اور بھورا — رنگوں کے پہیے سے باہر ہوتے ہیں اور چمکدار رنگوں کو نرم کرتے ہیں۔",
+  "explanation_roman": "Ghair janibdar rang — kala, safed, surmai aur bhura — rangon ke pahiye se bahar hote hain aur chamakdar rangon ko naram karte hain.",
   "post": [
    "dm",
    "pet"
@@ -1069,6 +1661,22 @@
  },
  {
   "id": "DRW-048",
+  "question_ur": "یک رنگی رنگوں کی اسکیم کیا ہے؟",
+  "question_roman": "Yak rangi rangon ki scheme kya hai?",
+  "options_ur": [
+   "بہت سے چمکدار رنگ ایک ساتھ",
+   "ایک رنگ مختلف ہلکے اور گہرے شیڈز میں",
+   "صرف کالا اور سفید",
+   "پہیے پر مخالف رنگ"
+  ],
+  "options_roman": [
+   "Bohat se chamakdar rang ek sath",
+   "Ek rang mukhtalif halke aur gehre shades mein",
+   "Sirf kala aur safed",
+   "Pahiye par mukhalif rang"
+  ],
+  "explanation_ur": "یک رنگی اسکیم میں ایک رنگ استعمال ہوتا ہے، جس میں ٹنٹ (سفید ملانے سے) اور شیڈز (کالا ملانے سے) کے ذریعے تبدیلی کی جاتی ہے۔",
+  "explanation_roman": "Yak rangi scheme mein ek rang istemal hota hai, jis mein tint (safed milane se) aur shades (kala milane se) ke zariye tabdeeli ki jati hai.",
   "post": [
    "dm",
    "pet"
@@ -1099,6 +1707,22 @@
  },
  {
   "id": "DRW-049",
+  "question_ur": "تیسرے درجے کا رنگ کیسے بنایا جاتا ہے؟",
+  "question_roman": "Teesre darje ka rang kaise banaya jata hai?",
+  "options_ur": [
+   "دو بنیادی رنگ ملانے سے",
+   "ایک بنیادی رنگ کو اس کے ساتھ والے ثانوی رنگ کے ساتھ ملانے سے",
+   "کالے کو سفید کے ساتھ ملانے سے",
+   "تینوں بنیادی رنگ ملانے سے"
+  ],
+  "options_roman": [
+   "Do bunyadi rang milane se",
+   "Ek bunyadi rang ko is ke sath wale sanwi rang ke sath milane se",
+   "Kale ko safed ke sath milane se",
+   "Teenon bunyadi rang milane se"
+  ],
+  "explanation_ur": "تیسرے درجے کا رنگ ایک بنیادی رنگ کو اس کے ساتھ والے ثانوی رنگ کے ساتھ ملانے سے بنتا ہے، جیسے سرخ نارنجی۔",
+  "explanation_roman": "Teesre darje ka rang ek bunyadi rang ko is ke sath wale sanwi rang ke sath milane se banta hai, jaise surkh narangi.",
   "post": [
    "dm",
    "pet"
@@ -1129,6 +1753,22 @@
  },
  {
   "id": "DRW-050",
+  "question_ur": "نیلے کا تکمیلی رنگ کون سا ہے؟",
+  "question_roman": "Neele ka takmeeli rang kaun sa hai?",
+  "options_ur": [
+   "سبز",
+   "جامنی",
+   "نارنجی",
+   "پیلا"
+  ],
+  "options_roman": [
+   "Sabz",
+   "Jamni",
+   "Narangi",
+   "Peela"
+  ],
+  "explanation_ur": "نیلے کا تکمیلی رنگ نارنجی ہے۔ تکمیلی رنگ رنگوں کے پہیے پر ایک دوسرے کے مخالف ہوتے ہیں۔",
+  "explanation_roman": "Neele ka takmeeli rang narangi hai. Takmeeli rang rangon ke pahiye par ek dusre ke mukhalif hote hain.",
   "post": [
    "dm",
    "pet"
@@ -1159,6 +1799,22 @@
  },
  {
   "id": "DRW-051",
+  "question_ur": "پیلے کا تکمیلی رنگ کون سا ہے؟",
+  "question_roman": "Peele ka takmeeli rang kaun sa hai?",
+  "options_ur": [
+   "نارنجی",
+   "جامنی",
+   "سبز",
+   "سرخ"
+  ],
+  "options_roman": [
+   "Narangi",
+   "Jamni",
+   "Sabz",
+   "Surkh"
+  ],
+  "explanation_ur": "پیلے کا تکمیلی رنگ جامنی ہے۔ تکمیلی رنگ رنگوں کے پہیے پر ایک دوسرے کے مخالف ہوتے ہیں۔",
+  "explanation_roman": "Peele ka takmeeli rang jamni hai. Takmeeli rang rangon ke pahiye par ek dusre ke mukhalif hote hain.",
   "post": [
    "dm",
    "pet"
@@ -1189,6 +1845,22 @@
  },
  {
   "id": "DRW-052",
+  "question_ur": "پنسل کے درجات میں 'B' پنسل کیسا نشان دیتی ہے؟",
+  "question_roman": "Pencil ke darjat mein 'B' pencil kaisa nishan deti hai?",
+  "options_ur": [
+   "ایک سخت، ہلکا نشان",
+   "ایک نرم، گہرا نشان",
+   "بالکل کوئی نشان نہیں",
+   "ایک رنگین نشان"
+  ],
+  "options_roman": [
+   "Ek sakht, halka nishan",
+   "Ek naram, gehra nishan",
+   "Bilkul koi nishan nahi",
+   "Ek rangeen nishan"
+  ],
+  "explanation_ur": "B پنسل نرم ہوتی ہیں اور گہرے نشان دیتی ہیں۔ H پنسل سخت ہوتی ہیں اور ہلکے نشان دیتی ہیں، اور HB درمیان میں ہوتی ہے۔",
+  "explanation_roman": "B pencil naram hoti hain aur gehre nishan deti hain. H pencil sakht hoti hain aur halke nishan deti hain, aur HB darmiyan mein hoti hai.",
   "post": [
    "dm",
    "pet"
@@ -1219,6 +1891,22 @@
  },
  {
   "id": "DRW-053",
+  "question_ur": "ہلکی تعمیری لکیروں کے لیے پنسل کا کون سا درجہ بہترین ہے؟",
+  "question_roman": "Halki tameeri lakeeron ke liye pencil ka kaun sa darja behtareen hai?",
+  "options_ur": [
+   "6B",
+   "2H",
+   "8B",
+   "HB"
+  ],
+  "options_roman": [
+   "6B",
+   "2H",
+   "8B",
+   "HB"
+  ],
+  "explanation_ur": "2H پنسل سخت اور ہلکی ہوتی ہے، اس لیے یہ ہلکی تعمیری لکیروں کے لیے موزوں ہے جو ڈرائنگ کی رہنمائی کرتی ہیں بغیر اسے گہرا کیے۔",
+  "explanation_roman": "2H pencil sakht aur halki hoti hai, is liye yeh halki tameeri lakeeron ke liye mozoon hai jo drawing ki rehnumai karti hain baghair ise gehra kiye.",
   "post": [
    "dm",
    "pet"
@@ -1249,6 +1937,22 @@
  },
  {
   "id": "DRW-054",
+  "question_ur": "گوندھا ہوا ربڑ کس کام کے لیے استعمال ہوتا ہے؟",
+  "question_roman": "Gondha hua rubber kis kaam ke liye istemal hota hai?",
+  "options_ur": [
+   "صرف سیاہی مٹانے کے لیے",
+   "گریفائٹ کو نرمی سے اٹھانے اور چھوٹے حصوں کے لیے نوکوں کی شکل دینے کے لیے",
+   "پنسل تیز کرنے کے لیے",
+   "زاویے ناپنے کے لیے"
+  ],
+  "options_roman": [
+   "Sirf siyahi mitane ke liye",
+   "Graphite ko narmi se uthane aur chhote hisson ke liye nokon ki shakal dene ke liye",
+   "Pencil tez karne ke liye",
+   "Zawiye napne ke liye"
+  ],
+  "explanation_ur": "گوندھا ہوا ربڑ نرم اور شکل دینے کے قابل ہوتا ہے۔ یہ گریفائٹ کو نرمی سے اٹھاتا ہے اور چھوٹے حصوں کو مٹانے یا روشن حصوں کو اٹھانے کے لیے اس کی شکل بنائی جا سکتی ہے۔",
+  "explanation_roman": "Gondha hua rubber naram aur shakal dene ke qabil hota hai. Yeh graphite ko narmi se uthata hai aur chhote hisson ko mitane ya roshan hisson ko uthane ke liye is ki shakal banai ja sakti hai.",
   "post": [
    "dm",
    "pet"
@@ -1279,6 +1983,22 @@
  },
  {
   "id": "DRW-055",
+  "question_ur": "45 ڈگری والے سیٹ اسکوائر کے زاویے کیا ہوتے ہیں؟",
+  "question_roman": "45 degree wale set square ke zawiye kya hote hain?",
+  "options_ur": [
+   "90، 60 اور 30",
+   "90، 45 اور 45",
+   "90، 50 اور 40",
+   "60، 60 اور 60"
+  ],
+  "options_roman": [
+   "90, 60 aur 30",
+   "90, 45 aur 45",
+   "90, 50 aur 40",
+   "60, 60 aur 60"
+  ],
+  "explanation_ur": "45 ڈگری والا سیٹ اسکوائر ایک قائم الزاویہ مثلث ہے جس کے زاویے 90، 45 اور 45 ڈگری ہوتے ہیں۔",
+  "explanation_roman": "45 degree wala set square ek qaim-uz-zawiya musallas hai jis ke zawiye 90, 45 aur 45 degree hote hain.",
   "post": [
    "dm",
    "pet"
@@ -1309,6 +2029,22 @@
  },
  {
   "id": "DRW-056",
+  "question_ur": "لکیر کو دو برابر حصوں میں بانٹنے کا کیا مطلب ہے؟",
+  "question_roman": "Lakeer ko do barabar hisson mein bantne ka kya matlab hai?",
+  "options_ur": [
+   "اسے بڑھانا",
+   "اسے دو برابر حصوں میں تقسیم کرنا",
+   "اس کی لمبائی دوگنی کرنا",
+   "اسے سیاہی سے بنانا"
+  ],
+  "options_roman": [
+   "Ise barhana",
+   "Ise do barabar hisson mein taqseem karna",
+   "Is ki lambai dogni karna",
+   "Ise siyahi se banana"
+  ],
+  "explanation_ur": "لکیر کو نصف کرنے کا مطلب ہے اسے دو برابر حصوں میں تقسیم کرنا، جو عام طور پر پرکار سے ہر سرے سے قوسیں بنا کر کیا جاتا ہے۔",
+  "explanation_roman": "Lakeer ko nisf karne ka matlab hai ise do barabar hisson mein taqseem karna, jo aam tor par parkar se har sire se qausein bana kar kiya jata hai.",
   "post": [
    "dm",
    "pet"
@@ -1339,6 +2075,22 @@
  },
  {
   "id": "DRW-057",
+  "question_ur": "ہندسی تعمیر میں کون سا آلہ دائرے اور قوسیں بناتا ہے؟",
+  "question_roman": "Hindsi tameer mein kaun sa aala daire aur qausein banata hai?",
+  "options_ur": [
+   "پروٹریکٹر",
+   "پرکار",
+   "سیٹ اسکوائر",
+   "ٹی اسکوائر"
+  ],
+  "options_roman": [
+   "Protractor",
+   "Parkar",
+   "Set square",
+   "T-square"
+  ],
+  "explanation_ur": "پرکار، جس میں ایک مقررہ نقطہ اور ایک پنسل کا نقطہ ہوتا ہے، مقررہ رداس کے دائرے اور قوسیں بناتا ہے۔",
+  "explanation_roman": "Parkar, jis mein ek muqarrara nuqta aur ek pencil ka nuqta hota hai, muqarrara radius ke daire aur qausein banata hai.",
   "post": [
    "dm",
    "pet"
@@ -1369,6 +2121,22 @@
  },
  {
   "id": "DRW-058",
+  "question_ur": "پرکار سے 90 ڈگری کے زاویے کو نصف کرنے سے کتنے سائز کے دو زاویے بنتے ہیں؟",
+  "question_roman": "Parkar se 90 degree ke zawiye ko nisf karne se kitne size ke do zawiye bante hain?",
+  "options_ur": [
+   "30 ڈگری",
+   "45 ڈگری",
+   "60 ڈگری",
+   "120 ڈگری"
+  ],
+  "options_roman": [
+   "30 degree",
+   "45 degree",
+   "60 degree",
+   "120 degree"
+  ],
+  "explanation_ur": "90 ڈگری کے قائم زاویے کو نصف کرنے سے ہر ایک 45 ڈگری کے دو زاویے بنتے ہیں۔",
+  "explanation_roman": "90 degree ke qaim zawiye ko nisf karne se har ek 45 degree ke do zawiye bante hain.",
   "post": [
    "dm",
    "pet"
@@ -1399,6 +2167,22 @@
  },
  {
   "id": "DRW-059",
+  "question_ur": "زمین کی تزئین کی ڈرائنگ میں کون سا حصہ صفحے پر سب سے بڑا اور سب سے نیچے بنایا جاتا ہے؟",
+  "question_roman": "Zameen ki tazyeen ki drawing mein kaun sa hissa safhe par sab se bara aur sab se neeche banaya jata hai?",
+  "options_ur": [
+   "پس منظر",
+   "پیش منظر",
+   "آسمان",
+   "افق"
+  ],
+  "options_roman": [
+   "Pas manzar",
+   "Pesh manzar",
+   "Aasman",
+   "Ufuq"
+  ],
+  "explanation_ur": "پیش منظر دیکھنے والے کے سب سے قریب ہوتا ہے، اس لیے اس کی چیزیں بڑی اور نیچے بنائی جاتی ہیں۔ دور کی چیزیں چھوٹی اور اوپر ہوتی ہیں۔",
+  "explanation_roman": "Pesh manzar dekhne wale ke sab se qareeb hota hai, is liye is ki cheezein bari aur neeche banai jati hain. Door ki cheezein chhoti aur oopar hoti hain.",
   "post": [
    "dm",
    "pet"
@@ -1429,6 +2213,22 @@
  },
  {
   "id": "DRW-060",
+  "question_ur": "انسانی شکل کی ڈرائنگ میں جسم کی اونچائی ناپنے کے لیے کون سی اکائی استعمال ہوتی ہے؟",
+  "question_roman": "Insani shakal ki drawing mein jism ki unchai napne ke liye kaun si ikai istemal hoti hai?",
+  "options_ur": [
+   "پاؤں",
+   "سر",
+   "بازو",
+   "ہاتھ"
+  ],
+  "options_roman": [
+   "Paon",
+   "Sar",
+   "Bazu",
+   "Hath"
+  ],
+  "explanation_ur": "سر ناپنے کی اکائی ہے۔ ایک بالغ شخص کی شکل عام طور پر تقریباً ساڑھے سات سروں کے برابر لمبی بنائی جاتی ہے۔",
+  "explanation_roman": "Sar napne ki ikai hai. Ek baligh shakhs ki shakal aam tor par taqreeban saade saat saron ke barabar lambi banai jati hai.",
   "post": [
    "dm",
    "pet"

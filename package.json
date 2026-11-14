@@ -65,7 +65,12 @@
     "test:stage4a-pwa": "node scripts/test-stage4a-pwa.mjs",
     "test:stage4b-audio": "node scripts/test-stage4b-audio.mjs",
     "test:stage5a": "node scripts/test-stage5a.mjs",
-    "test:stage5b": "node scripts/test-stage5b.mjs"
+    "test:stage5b": "node scripts/test-stage5b.mjs",
+    "test:stage5c": "node scripts/test-stage5c.mjs",
+    "test:stage5d": "node scripts/test-stage5d.mjs",
+    "test:stage5e": "node scripts/test-stage5e.mjs",
+    "test:stage5f": "node scripts/test-stage5f.mjs",
+    "test:stage5g": "node scripts/test-stage5g.mjs"
   },
   "version": "3.0.0"
 }

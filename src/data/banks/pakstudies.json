@@ -1,6 +1,22 @@
 [
  {
   "id": "PAK-001",
+  "question_ur": "قراردادِ لاہور کس تاریخ کو منظور ہوئی؟",
+  "question_roman": "Lahore Resolution kis tareekh ko manzoor hui?",
+  "options_ur": [
+   "23 مارچ 1940",
+   "23 مارچ 1939",
+   "14 اگست 1947",
+   "3 جون 1947"
+  ],
+  "options_roman": [
+   "23 March 1940",
+   "23 March 1939",
+   "14 August 1947",
+   "3 June 1947"
+  ],
+  "explanation_ur": "قراردادِ لاہور 23 مارچ 1940 کو منظور ہوئی۔",
+  "explanation_roman": "The Lahore Resolution was passed on 23 March 1940. Lahore Resolution 23 March 1940 ko manzoor hui.",
   "post": [
    "zamungkor",
    "tt",
@@ -42,6 +58,22 @@
  },
  {
   "id": "PAK-002",
+  "question_ur": "آل انڈیا مسلم لیگ کس سال قائم ہوئی؟",
+  "question_roman": "All-India Muslim League kis saal qayam hui?",
+  "options_ur": [
+   "1905",
+   "1906",
+   "1911",
+   "1916"
+  ],
+  "options_roman": [
+   "1905",
+   "1906",
+   "1911",
+   "1916"
+  ],
+  "explanation_ur": "مسلم لیگ 1906 میں ڈھاکہ میں قائم ہوئی۔",
+  "explanation_roman": "The Muslim League was founded in Dhaka in 1906. Muslim League 1906 mein Dhaka mein bani.",
   "post": [
    "zamungkor",
    "tt",
@@ -83,6 +115,22 @@
  },
  {
   "id": "PAK-003",
+  "question_ur": "علامہ اقبال نے الہ آباد میں اپنے خطبے میں علیحدہ مسلم ریاست کا تصور کس سال پیش کیا؟",
+  "question_roman": "Allama Iqbal ne Allahabad mein apne khutbe mein alag Muslim riyasat ka tasawwur kis saal pesh kiya?",
+  "options_ur": [
+   "1928",
+   "1929",
+   "1930",
+   "1932"
+  ],
+  "options_roman": [
+   "1928",
+   "1929",
+   "1930",
+   "1932"
+  ],
+  "explanation_ur": "اقبال نے 1930 میں الہ آباد میں خطبہ دیا۔",
+  "explanation_roman": "Iqbal gave the Allahabad Address in 1930. Iqbal ne 1930 mein Allahabad mein khutba diya.",
   "post": [
    "zamungkor",
    "tt",
@@ -124,6 +172,22 @@
  },
  {
   "id": "PAK-004",
+  "question_ur": "قائداعظم نے اپنے چودہ نکات کس سال پیش کیے؟",
+  "question_roman": "Quaid-e-Azam ne apne Chaudah Nikat kis saal pesh kiye?",
+  "options_ur": [
+   "1927",
+   "1928",
+   "1929",
+   "1930"
+  ],
+  "options_roman": [
+   "1927",
+   "1928",
+   "1929",
+   "1930"
+  ],
+  "explanation_ur": "چودہ نکات 1929 میں پیش کیے گئے۔",
+  "explanation_roman": "The Fourteen Points were presented in 1929. Chaudah Nikat 1929 mein pesh kiye gaye.",
   "post": [
    "zamungkor",
    "tt",
@@ -165,6 +229,22 @@
  },
  {
   "id": "PAK-005",
+  "question_ur": "کانگریس اور مسلم لیگ کے درمیان معاہدۂ لکھنؤ کس سال ہوا؟",
+  "question_roman": "Congress aur Muslim League ke darmiyan Lucknow Pact kis saal hua?",
+  "options_ur": [
+   "1913",
+   "1916",
+   "1919",
+   "1922"
+  ],
+  "options_roman": [
+   "1913",
+   "1916",
+   "1919",
+   "1922"
+  ],
+  "explanation_ur": "معاہدۂ لکھنؤ 1916 میں ہوا۔",
+  "explanation_roman": "The Lucknow Pact was signed in 1916. Lucknow Pact 1916 mein hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -206,6 +286,22 @@
  },
  {
   "id": "PAK-006",
+  "question_ur": "شملہ وفد نے وائسرائے سے کس سال ملاقات کی؟",
+  "question_roman": "Simla Deputation ne Viceroy se kis saal mulaqat ki?",
+  "options_ur": [
+   "1905",
+   "1906",
+   "1909",
+   "1911"
+  ],
+  "options_roman": [
+   "1905",
+   "1906",
+   "1909",
+   "1911"
+  ],
+  "explanation_ur": "شملہ وفد نے 1906 میں لارڈ منٹو سے ملاقات کی۔",
+  "explanation_roman": "The Simla Deputation met Lord Minto in 1906. Simla Deputation 1906 mein gaya.",
   "post": [
    "zamungkor",
    "tt",
@@ -247,6 +343,22 @@
  },
  {
   "id": "PAK-007",
+  "question_ur": "پاکستان کس تاریخ کو وجود میں آیا؟",
+  "question_roman": "Pakistan kis tareekh ko wujood mein aaya?",
+  "options_ur": [
+   "14 اگست 1947",
+   "15 اگست 1947",
+   "23 مارچ 1940",
+   "3 جون 1947"
+  ],
+  "options_roman": [
+   "14 August 1947",
+   "15 August 1947",
+   "23 March 1940",
+   "3 June 1947"
+  ],
+  "explanation_ur": "پاکستان 14 اگست 1947 کو وجود میں آیا۔",
+  "explanation_roman": "Pakistan was created on 14 August 1947. Pakistan 14 August 1947 ko bana.",
   "post": [
    "zamungkor",
    "tt",
@@ -288,6 +400,22 @@
  },
  {
   "id": "PAK-008",
+  "question_ur": "پاکستان کے پہلے گورنر جنرل کون تھے؟",
+  "question_roman": "Pakistan ke pehle Governor-General kaun the?",
+  "options_ur": [
+   "لیاقت علی خان",
+   "خواجہ ناظم الدین",
+   "قائداعظم محمد علی جناح",
+   "اسکندر مرزا"
+  ],
+  "options_roman": [
+   "Liaquat Ali Khan",
+   "Khawaja Nazimuddin",
+   "Quaid-e-Azam Muhammad Ali Jinnah",
+   "Iskander Mirza"
+  ],
+  "explanation_ur": "قائداعظم پہلے گورنر جنرل تھے۔",
+  "explanation_roman": "Quaid-e-Azam was the first Governor-General. Pehle Governor-General Quaid-e-Azam the.",
   "post": [
    "zamungkor",
    "tt",
@@ -331,6 +459,22 @@
  },
  {
   "id": "PAK-009",
+  "question_ur": "پاکستان کے پہلے وزیراعظم کون تھے؟",
+  "question_roman": "Pakistan ke pehle Wazir-e-Azam kaun the?",
+  "options_ur": [
+   "خواجہ ناظم الدین",
+   "لیاقت علی خان",
+   "محمد علی بوگرہ",
+   "چوہدری محمد علی"
+  ],
+  "options_roman": [
+   "Khawaja Nazimuddin",
+   "Liaquat Ali Khan",
+   "Muhammad Ali Bogra",
+   "Chaudhry Muhammad Ali"
+  ],
+  "explanation_ur": "لیاقت علی خان پہلے وزیراعظم تھے۔",
+  "explanation_roman": "Liaquat Ali Khan was the first Prime Minister. Pehle Wazir-e-Azam Liaquat Ali Khan the.",
   "post": [
    "zamungkor",
    "tt",
@@ -372,6 +516,22 @@
  },
  {
   "id": "PAK-010",
+  "question_ur": "قراردادِ مقاصد دستور ساز اسمبلی نے کس سال منظور کی؟",
+  "question_roman": "Objectives Resolution Constituent Assembly ne kis saal manzoor ki?",
+  "options_ur": [
+   "1947",
+   "1948",
+   "1949",
+   "1950"
+  ],
+  "options_roman": [
+   "1947",
+   "1948",
+   "1949",
+   "1950"
+  ],
+  "explanation_ur": "قراردادِ مقاصد مارچ 1949 میں منظور ہوئی۔",
+  "explanation_roman": "The Objectives Resolution was passed in March 1949. Qarardad-e-Maqasid 1949 mein manzoor hui.",
   "post": [
    "zamungkor",
    "tt",
@@ -413,6 +573,22 @@
  },
  {
   "id": "PAK-011",
+  "question_ur": "قائداعظم محمد علی جناح کس تاریخ کو پیدا ہوئے؟",
+  "question_roman": "Quaid-e-Azam Muhammad Ali Jinnah kis tareekh ko paida hue?",
+  "options_ur": [
+   "25 دسمبر 1876",
+   "25 دسمبر 1875",
+   "14 اگست 1876",
+   "11 ستمبر 1876"
+  ],
+  "options_roman": [
+   "25 December 1876",
+   "25 December 1875",
+   "14 August 1876",
+   "11 September 1876"
+  ],
+  "explanation_ur": "قائداعظم 25 دسمبر 1876 کو کراچی میں پیدا ہوئے۔",
+  "explanation_roman": "Quaid-e-Azam was born on 25 December 1876 in Karachi. Quaid-e-Azam 25 December 1876 ko Karachi mein paida hue.",
   "post": [
    "zamungkor",
    "tt",
@@ -454,6 +630,22 @@
  },
  {
   "id": "PAK-012",
+  "question_ur": "کابینہ مشن ہندوستان کس سال آیا؟",
+  "question_roman": "Cabinet Mission Hindustan kis saal aaya?",
+  "options_ur": [
+   "1944",
+   "1945",
+   "1946",
+   "1947"
+  ],
+  "options_roman": [
+   "1944",
+   "1945",
+   "1946",
+   "1947"
+  ],
+  "explanation_ur": "کابینہ مشن 1946 میں آیا۔",
+  "explanation_roman": "The Cabinet Mission came in 1946. Cabinet Mission 1946 mein aaya.",
   "post": [
    "zamungkor",
    "tt",
@@ -495,6 +687,22 @@
  },
  {
   "id": "PAK-013",
+  "question_ur": "3 جون پلان کا اعلان کس نے کیا؟",
+  "question_roman": "3rd June Plan ka elaan kis ne kiya?",
+  "options_ur": [
+   "لارڈ ویول",
+   "لارڈ ماؤنٹ بیٹن",
+   "لارڈ کرزن",
+   "لارڈ منٹو"
+  ],
+  "options_roman": [
+   "Lord Wavell",
+   "Lord Mountbatten",
+   "Lord Curzon",
+   "Lord Minto"
+  ],
+  "explanation_ur": "3 جون پلان 1947 کا اعلان لارڈ ماؤنٹ بیٹن نے کیا۔",
+  "explanation_roman": "The 3rd June Plan 1947 was announced by Lord Mountbatten. 3 June Plan Lord Mountbatten ne pesh kiya.",
   "post": [
    "zamungkor",
    "tt",
@@ -536,6 +744,22 @@
  },
  {
   "id": "PAK-014",
+  "question_ur": "تقسیمِ بنگال کا اعلان 1905 میں کس نے کیا؟",
+  "question_roman": "Bengal ki taqseem ka elaan 1905 mein kis ne kiya?",
+  "options_ur": [
+   "لارڈ منٹو",
+   "لارڈ کرزن",
+   "لارڈ ماؤنٹ بیٹن",
+   "لارڈ ارون"
+  ],
+  "options_roman": [
+   "Lord Minto",
+   "Lord Curzon",
+   "Lord Mountbatten",
+   "Lord Irwin"
+  ],
+  "explanation_ur": "بنگال کی تقسیم 1905 میں لارڈ کرزن نے کی۔",
+  "explanation_roman": "Bengal was partitioned in 1905 by Lord Curzon. Bengal ki taqseem 1905 mein Lord Curzon ne ki.",
   "post": [
    "zamungkor",
    "tt",
@@ -577,6 +801,22 @@
  },
  {
   "id": "PAK-015",
+  "question_ur": "تحریکِ خلافت کس سال شروع ہوئی؟",
+  "question_roman": "Khilafat Tehreek kis saal shuru hui?",
+  "options_ur": [
+   "1916",
+   "1918",
+   "1919",
+   "1921"
+  ],
+  "options_roman": [
+   "1916",
+   "1918",
+   "1919",
+   "1921"
+  ],
+  "explanation_ur": "تحریکِ خلافت 1919 میں شروع ہوئی۔",
+  "explanation_roman": "The Khilafat Movement started in 1919. Khilafat Tehreek 1919 mein shuru hui.",
   "post": [
    "zamungkor",
    "tt",
@@ -618,6 +858,22 @@
  },
  {
   "id": "PAK-016",
+  "question_ur": "قائد اعظم کس سال آل انڈیا مسلم لیگ میں شامل ہوئے؟",
+  "question_roman": "Quaid-e-Azam kis saal All-India Muslim League mein shamil hue?",
+  "options_ur": [
+   "1911",
+   "1913",
+   "1916",
+   "1920"
+  ],
+  "options_roman": [
+   "1911",
+   "1913",
+   "1916",
+   "1920"
+  ],
+  "explanation_ur": "جناح 1913 میں مسلم لیگ میں شامل ہوئے۔",
+  "explanation_roman": "Jinnah joined the Muslim League in 1913. Jinnah 1913 mein Muslim League mein shamil hue.",
   "post": [
    "zamungkor",
    "tt",
@@ -659,6 +915,22 @@
  },
  {
   "id": "PAK-017",
+  "question_ur": "پاکستان کا پہلا آئین کس سال نافذ ہوا؟",
+  "question_roman": "Pakistan ka pehla Aain kis saal nafiz hua?",
+  "options_ur": [
+   "1954",
+   "1956",
+   "1958",
+   "1962"
+  ],
+  "options_roman": [
+   "1954",
+   "1956",
+   "1958",
+   "1962"
+  ],
+  "explanation_ur": "پہلا آئین 1956 میں نافذ ہوا۔",
+  "explanation_roman": "The first Constitution was enforced in 1956. Pehla Aain 1956 mein nafiz hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -700,6 +972,22 @@
  },
  {
   "id": "PAK-018",
+  "question_ur": "پاکستان کا دوسرا آئین کس سال نافذ ہوا؟",
+  "question_roman": "Pakistan ka dusra Aain kis saal nafiz hua?",
+  "options_ur": [
+   "1958",
+   "1960",
+   "1962",
+   "1969"
+  ],
+  "options_roman": [
+   "1958",
+   "1960",
+   "1962",
+   "1969"
+  ],
+  "explanation_ur": "دوسرا آئین 1962 میں نافذ ہوا۔",
+  "explanation_roman": "The second Constitution was enforced in 1962. Dusra Aain 1962 mein nafiz hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -741,6 +1029,22 @@
  },
  {
   "id": "PAK-019",
+  "question_ur": "1973 کا آئین کس تاریخ کو نافذ ہوا؟",
+  "question_roman": "1973 ka Aain kis tareekh ko nafiz hua?",
+  "options_ur": [
+   "23 مارچ 1973",
+   "10 اپریل 1973",
+   "14 اگست 1973",
+   "1 جنوری 1974"
+  ],
+  "options_roman": [
+   "23 March 1973",
+   "10 April 1973",
+   "14 August 1973",
+   "1 January 1974"
+  ],
+  "explanation_ur": "1973 کا آئین 14 اگست 1973 کو نافذ ہوا۔",
+  "explanation_roman": "The 1973 Constitution was enforced on 14 August 1973. 1973 ka Aain 14 August 1973 ko nafiz hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -782,6 +1086,22 @@
  },
  {
   "id": "PAK-020",
+  "question_ur": "1973 کا آئین قومی اسمبلی نے کس تاریخ کو منظور کیا؟",
+  "question_roman": "1973 ka Aain National Assembly ne kis tareekh ko manzoor kiya?",
+  "options_ur": [
+   "10 اپریل 1973",
+   "14 اگست 1973",
+   "23 مارچ 1973",
+   "12 مارچ 1949"
+  ],
+  "options_roman": [
+   "10 April 1973",
+   "14 August 1973",
+   "23 March 1973",
+   "12 March 1949"
+  ],
+  "explanation_ur": "1973 کا آئین 10 اپریل 1973 کو منظور ہوا۔",
+  "explanation_roman": "The 1973 Constitution was passed on 10 April 1973. 1973 ka Aain 10 April 1973 ko manzoor hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -823,6 +1143,22 @@
  },
  {
   "id": "PAK-021",
+  "question_ur": "1973 کا آئین کس قسم کی حکومت فراہم کرتا ہے؟",
+  "question_roman": "1973 ka Aain kis qisam ki hukumat faraham karta hai?",
+  "options_ur": [
+   "صدارتی",
+   "پارلیمانی",
+   "فوجی",
+   "بادشاہت"
+  ],
+  "options_roman": [
+   "Sadarti",
+   "Parlimani",
+   "Fauji",
+   "Badshahat"
+  ],
+  "explanation_ur": "1973 کا آئین پارلیمانی نظام فراہم کرتا ہے۔",
+  "explanation_roman": "The 1973 Constitution provides a parliamentary system. 1973 ka Aain parlimani nizam deta hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -864,6 +1200,22 @@
  },
  {
   "id": "PAK-022",
+  "question_ur": "1973 کے آئین کے تحت پاکستان کا سرکاری مذہب کیا ہے؟",
+  "question_roman": "1973 ke Aain ke tehat Pakistan ka sarkaari mazhab kya hai?",
+  "options_ur": [
+   "عیسائیت",
+   "ہندومت",
+   "اسلام",
+   "کوئی سرکاری مذہب نہیں"
+  ],
+  "options_roman": [
+   "Isaiyat",
+   "Hindumat",
+   "Islam",
+   "Koi sarkaari mazhab nahi"
+  ],
+  "explanation_ur": "1973 کے آئین کے تحت اسلام پاکستان کا سرکاری مذہب ہے۔",
+  "explanation_roman": "Under the 1973 Constitution, Islam is the state religion. 1973 ke Aain ke mutabiq Islam Pakistan ka sarkaari mazhab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -905,6 +1257,22 @@
  },
  {
   "id": "PAK-023",
+  "question_ur": "1973 کے آئین کے تحت پاکستان کی قومی زبان کیا ہے؟",
+  "question_roman": "1973 ke Aain ke tehat Pakistan ki qawmi zaban kya hai?",
+  "options_ur": [
+   "انگریزی",
+   "پنجابی",
+   "اردو",
+   "پشتو"
+  ],
+  "options_roman": [
+   "Angrezi",
+   "Punjabi",
+   "Urdu",
+   "Pashto"
+  ],
+  "explanation_ur": "اردو پاکستان کی قومی زبان ہے۔",
+  "explanation_roman": "Urdu is the national language of Pakistan. Urdu Pakistan ki qawmi zaban hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -946,6 +1314,22 @@
  },
  {
   "id": "PAK-024",
+  "question_ur": "1973 کے آئین میں 18ویں ترمیم کس سال منظور ہوئی؟",
+  "question_roman": "1973 ke Aain mein 18th Tarmeem kis saal manzoor hui?",
+  "options_ur": [
+   "2008",
+   "2009",
+   "2010",
+   "2012"
+  ],
+  "options_roman": [
+   "2008",
+   "2009",
+   "2010",
+   "2012"
+  ],
+  "explanation_ur": "18ویں ترمیم 2010 میں منظور ہوئی اور اس نے صوبوں کو زیادہ اختیارات دیے۔",
+  "explanation_roman": "The 18th Amendment was passed in 2010 and gave more powers to the provinces. 18th Tarmeem 2010 mein manzoor hui.",
   "post": [
    "zamungkor",
    "tt",
@@ -987,6 +1371,22 @@
  },
  {
   "id": "PAK-025",
+  "question_ur": "1973 کے آئین کے تحت حکومت کا سربراہ کون ہے؟",
+  "question_roman": "1973 ke Aain ke tehat hukumat ka sarbarah kaun hai?",
+  "options_ur": [
+   "صدر",
+   "وزیر اعظم",
+   "چیف جسٹس",
+   "آرمی چیف"
+  ],
+  "options_roman": [
+   "Sadr",
+   "Wazir-e-Azam",
+   "Chief Justice",
+   "Army Chief"
+  ],
+  "explanation_ur": "وزیر اعظم حکومت کا سربراہ ہوتا ہے۔",
+  "explanation_roman": "The Prime Minister is the head of the government. Wazir-e-Azam hukumat ka sarbarah hota hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1028,6 +1428,22 @@
  },
  {
   "id": "PAK-026",
+  "question_ur": "پاکستان کی پارلیمنٹ (مجلس شوریٰ) کن دو ایوانوں پر مشتمل ہے؟",
+  "question_roman": "Pakistan ki Parliament (Majlis-e-Shura) kin do aiwanon par mushtamil hai?",
+  "options_ur": [
+   "سینیٹ اور قومی اسمبلی",
+   "سینیٹ اور صوبائی اسمبلی",
+   "قومی اسمبلی اور سپریم کورٹ",
+   "سینیٹ اور کابینہ"
+  ],
+  "options_roman": [
+   "Senate aur National Assembly",
+   "Senate aur Provincial Assembly",
+   "National Assembly aur Supreme Court",
+   "Senate aur Cabinet"
+  ],
+  "explanation_ur": "پارلیمنٹ سینیٹ اور قومی اسمبلی پر مشتمل ہے۔",
+  "explanation_roman": "Parliament has the Senate and the National Assembly. Parliament Senate aur National Assembly par mushtamil hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1069,6 +1485,22 @@
  },
  {
   "id": "PAK-027",
+  "question_ur": "پاکستان کے دوسرے وزیر اعظم کون تھے؟",
+  "question_roman": "Pakistan ke dusre Wazir-e-Azam kaun the?",
+  "options_ur": [
+   "محمد علی بوگرہ",
+   "خواجہ ناظم الدین",
+   "چوہدری محمد علی",
+   "فیروز خان نون"
+  ],
+  "options_roman": [
+   "Muhammad Ali Bogra",
+   "Khawaja Nazimuddin",
+   "Chaudhry Muhammad Ali",
+   "Feroz Khan Noon"
+  ],
+  "explanation_ur": "خواجہ ناظم الدین دوسرے وزیر اعظم تھے۔",
+  "explanation_roman": "Khawaja Nazimuddin was the second Prime Minister. Dusre Wazir-e-Azam Khawaja Nazimuddin the.",
   "post": [
    "zamungkor",
    "tt",
@@ -1110,6 +1542,22 @@
  },
  {
   "id": "PAK-028",
+  "question_ur": "لیاقت علی خان کو کس سال اور کس شہر میں قتل کیا گیا؟",
+  "question_roman": "Liaquat Ali Khan ko kis saal aur kis sheher mein qatal kiya gaya?",
+  "options_ur": [
+   "1950 میں کراچی",
+   "1951 میں راولپنڈی",
+   "1952 میں لاہور",
+   "1953 میں پشاور"
+  ],
+  "options_roman": [
+   "1950 mein Karachi",
+   "1951 mein Rawalpindi",
+   "1952 mein Lahore",
+   "1953 mein Peshawar"
+  ],
+  "explanation_ur": "لیاقت علی خان کو 1951 میں راولپنڈی میں قتل کیا گیا۔",
+  "explanation_roman": "Liaquat Ali Khan was assassinated in Rawalpindi in 1951. Liaquat Ali Khan 1951 mein Rawalpindi mein shaheed hue.",
   "post": [
    "zamungkor",
    "tt",
@@ -1151,6 +1599,22 @@
  },
  {
   "id": "PAK-029",
+  "question_ur": "1973 کے آئین کے تحت پہلے وزیر اعظم کون تھے؟",
+  "question_roman": "1973 ke Aain ke tehat pehle Wazir-e-Azam kaun the?",
+  "options_ur": [
+   "بے نظیر بھٹو",
+   "ذوالفقار علی بھٹو",
+   "نواز شریف",
+   "محمد خان جونیجو"
+  ],
+  "options_roman": [
+   "Benazir Bhutto",
+   "Zulfikar Ali Bhutto",
+   "Nawaz Sharif",
+   "Muhammad Khan Junejo"
+  ],
+  "explanation_ur": "ذوالفقار علی بھٹو 1973 کے آئین کے تحت پہلے وزیر اعظم تھے اور 1973 سے 1977 تک اس عہدے پر رہے۔",
+  "explanation_roman": "Zulfikar Ali Bhutto was Prime Minister from 1973 to 1977. Zulfikar Ali Bhutto 1973 ke Aain ke tehat pehle Wazir-e-Azam the.",
   "post": [
    "zamungkor",
    "tt",
@@ -1192,6 +1656,22 @@
  },
  {
   "id": "PAK-030",
+  "question_ur": "1988 میں پاکستان کی پہلی خاتون وزیر اعظم کون بنیں؟",
+  "question_roman": "1988 mein Pakistan ki pehli khatoon Wazir-e-Azam kaun bani?",
+  "options_ur": [
+   "فاطمہ جناح",
+   "بے نظیر بھٹو",
+   "مریم نواز",
+   "حنا ربانی کھر"
+  ],
+  "options_roman": [
+   "Fatima Jinnah",
+   "Benazir Bhutto",
+   "Maryam Nawaz",
+   "Hina Rabbani Khar"
+  ],
+  "explanation_ur": "بے نظیر بھٹو 1988 میں وزیر اعظم بنیں۔",
+  "explanation_roman": "Benazir Bhutto became Prime Minister in 1988. Benazir Bhutto 1988 mein Wazir-e-Azam bani.",
   "post": [
    "zamungkor",
    "tt",
@@ -1233,6 +1713,22 @@
  },
  {
   "id": "PAK-031",
+  "question_ur": "پاکستان کے کس وزیرِ اعظم نے تین مرتبہ وزیرِ اعظم کے طور پر خدمات انجام دیں؟",
+  "question_roman": "Pakistan ke kis Wazir-e-Azam ne teen martaba Wazir-e-Azam ke tor par khidmat anjam di?",
+  "options_ur": [
+   "ذوالفقار علی بھٹو",
+   "نواز شریف",
+   "عمران خان",
+   "شوکت عزیز"
+  ],
+  "options_roman": [
+   "Zulfikar Ali Bhutto",
+   "Nawaz Sharif",
+   "Imran Khan",
+   "Shaukat Aziz"
+  ],
+  "explanation_ur": "نواز شریف تین مرتبہ وزیرِ اعظم رہے۔",
+  "explanation_roman": "Nawaz Sharif served as Prime Minister three times. Nawaz Sharif teen martaba Wazir-e-Azam rahe.",
   "post": [
    "zamungkor",
    "tt",
@@ -1274,6 +1770,22 @@
  },
  {
   "id": "PAK-032",
+  "question_ur": "2018 سے 2022 تک پاکستان کے وزیرِ اعظم کون تھے؟",
+  "question_roman": "2018 se 2022 tak Pakistan ke Wazir-e-Azam kaun the?",
+  "options_ur": [
+   "نواز شریف",
+   "شاہد خاقان عباسی",
+   "عمران خان",
+   "شہباز شریف"
+  ],
+  "options_roman": [
+   "Nawaz Sharif",
+   "Shahid Khaqan Abbasi",
+   "Imran Khan",
+   "Shehbaz Sharif"
+  ],
+  "explanation_ur": "عمران خان 2018 سے 2022 تک وزیرِ اعظم رہے۔",
+  "explanation_roman": "Imran Khan was Prime Minister from 2018 to 2022. Imran Khan 2018 se 2022 tak Wazir-e-Azam rahe.",
   "post": [
    "zamungkor",
    "tt",
@@ -1315,6 +1827,22 @@
  },
  {
   "id": "PAK-033",
+  "question_ur": "پاکستان کا دارالحکومت کون سا ہے؟",
+  "question_roman": "Pakistan ka darul-hukumat kaun sa hai?",
+  "options_ur": [
+   "کراچی",
+   "لاہور",
+   "اسلام آباد",
+   "راولپنڈی"
+  ],
+  "options_roman": [
+   "Karachi",
+   "Lahore",
+   "Islamabad",
+   "Rawalpindi"
+  ],
+  "explanation_ur": "اسلام آباد پاکستان کا دارالحکومت ہے۔",
+  "explanation_roman": "Islamabad is the capital of Pakistan. Islamabad Pakistan ka darul-hukumat hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1356,6 +1884,22 @@
  },
  {
   "id": "PAK-034",
+  "question_ur": "رقبے کے لحاظ سے پاکستان کا سب سے بڑا صوبہ کون سا ہے؟",
+  "question_roman": "Raqbe ke lehaz se Pakistan ka sab se bara suba kaun sa hai?",
+  "options_ur": [
+   "پنجاب",
+   "سندھ",
+   "خیبر پختونخوا",
+   "بلوچستان"
+  ],
+  "options_roman": [
+   "Punjab",
+   "Sindh",
+   "Khyber Pakhtunkhwa",
+   "Balochistan"
+  ],
+  "explanation_ur": "بلوچستان رقبے کے لحاظ سے سب سے بڑا صوبہ ہے۔",
+  "explanation_roman": "Balochistan is the largest province by area. Balochistan raqbe ke lehaz se sab se bara suba hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1397,6 +1941,22 @@
  },
  {
   "id": "PAK-035",
+  "question_ur": "آبادی کے لحاظ سے پاکستان کا سب سے بڑا صوبہ کون سا ہے؟",
+  "question_roman": "Abadi ke lehaz se Pakistan ka sab se bara suba kaun sa hai?",
+  "options_ur": [
+   "سندھ",
+   "پنجاب",
+   "خیبر پختونخوا",
+   "بلوچستان"
+  ],
+  "options_roman": [
+   "Sindh",
+   "Punjab",
+   "Khyber Pakhtunkhwa",
+   "Balochistan"
+  ],
+  "explanation_ur": "پنجاب آبادی کے لحاظ سے سب سے بڑا صوبہ ہے۔",
+  "explanation_roman": "Punjab is the most populous province. Punjab abadi ke lehaz se sab se bara suba hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1438,6 +1998,22 @@
  },
  {
   "id": "PAK-036",
+  "question_ur": "پاکستان کا سب سے لمبا دریا کون سا ہے؟",
+  "question_roman": "Pakistan ka sab se lamba darya kaun sa hai?",
+  "options_ur": [
+   "جہلم",
+   "چناب",
+   "راوی",
+   "دریائے سندھ"
+  ],
+  "options_roman": [
+   "Jhelum",
+   "Chenab",
+   "Ravi",
+   "Indus"
+  ],
+  "explanation_ur": "دریائے سندھ پاکستان کا سب سے لمبا دریا ہے۔",
+  "explanation_roman": "The Indus is the longest river of Pakistan. Darya-e-Sindh Pakistan ka sab se lamba darya hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1479,6 +2055,22 @@
  },
  {
   "id": "PAK-037",
+  "question_ur": "K2، جو پاکستان کی سب سے بلند چوٹی ہے، دنیا کی دوسری سب سے بلند چوٹی ہے۔ اس کی بلندی کتنی ہے؟",
+  "question_roman": "K2, jo Pakistan ki sab se buland choti hai, duniya ki dusri sab se buland choti hai. Us ki bulandi kitni hai?",
+  "options_ur": [
+   "8,611 میٹر",
+   "8,848 میٹر",
+   "8,126 میٹر",
+   "7,821 میٹر"
+  ],
+  "options_roman": [
+   "8,611 metre",
+   "8,848 metre",
+   "8,126 metre",
+   "7,821 metre"
+  ],
+  "explanation_ur": "K2 کی بلندی 8,611 میٹر ہے۔",
+  "explanation_roman": "K2 is 8,611 metres high. K2 ki bulandi 8,611 metre hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1520,6 +2112,22 @@
  },
  {
   "id": "PAK-038",
+  "question_ur": "پاکستان کا قومی جانور کون سا ہے؟",
+  "question_roman": "Pakistan ka qawmi janwar kaun sa hai?",
+  "options_ur": [
+   "شیر",
+   "مارخور",
+   "برفانی چیتا",
+   "آئی بیکس"
+  ],
+  "options_roman": [
+   "Sher",
+   "Markhor",
+   "Barfani Cheetah",
+   "Ibex"
+  ],
+  "explanation_ur": "مارخور پاکستان کا قومی جانور ہے۔",
+  "explanation_roman": "The Markhor is the national animal of Pakistan. Markhor Pakistan ka qawmi janwar hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1561,6 +2169,22 @@
  },
  {
   "id": "PAK-039",
+  "question_ur": "پاکستان کا قومی پرندہ کون سا ہے؟",
+  "question_roman": "Pakistan ka qawmi parinda kaun sa hai?",
+  "options_ur": [
+   "مور",
+   "عقاب",
+   "چکور",
+   "باز"
+  ],
+  "options_roman": [
+   "Mor",
+   "Uqab",
+   "Chakor",
+   "Baaz"
+  ],
+  "explanation_ur": "چکور پاکستان کا قومی پرندہ ہے۔",
+  "explanation_roman": "The Chukar Partridge is the national bird. Chakor Pakistan ka qawmi parinda hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1602,6 +2226,22 @@
  },
  {
   "id": "PAK-040",
+  "question_ur": "پاکستان کا قومی پھول کون سا ہے؟",
+  "question_roman": "Pakistan ka qawmi phool kaun sa hai?",
+  "options_ur": [
+   "گلاب",
+   "چمبیلی",
+   "گلِ لالہ",
+   "سورج مکھی"
+  ],
+  "options_roman": [
+   "Gulab",
+   "Chambeli",
+   "Gul-e-Lala",
+   "Suraj Mukhi"
+  ],
+  "explanation_ur": "چمبیلی پاکستان کا قومی پھول ہے۔",
+  "explanation_roman": "Jasmine is the national flower of Pakistan. Chambeli Pakistan ka qawmi phool hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1643,6 +2283,22 @@
  },
  {
   "id": "PAK-041",
+  "question_ur": "پاکستان کا قومی درخت کون سا ہے؟",
+  "question_roman": "Pakistan ka qawmi darakht kaun sa hai?",
+  "options_ur": [
+   "آم",
+   "دیودار",
+   "نیم",
+   "برگد"
+  ],
+  "options_roman": [
+   "Aam",
+   "Deodar",
+   "Neem",
+   "Bargad"
+  ],
+  "explanation_ur": "دیودار پاکستان کا قومی درخت ہے۔",
+  "explanation_roman": "Deodar is the national tree of Pakistan. Deodar Pakistan ka qawmi darakht hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1684,6 +2340,22 @@
  },
  {
   "id": "PAK-042",
+  "question_ur": "پانی ذخیرہ کرنے کی گنجائش کے لحاظ سے پاکستان کا سب سے بڑا ڈیم کون سا ہے؟",
+  "question_roman": "Pani zakheera karne ki gunjaish ke lehaz se Pakistan ka sab se bara dam kaun sa hai?",
+  "options_ur": [
+   "منگلا ڈیم",
+   "تربیلا ڈیم",
+   "وارسک ڈیم",
+   "حب ڈیم"
+  ],
+  "options_roman": [
+   "Mangla Dam",
+   "Tarbela Dam",
+   "Warsak Dam",
+   "Hub Dam"
+  ],
+  "explanation_ur": "تربیلا ڈیم پاکستان کا سب سے بڑا ڈیم ہے۔",
+  "explanation_roman": "Tarbela Dam is the largest dam in Pakistan. Tarbela Dam Pakistan ka sab se bara dam hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1725,6 +2397,22 @@
  },
  {
   "id": "PAK-043",
+  "question_ur": "پاکستان نے اقوامِ متحدہ میں کس تاریخ کو شمولیت اختیار کی؟",
+  "question_roman": "Pakistan ne Aqwam-e-Muttahida mein kis tareekh ko shamooliyat ikhtiyar ki?",
+  "options_ur": [
+   "14 اگست 1947",
+   "30 ستمبر 1947",
+   "23 مارچ 1948",
+   "1 جنوری 1948"
+  ],
+  "options_roman": [
+   "14 August 1947",
+   "30 September 1947",
+   "23 March 1948",
+   "1 January 1948"
+  ],
+  "explanation_ur": "پاکستان نے 30 ستمبر 1947 کو اقوامِ متحدہ میں شمولیت اختیار کی۔",
+  "explanation_roman": "Pakistan joined the UN on 30 September 1947. Pakistan 30 September 1947 ko UN ka member bana.",
   "post": [
    "zamungkor",
    "tt",
@@ -1766,6 +2454,22 @@
  },
  {
   "id": "PAK-044",
+  "question_ur": "پاکستان کا قومی ترانہ کس نے لکھا؟",
+  "question_roman": "Pakistan ka qawmi tarana kis ne likha?",
+  "options_ur": [
+   "علامہ اقبال",
+   "حفیظ جالندھری",
+   "فیض احمد فیض",
+   "احمد فراز"
+  ],
+  "options_roman": [
+   "Allama Iqbal",
+   "Hafeez Jalandhari",
+   "Faiz Ahmed Faiz",
+   "Ahmed Faraz"
+  ],
+  "explanation_ur": "قومی ترانہ حفیظ جالندھری نے لکھا۔",
+  "explanation_roman": "The national anthem was written by Hafeez Jalandhari. Qawmi tarana Hafeez Jalandhari ne likha.",
   "post": [
    "zamungkor",
    "tt",
@@ -1807,6 +2511,22 @@
  },
  {
   "id": "PAK-045",
+  "question_ur": "پاکستان کا قومی پرچم کس نے ڈیزائن کیا؟",
+  "question_roman": "Pakistan ka qawmi parcham kis ne design kiya?",
+  "options_ur": [
+   "امیر الدین قدوائی",
+   "قائدِ اعظم",
+   "لیاقت علی خان",
+   "حفیظ جالندھری"
+  ],
+  "options_roman": [
+   "Amiruddin Kidwai",
+   "Quaid-e-Azam",
+   "Liaquat Ali Khan",
+   "Hafeez Jalandhari"
+  ],
+  "explanation_ur": "پرچم امیر الدین قدوائی نے ڈیزائن کیا۔",
+  "explanation_roman": "The flag was designed by Amiruddin Kidwai. Parcham Amiruddin Kidwai ne design kiya.",
   "post": [
    "zamungkor",
    "tt",

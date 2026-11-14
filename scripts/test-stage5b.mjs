@@ -171,7 +171,9 @@ check("5B no Latin honorific abbreviations in translations", honorBad.length ===
 
 // --------------------------------- §6 no other bank/subject touched
 const bankDir = join(ROOT, "src/data/banks");
-const TRANSLATED_BANKS = new Set(["islamiyat.json", "tajweed.json"]);
+// Stage 5C: arabic.json + urdu.json are translated too.
+// Stage 5D: english.json + maths.json + gk.json are translated too.
+const TRANSLATED_BANKS = new Set(["islamiyat.json", "tajweed.json", "arabic.json", "urdu.json", "english.json", "maths.json", "gk.json", "science.json", "pakstudies.json", "socialstudies.json", "pedagogy.json", "it.json", "pe.json", "drawing.json", "pastpapers.json", "pastpapers_reworded.json"]);
 let otherBankTouched = [];
 for (const f of fs.readdirSync(bankDir)) {
   if (TRANSLATED_BANKS.has(f)) continue;
@@ -180,7 +182,7 @@ for (const f of fs.readdirSync(bankDir)) {
     if (MCQ_TR_KEYS.some((k) => k in q)) otherBankTouched.push(`${f}:${q.id}`);
   }
 }
-check("5B no bank other than islamiyat/tajweed carries _ur/_roman fields", otherBankTouched.length === 0, otherBankTouched.slice(0, 5).join(", "));
+check("5B no bank other than islamiyat/tajweed/arabic/urdu/english/maths/gk carries _ur/_roman fields", otherBankTouched.length === 0, otherBankTouched.slice(0, 5).join(", "));
 
 // --------------------------------- §7 notes: completeness + scope
 const NOTE_TR_KEYS = ["title_ur", "title_roman", "body_ur", "body_roman"];
@@ -203,7 +205,9 @@ check("5B tajweed notes: no unexpected keys added", noteBadKeys.length === 0, no
 check("5B tajweed notes: translation fields all-4-or-none + valid", noteBadShape.length === 0, noteBadShape.slice(0, 3).join(", "));
 check("5B tajweed notes: all 24 translated", noteTranslated.length === 24, `translated=${noteTranslated.length}`);
 console.log(`INFO  5B tajweed notes translated: ${noteTranslated.length}/24`);
-const TRANSLATED_NOTE_SUBJECTS = new Set(["Islamiyat", "Tajweed"]);
+// Stage 5C: Arabic + Urdu notes are translated too.
+// Stage 5D: English + Maths + GK notes are translated too.
+const TRANSLATED_NOTE_SUBJECTS = new Set(["Islamiyat", "Tajweed", "Arabic", "Urdu", "English", "Maths", "GK", "General Science", "Pak Studies", "Social Studies", "Pedagogy", "IT/Computer", "Drawing/PE"]);
 let otherNoteTouched = [];
 for (const [subject, notes] of Object.entries(NOTES)) {
   if (TRANSLATED_NOTE_SUBJECTS.has(subject)) continue;
@@ -211,7 +215,7 @@ for (const [subject, notes] of Object.entries(NOTES)) {
     if (NOTE_TR_KEYS.some((k) => k in n)) otherNoteTouched.push(`${subject}:${n.title}`);
   }
 }
-check("5B no subject other than Islamiyat/Tajweed carries note _ur/_roman fields", otherNoteTouched.length === 0, otherNoteTouched.slice(0, 3).join(", "));
+check("5B no subject other than Islamiyat/Tajweed/Arabic/Urdu/English/Maths/GK carries note _ur/_roman fields", otherNoteTouched.length === 0, otherNoteTouched.slice(0, 3).join(", "));
 
 // --------------------------------- §8 resolver on real Tajweed items
 const translatedQ = BY_SUBJECT.tajweed.find((q) => q.question_ur !== undefined);

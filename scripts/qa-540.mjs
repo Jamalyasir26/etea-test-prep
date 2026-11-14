@@ -180,7 +180,11 @@ check("review status: exactly the 15 owner-approved items are owner-reviewed (by
   // explanationEn/explanationLang fields and is never loaded; the
   // comparison ignores them (as it already ignores review fields) so
   // the original content still has to match exactly.
-  const strip = (items) => items.map(({ reviewStatus, reviewedBy, reviewedAt, explanationEn, explanationLang, ...rest }) => rest);
+  // Stage 5F — the split banks now also carry additive Stage 5
+  // translation fields (_ur/_roman); the legacy file predates those too,
+  // so the comparison ignores them as well. Same intent: original
+  // content must still match exactly.
+  const strip = (items) => items.map(({ reviewStatus, reviewedBy, reviewedAt, explanationEn, explanationLang, question_ur, question_roman, options_ur, options_roman, explanation_ur, explanation_roman, ...rest }) => rest);
   // Legacy holds only the ORIGINAL 20 items (DRW-001..020); the 20 items
   // added in the post-verification fix (DRW-021..030, PE-001..PE-010) are
   // in the split banks only, so the legacy file is compared against the

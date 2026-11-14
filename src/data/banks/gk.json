@@ -1,6 +1,22 @@
 [
  {
   "id": "GKN-001",
+  "question_ur": "پاکستان کے بانی کے طور پر کسے جانا جاتا ہے؟",
+  "question_roman": "Pakistan ke baani ke tor par kise jana jata hai?",
+  "options_ur": [
+   "علامہ محمد اقبال",
+   "محمد علی جناح",
+   "لیاقت علی خان",
+   "سر سید احمد خان"
+  ],
+  "options_roman": [
+   "Allama Muhammad Iqbal",
+   "Muhammad Ali Jinnah",
+   "Liaquat Ali Khan",
+   "Sir Syed Ahmad Khan"
+  ],
+  "explanation_ur": "قائد اعظم محمد علی جناح پاکستان کے بانی ہیں۔",
+  "explanation_roman": "Quaid-e-Azam Muhammad Ali Jinnah Pakistan ke baani hain.",
   "post": [
    "tt",
    "at",
@@ -41,6 +57,22 @@
  },
  {
   "id": "GKN-002",
+  "question_ur": "پاکستان کس تاریخ کو وجود میں آیا؟",
+  "question_roman": "Pakistan kis tareekh ko wujood mein aaya?",
+  "options_ur": [
+   "23 مارچ 1940",
+   "14 اگست 1947",
+   "23 مارچ 1956",
+   "14 اگست 1948"
+  ],
+  "options_roman": [
+   "23 March 1940",
+   "14 August 1947",
+   "23 March 1956",
+   "14 August 1948"
+  ],
+  "explanation_ur": "پاکستان 14 اگست 1947 کو وجود میں آیا۔",
+  "explanation_roman": "Pakistan 14 August 1947 ko wujood mein aaya.",
   "post": [
    "tt",
    "at",
@@ -81,6 +113,22 @@
  },
  {
   "id": "GKN-003",
+  "question_ur": "پاکستان کا پہلا دارالحکومت کون سا شہر تھا؟",
+  "question_roman": "Pakistan ka pehla darul-hukumat kaun sa shehar tha?",
+  "options_ur": [
+   "اسلام آباد",
+   "لاہور",
+   "کراچی",
+   "راولپنڈی"
+  ],
+  "options_roman": [
+   "Islamabad",
+   "Lahore",
+   "Karachi",
+   "Rawalpindi"
+  ],
+  "explanation_ur": "کراچی پاکستان کا پہلا دارالحکومت تھا؛ اسلام آباد 1960 کی دہائی میں دارالحکومت بنا۔",
+  "explanation_roman": "Karachi Pakistan ka pehla darul-hukumat tha; Islamabad 1960 ki dahai mein darul-hukumat bana.",
   "post": [
    "tt",
    "at",
@@ -121,6 +169,22 @@
  },
  {
   "id": "GKN-004",
+  "question_ur": "پاکستان کا موجودہ دارالحکومت کون سا شہر ہے؟",
+  "question_roman": "Pakistan ka maujooda darul-hukumat kaun sa shehar hai?",
+  "options_ur": [
+   "کراچی",
+   "لاہور",
+   "اسلام آباد",
+   "پشاور"
+  ],
+  "options_roman": [
+   "Karachi",
+   "Lahore",
+   "Islamabad",
+   "Peshawar"
+  ],
+  "explanation_ur": "اسلام آباد پاکستان کا موجودہ دارالحکومت ہے۔",
+  "explanation_roman": "Islamabad Pakistan ka maujooda darul-hukumat hai.",
   "post": [
    "tt",
    "at",
@@ -161,6 +225,22 @@
  },
  {
   "id": "GKN-005",
+  "question_ur": "پاکستان کا قومی ترانہ کس شاعر نے لکھا تھا؟",
+  "question_roman": "Pakistan ka qaumi tarana kis shayar ne likha tha?",
+  "options_ur": [
+   "علامہ اقبال",
+   "حفیظ جالندھری",
+   "فیض احمد فیض",
+   "جوش ملیح آبادی"
+  ],
+  "options_roman": [
+   "Allama Iqbal",
+   "Hafeez Jalandhari",
+   "Faiz Ahmed Faiz",
+   "Josh Malihabadi"
+  ],
+  "explanation_ur": "قومی ترانہ حفیظ جالندھری نے لکھا تھا۔",
+  "explanation_roman": "National anthem (Qaumi Tarana) Hafeez Jalandhari ne likha tha.",
   "post": [
    "tt",
    "at",
@@ -201,6 +281,22 @@
  },
  {
   "id": "GKN-006",
+  "question_ur": "پاکستان کے قومی ترانے کی موسیقی کس نے ترتیب دی تھی؟",
+  "question_roman": "Pakistan ke qaumi tarane ki mausiqi kis ne tartib di thi?",
+  "options_ur": [
+   "احمد جی چاگلہ",
+   "سہیل رانا",
+   "نثار بزمی",
+   "خواجہ خورشید انور"
+  ],
+  "options_roman": [
+   "Ahmed G. Chagla",
+   "Sohail Rana",
+   "Nisar Bazmi",
+   "Khwaja Khurshid Anwar"
+  ],
+  "explanation_ur": "قومی ترانے کی موسیقی احمد جی چاگلہ نے ترتیب دی تھی۔",
+  "explanation_roman": "Qaumi tarane ki mausiqi Ahmed G. Chagla ne tartib di thi.",
   "post": [
    "tt",
    "at",
@@ -241,6 +337,22 @@
  },
  {
   "id": "GKN-007",
+  "question_ur": "”پاکستان“ کا نام کس نے وضع کیا تھا؟",
+  "question_roman": "Pakistan ka naam kis ne waza kiya tha?",
+  "options_ur": [
+   "علامہ اقبال",
+   "چوہدری رحمت علی",
+   "محمد علی جناح",
+   "لیاقت علی خان"
+  ],
+  "options_roman": [
+   "Allama Iqbal",
+   "Chaudhry Rahmat Ali",
+   "Muhammad Ali Jinnah",
+   "Liaquat Ali Khan"
+  ],
+  "explanation_ur": "”پاکستان“ کا نام چوہدری رحمت علی نے وضع کیا تھا۔",
+  "explanation_roman": "'Pakistan' ka naam Chaudhry Rahmat Ali ne waza kiya tha.",
   "post": [
    "tt",
    "at",
@@ -281,6 +393,22 @@
  },
  {
   "id": "GKN-008",
+  "question_ur": "پاکستان میں کتنے صوبے ہیں؟",
+  "question_roman": "Pakistan mein kitne soobay hain?",
+  "options_ur": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "options_roman": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "explanation_ur": "پاکستان میں چار صوبے ہیں: پنجاب، سندھ، خیبر پختونخوا اور بلوچستان۔",
+  "explanation_roman": "Pakistan mein chaar soobay hain: Punjab, Sindh, Khyber Pakhtunkhwa aur Balochistan.",
   "post": [
    "tt",
    "at",
@@ -321,6 +449,22 @@
  },
  {
   "id": "GKN-009",
+  "question_ur": "آبادی کے لحاظ سے پاکستان کا سب سے بڑا شہر کون سا ہے؟",
+  "question_roman": "Aabadi ke lihaz se Pakistan ka sab se bara shehar kaun sa hai?",
+  "options_ur": [
+   "لاہور",
+   "کراچی",
+   "اسلام آباد",
+   "فیصل آباد"
+  ],
+  "options_roman": [
+   "Lahore",
+   "Karachi",
+   "Islamabad",
+   "Faisalabad"
+  ],
+  "explanation_ur": "کراچی آبادی کے لحاظ سے پاکستان کا سب سے بڑا شہر ہے۔",
+  "explanation_roman": "Karachi aabadi ke lihaz se Pakistan ka sab se bara shehar hai.",
   "post": [
    "tt",
    "at",
@@ -361,6 +505,22 @@
  },
  {
   "id": "GKN-010",
+  "question_ur": "پاکستان کا قومی جانور کون سا ہے؟",
+  "question_roman": "Pakistan ka qaumi janwar kaun sa hai?",
+  "options_ur": [
+   "شیر",
+   "برفانی چیتا",
+   "مارخور",
+   "کالا ہرن"
+  ],
+  "options_roman": [
+   "Sher",
+   "Barfani cheeta",
+   "Markhor",
+   "Kala hiran"
+  ],
+  "explanation_ur": "مارخور پاکستان کا قومی جانور ہے۔",
+  "explanation_roman": "Markhor Pakistan ka qaumi janwar hai.",
   "post": [
    "tt",
    "at",
@@ -401,6 +561,22 @@
  },
  {
   "id": "GKN-011",
+  "question_ur": "پاکستان کا قومی پھول کون سا ہے؟",
+  "question_roman": "Pakistan ka qaumi phool kaun sa hai?",
+  "options_ur": [
+   "گلاب",
+   "چنبیلی",
+   "سورج مکھی",
+   "لالہ"
+  ],
+  "options_roman": [
+   "Gulab",
+   "Chambelee",
+   "Suraj mukhi",
+   "Lala"
+  ],
+  "explanation_ur": "چنبیلی پاکستان کا قومی پھول ہے۔",
+  "explanation_roman": "Chambelee Pakistan ka qaumi phool hai.",
   "post": [
    "tt",
    "at",
@@ -441,6 +617,22 @@
  },
  {
   "id": "GKN-012",
+  "question_ur": "پاکستان کا قومی پرندہ کون سا ہے؟",
+  "question_roman": "Pakistan ka qaumi parinda kaun sa hai?",
+  "options_ur": [
+   "مور",
+   "چکور",
+   "تلور",
+   "عقاب"
+  ],
+  "options_roman": [
+   "Mor",
+   "Chakor",
+   "Taloor",
+   "Uqaab"
+  ],
+  "explanation_ur": "چکور (تیتر) پاکستان کا قومی پرندہ ہے۔",
+  "explanation_roman": "Chakor (teetar) Pakistan ka qaumi parinda hai.",
   "post": [
    "tt",
    "at",
@@ -481,6 +673,22 @@
  },
  {
   "id": "GKN-013",
+  "question_ur": "پاکستان کا قومی درخت کون سا ہے؟",
+  "question_roman": "Pakistan ka qaumi darakht kaun sa hai?",
+  "options_ur": [
+   "آم",
+   "نیم",
+   "دیودار",
+   "شیشم"
+  ],
+  "options_roman": [
+   "Aam",
+   "Neem",
+   "Deodar",
+   "Sheesham"
+  ],
+  "explanation_ur": "دیودار پاکستان کا قومی درخت ہے۔",
+  "explanation_roman": "Deodar Pakistan ka qaumi darakht hai.",
   "post": [
    "tt",
    "at",
@@ -521,6 +729,22 @@
  },
  {
   "id": "GKN-014",
+  "question_ur": "پاکستان کا قومی پھل کون سا ہے؟",
+  "question_roman": "Pakistan ka qaumi phal kaun sa hai?",
+  "options_ur": [
+   "کیلا",
+   "سیب",
+   "آم",
+   "مالٹا"
+  ],
+  "options_roman": [
+   "Kela",
+   "Seb",
+   "Aam",
+   "Malta"
+  ],
+  "explanation_ur": "آم پاکستان کا قومی پھل ہے۔",
+  "explanation_roman": "Aam Pakistan ka qaumi phal hai.",
   "post": [
    "tt",
    "at",
@@ -561,6 +785,22 @@
  },
  {
   "id": "GKN-015",
+  "question_ur": "پاکستان کا قومی کھیل کون سا ہے؟",
+  "question_roman": "Pakistan ka qaumi khel kaun sa hai?",
+  "options_ur": [
+   "کرکٹ",
+   "فٹ بال",
+   "فیلڈ ہاکی",
+   "اسکواش"
+  ],
+  "options_roman": [
+   "Cricket",
+   "Football",
+   "Field hockey",
+   "Squash"
+  ],
+  "explanation_ur": "فیلڈ ہاکی پاکستان کا قومی کھیل ہے۔",
+  "explanation_roman": "Field hockey Pakistan ka qaumi khel hai.",
   "post": [
    "tt",
    "at",
@@ -601,6 +841,22 @@
  },
  {
   "id": "GKN-016",
+  "question_ur": "پاکستان کا قومی نعرہ کیا ہے؟",
+  "question_roman": "Pakistan ka qaumi motto kya hai?",
+  "options_ur": [
+   "اتحاد، ایمان، تنظیم",
+   "ایمان، اتحاد، تنظیم",
+   "تنظیم، اتحاد، ایمان",
+   "ایمان، تنظیم، اتحاد"
+  ],
+  "options_roman": [
+   "Ittehad, Iman, Tanzeem",
+   "Iman, Ittehad, Tanzeem",
+   "Tanzeem, Ittehad, Iman",
+   "Iman, Tanzeem, Ittehad"
+  ],
+  "explanation_ur": "پاکستان کا قومی نعرہ 'Iman, Ittehad, Tanzeem' ہے — ایمان، اتحاد، تنظیم۔",
+  "explanation_roman": "Pakistan ka qaumi motto 'Iman, Ittehad, Tanzeem' hai — Iman, Ittehad, Tanzeem.",
   "post": [
    "tt",
    "at",
@@ -641,6 +897,22 @@
  },
  {
   "id": "GKN-017",
+  "question_ur": "کس دریا کو پاکستان کی شہ رگ کہا جاتا ہے؟",
+  "question_roman": "Kis darya ko Pakistan ki shah rag kaha jata hai?",
+  "options_ur": [
+   "جہلم",
+   "چناب",
+   "راوی",
+   "سندھ"
+  ],
+  "options_roman": [
+   "Jhelum",
+   "Chenab",
+   "Ravi",
+   "Indus"
+  ],
+  "explanation_ur": "دریائے سندھ کو پاکستان کی شہ رگ کہا جاتا ہے۔",
+  "explanation_roman": "Indus River ko Pakistan ki shah rag kaha jata hai.",
   "post": [
    "tt",
    "at",
@@ -681,6 +953,22 @@
  },
  {
   "id": "GKN-018",
+  "question_ur": "ذخیرہ کرنے کی گنجائش کے لحاظ سے پاکستان کا سب سے بڑا ڈیم کون سا ہے؟",
+  "question_roman": "Storage capacity ke lehaz se Pakistan ka sab se bara dam kaun sa hai?",
+  "options_ur": [
+   "منگلا ڈیم",
+   "تربیلا ڈیم",
+   "وارسک ڈیم",
+   "دیامر بھاشا ڈیم"
+  ],
+  "options_roman": [
+   "Mangla Dam",
+   "Tarbela Dam",
+   "Warsak Dam",
+   "Diamer-Bhasha Dam"
+  ],
+  "explanation_ur": "تربیلا ڈیم، جو دریائے سندھ پر واقع ہے، ذخیرہ کرنے کی گنجائش کے لحاظ سے پاکستان کا سب سے بڑا ڈیم ہے۔",
+  "explanation_roman": "Tarbela Dam, jo Indus River par hai, storage capacity ke lehaz se Pakistan ka sab se bara dam hai.",
   "post": [
    "tt",
    "at",
@@ -721,6 +1009,22 @@
  },
  {
   "id": "GKN-019",
+  "question_ur": "قرآن مجید کا سب سے پہلے نازل ہونے والا لفظ کون سا تھا؟",
+  "question_roman": "Quran Majeed ka sab se pehle nazil hone wala lafz kaun sa tha?",
+  "options_ur": [
+   "الحمد",
+   "اقرا",
+   "قل",
+   "بسم اللہ"
+  ],
+  "options_roman": [
+   "Alhamd",
+   "Iqra",
+   "Qul",
+   "Bismillah"
+  ],
+  "explanation_ur": "سب سے پہلے نازل ہونے والا لفظ 'اقرا' (پڑھو) تھا — سورۃ العلق کا آغاز۔",
+  "explanation_roman": "Sab se pehle nazil hone wala lafz 'Iqra' (Parho) tha — Surah Al-Alaq ka aghaz.",
   "post": [
    "tt",
    "at",
@@ -761,6 +1065,22 @@
  },
  {
   "id": "GKN-020",
+  "question_ur": "سب سے پہلے کون سی سورت نازل ہوئی؟",
+  "question_roman": "Sab se pehle kaun si Surah nazil hui?",
+  "options_ur": [
+   "سورۃ الفاتحہ",
+   "سورۃ العلق",
+   "سورۃ البقرہ",
+   "سورۃ یٰسین"
+  ],
+  "options_roman": [
+   "Surah Al-Fatiha",
+   "Surah Al-Alaq",
+   "Surah Al-Baqarah",
+   "Surah Yaseen"
+  ],
+  "explanation_ur": "سورۃ العلق سب سے پہلے نازل ہونے والی سورت تھی۔",
+  "explanation_roman": "Surah Al-Alaq sab se pehle nazil hone wali Surah thi.",
   "post": [
    "tt",
    "at",
@@ -801,6 +1121,22 @@
  },
  {
   "id": "GKN-021",
+  "question_ur": "قرآن مجید میں کل کتنی سورتیں ہیں؟",
+  "question_roman": "Quran Majeed mein kul kitni Surahen hain?",
+  "options_ur": [
+   "110",
+   "114",
+   "116",
+   "120"
+  ],
+  "options_roman": [
+   "110",
+   "114",
+   "116",
+   "120"
+  ],
+  "explanation_ur": "قرآن مجید میں 114 سورتیں ہیں۔",
+  "explanation_roman": "Quran Majeed mein 114 Surahen hain.",
   "post": [
    "tt",
    "at",
@@ -841,6 +1177,22 @@
  },
  {
   "id": "GKN-022",
+  "question_ur": "قرآن مجید کو کتنے پاروں (جزء) میں تقسیم کیا گیا ہے؟",
+  "question_roman": "Quran Majeed ko kitne Paron (Juz) mein taqseem kiya gaya hai?",
+  "options_ur": [
+   "25",
+   "28",
+   "30",
+   "33"
+  ],
+  "options_roman": [
+   "25",
+   "28",
+   "30",
+   "33"
+  ],
+  "explanation_ur": "قرآن مجید کو 30 پاروں (اجزاء) میں تقسیم کیا گیا ہے۔",
+  "explanation_roman": "Quran Majeed ko 30 Paron (Ajza) mein taqseem kiya gaya hai.",
   "post": [
    "tt",
    "at",
@@ -881,6 +1233,22 @@
  },
  {
   "id": "GKN-023",
+  "question_ur": "اسلامی کیلنڈر کا پہلا مہینہ کون سا ہے؟",
+  "question_roman": "Islami calendar ka pehla mahina kaun sa hai?",
+  "options_ur": [
+   "رمضان",
+   "شوال",
+   "محرم",
+   "ربیع الاول"
+  ],
+  "options_roman": [
+   "Ramadan",
+   "Shawwal",
+   "Muharram",
+   "Rabi-ul-Awwal"
+  ],
+  "explanation_ur": "محرم اسلامی (ہجری) کیلنڈر کا پہلا مہینہ ہے۔",
+  "explanation_roman": "Muharram Islami (Hijri) calendar ka pehla mahina hai.",
   "post": [
    "tt",
    "at",
@@ -921,6 +1289,22 @@
  },
  {
   "id": "GKN-024",
+  "question_ur": "مسلمان کس مہینے میں روزے رکھتے ہیں؟",
+  "question_roman": "Musalman kis mahine mein roze rakhte hain?",
+  "options_ur": [
+   "شعبان",
+   "رمضان",
+   "شوال",
+   "ذوالحجہ"
+  ],
+  "options_roman": [
+   "Shaban",
+   "Ramadan",
+   "Shawwal",
+   "Zil-Hajj"
+  ],
+  "explanation_ur": "مسلمان رمضان کے مہینے میں روزے رکھتے ہیں، جو اسلامی کیلنڈر کا 9واں مہینہ ہے۔",
+  "explanation_roman": "Musalman Ramadan ke mahine mein roze rakhte hain, jo Islami calendar ka 9th mahina hai.",
   "post": [
    "tt",
    "at",
@@ -961,6 +1345,22 @@
  },
  {
   "id": "GKN-025",
+  "question_ur": "اسلام میں سب سے پہلے تعمیر ہونے والی مسجد کون سی ہے؟",
+  "question_roman": "Islam mein sab se pehle tameer hone wali masjid kaun si hai?",
+  "options_ur": [
+   "مسجد نبوی",
+   "مسجد قبا",
+   "مسجد اقصیٰ",
+   "مسجد الحرام"
+  ],
+  "options_roman": [
+   "Masjid-e-Nabawi",
+   "Masjid Quba",
+   "Masjid-e-Aqsa",
+   "Masjid-e-Haram"
+  ],
+  "explanation_ur": "مسجد قبا، جو مدینہ کے قریب ہے، اسلام میں سب سے پہلے تعمیر ہونے والی مسجد تھی۔",
+  "explanation_roman": "Masjid Quba, jo Madinah ke qareeb hai, Islam mein sab se pehle tameer hone wali masjid thi.",
   "post": [
    "tt",
    "at",
@@ -1001,6 +1401,22 @@
  },
  {
   "id": "GKN-026",
+  "question_ur": "مسلمانوں پر روزانہ کتنی نمازیں فرض ہیں؟",
+  "question_roman": "Musalmanon par rozana kitni namazen farz hain?",
+  "options_ur": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "options_roman": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "explanation_ur": "پانچ روزانہ نمازیں (فجر، ظہر، عصر، مغرب، عشاء) فرض ہیں۔",
+  "explanation_roman": "Paanch rozana namazen (Fajr, Zuhr, Asr, Maghrib, Isha) farz hain.",
   "post": [
    "tt",
    "at",
@@ -1041,6 +1457,22 @@
  },
  {
   "id": "GKN-027",
+  "question_ur": "نقدی اور تجارتی سامان پر زکوٰۃ کس شرح سے لی جاتی ہے؟",
+  "question_roman": "Naqdi aur tijarti saman par Zakat kis sharah se li jati hai?",
+  "options_ur": [
+   "1%",
+   "2.5%",
+   "5%",
+   "10%"
+  ],
+  "options_roman": [
+   "1%",
+   "2.5%",
+   "5%",
+   "10%"
+  ],
+  "explanation_ur": "نقدی، سونے، چاندی اور تجارتی سامان پر زکوٰۃ ایک سال تک رکھی ہوئی دولت کا 2.5% ہے۔",
+  "explanation_roman": "Naqdi, sone, chandi aur tijarti saman par Zakat ek saal tak rakhi hui daulat ka 2.5% hai.",
   "post": [
    "tt",
    "at",
@@ -1081,6 +1513,22 @@
  },
  {
   "id": "GKN-028",
+  "question_ur": "اسلام کے پہلے خلیفہ کون تھے؟",
+  "question_roman": "Islam ke pehle Khalifa kaun the?",
+  "options_ur": [
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت ابو بکر رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ"
+  ],
+  "options_roman": [
+   "Hazrat Umar Raziallahu Anhu",
+   "Hazrat Abu Bakr Raziallahu Anhu",
+   "Hazrat Usman Raziallahu Anhu",
+   "Hazrat Ali Raziallahu Anhu"
+  ],
+  "explanation_ur": "حضرت ابو بکر صدیق رضی اللہ عنہ پہلے خلیفہ تھے۔",
+  "explanation_roman": "Hazrat Abu Bakr Siddique Raziallahu Anhu pehle Khalifa the.",
   "post": [
    "tt",
    "at",
@@ -1121,6 +1569,22 @@
  },
  {
   "id": "GKN-029",
+  "question_ur": "جنگ بدر کس ہجری سال میں لڑی گئی؟",
+  "question_roman": "Jang-e-Badr kis Hijri saal mein lari gayi?",
+  "options_ur": [
+   "1 ہجری",
+   "2 ہجری",
+   "3 ہجری",
+   "5 ہجری"
+  ],
+  "options_roman": [
+   "1 AH",
+   "2 AH",
+   "3 AH",
+   "5 AH"
+  ],
+  "explanation_ur": "جنگ بدر 2 ہجری (624 عیسوی) میں لڑی گئی۔",
+  "explanation_roman": "Jang-e-Badr 2 AH (624 CE) mein lari gayi.",
   "post": [
    "tt",
    "at",
@@ -1161,6 +1625,22 @@
  },
  {
   "id": "GKN-030",
+  "question_ur": "اسلامی کیلنڈر کا آخری مہینہ کون سا ہے؟",
+  "question_roman": "Islami calendar ka akhri mahina kaun sa hai?",
+  "options_ur": [
+   "محرم",
+   "رمضان",
+   "شوال",
+   "ذوالحجہ"
+  ],
+  "options_roman": [
+   "Muharram",
+   "Ramadan",
+   "Shawwal",
+   "Dhul-Hijjah"
+  ],
+  "explanation_ur": "ذوالحجہ اسلامی کیلنڈر کا بارہواں اور آخری مہینہ ہے۔",
+  "explanation_roman": "Dhul-Hijjah Islami calendar ka barahwan aur akhri mahina hai.",
   "post": [
    "tt",
    "at",

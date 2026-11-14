@@ -1,6 +1,22 @@
 [
  {
   "id": "SS-001",
+  "question_ur": "قراردادِ پاکستان لاہور میں کس سال منظور ہوئی تھی؟",
+  "question_roman": "Qarardad-e-Pakistan Lahore mein kis saal manzoor hui thi?",
+  "options_ur": [
+   "1930",
+   "1940",
+   "1942",
+   "1946"
+  ],
+  "options_roman": [
+   "1930",
+   "1940",
+   "1942",
+   "1946"
+  ],
+  "explanation_ur": "قراردادِ پاکستان 23 مارچ 1940 کو لاہور میں (منٹو پارک) منظور ہوئی تھی۔",
+  "explanation_roman": "Qarardad-e-Pakistan 23 March 1940 ko Lahore mein (Minto Park) manzoor hui thi.",
   "post": [
    "tt",
    "at",
@@ -34,6 +50,22 @@
  },
  {
   "id": "SS-002",
+  "question_ur": "پاکستان کے پہلے گورنر جنرل کے طور پر کس رہنما نے خدمات انجام دیں؟",
+  "question_roman": "Pakistan ke pehle Governor-General ke tor par kis rehnuma ne khidmat anjaam di?",
+  "options_ur": [
+   "لیاقت علی خان",
+   "خواجہ ناظم الدین",
+   "محمد علی جناح",
+   "سردار عبدالرب نشتر"
+  ],
+  "options_roman": [
+   "Liaquat Ali Khan",
+   "Khawaja Nazimuddin",
+   "Muhammad Ali Jinnah",
+   "Sardar Abdur Rab Nishtar"
+  ],
+  "explanation_ur": "قائدِ اعظم محمد علی جناح پاکستان کے پہلے گورنر جنرل تھے۔",
+  "explanation_roman": "Quaid-e-Azam Muhammad Ali Jinnah Pakistan ke pehle Governor-General thay.",
   "post": [
    "tt",
    "at",
@@ -67,6 +99,22 @@
  },
  {
   "id": "SS-003",
+  "question_ur": "پاکستان کے پہلے وزیرِ اعظم کے طور پر کس رہنما نے خدمات انجام دیں؟",
+  "question_roman": "Pakistan ke pehle Wazir-e-Azam ke tor par kis rehnuma ne khidmat anjaam di?",
+  "options_ur": [
+   "لیاقت علی خان",
+   "خواجہ ناظم الدین",
+   "محمد علی بوگرہ",
+   "چوہدری محمد علی"
+  ],
+  "options_roman": [
+   "Liaquat Ali Khan",
+   "Khawaja Nazimuddin",
+   "Muhammad Ali Bogra",
+   "Chaudhry Muhammad Ali"
+  ],
+  "explanation_ur": "لیاقت علی خان پاکستان کے پہلے وزیرِ اعظم تھے۔",
+  "explanation_roman": "Liaquat Ali Khan Pakistan ke pehle Wazir-e-Azam thay.",
   "post": [
    "tt",
    "at",
@@ -100,6 +148,22 @@
  },
  {
   "id": "SS-004",
+  "question_ur": "مجلسِ دستور ساز نے قراردادِ مقاصد کس سال منظور کی تھی؟",
+  "question_roman": "Majlis-e-Dastoor Saaz ne Qarardad-e-Maqasid kis saal manzoor ki thi?",
+  "options_ur": [
+   "1947",
+   "1948",
+   "1949",
+   "1956"
+  ],
+  "options_roman": [
+   "1947",
+   "1948",
+   "1949",
+   "1956"
+  ],
+  "explanation_ur": "قراردادِ مقاصد 12 مارچ 1949 کو منظور ہوئی تھی۔",
+  "explanation_roman": "Qarardad-e-Maqasid 12 March 1949 ko manzoor hui thi.",
   "post": [
    "tt",
    "at",
@@ -133,6 +197,22 @@
  },
  {
   "id": "SS-005",
+  "question_ur": "پاکستان کا پہلا آئین 23 مارچ کو کس سال نافذ ہوا تھا؟",
+  "question_roman": "Pakistan ka pehla Aain 23 March ko kis saal naafiz hua tha?",
+  "options_ur": [
+   "1952",
+   "1956",
+   "1962",
+   "1973"
+  ],
+  "options_roman": [
+   "1952",
+   "1956",
+   "1962",
+   "1973"
+  ],
+  "explanation_ur": "پاکستان کا پہلا آئین 23 مارچ 1956 کو نافذ ہوا تھا۔",
+  "explanation_roman": "Pakistan ka pehla Aain 23 March 1956 ko naafiz hua tha.",
   "post": [
    "tt",
    "at",
@@ -166,6 +246,22 @@
  },
  {
   "id": "SS-006",
+  "question_ur": "پاکستان کا موجودہ آئین (1973) کس تاریخ کو نافذ ہوا تھا؟",
+  "question_roman": "Pakistan ka maujooda Aain (1973) kis tareekh ko naafiz hua tha?",
+  "options_ur": [
+   "23 مارچ 1973",
+   "14 اگست 1973",
+   "5 جولائی 1977",
+   "1 جنوری 1974"
+  ],
+  "options_roman": [
+   "23 March 1973",
+   "14 August 1973",
+   "5 July 1977",
+   "1 January 1974"
+  ],
+  "explanation_ur": "1973 کا آئین 14 اگست 1973 کو نافذ ہوا تھا۔",
+  "explanation_roman": "1973 ka Aain 14 August 1973 ko naafiz hua tha.",
   "post": [
    "tt",
    "at",
@@ -199,6 +295,22 @@
  },
  {
   "id": "SS-007",
+  "question_ur": "رقبے کے لحاظ سے پاکستان کا سب سے بڑا صوبہ کون سا ہے؟",
+  "question_roman": "Raqbe ke lihaza se Pakistan ka sab se bara sooba kaun sa hai?",
+  "options_ur": [
+   "پنجاب",
+   "سندھ",
+   "خیبر پختونخوا",
+   "بلوچستان"
+  ],
+  "options_roman": [
+   "Punjab",
+   "Sindh",
+   "Khyber Pakhtunkhwa",
+   "Balochistan"
+  ],
+  "explanation_ur": "رقبے کے لحاظ سے بلوچستان پاکستان کا سب سے بڑا صوبہ ہے۔",
+  "explanation_roman": "Raqbe ke lihaza se Balochistan Pakistan ka sab se bara sooba hai.",
   "post": [
    "tt",
    "at",
@@ -232,6 +344,22 @@
  },
  {
   "id": "SS-008",
+  "question_ur": "درہ خیبر پشاور کو کس ملک سے ملاتا ہے؟",
+  "question_roman": "Khyber Pass Peshawar ko kis mulk se milata hai?",
+  "options_ur": [
+   "چین",
+   "ایران",
+   "افغانستان",
+   "بھارت"
+  ],
+  "options_roman": [
+   "China",
+   "Iran",
+   "Afghanistan",
+   "India"
+  ],
+  "explanation_ur": "درہ خیبر پشاور کو افغانستان سے ملاتا ہے (جلال آباد اور کابل کی طرف)۔",
+  "explanation_roman": "Khyber Pass Peshawar ko Afghanistan se milata hai (Jalalabad aur Kabul ki taraf).",
   "post": [
    "tt",
    "at",
@@ -265,6 +393,22 @@
  },
  {
   "id": "SS-009",
+  "question_ur": "پاکستان میں کس دریا کا راستہ سب سے لمبا ہے؟",
+  "question_roman": "Pakistan mein kis darya ka rasta sab se lamba hai?",
+  "options_ur": [
+   "جہلم",
+   "چناب",
+   "راوی",
+   "دریائے سندھ"
+  ],
+  "options_roman": [
+   "Jhelum",
+   "Chenab",
+   "Ravi",
+   "Indus"
+  ],
+  "explanation_ur": "دریائے سندھ پاکستان کا سب سے لمبا دریا ہے۔",
+  "explanation_roman": "Indus Pakistan ka sab se lamba darya hai.",
   "post": [
    "tt",
    "at",
@@ -298,6 +442,22 @@
  },
  {
   "id": "SS-010",
+  "question_ur": "پاکستان کی سب سے بلند پہاڑی چوٹی کون سی ہے؟",
+  "question_roman": "Pakistan ki sab se buland pahari choti kaun si hai?",
+  "options_ur": [
+   "نانگا پربت",
+   "K2",
+   "براڈ پیک",
+   "ترچ میر"
+  ],
+  "options_roman": [
+   "Nanga Parbat",
+   "K2",
+   "Broad Peak",
+   "Tirich Mir"
+  ],
+  "explanation_ur": "K2 (8,611 میٹر) پاکستان کی سب سے بلند چوٹی اور دنیا کی دوسری سب سے بلند چوٹی ہے۔",
+  "explanation_roman": "K2 (8,611 m) Pakistan ki sab se buland choti aur duniya ki doosri sab se buland choti hai.",
   "post": [
    "tt",
    "at",
@@ -331,6 +491,22 @@
  },
  {
   "id": "SS-011",
+  "question_ur": "خیبر پختونخوا کا دارالحکومت کون سا شہر ہے؟",
+  "question_roman": "Khyber Pakhtunkhwa ka darul-hukumat kaun sa shehar hai?",
+  "options_ur": [
+   "ایبٹ آباد",
+   "مردان",
+   "پشاور",
+   "سوات"
+  ],
+  "options_roman": [
+   "Abbottabad",
+   "Mardan",
+   "Peshawar",
+   "Swat"
+  ],
+  "explanation_ur": "پشاور خیبر پختونخوا کا دارالحکومت ہے۔",
+  "explanation_roman": "Peshawar Khyber Pakhtunkhwa ka darul-hukumat hai.",
   "post": [
    "tt",
    "at",
@@ -364,6 +540,22 @@
  },
  {
   "id": "SS-012",
+  "question_ur": "تھر کا صحرا بنیادی طور پر کس صوبے میں واقع ہے؟",
+  "question_roman": "Thar ka sehra bunyadi tor par kis soobe mein waqay hai?",
+  "options_ur": [
+   "پنجاب",
+   "سندھ",
+   "بلوچستان",
+   "خیبر پختونخوا"
+  ],
+  "options_roman": [
+   "Punjab",
+   "Sindh",
+   "Balochistan",
+   "Khyber Pakhtunkhwa"
+  ],
+  "explanation_ur": "تھر کا صحرا بنیادی طور پر جنوب مشرقی پاکستان کے صوبہ سندھ میں واقع ہے۔",
+  "explanation_roman": "Thar ka sehra bunyadi tor par junoob-mashriqi Pakistan ke sooba Sindh mein waqay hai.",
   "post": [
    "tt",
    "at",
@@ -397,6 +589,22 @@
  },
  {
   "id": "SS-013",
+  "question_ur": "پاکستان کی قومی اسمبلی میں کل کتنی نشستیں ہیں؟",
+  "question_roman": "Pakistan ki Qaumi Assembly mein kul kitni nashistein hain?",
+  "options_ur": [
+   "272",
+   "300",
+   "336",
+   "342"
+  ],
+  "options_roman": [
+   "272",
+   "300",
+   "336",
+   "342"
+  ],
+  "explanation_ur": "قومی اسمبلی میں 336 نشستیں ہیں: 266 عام، 60 خواتین کے لیے مخصوص اور 10 غیر مسلموں کے لیے۔",
+  "explanation_roman": "Qaumi Assembly mein 336 nashistein hain: 266 aam, 60 khawateen ke liye makhsoos aur 10 ghair-Muslimon ke liye.",
   "post": [
    "tt",
    "at",
@@ -430,6 +638,22 @@
  },
  {
   "id": "SS-014",
+  "question_ur": "پاکستان کی سینیٹ میں کل کتنی نشستیں ہیں؟",
+  "question_roman": "Pakistan ki Senate mein kul kitni nashistein hain?",
+  "options_ur": [
+   "96",
+   "100",
+   "104",
+   "120"
+  ],
+  "options_roman": [
+   "96",
+   "100",
+   "104",
+   "120"
+  ],
+  "explanation_ur": "سابقہ فاٹا کے انضمام کے بعد سینیٹ میں 96 نشستیں ہیں۔",
+  "explanation_roman": "Sabqa FATA ke inzimam ke baad Senate mein 96 nashistein hain.",
   "post": [
    "tt",
    "at",
@@ -463,6 +687,22 @@
  },
  {
   "id": "SS-015",
+  "question_ur": "پاکستان کے سربراہِ مملکت کون ہیں؟",
+  "question_roman": "Pakistan ke sarbarah-e-mumlikat kaun hain?",
+  "options_ur": [
+   "وزیرِ اعظم",
+   "صدر",
+   "چیف جسٹس",
+   "قومی اسمبلی کے اسپیکر"
+  ],
+  "options_roman": [
+   "Wazir-e-Azam",
+   "Sadr",
+   "Chief Justice",
+   "Qaumi Assembly ke Speaker"
+  ],
+  "explanation_ur": "پاکستان کے صدر سربراہِ مملکت ہیں۔",
+  "explanation_roman": "Pakistan ke Sadr sarbarah-e-mumlikat hain.",
   "post": [
    "tt",
    "at",
@@ -496,6 +736,22 @@
  },
  {
   "id": "SS-016",
+  "question_ur": "پاکستان میں ووٹ ڈالنے کی کم از کم عمر کیا ہے؟",
+  "question_roman": "Pakistan mein vote daalne ki kam az kam umar kya hai?",
+  "options_ur": [
+   "16 سال",
+   "18 سال",
+   "20 سال",
+   "21 سال"
+  ],
+  "options_roman": [
+   "16 saal",
+   "18 saal",
+   "20 saal",
+   "21 saal"
+  ],
+  "explanation_ur": "پاکستان میں 18 سال یا اس سے زائد عمر کا شہری ووٹ ڈال سکتا ہے۔",
+  "explanation_roman": "Pakistan mein 18 saal ya is se zayed umar ka shehri vote daal sakta hai.",
   "post": [
    "tt",
    "at",
@@ -529,6 +785,22 @@
  },
  {
   "id": "SS-017",
+  "question_ur": "پاکستان کی قومی زبان کون سی ہے؟",
+  "question_roman": "Pakistan ki qaumi zaban kaun si hai?",
+  "options_ur": [
+   "پنجابی",
+   "انگریزی",
+   "اردو",
+   "پشتو"
+  ],
+  "options_roman": [
+   "Punjabi",
+   "English",
+   "Urdu",
+   "Pashto"
+  ],
+  "explanation_ur": "اردو پاکستان کی قومی زبان ہے؛ انگریزی سرکاری زبان ہے۔",
+  "explanation_roman": "Urdu Pakistan ki qaumi zaban hai; English sarkaari zaban hai.",
   "post": [
    "tt",
    "at",
@@ -562,6 +834,22 @@
  },
  {
   "id": "SS-018",
+  "question_ur": "1973 کے آئین میں بنیادی حقوق کن دفعات میں دیے گئے ہیں؟",
+  "question_roman": "1973 ke Aeen mein Bunyadi Huqooq kin Articles mein diye gaye hain?",
+  "options_ur": [
+   "دفعات 1–6",
+   "دفعات 8–28",
+   "دفعات 41–49",
+   "دفعات 62–63"
+  ],
+  "options_roman": [
+   "Articles 1–6",
+   "Articles 8–28",
+   "Articles 41–49",
+   "Articles 62–63"
+  ],
+  "explanation_ur": "بنیادی حقوق 1973 کے آئین کی دفعات 8 تا 28 میں درج ہیں۔",
+  "explanation_roman": "Bunyadi Huqooq 1973 ke Aeen ke Articles 8 ta 28 mein darj hain.",
   "post": [
    "tt",
    "at",
@@ -595,6 +883,22 @@
  },
  {
   "id": "SS-019",
+  "question_ur": "پاکستان میں مردم شماری کون سا ادارہ کرتا ہے؟",
+  "question_roman": "Pakistan mein mardum shumari kaun sa idara karta hai?",
+  "options_ur": [
+   "اسٹیٹ بینک آف پاکستان",
+   "پاکستان بیورو آف سٹیٹسٹکس",
+   "الیکشن کمیشن آف پاکستان",
+   "نیشنل ڈیٹا بیس اینڈ رجسٹریشن اتھارٹی"
+  ],
+  "options_roman": [
+   "State Bank of Pakistan",
+   "Pakistan Bureau of Statistics",
+   "Election Commission of Pakistan",
+   "National Database and Registration Authority"
+  ],
+  "explanation_ur": "پاکستان بیورو آف سٹیٹسٹکس مردم شماری کرتا ہے۔",
+  "explanation_roman": "Pakistan Bureau of Statistics mardum shumari karta hai.",
   "post": [
    "tt",
    "at",
@@ -628,6 +932,22 @@
  },
  {
   "id": "SS-020",
+  "question_ur": "اسلامی نظریاتی کونسل کا بنیادی کردار کیا ہے؟",
+  "question_roman": "Council of Islamic Ideology ka bunyadi kirdaar kya hai?",
+  "options_ur": [
+   "ٹیکس جمع کرنا",
+   "قوانین کے اسلام سے مطابقت کے بارے میں مشورہ دینا",
+   "انتخابات کرانا",
+   "ججوں کی تقرری کرنا"
+  ],
+  "options_roman": [
+   "Tax jama karna",
+   "Qawaneen ke Islam se mutabiqat ke baare mein mashwara dena",
+   "Intikhabat karana",
+   "Jajon ki taqrari karna"
+  ],
+  "explanation_ur": "اسلامی نظریاتی کونسل پارلیمنٹ اور حکومت کو مشورہ دیتی ہے کہ آیا قوانین اسلام کے مطابق ہیں۔",
+  "explanation_roman": "Council of Islamic Ideology Parliament aur Government ko mashwara deti hai ke aaya qawaneen Islam ke mutabiq hain.",
   "post": [
    "tt",
    "at",
@@ -661,6 +981,22 @@
  },
  {
   "id": "SS-021",
+  "question_ur": "اسٹیٹ بینک آف پاکستان کس سال قائم ہوا تھا؟",
+  "question_roman": "State Bank of Pakistan kis saal qaim hua tha?",
+  "options_ur": [
+   "1947",
+   "1948",
+   "1950",
+   "1956"
+  ],
+  "options_roman": [
+   "1947",
+   "1948",
+   "1950",
+   "1956"
+  ],
+  "explanation_ur": "اسٹیٹ بینک آف پاکستان 1 جولائی 1948 کو قائم ہوا تھا۔",
+  "explanation_roman": "State Bank of Pakistan 1 July 1948 ko qaim hua tha.",
   "post": [
    "tt",
    "at",
@@ -694,6 +1030,22 @@
  },
  {
   "id": "SS-022",
+  "question_ur": "پاکستان کی کرنسی کیا ہے؟",
+  "question_roman": "Pakistan ki currency kya hai?",
+  "options_ur": [
+   "ٹکا",
+   "روپیہ",
+   "دینار",
+   "ریال"
+  ],
+  "options_roman": [
+   "Taka",
+   "Rupee",
+   "Dinar",
+   "Riyal"
+  ],
+  "explanation_ur": "پاکستان کی کرنسی پاکستانی روپیہ (PKR) ہے۔",
+  "explanation_roman": "Pakistan ki currency Pakistani Rupee (PKR) hai.",
   "post": [
    "tt",
    "at",
@@ -727,6 +1079,22 @@
  },
  {
   "id": "SS-023",
+  "question_ur": "پاکستان کی سب سے بڑی برآمدی آمدنی والا شعبہ کون سا ہے؟",
+  "question_roman": "Pakistan ki sab se bari baraamadi aamdani wala shoba kaun sa hai?",
+  "options_ur": [
+   "ٹیکسٹائل",
+   "کھیلوں کا سامان",
+   "جراحی کے آلات",
+   "چمڑے کی مصنوعات"
+  ],
+  "options_roman": [
+   "Textiles",
+   "Khelon ka saman",
+   "Jarahi ke aalat",
+   "Chamre ki masnoaat"
+  ],
+  "explanation_ur": "ٹیکسٹائل (کپاس کا دھاگا، کپڑا اور ملبوسات) پاکستان کی سب سے بڑی برآمدی آمدنی ہے۔",
+  "explanation_roman": "Textiles (kapas ka dhaga, kapra aur malboosat) Pakistan ki sab se bari baraamadi aamdani hai.",
   "post": [
    "tt",
    "at",
@@ -760,6 +1128,22 @@
  },
  {
   "id": "SS-024",
+  "question_ur": "GDP کا مطلب کیا ہے؟",
+  "question_roman": "GDP ka matlab kya hai?",
+  "options_ur": [
+   "عمومی ملکی پیداوار",
+   "مجموعی ملکی پیداوار",
+   "مجموعی ترقیاتی پروگرام",
+   "عمومی ترقیاتی منصوبہ"
+  ],
+  "options_roman": [
+   "Aamoomi mulki paidawar",
+   "Majmooi mulki paidawar",
+   "Majmooi taraqqiyati programme",
+   "Aamoomi taraqqiyati mansooba"
+  ],
+  "explanation_ur": "GDP کا مطلب مجموعی ملکی پیداوار ہے — کسی ملک میں پیدا ہونے والی اشیا اور خدمات کی کل قیمت۔",
+  "explanation_roman": "GDP ka matlab Majmooi Mulki Paidawar hai — kisi mulk mein paida hone wali ashya aur khidmat ki kul qeemat.",
   "post": [
    "tt",
    "at",
@@ -793,6 +1177,22 @@
  },
  {
   "id": "SS-025",
+  "question_ur": "پاکستان اور بھارت کے درمیان شملہ معاہدے پر کس سال دستخط ہوئے تھے؟",
+  "question_roman": "Pakistan aur India ke darmiyan Simla Agreement par kis saal dastakhat hue thay?",
+  "options_ur": [
+   "1965",
+   "1971",
+   "1972",
+   "1974"
+  ],
+  "options_roman": [
+   "1965",
+   "1971",
+   "1972",
+   "1974"
+  ],
+  "explanation_ur": "شملہ معاہدے پر 1972 میں دستخط ہوئے تھے۔",
+  "explanation_roman": "Simla Agreement par 1972 mein dastakhat hue thay.",
   "post": [
    "tt",
    "at",
@@ -826,6 +1226,22 @@
  },
  {
   "id": "SS-026",
+  "question_ur": "پاکستان اقوام متحدہ کا رکن کس تاریخ کو بنا تھا؟",
+  "question_roman": "Pakistan United Nations ka rukun kis tareekh ko bana tha?",
+  "options_ur": [
+   "14 اگست 1947",
+   "30 ستمبر 1947",
+   "23 مارچ 1956",
+   "1 جنوری 1948"
+  ],
+  "options_roman": [
+   "14 August 1947",
+   "30 September 1947",
+   "23 March 1956",
+   "1 January 1948"
+  ],
+  "explanation_ur": "پاکستان 30 ستمبر 1947 کو اقوام متحدہ میں شامل ہوا تھا۔",
+  "explanation_roman": "Pakistan 30 September 1947 ko United Nations mein shamil hua tha.",
   "post": [
    "tt",
    "at",
@@ -859,6 +1275,22 @@
  },
  {
   "id": "SS-027",
+  "question_ur": "کون سا درہ پاکستان کو چین سے ملاتا ہے؟",
+  "question_roman": "Kaun sa darra Pakistan ko China se milata hai?",
+  "options_ur": [
+   "درہ خیبر",
+   "درہ بولان",
+   "درہ خنجراب",
+   "درہ لواری"
+  ],
+  "options_roman": [
+   "Khyber Pass",
+   "Bolan Pass",
+   "Khunjerab Pass",
+   "Lowari Pass"
+  ],
+  "explanation_ur": "درہ خنجراب پاکستان (گلگت بلتستان) کو چین سے ملاتا ہے۔",
+  "explanation_roman": "Khunjerab Pass Pakistan (Gilgit-Baltistan) ko China se milata hai.",
   "post": [
    "tt",
    "at",
@@ -892,6 +1324,22 @@
  },
  {
   "id": "SS-028",
+  "question_ur": "پاکستان کے وزیر اعظم کا انتخاب کون سا ادارہ کرتا ہے؟",
+  "question_roman": "Pakistan ke Wazir-e-Azam ka intikhab kaun sa idara karta hai?",
+  "options_ur": [
+   "سینیٹ",
+   "قومی اسمبلی",
+   "سپریم کورٹ",
+   "الیکشن کمیشن"
+  ],
+  "options_roman": [
+   "The Senate",
+   "The National Assembly",
+   "The Supreme Court",
+   "The Election Commission"
+  ],
+  "explanation_ur": "وزیر اعظم کا انتخاب قومی اسمبلی کرتی ہے۔",
+  "explanation_roman": "Wazir-e-Azam ka intikhab National Assembly karti hai.",
   "post": [
    "tt",
    "at",
@@ -925,6 +1373,22 @@
  },
  {
   "id": "SS-029",
+  "question_ur": "بادشاہی مسجد کس شہر میں واقع ہے؟",
+  "question_roman": "Badshahi Mosque kis sheher mein waqia hai?",
+  "options_ur": [
+   "اسلام آباد",
+   "کراچی",
+   "لاہور",
+   "ملتان"
+  ],
+  "options_roman": [
+   "Islamabad",
+   "Karachi",
+   "Lahore",
+   "Multan"
+  ],
+  "explanation_ur": "بادشاہی مسجد لاہور میں ہے، جو مغل دور میں تعمیر کی گئی تھی۔",
+  "explanation_roman": "Badshahi Mosque Lahore mein hai, jo Mughal daur mein tameer ki gayi thi.",
   "post": [
    "tt",
    "at",
@@ -958,6 +1422,22 @@
  },
  {
   "id": "SS-030",
+  "question_ur": "منگلا ڈیم کس دریا پر بنایا گیا ہے؟",
+  "question_roman": "Mangla Dam kis darya par banaya gaya hai?",
+  "options_ur": [
+   "سندھ",
+   "جہلم",
+   "چناب",
+   "راوی"
+  ],
+  "options_roman": [
+   "Indus",
+   "Jhelum",
+   "Chenab",
+   "Ravi"
+  ],
+  "explanation_ur": "منگلا ڈیم دریائے جہلم پر بنایا گیا ہے۔",
+  "explanation_roman": "Mangla Dam Jhelum River par banaya gaya hai.",
   "post": [
    "tt",
    "at",

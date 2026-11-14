@@ -1,6 +1,22 @@
 [
  {
   "id": "PPR-001",
+  "question_ur": "قرآن مجید میں 'محمد' ﷺ کا نام کل کتنی مرتبہ آیا ہے؟",
+  "question_roman": "Quran-e-Majeed mein 'Muhammad' Sallallahu Alaihi Wasallam ka naam kul kitni martaba aaya hai?",
+  "options_ur": [
+   "6 مرتبہ",
+   "5 مرتبہ",
+   "3 مرتبہ",
+   "4 مرتبہ"
+  ],
+  "options_roman": [
+   "6 martaba",
+   "5 martaba",
+   "3 martaba",
+   "4 martaba"
+  ],
+  "explanation_ur": "قرآن مجید میں محمد کا نام 4 مرتبہ آیا ہے۔",
+  "explanation_roman": "Quran-e-Majeed mein Muhammad ka naam 4 martaba aaya hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -30,6 +46,22 @@
  },
  {
   "id": "PPR-002",
+  "question_ur": "صحیح بخاری اور صحیح مسلم کو مشترکہ طور پر کیا کہا جاتا ہے؟",
+  "question_roman": "Sahih Bukhari aur Sahih Muslim ko mushtaraka taur par kya kaha jata hai?",
+  "options_ur": [
+   "صحاح ستہ",
+   "صحیحین",
+   "کتب اربعہ",
+   "موطا"
+  ],
+  "options_roman": [
+   "Sihah Sitta",
+   "Sahihain",
+   "Kutub-e-Arba",
+   "Muwatta"
+  ],
+  "explanation_ur": "صحیح بخاری اور صحیح مسلم حدیث کی دو سب سے مستند کتابیں ہیں اور ان دونوں کو ایک ساتھ صحیحین کہا جاتا ہے۔",
+  "explanation_roman": "Sahih Bukhari aur Sahih Muslim Hadith ki do sab se mustanad kitabein hain aur in dono ko ek sath Sahihain kaha jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -59,6 +91,22 @@
  },
  {
   "id": "PPR-003",
+  "question_ur": "کس خلیفہ نے نبی ﷺ کی دو بیٹیوں سے نکاح کیا تھا اور اسی لیے انہیں ذوالنورین کہا جاتا ہے؟",
+  "question_roman": "Kis Khalifa ne Nabi Sallallahu Alaihi Wasallam ki do betiyon se nikah kiya tha aur isi liye unhein Zun-Nurain kaha jata hai?",
+  "options_ur": [
+   "حضرت علی رضی اللہ عنہ",
+   "حضرت ابو بکر رضی اللہ عنہ",
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ"
+  ],
+  "options_roman": [
+   "Hazrat Ali Raziallahu Anhu",
+   "Hazrat Abu Bakr Raziallahu Anhu",
+   "Hazrat Umar Raziallahu Anhu",
+   "Hazrat Usman Raziallahu Anhu"
+  ],
+  "explanation_ur": "حضرت عثمان رضی اللہ عنہ نے نبی ﷺ کی دو بیٹیوں سے نکاح کیا تھا، اسی لیے انہیں ذوالنورین کہا جاتا ہے۔",
+  "explanation_roman": "Hazrat Usman Raziallahu Anhu ne Nabi Sallallahu Alaihi Wasallam ki do betiyon se nikah kiya tha, isi liye unhein Zun-Nurain kaha jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -88,6 +136,22 @@
  },
  {
   "id": "PPR-004",
+  "question_ur": "کس رکن کے بغیر حج نامکمل سمجھا جاتا ہے؟",
+  "question_roman": "Kis rukn ke baghair Hajj namukammal samjha jata hai?",
+  "options_ur": [
+   "صفا اور مروہ کے درمیان سعی",
+   "عرفات میں وقوف",
+   "کعبہ کا طواف",
+   "منیٰ میں قیام"
+  ],
+  "options_roman": [
+   "Safa aur Marwa ke darmiyan Sa'i",
+   "Arafat mein Wuquf",
+   "Kaaba ka Tawaf",
+   "Mina mein qayam"
+  ],
+  "explanation_ur": "9 ذی الحجہ کو عرفات میں ٹھہرنا (وقوف) حج کا سب سے اہم رکن ہے۔",
+  "explanation_roman": "9 Zil Hajj ko Arafat mein theharna (Wuquf) Hajj ka sab se aham rukn hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -117,6 +181,22 @@
  },
  {
   "id": "PPR-005",
+  "question_ur": "اسلام کے پیغام پر سب سے پہلے ایمان کون لایا؟",
+  "question_roman": "Islam ke paigham par sab se pehle iman kaun laya?",
+  "options_ur": [
+   "حضرت علی رضی اللہ عنہ",
+   "حضرت بلال رضی اللہ عنہ",
+   "حضرت خدیجہ رضی اللہ عنہا",
+   "حضرت ابو بکر رضی اللہ عنہ"
+  ],
+  "options_roman": [
+   "Hazrat Ali Raziallahu Anhu",
+   "Hazrat Bilal Raziallahu Anhu",
+   "Hazrat Khadija Raziallahu Anha",
+   "Hazrat Abu Bakr Raziallahu Anhu"
+  ],
+  "explanation_ur": "حضرت خدیجہ رضی اللہ عنہا، جو نبی ﷺ کی پہلی زوجہ تھیں، اسلام قبول کرنے والی پہلی شخصیت تھیں۔",
+  "explanation_roman": "Hazrat Khadija Raziallahu Anha, jo Nabi Sallallahu Alaihi Wasallam ki pehli zauja theen, Islam qabool karne wali pehli shakhsiyat theen.",
   "post": [
    "zamungkor",
    "tt",
@@ -146,6 +226,22 @@
  },
  {
   "id": "PPR-006",
+  "question_ur": "خالی جگہ پُر کریں: He got admission in ___ university.",
+  "question_roman": "Khali jagah pur karein: He got admission in ___ university.",
+  "options_ur": [
+   "an university",
+   "no article",
+   "the university",
+   "a university"
+  ],
+  "options_roman": [
+   "an university",
+   "no article",
+   "the university",
+   "a university"
+  ],
+  "explanation_ur": "لفظ 'university' کی آواز 'yoo' سے شروع ہوتی ہے جو consonant کی آواز ہے، اس لیے اس کے ساتھ 'a' آتا ہے، 'an' نہیں۔",
+  "explanation_roman": "Lafz 'university' ki aawaz 'yoo' se shuru hoti hai jo consonant ki aawaz hai, is liye is ke sath 'a' aata hai, 'an' nahin.",
   "post": [
    "zamungkor",
    "tt",
@@ -175,6 +271,22 @@
  },
  {
   "id": "PPR-007",
+  "question_ur": "She is capable ___ hard work. درست preposition منتخب کریں۔",
+  "question_roman": "She is capable ___ hard work. Durust preposition muntakhab karein.",
+  "options_ur": [
+   "to",
+   "for",
+   "of",
+   "in"
+  ],
+  "options_roman": [
+   "to",
+   "for",
+   "of",
+   "in"
+  ],
+  "explanation_ur": "'Capable' کے بعد 'of' آتا ہے — capable of doing something۔",
+  "explanation_roman": "'Capable' ke baad 'of' aata hai — capable of doing something.",
   "post": [
    "zamungkor",
    "tt",
@@ -204,6 +316,22 @@
  },
  {
   "id": "PPR-008",
+  "question_ur": "Passive voice میں تبدیل کریں: 'She cleaned the room.'",
+  "question_roman": "Passive voice mein tabdeel karein: 'She cleaned the room.'",
+  "options_ur": [
+   "The room was cleaned by her",
+   "The room is cleaned by her",
+   "The room has been cleaned by her",
+   "The room cleans by her"
+  ],
+  "options_roman": [
+   "The room was cleaned by her",
+   "The room is cleaned by her",
+   "The room has been cleaned by her",
+   "The room cleans by her"
+  ],
+  "explanation_ur": "Past simple کا passive یہ ہے: 'The room was cleaned by her.'",
+  "explanation_roman": "Past simple ka passive yeh hai: 'The room was cleaned by her.'",
   "post": [
    "zamungkor",
    "tt",
@@ -233,6 +361,22 @@
  },
  {
   "id": "PPR-009",
+  "question_ur": "'abundant' کا متضاد کون سا لفظ ہے؟",
+  "question_roman": "'abundant' ka mutazad kaun sa lafz hai?",
+  "options_ur": [
+   "Ample",
+   "Plentiful",
+   "Scarce",
+   "Sufficient"
+  ],
+  "options_roman": [
+   "Ample",
+   "Plentiful",
+   "Scarce",
+   "Sufficient"
+  ],
+  "explanation_ur": "'Abundant' کا مطلب plentiful ہے؛ اس کا متضاد 'scarce' ہے۔",
+  "explanation_roman": "'Abundant' ka matlab plentiful hai; is ka mutazad 'scarce' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -262,6 +406,22 @@
  },
  {
   "id": "PPR-010",
+  "question_ur": "گرامر کے لحاظ سے درست جملہ منتخب کریں۔",
+  "question_roman": "Grammar ke lihaz se durust jumla muntakhab karein.",
+  "options_ur": [
+   "Neither of the answers is correct",
+   "Neither of the answers are correct",
+   "Neither of the answers were correct",
+   "Neither of the answers have correct"
+  ],
+  "options_roman": [
+   "Neither of the answers is correct",
+   "Neither of the answers are correct",
+   "Neither of the answers were correct",
+   "Neither of the answers have correct"
+  ],
+  "explanation_ur": "'Neither' واحد ہے، اس لیے درست فعل 'is' ہے، 'are' نہیں۔",
+  "explanation_roman": "'Neither' wahid hai, is liye durust fail 'is' hai, 'are' nahin.",
   "post": [
    "zamungkor",
    "tt",
@@ -291,6 +451,22 @@
  },
  {
   "id": "PPR-011",
+  "question_ur": "'کتاب' کی جمع کے لیے درست لفظ کون سا ہے؟",
+  "question_roman": "'Kitaab' ki jama ke liye durust lafz kaun sa hai?",
+  "options_ur": [
+   "کتابے",
+   "کتابات",
+   "کتابیں",
+   "کتابوں"
+  ],
+  "options_roman": [
+   "kitaabe (کتابے)",
+   "kitaabaat (کتابات)",
+   "kitaabein (کتابیں)",
+   "kitaabon (کتابوں)"
+  ],
+  "explanation_ur": "'کتاب' کی جمع کے لیے لفظ 'کتابیں' ہے۔",
+  "explanation_roman": "'کتاب' ki jama ke liye lafz 'کتابیں' hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -320,6 +496,22 @@
  },
  {
   "id": "PPR-012",
+  "question_ur": "محاورہ 'آنکھوں کا تارا' کس کے لیے استعمال ہوتا ہے؟",
+  "question_roman": "Muhawara 'Aankhon ka taara' kis ke liye istemal hota hai?",
+  "options_ur": [
+   "بہت پیارے کے لیے",
+   "دشمن کے لیے",
+   "اندھے کے لیے",
+   "دور کے رشتے دار کے لیے"
+  ],
+  "options_roman": [
+   "bohat pyare ke liye (بہت پیارے کے لیے)",
+   "dushman ke liye (دشمن کے لیے)",
+   "andhe ke liye (اندھے کے لیے)",
+   "door ke rishte daar ke liye (دور کے رشتے دار کے لیے)"
+  ],
+  "explanation_ur": "'آنکھوں کا تارا' کا مطلب ہے بہت پیارا یا محبوب شخص۔",
+  "explanation_roman": "'آنکھوں کا تارا' ka matlab hai bohat pyara ya mehboob shakhs.",
   "post": [
    "zamungkor",
    "tt",
@@ -349,6 +541,22 @@
  },
  {
   "id": "PPR-013",
+  "question_ur": "کس شاعر کو 'شاعر مشرق' کہا جاتا ہے؟",
+  "question_roman": "Kis shair ko 'Shair-e-Mashriq' kaha jata hai?",
+  "options_ur": [
+   "مرزا غالب",
+   "احمد فراز",
+   "علامہ اقبال",
+   "میر تقی میر"
+  ],
+  "options_roman": [
+   "Mirza Ghalib (مرزا غالب)",
+   "Ahmed Faraz (احمد فراز)",
+   "Allama Iqbal (علامہ اقبال)",
+   "Mir Taqi Mir (میر تقی میر)"
+  ],
+  "explanation_ur": "علامہ اقبال کو 'شاعر مشرق' (مشرق کا شاعر) کہا جاتا ہے۔",
+  "explanation_roman": "Allama Iqbal 'Shair-e-Mashriq' (Mashriq ka shair) ke naam se jane jate hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -378,6 +586,22 @@
  },
  {
   "id": "PPR-014",
+  "question_ur": "قرارداد مقاصد کس سال منظور کی گئی تھی؟",
+  "question_roman": "Qarardad-e-Maqasid kis saal manzoor ki gayi thi?",
+  "options_ur": [
+   "1956",
+   "1947",
+   "1949",
+   "1948"
+  ],
+  "options_roman": [
+   "1956",
+   "1947",
+   "1949",
+   "1948"
+  ],
+  "explanation_ur": "قرارداد مقاصد کو پہلی دستور ساز اسمبلی نے مارچ 1949 میں منظور کیا تھا۔",
+  "explanation_roman": "Qarardad-e-Maqasid ko pehli Dastur Saaz Assembly ne March 1949 mein manzoor kiya tha.",
   "post": [
    "zamungkor",
    "tt",
@@ -407,6 +631,22 @@
  },
  {
   "id": "PPR-015",
+  "question_ur": "2010 میں کس آئینی ترمیم نے صوبوں کو زیادہ خود مختاری دی؟",
+  "question_roman": "2010 mein kis aayeeni tarmeem ne soobon ko zyada khud mukhtari di?",
+  "options_ur": [
+   "17ویں ترمیم",
+   "18ویں ترمیم",
+   "13ویں ترمیم",
+   "10ویں ترمیم"
+  ],
+  "options_roman": [
+   "17th Tarmeem",
+   "18th Tarmeem",
+   "13th Tarmeem",
+   "10th Tarmeem"
+  ],
+  "explanation_ur": "18ویں ترمیم (2010) نے صوبوں کو زیادہ خود مختاری دی۔",
+  "explanation_roman": "18th Tarmeem (2010) ne soobon ko zyada khud mukhtari di.",
   "post": [
    "zamungkor",
    "tt",
@@ -436,6 +676,22 @@
  },
  {
   "id": "PPR-016",
+  "question_ur": "پاکستان افغانستان سے کس درے کے ذریعے جڑا ہوا ہے؟",
+  "question_roman": "Pakistan Afghanistan se kis darre ke zariye jura hua hai?",
+  "options_ur": [
+   "درہ خنجراب",
+   "درہ لواری",
+   "درہ بولان",
+   "درہ خیبر"
+  ],
+  "options_roman": [
+   "Khunjerab Pass",
+   "Lowari Pass",
+   "Bolan Pass",
+   "Khyber Pass"
+  ],
+  "explanation_ur": "درہ خیبر پاکستان کو افغانستان سے ملاتا ہے۔",
+  "explanation_roman": "Khyber Pass Pakistan ko Afghanistan se milata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -465,6 +721,22 @@
  },
  {
   "id": "PPR-017",
+  "question_ur": "8 اور 12 کے LCM اور HCF کا مجموعہ معلوم کریں۔",
+  "question_roman": "8 aur 12 ke LCM aur HCF ka majmooa maloom karein.",
+  "options_ur": [
+   "36",
+   "24",
+   "20",
+   "28"
+  ],
+  "options_roman": [
+   "36",
+   "24",
+   "20",
+   "28"
+  ],
+  "explanation_ur": "8 اور 12 کا LCM 24 ہے، HCF 4 ہے، 24 + 4 = 28 ہے۔",
+  "explanation_roman": "8 aur 12 ka LCM 24 hai; HCF 4 hai; 24 + 4 = 28.",
   "post": [
    "zamungkor",
    "tt",
@@ -494,6 +766,22 @@
  },
  {
   "id": "PPR-018",
+  "question_ur": "ایک چیز کی قیمت 250 روپے ہے۔ اس کی قیمت میں 20% اضافہ کر دیا جاتا ہے۔ نئی قیمت کیا ہے؟",
+  "question_roman": "Ek cheez ki qeemat Rs 250 hai. Us ki qeemat mein 20% izafa kar diya jata hai. Nayi qeemat kya hai?",
+  "options_ur": [
+   "320 روپے",
+   "300 روپے",
+   "270 روپے",
+   "290 روپے"
+  ],
+  "options_roman": [
+   "Rs 320",
+   "Rs 300",
+   "Rs 270",
+   "Rs 290"
+  ],
+  "explanation_ur": "250 کا 20% = 50 ہے؛ 250 + 50 = 300 ہے۔",
+  "explanation_roman": "250 ka 20% = 50 hai; 250 + 50 = 300 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -523,6 +811,22 @@
  },
  {
   "id": "PPR-019",
+  "question_ur": "ایک باپ اپنے بیٹے سے تین گنا بڑا ہے۔ 5 سال بعد وہ اپنے بیٹے سے دو گنا بڑا ہو جائے گا۔ باپ کی موجودہ عمر کیا ہے؟",
+  "question_roman": "Ek baap apne bete se teen guna bara hai. 5 saal baad woh apne bete se do guna bara ho jaye ga. Baap ki maujooda umar kya hai?",
+  "options_ur": [
+   "25 سال",
+   "20 سال",
+   "15 سال",
+   "10 سال"
+  ],
+  "options_roman": [
+   "25 saal",
+   "20 saal",
+   "15 saal",
+   "10 saal"
+  ],
+  "explanation_ur": "باپ کی موجودہ عمر 3x ہے؛ 5 سال بعد 3x + 5 = 2(x + 5) سے x = 5 ملتا ہے، اس لیے باپ کی عمر 15 سال ہے۔",
+  "explanation_roman": "Baap ki umar ab 3x hai; 5 saal baad 3x + 5 = 2(x + 5) se x = 5 milta hai, is liye baap ki umar 15 saal hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -552,6 +856,22 @@
  },
  {
   "id": "PPR-020",
+  "question_ur": "ایک استاد طالب علم کو عارضی مدد دیتا ہے اور جیسے جیسے طالب علم سیکھتا ہے، آہستہ آہستہ اس مدد کو ختم کر دیتا ہے۔ اسے کیا کہتے ہیں؟",
+  "question_roman": "Ek ustad talib-e-ilm ko aarzi madad deta hai aur jaise jaise talib-e-ilm seekhta hai, aahista aahista us madad ko khatam kar deta hai. Ise kya kehte hain?",
+  "options_ur": [
+   "سکیفولڈنگ",
+   "سبق کو دہرانا",
+   "مکمل جواب دینا",
+   "طالب علم کو اکیلا چھوڑ دینا"
+  ],
+  "options_roman": [
+   "Scaffolding",
+   "Lesson ko dohrana",
+   "Mukammal jawab dena",
+   "Talib-e-ilm ko akela chhor dena"
+  ],
+  "explanation_ur": "سکیفولڈنگ ZPD کے اندر عارضی مدد ہے، جو سیکھنے والے کے خود مختار ہوتے ہی آہستہ آہستہ ختم کر دی جاتی ہے۔",
+  "explanation_roman": "Scaffolding ZPD ke andar aarzi madad hai, jo seekhne wale ke khud mukhtar hote hi aahista aahista khatam kar di jati hai.",
   "post": [
    "zamungkor",
    "tt",

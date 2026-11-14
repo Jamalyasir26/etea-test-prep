@@ -1,6 +1,22 @@
 [
  {
   "id": "DRW-011",
+  "question_ur": "میدان میں کرکٹ ٹیم میں کتنے کھلاڑی ہوتے ہیں؟",
+  "question_roman": "Maidan mein cricket team mein kitne khilari hote hain?",
+  "options_ur": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "options_roman": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "explanation_ur": "کرکٹ میں ایک ٹیم میں 11 کھلاڑی ہوتے ہیں۔",
+  "explanation_roman": "cricket mein aik team mein 11 khilari hote hain.",
   "post": [
    "dm",
    "pet"
@@ -29,6 +45,22 @@
  },
  {
   "id": "DRW-012",
+  "question_ur": "کرکٹ میں ایک اوور میں کتنی گیندیں ہوتی ہیں؟",
+  "question_roman": "Cricket mein aik over mein kitni gendain hoti hain?",
+  "options_ur": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "options_roman": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "explanation_ur": "ایک اوور میں 6 گیندیں ہوتی ہیں۔",
+  "explanation_roman": "aik over mein 6 gendain hoti hain.",
   "post": [
    "dm",
    "pet"
@@ -57,6 +89,22 @@
  },
  {
   "id": "DRW-013",
+  "question_ur": "میدان میں فٹ بال (ساکر) ٹیم میں کتنے کھلاڑی ہوتے ہیں؟",
+  "question_roman": "Maidan mein football (soccer) team mein kitne khilari hote hain?",
+  "options_ur": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "options_roman": [
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "explanation_ur": "فٹ بال ٹیم میں 11 کھلاڑی ہوتے ہیں، جن میں گول کیپر بھی شامل ہے۔",
+  "explanation_roman": "Football team mein 11 khilari hote hain, jin mein goalkeeper bhi shamil hai.",
   "post": [
    "dm",
    "pet"
@@ -84,6 +132,22 @@
  },
  {
   "id": "DRW-014",
+  "question_ur": "اضافی وقت کے بغیر، ایک معیاری فٹ بال (ساکر) میچ کتنی دیر کا ہوتا ہے؟",
+  "question_roman": "Extra time ke baghair, aik standard football (soccer) match kitni dair ka hota hai?",
+  "options_ur": [
+   "60 منٹ",
+   "80 منٹ",
+   "90 منٹ",
+   "120 منٹ"
+  ],
+  "options_roman": [
+   "60 minutes",
+   "80 minutes",
+   "90 minutes",
+   "120 minutes"
+  ],
+  "explanation_ur": "فٹ بال میچ میں 45 منٹ کے دو حصے ہوتے ہیں، اس طرح مجموعی طور پر 90 منٹ ہوتے ہیں۔",
+  "explanation_roman": "Football match mein 45 minutes ke do hissay hote hain, is tarah majmooi tor par 90 minutes hote hain.",
   "post": [
    "dm",
    "pet"
@@ -111,6 +175,22 @@
  },
  {
   "id": "DRW-015",
+  "question_ur": "میدان میں ہاکی ٹیم میں کتنے کھلاڑی ہوتے ہیں؟",
+  "question_roman": "Maidan mein hockey team mein kitne khilari hote hain?",
+  "options_ur": [
+   "9",
+   "10",
+   "11",
+   "7"
+  ],
+  "options_roman": [
+   "9",
+   "10",
+   "11",
+   "7"
+  ],
+  "explanation_ur": "فیلڈ ہاکی ٹیم میں میدان پر 11 کھلاڑی ہوتے ہیں، جن میں گول کیپر بھی شامل ہے۔",
+  "explanation_roman": "Field hockey team mein maidan par 11 khilari hote hain, jin mein goalkeeper bhi shamil hai.",
   "post": [
    "dm",
    "pet"
@@ -138,6 +218,22 @@
  },
  {
   "id": "DRW-016",
+  "question_ur": "اولمپک کھیل کتنے عرصے بعد منعقد ہوتے ہیں؟",
+  "question_roman": "Olympic Games kitne arsay baad munaqid hote hain?",
+  "options_ur": [
+   "ہر 2 سال بعد",
+   "ہر 3 سال بعد",
+   "ہر 4 سال بعد",
+   "ہر 5 سال بعد"
+  ],
+  "options_roman": [
+   "Har 2 saal baad",
+   "Har 3 saal baad",
+   "Har 4 saal baad",
+   "Har 5 saal baad"
+  ],
+  "explanation_ur": "اولمپکس ہر چار سال بعد ہوتے ہیں۔",
+  "explanation_roman": "Olympics har chaar saal baad hote hain.",
   "post": [
    "dm",
    "pet"
@@ -166,6 +262,22 @@
  },
  {
   "id": "DRW-017",
+  "question_ur": "میراتھن دوڑ کا معیاری فاصلہ کتنا ہے؟",
+  "question_roman": "Marathon race ka standard fasla kitna hai?",
+  "options_ur": [
+   "26 km",
+   "32 km",
+   "42 km (تقریباً 42.195 km)",
+   "50 km"
+  ],
+  "options_roman": [
+   "26 km",
+   "32 km",
+   "42 km (taqreeban 42.195 km)",
+   "50 km"
+  ],
+  "explanation_ur": "میراتھن تقریباً 42.195 کلومیٹر لمبی ہوتی ہے۔",
+  "explanation_roman": "Marathon taqreeban 42.195 kilometres lambi hoti hai.",
   "post": [
    "dm",
    "pet"
@@ -193,6 +305,22 @@
  },
  {
   "id": "DRW-018",
+  "question_ur": "ورزش سے پہلے وارم اپ کرنا کیوں ضروری ہے؟",
+  "question_roman": "Warzish se pehle warm up karna kyun zaroori hai?",
+  "options_ur": [
+   "اس سے پٹھے ٹھنڈے ہو جاتے ہیں",
+   "یہ جسم کو تیار کرتا ہے اور چوٹ کے خطرے کو کم کرتا ہے",
+   "اس سے دل کی دھڑکن رک جاتی ہے",
+   "اس سے ورزش غیر ضروری ہو جاتی ہے"
+  ],
+  "options_roman": [
+   "Is se muscles thande ho jate hain",
+   "Yeh jism ko tayyar karta hai aur chot ke khatre ko kam karta hai",
+   "Is se dil ki dharkan ruk jati hai",
+   "Is se warzish ghair zaroori ho jati hai"
+  ],
+  "explanation_ur": "وارم اپ آہستہ آہستہ دل کی رفتار بڑھاتا ہے اور پٹھوں کو ڈھیلا کرتا ہے، اس لیے چوٹ کا امکان کم ہو جاتا ہے۔",
+  "explanation_roman": "Warm-up aahista aahista heart rate barhata hai aur muscles ko dheela karta hai, is liye chot ka imkaan kam ho jata hai.",
   "post": [
    "dm",
    "pet"
@@ -220,6 +348,22 @@
  },
  {
   "id": "DRW-019",
+  "question_ur": "ایک عام بالغ انسان کے ڈھانچے میں کتنی ہڈیاں ہوتی ہیں؟",
+  "question_roman": "Aik aam baaligh insaan ke dhanche mein kitni haddiyan hoti hain?",
+  "options_ur": [
+   "106",
+   "206",
+   "306",
+   "406"
+  ],
+  "options_roman": [
+   "106",
+   "206",
+   "306",
+   "406"
+  ],
+  "explanation_ur": "بالغ انسان میں 206 ہڈیاں ہوتی ہیں۔",
+  "explanation_roman": "baaligh insaan mein 206 haddiyan hoti hain.",
   "post": [
    "dm",
    "pet"
@@ -248,6 +392,22 @@
  },
  {
   "id": "DRW-020",
+  "question_ur": "درج ذیل میں سے باقاعدہ ایروبک ورزش کی بہترین مثال کون سی ہے؟",
+  "question_roman": "Darj zail mein se baqaida aerobic warzish ki behtareen misaal kaun si hai?",
+  "options_ur": [
+   "ٹیلی ویژن دیکھنا",
+   "تیز چلنا یا جاگنگ",
+   "سونا",
+   "لمبے وقت تک بیٹھے رہنا"
+  ],
+  "options_roman": [
+   "Television dekhna",
+   "Tez chalna ya jogging",
+   "Sona",
+   "Lambe waqt tak baithe rehna"
+  ],
+  "explanation_ur": "تیز چلنا اور جاگنگ دل کی رفتار بڑھاتے ہیں اور فٹنس بہتر کرتے ہیں؛ باقی کام جسم کی ورزش نہیں کرتے۔",
+  "explanation_roman": "Tez chalna aur jogging heart rate barhate hain aur fitness behtar karte hain; baaqi kaam jism ki warzish nahi karte.",
   "post": [
    "dm",
    "pet"
@@ -275,6 +435,22 @@
  },
  {
   "id": "PE-001",
+  "question_ur": "کورٹ پر باسکٹ بال ٹیم میں کتنے کھلاڑی ہوتے ہیں؟",
+  "question_roman": "Court par basketball team mein kitne khilari hote hain?",
+  "options_ur": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "options_roman": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "explanation_ur": "باسکٹ بال میں ایک ٹیم کے 5 کھلاڑی کورٹ پر ہوتے ہیں۔",
+  "explanation_roman": "basketball mein aik team ke 5 khilari court par hote hain.",
   "post": [
    "dm",
    "pet"
@@ -304,6 +480,22 @@
  },
  {
   "id": "PE-002",
+  "question_ur": "کورٹ پر والی بال ٹیم میں کتنے کھلاڑی ہوتے ہیں؟",
+  "question_roman": "Court par volleyball team mein kitne khilari hote hain?",
+  "options_ur": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "options_roman": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "explanation_ur": "والی بال ٹیم میں کورٹ پر 6 کھلاڑی ہوتے ہیں۔",
+  "explanation_roman": "Volleyball team mein court par 6 khilari hote hain.",
   "post": [
    "dm",
    "pet"
@@ -332,6 +524,22 @@
  },
  {
   "id": "PE-003",
+  "question_ur": "بیڈمنٹن میں شٹل کاک کو اور کیا کہا جاتا ہے؟",
+  "question_roman": "Badminton mein shuttlecock ko aur kya kaha jata hai?",
+  "options_ur": [
+   "پرندہ",
+   "برڈی",
+   "گیند",
+   "شٹل بیٹ"
+  ],
+  "options_roman": [
+   "Bird",
+   "Birdie",
+   "Ball",
+   "Shuttle bat"
+  ],
+  "explanation_ur": "شٹل کاک، ہلکا مخروطی جسم جسے کھلاڑی جال کے اوپر سے مارتے ہیں، کو برڈی بھی کہا جاتا ہے۔",
+  "explanation_roman": "Shuttlecock, halka cone jise khilari net ke oopar se marte hain, ko birdie bhi kaha jata hai.",
   "post": [
    "dm",
    "pet"
@@ -360,6 +568,22 @@
  },
  {
   "id": "PE-004",
+  "question_ur": "ایتھلیٹکس میں کون سی دوڑ سب سے چھوٹی سپرنٹ کے طور پر جانی جاتی ہے؟",
+  "question_roman": "Athletics mein kaun si race sab se chhoti sprint ke tor par jani jati hai?",
+  "options_ur": [
+   "200 میٹر",
+   "400 میٹر",
+   "100 میٹر",
+   "800 میٹر"
+  ],
+  "options_roman": [
+   "200 metres",
+   "400 metres",
+   "100 metres",
+   "800 metres"
+  ],
+  "explanation_ur": "100 میٹر کی دوڑ ایتھلیٹکس میں سب سے چھوٹی سپرنٹ ہے۔",
+  "explanation_roman": "100-metre race athletics mein sab se chhoti sprint hai.",
   "post": [
    "dm",
    "pet"
@@ -388,6 +612,22 @@
  },
  {
   "id": "PE-005",
+  "question_ur": "سیٹ اینڈ ریچ ٹیسٹ سے جسمانی فٹنس کا کون سا جزو جانچا جاتا ہے؟",
+  "question_roman": "Sit-and-reach test se physical fitness ka kaun sa juzo jancha jata hai?",
+  "options_ur": [
+   "لچک",
+   "طاقت",
+   "رفتار",
+   "توازن"
+  ],
+  "options_roman": [
+   "Flexibility",
+   "Strength",
+   "Speed",
+   "Balance"
+  ],
+  "explanation_ur": "سیٹ اینڈ ریچ ٹیسٹ یہ ناپتا ہے کہ کوئی شخص کتنی دور تک آگے جھک سکتا ہے، جو لچک کو ظاہر کرتا ہے۔",
+  "explanation_roman": "Sit-and-reach test yeh naapta hai ke koi shakhs kitni door tak aage jhuk sakta hai, jo flexibility ko zahir karta hai.",
   "post": [
    "dm",
    "pet"
@@ -416,6 +656,22 @@
  },
  {
   "id": "PE-006",
+  "question_ur": "ورزش کے بعد کولنگ ڈاؤن کرنا کیوں ضروری ہے؟",
+  "question_roman": "Warzish ke baad cooling down karna kyun zaroori hai?",
+  "options_ur": [
+   "اس سے پٹھے فوراً بڑے ہو جاتے ہیں",
+   "اس سے جسم آہستہ آہستہ اپنی معمول کی حالت میں واپس آ جاتا ہے",
+   "اس سے پسینہ فوراً رک جاتا ہے",
+   "اس سے نیند کی ضرورت ختم ہو جاتی ہے"
+  ],
+  "options_roman": [
+   "Is se patthay foran baray ho jatay hain",
+   "Is se jism aahista aahista apni mamool ki haalat mein wapas aa jata hai",
+   "Is se paseena foran ruk jata hai",
+   "Is se neend ki zaroorat khatam ho jati hai"
+  ],
+  "explanation_ur": "آہستہ حرکت اور کھنچاؤ والی ورزش کے ساتھ کولنگ ڈاؤن کرنے سے دل کی دھڑکن اور سانس آہستہ آہستہ معمول پر آ جاتے ہیں۔",
+  "explanation_roman": "Aahista harkat aur khinchao wali warzish ke saath cooling down karne se dil ki dhadkan aur saans aahista aahista mamool par aa jatay hain.",
   "post": [
    "dm",
    "pet"
@@ -444,6 +700,22 @@
  },
  {
   "id": "PE-007",
+  "question_ur": "کورٹ میں کبڈی کی ٹیم میں کتنے کھلاڑی ہوتے ہیں؟",
+  "question_roman": "Court mein kabaddi ki team mein kitne khiladi hotay hain?",
+  "options_ur": [
+   "5",
+   "6",
+   "9",
+   "7"
+  ],
+  "options_roman": [
+   "5",
+   "6",
+   "9",
+   "7"
+  ],
+  "explanation_ur": "کبڈی کی ٹیم میں کورٹ پر 7 کھلاڑی ہوتے ہیں۔",
+  "explanation_roman": "Kabaddi ki team mein court par 7 khiladi hotay hain.",
   "post": [
    "dm",
    "pet"
@@ -472,6 +744,22 @@
  },
  {
   "id": "PE-008",
+  "question_ur": "ایتھلیٹکس کے کس مقابلے میں بھاری دھات کی گیند کو جتنا ممکن ہو دور پھینکا جاتا ہے؟",
+  "question_roman": "Athletics ke kis muqablay mein bhaari dhaat ki gend ko jitna mumkin ho door phenka jata hai?",
+  "options_ur": [
+   "جیولن تھرو",
+   "ڈسکس تھرو",
+   "شاٹ پٹ",
+   "ہیمر تھرو"
+  ],
+  "options_roman": [
+   "Javelin throw",
+   "Discus throw",
+   "Shot put",
+   "Hammer throw"
+  ],
+  "explanation_ur": "شاٹ پٹ میں کھلاڑی کندھے سے بھاری دھات کی گیند کو جتنا ممکن ہو دور دھکیلتا ہے۔",
+  "explanation_roman": "Shot put mein khiladi kandhay se bhaari dhaat ki gend ko jitna mumkin ho door dhakelta hai.",
   "post": [
    "dm",
    "pet"
@@ -500,6 +788,22 @@
  },
  {
   "id": "PE-009",
+  "question_ur": "ہارٹ ریٹ سے کیا ناپا جاتا ہے؟",
+  "question_roman": "Heart rate se kya naapa jata hai?",
+  "options_ur": [
+   "فی منٹ دل کی دھڑکنوں کی تعداد",
+   "جسم میں خون کی مقدار",
+   "دل کا سائز",
+   "دوڑنے کی رفتار"
+  ],
+  "options_roman": [
+   "Fi minute dil ki dhadkanon ki taadad",
+   "Jism mein khoon ki miqdaar",
+   "Dil ka size",
+   "Daurnay ki raftaar"
+  ],
+  "explanation_ur": "ہارٹ ریٹ ایک منٹ میں دل کے دھڑکنے کی تعداد ہے۔",
+  "explanation_roman": "Heart rate ek minute mein dil ke dhadaknay ki taadad hai.",
   "post": [
    "dm",
    "pet"
@@ -528,6 +832,22 @@
  },
  {
   "id": "PE-010",
+  "question_ur": "کھیل میں اچھی اسپورٹس مین شپ کا کیا مطلب ہے؟",
+  "question_roman": "Khel mein achi sportsmanship ka kya matlab hai?",
+  "options_ur": [
+   "کسی بھی طریقے سے جیتنا",
+   "ایمانداری سے کھیلنا اور حریفوں اور عہدیداروں کا احترام کرنا",
+   "مضبوط ٹیموں کے خلاف کھیلنے سے انکار کرنا",
+   "ریفری سے بحث کرنا"
+  ],
+  "options_roman": [
+   "Kisi bhi tareeqay se jeetna",
+   "Imaandari se khelna aur hareefon aur ohdedaron ka ehtram karna",
+   "Mazboot teamon ke khilaf khelnay se inkar karna",
+   "Referee se behes karna"
+  ],
+  "explanation_ur": "اچھی اسپورٹس مین شپ کا مطلب ہے اصولوں کے مطابق کھیلنا، حریفوں اور عہدیداروں کا احترام کرنا، اور نتیجے کو خوش اسلوبی سے قبول کرنا۔",
+  "explanation_roman": "Achi sportsmanship ka matlab hai usoolon ke mutabiq khelna, hareefon aur ohdedaron ka ehtram karna, aur nateejay ko khush usloobi se qabool karna.",
   "post": [
    "dm",
    "pet"
@@ -556,6 +876,22 @@
  },
  {
   "id": "PE-011",
+  "question_ur": "معیاری فیلڈ ہاکی کا میچ کتنی دیر کا ہوتا ہے؟",
+  "question_roman": "Mayaari field hockey ka match kitni dair ka hota hai?",
+  "options_ur": [
+   "40 منٹ",
+   "50 منٹ",
+   "60 منٹ",
+   "90 منٹ"
+  ],
+  "options_roman": [
+   "40 minutes",
+   "50 minutes",
+   "60 minutes",
+   "90 minutes"
+  ],
+  "explanation_ur": "معیاری ہاکی کا میچ 60 منٹ تک جاری رہتا ہے، جو 15 منٹ کے چار کوارٹرز میں کھیلا جاتا ہے۔",
+  "explanation_roman": "Mayaari hockey ka match 60 minutes tak jari rehta hai, jo 15 minutes ke chaar quarters mein khela jata hai.",
   "post": [
    "dm",
    "pet"
@@ -586,6 +922,22 @@
  },
  {
   "id": "PE-012",
+  "question_ur": "فیلڈ ہاکی عام طور پر کس سطح پر کھیلی جاتی ہے:",
+  "question_roman": "Field hockey aam tor par kis satah par kheli jati hai:",
+  "options_ur": [
+   "گھاس",
+   "مٹی",
+   "ایسٹرو ٹرف (مصنوعی ٹرف)",
+   "لکڑی"
+  ],
+  "options_roman": [
+   "Ghaas",
+   "Mitti",
+   "Astroturf (artificial turf)",
+   "Lakri"
+  ],
+  "explanation_ur": "جدید فیلڈ ہاکی عام طور پر ایسٹرو ٹرف پر کھیلی جاتی ہے، جو ایک ہموار مصنوعی سطح ہے جس پر گیند تیزی سے لڑھکتی رہتی ہے۔",
+  "explanation_roman": "Jadeed field hockey aam tor par astroturf par kheli jati hai, jo ek hamwaar masnooi satah hai jis par gend teezi se ladhakti rehti hai.",
   "post": [
    "dm",
    "pet"
@@ -616,6 +968,22 @@
  },
  {
   "id": "PE-013",
+  "question_ur": "ٹینس میں پوائنٹس کس ترتیب سے گنے جاتے ہیں؟",
+  "question_roman": "Tennis mein points kis tarteeb se ginay jatay hain?",
+  "options_ur": [
+   "10, 20, 30",
+   "15, 30, 40",
+   "1, 2, 3",
+   "5, 10, 15"
+  ],
+  "options_roman": [
+   "10, 20, 30",
+   "15, 30, 40",
+   "1, 2, 3",
+   "5, 10, 15"
+  ],
+  "explanation_ur": "ٹینس میں پوائنٹس 15, 30 اور 40 کے طور پر گنے جاتے ہیں؛ 40 کے بعد اگلا پوائنٹ جیتنے سے گیم جیت لی جاتی ہے۔",
+  "explanation_roman": "Tennis mein points 15, 30 aur 40 ke tor par ginay jatay hain; 40 ke baad agla point jeetnay se game jeet li jati hai.",
   "post": [
    "dm",
    "pet"
@@ -646,6 +1014,22 @@
  },
  {
   "id": "PE-014",
+  "question_ur": "ٹینس کا وہ میچ جس میں ہر طرف دو کھلاڑی ہوں، کیا کہلاتا ہے:",
+  "question_roman": "Tennis ka woh match jis mein har taraf do khiladi hon, kya kehlata hai:",
+  "options_ur": [
+   "سنگلز",
+   "ڈبلز",
+   "مکسڈ",
+   "ریلے"
+  ],
+  "options_roman": [
+   "Singles",
+   "Doubles",
+   "Mixed",
+   "Relay"
+  ],
+  "explanation_ur": "ڈبلز ہر طرف دو کھلاڑیوں کے ساتھ کھیلا جاتا ہے؛ سنگلز میں ہر طرف ایک کھلاڑی ہوتا ہے۔",
+  "explanation_roman": "Doubles har taraf do khiladiyon ke saath khela jata hai; singles mein har taraf ek khiladi hota hai.",
   "post": [
    "dm",
    "pet"
@@ -676,6 +1060,22 @@
  },
  {
   "id": "PE-015",
+  "question_ur": "ٹیبل ٹینس میں گیم جیتنے کے لیے کھلاڑی کو کتنے پوائنٹس جیتنے ضروری ہیں (2 پوائنٹس کی برتری کے ساتھ)؟",
+  "question_roman": "Table tennis mein game jeetnay ke liye khiladi ko kitne points jeetna zaroori hain (2 points ki bartari ke saath)?",
+  "options_ur": [
+   "7",
+   "9",
+   "11",
+   "21"
+  ],
+  "options_roman": [
+   "7",
+   "9",
+   "11",
+   "21"
+  ],
+  "explanation_ur": "ٹیبل ٹینس میں گیم وہ پہلا کھلاڑی جیتتا ہے جو 11 پوائنٹس تک پہنچ جائے اور اسے کم از کم 2 پوائنٹس کی برتری حاصل ہو۔",
+  "explanation_roman": "Table tennis mein game woh pehla khiladi jeetta hai jo 11 points tak pahunch jaye aur usay kam az kam 2 points ki bartari haasil ho.",
   "post": [
    "dm",
    "pet"
@@ -706,6 +1106,22 @@
  },
  {
   "id": "PE-016",
+  "question_ur": "بیڈمنٹن میں ریلی اسکورنگ کے تحت گیم کتنے پوائنٹس کی ہوتی ہے؟",
+  "question_roman": "Badminton mein rally scoring ke tehat game kitne points ki hoti hai?",
+  "options_ur": [
+   "11",
+   "15",
+   "21",
+   "25"
+  ],
+  "options_roman": [
+   "11",
+   "15",
+   "21",
+   "25"
+  ],
+  "explanation_ur": "ریلی اسکورنگ کے تحت بیڈمنٹن کی گیم 21 پوائنٹس تک جاتی ہے؛ ہر ریلی پر ایک پوائنٹ ملتا ہے۔",
+  "explanation_roman": "Rally scoring ke tehat badminton ki game 21 points tak jati hai; har rally par ek point milta hai.",
   "post": [
    "dm",
    "pet"
@@ -736,6 +1152,22 @@
  },
  {
   "id": "PE-017",
+  "question_ur": "مردوں کی والی بال میں جال کی اونچائی کتنی ہوتی ہے؟",
+  "question_roman": "Mardon ki volleyball mein jaal ki oonchai kitni hoti hai?",
+  "options_ur": [
+   "2.24 میٹر",
+   "2.43 میٹر",
+   "2.55 میٹر",
+   "3.05 میٹر"
+  ],
+  "options_roman": [
+   "2.24 metres",
+   "2.43 metres",
+   "2.55 metres",
+   "3.05 metres"
+  ],
+  "explanation_ur": "مردوں کی والی بال کا جال درمیان میں 2.43 میٹر اونچا ہوتا ہے؛ خواتین کا جال 2.24 میٹر ہوتا ہے۔",
+  "explanation_roman": "Mardon ki volleyball ka jaal darmiyan mein 2.43 metres ooncha hota hai; khawateen ka jaal 2.24 metres hota hai.",
   "post": [
    "dm",
    "pet"
@@ -766,6 +1198,22 @@
  },
  {
   "id": "PE-018",
+  "question_ur": "باسکٹ بال کا ہوپ فرش سے کتنا اونچا ہوتا ہے؟",
+  "question_roman": "Basketball ka hoop farsh se kitna ooncha hota hai?",
+  "options_ur": [
+   "8 فٹ",
+   "9 فٹ",
+   "10 فٹ",
+   "11 فٹ"
+  ],
+  "options_roman": [
+   "8 feet",
+   "9 feet",
+   "10 feet",
+   "11 feet"
+  ],
+  "explanation_ur": "باسکٹ بال کا رم فرش سے 10 فٹ (3.05 میٹر) اونچا ہوتا ہے۔",
+  "explanation_roman": "Basketball ka rim farsh se 10 feet (3.05 metres) ooncha hota hai.",
   "post": [
    "dm",
    "pet"
@@ -796,6 +1244,22 @@
  },
  {
   "id": "PE-019",
+  "question_ur": "کرکٹ کی وکٹ میں کتنے اسٹمپ ہوتے ہیں؟",
+  "question_roman": "Cricket ki wicket mein kitne stump hotay hain?",
+  "options_ur": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "options_roman": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "explanation_ur": "وکٹ میں تین اسٹمپ ہوتے ہیں جن کے اوپر دو بیلز رکھی ہوتی ہیں۔",
+  "explanation_roman": "Wicket mein teen stump hotay hain jin ke oopar do bails rakhi hoti hain.",
   "post": [
    "dm",
    "pet"
@@ -826,6 +1290,22 @@
  },
  {
   "id": "PE-020",
+  "question_ur": "ایک روزہ بین الاقوامی (ODI) کرکٹ میچ میں فی ٹیم کتنے اوورز کھیلے جاتے ہیں؟",
+  "question_roman": "One Day International (ODI) cricket match mein fi team kitne overs khelay jatay hain?",
+  "options_ur": [
+   "20",
+   "40",
+   "50",
+   "60"
+  ],
+  "options_roman": [
+   "20",
+   "40",
+   "50",
+   "60"
+  ],
+  "explanation_ur": "ODI میں ہر ٹیم کو زیادہ سے زیادہ 50 اوورز ملتے ہیں۔",
+  "explanation_roman": "ODI mein har team ko zyada se zyada 50 overs miltay hain.",
   "post": [
    "dm",
    "pet"
@@ -856,6 +1336,22 @@
  },
  {
   "id": "PE-021",
+  "question_ur": "ٹوئنٹی20 (T20) کرکٹ میچ میں فی ٹیم کتنے اوورز کھیلے جاتے ہیں؟",
+  "question_roman": "Twenty20 (T20) cricket match mein fi side kitne overs khele jate hain?",
+  "options_ur": [
+   "10",
+   "15",
+   "20",
+   "25"
+  ],
+  "options_roman": [
+   "10",
+   "15",
+   "20",
+   "25"
+  ],
+  "explanation_ur": "T20 میچ میں ہر ٹیم کو زیادہ سے زیادہ 20 اوورز ملتے ہیں۔",
+  "explanation_roman": "T20 match mein har side ko zyada se zyada 20 overs milte hain.",
   "post": [
    "dm",
    "pet"
@@ -886,6 +1382,22 @@
  },
  {
   "id": "PE-022",
+  "question_ur": "فٹ بال میں پینلٹی کک کس فاصلے سے لی جاتی ہے؟",
+  "question_roman": "Football mein penalty kick kis faasle se li jati hai?",
+  "options_ur": [
+   "6 گز",
+   "10 گز",
+   "12 گز",
+   "18 گز"
+  ],
+  "options_roman": [
+   "6 yards",
+   "10 yards",
+   "12 yards",
+   "18 yards"
+  ],
+  "explanation_ur": "پینلٹی اسپاٹ گول لائن سے 12 گز (11 میٹر) کے فاصلے پر ہوتا ہے۔",
+  "explanation_roman": "Penalty spot goal line se 12 yards (11 metres) ke faasle par hota hai.",
   "post": [
    "dm",
    "pet"
@@ -916,6 +1428,22 @@
  },
  {
   "id": "PE-023",
+  "question_ur": "فٹ بال میں پینلٹی ایریا کے اندر گیند کو ہاتھ سے چھونے کی اجازت کس کھلاڑی کو ہوتی ہے؟",
+  "question_roman": "Football mein penalty area ke andar ball ko haath se chhoone ki ijazat kis khiladi ko hoti hai?",
+  "options_ur": [
+   "کپتان",
+   "گول کیپر",
+   "اسٹرائیکر",
+   "ریفری"
+  ],
+  "options_roman": [
+   "Captain",
+   "Goalkeeper",
+   "Striker",
+   "Referee"
+  ],
+  "explanation_ur": "صرف گول کیپر ہاتھ استعمال کر سکتا ہے، اور وہ بھی صرف اپنی ٹیم کے پینلٹی ایریا کے اندر۔",
+  "explanation_roman": "Sirf goalkeeper haath istemal kar sakta hai, aur woh bhi sirf apni team ke penalty area ke andar.",
   "post": [
    "dm",
    "pet"
@@ -946,6 +1474,22 @@
  },
  {
   "id": "PE-024",
+  "question_ur": "فٹ بال میں کھلاڑی کے لیے ریڈ کارڈ کا کیا مطلب ہوتا ہے؟",
+  "question_roman": "Football mein khiladi ke liye red card ka kya matlab hota hai?",
+  "options_ur": [
+   "ایک وارننگ",
+   "ایک فری کک",
+   "کھلاڑی کو میدان سے باہر بھیج دیا جاتا ہے",
+   "ایک پینلٹی کک"
+  ],
+  "options_roman": [
+   "Aik warning",
+   "Aik free kick",
+   "Khiladi ko maidan se bahar bhej diya jata hai",
+   "Aik penalty kick"
+  ],
+  "explanation_ur": "ریڈ کارڈ ملنے پر کھلاڑی کو باقی میچ کے لیے میدان سے باہر بھیج دیا جاتا ہے؛ ییلو کارڈ ایک وارننگ ہوتی ہے۔",
+  "explanation_roman": "Red card milne par khiladi ko baqi match ke liye maidan se bahar bhej diya jata hai; yellow card aik warning hoti hai.",
   "post": [
    "dm",
    "pet"
@@ -976,6 +1520,22 @@
  },
  {
   "id": "PE-025",
+  "question_ur": "معیاری ایتھلیٹکس ٹریک کا ایک چکر کتنا ہوتا ہے؟",
+  "question_roman": "Standard athletics track ka aik lap kitna hota hai?",
+  "options_ur": [
+   "200 میٹر",
+   "300 میٹر",
+   "400 میٹر",
+   "800 میٹر"
+  ],
+  "options_roman": [
+   "200 metres",
+   "300 metres",
+   "400 metres",
+   "800 metres"
+  ],
+  "explanation_ur": "معیاری ایتھلیٹکس ٹریک کا ایک چکر 400 میٹر کا ہوتا ہے۔",
+  "explanation_roman": "Standard athletics track ka aik lap 400 metres ka hota hai.",
   "post": [
    "dm",
    "pet"
@@ -1006,6 +1566,22 @@
  },
  {
   "id": "PE-026",
+  "question_ur": "4 × 100 m ریلے ٹیم میں کتنے دوڑنے والے ہوتے ہیں؟",
+  "question_roman": "4 × 100 m relay team mein kitne runners hote hain?",
+  "options_ur": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "options_roman": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "explanation_ur": "چار دوڑنے والے ہر ایک 100 میٹر دوڑتے ہیں اور آپس میں بیٹن منتقل کرتے ہیں۔",
+  "explanation_roman": "Chaar runners mein se har aik 100 metres bhaagta hai aur aik doosre ko baton deta hai.",
   "post": [
    "dm",
    "pet"
@@ -1036,6 +1612,22 @@
  },
  {
   "id": "PE-027",
+  "question_ur": "ایتھلیٹکس کے کس مقابلے میں ایک لمبا نیزہ جتنا دور ہو سکے پھینکا جاتا ہے؟",
+  "question_roman": "Athletics ke kis event mein aik lamba neza jitna door ho sake phenka jata hai?",
+  "options_ur": [
+   "شاٹ پٹ",
+   "ڈسکس",
+   "جیولن",
+   "ہیمر"
+  ],
+  "options_roman": [
+   "Shot put",
+   "Discus",
+   "Javelin",
+   "Hammer"
+  ],
+  "explanation_ur": "جیولن تھرو میں کھلاڑی ایک لمبا نیزہ پھینکتا ہے؛ سب سے دور قانونی تھرو جیت جاتی ہے۔",
+  "explanation_roman": "Javelin throw mein khiladi aik lamba neza phenkta hai; sab se door legal throw jeet jati hai.",
   "post": [
    "dm",
    "pet"
@@ -1066,6 +1658,22 @@
  },
  {
   "id": "PE-028",
+  "question_ur": "ایتھلیٹکس کے کس مقابلے میں ایک بھاری ڈسک پھینکی جاتی ہے؟",
+  "question_roman": "Athletics ke kis event mein aik bhaari disc phenki jati hai?",
+  "options_ur": [
+   "شاٹ پٹ",
+   "ڈسکس",
+   "جیولن",
+   "ہائی جمپ"
+  ],
+  "options_roman": [
+   "Shot put",
+   "Discus",
+   "Javelin",
+   "High jump"
+  ],
+  "explanation_ur": "ڈسکس تھرو میں کھلاڑی گھوم کر ایک بھاری ڈسک چھوڑتا ہے؛ فاصلہ جیت کا فیصلہ کرتا ہے۔",
+  "explanation_roman": "Discus throw mein khiladi ghoom kar aik bhaari disc chhorta hai; faasla jeet ka faisla karta hai.",
   "post": [
    "dm",
    "pet"
@@ -1096,6 +1704,22 @@
  },
  {
   "id": "PE-029",
+  "question_ur": "لانگ جمپ میں کھلاڑی کہاں سے ٹیک آف کرتا ہے؟",
+  "question_roman": "Long jump mein khiladi kahan se take-off karta hai?",
+  "options_ur": [
+   "ایک اسپرنگ بورڈ",
+   "ایک ٹیک آف بورڈ",
+   "ایک ٹرامپولین",
+   "ایک اسٹارٹنگ بلاک"
+  ],
+  "options_roman": [
+   "Aik springboard",
+   "Aik take-off board",
+   "Aik trampoline",
+   "Aik starting block"
+  ],
+  "explanation_ur": "لانگ جمپر رن وے پر دوڑتا ہے اور ایک مقررہ ٹیک آف بورڈ سے ٹیک آف کرتا ہے۔",
+  "explanation_roman": "Long jumper runway par bhaagta hai aur aik fixed take-off board se take-off karta hai.",
   "post": [
    "dm",
    "pet"
@@ -1126,6 +1750,22 @@
  },
  {
   "id": "PE-030",
+  "question_ur": "صحت مند بالغ انسان کے دل کی عام آرام دہ دھڑکن تقریباً کتنی ہوتی ہے؟",
+  "question_roman": "Sehatmand adult ke dil ki aam resting heart rate taqreeban kitni hoti hai?",
+  "options_ur": [
+   "20–40 دھڑکن فی منٹ",
+   "40–60 دھڑکن فی منٹ",
+   "60–100 دھڑکن فی منٹ",
+   "120–150 دھڑکن فی منٹ"
+  ],
+  "options_roman": [
+   "20–40 dharkan fi minute",
+   "40–60 dharkan fi minute",
+   "60–100 dharkan fi minute",
+   "120–150 dharkan fi minute"
+  ],
+  "explanation_ur": "آرام کی حالت میں بالغ انسان کا دل عام طور پر فی منٹ 60 سے 100 بار دھڑکتا ہے؛ تربیت یافتہ کھلاڑیوں میں یہ اکثر کم ہوتی ہے۔",
+  "explanation_roman": "Aaram ki haalat mein adult ka dil aam tor par 60 se 100 dafa per minute dharakta hai; trained athletes mein aksar is se kam hoti hai.",
   "post": [
    "dm",
    "pet"
@@ -1156,6 +1796,22 @@
  },
  {
   "id": "PE-031",
+  "question_ur": "دل کی دھڑکن گننے کے لیے نبض اکثر کہاں محسوس کی جاتی ہے؟",
+  "question_roman": "Dil ki dharkan ginne ke liye pulse aksar kahan mehsoos ki jati hai?",
+  "options_ur": [
+   "کہنی",
+   "کلائی",
+   "گھٹنا",
+   "ٹخنہ"
+  ],
+  "options_roman": [
+   "Kohni",
+   "Kalai",
+   "Ghutna",
+   "Takhna"
+  ],
+  "explanation_ur": "نبض کلائی پر سب سے آسانی سے محسوس ہوتی ہے، جہاں ایک شریان جلد کے قریب سے گزرتی ہے۔",
+  "explanation_roman": "Pulse kalai par sab se aasani se mehsoos hoti hai, jahan aik artery jild ke qareeb se guzarti hai.",
   "post": [
    "dm",
    "pet"
@@ -1186,6 +1842,22 @@
  },
  {
   "id": "PE-032",
+  "question_ur": "انسانی جسم کی سب سے لمبی ہڈی کون سی ہے؟",
+  "question_roman": "Insani jism ki sab se lambi haddi kaun si hai?",
+  "options_ur": [
+   "ہیومرس",
+   "ٹیبیا",
+   "فیمر",
+   "ریڈیس"
+  ],
+  "options_roman": [
+   "Humerus",
+   "Tibia",
+   "Femur",
+   "Radius"
+  ],
+  "explanation_ur": "فیمر، ران کی ہڈی، جسم کی سب سے لمبی اور سب سے مضبوط ہڈی ہے۔",
+  "explanation_roman": "Femur, raan ki haddi, jism ki sab se lambi aur sab se mazboot haddi hai.",
   "post": [
    "dm",
    "pet"
@@ -1216,6 +1888,22 @@
  },
  {
   "id": "PE-033",
+  "question_ur": "انسانی جسم کی سب سے چھوٹی ہڈی کون سی ہے؟",
+  "question_roman": "Insani jism ki sab se chhoti haddi kaun si hai?",
+  "options_ur": [
+   "سٹیپس",
+   "پٹیلا",
+   "النا",
+   "کلاویکل"
+  ],
+  "options_roman": [
+   "Stapes",
+   "Patella",
+   "Ulna",
+   "Clavicle"
+  ],
+  "explanation_ur": "سٹیپس، درمیانی کان کی ایک چھوٹی سی ہڈی، جسم کی سب سے چھوٹی ہڈی ہے۔",
+  "explanation_roman": "Stapes, darmiyani kaan ki aik chhoti si haddi, jism ki sab se chhoti haddi hai.",
   "post": [
    "dm",
    "pet"
@@ -1246,6 +1934,22 @@
  },
  {
   "id": "PE-034",
+  "question_ur": "انسانی جسم کا سب سے بڑا عضلہ (پٹھا) کون سا ہے؟",
+  "question_roman": "Insani jism ka sab se bara muscle kaun sa hai?",
+  "options_ur": [
+   "بائیسیپس",
+   "گلوٹیس میکسیمس",
+   "دل",
+   "ڈایافرام"
+  ],
+  "options_roman": [
+   "Biceps",
+   "Gluteus maximus",
+   "Dil",
+   "Diaphragm"
+  ],
+  "explanation_ur": "گلوٹیس میکسیمس، سرین کا مرکزی عضلہ، جسم کا سب سے بڑا عضلہ ہے۔",
+  "explanation_roman": "Gluteus maximus, buttock ka main muscle, jism ka sab se bara muscle hai.",
   "post": [
    "dm",
    "pet"
@@ -1276,6 +1980,22 @@
  },
  {
   "id": "PE-035",
+  "question_ur": "کون سا غذائی جزو جسم کی توانائی کا مرکزی ذریعہ ہے؟",
+  "question_roman": "Kaun sa nutrient jism ki energy ka main source hai?",
+  "options_ur": [
+   "پروٹین",
+   "وٹامنز",
+   "کاربوہائیڈریٹس",
+   "معدنیات"
+  ],
+  "options_roman": [
+   "Protein",
+   "Vitamins",
+   "Carbohydrates",
+   "Minerals"
+  ],
+  "explanation_ur": "کاربوہائیڈریٹس گلوکوز میں تبدیل ہوتے ہیں، جو کام اور کھیل کے لیے جسم کا مرکزی ایندھن ہے۔",
+  "explanation_roman": "Carbohydrates glucose mein tabdeel hote hain, jo kaam aur sport ke liye jism ka main fuel hai.",
   "post": [
    "dm",
    "pet"
@@ -1306,6 +2026,22 @@
  },
  {
   "id": "PE-036",
+  "question_ur": "کون سا غذائی جزو بنیادی طور پر عضلات (پٹھوں) کو بناتا اور مرمت کرتا ہے؟",
+  "question_roman": "Kaun sa nutrient bunyadi tor par muscles ko banata aur repair karta hai?",
+  "options_ur": [
+   "چربی",
+   "پروٹین",
+   "فائبر",
+   "پانی"
+  ],
+  "options_roman": [
+   "Charbi",
+   "Protein",
+   "Fibre",
+   "Paani"
+  ],
+  "explanation_ur": "پروٹین وہ بنیادی اجزا فراہم کرتا ہے جو تربیت کے بعد عضلات کی مرمت کرتے ہیں اور ان کی نشوونما میں مدد دیتے ہیں۔",
+  "explanation_roman": "Protein woh building blocks faraham karta hai jo training ke baad muscles ko repair karte hain aur un ke grow hone mein madad dete hain.",
   "post": [
    "dm",
    "pet"

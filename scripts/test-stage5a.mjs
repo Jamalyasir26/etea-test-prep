@@ -140,10 +140,16 @@ check(
 // --------------------------------- §5 no other bank touched
 // Stage 5B: tajweed.json is translated too — the scope guard allows
 // both pilot banks (islamiyat + tajweed) and no others.
+// Stage 5C: arabic.json + urdu.json are translated too — the guard
+// allows all four translated banks and no others.
+// Stage 5D: english.json + maths.json + gk.json are translated too.
+// Stage 5E: science.json + pakstudies.json + socialstudies.json + pedagogy.json are translated too.
+// Stage 5F: it.json + pe.json are translated too.
+// Stage 5G (FINAL): drawing.json + pastpapers.json + pastpapers_reworded.json are translated too.
 const bankDir = join(ROOT, "src/data/banks");
 let otherBankTouched = [];
 for (const f of fs.readdirSync(bankDir)) {
-  if (f === "islamiyat.json" || f === "tajweed.json") continue;
+  if (f === "islamiyat.json" || f === "tajweed.json" || f === "arabic.json" || f === "urdu.json" || f === "english.json" || f === "maths.json" || f === "gk.json" || f === "science.json" || f === "pakstudies.json" || f === "socialstudies.json" || f === "pedagogy.json" || f === "it.json" || f === "pe.json" || f === "drawing.json" || f === "pastpapers.json" || f === "pastpapers_reworded.json") continue;
   const items = JSON.parse(fs.readFileSync(join(bankDir, f), "utf8"));
   for (const q of items) {
     if (MCQ_TR_KEYS.some((k) => k in q)) otherBankTouched.push(`${f}:${q.id}`);
@@ -174,7 +180,12 @@ check("5A islamiyat notes: at least one note translated", noteTranslated.length 
 console.log(`INFO  5A islamiyat notes translated: ${noteTranslated.length}/14`);
 let otherNoteTouched = [];
 for (const [subject, notes] of Object.entries(NOTES)) {
-  if (subject === "Islamiyat" || subject === "Tajweed") continue;
+  // Stage 5C: Arabic + Urdu notes are translated too.
+  // Stage 5D: English + Maths + GK notes are translated too.
+  // Stage 5E: General Science + Pak Studies + Social Studies + Pedagogy notes are translated too.
+  // Stage 5F: IT/Computer notes are translated too.
+  // Stage 5G (FINAL): Drawing/PE notes are translated too.
+  if (subject === "Islamiyat" || subject === "Tajweed" || subject === "Arabic" || subject === "Urdu" || subject === "English" || subject === "Maths" || subject === "GK" || subject === "General Science" || subject === "Pak Studies" || subject === "Social Studies" || subject === "Pedagogy" || subject === "IT/Computer" || subject === "Drawing/PE") continue;
   for (const n of notes) {
     if (NOTE_TR_KEYS.some((k) => k in n)) otherNoteTouched.push(`${subject}:${n.title}`);
   }
@@ -183,7 +194,16 @@ check("5A no other subject's notes carry _ur/_roman fields", otherNoteTouched.le
 
 // --------------------------------- §7 resolver: real translated + untranslated items
 const translatedQ = BY_SUBJECT.islamiyat.find((q) => q.question_ur !== undefined);
-const untranslatedQ = QUESTIONS.find((q) => q.subjectKey !== "islamiyat");
+// Stage 5C: arabic.json loads first in QUESTIONS and is now translated,
+// so the untranslated fixture must be selected by absence of fields,
+// not by subject — the check's intent (fallback on an untranslated
+// item) is unchanged.
+// Stage 5G (FINAL): every registered bank is translated, so no real
+// untranslated item exists any more. The fixture is a synthetic copy of
+// a real item with the translation keys stripped — the resolver sees
+// exactly an untranslated item, and the check's intent is unchanged.
+const stripTrKeys = (q) => { const c = { ...q }; for (const k of MCQ_TR_KEYS) delete c[k]; return c; };
+const untranslatedQ = stripTrKeys(QUESTIONS[0]);
 if (translatedQ) {
   const rUr = resolveQuestionView(translatedQ, "ur");
   check("5A resolver: translated item in ur returns translated view", rUr.translated === true && rUr.view.question === translatedQ.question_ur);
@@ -225,7 +245,15 @@ check("5A resolver: synthetic view is a copy, input untouched", fullSyn.question
 
 // Notes resolver.
 const translatedN = NOTES.Islamiyat.find((n) => n.title_ur !== undefined);
-const untranslatedN = NOTES.English[0];
+// Stage 5D: NOTES.English[0] was the untranslated-note fixture and is now
+// translated, so the fixture must be selected by absence of fields, not
+// by subject — the check's intent (fallback on an untranslated note) is
+// unchanged. (Same fix 5C applied to the untranslated-question selector.)
+// Stage 5G (FINAL): every note subject is translated, so no real
+// untranslated note exists any more. The fixture is a synthetic copy of
+// a real note with the translation keys stripped — same intent.
+const stripNoteTrKeys = (n) => { const c = { ...n }; for (const k of NOTE_TR_KEYS) delete c[k]; return c; };
+const untranslatedN = stripNoteTrKeys(Object.values(NOTES).flat()[0]);
 if (translatedN) {
   const rn = resolveNoteView(translatedN, "ur");
   check("5A note resolver: translated note in ur returns translated text", rn.translated === true && rn.title === translatedN.title_ur && rn.body === translatedN.body_ur);
