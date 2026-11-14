@@ -15,10 +15,9 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   flashcardCategoryForNote,
-  hasTranslation,
-  localizeNote,
   noteBankKey,
   NOTES,
+  resolveNoteView,
   type Note,
 } from "@/lib/data";
 import { planDayForSubject } from "@/lib/plan";
@@ -153,14 +152,13 @@ function LibraryInner() {
         const n = e.note;
         const isHidden = hidden[e.key] ?? true;
         const draft = drafts[e.key] ?? annotations[e.key] ?? "";
-        // Localization Pass 1 — TRI-LANGUAGE PROOF OF CONCEPT: the
-        // rendered title/body go through localizeNote(), which falls
-        // back to the English fields whenever no ur/roman translation
-        // exists (today: every note — behaviour is unchanged). The
-        // storage key and annotation lookup stay on the ORIGINAL
-        // English title, so stored annotations are unaffected by the
-        // display language.
-        const shown = localizeNote(n, lang);
+        // Stage 5 — item-level resolution of the flat _ur/_roman
+        // fields: a note renders translated title/body ONLY when both
+        // fields for the language exist; otherwise the full English
+        // note renders (never a mix). The storage key and annotation
+        // lookup stay on the ORIGINAL English title, so stored
+        // annotations are unaffected by the display language.
+        const shown = resolveNoteView(n, lang);
         // Step 2a — stable id for the reveal control's aria-controls:
         // the note key sanitized + the list index (the key alone can
         // contain spaces/punctuation, which are invalid in an id).
@@ -182,10 +180,25 @@ function LibraryInner() {
             {/* Step 2b — translation status: in Urdu/Roman mode, notes
                 without a translation for that language are labelled as
                 English source text, so the English is never mistaken
-                for a missing translation. */}
-            {lang !== "en" && !hasTranslation(n, lang) && (
+                for a missing translation. Stage 5 — translated notes
+                carry the literal "[Auto-Translated]" badge instead
+                (same literal in all languages; accessible label via
+                i18n; Latin literal isolated LTR for RTL mode). */}
+            {lang !== "en" && !shown.translated && (
               <p>
                 <span className="badge grey">{t("englishSourceText")}</span>
+              </p>
+            )}
+            {shown.translated && (
+              <p>
+                <span
+                  dir="ltr"
+                  className="badge grey"
+                  title={t("autoTranslatedBadgeAria")}
+                  aria-label={t("autoTranslatedBadgeAria")}
+                >
+                  [Auto-Translated]
+                </span>
               </p>
             )}
             {n.source && (

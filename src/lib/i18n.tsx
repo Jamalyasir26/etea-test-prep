@@ -1408,6 +1408,11 @@ const STRINGS: Record<string, StrEntry> = {
   relatedFlashcards: { en: "Related flashcards", roman: "Mutalliqa flashcards", ur: "متعلقہ فلیش کارڈز" },
   relatedPlan: { en: "Related plan day", roman: "Mutalliqa plan din", ur: "متعلقہ منصوبہ دن" },
 
+  // ---- Stage 5 — auto-translated content badge (visible text is the
+  // literal "[Auto-Translated]" in all languages; this key is only the
+  // accessible label / tooltip). ----
+  autoTranslatedBadgeAria: { en: "Auto-translated content", roman: "Auto-translated mawaad", ur: "خودکار ترجمہ شدہ مواد" },
+
   // ---- Step 3b-audit2 (F02) — pending-English explanation label.
   // Phase 4A: the /review queue section (heading/intro/show-more) was
   // removed per owner decision; only the display-only label remains. ----

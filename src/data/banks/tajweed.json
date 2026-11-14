@@ -1,6 +1,22 @@
 [
  {
   "id": "TAJ-001",
+  "question_ur": "عام مخارج (حروف کے نکلنے کی جگہیں) کتنے ہیں؟",
+  "question_roman": "Aam Makharij (huruf ke nikalne ki jaghein) kitne hain?",
+  "options_ur": [
+   "3",
+   "5",
+   "7",
+   "17"
+  ],
+  "options_roman": [
+   "3",
+   "5",
+   "7",
+   "17"
+  ],
+  "explanation_ur": "5 عام مخارج ہیں: جوف (منہ کی خالی جگہ)، حلق (گلا)، لسان (زبان)، شفتان (ہونٹ) اور خیشوم (ناک)۔",
+  "explanation_roman": "5 aam Makharij hain: Jawf (munh ki khali jagah), Halq (gala), Lisan (zuban), Shafatan (hont) aur Khayshum (naak).",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -28,6 +44,22 @@
  },
  {
   "id": "TAJ-002",
+  "question_ur": "تفصیلی مخارج کل کتنے ہیں؟",
+  "question_roman": "Tafseeli Makharij kul kitne hain?",
+  "options_ur": [
+   "5",
+   "10",
+   "17",
+   "29"
+  ],
+  "options_roman": [
+   "5",
+   "10",
+   "17",
+   "29"
+  ],
+  "explanation_ur": "17 تفصیلی مخارج ہیں: جوف 1، حلق 3، زبان 10، ہونٹ 2 اور ناک 1۔",
+  "explanation_roman": "17 tafseeli Makharij hain: Jawf 1, Halq 3, zuban 10, hont 2 aur naak 1.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -55,6 +87,22 @@
  },
  {
   "id": "TAJ-003",
+  "question_ur": "جوف سے کون سے حروف نکلتے ہیں؟",
+  "question_roman": "Jawf se kaun se huruf nikalte hain?",
+  "options_ur": [
+   "الف، واؤ اور یا (مد کے حروف)",
+   "با، میم اور فا",
+   "قاف اور کاف",
+   "سین اور صاد"
+  ],
+  "options_roman": [
+   "Alif, Waw aur Ya (Madd ke huruf)",
+   "Ba, Meem aur Fa",
+   "Qaf aur Kaf",
+   "Seen aur Saad"
+  ],
+  "explanation_ur": "جوف (منہ اور گلے کی خالی جگہ) تین مد کے حروف: الف، واؤ اور یا کا مخرج ہے۔",
+  "explanation_roman": "Jawf (munh aur gale ki khali jagah) teen Madd huruf: Alif, Waw aur Ya ka Makhraj hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -82,6 +130,22 @@
  },
  {
   "id": "TAJ-004",
+  "question_ur": "حلق (گلے) سے کتنے حروف نکلتے ہیں؟",
+  "question_roman": "Halq (gale) se kitne huruf nikalte hain?",
+  "options_ur": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "options_roman": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "explanation_ur": "گلے کے چھ حروف ہیں: ہمزہ، ہا، عین، حا، غین اور خا۔",
+  "explanation_roman": "Gale ke chhe huruf hain: Hamzah, Ha, Ayn, Haa, Ghayn aur Kha.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -109,6 +173,22 @@
  },
  {
   "id": "TAJ-005",
+  "question_ur": "17 تفصیلی مخارج میں سے کتنے زبان سے ہیں؟",
+  "question_roman": "17 tafseeli Makharij mein se kitne zuban se hain?",
+  "options_ur": [
+   "6",
+   "10",
+   "12",
+   "17"
+  ],
+  "options_roman": [
+   "6",
+   "10",
+   "12",
+   "17"
+  ],
+  "explanation_ur": "17 تفصیلی مخارج میں سے 10 زبان (لسان) سے ہیں۔",
+  "explanation_roman": "17 tafseeli Makharij mein se 10 zuban (Lisan) se hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -136,6 +216,22 @@
  },
  {
   "id": "TAJ-006",
+  "question_ur": "ہونٹوں (شفتان) سے کون سے حروف نکلتے ہیں؟",
+  "question_roman": "Honton (Shafatan) se kaun se huruf nikalte hain?",
+  "options_ur": [
+   "صرف با اور میم",
+   "فا، با اور میم",
+   "فا، با، میم اور واؤ",
+   "قاف، کاف اور جیم"
+  ],
+  "options_roman": [
+   "Sirf Ba aur Meem",
+   "Fa, Ba aur Meem",
+   "Fa, Ba, Meem aur Waw",
+   "Qaf, Kaf aur Jeem"
+  ],
+  "explanation_ur": "ہونٹوں کے چار حروف ہیں: فا، با، میم اور واؤ۔",
+  "explanation_roman": "Honton ke chaar huruf hain: Fa, Ba, Meem aur Waw.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -163,6 +259,22 @@
  },
  {
   "id": "TAJ-007",
+  "question_ur": "خیشوم (ناک کی نالی) سے کیا نکلتا ہے؟",
+  "question_roman": "Khayshum (naak ki naali) se kya nikalta hai?",
+  "options_ur": [
+   "غنہ (ناک کی آواز)",
+   "قلقلہ",
+   "مد",
+   "اخفا"
+  ],
+  "options_roman": [
+   "Ghunnah (naak ki awaz)",
+   "Qalqalah",
+   "Madd",
+   "Ikhfa"
+  ],
+  "explanation_ur": "خیشوم ناک کی نالی ہے۔ غنہ، جو نون اور میم کی ناک کی آواز ہے، اسی سے نکلتا ہے۔",
+  "explanation_roman": "Khayshum naak ki naali hai. Ghunnah, jo Noon aur Meem ki naak ki awaz hai, usi se nikalta hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -190,6 +302,22 @@
  },
  {
   "id": "TAJ-008",
+  "question_ur": "نون ساکنہ اور تنوین کے کتنے قواعد ہیں؟",
+  "question_roman": "Noon Sakinah aur Tanween ke kitne qawaid hain?",
+  "options_ur": [
+   "2",
+   "3",
+   "5",
+   "4"
+  ],
+  "options_roman": [
+   "2",
+   "3",
+   "5",
+   "4"
+  ],
+  "explanation_ur": "نون ساکنہ اور تنوین کے 4 قواعد ہیں: اظہار، ادغام، اقلاب اور اخفا۔",
+  "explanation_roman": "Noon Sakinah aur Tanween ke 4 qawaid hain: Izhar, Idgham, Iqlab aur Ikhfa.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -217,6 +345,22 @@
  },
  {
   "id": "TAJ-009",
+  "question_ur": "نون ساکنہ یا تنوین کے بعد کون سے حروف اظہار کا سبب بنتے ہیں؟",
+  "question_roman": "Noon Sakinah ya Tanween ke baad kaun se huruf Izhar ka sabab bante hain?",
+  "options_ur": [
+   "یرملون",
+   "ہمزہ، ہا، عین، حا، غین، خا",
+   "با اور میم",
+   "قاف اور کاف"
+  ],
+  "options_roman": [
+   "Yarmaloon",
+   "Hamzah, Ha, Ayn, Haa, Ghayn, Kha",
+   "Ba aur Meem",
+   "Qaaf aur Kaf"
+  ],
+  "explanation_ur": "اظہار کے 6 حروف ہیں: ہمزہ، ہا، عین، حا، غین اور خا — یہ گلے کے حروف ہیں۔",
+  "explanation_roman": "Izhar ke 6 huruf hain: Hamzah, Ha, Ayn, Haa, Ghayn aur Kha — ye gale ke huruf hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -244,6 +388,22 @@
  },
  {
   "id": "TAJ-010",
+  "question_ur": "اظہار کا کیا مطلب ہے؟",
+  "question_roman": "Izhar ka kya matlab hai?",
+  "options_ur": [
+   "واضح طور پر ادا کرنا",
+   "ملا دینا",
+   "چھپانا",
+   "میم میں بدل دینا"
+  ],
+  "options_roman": [
+   "Wazeh taur par ada karna",
+   "Mila dena",
+   "Chhupana",
+   "Meem mein badal dena"
+  ],
+  "explanation_ur": "اظہار کا مطلب ہے واضح طور پر ادا کرنا، غنہ کے بغیر — نون کو واضح پڑھا جاتا ہے۔",
+  "explanation_roman": "Izhar ka matlab hai wazeh taur par ada karna, Ghunnah ke baghair — Noon ko wazeh padha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -271,6 +431,22 @@
  },
  {
   "id": "TAJ-011",
+  "question_ur": "نون ساکنہ یا تنوین کے بعد کون سے حروف ادغام کا سبب بنتے ہیں؟",
+  "question_roman": "Noon Sakinah ya Tanween ke baad kaun se huruf Idgham ka sabab bante hain?",
+  "options_ur": [
+   "گلے کے حروف",
+   "با اور میم",
+   "یا، را، میم، لام، واؤ، نون",
+   "قلقلہ کے حروف"
+  ],
+  "options_roman": [
+   "Gale ke huruf",
+   "Ba aur Meem",
+   "Ya, Ra, Meem, Lam, Waw, Noon",
+   "Qalqalah ke huruf"
+  ],
+  "explanation_ur": "ادغام کے حروف ہیں: یا، را، میم، لام، واؤ اور نون — یہ لفظ یرملون میں جمع ہیں۔",
+  "explanation_roman": "Idgham ke huruf hain: Ya, Ra, Meem, Lam, Waw aur Noon — ye lafz Yarmaloon mein jama hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -298,6 +474,22 @@
  },
  {
   "id": "TAJ-012",
+  "question_ur": "غنہ کے ساتھ ادغام کن حروف کے ساتھ ہوتا ہے؟",
+  "question_roman": "Ghunnah ke saath Idgham kin huruf ke saath hota hai?",
+  "options_ur": [
+   "لام اور را",
+   "یا، نون، میم اور واؤ",
+   "صرف با",
+   "گلے کے حروف"
+  ],
+  "options_roman": [
+   "Lam aur Ra",
+   "Ya, Noon, Meem aur Waw",
+   "Sirf Ba",
+   "Gale ke huruf"
+  ],
+  "explanation_ur": "غنہ کے ساتھ ادغام یا، نون، میم اور واؤ کے ساتھ ہوتا ہے — یہ لفظ ینمو میں جمع ہیں۔",
+  "explanation_roman": "Ghunnah ke saath Idgham Ya, Noon, Meem aur Waw ke saath hota hai — ye lafz Yanmoo mein jama hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -325,6 +517,22 @@
  },
  {
   "id": "TAJ-013",
+  "question_ur": "غنہ کے بغیر ادغام کن حروف کے ساتھ ہوتا ہے؟",
+  "question_roman": "Ghunnah ke baghair Idgham kin huruf ke saath hota hai?",
+  "options_ur": [
+   "لام اور را",
+   "یا اور واؤ",
+   "نون اور میم",
+   "با اور تا"
+  ],
+  "options_roman": [
+   "Lam aur Ra",
+   "Ya aur Waw",
+   "Noon aur Meem",
+   "Ba aur Ta"
+  ],
+  "explanation_ur": "غنہ کے بغیر ادغام صرف لام اور را کے ساتھ ہوتا ہے۔",
+  "explanation_roman": "Ghunnah ke baghair Idgham sirf Lam aur Ra ke saath hota hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -352,6 +560,22 @@
  },
  {
   "id": "TAJ-014",
+  "question_ur": "نون ساکنہ یا تنوین کے بعد کون سا حرف آنے پر اقلاب ہوتا ہے؟",
+  "question_roman": "Noon Sakinah ya Tanween ke baad kaun sa harf aane par Iqlab hota hai?",
+  "options_ur": [
+   "ہمزہ",
+   "با",
+   "را",
+   "خا"
+  ],
+  "options_roman": [
+   "Hamzah",
+   "Ba",
+   "Ra",
+   "Kha"
+  ],
+  "explanation_ur": "اقلاب کا مطلب ہے نون ساکنہ یا تنوین کو میم میں بدل دینا جب اس کے بعد با آئے، غنہ کے ساتھ۔",
+  "explanation_roman": "Iqlab ka matlab hai Noon Sakinah ya Tanween ko Meem mein badal dena jab us ke baad Ba aaye, Ghunnah ke saath.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -379,6 +603,22 @@
  },
  {
   "id": "TAJ-015",
+  "question_ur": "اخفا کے کتنے حروف ہیں؟",
+  "question_roman": "Ikhfa ke kitne huruf hain?",
+  "options_ur": [
+   "6",
+   "10",
+   "15",
+   "20"
+  ],
+  "options_roman": [
+   "6",
+   "10",
+   "15",
+   "20"
+  ],
+  "explanation_ur": "اخفا کے 15 حروف ہیں — 6 اظہار، 6 ادغام اور 1 اقلاب کے حروف کے علاوہ تمام حروف (28 - 13 = 15)۔",
+  "explanation_roman": "Ikhfa ke 15 huruf hain — 6 Izhar, 6 Idgham aur 1 Iqlab ke huruf ke ilawa tamam huruf (28 - 13 = 15).",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -406,6 +646,22 @@
  },
  {
   "id": "TAJ-016",
+  "question_ur": "میم ساکنہ کے کتنے قواعد ہیں؟",
+  "question_roman": "Meem Sakinah ke kitne qawaid hain?",
+  "options_ur": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "options_roman": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "explanation_ur": "میم ساکنہ کے 3 قواعد ہیں: اخفا شفوی، ادغام شفوی اور اظہار شفوی۔",
+  "explanation_roman": "Meem Sakinah ke 3 qawaid hain: Ikhfa Shafawi, Idgham Shafawi aur Izhar Shafawi.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -433,6 +689,22 @@
  },
  {
   "id": "TAJ-017",
+  "question_ur": "میم ساکنہ کے بعد کون سا حرف آنے پر اخفا شفوی ہوتا ہے؟",
+  "question_roman": "Meem Sakinah ke baad kaun sa harf aane par Ikhfa Shafawi hota hai?",
+  "options_ur": [
+   "میم",
+   "با",
+   "را",
+   "ہمزہ"
+  ],
+  "options_roman": [
+   "Meem",
+   "Ba",
+   "Ra",
+   "Hamzah"
+  ],
+  "explanation_ur": "اخفا شفوی اس وقت ہوتا ہے جب میم ساکنہ کے بعد با آئے، اور اسے غنہ کے ساتھ پڑھا جاتا ہے۔",
+  "explanation_roman": "Ikhfa Shafawi us waqt hota hai jab Meem Sakinah ke baad Ba aaye, aur use Ghunnah ke saath padha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -460,6 +732,22 @@
  },
  {
   "id": "TAJ-018",
+  "question_ur": "میم ساکنہ کے بعد کون سا حرف آنے پر ادغام شفوی ہوتا ہے؟",
+  "question_roman": "Meem Sakinah ke baad kaun sa harf aane par Idgham Shafawi hota hai?",
+  "options_ur": [
+   "با",
+   "لام",
+   "میم",
+   "نون"
+  ],
+  "options_roman": [
+   "Ba",
+   "Lam",
+   "Meem",
+   "Noon"
+  ],
+  "explanation_ur": "ادغام شفوی اس وقت ہوتا ہے جب میم ساکنہ کے بعد دوسری میم آئے، اور وہ غنہ کے ساتھ مل جاتی ہیں۔",
+  "explanation_roman": "Idgham Shafawi us waqt hota hai jab Meem Sakinah ke baad dusri Meem aaye, aur woh Ghunnah ke saath mil jati hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -487,6 +775,22 @@
  },
  {
   "id": "TAJ-019",
+  "question_ur": "اظہار شفوی کب ہوتا ہے؟",
+  "question_roman": "Izhar Shafawi kab hota hai?",
+  "options_ur": [
+   "با اور میم کے علاوہ کوئی بھی حرف",
+   "صرف با",
+   "صرف میم",
+   "صرف گلے کے حروف"
+  ],
+  "options_roman": [
+   "Ba aur Meem ke ilawa koi bhi harf",
+   "Sirf Ba",
+   "Sirf Meem",
+   "Sirf gale ke huruf"
+  ],
+  "explanation_ur": "اظہار شفوی اس وقت ہوتا ہے جب میم ساکنہ کے بعد با اور میم کے علاوہ کوئی بھی حرف آئے — اسے واضح پڑھا جاتا ہے۔",
+  "explanation_roman": "Izhar Shafawi us waqt hota hai jab Meem Sakinah ke baad Ba aur Meem ke ilawa koi bhi harf aaye — use wazeh padha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -514,6 +818,22 @@
  },
  {
   "id": "TAJ-020",
+  "question_ur": "مد اصلی کو کتنا لمبا کیا جاتا ہے؟",
+  "question_roman": "Madd Asli ko kitna lamba kiya jata hai?",
+  "options_ur": [
+   "1 حرکت",
+   "2 حرکت",
+   "4 حرکت",
+   "6 حرکت"
+  ],
+  "options_roman": [
+   "1 Harakah",
+   "2 Harakah",
+   "4 Harakah",
+   "6 Harakah"
+  ],
+  "explanation_ur": "مد اصلی (قدرتی مد) کو 2 حرکت (گنتی) تک لمبا کیا جاتا ہے۔",
+  "explanation_roman": "Madd Asli (qudrati Madd) ko 2 Harakah (ginti) tak lamba kiya jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -541,6 +861,22 @@
  },
  {
   "id": "TAJ-021",
+  "question_ur": "مد لازم کو کتنا لمبا کیا جاتا ہے؟",
+  "question_roman": "Madd Lazim ko kitna lamba kiya jata hai?",
+  "options_ur": [
+   "2 حرکت",
+   "4 حرکت",
+   "6 حرکت",
+   "8 حرکت"
+  ],
+  "options_roman": [
+   "2 Harakah",
+   "4 Harakah",
+   "6 Harakah",
+   "8 Harakah"
+  ],
+  "explanation_ur": "مد لازم کو 6 حرکت تک لمبا کیا جاتا ہے — یہ سب سے لمبی مد ہے۔",
+  "explanation_roman": "Madd Lazim ko 6 Harakah tak lamba kiya jata hai — ye sab se lambi Madd hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -568,6 +904,22 @@
  },
  {
   "id": "TAJ-022",
+  "question_ur": "مد متصل کیا ہے؟",
+  "question_roman": "Madd Muttasil kya hai?",
+  "options_ur": [
+   "مد والا حرف جس کے بعد اسی لفظ میں ہمزہ آئے",
+   "مد والا حرف جس کے بعد اگلے لفظ میں ہمزہ آئے",
+   "وقف پر سکون سے پہلے مد",
+   "شدہ سے پہلے مد"
+  ],
+  "options_roman": [
+   "Madd wala harf jis ke baad usi lafz mein Hamzah aaye",
+   "Madd wala harf jis ke baad agle lafz mein Hamzah aaye",
+   "Waqf par Sukoon se pehle Madd",
+   "Shaddah se pehle Madd"
+  ],
+  "explanation_ur": "مد متصل اس وقت ہوتا ہے جب مد والے حرف کے بعد اسی لفظ میں ہمزہ آئے۔",
+  "explanation_roman": "Madd Muttasil us waqt hota hai jab Madd wale harf ke baad usi lafz mein Hamzah aaye.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -595,6 +947,22 @@
  },
  {
   "id": "TAJ-023",
+  "question_ur": "مد منفصل کیا ہے؟",
+  "question_roman": "Madd Munfasil kya hai?",
+  "options_ur": [
+   "اسی لفظ میں مد",
+   "مد والا حرف جس کے بعد اگلے لفظ میں ہمزہ آئے",
+   "سکون سے پہلے مد",
+   "6 حرکات والا مد"
+  ],
+  "options_roman": [
+   "Usi lafz mein Madd",
+   "Madd wala harf jis ke baad agle lafz mein Hamzah aaye",
+   "Sukoon se pehle Madd",
+   "6 Harakah wala Madd"
+  ],
+  "explanation_ur": "مد منفصل اس وقت ہوتا ہے جب ایک لفظ کے آخر میں مد والا حرف ہو اور اگلے لفظ کے شروع میں ہمزہ آئے۔",
+  "explanation_roman": "Madd Munfasil us waqt hota hai jab ek lafz ke aakhir mein Madd wala harf ho aur agle lafz ke shuru mein Hamzah aaye.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -622,6 +990,22 @@
  },
  {
   "id": "TAJ-024",
+  "question_ur": "مد عارض لسکون کو کتنا لمبا کھینچا جا سکتا ہے؟",
+  "question_roman": "Madd Aarid Lis Sukoon ko kitna lamba kheencha ja sakta hai?",
+  "options_ur": [
+   "صرف 2 حرکات",
+   "صرف 6 حرکات",
+   "2، 4 یا 6 حرکات",
+   "صرف 4 حرکات"
+  ],
+  "options_roman": [
+   "Sirf 2 Harakah",
+   "Sirf 6 Harakah",
+   "2, 4 ya 6 Harakah",
+   "Sirf 4 Harakah"
+  ],
+  "explanation_ur": "کسی لفظ پر وقف کرتے وقت مد عارض لسکون کو 2، 4 یا 6 حرکات تک کھینچا جاتا ہے۔",
+  "explanation_roman": "Kisi lafz par waqf karte waqt Madd Aarid Lis Sukoon ko 2, 4 ya 6 Harakah tak kheencha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -649,6 +1033,22 @@
  },
  {
   "id": "TAJ-025",
+  "question_ur": "قلقلہ والے حروف کون سے ہیں؟",
+  "question_roman": "Qalqalah wale huroof kaun se hain?",
+  "options_ur": [
+   "حلق والے حروف",
+   "قاف، طا، با، جیم، دال",
+   "یا، را، میم، لام، واو، نون",
+   "فا، با، میم، واو"
+  ],
+  "options_roman": [
+   "Halaq wale huroof",
+   "Qaf, Ta, Ba, Jeem, Dal",
+   "Ya, Ra, Meem, Lam, Waw, Noon",
+   "Fa, Ba, Meem, Waw"
+  ],
+  "explanation_ur": "قلقلہ کے 5 حروف قاف، طا، با، جیم اور دال ہیں — یہ لفظ قطب جد میں جمع ہیں۔",
+  "explanation_roman": "5 Qalqalah huroof Qaf, Ta, Ba, Jeem aur Dal hain — ye lafz Qutb Jad mein jama hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -676,6 +1076,22 @@
  },
  {
   "id": "TAJ-026",
+  "question_ur": "مشدد نون یا میم کا غنہ کتنی دیر تک رکھا جاتا ہے؟",
+  "question_roman": "Mushaddad Noon ya Meem ka Ghunnah kitni der tak rakha jata hai?",
+  "options_ur": [
+   "کوئی غنہ نہیں",
+   "1 حرکت",
+   "2 حرکات",
+   "6 حرکات"
+  ],
+  "options_roman": [
+   "Koi Ghunnah nahi",
+   "1 Harakah",
+   "2 Harakah",
+   "6 Harakah"
+  ],
+  "explanation_ur": "جب نون یا میم پر شدہ ہو تو غنہ 2 حرکات تک رکھا جاتا ہے۔",
+  "explanation_roman": "Jab Noon ya Meem par Shaddah ho to Ghunnah 2 Harakah tak rakha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -703,6 +1119,22 @@
  },
  {
   "id": "TAJ-027",
+  "question_ur": "تجوید میں وقف کا کیا مطلب ہے؟",
+  "question_roman": "Tajweed mein Waqf ka kya matlab hai?",
+  "options_ur": [
+   "رکنا",
+   "شروع کرنا",
+   "ملانا",
+   "چھپانا"
+  ],
+  "options_roman": [
+   "Rukna",
+   "Shuru karna",
+   "Milana",
+   "Chhupana"
+  ],
+  "explanation_ur": "وقف کا مطلب ہے رکنا — تلاوت کرتے ہوئے لفظ کے آخر میں آواز اور سانس کو روک دینا۔",
+  "explanation_roman": "Waqf ka matlab hai rukna — tilawat karte hue lafz ke aakhir mein awaz aur saans ko rok dena.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -730,6 +1162,22 @@
  },
  {
   "id": "TAJ-028",
+  "question_ur": "وقف کی علامت میم (م) کا کیا مطلب ہے؟",
+  "question_roman": "Waqf ki alamat Meem (م) ka kya matlab hai?",
+  "options_ur": [
+   "رکنا ممنوع ہے",
+   "رکنا ضروری ہے (وقف لازم)",
+   "رکنا جائز ہے",
+   "بغیر رکے جاری رکھیں"
+  ],
+  "options_roman": [
+   "Rukna mamnu hai",
+   "Rukna zaroori hai (Waqf Lazim)",
+   "Rukna jaiz hai",
+   "Baghair ruke jaari rakhen"
+  ],
+  "explanation_ur": "علامت میم (م) کا مطلب ہے وقف لازم — رکنا ضروری ہے۔",
+  "explanation_roman": "Alamat Meem (م) ka matlab hai Waqf Lazim — rukna zaroori hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -757,6 +1205,22 @@
  },
  {
   "id": "TAJ-029",
+  "question_ur": "تجوید کا کیا مطلب ہے؟",
+  "question_roman": "Tajweed ka kya matlab hai?",
+  "options_ur": [
+   "قرآن حفظ کرنا",
+   "قرآن کو اس کے قواعد کے ساتھ درست پڑھنا",
+   "قرآن کا ترجمہ کرنا",
+   "قرآن کو خوبصورت لکھنا"
+  ],
+  "options_roman": [
+   "Quran hifz karna",
+   "Quran ko us ke qawaid ke sath durust parhna",
+   "Quran ka tarjuma karna",
+   "Quran ko khoobsurat likhna"
+  ],
+  "explanation_ur": "تجوید کا مطلب ہے قرآن کو درست طریقے سے پڑھنا، ہر حرف کو اس کا حق اور مقام دینا۔",
+  "explanation_roman": "Tajweed means reciting the Quran correctly, giving every letter its due right and place. Tajweed ka matlab hai Quran ko us ke qawaid ke sath durust parhna.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -785,6 +1249,22 @@
  },
  {
   "id": "TAJ-030",
+  "question_ur": "قرآن پاک کتنے جز (حصے) میں تقسیم ہے؟",
+  "question_roman": "Quran Pak kitne Juz (hissay) mein taqseem hai?",
+  "options_ur": [
+   "30",
+   "25",
+   "40",
+   "114"
+  ],
+  "options_roman": [
+   "30",
+   "25",
+   "40",
+   "114"
+  ],
+  "explanation_ur": "قرآن پاک 30 جز (حصے) میں تقسیم ہے۔",
+  "explanation_roman": "Quran Pak 30 Juz (hissay) mein taqseem hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -812,6 +1292,22 @@
  },
  {
   "id": "TAJ-031",
+  "question_ur": "کتنے حروف اخفا حقیقی (نون ساکنہ کے لیے چھپانے کا قاعدہ) کو لازم کرتے ہیں؟",
+  "question_roman": "Kitne huroof Ikhfa Haqiqi (Noon Sakinah ko chhupane ka qaida) ko lazim karte hain?",
+  "options_ur": [
+   "6 حروف",
+   "10 حروف",
+   "15 حروف",
+   "28 حروف"
+  ],
+  "options_roman": [
+   "6 huroof",
+   "10 huroof",
+   "15 huroof",
+   "28 huroof"
+  ],
+  "explanation_ur": "اخفا حقیقی 15 حروف سے پہلے ہوتا ہے: ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك۔ نون کو غنہ کے ساتھ دو گنتی تک چھپایا جاتا ہے۔",
+  "explanation_roman": "Ikhfa Haqiqi 15 huroof se pehle hota hai: ت ث ج د ذ ز س ش ص ض ط ظ ف ق ك. Noon ko Ghunnah ke sath do counts tak chhupaya jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -842,6 +1338,22 @@
  },
  {
   "id": "TAJ-032",
+  "question_ur": "نون ساکنہ یا تنوین کے بعد با (ب) آئے تو کون سا قاعدہ لگتا ہے؟",
+  "question_roman": "Noon Sakinah ya Tanween ke baad Ba (ب) aaye to kaun sa qaida lagta hai?",
+  "options_ur": [
+   "اظہار",
+   "ادغام",
+   "اقلاب",
+   "اخفا"
+  ],
+  "options_roman": [
+   "Izhar",
+   "Idgham",
+   "Iqlab",
+   "Ikhfa"
+  ],
+  "explanation_ur": "اقلاب صرف با سے پہلے ہوتا ہے: نون کی آواز چھپی ہوئی میم کی آواز میں بدل جاتی ہے، غنہ کے ساتھ دو گنتی تک۔",
+  "explanation_roman": "Iqlab sirf Ba se pehle hota hai: Noon ki awaz chhupi hui Meem ki awaz mein badal jati hai, Ghunnah ke sath do counts tak.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -872,6 +1384,22 @@
  },
  {
   "id": "TAJ-033",
+  "question_ur": "اخفا شفوی اس وقت ہوتا ہے جب ساکن میم (میم ساکنہ) کے بعد کون سا حرف آئے؟",
+  "question_roman": "Ikhfa Shafawi us waqt hota hai jab sakin Meem (Meem Sakinah) ke baad kaun sa harf aaye?",
+  "options_ur": [
+   "میم",
+   "با",
+   "واو",
+   "فا"
+  ],
+  "options_roman": [
+   "Meem",
+   "Ba",
+   "Waw",
+   "Fa"
+  ],
+  "explanation_ur": "اخفا شفوی ساکن میم ہے جس کے بعد صرف با آئے: میم کو نرمی سے غنہ کے ساتھ دو گنتی تک چھپایا جاتا ہے۔",
+  "explanation_roman": "Ikhfa Shafawi sakin Meem hai jis ke baad sirf Ba aaye: Meem ko narmi se Ghunnah ke sath do counts tak chhupaya jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -902,6 +1430,22 @@
  },
  {
   "id": "TAJ-034",
+  "question_ur": "اخفا میں غنہ (ناک کی آواز) کتنی دیر کا ہوتا ہے؟",
+  "question_roman": "Ikhfa mein Ghunnah (naak ki awaz) kitni der ka hota hai?",
+  "options_ur": [
+   "1 گنتی",
+   "2 گنتی",
+   "4 گنتی",
+   "6 گنتی"
+  ],
+  "options_roman": [
+   "1 count",
+   "2 counts",
+   "4 counts",
+   "6 counts"
+  ],
+  "explanation_ur": "اخفا میں غنہ تقریباً دو گنتی تک رکھا جاتا ہے۔",
+  "explanation_roman": "Ikhfa mein Ghunnah taqreeban do counts tak rakha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -932,6 +1476,22 @@
  },
  {
   "id": "TAJ-035",
+  "question_ur": "کون سے دو حروف بغیر غنہ کے ادغام دیتے ہیں؟",
+  "question_roman": "Kaun se do huroof baghair Ghunnah ke Idgham dete hain?",
+  "options_ur": [
+   "یا اور واو",
+   "میم اور نون",
+   "لام اور را",
+   "با اور طا"
+  ],
+  "options_roman": [
+   "Ya aur Waw",
+   "Meem aur Noon",
+   "Lam aur Ra",
+   "Ba aur Ta"
+  ],
+  "explanation_ur": "ادغام صرف لام اور را کے لیے بغیر غنہ کے ہوتا ہے؛ باقی چار ادغام والے حروف (یا، نون، میم، واو) میں غنہ ہوتا ہے۔",
+  "explanation_roman": "Idgham sirf Lam aur Ra ke liye baghair Ghunnah ke hota hai; baqi chaar Idgham wale huroof (Ya, Noon, Meem, Waw) mein Ghunnah hota hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -962,6 +1522,22 @@
  },
  {
   "id": "TAJ-036",
+  "question_ur": "مجموعی طور پر ادغام کے کتنے حروف ہیں؟",
+  "question_roman": "Majmooi taur par Idgham ke kitne huroof hain?",
+  "options_ur": [
+   "4 حروف",
+   "5 حروف",
+   "6 حروف",
+   "15 حروف"
+  ],
+  "options_roman": [
+   "4 huroof",
+   "5 huroof",
+   "6 huroof",
+   "15 huroof"
+  ],
+  "explanation_ur": "ادغام کے 6 حروف ہیں، جو لفظ یرملون سے یاد رکھے جاتے ہیں: یا، را، میم، لام، واو اور نون۔",
+  "explanation_roman": "Idgham ke 6 huroof hain, jo lafz Yarmaloon se yaad rakhe jate hain: Ya, Ra, Meem, Lam, Waw aur Noon.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -992,6 +1568,22 @@
  },
  {
   "id": "TAJ-037",
+  "question_ur": "لفظ یرملون (يَرْمَلُون) کن حروف کو جمع کرتا ہے؟",
+  "question_roman": "Lafz Yarmaloon (يَرْمَلُون) kin huroof ko jama karta hai?",
+  "options_ur": [
+   "اظہار والے حروف",
+   "ادغام والے حروف",
+   "قلقلہ والے حروف",
+   "اخفا والے حروف"
+  ],
+  "options_roman": [
+   "Izhar wale huroof",
+   "Idgham wale huroof",
+   "Qalqalah wale huroof",
+   "Ikhfa wale huroof"
+  ],
+  "explanation_ur": "یرملون ادغام کے چھ حروف کو جمع کرتا ہے: یا، را، میم، لام، واو اور نون۔",
+  "explanation_roman": "Yarmaloon Idgham ke chhe huroof ko jama karta hai: Ya, Ra, Meem, Lam, Waw aur Noon.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1022,6 +1614,22 @@
  },
  {
   "id": "TAJ-038",
+  "question_ur": "ساکن میم کے بعد دوسری میم آئے تو کون سا قاعدہ ہوتا ہے؟",
+  "question_roman": "Sakin Meem ke baad doosri Meem aaye to kaun sa qaida hota hai?",
+  "options_ur": [
+   "اخفا شفوی",
+   "ادغام شفوی",
+   "اظہار شفوی",
+   "اقلاب"
+  ],
+  "options_roman": [
+   "Ikhfa Shafawi",
+   "Idgham Shafawi",
+   "Izhar Shafawi",
+   "Iqlab"
+  ],
+  "explanation_ur": "ادغام شفوی ساکن میم ہے جس کے بعد دوسری میم آئے: دونوں مل کر ایک مشدد میم بن جاتی ہیں، غنہ کے ساتھ دو گنتی تک۔",
+  "explanation_roman": "Idgham Shafawi sakin Meem hai jis ke baad doosri Meem aaye: dono mil kar ek mushaddad Meem ban jati hain, Ghunnah ke sath do counts tak.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1052,6 +1660,22 @@
  },
  {
   "id": "TAJ-039",
+  "question_ur": "قلقلہ کے کتنے حروف ہیں؟",
+  "question_roman": "Qalqalah ke kitne huroof hain?",
+  "options_ur": [
+   "3 حروف",
+   "5 حروف",
+   "6 حروف",
+   "15 حروف"
+  ],
+  "options_roman": [
+   "3 huroof",
+   "5 huroof",
+   "6 huroof",
+   "15 huroof"
+  ],
+  "explanation_ur": "قلقلہ کے 5 حروف ہیں، جو جملہ قطب جد سے یاد رکھے جاتے ہیں: قاف، طا، با، جیم اور دال۔",
+  "explanation_roman": "Qalqalah ke 5 huroof hain, jo jumla Qutb Jad se yaad rakhe jate hain: Qaf, Ta, Ba, Jeem aur Dal.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1082,6 +1706,22 @@
  },
  {
   "id": "TAJ-040",
+  "question_ur": "کون سا جملہ قلقلہ والے حروف کو جمع کرتا ہے؟",
+  "question_roman": "Kaun sa jumla Qalqalah wale huroof ko jama karta hai?",
+  "options_ur": [
+   "یرملون",
+   "قطب جد",
+   "ینمو",
+   "حروف حلق"
+  ],
+  "options_roman": [
+   "Yarmaloon",
+   "Qutb Jad",
+   "Yanmu",
+   "Huroof Halq"
+  ],
+  "explanation_ur": "قطب جد قلقلہ کے پانچ حروف کو جمع کرتا ہے: قاف، طا، با، جیم اور دال۔",
+  "explanation_roman": "Qutb Jad Qalqalah ke paanch huroof ko jama karta hai: Qaf, Ta, Ba, Jeem aur Dal.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1112,6 +1752,22 @@
  },
  {
   "id": "TAJ-041",
+  "question_ur": "قلقلہ کا جھٹکا کب سب سے زیادہ مضبوط ہوتا ہے؟",
+  "question_roman": "Qalqalah ka jhatka kab sab se zyada mazboot hota hai?",
+  "options_ur": [
+   "لفظ کے درمیان میں",
+   "حرف پر وقف کرتے وقت",
+   "حرکت سے پہلے",
+   "مد والے حرف کے بعد"
+  ],
+  "options_roman": [
+   "Lafz ke darmiyan mein",
+   "Harf par waqf karte waqt",
+   "Harakat se pehle",
+   "Madd wale harf ke baad"
+  ],
+  "explanation_ur": "قلقلہ کبریٰ، جو زیادہ مضبوط جھٹکا ہے، اس وقت ہوتا ہے جب پڑھنے والا قلقلہ والے حرف پر ختم ہونے والے لفظ پر وقف کرے۔",
+  "explanation_roman": "Qalqalah Kubra, jo zyada mazboot jhatka hai, us waqt hota hai jab parhne wala Qalqalah wale harf par khatam hone wale lafz par waqf kare.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1142,6 +1798,22 @@
  },
  {
   "id": "TAJ-042",
+  "question_ur": "کون سا حرف قلقلہ والا حرف نہیں ہے؟",
+  "question_roman": "Kaun sa harf Qalqalah wala harf nahi hai?",
+  "options_ur": [
+   "قاف",
+   "طا",
+   "با",
+   "سین"
+  ],
+  "options_roman": [
+   "Qaf",
+   "Ta",
+   "Ba",
+   "Seen"
+  ],
+  "explanation_ur": "سین قلقلہ والا حرف نہیں ہے۔ قلقلہ کے پانچ حروف قاف، طا، با، جیم اور دال ہیں۔",
+  "explanation_roman": "Seen Qalqalah wala harf nahi hai. Paanch Qalqalah huroof Qaf, Ta, Ba, Jeem aur Dal hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1172,6 +1844,22 @@
  },
  {
   "id": "TAJ-043",
+  "question_ur": "مدِّ طبعی (قدرتی مد) کتنی حرکتوں کی ہوتی ہے؟",
+  "question_roman": "Madd Tabi'i (qudrati Madd) kitni harakat ki hoti hai?",
+  "options_ur": [
+   "1 حرکت",
+   "2 حرکتیں",
+   "4 حرکتیں",
+   "6 حرکتیں"
+  ],
+  "options_roman": [
+   "1 harakat",
+   "2 harakat",
+   "4 harakat",
+   "6 harakat"
+  ],
+  "explanation_ur": "مدِّ طبعی ہمیشہ دو حرکتوں کی ہوتی ہے: یہ بنیادی مد ہے جس کے بعد نہ حمزہ آتا ہے اور نہ سکون۔",
+  "explanation_roman": "Madd Tabi'i hamesha do harakat ki hoti hai: ye buniyadi Madd hai jis ke baad na Hamzah aata hai aur na Sukoon.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1202,6 +1890,22 @@
  },
  {
   "id": "TAJ-044",
+  "question_ur": "کون سی مد ہمیشہ چھ حرکتوں کی ہوتی ہے؟",
+  "question_roman": "Kaun si Madd hamesha chhe harakat ki hoti hai?",
+  "options_ur": [
+   "مدِّ طبعی",
+   "مدِّ بدل",
+   "مدِّ لازم",
+   "مدِّ عارض"
+  ],
+  "options_roman": [
+   "Madd Tabi'i",
+   "Madd Badal",
+   "Madd Lazim",
+   "Madd Arid"
+  ],
+  "explanation_ur": "مدِّ لازم ہمیشہ چھ حرکتوں کی ہوتی ہے: مد والا حرف جس کے بعد مستقل سکون یا شدّہ ہو۔",
+  "explanation_roman": "Madd Lazim hamesha chhe harakat ki hoti hai: Madd wala harf jis ke baad mustaqil Sukoon ya Shaddah ho.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1232,6 +1936,22 @@
  },
  {
   "id": "TAJ-045",
+  "question_ur": "مد والا حرف جس کے بعد ایک ہی لفظ میں حمزہ آئے، وہ مد کی کون سی قسم ہے؟",
+  "question_roman": "Madd wala harf jis ke baad ek hi lafz mein Hamzah aaye, woh Madd ki kaun si qism hai?",
+  "options_ur": [
+   "مدِّ منفصل",
+   "مدِّ متصل",
+   "مدِّ بدل",
+   "مدِّ لازم"
+  ],
+  "options_roman": [
+   "Madd Munfasil",
+   "Madd Muttasil",
+   "Madd Badal",
+   "Madd Lazim"
+  ],
+  "explanation_ur": "مدِّ متصل (جڑی ہوئی) مد والا حرف ہے جس کے بعد ایک ہی لفظ میں حمزہ آئے، اور اسے چار یا پانچ حرکتوں تک کھینچا جاتا ہے۔",
+  "explanation_roman": "Madd Muttasil (judi hui) Madd wala harf hai jis ke baad ek hi lafz mein Hamzah aaye, aur use chaar ya paanch harakat tak kheencha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1262,6 +1982,22 @@
  },
  {
   "id": "TAJ-046",
+  "question_ur": "مدِّ بدل کتنی حرکتوں کی ہوتی ہے؟",
+  "question_roman": "Madd Badal kitni harakat ki hoti hai?",
+  "options_ur": [
+   "2 حرکتیں",
+   "4 حرکتیں",
+   "5 حرکتیں",
+   "6 حرکتیں"
+  ],
+  "options_roman": [
+   "2 harakat",
+   "4 harakat",
+   "5 harakat",
+   "6 harakat"
+  ],
+  "explanation_ur": "مدِّ بدل دو حرکتوں کی ہوتی ہے: حمزہ مد والے حرف سے پہلے آتا ہے۔",
+  "explanation_roman": "Madd Badal do harakat ki hoti hai: Hamzah Madd wale harf se pehle aata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1292,6 +2028,22 @@
  },
  {
   "id": "TAJ-047",
+  "question_ur": "نون ساکنہ اور تنوین کے کتنے قواعد ہیں؟",
+  "question_roman": "Noon Sakinah aur Tanween ke kitne qawaid hain?",
+  "options_ur": [
+   "2 قواعد",
+   "3 قواعد",
+   "4 قواعد",
+   "6 قواعد"
+  ],
+  "options_roman": [
+   "2 qawaid",
+   "3 qawaid",
+   "4 qawaid",
+   "6 qawaid"
+  ],
+  "explanation_ur": "نون ساکنہ اور تنوین کے چار قواعد ہیں: اظہار، ادغام، اقلاب اور اخفا۔",
+  "explanation_roman": "Noon Sakinah aur Tanween ke chaar qawaid hain: Izhar, Idgham, Iqlab aur Ikhfa.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1322,6 +2074,22 @@
  },
  {
   "id": "TAJ-048",
+  "question_ur": "اظہار (حلق) کے کتنے حروف ہیں؟",
+  "question_roman": "Izhar (halaq) ke kitne huroof hain?",
+  "options_ur": [
+   "5 حروف",
+   "6 حروف",
+   "15 حروف",
+   "28 حروف"
+  ],
+  "options_roman": [
+   "5 huroof",
+   "6 huroof",
+   "15 huroof",
+   "28 huroof"
+  ],
+  "explanation_ur": "اظہار کے 6 حروف ہیں، جو حلق کے حروف ہیں: حمزہ، ہا، عین، حا، غین اور خا۔",
+  "explanation_roman": "Izhar ke 6 huroof hain, jo halaq ke huroof hain: Hamza, Ha, Ain, Ha, Ghain aur Kha.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1352,6 +2120,22 @@
  },
  {
   "id": "TAJ-049",
+  "question_ur": "میم ساکنہ کے کتنے قواعد ہیں؟",
+  "question_roman": "Meem Sakinah ke kitne qawaid hain?",
+  "options_ur": [
+   "2 قواعد",
+   "3 قواعد",
+   "4 قواعد",
+   "6 قواعد"
+  ],
+  "options_roman": [
+   "2 qawaid",
+   "3 qawaid",
+   "4 qawaid",
+   "6 qawaid"
+  ],
+  "explanation_ur": "میم ساکنہ کے 3 قواعد ہیں: اخفائے شفوی، ادغامِ شفوی اور اظہارِ شفوی۔",
+  "explanation_roman": "Meem Sakinah ke 3 qawaid hain: Ikhfa Shafawi, Idgham Shafawi aur Izhar Shafawi.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1382,6 +2166,22 @@
  },
  {
   "id": "TAJ-050",
+  "question_ur": "ساکن میم جس کے بعد باقی 26 حروف میں سے کوئی حرف آئے، وہ کون سا قاعدہ ہے؟",
+  "question_roman": "Saakin Meem jis ke baad baaki 26 huroof mein se koi harf aaye, woh kaun sa qaaida hai?",
+  "options_ur": [
+   "اخفائے شفوی",
+   "ادغامِ شفوی",
+   "اظہارِ شفوی",
+   "اقلاب"
+  ],
+  "options_roman": [
+   "Ikhfa Shafawi",
+   "Idgham Shafawi",
+   "Izhar Shafawi",
+   "Iqlab"
+  ],
+  "explanation_ur": "اظہارِ شفوی ساکن میم ہے جس کے بعد باقی 26 حروف میں سے کوئی حرف آئے: میم کو واضح طور پر ادا کیا جاتا ہے۔",
+  "explanation_roman": "Izhar Shafawi saakin Meem hai jis ke baad baaki 26 huroof mein se koi harf aaye: Meem ko wazeh taur par ada kiya jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1412,6 +2212,22 @@
  },
  {
   "id": "TAJ-051",
+  "question_ur": "حرف کی صفت کے طور پر ہمس کا کیا مطلب ہے؟",
+  "question_roman": "Harf ki sifat ke taur par Hams ka kya matlab hai?",
+  "options_ur": [
+   "آواز مکمل طور پر رک جاتی ہے",
+   "حرف کے ساتھ سانس بہتی ہے",
+   "زبان اوپر اٹھتی ہے",
+   "حرف گونجتا ہے"
+  ],
+  "options_roman": [
+   "Aawaz mukammal taur par ruk jati hai",
+   "Harf ke saath saans behti hai",
+   "Zabaan upar uthti hai",
+   "Harf goonjta hai"
+  ],
+  "explanation_ur": "ہمس کا مطلب ہے کہ حرف کی ادائیگی کے وقت سانس بہتی ہے۔ اس کی ضد جہر ہے، جس میں سانس نہیں بہتی۔",
+  "explanation_roman": "Hams ka matlab hai ke harf ki adaigi ke waqt saans behti hai. Is ki zidd Jahr hai, jis mein saans nahi behti.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1442,6 +2258,22 @@
  },
  {
   "id": "TAJ-052",
+  "question_ur": "ہمس کی صفت کتنے حروف میں پائی جاتی ہے؟",
+  "question_roman": "Hams ki sifat kitne huroof mein payi jati hai?",
+  "options_ur": [
+   "پانچ",
+   "آٹھ",
+   "دس",
+   "پندرہ"
+  ],
+  "options_roman": [
+   "Paanch",
+   "Aath",
+   "Das",
+   "Pandrah"
+  ],
+  "explanation_ur": "دس حروف میں ہمس کی صفت پائی جاتی ہے۔ باقی حروف میں جہر کی صفت پائی جاتی ہے، جس میں سانس نہیں بہتی۔",
+  "explanation_roman": "Das huroof mein Hams ki sifat payi jati hai. Baaki huroof mein Jahr ki sifat payi jati hai, jis mein saans nahi behti.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1472,6 +2304,22 @@
  },
  {
   "id": "TAJ-053",
+  "question_ur": "حرف کی صفت کے طور پر شدّت کا کیا مطلب ہے؟",
+  "question_roman": "Harf ki sifat ke taur par Shiddah ka kya matlab hai?",
+  "options_ur": [
+   "آواز آزادانہ بہتی ہے",
+   "آواز رک جاتی ہے اور روک لی جاتی ہے",
+   "حرف ہلکا پڑھا جاتا ہے",
+   "حرف کو کھینچا جاتا ہے"
+  ],
+  "options_roman": [
+   "Aawaz aazadana behti hai",
+   "Aawaz ruk jati hai aur rok li jati hai",
+   "Harf halka parha jata hai",
+   "Harf ko kheencha jata hai"
+  ],
+  "explanation_ur": "شدّت کا مطلب ہے کہ آواز مخرج پر رک جاتی ہے اور روک لی جاتی ہے۔ اس کی ضد رخاوت ہے، جس میں آواز بہتی ہے۔",
+  "explanation_roman": "Shiddah ka matlab hai ke aawaz makhraj par ruk jati hai aur rok li jati hai. Is ki zidd Rakhawah hai, jis mein aawaz behti hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1502,6 +2350,22 @@
  },
  {
   "id": "TAJ-054",
+  "question_ur": "شدّت کی صفت کتنے حروف میں پائی جاتی ہے؟",
+  "question_roman": "Shiddah ki sifat kitne huroof mein payi jati hai?",
+  "options_ur": [
+   "پانچ",
+   "آٹھ",
+   "دس",
+   "بارہ"
+  ],
+  "options_roman": [
+   "Paanch",
+   "Aath",
+   "Das",
+   "Barah"
+  ],
+  "explanation_ur": "آٹھ حروف میں شدّت کی صفت پائی جاتی ہے۔ باقی رخاوت والے ہیں، یا درمیان میں ہیں (توسّط)۔",
+  "explanation_roman": "Aath huroof mein Shiddah ki sifat payi jati hai. Baaki Rakhawah wale hain, ya darmiyan mein hain (Tawassut).",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1532,6 +2396,22 @@
  },
  {
   "id": "TAJ-055",
+  "question_ur": "استعلاء کی وجہ سے کتنے حروف بھاری (مفخّمہ) ہوتے ہیں؟",
+  "question_roman": "Isti'la ki wajah se kitne huroof bhaari (Mufakhkhamah) hote hain?",
+  "options_ur": [
+   "پانچ",
+   "سات",
+   "نو",
+   "گیارہ"
+  ],
+  "options_roman": [
+   "Paanch",
+   "Saat",
+   "Nau",
+   "Gyarah"
+  ],
+  "explanation_ur": "سات حروف بھاری ہوتے ہیں: خا، صاد، ضاد، غین، طا، قاف اور ظا۔ باقی ہلکے ہوتے ہیں۔",
+  "explanation_roman": "Saat huroof bhaari hote hain: Kha, Sad, Dad, Ghain, Ta, Qaf aur Za. Baaki halke hote hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1562,6 +2442,22 @@
  },
  {
   "id": "TAJ-056",
+  "question_ur": "تجوید میں تفخیم کا کیا مطلب ہے؟",
+  "question_roman": "Tajweed mein Tafkheem ka kya matlab hai?",
+  "options_ur": [
+   "حرف کو ہلکا پڑھنا",
+   "حرف کو بھاری پڑھنا، منہ بھر کر",
+   "حرف کو کھینچنا",
+   "حرف کو چھپانا"
+  ],
+  "options_roman": [
+   "Harf ko halka parhna",
+   "Harf ko bhaari parhna, munh bhar kar",
+   "Harf ko kheenchna",
+   "Harf ko chhupana"
+  ],
+  "explanation_ur": "تفخیم کا مطلب ہے حرف کو بھاری پڑھنا، منہ بھر کر۔ ترقیق اس کی ضد ہے: ہلکا پڑھنا۔",
+  "explanation_roman": "Tafkheem ka matlab hai harf ko bhaari parhna, munh bhar kar. Tarqeeq is ki zidd hai: halka parhna.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1592,6 +2488,22 @@
  },
  {
   "id": "TAJ-057",
+  "question_ur": "فتحہ والی راء کس طرح پڑھی جاتی ہے؟",
+  "question_roman": "Fatha wali Raa kis tarah parhi jati hai?",
+  "options_ur": [
+   "ہلکی (ترقیق)",
+   "بھاری (تفخیم)",
+   "کھینچ کر",
+   "خاموش"
+  ],
+  "options_roman": [
+   "Halki (Tarqeeq)",
+   "Bhaari (Tafkheem)",
+   "Kheench kar",
+   "Khamosh"
+  ],
+  "explanation_ur": "فتحہ والی راء، یا ضمّہ والی راء، بھاری پڑھی جاتی ہے۔ کسرہ والی راء ہلکی پڑھی جاتی ہے۔",
+  "explanation_roman": "Fatha wali Raa, ya Dammah wali Raa, bhaari parhi jati hai. Kasrah wali Raa halki parhi jati hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1622,6 +2534,22 @@
  },
  {
   "id": "TAJ-058",
+  "question_ur": "کسرہ والی راء کس طرح پڑھی جاتی ہے؟",
+  "question_roman": "Kasrah wali Raa kis tarah parhi jati hai?",
+  "options_ur": [
+   "بھاری (تفخیم)",
+   "ہلکی (ترقیق)",
+   "قلقلہ کے ساتھ",
+   "غنّہ کے ساتھ"
+  ],
+  "options_roman": [
+   "Bhaari (Tafkheem)",
+   "Halki (Tarqeeq)",
+   "Qalqalah ke saath",
+   "Ghunnah ke saath"
+  ],
+  "explanation_ur": "کسرہ والی راء ہلکی (ترقیق) پڑھی جاتی ہے۔ فتحہ یا ضمّہ کے ساتھ وہ بھاری پڑھی جاتی ہے۔",
+  "explanation_roman": "Kasrah wali Raa halki (Tarqeeq) parhi jati hai. Fatha ya Dammah ke saath woh bhaari parhi jati hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1652,6 +2580,22 @@
  },
  {
   "id": "TAJ-059",
+  "question_ur": "اللہ کے نام میں لام جب فتحہ کے بعد آئے تو اسے کیسے پڑھا جاتا ہے؟",
+  "question_roman": "Allah ke naam mein Laam jab Fatha ke baad aaye to use kaise parha jata hai?",
+  "options_ur": [
+   "ہلکا",
+   "بھاری",
+   "خاموش",
+   "کھینچ کر"
+  ],
+  "options_roman": [
+   "Halka",
+   "Bhaari",
+   "Khamosh",
+   "Kheench kar"
+  ],
+  "explanation_ur": "اللہ کے نام میں لام فتحہ یا ضمّہ کے بعد بھاری پڑھا جاتا ہے، اور کسرہ کے بعد ہلکا پڑھا جاتا ہے۔",
+  "explanation_roman": "Allah ke naam mein Laam Fatha ya Dammah ke baad bhaari parha jata hai, aur Kasrah ke baad halka parha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1682,6 +2626,22 @@
  },
  {
   "id": "TAJ-060",
+  "question_ur": "اللہ کے نام میں لام جب کسرہ کے بعد آئے تو اسے کیسے پڑھا جاتا ہے؟",
+  "question_roman": "Allah ke naam mein Laam jab Kasrah ke baad aaye to use kaise parha jata hai?",
+  "options_ur": [
+   "بھاری",
+   "ہلکا",
+   "اخفا کے ساتھ",
+   "ادغام کے ساتھ"
+  ],
+  "options_roman": [
+   "Bhaari",
+   "Halka",
+   "Ikhfa ke saath",
+   "Idgham ke saath"
+  ],
+  "explanation_ur": "کسرہ کے بعد، اللہ کے نام میں لام ہلکا (ترقیق) پڑھا جاتا ہے۔",
+  "explanation_roman": "Kasrah ke baad, Allah ke naam mein Laam halka (Tarqeeq) parha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1712,6 +2672,22 @@
  },
  {
   "id": "TAJ-061",
+  "question_ur": "شمسی حروف (حروفِ شمسیہ) کتنے ہیں؟",
+  "question_roman": "Shamsi huroof (Huruf Shamsiyyah) kitne hain?",
+  "options_ur": [
+   "دس",
+   "بارہ",
+   "چودہ",
+   "سولہ"
+  ],
+  "options_roman": [
+   "Das",
+   "Barah",
+   "Chaudah",
+   "Solah"
+  ],
+  "explanation_ur": "چودہ حروف شمسی حروف ہیں۔ 'Al-' کا لام ان میں مدغم ہو جاتا ہے اور ادا نہیں کیا جاتا۔",
+  "explanation_roman": "Chaudah huroof shamsi huroof hain. 'Al-' ka Laam un mein mudgham ho jata hai aur ada nahi kiya jata.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1742,6 +2718,22 @@
  },
  {
   "id": "TAJ-062",
+  "question_ur": "قمری حرف (قمریہ) سے پہلے 'Al-' کا لام کیسے پڑھا جاتا ہے؟",
+  "question_roman": "Qamari harf (Qamariyyah) se pehle 'Al-' ka Laam kaise parha jata hai?",
+  "options_ur": [
+   "وہ مدغم ہو جاتا ہے اور خاموش ہو جاتا ہے",
+   "اسے واضح طور پر ادا کیا جاتا ہے",
+   "وہ میم میں بدل جاتا ہے",
+   "اسے کھینچا جاتا ہے"
+  ],
+  "options_roman": [
+   "Woh mudgham ho jata hai aur khamosh ho jata hai",
+   "Use wazeh taur par ada kiya jata hai",
+   "Woh Meem mein badal jata hai",
+   "Use kheencha jata hai"
+  ],
+  "explanation_ur": "چودہ قمری حروف سے پہلے، 'Al-' کا لام واضح طور پر ادا کیا جاتا ہے۔",
+  "explanation_roman": "Chaudah qamari huroof se pehle, 'Al-' ka Laam wazeh taur par ada kiya jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1772,6 +2764,22 @@
  },
  {
   "id": "TAJ-063",
+  "question_ur": "تلاوت میں الفاظ کو جوڑتے وقت ہمزۃ الوصل کے ساتھ کیا ہوتا ہے؟",
+  "question_roman": "Tilawat mein alfaz ko jorte waqt Hamzatul Wasl ke saath kya hota hai?",
+  "options_ur": [
+   "یہ ہمیشہ پڑھا جاتا ہے",
+   "یہ جوڑنے پر گر جاتا ہے اور صرف شروع کرتے وقت پڑھا جاتا ہے",
+   "یہ مد میں بدل جاتا ہے",
+   "اسے چھ حرکات تک کھینچا جاتا ہے"
+  ],
+  "options_roman": [
+   "Ye hamesha parha jata hai",
+   "Ye jorne par gir jata hai aur sirf shuru karte waqt parha jata hai",
+   "Ye Madd mein badal jata hai",
+   "Ise 6 harkaat tak khaincha jata hai"
+  ],
+  "explanation_ur": "ہمزۃ الوصل الفاظ کو جوڑنے پر گر جاتا ہے، اور صرف اس لفظ سے شروع کرتے وقت پڑھا جاتا ہے۔ ہمزۃ القطع ہمیشہ پڑھا جاتا ہے۔",
+  "explanation_roman": "Hamzatul Wasl alfaz ko jorne par gir jata hai, aur sirf us lafz se shuru karte waqt parha jata hai. Hamzatul Qat' hamesha parha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1802,6 +2810,22 @@
  },
  {
   "id": "TAJ-064",
+  "question_ur": "مد لین کیا ہے؟",
+  "question_roman": "Madd Leen kya hai?",
+  "options_ur": [
+   "ایک مد جو ہمزہ کی وجہ سے ہوتی ہے",
+   "وقف پر فتحہ کے بعد واؤ یا یاء ساکنہ کی نرم لمبائی",
+   "بالکل دو حرکات کی مد",
+   "صرف ایک لفظ کے اندر کی مد"
+  ],
+  "options_roman": [
+   "Ek Madd jo Hamzah ki wajah se hoti hai",
+   "Waqf par Fatha ke baad Waw ya Yaa Sakinah ki narm lambai",
+   "Bilkul 2 harkaat ki Madd",
+   "Sirf ek lafz ke andar ki Madd"
+  ],
+  "explanation_ur": "مد لین وقف کرتے وقت فتحہ کے بعد آنے والی ساکن واؤ یا یاء کی نرم لمبائی ہے۔ اسے دو، چار یا چھ حرکات تک کھینچا جا سکتا ہے۔",
+  "explanation_roman": "Madd Leen waqf karte waqt Fatha ke baad aane wali sakin Waw ya Yaa ki narm lambai hai. Ise 2, 4 ya 6 harkaat tak khaincha ja sakta hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1832,6 +2856,22 @@
  },
  {
   "id": "TAJ-065",
+  "question_ur": "مد عوض کیا ہے؟",
+  "question_roman": "Madd Iwaz kya hai?",
+  "options_ur": [
+   "وقف پر تنوین فتحتین کو الف پڑھا جاتا ہے، دو حرکات تک کھینچا جاتا ہے",
+   "ہمزہ سے پہلے کی مد",
+   "چھ حرکات کی مد",
+   "لفظ کے درمیان کی مد"
+  ],
+  "options_roman": [
+   "Waqf par Tanween Fathatain ko Alif parha jata hai, 2 harkaat tak khaincha jata hai",
+   "Hamzah se pehle ki Madd",
+   "6 harkaat ki Madd",
+   "Lafz ke darmiyan ki Madd"
+  ],
+  "explanation_ur": "وقف پر، تنوین فتحتین پر ختم ہونے والے لفظ کو تنوین کی جگہ الف کے ساتھ پڑھا جاتا ہے، دو حرکات تک کھینچا جاتا ہے۔ یہ مد عوض ہے۔",
+  "explanation_roman": "Waqf par, Tanween Fathatain par khatam hone wale lafz ko Tanween ki jagah Alif ke saath parha jata hai, 2 harkaat tak khaincha jata hai. Ye Madd Iwaz hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1862,6 +2902,22 @@
  },
  {
   "id": "TAJ-066",
+  "question_ur": "مد صلہ کس حرف کو لمبا کرتا ہے؟",
+  "question_roman": "Madd Silah kis harf ko lamba karta hai?",
+  "options_ur": [
+   "ضمیر کی ہاء (ہاء کنایہ)",
+   "نون ساکنہ",
+   "میم ساکنہ",
+   "’Al-‘ کا لام"
+  ],
+  "options_roman": [
+   "Zameer ki Haa (Haa Kinasayah)",
+   "Noon Sakinah",
+   "Meem Sakinah",
+   "'Al-' ka Laam"
+  ],
+  "explanation_ur": "مد صلہ ضمیر کی ہاء کو لمبا کرتا ہے جب وہ دو حرکات کے درمیان واقع ہو: عام طور پر دو حرکات، اور ہمزہ سے پہلے زیادہ لمبا ہوتا ہے۔",
+  "explanation_roman": "Madd Silah zameer ki Haa ko lamba karta hai jab woh do harkaat ke darmiyan waqe ho: aam tor par 2 harkaat, aur Hamzah se pehle zyada lamba hota hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1892,6 +2948,22 @@
  },
  {
   "id": "TAJ-067",
+  "question_ur": "مصحف میں وقف کی علامت جاء (ج) کا کیا مطلب ہے؟",
+  "question_roman": "Mushaf mein Waqf ki alamat Jaa (ج) ka kya matlab hai?",
+  "options_ur": [
+   "وقف نہ کریں",
+   "یہاں وقف کرنا جائز ہے",
+   "آپ کو وقف کرنا لازم ہے",
+   "سانس لیے بغیر رکیں"
+  ],
+  "options_roman": [
+   "Waqf na karein",
+   "Yahan waqf karna jaiz hai",
+   "Aap ko waqf karna lazim hai",
+   "Saans liye baghair rukein"
+  ],
+  "explanation_ur": "علامت جاء (ج) کا مطلب ہے کہ وقف کرنا جائز ہے، اور جاری رکھنا بھی ٹھیک ہے۔",
+  "explanation_roman": "Alamat Jaa (ج) ka matlab hai ke waqf karna jaiz hai, aur jaari rakhna bhi theek hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1922,6 +2994,22 @@
  },
  {
   "id": "TAJ-068",
+  "question_ur": "مصحف میں وقف کی علامت لا (لا) کا کیا مطلب ہے؟",
+  "question_roman": "Mushaf mein Waqf ki alamat Laa (لا) ka kya matlab hai?",
+  "options_ur": [
+   "یہاں وقف کریں",
+   "یہاں وقف نہ کریں",
+   "تھوڑی دیر رکیں",
+   "آواز کو کھینچیں"
+  ],
+  "options_roman": [
+   "Yahan waqf karein",
+   "Yahan waqf na karein",
+   "Thori der rukein",
+   "Aawaz ko khainchein"
+  ],
+  "explanation_ur": "علامت لا (لا) کا مطلب ہے کہ اس جگہ وقف نہ کریں، کیونکہ اس کے بعد آنے والے حصے کے بغیر معنی نامکمل ہے۔",
+  "explanation_roman": "Alamat Laa (لا) ka matlab hai ke is jagah waqf na karein, kyunke is ke baad aane wale hisse ke baghair matlab namukammal hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1952,6 +3040,22 @@
  },
  {
   "id": "TAJ-069",
+  "question_ur": "مصحف میں وقف کی علامت صلی (صلى) کا کیا مطلب ہے؟",
+  "question_roman": "Mushaf mein Waqf ki alamat Sali (صلى) ka kya matlab hai?",
+  "options_ur": [
+   "وقف کرنا بہتر ہے",
+   "جاری رکھنا بہتر ہے",
+   "وقف نہ کریں",
+   "سانس لیے بغیر رکیں"
+  ],
+  "options_roman": [
+   "Waqf karna behtar hai",
+   "Jaari rakhna behtar hai",
+   "Waqf na karein",
+   "Saans liye baghair rukein"
+  ],
+  "explanation_ur": "صلی (صلى) کا مطلب ہے کہ جاری رکھنا بہتر ہے، اگرچہ وقف کرنا جائز ہے۔ قلی (قلى) کا مطلب ہے کہ وقف کرنا بہتر ہے۔",
+  "explanation_roman": "Sali (صلى) ka matlab hai ke jaari rakhna behtar hai, agarcha waqf karna jaiz hai. Qali (قلى) ka matlab hai ke waqf karna behtar hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -1982,6 +3086,22 @@
  },
  {
   "id": "TAJ-070",
+  "question_ur": "کون سا وقف معنی اور گرامر دونوں میں مکمل ہے، اس لیے وہاں وقف کرنا بہترین ہے؟",
+  "question_roman": "Kaun sa Waqf matlab aur grammar dono mein mukammal hai, is liye wahan waqf karna behtareen hai?",
+  "options_ur": [
+   "وقف قبیح",
+   "وقف حسن",
+   "وقف تام",
+   "وقف کافی"
+  ],
+  "options_roman": [
+   "Waqf Qabeeh",
+   "Waqf Hasan",
+   "Waqf Taam",
+   "Waqf Kaafi"
+  ],
+  "explanation_ur": "وقف تام مکمل وقف ہے: معنی اور گرامر دونوں مکمل ہوتے ہیں۔ کافی کافی ہوتا ہے، حسن اچھا ہوتا ہے، اور قبیح برا وقف ہے جو معنی کو بگاڑ دیتا ہے۔",
+  "explanation_roman": "Waqf Taam mukammal waqf hai: matlab aur grammar dono mukammal hote hain. Kaafi kaafi hota hai, Hasan acha hota hai, aur Qabeeh bura waqf hai jo matlab ko bigaar deta hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2012,6 +3132,22 @@
  },
  {
   "id": "TAJ-071",
+  "question_ur": "حفظ کے نظام میں ’سبق‘ کیا ہے؟",
+  "question_roman": "Hifz ke nizam mein 'Sabq' kya hai?",
+  "options_ur": [
+   "پرانے حصوں کی دہرائی",
+   "ہر روز حفظ کیا جانے والا نیا سبق",
+   "کسی قاری کو سننا",
+   "آخری امتحان"
+  ],
+  "options_roman": [
+   "Purane hisson ki dohraai",
+   "Har roz hifz kiya jane wala naya sabq",
+   "Kisi Qari ko sunna",
+   "Aakhri imtihan"
+  ],
+  "explanation_ur": "سبق ہر روز حفظ کیا جانے والا نیا حصہ ہے۔ پھر اس کی دہرائی سبقی کے طور پر کی جاتی ہے، اور بعد میں آموختہ کے طور پر۔",
+  "explanation_roman": "Sabq har roz hifz kiya jane wala naya hissa hai. Phir is ki dohraai Sabqi ke tor par ki jati hai, aur baad mein Amukhta ke tor par.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2042,6 +3178,22 @@
  },
  {
   "id": "TAJ-072",
+  "question_ur": "حفظ کی مشق میں ’سبقی‘ کیا ہے؟",
+  "question_roman": "Hifz ki mashq mein 'Sabqi' kya hai?",
+  "options_ur": [
+   "نیا سبق",
+   "حال ہی میں حفظ کیے گئے حصوں کی دہرائی",
+   "استاد کے بغیر حفظ کرنا",
+   "دیکھے بغیر لکھنا"
+  ],
+  "options_roman": [
+   "Naya sabq",
+   "Haal hi mein hifz kiye gaye hisson ki dohraai",
+   "Ustad ke baghair hifz karna",
+   "Dekhe baghair likhna"
+  ],
+  "explanation_ur": "سبقی حال ہی میں حفظ کیے گئے حصوں کی دہرائی ہے، عام طور پر آخری چند اسباق، تاکہ وہ بھولنے سے پہلے پختہ ہو جائیں۔",
+  "explanation_roman": "Sabqi haal hi mein hifz kiye gaye hisson ki dohraai hai, aam tor par aakhri chand asbaaq, taake woh bhoolne se pehle pukhta ho jayein.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2072,6 +3224,22 @@
  },
  {
   "id": "TAJ-073",
+  "question_ur": "حفظ کی مشق میں ’آموختہ‘ کیا ہے؟",
+  "question_roman": "Hifz ki mashq mein 'Amukhta' kya hai?",
+  "options_ur": [
+   "نیا سبق",
+   "پرانے، عرصے سے حفظ کیے گئے حصوں کی دہرائی",
+   "تجوید کا ایک قاعدہ",
+   "تلاوت سننا"
+  ],
+  "options_roman": [
+   "Naya sabq",
+   "Purane, arse se hifz kiye gaye hisson ki dohraai",
+   "Tajweed ka ek qaida",
+   "Tilawat sunna"
+  ],
+  "explanation_ur": "آموختہ عرصہ پہلے حفظ کیے گئے پرانے حصوں کی دہرائی ہے۔ اس کے بغیر پرانا حفظ کمزور ہو جاتا ہے۔",
+  "explanation_roman": "Amukhta arsa pehle hifz kiye gaye purane hisson ki dohraai hai. Is ke baghair purana Hifz kamzor ho jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2102,6 +3270,22 @@
  },
  {
   "id": "TAJ-074",
+  "question_ur": "نئی آیت حفظ کرنے کا پہلا قدم کیا ہے؟",
+  "question_roman": "Nai aayat hifz karne ka pehla qadam kya hai?",
+  "options_ur": [
+   "اسے فوراً حفظ سے پڑھیں",
+   "صفحے کو دیکھتے ہوئے اسے کئی بار دہرائیں",
+   "دیکھے بغیر اسے لکھیں",
+   "ایک بار سنیں اور آگے بڑھ جائیں"
+  ],
+  "options_roman": [
+   "Ise fauran hifz se parhein",
+   "Safhe ko dekhte hue ise kai baar dohrayein",
+   "Dekhe baghair ise likhein",
+   "Ek baar sunein aur aage barh jayein"
+  ],
+  "explanation_ur": "نئی آیت کو دیکھتے ہوئے کئی بار دہرایا جاتا ہے، یہاں تک کہ زبان اسے جان لے، اور صرف اس کے بعد اسے حفظ سے پڑھا جاتا ہے۔",
+  "explanation_roman": "Nai aayat ko dekhte hue kai baar dohraya jata hai, yahan tak ke zabaan ise jaan le, aur sirf is ke baad ise hifz se parha jata hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2132,6 +3316,22 @@
  },
  {
   "id": "TAJ-075",
+  "question_ur": "کون سی عادت حفظ کیے گئے حصوں کو بھولنے سے سب سے زیادہ محفوظ رکھتی ہے؟",
+  "question_roman": "Kaun si aadat hifz kiye gaye hisson ko bhoolne se sab se zyada mehfooz rakhti hai?",
+  "options_ur": [
+   "ہر روز کئی نئے صفحات سیکھنا",
+   "پرانے حصوں کی باقاعدہ دہرائی",
+   "خاموشی سے حفظ کرنا",
+   "مصروف دنوں میں دہرائی چھوڑ دینا"
+  ],
+  "options_roman": [
+   "Har roz kai naye safhe seekhna",
+   "Purane hisson ki baqaida dohraai",
+   "Khamoshi se hifz karna",
+   "Masroof dinon mein dohraai chhor dena"
+  ],
+  "explanation_ur": "پرانے حصوں کی باقاعدہ دہرائی ہی حفظ کو مضبوط رکھتی ہے۔ دہرائی کے بغیر نئے اسباق جلد بھول جاتے ہیں۔",
+  "explanation_roman": "Purane hisson ki baqaida dohraai hi Hifz ko mazboot rakhti hai. Dohraai ke baghair naye asbaaq jald bhool jate hain.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2162,6 +3362,22 @@
  },
  {
   "id": "TAJ-076",
+  "question_ur": "کسی ماہر قاری کو سننا حفظ میں کس طرح مدد کرتا ہے؟",
+  "question_roman": "Kisi mahir Qari ko sunna Hifz mein kis tarah madad karta hai?",
+  "options_ur": [
+   "یہ دہرائی کی جگہ لے لیتا ہے",
+   "یہ کان کے ذریعے الفاظ اور تجوید کو یادداشت میں پختہ کرتا ہے",
+   "یہ نئے سبق کے طور پر شمار ہوتا ہے",
+   "یہ مصحف کو چھوٹا کر دیتا ہے"
+  ],
+  "options_roman": [
+   "Ye dohraai ki jagah le leta hai",
+   "Ye kaan ke zariye alfaz aur Tajweed ko yaaddasht mein pukhta karta hai",
+   "Ye naye sabq ke tor par shumaar hota hai",
+   "Ye Mushaf ko chhota kar deta hai"
+  ],
+  "explanation_ur": "سننے سے الفاظ اور ان کی درست تجوید دونوں یادداشت میں پختہ ہو جاتے ہیں۔ کان آنکھ اور زبان کی مدد کرتا ہے۔",
+  "explanation_roman": "Sunne se alfaz aur un ki durust Tajweed dono yaaddasht mein pukhta ho jate hain. Kaan aankh aur zabaan ki madad karta hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2192,6 +3408,22 @@
  },
  {
   "id": "TAJ-077",
+  "question_ur": "طالب علم کو حفظ کیے گئے حصے استاد کو کیوں سنانے چاہییں؟",
+  "question_roman": "Talib-e-ilm ko hifz kiye gaye hisse ustad ko kyun sunane chahiyein?",
+  "options_ur": [
+   "جلدی ختم کرنے کے لیے",
+   "تاکہ غلطیاں جلد پکڑی جائیں اور درست کر دی جائیں",
+   "دہرائی سے بچنے کے لیے",
+   "صرف نئے قواعد سیکھنے کے لیے"
+  ],
+  "options_roman": [
+   "Jaldi khatam karne ke liye",
+   "Taake ghaltiyan jald pakri jayein aur durust kar di jayein",
+   "Dohraai se bachne ke liye",
+   "Sirf naye qawaid seekhne ke liye"
+  ],
+  "explanation_ur": "استاد چھوٹی غلطیاں جلد پکڑ لیتا ہے۔ اکیلے حفظ کی گئی غلطیاں عادتیں بن جاتی ہیں جنہیں بعد میں درست کرنا مشکل ہوتا ہے۔",
+  "explanation_roman": "Ustad chhoti ghaltiyan jald pakar leta hai. Akele hifz ki gayi ghaltiyan aadatein ban jati hain jinhein baad mein durust karna mushkil hota hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2222,6 +3454,22 @@
  },
  {
   "id": "TAJ-078",
+  "question_ur": "حفظ کے اساتذہ ہر روز ایک ہی مصحف استعمال کرنے کا مشورہ کیوں دیتے ہیں؟",
+  "question_roman": "Hifz ke ustad har roz ek hi Mushaf istemal karne ka mashwara kyun dete hain?",
+  "options_ur": [
+   "دوسرے نسخے غلط ہوتے ہیں",
+   "ایک ہی صفحے کی ترتیب سے آیات کے مقام کی بصری یادداشت بنتی ہے",
+   "یہ اٹھانے میں ہلکا ہوتا ہے",
+   "اس کی چھپائی بڑی ہوتی ہے"
+  ],
+  "options_roman": [
+   "Doosre nuskhe ghalat hote hain",
+   "Ek hi safhe ki tarteeb se aayaat ke maqam ki basri yaaddasht banti hai",
+   "Ye uthane mein halka hota hai",
+   "Is ki chhapai bari hoti hai"
+  ],
+  "explanation_ur": "ایک مصحف استعمال کرنے سے بصری یادداشت بنتی ہے: طالب علم کو یاد رہتا ہے کہ ہر آیت صفحے پر کہاں واقع ہے۔",
+  "explanation_roman": "Ek Mushaf istemal karne se basri yaaddasht banti hai: talib-e-ilm ko yaad rehta hai ke har aayat safhe par kahan waqe hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2252,6 +3500,22 @@
  },
  {
   "id": "TAJ-079",
+  "question_ur": "آیات کا معنی سمجھنا حفظ میں کس طرح مدد کرتا ہے؟",
+  "question_roman": "Aayaat ka matlab samajhna Hifz mein kis tarah madad karta hai?",
+  "options_ur": [
+   "یہ دہرائی کی جگہ لے لیتا ہے",
+   "یہ یادداشت کو سہارے دیتا ہے، اس لیے آیات کو یاد کرنا اور جوڑنا آسان ہو جاتا ہے",
+   "یہ استاد کی ضرورت ختم کر دیتا ہے",
+   "یہ دہرائی کا وقت صفر کر دیتا ہے"
+  ],
+  "options_roman": [
+   "Ye dohraai ki jagah le leta hai",
+   "Ye yaaddasht ko sahare deta hai, is liye aayaat ko yaad karna aur jorna aasan ho jata hai",
+   "Ye ustad ki zaroorat khatam kar deta hai",
+   "Ye dohraai ka waqt zero kar deta hai"
+  ],
+  "explanation_ur": "معنی جاننے سے یادداشت کو آیات یاد کرنے اور جوڑنے کے لیے سہارے ملتے ہیں۔ سمجھ حفظ میں مدد کرتی ہے لیکن دہرائی کی جگہ نہیں لے سکتی۔",
+  "explanation_roman": "Matlab janne se yaaddasht ko aayaat yaad karne aur jorne ke liye sahare milte hain. Samajh hifz mein madad karti hai lekin dohraai ki jagah nahi le sakti.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2282,6 +3546,22 @@
  },
  {
   "id": "TAJ-080",
+  "question_ur": "کون سا طریقہ وقت کے ساتھ مضبوط حفظ بناتا ہے؟",
+  "question_roman": "Kaun sa tareeqa waqt ke saath mazboot Hifz banata hai?",
+  "options_ur": [
+   "ہفتے میں ایک بار بڑا حصہ",
+   "بغیر ناغہ کے ہر روز تھوڑا سا حصہ",
+   "صرف امتحانات سے پہلے دہرائی کرنا",
+   "صرف آسان سورتیں حفظ کرنا"
+  ],
+  "options_roman": [
+   "Hafte mein ek baar bara hissa",
+   "Baghair naghe ke har roz thora sa hissa",
+   "Sirf imtihanat se pehle dohraai karna",
+   "Sirf aasan Suratein hifz karna"
+  ],
+  "explanation_ur": "بغیر ناغہ کے روزانہ تھوڑا سا حصہ، بڑی بے قاعدہ کوششوں سے زیادہ مضبوط حفظ بناتا ہے۔ تسلسل مقدار سے بہتر ہے۔",
+  "explanation_roman": "Baghair naghe ke rozana thora sa hissa, bari be-qaida koshishon se zyada mazboot Hifz banata hai. Tasalsul miqdaar se behtar hai.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2312,6 +3592,22 @@
  },
  {
   "id": "TAJ-081",
+  "question_ur": "حفظ کی مشق میں ’linking‘ (جوڑنا) کا کیا مطلب ہے؟",
+  "question_roman": "Hifz ki mashq mein 'linking' ka kya matlab hai?",
+  "options_ur": [
+   "دو مصحف جوڑنا",
+   "تلاوت کرتے ہوئے ایک آیت کے آخر کو اگلی آیت کے شروع سے جوڑنا",
+   "ایک ساتھ دو قاریوں کو سننا",
+   "دو صفحے ایک ساتھ لکھنا"
+  ],
+  "options_roman": [
+   "Do Mushaf jorna",
+   "Tilawat karte hue ek aayat ke aakhir ko agli aayat ke shuru se jorna",
+   "Ek saath do Qariyon ko sunna",
+   "Do safhe ek saath likhna"
+  ],
+  "explanation_ur": "جوڑنے (linking) کا مطلب ہے آیات کے درمیان جوڑ کی مشق کرنا، تاکہ تلاوت ایک آیت سے اگلی آیت میں بغیر رکے رواں رہے۔",
+  "explanation_roman": "Linking ka matlab hai aayaat ke darmiyan jor ki mashq karna, taake tilawat ek aayat se agli aayat mein baghair ruke rawan rahe.",
   "post": [
    "zamungkor-qari",
    "qari"
@@ -2342,6 +3638,22 @@
  },
  {
   "id": "TAJ-082",
+  "question_ur": "حفظ کرتے وقت بلند آواز سے پڑھنے کی سفارش کیوں کی جاتی ہے؟",
+  "question_roman": "Hifz karte waqt buland aawaz se parhne ki sifarish kyun ki jati hai?",
+  "options_ur": [
+   "یہ خاموش پڑھنے سے تیز ہوتا ہے",
+   "الفاظ بولنے سے زبان اور کان متحرک ہوتے ہیں، جو انہیں زیادہ مضبوطی سے پختہ کرتے ہیں",
+   "اس کے لیے مصحف کی ضرورت نہیں ہوتی",
+   "یہ سننے والوں کو متاثر کرتا ہے"
+  ],
+  "options_roman": [
+   "Ye khamosh parhne se tez hota hai",
+   "Alfaz bolne se zabaan aur kaan mutaharik hote hain, jo inhein zyada mazbooti se pukhta karte hain",
+   "Is ke liye Mushaf ki zaroorat nahi hoti",
+   "Ye sunne walon ko mutasir karta hai"
+  ],
+  "explanation_ur": "بلند آواز سے پڑھنے سے زبان اور کان ایک ساتھ متحرک ہوتے ہیں، جو الفاظ کو خاموش پڑھنے سے زیادہ مضبوطی سے پختہ کرتا ہے۔",
+  "explanation_roman": "Buland aawaz se parhne se zabaan aur kaan ek saath mutaharik hote hain, jo alfaz ko khamosh parhne se zyada mazbooti se pukhta karta hai.",
   "post": [
    "zamungkor-qari",
    "qari"

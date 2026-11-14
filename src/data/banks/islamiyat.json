@@ -1,6 +1,22 @@
 [
  {
   "id": "ISL-001",
+  "question_ur": "قرآن پاک میں کل کتنی سورتیں ہیں؟",
+  "question_roman": "Quran Pak mein kul kitni Suratein hain?",
+  "options_ur": [
+   "110",
+   "112",
+   "114",
+   "116"
+  ],
+  "options_roman": [
+   "110",
+   "112",
+   "114",
+   "116"
+  ],
+  "explanation_ur": "قرآن پاک میں 114 سورتیں ہیں۔",
+  "explanation_roman": "The Holy Quran has 114 Surahs. Quran mein kul 114 Suratein hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -36,6 +52,22 @@
  },
  {
   "id": "ISL-002",
+  "question_ur": "قرآن پاک میں کتنے پارے (جز) ہیں؟",
+  "question_roman": "Quran Pak mein kitne Paray (Juz) hain?",
+  "options_ur": [
+   "28",
+   "29",
+   "30",
+   "33"
+  ],
+  "options_roman": [
+   "28",
+   "29",
+   "30",
+   "33"
+  ],
+  "explanation_ur": "قرآن پاک 30 پاروں میں تقسیم ہے۔",
+  "explanation_roman": "The Quran is divided into 30 Parahs. Quran 30 Paron mein taqseem hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -68,6 +100,22 @@
  },
  {
   "id": "ISL-003",
+  "question_ur": "قرآن پاک کی پہلی سورت کون سی ہے؟",
+  "question_roman": "Quran Pak ki pehli Surah kaun si hai?",
+  "options_ur": [
+   "البقرہ",
+   "الفاتحہ",
+   "الاخلاص",
+   "الناس"
+  ],
+  "options_roman": [
+   "Al-Baqarah",
+   "Al-Fatiha",
+   "Al-Ikhlas",
+   "An-Nas"
+  ],
+  "explanation_ur": "پہلی سورت سورہ الفاتحہ ہے۔",
+  "explanation_roman": "Al-Fatiha is the first Surah. Pehli Surah Al-Fatiha hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -100,6 +148,22 @@
  },
  {
   "id": "ISL-004",
+  "question_ur": "قرآن پاک کی آخری سورت کون سی ہے؟",
+  "question_roman": "Quran Pak ki aakhri Surah kaun si hai?",
+  "options_ur": [
+   "الفلق",
+   "الاخلاص",
+   "الکوثر",
+   "الناس"
+  ],
+  "options_roman": [
+   "Al-Falaq",
+   "Al-Ikhlas",
+   "Al-Kausar",
+   "An-Nas"
+  ],
+  "explanation_ur": "آخری سورت سورہ الناس ہے۔",
+  "explanation_roman": "An-Nas is the last Surah. Aakhri Surah An-Nas hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -132,6 +196,22 @@
  },
  {
   "id": "ISL-005",
+  "question_ur": "قرآن پاک کی سب سے لمبی سورت کون سی ہے؟",
+  "question_roman": "Quran Pak ki sab se lambi Surah kaun si hai?",
+  "options_ur": [
+   "آل عمران",
+   "البقرہ",
+   "النساء",
+   "المائدہ"
+  ],
+  "options_roman": [
+   "Al-Imran",
+   "Al-Baqarah",
+   "An-Nisa",
+   "Al-Maidah"
+  ],
+  "explanation_ur": "سب سے لمبی سورت سورہ البقرہ ہے۔",
+  "explanation_roman": "Al-Baqarah is the longest Surah. Sab se lambi Surah Al-Baqarah hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -164,6 +244,22 @@
  },
  {
   "id": "ISL-006",
+  "question_ur": "قرآن پاک کی سب سے چھوٹی سورت کون سی ہے؟",
+  "question_roman": "Quran Pak ki sab se chhoti Surah kaun si hai?",
+  "options_ur": [
+   "العصر",
+   "الاخلاص",
+   "الکوثر",
+   "النصر"
+  ],
+  "options_roman": [
+   "Al-Asr",
+   "Al-Ikhlas",
+   "Al-Kausar",
+   "An-Nasr"
+  ],
+  "explanation_ur": "سب سے چھوٹی سورت سورہ الکوثر ہے، جس میں 3 آیات ہیں۔",
+  "explanation_roman": "Al-Kausar is the shortest Surah, with 3 verses. Sab se chhoti Surah Al-Kausar hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -196,6 +292,22 @@
  },
  {
   "id": "ISL-007",
+  "question_ur": "قرآن پاک کا دل کس سورت کو کہا جاتا ہے؟",
+  "question_roman": "Quran Pak ka Dil kis Surah ko kaha jata hai?",
+  "options_ur": [
+   "الرحمن",
+   "یٰسین",
+   "الملک",
+   "الکہف"
+  ],
+  "options_roman": [
+   "Al-Rahman",
+   "Yasin",
+   "Al-Mulk",
+   "Al-Kahf"
+  ],
+  "explanation_ur": "سورہ یٰسین کو قرآن کا دل کہا جاتا ہے۔",
+  "explanation_roman": "Surah Yasin is called the Heart of the Quran. Surah Yasin ko Quran ka Dil kaha jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -228,6 +340,22 @@
  },
  {
   "id": "ISL-008",
+  "question_ur": "کس سورت کو ام الکتاب (کتاب کی ماں) کہا جاتا ہے؟",
+  "question_roman": "Kis Surah ko Umm-ul-Kitab (Kitab ki Maa) kaha jata hai?",
+  "options_ur": [
+   "الفاتحہ",
+   "البقرہ",
+   "الاخلاص",
+   "الرحمن"
+  ],
+  "options_roman": [
+   "Al-Fatiha",
+   "Al-Baqarah",
+   "Al-Ikhlas",
+   "Al-Rahman"
+  ],
+  "explanation_ur": "سورہ الفاتحہ کو ام الکتاب کہا جاتا ہے۔",
+  "explanation_roman": "Al-Fatiha is called Umm-ul-Kitab. Al-Fatiha ko Umm-ul-Kitab kaha jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -260,6 +388,22 @@
  },
  {
   "id": "ISL-009",
+  "question_ur": "کون سی سورت بسم اللہ سے شروع نہیں ہوتی؟",
+  "question_roman": "Kaun si Surah Bismillah se shuru nahi hoti?",
+  "options_ur": [
+   "الانفال",
+   "التوبہ",
+   "الحج",
+   "النحل"
+  ],
+  "options_roman": [
+   "Al-Anfal",
+   "Al-Taubah",
+   "Al-Hajj",
+   "Al-Nahl"
+  ],
+  "explanation_ur": "سورہ التوبہ کے شروع میں بسم اللہ نہیں ہے۔",
+  "explanation_roman": "Surah At-Taubah does not begin with Bismillah. Surah Taubah ke shuru mein Bismillah nahi hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -292,6 +436,22 @@
  },
  {
   "id": "ISL-010",
+  "question_ur": "قرآن پاک میں مجموعی طور پر لفظ بسم اللہ کتنی مرتبہ آیا ہے؟",
+  "question_roman": "Quran Pak mein majmooi tor par lafz Bismillah kitni martaba aaya hai?",
+  "options_ur": [
+   "113",
+   "114",
+   "115",
+   "116"
+  ],
+  "options_roman": [
+   "113",
+   "114",
+   "115",
+   "116"
+  ],
+  "explanation_ur": "بسم اللہ مجموعی طور پر 114 مرتبہ آیا ہے، بشمول سورہ النمل کے اندر ایک مرتبہ۔",
+  "explanation_roman": "Bismillah appears 114 times in total, including once inside Surah An-Naml. Kul 114 martaba Bismillah aayi hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -324,6 +484,22 @@
  },
  {
   "id": "ISL-011",
+  "question_ur": "قرآن پاک کی سب سے پہلے نازل ہونے والی آیات کون سی تھیں؟",
+  "question_roman": "Quran Pak ki sab se pehle nazil hone wali Ayaat kaun si thin?",
+  "options_ur": [
+   "سورہ الفاتحہ",
+   "اقرا (سورہ العلق)",
+   "سورہ النصر",
+   "سورہ الاخلاص"
+  ],
+  "options_roman": [
+   "Surah Al-Fatiha",
+   "Iqra (Surah Al-Alaq)",
+   "Surah An-Nasr",
+   "Surah Al-Ikhlas"
+  ],
+  "explanation_ur": "پہلی وحی 'اقرا' تھی، جو سورہ العلق سے ہے۔",
+  "explanation_roman": "The first revelation was 'Iqra' from Surah Al-Alaq. Pehli Wahi 'Iqra' thi, Surah Al-Alaq se.",
   "post": [
    "zamungkor",
    "tt",
@@ -356,6 +532,22 @@
  },
  {
   "id": "ISL-012",
+  "question_ur": "قرآن پاک کتنے سالوں میں نازل ہوا؟",
+  "question_roman": "Quran Pak kitne saalon mein nazil hua?",
+  "options_ur": [
+   "20 سال",
+   "21 سال",
+   "23 سال",
+   "25 سال"
+  ],
+  "options_roman": [
+   "20 saal",
+   "21 saal",
+   "23 saal",
+   "25 saal"
+  ],
+  "explanation_ur": "قرآن پاک 23 سال میں نازل ہوا۔",
+  "explanation_roman": "The Quran was revealed over 23 years. Quran 23 saal mein nazil hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -388,6 +580,22 @@
  },
  {
   "id": "ISL-013",
+  "question_ur": "معیاری پاکستانی نصابی کتب کے مطابق قرآن پاک میں مکی سورتیں کتنی ہیں؟",
+  "question_roman": "Mayari Pakistani nisabi kutub ke mutabiq Quran Pak mein Makki Suratein kitni hain?",
+  "options_ur": [
+   "82",
+   "84",
+   "86",
+   "88"
+  ],
+  "options_roman": [
+   "82",
+   "84",
+   "86",
+   "88"
+  ],
+  "explanation_ur": "مکی سورتیں 86 ہیں جو ہجرت سے پہلے نازل ہوئیں۔",
+  "explanation_roman": "There are 86 Makki Surahs revealed before Hijrat. Makki Suratein 86 hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -420,6 +628,22 @@
  },
  {
   "id": "ISL-014",
+  "question_ur": "قرآن پاک میں مدنی سورتیں کتنی ہیں؟",
+  "question_roman": "Quran Pak mein Madani Suratein kitni hain?",
+  "options_ur": [
+   "26",
+   "28",
+   "30",
+   "32"
+  ],
+  "options_roman": [
+   "26",
+   "28",
+   "30",
+   "32"
+  ],
+  "explanation_ur": "مدنی سورتیں 28 ہیں جو ہجرت کے بعد نازل ہوئیں۔",
+  "explanation_roman": "There are 28 Madani Surahs revealed after Hijrat. Madani Suratein 28 hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -452,6 +676,22 @@
  },
  {
   "id": "ISL-015",
+  "question_ur": "قرآن پاک سب سے پہلے کس مہینے میں نازل ہوا؟",
+  "question_roman": "Quran Pak sab se pehle kis mahine mein nazil hua?",
+  "options_ur": [
+   "شوال",
+   "رمضان",
+   "محرم",
+   "ذوالحجہ"
+  ],
+  "options_roman": [
+   "Shawwal",
+   "Ramadan",
+   "Muharram",
+   "Zil Hajj"
+  ],
+  "explanation_ur": "قرآن پاک رمضان میں نازل ہونا شروع ہوا۔",
+  "explanation_roman": "The Quran was first revealed in Ramadan. Quran Ramadan mein nazil hona shuru hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -484,6 +724,22 @@
  },
  {
   "id": "ISL-016",
+  "question_ur": "قرآن پاک سب سے پہلے کس رات نازل ہوا؟",
+  "question_roman": "Quran Pak sab se pehle kis raat nazil hua?",
+  "options_ur": [
+   "شب برات",
+   "لیلۃ القدر",
+   "شب معراج",
+   "لیلۃ الجمعہ"
+  ],
+  "options_roman": [
+   "Shab-e-Barat",
+   "Laylatul Qadr",
+   "Shab-e-Miraj",
+   "Laylatul Jumuah"
+  ],
+  "explanation_ur": "پہلی وحی لیلۃ القدر میں آئی۔",
+  "explanation_roman": "The first revelation was on Laylatul Qadr. Pehli Wahi Laylatul Qadr mein aayi.",
   "post": [
    "zamungkor",
    "tt",
@@ -516,6 +772,22 @@
  },
  {
   "id": "ISL-017",
+  "question_ur": "آیت الکرسی کس سورت میں ہے؟",
+  "question_roman": "Ayat-ul-Kursi kis Surah mein hai?",
+  "options_ur": [
+   "آل عمران",
+   "البقرہ",
+   "النساء",
+   "المائدہ"
+  ],
+  "options_roman": [
+   "Al-Imran",
+   "Al-Baqarah",
+   "An-Nisa",
+   "Al-Maidah"
+  ],
+  "explanation_ur": "آیت الکرسی سورہ البقرہ میں ہے۔",
+  "explanation_roman": "Ayat-ul-Kursi is in Surah Al-Baqarah. Ayat-ul-Kursi Surah Al-Baqarah mein hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -548,6 +820,22 @@
  },
  {
   "id": "ISL-018",
+  "question_ur": "قرآن پاک کی دلہن کس سورت کو کہا جاتا ہے؟",
+  "question_roman": "Quran Pak ki Dulhan kis Surah ko kaha jata hai?",
+  "options_ur": [
+   "الرحمن",
+   "الملک",
+   "الواقعہ",
+   "الحدید"
+  ],
+  "options_roman": [
+   "Al-Rahman",
+   "Al-Mulk",
+   "Al-Waqiah",
+   "Al-Hadid"
+  ],
+  "explanation_ur": "سورہ الرحمن کو قرآن کی دلہن کہا جاتا ہے۔",
+  "explanation_roman": "Surah Ar-Rahman is called the Bride of the Quran. Surah Rahman ko Quran ki Dulhan kaha jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -580,6 +868,22 @@
  },
  {
   "id": "ISL-019",
+  "question_ur": "سورہ الاخلاص کی تلاوت ثواب میں قرآن پاک کے کس حصے کی تلاوت کے برابر ہے؟",
+  "question_roman": "Surah Al-Ikhlas ki tilawat sawab mein Quran Pak ke kis hisse ki tilawat ke barabar hai?",
+  "options_ur": [
+   "ایک چوتھائی",
+   "ایک تہائی",
+   "ایک نصف",
+   "ایک دسواں حصہ"
+  ],
+  "options_roman": [
+   "Aik chauthai",
+   "Aik tihai",
+   "Aik nisf",
+   "Aik daswan hissa"
+  ],
+  "explanation_ur": "سورہ الاخلاص ثواب میں قرآن کے ایک تہائی حصے کے برابر ہے۔",
+  "explanation_roman": "Surah Al-Ikhlas equals one third of the Quran in reward. Surah Ikhlas aik tihai Quran ke barabar hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -612,6 +916,22 @@
  },
  {
   "id": "ISL-020",
+  "question_ur": "سب سے آخر میں نازل ہونے والی مکمل سورت کون سی تھی؟",
+  "question_roman": "Sab se aakhir mein nazil hone wali mukammal Surah kaun si thi?",
+  "options_ur": [
+   "النصر",
+   "الفاتحہ",
+   "الکوثر",
+   "الماعون"
+  ],
+  "options_roman": [
+   "An-Nasr",
+   "Al-Fatiha",
+   "Al-Kausar",
+   "Al-Maun"
+  ],
+  "explanation_ur": "آخری مکمل سورت سورہ النصر نازل ہوئی۔",
+  "explanation_roman": "Surah An-Nasr was the last complete Surah revealed. Aakhri mukammal Surah An-Nasr nazil hui.",
   "post": [
    "zamungkor",
    "tt",
@@ -644,6 +964,22 @@
  },
  {
   "id": "ISL-021",
+  "question_ur": "قرآن پاک کا 30واں پارہ کس نام سے بھی جانا جاتا ہے؟",
+  "question_roman": "Quran Pak ka 30wan Parah kis naam se bhi jana jata hai?",
+  "options_ur": [
+   "جز عمّ",
+   "جز تبارک",
+   "جز قد سمع",
+   "جز الم تر"
+  ],
+  "options_roman": [
+   "Juz Amma",
+   "Juz Tabarak",
+   "Juz Qad Sami",
+   "Juz Alam Tara"
+  ],
+  "explanation_ur": "30ویں پارے کو جز عمّ کہتے ہیں۔",
+  "explanation_roman": "The 30th Parah is called Juz Amma. Teeswein Pare ko Juz Amma kehte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -676,6 +1012,22 @@
  },
  {
   "id": "ISL-022",
+  "question_ur": "حضرت ابو بکرؓ کے دور میں قرآن پاک کی تدوین کے لیے بنائی گئی کمیٹی کی سربراہی کس نے کی؟",
+  "question_roman": "Hazrat Abu Bakr (RA) ke daur mein Quran Pak ki tadveen ke liye banayi gayi committee ki sarbarahi kis ne ki?",
+  "options_ur": [
+   "حضرت عمرؓ",
+   "حضرت عثمانؓ",
+   "زید بن ثابتؓ",
+   "حضرت علیؓ"
+  ],
+  "options_roman": [
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)",
+   "Zaid bin Sabit (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "explanation_ur": "زید بن ثابتؓ نے تدوین کے کام کی سربراہی کی۔",
+  "explanation_roman": "Zaid bin Sabit (RA) headed the compilation work. Zaid bin Sabit (RA) ne tadveen ki sarbarahi ki.",
   "post": [
    "zamungkor",
    "tt",
@@ -708,6 +1060,22 @@
  },
  {
   "id": "ISL-023",
+  "question_ur": "قرآن پاک کے نسخوں کو معیاری شکل دے کر مختلف علاقوں میں کس نے بھیجا؟",
+  "question_roman": "Quran Pak ke nuskhon ko mayari shakal de kar mukhtalif ilaqon mein kis ne bheja?",
+  "options_ur": [
+   "حضرت ابو بکرؓ",
+   "حضرت عمرؓ",
+   "حضرت عثمانؓ",
+   "حضرت علیؓ"
+  ],
+  "options_roman": [
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "explanation_ur": "حضرت عثمانؓ نے قرآن کے نسخے معیاری کیے۔",
+  "explanation_roman": "Hazrat Usman (RA) standardized the Quranic text. Hazrat Usman (RA) ne Quran ke nuskhe standard kiye.",
   "post": [
    "zamungkor",
    "tt",
@@ -740,6 +1108,22 @@
  },
  {
   "id": "ISL-024",
+  "question_ur": "قرآن پاک کے پہلے حافظ کون تھے؟",
+  "question_roman": "Quran Pak ke pehle Hafiz kaun the?",
+  "options_ur": [
+   "حضرت ابو بکرؓ",
+   "حضرت زید بن ثابتؓ",
+   "حضرت محمد ﷺ",
+   "حضرت علیؓ"
+  ],
+  "options_roman": [
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Zaid bin Sabit (RA)",
+   "Prophet Muhammad (SAW)",
+   "Hazrat Ali (RA)"
+  ],
+  "explanation_ur": "پہلے حافظ قرآن حضرت محمد ﷺ تھے۔",
+  "explanation_roman": "Prophet Muhammad (SAW) was the first Hafiz of the Quran. Pehle Hafiz-e-Quran Hazrat Muhammad (SAW) the.",
   "post": [
    "zamungkor",
    "tt",
@@ -772,6 +1156,22 @@
  },
  {
   "id": "ISL-025",
+  "question_ur": "قرآن پاک کا دل کس سورت کو کہا جاتا ہے؟",
+  "question_roman": "Quran Pak ka dil kis Surah ko kaha jata hai?",
+  "options_ur": [
+   "سورہ یٰسین",
+   "سورہ الرحمن",
+   "سورہ الملک",
+   "سورہ الفاتحہ"
+  ],
+  "options_roman": [
+   "Surah Yaseen",
+   "Surah Ar-Rahman",
+   "Surah Al-Mulk",
+   "Surah Al-Fatiha"
+  ],
+  "explanation_ur": "سورہ یٰسین کو قرآن پاک کا دل کہا جاتا ہے۔",
+  "explanation_roman": "Surah Yaseen is known as the heart of the Holy Quran. Surah Yaseen ko Quran ka dil kaha jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -804,6 +1204,22 @@
  },
  {
   "id": "ISL-026",
+  "question_ur": "کس سورت کو ام القرآن (قرآن کی ماں) کہا جاتا ہے؟",
+  "question_roman": "Kis Surah ko Umm-ul-Quran (Quran ki Maa) kaha jata hai?",
+  "options_ur": [
+   "سورہ الفاتحہ",
+   "سورہ البقرہ",
+   "سورہ یٰسین",
+   "سورہ الاخلاص"
+  ],
+  "options_roman": [
+   "Surah Al-Fatiha",
+   "Surah Al-Baqarah",
+   "Surah Yaseen",
+   "Surah Al-Ikhlas"
+  ],
+  "explanation_ur": "سورہ الفاتحہ کو ام القرآن کہا جاتا ہے، یعنی قرآن کی ماں۔",
+  "explanation_roman": "Surah Al-Fatiha is called Umm-ul-Quran, the Mother of the Quran. Surah Al-Fatiha ko Umm-ul-Quran kaha jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -836,6 +1252,22 @@
  },
  {
   "id": "ISL-027",
+  "question_ur": "حضرت محمد ﷺ کے پاس وحی کون سے فرشتے لے کر آئے؟",
+  "question_roman": "Hazrat Muhammad (SAW) ke paas wahi kaun se farishte le kar aaye?",
+  "options_ur": [
+   "حضرت جبرئیل علیہ السلام",
+   "حضرت میکائیل علیہ السلام",
+   "حضرت اسرافیل علیہ السلام",
+   "حضرت عزرائیل علیہ السلام"
+  ],
+  "options_roman": [
+   "Hazrat Jibreel (AS)",
+   "Hazrat Mikael (AS)",
+   "Hazrat Israfeel (AS)",
+   "Hazrat Izraeel (AS)"
+  ],
+  "explanation_ur": "حضرت جبرئیل علیہ السلام نبی کریم ﷺ کے پاس وحی لے کر آتے تھے۔",
+  "explanation_roman": "Hazrat Jibreel (AS) brought the revelation to the Prophet (SAW). Wahi Hazrat Jibreel (AS) le kar aate thay.",
   "post": [
    "zamungkor",
    "tt",
@@ -868,6 +1300,22 @@
  },
  {
   "id": "ISL-028",
+  "question_ur": "کس سورۃ میں بسم اللہ دو مرتبہ آئی ہے، ایک مرتبہ شروع میں اور ایک مرتبہ متن کے اندر؟",
+  "question_roman": "Kis Surah mein Bismillah do martaba aayi hai, ek martaba shuru mein aur ek martaba matn ke andar?",
+  "options_ur": [
+   "البقرہ",
+   "النمل",
+   "الکہف",
+   "الرحمن"
+  ],
+  "options_roman": [
+   "Al-Baqarah",
+   "An-Naml",
+   "Al-Kahf",
+   "Al-Rahman"
+  ],
+  "explanation_ur": "سورۃ النمل میں بسم اللہ حضرت سلیمان علیہ السلام کے خط میں بھی آئی ہے۔ سورۃ النمل میں بسم اللہ دو مرتبہ ہے۔",
+  "explanation_roman": "In Surah An-Naml Bismillah appears in the letter of Hazrat Sulaiman (AS) as well. Surah Naml mein Bismillah do martaba hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -900,6 +1348,22 @@
  },
  {
   "id": "ISL-029",
+  "question_ur": "مکی سورتیں وہ ہیں جو مکہ میں کس واقعے سے پہلے نازل ہوئیں؟",
+  "question_roman": "Makki Suratein woh hain jo Makkah mein kis waqiye se pehle nazil huin?",
+  "options_ur": [
+   "غزوہ بدر",
+   "ہجرت مدینہ",
+   "فتح مکہ",
+   "حجۃ الوداع"
+  ],
+  "options_roman": [
+   "Ghazwa Badr",
+   "Madinah ki taraf Hijrat",
+   "Fatah Makkah",
+   "Hajjatul Wida"
+  ],
+  "explanation_ur": "مکی سورتیں ہجرت سے پہلے نازل ہوئیں۔",
+  "explanation_roman": "Makki Surahs were revealed before the Hijrat. Makki Suratein Hijrat se pehle nazil huin.",
   "post": [
    "zamungkor",
    "tt",
@@ -935,6 +1399,22 @@
  },
  {
   "id": "ISL-030",
+  "question_ur": "جمعہ کے دن کون سی سورۃ پڑھنے کی سفارش کی گئی ہے؟",
+  "question_roman": "Jummah ke din kaun si Surah parhne ki sifarish ki gayi hai?",
+  "options_ur": [
+   "الکہف",
+   "الملک",
+   "الواقعہ",
+   "یاسین"
+  ],
+  "options_roman": [
+   "Al-Kahf",
+   "Al-Mulk",
+   "Al-Waqiah",
+   "Al-Yasin"
+  ],
+  "explanation_ur": "جمعہ کے دن سورۃ الکہف پڑھنا مستحب ہے۔",
+  "explanation_roman": "Surah Al-Kahf is recommended on Friday. Jummah ke din Surah Kahf parhna mustahab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -967,6 +1447,22 @@
  },
  {
   "id": "ISL-031",
+  "question_ur": "صحاح ستہ میں کتنی کتابیں ہیں؟",
+  "question_roman": "Sihah Sitta mein kitni kitabein hain?",
+  "options_ur": [
+   "چار",
+   "پانچ",
+   "چھ",
+   "سات"
+  ],
+  "options_roman": [
+   "Chaar",
+   "Paanch",
+   "Chhe",
+   "Saat"
+  ],
+  "explanation_ur": "صحاح ستہ سے مراد حدیث کی چھ مستند کتابیں ہیں۔ صحاح ستہ میں چھ کتابیں ہیں۔",
+  "explanation_roman": "Sihah Sitta means the six authentic books of Hadith. Sihah Sitta mein chhe kitabein hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -999,6 +1495,22 @@
  },
  {
   "id": "ISL-032",
+  "question_ur": "قرآن مجید کے بعد حدیث کی سب سے زیادہ مستند کتاب کون سی ہے؟",
+  "question_roman": "Quran Majeed ke baad Hadith ki sab se ziyada mustanad kitab kaun si hai?",
+  "options_ur": [
+   "صحیح مسلم",
+   "سنن ابو داؤد",
+   "صحیح بخاری",
+   "جامع ترمذی"
+  ],
+  "options_roman": [
+   "Sahih Muslim",
+   "Sunan Abu Dawood",
+   "Sahih Bukhari",
+   "Jami Tirmidhi"
+  ],
+  "explanation_ur": "صحیح بخاری کو حدیث کی سب سے زیادہ مستند کتاب سمجھا جاتا ہے۔ صحیح بخاری سب سے مستند کتاب ہے۔",
+  "explanation_roman": "Sahih Bukhari is considered the most authentic Hadith book. Sahih Bukhari sab se mustanad kitab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1031,6 +1543,22 @@
  },
  {
   "id": "ISL-033",
+  "question_ur": "صحیح بخاری کے مصنف کون ہیں؟",
+  "question_roman": "Sahih Bukhari ke musannif kaun hain?",
+  "options_ur": [
+   "امام مسلم",
+   "امام بخاری",
+   "امام ترمذی",
+   "امام نسائی"
+  ],
+  "options_roman": [
+   "Imam Muslim",
+   "Imam Bukhari",
+   "Imam Tirmidhi",
+   "Imam Nasai"
+  ],
+  "explanation_ur": "صحیح بخاری امام محمد بن اسماعیل البخاری نے لکھی تھی۔ صحیح بخاری امام بخاری کی کتاب ہے۔",
+  "explanation_roman": "Sahih Bukhari was written by Imam Muhammad ibn Ismail al-Bukhari. Sahih Bukhari Imam Bukhari ki kitab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1063,6 +1591,22 @@
  },
  {
   "id": "ISL-034",
+  "question_ur": "صحیح مسلم کے مصنف کون ہیں؟",
+  "question_roman": "Sahih Muslim ke musannif kaun hain?",
+  "options_ur": [
+   "امام بخاری",
+   "امام مسلم بن الحجاج",
+   "امام ابو داؤد",
+   "امام ابن ماجہ"
+  ],
+  "options_roman": [
+   "Imam Bukhari",
+   "Imam Muslim ibn al-Hajjaj",
+   "Imam Abu Dawood",
+   "Imam Ibn Majah"
+  ],
+  "explanation_ur": "صحیح مسلم امام مسلم بن الحجاج نے لکھی تھی۔ صحیح مسلم امام مسلم کی کتاب ہے۔",
+  "explanation_roman": "Sahih Muslim was written by Imam Muslim ibn al-Hajjaj. Sahih Muslim Imam Muslim ki kitab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1095,6 +1639,22 @@
  },
  {
   "id": "ISL-035",
+  "question_ur": "مندرجہ ذیل میں سے کون سی کتاب صحاح ستہ میں شامل نہیں ہے؟",
+  "question_roman": "Mandrajah zail mein se kaun si kitab Sihah Sitta mein shamil nahi hai?",
+  "options_ur": [
+   "صحیح بخاری",
+   "سنن ابن ماجہ",
+   "موطا امام مالک",
+   "سنن نسائی"
+  ],
+  "options_roman": [
+   "Sahih Bukhari",
+   "Sunan Ibn Majah",
+   "Muwatta Imam Malik",
+   "Sunan Nasai"
+  ],
+  "explanation_ur": "موطا امام مالک ایک مشہور قدیم کتاب ہے لیکن صحاح ستہ کا حصہ نہیں ہے۔ موطا صحاح ستہ میں شامل نہیں ہے۔",
+  "explanation_roman": "Muwatta Imam Malik is a famous early book but not part of Sihah Sitta. Muwatta Sihah Sitta mein shamil nahi.",
   "post": [
    "zamungkor",
    "tt",
@@ -1127,6 +1687,22 @@
  },
  {
   "id": "ISL-036",
+  "question_ur": "امام بخاری کس شہر میں پیدا ہوئے؟",
+  "question_roman": "Imam Bukhari kis sheher mein paida hue?",
+  "options_ur": [
+   "نیشاپور",
+   "بغداد",
+   "بخارا",
+   "مدینہ"
+  ],
+  "options_roman": [
+   "Nishapur",
+   "Baghdad",
+   "Bukhara",
+   "Madinah"
+  ],
+  "explanation_ur": "امام بخاری بخارا میں پیدا ہوئے۔",
+  "explanation_roman": "Imam Bukhari was born in Bukhara. Imam Bukhari Bukhara mein paida hue.",
   "post": [
    "zamungkor",
    "tt",
@@ -1159,6 +1735,22 @@
  },
  {
   "id": "ISL-037",
+  "question_ur": "امام بخاری کس ہجری سال میں پیدا ہوئے؟",
+  "question_roman": "Imam Bukhari kis Hijri saal mein paida hue?",
+  "options_ur": [
+   "194 ہجری",
+   "204 ہجری",
+   "184 ہجری",
+   "214 ہجری"
+  ],
+  "options_roman": [
+   "194 AH",
+   "204 AH",
+   "184 AH",
+   "214 AH"
+  ],
+  "explanation_ur": "امام بخاری 194 ہجری میں پیدا ہوئے۔",
+  "explanation_roman": "Imam Bukhari was born in 194 AH. Imam Bukhari 194 Hijri mein paida hue.",
   "post": [
    "zamungkor",
    "tt",
@@ -1191,6 +1783,22 @@
  },
  {
   "id": "ISL-038",
+  "question_ur": "اسلامی اصطلاح میں لفظ حدیث کا کیا مطلب ہے؟",
+  "question_roman": "Islami istilah mein lafz Hadith ka kya matlab hai?",
+  "options_ur": [
+   "صرف قرآن",
+   "نبی ﷺ کے اقوال، افعال اور تقریرات",
+   "صرف صحابہ کی سنت",
+   "صرف اسلامی قانون"
+  ],
+  "options_roman": [
+   "Sirf Quran",
+   "Nabi (SAW) ke aqwal, afaal aur taqreerat",
+   "Sirf Sahaba ki Sunnah",
+   "Sirf Islami qanoon"
+  ],
+  "explanation_ur": "حدیث سے مراد نبی محمد ﷺ کے اقوال، افعال اور تقریرات ہیں۔",
+  "explanation_roman": "Hadith means the sayings, actions and approvals of Prophet Muhammad (SAW). Hadith se murad Nabi (SAW) ke aqwal, afaal aur taqreerat hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -1223,6 +1831,22 @@
  },
  {
   "id": "ISL-039",
+  "question_ur": "سنن ابو داؤد کے مصنف کون ہیں؟",
+  "question_roman": "Sunan Abu Dawood ke musannif kaun hain?",
+  "options_ur": [
+   "امام ابو داؤد",
+   "امام مالک",
+   "امام شافعی",
+   "امام احمد"
+  ],
+  "options_roman": [
+   "Imam Abu Dawood",
+   "Imam Malik",
+   "Imam Shafi",
+   "Imam Ahmad"
+  ],
+  "explanation_ur": "سنن ابو داؤد امام ابو داؤد نے لکھی تھی۔ سنن ابو داؤد امام ابو داؤد کی کتاب ہے۔",
+  "explanation_roman": "Sunan Abu Dawood was written by Imam Abu Dawood. Sunan Abu Dawood Imam Abu Dawood ki kitab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1255,6 +1879,22 @@
  },
  {
   "id": "ISL-040",
+  "question_ur": "جامع ترمذی کے مصنف کون ہیں؟",
+  "question_roman": "Jami Tirmidhi ke musannif kaun hain?",
+  "options_ur": [
+   "امام نسائی",
+   "امام ترمذی",
+   "امام ابن ماجہ",
+   "امام بخاری"
+  ],
+  "options_roman": [
+   "Imam Nasai",
+   "Imam Tirmidhi",
+   "Imam Ibn Majah",
+   "Imam Bukhari"
+  ],
+  "explanation_ur": "جامع ترمذی امام ترمذی نے لکھی تھی۔ جامع ترمذی امام ترمذی کی کتاب ہے۔",
+  "explanation_roman": "Jami Tirmidhi was written by Imam Tirmidhi. Jami Tirmidhi Imam Tirmidhi ki kitab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1287,6 +1927,22 @@
  },
  {
   "id": "ISL-041",
+  "question_ur": "سنن نسائی کے مصنف کون ہیں؟",
+  "question_roman": "Sunan Nasai ke musannif kaun hain?",
+  "options_ur": [
+   "امام نسائی",
+   "امام مسلم",
+   "امام مالک",
+   "امام شافعی"
+  ],
+  "options_roman": [
+   "Imam Nasai",
+   "Imam Muslim",
+   "Imam Malik",
+   "Imam Shafi"
+  ],
+  "explanation_ur": "سنن نسائی امام نسائی نے لکھی تھی۔ سنن نسائی امام نسائی کی کتاب ہے۔",
+  "explanation_roman": "Sunan Nasai was written by Imam Nasai. Sunan Nasai Imam Nasai ki kitab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1319,6 +1975,22 @@
  },
  {
   "id": "ISL-042",
+  "question_ur": "سنن ابن ماجہ کے مصنف کون ہیں؟",
+  "question_roman": "Sunan Ibn Majah ke musannif kaun hain?",
+  "options_ur": [
+   "امام ابن ماجہ",
+   "امام ابو داؤد",
+   "امام ترمذی",
+   "امام احمد"
+  ],
+  "options_roman": [
+   "Imam Ibn Majah",
+   "Imam Abu Dawood",
+   "Imam Tirmidhi",
+   "Imam Ahmad"
+  ],
+  "explanation_ur": "سنن ابن ماجہ امام ابن ماجہ نے لکھی تھی۔ سنن ابن ماجہ امام ابن ماجہ کی کتاب ہے۔",
+  "explanation_roman": "Sunan Ibn Majah was written by Imam Ibn Majah. Sunan Ibn Majah Imam Ibn Majah ki kitab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1351,6 +2023,22 @@
  },
  {
   "id": "ISL-043",
+  "question_ur": "موطا کے مصنف کون ہیں؟",
+  "question_roman": "Muwatta ke musannif kaun hain?",
+  "options_ur": [
+   "امام مالک بن انس",
+   "امام ابو حنیفہ",
+   "امام شافعی",
+   "امام بخاری"
+  ],
+  "options_roman": [
+   "Imam Malik ibn Anas",
+   "Imam Abu Hanifa",
+   "Imam Shafi",
+   "Imam Bukhari"
+  ],
+  "explanation_ur": "موطا امام مالک بن انس نے لکھی تھی۔ موطا امام مالک کی کتاب ہے۔",
+  "explanation_roman": "Muwatta was written by Imam Malik ibn Anas. Muwatta Imam Malik ki kitab hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1383,6 +2071,22 @@
  },
  {
   "id": "ISL-044",
+  "question_ur": "حدیث قدسی کیا ہے؟",
+  "question_roman": "Hadith Qudsi kya hai?",
+  "options_ur": [
+   "ایسی حدیث جس کا مفہوم اللہ کی طرف سے ہو لیکن الفاظ نبی ﷺ کے ہوں",
+   "قرآن میں موجود حدیث",
+   "ایک ضعیف حدیث",
+   "صرف نماز کے بارے میں حدیث"
+  ],
+  "options_roman": [
+   "Aisi Hadith jis ka mafhoom Allah ki taraf se ho lekin alfaz Nabi (SAW) ke hon",
+   "Quran mein maujood Hadith",
+   "Ek zaeef Hadith",
+   "Sirf namaz ke baare mein Hadith"
+  ],
+  "explanation_ur": "حدیث قدسی میں مفہوم اللہ کا ہوتا ہے اور الفاظ نبی ﷺ کے ہوتے ہیں۔",
+  "explanation_roman": "In Hadith Qudsi the meaning is from Allah and the words are of the Prophet (SAW). Hadith Qudsi mein mafhoom Allah ka aur alfaz Nabi (SAW) ke hote hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -1415,6 +2119,22 @@
  },
  {
   "id": "ISL-045",
+  "question_ur": "سنت کا کیا مطلب ہے؟",
+  "question_roman": "Sunnah ka kya matlab hai?",
+  "options_ur": [
+   "نبی ﷺ کا طریقہ اور عمل",
+   "صرف فرض نمازیں",
+   "اسلامی تاریخ",
+   "فقہ کی ایک کتاب"
+  ],
+  "options_roman": [
+   "Nabi (SAW) ka tareeqa aur amal",
+   "Sirf Fard namazein",
+   "Islami tareekh",
+   "Fiqh ki ek kitab"
+  ],
+  "explanation_ur": "سنت نبی محمد ﷺ کا طریقہ اور عمل ہے۔ سنت نبی ﷺ کا طریقہ ہے۔",
+  "explanation_roman": "Sunnah is the way and practice of Prophet Muhammad (SAW). Sunnah Nabi (SAW) ka tareeqa hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -1447,6 +2167,22 @@
  },
  {
   "id": "ISL-046",
+  "question_ur": "حضرت محمد ﷺ کس سال میں پیدا ہوئے؟",
+  "question_roman": "Hazrat Muhammad (SAW) kis saal mein paida hue?",
+  "options_ur": [
+   "570 عیسوی",
+   "571 عیسوی",
+   "572 عیسوی",
+   "575 عیسوی"
+  ],
+  "options_roman": [
+   "570 AD",
+   "571 AD",
+   "572 AD",
+   "575 AD"
+  ],
+  "explanation_ur": "حضرت محمد ﷺ 571 عیسوی میں پیدا ہوئے، جو عام الفیل کا سال تھا۔ آپ ﷺ 571 عیسوی میں پیدا ہوئے۔",
+  "explanation_roman": "Prophet Muhammad (SAW) was born in 571 AD, the Year of the Elephant. Aap (SAW) 571 AD mein paida hue.",
   "post": [
    "zamungkor",
    "tt",
@@ -1479,6 +2215,22 @@
  },
  {
   "id": "ISL-047",
+  "question_ur": "حضرت محمد ﷺ کس شہر میں پیدا ہوئے؟",
+  "question_roman": "Hazrat Muhammad (SAW) kis sheher mein paida hue?",
+  "options_ur": [
+   "مدینہ",
+   "طائف",
+   "مکہ",
+   "یروشلم"
+  ],
+  "options_roman": [
+   "Madinah",
+   "Taif",
+   "Makkah",
+   "Jerusalem"
+  ],
+  "explanation_ur": "حضرت محمد ﷺ مکہ میں پیدا ہوئے۔",
+  "explanation_roman": "Prophet Muhammad (SAW) was born in Makkah. Aap (SAW) Makkah mein paida hue.",
   "post": [
    "zamungkor",
    "tt",
@@ -1511,6 +2263,22 @@
  },
  {
   "id": "ISL-048",
+  "question_ur": "حضرت محمد ﷺ کی پیدائش کے سال کو کیا کہا جاتا ہے؟",
+  "question_roman": "Hazrat Muhammad (SAW) ki paidaish ke saal ko kya kaha jata hai?",
+  "options_ur": [
+   "عام الفیل",
+   "عام الحزن",
+   "ہجرت کا سال",
+   "فتح کا سال"
+  ],
+  "options_roman": [
+   "Aam-ul-Feel",
+   "Aam-ul-Huzn",
+   "Hijrat ka saal",
+   "Fatah ka saal"
+  ],
+  "explanation_ur": "571 عیسوی کو عام الفیل کہا جاتا ہے۔",
+  "explanation_roman": "571 AD is called the Year of the Elephant (Aam-ul-Feel). 571 AD ko Aam-ul-Feel kehte hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -1543,6 +2311,22 @@
  },
  {
   "id": "ISL-049",
+  "question_ur": "حضرت محمد ﷺ کے والد کا نام کیا تھا؟",
+  "question_roman": "Hazrat Muhammad (SAW) ke walid ka naam kya tha?",
+  "options_ur": [
+   "عبد المطلب",
+   "ابو طالب",
+   "عبداللہ",
+   "حمزہ"
+  ],
+  "options_roman": [
+   "Abdul Muttalib",
+   "Abu Talib",
+   "Abdullah",
+   "Hamza"
+  ],
+  "explanation_ur": "آپ ﷺ کے والد عبداللہ تھے، جن کا انتقال آپ ﷺ کی پیدائش سے پہلے ہو گیا تھا۔ آپ ﷺ کے والد کا نام عبداللہ تھا۔",
+  "explanation_roman": "His father was Abdullah, who died before his birth. Aap (SAW) ke walid ka naam Abdullah tha.",
   "post": [
    "zamungkor",
    "tt",
@@ -1575,6 +2359,22 @@
  },
  {
   "id": "ISL-050",
+  "question_ur": "حضرت محمد ﷺ کی والدہ کا نام کیا تھا؟",
+  "question_roman": "Hazrat Muhammad (SAW) ki walida ka naam kya tha?",
+  "options_ur": [
+   "حلیمہ",
+   "آمنہ بنت وہب",
+   "خدیجہ",
+   "فاطمہ"
+  ],
+  "options_roman": [
+   "Halima",
+   "Amina bint Wahb",
+   "Khadija",
+   "Fatima"
+  ],
+  "explanation_ur": "آپ ﷺ کی والدہ کا نام آمنہ بنت وہب تھا۔",
+  "explanation_roman": "His mother was Amina bint Wahb. Aap (SAW) ki walida ka naam Amina bint Wahb tha.",
   "post": [
    "zamungkor",
    "tt",
@@ -1607,6 +2407,22 @@
  },
  {
   "id": "ISL-051",
+  "question_ur": "حضرت محمد ﷺ کی رضاعی والدہ کون تھیں؟",
+  "question_roman": "Hazrat Muhammad (SAW) ki razai maa kaun thin?",
+  "options_ur": [
+   "حضرت خدیجہ رضی اللہ عنہا",
+   "حلیمہ سعدیہ رضی اللہ عنہا",
+   "حضرت آمنہ رضی اللہ عنہا",
+   "حضرت اسماء رضی اللہ عنہا"
+  ],
+  "options_roman": [
+   "Hazrat Khadija (RA)",
+   "Halima Saadia (RA)",
+   "Hazrat Amina (RA)",
+   "Hazrat Asma (RA)"
+  ],
+  "explanation_ur": "حلیمہ سعدیہ رضی اللہ عنہا آپ ﷺ کی رضاعی والدہ تھیں۔",
+  "explanation_roman": "Halima Saadia (RA) was his foster mother. Halima Saadia (RA) Aap (SAW) ki razai maa thin.",
   "post": [
    "zamungkor",
    "tt",
@@ -1639,6 +2455,22 @@
  },
  {
   "id": "ISL-052",
+  "question_ur": "حضرت محمد ﷺ کے دادا کون تھے؟",
+  "question_roman": "Hazrat Muhammad (SAW) ke dada kaun the?",
+  "options_ur": [
+   "ابو طالب",
+   "عبد المطلب",
+   "عبداللہ",
+   "عباس"
+  ],
+  "options_roman": [
+   "Abu Talib",
+   "Abdul Muttalib",
+   "Abdullah",
+   "Abbas"
+  ],
+  "explanation_ur": "آپ ﷺ کے دادا عبد المطلب تھے۔",
+  "explanation_roman": "His grandfather was Abdul Muttalib. Aap (SAW) ke dada Abdul Muttalib the.",
   "post": [
    "zamungkor",
    "tt",
@@ -1671,6 +2503,22 @@
  },
  {
   "id": "ISL-053",
+  "question_ur": "حضرت محمد (SAW) کی پرورش ان کے دادا کے بعد کس نے کی؟",
+  "question_roman": "Hazrat Muhammad (SAW) ki parvarish un ke dada ke baad kis ne ki?",
+  "options_ur": [
+   "حضرت حمزہ (RA)",
+   "ابو طالب",
+   "حضرت عباس (RA)",
+   "حضرت علی (RA)"
+  ],
+  "options_roman": [
+   "Hazrat Hamza (RA)",
+   "Abu Talib",
+   "Hazrat Abbas (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "explanation_ur": "ان کے چچا ابو طالب نے ان کی پرورش کی۔",
+  "explanation_roman": "His uncle Abu Talib raised him. Abu Talib ne Aap (SAW) ki parvarish ki.",
   "post": [
    "zamungkor",
    "tt",
@@ -1703,6 +2551,22 @@
  },
  {
   "id": "ISL-054",
+  "question_ur": "حضرت محمد (SAW) کی پہلی زوجہ کون تھیں؟",
+  "question_roman": "Hazrat Muhammad (SAW) ki pehli biwi kaun thin?",
+  "options_ur": [
+   "حضرت عائشہ (RA)",
+   "حضرت خدیجہ (RA)",
+   "حضرت حفصہ (RA)",
+   "حضرت سودہ (RA)"
+  ],
+  "options_roman": [
+   "Hazrat Aisha (RA)",
+   "Hazrat Khadija (RA)",
+   "Hazrat Hafsa (RA)",
+   "Hazrat Sawda (RA)"
+  ],
+  "explanation_ur": "حضرت خدیجہ (RA) ان کی پہلی زوجہ تھیں۔",
+  "explanation_roman": "Hazrat Khadija (RA) was his first wife. Pehli biwi Hazrat Khadija (RA) thin.",
   "post": [
    "zamungkor",
    "tt",
@@ -1735,6 +2599,22 @@
  },
  {
   "id": "ISL-055",
+  "question_ur": "حضرت محمد (SAW) کو پہلی وحی کس عمر میں ملی؟",
+  "question_roman": "Hazrat Muhammad (SAW) ko pehli Wahi kis umar mein mili?",
+  "options_ur": [
+   "35 سال",
+   "38 سال",
+   "40 سال",
+   "43 سال"
+  ],
+  "options_roman": [
+   "35 saal",
+   "38 saal",
+   "40 saal",
+   "43 saal"
+  ],
+  "explanation_ur": "ان کو پہلی وحی 40 سال کی عمر میں ملی۔",
+  "explanation_roman": "He received the first revelation at the age of 40. Pehli Wahi 40 saal ki umar mein aayi.",
   "post": [
    "zamungkor",
    "tt",
@@ -1770,6 +2650,22 @@
  },
  {
   "id": "ISL-056",
+  "question_ur": "حضرت محمد (SAW) کو پہلی وحی کس سال ملی؟",
+  "question_roman": "Hazrat Muhammad (SAW) ko pehli Wahi kis saal mein aayi?",
+  "options_ur": [
+   "608 عیسوی",
+   "610 عیسوی",
+   "612 عیسوی",
+   "622 عیسوی"
+  ],
+  "options_roman": [
+   "608 AD",
+   "610 AD",
+   "612 AD",
+   "622 AD"
+  ],
+  "explanation_ur": "پہلی وحی 610 عیسوی میں آئی۔",
+  "explanation_roman": "The first revelation came in 610 AD. Pehli Wahi 610 AD mein aayi.",
   "post": [
    "zamungkor",
    "tt",
@@ -1802,6 +2698,22 @@
  },
  {
   "id": "ISL-057",
+  "question_ur": "حضرت محمد (SAW) کو پہلی وحی کس غار میں ملی؟",
+  "question_roman": "Hazrat Muhammad (SAW) ko pehli Wahi kis ghaar mein mili?",
+  "options_ur": [
+   "غارِ ثور",
+   "غارِ حرا",
+   "غارِ احد",
+   "غارِ صفا"
+  ],
+  "options_roman": [
+   "Ghar-e-Thawr",
+   "Ghar-e-Hira",
+   "Ghar-e-Uhud",
+   "Ghar-e-Safa"
+  ],
+  "explanation_ur": "پہلی وحی غارِ حرا میں آئی۔",
+  "explanation_roman": "The first revelation came in Cave Hira. Pehli Wahi Ghar-e-Hira mein aayi.",
   "post": [
    "zamungkor",
    "tt",
@@ -1834,6 +2746,22 @@
  },
  {
   "id": "ISL-058",
+  "question_ur": "حضرت محمد (SAW) کے پاس وحی کون سے فرشتے لائے؟",
+  "question_roman": "Hazrat Muhammad (SAW) ke paas Wahi kaun se farishte laaye?",
+  "options_ur": [
+   "میکائیل (AS)",
+   "اسرافیل (AS)",
+   "جبرائیل (AS)",
+   "عزرائیل (AS)"
+  ],
+  "options_roman": [
+   "Mikail (AS)",
+   "Israfil (AS)",
+   "Jibrael (AS)",
+   "Izrail (AS)"
+  ],
+  "explanation_ur": "فرشتہ جبرائیل (AS) وحی لے کر آئے۔",
+  "explanation_roman": "Angel Jibrael (AS) brought the revelation. Wahi Hazrat Jibrael (AS) le kar aaye.",
   "post": [
    "zamungkor",
    "tt",
@@ -1866,6 +2794,22 @@
  },
  {
   "id": "ISL-059",
+  "question_ur": "اسلام قبول کرنے والے پہلے بالغ مرد کون تھے؟",
+  "question_roman": "Islam qubool karne wale pehle baaligh mard kaun the?",
+  "options_ur": [
+   "حضرت عمر (RA)",
+   "حضرت علی (RA)",
+   "حضرت ابو بکر (RA)",
+   "حضرت عثمان (RA)"
+  ],
+  "options_roman": [
+   "Hazrat Umar (RA)",
+   "Hazrat Ali (RA)",
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Usman (RA)"
+  ],
+  "explanation_ur": "حضرت ابو بکر (RA) اسلام قبول کرنے والے پہلے بالغ مرد تھے۔",
+  "explanation_roman": "Hazrat Abu Bakr (RA) was the first adult man to accept Islam. Pehle mard Hazrat Abu Bakr (RA) the.",
   "post": [
    "zamungkor",
    "tt",
@@ -1898,6 +2842,22 @@
  },
  {
   "id": "ISL-060",
+  "question_ur": "اسلام قبول کرنے والی پہلی خاتون کون تھیں؟",
+  "question_roman": "Islam qubool karne wali pehli khatoon kaun thin?",
+  "options_ur": [
+   "حضرت عائشہ (RA)",
+   "حضرت فاطمہ (RA)",
+   "حضرت خدیجہ (RA)",
+   "حضرت حفصہ (RA)"
+  ],
+  "options_roman": [
+   "Hazrat Aisha (RA)",
+   "Hazrat Fatima (RA)",
+   "Hazrat Khadija (RA)",
+   "Hazrat Hafsa (RA)"
+  ],
+  "explanation_ur": "حضرت خدیجہ (RA) اسلام قبول کرنے والی پہلی خاتون تھیں۔",
+  "explanation_roman": "Hazrat Khadija (RA) was the first woman to accept Islam. Pehli khatoon Hazrat Khadija (RA) thin.",
   "post": [
    "zamungkor",
    "tt",
@@ -1930,6 +2890,22 @@
  },
  {
   "id": "ISL-061",
+  "question_ur": "اسلام قبول کرنے والے پہلے بچے کون تھے؟",
+  "question_roman": "Islam qubool karne wale pehle bachche kaun the?",
+  "options_ur": [
+   "حضرت حسن (RA)",
+   "حضرت علی (RA)",
+   "حضرت زید (RA)",
+   "حضرت عثمان (RA)"
+  ],
+  "options_roman": [
+   "Hazrat Hasan (RA)",
+   "Hazrat Ali (RA)",
+   "Hazrat Zaid (RA)",
+   "Hazrat Usman (RA)"
+  ],
+  "explanation_ur": "حضرت علی (RA) اسلام قبول کرنے والے پہلے بچے تھے۔",
+  "explanation_roman": "Hazrat Ali (RA) was the first child to accept Islam. Pehle bachche Hazrat Ali (RA) the.",
   "post": [
    "zamungkor",
    "tt",
@@ -1962,6 +2938,22 @@
  },
  {
   "id": "ISL-062",
+  "question_ur": "مدینہ کی طرف ہجرت کس سال ہوئی؟",
+  "question_roman": "Madinah ki taraf Hijrat kis saal mein hui?",
+  "options_ur": [
+   "620 عیسوی",
+   "621 عیسوی",
+   "622 عیسوی",
+   "624 عیسوی"
+  ],
+  "options_roman": [
+   "620 AD",
+   "621 AD",
+   "622 AD",
+   "624 AD"
+  ],
+  "explanation_ur": "ہجرت 622 عیسوی میں ہوئی۔",
+  "explanation_roman": "The Hijrat took place in 622 AD. Hijrat 622 AD mein hui.",
   "post": [
    "zamungkor",
    "tt",
@@ -1994,6 +2986,22 @@
  },
  {
   "id": "ISL-063",
+  "question_ur": "مدینہ کا پرانا نام کیا تھا؟",
+  "question_roman": "Madinah ka purana naam kya tha?",
+  "options_ur": [
+   "طائف",
+   "یثرب",
+   "کوفہ",
+   "بصرہ"
+  ],
+  "options_roman": [
+   "Taif",
+   "Yathrib",
+   "Kufa",
+   "Basra"
+  ],
+  "explanation_ur": "مدینہ کا پرانا نام یثرب تھا۔",
+  "explanation_roman": "Madinah was earlier called Yathrib. Madinah ka purana naam Yathrib tha.",
   "post": [
    "zamungkor",
    "tt",
@@ -2026,6 +3034,22 @@
  },
  {
   "id": "ISL-064",
+  "question_ur": "اسلام میں تعمیر ہونے والی پہلی مسجد کون سی تھی؟",
+  "question_roman": "Islam mein tameer hone wali pehli masjid kaun si thi?",
+  "options_ur": [
+   "مسجد نبوی",
+   "مسجد قبا",
+   "مسجد اقصیٰ",
+   "مسجد حرام"
+  ],
+  "options_roman": [
+   "Masjid Nabawi",
+   "Masjid Quba",
+   "Masjid Aqsa",
+   "Masjid Haram"
+  ],
+  "explanation_ur": "مسجد قبا پہلی تعمیر ہونے والی مسجد تھی۔",
+  "explanation_roman": "Masjid Quba was the first mosque built. Pehli masjid Masjid Quba thi.",
   "post": [
    "zamungkor",
    "tt",
@@ -2058,6 +3082,22 @@
  },
  {
   "id": "ISL-065",
+  "question_ur": "غزوہ بدر کس ہجری سال میں ہوا؟",
+  "question_roman": "Ghazwa Badr kis Hijri saal mein hua?",
+  "options_ur": [
+   "1 ہجری",
+   "2 ہجری",
+   "3 ہجری",
+   "5 ہجری"
+  ],
+  "options_roman": [
+   "1 Hijri",
+   "2 Hijri",
+   "3 Hijri",
+   "5 Hijri"
+  ],
+  "explanation_ur": "غزوہ بدر 2 ہجری میں ہوا۔",
+  "explanation_roman": "The Battle of Badr took place in 2 AH. Ghazwa Badr 2 Hijri mein hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -2090,6 +3130,22 @@
  },
  {
   "id": "ISL-066",
+  "question_ur": "غزوہ بدر میں کتنے مسلمانوں نے حصہ لیا؟",
+  "question_roman": "Ghazwa Badr mein kitne Musalmanon ne hissa liya?",
+  "options_ur": [
+   "313",
+   "1000",
+   "3000",
+   "10000"
+  ],
+  "options_roman": [
+   "313",
+   "1000",
+   "3000",
+   "10000"
+  ],
+  "explanation_ur": "بدر میں 313 مسلمانوں نے حصہ لیا۔",
+  "explanation_roman": "313 Muslims took part in Badr. Badr mein 313 Musalman the.",
   "post": [
    "zamungkor",
    "tt",
@@ -2122,6 +3178,22 @@
  },
  {
   "id": "ISL-067",
+  "question_ur": "غزوہ احد کس ہجری سال میں ہوا؟",
+  "question_roman": "Ghazwa Uhud kis Hijri saal mein hua?",
+  "options_ur": [
+   "2 ہجری",
+   "3 ہجری",
+   "4 ہجری",
+   "5 ہجری"
+  ],
+  "options_roman": [
+   "2 Hijri",
+   "3 Hijri",
+   "4 Hijri",
+   "5 Hijri"
+  ],
+  "explanation_ur": "غزوہ احد 3 ہجری میں ہوا۔",
+  "explanation_roman": "The Battle of Uhud took place in 3 AH. Ghazwa Uhud 3 Hijri mein hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -2154,6 +3226,22 @@
  },
  {
   "id": "ISL-068",
+  "question_ur": "غزوہ خندق کس ہجری سال میں ہوا؟",
+  "question_roman": "Ghazwa Khandaq kis Hijri saal mein hua?",
+  "options_ur": [
+   "3 ہجری",
+   "4 ہجری",
+   "5 ہجری",
+   "6 ہجری"
+  ],
+  "options_roman": [
+   "3 Hijri",
+   "4 Hijri",
+   "5 Hijri",
+   "6 Hijri"
+  ],
+  "explanation_ur": "غزوہ خندق 5 ہجری میں ہوا۔",
+  "explanation_roman": "The Battle of Khandaq took place in 5 AH. Ghazwa Khandaq 5 Hijri mein hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -2186,6 +3274,22 @@
  },
  {
   "id": "ISL-069",
+  "question_ur": "فتح مکہ کس ہجری سال میں ہوئی؟",
+  "question_roman": "Fatah Makkah kis Hijri saal mein hui?",
+  "options_ur": [
+   "6 ہجری",
+   "7 ہجری",
+   "8 ہجری",
+   "10 ہجری"
+  ],
+  "options_roman": [
+   "6 Hijri",
+   "7 Hijri",
+   "8 Hijri",
+   "10 Hijri"
+  ],
+  "explanation_ur": "فتح مکہ 8 ہجری میں ہوئی۔",
+  "explanation_roman": "Fatah Makkah took place in 8 AH. Fatah Makkah 8 Hijri mein hui.",
   "post": [
    "zamungkor",
    "tt",
@@ -2218,6 +3322,22 @@
  },
  {
   "id": "ISL-070",
+  "question_ur": "صلح حدیبیہ کس ہجری سال میں ہوئی؟",
+  "question_roman": "Sulah Hudaybiyyah kis Hijri saal mein hui?",
+  "options_ur": [
+   "5 ہجری",
+   "6 ہجری",
+   "7 ہجری",
+   "8 ہجری"
+  ],
+  "options_roman": [
+   "5 Hijri",
+   "6 Hijri",
+   "7 Hijri",
+   "8 Hijri"
+  ],
+  "explanation_ur": "صلح حدیبیہ 6 ہجری میں ہوئی۔",
+  "explanation_roman": "The Treaty of Hudaybiyyah was signed in 6 AH. Sulah Hudaybiyyah 6 Hijri mein hui.",
   "post": [
    "zamungkor",
    "tt",
@@ -2250,6 +3370,22 @@
  },
  {
   "id": "ISL-071",
+  "question_ur": "حجۃ الوداع کس ہجری سال میں ہوا؟",
+  "question_roman": "Hajjatul Wida kis Hijri saal mein hua?",
+  "options_ur": [
+   "8 ہجری",
+   "9 ہجری",
+   "10 ہجری",
+   "11 ہجری"
+  ],
+  "options_roman": [
+   "8 Hijri",
+   "9 Hijri",
+   "10 Hijri",
+   "11 Hijri"
+  ],
+  "explanation_ur": "حجۃ الوداع 10 ہجری میں ہوا۔",
+  "explanation_roman": "Hajjatul Wida took place in 10 AH. Hajjatul Wida 10 Hijri mein hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -2282,6 +3418,22 @@
  },
  {
   "id": "ISL-072",
+  "question_ur": "حضرت محمد (SAW) کا وصال کس سال ہوا؟",
+  "question_roman": "Hazrat Muhammad (SAW) ka wisal kis saal mein hua?",
+  "options_ur": [
+   "630 عیسوی",
+   "631 عیسوی",
+   "632 عیسوی",
+   "634 عیسوی"
+  ],
+  "options_roman": [
+   "630 AD",
+   "631 AD",
+   "632 AD",
+   "634 AD"
+  ],
+  "explanation_ur": "ان کا وصال 632 عیسوی (11 ہجری) میں ہوا۔",
+  "explanation_roman": "He passed away in 632 AD (11 AH). Aap (SAW) ka wisal 632 AD mein hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -2314,6 +3466,22 @@
  },
  {
   "id": "ISL-073",
+  "question_ur": "حضرت محمد (SAW) کا وصال کس عمر میں ہوا؟",
+  "question_roman": "Hazrat Muhammad (SAW) ka wisal kis umar mein hua?",
+  "options_ur": [
+   "60 سال",
+   "61 سال",
+   "63 سال",
+   "65 سال"
+  ],
+  "options_roman": [
+   "60 saal",
+   "61 saal",
+   "63 saal",
+   "65 saal"
+  ],
+  "explanation_ur": "وصال کے وقت عمر 63 سال تھی۔",
+  "explanation_roman": "He passed away at the age of 63. Wisal ke waqt umar 63 saal thi.",
   "post": [
    "zamungkor",
    "tt",
@@ -2346,6 +3514,22 @@
  },
  {
   "id": "ISL-074",
+  "question_ur": "معیاری نصابی کتابوں میں غزوات (وہ جنگیں جن کی قیادت حضرت محمد (SAW) نے کی) کی تعداد کتنی بتائی جاتی ہے؟",
+  "question_roman": "Mayari kitabon mein Ghazwat (wo jangein jin ki qayadat Hazrat Muhammad (SAW) ne ki) ki tadad kitni batayi jati hai?",
+  "options_ur": [
+   "19",
+   "23",
+   "27",
+   "31"
+  ],
+  "options_roman": [
+   "19",
+   "23",
+   "27",
+   "31"
+  ],
+  "explanation_ur": "معیاری نصابی کتابوں میں غزوات کی تعداد 27 بتائی جاتی ہے۔",
+  "explanation_roman": "Standard textbooks count 27 Ghazwat. Kitabon mein Ghazwat ki tadad 27 batayi jati hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -2378,6 +3562,22 @@
  },
  {
   "id": "ISL-075",
+  "question_ur": "حضرت محمد (SAW) کا آخری غزوہ کون سا تھا؟",
+  "question_roman": "Hazrat Muhammad (SAW) ka aakhri Ghazwa kaun sa tha?",
+  "options_ur": [
+   "بدر",
+   "تبوک",
+   "احد",
+   "خندق"
+  ],
+  "options_roman": [
+   "Badr",
+   "Tabuk",
+   "Uhud",
+   "Khandaq"
+  ],
+  "explanation_ur": "غزوہ تبوک، جو 9 ہجری میں ہوا، آخری غزوہ تھا۔",
+  "explanation_roman": "Ghazwa Tabuk in 9 AH was the last Ghazwa. Aakhri Ghazwa Tabuk tha, 9 Hijri mein.",
   "post": [
    "zamungkor",
    "tt",
@@ -2410,6 +3610,22 @@
  },
  {
   "id": "ISL-076",
+  "question_ur": "اسلام کے پہلے خلیفہ کون تھے؟",
+  "question_roman": "Islam ke pehle Khalifa kaun the?",
+  "options_ur": [
+   "حضرت عمر (RA)",
+   "حضرت ابو بکر (RA)",
+   "حضرت عثمان (RA)",
+   "حضرت علی (RA)"
+  ],
+  "options_roman": [
+   "Hazrat Umar (RA)",
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "explanation_ur": "حضرت ابو بکر (RA) پہلے خلیفہ تھے۔",
+  "explanation_roman": "Hazrat Abu Bakr (RA) was the first Khalifa. Pehle Khalifa Hazrat Abu Bakr (RA) the.",
   "post": [
    "zamungkor",
    "tt",
@@ -2442,6 +3658,22 @@
  },
  {
   "id": "ISL-077",
+  "question_ur": "حضرت ابو بکر (RA) کس لقب سے جانے جاتے ہیں؟",
+  "question_roman": "Hazrat Abu Bakr (RA) kis laqab se jaane jate hain?",
+  "options_ur": [
+   "فاروق",
+   "صدیق",
+   "غنی",
+   "حیدر"
+  ],
+  "options_roman": [
+   "Farooq",
+   "Siddiq",
+   "Ghani",
+   "Haider"
+  ],
+  "explanation_ur": "حضرت ابو بکر (RA) صدیق کے لقب سے جانے جاتے ہیں۔",
+  "explanation_roman": "Hazrat Abu Bakr (RA) is known as Siddiq. Hazrat Abu Bakr (RA) ka laqab Siddiq hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -2474,6 +3706,22 @@
  },
  {
   "id": "ISL-078",
+  "question_ur": "اسلام کے دوسرے خلیفہ کون تھے؟",
+  "question_roman": "Islam ke dusre Khalifa kaun the?",
+  "options_ur": [
+   "حضرت علی (RA)",
+   "حضرت عثمان (RA)",
+   "حضرت عمر (RA)",
+   "حضرت ابو بکر (RA)"
+  ],
+  "options_roman": [
+   "Hazrat Ali (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Umar (RA)",
+   "Hazrat Abu Bakr (RA)"
+  ],
+  "explanation_ur": "حضرت عمر (RA) دوسرے خلیفہ تھے۔",
+  "explanation_roman": "Hazrat Umar (RA) was the second Khalifa. Dusre Khalifa Hazrat Umar (RA) the.",
   "post": [
    "zamungkor",
    "tt",
@@ -2506,6 +3754,22 @@
  },
  {
   "id": "ISL-079",
+  "question_ur": "حضرت عثمان (رضی اللہ عنہ) کس لقب سے معروف ہیں؟",
+  "question_roman": "Hazrat Usman (RA) kis laqab se mashhoor hain?",
+  "options_ur": [
+   "فاروق",
+   "صدیق",
+   "ذو النورین",
+   "حیدر"
+  ],
+  "options_roman": [
+   "Farooq",
+   "Siddiq",
+   "Dhun-Nurayn",
+   "Haider"
+  ],
+  "explanation_ur": "حضرت عثمان (رضی اللہ عنہ) ذو النورین کے لقب سے معروف ہیں۔",
+  "explanation_roman": "Hazrat Usman (RA) is known as Dhun-Nurayn. Hazrat Usman (RA) ka laqab Dhun-Nurayn hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -2538,6 +3802,22 @@
  },
  {
   "id": "ISL-080",
+  "question_ur": "اسلام کے چوتھے خلیفہ کون تھے؟",
+  "question_roman": "Islam ke chauthe Khalifa kaun the?",
+  "options_ur": [
+   "حضرت عمر (رضی اللہ عنہ)",
+   "حضرت عثمان (رضی اللہ عنہ)",
+   "حضرت ابو بکر (رضی اللہ عنہ)",
+   "حضرت علی (رضی اللہ عنہ)"
+  ],
+  "options_roman": [
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "explanation_ur": "حضرت علی (رضی اللہ عنہ) چوتھے خلیفہ تھے۔",
+  "explanation_roman": "Hazrat Ali (RA) was the fourth Khalifa. Chauthe Khalifa Hazrat Ali (RA) the.",
   "post": [
    "zamungkor",
    "tt",
@@ -2570,6 +3850,22 @@
  },
  {
   "id": "ISL-081",
+  "question_ur": "خلفائے راشدین کی درست ترتیب کیا ہے؟",
+  "question_roman": "Khulafa-e-Rashideen ki durust tarteeb kya hai?",
+  "options_ur": [
+   "ابو بکر، عمر، عثمان، علی",
+   "عمر، ابو بکر، علی، عثمان",
+   "ابو بکر، عثمان، عمر، علی",
+   "علی، ابو بکر، عمر، عثمان"
+  ],
+  "options_roman": [
+   "Abu Bakr, Umar, Usman, Ali",
+   "Umar, Abu Bakr, Ali, Usman",
+   "Abu Bakr, Usman, Umar, Ali",
+   "Ali, Abu Bakr, Umar, Usman"
+  ],
+  "explanation_ur": "ترتیب ابو بکر، عمر، عثمان اور علی (رضی اللہ عنہم) ہے۔",
+  "explanation_roman": "The order is Abu Bakr, Umar, Usman and Ali (RA). Tarteeb Abu Bakr, Umar, Usman, Ali hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -2602,6 +3898,22 @@
  },
  {
   "id": "ISL-082",
+  "question_ur": "ہجری کیلنڈر کس نے شروع کیا؟",
+  "question_roman": "Hijri calendar kis ne shuru kiya?",
+  "options_ur": [
+   "حضرت ابو بکر (رضی اللہ عنہ)",
+   "حضرت عمر (رضی اللہ عنہ)",
+   "حضرت عثمان (رضی اللہ عنہ)",
+   "حضرت علی (رضی اللہ عنہ)"
+  ],
+  "options_roman": [
+   "Hazrat Abu Bakr (RA)",
+   "Hazrat Umar (RA)",
+   "Hazrat Usman (RA)",
+   "Hazrat Ali (RA)"
+  ],
+  "explanation_ur": "حضرت عمر (رضی اللہ عنہ) نے ہجری کیلنڈر شروع کیا۔",
+  "explanation_roman": "Hazrat Umar (RA) started the Hijri calendar. Hijri calendar Hazrat Umar (RA) ne shuru kiya.",
   "post": [
    "zamungkor",
    "tt",
@@ -2634,6 +3946,22 @@
  },
  {
   "id": "ISL-083",
+  "question_ur": "اسلام کے ارکان کتنے ہیں؟",
+  "question_roman": "Islam ke Arkan kitne hain?",
+  "options_ur": [
+   "چار",
+   "پانچ",
+   "چھ",
+   "سات"
+  ],
+  "options_roman": [
+   "Chaar",
+   "Paanch",
+   "Chhe",
+   "Saat"
+  ],
+  "explanation_ur": "اسلام کے پانچ ارکان ہیں۔",
+  "explanation_roman": "There are five Pillars of Islam. Islam ke paanch Arkan hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -2666,6 +3994,22 @@
  },
  {
   "id": "ISL-084",
+  "question_ur": "نقد رقم اور تجارتی سامان پر زکوٰۃ کی شرح کیا ہے؟",
+  "question_roman": "Naqd raqam aur tijarti saman par Zakat ki sharah kya hai?",
+  "options_ur": [
+   "2.5 فیصد",
+   "5 فیصد",
+   "7.5 فیصد",
+   "10 فیصد"
+  ],
+  "options_roman": [
+   "2.5 feesad",
+   "5 feesad",
+   "7.5 feesad",
+   "10 feesad"
+  ],
+  "explanation_ur": "نقد رقم اور تجارتی سامان پر زکوٰۃ 2.5 فیصد ہے۔",
+  "explanation_roman": "Zakat is 2.5 percent on cash and trade goods. Zakat ki sharah 2.5 feesad hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -2698,6 +4042,22 @@
  },
  {
   "id": "ISL-085",
+  "question_ur": "مسلمان کس اسلامی مہینے میں روزے رکھتے ہیں؟",
+  "question_roman": "Musalman kis Islami mahine mein roze rakhte hain?",
+  "options_ur": [
+   "شعبان",
+   "رمضان",
+   "شوال",
+   "محرم"
+  ],
+  "options_roman": [
+   "Shaban",
+   "Ramadan",
+   "Shawwal",
+   "Muharram"
+  ],
+  "explanation_ur": "مسلمان رمضان میں روزے رکھتے ہیں، جو 9واں اسلامی مہینہ ہے۔",
+  "explanation_roman": "Muslims fast in Ramadan, the 9th Islamic month. Roze Ramadan mein rakhe jate hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -2730,6 +4090,22 @@
  },
  {
   "id": "ISL-086",
+  "question_ur": "حج کس اسلامی مہینے میں ادا کیا جاتا ہے؟",
+  "question_roman": "Hajj kis Islami mahine mein ada kiya jata hai?",
+  "options_ur": [
+   "رمضان",
+   "شوال",
+   "ذی القعدہ",
+   "ذی الحجہ"
+  ],
+  "options_roman": [
+   "Ramadan",
+   "Shawwal",
+   "Zil Qad",
+   "Zil Hajj"
+  ],
+  "explanation_ur": "حج ذی الحجہ میں ادا کیا جاتا ہے۔",
+  "explanation_roman": "Hajj is performed in Zil Hajj. Hajj Zil Hajj mein ada kiya jata hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -2762,6 +4138,22 @@
  },
  {
   "id": "ISL-087",
+  "question_ur": "وقوفِ عرفات (عرفات میں ٹھہرنا) کس تاریخ کو ہوتا ہے؟",
+  "question_roman": "Wuquf-e-Arafat (Arafat mein theharna) kis tareekh ko hota hai?",
+  "options_ur": [
+   "8 ذی الحجہ",
+   "9 ذی الحجہ",
+   "10 ذی الحجہ",
+   "11 ذی الحجہ"
+  ],
+  "options_roman": [
+   "8 Zil Hajj",
+   "9 Zil Hajj",
+   "10 Zil Hajj",
+   "11 Zil Hajj"
+  ],
+  "explanation_ur": "وقوفِ عرفات 9 ذی الحجہ کو ہوتا ہے۔",
+  "explanation_roman": "Wuquf-e-Arafat is on 9 Zil Hajj. Wuquf-e-Arafat 9 Zil Hajj ko hota hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -2794,6 +4186,22 @@
  },
  {
   "id": "ISL-088",
+  "question_ur": "کعبہ کے طواف میں کتنے چکر ہوتے ہیں؟",
+  "question_roman": "Kaaba ke Tawaf mein kitne chakkar (rounds) hote hain?",
+  "options_ur": [
+   "پانچ",
+   "چھ",
+   "سات",
+   "آٹھ"
+  ],
+  "options_roman": [
+   "Paanch",
+   "Chhe",
+   "Saat",
+   "Aath"
+  ],
+  "explanation_ur": "کعبہ کے گرد طواف کے سات چکر ہوتے ہیں۔",
+  "explanation_roman": "Tawaf has seven rounds around the Kaaba. Tawaf mein saat chakkar hote hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -2826,6 +4234,22 @@
  },
  {
   "id": "ISL-089",
+  "question_ur": "امام ابو حنیفہ فقہ کے کس مکتبِ فکر کے بانی ہیں؟",
+  "question_roman": "Imam Abu Hanifa Fiqh ke kis school ke baani hain?",
+  "options_ur": [
+   "شافعی مکتب",
+   "مالکی مکتب",
+   "حنفی مکتب",
+   "حنبلی مکتب"
+  ],
+  "options_roman": [
+   "Shafi school",
+   "Maliki school",
+   "Hanafi school",
+   "Hanbali school"
+  ],
+  "explanation_ur": "امام ابو حنیفہ حنفی مکتبِ فکر کے بانی ہیں۔",
+  "explanation_roman": "Imam Abu Hanifa founded the Hanafi school. Imam Abu Hanifa Hanafi mazhab ke baani hain.",
   "post": [
    "zamungkor",
    "tt",
@@ -2858,6 +4282,22 @@
  },
  {
   "id": "ISL-090",
+  "question_ur": "پاکستان میں فقہ کا کون سا مکتب سب سے زیادہ مانا جاتا ہے؟",
+  "question_roman": "Pakistan mein Fiqh ka kaun sa school sab se zyada mana jata hai?",
+  "options_ur": [
+   "شافعی",
+   "مالکی",
+   "حنبلی",
+   "حنفی"
+  ],
+  "options_roman": [
+   "Shafi",
+   "Maliki",
+   "Hanbali",
+   "Hanafi"
+  ],
+  "explanation_ur": "پاکستان میں اکثر حنفی مکتبِ فکر پر عمل ہوتا ہے۔",
+  "explanation_roman": "The Hanafi school is most followed in Pakistan. Pakistan mein aksar Hanafi mazhab par amal hota hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -2890,6 +4330,22 @@
  },
  {
   "id": "ISL-091",
+  "question_ur": "سورتوں کو گنیں: قرآن مجید میں کتنی سورتیں ہیں؟",
+  "question_roman": "Suraton ko ginein: Quran-e-Majeed mein kitni Suratein hain?",
+  "options_ur": [
+   "110",
+   "112",
+   "114",
+   "116"
+  ],
+  "options_roman": [
+   "110",
+   "112",
+   "114",
+   "116"
+  ],
+  "explanation_ur": "قرآن مجید میں 114 سورتیں ہیں، الفاتحہ سے الناس تک۔",
+  "explanation_roman": "Quran-e-Majeed mein 114 Suratein hain, Al-Fatiha se An-Nas tak.",
   "post": [
    "zamungkor",
    "tt",
@@ -2924,6 +4380,22 @@
  },
  {
   "id": "ISL-092",
+  "question_ur": "قرآن مجید میں سب سے زیادہ آیات والی سورت کون سی ہے؟",
+  "question_roman": "Quran-e-Majeed mein sab se zyada Ayaat wali Surah kaun si hai?",
+  "options_ur": [
+   "الفاتحہ",
+   "البقرہ",
+   "آلِ عمران",
+   "النساء"
+  ],
+  "options_roman": [
+   "Al-Fatiha",
+   "Al-Baqarah",
+   "Aal-e-Imran",
+   "An-Nisa"
+  ],
+  "explanation_ur": "سورۂ البقرہ میں سب سے زیادہ آیات ہیں، 286 آیات۔",
+  "explanation_roman": "Al-Baqarah mein sab se zyada Ayaat hain, 286 Ayaat.",
   "post": [
    "zamungkor",
    "tt",
@@ -2958,6 +4430,22 @@
  },
  {
   "id": "ISL-093",
+  "question_ur": "قرآن مجید میں سب سے کم آیات والی سورت کون سی ہے؟",
+  "question_roman": "Quran-e-Majeed mein sab se kam Ayaat wali Surah kaun si hai?",
+  "options_ur": [
+   "الاخلاص",
+   "الکوثر",
+   "النصر",
+   "العصر"
+  ],
+  "options_roman": [
+   "Al-Ikhlas",
+   "Al-Kawthar",
+   "An-Nasr",
+   "Al-Asr"
+  ],
+  "explanation_ur": "سورۂ الکوثر میں سب سے کم آیات ہیں، 3 آیات۔",
+  "explanation_roman": "Al-Kawthar mein sab se kam Ayaat hain, 3 Ayaat.",
   "post": [
    "zamungkor",
    "tt",
@@ -2992,6 +4480,22 @@
  },
  {
   "id": "ISL-094",
+  "question_ur": "قرآن مجید کو کتنے حصوں (پاروں) میں تقسیم کیا گیا ہے؟",
+  "question_roman": "Quran-e-Majeed ko kitne hisson (Juz) mein taqseem kiya gaya hai?",
+  "options_ur": [
+   "7",
+   "10",
+   "30",
+   "40"
+  ],
+  "options_roman": [
+   "7",
+   "10",
+   "30",
+   "40"
+  ],
+  "explanation_ur": "قرآن مجید کو مہینے بھر میں پڑھنے کے لیے 30 پاروں میں تقسیم کیا گیا ہے۔",
+  "explanation_roman": "Quran-e-Majeed ko mahine bhar mein parhne ke liye 30 Juz mein taqseem kiya gaya hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -3026,6 +4530,22 @@
  },
  {
   "id": "ISL-095",
+  "question_ur": "سب سے پہلے نازل ہونے والی آیات کا تعلق کس سورت سے ہے؟",
+  "question_roman": "Sab se pehle nazil hone wali Ayaat ka talluq kis Surah se hai?",
+  "options_ur": [
+   "الفاتحہ",
+   "العلق",
+   "المدثر",
+   "البقرہ"
+  ],
+  "options_roman": [
+   "Al-Fatiha",
+   "Al-Alaq",
+   "Al-Muddathir",
+   "Al-Baqarah"
+  ],
+  "explanation_ur": "سب سے پہلے نازل ہونے والی آیات سورۂ العلق کی ابتدائی پانچ آیات تھیں، جن کا آغاز پڑھنے کے حکم سے ہوا۔",
+  "explanation_roman": "Sab se pehle nazil hone wali Ayaat Surah Al-Alaq ki ibtidai paanch Ayaat thin, jin ka aaghaz parhne ke hukm se hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -3060,6 +4580,22 @@
  },
  {
   "id": "ISL-096",
+  "question_ur": "صحاح ستہ (چھ کتابوں) میں کتنی کتابیں ہیں؟",
+  "question_roman": "Sihah Sitta (Chhe Kitabon) mein kitni kitabein hain?",
+  "options_ur": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "options_roman": [
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "explanation_ur": "صحاح ستہ، جسے کتبِ ستہ بھی کہا جاتا ہے، احادیث کے چھ مستند سنی مجموعوں پر مشتمل ہے۔",
+  "explanation_roman": "Sihah Sitta, jise Kutub al-Sittah bhi kaha jata hai, Hadith ke chhe mustanad Sunni majmuon par mushtamil hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -3094,6 +4630,22 @@
  },
  {
   "id": "ISL-097",
+  "question_ur": "کن دو کتابوں کو مل کر صحیحین (دو صحیح) کہا جاتا ہے؟",
+  "question_roman": "Kin do kitabon ko mila kar Sahihayn (do Sahih) kaha jata hai?",
+  "options_ur": [
+   "بخاری اور ترمذی",
+   "بخاری اور مسلم",
+   "مسلم اور ابو داؤد",
+   "نسائی اور ابن ماجہ"
+  ],
+  "options_roman": [
+   "Bukhari aur Tirmidhi",
+   "Bukhari aur Muslim",
+   "Muslim aur Abu Dawud",
+   "Nasa'i aur Ibn Majah"
+  ],
+  "explanation_ur": "صحیح بخاری اور صحیح مسلم کو مل کر صحیحین کہا جاتا ہے؛ دونوں کا مقصد صرف مستند روایات کو شامل کرنا تھا۔",
+  "explanation_roman": "Sahih al-Bukhari aur Sahih Muslim ko mila kar Sahihayn kaha jata hai; donon ka maqsad sirf mustanad riwayaat ko shaamil karna tha.",
   "post": [
    "zamungkor",
    "tt",
@@ -3128,6 +4680,22 @@
  },
  {
   "id": "ISL-098",
+  "question_ur": "سنن ابی داؤد کس نے مرتب کی؟",
+  "question_roman": "Sunan Abi Dawud kis ne murattab ki?",
+  "options_ur": [
+   "امام بخاری",
+   "امام مسلم",
+   "ابو داؤد",
+   "ترمذی"
+  ],
+  "options_roman": [
+   "Imam al-Bukhari",
+   "Imam Muslim",
+   "Abu Dawud",
+   "Al-Tirmidhi"
+  ],
+  "explanation_ur": "سنن ابی داؤد ابو داؤد نے مرتب کی۔",
+  "explanation_roman": "Sunan Abi Dawud Abu Dawud ne murattab ki.",
   "post": [
    "zamungkor",
    "tt",
@@ -3162,6 +4730,22 @@
  },
  {
   "id": "ISL-099",
+  "question_ur": "ہجرت (مدینہ کی طرف ہجرت) کس سال ہوئی؟",
+  "question_roman": "Hijrah (Madinah ki taraf hijrat) kis saal hui?",
+  "options_ur": [
+   "610 عیسوی",
+   "619 عیسوی",
+   "622 عیسوی",
+   "630 عیسوی"
+  ],
+  "options_roman": [
+   "610 CE",
+   "619 CE",
+   "622 CE",
+   "630 CE"
+  ],
+  "explanation_ur": "ہجرت 622 عیسوی میں ہوئی — یہ ہجری کیلنڈر کا سال 1 ہے۔",
+  "explanation_roman": "Hijrah 622 CE mein hui — ye Hijri calendar ka saal 1 hai.",
   "post": [
    "zamungkor",
    "tt",
@@ -3196,6 +4780,22 @@
  },
  {
   "id": "ISL-100",
+  "question_ur": "غزوۂ بدر کس سال ہوا؟",
+  "question_roman": "Battle of Badr kis saal hua?",
+  "options_ur": [
+   "622 عیسوی / 1 ہجری",
+   "624 عیسوی / 2 ہجری",
+   "625 عیسوی / 3 ہجری",
+   "627 عیسوی / 5 ہجری"
+  ],
+  "options_roman": [
+   "622 CE / 1 AH",
+   "624 CE / 2 AH",
+   "625 CE / 3 AH",
+   "627 CE / 5 AH"
+  ],
+  "explanation_ur": "غزوۂ بدر 624 عیسوی (2 ہجری) میں ہوا: تقریباً 313 مسلمانوں کا مقابلہ قریش کی تقریباً 1,000 پر مشتمل فوج سے ہوا۔",
+  "explanation_roman": "Battle of Badr 624 CE (2 AH) mein hua: taqreeban 313 Musalmanon ka muqabla Quraysh ki taqreeban 1,000 par mushtamil fauj se hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -3230,6 +4830,22 @@
  },
  {
   "id": "ISL-101",
+  "question_ur": "غزوۂ احد کس سال ہوا؟",
+  "question_roman": "Battle of Uhud kis saal hua?",
+  "options_ur": [
+   "624 عیسوی / 2 ہجری",
+   "625 عیسوی / 3 ہجری",
+   "627 عیسوی / 5 ہجری",
+   "630 عیسوی / 8 ہجری"
+  ],
+  "options_roman": [
+   "624 CE / 2 AH",
+   "625 CE / 3 AH",
+   "627 CE / 5 AH",
+   "630 CE / 8 AH"
+  ],
+  "explanation_ur": "غزوۂ احد 625 عیسوی (3 ہجری) میں ہوا۔",
+  "explanation_roman": "Battle of Uhud 625 CE (3 AH) mein hua.",
   "post": [
    "zamungkor",
    "tt",
@@ -3264,6 +4880,22 @@
  },
  {
   "id": "ISL-102",
+  "question_ur": "فقہ کے بنیادی ماخذ عام طور پر کتنے بتائے جاتے ہیں؟",
+  "question_roman": "Fiqh ke bunyadi makhaz aam taur par kitne bataye jate hain?",
+  "options_ur": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "options_roman": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "explanation_ur": "فقہ کے چار بنیادی ماخذ عام طور پر بتائے جاتے ہیں: قرآن، سنت، اجماع اور قیاس۔",
+  "explanation_roman": "Fiqh ke chaar bunyadi makhaz aam taur par bataye jate hain: Quran, Sunnah, Ijma aur Qiyas.",
   "post": [
    "zamungkor",
    "tt",
@@ -3298,6 +4930,22 @@
  },
  {
   "id": "ISL-103",
+  "question_ur": "حنفی مکتبِ فقہ کی بنیاد کس نے رکھی؟",
+  "question_roman": "Hanafi school of Fiqh ki bunyad kis ne rakhi?",
+  "options_ur": [
+   "امام مالک بن انس",
+   "امام ابو حنیفہ",
+   "امام شافعی",
+   "امام احمد بن حنبل"
+  ],
+  "options_roman": [
+   "Imam Malik ibn Anas",
+   "Imam Abu Hanifa",
+   "Imam al-Shafi'i",
+   "Imam Ahmad ibn Hanbal"
+  ],
+  "explanation_ur": "حنفی مکتب کی بنیاد امام ابو حنیفہ نے رکھی، جو عراق کے شہر کوفہ سے تھے۔",
+  "explanation_roman": "Hanafi school ki bunyad Imam Abu Hanifa ne rakhi, jo Iraq ke sheher Kufa se the.",
   "post": [
    "zamungkor",
    "tt",
@@ -3332,6 +4980,22 @@
  },
  {
   "id": "ISL-104",
+  "question_ur": "فقہ کے چار ماخذ کو اپنی کتاب الرسالہ میں کس نے منظم کیا؟",
+  "question_roman": "Fiqh ke chaar makhaz ko apni kitab Al-Risala mein kis ne munazzam kiya?",
+  "options_ur": [
+   "امام ابو حنیفہ",
+   "امام مالک بن انس",
+   "امام شافعی",
+   "امام احمد بن حنبل"
+  ],
+  "options_roman": [
+   "Imam Abu Hanifa",
+   "Imam Malik ibn Anas",
+   "Imam al-Shafi'i",
+   "Imam Ahmad ibn Hanbal"
+  ],
+  "explanation_ur": "امام شافعی نے اپنی کتاب الرسالہ میں چار ماخذ کی فہرست کو منظم کیا۔",
+  "explanation_roman": "Imam al-Shafi'i ne apni kitab Al-Risala mein chaar-makhaz ki fehrist ko munazzam kiya.",
   "post": [
    "zamungkor",
    "tt",
@@ -3366,6 +5030,22 @@
  },
  {
   "id": "ISL-105",
+  "question_ur": "فقہ کا کون سا مکتب اہلِ مدینہ کے عمل کو بہت اہمیت دیتا ہے؟",
+  "question_roman": "Fiqh ka kaun sa school Ahl-e-Madinah ke amal ko bohat ahmiyat deta hai?",
+  "options_ur": [
+   "حنفی",
+   "مالکی",
+   "شافعی",
+   "حنبلی"
+  ],
+  "options_roman": [
+   "Hanafi",
+   "Maliki",
+   "Shafi'i",
+   "Hanbali"
+  ],
+  "explanation_ur": "مالکی مکتب، جس کی بنیاد مدینہ کے امام مالک بن انس نے رکھی، اہلِ مدینہ کے عمل کو بہت اہمیت دیتا ہے۔",
+  "explanation_roman": "Maliki school, jis ki bunyad Madinah ke Imam Malik ibn Anas ne rakhi, Ahl-e-Madinah ke amal ko bohat ahmiyat deta hai.",
   "post": [
    "zamungkor",
    "tt",

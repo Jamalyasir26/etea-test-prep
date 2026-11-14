@@ -63,7 +63,9 @@
     "test:phase4b1": "node scripts/test-phase4b1.mjs",
     "test:phase4b2": "node scripts/test-phase4b2.mjs",
     "test:stage4a-pwa": "node scripts/test-stage4a-pwa.mjs",
-    "test:stage4b-audio": "node scripts/test-stage4b-audio.mjs"
+    "test:stage4b-audio": "node scripts/test-stage4b-audio.mjs",
+    "test:stage5a": "node scripts/test-stage5a.mjs",
+    "test:stage5b": "node scripts/test-stage5b.mjs"
   },
   "version": "3.0.0"
 }

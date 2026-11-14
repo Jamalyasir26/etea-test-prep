@@ -121,8 +121,20 @@ check("4B2 roman-marker count still 196", QUESTIONS.filter((q) => q.explanationL
 check("4B2 pending English explanations still 196", pendingEnglishExplanations().length === 196);
 
 // --- religious-content safety on new Qari text ---
-const qariText = JSON.stringify(TAJ_NEW.map((id) => BY_ID[id])) +
-  JSON.stringify(NOTES["Tajweed"].slice(14));
+// Stage 5B: strip the flat _ur/_roman translation fields before
+// scanning — the _ur fields are Urdu script by design (guarded
+// separately by test-stage5b.mjs: Arabic-verbatim + honorific
+// checks). Stripped objects are identical to the pre-Stage-5 objects,
+// so both checks below keep their exact original meaning: the
+// English-authored 4B2 content carries no invented religious
+// references and no Arabic script beyond the Waqf sign glyphs.
+const stripTr = (o) => {
+  const c = { ...o };
+  for (const k of Object.keys(c)) if (k.endsWith("_ur") || k.endsWith("_roman")) delete c[k];
+  return c;
+};
+const qariText = JSON.stringify(TAJ_NEW.map((id) => stripTr(BY_ID[id]))) +
+  JSON.stringify(NOTES["Tajweed"].slice(14).map(stripTr));
 check("4B2 no Hadith numbers/citations/narrations in new Qari text",
   !(/hadith\s*\d/i.test(qariText) || /sahih/i.test(qariText) || /bukhari/i.test(qariText) ||
     /muslim\s*\d/i.test(qariText) || /surah\s+\d+:\d+/i.test(qariText) || /ayah\s+\d+/i.test(qariText) ||

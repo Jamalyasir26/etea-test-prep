@@ -52,6 +52,7 @@ import {
   isTrusted,
   libraryScopeForSubjectLabel,
   mulberry32,
+  resolveQuestionView,
   shuffleOptions,
   type Question,
   type ReviewOverrides,
@@ -350,13 +351,22 @@ export default function QuizRunner({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Stage 5 — resolve translated content BEFORE shuffling, so the
+  // shuffled options are the translated ones and correctIndex still
+  // tracks the right choice. The shuffle seed depends only on (id +
+  // startTs), never on the text, so switching language mid-run keeps
+  // every option in the same position (translations preserve option
+  // order) and stored index-based answers stay valid. Untranslated
+  // items resolve to themselves (full English), unchanged.
   const prepared = useMemo(
     () =>
       questions.map((q) => {
         const rand = mulberry32(hashSeed(q.id + String(startTs)));
-        return shuffleOptions(q, rand);
+        const resolved = resolveQuestionView(q, lang);
+        const shuffled = shuffleOptions(resolved.view, rand);
+        return { ...shuffled, translated: resolved.translated };
       }),
-    [questions, startTs],
+    [questions, startTs, lang],
   );
 
   const [answers, setAnswers] = useState<Record<string, number>>({});
@@ -936,6 +946,21 @@ export default function QuizRunner({
                 <span className={`badge ${fp === undefined ? "grey" : ok ? "green" : "red"}`}>
                   {fp === undefined ? t("badgeUnanswered") : ok ? t("badgeCorrectFirst") : t("badgeWrongFirst")}
                 </span>
+                {/* Stage 5 — same [Auto-Translated] badge as the
+                    question card; see the card comment above. */}
+                {p.translated && (
+                  <>
+                    {" "}
+                    <span
+                      dir="ltr"
+                      className="badge grey"
+                      title={t("autoTranslatedBadgeAria")}
+                      aria-label={t("autoTranslatedBadgeAria")}
+                    >
+                      [Auto-Translated]
+                    </span>
+                  </>
+                )}
               </p>
               {p.options.map((o, oi) => (
                 <p key={oi} style={{ margin: "4px 0" }}>
@@ -1129,6 +1154,23 @@ export default function QuizRunner({
           <span dir="ltr" className="badge grey">
             {q.question.subject}
           </span>
+          {/* Stage 5 — literal "[Auto-Translated]" badge on translated
+              items (same literal in all languages; accessible label
+              via i18n). Latin literal isolated LTR so it cannot jump
+              in RTL (Urdu) mode. Never renders on fallback English. */}
+          {q.translated && (
+            <>
+              {" "}
+              <span
+                dir="ltr"
+                className="badge grey"
+                title={t("autoTranslatedBadgeAria")}
+                aria-label={t("autoTranslatedBadgeAria")}
+              >
+                [Auto-Translated]
+              </span>
+            </>
+          )}
           {/* Step 2a — semantic badges: review status (effective: bank
               status + this device's /review decisions), topic-inspired
               disclosure for past-paper-topic items, and provenance.

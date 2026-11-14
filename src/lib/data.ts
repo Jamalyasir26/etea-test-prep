@@ -75,6 +75,24 @@ export type Question = {
   // religious-content translations go through the owner review queue.
   ur?: QuestionTranslation;
   roman?: QuestionTranslation;
+  // Stage 5 (owner decision FINAL 2026-11-14) — flat auto-translations
+  // in Urdu script (_ur) and Roman Urdu (_roman), added subject by
+  // subject. These are SEPARATE from the Pass-1 nested scaffold above
+  // (which stays untouched; no item carries nested translations). An
+  // item is translated for a language ONLY when ALL SIX fields for
+  // that language are present and non-empty — see
+  // resolveQuestionView: a partially translated item renders the full
+  // English version, never a mix. Translated items render with a
+  // literal "[Auto-Translated]" badge; there is no review queue (the
+  // owner checks translations while reading). Arabic script inside a
+  // translation is copied verbatim from the source field, never
+  // retyped. Never modify existing keys when adding these.
+  question_ur?: string;
+  question_roman?: string;
+  options_ur?: string[];
+  options_roman?: string[];
+  explanation_ur?: string;
+  explanation_roman?: string;
 };
 
 /** Localization Pass 1 — one item's translated text. Every field is
@@ -115,6 +133,14 @@ export type Note = {
   // LOCALIZATION-PLAN.md). Absent = English only.
   ur?: NoteTranslation;
   roman?: NoteTranslation;
+  // Stage 5 (owner decision FINAL 2026-11-14) — flat auto-translations,
+  // same rule as Question: a note is translated for a language ONLY
+  // when ALL FOUR fields for that language are present and non-empty
+  // (see resolveNoteView); otherwise the full English note renders.
+  title_ur?: string;
+  title_roman?: string;
+  body_ur?: string;
+  body_roman?: string;
 };
 export type Flashcard = { front: string; back: string; category: string };
 export type Track = {
@@ -435,6 +461,53 @@ export function hasTranslation(item: Question | Note, lang: "roman" | "ur"): boo
   return Object.values(tr).some((v) =>
     Array.isArray(v) ? v.some((s) => s.trim().length > 0) : typeof v === "string" && v.trim().length > 0,
   );
+}
+
+/** Stage 5 — ITEM-LEVEL content resolution for the flat _ur/_roman
+ *  fields. An item renders translated content ONLY when the language's
+ *  full field set is present and non-empty (question + same-length
+ *  options + explanation); anything less renders the FULL English item
+ *  (the input object itself, unchanged) — never a half-translated mix,
+ *  never an empty field. The returned `view` is a shallow copy carrying
+ *  the translated text in the standard fields, so every existing
+ *  consumer (shuffleOptions, displayExplanation, badges, session
+ *  fingerprints) keeps working unchanged: ids, correctIndex,
+ *  reviewStatus, source and all other fields are identical. In English
+ *  mode the input is returned untouched. Pure; never mutates. */
+export type ResolvedQuestion = { view: Question; translated: boolean };
+export function resolveQuestionView(q: Question, lang: ContentLang): ResolvedQuestion {
+  if (lang === "en") return { view: q, translated: false };
+  const tq = lang === "ur" ? q.question_ur : q.question_roman;
+  const to = lang === "ur" ? q.options_ur : q.options_roman;
+  const te = lang === "ur" ? q.explanation_ur : q.explanation_roman;
+  const complete =
+    typeof tq === "string" &&
+    tq.trim().length > 0 &&
+    Array.isArray(to) &&
+    to.length === q.options.length &&
+    to.every((s) => typeof s === "string" && s.trim().length > 0) &&
+    typeof te === "string" &&
+    te.trim().length > 0;
+  if (!complete) return { view: q, translated: false };
+  return { view: { ...q, question: tq, options: to, explanation: te }, translated: true };
+}
+
+/** Stage 5 — same item-level rule for notes: translated ONLY when both
+ *  title and body for the language are present and non-empty. */
+export type ResolvedNote = { title: string; body: string; translated: boolean };
+export function resolveNoteView(note: Note, lang: ContentLang): ResolvedNote {
+  if (lang === "en") return { title: note.title, body: note.body, translated: false };
+  const tt = lang === "ur" ? note.title_ur : note.title_roman;
+  const tb = lang === "ur" ? note.body_ur : note.body_roman;
+  if (
+    typeof tt === "string" &&
+    tt.trim().length > 0 &&
+    typeof tb === "string" &&
+    tb.trim().length > 0
+  ) {
+    return { title: tt, body: tb, translated: true };
+  }
+  return { title: note.title, body: note.body, translated: false };
 }
 
 /** Stage 1 P2 — provenance badge for one item. Returns null when the

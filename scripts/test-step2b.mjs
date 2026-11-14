@@ -680,7 +680,11 @@ check("analysis: drill links use bank keys (no raw-label links left)", analysis.
 const library = read("src/app/library/page.tsx");
 check("library: Search all subjects option", library.includes('t("searchAllSubjects")') && library.includes('value={ALL_SUBJECTS}'));
 check("library: matching count line", library.includes('tf("libraryMatchCount"') && library.includes('tf("libraryMatchCountQuery"'));
-check("library: English source text label where translation is missing", library.includes('t("englishSourceText")') && library.includes("hasTranslation(n, lang)"));
+// Stage 5A — the label is now driven by resolveNoteView's item-level
+// `translated` flag (flat _ur/_roman fields) instead of the Pass-1
+// nested-scaffold hasTranslation(); the rendered behaviour is
+// unchanged: English source text is labelled in Urdu/Roman mode.
+check("library: English source text label where translation is missing", library.includes('t("englishSourceText")') && library.includes("!shown.translated"));
 check("library: related practice/flashcard/plan links", library.includes('t("relatedLabel")') && library.includes('t("relatedPractice")') && library.includes('t("relatedFlashcards")') && library.includes('t("relatedPlan")') && library.includes("noteBankKey(e.subject)") && library.includes("flashcardCategoryForNote(e.subject)") && library.includes("planDayForSubject(e.subject)"));
 check("library: subject + query preserved in the URL", library.includes('params.get("subject")') && library.includes('params.get("q")') && library.includes("history.replaceState"));
 
