@@ -21,8 +21,9 @@
 //  (i) Every zamFixed id resolves via the manifest id->bank map.
 //  (j) The dead drawing_pe bank is not in the manifest.
 //  Plus: bank/note/audio content, tracking.ts and sw.js are
-//  byte-identical to the pre-lazyload backup except the four Phase 1
-//  files (islamiyat.json + tajweed.json + arabic.json + content.json,
+//  byte-identical to the pre-lazyload backup except the Phase 1
+//  files (islamiyat.json + tajweed.json + arabic.json + english.json +
+//  urdu.json + maths.json + content.json,
 //  whose delta is pinned exactly), and every loading/failure UI marker
 //  is present.
 // Run: npm run build && node scripts/test-lazy-banks.mjs (exit 0 = all pass)
@@ -117,8 +118,8 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 
 // ---------- Content + storage schema unchanged vs backup ----------
 // Phase 1 exception (documented, narrow): islamiyat.json, tajweed.json,
-// arabic.json, english.json, urdu.json + content.json changed ONLY by the Phase 1 growth
-// batches (395 + 418 + 420 + 455 + 455 appended items, counts + bySubject indexes).
+// arabic.json, english.json, urdu.json, maths.json + content.json changed ONLY by the Phase 1 growth
+// batches (395 + 418 + 420 + 455 + 455 + 455 appended items, counts + bySubject indexes).
 // Everything else stays byte-identical, and the changed files must match the backup
 // exactly outside the Phase 1 delta (byte-prefix for the banks,
 // parsed-diff for content.json).
@@ -130,9 +131,9 @@ if (fs.existsSync(BACKUP)) {
     "src/data/quran-examples.json",
     "src/lib/tracking.ts",
   ];
-  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/content.json"]);
+  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/banks/maths.json", "src/data/content.json"]);
   const changed = contentPaths.filter((p) => !PHASE1_CHANGED.has(p) && sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
-  check("bank/note/audio content + tracking.ts byte-identical to backup except the six Phase 1 files", changed.length === 0, changed.join(", "));
+  check("bank/note/audio content + tracking.ts byte-identical to backup except the seven Phase 1 files", changed.length === 0, changed.join(", "));
   const backupBankRaw = fs.readFileSync(join(BACKUP, "src/data/banks/islamiyat.json"), "utf8");
   const curBankRaw = fs.readFileSync(join(ROOT, "src/data/banks/islamiyat.json"), "utf8");
   const backupPrefix = backupBankRaw.slice(0, -3); // strip trailing "\n]\n"
@@ -178,6 +179,15 @@ if (fs.existsSync(BACKUP)) {
     curUrdRaw.startsWith(backupUrdPrefix + ",") && backupUrd.length === 45 && curUrd.length === 500 &&
     JSON.stringify(curUrd.slice(0, 45)) === JSON.stringify(backupUrd) &&
     curUrd[45].id === "URD-046" && curUrd[499].id === "URD-500");
+  const backupMatRaw = fs.readFileSync(join(BACKUP, "src/data/banks/maths.json"), "utf8");
+  const curMatRaw = fs.readFileSync(join(ROOT, "src/data/banks/maths.json"), "utf8");
+  const backupMatPrefix = backupMatRaw.slice(0, -3); // strip trailing "\n]\n"
+  const backupMat = JSON.parse(backupMatRaw);
+  const curMat = JSON.parse(curMatRaw);
+  check("Phase 1 maths.json: backup bytes are an exact prefix (45 items untouched) + 455 appended",
+    curMatRaw.startsWith(backupMatPrefix + ",") && backupMat.length === 45 && curMat.length === 500 &&
+    JSON.stringify(curMat.slice(0, 45)) === JSON.stringify(backupMat) &&
+    curMat[45].id === "MAT-046" && curMat[499].id === "MAT-500");
   const backupContent = JSON.parse(fs.readFileSync(join(BACKUP, "src/data/content.json"), "utf8"));
   const curContent = JSON.parse(fs.readFileSync(join(ROOT, "src/data/content.json"), "utf8"));
   const reverted = JSON.parse(JSON.stringify(curContent));
@@ -192,14 +202,17 @@ if (fs.existsSync(BACKUP)) {
     backupContent.counts.bySubject.find((r) => r[0] === "English")[1];
   reverted.counts.bySubject.find((r) => r[0] === "Urdu")[1] =
     backupContent.counts.bySubject.find((r) => r[0] === "Urdu")[1];
+  reverted.counts.bySubject.find((r) => r[0] === "Maths")[1] =
+    backupContent.counts.bySubject.find((r) => r[0] === "Maths")[1];
   reverted.bySubject.islamiyat = backupContent.bySubject.islamiyat;
   reverted.bySubject.tajweed = backupContent.bySubject.tajweed;
   reverted.bySubject.arabic = backupContent.bySubject.arabic;
   reverted.bySubject.english = backupContent.bySubject.english;
   reverted.bySubject.urdu = backupContent.bySubject.urdu;
-  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu indexes differ from backup",
+  reverted.bySubject.maths = backupContent.bySubject.maths;
+  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths indexes differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
-    curContent.counts.total === 2906 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500);
+    curContent.counts.total === 3361 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");
 }
@@ -270,7 +283,7 @@ check(
   "loadAllQuestions order == old static QUESTIONS order (bank order + file order)",
   JSON.stringify(allLoaded.map((q) => q.id)) === JSON.stringify(QUESTIONS.map((q) => q.id)),
 );
-check("loadAllQuestions total is 2906", allLoaded.length === 2906, `got ${allLoaded.length}`);
+check("loadAllQuestions total is 3361", allLoaded.length === 3361, `got ${allLoaded.length}`);
 check("loadBank of an unknown key returns [] (never throws)", JSON.stringify(await data.loadBank("no_such_bank")) === "[]");
 check(
   "BANK_COUNTS matches the bank files exactly",
@@ -282,7 +295,7 @@ check(
 );
 check(
   "ID_BANK maps every id to its bank",
-  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 2906,
+  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 3361,
 );
 
 // ---------- (e) availability: manifest == old computation == built ----------

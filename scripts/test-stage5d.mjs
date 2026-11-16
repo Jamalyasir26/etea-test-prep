@@ -1,4 +1,4 @@
-// Stage 5D tests — English (500 MCQs + 8 notes) + Maths (45 MCQs + 7 notes)
+// Stage 5D tests — English (500 MCQs + 8 notes) + Maths (500 MCQs + 7 notes)
 // + GK (30 MCQs + 6 notes), Urdu script + Roman Urdu, on the Stage 5A
 // infrastructure. Exercises the REAL data.ts (compiled to CommonJS in /tmp
 // with tsc, same approach as test-stage5a/b/c.mjs). Locks: counts
@@ -59,12 +59,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5D bank total 2906 MCQs", QUESTIONS.length === 2906, `got ${QUESTIONS.length}`);
+check("5D bank total 3361 MCQs", QUESTIONS.length === 3361, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5D notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5D VISIBLE_COUNTS 2906/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 2906 &&
+  "5D VISIBLE_COUNTS 3361/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 3361 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -72,7 +72,7 @@ check(
   JSON.stringify(VISIBLE_COUNTS),
 );
 check("5D english bank still 500 items", BY_SUBJECT.english.length === 500, `got ${BY_SUBJECT.english.length}`);
-check("5D maths bank still 45 items", BY_SUBJECT.maths.length === 45, `got ${BY_SUBJECT.maths.length}`);
+check("5D maths bank still 500 items", BY_SUBJECT.maths.length === 500, `got ${BY_SUBJECT.maths.length}`);
 check("5D gk bank still 30 items", BY_SUBJECT.gk.length === 30, `got ${BY_SUBJECT.gk.length}`);
 check("5D English notes still 8", NOTES.English.length === 8, `got ${NOTES.English.length}`);
 check("5D Maths notes still 7", NOTES.Maths.length === 7, `got ${NOTES.Maths.length}`);
@@ -104,7 +104,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["english", "english", 500], ["maths", "maths", 45], ["gk", "gk", 30]]) {
+for (const [bankKey, label, expected] of [["english", "english", 500], ["maths", "maths", 500], ["gk", "gk", 30]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -398,7 +398,7 @@ for (const subject of ["English", "Maths", "GK"]) {
 }
 check("5D quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5D content.json counts unchanged", contentJson.counts.total === 2906 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5D content.json counts unchanged", contentJson.counts.total === 3361 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

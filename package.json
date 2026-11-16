@@ -77,7 +77,8 @@
     "test:phase1tajweed": "node scripts/test-phase1-tajweed.mjs",
     "test:phase1arabic": "node scripts/test-phase1-arabic.mjs",
     "test:phase1english": "node scripts/test-phase1-english.mjs",
-    "test:phase1urdu": "node scripts/test-phase1-urdu.mjs"
+    "test:phase1urdu": "node scripts/test-phase1-urdu.mjs",
+    "test:phase1maths": "node scripts/test-phase1-maths.mjs"
   },
   "version": "3.0.0"
 }
