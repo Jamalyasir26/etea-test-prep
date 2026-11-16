@@ -68,11 +68,11 @@ check("4A Start Here card still gated (no wrong-variant flash)", home.includes("
 // Phase 4B1 added 56 MCQs (30 IT + 26 PE) and Phase 4B2 added 62
 // (30 Drawing + 32 Tajweed) to the 645 F02-audited items.
 // (drawing_pe.json is the legacy combined file data.ts does not load;
-// excluding it, the banks hold exactly the 1576 items.)
+// excluding it, the banks hold exactly the 1996 items.)
 const bankFiles = fs.readdirSync(join(ROOT, "src/data/banks")).filter((f) => f.endsWith(".json") && f !== "drawing_pe.json");
 let bankQs = [];
 for (const f of bankFiles) bankQs = bankQs.concat(JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", f), "utf8")));
-check("4A bank total still 1576 questions", bankQs.length === 1576, String(bankQs.length));
+check("4A bank total still 1996 questions", bankQs.length === 1996, String(bankQs.length));
 check("4A explanationEn count still 124", bankQs.filter((q) => q.explanationEn).length === 124);
 check("4A roman-marker count still 196", bankQs.filter((q) => q.explanationLang === "roman").length === 196);
 

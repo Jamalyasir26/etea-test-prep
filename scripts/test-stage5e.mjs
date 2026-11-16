@@ -60,12 +60,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5E bank total 1576 MCQs", QUESTIONS.length === 1576, `got ${QUESTIONS.length}`);
+check("5E bank total 1996 MCQs", QUESTIONS.length === 1996, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5E notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5E VISIBLE_COUNTS 1576/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 1576 &&
+  "5E VISIBLE_COUNTS 1996/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 1996 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -381,7 +381,7 @@ for (const subject of ["General Science", "Pak Studies", "Social Studies", "Peda
 }
 check("5E quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5E content.json counts unchanged", contentJson.counts.total === 1576 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5E content.json counts unchanged", contentJson.counts.total === 1996 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

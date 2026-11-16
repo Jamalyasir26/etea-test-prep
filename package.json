@@ -74,7 +74,8 @@
     "test:stage5g": "node scripts/test-stage5g.mjs",
     "test:lazybanks": "node scripts/test-lazy-banks.mjs",
     "test:phase1islamiyat": "node scripts/test-phase1-islamiyat.mjs",
-    "test:phase1tajweed": "node scripts/test-phase1-tajweed.mjs"
+    "test:phase1tajweed": "node scripts/test-phase1-tajweed.mjs",
+    "test:phase1arabic": "node scripts/test-phase1-arabic.mjs"
   },
   "version": "3.0.0"
 }
