@@ -237,7 +237,7 @@ const { displayExplanation, pendingEnglishExplanations } = data;
 const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
 const QUESTIONS = BANK_KEYS.flatMap((k) => JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8")));
 
-check("F02 bank still 2451 MCQs", QUESTIONS.length === 2451);
+check("F02 bank still 2906 MCQs", QUESTIONS.length === 2906);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("F02 notes still 151", notesTotal === 151);
 check("F02 flashcards still 70", FLASHCARDS.length === 70);

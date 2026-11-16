@@ -1,6 +1,6 @@
 // qa-540.mjs — structural + consistency-heuristic QA for the ETEA Prep banks.
 // NOTE: the filename is historical — it dates from when the bank held 540
-// items. The active total is now 2451 (Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420 and Phase 1 English added 455 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
+// items. The active total is now 2906 (Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455 and Phase 1 Urdu added 455 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
 // references (`npm run qa`, QA-540.md, VERIFY-phase2.md) keep working.
 // Plain node, no dependencies. Run: npm run qa  (node scripts/qa-540.mjs)
 // Exit code 0 = all checks pass; 1 = any check fails.
@@ -8,7 +8,7 @@
 // SCOPE: this is STRUCTURAL + consistency-heuristic QA only. It checks counts,
 // option shape, ID uniqueness, near-duplicate stems, the PED-009 regression and
 // mock-composition consistency. It does NOT declare the bank subject-matter
-// verified — full subject verification of all 2451 items is out of scope.
+// verified — full subject verification of all 2906 items is out of scope.
 //
 // Bank layout note: drawing_pe.json is LEGACY — kept on disk, superseded by
 // drawing.json (DRW-001..DRW-010 + DRW-021..DRW-060) + pe.json (DRW-011..020 + PE-001..PE-036).
@@ -27,9 +27,9 @@ const CONTENT_PATH = join(ROOT, "src/data/content.json");
 const EXPECTED = {
   arabic: 500, drawing: 50, pe: 46, english: 500, gk: 30, islamiyat: 500,
   it: 60, maths: 45, pakstudies: 45, pastpapers: 20, pastpapers_reworded: 20,
-  pedagogy: 30, science: 30, socialstudies: 30, tajweed: 500, urdu: 45,
+  pedagogy: 30, science: 30, socialstudies: 30, tajweed: 500, urdu: 500,
 };
-const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 2451
+const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 2906
 const LEGACY_FILE = "drawing_pe.json";
 
 const results = []; // { name, pass, detail }
@@ -298,9 +298,9 @@ const content = loadJson(CONTENT_PATH);
 
   // content.json counts agree with the banks.
   const counts = content.counts || {};
-  check("content.json counts.total = 2451 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
+  check("content.json counts.total = 2906 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
   const bySubjectSum = (counts.bySubject || []).reduce((s, [, n]) => s + n, 0);
-  check("content.json counts.bySubject sums to 2451", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
+  check("content.json counts.bySubject sums to 2906", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
   const bySubject = content.bySubject || {};
   const indexBad = [];
   for (const [key, expected] of Object.entries(EXPECTED)) {

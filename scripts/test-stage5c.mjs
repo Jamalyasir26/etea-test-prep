@@ -58,12 +58,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5C bank total 2451 MCQs", QUESTIONS.length === 2451, `got ${QUESTIONS.length}`);
+check("5C bank total 2906 MCQs", QUESTIONS.length === 2906, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5C notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5C VISIBLE_COUNTS 2451/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 2451 &&
+  "5C VISIBLE_COUNTS 2906/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 2906 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -71,7 +71,7 @@ check(
   JSON.stringify(VISIBLE_COUNTS),
 );
 check("5C arabic bank still 500 items", BY_SUBJECT.arabic.length === 500, `got ${BY_SUBJECT.arabic.length}`);
-check("5C urdu bank still 45 items", BY_SUBJECT.urdu.length === 45, `got ${BY_SUBJECT.urdu.length}`);
+check("5C urdu bank still 500 items", BY_SUBJECT.urdu.length === 500, `got ${BY_SUBJECT.urdu.length}`);
 check("5C Arabic notes still 13", NOTES.Arabic.length === 13, `got ${NOTES.Arabic.length}`);
 check("5C Urdu notes still 6", NOTES.Urdu.length === 6, `got ${NOTES.Urdu.length}`);
 
@@ -101,7 +101,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["arabic", "arabic", 500], ["urdu", "urdu", 45]]) {
+for (const [bankKey, label, expected] of [["arabic", "arabic", 500], ["urdu", "urdu", 500]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -273,7 +273,7 @@ if (translatedUrN) {
 }
 check("5C quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5C content.json counts unchanged", contentJson.counts.total === 2451 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5C content.json counts unchanged", contentJson.counts.total === 2906 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

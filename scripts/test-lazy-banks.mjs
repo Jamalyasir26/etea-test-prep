@@ -117,8 +117,8 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 
 // ---------- Content + storage schema unchanged vs backup ----------
 // Phase 1 exception (documented, narrow): islamiyat.json, tajweed.json,
-// arabic.json, english.json + content.json changed ONLY by the Phase 1 growth
-// batches (395 + 418 + 420 + 455 appended items, counts + bySubject indexes).
+// arabic.json, english.json, urdu.json + content.json changed ONLY by the Phase 1 growth
+// batches (395 + 418 + 420 + 455 + 455 appended items, counts + bySubject indexes).
 // Everything else stays byte-identical, and the changed files must match the backup
 // exactly outside the Phase 1 delta (byte-prefix for the banks,
 // parsed-diff for content.json).
@@ -130,9 +130,9 @@ if (fs.existsSync(BACKUP)) {
     "src/data/quran-examples.json",
     "src/lib/tracking.ts",
   ];
-  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/content.json"]);
+  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/content.json"]);
   const changed = contentPaths.filter((p) => !PHASE1_CHANGED.has(p) && sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
-  check("bank/note/audio content + tracking.ts byte-identical to backup except the five Phase 1 files", changed.length === 0, changed.join(", "));
+  check("bank/note/audio content + tracking.ts byte-identical to backup except the six Phase 1 files", changed.length === 0, changed.join(", "));
   const backupBankRaw = fs.readFileSync(join(BACKUP, "src/data/banks/islamiyat.json"), "utf8");
   const curBankRaw = fs.readFileSync(join(ROOT, "src/data/banks/islamiyat.json"), "utf8");
   const backupPrefix = backupBankRaw.slice(0, -3); // strip trailing "\n]\n"
@@ -169,6 +169,15 @@ if (fs.existsSync(BACKUP)) {
     curEngRaw.startsWith(backupEngPrefix + ",") && backupEng.length === 45 && curEng.length === 500 &&
     JSON.stringify(curEng.slice(0, 45)) === JSON.stringify(backupEng) &&
     curEng[45].id === "ENG-046" && curEng[499].id === "ENG-500");
+  const backupUrdRaw = fs.readFileSync(join(BACKUP, "src/data/banks/urdu.json"), "utf8");
+  const curUrdRaw = fs.readFileSync(join(ROOT, "src/data/banks/urdu.json"), "utf8");
+  const backupUrdPrefix = backupUrdRaw.slice(0, -3); // strip trailing "\n]\n"
+  const backupUrd = JSON.parse(backupUrdRaw);
+  const curUrd = JSON.parse(curUrdRaw);
+  check("Phase 1 urdu.json: backup bytes are an exact prefix (45 items untouched) + 455 appended",
+    curUrdRaw.startsWith(backupUrdPrefix + ",") && backupUrd.length === 45 && curUrd.length === 500 &&
+    JSON.stringify(curUrd.slice(0, 45)) === JSON.stringify(backupUrd) &&
+    curUrd[45].id === "URD-046" && curUrd[499].id === "URD-500");
   const backupContent = JSON.parse(fs.readFileSync(join(BACKUP, "src/data/content.json"), "utf8"));
   const curContent = JSON.parse(fs.readFileSync(join(ROOT, "src/data/content.json"), "utf8"));
   const reverted = JSON.parse(JSON.stringify(curContent));
@@ -181,13 +190,16 @@ if (fs.existsSync(BACKUP)) {
     backupContent.counts.bySubject.find((r) => r[0] === "Arabic")[1];
   reverted.counts.bySubject.find((r) => r[0] === "English")[1] =
     backupContent.counts.bySubject.find((r) => r[0] === "English")[1];
+  reverted.counts.bySubject.find((r) => r[0] === "Urdu")[1] =
+    backupContent.counts.bySubject.find((r) => r[0] === "Urdu")[1];
   reverted.bySubject.islamiyat = backupContent.bySubject.islamiyat;
   reverted.bySubject.tajweed = backupContent.bySubject.tajweed;
   reverted.bySubject.arabic = backupContent.bySubject.arabic;
   reverted.bySubject.english = backupContent.bySubject.english;
-  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english indexes differ from backup",
+  reverted.bySubject.urdu = backupContent.bySubject.urdu;
+  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu indexes differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
-    curContent.counts.total === 2451 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500);
+    curContent.counts.total === 2906 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");
 }
@@ -258,7 +270,7 @@ check(
   "loadAllQuestions order == old static QUESTIONS order (bank order + file order)",
   JSON.stringify(allLoaded.map((q) => q.id)) === JSON.stringify(QUESTIONS.map((q) => q.id)),
 );
-check("loadAllQuestions total is 2451", allLoaded.length === 2451, `got ${allLoaded.length}`);
+check("loadAllQuestions total is 2906", allLoaded.length === 2906, `got ${allLoaded.length}`);
 check("loadBank of an unknown key returns [] (never throws)", JSON.stringify(await data.loadBank("no_such_bank")) === "[]");
 check(
   "BANK_COUNTS matches the bank files exactly",
@@ -270,7 +282,7 @@ check(
 );
 check(
   "ID_BANK maps every id to its bank",
-  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 2451,
+  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 2906,
 );
 
 // ---------- (e) availability: manifest == old computation == built ----------
