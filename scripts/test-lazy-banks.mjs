@@ -128,9 +128,9 @@ if (fs.existsSync(BACKUP)) {
     "src/data/quran-examples.json",
     "src/lib/tracking.ts",
   ];
-  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/content.json"]);
+  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/content.json"]);
   const changed = contentPaths.filter((p) => !PHASE1_CHANGED.has(p) && sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
-  check("bank/note/audio content + tracking.ts byte-identical to backup except the two Phase 1 files", changed.length === 0, changed.join(", "));
+  check("bank/note/audio content + tracking.ts byte-identical to backup except the three Phase 1 files", changed.length === 0, changed.join(", "));
   const backupBankRaw = fs.readFileSync(join(BACKUP, "src/data/banks/islamiyat.json"), "utf8");
   const curBankRaw = fs.readFileSync(join(ROOT, "src/data/banks/islamiyat.json"), "utf8");
   const backupPrefix = backupBankRaw.slice(0, -3); // strip trailing "\n]\n"
@@ -140,16 +140,28 @@ if (fs.existsSync(BACKUP)) {
     curBankRaw.startsWith(backupPrefix + ",") && backupBank.length === 105 && curBank.length === 500 &&
     JSON.stringify(curBank.slice(0, 105)) === JSON.stringify(backupBank) &&
     curBank[105].id === "ISL-106" && curBank[499].id === "ISL-500");
+  const backupTajRaw = fs.readFileSync(join(BACKUP, "src/data/banks/tajweed.json"), "utf8");
+  const curTajRaw = fs.readFileSync(join(ROOT, "src/data/banks/tajweed.json"), "utf8");
+  const backupTajPrefix = backupTajRaw.slice(0, -3); // strip trailing "\n]\n"
+  const backupTaj = JSON.parse(backupTajRaw);
+  const curTaj = JSON.parse(curTajRaw);
+  check("Phase 1 tajweed.json: backup bytes are an exact prefix (82 items untouched) + 418 appended",
+    curTajRaw.startsWith(backupTajPrefix + ",") && backupTaj.length === 82 && curTaj.length === 500 &&
+    JSON.stringify(curTaj.slice(0, 82)) === JSON.stringify(backupTaj) &&
+    curTaj[82].id === "TAJ-083" && curTaj[499].id === "TAJ-500");
   const backupContent = JSON.parse(fs.readFileSync(join(BACKUP, "src/data/content.json"), "utf8"));
   const curContent = JSON.parse(fs.readFileSync(join(ROOT, "src/data/content.json"), "utf8"));
   const reverted = JSON.parse(JSON.stringify(curContent));
   reverted.counts.total = backupContent.counts.total;
   reverted.counts.bySubject.find((r) => r[0] === "Islamiyat")[1] =
     backupContent.counts.bySubject.find((r) => r[0] === "Islamiyat")[1];
+  reverted.counts.bySubject.find((r) => r[0] === "Tajweed")[1] =
+    backupContent.counts.bySubject.find((r) => r[0] === "Tajweed")[1];
   reverted.bySubject.islamiyat = backupContent.bySubject.islamiyat;
-  check("Phase 1 content.json: only counts + bySubject.islamiyat index differ from backup",
+  reverted.bySubject.tajweed = backupContent.bySubject.tajweed;
+  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed indexes differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
-    curContent.counts.total === 1158 && curContent.bySubject.islamiyat.length === 500);
+    curContent.counts.total === 1576 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");
 }
@@ -220,7 +232,7 @@ check(
   "loadAllQuestions order == old static QUESTIONS order (bank order + file order)",
   JSON.stringify(allLoaded.map((q) => q.id)) === JSON.stringify(QUESTIONS.map((q) => q.id)),
 );
-check("loadAllQuestions total is 1158", allLoaded.length === 1158, `got ${allLoaded.length}`);
+check("loadAllQuestions total is 1576", allLoaded.length === 1576, `got ${allLoaded.length}`);
 check("loadBank of an unknown key returns [] (never throws)", JSON.stringify(await data.loadBank("no_such_bank")) === "[]");
 check(
   "BANK_COUNTS matches the bank files exactly",
@@ -232,7 +244,7 @@ check(
 );
 check(
   "ID_BANK maps every id to its bank",
-  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 1158,
+  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 1576,
 );
 
 // ---------- (e) availability: manifest == old computation == built ----------

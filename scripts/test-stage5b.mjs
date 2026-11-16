@@ -1,7 +1,9 @@
 // Stage 5B tests — Tajweed pilot batch 2 (82 MCQs + 24 notes, Urdu
-// script + Roman Urdu) on the Stage 5A infrastructure. Exercises the
-// REAL data.ts (compiled to CommonJS in /tmp with tsc, same approach
-// as test-stage5a.mjs). Locks: counts unchanged; flat _ur/_roman
+// script + Roman Urdu) on the Stage 5A infrastructure. Phase 1 Tajweed
+// (2026-11-16) grew the bank to 500 items, all trilingual at creation;
+// the bank-size/translation checks below pin 500, not the pilot 82.
+// Exercises the REAL data.ts (compiled to CommonJS in /tmp with tsc,
+// same approach as test-stage5a.mjs). Locks: counts unchanged; flat _ur/_roman
 // fields are all-or-none per language per item (whole items only);
 // options arrays match English length/order slots; the one
 // Roman-marked explanation (TAJ-029) copied verbatim to _roman;
@@ -56,19 +58,19 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5B bank total 1158 MCQs", QUESTIONS.length === 1158, `got ${QUESTIONS.length}`);
+check("5B bank total 1576 MCQs", QUESTIONS.length === 1576, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5B notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5B VISIBLE_COUNTS 1158/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 1158 &&
+  "5B VISIBLE_COUNTS 1576/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 1576 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 16,
   JSON.stringify(VISIBLE_COUNTS),
 );
-check("5B tajweed bank still 82 items", BY_SUBJECT.tajweed.length === 82, `got ${BY_SUBJECT.tajweed.length}`);
+check("5B tajweed bank 500 items (82 pilot + 418 Phase 1)", BY_SUBJECT.tajweed.length === 500, `got ${BY_SUBJECT.tajweed.length}`);
 check("5B tajweed notes still 24", NOTES.Tajweed.length === 24, `got ${NOTES.Tajweed.length}`);
 check("5B islamiyat bank 500 items (grown from 105 by Phase 1)", BY_SUBJECT.islamiyat.length === 500, `got ${BY_SUBJECT.islamiyat.length}`);
 
@@ -125,8 +127,8 @@ check(
   mcqUrSet.length === mcqRomanSet.length && mcqUrSet.every((id) => mcqRomanSet.includes(id)),
   `ur=${mcqUrSet.length} roman=${mcqRomanSet.length}`,
 );
-check("5B tajweed MCQs: all 82 translated", mcqUrSet.length === 82, `translated=${mcqUrSet.length}`);
-console.log(`INFO  5B tajweed MCQs translated: ${mcqUrSet.length}/82`);
+check("5B tajweed MCQs: all 500 translated", mcqUrSet.length === 500, `translated=${mcqUrSet.length}`);
+console.log(`INFO  5B tajweed MCQs translated: ${mcqUrSet.length}/500`);
 
 // --------------------------------- §4 Roman-marked explanation copied verbatim (TAJ-029)
 const t29 = BY_SUBJECT.tajweed.find((q) => q.id === "TAJ-029");
@@ -249,7 +251,7 @@ if (translatedN) {
 }
 check("5B quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5B content.json counts unchanged", contentJson.counts.total === 1158 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5B content.json counts unchanged", contentJson.counts.total === 1576 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);
