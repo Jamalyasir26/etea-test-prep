@@ -66,12 +66,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5G bank total 1996 MCQs", QUESTIONS.length === 1996, `got ${QUESTIONS.length}`);
+check("5G bank total 2451 MCQs", QUESTIONS.length === 2451, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5G notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5G VISIBLE_COUNTS 1996/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 1996 &&
+  "5G VISIBLE_COUNTS 2451/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 2451 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -514,7 +514,7 @@ for (const [bankKey, label] of [["drawing", "Drawing"], ["pastpapers", "Past Pap
 }
 check("5G quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5G content.json counts unchanged", contentJson.counts.total === 1996 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5G content.json counts unchanged", contentJson.counts.total === 2451 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 // --------------------------------- §10 past-paper disclosure labels (FINAL)
 // The disclosure lives in `pastPaperRef`, rendered by the existing
@@ -561,7 +561,7 @@ check(
 );
 // Whole-bank final completeness, independent of the per-bank loops above.
 check(
-  "5G FINAL: all 1996 questions carry complete translation triples in both languages",
+  "5G FINAL: all 2451 questions carry complete translation triples in both languages",
   QUESTIONS.every((q) => tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid),
   `untranslated=${QUESTIONS.filter((q) => !(tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid)).map((q) => q.id).slice(0, 5).join(",")}`,
 );
