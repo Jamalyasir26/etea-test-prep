@@ -1,5 +1,7 @@
 // Stage 5A tests — translation infrastructure + Islamiyat pilot batch
-// (105 MCQs + 14 notes, Urdu script + Roman Urdu). Exercises the REAL
+// (105 MCQs at the time + 14 notes, Urdu script + Roman Urdu; the bank
+// has since grown to 500 MCQs under Phase 1 — the counts below pin the
+// CURRENT bank size). Exercises the REAL
 // data.ts (compiled to CommonJS in /tmp with tsc, same approach as
 // test-trilanguage.mjs). Locks: counts unchanged; flat _ur/_roman
 // fields are all-or-none per language per item (whole items only);
@@ -55,19 +57,19 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5A bank total 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
+check("5A bank total 1158 MCQs", QUESTIONS.length === 1158, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5A notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5A VISIBLE_COUNTS 763/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 763 &&
+  "5A VISIBLE_COUNTS 1158/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 1158 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 16,
   JSON.stringify(VISIBLE_COUNTS),
 );
-check("5A islamiyat bank still 105 items", BY_SUBJECT.islamiyat.length === 105, `got ${BY_SUBJECT.islamiyat.length}`);
+check("5A islamiyat bank 500 items (grown from 105 by Phase 1)", BY_SUBJECT.islamiyat.length === 500, `got ${BY_SUBJECT.islamiyat.length}`);
 check("5A islamiyat notes still 14", NOTES.Islamiyat.length === 14, `got ${NOTES.Islamiyat.length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
@@ -124,7 +126,7 @@ check(
   `ur=${mcqUrSet.length} roman=${mcqRomanSet.length}`,
 );
 check("5A islamiyat MCQs: at least one item translated", mcqUrSet.length > 0, `translated=${mcqUrSet.length}`);
-console.log(`INFO  5A islamiyat MCQs translated: ${mcqUrSet.length}/105`);
+console.log(`INFO  5A islamiyat MCQs translated: ${mcqUrSet.length}/500`);
 
 // --------------------------------- §4 Roman-marked explanations copied verbatim
 let romanNotVerbatim = [];
@@ -293,7 +295,7 @@ check("5A /review untouched: no badge, no resolver", !review.includes("[Auto-Tra
 const quranExamples = read("src/data/quran-examples.json");
 check("5A quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(quranExamples));
 const contentJson = readJson("src/data/content.json");
-check("5A content.json counts unchanged", contentJson.counts.total === 763 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5A content.json counts unchanged", contentJson.counts.total === 1158 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

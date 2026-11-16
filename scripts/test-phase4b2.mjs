@@ -58,12 +58,12 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 // --- totals ---
-check("4B2 bank total 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
+check("4B2 bank total 1158 MCQs", QUESTIONS.length === 1158, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("4B2 notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check("4B2 flashcards still 70 (none added)", FLASHCARDS.length === 70, `got ${FLASHCARDS.length}`);
-check("4B2 VISIBLE_COUNTS 763/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 763 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
+check("4B2 VISIBLE_COUNTS 1158/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 1158 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
   VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 16, JSON.stringify(VISIBLE_COUNTS));
 check("4B2 Drawing bank 50 items", BY_SUBJECT.drawing.length === 50, `got ${BY_SUBJECT.drawing.length}`);
 check("4B2 Tajweed bank 82 items", BY_SUBJECT.tajweed.length === 82, `got ${BY_SUBJECT.tajweed.length}`);
@@ -225,8 +225,8 @@ const drawRow = dmRow.subjects.find((s) => s.label === "Drawing");
 const qariBlock = qariRow.subjects.find((s) => s.label === "Tajweed/Hifz + Islamiyat (combined block)");
 check("4B2 ledger dm Drawing row: 50 MCQs / 24 notes / 0 cards (recomputed)",
   drawRow.mcqs === 50 && drawRow.notes === 24 && drawRow.cards === 0, JSON.stringify(drawRow));
-check("4B2 ledger qari combined row: 187 MCQs / 38 notes / 12 cards (recomputed)",
-  qariBlock.mcqs === 187 && qariBlock.notes === 38 && qariBlock.cards === 12, JSON.stringify(qariBlock));
+check("4B2 ledger qari combined row: 582 MCQs / 38 notes / 12 cards (recomputed; 82 Tajweed + 500 Islamiyat after Phase 1)",
+  qariBlock.mcqs === 582 && qariBlock.notes === 38 && qariBlock.cards === 12, JSON.stringify(qariBlock));
 check("4B2 ledger dm + qari coverage still exact", dmRow.coverage === "exact" && qariRow.coverage === "exact");
 check("4B2 ledger DM/Qari prose: count-free, Phase 4B2 noted, stale lines gone",
   dmRow.missing.includes("Phase 4B2") && !/\d+ (MCQs|notes)/.test(dmRow.missing) &&
@@ -243,17 +243,17 @@ check("4B2 only dm + qari rows mention Phase 4B2",
 check("4B2 Phase 4B1 mentions still 2 (ctit + pet rows)",
   (ledgerSrc.match(/Phase 4B1/g) || []).length === 2);
 const contentJson = JSON.parse(read("src/data/content.json"));
-check("4B2 content.json counts: total 763, Drawing 50, Tajweed 82, notes 151, cards 70",
-  contentJson.counts.total === 763 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
+check("4B2 content.json counts: total 1158, Drawing 50, Tajweed 82, notes 151, cards 70",
+  contentJson.counts.total === 1158 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Drawing")[1] === 50 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Tajweed")[1] === 82);
 check("4B2 content.json bySubject index matches banks (drawing 50 / tajweed 82)",
   contentJson.bySubject.drawing.length === 50 && contentJson.bySubject.tajweed.length === 82 &&
   contentJson.bySubject.drawing[49] === "DRW-060" && contentJson.bySubject.tajweed[81] === "TAJ-082");
-check("4B2 meta description + i18n counts updated (763 / 151)",
-  read("src/app/layout.tsx").includes("763 MCQs") &&
+check("4B2 meta description + i18n counts updated (1158 / 151)",
+  read("src/app/layout.tsx").includes("1158 MCQs") &&
   read("src/lib/i18n.tsx").includes("151 notes") &&
-  read("src/lib/i18n.tsx").includes("763-question bank"));
+  read("src/lib/i18n.tsx").includes("share the same subject banks"));
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

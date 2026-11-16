@@ -56,12 +56,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5B bank total 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
+check("5B bank total 1158 MCQs", QUESTIONS.length === 1158, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5B notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5B VISIBLE_COUNTS 763/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 763 &&
+  "5B VISIBLE_COUNTS 1158/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 1158 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -70,7 +70,7 @@ check(
 );
 check("5B tajweed bank still 82 items", BY_SUBJECT.tajweed.length === 82, `got ${BY_SUBJECT.tajweed.length}`);
 check("5B tajweed notes still 24", NOTES.Tajweed.length === 24, `got ${NOTES.Tajweed.length}`);
-check("5B islamiyat bank still 105 items", BY_SUBJECT.islamiyat.length === 105, `got ${BY_SUBJECT.islamiyat.length}`);
+check("5B islamiyat bank 500 items (grown from 105 by Phase 1)", BY_SUBJECT.islamiyat.length === 500, `got ${BY_SUBJECT.islamiyat.length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
 const MCQ_TR_KEYS = ["question_ur", "question_roman", "options_ur", "options_roman", "explanation_ur", "explanation_roman"];
@@ -249,7 +249,7 @@ if (translatedN) {
 }
 check("5B quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5B content.json counts unchanged", contentJson.counts.total === 763 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5B content.json counts unchanged", contentJson.counts.total === 1158 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

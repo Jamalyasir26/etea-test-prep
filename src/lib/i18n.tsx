@@ -526,9 +526,9 @@ const STRINGS: Record<string, StrEntry> = {
   },
   mockIntroB: { en: "shared practice bank", roman: "shared practice bank", ur: "مشترکہ مشقی بینک" },
   mockIntroC: {
-    en: "— questions may repeat across track mocks; this is stated on each mock because the 763-question bank cannot supply 8+ disjoint 100-question mocks.",
-    roman: "se bante hain — track mockon mein sawalat dohraye ja sakte hain; yeh har mock par likha hai kyunke 763 sawalon ka bank 8 se zyada alag alag 100 sawalon wale mock nahi de sakta.",
-    ur: "سے بنتے ہیں — ٹریک موکوں میں سوالات دہرائے جا سکتے ہیں؛ یہ ہر موک پر لکھا ہے کیونکہ 763 سوالوں کا بینک 8 سے زیادہ الگ الگ 100 سوالوں والے موک نہیں دے سکتا۔",
+    en: "— questions may repeat across track mocks; this is stated on each mock because the track mocks share the same subject banks.",
+    roman: "se bante hain — track mockon mein sawalat dohraye ja sakte hain; yeh har mock par likha hai kyunke track mock aik hi subject bankon se bante hain.",
+    ur: "سے بنتے ہیں — ٹریک موکوں میں سوالات دہرائے جا سکتے ہیں؛ یہ ہر موک پر لکھا ہے کیونکہ ٹریک موک ایک ہی مضامین کے بینکوں سے بنتے ہیں۔",
   },
   mockIntroD: {
     en: "All mocks are practice mocks, not official ETEA papers.",

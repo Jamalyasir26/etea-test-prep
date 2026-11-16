@@ -331,7 +331,7 @@ const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 check("counts: VISIBLE_COUNTS.tracks is 12", data.VISIBLE_COUNTS.tracks === 12, String(data.VISIBLE_COUNTS.tracks));
 check("counts: VISIBLE_COUNTS.mocks is 16", data.VISIBLE_COUNTS.mocks === 16, String(data.VISIBLE_COUNTS.mocks));
-check("counts: bank counts as of Phase 4B1 (763/151/70)", data.COUNTS.total === 763 && data.COUNTS.notes === 151 && data.COUNTS.cards === 70);
+check("counts: bank counts (1158/151/70)", data.COUNTS.total === 1158 && data.COUNTS.notes === 151 && data.COUNTS.cards === 70);
 
 // ------------------------------------------------------------ summary
 if (failures > 0) {

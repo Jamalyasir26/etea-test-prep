@@ -72,7 +72,8 @@
     "test:stage5e": "node scripts/test-stage5e.mjs",
     "test:stage5f": "node scripts/test-stage5f.mjs",
     "test:stage5g": "node scripts/test-stage5g.mjs",
-    "test:lazybanks": "node scripts/test-lazy-banks.mjs"
+    "test:lazybanks": "node scripts/test-lazy-banks.mjs",
+    "test:phase1islamiyat": "node scripts/test-phase1-islamiyat.mjs"
   },
   "version": "3.0.0"
 }

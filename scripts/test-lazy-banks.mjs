@@ -21,8 +21,9 @@
 //  (i) Every zamFixed id resolves via the manifest id->bank map.
 //  (j) The dead drawing_pe bank is not in the manifest.
 //  Plus: bank/note/audio content, tracking.ts and sw.js are
-//  byte-identical to the pre-lazyload backup (no content or schema
-//  changes), and every loading/failure UI marker is present.
+//  byte-identical to the pre-lazyload backup except the two Phase 1
+//  files (islamiyat.json + content.json, whose delta is pinned
+//  exactly), and every loading/failure UI marker is present.
 // Run: npm run build && node scripts/test-lazy-banks.mjs (exit 0 = all pass)
 import { execSync } from "node:child_process";
 import { createRequire } from "node:module";
@@ -114,6 +115,11 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 }
 
 // ---------- Content + storage schema unchanged vs backup ----------
+// Phase 1 exception (documented, narrow): islamiyat.json + content.json
+// changed ONLY by the Phase 1 Islamiyat growth (395 appended items,
+// counts + bySubject index). Everything else stays byte-identical, and
+// the two changed files must match the backup exactly outside the
+// Phase 1 delta (byte-prefix for the bank, parsed-diff for content.json).
 if (fs.existsSync(BACKUP)) {
   const contentPaths = [
     ...BANK_KEYS.map((k) => `src/data/banks/${k}.json`),
@@ -122,8 +128,28 @@ if (fs.existsSync(BACKUP)) {
     "src/data/quran-examples.json",
     "src/lib/tracking.ts",
   ];
-  const changed = contentPaths.filter((p) => sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
-  check("bank/note/audio content + tracking.ts byte-identical to backup (no content/schema change)", changed.length === 0, changed.join(", "));
+  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/content.json"]);
+  const changed = contentPaths.filter((p) => !PHASE1_CHANGED.has(p) && sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
+  check("bank/note/audio content + tracking.ts byte-identical to backup except the two Phase 1 files", changed.length === 0, changed.join(", "));
+  const backupBankRaw = fs.readFileSync(join(BACKUP, "src/data/banks/islamiyat.json"), "utf8");
+  const curBankRaw = fs.readFileSync(join(ROOT, "src/data/banks/islamiyat.json"), "utf8");
+  const backupPrefix = backupBankRaw.slice(0, -3); // strip trailing "\n]\n"
+  const backupBank = JSON.parse(backupBankRaw);
+  const curBank = JSON.parse(curBankRaw);
+  check("Phase 1 islamiyat.json: backup bytes are an exact prefix (105 items untouched) + 395 appended",
+    curBankRaw.startsWith(backupPrefix + ",") && backupBank.length === 105 && curBank.length === 500 &&
+    JSON.stringify(curBank.slice(0, 105)) === JSON.stringify(backupBank) &&
+    curBank[105].id === "ISL-106" && curBank[499].id === "ISL-500");
+  const backupContent = JSON.parse(fs.readFileSync(join(BACKUP, "src/data/content.json"), "utf8"));
+  const curContent = JSON.parse(fs.readFileSync(join(ROOT, "src/data/content.json"), "utf8"));
+  const reverted = JSON.parse(JSON.stringify(curContent));
+  reverted.counts.total = backupContent.counts.total;
+  reverted.counts.bySubject.find((r) => r[0] === "Islamiyat")[1] =
+    backupContent.counts.bySubject.find((r) => r[0] === "Islamiyat")[1];
+  reverted.bySubject.islamiyat = backupContent.bySubject.islamiyat;
+  check("Phase 1 content.json: only counts + bySubject.islamiyat index differ from backup",
+    JSON.stringify(reverted) === JSON.stringify(backupContent) &&
+    curContent.counts.total === 1158 && curContent.bySubject.islamiyat.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");
 }
@@ -194,7 +220,7 @@ check(
   "loadAllQuestions order == old static QUESTIONS order (bank order + file order)",
   JSON.stringify(allLoaded.map((q) => q.id)) === JSON.stringify(QUESTIONS.map((q) => q.id)),
 );
-check("loadAllQuestions total is 763", allLoaded.length === 763, `got ${allLoaded.length}`);
+check("loadAllQuestions total is 1158", allLoaded.length === 1158, `got ${allLoaded.length}`);
 check("loadBank of an unknown key returns [] (never throws)", JSON.stringify(await data.loadBank("no_such_bank")) === "[]");
 check(
   "BANK_COUNTS matches the bank files exactly",
@@ -206,7 +232,7 @@ check(
 );
 check(
   "ID_BANK maps every id to its bank",
-  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 763,
+  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 1158,
 );
 
 // ---------- (e) availability: manifest == old computation == built ----------
