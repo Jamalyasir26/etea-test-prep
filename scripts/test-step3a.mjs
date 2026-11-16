@@ -676,7 +676,11 @@ const NEW_KEYS = [
 ];
 for (const key of NEW_KEYS) {
   const at = i18nSrc.indexOf(`  ${key}: {`);
-  const block = at === -1 ? "" : i18nSrc.slice(at, at + 900);
+  // Block-bounded slice (not a fixed window): since the lazy-load
+  // batch every key also carries a roman line, long blocks exceed
+  // the old 900-char window before the ur line closes.
+  const end = at === -1 ? -1 : i18nSrc.indexOf("\n  },", at);
+  const block = at === -1 || end === -1 ? "" : i18nSrc.slice(at, end);
   check(
     `i18n: key ${key} exists with non-empty en + ur`,
     at !== -1 && /en: "[^"]+"/.test(block) && /ur: "[^"]+"/.test(block),

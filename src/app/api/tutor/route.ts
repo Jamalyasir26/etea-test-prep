@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
       ? `Previous conversation (for context only):\n${historyText}\n\nNew question:\n${message}`
       : message;
     const { text, provider } = await generateTutorAnswer(prompt, lang, annotations);
-    const { notes, questions } = retrieve(message, 3, 3);
+    const { notes, questions } = await retrieve(message, 3, 3);
     return NextResponse.json({
       answer: text,
       provider,

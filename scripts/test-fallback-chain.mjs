@@ -46,7 +46,16 @@ const {
   classifyProviderError,
   AiError,
 } = require(path.join(OUT, "lib/ai.js"));
-const { reviewAttribution, BY_ID } = require(path.join(OUT, "lib/data.js"));
+const { reviewAttribution } = require(path.join(OUT, "lib/data.js"));
+// Lazy loading (Nov 2026): BY_ID is no longer exported from data.ts
+// (banks load dynamically). Rebuild it from the bank files — same
+// ids, same content. The loader itself is covered by
+// test-lazy-banks.mjs.
+const BY_ID = Object.fromEntries(
+  ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"]
+    .flatMap((k) => JSON.parse(fs.readFileSync(path.join(ROOT, "src/data/banks", `${k}.json`), "utf8")))
+    .map((q) => [q.id, q]),
+);
 
 let failures = 0;
 function check(name, cond, detail = "") {

@@ -10,6 +10,7 @@ import { execSync } from "node:child_process";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import fs from "node:fs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = "/tmp/stage1p0-retrieval";
@@ -18,7 +19,15 @@ execSync(
   { cwd: ROOT, stdio: "ignore" },
 );
 const require = createRequire(import.meta.url);
-const { retrieve, NOTES, QUESTIONS, BY_ID } = require(join(OUT, "lib/data.js"));
+const { retrieve, NOTES } = require(join(OUT, "lib/data.js"));
+// Lazy loading (Nov 2026): QUESTIONS/BY_ID are no longer exported
+// from data.ts (banks load dynamically) and retrieve() is async.
+// Rebuild the maps from the bank files in canonical bank order —
+// identical to the old static order. The loader itself is covered
+// by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const QUESTIONS = BANK_KEYS.flatMap((k) => JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8")));
+const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 let failures = 0;
 function check(name, cond, detail = "") {
@@ -38,7 +47,7 @@ function noteTitles(r) {
 // Before P0.3 the dedicated Ikhfa note did not exist; the tutor's excerpts
 // held one sentence on Ikhfa inside a longer note. The bar is: the new
 // dedicated Ikhfa note is picked up in the top 5 (contextBlock's window).
-const vL3 = retrieve("Ikhfa kya hota hai aur Noon Sakinah ke rules kya hain?", 5, 5);
+const vL3 = await retrieve("Ikhfa kya hota hai aur Noon Sakinah ke rules kya hain?", 5, 5);
 check(
   "V-L3: new Ikhfa note is picked up in the top 5",
   noteTitles(vL3).includes("Ikhfa — Hiding the Noon Sound (إخفاء)"),
@@ -51,7 +60,7 @@ check(
 );
 
 // V-L4 (Arabic): "ما هو الفاعل في النحو؟" — before P0.3 this retrieved NOTHING.
-const vL4 = retrieve("ما هو الفاعل في النحو؟", 5, 5);
+const vL4 = await retrieve("ما هو الفاعل في النحو؟", 5, 5);
 check(
   "V-L4: new Al-Fa'il note is retrieved (Arabic script match)",
   noteTitles(vL4).includes("Al-Fa'il — The Doer (الفاعل) in Nahw (النحو)"),
@@ -64,25 +73,25 @@ check(
 );
 
 // --- Other new topics retrieve ---
-const qalqalah = retrieve("What is Qalqalah and how many Qalqalah letters are there?", 5, 5);
+const qalqalah = await retrieve("What is Qalqalah and how many Qalqalah letters are there?", 5, 5);
 check(
   "Qalqalah note retrieved",
   noteTitles(qalqalah).includes("Qalqalah — The Echo Letters (قلقلة)"),
   `top 5: ${noteTitles(qalqalah).join(" | ")}`,
 );
-const mafoul = retrieve("ما هو المفعول به؟", 5, 5);
+const mafoul = await retrieve("ما هو المفعول به؟", 5, 5);
 check(
   "Maf'ul Bihi note retrieved (Arabic query)",
   noteTitles(mafoul).includes("Al-Maf'ul Bihi — The Object (المفعول به)"),
   `top 5: ${noteTitles(mafoul).join(" | ") || "(none)"}`,
 );
-const madd = retrieve("How many counts is Madd Lazim?", 5, 5);
+const madd = await retrieve("How many counts is Madd Lazim?", 5, 5);
 check(
   "Madd note retrieved",
   noteTitles(madd).some((t) => t.includes("Madd")),
   `top 5: ${noteTitles(madd).join(" | ")}`,
 );
-const seerat = retrieve("In which year did the Hijrah take place?", 5, 5);
+const seerat = await retrieve("In which year did the Hijrah take place?", 5, 5);
 check(
   "Seerat/Hijrah note retrieved",
   noteTitles(seerat).some((t) => t.includes("Hijrah")),
@@ -90,7 +99,7 @@ check(
 );
 
 // --- Regression: previously working retrieval still works ---
-const vL1 = retrieve("What is scaffolding in pedagogy?", 5, 5);
+const vL1 = await retrieve("What is scaffolding in pedagogy?", 5, 5);
 check(
   "V-L1 regression: scaffolding note still retrieved",
   noteTitles(vL1).some((t) => t.toLowerCase().includes("scaffolding")),
@@ -98,7 +107,7 @@ check(
 );
 
 // --- Out-of-scope sanity: the new notes must not hijack unrelated queries ---
-const vL6 = retrieve("What is the capital of Australia?", 5, 5);
+const vL6 = await retrieve("What is the capital of Australia?", 5, 5);
 check(
   "V-L6 sanity: no Tajweed/Arabic note in top 5 for an out-of-scope query",
   !noteTitles(vL6).some((t) => /Ikhfa|Fa'il|Qalqalah|Madd|Maf'ul/.test(t)),

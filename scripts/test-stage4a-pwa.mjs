@@ -130,7 +130,16 @@ check("4A SW only caches successful same-origin responses", sw.includes("respons
 check("4A SW has no audio code (PWA-only batch)", !sw.toLowerCase().includes("audio"));
 
 // --------------------------------- §4 data bundling (why chunk caching = data caching)
+// Lazy loading (Nov 2026): notes (content.json) stay statically
+// imported; question banks load via dynamic import() in banks.ts —
+// one lazy chunk per bank under /_next/static/chunks/, covered by
+// the SW cache-first rule, so a bank opened once online works
+// offline. A bank never opened online fails gracefully offline
+// (bankLoadFailedOffline); the chunk split itself is proven by
+// test-lazy-banks.mjs, and the offline narrowing is documented in
+// etea-bundle-decision.md.
 const dataTs = read("src/lib/data.ts");
+const banksTs = read("src/lib/banks.ts");
 check("4A data.ts statically imports content.json", dataTs.includes('import content from "../data/content.json"'));
 const BANKS = [
   "arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies",
@@ -138,15 +147,23 @@ const BANKS = [
   "tajweed", "urdu",
 ];
 for (const b of BANKS) {
-  check(`4A data.ts statically imports bank ${b}.json`, dataTs.includes(`../data/banks/${b}.json`));
+  check(`4A banks.ts dynamically imports bank ${b}.json (lazy chunk)`, banksTs.includes(`import("../data/banks/${b}.json")`));
 }
 check(
-  "4A drawing_pe.json is never imported (on disk + legacy keys only, not part of the bundle)",
-  !dataTs.includes('../data/banks/drawing_pe.json'),
+  "4A data.ts imports no bank JSON statically (all banks lazy)",
+  !BANKS.some((b) => dataTs.includes(`../data/banks/${b}.json`)),
 );
 check(
-  "4A data layer fetches no JSON over the network (all data is bundled)",
-  !dataTs.includes("fetch("),
+  "4A drawing_pe.json is never imported (on disk + legacy keys only, not part of any chunk)",
+  !dataTs.includes('../data/banks/drawing_pe.json') && !banksTs.includes('import("../data/banks/drawing_pe.json")'),
+);
+check(
+  "4A data layer fetches no JSON over the network (dynamic import(), not fetch)",
+  !dataTs.includes("fetch(") && !banksTs.includes("fetch("),
+);
+check(
+  "4A offline bank failure has a dedicated message key",
+  read("src/lib/i18n.tsx").includes("bankLoadFailedOffline"),
 );
 
 // --------------------------------- §5 wiring

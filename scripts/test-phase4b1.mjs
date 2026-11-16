@@ -43,8 +43,16 @@ check("4B1 tsc harness: no unexpected type errors", tscErrors.every((l) => l.inc
 const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 const ledger = require(join(OUT, "lib/ledger.js"));
-const { QUESTIONS, BY_SUBJECT, BY_ID, NOTES, FLASHCARDS, MOCKS, ZAM_FIXED, VISIBLE_COUNTS } = data;
+const { NOTES, FLASHCARDS, MOCKS, ZAM_FIXED, VISIBLE_COUNTS } = data;
 const { displayExplanation, pendingEnglishExplanations, buildMockQuestions } = data;
+// Lazy loading (Nov 2026): QUESTIONS/BY_SUBJECT/BY_ID are no longer
+// exported from data.ts (banks load dynamically). Rebuild them from
+// the bank files in canonical bank order — identical to the old
+// static order. The loader itself is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8"))]));
+const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
+const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 // --- totals ---
 check("4B1 bank total 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
@@ -98,7 +106,7 @@ check("4B1 zero items marked official anywhere",
 // --- F02 guards unchanged ---
 check("4B1 explanationEn count still 124", QUESTIONS.filter((q) => q.explanationEn).length === 124);
 check("4B1 roman-marker count still 196", QUESTIONS.filter((q) => q.explanationLang === "roman").length === 196);
-check("4B1 pendingEnglishExplanations still 196", pendingEnglishExplanations().length === 196);
+check("4B1 pendingEnglishExplanations still 196", (await pendingEnglishExplanations()).length === 196);
 // Exact RU detector (same set + tokeniser as test-step3b-audit2.mjs).
 const RU = new Set("ki ka ke hai hain ho hun hum se mein ko nahi hota hoti hote jata jati gaya gayi tha thi thay yeh woh aur bhi jo aik ek diya kiya raha rahi rahe jab kyun kaise kahan lekin magar phir sirf bohat zyada liye bina kehte kaha kehlata kehlati sakta sakti chahiye wala wali walay hoga hogi honge karein karna hona jana ana karke hokar rehta rehti rehte ne hua hui hue thin aayi aaye nazil paida bani bana mukammal pehle pehli dusre dusri aakhri".split(" "));
 const ruHits = (s) => s.toLowerCase().replace(/[^a-z\s']/g, " ").split(/\s+/).filter((w) => RU.has(w)).length;
@@ -148,8 +156,8 @@ check("4B1 concept-extracted notes total 56 (15 + 21 + 20 in Phase 4B2)",
 // --- mocks draw from the grown pools ---
 const ctitB = MOCKS.find((m) => m.id === "ctit-B");
 const petB = MOCKS.find((m) => m.id === "pet-B");
-const ctitQs = buildMockQuestions(ctitB);
-const petQs = buildMockQuestions(petB);
+const ctitQs = await buildMockQuestions(ctitB);
+const petQs = await buildMockQuestions(petB);
 check("4B1 ctit-B builds 100 with 25 IT from the 60-item pool",
   ctitQs.length === 100 && ctitQs.filter((q) => q.subjectKey === "it").length === 25);
 check("4B1 pet-B builds 100 with 20 PE from the 46-item pool",

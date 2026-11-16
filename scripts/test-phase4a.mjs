@@ -40,7 +40,7 @@ check("4A review heading + filters intact", review.includes("reviewTitle") && re
 // --------------------------------- §2 labels + data + logic kept
 const data = read("src/lib/data.ts");
 check("4A displayExplanation kept", data.includes("export function displayExplanation"));
-check("4A pendingEnglishExplanations helper kept (tests)", data.includes("export function pendingEnglishExplanations"));
+check("4A pendingEnglishExplanations helper kept (tests)", data.includes("export async function pendingEnglishExplanations"));
 check("4A helper comment notes the Phase 4A removal", data.includes("Phase 4A: the /review queue UI"));
 const qr = read("src/components/QuizRunner.tsx");
 check("4A QuizRunner still renders displayExplanation + pending label", qr.includes("displayExplanation(p.question, lang)") && qr.includes("explanationPendingLabel"));

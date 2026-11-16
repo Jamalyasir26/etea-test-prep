@@ -28,7 +28,7 @@
  * mid-quiz. Activation then claims clients and cleans old caches.
  */
 
-const CACHE_VERSION = "etea-prep-v1";
+const CACHE_VERSION = "etea-prep-v2";
 
 // App shell: every statically prerendered route, the manifest and the
 // icons. Dynamic routes (/mock/[id], /tracks/[id]) are cached at

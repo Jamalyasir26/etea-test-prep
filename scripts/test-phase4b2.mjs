@@ -46,8 +46,16 @@ check("4B2 tsc harness: no unexpected type errors", tscErrors.every((l) => l.inc
 const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 const ledger = require(join(OUT, "lib/ledger.js"));
-const { QUESTIONS, BY_SUBJECT, BY_ID, NOTES, FLASHCARDS, MOCKS, ZAM_FIXED, VISIBLE_COUNTS } = data;
+const { NOTES, FLASHCARDS, MOCKS, ZAM_FIXED, VISIBLE_COUNTS } = data;
 const { pendingEnglishExplanations, buildMockQuestions } = data;
+// Lazy loading (Nov 2026): QUESTIONS/BY_SUBJECT/BY_ID are no longer
+// exported from data.ts (banks load dynamically). Rebuild them from
+// the bank files in canonical bank order — identical to the old
+// static order. The loader itself is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8"))]));
+const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
+const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 // --- totals ---
 check("4B2 bank total 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
@@ -118,7 +126,7 @@ check("4B2 RU guard: 0 hits on new questions/options/explanations", ruHits.lengt
 // --- F02 guards unchanged ---
 check("4B2 explanationEn count still 124", QUESTIONS.filter((q) => q.explanationEn).length === 124);
 check("4B2 roman-marker count still 196", QUESTIONS.filter((q) => q.explanationLang === "roman").length === 196);
-check("4B2 pending English explanations still 196", pendingEnglishExplanations().length === 196);
+check("4B2 pending English explanations still 196", (await pendingEnglishExplanations()).length === 196);
 
 // --- religious-content safety on new Qari text ---
 // Stage 5B: strip the flat _ur/_roman translation fields before
@@ -189,9 +197,9 @@ check("4B2 3 Hifz notes among the new Tajweed notes",
 const dmB = MOCKS.find((m) => m.id === "dm-B");
 const qariB = MOCKS.find((m) => m.id === "qari-B");
 const qariMD = MOCKS.find((m) => m.id === "qari-MD");
-const dmQs = buildMockQuestions(dmB);
-const qariQs = buildMockQuestions(qariB);
-const qariMdQs = buildMockQuestions(qariMD);
+const dmQs = await buildMockQuestions(dmB);
+const qariQs = await buildMockQuestions(qariB);
+const qariMdQs = await buildMockQuestions(qariMD);
 check("4B2 dm-B builds 100 with 20 drawing from the 50-item pool",
   dmQs.length === 100 && dmQs.filter((q) => q.subjectKey === "drawing").length === 20);
 check("4B2 qari-B builds 100 with 20 tajweed from the 82-item pool",

@@ -47,15 +47,8 @@
 // (PDF 435 not directly verified in the report pass) and ZamungKor is
 // Official-scope-unavailable — neither gets the green badge.
 
-import {
-  BY_SUBJECT,
-  FLASHCARDS,
-  NOTES,
-  TRACKS,
-  VISIBLE_MOCKS,
-  VISIBLE_TRACKS,
-  type Track,
-} from "./data";
+import { FLASHCARDS, NOTES, TRACKS, VISIBLE_MOCKS, VISIBLE_TRACKS, type Track } from "./data";
+import { BANK_COUNTS, BANK_TRUSTED } from "./banks";
 
 export type LedgerCoverage = "exact" | "proxy" | "partial" | "unknown";
 export type LedgerSourceState = "confirmed" | "provisional" | "unavailable";
@@ -588,7 +581,7 @@ function countFor(entry: LedgerWeightageEntry): { notes: number; mcqs: number; c
   let notes = 0;
   for (const s of entry.noteSubjects) notes += NOTES[s]?.length ?? 0;
   let mcqs = 0;
-  for (const k of entry.bankKeys) mcqs += BY_SUBJECT[k]?.length ?? 0;
+  for (const k of entry.bankKeys) mcqs += BANK_COUNTS[k] ?? 0;
   let cards = 0;
   for (const c of entry.cardCategories) {
     cards += FLASHCARDS.filter((f) => f.category === c).length;
@@ -625,10 +618,10 @@ export function ledgerRowFor(trackId: string): LedgerRow | null {
   let trustedInBank = 0;
   let totalMcqs = 0;
   for (const k of bankKeys) {
-    for (const q of BY_SUBJECT[k] ?? []) {
-      totalMcqs += 1;
-      if (q.reviewStatus === "owner-reviewed" || q.reviewStatus === "approved") trustedInBank += 1;
-    }
+    // Exact: BANK_TRUSTED counts stored owner-reviewed/approved items,
+    // the same predicate the old scan used (no overrides here).
+    totalMcqs += BANK_COUNTS[k] ?? 0;
+    trustedInBank += BANK_TRUSTED[k] ?? 0;
   }
   const { coverage, reason } = coverageFor(def.pattern, subjects, mocks.length);
   return {

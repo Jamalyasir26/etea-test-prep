@@ -3,7 +3,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { AiError, generateTutorAnswer, normalizeTutorLang, rateLimitOk } from "@/lib/ai";
 import { clientIpFromHeaders, isSameOriginRequest } from "@/lib/apiGuard";
-import { BY_ID } from "@/lib/data";
+import { findQuestionById } from "@/lib/banks";
 
 export async function POST(req: NextRequest) {
   try {
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     // Stage 1 P1 Tier 2: shares the tutor generation path, so it accepts
     // the same languages (including "ar"); unknown values fall back to "en".
     const lang = normalizeTutorLang(body.lang);
-    const q = BY_ID[String(body.questionId ?? "")];
+    const q = await findQuestionById(String(body.questionId ?? ""));
     if (!q) return NextResponse.json({ error: "Question not found." }, { status: 404 });
     // Rate limit AFTER validation: unknown question IDs never consumed quota.
     const rl = rateLimitOk(clientIpFromHeaders(req.headers));

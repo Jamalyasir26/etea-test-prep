@@ -4,7 +4,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { BY_SUBJECT, hashSeed, isTrusted, mulberry32, shuffled, SUBJECT_LABELS } from "@/lib/data";
+import { hashSeed, isTrusted, mulberry32, shuffled, SUBJECT_LABELS, type Question } from "@/lib/data";
+import { BANK_COUNTS, BANK_KEYS, loadBank } from "@/lib/banks";
 import { lri, useLang } from "@/lib/i18n";
 import { loadPracticeState, PRACTICE_STATE_KEY, resolvePracticeInitial } from "@/lib/practice";
 import { loadReviews, safeWrite } from "@/lib/tracking";
@@ -22,7 +23,7 @@ function PracticeInner() {
   // default 20, so existing stored sessions keep working).
   const countParam = Number(params.get("count") ?? "20");
   const count = Number.isFinite(countParam) ? Math.min(20, Math.max(5, Math.floor(countParam))) : 20;
-  const subjects = useMemo(() => Object.keys(BY_SUBJECT).sort(), []);
+  const subjects = useMemo(() => [...BANK_KEYS].sort(), []);
   // Step 2 fixes — the initial subject/round/seed resolve through one
   // pure function (src/lib/practice.ts): the bare URL restores the
   // stored round + seed, so a reload resumes the SAME set and the
@@ -30,7 +31,7 @@ function PracticeInner() {
   // fresh (per-scope sessions are the design).
   const [practiceInit] = useState(() => {
     const stored = loadPracticeState(initial || "islamiyat");
-    return resolvePracticeInitial(initial, stored, (k) => Boolean(BY_SUBJECT[k]), Date.now());
+    return resolvePracticeInitial(initial, stored, (k) => (BANK_KEYS as readonly string[]).includes(k), Date.now());
   });
   const [subjectKey, setSubjectKey] = useState(practiceInit.subjectKey);
   const [round, setRound] = useState(practiceInit.round);
@@ -44,11 +45,38 @@ function PracticeInner() {
   const labelByKey: Record<string, string> = SUBJECT_LABELS;
   const subjectLabel = labelByKey[subjectKey] ?? subjectKey;
 
+  // Lazy bank: the subject's chunk loads on demand; QuizRunner mounts
+  // only once it arrives (an empty question list must never create a
+  // session fingerprint for this scope). A failed load shows a
+  // failure state with retry instead of a blank page: offline, a
+  // subject never opened online has no cached chunk yet.
+  const [bank, setBank] = useState<Question[] | null>(null);
+  const [bankError, setBankError] = useState<"offline" | "error" | null>(null);
+  const [retryNonce, setRetryNonce] = useState(0);
+  useEffect(() => {
+    let live = true;
+    setBank(null);
+    setBankError(null);
+    loadBank(subjectKey).then(
+      (b) => {
+        if (live) setBank(b);
+      },
+      () => {
+        if (live)
+          setBankError(
+            typeof navigator !== "undefined" && !navigator.onLine ? "offline" : "error",
+          );
+      },
+    );
+    return () => {
+      live = false;
+    };
+  }, [subjectKey, retryNonce]);
+
   const questions = useMemo(() => {
-    const bank = BY_SUBJECT[subjectKey] ?? [];
     const rand = mulberry32(hashSeed(`${subjectKey}-${round}-${seed}`));
-    return shuffled(bank, rand).slice(0, count);
-  }, [subjectKey, round, seed, count]);
+    return shuffled(bank ?? [], rand).slice(0, count);
+  }, [bank, subjectKey, round, seed, count]);
 
   // Stage 1 P0.2 — the results screen shows "Provisional — not verified"
   // unless every question in this set is owner-reviewed/approved.
@@ -80,7 +108,7 @@ function PracticeInner() {
         >
           {subjects.map((k) => (
             <option key={k} value={k}>
-              {labelByKey[k] ?? k} ({BY_SUBJECT[k].length})
+              {labelByKey[k] ?? k} ({BANK_COUNTS[k] ?? 0})
             </option>
           ))}
         </select>
@@ -88,16 +116,27 @@ function PracticeInner() {
           {t("newSet")}
         </button>
       </div>
-      <QuizRunner
-        key={`${subjectKey}-${round}-${count}`}
-        title={tf("quizTitle", { subject: lri(subjectLabel) })}
-        questions={questions}
-        mode="practice"
-        subject={subjectLabel}
-        allItemsVerified={allItemsVerified}
-        sessionScope={count === 20 ? `practice:${subjectKey}:${round}` : `practice:${subjectKey}:${round}:c${count}`}
-        questionSeed={String(seed)}
-      />
+      {bankError !== null ? (
+        <div className="alert">
+          <p>{t(bankError === "offline" ? "bankLoadFailedOffline" : "bankLoadFailed")}</p>
+          <button className="secondary" onClick={() => setRetryNonce((n) => n + 1)}>
+            {t("retryButton")}
+          </button>
+        </div>
+      ) : bank === null ? (
+        <p className="muted">{t("loading")}</p>
+      ) : (
+        <QuizRunner
+          key={`${subjectKey}-${round}-${count}`}
+          title={tf("quizTitle", { subject: lri(subjectLabel) })}
+          questions={questions}
+          mode="practice"
+          subject={subjectLabel}
+          allItemsVerified={allItemsVerified}
+          sessionScope={count === 20 ? `practice:${subjectKey}:${round}` : `practice:${subjectKey}:${round}:c${count}`}
+          questionSeed={String(seed)}
+        />
+      )}
     </div>
   );
 }

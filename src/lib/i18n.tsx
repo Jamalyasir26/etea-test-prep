@@ -9,10 +9,11 @@
 //
 // FALLBACK RULE (documented): t()/tf() look up the current language,
 // then fall back to English, then to the key itself. Roman Urdu
-// ("roman") has translations for short UI chrome (labels, buttons,
-// headings); LONG explanatory paragraphs have no roman entry and fall
-// back to English until a later pass translates them. Urdu ("ur") is
-// complete for every key: the test suite fails if any key lacks ur.
+// ("roman") is complete for every key (completed in the lazy-load
+// batch, Nov 2026 — the 138 long explanatory paragraphs that used to
+// fall back to English now have roman entries), and Urdu ("ur") is
+// complete for every key: the test suite fails if any key lacks
+// roman or ur.
 // Deliberate exceptions (English kept, listed in the report): proper
 // names (ETEA, KPPSC, Gemini, Groq, OpenRouter), IDs/codes, the scoring
 // policy notes (factual precision statements), CORRECTIONS / the pattern
@@ -68,14 +69,17 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Footer ----
   footerP1: {
     en: "All questions are original practice questions, not ETEA papers. Patterns are labelled per project — ETEA sets paper composition per project. Always verify against your specific advertisement / roll number slip.",
+    roman: "Tamam sawalat asli mashqi sawalat hain, ETEA ke parchy nahi. Pattern har mansoobe ke lihaaz se bataye gaye hain — ETEA har mansoobe ke liye parchy ki tarkeeb khud tay karta hai. Hamesha apne makhsoos ishtihar / roll number slip se tasdeeq karen.",
     ur: "تمام سوالات اصل مشقی سوالات ہیں، ETEA کے پرچے نہیں۔ پیٹرن ہر منصوبے کے لحاظ سے بتائے گئے ہیں — ETEA ہر منصوبے کے لیے پرچے کی ترکیب خود طے کرتا ہے۔ ہمیشہ اپنے مخصوص اشتہار / رول نمبر سلپ سے تصدیق کریں۔",
   },
   footerP2: {
     en: "AI Tutor answers are generated from this library only. All practice questions are AI-generated and unreviewed unless marked reviewed — mocks are provisional practice built from those unreviewed items. Trusted mode uses reviewed items only. No Hadith numbers, references, dates or quotes are invented on this site.",
+    roman: "AI Tutor ke jawab sirf is library se banaye jate hain. Tamam mashqi sawalat AI se bane hue aur ghair jaiza shuda hain jab tak un par jaiza shuda ka nishan na ho — mock inhi ghair jaiza shuda cheezon par mabni aarzi mashq hain. Trusted mode sirf jaiza shuda cheezain istemal karta hai. Is site par Hadith ke number, hawala jaat, tareekhain ya iqtibasat ghare nahi jate.",
     ur: "اے آئی استاد کے جوابات صرف اس لائبریری سے بنائے جاتے ہیں۔ تمام مشقی سوالات اے آئی سے بنے ہوئے اور غیر جائزہ شدہ ہیں جب تک ان پر جائزہ شدہ کا نشان نہ ہو — موک انہی غیر جائزہ شدہ اشیاء پر مبنی عارضی مشق ہیں۔ قابل اعتماد موڈ صرف جائزہ شدہ اشیاء استعمال کرتا ہے۔ اس سائٹ پر حدیث کے نمبر، حوالہ جات، تاریخیں یا اقتباسات گھڑے نہیں جاتے۔",
   },
   footerP3: {
     en: "Search engines are asked not to index this site (robots.txt / noindex), but that is not access control: anyone with the link can open it, and a real access gate is future work.",
+    roman: "Search engine se kaha gaya hai ke is site ko index na karen (robots.txt / noindex), lekin yeh rasai ki pabandi nahi hai: link rakhne wala koi bhi ise khol sakta hai, aur asal access gate mustaqbil ka kaam hai.",
     ur: "سرچ انجنوں سے کہا گیا ہے کہ اس سائٹ کو انڈیکس نہ کریں (robots.txt / noindex)، لیکن یہ رسائی کی پابندی نہیں ہے: لنک رکھنے والا کوئی بھی اسے کھول سکتا ہے، اور اصل رسائی گیٹ مستقبل کا کام ہے۔",
   },
 
@@ -167,6 +171,19 @@ const STRINGS: Record<string, StrEntry> = {
   export: { en: "Export progress", roman: "Progress export karein", ur: "پیش رفت محفوظ کریں" },
   import: { en: "Import progress", roman: "Progress import karein", ur: "پیش رفت لائیں" },
   loading: { en: "Loading…", roman: "Loading…", ur: "لوڈ ہو رہا ہے…" },
+  // Lazy banks — chunk-load failure states. The offline variant is
+  // shown when the device reports offline (a subject never opened
+  // online has no cached chunk); the generic variant otherwise.
+  bankLoadFailed: {
+    en: "Questions could not be loaded. Please check your connection and try again.",
+    roman: "Sawal load nahi ho sake. Connection check kar ke dobara koshish karein.",
+    ur: "سوالات لوڈ نہیں ہو سکے۔ کنکشن چیک کر کے دوبارہ کوشش کریں۔",
+  },
+  bankLoadFailedOffline: {
+    en: "You are offline and this subject has not been opened before, so its questions are not saved on this device yet. Connect to the internet once to load it.",
+    roman: "Aap offline hain aur yeh subject pehle kabhi nahi khola gaya, is liye is ke sawal is device par save nahi hain. Isay load karne ke liye aik dafa internet connect karein.",
+    ur: "آپ آف لائن ہیں اور یہ مضمون پہلے کبھی نہیں کھولا گیا، اس لیے اس کے سوالات اس ڈیوائس پر محفوظ نہیں ہیں۔ اسے لوڈ کرنے کے لیے ایک دفعہ انٹرنیٹ سے جڑیں۔",
+  },
   close: { en: "Close", roman: "Band karein", ur: "بند کریں" },
   cancel: { en: "Cancel", roman: "Cancel", ur: "منسوخ کریں" },
   subjectWord: { en: "Subject", roman: "Subject", ur: "مضمون" },
@@ -198,6 +215,7 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Home ----
   homeIntro: {
     en: "Personal preparation — everything for upcoming KP tests in one place. {total} MCQs · {notes} notes · {cards} flashcards · {tracks} teaching post tracks · {mocks} mocks.",
+    roman: "Zaati tayari — aane wale KP teston ke liye sab kuch ek jagah. {total} MCQs · {notes} notes · {cards} flashcards · {tracks} teaching post tracks · {mocks} mocks.",
     ur: "ذاتی تیاری — آنے والے کے پی ٹیسٹوں کے لیے سب کچھ ایک جگہ۔ {total} ایم سی کیوز · {notes} نوٹس · {cards} فلیش کارڈز · {tracks} تدریسی پوسٹ ٹریکس · {mocks} موک۔",
   },
   correctionsHeading: {
@@ -223,6 +241,7 @@ const STRINGS: Record<string, StrEntry> = {
   tutorLiveHeading: { en: "AI Tutor — live.", roman: "AI Tutor — live.", ur: "اے آئی استاد — براہ راست۔" },
   tutorLiveBody: {
     en: "The tutor calls Gemini (primary) with Groq and OpenRouter (free model) as fallbacks, server-side only. It answers from this library only, and says so when a question is outside the library. If live AI is down, the offline Study Assistant (library search) still works.",
+    roman: "Tutor Gemini (primary) ko call karta hai, aur Groq aur OpenRouter (free model) fallback ke tor par hain, sirf server par. Woh sirf is library se jawab deta hai, aur jab sawal library se bahar ho to bata deta hai. Agar live AI band ho to offline Study Assistant (library search) phir bhi kaam karta hai.",
     ur: "استاد Gemini (بنیادی) کو پکارتا ہے، اور Groq اور OpenRouter (مفت ماڈل) متبادل کے طور پر ہیں، صرف سرور پر۔ وہ صرف اس لائبریری سے جواب دیتا ہے، اور جب سوال لائبریری سے باہر ہو تو بتا دیتا ہے۔ اگر براہ راست اے آئی بند ہو تو آف لائن معاون (لائبریری تلاش) پھر بھی کام کرتا ہے۔",
   },
   quickLibraryDesc: {
@@ -270,14 +289,17 @@ const STRINGS: Record<string, StrEntry> = {
   tutorTitle: { en: "AI Tutor — Ustad", roman: "AI Tutor — Ustad", ur: "اے آئی استاد" },
   tutorIntro: {
     en: "This is the live tutor. It answers from this library only (RAG), in your selected language. If a question is outside the library, it says so instead of inventing. Mocks are provisional practice built from unreviewed AI-generated questions; Trusted mode uses reviewed items only.",
+    roman: "Yeh live tutor hai. Woh sirf is library se jawab deta hai (RAG), aap ki muntakhab zuban mein. Agar sawal library se bahar ho to gharne ke bajaye bata deta hai. Mock ghair jaiza shuda AI se bane sawalat par mabni aarzi mashq hain; Trusted mode sirf jaiza shuda cheezain istemal karta hai.",
     ur: "یہ براہ راست استاد ہے۔ وہ صرف اس لائبریری سے جواب دیتا ہے (RAG)، آپ کی منتخب زبان میں۔ اگر سوال لائبریری سے باہر ہو تو گھڑنے کے بجائے بتا دیتا ہے۔ موک غیر جائزہ شدہ اے آئی سے بنے سوالات پر مبنی عارضی مشق ہیں؛ قابل اعتماد موڈ صرف جائزہ شدہ اشیاء استعمال کرتا ہے۔",
   },
   tutorPrivacy: {
     en: "Privacy: your question goes to Gemini, Groq or OpenRouter (the AI providers) to generate the answer. Don't share sensitive personal data. Your questions are not stored on this site.",
+    roman: "Privacy: aap ka sawal jawab banane ke liye Gemini, Groq ya OpenRouter (AI providers) ko jata hai. Hassas zaati data share na karen. Aap ke sawalat is site par mehfooz nahi hote.",
     ur: "رازداری: آپ کا سوال جواب بنانے کے لیے Gemini، Groq یا OpenRouter (اے آئی فراہم کنندگان) کو جاتا ہے۔ حساس ذاتی ڈیٹا شیئر نہ کریں۔ آپ کے سوالات اس سائٹ پر محفوظ نہیں ہوتے۔",
   },
   tutorAnnotationsOn: {
     en: "Your private note annotations are included in this chat (you enabled this in the Library). Turn it off there any time.",
+    roman: "Aap ke niji note annotations is chat mein shamil hain (aap ne yeh Library mein enable kiya tha). Wahan se kisi bhi waqt band kar sakte hain.",
     ur: "آپ کے نجی نوٹ حاشیے اس گفتگو میں شامل ہیں (آپ نے یہ لائبریری میں فعال کیا تھا)۔ وہاں سے کسی بھی وقت بند کر سکتے ہیں۔",
   },
   answerLanguage: { en: "Answer language:", roman: "Jawab ki language:", ur: "جواب کی زبان:" },
@@ -349,6 +371,7 @@ const STRINGS: Record<string, StrEntry> = {
   offlineMcqLabel: { en: "MCQ", roman: "MCQ", ur: "ایم سی کیو" },
   noMatchFallback: {
     en: "No matching note or question was found in this library either — try rephrasing, or use the Library section.",
+    roman: "Is library mein koi matching note ya sawal nahi mila — dobara lafzon mein poochhen, ya Library section istemal karen.",
     ur: "اس لائبریری میں کوئی مطابق نوٹ یا سوال نہیں ملا — دوبارہ لفظوں میں پوچھیں، یا لائبریری کا حصہ استعمال کریں۔",
   },
   yourAnnotations: {
@@ -370,10 +393,12 @@ const STRINGS: Record<string, StrEntry> = {
   },
   statusFailedSummary: {
     en: "Live AI status could not be checked ({reason}). The tutor page shows details, and the offline library search still works.",
+    roman: "Live AI status check nahi ho saki ({reason}). Tutor page par tafseel hai, aur offline library search phir bhi kaam karti hai.",
     ur: "براہ راست اے آئی کی حالت چیک نہیں ہو سکی ({reason})۔ استاد کے صفحے پر تفصیل ہے، اور آف لائن لائبریری تلاش پھر بھی کام کرتی ہے۔",
   },
   statusFailedFull: {
     en: "Live AI status could not be checked ({reason}). The offline library search below still works.",
+    roman: "Live AI status check nahi ho saki ({reason}). Neeche offline library search phir bhi kaam karti hai.",
     ur: "براہ راست اے آئی کی حالت چیک نہیں ہو سکی ({reason})۔ نیچے آف لائن لائبریری تلاش پھر بھی کام کرتی ہے۔",
   },
   reasonHttp: {
@@ -411,6 +436,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   coldStartNote: {
     en: "This check ran on a cold instance — a timeout here usually clears on retry.",
+    roman: "Yeh check cold instance par chali — yahan ka timeout aam tor par dobara koshish par saaf ho jata hai.",
     ur: "یہ جانچ کولڈ انسٹینس پر چلی — یہاں کا ٹائم آؤٹ عام طور پر دوبارہ کوشش پر صاف ہو جاتا ہے۔",
   },
   statusResponding: { en: "responding", roman: "responding", ur: "جواب دے رہا ہے" },
@@ -429,6 +455,7 @@ const STRINGS: Record<string, StrEntry> = {
   recallFirst: { en: "Recall first:", roman: "Pehle yaad karein:", ur: "پہلے یاد کریں:" },
   libraryIntro2: {
     en: "cover the note, recall it from memory, then read. Plain re-reading is low-utility; retrieval practice is high-utility.",
+    roman: "Note dhampen, hafze se yaad karen, phir parhen. Sirf dobara parhna kam faida mand hai; hafze se yaad karne ki mashq zyada faida mand hai.",
     ur: "نوٹ ڈھانپیں، حافظے سے یاد کریں، پھر پڑھیں۔ صرف دوبارہ پڑھنا کم فائدہ مند ہے؛ حافظے سے یاد کرنے کی مشق زیادہ فائدہ مند ہے۔",
   },
   optInLabel: {
@@ -438,6 +465,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   optInDesc: {
     en: "Off by default. Your annotations are private notes stored on this device only — they are NOT sent to the AI tutor unless you enable this. When enabled, the tutor sees them as your own notes alongside the library.",
+    roman: "Default tor par band hai. Aap ke annotations niji notes hain jo sirf is device par mehfooz hain — jab tak aap yeh enable na karen, AI tutor ko nahi bheje jate. Enable hone par tutor unhein library ke sath aap ke apne notes ke tor par dekhta hai.",
     ur: "بنیادی طور پر بند ہے۔ آپ کے حاشیے نجی نوٹ ہیں جو صرف اس ڈیوائس پر محفوظ ہیں — جب تک آپ یہ فعال نہ کریں، اے آئی استاد کو نہیں بھیجے جاتے۔ فعال ہونے پر استاد انہیں لائبریری کے ساتھ آپ کے اپنے نوٹ کے طور پر دیکھتا ہے۔",
   },
   searchNotesPlaceholder: { en: "Search notes…", roman: "Notes talash karein…", ur: "نوٹس تلاش کریں…" },
@@ -479,6 +507,7 @@ const STRINGS: Record<string, StrEntry> = {
   practiceTitle: { en: "Practice — Topic Quizzes", roman: "Practice — Topic Quizzes", ur: "مشق — موضوعی کوئز" },
   practiceIntro1: {
     en: "20 questions per attempt, shuffled every time. Instant feedback after each question. All questions are original practice questions, labelled “AI-generated — not verified” (drafted by AI, structurally checked).",
+    roman: "Har koshish mein 20 sawalat, har bar mile jule. Har sawal ke baad fori feedback. Tamam sawalat asli mashqi sawalat hain, jin par “AI-generated — not verified” ka label hai (AI se likhe gaye, structurally check shuda).",
     ur: "ہر کوشش میں 20 سوالات، ہر بار ملے جلے۔ ہر سوال کے بعد فوری تاثرات۔ تمام سوالات اصل مشقی سوالات ہیں، جن پر “AI-generated — not verified” کا لیبل ہے (اے آئی سے لکھے گئے، ساختی طور پر چیک شدہ)۔",
   },
   notEteaQuestions: {
@@ -492,11 +521,13 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Mock list ----
   mockIntroA: {
     en: "Each mock states which pattern variant it follows. ZamungKor mocks are disjoint (no question repeats across them). Track mocks draw from the",
+    roman: "Har mock batata hai ke woh kis pattern variant par hai. ZamungKor mock alag alag hain (un mein koi sawal dohraya nahi jata). Track mock",
     ur: "ہر موک بتاتا ہے کہ وہ کس پیٹرن ورژن پر ہے۔ زمونگ کور موک الگ الگ ہیں (ان میں کوئی سوال دہرایا نہیں جاتا)۔ ٹریک موک",
   },
   mockIntroB: { en: "shared practice bank", roman: "shared practice bank", ur: "مشترکہ مشقی بینک" },
   mockIntroC: {
     en: "— questions may repeat across track mocks; this is stated on each mock because the 763-question bank cannot supply 8+ disjoint 100-question mocks.",
+    roman: "se bante hain — track mockon mein sawalat dohraye ja sakte hain; yeh har mock par likha hai kyunke 763 sawalon ka bank 8 se zyada alag alag 100 sawalon wale mock nahi de sakta.",
     ur: "سے بنتے ہیں — ٹریک موکوں میں سوالات دہرائے جا سکتے ہیں؛ یہ ہر موک پر لکھا ہے کیونکہ 763 سوالوں کا بینک 8 سے زیادہ الگ الگ 100 سوالوں والے موک نہیں دے سکتا۔",
   },
   mockIntroD: {
@@ -512,6 +543,7 @@ const STRINGS: Record<string, StrEntry> = {
   trustedModeLabel: { en: "Trusted mode", roman: "Trusted mode", ur: "قابل اعتماد موڈ" },
   mockProv2: {
     en: "uses reviewed questions only and returns fewer questions when not enough have been reviewed yet — it never fills the gap with unreviewed items.",
+    roman: "sirf jaiza shuda sawalat istemal karta hai aur jab kaafi jaiza shuda sawalat na hon to kam sawalat deta hai — khali jagah kabhi ghair jaiza shuda cheezon se nahi bharta.",
     ur: "صرف جائزہ شدہ سوالات استعمال کرتا ہے اور جب کافی جائزہ شدہ سوالات نہ ہوں تو کم سوالات دیتا ہے — خالی جگہ کبھی غیر جائزہ شدہ اشیاء سے نہیں بھرتا۔",
   },
   provisionalMode: { en: "Provisional (all questions)", roman: "Provisional (tamam questions)", ur: "عارضی (تمام سوالات)" },
@@ -530,6 +562,7 @@ const STRINGS: Record<string, StrEntry> = {
   mockOwnConfig: { en: " — this mock's own config.", roman: " — is mock ki apni config.", ur: " — اس موک کی اپنی ترتیب۔" },
   noPolicyNote: {
     en: " — ETEA has published no negative-marking policy for these projects.",
+    roman: " — in mansoobon ke liye ETEA ne negative marking ki koi policy shaya nahi ki.",
     ur: " — ان منصوبوں کے لیے ETEA نے منفی نمبروں کی کوئی پالیسی شائع نہیں کی۔",
   },
   scoringForRun: { en: "Scoring for this run: ", roman: "Is run ke liye scoring: ", ur: "اس کوشش کے لیے نمبر بندی: " },
@@ -569,12 +602,14 @@ const STRINGS: Record<string, StrEntry> = {
   planAlertTitle: { en: "Sample timetable — adjust to your schedule.", roman: "Sample timetable — apne schedule ke mutabiq adjust karein.", ur: "نمونہ ٹائم ٹیبل — اپنے شیڈول کے مطابق بدلیں۔" },
   planAlertBody: {
     en: "No credible source prescribes 2–3 hours/day for ETEA. The base plan is 21 days, 2–3 hours/day, 63 tasks (~50 hours).",
+    roman: "Koi motabar source ETEA ke liye rozana 2–3 ghante tajweez nahi karta. Base plan 21 din, rozana 2–3 ghante, 63 tasks (~50 ghante) hai.",
     ur: "کوئی معتبر ماخذ ETEA کے لیے روزانہ 2–3 گھنٹے تجویز نہیں کرتا۔ بنیادی منصوبہ 21 دن، روزانہ 2–3 گھنٹے، 63 کام (~50 گھنٹے) ہے۔",
   },
   tasksDone: { en: "tasks done", roman: "tasks done", ur: "کام مکمل" },
   generateAiPlan: { en: "Generate AI plan", roman: "AI plan banayein", ur: "اے آئی منصوبہ بنائیں" },
   planPrivacy: {
     en: "Privacy: generating an AI plan sends your chosen length and weakest subjects to Gemini, Groq or OpenRouter (the AI providers). Don't share sensitive personal data.",
+    roman: "Privacy: AI plan banane se aap ki muntakhab muddat aur kamzor tareen mazameen Gemini, Groq ya OpenRouter (AI providers) ko jate hain. Hassas zaati data share na karen.",
     ur: "رازداری: اے آئی منصوبہ بنانے سے آپ کی منتخب مدت اور کمزور ترین مضامین Gemini، Groq یا OpenRouter (اے آئی فراہم کنندگان) کو جاتے ہیں۔ حساس ذاتی ڈیٹا شیئر نہ کریں۔",
   },
   generatingPlan: { en: "Generating your plan…", roman: "Aap ka plan ban raha hai…", ur: "آپ کا منصوبہ بن رہا ہے…" },
@@ -595,6 +630,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   flashIntro: {
     en: "Answer before flipping the card (retrieval practice). Grade yourself: Again / Hard / Good / Easy. FSRS-7 adapts each card's interval from its stability and difficulty: new cards start with short same-day steps (about 1 and 10 minutes), and each grade button shows the exact interval that grade will set. Only cards due now (plus new cards) are in the session — future-due cards stay out unless you turn on cram mode.",
+    roman: "Card palatne se pehle jawab den (retrieval practice). Khud ko grade den: Again / Hard / Good / Easy. FSRS-7 har card ka interval us ke stability aur difficulty ke mutabiq banata hai: naye card mukhtasar same-day steps (taqreeban 1 aur 10 minute) se shuru hote hain, aur har grade button woh exact interval dikhata hai jo woh grade set kare ga. Session mein sirf abhi due card (aur naye card) hote hain — future-due card bahar rehte hain jab tak aap cram mode enable na karen.",
     ur: "کارڈ پلٹنے سے پہلے جواب دیں (حافظے سے یاد کرنے کی مشق)۔ خود کو درجہ دیں: دوبارہ / مشکل / اچھا / آسان۔ FSRS-7 ہر کارڈ کا وقفہ اس کے استحکام اور مشکل کے مطابق بناتا ہے: نئے کارڈ مختصر ہم روزہ مراحل (تقریباً 1 اور 10 منٹ) سے شروع ہوتے ہیں، اور ہر درجہ بٹن وہ درست وقفہ دکھاتا ہے جو وہ درجہ مقرر کرے گا۔ سیشن میں صرف ابھی واجب کارڈ (اور نئے کارڈ) ہوتے ہیں — مستقبل میں واجب کارڈ باہر رہتے ہیں جب تک آپ کرام موڈ فعال نہ کریں۔",
   },
   categoryLabel: { en: "Category", roman: "Category", ur: "زمرہ" },
@@ -608,6 +644,7 @@ const STRINGS: Record<string, StrEntry> = {
   sessionFinished: { en: "Session finished", roman: "Session mukammal", ur: "سیشن مکمل" },
   sessionFinishedBody: {
     en: "Recalled {fraction} cards. Cards still in learning were shown again this session; the rest return on their FSRS-scheduled day. Flashcard self-ratings are kept separate from quiz/mock accuracy on the Analysis page.",
+    roman: "{fraction} card yaad kiye gaye. Seekhne ke marhale mein maujood card is session mein dobara dikhaye gaye; baqi apne FSRS muqarrara din wapas aayen ge. Flashcard self-ratings Analysis page par quiz/mock accuracy se alag rakhi jati hain.",
     ur: "{fraction} کارڈ یاد کیے گئے۔ سیکھنے کے مرحلے میں موجود کارڈ اس سیشن میں دوبارہ دکھائے گئے؛ باقی اپنے FSRS مقررہ دن واپس آئیں گے۔ فلیش کارڈ کی خود درجہ بندی تجزیہ صفحے پر کوئز/موک درستگی سے الگ رکھی جاتی ہے۔",
   },
   reviewAgain: { en: "Review again", roman: "Dobara review karein", ur: "دوبارہ جائزہ لیں" },
@@ -631,10 +668,12 @@ const STRINGS: Record<string, StrEntry> = {
   },
   flashMigratedNotice: {
     en: "Your flashcard schedule moved to FSRS-7 (adaptive spaced repetition). {migrated} card(s) kept their due dates (intervals restarted); {reset} card(s) had no usable schedule and started fresh. Your previous schedule was saved unchanged as a backup.",
+    roman: "Aap ka flashcard schedule FSRS-7 (adaptive spaced repetition) par muntaqil ho gaya. {migrated} card ki due dates barqarar rahin (intervals dobara shuru hue); {reset} card ka koi qaabil istemal schedule nahi tha aur woh naye sire se shuru hue. Aap ka pichla schedule baghair tabdeeli ke backup ke tor par mehfooz kar liya gaya.",
     ur: "آپ کا فلیش کارڈ شیڈول FSRS-7 (مطابقتی وقفہ تکرار) پر منتقل ہو گیا۔ {migrated} کارڈ کی واجب تاریخیں برقرار رہیں (وقفے دوبارہ شروع ہوئے)؛ {reset} کارڈ کا کوئی قابل استعمال شیڈول نہیں تھا اور وہ نئے سرے سے شروع ہوئے۔ آپ کا پچھلا شیڈول بغیر تبدیلی کے بیک اپ کے طور پر محفوظ کر لیا گیا۔",
   },
   flashMigrationBackupFailed: {
     en: "The backup of your previous schedule could not be saved, so your previous schedule was left unchanged — the migration will retry on your next visit.",
+    roman: "Aap ke pichle schedule ka backup mehfooz nahi ho saka, is liye pichla schedule baghair tabdeeli ke chhor diya gaya — agli bar migration dobara koshish kare gi.",
     ur: "آپ کے پچھلے شیڈول کا بیک اپ محفوظ نہیں ہو سکا، اس لیے پچھلا شیڈول بغیر تبدیلی کے چھوڑ دیا گیا — اگلی بار منتقلی دوبارہ کوشش کرے گی۔",
   },
   cardsDueLabel: { en: "Cards due today", roman: "Cards due aaj", ur: "آج واجب کارڈز" },
@@ -660,11 +699,13 @@ const STRINGS: Record<string, StrEntry> = {
   },
   quarantineBody: {
     en: "{n} stored value(s) could not be read (keys: {keys}). The raw text was quarantined verbatim — download it below to inspect or recover it by hand. The affected section shows its empty state until the stored value is repaired or replaced.",
+    roman: "{n} mehfooz shuda value(s) parhi nahi ja sakin (keys: {keys}). Raw text verbatim quarantine kar liya gaya — hath se jaanchne ya recover karne ke liye neeche se download karen. Mutasira hissa us waqt tak khali haalat dikhata hai jab tak mehfooz shuda value repair ya replace na ho.",
     ur: "{n} محفوظ شدہ قیمت(یں) پڑھی نہیں جا سکیں (کلیدیں: {keys})۔ خام متن بعینہ قرنطینہ کر لیا گیا — ہاتھ سے جانچنے یا بحال کرنے کے لیے نیچے سے ڈاؤن لوڈ کریں۔ متاثرہ حصہ اس وقت تک خالی حالت دکھاتا ہے جب تک محفوظ شدہ قیمت درست یا تبدیل نہ ہو۔",
   },
   writeFailedA: { en: "A save failed", roman: "Aik save fail ho gaya", ur: "ایک محفوظ کاری ناکام ہوئی" },
   writeFailedB: {
     en: "Your progress may not have been stored — export it now from “Your data” below, then free up browser storage and try again.",
+    roman: "Aap ki progress mehfooz nahi hui hogi — neeche “Your data” se abhi export karen, phir browser storage khali karen aur dobara koshish karen.",
     ur: "آپ کی پیش رفت محفوظ نہیں ہوئی ہوگی — نیچے “آپ کا ڈیٹا” سے ابھی برآمد کریں، پھر براؤزر اسٹوریج خالی کریں اور دوبارہ کوشش کریں۔",
   },
   readFailedA: { en: "A stored value could not be read", roman: "Aik stored value parhi nahi ja saki", ur: "ایک محفوظ شدہ قیمت پڑھی نہیں جا سکی" },
@@ -681,10 +722,12 @@ const STRINGS: Record<string, StrEntry> = {
   },
   quarantineDownloadedMsg: {
     en: "Quarantined data downloaded as a JSON file (raw stored text, verbatim). Nothing was deleted.",
+    roman: "Quarantined data JSON file ke tor par download ho gaya (raw stored text, verbatim). Kuch delete nahi hua.",
     ur: "قرنطینہ شدہ ڈیٹا JSON فائل کے طور پر ڈاؤن لوڈ ہو گیا (خام محفوظ شدہ متن، بعینہ)۔ کچھ حذف نہیں ہوا۔",
   },
   quarantineClearConfirm: {
     en: "Clear the quarantined data and dismiss this warning? Only do this after downloading a copy — the raw text will be removed.",
+    roman: "Quarantined data saaf karen aur yeh warning khatam karen? Yeh sirf copy download karne ke baad karen — raw text hata diya jaye ga.",
     ur: "قرنطینہ شدہ ڈیٹا صاف کریں اور یہ وارننگ ختم کریں؟ یہ صرف کاپی ڈاؤن لوڈ کرنے کے بعد کریں — خام متن ہٹ جائے گا۔",
   },
   quarantineClearedMsg: { en: "Quarantined data cleared by your choice.", roman: "Quarantined data aap ki choice se clear ho gaya.", ur: "قرنطینہ شدہ ڈیٹا آپ کی مرضی سے صاف ہو گیا۔" },
@@ -701,6 +744,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   firstAnswerNote: {
     en: "Scores count your first answer to each question; corrected retries never change a score. Flashcard self-ratings are kept separate from MCQ accuracy.",
+    roman: "Score har sawal ke aap ke pehle jawab par hote hain; durust shuda dobara koshishain kabhi score nahi badaltin. Flashcard self-ratings MCQ accuracy se alag rakhi jati hain.",
     ur: "نمبر ہر سوال کے آپ کے پہلے جواب پر ہوتے ہیں؛ درست شدہ دوبارہ کوششیں کبھی نمبر نہیں بدلتیں۔ فلیش کارڈ کی خود درجہ بندی ایم سی کیو درستگی سے الگ رکھی جاتی ہے۔",
   },
   perSubjectHeading: { en: "Per-subject accuracy", roman: "Per-subject accuracy", ur: "مضمون کے لحاظ سے درستگی" },
@@ -739,25 +783,30 @@ const STRINGS: Record<string, StrEntry> = {
   noRetries: { en: "no corrected retries", roman: "koi corrected retry nahi", ur: "کوئی درست شدہ دوبارہ کوشش نہیں" },
   noItemData: {
     en: "No per-item data recorded for this attempt — it was recorded before item-level tracking existed.",
+    roman: "Is koshish ke liye per-item data record nahi hua — yeh item-level tracking aane se pehle record hui thi.",
     ur: "اس کوشش کے لیے فی سوال ڈیٹا ریکارڈ نہیں ہوا — یہ فی سوال ٹریکنگ آنے سے پہلے ریکارڈ ہوئی تھی۔",
   },
   yourDataHeading: { en: "Your data", roman: "Aap ka data", ur: "آپ کا ڈیٹا" },
   yourDataBody: {
     en: "Progress lives in this browser only (localStorage). Export it regularly so a cleared browser never loses your history. A full backup covers attempts, plan, flashcards, issues, preferences (language/theme) and in-progress sessions — and never contains API keys (there are none client-side). Import merges into what is already stored (attempts deduplicated by id; a live in-progress session is never overwritten by an import). If a stored value ever fails to parse, its raw text is quarantined — never deleted — and a warning appears at the top of this page with a download option.",
+    roman: "Progress sirf is browser mein rehti hai (localStorage). Ise baqaidgi se export karen taake browser saaf hone par aap ki history kabhi zaya na ho. Full backup mein attempts, plan, flashcards, issues, preferences (language/theme) aur in-progress sessions shamil hote hain — aur is mein kabhi API keys nahi hotin (client par koi nahi hain). Import pehle se mehfooz data mein merge ho jati hai (attempts id se duplicate nahi hotin; live in-progress session import se kabhi overwrite nahi hota). Agar koi mehfooz shuda value kabhi parse na ho sake to us ka raw text quarantine kar liya jata hai — kabhi delete nahi hota — aur is page ke upar download ke option ke sath warning aa jati hai.",
     ur: "پیش رفت صرف اس براؤزر میں رہتی ہے (localStorage)۔ اسے باقاعدگی سے برآمد کریں تاکہ براؤزر صاف ہونے پر آپ کی تاریخ کبھی ضائع نہ ہو۔ مکمل بیک اپ میں کوششیں، منصوبہ، فلیش کارڈز، مسائل، ترجیحات (زبان/تھیم) اور جاری سیشن شامل ہوتے ہیں — اور اس میں کبھی API کیز نہیں ہوتیں (کلائنٹ پر کوئی نہیں ہیں)۔ درآمد پہلے سے محفوظ ڈیٹا میں ضم ہو جاتی ہے (کوششیں نمبر سے دہرائی نہیں جاتیں؛ جاری سیشن درآمد سے کبھی اوور رائٹ نہیں ہوتا)۔ اگر کوئی محفوظ شدہ قیمت کبھی پڑھی نہ جا سکے تو اس کا خام متن قرنطینہ کر لیا جاتا ہے — کبھی حذف نہیں ہوتا — اور اس صفحے کے اوپر ڈاؤن لوڈ کے آپشن کے ساتھ وارننگ آ جاتی ہے۔",
   },
   deleteAttempts: { en: "Delete all attempts", roman: "Tamam attempts delete karein", ur: "تمام کوششیں حذف کریں" },
   deleteAttemptsConfirm: {
     en: "Delete all recorded attempts? This cannot be undone (export first if you want a copy).",
+    roman: "Tamam record shuda attempts delete karen? Yeh wapas nahi ho sakta (agar copy chahiye to pehle export karen).",
     ur: "تمام ریکارڈ شدہ کوششیں حذف کریں؟ یہ واپس نہیں ہو سکتا (اگر کاپی چاہیے تو پہلے برآمد کریں)۔",
   },
   attemptsDeletedMsg: { en: "All attempts deleted.", roman: "Tamam attempts delete ho gayein.", ur: "تمام کوششیں حذف ہو گئیں۔" },
   exportMsg: {
     en: "Progress exported as a JSON file (attempts, plan, flashcards, issues, preferences, in-progress sessions).",
+    roman: "Progress JSON file ke tor par export ho gayi (attempts, plan, flashcards, issues, preferences, in-progress sessions).",
     ur: "پیش رفت JSON فائل کے طور پر برآمد ہو گئی (کوششیں، منصوبہ، فلیش کارڈز، مسائل، ترجیحات، جاری سیشن)۔",
   },
   importMsg: {
     en: "Imported {a} new attempt(s), {i} issue(s), {s} session(s); merged {p} plan key(s), {f} flashcard(s)",
+    roman: "{a} nayi attempt(s), {i} issue(s), {s} session(s) import hue; {p} plan key(s), {f} flashcard(s) merge hue",
     ur: "{a} نئی کوشش(یں)، {i} مسئلہ/مسائل، {s} سیشن درآمد ہوئے؛ {p} منصوبہ کلید(یں)، {f} فلیش کارڈ ضم ہوئے",
   },
   importPrefs: { en: "; preferences applied", roman: "; preferences apply ho gayein", ur: "؛ ترجیحات لاگو ہو گئیں" },
@@ -774,11 +823,13 @@ const STRINGS: Record<string, StrEntry> = {
   reviewAlertTitle: { en: "You are the verifier.", roman: "Aap verifier hain.", ur: "آپ تصدیق کنندہ ہیں۔" },
   reviewAlertBody1: {
     en: "Religious content (Islamiyat, Tajweed, Arabic, Fiqh) is verified by you, the owner — never by the AI. Items that pass the structural check stay",
+    roman: "Mazhabi content (Islamiyat, Tajweed, Arabic, Fiqh) ki tasdeeq aap, yani malik, karte hain — AI kabhi nahi karta. Structural check pass karne wali cheezain yahan aap ki tasdeeq tak",
     ur: "مذہبی مواد (اسلامیات، تجوید، عربی، فقہ) کی تصدیق آپ، یعنی مالک، کرتے ہیں — اے آئی کبھی نہیں کرتا۔ ساختی جانچ پاس کرنے والی اشیاء یہاں آپ کی تصدیق تک",
   },
   draftWord: { en: "draft", roman: "draft", ur: "مسودہ" },
   reviewAlertBody2: {
     en: "until you verify them here. Verified items feed Trusted Mode; everything else stays provisional.",
+    roman: "rehti hain. Tasdeeq shuda cheezain Trusted Mode mein jati hain; baqi sab aarzi rehta hai.",
     ur: "رہتی ہیں۔ تصدیق شدہ اشیاء قابل اعتماد موڈ میں جاتی ہیں؛ باقی سب عارضی رہتا ہے۔",
   },
   zamProgressLabel: { en: "ZamungKor Mock 1 + 2 progress:", roman: "ZamungKor Mock 1 + 2 progress:", ur: "زمونگ کور موک 1 + 2 کی پیش رفت:" },
@@ -795,6 +846,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   countsLine: {
     en: "Current filter: {total} items — {draft} draft · {needs} needs review · {disputed} disputed · {verified} verified. Structural check: {pass} pass · {sneeds} needs review · {prob} problem.",
+    roman: "Maujooda filter: {total} items — {draft} draft · {needs} jaiza darkar · {disputed} mutanaza · {verified} tasdeeq shuda. Structural check: {pass} pass · {sneeds} jaiza darkar · {prob} masla.",
     ur: "موجودہ فلٹر: {total} اشیاء — {draft} مسودہ · {needs} جائزہ درکار · {disputed} متنازع · {verified} تصدیق شدہ۔ ساختی جانچ: {pass} پاس · {sneeds} جائزہ درکار · {prob} مسئلہ۔",
   },
   mockFilterLabel: { en: "Mock", roman: "Mock", ur: "موک" },
@@ -840,6 +892,7 @@ const STRINGS: Record<string, StrEntry> = {
   issuesTitle: { en: "Issues — private correction inbox", roman: "Issues — private correction inbox", ur: "مسائل — نجی تصحیح ان باکس" },
   issuesIntro: {
     en: "Reports saved privately on this device only — nothing was sent anywhere. Review them here, fix the bank, then delete the resolved ones. Legacy reports (from before the reason / correction fields existed) show “—” for the missing fields.",
+    roman: "Reports sirf is device par niji tor par mehfooz hain — kahin nahi bheji gayin. Yahan un ka jaiza len, bank durust karen, phir hal shuda delete kar den. Purani reports (reason / correction fields se pehle ki) ghaib fields ke liye “—” dikhati hain.",
     ur: "رپورٹیں صرف اس ڈیوائس پر نجی طور پر محفوظ ہیں — کہیں نہیں بھیجی گئیں۔ یہاں ان کا جائزہ لیں، بینک درست کریں، پھر حل شدہ حذف کر دیں۔ پرانی رپورٹیں (وجہ / تصحیح والے خانوں سے پہلے کی) غائب خانوں کے لیے “—” دکھاتی ہیں۔",
   },
   filterReasonAria: { en: "Filter by reason", roman: "Reason se filter karein", ur: "وجہ سے فلٹر کریں" },
@@ -860,6 +913,7 @@ const STRINGS: Record<string, StrEntry> = {
   deleteAll: { en: "Delete all", roman: "Tamam delete karein", ur: "تمام حذف کریں" },
   deleteAllConfirm: {
     en: "Delete all {n} issue report(s)? This cannot be undone (export first if you want a copy).",
+    roman: "Tamam {n} issue report(s) delete karen? Yeh wapas nahi ho sakta (agar copy chahiye to pehle export karen).",
     ur: "تمام {n} مسئلہ رپورٹ(یں) حذف کریں؟ یہ واپس نہیں ہو سکتا (اگر کاپی چاہیے تو پہلے برآمد کریں)۔",
   },
   allDeletedMsg: { en: "All issue reports deleted.", roman: "Tamam issue reports delete ho gayein.", ur: "تمام مسئلہ رپورٹیں حذف ہو گئیں۔" },
@@ -873,11 +927,13 @@ const STRINGS: Record<string, StrEntry> = {
   telemetryHeading: { en: "Client errors (this device only)", roman: "Client errors (sirf is device par)", ur: "کلائنٹ خرابیاں (صرف اس ڈیوائس پر)" },
   telemetryIntro: {
     en: "Browser errors and hydration failures recorded on this device, newest first (kept: latest 50). Nothing here was sent anywhere. An empty list means no client error has been recorded since the list was last cleared.",
+    roman: "Browser errors aur hydration failures is device par record hain, nayi pehle (rakhi jati hain: latest 50). Yahan se kuch kahin nahi bheja gaya. Khali list ka matlab hai ke list saaf hone ke baad se koi client error record nahi hui.",
     ur: "براؤزر خرابیاں اور ہائیڈریشن ناکامیاں اس ڈیوائس پر ریکارڈ ہیں، نئی پہلے (رکھی جاتی ہیں: تازہ ترین 50)۔ یہاں سے کچھ کہیں نہیں بھیجا گیا۔ خالی فہرست کا مطلب ہے کہ فہرست صاف ہونے کے بعد سے کوئی کلائنٹ خرابی ریکارڈ نہیں ہوئی۔",
   },
   clearTelemetry: { en: "Clear client errors", roman: "Client errors clear karein", ur: "کلائنٹ خرابیاں صاف کریں" },
   clearTelemetryConfirm: {
     en: "Delete all {n} recorded client error(s)? This cannot be undone.",
+    roman: "Tamam {n} record shuda client error(s) delete karen? Yeh wapas nahi ho sakta.",
     ur: "تمام {n} ریکارڈ شدہ کلائنٹ خرابی(اں) حذف کریں؟ یہ واپس نہیں ہو سکتا۔",
   },
   telemetryClearedMsg: { en: "Client-error telemetry cleared.", roman: "Client-error telemetry clear ho gayi.", ur: "کلائنٹ خرابی ٹیلی میٹری صاف ہو گئی۔" },
@@ -891,6 +947,7 @@ const STRINGS: Record<string, StrEntry> = {
   vacAlertB: { en: "for the latest.", roman: "for the latest.", ur: "دیکھیں۔" },
   vacAlertC: {
     en: "No next ESED date is published here — the “Dec 2026/Jan 2027” claim is an unverified Facebook rumour.",
+    roman: "Agli ESED date yahan shaya nahi ki jati — “Dec 2026/Jan 2027” ka daawa ghair musaddaqa Facebook afwah hai.",
     ur: "اگلی ESED تاریخ یہاں شائع نہیں کی جاتی — “دسمبر 2026/جنوری 2027” کا دعویٰ غیر مصدقہ فیس بک افواہ ہے۔",
   },
   postWord: { en: "Post", roman: "Post", ur: "عہدہ" },
@@ -902,6 +959,7 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Step 3a — teaching-only scope + coverage ledger ----
   teachingOnlyNote: {
     en: "Teaching posts only: non-teaching tracks, mocks and vacancy rows are hidden in this personal teaching-prep build. Their data is retained in the files and can be shown again.",
+    roman: "Sirf teaching posts: is zaati teaching-prep build mein ghair teaching tracks, mock aur vacancy rows chhupai gayi hain. Un ka data files mein mehfooz hai aur dobara dikhaya ja sakta hai.",
     ur: "صرف تدریسی عہدے: اس ذاتی تدریسی تیاری کے نسخے میں غیر تدریسی ٹریکس، موک اور آسامیوں کی قطاریں چھپائی گئی ہیں۔ ان کا ڈیٹا فائلوں میں محفوظ ہے اور دوبارہ دکھایا جا سکتا ہے۔",
   },
   tracksLedgerLink: {
@@ -916,6 +974,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   ledgerIntro: {
     en: "One row per teaching post. “Exact” means every blueprint subject has at least one note and one practice question — it is not a claim of depth or sufficiency; the per-subject counts show how thin or deep the material is. Sources were last verified on 11 Nov 2026; always re-check your own advertisement and roll-number slip.",
+    roman: "Har teaching post ke liye ek row. “Exact” ka matlab hai ke har blueprint subject ke liye kam az kam ek note aur ek mashqi sawal maujood hai — yeh gehrai ya kifayat ka daawa nahi; har subject ki ginti batati hai ke material kitna kam ya zyada hai. Sources ki aakhri tasdeeq 11 Nov 2026 ko hui; hamesha apna ishtihar aur roll-number slip dobara dekhen.",
     ur: "ہر تدریسی عہدے کے لیے ایک قطار۔ “Exact” کا مطلب ہے کہ ہر نصابی مضمون کے لیے کم از کم ایک نوٹ اور ایک مشقی سوال موجود ہے — یہ گہرائی یا کفایت کا دعویٰ نہیں؛ ہر مضمون کی گنتی بتاتی ہے کہ مواد کتنا کم یا زیادہ ہے۔ ماخذ کی آخری تصدیق 11 نومبر 2026 کو ہوئی؛ ہمیشہ اپنا اشتہار اور رول نمبر سلپ دوبارہ دیکھیں۔",
   },
   ledgerSourceLabel: { en: "Official source", roman: "Official source", ur: "سرکاری ماخذ" },
@@ -931,6 +990,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   ledgerSubjectCounts: {
     en: "{notes} notes · {mcqs} MCQs · {cards} cards",
+    roman: "{notes} notes · {mcqs} MCQs · {cards} cards",
     ur: "{notes} نوٹس · {mcqs} ایم سی کیوز · {cards} کارڈز",
   },
   ledgerMocksLabel: { en: "Mocks", roman: "Mocks", ur: "موک" },
@@ -938,6 +998,7 @@ const STRINGS: Record<string, StrEntry> = {
   ledgerNoMock: { en: "No mock yet", roman: "Abhi koi mock nahi", ur: "ابھی کوئی موک نہیں" },
   ledgerBankReview: {
     en: "Owner-reviewed in bank: {n} of {total} MCQs (bank data — your on-device decisions may add more).",
+    roman: "Bank mein malik se jaiza shuda: {total} MCQs mein se {n} (bank data — aap ke device ke faisle mazeed shamil kar sakte hain).",
     ur: "بینک میں مالک سے جائزہ شدہ: {total} ایم سی کیوز میں سے {n} (بینک کا ڈیٹا — آپ کے آلے کے فیصلے مزید شامل کر سکتے ہیں)۔",
   },
   ledgerMissingLabel: { en: "Missing", roman: "Missing", ur: "کمی" },
@@ -946,31 +1007,37 @@ const STRINGS: Record<string, StrEntry> = {
   ledgerCoverageExact: { en: "Exact", roman: "Exact", ur: "عین مطابق" },
   ledgerCoverageExactDetail: {
     en: "Every blueprint subject has at least one note and one practice question, and a mock exists. Not a claim of depth.",
+    roman: "Har blueprint subject ke liye kam az kam ek note aur ek mashqi sawal maujood hai, aur mock bhi hai. Gehrai ka daawa nahi.",
     ur: "ہر نصابی مضمون کے لیے کم از کم ایک نوٹ اور ایک مشقی سوال موجود ہے، اور موک بھی ہے۔ گہرائی کا دعویٰ نہیں۔",
   },
   ledgerCoverageProxy: { en: "Proxy", roman: "Proxy", ur: "متبادل" },
   ledgerCoverageProxyDetail: {
     en: "No official pattern — preparing on another post's pattern.",
+    roman: "Koi official pattern nahi — doosre post ke pattern par tayari.",
     ur: "کوئی سرکاری پیٹرن نہیں — دوسرے عہدے کے پیٹرن پر تیاری۔",
   },
   ledgerCoveragePartial: { en: "Partial", roman: "Partial", ur: "جزوی" },
   ledgerCoveragePartialDetail: {
     en: "Pattern confirmed or provisional, but some subject has no material, or no mock exists.",
+    roman: "Pattern confirmed ya aarzi hai, lekin kisi subject ka material nahi ya mock nahi.",
     ur: "پیٹرن مصدقہ یا عارضی ہے، لیکن کسی مضمون کا مواد نہیں یا موک نہیں۔",
   },
   ledgerCoverageUnknown: { en: "Unknown", roman: "Unknown", ur: "نامعلوم" },
   ledgerCoverageUnknownDetail: {
     en: "No verified pattern source.",
+    roman: "Pattern ka koi verified source nahi.",
     ur: "پیٹرن کا کوئی مصدقہ ماخذ نہیں۔",
   },
   ledgerSourceConfirmed: { en: "Source Confirmed", roman: "Source Confirmed", ur: "ماخذ مصدقہ" },
   ledgerSourceConfirmedDetail: {
     en: "Pattern confirmed against a named official source.",
+    roman: "Pattern ki tasdeeq naam wale official source se hui.",
     ur: "پیٹرن کی تصدیق نام والے سرکاری ماخذ سے ہوئی۔",
   },
   ledgerSourceProvisional: { en: "Provisional", roman: "Provisional", ur: "عارضی" },
   ledgerSourceProvisionalDetail: {
     en: "Pattern breakdown provisional — verify against the official document.",
+    roman: "Pattern ki tafseel aarzi hai — official document se tasdeeq karen.",
     ur: "پیٹرن کی تفصیل عارضی ہے — سرکاری دستاویز سے تصدیق کریں۔",
   },
   ledgerSourceUnavailable: {
@@ -980,6 +1047,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   ledgerSourceUnavailableDetail: {
     en: "No published syllabus or pattern for this post.",
+    roman: "Is post ke liye koi shaya shuda syllabus ya pattern nahi.",
     ur: "اس عہدے کے لیے کوئی شائع شدہ نصاب یا پیٹرن نہیں۔",
   },
 
@@ -1001,18 +1069,22 @@ const STRINGS: Record<string, StrEntry> = {
   topicsTitle: { en: "Practice from Past-Paper Topics", roman: "Practice from Past-Paper Topics", ur: "پاسٹ پیپر موضوعات سے مشق" },
   topicsAlertBold: {
     en: "No past-paper documents or PDFs are hosted here, and no past-paper question is copied verbatim.",
+    roman: "Yahan past paper ki koi document ya PDF host nahi ki jati, aur past paper ka koi sawal verbatim copy nahi kiya gaya.",
     ur: "یہاں پاسٹ پیپر کی کوئی دستاویز یا PDF میزبانی نہیں کی جاتی، اور پاسٹ پیپر کا کوئی سوال بعینہ نقل نہیں کیا گیا۔",
   },
   topicsAlertRest: {
     en: "Past papers were used only as a source for what topics and facts are tested. Every question below is written in our own words.",
+    roman: "Past papers sirf is ke liye istemal hue ke kin topics aur facts ka imtihan hota hai. Neeche har sawal hamare apne alfaaz mein likha gaya hai.",
     ur: "پاسٹ پیپر صرف اس کے لیے استعمال ہوئے کہ کن موضوعات اور حقائق کا امتحان ہوتا ہے۔ نیچے ہر سوال ہمارے اپنے الفاظ میں لکھا گیا ہے۔",
   },
   topicsLi1: {
     en: "Original practice questions are labelled: “Original practice question based on past-paper topics — not the actual paper”.",
+    roman: "Original practice questions par label hai: “Original practice question based on past-paper topics — not the actual paper”.",
     ur: "اصل مشقی سوالات پر لیبل ہے: “Original practice question based on past-paper topics — not the actual paper”۔",
   },
   topicsLi2: {
     en: "Reworded versions are labelled: “Same concept as a past-paper question, reworded in a different style — not the actual paper”.",
+    roman: "Reworded versions par label hai: “Same concept as a past-paper question, reworded in a different style — not the actual paper”.",
     ur: "دوبارہ لکھے گئے ورژن پر لیبل ہے: “Same concept as a past-paper question, reworded in a different style — not the actual paper”۔",
   },
   topicsOrigHeading: { en: "Original practice — {n} questions", roman: "Original practice — {n} questions", ur: "اصل مشق — {n} سوالات" },
@@ -1031,6 +1103,7 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Links ----
   linksIntro: {
     en: "Link out only — no textbook or past-paper PDFs are hosted on this site. ETEA has published no model-MCQ book and collaborates with no prep institution.",
+    roman: "Sirf link out — is site par textbook ya past-paper PDFs host nahi ki jatin. ETEA ne koi model-MCQ book shaya nahi ki aur kisi prep institution se collaborate nahi karta.",
     ur: "صرف لنک — اس سائٹ پر نصابی کتاب یا پاسٹ پیپر کی کوئی PDF میزبانی نہیں کی جاتی۔ ETEA نے کوئی ماڈل ایم سی کیو کتاب شائع نہیں کی اور کسی تیاری کے ادارے سے تعاون نہیں کرتا۔",
   },
 
@@ -1076,6 +1149,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   qrFirstAnswerNote: {
     en: "Score counts your first answer to each question. Changing an answer afterwards is a retry: it is recorded for learning, but it does not change the score.",
+    roman: "Score har sawal ke aap ke pehle jawab par hota hai. Baad mein jawab badalna retry hai: yeh seekhne ke liye record hoti hai, lekin score nahi badalti.",
     ur: "نمبر ہر سوال کے آپ کے پہلے جواب پر ہوتا ہے۔ بعد میں جواب بدلنا دوبارہ کوشش ہے: یہ سیکھنے کے لیے ریکارڈ ہوتی ہے، لیکن نمبر نہیں بدلتی۔",
   },
   retriesLine: {
@@ -1125,6 +1199,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   restartConfirm: {
     en: "Discard this in-progress session and start again? Your recorded attempts are not affected.",
+    roman: "Yeh in-progress session khatam kar ke dobara shuru karen? Aap ki record shuda attempts mutasir nahi hon gi.",
     ur: "یہ جاری سیشن ختم کر کے دوبارہ شروع کریں؟ آپ کی ریکارڈ شدہ کوششیں متاثر نہیں ہوں گی۔",
   },
   originalBadge: { en: "Original", roman: "Original", ur: "اصل" },
@@ -1133,15 +1208,18 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Step 2a — semantic badges, Start Here, nav groups, scroll regions, chart alternatives ----
   provisionalBadgeDetail: {
     en: "These items are unreviewed practice material — the owner has not checked them yet.",
+    roman: "Yeh cheezain ghair jaiza shuda mashqi material hain — malik ne abhi unhein nahi dekha.",
     ur: "یہ سوالات غیر جائزہ شدہ مشقی مواد ہیں — مالک نے ابھی انہیں نہیں دیکھا۔",
   },
   verifiedBadgeDetail: {
     en: "All items in this run were reviewed by the owner on this device — personal review, not official certification.",
+    roman: "Is run ke tamam sawalat malik ne is device par dekhe — zaati jaiza, official certification nahi.",
     ur: "اس رن کے تمام سوالات مالک نے اس آلے پر دیکھے — ذاتی جائزہ، سرکاری تصدیق نہیں۔",
   },
   mockScoringUnknown: { en: "Scoring policy unknown", roman: "Scoring policy unknown", ur: "اسکورنگ پالیسی نامعلوم" },
   mockScoringUnknownDetail: {
     en: "No official scoring policy is published for this mock; the zero-penalty default is used.",
+    roman: "Is test ki koi official scoring policy shaya nahi; zero-penalty default istemal hota hai.",
     ur: "اس ٹیسٹ کی کوئی سرکاری اسکورنگ پالیسی شائع نہیں؛ صفر جرمانہ ڈیفالٹ استعمال ہوتا ہے۔",
   },
   navGroupStudy: { en: "Study", roman: "Study", ur: "مطالعہ" },
@@ -1151,10 +1229,12 @@ const STRINGS: Record<string, StrEntry> = {
   startHereHeading: { en: "Start here", roman: "Yahan se shuru karein", ur: "یہاں سے شروع کریں" },
   startHereFresh: {
     en: "Pick where to begin — everything below is built from your own study data.",
+    roman: "Chunen ke kahan se shuru karna hai — neeche sab kuch aap ke apne study data se banaya gaya hai.",
     ur: "منتخب کریں کہ کہاں سے شروع کرنا ہے — نیچے سب کچھ آپ کے اپنے مطالعے کے ڈیٹا سے بنایا گیا ہے۔",
   },
   startHereReturning: {
     en: "Pick up where you left off — these actions come from your saved progress.",
+    roman: "Jahan chhora tha wahin se jaari rakhen — yeh actions aap ki mehfooz progress se hain.",
     ur: "جہاں چھوڑا تھا وہیں سے جاری رکھیں — یہ اقدامات آپ کی محفوظ پیش رفت سے ہیں۔",
   },
   startHerePractice: { en: "Start topic practice", roman: "Topic practice shuru karein", ur: "موضوع کی مشق شروع کریں" },
@@ -1162,37 +1242,40 @@ const STRINGS: Record<string, StrEntry> = {
   startHereCards: { en: "Review due cards", roman: "Due cards review karein", ur: "واجب کارڈز کا جائزہ لیں" },
   startHerePlan: { en: "Build study plan", roman: "Study plan banayein", ur: "مطالعہ منصوبہ بنائیں" },
   startHereContinuePlan: { en: "Continue plan", roman: "Plan jaari rakhein", ur: "منصوبہ جاری رکھیں" },
-  resumeSession: { en: "Resume: {title}", ur: "جاری رکھیں: {title}" },
-  continuePractice: { en: "Continue practice: {subject}", ur: "مشق جاری رکھیں: {subject}" },
-  cardsDueNew: { en: "{due} due · {fresh} new", ur: "{due} واجب · {fresh} نئے" },
+  resumeSession: { en: "Resume: {title}", roman: "Resume: {title}", ur: "جاری رکھیں: {title}" },
+  continuePractice: { en: "Continue practice: {subject}", roman: "Practice jaari rakhen: {subject}", ur: "مشق جاری رکھیں: {subject}" },
+  cardsDueNew: { en: "{due} due · {fresh} new", roman: "{due} due · {fresh} naye", ur: "{due} واجب · {fresh} نئے" },
   planNextLabel: { en: "Next:", roman: "Agla:", ur: "اگلا:" },
-  planComplete: { en: "Study plan complete — all 63 tasks done.", ur: "مطالعہ منصوبہ مکمل — تمام 63 کام مکمل۔" },
-  attemptsScope: { en: "{mcq} MCQ questions · {flash} flashcard reviews", ur: "{mcq} ایم سی کیو سوالات · {flash} فلیش کارڈ جائزے" },
-  accuracySample: { en: "{correct} of {total} first-pass answers", ur: "پہلی کوشش کے {total} جوابات میں سے {correct} درست" },
+  planComplete: { en: "Study plan complete — all 63 tasks done.", roman: "Study plan complete — tamam 63 tasks done.", ur: "مطالعہ منصوبہ مکمل — تمام 63 کام مکمل۔" },
+  attemptsScope: { en: "{mcq} MCQ questions · {flash} flashcard reviews", roman: "{mcq} MCQ questions · {flash} flashcard reviews", ur: "{mcq} ایم سی کیو سوالات · {flash} فلیش کارڈ جائزے" },
+  accuracySample: { en: "{correct} of {total} first-pass answers", roman: "Pehli koshish ke {total} jawabat mein se {correct} durust", ur: "پہلی کوشش کے {total} جوابات میں سے {correct} درست" },
   accuracyNoData: { en: "No answers yet", roman: "Abhi koi jawab nahi", ur: "ابھی کوئی جواب نہیں" },
-  streakRule: { en: "Consecutive days with any study", ur: "مسلسل دن جن میں کوئی مطالعہ ہوا" },
+  streakRule: { en: "Consecutive days with any study", roman: "Musalsal din jin mein koi study hui", ur: "مسلسل دن جن میں کوئی مطالعہ ہوا" },
   timeScope: { en: "Across all attempts", roman: "Tamam koshishon mein", ur: "تمام کوششوں میں" },
-  correctionsAck: { en: "I have read these corrections", ur: "میں نے یہ تصحیحات پڑھ لی ہیں" },
+  correctionsAck: { en: "I have read these corrections", roman: "Maine yeh corrections parh li hain", ur: "میں نے یہ تصحیحات پڑھ لی ہیں" },
   correctionsShowFull: { en: "Show full notice", roman: "Mukammal notice dikhayein", ur: "مکمل نوٹس دکھائیں" },
   correctionsShowCompact: { en: "Show compact notice", roman: "Mukhtasar notice dikhayein", ur: "مختصر نوٹس دکھائیں" },
   tableScrollHint: {
     en: "This table scrolls horizontally on narrow screens.",
+    roman: "Yeh table tang screen par horizontally scroll hoti hai.",
     ur: "یہ جدول تنگ اسکرین پر افقی طور پر اسکرول ہوتی ہے۔",
   },
-  perSubjectTableAria: { en: "Per-subject results table", ur: "فی مضمون نتائج کی جدول" },
-  issuesTableAria: { en: "Reported issues table", ur: "رپورٹ شدہ مسائل کی جدول" },
-  telemetryTableAria: { en: "On-device error telemetry table", ur: "آلے پر خرابی ٹیلی میٹری کی جدول" },
-  analysisPerSubjectAria: { en: "Per-subject accuracy table", ur: "فی مضمون درستگی کی جدول" },
-  mockHistoryTableAria: { en: "Mock history table", ur: "ٹیسٹ تاریخ کی جدول" },
-  allAttemptsTableAria: { en: "All attempts table", ur: "تمام کوششوں کی جدول" },
-  itemRecordsTableAria: { en: "Per-question attempt detail table", ur: "فی سوال کوشش کی تفصیل کی جدول" },
+  perSubjectTableAria: { en: "Per-subject results table", roman: "Fi mazmoon nataij ki table", ur: "فی مضمون نتائج کی جدول" },
+  issuesTableAria: { en: "Reported issues table", roman: "Report shuda masail ki table", ur: "رپورٹ شدہ مسائل کی جدول" },
+  telemetryTableAria: { en: "On-device error telemetry table", roman: "Device par error telemetry ki table", ur: "آلے پر خرابی ٹیلی میٹری کی جدول" },
+  analysisPerSubjectAria: { en: "Per-subject accuracy table", roman: "Fi mazmoon accuracy ki table", ur: "فی مضمون درستگی کی جدول" },
+  mockHistoryTableAria: { en: "Mock history table", roman: "Mock history ki table", ur: "ٹیسٹ تاریخ کی جدول" },
+  allAttemptsTableAria: { en: "All attempts table", roman: "Tamam attempts ki table", ur: "تمام کوششوں کی جدول" },
+  itemRecordsTableAria: { en: "Per-question attempt detail table", roman: "Fi sawal attempt detail ki table", ur: "فی سوال کوشش کی تفصیل کی جدول" },
   chartViewData: { en: "View data as a table", roman: "Data table ki soorat mein dekhein", ur: "ڈیٹا جدول کی صورت میں دیکھیں" },
   chartDueAria: {
     en: "Bar chart: flashcards due each day for the next 7 days. The same data is in the table below.",
+    roman: "Bar chart: agle 7 dinon mein har din due flashcards. Wahi data neeche di gayi table mein hai.",
     ur: "بار چارٹ: اگلے 7 دنوں میں ہر دن واجب فلیش کارڈ۔ وہی ڈیٹا نیچے دی گئی جدول میں ہے۔",
   },
   chartAccuracyAria: {
     en: "Chart: daily MCQ accuracy and questions attempted over the last 14 days with attempts. The same data is in the table below.",
+    roman: "Chart: pichle 14 dinon mein rozana MCQ accuracy aur hal shude sawalat. Wahi data neeche di gayi table mein hai.",
     ur: "چارٹ: پچھلے 14 دنوں میں روزانہ ایم سی کیو درستگی اور حل شدہ سوالات۔ وہی ڈیٹا نیچے دی گئی جدول میں ہے۔",
   },
 
@@ -1202,57 +1285,63 @@ const STRINGS: Record<string, StrEntry> = {
   prestartPatternLabel: { en: "Pattern", roman: "Pattern", ur: "پیٹرن" },
   prestartNoPattern: {
     en: "Subject drill — no exam pattern is claimed for this set.",
+    roman: "Subject drill — is set ke liye kisi exam pattern ka daawa nahi.",
     ur: "مضمون کی ڈرل — اس سیٹ کے لیے کسی امتحانی پیٹرن کا دعویٰ نہیں۔",
   },
   prestartQuestions: { en: "{n} questions", roman: "{n} sawal", ur: "{n} سوالات" },
-  prestartReviewed: { en: "{n} of {total} owner-reviewed", ur: "{n} از {total} مالک سے جائزہ شدہ" },
+  prestartReviewed: { en: "{n} of {total} owner-reviewed", roman: "{n} of {total} malik se jaiza shuda", ur: "{n} از {total} مالک سے جائزہ شدہ" },
   prestartProvisional: {
     en: "{n} provisional (not owner-reviewed)",
+    roman: "{n} aarzi (malik se jaiza shuda nahi)",
     ur: "{n} عارضی (مالک سے جائزہ شدہ نہیں)",
   },
   prestartDurationLabel: { en: "Duration", roman: "Duration", ur: "دورانیہ" },
   prestartNoTimer: { en: "No timer", roman: "Koi timer nahi", ur: "کوئی ٹائمر نہیں" },
-  prestartUnanswered: { en: "Unanswered questions score {marks} marks.", ur: "بلا جواب سوالات کے {marks} نمبر ملتے ہیں۔" },
+  prestartUnanswered: { en: "Unanswered questions score {marks} marks.", roman: "Bila jawab sawalat ke {marks} marks milte hain.", ur: "بلا جواب سوالات کے {marks} نمبر ملتے ہیں۔" },
   prestartAllocation: { en: "Questions by subject", roman: "Subject ke mutabiq sawal", ur: "مضمون کے مطابق سوالات" },
   prestartResumeNote: {
     en: "You have an unfinished session for this exact set.",
+    roman: "Is exact set ke liye aap ka ek namukammal session maujood hai.",
     ur: "اس عین سیٹ کے لیے آپ کا ایک نامکمل سیشن موجود ہے۔",
   },
   prestartIncompatible: {
     en: "Your previous session does not match this set ({reason}), so it will not be applied. Start fresh to begin with the current questions.",
+    roman: "Aap ka pichla session is set se match nahi karta ({reason}), is liye ise apply nahi kiya jaye ga. Maujooda sawalat se shuru karne ke liye naye sire se shuru karen.",
     ur: "آپ کا پچھلا سیشن اس سیٹ سے مطابقت نہیں رکھتا ({reason})، اس لیے اسے لاگو نہیں کیا جائے گا۔ موجودہ سوالات سے شروع کرنے کے لیے نئے سرے سے شروع کریں۔",
   },
-  incompatReasonVersion: { en: "the session format changed", ur: "سیشن کی شکل بدل گئی" },
-  incompatReasonScope: { en: "the session belongs to a different quiz", ur: "سیشن کسی اور کوئز کا ہے" },
-  incompatReasonSubject: { en: "the subject changed", ur: "مضمون بدل گیا" },
-  incompatReasonMock: { en: "the mock changed", ur: "موک بدل گیا" },
-  incompatReasonSeed: { en: "the question set changed", ur: "سوالات کا سیٹ بدل گیا" },
-  incompatReasonQuestions: { en: "the questions changed", ur: "سوالات بدل گئے" },
-  incompatReasonRevision: { en: "the answer-key version changed", ur: "جوابی کلید کا ورژن بدل گیا" },
+  incompatReasonVersion: { en: "the session format changed", roman: "session format badal gaya", ur: "سیشن کی شکل بدل گئی" },
+  incompatReasonScope: { en: "the session belongs to a different quiz", roman: "session kisi aur quiz ka hai", ur: "سیشن کسی اور کوئز کا ہے" },
+  incompatReasonSubject: { en: "the subject changed", roman: "subject badal gaya", ur: "مضمون بدل گیا" },
+  incompatReasonMock: { en: "the mock changed", roman: "mock badal gaya", ur: "موک بدل گیا" },
+  incompatReasonSeed: { en: "the question set changed", roman: "question set badal gaya", ur: "سوالات کا سیٹ بدل گیا" },
+  incompatReasonQuestions: { en: "the questions changed", roman: "sawalat badal gaye", ur: "سوالات بدل گئے" },
+  incompatReasonRevision: { en: "the answer-key version changed", roman: "answer-key version badal gaya", ur: "جوابی کلید کا ورژن بدل گیا" },
   resumeButton: { en: "Resume", roman: "Resume karein", ur: "جاری رکھیں" },
   startFreshButton: { en: "Start fresh", roman: "Naye sire se shuru karein", ur: "نئے سرے سے شروع کریں" },
   questionMapToggle: { en: "Question map", roman: "Sawalon ka map", ur: "سوالات کا نقشہ" },
-  questionMapLabel: { en: "Question map — jump to a question", ur: "سوالات کا نقشہ — کسی سوال پر جائیں" },
+  questionMapLabel: { en: "Question map — jump to a question", roman: "Sawalat ka map — kisi sawal par jayen", ur: "سوالات کا نقشہ — کسی سوال پر جائیں" },
   questionMapAnswered: { en: "answered", roman: "answered", ur: "جواب دیا گیا" },
   questionMapCurrent: { en: "current", roman: "current", ur: "موجودہ" },
   questionMapFlagged: { en: "flagged", roman: "flagged", ur: "نشان زد" },
   questionMapUnanswered: { en: "unanswered", roman: "unanswered", ur: "بلا جواب" },
   flagButton: { en: "Flag for review", roman: "Review ke liye flag karein", ur: "جائزے کے لیے نشان زد کریں" },
   flaggedButton: { en: "Flagged — tap to unflag", roman: "Flagged — hatane ke liye tap karein", ur: "نشان زد — ہٹانے کے لیے تھپتھپائیں" },
-  yourAnswerLine: { en: "Your answer: {answer}", ur: "آپ کا جواب: {answer}" },
+  yourAnswerLine: { en: "Your answer: {answer}", roman: "Aap ka jawab: {answer}", ur: "آپ کا جواب: {answer}" },
   yourBlankLine: { en: "You left this blank.", roman: "Aap ne ise khaali chhoda.", ur: "آپ نے اسے خالی چھوڑا۔" },
-  correctAnswerLine: { en: "Correct answer: {answer}", ur: "درست جواب: {answer}" },
+  correctAnswerLine: { en: "Correct answer: {answer}", roman: "Durust jawab: {answer}", ur: "درست جواب: {answer}" },
   revealReasonLabel: { en: "Why", roman: "Kyun", ur: "کیوں" },
   sourceNoteLink: { en: "Open the related note in the Library", roman: "Mutalliqa note Library mein kholein", ur: "متعلقہ نوٹ لائبریری میں کھولیں" },
   firstPassAccuracyLine: {
     en: "First-pass accuracy: {correct} of {answered} answered ({pct}%)",
+    roman: "First-pass accuracy: {answered} jawab shuda mein se {correct} durust ({pct}%)",
     ur: "پہلی کوشش کی درستگی: {answered} جواب شدہ میں سے {correct} درست ({pct}٪)",
   },
   provisionalContentLine: {
     en: "Provisional content: {n} of {total} questions are not owner-reviewed.",
+    roman: "Aarzi content: {total} sawalat mein se {n} malik se jaiza shuda nahi.",
     ur: "عارضی مواد: {total} سوالات میں سے {n} مالک سے جائزہ شدہ نہیں۔",
   },
-  flaggedResultsLine: { en: "Flagged for review: {list}", ur: "جائزے کے لیے نشان زد: {list}" },
+  flaggedResultsLine: { en: "Flagged for review: {list}", roman: "Jaize ke liye nishan zad: {list}", ur: "جائزے کے لیے نشان زد: {list}" },
   noCorrectionChoice: {
     en: "I have no suggested correction",
     roman: "Mere paas koi tajweez shuda tasheeh nahi",
@@ -1260,6 +1349,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   issueValidationError: {
     en: "Choose a reason, and either write a correction or tick “I have no suggested correction”.",
+    roman: "Ek reason chunen, aur ya to correction likhen ya “I have no suggested correction” par tick karen.",
     ur: "ایک وجہ چنیں، اور یا تو تصحیح لکھیں یا “میرے پاس کوئی تجویز شدہ تصحیح نہیں ہے” پر نشان لگائیں۔",
   },
   noSuggestedCorrectionLabel: { en: "No suggested correction", roman: "Koi tajweez shuda tasheeh nahi", ur: "کوئی تجویز شدہ تصحیح نہیں" },
@@ -1268,21 +1358,25 @@ const STRINGS: Record<string, StrEntry> = {
   mockLabelFull: { en: "Full", roman: "Full", ur: "مکمل" },
   mockLabelFullDetail: {
     en: "All {total} questions are available in this mock.",
+    roman: "Is mock mein tamam {total} sawalat dastiyab hain.",
     ur: "اس موک میں تمام {total} سوالات دستیاب ہیں۔",
   },
   mockLabelPartial: { en: "Partial", roman: "Partial", ur: "جزوی" },
   mockLabelPartialDetail: {
     en: "Only {n} of {total} questions are available in this mock.",
+    roman: "Is mock mein {total} mein se sirf {n} sawalat dastiyab hain.",
     ur: "اس موک میں {total} میں سے صرف {n} سوالات دستیاب ہیں۔",
   },
   mockLabelProxy: { en: "Proxy", roman: "Proxy", ur: "متبادل" },
   mockLabelProxyDetail: {
     en: "A proxy mock: practises the pattern from practice items — not an official paper, and ZamungKor has no published syllabus.",
+    roman: "Proxy mock: practice items se pattern ki mashq karwata hai — official paper nahi, aur ZamungKor ka koi shaya shuda syllabus nahi.",
     ur: "متبادل موک: مشقی سوالات سے پیٹرن کی مشق کرواتا ہے — سرکاری پرچہ نہیں، اور زمونگ کور کا کوئی شائع شدہ نصاب نہیں۔",
   },
   mockLabelReviewedSubset: { en: "Reviewed subset", roman: "Reviewed subset", ur: "جائزہ شدہ حصہ" },
   mockLabelReviewedSubsetDetail: {
     en: "{n} of {total} questions are owner-reviewed; trusted mode uses only those.",
+    roman: "{total} mein se {n} sawalat malik se jaiza shuda hain; trusted mode sirf unhi ko istemal karta hai.",
     ur: "{total} میں سے {n} سوالات مالک سے جائزہ شدہ ہیں؛ قابل اعتماد موڈ صرف انہی کو استعمال کرتا ہے۔",
   },
   startReviewedPractice: {
@@ -1294,26 +1388,31 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Step 2b — tutor warnings, citations, failure recovery ----
   tutorWarningFallback: {
     en: "Fallback order: Gemini first, then Groq, then OpenRouter (free model). If one provider fails, the next is tried automatically.",
+    roman: "Fallback order: pehle Gemini, phir Groq, phir OpenRouter (free model). Agar ek provider fail ho jaye to agle ko automatically try kiya jata hai.",
     ur: "متبادل ترتیب: پہلے Gemini، پھر Groq، پھر OpenRouter (مفت ماڈل)۔ اگر ایک فراہم کنندہ ناکام ہو جائے تو اگلے کو خودکار طور پر آزمایا جاتا ہے۔",
   },
   tutorWarningRetention: {
     en: "Retention: the providers may process and keep your question under their own policies — this site does not control or see that retention. Your questions are not stored on this site.",
+    roman: "Retention: providers aap ka sawal apni policies ke tehet process aur rakh sakte hain — is site ka us retention par koi control ya nazar nahi. Aap ke sawalat is site par mehfooz nahi hote.",
     ur: "برقرار رکھنا: فراہم کنندگان آپ کا سوال اپنی پالیسیوں کے تحت پروسیس اور رکھ سکتے ہیں — اس سائٹ کا اس پر کوئی کنٹرول یا نظر نہیں۔ آپ کے سوالات اس سائٹ پر محفوظ نہیں ہوتے۔",
   },
   citationsHeading: { en: "Sources from this library", roman: "Is library ke sources", ur: "اس لائبریری کے ماخذ" },
   citationNoteLabel: { en: "Note", roman: "Note", ur: "نوٹ" },
   aiNotAuthority: {
     en: "AI explanations are study help, not the answer key — always check the library note or question yourself.",
+    roman: "AI explanations study help hain, answer key nahi — hamesha library note ya sawal khud check karen.",
     ur: "اے آئی وضاحتیں مطالعے میں مدد ہیں، جوابی کلید نہیں — ہمیشہ لائبریری نوٹ یا سوال خود چیک کریں۔",
   },
   requestCancelled: {
     en: "Request cancelled — your question is back in the box below.",
+    roman: "Request cancel ho gayi — aap ka sawal neeche wale box mein wapas aa gaya hai.",
     ur: "درخواست منسوخ — آپ کا سوال نیچے والے خانے میں واپس آ گیا ہے۔",
   },
   retryButton: { en: "Retry", roman: "Dobara koshish karein", ur: "دوبارہ کوشش کریں" },
   offlineSearchButton: { en: "Search the library offline", roman: "Library offline talaash karein", ur: "لائبریری آف لائن تلاش کریں" },
   tutorFailedNote: {
     en: "The live tutor could not answer. Your question is preserved below — retry, or search the library offline.",
+    roman: "Live tutor jawab nahi de saka. Aap ka sawal neeche mehfooz hai — retry karen, ya library offline search karen.",
     ur: "براہ راست استاد جواب نہیں دے سکا۔ آپ کا سوال نیچے محفوظ ہے — دوبارہ کوشش کریں، یا لائبریری آف لائن تلاش کریں۔",
   },
   checkedAgeNow: { en: "Checked just now.", roman: "Abhi check hua.", ur: "ابھی چیک ہوا۔" },
@@ -1321,15 +1420,17 @@ const STRINGS: Record<string, StrEntry> = {
   checkedAgeOld: { en: "Checked over an hour ago.", roman: "Aik ghantay se zyada pehle check hua.", ur: "ایک گھنٹے سے زیادہ پہلے چیک ہوا۔" },
   refreshCooldownNote: {
     en: "Refresh is available again shortly — probes are rate-limited to protect provider quota.",
+    roman: "Refresh jald dobara dastiyab hoga — provider quota bachane ke liye probes rate-limited hain.",
     ur: "ریفریش جلد دوبارہ دستیاب ہوگا — فراہم کنندہ کوٹہ بچانے کے لیے جانچ محدود ہے۔",
   },
 
   // ---- Step 2b — study plan: pacing, calendar, deep links ----
-  planPacing3: { en: "21 study units paced over 21 days", ur: "21 مطالعہ یونٹس 21 دنوں میں" },
-  planPacing6: { en: "21 study units paced over 42 days", ur: "21 مطالعہ یونٹس 42 دنوں میں" },
-  planPacing12: { en: "21 study units · two cycles paced over 84 days", ur: "21 مطالعہ یونٹس · دو مراحل میں 84 دنوں میں" },
+  planPacing3: { en: "21 study units paced over 21 days", roman: "21 study units 21 dinon mein", ur: "21 مطالعہ یونٹس 21 دنوں میں" },
+  planPacing6: { en: "21 study units paced over 42 days", roman: "21 study units 42 dinon mein", ur: "21 مطالعہ یونٹس 42 دنوں میں" },
+  planPacing12: { en: "21 study units · two cycles paced over 84 days", roman: "21 study units · do cycles 84 dinon mein", ur: "21 مطالعہ یونٹس · دو مراحل میں 84 دنوں میں" },
   planCalendarSpan: {
     en: "{study} study days + {rest} rest days over {total} calendar days",
+    roman: "{total} calendar dinon mein {study} study days + {rest} rest days",
     ur: "{total} کیلنڈر دنوں میں {study} مطالعہ دن + {rest} آرام دن",
   },
   planRestDay: { en: "Rest day", roman: "Aaram ka din", ur: "آرام کا دن" },
@@ -1343,17 +1444,20 @@ const STRINGS: Record<string, StrEntry> = {
   planCycle2Label: { en: "Cycle 2 revisit", roman: "Cycle 2 revisit", ur: "دوسرے مرحلے میں دہرائی" },
   planCycle2Note: {
     en: "Revisit this unit with unseen items and mixed practice — not the same questions repeated.",
+    roman: "Is unit ko unseen items aur mixed practice ke sath dobara dekhen — wahi sawalat dohraye nahi jate.",
     ur: "اس یونٹ کو نئے سوالات اور مخلوط مشق کے ساتھ دہرائیں — وہی سوالات دہرائے نہیں جاتے۔",
   },
   planCycle2Banner: {
     en: "12-week plan: two cycles. Cycle 1 builds the units; Cycle 2 revisits each unit with unseen items and mixed practice. One checkbox per task — checking it marks the task done in both cycles.",
+    roman: "12-week plan: do cycles. Cycle 1 units banata hai; Cycle 2 har unit ko unseen items aur mixed practice ke sath dobara dekhta hai. Har task ke liye ek checkbox — use tick karne se task dono cycles mein done mark hota hai.",
     ur: "12 ہفتوں کا منصوبہ: دو مراحل۔ پہلا مرحلہ یونٹس بناتا ہے؛ دوسرا مرحلہ ہر یونٹ کو نئے سوالات اور مخلوط مشق کے ساتھ دہراتا ہے۔ ہر کام کے لیے ایک چیک باکس — اسے نشان زد کرنے سے کام دونوں مرحلوں میں مکمل شمار ہوتا ہے۔",
   },
   planWorkloadWord: { en: "Workload", roman: "Workload", ur: "کام کا بوجھ" },
-  planStartDate: { en: "Plan starts: {date}", ur: "منصوبہ شروع: {date}" },
+  planStartDate: { en: "Plan starts: {date}", roman: "Plan shuru: {date}", ur: "منصوبہ شروع: {date}" },
   planResetDates: { en: "Restart plan dates from today", roman: "Plan ki tareekhein aaj se dobara shuru karein", ur: "منصوبے کی تاریخیں آج سے دوبارہ شروع کریں" },
   planResetDatesNote: {
     en: "Only the dates change — your completed tasks stay checked.",
+    roman: "Sirf dates badalti hain — aap ke complete tasks checked rehte hain.",
     ur: "صرف تاریخیں بدلتی ہیں — آپ کے مکمل شدہ کام نشان زد رہتے ہیں۔",
   },
   planTaskLinkLibrary: { en: "Open in Library", roman: "Library mein kholein", ur: "لائبریری میں کھولیں" },
@@ -1368,6 +1472,7 @@ const STRINGS: Record<string, StrEntry> = {
   flashSessionReviewed: { en: "reviewed this session", roman: "is session mein reviewed", ur: "اس سیشن میں دہرائے گئے" },
   flashSaveFailed: {
     en: "Could not save this grade — the card's progress is not stored yet. Retry, or export your progress first.",
+    roman: "Yeh grade save nahi ho saka — card ki progress abhi save nahi hui. Dobara koshish karen, ya pehle apni progress export karen.",
     ur: "یہ درجہ محفوظ نہیں ہو سکا — کارڈ کی پیش رفت ابھی محفوظ نہیں ہوئی۔ دوبارہ کوشش کریں، یا پہلے اپنی پیش رفت برآمد کریں۔",
   },
   flashRetrySave: { en: "Retry save", roman: "Save dobara karein", ur: "محفوظ کرنے کی دوبارہ کوشش کریں" },
@@ -1376,12 +1481,14 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Step 2b — analysis: denominators, provisional, filters, data ----
   analysisDenominators: {
     en: "Accuracy {pct}% is over {questions} questions in {attempts} MCQ attempts. Flashcard numbers are self-ratings and are never mixed into MCQ accuracy.",
+    roman: "Accuracy {pct}% {attempts} MCQ attempts ke {questions} sawalat par hai. Flashcard numbers self-ratings hain aur kabhi MCQ accuracy mein nahi milaye jate.",
     ur: "درستگی {pct}٪ {attempts} ایم سی کیو کوششوں کے {questions} سوالات پر مبنی ہے۔ فلیش کارڈ نمبر خود درجہ بندی ہیں اور کبھی ایم سی کیو درستگی میں نہیں ملائے جاتے۔",
   },
   provisionalHeading: { en: "Provisional — small sample", roman: "Provisional — chhota sample", ur: "عارضی — چھوٹا نمونہ" },
   provisionalSmallSample: { en: "provisional—small sample", roman: "provisional—chhota sample", ur: "عارضی—چھوٹا نمونہ" },
   provisionalIntro: {
     en: "These subjects have fewer than 5 answered questions, so their accuracy is provisional. They are shown here, not hidden.",
+    roman: "In subjects ke 5 se kam jawab shuda sawalat hain, is liye un ki accuracy aarzi hai. Unhein yahan dikhaya gaya hai, chhupaya nahi gaya.",
     ur: "ان مضامین کے 5 سے کم جواب شدہ سوالات ہیں، اس لیے ان کی درستگی عارضی ہے۔ انہیں یہاں دکھایا گیا ہے، چھپایا نہیں گیا۔",
   },
   run10Drill: { en: "Run 10-question drill", roman: "10 sawalon ki drill chalayein", ur: "10 سوالات کی ڈرل چلائیں" },
@@ -1392,16 +1499,16 @@ const STRINGS: Record<string, StrEntry> = {
   filterAllSubjects: { en: "All subjects", roman: "Tamam subjects", ur: "تمام مضامین" },
   filterAllTracks: { en: "All tracks", roman: "Tamam tracks", ur: "تمام ٹریک" },
   filtersHeading: { en: "Filters", roman: "Filters", ur: "فلٹر" },
-  filteredNote: { en: "Showing {n} of {total} attempts.", ur: "{total} میں سے {n} کوششیں دکھائی جا رہی ہیں۔" },
-  lastExportLine: { en: "Last export: {date}", ur: "آخری برآمد: {date}" },
-  lastImportLine: { en: "Last import: {date}", ur: "آخری درآمد: {date}" },
+  filteredNote: { en: "Showing {n} of {total} attempts.", roman: "{total} mein se {n} attempts dikhai ja rahi hain.", ur: "{total} میں سے {n} کوششیں دکھائی جا رہی ہیں۔" },
+  lastExportLine: { en: "Last export: {date}", roman: "Aakhri export: {date}", ur: "آخری برآمد: {date}" },
+  lastImportLine: { en: "Last import: {date}", roman: "Aakhri import: {date}", ur: "آخری درآمد: {date}" },
   neverExported: { en: "Never exported yet.", roman: "Abhi tak export nahi hua.", ur: "ابھی تک برآمد نہیں ہوا۔" },
   neverImported: { en: "Never imported yet.", roman: "Abhi tak import nahi hua.", ur: "ابھی تک درآمد نہیں ہوا۔" },
 
   // ---- Step 2b — library: scoped search, source text, related links ----
   searchAllSubjects: { en: "Search all subjects", roman: "Tamam subjects talaash karein", ur: "تمام مضامین تلاش کریں" },
-  libraryMatchCount: { en: "{n} of {total} notes", ur: "{total} میں سے {n} نوٹ" },
-  libraryMatchCountQuery: { en: "{n} notes match “{q}”", ur: "“{q}” سے {n} نوٹ ملتے ہیں" },
+  libraryMatchCount: { en: "{n} of {total} notes", roman: "{total} mein se {n} notes", ur: "{total} میں سے {n} نوٹ" },
+  libraryMatchCountQuery: { en: "{n} notes match “{q}”", roman: "“{q}” se {n} notes milte hain", ur: "“{q}” سے {n} نوٹ ملتے ہیں" },
   englishSourceText: { en: "English source text", roman: "English source text", ur: "انگریزی ماخذ متن" },
   relatedLabel: { en: "Related:", roman: "Mutalliqa:", ur: "متعلقہ:" },
   relatedPractice: { en: "Related practice drill", roman: "Mutalliqa practice drill", ur: "متعلقہ مشقی ڈرل" },
@@ -1418,6 +1525,7 @@ const STRINGS: Record<string, StrEntry> = {
   // removed per owner decision; only the display-only label remains. ----
   explanationPendingLabel: {
     en: "Roman Urdu explanation — English version pending owner review",
+    roman: "Roman Urdu explanation — English version owner review ke muntazir hai",
     ur: "رومن اردو وضاحت — انگریزی نسخہ مالک کے جائزے کا منتظر ہے",
   },
 
@@ -1425,31 +1533,36 @@ const STRINGS: Record<string, StrEntry> = {
   flagsHeading: { en: "Flagged questions", roman: "Flagged sawalat", ur: "نشاندہ سوالات" },
   flagsIntro: {
     en: "Questions you flagged during practice and mocks. Flags survive submitting the test and reloading the page. Remove them here when done.",
+    roman: "Woh sawalat jinhein aap ne practice aur mocks ke dauran flag kiya. Flags test submit karne aur page reload karne ke baad bhi rehte hain. Done hone par yahan se hata den.",
     ur: "وہ سوالات جنہیں آپ نے مشق اور موک ٹیسٹ کے دوران نشان زد کیا۔ نشان ٹیسٹ جمع کرانے اور صفحہ دوبارہ لوڈ کرنے کے بعد بھی رہتے ہیں۔ مکمل ہونے پر یہاں سے ہٹا دیں۔",
   },
   flagsEmpty: {
     en: "No flagged questions yet. Flag a question during practice or a mock to keep it here.",
+    roman: "Abhi koi flagged question nahi hai. Kisi sawal ko yahan rakhne ke liye practice ya mock ke dauran use flag karen.",
     ur: "ابھی کوئی نشاندہ سوال نہیں ہے۔ کسی سوال کو یہاں رکھنے کے لیے مشق یا موک کے دوران اسے نشان زد کریں۔",
   },
   flagsRemove: { en: "Remove", roman: "Hata dein", ur: "ہٹا دیں" },
   flagsClearAll: { en: "Clear all flags", roman: "Tamam flags saaf karein", ur: "تمام نشانات صاف کریں" },
   flagsFromMock: { en: "Mock", roman: "Mock", ur: "موک" },
   flagsFromPractice: { en: "Practice", roman: "Practice", ur: "مشق" },
-  flagsFlaggedOn: { en: "Flagged {date}", ur: "{date} کو نشان زد کیا گیا" },
+  flagsFlaggedOn: { en: "Flagged {date}", roman: "{date} ko flag kiya gaya", ur: "{date} کو نشان زد کیا گیا" },
 
   // ---- Step 3b-audit2 (F07/F08/F09) — storage failure + multi-tab warnings ----
   storageSaveFailed: {
     en: "A save failed — your latest changes may not be stored (storage may be full or blocked). Download a backup copy, free up space, then retry.",
+    roman: "Save fail ho gaya — aap ki latest changes mehfooz nahi hui hon gi (storage full ya blocked ho sakti hai). Backup copy download karen, jagah khali karen, phir dobara koshish karen.",
     ur: "محفوظ کرنا ناکام ہو گیا — آپ کی تازہ ترین تبدیلیاں محفوظ نہیں ہوئی ہوں گی (اسٹوریج بھری ہوئی یا بند ہو سکتی ہے)۔ بیک اپ کی کاپی ڈاؤن لوڈ کریں، جگہ خالی کریں، پھر دوبارہ کوشش کریں۔",
   },
   storageOtherTab: {
     en: "Your study data was changed in another open tab. Reload this page to see the latest version before continuing — otherwise your changes here may overwrite it.",
+    roman: "Aap ka study data kisi doosre khule tab mein badal gaya hai. Jaari rakhne se pehle latest version dekhne ke liye yeh page reload karen — warna yahan ki changes use overwrite kar sakti hain.",
     ur: "آپ کا مطالعاتی ڈیٹا کسی دوسرے کھلے ٹیب میں تبدیل ہو گیا ہے۔ جاری رکھنے سے پہلے تازہ ترین نسخہ دیکھنے کے لیے یہ صفحہ دوبارہ لوڈ کریں — ورنہ یہاں کی تبدیلیاں اسے مٹا سکتی ہیں۔",
   },
   storageReload: { en: "Reload page", roman: "Page dobara load karein", ur: "صفحہ دوبارہ لوڈ کریں" },
   storageDismiss: { en: "Dismiss", roman: "Band karein", ur: "بند کریں" },
   attemptSaveFailed: {
     en: "This result could not be saved — storage may be full. Your answers above are still on screen. Retry the save, or download this result so it is not lost.",
+    roman: "Yeh result save nahi ho saka — storage full ho sakti hai. Aap ke jawabat upar screen par maujood hain. Save ki dobara koshish karen, ya yeh result download karen taake zaya na ho.",
     ur: "یہ نتیجہ محفوظ نہیں ہو سکا — اسٹوریج بھری ہوئی ہو سکتی ہے۔ آپ کے جوابات اوپر اسکرین پر موجود ہیں۔ محفوظ کرنے کی دوبارہ کوشش کریں، یا یہ نتیجہ ڈاؤن لوڈ کریں تاکہ ضائع نہ ہو۔",
   },
   attemptRetrySave: { en: "Retry save", roman: "Save dobara karein", ur: "دوبارہ محفوظ کریں" },
@@ -1457,6 +1570,7 @@ const STRINGS: Record<string, StrEntry> = {
   attemptSaveRecovered: { en: "Result saved.", roman: "Natija save ho gaya.", ur: "نتیجہ محفوظ ہو گیا۔" },
   issueSaveFailed: {
     en: "This report could not be saved — storage may be full. Your text is still here. Try saving again.",
+    roman: "Yeh report save nahi ho saki — storage full ho sakti hai. Aap ka text yahin maujood hai. Dobara save karne ki koshish karen.",
     ur: "یہ رپورٹ محفوظ نہیں ہو سکی — اسٹوریج بھری ہوئی ہو سکتی ہے۔ آپ کا متن یہیں موجود ہے۔ دوبارہ محفوظ کرنے کی کوشش کریں۔",
   },
 };

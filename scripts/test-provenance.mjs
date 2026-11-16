@@ -23,7 +23,14 @@ execSync(
   { cwd: ROOT, stdio: "ignore" },
 );
 const require = createRequire(import.meta.url);
-const { QUESTIONS, NOTES, BY_ID, provenanceBadge } = require(join(OUT, "lib/data.js"));
+const { NOTES, provenanceBadge } = require(join(OUT, "lib/data.js"));
+// Lazy loading (Nov 2026): QUESTIONS/BY_ID are no longer exported
+// from data.ts (banks load dynamically). Rebuild them from the bank
+// files in canonical bank order — identical to the old static order.
+// The loader itself is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const QUESTIONS = BANK_KEYS.flatMap((k) => JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8")));
+const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 let failures = 0;
 function check(name, cond, detail = "") {

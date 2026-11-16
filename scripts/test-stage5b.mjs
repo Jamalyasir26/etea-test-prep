@@ -46,7 +46,14 @@ const tscErrors = tscDiag.split("\n").filter((l) => l.includes("error TS"));
 check("5B tsc harness: no unexpected type errors", tscErrors.every((l) => l.includes("TS5097")), tscDiag.slice(0, 300));
 const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
-const { QUESTIONS, BY_SUBJECT, NOTES, VISIBLE_COUNTS, resolveQuestionView, resolveNoteView } = data;
+const { NOTES, VISIBLE_COUNTS, resolveQuestionView, resolveNoteView } = data;
+// Lazy loading (Nov 2026): QUESTIONS/BY_SUBJECT are no longer
+// exported from data.ts (banks load dynamically). Rebuild them from
+// the bank files in canonical bank order — identical to the old
+// static order. The loader itself is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8"))]));
+const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
 check("5B bank total 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);

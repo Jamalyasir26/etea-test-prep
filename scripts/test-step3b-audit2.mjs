@@ -227,8 +227,15 @@ const tscErrors = tscDiag.split("\n").filter((l) => l.includes("error TS"));
 check("F02 tsc harness: no unexpected type errors", tscErrors.every((l) => l.includes("TS5097")), tscDiag.slice(0, 300));
 const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
-const { QUESTIONS, NOTES, FLASHCARDS, VISIBLE_TRACKS, VISIBLE_MOCKS } = data;
+const { NOTES, FLASHCARDS, VISIBLE_TRACKS, VISIBLE_MOCKS } = data;
 const { displayExplanation, pendingEnglishExplanations } = data;
+// Lazy loading (Nov 2026): QUESTIONS is no longer exported from
+// data.ts (banks load dynamically) and pendingEnglishExplanations
+// is async. Rebuild QUESTIONS from the bank files in canonical
+// bank order — identical to the old static order. The loader itself
+// is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const QUESTIONS = BANK_KEYS.flatMap((k) => JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8")));
 
 check("F02 bank still 763 MCQs", QUESTIONS.length === 763);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
@@ -297,7 +304,7 @@ check("F02 plain English item shows original, not pending", displayExplanation(b
 // Phase 4A: the /review queue UI is gone (owner decision), but the
 // helper still lists the 196 marked items for F02 accounting — the
 // pending labels on explanations are unchanged.
-const pending = pendingEnglishExplanations();
+const pending = await pendingEnglishExplanations();
 check("F02 pendingEnglishExplanations still lists 196 marked items", pending.length === 196);
 check("F02 pending list sorted by id", pending.every((q, i) => i === 0 || pending[i - 1].id <= q.id));
 check("F02 exactly one correct answer preserved on translated items", withEn.every((q) => q.options.length >= 2 && q.correctIndex >= 0 && q.correctIndex < q.options.length));

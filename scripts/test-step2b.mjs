@@ -213,9 +213,17 @@ execSync(`ln -sfn ${join(ROOT, "node_modules")} ${join(OUT, "node_modules")}`, {
 const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 const plan = require(join(OUT, "lib/plan.js"));
+// Lazy loading (Nov 2026): QUESTIONS/BY_SUBJECT are no longer
+// exported from data.ts (banks load dynamically), and mockLabels /
+// buildMockQuestions are async. Rebuild the maps from the bank files
+// in canonical bank order — identical to the old static order. The
+// loader itself is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8"))]));
+const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // Counts as of Phase 4B1 (Step 2b itself added none; 4B1 added 56 MCQs + 21 notes).
-check("counts: 763 MCQs", data.QUESTIONS.length === 763, `got ${data.QUESTIONS.length}`);
+check("counts: 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
 check(
   "counts: 151 notes",
   Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 151,
@@ -229,7 +237,9 @@ check("counts: 20 mocks", data.MOCKS.length === 20, `got ${data.MOCKS.length}`);
 let coverageKinds = new Set();
 let scoringUnknownCount = 0;
 for (const m of data.MOCKS) {
-  const labels = data.mockLabels(m);
+  const labels = await data.mockLabels(m);
+  const built = await data.buildMockQuestions(m, "probe-seed");
+  const trustedBuilt = await data.buildMockQuestions(m, "probe-seed", { trustedOnly: true });
   coverageKinds.add(labels.coverage);
   if (labels.scoringUnknown) scoringUnknownCount++;
   check(
@@ -246,12 +256,12 @@ for (const m of data.MOCKS) {
   }
   check(
     `mock ${m.id}: available equals built questions`,
-    labels.available === data.buildMockQuestions(m, "probe-seed").length,
-    `avail ${labels.available} vs built ${data.buildMockQuestions(m, "probe-seed").length}`,
+    labels.available === built.length,
+    `avail ${labels.available} vs built ${built.length}`,
   );
   check(
     `mock ${m.id}: trusted equals trusted-built questions`,
-    labels.trusted === data.buildMockQuestions(m, "probe-seed", { trustedOnly: true }).length,
+    labels.trusted === trustedBuilt.length,
   );
   check(`mock ${m.id}: trusted <= available`, labels.trusted <= labels.available);
   check(`mock ${m.id}: scoringUnknown iff no own config`, labels.scoringUnknown === !m.scoring);
@@ -259,7 +269,7 @@ for (const m of data.MOCKS) {
 check("mock labels: proxy + full both occur in real data", coverageKinds.has("proxy") && coverageKinds.has("full"));
 check(
   "mock labels: 19/20 scoring-unknown, only sst-kppsc has a config",
-  scoringUnknownCount === 19 && data.mockLabels(data.MOCKS.find((m) => m.id === "sst-kppsc")).scoringUnknown === false,
+  scoringUnknownCount === 19 && (await data.mockLabels(data.MOCKS.find((m) => m.id === "sst-kppsc"))).scoringUnknown === false,
   `unknown=${scoringUnknownCount}`,
 );
 // The "partial" branch is unreachable with the current banks (every
@@ -268,11 +278,12 @@ const syntheticPartial = {
   id: "synth-partial", title: "Synthetic", track: "tt", variant: "B", minutes: 100, total: 100,
   comp: { islamiyat: 50 }, note: "",
 };
+const synthLabels = await data.mockLabels(syntheticPartial);
 check(
   "mock labels: under-subscribed comp -> partial",
-  data.mockLabels(syntheticPartial).coverage === "partial" &&
-    data.mockLabels(syntheticPartial).available === 50,
-  JSON.stringify(data.mockLabels(syntheticPartial)),
+  synthLabels.coverage === "partial" &&
+    synthLabels.available === 50,
+  JSON.stringify(synthLabels),
 );
 const syntheticCapped = {
   id: "synth-capped", title: "Synthetic", track: "tt", variant: "B", minutes: 100, total: 100,
@@ -280,8 +291,8 @@ const syntheticCapped = {
 };
 check(
   "mock labels: over-subscribed comp caps at the bank size (never invented)",
-  data.mockAvailableCount(syntheticCapped) === data.BY_SUBJECT.islamiyat.length,
-  `avail=${data.mockAvailableCount(syntheticCapped)} bank=${data.BY_SUBJECT.islamiyat.length}`,
+  data.mockAvailableCount(syntheticCapped) === BY_SUBJECT.islamiyat.length,
+  `avail=${data.mockAvailableCount(syntheticCapped)} bank=${BY_SUBJECT.islamiyat.length}`,
 );
 const syntheticUnknownSubject = {
   id: "synth-unknown", title: "Synthetic", track: "tt", variant: "B", minutes: 100, total: 10,
@@ -311,7 +322,7 @@ check("flashcardCategoryForNote: Maths is not", data.flashcardCategoryForNote("M
 for (const c of [...new Set(data.FLASHCARDS.map((f) => f.category))]) {
   check(`flashcardCategoryForNote: category ${c} maps to itself`, data.flashcardCategoryForNote(c) === c);
 }
-const distinctLabels = [...new Set(data.QUESTIONS.map((q) => q.subject))];
+const distinctLabels = [...new Set(QUESTIONS.map((q) => q.subject))];
 check(
   "libraryScope: every question label maps to a NOTES key or 'all'",
   distinctLabels.every((l) => {

@@ -1,6 +1,7 @@
 // i18n coverage tests (Localization Pass 1) — plain node, no dependencies.
-// 1. Every STRINGS key has a non-empty en AND ur translation (roman is
-//    optional — it falls back to en; see the fallback rule below).
+// 1. Every STRINGS key has a non-empty en AND ur AND roman
+//    translation (roman completed in the lazy-load batch, Nov 2026;
+//    the fallback to en remains only as a safety net).
 // 2. Placeholder sets: ur/roman placeholders must be a subset of en's
 //    (so tf() can never render a raw {name} in a translated string).
 // 3. Every t("…")/tf("…") literal key used in src/ exists in STRINGS,
@@ -98,8 +99,8 @@ const missingUr = keys.filter((k) => !STRINGS[k].ur);
 check("every key has a ur translation", missingUr.length === 0, missingUr.join(", "));
 const missingEn = keys.filter((k) => !STRINGS[k].en);
 check("every key has an en translation", missingEn.length === 0, missingEn.join(", "));
-const emptyRoman = keys.filter((k) => "roman" in STRINGS[k] && !STRINGS[k].roman);
-check("roman translations, where present, are non-empty", emptyRoman.length === 0, emptyRoman.join(", "));
+const emptyRoman = keys.filter((k) => !("roman" in STRINGS[k]) || !STRINGS[k].roman);
+check("every key has a non-empty roman translation", emptyRoman.length === 0, emptyRoman.join(", "));
 
 function placeholders(s) {
   return new Set([...(s ?? "").matchAll(/\{(\w+)\}/g)].map((m) => m[1]));
@@ -385,7 +386,13 @@ execSync(
   { cwd: ROOT, stdio: "ignore" },
 );
 const require = createRequire(import.meta.url);
-const { QUESTIONS, provenanceBadge } = require(join(OUT, "lib/data.js"));
+const { provenanceBadge } = require(join(OUT, "lib/data.js"));
+// Lazy loading (Nov 2026): QUESTIONS is no longer exported from
+// data.ts (banks load dynamically). Rebuild it from the bank files
+// in canonical bank order — identical to the old static order. The
+// loader itself is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const QUESTIONS = BANK_KEYS.flatMap((k) => JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8")));
 const conceptItem = QUESTIONS.find((q) => q.sourceKind === "concept-extracted");
 check("concept-extracted item exists for the Urdu badge check", !!conceptItem);
 const urBadge = provenanceBadge(conceptItem, "ur");

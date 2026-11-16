@@ -140,8 +140,8 @@ function TutorInner() {
   // (live request failed) and the manual "Search the library offline"
   // button. Returns the message text + citation payload; the caller
   // decides the prefix line (live error vs. manual search).
-  function offlineResult(q: string, prefix: string): { text: string; sources: MsgSources } {
-    const { notes, questions } = retrieve(q, 3, 3);
+  async function offlineResult(q: string, prefix: string): Promise<{ text: string; sources: MsgSources }> {
+    const { notes, questions } = await retrieve(q, 3, 3);
     const terms = tokenize(q);
     const matchingAnnotations = annotationsOn
       ? Object.entries(annotations)
@@ -173,8 +173,8 @@ function TutorInner() {
     };
   }
 
-  function runOfflineSearch(q: string) {
-    const { text, sources } = offlineResult(q, "");
+  async function runOfflineSearch(q: string) {
+    const { text, sources } = await offlineResult(q, "");
     setMsgs((m) => [...m, { role: "ai", text, sources }]);
     setFailedPrompt(null);
   }
@@ -209,7 +209,7 @@ function TutorInner() {
         // Offline fallback: search the library directly (same content
         // as before, now with clickable citations). The prompt is
         // preserved in the input + Retry/offline actions below.
-        const { text: fb, sources } = offlineResult(q, j.error ?? t("liveUnavailable"));
+        const { text: fb, sources } = await offlineResult(q, j.error ?? t("liveUnavailable"));
         setMsgs((m) => [...m, { role: "ai", text: fb, sources }]);
         setInput(q);
         setFailedPrompt(q);

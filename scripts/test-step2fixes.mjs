@@ -126,8 +126,15 @@ execSync(`ln -sfn ${join(ROOT, "node_modules")} ${join(OUT, "node_modules")}`, {
 const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 const tracking = await import("../src/lib/tracking.ts");
+// Lazy loading (Nov 2026): QUESTIONS/BY_SUBJECT are no longer
+// exported from data.ts (banks load dynamically). Rebuild them from
+// the bank files in canonical bank order — identical to the old
+// static order. The loader itself is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8"))]));
+const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
-check("counts: 763 MCQs", data.QUESTIONS.length === 763, `got ${data.QUESTIONS.length}`);
+check("counts: 763 MCQs", QUESTIONS.length === 763, `got ${QUESTIONS.length}`);
 check("counts: 151 notes", Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 151);
 check("counts: 70 flashcards", data.FLASHCARDS.length === 70, `got ${data.FLASHCARDS.length}`);
 check("counts: 19 tracks", data.TRACKS.length === 19, `got ${data.TRACKS.length}`);
@@ -136,7 +143,7 @@ check("counts: 20 mocks", data.MOCKS.length === 20, `got ${data.MOCKS.length}`);
 // The page's exact set construction: shuffled bank slice, seeded by
 // subject-round-seed.
 const buildSet = (subjectKey, round, seed) => {
-  const bank = data.BY_SUBJECT[subjectKey] ?? [];
+  const bank = BY_SUBJECT[subjectKey] ?? [];
   const rand = data.mulberry32(data.hashSeed(`${subjectKey}-${round}-${seed}`));
   return data.shuffled(bank, rand).slice(0, 20);
 };
@@ -181,7 +188,7 @@ store.clear();
 tracking.saveSession(storedSession);
 
 // Bare-URL reload: resolve restores round+seed -> fingerprint matches.
-const resolved = resolvePracticeInitial("", { subjectKey: "islamiyat", round: 0, seed: SET_SEED }, (k) => Boolean(data.BY_SUBJECT[k]), Date.now());
+const resolved = resolvePracticeInitial("", { subjectKey: "islamiyat", round: 0, seed: SET_SEED }, (k) => Boolean(BY_SUBJECT[k]), Date.now());
 const reloaded = buildSet(resolved.subjectKey, resolved.round, resolved.seed);
 check(
   "resume: bare-URL reload rebuilds the identical set",
@@ -205,7 +212,7 @@ check(
   tracking.checkSessionCompatibility(storedSession, staleFp).compatible === false,
 );
 // Subject change: old session stays stored, nothing stale applied.
-const changed = resolvePracticeInitial("english", { subjectKey: "islamiyat", round: 0, seed: SET_SEED }, (k) => Boolean(data.BY_SUBJECT[k]), 555);
+const changed = resolvePracticeInitial("english", { subjectKey: "islamiyat", round: 0, seed: SET_SEED }, (k) => Boolean(BY_SUBJECT[k]), 555);
 check("subject change: fresh round/seed for the new subject", changed.round === 0 && changed.seed === 555);
 check("subject change: old session still stored + loadable", tracking.loadSession(SCOPE) !== null);
 check("subject change: new scope has no session", tracking.loadSession("practice:english:0") === null);

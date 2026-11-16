@@ -15,6 +15,7 @@ import { execSync } from "node:child_process";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import fs from "node:fs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = "/tmp/loc1-trilanguage";
@@ -23,7 +24,13 @@ execSync(
   { cwd: ROOT, stdio: "ignore" },
 );
 const require = createRequire(import.meta.url);
-const { QUESTIONS, NOTES, localizeQuestion, localizeNote, hasTranslation } = require(join(OUT, "lib/data.js"));
+const { NOTES, localizeQuestion, localizeNote, hasTranslation } = require(join(OUT, "lib/data.js"));
+// Lazy loading (Nov 2026): QUESTIONS is no longer exported from
+// data.ts (banks load dynamically). Rebuild it from the bank files
+// in canonical bank order — identical to the old static order. The
+// loader itself is covered by test-lazy-banks.
+const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
+const QUESTIONS = BANK_KEYS.flatMap((k) => JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8")));
 
 let failures = 0;
 function check(name, cond, detail = "") {

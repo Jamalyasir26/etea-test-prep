@@ -451,8 +451,8 @@ Rules you must follow:
 - Never claim to be ETEA, KPPSC or any official body. You are a practice tutor, not an official source.
 - Keep answers short, exam-focused, and end with one quick self-test question when it fits.`;
 
-function contextBlock(query: string, ownerAnnotations?: { note: string; text: string }[]): string {
-  const { notes, questions } = retrieve(query, 5, 5);
+async function contextBlock(query: string, ownerAnnotations?: { note: string; text: string }[]): Promise<string> {
+  const { notes, questions } = await retrieve(query, 5, 5);
   const n = notes
     .map((x) => `- [Note: ${x.title}] ${x.body.slice(0, 600)}`)
     .join("\n");
@@ -677,7 +677,7 @@ export async function generateTutorAnswer(
   const answerDeadlineMs = bounds.answerDeadlineMs ?? ANSWER_DEADLINE_MS;
   const startedAt = Date.now();
   const remainingMs = () => answerDeadlineMs - (Date.now() - startedAt);
-  const prompt = `${contextBlock(userPrompt, ownerAnnotations)}\n\n${langInstruction(lang)}\n\nUSER QUESTION:\n${userPrompt}`;
+  const prompt = `${await contextBlock(userPrompt, ownerAnnotations)}\n\n${langInstruction(lang)}\n\nUSER QUESTION:\n${userPrompt}`;
 
   // Try ONE provider with at most one bounded retry for transient
   // errors. The attempt's AbortSignal bound is min(8s, remaining

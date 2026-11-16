@@ -25,6 +25,8 @@ import {
   SUBJECT_LABELS,
   VISIBLE_COUNTS,
   VISIBLE_MOCKS,
+  BANK_KEYS,
+  subjectKeyForLabel,
 } from "@/lib/data";
 import {
   computeStats,
@@ -165,6 +167,23 @@ export default function Home() {
         label: tf("continuePractice", { subject: SUBJECT_LABELS[parts[1]] ?? parts[1] }),
       };
     }
+  }
+
+  // Drill links use the BANK key, not the display label (same fix as
+  // /analysis): per-subject stats are keyed by label ("Islamiyat") but
+  // /practice expects a bank key ("islamiyat") — passing the label
+  // silently fell back to the stored subject and drilled the WRONG
+  // subject. An unmapped label links to /practice with no subject
+  // (honest fallback, never a guessed subject).
+  function drillHref(label: string): string {
+    const key = subjectKeyForLabel(label);
+    // The legacy "Drawing/PE" label maps to drawing_pe, which is not
+    // a practicable bank — and no question carries that label today.
+    // Guard anyway: an unmapped or non-bank key links to /practice
+    // with no subject, never a param the practice page would reject
+    // (and silently drill the stored subject instead).
+    if (!key || !(BANK_KEYS as readonly string[]).includes(key)) return "/practice";
+    return `/practice?subject=${encodeURIComponent(key)}`;
   }
 
   const p = PATTERNS[pattern];
@@ -423,7 +442,7 @@ export default function Home() {
               <span dir="ltr">
                 {Math.round(w.accuracy)}% ({w.total} Q)
               </span>{" "}
-              <Link href={`/practice?subject=${encodeURIComponent(w.subject)}`}>{t("drillArrow")}</Link>
+              <Link href={drillHref(w.subject)}>{t("drillArrow")}</Link>
             </p>
           ))}
           <p>

@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { VISIBLE_MOCKS, PATTERN_BANNER, mockLabels } from "@/lib/data";
+import { VISIBLE_MOCKS, PATTERN_BANNER, mockLabels, mockLabelsSync, type MockLabels } from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
 import { loadReviews, type ReviewRecord } from "@/lib/tracking";
 import { DEFAULT_SCORING, localizedScoringLabel, type ScoringConfig } from "@/lib/scoring";
@@ -30,6 +30,30 @@ export default function MockList() {
   }, []);
   const overrides: Record<string, string> = {};
   for (const [qid, r] of Object.entries(reviews)) overrides[qid] = r.reviewStatus;
+  // Lazy banks: trusted counts need bank contents, so labels load async
+  // after mount (same B07 pattern as reviews above); first paint uses
+  // the exact sync coverage/availability with trusted: 0. If a chunk
+  // fails to load (offline), the sync fallback stays — availability
+  // and coverage are exact, and the runner page carries the real
+  // failure state where questions are actually needed.
+  const [labelsById, setLabelsById] = useState<Record<string, MockLabels>>({});
+  useEffect(() => {
+    let live = true;
+    Promise.all(
+      VISIBLE_MOCKS.map(async (m) => [m.id, await mockLabels(m, overrides)] as const),
+    ).then(
+      (entries) => {
+        if (live) setLabelsById(Object.fromEntries(entries));
+      },
+      () => {
+        /* keep the sync fallback */
+      },
+    );
+    return () => {
+      live = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reviews]);
   // Stage 1 P0.1 — per-mock scoring override for this run only. "default"
   // = the mock's own config (or the zero-penalty default, policy unknown).
   // "zero" / "0.25" override it for this run; the choice is carried in the
@@ -83,7 +107,7 @@ export default function MockList() {
         </button>
       </div>
       {VISIBLE_MOCKS.map((m) => {
-        const labels = mockLabels(m, overrides);
+        const labels = labelsById[m.id] ?? mockLabelsSync(m);
         const trusted = labels.trusted;
         const trustedDisabled = mode === "trusted" && trusted === 0;
         return (

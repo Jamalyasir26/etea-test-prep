@@ -5,23 +5,7 @@
 // Nothing here is invented: patterns, BPS and dates are exactly as in v2.
 import content from "../data/content.json";
 import type { ScoringConfig } from "./scoring";
-
-import arabic from "../data/banks/arabic.json";
-import drawing from "../data/banks/drawing.json";
-import english from "../data/banks/english.json";
-import gk from "../data/banks/gk.json";
-import islamiyat from "../data/banks/islamiyat.json";
-import it from "../data/banks/it.json";
-import maths from "../data/banks/maths.json";
-import pakstudies from "../data/banks/pakstudies.json";
-import pastpapers from "../data/banks/pastpapers.json";
-import pastpapersReworded from "../data/banks/pastpapers_reworded.json";
-import pe from "../data/banks/pe.json";
-import pedagogy from "../data/banks/pedagogy.json";
-import science from "../data/banks/science.json";
-import socialstudies from "../data/banks/socialstudies.json";
-import tajweed from "../data/banks/tajweed.json";
-import urdu from "../data/banks/urdu.json";
+import { BANK_COUNTS, findQuestionsByIds, loadAllQuestions, loadBank } from "./banks";
 
 export type Question = {
   id: string;
@@ -176,32 +160,28 @@ export type Vacancy = {
   src: string;
 };
 
-const BANKS: Record<string, Question[]> = {
-  arabic: arabic as Question[],
-  drawing: drawing as Question[],
-  english: english as Question[],
-  gk: gk as Question[],
-  islamiyat: islamiyat as Question[],
-  it: it as Question[],
-  maths: maths as Question[],
-  pakstudies: pakstudies as Question[],
-  pastpapers: pastpapers as Question[],
-  pastpapers_reworded: pastpapersReworded as Question[],
-  pe: pe as Question[],
-  pedagogy: pedagogy as Question[],
-  science: science as Question[],
-  socialstudies: socialstudies as Question[],
-  tajweed: tajweed as Question[],
-  urdu: urdu as Question[],
-};
 // NOTE: drawing_pe.json stays on disk but is deliberately NOT registered:
 // its 20 items are split into the separate drawing.json and pe.json banks.
-
-export const QUESTIONS: Question[] = Object.values(BANKS).flat();
-export const BY_ID: Record<string, Question> = Object.fromEntries(
-  QUESTIONS.map((q) => [q.id, q]),
-);
-export const BY_SUBJECT: Record<string, Question[]> = BANKS;
+//
+// LAZY BANKS: question banks are NOT statically imported any more —
+// they load on demand via src/lib/banks.ts (dynamic import, one hashed
+// chunk per bank). The old sync QUESTIONS / BY_ID / BY_SUBJECT exports
+// are gone; use loadBank / loadBanks / loadAllQuestions /
+// findQuestionById / findQuestionsByIds. Everything derived from
+// content.json below stays synchronous and unchanged. The resolver
+// API (resolveQuestionView / resolveNoteView / localizeQuestion /
+// localizeNote / displayExplanation / badge helpers) is unchanged:
+// resolvers take an already-loaded Question/Note object.
+export {
+  BANK_COUNTS,
+  BANK_KEYS,
+  BANK_TRUSTED,
+  findQuestionById,
+  findQuestionsByIds,
+  loadAllQuestions,
+  loadBank,
+  loadBanks,
+} from "./banks";
 
 // content.json (notes, flashcards, tracks, mocks, patterns, plan, vacancies, links)
 export const NOTES: Record<string, Note[]> = content.notes as Record<string, Note[]>;
@@ -436,8 +416,9 @@ export function displayExplanation(q: Question, lang: ContentLang): ExplanationD
  *  helper is retained for the test suites' F02 accounting. The pending
  *  labels on explanations are unaffected. Religious-content
  *  translations are the owner's decision, never auto-generated. */
-export function pendingEnglishExplanations(): Question[] {
-  return QUESTIONS.filter((q) => q.explanationLang === "roman").sort((a, b) =>
+export async function pendingEnglishExplanations(): Promise<Question[]> {
+  const all = await loadAllQuestions();
+  return all.filter((q) => q.explanationLang === "roman").sort((a, b) =>
     a.id.localeCompare(b.id),
   );
 }
@@ -812,16 +793,17 @@ export function isTrusted(q: Question, overrides?: ReviewOverrides): boolean {
  *  Legacy comp key "drawing_pe" is no longer used by any live comp
  *  (DM/PET comps in content.json use "drawing" / "pe"); the alias is kept
  *  only as a safety net and draws from the split drawing + pe banks. */
-export function trustedOnlyCount(mock: MockDef, overrides?: ReviewOverrides): number {
+export async function trustedOnlyCount(mock: MockDef, overrides?: ReviewOverrides): Promise<number> {
   if (mock.fixed && ZAM_FIXED[mock.fixed]) {
-    return ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter((q) => q && isTrusted(q, overrides)).length;
+    const qs = await findQuestionsByIds(ZAM_FIXED[mock.fixed]);
+    return qs.filter((q) => isTrusted(q, overrides)).length;
   }
   let n = 0;
   for (const [subjectKey, count] of Object.entries(mock.comp ?? {})) {
     const pool =
       subjectKey === "drawing_pe"
-        ? [...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? [])]
-        : (BY_SUBJECT[subjectKey] ?? []);
+        ? [...(await loadBank("drawing")), ...(await loadBank("pe"))]
+        : await loadBank(subjectKey);
     n += Math.min(count, pool.filter((q) => isTrusted(q, overrides)).length);
   }
   return n;
@@ -833,15 +815,15 @@ export function trustedOnlyCount(mock: MockDef, overrides?: ReviewOverrides): nu
  *  With opts.trustedOnly, only trusted (reviewed) items are used and the
  *  shortfall is NEVER filled with unreviewed items — the mock returns
  *  fewer questions instead. */
-export function buildMockQuestions(
+export async function buildMockQuestions(
   mock: MockDef,
   seedSuffix = "",
   opts?: { trustedOnly?: boolean; overrides?: ReviewOverrides },
-): Question[] {
+): Promise<Question[]> {
   const trustedOnly = opts?.trustedOnly === true;
   const overrides = opts?.overrides;
   if (mock.fixed && ZAM_FIXED[mock.fixed]) {
-    const qs = ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter(Boolean);
+    const qs = await findQuestionsByIds(ZAM_FIXED[mock.fixed]);
     return trustedOnly ? qs.filter((q) => isTrusted(q, overrides)) : qs;
   }
   const rand = mulberry32(hashSeed(mock.id + seedSuffix));
@@ -853,8 +835,8 @@ export function buildMockQuestions(
     // unregistered old file.
     const bank =
       subjectKey === "drawing_pe"
-        ? [...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? [])]
-        : (BY_SUBJECT[subjectKey] ?? []);
+        ? [...(await loadBank("drawing")), ...(await loadBank("pe"))]
+        : await loadBank(subjectKey);
     const pool = trustedOnly ? bank.filter((q) => isTrusted(q, overrides)) : bank;
     const picked = shuffled(pool, rand).slice(0, count);
     out.push(...picked);
@@ -870,16 +852,19 @@ export function buildMockQuestions(
  *  min(requested, bank size). buildMockQuestions() always returns
  *  exactly this many — the number is computed, never guessed. */
 export function mockAvailableCount(mock: MockDef): number {
+  // Stays synchronous: availability needs bank SIZES only, which come
+  // from the BANK_COUNTS manifest (exact; every zamFixed id exists in
+  // the banks, pinned by the test suite). No bank chunk is loaded.
   if (mock.fixed && ZAM_FIXED[mock.fixed]) {
-    return ZAM_FIXED[mock.fixed].map((id) => BY_ID[id]).filter(Boolean).length;
+    return ZAM_FIXED[mock.fixed].length;
   }
   let n = 0;
   for (const [subjectKey, count] of Object.entries(mock.comp ?? {})) {
-    const bank =
+    const size =
       subjectKey === "drawing_pe"
-        ? [...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? [])]
-        : (BY_SUBJECT[subjectKey] ?? []);
-    n += Math.min(count, bank.length);
+        ? (BANK_COUNTS.drawing ?? 0) + (BANK_COUNTS.pe ?? 0)
+        : (BANK_COUNTS[subjectKey] ?? 0);
+    n += Math.min(count, size);
   }
   return n;
 }
@@ -905,9 +890,9 @@ export type MockLabels = {
  *  `coverage` to the Full / Partial / Proxy badge, shows a "Reviewed
  *  subset" badge when 0 < trusted < total, and a "Scoring policy
  *  unknown" badge when scoringUnknown. */
-export function mockLabels(mock: MockDef, overrides?: ReviewOverrides): MockLabels {
+export async function mockLabels(mock: MockDef, overrides?: ReviewOverrides): Promise<MockLabels> {
   const available = mockAvailableCount(mock);
-  const trusted = trustedOnlyCount(mock, overrides);
+  const trusted = await trustedOnlyCount(mock, overrides);
   return {
     coverage: mock.variant === "proxy" ? "proxy" : available >= mock.total ? "full" : "partial",
     available,
@@ -916,9 +901,21 @@ export function mockLabels(mock: MockDef, overrides?: ReviewOverrides): MockLabe
   };
 }
 
+/** Synchronous labels with trusted: 0 — the first-paint fallback while
+ *  the async trusted counts load. Coverage/availability are exact. */
+export function mockLabelsSync(mock: MockDef): MockLabels {
+  const available = mockAvailableCount(mock);
+  return {
+    coverage: mock.variant === "proxy" ? "proxy" : available >= mock.total ? "full" : "partial",
+    available,
+    trusted: 0,
+    scoringUnknown: !mock.scoring,
+  };
+}
+
 // ---------- Step 2b — cross-section subject mappings ----------
 
-/** NOTES subject key -> BY_SUBJECT bank key, for Library "related
+/** NOTES subject key -> bank key, for Library "related
  *  practice drill" links. "Drawing/PE" has NO bank key (its items live
  *  in the split drawing/pe banks) and is deliberately absent: the
  *  caller omits the drill link rather than pointing at half the
@@ -958,7 +955,7 @@ export function libraryScopeForSubjectLabel(label: string): string {
   return "all";
 }
 
-/** BY_SUBJECT bank key for a subject DISPLAY label (e.g. "Islamiyat"
+/** Bank key for a subject DISPLAY label (e.g. "Islamiyat"
  *  -> "islamiyat", "Past-Paper Topics" -> "pastpapers"). Inverts
  *  SUBJECT_LABELS. Used by the Analysis drill links: per-subject stats
  *  are keyed by label, but /practice expects a bank key — passing the
@@ -1019,11 +1016,11 @@ function score(text: string, terms: string[]): number {
 // `subject` off the returned notes.
 export type RetrievedNote = Note & { subject: string };
 
-export function retrieve(
+export async function retrieve(
   query: string,
   topNotes = 5,
   topQuestions = 5,
-): { notes: RetrievedNote[]; questions: Question[] } {
+): Promise<{ notes: RetrievedNote[]; questions: Question[] }> {
   const terms = [...new Set(tokenize(query))];
   if (terms.length === 0) return { notes: [] as RetrievedNote[], questions: [] as Question[] };
   const noteScores: { note: Note; subject: string; s: number }[] = [];
@@ -1035,7 +1032,8 @@ export function retrieve(
   }
   noteScores.sort((a, b) => b.s - a.s);
   const qScores: { q: Question; s: number }[] = [];
-  for (const q of QUESTIONS) {
+  const allQuestions = await loadAllQuestions();
+  for (const q of allQuestions) {
     const s = score(`${q.question} ${q.explanation} ${q.subject} ${q.topic}`, terms);
     if (s > 0) qScores.push({ q, s });
   }

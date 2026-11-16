@@ -8,10 +8,10 @@
 // scope so switching modes remounts it instead of leaking state.
 "use client";
 
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { buildMockQuestions, isTrusted, VISIBLE_MOCKS, trustedOnlyCount } from "@/lib/data";
+import { buildMockQuestions, isTrusted, VISIBLE_MOCKS, trustedOnlyCount, type Question } from "@/lib/data";
 import { useLang } from "@/lib/i18n";
 import { loadReviews, loadSession } from "@/lib/tracking";
 import { localizedScoringLabel, resolveScoring } from "@/lib/scoring";
@@ -45,12 +45,45 @@ function MockRunInner() {
     const live = loadSession(scope);
     return live?.questionSeed ? live.questionSeed : String(Date.now());
   });
-  const questions = useMemo(
-    () => (mock ? buildMockQuestions(mock, questionSeed, { trustedOnly, overrides }) : []),
+  // Lazy banks: the mock's questions build async (sampling waits for
+  // the needed bank chunks); QuizRunner mounts only once they arrive.
+  // A failed load shows a failure state with retry instead of a blank
+  // page. `overrides` is intentionally excluded from the deps (same as
+  // the old useMemo): reviews load once, before first paint here.
+  const [questions, setQuestions] = useState<Question[] | null>(null);
+  const [trustedCount, setTrustedCount] = useState(0);
+  const [bankError, setBankError] = useState<"offline" | "error" | null>(null);
+  const [retryNonce, setRetryNonce] = useState(0);
+  useEffect(() => {
+    let live = true;
+    setQuestions(null);
+    setBankError(null);
+    if (mock) {
+      Promise.all([
+        buildMockQuestions(mock, questionSeed, { trustedOnly, overrides }),
+        trustedOnlyCount(mock, overrides),
+      ]).then(
+        ([qs, n]) => {
+          if (live) {
+            setQuestions(qs);
+            setTrustedCount(n);
+          }
+        },
+        () => {
+          if (live)
+            setBankError(
+              typeof navigator !== "undefined" && !navigator.onLine ? "offline" : "error",
+            );
+        },
+      );
+    }
+    return () => {
+      live = false;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [mock, questionSeed, trustedOnly],
-  );
-  const allItemsVerified = questions.length > 0 && questions.every((q) => isTrusted(q, overrides));
+  }, [mock, questionSeed, trustedOnly, retryNonce]);
+  const allItemsVerified =
+    (questions?.length ?? 0) > 0 && (questions ?? []).every((q) => isTrusted(q, overrides));
 
   if (!mock) {
     return (
@@ -72,10 +105,10 @@ function MockRunInner() {
     <>
       {t("trustedOnlyLabel")}{" "}
       <span dir="ltr">
-        {questions.length} of {mock.total}
+        {questions?.length ?? 0} of {mock.total}
       </span>{" "}
       {t("trustedNoteRest")} —{" "}
-      <span dir="ltr">{trustedOnlyCount(mock, overrides)}</span> {t("reviewedWord")}{" "}
+      <span dir="ltr">{trustedCount}</span> {t("reviewedWord")}{" "}
       {t("trustedNoteInMock")}. {t("trustedNoteShortfall")} <span dir="auto">{mock.note}</span>
     </>
   ) : (
@@ -96,9 +129,33 @@ function MockRunInner() {
   // shown verbatim — ETEA and KPPSC variants are never merged.
   const allocation = useMemo(() => {
     const m = new Map<string, number>();
-    for (const q of questions) m.set(q.subject, (m.get(q.subject) ?? 0) + 1);
+    for (const q of questions ?? []) m.set(q.subject, (m.get(q.subject) ?? 0) + 1);
     return [...m.entries()];
   }, [questions]);
+  if (bankError !== null) {
+    return (
+      <div>
+        <h1>{mock.title}</h1>
+        <div className="alert">
+          <p>{t(bankError === "offline" ? "bankLoadFailedOffline" : "bankLoadFailed")}</p>
+          <button className="secondary" onClick={() => setRetryNonce((n) => n + 1)}>
+            {t("retryButton")}
+          </button>
+        </div>
+        <p>
+          <Link href="/mock">{t("backToMocks")}</Link>
+        </p>
+      </div>
+    );
+  }
+  if (questions === null) {
+    return (
+      <div>
+        <h1>{mock.title}</h1>
+        <p className="muted">{t("loading")}</p>
+      </div>
+    );
+  }
   const disclosureExtra = (
     <>
       <p>

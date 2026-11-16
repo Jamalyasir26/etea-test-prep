@@ -11,16 +11,14 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
-  BY_ID,
-  BY_SUBJECT,
   MOCKS,
-  QUESTIONS,
   ZAM_FIXED,
   displayExplanation,
   effectiveReviewStatus,
   reviewAttribution,
   type Question,
 } from "@/lib/data";
+import { loadAllQuestions } from "@/lib/banks";
 import structural from "@/data/structural-checks.json";
 import { useLang } from "@/lib/i18n";
 import {
@@ -54,22 +52,31 @@ const MOCK_FILTERS: { value: string; labelKey: string }[] = [
   { value: "all", labelKey: "mockFilterAll" },
 ];
 
-function mockPool(mockId: string): Question[] {
-  if (mockId === "all") return QUESTIONS;
+function mockPool(mockId: string, questions: Question[], byId: Map<string, Question>): Question[] {
+  if (mockId === "all") return questions;
   if (mockId === "zam1+zam2") {
     return [...(ZAM_FIXED.zam1 ?? []), ...(ZAM_FIXED.zam2 ?? [])]
-      .map((id) => BY_ID[id])
-      .filter(Boolean);
+      .map((id) => byId.get(id))
+      .filter((q): q is Question => Boolean(q));
   }
-  if (ZAM_FIXED[mockId]) return ZAM_FIXED[mockId].map((id) => BY_ID[id]).filter(Boolean);
+  if (ZAM_FIXED[mockId])
+    return ZAM_FIXED[mockId].map((id) => byId.get(id)).filter((q): q is Question => Boolean(q));
   const mock = MOCKS.find((m) => m.id === mockId);
-  if (!mock?.comp) return QUESTIONS;
-  // Dynamic mock: the pool is every bank item whose subject can appear in it.
+  if (!mock?.comp) return questions;
+  // Dynamic mock: the pool is every bank item whose subject can appear in it,
+  // in comp-key order with each bank in file order (the old per-bank
+  // concatenation order), deduplicated by id.
   const keys = Object.keys(mock.comp);
+  const bySubject = new Map<string, Question[]>();
+  for (const q of questions) {
+    const list = bySubject.get(q.subjectKey);
+    if (list) list.push(q);
+    else bySubject.set(q.subjectKey, [q]);
+  }
   const out: Question[] = [];
   for (const k of keys) {
-    if (k === "drawing_pe") out.push(...(BY_SUBJECT.drawing ?? []), ...(BY_SUBJECT.pe ?? []));
-    else out.push(...(BY_SUBJECT[k] ?? []));
+    if (k === "drawing_pe") out.push(...(bySubject.get("drawing") ?? []), ...(bySubject.get("pe") ?? []));
+    else out.push(...(bySubject.get(k) ?? []));
   }
   return [...new Map(out.map((q) => [q.id, q])).values()];
 }
@@ -115,6 +122,32 @@ export default function ReviewDashboard() {
   // Step 3b-audit2 (F12) — durable flags, loaded after mount (B07:
   // storage reads in initializers would mismatch the server HTML).
   const [flags, setFlags] = useState<DurableFlag[]>([]);
+  // Lazy banks: /review genuinely needs every bank (pools + counts), so
+  // all chunks load once here. Content renders only after load (the
+  // first render matches the server HTML: loading state on both).
+  const [allQuestions, setAllQuestions] = useState<Question[] | null>(null);
+  const [bankError, setBankError] = useState<"offline" | "error" | null>(null);
+  const [retryNonce, setRetryNonce] = useState(0);
+  useEffect(() => {
+    let live = true;
+    setAllQuestions(null);
+    setBankError(null);
+    loadAllQuestions().then(
+      (qs) => {
+        if (live) setAllQuestions(qs);
+      },
+      () => {
+        if (live)
+          setBankError(
+            typeof navigator !== "undefined" && !navigator.onLine ? "offline" : "error",
+          );
+      },
+    );
+    return () => {
+      live = false;
+    };
+  }, [retryNonce]);
+  const byId = useMemo(() => new Map((allQuestions ?? []).map((q) => [q.id, q])), [allQuestions]);
   useEffect(() => {
     setReviews(loadReviews());
     setFlags(loadFlags());
@@ -132,7 +165,10 @@ export default function ReviewDashboard() {
     return o;
   }, [reviews]);
 
-  const pool = useMemo(() => mockPool(mockFilter), [mockFilter]);
+  const pool = useMemo(
+    () => mockPool(mockFilter, allQuestions ?? [], byId),
+    [mockFilter, allQuestions, byId],
+  );
   const filtered = useMemo(() => {
     return pool.filter((q) => {
       if (postFilter !== "all" && !q.post.includes(postFilter)) return false;
@@ -161,11 +197,11 @@ export default function ReviewDashboard() {
   const zamProgress = useMemo(() => {
     const ids = [...(ZAM_FIXED.zam1 ?? []), ...(ZAM_FIXED.zam2 ?? [])];
     const verified = ids.filter((id) => {
-      const q = BY_ID[id];
+      const q = byId.get(id);
       return q && (effectiveReviewStatus(q, overrides) === "owner-reviewed" || effectiveReviewStatus(q, overrides) === "approved");
     }).length;
     return { verified, total: ids.length };
-  }, [overrides]);
+  }, [overrides, byId]);
 
   function act(qid: string, status: ReviewStatus) {
     setReviews(setReview(qid, status));
@@ -183,6 +219,28 @@ export default function ReviewDashboard() {
   }
 
   const shown = filtered.slice(0, visible);
+
+  if (bankError !== null) {
+    return (
+      <div>
+        <h1>{t("reviewTitle")}</h1>
+        <div className="alert">
+          <p>{t(bankError === "offline" ? "bankLoadFailedOffline" : "bankLoadFailed")}</p>
+          <button className="secondary" onClick={() => setRetryNonce((n) => n + 1)}>
+            {t("retryButton")}
+          </button>
+        </div>
+      </div>
+    );
+  }
+  if (allQuestions === null) {
+    return (
+      <div>
+        <h1>{t("reviewTitle")}</h1>
+        <p className="muted">{t("loading")}</p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -235,7 +293,7 @@ export default function ReviewDashboard() {
           ) : (
             <>
               {flags.map((f) => {
-                const q = BY_ID[f.qid];
+                const q = byId.get(f.qid);
                 return (
                   <p key={f.qid} style={{ margin: "8px 0" }}>
                     <b>

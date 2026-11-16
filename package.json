@@ -29,6 +29,7 @@
   },
   "scripts": {
     "build": "next build",
+    "prebuild": "node scripts/generate-bank-manifest.mjs",
     "dev": "next dev",
     "start": "next start",
     "qa": "node scripts/qa-540.mjs",
@@ -70,7 +71,8 @@
     "test:stage5d": "node scripts/test-stage5d.mjs",
     "test:stage5e": "node scripts/test-stage5e.mjs",
     "test:stage5f": "node scripts/test-stage5f.mjs",
-    "test:stage5g": "node scripts/test-stage5g.mjs"
+    "test:stage5g": "node scripts/test-stage5g.mjs",
+    "test:lazybanks": "node scripts/test-lazy-banks.mjs"
   },
   "version": "3.0.0"
 }
