@@ -43,7 +43,7 @@ function check(name, cond, detail = "") {
 }
 
 // ---------- Zero translated content today (behaviour unchanged) ----------
-check("bank loads: 3816 MCQs", QUESTIONS.length === 3816, `got ${QUESTIONS.length}`);
+check("bank loads: 4286 MCQs", QUESTIONS.length === 4286, `got ${QUESTIONS.length}`);
 const translatedMcqs = QUESTIONS.filter((q) => q.ur || q.roman);
 check("zero MCQs carry a ur/roman translation today", translatedMcqs.length === 0, translatedMcqs.slice(0, 3).map((q) => q.id).join(", "));
 const allNotes = Object.values(NOTES).flat();

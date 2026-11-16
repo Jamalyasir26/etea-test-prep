@@ -55,12 +55,12 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 // --- totals ---
-check("4B1 bank total 3816 MCQs", QUESTIONS.length === 3816, `got ${QUESTIONS.length}`);
+check("4B1 bank total 4286 MCQs", QUESTIONS.length === 4286, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("4B1 notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check("4B1 flashcards still 70", FLASHCARDS.length === 70, `got ${FLASHCARDS.length}`);
-check("4B1 VISIBLE_COUNTS 3816/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 3816 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
+check("4B1 VISIBLE_COUNTS 4286/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 4286 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
   VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 16, JSON.stringify(VISIBLE_COUNTS));
 check("4B1 IT bank 60 items", BY_SUBJECT.it.length === 60, `got ${BY_SUBJECT.it.length}`);
 check("4B1 PE bank 46 items", BY_SUBJECT.pe.length === 46, `got ${BY_SUBJECT.pe.length}`);
@@ -201,8 +201,8 @@ check("4B1 DM + Qari rows untouched by this batch", (() => {
   return !blockFor("dm").includes("Phase 4B1") && !blockFor("qari").includes("Phase 4B1");
 })());
 const contentJson = JSON.parse(read("src/data/content.json"));
-check("4B1 content.json counts: total 3816, IT 60, PE 46, notes 151, cards 70",
-  contentJson.counts.total === 3816 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
+check("4B1 content.json counts: total 4286, IT 60, PE 46, notes 151, cards 70",
+  contentJson.counts.total === 4286 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
   contentJson.counts.bySubject.find((r) => r[0] === "IT")[1] === 60 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Physical Education")[1] === 46);
 check("4B1 content.json bySubject index matches banks (it 60 / pe 46)",
