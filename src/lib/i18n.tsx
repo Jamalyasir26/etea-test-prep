@@ -1635,6 +1635,60 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Yeh report save nahi ho saki — storage full ho sakti hai. Aap ka text yahin maujood hai. Dobara save karne ki koshish karen.",
     ur: "یہ رپورٹ محفوظ نہیں ہو سکی — اسٹوریج بھری ہوئی ہو سکتی ہے۔ آپ کا متن یہیں موجود ہے۔ دوبارہ محفوظ کرنے کی کوشش کریں۔",
   },
+
+  // ---- Phase 3: practice advance ----
+  practiceModeLabel: { en: "Practice mode", roman: "Mashq mode", ur: "مشق موڈ" },
+  practiceModeStandard: { en: "Standard", roman: "Mayari", ur: "معیاری" },
+  practiceModeRevise: { en: "Revise", roman: "Dohrai", ur: "دہرائی" },
+  practiceModeAdaptive: { en: "Adaptive", roman: "Mutabiqti", ur: "مطابقتی" },
+  reviseTitle: { en: "Revise mistakes", roman: "Ghaltiyan dohraein", ur: "غلطیاں دہرائیں" },
+  reviseQueueCount: { en: "{n} questions to revise", roman: "{n} sawalat dohrane hain", ur: "{n} سوالات دہرانے ہیں" },
+  reviseEmpty: {
+    en: "No mistakes to revise. Questions you answered wrong in quizzes and mocks will appear here.",
+    roman: "Dohrane ke liye koi ghalti nahi. Quiz aur mock mein ghalat jawab diye gaye sawalat yahan aayen ge.",
+    ur: "دہرانے کے لیے کوئی غلطی نہیں۔ کوئز اور موک میں غلط جواب دیے گئے سوالات یہاں آئیں گے۔",
+  },
+  reviseClearedNote: {
+    en: "Answering a question correctly on the first try removes it from this list.",
+    roman: "Kisi sawal ka pehli koshish mein durust jawab use is fehrist se hata deta hai.",
+    ur: "کسی سوال کا پہلی کوشش میں درست جواب اسے اس فہرست سے ہٹا دیتا ہے۔",
+  },
+  adaptivePickedLine: {
+    en: "More questions picked from your weakest topics: {topics}",
+    roman: "Aap ke kamzor tareen mauzuon se zyada sawalat chune gaye: {topics}",
+    ur: "آپ کے کمزور ترین موضوعات سے زیادہ سوالات چنے گئے: {topics}",
+  },
+  adaptiveUniformLine: {
+    en: "No weak topics yet — questions picked evenly from all topics.",
+    roman: "Abhi koi kamzor mauzu nahi — sawalat tamam mauzuon se barabar chune gaye.",
+    ur: "ابھی کوئی کمزور موضوع نہیں — سوالات تمام موضوعات سے برابر چنے گئے۔",
+  },
+  timedToggleLabel: { en: "Timed practice", roman: "Waqt wali mashq", ur: "وقت والی مشق" },
+  timedMinutesLabel: { en: "Time limit", roman: "Waqt ki had", ur: "وقت کی حد" },
+  timedMinutesAria: { en: "Time limit in minutes", roman: "Minute mein waqt ki had", ur: "منٹ میں وقت کی حد" },
+  timedExpiryNote: {
+    en: "When the time runs out, your answers are submitted automatically.",
+    roman: "Waqt khatam hone par aap ke jawab khud ba khud jama ho jayen ge.",
+    ur: "وقت ختم ہونے پر آپ کے جوابات خود بخود جمع ہو جائیں گے۔",
+  },
+  topicAccuracyHeading: { en: "Accuracy by topic", roman: "Mauzu ke lehaz se durustgi", ur: "موضوع کے لحاظ سے درستگی" },
+  topicAccuracyIntro: {
+    en: "First-pass accuracy for each topic, from your quiz and mock attempts.",
+    roman: "Har mauzu mein pehli koshish ki durustgi — aap ke quiz aur mock attempts se.",
+    ur: "ہر موضوع میں پہلی کوشش کی درستگی — آپ کی کوئز اور موک کوششوں سے۔",
+  },
+  topicAccuracyEmpty: {
+    en: "No topic data yet — take a quiz or a mock and your accuracy by topic will appear here.",
+    roman: "Abhi koi mauzu data nahi — aik quiz ya mock dein, phir aap ki har mauzu ki durustgi yahan aaye gi.",
+    ur: "ابھی موضوع کا کوئی ڈیٹا نہیں — ایک کوئز یا موک دیں، پھر آپ کی ہر موضوع کی درستگی یہاں آئے گی۔",
+  },
+  topicAccuracyTableAria: { en: "Accuracy by topic table", roman: "Mauzu ke lehaz se durustgi ki table", ur: "موضوع کے لحاظ سے درستگی کی جدول" },
+  adaptiveDrillLink: {
+    en: "Adaptive drill for your weakest subject",
+    roman: "Apne kamzor tareen mazmoon ki mutabiqti mashq",
+    ur: "اپنے کمزور ترین مضمون کی مطابقتی مشق",
+  },
+  reviseDrillLink: { en: "Revise your mistakes", roman: "Apni ghaltiyan dohraein", ur: "اپنی غلطیاں دہرائیں" },
 };
 
 type Ctx = {

@@ -1,6 +1,9 @@
 // Shared quiz / mock runner.
 // Practice mode: instant feedback after each answer.
 // Mock mode: no feedback until submit; timed, auto-submits at 0.
+// Timed practice (Phase 3): a practice run with minutes > 0 reuses the
+// same absolute-deadline machinery as mocks — deadlineTs survives
+// reload, and expiry auto-submits via the same idempotent finish().
 // Records every attempt (localStorage) for the live Analysis dashboard.
 //
 // Step 2b behaviour:
@@ -29,9 +32,10 @@
 //   retries are shown separately and do not change the score.
 // - SESSION PERSISTENCE: live state is saved per answer to the versioned
 //   key `etea_session_next_v2` (one JSON object keyed by scope). Reload
-//   resumes the same seeded question/option order. Mock timing uses an
-//   ABSOLUTE deadline (deadlineTs, ms epoch); the countdown derives from
-//   deadlineTs - Date.now(), so reload/background/sleep cannot reset it.
+//   resumes the same seeded question/option order. Timed runs (mock +
+//   timed practice) use an ABSOLUTE deadline (deadlineTs, ms epoch); the
+//   countdown derives from deadlineTs - Date.now(), so reload/background/
+//   sleep cannot reset it.
 // - IDEMPOTENT SUBMIT: a persisted `submitted` flag; finish() is a no-op
 //   once submitted, so timeout and manual submit record exactly one attempt.
 // - ITEM-LEVEL RECORDS: every attempt stores per-item first/final answers,
@@ -100,7 +104,7 @@ const REASON_KEY: Record<IssueReason, string> = {
 type Props = {
   title: string;
   questions: Question[];
-  minutes?: number; // 0 = no timer
+  minutes?: number; // 0 = no timer; > 0 = timed run (mock or timed practice): same absolute-deadline machinery — deadlineTs survives reload, expiry auto-submits via the same idempotent finish()
   mode: "practice" | "mock";
   subject?: string;
   mockId?: string;
@@ -273,6 +277,10 @@ export default function QuizRunner({
 }: Props) {
   const { t, tf, lang } = useLang();
   const scope = sessionScope ?? `quiz:${title}`;
+  // Phase 3 — timed runs (mock + timed practice) share one gate: any
+  // run with minutes > 0 gets the absolute-deadline machinery. Mocks
+  // always pass minutes > 0, so mock behaviour is unchanged.
+  const timed = minutes > 0;
 
   // Step 2b — PRE-START FLOW. Nothing starts automatically: the
   // disclosure screen shows first, and the quiz begins only when the
@@ -396,10 +404,10 @@ export default function QuizRunner({
 
   // Absolute-deadline countdown: tick from the wall clock, not a decrement.
   useEffect(() => {
-    if (mode !== "mock" || minutes <= 0 || done) return;
+    if (!timed || done) return;
     const iv = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(iv);
-  }, [mode, minutes, done]);
+  }, [timed, done]);
 
   const secondsLeft = deadlineTs === null ? minutes * 60 : Math.max(0, Math.ceil((deadlineTs - now) / 1000));
 
@@ -499,7 +507,7 @@ export default function QuizRunner({
     shownAtRef.current = {};
     const fresh = Date.now();
     setStartTs(fresh);
-    setDeadlineTs(mode === "mock" && minutes > 0 ? fresh + minutes * 60 * 1000 : null);
+    setDeadlineTs(timed ? fresh + minutes * 60 * 1000 : null);
     setAnswers({});
     setFirstPass({});
     setRetries([]);
@@ -622,7 +630,7 @@ export default function QuizRunner({
   // Auto-submit at the absolute deadline (timeout path uses the same
   // idempotent finish() as the manual Submit button).
   useEffect(() => {
-    if (mode === "mock" && minutes > 0 && deadlineTs !== null && secondsLeft === 0 && !done) {
+    if (timed && deadlineTs !== null && secondsLeft === 0 && !done) {
       finishRef.current();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -637,7 +645,7 @@ export default function QuizRunner({
     shownAtRef.current = {};
     const fresh = Date.now();
     setStartTs(fresh);
-    setDeadlineTs(mode === "mock" && minutes > 0 ? fresh + minutes * 60 * 1000 : null);
+    setDeadlineTs(timed ? fresh + minutes * 60 * 1000 : null);
     setAnswers({});
     setFirstPass({});
     setRetries([]);
@@ -1067,7 +1075,7 @@ export default function QuizRunner({
             Urdu/Roman modes show the localized wording; the numbers
             stay bidi-isolated via lri(). */}
         {tf("ofCount", { a: lri(String(idx + 1)), b: lri(String(total)) })}
-        {mode === "mock" && minutes > 0 && (
+        {timed && (
           <>
             {" · "}⏱ <span dir="ltr">{mm}:{ss}</span> {t("timeLeft")}
           </>
@@ -1294,7 +1302,7 @@ export default function QuizRunner({
         {retries.length > 0
           ? ` · ${retries.length === 1 ? tf("retriesNotCountedOne", { n: retries.length }) : tf("retriesNotCounted", { n: retries.length })}`
           : ""}
-        {mode === "mock" && minutes > 0 ? ` · ${t("timerNote")}` : ""}
+        {timed ? ` · ${t("timerNote")}` : ""}
       </p>
       <p className="muted">
         {t("scoringWord")} {localizedScoringLabel(scoring, lang)}

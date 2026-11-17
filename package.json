@@ -90,7 +90,12 @@
     "test:phase2flashcards": "node scripts/test-phase2-flashcards.mjs",
     "test:phase2plan": "node scripts/test-phase2-plan.mjs",
     "test:phase2mocks": "node scripts/test-phase2-mocks.mjs",
-    "test:phase2chrome": "node scripts/test-phase2-chrome.mjs"
+    "test:phase2chrome": "node scripts/test-phase2-chrome.mjs",
+    "test:phase3mocks": "node scripts/test-phase3-mocks.mjs",
+    "test:phase3practice": "node scripts/test-phase3-practice.mjs",
+    "test:phase3timed": "node scripts/test-phase3-timed.mjs",
+    "test:phase3analysis": "node scripts/test-phase3-analysis.mjs",
+    "test:phase3practiceui": "node scripts/test-phase3-practice-ui.mjs"
   },
   "version": "3.0.0"
 }

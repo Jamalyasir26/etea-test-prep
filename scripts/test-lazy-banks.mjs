@@ -124,8 +124,13 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 // Phase 2 exception (documented, narrow): tracking.ts changed ONLY inside
 // gradeButtonLabel (Roman grade names) and content.json gained ONLY the
 // _ur/_roman translation fields on flashcards, plan tuples, and mock
-// defs. Everything else stays byte-identical, and the changed files must
-// match the backup exactly outside the Phase 1 + Phase 2 deltas
+// defs.
+// Phase 3 exception (documented, narrow): tracking.ts gained ONLY a
+// one-line comment change on the deadlineTs field ("(mock only)" ->
+// "(timed runs: mock + timed practice)", W3 timed mode; no code change),
+// and content.json gained ONLY the 8 new mock defs + counts.mocks 20 -> 28.
+// Everything else stays byte-identical, and the changed files must
+// match the backup exactly outside the Phase 1 + Phase 2 + Phase 3 deltas
 // (byte-prefix for the banks, parsed-diff for content.json, function-strip
 // for tracking.ts).
 if (fs.existsSync(BACKUP)) {
@@ -158,9 +163,15 @@ if (fs.existsSync(BACKUP)) {
   };
   const backupTracking = fs.readFileSync(join(BACKUP, "src/lib/tracking.ts"), "utf8");
   const curTracking = fs.readFileSync(join(ROOT, "src/lib/tracking.ts"), "utf8");
+  // Phase 3 exception (documented, narrow): normalize the ONE deadlineTs
+  // comment line (W3 timed mode, comment only) before comparing, and pin
+  // the exact old/new texts so the exception cannot hide a code change.
+  const normDeadlineComment = (s) => s.replace(/\/\/ absolute end \([^)]*\); countdown = deadlineTs - now/, "// absolute end (X); countdown = deadlineTs - now");
   check(
-    "Phase 2 tracking.ts: identical to backup outside gradeButtonLabel, Roman names only in current",
-    stripGradeButtonLabel(curTracking) === stripGradeButtonLabel(backupTracking) &&
+    "Phase 2 + Phase 3 tracking.ts: identical to backup outside gradeButtonLabel + the deadlineTs comment, Roman names only in current",
+    normDeadlineComment(stripGradeButtonLabel(curTracking)) === normDeadlineComment(stripGradeButtonLabel(backupTracking)) &&
+      curTracking.includes("// absolute end (timed runs: mock + timed practice); countdown = deadlineTs - now") &&
+      backupTracking.includes("// absolute end (mock only); countdown = deadlineTs - now") &&
       ["Dobara", "Mushkil", "Achha", "Asan"].every((n) => curTracking.includes(`"${n}"`)) &&
       ["Dobara", "Mushkil", "Achha", "Asan"].every((n) => !backupTracking.includes(`"${n}"`)),
   );
@@ -293,6 +304,14 @@ if (fs.existsSync(BACKUP)) {
   const backupContent = JSON.parse(fs.readFileSync(join(BACKUP, "src/data/content.json"), "utf8"));
   const curContent = JSON.parse(fs.readFileSync(join(ROOT, "src/data/content.json"), "utf8"));
   const reverted = JSON.parse(JSON.stringify(curContent));
+  // Phase 3 revert (documented, narrow): drop ONLY the 8 new mock defs
+  // and reset counts.mocks to the backup value before comparing. The
+  // original 20 defs must match the backup exactly after the Phase 2
+  // translation-field strip below.
+  const PHASE3_NEW_MOCK_IDS = ["pst-A", "ct-B", "ctit-A", "dm-2", "pet-2", "swse-2", "sst-kppsc-2", "sst-etea-2"];
+  reverted.mocks = reverted.mocks.filter((m) => !PHASE3_NEW_MOCK_IDS.includes(m.id));
+  reverted.counts.mocks = backupContent.counts.mocks;
+  const curOnlyMockIds = curContent.mocks.map((m) => m.id).filter((id) => !backupContent.mocks.some((b) => b.id === id));
   reverted.counts.total = backupContent.counts.total;
   reverted.counts.bySubject.find((r) => r[0] === "Islamiyat")[1] =
     backupContent.counts.bySubject.find((r) => r[0] === "Islamiyat")[1];
@@ -357,8 +376,9 @@ if (fs.existsSync(BACKUP)) {
     delete m.note_ur;
     delete m.note_roman;
   }
-  check("Phase 1 + Phase 2 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes + Phase 2 translation fields differ from backup",
+  check("Phase 1 + Phase 2 + Phase 3 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes + Phase 2 translation fields + the 8 Phase 3 mock defs differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
+    curContent.counts.mocks === 28 && curContent.mocks.length === 28 && JSON.stringify(curOnlyMockIds) === JSON.stringify(PHASE3_NEW_MOCK_IDS) &&
     curContent.counts.total === 7040 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500 && curContent.bySubject.socialstudies.length === 500 && curContent.bySubject.gk.length === 500 && curContent.bySubject.it.length === 500 && curContent.bySubject.pe.length === 500 && curContent.bySubject.drawing.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");
@@ -466,7 +486,7 @@ for (const m of data.MOCKS) {
     availBad.push(m.id);
   }
 }
-check("mockAvailableCount == old fs computation == built questions (all 20 mocks, incl. trusted)", availOk, availBad.join(", "));
+check("mockAvailableCount == old fs computation == built questions (all 28 mocks, incl. trusted)", availOk, availBad.join(", "));
 check(
   "mockLabelsSync matches async labels on coverage/availability (trusted: 0 first-paint fallback)",
   data.MOCKS.every((m) => {

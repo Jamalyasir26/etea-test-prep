@@ -330,7 +330,7 @@ check("tsc harness: emitted lib/data.js", fs.existsSync(join(OUT, "lib/data.js")
 const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 check("counts: VISIBLE_COUNTS.tracks is 12", data.VISIBLE_COUNTS.tracks === 12, String(data.VISIBLE_COUNTS.tracks));
-check("counts: VISIBLE_COUNTS.mocks is 16", data.VISIBLE_COUNTS.mocks === 16, String(data.VISIBLE_COUNTS.mocks));
+check("counts: VISIBLE_COUNTS.mocks is 24", data.VISIBLE_COUNTS.mocks === 24, String(data.VISIBLE_COUNTS.mocks));
 check("counts: bank counts (7040/151/70)", data.COUNTS.total === 7040 && data.COUNTS.notes === 151 && data.COUNTS.cards === 70);
 
 // ------------------------------------------------------------ summary

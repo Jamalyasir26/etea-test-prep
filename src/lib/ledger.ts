@@ -315,8 +315,8 @@ const LEDGER_DEFS: LedgerDef[] = [
       w("gk", "10 Q"),
     ],
     sharedMockIds: ["pst-B"],
-    missing: "No missing blueprint subject. No mock is listed under CT itself — the PST / CT mock is shared.",
-    nextAction: "Run the shared PST / CT Version B mock.",
+    missing: "No missing blueprint subject. CT now has its own mock (ct-B); the PST / CT mock remains listed as shared.",
+    nextAction: "Run the CT Version B mock (ct-B) or the shared PST / CT mock.",
   },
   {
     trackId: "ctit",

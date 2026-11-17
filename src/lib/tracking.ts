@@ -1020,7 +1020,7 @@ export type QuizSession = {
   responseMs: Record<string, number>; // qid -> ms from question shown to first response
   idx: number;
   startedAt: number; // ms epoch
-  deadlineTs: number | null; // absolute end (mock only); countdown = deadlineTs - now
+  deadlineTs: number | null; // absolute end (timed runs: mock + timed practice); countdown = deadlineTs - now
   minutes: number;
   submitted: boolean; // persisted: finish() is a no-op once this is true
   trustedOnly: boolean;

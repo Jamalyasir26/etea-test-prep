@@ -79,7 +79,7 @@ const EXPECTED_HIDDEN_TRACKS = [
 const EXPECTED_HIDDEN_MOCKS = ["jc", "co", "pc", "forest"];
 
 check("full data intact: 19 tracks", data.TRACKS.length === 19, `got ${data.TRACKS.length}`);
-check("full data intact: 20 mocks", data.MOCKS.length === 20, `got ${data.MOCKS.length}`);
+check("full data intact: 28 mocks", data.MOCKS.length === 28, `got ${data.MOCKS.length}`);
 check("full data intact: 5 vacancies", data.VACANCIES.length === 5, `got ${data.VACANCIES.length}`);
 check(
   "teaching list: exactly the 12 named ids",
@@ -103,7 +103,7 @@ check(
   data.VISIBLE_TRACKS.length + EXPECTED_HIDDEN_TRACKS.length === 19 &&
     EXPECTED_HIDDEN_TRACKS.every((id) => data.TRACKS.some((t) => t.id === id)),
 );
-check("visible mocks: 16", data.VISIBLE_MOCKS.length === 16, `got ${data.VISIBLE_MOCKS.length}`);
+check("visible mocks: 24", data.VISIBLE_MOCKS.length === 24, `got ${data.VISIBLE_MOCKS.length}`);
 for (const id of EXPECTED_HIDDEN_MOCKS) {
   check(
     `hidden mock ${id}: absent from VISIBLE_MOCKS, present in MOCKS`,
@@ -143,17 +143,17 @@ check(
   JSON.stringify(data.VISIBLE_VACANCIES.map((v) => v.post)),
 );
 check(
-  "VISIBLE_COUNTS: 12 tracks / 16 mocks, bank counts as of Phase 4B1",
+  "VISIBLE_COUNTS: 12 tracks / 24 mocks, bank counts as of Phase 4B1",
   data.VISIBLE_COUNTS.tracks === 12 &&
-    data.VISIBLE_COUNTS.mocks === 16 &&
+    data.VISIBLE_COUNTS.mocks === 24 &&
     data.VISIBLE_COUNTS.total === 7040 &&
     data.VISIBLE_COUNTS.notes === 151 &&
     data.VISIBLE_COUNTS.cards === 70,
   JSON.stringify(data.VISIBLE_COUNTS),
 );
 check(
-  "COUNTS keeps full-bank figures (19 / 20)",
-  data.COUNTS.tracks === 19 && data.COUNTS.mocks === 20,
+  "COUNTS keeps full-bank figures (19 / 28)",
+  data.COUNTS.tracks === 19 && data.COUNTS.mocks === 28,
 );
 
 // ------------------------------------------------------- §2 SST split (real)
@@ -192,9 +192,9 @@ check(
   mockE.scoring === undefined,
 );
 check(
-  "visible mocks: 15 of 16 scoring-unknown, only sst-kppsc has a config",
-  data.VISIBLE_MOCKS.filter((m) => !m.scoring).length === 15 &&
-    data.VISIBLE_MOCKS.filter((m) => m.scoring).map((m) => m.id).join() === "sst-kppsc",
+  "visible mocks: 22 of 24 scoring-unknown, only sst-kppsc + sst-kppsc-2 have configs",
+  data.VISIBLE_MOCKS.filter((m) => !m.scoring).length === 22 &&
+    data.VISIBLE_MOCKS.filter((m) => m.scoring).map((m) => m.id).join() === "sst-kppsc,sst-kppsc-2",
 );
 
 // ------------------------------------------------- §3 ledger (real module)
@@ -493,10 +493,12 @@ check(
     byId["sst-etea"].sourceLabel !== byId["sst-kppsc"].sourceLabel,
 );
 check(
-  "ct: shared pst-B mock flagged shared, no own mock",
-  byId.ct.mocks.length === 1 &&
-    byId.ct.mocks[0].id === "pst-B" &&
-    byId.ct.mocks[0].shared === true,
+  "ct: own ct-B mock first (not shared) + shared pst-B mock second",
+  byId.ct.mocks.length === 2 &&
+    byId.ct.mocks[0].id === "ct-B" &&
+    byId.ct.mocks[0].shared === false &&
+    byId.ct.mocks[1].id === "pst-B" &&
+    byId.ct.mocks[1].shared === true,
   JSON.stringify(byId.ct.mocks),
 );
 check(

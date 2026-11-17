@@ -37,6 +37,7 @@ import {
   type Stats,
   type StorageWarning,
 } from "@/lib/tracking";
+import { computeTopicStats } from "@/lib/practice-advance";
 import { lri, useLang } from "@/lib/i18n";
 import { formatAppDateTime, formatStoredDate } from "@/lib/format";
 import { AccuracyTrendChart, DueForecastChart } from "@/components/AnalysisCharts";
@@ -169,6 +170,10 @@ export default function Analysis() {
 
   const stats: Stats = useMemo(() => computeStats(filteredAttempts), [filteredAttempts]);
 
+  // Phase 3 — topic accuracy, from the SAME filtered attempts as the
+  // rest of the page (same date/subject/track filters).
+  const topicStats = useMemo(() => computeTopicStats(filteredAttempts), [filteredAttempts]);
+
   const subjectOptions = useMemo(() => {
     const labels = new Set<string>();
     for (const a of attempts) {
@@ -194,6 +199,21 @@ export default function Analysis() {
     if (!key) return "/practice";
     return `/practice?subject=${encodeURIComponent(key)}${count ? `&count=${count}` : ""}`;
   }
+
+  // Phase 3 — adaptive drill entry: the weakest subject (weakest is
+  // worst-first, so weakest[0]) via the existing bank-key drill link,
+  // plus mode=adaptive. No weakest subject → plain adaptive practice.
+  // drillHref returns "/practice" (no query) for an unmapped label, so
+  // the mode param joins with "?" in that case — "&mode=adaptive" on a
+  // bare path would be a broken href.
+  const weakestSubject = stats.weakest[0]?.subject;
+  const adaptiveBase = weakestSubject ? drillHref(weakestSubject) : null;
+  const adaptiveHref =
+    adaptiveBase === null
+      ? "/practice?mode=adaptive"
+      : adaptiveBase.includes("?")
+        ? `${adaptiveBase}&mode=adaptive`
+        : `${adaptiveBase}?mode=adaptive`;
 
   if (!loaded) return <p>{t("loading")}</p>;
   const last14 = stats.daily.slice(-14);
@@ -454,6 +474,62 @@ export default function Analysis() {
               <Link href={drillHref(p.subject, 10)}>{t("run10Drill")}</Link>
             </p>
           ))}
+        </>
+      )}
+
+      {/* Phase 3 — topic accuracy: worst-first topic stats from the
+          same filtered attempts. NO drill links on topic rows:
+          ItemRecord carries no subject key, so a topic cannot be
+          mapped to a bank subject for a drill link. The entry links
+          above the table lead to adaptive / revise practice instead. */}
+      <h2>{t("topicAccuracyHeading")}</h2>
+      <p className="muted">{t("topicAccuracyIntro")}</p>
+      {stats.hasData && (
+        <p>
+          <Link href={adaptiveHref}>{t("adaptiveDrillLink")}</Link>{" "}
+          <Link href="/practice?mode=revise">{t("reviseDrillLink")}</Link>
+        </p>
+      )}
+      {topicStats.length === 0 ? (
+        <p className="muted">{t("topicAccuracyEmpty")}</p>
+      ) : (
+        <>
+          {/* Same scroll-region pattern as the per-subject table. */}
+          <p className="muted">{t("tableScrollHint")}</p>
+          <div className="table-scroll" role="region" aria-label={t("topicAccuracyTableAria")} tabIndex={0}>
+          <table>
+          <thead>
+            <tr>
+              <th>{t("topicWord")}</th>
+              <th>{t("accuracy")}</th>
+              <th>{t("correctWord")}</th>
+              <th>{t("totalWord")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {topicStats.map((s) => (
+              <tr key={s.topic}>
+                <td>
+                  <span className={`heat ${heat(s.accuracy)}`} />
+                  <span dir="ltr">{s.topic}</span>
+                  {s.total < 5 && (
+                    <>
+                      {" "}
+                      <span className="badge grey">{t("provisionalSmallSample")}</span>
+                    </>
+                  )}
+                </td>
+                {/* Percentage isolated LTR, as in the per-subject table. */}
+                <td>
+                  <span dir="ltr">{Math.round(s.accuracy)}%</span>
+                </td>
+                <td>{s.correct}</td>
+                <td>{s.total}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+          </div>
         </>
       )}
 

@@ -1,4 +1,4 @@
-// Mock Tests — list of the 16 visible teaching mocks / practice tests
+// Mock Tests — list of the 24 visible teaching mocks / practice tests
 // (4 non-teaching mocks hidden — see the Step 3a visibility list in
 // src/lib/data.ts; hidden data stays in content.json).
 "use client";

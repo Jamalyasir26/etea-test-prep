@@ -1,10 +1,10 @@
-// Phase 2 mocks tests — all 20 mock definitions carry flat
+// Phase 2 mocks tests — all 28 mock definitions carry flat
 // _ur/_roman translations of title + note; selection behaviour is
 // UNTOUCHED (variant codes, comps, fixed ID lists, minutes, totals,
-// seeds). Visibility is unchanged (16 visible / 4 hidden). Plain
+// seeds). Visibility is unchanged (24 visible / 4 hidden). Plain
 // node, no dependencies. Run: node scripts/test-phase2-mocks.mjs
 // (exit 0 = all pass). Locks:
-//  - 20 mocks, title_ur/title_roman/note_ur/note_roman present +
+//  - 28 mocks, title_ur/title_roman/note_ur/note_roman present +
 //    non-empty on every def (visible AND hidden — one structure);
 //  - digit preservation: the multiset of digit-groups in each
 //    translated title/note equals the English one (counts, minutes,
@@ -12,7 +12,7 @@
 //  - selection shape intact: every dynamic mock's comp sums to its
 //    total; every fixed mock references an existing zamFixed list;
 //    the 3 fixed lists stay disjoint (re-asserted here, owned by
-//    test-step3a); visible set is exactly the 16 known ids;
+//    test-step3a); visible set is exactly the 24 known ids;
 //  - resolveMockView item-level fallback + never-mutates;
 //  - page wiring: list/detail/track pages render the resolved view
 //    with the badge only when translated; variant stays verbatim;
@@ -42,7 +42,7 @@ const ARABIC = /[\u0600-\u06FF]/;
 const digitGroups = (s) => (s.match(/\d+(?:\.\d+)?/g) || []).sort().join(",");
 
 // ---- §1 completeness ----
-check("mocks: 20 defs", mocks.length === 20, `got ${mocks.length}`);
+check("mocks: 28 defs", mocks.length === 28, `got ${mocks.length}`);
 check(
   "mocks: title/note translations present + non-empty on every def",
   mocks.every(
@@ -100,8 +100,11 @@ check(
 const EXPECTED_VARIANTS = {
   zam1: "proxy", zam2: "proxy", zam3: "proxy",
   "tt-B": "B", "tt-MD": "MD", "at-B": "B", "at-MD": "MD", "pst-B": "B",
-  "ctit-B": "B", "dm-B": "B", "pet-B": "B", "qari-B": "B", "qari-MD": "MD",
-  swse: "435", "sst-kppsc": "KPPSC-5th", "sst-etea": "ETEA-2020",
+  "pst-A": "A", "ct-B": "B",
+  "ctit-B": "B", "ctit-A": "A", "dm-B": "B", "dm-2": "B", "pet-B": "B", "pet-2": "B",
+  "qari-B": "B", "qari-MD": "MD",
+  swse: "435", "swse-2": "435", "sst-kppsc": "KPPSC-5th", "sst-kppsc-2": "KPPSC-5th",
+  "sst-etea": "ETEA-2020", "sst-etea-2": "ETEA-2020",
   jc: "RTPS-2026", co: "DC-Kohat-2026", pc: "PC-2020-21", forest: "DFO-2026",
 };
 check(
@@ -141,11 +144,12 @@ const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 
 const VISIBLE_IDS = [
-  "zam1", "zam2", "zam3", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "ctit-B", "dm-B",
-  "pet-B", "qari-B", "qari-MD", "swse", "sst-kppsc", "sst-etea",
+  "zam1", "zam2", "zam3", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
+  "ctit-B", "ctit-A", "dm-B", "dm-2", "pet-B", "pet-2", "qari-B", "qari-MD",
+  "swse", "swse-2", "sst-kppsc", "sst-kppsc-2", "sst-etea", "sst-etea-2",
 ];
 check(
-  "mocks: visible set is exactly the 16 known ids",
+  "mocks: visible set is exactly the 24 known ids",
   JSON.stringify(data.VISIBLE_MOCKS.map((m) => m.id).sort()) === JSON.stringify([...VISIBLE_IDS].sort()),
   data.VISIBLE_MOCKS.map((m) => m.id).join(","),
 );
@@ -160,7 +164,7 @@ check(
   })(),
 );
 check(
-  "resolveMockView ur/roman: translated fields, translated=true (all 20)",
+  "resolveMockView ur/roman: translated fields, translated=true (all 28)",
   mocks.every((m) => {
     const u = data.resolveMockView(m, "ur");
     const r = data.resolveMockView(m, "roman");

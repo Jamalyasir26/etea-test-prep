@@ -171,8 +171,9 @@ export type MockDef = {
   note_ur?: string;
   note_roman?: string;
   // Stage 1 P0.1 — per-mock scoring config (optional). Absent = the
-  // zero-penalty default (policy unknown). Only sst-kppsc carries a
-  // config today (0.25 penalty, labelled "unverified assumption").
+  // zero-penalty default (policy unknown). Only sst-kppsc and
+  // sst-kppsc-2 carry configs today (0.25 penalty, labelled
+  // "unverified assumption").
   scoring?: ScoringConfig;
 };
 export type Vacancy = {
@@ -323,7 +324,7 @@ export const VISIBLE_VACANCIES: Vacancy[] = VACANCIES.filter(
 /** Home-page counts with the visible teaching scope. The bank counts
  *  (total/notes/cards) are subject-based and unchanged; only the
  *  track/mock counts drop to the visible set. COUNTS itself keeps the
- *  full-bank figures (19 tracks / 20 mocks) for data-level use. */
+ *  full-bank figures (19 tracks / 28 mocks) for data-level use. */
 export const VISIBLE_COUNTS = {
   ...COUNTS,
   tracks: VISIBLE_TRACKS.length,

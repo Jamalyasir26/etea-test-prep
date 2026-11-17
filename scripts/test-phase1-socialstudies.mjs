@@ -329,9 +329,9 @@ const LABEL_TO_MAP = {
     const label = { arabic: "Arabic", drawing: "Drawing", pe: "Physical Education", english: "English", gk: "GK", islamiyat: "Islamiyat", it: "IT", maths: "Maths", pakstudies: "Pak Studies", pastpapers: "Past-Paper Topics", pastpapers_reworded: "Past-Paper Topics (Reworded)", pedagogy: "Pedagogy", science: "General Science", tajweed: "Tajweed", urdu: "Urdu" }[k];
     return bySubj[label] === n;
   });
-  check("Phase1 content.json counts: total 7040, Social Studies 500, other rows unchanged, 151/70/19/20",
+  check("Phase1 content.json counts: total 7040, Social Studies 500, other rows unchanged, 151/70/19/28",
     content.counts.total === 7040 && bySubj["Social Studies"] === 500 && otherRowsOk &&
-    content.counts.notes === 151 && content.counts.cards === 70 && content.counts.tracks === 19 && content.counts.mocks === 20,
+    content.counts.notes === 151 && content.counts.cards === 70 && content.counts.tracks === 19 && content.counts.mocks === 28,
     `total=${content.counts.total} socialstudies=${bySubj["Social Studies"]}`);
 }
 

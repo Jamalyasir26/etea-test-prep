@@ -61,12 +61,12 @@ check("5A bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.len
 const notesTotal = Object.values(NOTES).flat().length;
 check("5A notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5A VISIBLE_COUNTS 7040/151/70, 12 tracks / 16 mocks",
+  "5A VISIBLE_COUNTS 7040/151/70, 12 tracks / 24 mocks",
   VISIBLE_COUNTS.total === 7040 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
-    VISIBLE_COUNTS.mocks === 16,
+    VISIBLE_COUNTS.mocks === 24,
   JSON.stringify(VISIBLE_COUNTS),
 );
 check("5A islamiyat bank 500 items (grown from 105 by Phase 1)", BY_SUBJECT.islamiyat.length === 500, `got ${BY_SUBJECT.islamiyat.length}`);

@@ -244,7 +244,8 @@ function scrollRegions(src) {
   return (src.match(/className="table-scroll" role="region"/g) ?? []).length;
 }
 check("issues has 2 scroll regions", scrollRegions(issues) === 2, `found ${scrollRegions(issues)}`);
-check("analysis has 4 scroll regions", scrollRegions(analysis) === 4, `found ${scrollRegions(analysis)}`);
+check("analysis has 5 scroll regions (Phase 3: + topic-accuracy table)", scrollRegions(analysis) === 5, `found ${scrollRegions(analysis)}`);
+check("analysis 5th scroll region is the topic-accuracy table", analysis.includes('className="table-scroll" role="region" aria-label={t("topicAccuracyTableAria")}'));
 check("QuizRunner results table has 1 scroll region", scrollRegions(qr) === 1, `found ${scrollRegions(qr)}`);
 check("vacancies keeps its scroll region", scrollRegions(vacancies) === 1);
 for (const [name, src] of [["issues", issues], ["analysis", analysis], ["QuizRunner", qr], ["vacancies", vacancies]]) {

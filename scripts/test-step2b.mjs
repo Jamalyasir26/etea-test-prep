@@ -230,7 +230,7 @@ check(
 );
 check("counts: 70 flashcards", data.FLASHCARDS.length === 70, `got ${data.FLASHCARDS.length}`);
 check("counts: 19 tracks", data.TRACKS.length === 19, `got ${data.TRACKS.length}`);
-check("counts: 20 mocks", data.MOCKS.length === 20, `got ${data.MOCKS.length}`);
+check("counts: 28 mocks", data.MOCKS.length === 28, `got ${data.MOCKS.length}`);
 
 // Every real mock: labels derive from real counts, and the available /
 // trusted counts equal what buildMockQuestions actually builds.
@@ -268,8 +268,10 @@ for (const m of data.MOCKS) {
 }
 check("mock labels: proxy + full both occur in real data", coverageKinds.has("proxy") && coverageKinds.has("full"));
 check(
-  "mock labels: 19/20 scoring-unknown, only sst-kppsc has a config",
-  scoringUnknownCount === 19 && (await data.mockLabels(data.MOCKS.find((m) => m.id === "sst-kppsc"))).scoringUnknown === false,
+  "mock labels: 26/28 scoring-unknown, only sst-kppsc + sst-kppsc-2 have configs",
+  scoringUnknownCount === 26 &&
+    (await data.mockLabels(data.MOCKS.find((m) => m.id === "sst-kppsc"))).scoringUnknown === false &&
+    (await data.mockLabels(data.MOCKS.find((m) => m.id === "sst-kppsc-2"))).scoringUnknown === false,
   `unknown=${scoringUnknownCount}`,
 );
 // The "partial" branch is unreachable with the current banks (every
