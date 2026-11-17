@@ -58,12 +58,12 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 // --- totals ---
-check("4B2 bank total 6136 MCQs", QUESTIONS.length === 6136, `got ${QUESTIONS.length}`);
+check("4B2 bank total 6590 MCQs", QUESTIONS.length === 6590, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("4B2 notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check("4B2 flashcards still 70 (none added)", FLASHCARDS.length === 70, `got ${FLASHCARDS.length}`);
-check("4B2 VISIBLE_COUNTS 6136/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 6136 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
+check("4B2 VISIBLE_COUNTS 6590/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 6590 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
   VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 16, JSON.stringify(VISIBLE_COUNTS));
 check("4B2 Drawing bank 50 items", BY_SUBJECT.drawing.length === 50, `got ${BY_SUBJECT.drawing.length}`);
 check("4B2 Tajweed bank 500 items (82 + 418 Phase 1)", BY_SUBJECT.tajweed.length === 500, `got ${BY_SUBJECT.tajweed.length}`);
@@ -243,15 +243,15 @@ check("4B2 only dm + qari rows mention Phase 4B2",
 check("4B2 Phase 4B1 mentions still 2 (ctit + pet rows)",
   (ledgerSrc.match(/Phase 4B1/g) || []).length === 2);
 const contentJson = JSON.parse(read("src/data/content.json"));
-check("4B2 content.json counts: total 6136, Drawing 50, Tajweed 500, notes 151, cards 70",
-  contentJson.counts.total === 6136 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
+check("4B2 content.json counts: total 6590, Drawing 50, Tajweed 500, notes 151, cards 70",
+  contentJson.counts.total === 6590 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Drawing")[1] === 50 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Tajweed")[1] === 500);
 check("4B2 content.json bySubject index matches banks (drawing 50 / tajweed 500)",
   contentJson.bySubject.drawing.length === 50 && contentJson.bySubject.tajweed.length === 500 &&
   contentJson.bySubject.drawing[49] === "DRW-060" && contentJson.bySubject.tajweed[499] === "TAJ-500");
-check("4B2 meta description + i18n counts updated (6136 / 151)",
-  read("src/app/layout.tsx").includes("6136 MCQs") &&
+check("4B2 meta description + i18n counts updated (6590 / 151)",
+  read("src/app/layout.tsx").includes("6590 MCQs") &&
   read("src/lib/i18n.tsx").includes("151 notes") &&
   read("src/lib/i18n.tsx").includes("share the same subject banks"));
 

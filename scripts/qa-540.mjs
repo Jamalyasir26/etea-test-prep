@@ -1,6 +1,6 @@
 // qa-540.mjs — structural + consistency-heuristic QA for the ETEA Prep banks.
 // NOTE: the filename is historical — it dates from when the bank held 540
-// items. The active total is now 6136 (Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455, Phase 1 Urdu added 455, Phase 1 Maths added 455, Phase 1 Pak Studies added 455, Phase 1 Pedagogy added 470, Phase 1 Science added 470, Phase 1 Social Studies added 470, Phase 1 GK added 470 and Phase 1 IT added 440 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
+// items. The active total is now 6590 (Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455, Phase 1 Urdu added 455, Phase 1 Maths added 455, Phase 1 Pak Studies added 455, Phase 1 Pedagogy added 470, Phase 1 Science added 470, Phase 1 Social Studies added 470, Phase 1 GK added 470, Phase 1 IT added 440 and Phase 1 PE added 454 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
 // references (`npm run qa`, QA-540.md, VERIFY-phase2.md) keep working.
 // Plain node, no dependencies. Run: npm run qa  (node scripts/qa-540.mjs)
 // Exit code 0 = all checks pass; 1 = any check fails.
@@ -8,10 +8,10 @@
 // SCOPE: this is STRUCTURAL + consistency-heuristic QA only. It checks counts,
 // option shape, ID uniqueness, near-duplicate stems, the PED-009 regression and
 // mock-composition consistency. It does NOT declare the bank subject-matter
-// verified — full subject verification of all 6136 items is out of scope.
+// verified — full subject verification of all 6590 items is out of scope.
 //
 // Bank layout note: drawing_pe.json is LEGACY — kept on disk, superseded by
-// drawing.json (DRW-001..DRW-010 + DRW-021..DRW-060) + pe.json (DRW-011..020 + PE-001..PE-036).
+// drawing.json (DRW-001..DRW-010 + DRW-021..DRW-060) + pe.json (DRW-011..020 + PE-001..PE-490).
 // It is still parsed and structurally checked, and asserted to equal the
 // ORIGINAL 20 split items (DRW-001..DRW-020), but it is EXCLUDED from the
 // active totals.
@@ -25,11 +25,11 @@ const CONTENT_PATH = join(ROOT, "src/data/content.json");
 
 // Expected ACTIVE per-bank counts (drawing_pe.json excluded — legacy).
 const EXPECTED = {
-  arabic: 500, drawing: 50, pe: 46, english: 500, gk: 500, islamiyat: 500,
+  arabic: 500, drawing: 50, pe: 500, english: 500, gk: 500, islamiyat: 500,
   it: 500, maths: 500, pakstudies: 500, pastpapers: 20, pastpapers_reworded: 20,
   pedagogy: 500, science: 500, socialstudies: 500, tajweed: 500, urdu: 500,
 };
-const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 6136
+const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 6590
 const LEGACY_FILE = "drawing_pe.json";
 
 const results = []; // { name, pass, detail }
@@ -170,7 +170,7 @@ check("review status: exactly the 15 owner-approved items are owner-reviewed (by
   const peIds = pe.map((x) => x.id);
   check("drawing.json = DRW-001..DRW-010 + DRW-021..DRW-060", JSON.stringify(drawingIds) === JSON.stringify([...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 1).padStart(3, "0")}`), ...Array.from({ length: 40 }, (_, i) => `DRW-${String(i + 21).padStart(3, "0")}`)]),
     `got ${drawingIds.join(",")}`);
-  check("pe.json = DRW-011..DRW-020 + PE-001..PE-036", JSON.stringify(peIds) === JSON.stringify([...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 11).padStart(3, "0")}`), ...Array.from({ length: 36 }, (_, i) => `PE-${String(i + 1).padStart(3, "0")}`)]),
+  check("pe.json = DRW-011..DRW-020 + PE-001..PE-036 first, in order, + PE-037..PE-490 appended (500)", pe.length === 500 && JSON.stringify(peIds.slice(0, 46)) === JSON.stringify([...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 11).padStart(3, "0")}`), ...Array.from({ length: 36 }, (_, i) => `PE-${String(i + 1).padStart(3, "0")}`)]) && peIds[46] === "PE-037" && peIds[499] === "PE-490",
     `got ${peIds.join(",")}`);
   const legacyIds = legacy.map((x) => x.id);
   const originalIds = [...drawingIds.slice(0, 10), ...peIds.slice(0, 10)];
@@ -308,9 +308,9 @@ const content = loadJson(CONTENT_PATH);
 
   // content.json counts agree with the banks.
   const counts = content.counts || {};
-  check("content.json counts.total = 6136 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
+  check("content.json counts.total = 6590 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
   const bySubjectSum = (counts.bySubject || []).reduce((s, [, n]) => s + n, 0);
-  check("content.json counts.bySubject sums to 6136", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
+  check("content.json counts.bySubject sums to 6590", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
   const bySubject = content.bySubject || {};
   const indexBad = [];
   for (const [key, expected] of Object.entries(EXPECTED)) {
