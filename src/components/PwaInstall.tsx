@@ -24,7 +24,7 @@ export default function PwaInstall() {
         <Button
           variant="ghost"
           size="icon"
-          className="tw:size-8 tw:shrink-0"
+          className="tw:size-11 tw:shrink-0"
           aria-label={t("pwaInstallDismiss")}
           title={t("pwaInstallDismiss")}
           onClick={dismissInstall}
@@ -34,7 +34,7 @@ export default function PwaInstall() {
       </div>
       <p className="tw:mt-1 tw:mb-3 tw:text-xs tw:text-muted-foreground">{t("pwaInstallBody")}</p>
       {canInstall ? (
-        <Button size="sm" className="tw:w-full" onClick={promptInstall}>
+        <Button size="sm" className="tw:w-full tw:min-h-11" onClick={promptInstall}>
           <Download aria-hidden="true" />
           {t("pwaInstallButton")}
         </Button>

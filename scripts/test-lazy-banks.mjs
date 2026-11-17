@@ -184,9 +184,13 @@ if (fs.existsSync(BACKUP)) {
   const backupPrefix = backupBankRaw.slice(0, -3); // strip trailing "\n]\n"
   const backupBank = JSON.parse(backupBankRaw);
   const curBank = JSON.parse(curBankRaw);
-  check("Phase 1 islamiyat.json: backup bytes are an exact prefix (105 items untouched) + 395 appended",
-    curBankRaw.startsWith(backupPrefix + ",") && backupBank.length === 105 && curBank.length === 500 &&
-    JSON.stringify(curBank.slice(0, 105)) === JSON.stringify(backupBank) &&
+  // U1: islamiyat _ur fields were rewritten idiomatically in all 500 items,
+  // so the byte-prefix assertion no longer applies. The non-_ur fields of
+  // the 105 backup items must still match exactly; append pins stay.
+  const stripUrFields = (q) => { const c = { ...q }; delete c.question_ur; delete c.options_ur; delete c.explanation_ur; return c; };
+  check("Phase 1 islamiyat.json (U1 _ur rewrite): non-_ur fields of 105 backup items untouched + 395 appended",
+    backupBank.length === 105 && curBank.length === 500 &&
+    JSON.stringify(curBank.slice(0, 105).map(stripUrFields)) === JSON.stringify(backupBank.map(stripUrFields)) &&
     curBank[105].id === "ISL-106" && curBank[499].id === "ISL-500");
   const backupTajRaw = fs.readFileSync(join(BACKUP, "src/data/banks/tajweed.json"), "utf8");
   const curTajRaw = fs.readFileSync(join(ROOT, "src/data/banks/tajweed.json"), "utf8");
@@ -324,6 +328,15 @@ if (fs.existsSync(BACKUP)) {
   for (const subject of Object.keys(PHASE4_NEW_PER_SUBJECT)) {
     reverted.notes[subject] = reverted.notes[subject].slice(0, backupContent.notes[subject].length);
   }
+  // U1 revert (documented, narrow): restore ONLY the _ur fields of the
+  // pre-existing notes from the backup — U1 rewrote them idiomatically.
+  // The remaining fields must match the backup exactly.
+  for (const subject of Object.keys(reverted.notes)) {
+    reverted.notes[subject].forEach((n, i) => {
+      n.title_ur = backupContent.notes[subject][i].title_ur;
+      n.body_ur = backupContent.notes[subject][i].body_ur;
+    });
+  }
   reverted.counts.notes = backupContent.counts.notes;
   reverted.counts.total = backupContent.counts.total;
   reverted.counts.bySubject.find((r) => r[0] === "Islamiyat")[1] =
@@ -389,7 +402,7 @@ if (fs.existsSync(BACKUP)) {
     delete m.note_ur;
     delete m.note_roman;
   }
-  check("Phase 1 + Phase 2 + Phase 3 + Phase 4 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes + Phase 2 translation fields + the 8 Phase 3 mock defs + the 150 Phase 4 notes differ from backup",
+  check("Phase 1 + Phase 2 + Phase 3 + Phase 4 + U1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes + Phase 2 translation fields + the 8 Phase 3 mock defs + the 150 Phase 4 notes + U1 _ur rewrites differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
     curContent.counts.mocks === 28 && curContent.mocks.length === 28 && JSON.stringify(curOnlyMockIds) === JSON.stringify(PHASE3_NEW_MOCK_IDS) &&
     curContent.counts.notes === 301 &&

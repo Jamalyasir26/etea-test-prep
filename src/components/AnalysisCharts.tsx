@@ -33,13 +33,15 @@ const TOOLTIP_STYLE = {
   borderRadius: 8,
   color: "var(--ink)",
 } as const;
-const AXIS_TICK = { fill: "#94a3b8", fontSize: 12 } as const;
 const GRID = { stroke: "#94a3b8", strokeOpacity: 0.25, vertical: false } as const;
 
 type FlashCardLite = { front: string; back: string; category: string };
 
 export function DueForecastChart({ cards, state }: { cards: FlashCardLite[]; state: FlashState }) {
-  const { t } = useLang();
+  const { t, theme } = useLang();
+  // U1 (F3.2) — theme-aware ticks: #94a3b8 fails on light cards
+  // (2.56:1); the site's own --muted passes (5.57:1). Dark keeps #94a3b8.
+  const tick = { fill: theme === "dark" ? "#94a3b8" : "#5a6b70", fontSize: 12 } as const;
   const data = forecastDue(cards, state, new Date(), 7);
   return (
     <div className="card">
@@ -50,8 +52,8 @@ export function DueForecastChart({ cards, state }: { cards: FlashCardLite[]; sta
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: -16 }}>
             <CartesianGrid {...GRID} />
-            <XAxis dataKey="label" tick={AXIS_TICK} />
-            <YAxis tick={AXIS_TICK} allowDecimals={false} />
+            <XAxis dataKey="label" tick={tick} />
+            <YAxis tick={tick} allowDecimals={false} />
             <Tooltip contentStyle={TOOLTIP_STYLE} labelFormatter={(label) => `${label}`} />
             <Bar dataKey="due" name={t("chartDueWord")} fill="#F5A10B" radius={[4, 4, 0, 0]} />
           </BarChart>
@@ -83,7 +85,11 @@ export function DueForecastChart({ cards, state }: { cards: FlashCardLite[]; sta
 export type DailyPoint = { date: string; correct: number; total: number; attempts: number };
 
 export function AccuracyTrendChart({ daily }: { daily: DailyPoint[] }) {
-  const { t } = useLang();
+  const { t, theme } = useLang();
+  // U1 (F3.2) — theme-aware ticks + accuracy line (see DueForecastChart):
+  // light line #0f766e passes (5.47:1) where #14b8a6 fails (2.49:1).
+  const tick = { fill: theme === "dark" ? "#94a3b8" : "#5a6b70", fontSize: 12 } as const;
+  const lineStroke = theme === "dark" ? "#14b8a6" : "#0f766e";
   const points = daily
     .slice(-14)
     .filter((d) => d.total > 0)
@@ -108,12 +114,12 @@ export function AccuracyTrendChart({ daily }: { daily: DailyPoint[] }) {
         <ResponsiveContainer width="100%" height="100%">
           <ComposedChart data={points} margin={{ top: 8, right: 8, bottom: 0, left: -16 }}>
             <CartesianGrid {...GRID} />
-            <XAxis dataKey="date" tick={AXIS_TICK} />
-            <YAxis yAxisId="left" tick={AXIS_TICK} allowDecimals={false} />
-            <YAxis yAxisId="right" orientation="right" tick={AXIS_TICK} domain={[0, 100]} />
+            <XAxis dataKey="date" tick={tick} />
+            <YAxis yAxisId="left" tick={tick} allowDecimals={false} />
+            <YAxis yAxisId="right" orientation="right" tick={tick} domain={[0, 100]} />
             <Tooltip contentStyle={TOOLTIP_STYLE} />
             <Bar yAxisId="left" dataKey="questions" name={t("chartQuestionsWord")} fill="#F5A10B" fillOpacity={0.35} radius={[4, 4, 0, 0]} />
-            <Line yAxisId="right" type="monotone" dataKey="accuracy" name={t("chartAccuracyWord")} stroke="#14b8a6" strokeWidth={2} dot={{ r: 3 }} />
+            <Line yAxisId="right" type="monotone" dataKey="accuracy" name={t("chartAccuracyWord")} stroke={lineStroke} strokeWidth={2} dot={{ r: 3 }} />
           </ComposedChart>
         </ResponsiveContainer>
       </div>

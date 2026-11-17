@@ -215,16 +215,16 @@ function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
         />
       </label>
       {error && (
-        <p role="alert" className="muted">
-          {t("issueValidationError")}
-        </p>
+        <div className="alert red" role="alert">
+          <p>{t("issueValidationError")}</p>
+        </div>
       )}
       {saveFailed && (
-        <p role="alert" className="muted">
-          {t("issueSaveFailed")}
-        </p>
+        <div className="alert red" role="alert">
+          <p>{t("issueSaveFailed")}</p>
+        </div>
       )}
-      <div style={{ display: "flex", gap: 8 }}>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         <button
           onClick={() => {
             if (reason === "" || (!noCorrection && correction.trim() === "")) {
@@ -701,9 +701,9 @@ export default function QuizRunner({
             <span dir="ltr">{tf("prestartQuestions", { n: total })}</span>
           </p>
           <p>
-            <span dir="ltr">{tf("prestartReviewed", { n: reviewedCount, total })}</span>
+            <span dir="auto">{tf("prestartReviewed", { n: reviewedCount, total })}</span>
             {" · "}
-            <span dir="ltr">{tf("prestartProvisional", { n: provisionalCount })}</span>
+            <span dir="auto">{tf("prestartProvisional", { n: provisionalCount })}</span>
           </p>
           <p>
             <b>{t("scoringWord")}</b> {localizedScoringLabel(scoring, lang)}
@@ -877,7 +877,7 @@ export default function QuizRunner({
           )}
           {answeredCount > 0 && (
             <p className="muted">
-              <span dir="ltr">
+              <span dir="auto">
                 {tf("firstPassAccuracyLine", {
                   correct: firstPassCount,
                   answered: answeredCount,
@@ -887,7 +887,7 @@ export default function QuizRunner({
             </p>
           )}
           <p className="muted">
-            <span dir="ltr">
+            <span dir="auto">
               {tf("provisionalContentLine", { n: provisionalCount, total })}
             </span>
           </p>
@@ -1229,7 +1229,7 @@ export default function QuizRunner({
           );
         })}
         {mode === "practice" && revealed && (
-          <div className="alert green">
+          <div className={pickedCorrect ? "alert green" : "alert red"}>
             {/* Step 2b — retrieval-first reveal sequence: the user's
                 own answer (or blank) FIRST, then the correct answer,
                 then the short reason, then the source + note link,
@@ -1240,7 +1240,7 @@ export default function QuizRunner({
             </p>
             <p>
               {picked !== null ? (
-                <span dir="ltr">
+                <span dir="auto">
                   {tf("yourAnswerLine", { answer: lri(q.options[picked]) })}
                 </span>
               ) : (
@@ -1248,7 +1248,7 @@ export default function QuizRunner({
               )}
             </p>
             <p>
-              <span dir="ltr">
+              <span dir="auto">
                 {tf("correctAnswerLine", { answer: lri(q.options[q.correctIndex]) })}
               </span>
             </p>

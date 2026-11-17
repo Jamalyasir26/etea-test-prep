@@ -309,7 +309,7 @@ const i18n = read("src/lib/i18n.tsx");
 const keyBlock = i18n.slice(i18n.indexOf("flashGradedNextReview"), i18n.indexOf("flashGradedNextReview") + 400);
 check("i18n: flashGradedNextReview has en + roman + ur", keyBlock.includes("en:") && keyBlock.includes("roman:") && keyBlock.includes("ur:"));
 check("i18n: flashGradedNextReview has {date} + {interval} slots", keyBlock.includes("{date}") && keyBlock.includes("{interval}"));
-check("i18n: flashGradedNextReview ur text present", /اگلا جائزہ/.test(keyBlock));
+check("i18n: flashGradedNextReview ur text present", /اگلی دہرائی/.test(keyBlock)); // U1 glossary: FSRS review = دہرائی (was: اگلا جائزہ)
 
 const analysis = read("src/app/analysis/page.tsx");
 const explicitSpaces = (analysis.match(/<\/span>\{" "\}\{tf\("weakOver"/g) ?? []).length;

@@ -60,7 +60,7 @@ export default function Topics() {
     return (
       <div>
         <h1>{t("topicsTitle")}</h1>
-        <p className="muted">{t("loading")}</p>
+        <p className="muted" role="status">{t("loading")}</p>
       </div>
     );
   }

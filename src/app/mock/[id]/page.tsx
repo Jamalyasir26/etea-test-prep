@@ -110,7 +110,7 @@ function MockRunInner() {
       {tf("ofCount", { a: lri(String(questions?.length ?? 0)), b: lri(String(mock.total)) })}{" "}
       {t("trustedNoteRest")} —{" "}
       <span dir="ltr">{trustedCount}</span> {t("reviewedWord")}{" "}
-      {t("trustedNoteInMock")}. {t("trustedNoteShortfall")} <span dir="auto">{view.note}</span>
+      {t("trustedNoteInMock")}{lang === "ur" ? "۔" : "."} {t("trustedNoteShortfall")} <span dir="auto">{view.note}</span>
     </>
   ) : (
     <span dir="auto">{view.note}</span>
@@ -153,7 +153,7 @@ function MockRunInner() {
     return (
       <div>
         <h1>{view.title}</h1>
-        <p className="muted">{t("loading")}</p>
+        <p className="muted" role="status">{t("loading")}</p>
       </div>
     );
   }

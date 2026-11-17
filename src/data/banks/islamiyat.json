@@ -402,7 +402,7 @@
    "Al-Hajj",
    "Al-Nahl"
   ],
-  "explanation_ur": "سورہ التوبہ کے شروع میں بسم اللہ نہیں ہے۔",
+  "explanation_ur": "سورہ التوبہ بسم اللہ سے شروع نہیں ہوتی۔",
   "explanation_roman": "Surah At-Taubah does not begin with Bismillah. Surah Taubah ke shuru mein Bismillah nahi hai.",
   "post": [
    "zamungkor",
@@ -436,7 +436,7 @@
  },
  {
   "id": "ISL-010",
-  "question_ur": "قرآن پاک میں مجموعی طور پر لفظ بسم اللہ کتنی مرتبہ آیا ہے؟",
+  "question_ur": "قرآن پاک میں لفظ بسم اللہ مجموعی طور پر کتنی مرتبہ آیا ہے؟",
   "question_roman": "Quran Pak mein majmooi tor par lafz Bismillah kitni martaba aaya hai?",
   "options_ur": [
    "113",
@@ -594,7 +594,7 @@
    "86",
    "88"
   ],
-  "explanation_ur": "مکی سورتیں 86 ہیں جو ہجرت سے پہلے نازل ہوئیں۔",
+  "explanation_ur": "مکی سورتیں 86 ہیں، جو ہجرت سے پہلے نازل ہوئیں۔",
   "explanation_roman": "There are 86 Makki Surahs revealed before Hijrat. Makki Suratein 86 hain.",
   "post": [
    "zamungkor",
@@ -642,7 +642,7 @@
    "30",
    "32"
   ],
-  "explanation_ur": "مدنی سورتیں 28 ہیں جو ہجرت کے بعد نازل ہوئیں۔",
+  "explanation_ur": "مدنی سورتیں 28 ہیں، جو ہجرت کے بعد نازل ہوئیں۔",
   "explanation_roman": "There are 28 Madani Surahs revealed after Hijrat. Madani Suratein 28 hain.",
   "post": [
    "zamungkor",
@@ -873,8 +873,8 @@
   "options_ur": [
    "ایک چوتھائی",
    "ایک تہائی",
-   "ایک نصف",
-   "ایک دسواں حصہ"
+   "نصف",
+   "دسواں حصہ"
   ],
   "options_roman": [
    "Aik chauthai",
@@ -882,7 +882,7 @@
    "Aik nisf",
    "Aik daswan hissa"
   ],
-  "explanation_ur": "سورہ الاخلاص ثواب میں قرآن کے ایک تہائی حصے کے برابر ہے۔",
+  "explanation_ur": "سورہ الاخلاص ثواب میں قرآن پاک کے ایک تہائی حصے کے برابر ہے۔",
   "explanation_roman": "Surah Al-Ikhlas equals one third of the Quran in reward. Surah Ikhlas aik tihai Quran ke barabar hai.",
   "post": [
    "zamungkor",
@@ -964,7 +964,7 @@
  },
  {
   "id": "ISL-021",
-  "question_ur": "قرآن پاک کا 30واں پارہ کس نام سے بھی جانا جاتا ہے؟",
+  "question_ur": "قرآن پاک کے 30ویں پارے کو کس نام سے بھی جانا جاتا ہے؟",
   "question_roman": "Quran Pak ka 30wan Parah kis naam se bhi jana jata hai?",
   "options_ur": [
    "جز عمّ",
@@ -1012,13 +1012,13 @@
  },
  {
   "id": "ISL-022",
-  "question_ur": "حضرت ابو بکرؓ کے دور میں قرآن پاک کی تدوین کے لیے بنائی گئی کمیٹی کی سربراہی کس نے کی؟",
+  "question_ur": "حضرت ابو بکر رضی اللہ عنہ کے دور میں قرآن پاک کی تدوین کے لیے بنائی گئی کمیٹی کی سربراہی کس نے کی؟",
   "question_roman": "Hazrat Abu Bakr (RA) ke daur mein Quran Pak ki tadveen ke liye banayi gayi committee ki sarbarahi kis ne ki?",
   "options_ur": [
-   "حضرت عمرؓ",
-   "حضرت عثمانؓ",
-   "زید بن ثابتؓ",
-   "حضرت علیؓ"
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ",
+   "زید بن ثابت رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Umar (RA)",
@@ -1026,7 +1026,7 @@
    "Zaid bin Sabit (RA)",
    "Hazrat Ali (RA)"
   ],
-  "explanation_ur": "زید بن ثابتؓ نے تدوین کے کام کی سربراہی کی۔",
+  "explanation_ur": "زید بن ثابت رضی اللہ عنہ نے تدوین کے کام کی سربراہی کی۔",
   "explanation_roman": "Zaid bin Sabit (RA) headed the compilation work. Zaid bin Sabit (RA) ne tadveen ki sarbarahi ki.",
   "post": [
    "zamungkor",
@@ -1063,10 +1063,10 @@
   "question_ur": "قرآن پاک کے نسخوں کو معیاری شکل دے کر مختلف علاقوں میں کس نے بھیجا؟",
   "question_roman": "Quran Pak ke nuskhon ko mayari shakal de kar mukhtalif ilaqon mein kis ne bheja?",
   "options_ur": [
-   "حضرت ابو بکرؓ",
-   "حضرت عمرؓ",
-   "حضرت عثمانؓ",
-   "حضرت علیؓ"
+   "حضرت ابو بکر رضی اللہ عنہ",
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Abu Bakr (RA)",
@@ -1074,7 +1074,7 @@
    "Hazrat Usman (RA)",
    "Hazrat Ali (RA)"
   ],
-  "explanation_ur": "حضرت عثمانؓ نے قرآن کے نسخے معیاری کیے۔",
+  "explanation_ur": "حضرت عثمان رضی اللہ عنہ نے قرآن پاک کے نسخوں کو معیاری شکل دی۔",
   "explanation_roman": "Hazrat Usman (RA) standardized the Quranic text. Hazrat Usman (RA) ne Quran ke nuskhe standard kiye.",
   "post": [
    "zamungkor",
@@ -1111,10 +1111,10 @@
   "question_ur": "قرآن پاک کے پہلے حافظ کون تھے؟",
   "question_roman": "Quran Pak ke pehle Hafiz kaun the?",
   "options_ur": [
-   "حضرت ابو بکرؓ",
-   "حضرت زید بن ثابتؓ",
+   "حضرت ابو بکر رضی اللہ عنہ",
+   "حضرت زید بن ثابت رضی اللہ عنہ",
    "حضرت محمد ﷺ",
-   "حضرت علیؓ"
+   "حضرت علی رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Abu Bakr (RA)",
@@ -1122,7 +1122,7 @@
    "Prophet Muhammad (SAW)",
    "Hazrat Ali (RA)"
   ],
-  "explanation_ur": "پہلے حافظ قرآن حضرت محمد ﷺ تھے۔",
+  "explanation_ur": "قرآن پاک کے پہلے حافظ حضرت محمد ﷺ تھے۔",
   "explanation_roman": "Prophet Muhammad (SAW) was the first Hafiz of the Quran. Pehle Hafiz-e-Quran Hazrat Muhammad (SAW) the.",
   "post": [
    "zamungkor",
@@ -1252,7 +1252,7 @@
  },
  {
   "id": "ISL-027",
-  "question_ur": "حضرت محمد ﷺ کے پاس وحی کون سے فرشتے لے کر آئے؟",
+  "question_ur": "حضرت محمد ﷺ کے پاس وحی کون سا فرشتہ لے کر آیا؟",
   "question_roman": "Hazrat Muhammad (SAW) ke paas wahi kaun se farishte le kar aaye?",
   "options_ur": [
    "حضرت جبرئیل علیہ السلام",
@@ -1300,7 +1300,7 @@
  },
  {
   "id": "ISL-028",
-  "question_ur": "کس سورۃ میں بسم اللہ دو مرتبہ آئی ہے، ایک مرتبہ شروع میں اور ایک مرتبہ متن کے اندر؟",
+  "question_ur": "کس سورت میں بسم اللہ دو مرتبہ آئی ہے، ایک مرتبہ شروع میں اور ایک مرتبہ متن کے اندر؟",
   "question_roman": "Kis Surah mein Bismillah do martaba aayi hai, ek martaba shuru mein aur ek martaba matn ke andar?",
   "options_ur": [
    "البقرہ",
@@ -1314,7 +1314,7 @@
    "Al-Kahf",
    "Al-Rahman"
   ],
-  "explanation_ur": "سورۃ النمل میں بسم اللہ حضرت سلیمان علیہ السلام کے خط میں بھی آئی ہے۔ سورۃ النمل میں بسم اللہ دو مرتبہ ہے۔",
+  "explanation_ur": "سورہ النمل میں بسم اللہ دو مرتبہ آئی ہے، جن میں سے ایک مرتبہ حضرت سلیمان علیہ السلام کے خط میں ہے۔",
   "explanation_roman": "In Surah An-Naml Bismillah appears in the letter of Hazrat Sulaiman (AS) as well. Surah Naml mein Bismillah do martaba hai.",
   "post": [
    "zamungkor",
@@ -1352,7 +1352,7 @@
   "question_roman": "Makki Suratein woh hain jo Makkah mein kis waqiye se pehle nazil huin?",
   "options_ur": [
    "غزوہ بدر",
-   "ہجرت مدینہ",
+   "مدینہ کی طرف ہجرت",
    "فتح مکہ",
    "حجۃ الوداع"
   ],
@@ -1399,13 +1399,13 @@
  },
  {
   "id": "ISL-030",
-  "question_ur": "جمعہ کے دن کون سی سورۃ پڑھنے کی سفارش کی گئی ہے؟",
+  "question_ur": "جمعہ کے دن کون سی سورت پڑھنے کی سفارش کی گئی ہے؟",
   "question_roman": "Jummah ke din kaun si Surah parhne ki sifarish ki gayi hai?",
   "options_ur": [
    "الکہف",
    "الملک",
    "الواقعہ",
-   "یاسین"
+   "یٰسین"
   ],
   "options_roman": [
    "Al-Kahf",
@@ -1413,7 +1413,7 @@
    "Al-Waqiah",
    "Al-Yasin"
   ],
-  "explanation_ur": "جمعہ کے دن سورۃ الکہف پڑھنا مستحب ہے۔",
+  "explanation_ur": "جمعہ کے دن سورہ الکہف پڑھنا مستحب ہے۔",
   "explanation_roman": "Surah Al-Kahf is recommended on Friday. Jummah ke din Surah Kahf parhna mustahab hai.",
   "post": [
    "zamungkor",
@@ -1461,7 +1461,7 @@
    "Chhe",
    "Saat"
   ],
-  "explanation_ur": "صحاح ستہ سے مراد حدیث کی چھ مستند کتابیں ہیں۔ صحاح ستہ میں چھ کتابیں ہیں۔",
+  "explanation_ur": "صحاح ستہ سے مراد حدیث کی چھ مستند کتابیں ہیں۔",
   "explanation_roman": "Sihah Sitta means the six authentic books of Hadith. Sihah Sitta mein chhe kitabein hain.",
   "post": [
    "zamungkor",
@@ -1495,7 +1495,7 @@
  },
  {
   "id": "ISL-032",
-  "question_ur": "قرآن مجید کے بعد حدیث کی سب سے زیادہ مستند کتاب کون سی ہے؟",
+  "question_ur": "قرآن پاک کے بعد حدیث کی سب سے مستند کتاب کون سی ہے؟",
   "question_roman": "Quran Majeed ke baad Hadith ki sab se ziyada mustanad kitab kaun si hai?",
   "options_ur": [
    "صحیح مسلم",
@@ -1509,7 +1509,7 @@
    "Sahih Bukhari",
    "Jami Tirmidhi"
   ],
-  "explanation_ur": "صحیح بخاری کو حدیث کی سب سے زیادہ مستند کتاب سمجھا جاتا ہے۔ صحیح بخاری سب سے مستند کتاب ہے۔",
+  "explanation_ur": "صحیح بخاری کو حدیث کی سب سے مستند کتاب سمجھا جاتا ہے۔",
   "explanation_roman": "Sahih Bukhari is considered the most authentic Hadith book. Sahih Bukhari sab se mustanad kitab hai.",
   "post": [
    "zamungkor",
@@ -1557,7 +1557,7 @@
    "Imam Tirmidhi",
    "Imam Nasai"
   ],
-  "explanation_ur": "صحیح بخاری امام محمد بن اسماعیل البخاری نے لکھی تھی۔ صحیح بخاری امام بخاری کی کتاب ہے۔",
+  "explanation_ur": "صحیح بخاری امام محمد بن اسماعیل البخاری نے لکھی تھی۔",
   "explanation_roman": "Sahih Bukhari was written by Imam Muhammad ibn Ismail al-Bukhari. Sahih Bukhari Imam Bukhari ki kitab hai.",
   "post": [
    "zamungkor",
@@ -1605,7 +1605,7 @@
    "Imam Abu Dawood",
    "Imam Ibn Majah"
   ],
-  "explanation_ur": "صحیح مسلم امام مسلم بن الحجاج نے لکھی تھی۔ صحیح مسلم امام مسلم کی کتاب ہے۔",
+  "explanation_ur": "صحیح مسلم امام مسلم بن الحجاج نے لکھی تھی۔",
   "explanation_roman": "Sahih Muslim was written by Imam Muslim ibn al-Hajjaj. Sahih Muslim Imam Muslim ki kitab hai.",
   "post": [
    "zamungkor",
@@ -1653,7 +1653,7 @@
    "Muwatta Imam Malik",
    "Sunan Nasai"
   ],
-  "explanation_ur": "موطا امام مالک ایک مشہور قدیم کتاب ہے لیکن صحاح ستہ کا حصہ نہیں ہے۔ موطا صحاح ستہ میں شامل نہیں ہے۔",
+  "explanation_ur": "موطا امام مالک ایک مشہور قدیم کتاب ہے، لیکن صحاح ستہ کا حصہ نہیں ہے۔",
   "explanation_roman": "Muwatta Imam Malik is a famous early book but not part of Sihah Sitta. Muwatta Sihah Sitta mein shamil nahi.",
   "post": [
    "zamungkor",
@@ -1845,7 +1845,7 @@
    "Imam Shafi",
    "Imam Ahmad"
   ],
-  "explanation_ur": "سنن ابو داؤد امام ابو داؤد نے لکھی تھی۔ سنن ابو داؤد امام ابو داؤد کی کتاب ہے۔",
+  "explanation_ur": "سنن ابو داؤد امام ابو داؤد نے لکھی تھی۔",
   "explanation_roman": "Sunan Abu Dawood was written by Imam Abu Dawood. Sunan Abu Dawood Imam Abu Dawood ki kitab hai.",
   "post": [
    "zamungkor",
@@ -1893,7 +1893,7 @@
    "Imam Ibn Majah",
    "Imam Bukhari"
   ],
-  "explanation_ur": "جامع ترمذی امام ترمذی نے لکھی تھی۔ جامع ترمذی امام ترمذی کی کتاب ہے۔",
+  "explanation_ur": "جامع ترمذی امام ترمذی نے لکھی تھی۔",
   "explanation_roman": "Jami Tirmidhi was written by Imam Tirmidhi. Jami Tirmidhi Imam Tirmidhi ki kitab hai.",
   "post": [
    "zamungkor",
@@ -1941,7 +1941,7 @@
    "Imam Malik",
    "Imam Shafi"
   ],
-  "explanation_ur": "سنن نسائی امام نسائی نے لکھی تھی۔ سنن نسائی امام نسائی کی کتاب ہے۔",
+  "explanation_ur": "سنن نسائی امام نسائی نے لکھی تھی۔",
   "explanation_roman": "Sunan Nasai was written by Imam Nasai. Sunan Nasai Imam Nasai ki kitab hai.",
   "post": [
    "zamungkor",
@@ -1989,7 +1989,7 @@
    "Imam Tirmidhi",
    "Imam Ahmad"
   ],
-  "explanation_ur": "سنن ابن ماجہ امام ابن ماجہ نے لکھی تھی۔ سنن ابن ماجہ امام ابن ماجہ کی کتاب ہے۔",
+  "explanation_ur": "سنن ابن ماجہ امام ابن ماجہ نے لکھی تھی۔",
   "explanation_roman": "Sunan Ibn Majah was written by Imam Ibn Majah. Sunan Ibn Majah Imam Ibn Majah ki kitab hai.",
   "post": [
    "zamungkor",
@@ -2037,7 +2037,7 @@
    "Imam Shafi",
    "Imam Bukhari"
   ],
-  "explanation_ur": "موطا امام مالک بن انس نے لکھی تھی۔ موطا امام مالک کی کتاب ہے۔",
+  "explanation_ur": "موطا امام مالک بن انس نے لکھی تھی۔",
   "explanation_roman": "Muwatta was written by Imam Malik ibn Anas. Muwatta Imam Malik ki kitab hai.",
   "post": [
    "zamungkor",
@@ -2133,7 +2133,7 @@
    "Islami tareekh",
    "Fiqh ki ek kitab"
   ],
-  "explanation_ur": "سنت نبی محمد ﷺ کا طریقہ اور عمل ہے۔ سنت نبی ﷺ کا طریقہ ہے۔",
+  "explanation_ur": "سنت نبی کریم ﷺ کا طریقہ اور عمل ہے۔",
   "explanation_roman": "Sunnah is the way and practice of Prophet Muhammad (SAW). Sunnah Nabi (SAW) ka tareeqa hai.",
   "post": [
    "zamungkor",
@@ -2181,7 +2181,7 @@
    "572 AD",
    "575 AD"
   ],
-  "explanation_ur": "حضرت محمد ﷺ 571 عیسوی میں پیدا ہوئے، جو عام الفیل کا سال تھا۔ آپ ﷺ 571 عیسوی میں پیدا ہوئے۔",
+  "explanation_ur": "حضرت محمد ﷺ 571 عیسوی میں پیدا ہوئے، جو عام الفیل کا سال تھا۔",
   "explanation_roman": "Prophet Muhammad (SAW) was born in 571 AD, the Year of the Elephant. Aap (SAW) 571 AD mein paida hue.",
   "post": [
    "zamungkor",
@@ -2325,7 +2325,7 @@
    "Abdullah",
    "Hamza"
   ],
-  "explanation_ur": "آپ ﷺ کے والد عبداللہ تھے، جن کا انتقال آپ ﷺ کی پیدائش سے پہلے ہو گیا تھا۔ آپ ﷺ کے والد کا نام عبداللہ تھا۔",
+  "explanation_ur": "آپ ﷺ کے والد عبداللہ تھے، جن کا انتقال آپ ﷺ کی پیدائش سے پہلے ہو گیا تھا۔",
   "explanation_roman": "His father was Abdullah, who died before his birth. Aap (SAW) ke walid ka naam Abdullah tha.",
   "post": [
    "zamungkor",
@@ -2503,13 +2503,13 @@
  },
  {
   "id": "ISL-053",
-  "question_ur": "حضرت محمد (SAW) کی پرورش ان کے دادا کے بعد کس نے کی؟",
+  "question_ur": "حضرت محمد ﷺ کی پرورش ان کے دادا کے بعد کس نے کی؟",
   "question_roman": "Hazrat Muhammad (SAW) ki parvarish un ke dada ke baad kis ne ki?",
   "options_ur": [
-   "حضرت حمزہ (RA)",
+   "حضرت حمزہ رضی اللہ عنہ",
    "ابو طالب",
-   "حضرت عباس (RA)",
-   "حضرت علی (RA)"
+   "حضرت عباس رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Hamza (RA)",
@@ -2551,13 +2551,13 @@
  },
  {
   "id": "ISL-054",
-  "question_ur": "حضرت محمد (SAW) کی پہلی زوجہ کون تھیں؟",
+  "question_ur": "حضرت محمد ﷺ کی پہلی زوجہ کون تھیں؟",
   "question_roman": "Hazrat Muhammad (SAW) ki pehli biwi kaun thin?",
   "options_ur": [
-   "حضرت عائشہ (RA)",
-   "حضرت خدیجہ (RA)",
-   "حضرت حفصہ (RA)",
-   "حضرت سودہ (RA)"
+   "حضرت عائشہ رضی اللہ عنہا",
+   "حضرت خدیجہ رضی اللہ عنہا",
+   "حضرت حفصہ رضی اللہ عنہا",
+   "حضرت سودہ رضی اللہ عنہا"
   ],
   "options_roman": [
    "Hazrat Aisha (RA)",
@@ -2565,7 +2565,7 @@
    "Hazrat Hafsa (RA)",
    "Hazrat Sawda (RA)"
   ],
-  "explanation_ur": "حضرت خدیجہ (RA) ان کی پہلی زوجہ تھیں۔",
+  "explanation_ur": "حضرت خدیجہ رضی اللہ عنہا ان کی پہلی زوجہ تھیں۔",
   "explanation_roman": "Hazrat Khadija (RA) was his first wife. Pehli biwi Hazrat Khadija (RA) thin.",
   "post": [
    "zamungkor",
@@ -2599,7 +2599,7 @@
  },
  {
   "id": "ISL-055",
-  "question_ur": "حضرت محمد (SAW) کو پہلی وحی کس عمر میں ملی؟",
+  "question_ur": "حضرت محمد ﷺ کو پہلی وحی کس عمر میں ملی؟",
   "question_roman": "Hazrat Muhammad (SAW) ko pehli Wahi kis umar mein mili?",
   "options_ur": [
    "35 سال",
@@ -2650,7 +2650,7 @@
  },
  {
   "id": "ISL-056",
-  "question_ur": "حضرت محمد (SAW) کو پہلی وحی کس سال ملی؟",
+  "question_ur": "حضرت محمد ﷺ کو پہلی وحی کس سال ملی؟",
   "question_roman": "Hazrat Muhammad (SAW) ko pehli Wahi kis saal mein aayi?",
   "options_ur": [
    "608 عیسوی",
@@ -2698,7 +2698,7 @@
  },
  {
   "id": "ISL-057",
-  "question_ur": "حضرت محمد (SAW) کو پہلی وحی کس غار میں ملی؟",
+  "question_ur": "حضرت محمد ﷺ کو پہلی وحی کس غار میں ملی؟",
   "question_roman": "Hazrat Muhammad (SAW) ko pehli Wahi kis ghaar mein mili?",
   "options_ur": [
    "غارِ ثور",
@@ -2746,13 +2746,13 @@
  },
  {
   "id": "ISL-058",
-  "question_ur": "حضرت محمد (SAW) کے پاس وحی کون سے فرشتے لائے؟",
+  "question_ur": "حضرت محمد ﷺ کے پاس وحی کون سا فرشتہ لایا؟",
   "question_roman": "Hazrat Muhammad (SAW) ke paas Wahi kaun se farishte laaye?",
   "options_ur": [
-   "میکائیل (AS)",
-   "اسرافیل (AS)",
-   "جبرائیل (AS)",
-   "عزرائیل (AS)"
+   "میکائیل علیہ السلام",
+   "اسرافیل علیہ السلام",
+   "جبرائیل علیہ السلام",
+   "عزرائیل علیہ السلام"
   ],
   "options_roman": [
    "Mikail (AS)",
@@ -2760,7 +2760,7 @@
    "Jibrael (AS)",
    "Izrail (AS)"
   ],
-  "explanation_ur": "فرشتہ جبرائیل (AS) وحی لے کر آئے۔",
+  "explanation_ur": "فرشتہ جبرائیل علیہ السلام وحی لے کر آئے۔",
   "explanation_roman": "Angel Jibrael (AS) brought the revelation. Wahi Hazrat Jibrael (AS) le kar aaye.",
   "post": [
    "zamungkor",
@@ -2797,10 +2797,10 @@
   "question_ur": "اسلام قبول کرنے والے پہلے بالغ مرد کون تھے؟",
   "question_roman": "Islam qubool karne wale pehle baaligh mard kaun the?",
   "options_ur": [
-   "حضرت عمر (RA)",
-   "حضرت علی (RA)",
-   "حضرت ابو بکر (RA)",
-   "حضرت عثمان (RA)"
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ",
+   "حضرت ابو بکر رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Umar (RA)",
@@ -2808,7 +2808,7 @@
    "Hazrat Abu Bakr (RA)",
    "Hazrat Usman (RA)"
   ],
-  "explanation_ur": "حضرت ابو بکر (RA) اسلام قبول کرنے والے پہلے بالغ مرد تھے۔",
+  "explanation_ur": "حضرت ابو بکر رضی اللہ عنہ اسلام قبول کرنے والے پہلے بالغ مرد تھے۔",
   "explanation_roman": "Hazrat Abu Bakr (RA) was the first adult man to accept Islam. Pehle mard Hazrat Abu Bakr (RA) the.",
   "post": [
    "zamungkor",
@@ -2845,10 +2845,10 @@
   "question_ur": "اسلام قبول کرنے والی پہلی خاتون کون تھیں؟",
   "question_roman": "Islam qubool karne wali pehli khatoon kaun thin?",
   "options_ur": [
-   "حضرت عائشہ (RA)",
-   "حضرت فاطمہ (RA)",
-   "حضرت خدیجہ (RA)",
-   "حضرت حفصہ (RA)"
+   "حضرت عائشہ رضی اللہ عنہا",
+   "حضرت فاطمہ رضی اللہ عنہا",
+   "حضرت خدیجہ رضی اللہ عنہا",
+   "حضرت حفصہ رضی اللہ عنہا"
   ],
   "options_roman": [
    "Hazrat Aisha (RA)",
@@ -2856,7 +2856,7 @@
    "Hazrat Khadija (RA)",
    "Hazrat Hafsa (RA)"
   ],
-  "explanation_ur": "حضرت خدیجہ (RA) اسلام قبول کرنے والی پہلی خاتون تھیں۔",
+  "explanation_ur": "حضرت خدیجہ رضی اللہ عنہا اسلام قبول کرنے والی پہلی خاتون تھیں۔",
   "explanation_roman": "Hazrat Khadija (RA) was the first woman to accept Islam. Pehli khatoon Hazrat Khadija (RA) thin.",
   "post": [
    "zamungkor",
@@ -2893,10 +2893,10 @@
   "question_ur": "اسلام قبول کرنے والے پہلے بچے کون تھے؟",
   "question_roman": "Islam qubool karne wale pehle bachche kaun the?",
   "options_ur": [
-   "حضرت حسن (RA)",
-   "حضرت علی (RA)",
-   "حضرت زید (RA)",
-   "حضرت عثمان (RA)"
+   "حضرت حسن رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ",
+   "حضرت زید رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Hasan (RA)",
@@ -2904,7 +2904,7 @@
    "Hazrat Zaid (RA)",
    "Hazrat Usman (RA)"
   ],
-  "explanation_ur": "حضرت علی (RA) اسلام قبول کرنے والے پہلے بچے تھے۔",
+  "explanation_ur": "حضرت علی رضی اللہ عنہ اسلام قبول کرنے والے پہلے بچے تھے۔",
   "explanation_roman": "Hazrat Ali (RA) was the first child to accept Islam. Pehle bachche Hazrat Ali (RA) the.",
   "post": [
    "zamungkor",
@@ -3418,7 +3418,7 @@
  },
  {
   "id": "ISL-072",
-  "question_ur": "حضرت محمد (SAW) کا وصال کس سال ہوا؟",
+  "question_ur": "حضرت محمد ﷺ کا وصال کس سال ہوا؟",
   "question_roman": "Hazrat Muhammad (SAW) ka wisal kis saal mein hua?",
   "options_ur": [
    "630 عیسوی",
@@ -3466,7 +3466,7 @@
  },
  {
   "id": "ISL-073",
-  "question_ur": "حضرت محمد (SAW) کا وصال کس عمر میں ہوا؟",
+  "question_ur": "حضرت محمد ﷺ کا وصال کس عمر میں ہوا؟",
   "question_roman": "Hazrat Muhammad (SAW) ka wisal kis umar mein hua?",
   "options_ur": [
    "60 سال",
@@ -3514,7 +3514,7 @@
  },
  {
   "id": "ISL-074",
-  "question_ur": "معیاری نصابی کتابوں میں غزوات (وہ جنگیں جن کی قیادت حضرت محمد (SAW) نے کی) کی تعداد کتنی بتائی جاتی ہے؟",
+  "question_ur": "معیاری نصابی کتابوں میں غزوات (وہ جنگیں جن کی قیادت حضرت محمد ﷺ نے کی) کی تعداد کتنی بتائی جاتی ہے؟",
   "question_roman": "Mayari kitabon mein Ghazwat (wo jangein jin ki qayadat Hazrat Muhammad (SAW) ne ki) ki tadad kitni batayi jati hai?",
   "options_ur": [
    "19",
@@ -3562,7 +3562,7 @@
  },
  {
   "id": "ISL-075",
-  "question_ur": "حضرت محمد (SAW) کا آخری غزوہ کون سا تھا؟",
+  "question_ur": "حضرت محمد ﷺ کا آخری غزوہ کون سا تھا؟",
   "question_roman": "Hazrat Muhammad (SAW) ka aakhri Ghazwa kaun sa tha?",
   "options_ur": [
    "بدر",
@@ -3613,10 +3613,10 @@
   "question_ur": "اسلام کے پہلے خلیفہ کون تھے؟",
   "question_roman": "Islam ke pehle Khalifa kaun the?",
   "options_ur": [
-   "حضرت عمر (RA)",
-   "حضرت ابو بکر (RA)",
-   "حضرت عثمان (RA)",
-   "حضرت علی (RA)"
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت ابو بکر رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Umar (RA)",
@@ -3624,7 +3624,7 @@
    "Hazrat Usman (RA)",
    "Hazrat Ali (RA)"
   ],
-  "explanation_ur": "حضرت ابو بکر (RA) پہلے خلیفہ تھے۔",
+  "explanation_ur": "حضرت ابو بکر رضی اللہ عنہ پہلے خلیفہ تھے۔",
   "explanation_roman": "Hazrat Abu Bakr (RA) was the first Khalifa. Pehle Khalifa Hazrat Abu Bakr (RA) the.",
   "post": [
    "zamungkor",
@@ -3658,7 +3658,7 @@
  },
  {
   "id": "ISL-077",
-  "question_ur": "حضرت ابو بکر (RA) کس لقب سے جانے جاتے ہیں؟",
+  "question_ur": "حضرت ابو بکر رضی اللہ عنہ کس لقب سے جانے جاتے ہیں؟",
   "question_roman": "Hazrat Abu Bakr (RA) kis laqab se jaane jate hain?",
   "options_ur": [
    "فاروق",
@@ -3672,7 +3672,7 @@
    "Ghani",
    "Haider"
   ],
-  "explanation_ur": "حضرت ابو بکر (RA) صدیق کے لقب سے جانے جاتے ہیں۔",
+  "explanation_ur": "حضرت ابو بکر رضی اللہ عنہ صدیق کے لقب سے جانے جاتے ہیں۔",
   "explanation_roman": "Hazrat Abu Bakr (RA) is known as Siddiq. Hazrat Abu Bakr (RA) ka laqab Siddiq hai.",
   "post": [
    "zamungkor",
@@ -3709,10 +3709,10 @@
   "question_ur": "اسلام کے دوسرے خلیفہ کون تھے؟",
   "question_roman": "Islam ke dusre Khalifa kaun the?",
   "options_ur": [
-   "حضرت علی (RA)",
-   "حضرت عثمان (RA)",
-   "حضرت عمر (RA)",
-   "حضرت ابو بکر (RA)"
+   "حضرت علی رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ",
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت ابو بکر رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Ali (RA)",
@@ -3720,7 +3720,7 @@
    "Hazrat Umar (RA)",
    "Hazrat Abu Bakr (RA)"
   ],
-  "explanation_ur": "حضرت عمر (RA) دوسرے خلیفہ تھے۔",
+  "explanation_ur": "حضرت عمر رضی اللہ عنہ دوسرے خلیفہ تھے۔",
   "explanation_roman": "Hazrat Umar (RA) was the second Khalifa. Dusre Khalifa Hazrat Umar (RA) the.",
   "post": [
    "zamungkor",
@@ -3754,7 +3754,7 @@
  },
  {
   "id": "ISL-079",
-  "question_ur": "حضرت عثمان (رضی اللہ عنہ) کس لقب سے معروف ہیں؟",
+  "question_ur": "حضرت عثمان رضی اللہ عنہ کس لقب سے معروف ہیں؟",
   "question_roman": "Hazrat Usman (RA) kis laqab se mashhoor hain?",
   "options_ur": [
    "فاروق",
@@ -3768,7 +3768,7 @@
    "Dhun-Nurayn",
    "Haider"
   ],
-  "explanation_ur": "حضرت عثمان (رضی اللہ عنہ) ذو النورین کے لقب سے معروف ہیں۔",
+  "explanation_ur": "حضرت عثمان رضی اللہ عنہ ذو النورین کے لقب سے معروف ہیں۔",
   "explanation_roman": "Hazrat Usman (RA) is known as Dhun-Nurayn. Hazrat Usman (RA) ka laqab Dhun-Nurayn hai.",
   "post": [
    "zamungkor",
@@ -3805,10 +3805,10 @@
   "question_ur": "اسلام کے چوتھے خلیفہ کون تھے؟",
   "question_roman": "Islam ke chauthe Khalifa kaun the?",
   "options_ur": [
-   "حضرت عمر (رضی اللہ عنہ)",
-   "حضرت عثمان (رضی اللہ عنہ)",
-   "حضرت ابو بکر (رضی اللہ عنہ)",
-   "حضرت علی (رضی اللہ عنہ)"
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ",
+   "حضرت ابو بکر رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Umar (RA)",
@@ -3816,7 +3816,7 @@
    "Hazrat Abu Bakr (RA)",
    "Hazrat Ali (RA)"
   ],
-  "explanation_ur": "حضرت علی (رضی اللہ عنہ) چوتھے خلیفہ تھے۔",
+  "explanation_ur": "حضرت علی رضی اللہ عنہ چوتھے خلیفہ تھے۔",
   "explanation_roman": "Hazrat Ali (RA) was the fourth Khalifa. Chauthe Khalifa Hazrat Ali (RA) the.",
   "post": [
    "zamungkor",
@@ -3864,7 +3864,7 @@
    "Abu Bakr, Usman, Umar, Ali",
    "Ali, Abu Bakr, Umar, Usman"
   ],
-  "explanation_ur": "ترتیب ابو بکر، عمر، عثمان اور علی (رضی اللہ عنہم) ہے۔",
+  "explanation_ur": "خلفائے راشدین کی ترتیب یہ ہے: ابو بکر، عمر، عثمان اور علی رضی اللہ عنہم۔",
   "explanation_roman": "The order is Abu Bakr, Umar, Usman and Ali (RA). Tarteeb Abu Bakr, Umar, Usman, Ali hai.",
   "post": [
    "zamungkor",
@@ -3901,10 +3901,10 @@
   "question_ur": "ہجری کیلنڈر کس نے شروع کیا؟",
   "question_roman": "Hijri calendar kis ne shuru kiya?",
   "options_ur": [
-   "حضرت ابو بکر (رضی اللہ عنہ)",
-   "حضرت عمر (رضی اللہ عنہ)",
-   "حضرت عثمان (رضی اللہ عنہ)",
-   "حضرت علی (رضی اللہ عنہ)"
+   "حضرت ابو بکر رضی اللہ عنہ",
+   "حضرت عمر رضی اللہ عنہ",
+   "حضرت عثمان رضی اللہ عنہ",
+   "حضرت علی رضی اللہ عنہ"
   ],
   "options_roman": [
    "Hazrat Abu Bakr (RA)",
@@ -3912,7 +3912,7 @@
    "Hazrat Usman (RA)",
    "Hazrat Ali (RA)"
   ],
-  "explanation_ur": "حضرت عمر (رضی اللہ عنہ) نے ہجری کیلنڈر شروع کیا۔",
+  "explanation_ur": "حضرت عمر رضی اللہ عنہ نے ہجری کیلنڈر شروع کیا۔",
   "explanation_roman": "Hazrat Umar (RA) started the Hijri calendar. Hijri calendar Hazrat Umar (RA) ne shuru kiya.",
   "post": [
    "zamungkor",
@@ -3946,7 +3946,7 @@
  },
  {
   "id": "ISL-083",
-  "question_ur": "اسلام کے ارکان کتنے ہیں؟",
+  "question_ur": "ارکانِ اسلام کتنے ہیں؟",
   "question_roman": "Islam ke Arkan kitne hain?",
   "options_ur": [
    "چار",
@@ -4095,8 +4095,8 @@
   "options_ur": [
    "رمضان",
    "شوال",
-   "ذی القعدہ",
-   "ذی الحجہ"
+   "ذوالقعدہ",
+   "ذوالحجہ"
   ],
   "options_roman": [
    "Ramadan",
@@ -4104,7 +4104,7 @@
    "Zil Qad",
    "Zil Hajj"
   ],
-  "explanation_ur": "حج ذی الحجہ میں ادا کیا جاتا ہے۔",
+  "explanation_ur": "حج ذوالحجہ میں ادا کیا جاتا ہے۔",
   "explanation_roman": "Hajj is performed in Zil Hajj. Hajj Zil Hajj mein ada kiya jata hai.",
   "post": [
    "zamungkor",
@@ -4141,10 +4141,10 @@
   "question_ur": "وقوفِ عرفات (عرفات میں ٹھہرنا) کس تاریخ کو ہوتا ہے؟",
   "question_roman": "Wuquf-e-Arafat (Arafat mein theharna) kis tareekh ko hota hai?",
   "options_ur": [
-   "8 ذی الحجہ",
-   "9 ذی الحجہ",
-   "10 ذی الحجہ",
-   "11 ذی الحجہ"
+   "8 ذوالحجہ",
+   "9 ذوالحجہ",
+   "10 ذوالحجہ",
+   "11 ذوالحجہ"
   ],
   "options_roman": [
    "8 Zil Hajj",
@@ -4152,7 +4152,7 @@
    "10 Zil Hajj",
    "11 Zil Hajj"
   ],
-  "explanation_ur": "وقوفِ عرفات 9 ذی الحجہ کو ہوتا ہے۔",
+  "explanation_ur": "وقوفِ عرفات 9 ذوالحجہ کو ہوتا ہے۔",
   "explanation_roman": "Wuquf-e-Arafat is on 9 Zil Hajj. Wuquf-e-Arafat 9 Zil Hajj ko hota hai.",
   "post": [
    "zamungkor",
@@ -4330,7 +4330,7 @@
  },
  {
   "id": "ISL-091",
-  "question_ur": "سورتوں کو گنیں: قرآن مجید میں کتنی سورتیں ہیں؟",
+  "question_ur": "قرآن پاک میں کتنی سورتیں ہیں؟",
   "question_roman": "Suraton ko ginein: Quran-e-Majeed mein kitni Suratein hain?",
   "options_ur": [
    "110",
@@ -4344,7 +4344,7 @@
    "114",
    "116"
   ],
-  "explanation_ur": "قرآن مجید میں 114 سورتیں ہیں، الفاتحہ سے الناس تک۔",
+  "explanation_ur": "قرآن پاک میں 114 سورتیں ہیں، سورہ الفاتحہ سے سورہ الناس تک۔",
   "explanation_roman": "Quran-e-Majeed mein 114 Suratein hain, Al-Fatiha se An-Nas tak.",
   "post": [
    "zamungkor",
@@ -4380,7 +4380,7 @@
  },
  {
   "id": "ISL-092",
-  "question_ur": "قرآن مجید میں سب سے زیادہ آیات والی سورت کون سی ہے؟",
+  "question_ur": "قرآن پاک میں سب سے زیادہ آیات والی سورت کون سی ہے؟",
   "question_roman": "Quran-e-Majeed mein sab se zyada Ayaat wali Surah kaun si hai?",
   "options_ur": [
    "الفاتحہ",
@@ -4394,7 +4394,7 @@
    "Aal-e-Imran",
    "An-Nisa"
   ],
-  "explanation_ur": "سورۂ البقرہ میں سب سے زیادہ آیات ہیں، 286 آیات۔",
+  "explanation_ur": "سورہ البقرہ میں سب سے زیادہ آیات ہیں: 286 آیات۔",
   "explanation_roman": "Al-Baqarah mein sab se zyada Ayaat hain, 286 Ayaat.",
   "post": [
    "zamungkor",
@@ -4430,7 +4430,7 @@
  },
  {
   "id": "ISL-093",
-  "question_ur": "قرآن مجید میں سب سے کم آیات والی سورت کون سی ہے؟",
+  "question_ur": "قرآن پاک میں سب سے کم آیات والی سورت کون سی ہے؟",
   "question_roman": "Quran-e-Majeed mein sab se kam Ayaat wali Surah kaun si hai?",
   "options_ur": [
    "الاخلاص",
@@ -4444,7 +4444,7 @@
    "An-Nasr",
    "Al-Asr"
   ],
-  "explanation_ur": "سورۂ الکوثر میں سب سے کم آیات ہیں، 3 آیات۔",
+  "explanation_ur": "سورہ الکوثر میں سب سے کم آیات ہیں: 3 آیات۔",
   "explanation_roman": "Al-Kawthar mein sab se kam Ayaat hain, 3 Ayaat.",
   "post": [
    "zamungkor",
@@ -4480,7 +4480,7 @@
  },
  {
   "id": "ISL-094",
-  "question_ur": "قرآن مجید کو کتنے حصوں (پاروں) میں تقسیم کیا گیا ہے؟",
+  "question_ur": "قرآن پاک کو کتنے حصوں (پاروں) میں تقسیم کیا گیا ہے؟",
   "question_roman": "Quran-e-Majeed ko kitne hisson (Juz) mein taqseem kiya gaya hai?",
   "options_ur": [
    "7",
@@ -4494,7 +4494,7 @@
    "30",
    "40"
   ],
-  "explanation_ur": "قرآن مجید کو مہینے بھر میں پڑھنے کے لیے 30 پاروں میں تقسیم کیا گیا ہے۔",
+  "explanation_ur": "قرآن پاک کو مہینے بھر میں پڑھنے کے لیے 30 پاروں میں تقسیم کیا گیا ہے۔",
   "explanation_roman": "Quran-e-Majeed ko mahine bhar mein parhne ke liye 30 Juz mein taqseem kiya gaya hai.",
   "post": [
    "zamungkor",
@@ -4544,7 +4544,7 @@
    "Al-Muddathir",
    "Al-Baqarah"
   ],
-  "explanation_ur": "سب سے پہلے نازل ہونے والی آیات سورۂ العلق کی ابتدائی پانچ آیات تھیں، جن کا آغاز پڑھنے کے حکم سے ہوا۔",
+  "explanation_ur": "سب سے پہلے نازل ہونے والی آیات سورہ العلق کی ابتدائی پانچ آیات تھیں، جن کا آغاز پڑھنے کے حکم سے ہوا۔",
   "explanation_roman": "Sab se pehle nazil hone wali Ayaat Surah Al-Alaq ki ibtidai paanch Ayaat thin, jin ka aaghaz parhne ke hukm se hua.",
   "post": [
    "zamungkor",
@@ -4744,7 +4744,7 @@
    "622 CE",
    "630 CE"
   ],
-  "explanation_ur": "ہجرت 622 عیسوی میں ہوئی — یہ ہجری کیلنڈر کا سال 1 ہے۔",
+  "explanation_ur": "ہجرت 622 عیسوی میں ہوئی۔ یہ ہجری کیلنڈر کا سال 1 ہے۔",
   "explanation_roman": "Hijrah 622 CE mein hui — ye Hijri calendar ka saal 1 hai.",
   "post": [
    "zamungkor",
@@ -4780,7 +4780,7 @@
  },
  {
   "id": "ISL-100",
-  "question_ur": "غزوۂ بدر کس سال ہوا؟",
+  "question_ur": "غزوہ بدر کس سال ہوا؟",
   "question_roman": "Battle of Badr kis saal hua?",
   "options_ur": [
    "622 عیسوی / 1 ہجری",
@@ -4794,7 +4794,7 @@
    "625 CE / 3 AH",
    "627 CE / 5 AH"
   ],
-  "explanation_ur": "غزوۂ بدر 624 عیسوی (2 ہجری) میں ہوا: تقریباً 313 مسلمانوں کا مقابلہ قریش کی تقریباً 1,000 پر مشتمل فوج سے ہوا۔",
+  "explanation_ur": "غزوہ بدر 624 عیسوی (2 ہجری) میں ہوا: تقریباً 313 مسلمانوں کا مقابلہ قریش کی تقریباً 1,000 پر مشتمل فوج سے ہوا۔",
   "explanation_roman": "Battle of Badr 624 CE (2 AH) mein hua: taqreeban 313 Musalmanon ka muqabla Quraysh ki taqreeban 1,000 par mushtamil fauj se hua.",
   "post": [
    "zamungkor",
@@ -4894,7 +4894,7 @@
    "4",
    "6"
   ],
-  "explanation_ur": "فقہ کے چار بنیادی ماخذ عام طور پر بتائے جاتے ہیں: قرآن، سنت، اجماع اور قیاس۔",
+  "explanation_ur": "فقہ کے چار بنیادی ماخذ عام طور پر بتائے جاتے ہیں: قرآن پاک، سنت، اجماع اور قیاس۔",
   "explanation_roman": "Fiqh ke chaar bunyadi makhaz aam taur par bataye jate hain: Quran, Sunnah, Ijma aur Qiyas.",
   "post": [
    "zamungkor",
@@ -4944,7 +4944,7 @@
    "Imam al-Shafi'i",
    "Imam Ahmad ibn Hanbal"
   ],
-  "explanation_ur": "حنفی مکتب کی بنیاد امام ابو حنیفہ نے رکھی، جو عراق کے شہر کوفہ سے تھے۔",
+  "explanation_ur": "حنفی مکتب کی بنیاد امام ابو حنیفہ نے رکھی، جو عراق کے شہر کوفہ سے تعلق رکھتے تھے۔",
   "explanation_roman": "Hanafi school ki bunyad Imam Abu Hanifa ne rakhi, jo Iraq ke sheher Kufa se the.",
   "post": [
    "zamungkor",
@@ -4980,7 +4980,7 @@
  },
  {
   "id": "ISL-104",
-  "question_ur": "فقہ کے چار ماخذ کو اپنی کتاب الرسالہ میں کس نے منظم کیا؟",
+  "question_ur": "فقہ کے چار ماخذوں کو اپنی کتاب الرسالہ میں کس نے منظم کیا؟",
   "question_roman": "Fiqh ke chaar makhaz ko apni kitab Al-Risala mein kis ne munazzam kiya?",
   "options_ur": [
    "امام ابو حنیفہ",
@@ -4994,7 +4994,7 @@
    "Imam al-Shafi'i",
    "Imam Ahmad ibn Hanbal"
   ],
-  "explanation_ur": "امام شافعی نے اپنی کتاب الرسالہ میں چار ماخذ کی فہرست کو منظم کیا۔",
+  "explanation_ur": "امام شافعی نے اپنی کتاب الرسالہ میں چار ماخذوں کی فہرست کو منظم کیا۔",
   "explanation_roman": "Imam al-Shafi'i ne apni kitab Al-Risala mein chaar-makhaz ki fehrist ko munazzam kiya.",
   "post": [
    "zamungkor",
@@ -5085,7 +5085,7 @@
   "options_ur": [
    "عوامی تقریر",
    "تحریری خط",
-   "خفیہ اور تیز طریقے سے بات پہنچانا",
+   "خفیہ اور تیزی سے پہنچایا جانے والا پیغام",
    "بلند آواز سے اعلان"
   ],
   "options_roman": [
@@ -5094,7 +5094,7 @@
    "Khufiya aur tez tareeqe se baat pahunchana",
    "Buland awaz se elaan"
   ],
-  "explanation_ur": "وحی کا لغوی معنی خفیہ اور تیز طریقے سے بات پہنچانا ہے، اور اسلامی اصطلاح میں اس سے مراد اللہ کا پیغام ہے جو کسی نبی تک پہنچایا جاتا ہے۔",
+  "explanation_ur": "وحی کا لغوی معنی خفیہ اور تیزی سے بات پہنچانا ہے، اور اسلامی اصطلاح میں اس سے مراد اللہ کا وہ پیغام ہے جو کسی نبی تک پہنچایا جاتا ہے۔",
   "explanation_roman": "Wahi ka lughvi matlab khufiya aur tez tareeqe se baat pahunchana hai, aur Islami istilah mein is se murad Allah ka paigham hai jo kisi Nabi tak pahunchaya jata hai.",
   "post": [
    "zamungkor",
@@ -5127,7 +5127,7 @@
  },
  {
   "id": "ISL-107",
-  "question_ur": "قرآن پاک، جو اللہ کے الفاظ کے طور پر پڑھا جاتا ہے، وحی کی کس قسم ہے؟",
+  "question_ur": "قرآن پاک کو، جو اللہ کے الفاظ کے طور پر پڑھا جاتا ہے، وحی کی کون سی قسم کہا جاتا ہے؟",
   "question_roman": "Quran Pak, jo Allah ke Alfaaz ke tor par parha jata hai, Wahi ki kis qism hai?",
   "options_ur": [
    "وحی متلو",
@@ -5174,7 +5174,7 @@
  },
  {
   "id": "ISL-108",
-  "question_ur": "حضرت محمد ﷺ پر وحی کا آغاز فرشتے کے قرآن لانے سے پہلے کس صورت میں ہوا؟",
+  "question_ur": "حضرت محمد ﷺ پر وحی کا آغاز فرشتے کے قرآن پاک لانے سے پہلے کس صورت میں ہوا؟",
   "question_roman": "Hazrat Muhammad Sallallahu Alaihi Wasallam par Wahi ka aaghaz, Farishte ke Quran lane se pehle, kis surat mein hua?",
   "options_ur": [
    "کاغذ پر براہ راست لکھائی",
@@ -5221,7 +5221,7 @@
  },
  {
   "id": "ISL-109",
-  "question_ur": "جبرئیل علیہ السلام کا کون سا لقب 'امانت دار روح' کے معنی دیتا ہے؟",
+  "question_ur": "جبرئیل علیہ السلام کے کس لقب کا مطلب 'امانت دار روح' ہے؟",
   "question_roman": "Jibreel Alaihis Salam ka kaun sa laqab 'Amanatdar Rooh' ke matlab deta hai?",
   "options_ur": [
    "روح القدس",
@@ -5235,7 +5235,7 @@
    "Malik",
    "Ridwan"
   ],
-  "explanation_ur": "روح الامین کا مطلب امانت دار روح ہے، جو جبرئیل علیہ السلام کا لقب ہے، جنہوں نے وحی کو امانت کے ساتھ پہنچایا۔",
+  "explanation_ur": "روح الامین کا مطلب 'امانت دار روح' ہے۔ یہ جبرئیل علیہ السلام کا لقب ہے، جنہوں نے وحی کو امانت کے ساتھ پہنچایا۔",
   "explanation_roman": "Ruh al-Amin ka matlab Amanatdar Rooh hai, jo Jibreel Alaihis Salam ka laqab hai, jinhon ne Wahi ko amanat ke sath pahunchaya.",
   "post": [
    "zamungkor",
@@ -5273,7 +5273,7 @@
   "options_ur": [
    "نئی زبان سکھاتے تھے",
    "زکوٰۃ جمع کرتے تھے",
-   "اب تک نازل شدہ قرآن کا دور کرتے تھے",
+   "اب تک نازل شدہ قرآن پاک کا دور کرتے تھے",
    "حج کی قیادت کرتے تھے"
   ],
   "options_roman": [
@@ -5282,7 +5282,7 @@
    "Ab tak nazil shuda Quran ka daur karte the",
    "Hajj ki qayadat karte the"
   ],
-  "explanation_ur": "ہر رمضان میں جبرئیل علیہ السلام نبی ﷺ کے ساتھ اب تک نازل شدہ قرآن کا دور کرتے تھے، اور آخری رمضان میں یہ دور دو مرتبہ ہوا۔",
+  "explanation_ur": "ہر رمضان میں جبرئیل علیہ السلام نبی ﷺ کے ساتھ اب تک نازل شدہ قرآن پاک کا دور کرتے تھے، اور آخری رمضان میں یہ دور دو مرتبہ ہوا۔",
   "explanation_roman": "Har Ramadan mein Jibreel Alaihis Salam Nabi Sallallahu Alaihi Wasallam ke sath ab tak nazil shuda Quran ka daur karte the, aur aakhri Ramadan mein ye daur do martaba hua.",
   "post": [
    "zamungkor",
@@ -5319,8 +5319,8 @@
   "question_roman": "Fatrat al-Wahi, yani Wahi mein waqfe, se kya murad hai?",
   "options_ur": [
    "پہلی وحی کے بعد ایک مدت تک وحی رک جانا",
-   "قرآن کی آخری وحی",
-   "قرآن کا کاغذ پر لکھا جانا",
+   "قرآن پاک کی آخری وحی",
+   "قرآن پاک کا کاغذ پر لکھا جانا",
    "پہلا عوامی خطبہ"
   ],
   "options_roman": [
@@ -5362,7 +5362,7 @@
  },
  {
   "id": "ISL-112",
-  "question_ur": "قرآن پاک کے ایک ساتھ نازل ہونے کے بجائے تھوڑا تھوڑا نازل ہونے کی عام طور پر بیان کی جانے والی حکمت کیا ہے؟",
+  "question_ur": "قرآن پاک کے ایک ہی بار نازل ہونے کے بجائے تھوڑا تھوڑا نازل ہونے کی عام طور پر بیان کی جانے والی حکمت کیا ہے؟",
   "question_roman": "Quran Pak ke aik sath nazil hone ke bajaye thora thora nazil hone ki aam tor par bayan ki jane wali hikmat kya hai?",
   "options_ur": [
    "تاکہ اسے خفیہ رکھا جا سکے",
@@ -5376,7 +5376,7 @@
    "Taake ise jaldi bhula diya jaye",
    "Taake ise qadam ba qadam yaad kiya ja sake, samjha ja sake aur is par amal kiya ja sake"
   ],
-  "explanation_ur": "تدریجی نزول سے قرآن یاد کرنا اور سمجھنا آسان ہوا، اور حالات کے ساتھ ساتھ اس کی ہدایت پر قدم بہ قدم عمل ہو سکا۔",
+  "explanation_ur": "تدریجی نزول سے قرآن پاک یاد کرنا اور سمجھنا آسان ہوا، اور حالات کے ساتھ ساتھ اس کی ہدایت پر قدم بہ قدم عمل ہو سکا۔",
   "explanation_roman": "Tadreeji nuzool se Quran yaad karna aur samajhna aasan hua, aur halaat ke sath sath is ki hidayat par qadam ba qadam amal ho saka.",
   "post": [
    "zamungkor",
@@ -5409,11 +5409,11 @@
  },
  {
   "id": "ISL-113",
-  "question_ur": "پہلی وحی کے وقت حضرت محمد ﷺ غار حرا میں کیا کر رہے تھے؟",
+  "question_ur": "پہلی وحی کے وقت حضرت محمد ﷺ غارِ حرا میں کیا کر رہے تھے؟",
   "question_roman": "Pehli Wahi ke waqt Hazrat Muhammad Sallallahu Alaihi Wasallam Ghaar-e-Hira mein kya kar rahe the?",
   "options_ur": [
    "قافلوں کے ساتھ تجارت",
-   "تنہائی میں عبادت اور غور و فکر میں وقت گزار رہے تھے",
+   "تنہائی میں عبادت اور غور و فکر",
    "قبائلی مجلس میں شرکت",
    "گھر تعمیر کر رہے تھے"
   ],
@@ -5423,7 +5423,7 @@
    "Qabaili majlis mein shirkat",
    "Ghar tameer kar rahe the"
   ],
-  "explanation_ur": "نبی ﷺ غار حرا میں تنہائی میں عبادت اور غور و فکر میں وقت گزارتے تھے، اور وہیں ان پر پہلی وحی آئی۔",
+  "explanation_ur": "نبی ﷺ غارِ حرا میں تنہائی میں عبادت اور غور و فکر کرتے تھے، اور وہیں ان پر پہلی وحی آئی۔",
   "explanation_roman": "Nabi Sallallahu Alaihi Wasallam Ghaar-e-Hira mein tanhai mein ibadat aur ghaur-o-fikr mein waqt guzarte the, aur wahein un par pehli Wahi aayi.",
   "post": [
    "zamungkor",
@@ -5470,7 +5470,7 @@
    "Waraqa bin Nawfal",
    "Abbas bin Abdul Muttalib"
   ],
-  "explanation_ur": "خدیجہ رضی اللہ عنہا نبی ﷺ کو اپنے چچا زاد ورقہ بن نوفل کے پاس لے گئیں، جو عالم آدمی تھے اور انہوں نے آنے والے کو وہی فرشتہ پہچانا جو موسیٰ علیہ السلام کے پاس بھیجا گیا تھا۔",
+  "explanation_ur": "خدیجہ رضی اللہ عنہا نبی ﷺ کو اپنے چچا زاد بھائی ورقہ بن نوفل کے پاس لے گئیں، جو ایک عالم آدمی تھے۔ انہوں نے پہچان لیا کہ آنے والا وہی فرشتہ ہے جو موسیٰ علیہ السلام کے پاس بھیجا گیا تھا۔",
   "explanation_roman": "Khadija Raziallahu Anha Nabi Sallallahu Alaihi Wasallam ko apne chacha zaad Waraqa bin Nawfal ke paas le gayein, jo aalim aadmi the aur unhon ne aane wale ko wohi Farishta pehchana jo Musa Alaihis Salam ke paas bheja gaya tha.",
   "post": [
    "zamungkor",
@@ -5506,7 +5506,7 @@
   "question_ur": "حضرت محمد ﷺ کی زندگی میں کاتبان وحی قرآن پاک کو کن چیزوں پر لکھتے تھے؟",
   "question_roman": "Hazrat Muhammad Sallallahu Alaihi Wasallam ki zindagi mein Katiban-e-Wahi Quran Pak ko kin cheezon par likhte the?",
   "options_ur": [
-   "چمڑے، کھجور کی شاخوں، چپٹے پتھروں اور ہڈیوں پر",
+   "چمڑے، کھجور کی شاخوں، چپٹے پتھروں اور کندھے کی ہڈیوں پر",
    "جلد والی کاغذی کتابوں پر",
    "صرف مٹی کی تختیوں پر",
    "صرف دھاتی پلیٹوں پر"
@@ -5556,7 +5556,7 @@
    "جنگ میں لشکر کی قیادت",
    "زکوٰۃ جمع کرنا",
    "جمعہ کا خطبہ دینا",
-   "نمایاں کاتب وحی کے طور پر وحی لکھنا"
+   "وحی کے نمایاں کاتب کے طور پر وحی لکھنا"
   ],
   "options_roman": [
    "Jang mein lashkar ki qayadat",
@@ -5597,11 +5597,11 @@
  },
  {
   "id": "ISL-117",
-  "question_ur": "کس واقعے کی وجہ سے عمر رضی اللہ عنہ نے ابو بکر رضی اللہ عنہ کے دور خلافت میں قرآن پاک کو ایک جلد میں جمع کرنے کا مشورہ دیا؟",
+  "question_ur": "کس واقعے کی وجہ سے عمر رضی اللہ عنہ نے ابو بکر رضی اللہ عنہ کے دورِ خلافت میں قرآن پاک کو ایک جلد میں جمع کرنے کا مشورہ دیا؟",
   "question_roman": "Kis waqiye ki wajah se Umar Raziallahu Anhu ne Abu Bakr Raziallahu Anhu ke daur-e-khilafat mein Quran Pak ko aik jild mein jama karne ka mashwara diya?",
   "options_ur": [
    "مسجدوں میں آگ لگ گئی تھی",
-   "جنگ یمامہ میں قرآن کے بہت سے حافظ شہید ہو گئے تھے",
+   "جنگِ یمامہ میں قرآن پاک کے بہت سے حافظ شہید ہو گئے تھے",
    "مدینہ میں قحط پڑ گیا تھا",
    "کاتب سفر پر چلے گئے تھے"
   ],
@@ -5611,7 +5611,7 @@
    "Madinah mein qahat par gaya tha",
    "Katib safar par chale gaye the"
   ],
-  "explanation_ur": "یمامہ میں بہت سے حفاظ کے شہید ہونے کے بعد عمر رضی اللہ عنہ کو حفظ شدہ حصوں کے ضائع ہونے کا خدشہ ہوا اور انہوں نے قرآن کو ایک جلد میں جمع کرنے کا مشورہ دیا۔",
+  "explanation_ur": "یمامہ میں بہت سے حفاظ کے شہید ہونے کے بعد عمر رضی اللہ عنہ کو حفظ شدہ حصوں کے ضائع ہونے کا خدشہ ہوا اور انہوں نے قرآن پاک کو ایک جلد میں جمع کرنے کا مشورہ دیا۔",
   "explanation_roman": "Yamama mein bohat se Huffaz ke shaheed hone ke baad Umar Raziallahu Anhu ko hifz shuda hisson ke zaya hone ka khadsha hua aur unhon ne Quran ko aik jild mein jama karne ka mashwara diya.",
   "post": [
    "zamungkor",
@@ -5644,7 +5644,7 @@
  },
  {
   "id": "ISL-118",
-  "question_ur": "عمر رضی اللہ عنہ کی خلافت کے بعد قرآن پاک کے مرتب شدہ صحیفے (الصحف) کس کی حفاظت میں رہے؟",
+  "question_ur": "عمر رضی اللہ عنہ کی خلافت کے بعد قرآن پاک کے مرتب شدہ صحیفے (الصحف) کس کے پاس رہے؟",
   "question_roman": "Umar Raziallahu Anhu ki khilafat ke baad Quran Pak ke murattab shuda Saheefe (Al-Suhuf) kis ki hifazat mein rahe?",
   "options_ur": [
    "عائشہ بنت ابو بکر رضی اللہ عنہا",
@@ -5691,7 +5691,7 @@
  },
  {
   "id": "ISL-119",
-  "question_ur": "ابو بکر رضی اللہ عنہ کے دور میں قرآن پاک کی جمع و تدوین کے دوران زید بن ثابت رضی اللہ عنہ کسی آیت کو قبول کرنے سے پہلے کیا شرط رکھتے تھے؟",
+  "question_ur": "ابو بکر رضی اللہ عنہ کے دور میں قرآن پاک جمع کرتے وقت زید بن ثابت رضی اللہ عنہ کسی آیت کو قبول کرنے سے پہلے کیا شرط رکھتے تھے؟",
   "question_roman": "Abu Bakr Raziallahu Anhu ke daur mein Quran Pak ki jama-o-tadveen ke dauran Zaid bin Sabit Raziallahu Anhu kisi Ayat ko qabool karne se pehle kya shart rakhte the?",
   "options_ur": [
    "گواہوں کی گواہی کے ساتھ تحریری ٹکڑا",
@@ -5738,7 +5738,7 @@
  },
  {
   "id": "ISL-120",
-  "question_ur": "مہم پر موجود مسلمان لشکروں میں قرآن کی قراءت پر شدید اختلافات کے بارے میں عثمان رضی اللہ عنہ کو کس نے خبردار کیا؟",
+  "question_ur": "مہم پر موجود مسلمان لشکروں میں قرآن پاک کی قراءت پر شدید اختلافات کے بارے میں عثمان رضی اللہ عنہ کو کس نے خبردار کیا؟",
   "question_roman": "Muhim par maujood Musalman lashkaron mein Quran ki Qirat par shadeed ikhtilafaat ke bare mein Usman Raziallahu Anhu ko kis ne khabardar kiya?",
   "options_ur": [
    "سلمان فارسی رضی اللہ عنہ",
@@ -5752,7 +5752,7 @@
    "Ammar bin Yasir Raziallahu Anhu",
    "Hudhayfah bin al-Yaman Raziallahu Anhu"
   ],
-  "explanation_ur": "حذیفہ بن الیمان رضی اللہ عنہ نے لشکروں کو مختلف قراءتوں پر جھگڑتے دیکھا اور عثمان رضی اللہ عنہ سے اختلافات بڑھنے سے پہلے کارروائی کی درخواست کی۔",
+  "explanation_ur": "حذیفہ بن الیمان رضی اللہ عنہ نے لشکروں کو مختلف قراءتوں پر جھگڑتے دیکھا اور عثمان رضی اللہ عنہ سے درخواست کی کہ اختلافات بڑھنے سے پہلے کارروائی کریں۔",
   "explanation_roman": "Hudhayfah bin al-Yaman Raziallahu Anhu ne lashkaron ko mukhtalif Qiraton par jhagarte dekha aur Usman Raziallahu Anhu se ikhtilafaat barhne se pehle karrawai ki darkhwast ki.",
   "post": [
    "zamungkor",
@@ -5785,7 +5785,7 @@
  },
  {
   "id": "ISL-121",
-  "question_ur": "جب معیاری متن تیار کرنے والی کمیٹی کسی آیت کے الفاظ پر مختلف ہوئی تو عثمان رضی اللہ عنہ نے اسے کس قبیلے کی بولی میں لکھنے کا حکم دیا؟",
+  "question_ur": "جب معیاری متن تیار کرنے والی کمیٹی میں کسی آیت کے الفاظ پر اختلاف ہوا تو عثمان رضی اللہ عنہ نے اسے کس قبیلے کی بولی میں لکھنے کا حکم دیا؟",
   "question_roman": "Jab mayari matn tayyar karne wali committee kisi Ayat ke alfaaz par mukhtalif hui to Usman Raziallahu Anhu ne use kis qabile ki boli mein likhne ka hukm diya?",
   "options_ur": [
    "ہوازن",
@@ -5799,7 +5799,7 @@
    "Thaqif",
    "Ansar"
   ],
-  "explanation_ur": "عثمان رضی اللہ عنہ نے حکم دیا کہ متنازع الفاظ قریش کی بولی میں لکھے جائیں، کیونکہ قرآن ان کی بولی میں نازل ہوا تھا۔",
+  "explanation_ur": "عثمان رضی اللہ عنہ نے حکم دیا کہ متنازع الفاظ قریش کی بولی میں لکھے جائیں، کیونکہ قرآن پاک ان کی بولی میں نازل ہوا تھا۔",
   "explanation_roman": "Usman Raziallahu Anhu ne hukm diya ke mutanaza alfaaz Quraysh ki boli mein likhe jayein, kyunke Quran un ki boli mein nazil hua tha.",
   "post": [
    "zamungkor",
@@ -5835,10 +5835,10 @@
   "question_ur": "عثمان رضی اللہ عنہ کے دور میں قرآنی متن کو معیاری بنانے کا بنیادی مقصد کیا تھا؟",
   "question_roman": "Usman Raziallahu Anhu ke daur mein Qurani matn ko mayari banane ka bunyadi maqsad kya tha?",
   "options_ur": [
-   "قرآن میں نئے باب شامل کرنا",
-   "قرآن کا دوسری زبانوں میں ترجمہ کرنا",
+   "قرآن پاک میں نئے باب شامل کرنا",
+   "قرآن پاک کا دوسری زبانوں میں ترجمہ کرنا",
    "ایک متفقہ متن محفوظ کرنا اور قراءتوں پر اختلافات ختم کرنا",
-   "مسافروں کے لیے قرآن مختصر کرنا"
+   "مسافروں کے لیے قرآن پاک مختصر کرنا"
   ],
   "options_roman": [
    "Quran mein naye baab shamil karna",
@@ -5879,11 +5879,11 @@
  },
  {
   "id": "ISL-123",
-  "question_ur": "سورتوں کے اندر آیات کی ترتیب کس چیز سے طے ہوئی؟",
+  "question_ur": "سورتوں میں آیات کی ترتیب کس سے طے ہوئی؟",
   "question_roman": "Suraton ke andar Ayaat ki tarteeb kis cheez se tay hui?",
   "options_ur": [
    "حضرت محمد ﷺ کی ہدایت سے، جو کاتبوں کو بتاتے تھے کہ ہر آیت کہاں رکھنی ہے",
-   "ان کے انتقال کے بعد صحابہ کے ووٹ سے",
+   "ان کی وفات کے بعد صحابہ کے ووٹ سے",
    "آیات کے نزول کی ترتیب سے",
    "آیات کی حروف تہجی کی ترتیب سے"
   ],
@@ -5893,7 +5893,7 @@
    "Ayaat ke nuzool ki tarteeb se",
    "Ayaat ki haroof-e-tahajji ki tarteeb se"
   ],
-  "explanation_ur": "جب کوئی آیت نازل ہوتی تو نبی ﷺ کاتبوں کو بتاتے تھے کہ اسے کس سورت میں اور کس آیت کے بعد رکھنا ہے، اس لیے قرآن کی ترتیب نزول کی ترتیب نہیں ہے۔",
+  "explanation_ur": "جب کوئی آیت نازل ہوتی تو نبی ﷺ کاتبوں کو بتاتے تھے کہ اسے کس سورت میں اور کس آیت کے بعد رکھنا ہے، اس لیے قرآن پاک کی ترتیب نزول کی ترتیب نہیں ہے۔",
   "explanation_roman": "Jab koi Ayat nazil hoti to Nabi Sallallahu Alaihi Wasallam katibon ko batate the ke use kis Surah mein aur kis Ayat ke baad rakhna hai, is liye Quran ki tarteeb nuzool ki tarteeb nahi hai.",
   "post": [
    "zamungkor",
@@ -5926,7 +5926,7 @@
  },
  {
   "id": "ISL-124",
-  "question_ur": "حضرت محمد ﷺ کی زندگی میں قرآن پاک کن دو ذریعوں سے مل کر محفوظ ہوا؟",
+  "question_ur": "حضرت محمد ﷺ کی زندگی میں قرآن پاک کن دو ذریعوں سے محفوظ رکھا گیا؟",
   "question_roman": "Hazrat Muhammad Sallallahu Alaihi Wasallam ki zindagi mein Quran Pak kin do zariyon se mil kar mehfooz hua?",
   "options_ur": [
    "چھاپہ خانوں اور کتب خانوں سے",
@@ -5940,7 +5940,7 @@
    "Masjid mein patthar ki kutbon se",
    "Sahaba ke hifz aur katibon ki tehreer se"
   ],
-  "explanation_ur": "بہت سے صحابہ نے پورا قرآن حفظ کیا، اور کاتبوں نے ہر وحی کو لکھ لیا، اس لیے قرآن شروع سے ہی حافظے اور تحریر دونوں میں محفوظ رہا۔",
+  "explanation_ur": "بہت سے صحابہ نے پورا قرآن پاک حفظ کیا، اور کاتبوں نے ہر وحی کو لکھ لیا، اس لیے قرآن پاک شروع سے ہی حافظے اور تحریر دونوں میں محفوظ رہا۔",
   "explanation_roman": "Bohat se Sahaba ne pura Quran hifz kiya, aur katibon ne har Wahi ko likh liya, is liye Quran shuru se hi hafze aur tehreer dono mein mehfooz raha.",
   "post": [
    "zamungkor",
@@ -6020,7 +6020,7 @@
  },
  {
   "id": "ISL-126",
-  "question_ur": "مدنی سورتوں میں، جو ہجرت کے بعد نازل ہوئیں، بنیادی طور پر کون سے مضامین آتے ہیں؟",
+  "question_ur": "مدنی سورتوں میں، جو ہجرت کے بعد نازل ہوئیں، بنیادی طور پر کون سے مضامین بیان ہوتے ہیں؟",
   "question_roman": "Madani Suraton mein, jo Hijrat ke baad nazil huin, bunyadi tor par kaun se mazameen aate hain?",
   "options_ur": [
    "صرف پچھلی قوموں کے قصے",
@@ -6034,7 +6034,7 @@
    "Ibadat, khandan, tijarat aur samaji zindagi ke tafseeli ahkaam",
    "Sirf mukhtasar qasmein aur tanbeehat"
   ],
-  "explanation_ur": "مدنی سورتوں میں مسلم معاشرے کی زندگی کے لیے تفصیلی ہدایت ہے، جن میں عبادت، خاندان، تجارت اور دوسروں سے تعلقات کے احکام شامل ہیں۔",
+  "explanation_ur": "مدنی سورتوں میں مسلم معاشرے کی زندگی کے لیے تفصیلی ہدایت ہے، جس میں عبادت، خاندان، تجارت اور دوسروں سے تعلقات کے احکام شامل ہیں۔",
   "explanation_roman": "Madani Suraton mein Muslim muashre ki zindagi ke liye tafseeli hidayat hai, jin mein ibadat, khandan, tijarat aur doosron se talluqaat ke ahkaam shamil hain.",
   "post": [
    "zamungkor",
@@ -6081,7 +6081,7 @@
    "Biradari ke jhagron par taveel behsein",
    "Halal aur haram khanon ki tafseeli fehristein"
   ],
-  "explanation_ur": "مکی سورتوں میں عام طور پر مختصر اور پراثر آیات اور قسمیں ہوتی ہیں جو دل کو متاثر کرتی ہیں، جبکہ مدنی آیات اکثر طویل اور زیادہ تفصیلی ہوتی ہیں۔",
+  "explanation_ur": "مکی سورتوں میں عام طور پر مختصر اور پرزور آیات اور قسمیں ہوتی ہیں، جو دل کو متاثر کرتی ہیں، جبکہ مدنی آیات اکثر طویل اور زیادہ تفصیلی ہوتی ہیں۔",
   "explanation_roman": "Makki Suraton mein aam tor par mukhtasar aur pur-asar Ayaat aur qasmein hoti hain jo dil ko mutasir karti hain, jabke Madani Ayaat aksar taveel aur ziyada tafseeli hoti hain.",
   "post": [
    "zamungkor",
@@ -6114,7 +6114,7 @@
  },
  {
   "id": "ISL-128",
-  "question_ur": "'یا ایہا الناس' یعنی اے لوگو، کا خطاب عام طور پر کس قسم کی سورت میں آتا ہے؟",
+  "question_ur": "'یا ایہا الناس' یعنی 'اے لوگو' کا خطاب عام طور پر کس قسم کی سورت میں آتا ہے؟",
   "question_roman": "'Ya Ayyuhannas' yani Ae logo, ka khitab aam tor par kis qism ki Surah mein aata hai?",
   "options_ur": [
    "مدنی سورت",
@@ -6128,7 +6128,7 @@
    "Sirf warasat ke bare mein Surah",
    "Makki Surah"
   ],
-  "explanation_ur": "'اے لوگو' کا خطاب عام طور پر مکی سورتوں میں ہے، جو سب لوگوں کو ایمان کی دعوت دیتی ہیں، جبکہ مدنی سورتوں میں زیادہ تر مومنوں کو خطاب کیا جاتا ہے۔",
+  "explanation_ur": "'اے لوگو' کا خطاب عام طور پر مکی سورتوں میں آتا ہے، جو سب لوگوں کو ایمان کی دعوت دیتی ہیں، جبکہ مدنی سورتوں میں زیادہ تر مومنوں سے خطاب کیا جاتا ہے۔",
   "explanation_roman": "'Ae logo' ka khitab aam tor par Makki Suraton mein hai, jo sab logon ko iman ki dawat deti hain, jabke Madani Suraton mein ziyada tar mominon ko khitab kiya jata hai.",
   "post": [
    "zamungkor",
@@ -6161,7 +6161,7 @@
  },
  {
   "id": "ISL-129",
-  "question_ur": "'یا ایہا الذین آمنوا' یعنی اے ایمان والو، کا خطاب عام طور پر کس قسم کی سورت میں آتا ہے؟",
+  "question_ur": "'یا ایہا الذین آمنوا' یعنی 'اے ایمان والو' کا خطاب عام طور پر کس قسم کی سورت میں آتا ہے؟",
   "question_roman": "'Ya Ayyuhalladhina Amanu' yani Ae iman walo, ka khitab aam tor par kis qism ki Surah mein aata hai?",
   "options_ur": [
    "مکی سورت",
@@ -6175,7 +6175,7 @@
    "Nabuwwat se pehle nazil hone wali Surah",
    "Sirf Anbiya ke qisson ke bare mein Surah"
   ],
-  "explanation_ur": "'اے ایمان والو' کا خطاب عام طور پر مدنی سورتوں میں ہے، جو قائم شدہ مومن برادری کو ان کے فرائض میں رہنمائی دیتی ہیں۔",
+  "explanation_ur": "'اے ایمان والو' کا خطاب عام طور پر مدنی سورتوں میں آتا ہے، جو قائم شدہ مومن جماعت کو ان کے فرائض میں رہنمائی دیتی ہیں۔",
   "explanation_roman": "'Ae iman walo' ka khitab aam tor par Madani Suraton mein hai, jo qaim shuda momin biradari ko un ke faraiz mein rehnumai deti hain.",
   "post": [
    "zamungkor",
@@ -6208,12 +6208,12 @@
  },
  {
   "id": "ISL-130",
-  "question_ur": "علماء مکی اور مدنی سورتوں کی تعریف بنیادی طور پر کس چیز سے کرتے ہیں؟",
+  "question_ur": "علماء مکی اور مدنی سورتوں کی تعریف بنیادی طور پر کس بات سے کرتے ہیں؟",
   "question_roman": "Ulama Makki aur Madani Suraton ki tareef bunyadi tor par kis cheez se karte hain?",
   "options_ur": [
    "سورت کی لمبائی سے",
    "سورت کی زبان سے",
-   "ہجرت کے حوالے سے نزول کے وقت سے",
+   "ہجرت کے لحاظ سے نزول کے وقت سے",
    "سورت کی آیات کی تعداد سے"
   ],
   "options_roman": [
@@ -6255,7 +6255,7 @@
  },
  {
   "id": "ISL-131",
-  "question_ur": "ان سورتوں میں سے کون سی مدنی ہے، جو ہجرت کے بعد نازل ہوئی اور جس میں مسلم برادری کے لیے تفصیلی احکام ہیں؟",
+  "question_ur": "ان میں سے کون سی سورت مدنی ہے، جو ہجرت کے بعد نازل ہوئی اور جس میں مسلمانوں کے لیے تفصیلی احکام ہیں؟",
   "question_roman": "In Suraton mein se kaun si Madani hai, jo Hijrat ke baad nazil hui aur jis mein Muslim biradari ke liye tafseeli ahkaam hain?",
   "options_ur": [
    "سورہ البقرہ",
@@ -6269,7 +6269,7 @@
    "Surah Yasin",
    "Surah Al-Mulk"
   ],
-  "explanation_ur": "سورہ البقرہ مدنی سورت ہے جس میں تفصیلی احکام ہیں، جبکہ الکہف، یٰسین اور الملک مکی سورتیں ہیں۔",
+  "explanation_ur": "سورہ البقرہ مدنی سورت ہے جس میں تفصیلی احکام ہیں، جبکہ سورہ الکہف، سورہ یٰسین اور سورہ الملک مکی سورتیں ہیں۔",
   "explanation_roman": "Surah Al-Baqarah Madani Surah hai jis mein tafseeli ahkaam hain, jabke Al-Kahf, Yasin aur Al-Mulk Makki Suratein hain.",
   "post": [
    "zamungkor",
@@ -6302,13 +6302,13 @@
  },
  {
   "id": "ISL-132",
-  "question_ur": "قرآن پاک کی جز (پارے) میں تقسیم کا بنیادی مقصد قاری کی کس چیز میں مدد کرنا ہے؟",
+  "question_ur": "قرآن پاک کو پاروں میں تقسیم کرنے کا بنیادی مقصد کیا ہے؟",
   "question_roman": "Quran Pak ki Juz (Pare) mein taqseem ka bunyadi maqsad qari ki kis cheez mein madad karna hai?",
   "options_ur": [
    "صرف آخری سورتیں حفظ کرنا",
-   "صرف رمضان میں قرآن پڑھنا",
-   "قرآن کا اردو میں ترجمہ کرنا",
-   "ہر روز ایک جز پڑھ کر ایک مہینے میں پورا قرآن مکمل کرنا"
+   "صرف رمضان میں قرآن پاک پڑھنا",
+   "قرآن پاک کا اردو میں ترجمہ کرنا",
+   "ہر روز ایک پارہ پڑھ کر ایک مہینے میں پورا قرآن پاک مکمل کرنا"
   ],
   "options_roman": [
    "Sirf aakhri Suratein hifz karna",
@@ -6316,7 +6316,7 @@
    "Quran ka Urdu mein tarjuma karna",
    "Har roz aik Juz parh kar aik mahine mein pura Quran mukammal karna"
   ],
-  "explanation_ur": "قرآن پاک 30 برابر اجزاء میں تقسیم ہے، تاکہ ہر روز ایک جز پڑھنے سے ایک مہینے میں پورا قرآن مکمل ہو جائے، اور ہر جز مزید 2 حزب میں تقسیم ہے۔",
+  "explanation_ur": "قرآن پاک 30 برابر پاروں میں تقسیم ہے، تاکہ ہر روز ایک پارہ پڑھنے سے ایک مہینے میں پورا قرآن پاک مکمل ہو جائے، اور ہر پارہ مزید 2 حزبوں میں تقسیم ہے۔",
   "explanation_roman": "Quran Pak 30 barabar Ajza mein taqseem hai, taake har roz aik Juz parhne se aik mahine mein pura Quran mukammal ho jaye, aur har Juz mazeed 2 Hizb mein taqseem hai.",
   "post": [
    "zamungkor",
@@ -6353,9 +6353,9 @@
   "question_roman": "Chhape hue Mushaf mein Ruku kya hai?",
   "options_ur": [
    "صرف نماز میں جھکنے کی حالت",
-   "آیات کا ایک حصہ جسے تلاوت کو مناسب ٹکڑوں میں تقسیم کرنے کے لیے نشان زد کیا جاتا ہے",
-   "ایک مکمل جز",
-   "سورت کا عنوان صفحہ"
+   "آیات کا ایک نشان زد حصہ، جو تلاوت کو آسان حصوں میں تقسیم کرتا ہے",
+   "ایک مکمل پارہ",
+   "سورت کا سرورق"
   ],
   "options_roman": [
    "Sirf namaz mein jhukne ki haalat",
@@ -6363,7 +6363,7 @@
    "Aik mukammal Juz",
    "Surah ka unwan safha"
   ],
-  "explanation_ur": "چھپے ہوئے مصحف میں رکوع آیات کا ایک نشان زد حصہ ہے جو متن کو تلاوت کے لیے ٹکڑوں میں تقسیم کرتا ہے، اور قرآن پاک میں ایسے 558 حصے ہیں۔",
+  "explanation_ur": "چھپے ہوئے مصحف میں رکوع آیات کا ایک نشان زد حصہ ہے، جو متن کو تلاوت کے لیے حصوں میں تقسیم کرتا ہے، اور قرآن پاک میں ایسے 558 حصے ہیں۔",
   "explanation_roman": "Chhape hue Mushaf mein Ruku Ayaat ka aik nishan zad hissa hai jo matn ko tilawat ke liye tukron mein taqseem karta hai, aur Quran Pak mein aise 558 hisse hain.",
   "post": [
    "zamungkor",
@@ -6396,7 +6396,7 @@
  },
  {
   "id": "ISL-134",
-  "question_ur": "قرآن پاک کو کتنی منزلوں میں تقسیم کیا گیا ہے، تاکہ ہر روز ایک منزل پڑھ کر ایک ہفتے میں مکمل کیا جا سکے؟",
+  "question_ur": "قرآن پاک کو کتنی منزلوں میں تقسیم کیا گیا ہے، تاکہ ہر روز ایک منزل پڑھ کر ایک ہفتے میں پورا قرآن پاک مکمل کیا جا سکے؟",
   "question_roman": "Quran Pak ko kitni Manzilon mein taqseem kiya gaya hai, taake har roz aik Manzil parh kar aik hafte mein mukammal kiya ja sake?",
   "options_ur": [
    "5",
@@ -6410,7 +6410,7 @@
    "7",
    "14"
   ],
-  "explanation_ur": "قرآن پاک 7 منزلوں میں تقسیم ہے، تاکہ ہر روز ایک منزل پڑھنے سے سات دنوں میں پورا قرآن مکمل ہو جائے۔",
+  "explanation_ur": "قرآن پاک 7 منزلوں میں تقسیم ہے، تاکہ ہر روز ایک منزل پڑھنے سے سات دنوں میں پورا قرآن پاک مکمل ہو جائے۔",
   "explanation_roman": "Quran Pak 7 Manzilon mein taqseem hai, taake har roz aik Manzil parhne se saat dinon mein pura Quran mukammal ho jaye.",
   "post": [
    "zamungkor",
@@ -6443,7 +6443,7 @@
  },
  {
   "id": "ISL-135",
-  "question_ur": "قرآن پاک کے ہر جز (پارے) کو کتنے حزبوں میں تقسیم کیا گیا ہے؟",
+  "question_ur": "قرآن پاک کے ہر پارے کو کتنے حزبوں میں تقسیم کیا گیا ہے؟",
   "question_roman": "Quran Pak ke har Juz (Paray) ko kitne Hizbon mein taqseem kiya gaya hai?",
   "options_ur": [
    "2",
@@ -6457,7 +6457,7 @@
    "7",
    "10"
   ],
-  "explanation_ur": "قرآن پاک کے ہر جز کو 2 حزبوں میں تقسیم کیا گیا ہے، اس طرح کل 60 حزب ہیں۔",
+  "explanation_ur": "قرآن پاک کے ہر پارے کو 2 حزبوں میں تقسیم کیا گیا ہے، اس طرح کل 60 حزب ہیں۔",
   "explanation_roman": "Quran Pak ke har Juz ko 2 Hizbon mein taqseem kiya gaya hai, is tarah kul 60 Hizb hain.",
   "post": [
    "zamungkor",
@@ -6504,7 +6504,7 @@
    "3",
    "4"
   ],
-  "explanation_ur": "سورہ البقرہ قرآن پاک کی دوسری سورت ہے، جو سورہ الفاتحہ کے بعد ہے۔",
+  "explanation_ur": "سورہ البقرہ قرآن پاک کی دوسری سورت ہے، جو سورہ الفاتحہ کے بعد آتی ہے۔",
   "explanation_roman": "Surah Al-Baqarah Quran Pak ki dusri Surah hai, jo Surah Al-Fatiha ke baad hai.",
   "post": [
    "zamungkor",
@@ -6537,7 +6537,7 @@
  },
  {
   "id": "ISL-137",
-  "question_ur": "لفظ البقرہ کا مطلب کیا ہے؟",
+  "question_ur": "'البقرہ' کا مطلب کیا ہے؟",
   "question_roman": "Lafz Al-Baqarah ka matlab kya hai?",
   "options_ur": [
    "گھوڑا",
@@ -6631,7 +6631,7 @@
  },
  {
   "id": "ISL-139",
-  "question_ur": "لفظ النور کا مطلب کیا ہے؟",
+  "question_ur": "'النور' کا مطلب کیا ہے؟",
   "question_roman": "Lafz An-Nur ka matlab kya hai?",
   "options_ur": [
    "چاند",
@@ -6645,7 +6645,7 @@
    "Aag",
    "Roshni"
   ],
-  "explanation_ur": "النور کا مطلب 'روشنی' ہے، اور اس سورت کا نام اس میں موجود نور والی آیت کی وجہ سے ہے۔",
+  "explanation_ur": "النور کا مطلب 'روشنی' ہے، اور اس سورت کا نام اس میں موجود آیتِ نور کی وجہ سے رکھا گیا ہے۔",
   "explanation_roman": "An-Nur ka matlab 'Roshni' hai, aur is Surah ka naam is mein maujood Nur wali Ayat ki wajah se hai.",
   "post": [
    "zamungkor",
@@ -6678,7 +6678,7 @@
  },
  {
   "id": "ISL-140",
-  "question_ur": "کون سی سورت میں ایک نبی کا مکمل قصہ شروع سے آخر تک ایک ہی سورت میں بیان ہوا ہے؟",
+  "question_ur": "کس سورت میں ایک نبی کا مکمل قصہ شروع سے آخر تک بیان ہوا ہے؟",
   "question_roman": "Kaun si Surah mein aik Nabi ka mukammal qissa shuru se aakhir tak aik hi Surah mein bayan hua hai?",
   "options_ur": [
    "سورہ ہود",
@@ -6692,7 +6692,7 @@
    "Surah Yunus",
    "Surah Nuh"
   ],
-  "explanation_ur": "سورہ یوسف میں حضرت یوسف علیہ السلام کا مکمل قصہ ان کے بچپن سے مصر میں ان کے زمانے تک بیان ہوا ہے۔",
+  "explanation_ur": "سورہ یوسف میں حضرت یوسف علیہ السلام کا مکمل قصہ ان کے بچپن سے لے کر مصر میں گزرے ان کے زمانے تک بیان ہوا ہے۔",
   "explanation_roman": "Surah Yusuf mein Hazrat Yusuf Alaihis Salam ka mukammal qissa un ke bachpan se Misr mein un ke zamane tak bayan hua hai.",
   "post": [
    "zamungkor",
@@ -6819,7 +6819,7 @@
  },
  {
   "id": "ISL-143",
-  "question_ur": "لفظ النمل کا مطلب کیا ہے؟",
+  "question_ur": "'النمل' کا مطلب کیا ہے؟",
   "question_roman": "Lafz An-Naml ka matlab kya hai?",
   "options_ur": [
    "چیونٹی",
@@ -6833,7 +6833,7 @@
    "Makri",
    "Parinda"
   ],
-  "explanation_ur": "النمل کا مطلب 'چیونٹی' ہے، اور اس سورت کا نام اس میں ذکر کردہ چیونٹی کی وجہ سے ہے۔",
+  "explanation_ur": "النمل کا مطلب 'چیونٹی' ہے، اور اس سورت کا نام اس میں ذکر کردہ چیونٹی کی وجہ سے رکھا گیا ہے۔",
   "explanation_roman": "An-Naml ka matlab 'Chiunti' hai, aur is Surah ka naam is mein zikr kardah chiunti ki wajah se hai.",
   "post": [
    "zamungkor",
@@ -7054,7 +7054,7 @@
  },
  {
   "id": "ISL-148",
-  "question_ur": "لفظ الحدید کا مطلب کیا ہے؟",
+  "question_ur": "'الحدید' کا مطلب کیا ہے؟",
   "question_roman": "Lafz Al-Hadid ka matlab kya hai?",
   "options_ur": [
    "سونا",
@@ -7068,7 +7068,7 @@
    "Taanba",
    "Loha"
   ],
-  "explanation_ur": "الحدید کا مطلب 'لوہا' ہے، اور اس سورت کا نام اس میں لوہے کے ذکر کی وجہ سے ہے۔",
+  "explanation_ur": "الحدید کا مطلب 'لوہا' ہے، اور اس سورت کا نام اس میں لوہے کے ذکر کی وجہ سے رکھا گیا ہے۔",
   "explanation_roman": "Al-Hadid ka matlab 'Loha' hai, aur is Surah ka naam is mein lohe ke zikr ki wajah se hai.",
   "post": [
    "zamungkor",
@@ -7195,7 +7195,7 @@
  },
  {
   "id": "ISL-151",
-  "question_ur": "سورہ النمل میں بسم اللہ سورت کے متن کے اندر کس آیت کا حصہ ہے؟",
+  "question_ur": "سورہ النمل کے متن میں بسم اللہ کس آیت کا حصہ ہے؟",
   "question_roman": "Surah An-Naml mein Bismillah Surah ke matn ke andar kis Ayat ka hissa hai?",
   "options_ur": [
    "آیت 30",
@@ -7209,7 +7209,7 @@
    "Ayat 40",
    "Ayat 25"
   ],
-  "explanation_ur": "سورہ النمل کے اندر بسم اللہ آیت 30 کا حصہ ہے، جو ملکہ سبا کو لکھے گئے خط میں ہے۔",
+  "explanation_ur": "سورہ النمل میں بسم اللہ آیت 30 کا حصہ ہے، جو ملکہ سبا کو لکھے گئے خط میں آئی ہے۔",
   "explanation_roman": "Surah An-Naml ke andar Bismillah Ayat 30 ka hissa hai, jo Malika Saba ko likhe gaye khat mein hai.",
   "post": [
    "zamungkor",
@@ -7242,7 +7242,7 @@
  },
  {
   "id": "ISL-152",
-  "question_ur": "لفظ الفیل کا مطلب کیا ہے؟",
+  "question_ur": "'الفیل' کا مطلب کیا ہے؟",
   "question_roman": "Lafz Al-Fil ka matlab kya hai?",
   "options_ur": [
    "گھوڑا",
@@ -7256,7 +7256,7 @@
    "Oont",
    "Sher"
   ],
-  "explanation_ur": "الفیل کا مطلب 'ہاتھی' ہے، اور اس سورت کا نام مکہ پر چڑھائی کرنے والے ہاتھیوں کے لشکر کی وجہ سے ہے۔",
+  "explanation_ur": "الفیل کا مطلب 'ہاتھی' ہے، اور اس سورت کا نام مکہ پر چڑھائی کرنے والے ہاتھیوں کے لشکر کی وجہ سے رکھا گیا ہے۔",
   "explanation_roman": "Al-Fil ka matlab 'Haathi' hai, aur is Surah ka naam Makkah par charhai karne wale haathiyon ke lashkar ki wajah se hai.",
   "post": [
    "zamungkor",
@@ -7383,7 +7383,7 @@
  },
  {
   "id": "ISL-155",
-  "question_ur": "معیاری پاکستانی نصابی کتب کے مطابق قرآن پاک میں سجدہ تلاوت کی آیات کتنی ہیں؟",
+  "question_ur": "معیاری پاکستانی نصابی کتب کے مطابق قرآن پاک میں سجدہ تلاوت والی آیات کتنی ہیں؟",
   "question_roman": "Mayari Pakistani nisabi kutub ke mutabiq Quran Pak mein Sajdah Tilawat ki Ayaat kitni hain?",
   "options_ur": [
    "11",
@@ -7397,7 +7397,7 @@
    "17",
    "20"
   ],
-  "explanation_ur": "قرآن پاک میں سجدہ تلاوت کی 14 آیات ہیں، جن کی تلاوت یا سماعت پر سجدہ کیا جاتا ہے۔",
+  "explanation_ur": "قرآن پاک میں سجدہ تلاوت والی 14 آیات ہیں، جن کی تلاوت یا سماعت پر سجدہ کیا جاتا ہے۔",
   "explanation_roman": "Quran Pak mein Sajdah Tilawat ki 14 Ayaat hain, jin ki tilawat ya samaat par Sajdah kiya jata hai.",
   "post": [
    "zamungkor",
@@ -7477,7 +7477,7 @@
  },
  {
   "id": "ISL-157",
-  "question_ur": "لفظ الاخلاص کا مطلب کیا ہے؟",
+  "question_ur": "'الاخلاص' کا مطلب کیا ہے؟",
   "question_roman": "Lafz Al-Ikhlas ka matlab kya hai?",
   "options_ur": [
    "خلوص",
@@ -7491,7 +7491,7 @@
    "Shukr",
    "Bahaduri"
   ],
-  "explanation_ur": "الاخلاص کا مطلب خلوص ہے، اور یہ سورت اللہ کی خالص توحید سکھاتی ہے۔",
+  "explanation_ur": "الاخلاص کا مطلب 'خلوص' ہے، اور یہ سورت اللہ کی خالص توحید سکھاتی ہے۔",
   "explanation_roman": "Al-Ikhlas ka matlab Khuloos hai, aur yeh Surah Allah ki khaalis Tauheed sikhati hai.",
   "post": [
    "zamungkor",
@@ -7679,7 +7679,7 @@
    "Ravi aur musannif",
    "Sawal aur jawab"
   ],
-  "explanation_ur": "ہر حدیث کی روایت میں اسناد ہوتی ہے، یعنی راویوں کی زنجیر، اور متن ہوتا ہے، یعنی روایت کا اصل مضمون۔",
+  "explanation_ur": "ہر حدیث کی روایت کے دو حصے ہوتے ہیں: اسناد، یعنی راویوں کی زنجیر، اور متن، یعنی روایت کا اصل متن اور مضمون۔",
   "explanation_roman": "Har Hadith ki riwayat mein Isnad hoti hai, yani raviyon ki zanjeer, aur Matn hota hai, yani riwayat ka asal mazmoon.",
   "post": [
    "zamungkor",
@@ -7712,7 +7712,7 @@
  },
  {
   "id": "ISL-162",
-  "question_ur": "لغوی (لفظی) معنی کے لحاظ سے عربی لفظ حدیث کا کیا مطلب ہے؟",
+  "question_ur": "عربی لفظ 'حدیث' کا لغوی معنی کیا ہے؟",
   "question_roman": "Lughvi (dictionary) matlab ke lihaaz se Arbi lafz Hadith ka kya matlab hai?",
   "options_ur": [
    "پرانا اور بھولا ہوا واقعہ",
@@ -7726,7 +7726,7 @@
    "Nayi baat, guftagu ya khabar",
    "Qazi ka faisla"
   ],
-  "explanation_ur": "لغوی معنی میں حدیث کا مطلب ہے نئی بات، گفتگو یا خبر؛ اصطلاحی معنی میں اس سے نبی کریم ﷺ سے متعلق روایات مراد ہوتی ہیں۔",
+  "explanation_ur": "لغوی معنی میں حدیث کا مطلب نئی بات، گفتگو یا خبر ہے۔ اصطلاحی معنی میں اس سے نبی کریم ﷺ سے متعلق روایات مراد ہوتی ہیں۔",
   "explanation_roman": "Lughvi matlab mein Hadith ka matlab hai nayi baat, guftagu ya khabar; istilahi matlab mein is se Nabi Kareem Sallallahu Alaihi Wasallam se mutaliq riwayat murad hoti hain.",
   "post": [
    "zamungkor",
@@ -7765,7 +7765,7 @@
    "حدیث وہ روایت ہے جو نبی ﷺ کے طریقے کو بیان کرتی ہے، جبکہ سنت وہ طریقہ اور عمل خود ہے",
    "حدیث صرف عبادت کے بارے میں ہے، جبکہ سنت صرف روزمرہ زندگی کے بارے میں ہے",
    "حدیث تحریری ہوتی ہے، جبکہ سنت کبھی تحریری نہیں ہوتی",
-   "حدیث بعد میں آئی، جبکہ سنت قرآن سے پہلے آئی"
+   "حدیث بعد میں آئی، جبکہ سنت قرآن پاک سے پہلے آئی"
   ],
   "options_roman": [
    "Hadith woh riwayat hai jo Nabi ke tareeqe ko bayan karti hai, jabke Sunnah woh tareeqa aur amal khud hai",
@@ -7961,7 +7961,7 @@
    "Fi'li",
    "Qudsi"
   ],
-  "explanation_ur": "تقریری حدیث نبی کریم ﷺ کی اس خاموش منظوری پر مبنی ہوتی ہے جو آپ نے اپنے سامنے کہی یا کی گئی بات پر بغیر اعتراض کے دی ہو۔",
+  "explanation_ur": "تقریری حدیث نبی کریم ﷺ کی اس خاموش منظوری پر مبنی ہوتی ہے جو آپ نے اپنے سامنے کہی گئی بات یا کیے گئے کام پر بغیر اعتراض کے دی ہو۔",
   "explanation_roman": "Taqriri Hadith Nabi Kareem Sallallahu Alaihi Wasallam ki us khamosh manzoori par mabni hoti hai jo aap ne apne samne kahi ya ki gayi baat par baghair aitraz ke di ho.",
   "post": [
    "zamungkor",
@@ -8135,12 +8135,12 @@
  },
  {
   "id": "ISL-171",
-  "question_ur": "حدیث کے صحیح قرار پائے جانے کے لیے درج ذیل میں سے کون سی شرط ہے؟",
+  "question_ur": "حدیث کو صحیح قرار دینے کے لیے مندرجہ ذیل میں سے کون سی شرط ہے؟",
   "question_roman": "Hadith ke Sahih qarar paye jane ke liye darj zail mein se kaun si shart hai?",
   "options_ur": [
    "عادل اور ضابط راویوں کی مسلسل زنجیر، جو شذوذ اور خفی علت سے پاک ہو",
    "ایسی زنجیر جس میں بیچ میں ایک راوی چھوٹ گیا ہو",
-   "ایسے راوی جن کے قابلِ بھروسا ہونے کی معلومات نہ ہو",
+   "ایسے راوی جن کا قابلِ بھروسا ہونا معلوم نہ ہو",
    "ایسا متن جو زیادہ مضبوط روایت کے خلاف ہو"
   ],
   "options_roman": [
@@ -8149,7 +8149,7 @@
    "Aise ravi jin ki qabil-e-bharosa hone ki maloomat na ho",
    "Aisa matn jo ziyada mazboot riwayat ke khilaf ho"
   ],
-  "explanation_ur": "صحیح حدیث کے لیے مسلسل زنجیر، عادل اور ضابط راوی، اور شذوذ اور خفی علت سے پاک ہونا ضروری ہے۔ حسن حدیث اس سے ملتی جلتی ہے لیکن اس کے راوی ضبط میں کچھ کم ہوتے ہیں۔",
+  "explanation_ur": "صحیح حدیث کے لیے مسلسل زنجیر، عادل اور ضابط راوی، اور شذوذ اور خفی علت سے پاک ہونا ضروری ہے۔ حسن حدیث اس سے ملتی جلتی ہے، لیکن اس کے راوی ضبط میں کچھ کم ہوتے ہیں۔",
   "explanation_roman": "Sahih Hadith ke liye musalsal zanjeer, adil aur zabt wale ravi, aur Shudhudh aur khafi illat se pak hona zaroori hai. Hasan Hadith is se milti julti hai lekin us ke ravi zabt mein kuch kam hote hain.",
   "post": [
    "zamungkor",
@@ -8196,7 +8196,7 @@
    "Mashhur",
    "Mursal"
   ],
-  "explanation_ur": "مرسل روایت میں خلا ہوتا ہے کیونکہ تابعی زنجیر سے صحابی کو چھوڑ دیتا ہے، اس لیے اسے ضعیف روایات میں شمار کیا جاتا ہے۔",
+  "explanation_ur": "مرسل روایت میں خلا ہوتا ہے، کیونکہ تابعی زنجیر سے صحابی کو چھوڑ دیتا ہے، اس لیے اسے ضعیف روایات میں شمار کیا جاتا ہے۔",
   "explanation_roman": "Mursal riwayat mein khala hota hai kyunke Tabi'i zanjeer se Sahabi ko chhod deta hai, is liye ise Da'if riwayat mein shumar kiya jata hai.",
   "post": [
    "zamungkor",
@@ -8229,7 +8229,7 @@
  },
  {
   "id": "ISL-173",
-  "question_ur": "وہ حدیث جس کی زنجیر سے دو یا زیادہ مسلسل راوی غائب ہوں، اسے کیا کہتے ہیں؟",
+  "question_ur": "وہ حدیث جس کی زنجیر سے دو یا زیادہ مسلسل راوی چھوٹ گئے ہوں، اسے کیا کہتے ہیں؟",
   "question_roman": "Woh Hadith jis ki zanjeer se do ya ziyada musalsal ravi ghaib hon, use kya kehte hain?",
   "options_ur": [
    "مرسل",
@@ -8243,7 +8243,7 @@
    "Mashhur",
    "Marfu"
   ],
-  "explanation_ur": "معضل میں زنجیر سے دو یا زیادہ مسلسل راوی چھوٹے ہوتے ہیں۔ اگر صرف ایک راوی غائب ہو تو روایت کو منقطع کہتے ہیں۔",
+  "explanation_ur": "معضل میں زنجیر سے دو یا زیادہ مسلسل راوی چھوٹے ہوتے ہیں۔ اگر صرف ایک راوی چھوٹا ہو تو روایت کو منقطع کہتے ہیں۔",
   "explanation_roman": "Mu'dal mein zanjeer se do ya ziyada musalsal ravi chhoote hote hain. Agar sirf aik ravi ghaib ho to riwayat ko Munqati kehte hain.",
   "post": [
    "zamungkor",
@@ -8276,7 +8276,7 @@
  },
  {
   "id": "ISL-174",
-  "question_ur": "جب کوئی راوی مبہم الفاظ استعمال کر کے زنجیر کے خلا کو چھپائے اور ایسا ظاہر کرے کہ اس نے کسی ایسے شخص سے سیدھا سنا ہے جس سے وہ ملا ہی نہیں، تو اس عمل کو کیا کہتے ہیں؟",
+  "question_ur": "جب کوئی راوی مبہم الفاظ استعمال کر کے زنجیر کے خلا کو چھپائے اور ایسا ظاہر کرے کہ اس نے کسی ایسے شخص سے براہ راست سنا ہے جس سے وہ ملا ہی نہیں، تو اس عمل کو کیا کہتے ہیں؟",
   "question_roman": "Jab koi ravi mubham alfaz istemal kar ke zanjeer ke khala ko chhupaye aur aisa zahir kare ke us ne kisi aise shakhs se seedha suna hai jis se woh mila hi nahi, to is amal ko kya kehte hain?",
   "options_ur": [
    "تفسیر",
@@ -8323,13 +8323,13 @@
  },
  {
   "id": "ISL-175",
-  "question_ur": "الفاظ کے لحاظ سے حدیث قدسی اور قرآن میں بنیادی فرق کیا ہے؟",
+  "question_ur": "الفاظ کے لحاظ سے حدیث قدسی اور قرآن پاک میں بنیادی فرق کیا ہے؟",
   "question_roman": "Alfaz ke lihaaz se Hadith Qudsi aur Quran mein bunyadi farq kya hai?",
   "options_ur": [
-   "قرآن کے الفاظ اور مطلب دونوں اللہ کی طرف سے ہیں، جبکہ حدیث قدسی کا مطلب اللہ کی طرف سے ہے اور الفاظ نبی کریم ﷺ کے ہیں",
-   "حدیث قدسی کے الفاظ اللہ کی طرف سے ہیں، جبکہ قرآن کے الفاظ نبی کے ہیں",
+   "قرآن پاک کے الفاظ اور مطلب دونوں اللہ کی طرف سے ہیں، جبکہ حدیث قدسی کا مطلب اللہ کی طرف سے ہے اور الفاظ نبی کریم ﷺ کے ہیں",
+   "حدیث قدسی کے الفاظ اللہ کی طرف سے ہیں، جبکہ قرآن پاک کے الفاظ نبی کریم ﷺ کے ہیں",
    "دونوں کے الفاظ اور درجہ ایک جیسے ہیں",
-   "حدیث قدسی قرآن کا حصہ ہے اور اسی طریقے سے نازل ہوئی"
+   "حدیث قدسی قرآن پاک کا حصہ ہے اور اسی طریقے سے نازل ہوئی"
   ],
   "options_roman": [
    "Quran ke alfaz aur matlab dono Allah ki taraf se hain, jabke Hadith Qudsi ka matlab Allah ki taraf se hai aur alfaz Nabi Kareem Sallallahu Alaihi Wasallam ke hain",
@@ -8337,7 +8337,7 @@
    "Dono ke alfaz aur darja aik jaise hain",
    "Hadith Qudsi Quran ka hissa hai aur usi tareeqe se nazil hui"
   ],
-  "explanation_ur": "حدیث قدسی میں مطلب اللہ کی طرف منسوب ہوتا ہے جبکہ الفاظ نبی کریم ﷺ کے ہوتے ہیں۔ قرآن کے الفاظ اور مطلب دونوں اللہ کی طرف سے ہیں۔",
+  "explanation_ur": "حدیث قدسی میں مطلب اللہ کی طرف منسوب ہوتا ہے، جبکہ الفاظ نبی کریم ﷺ کے ہوتے ہیں۔ قرآن پاک کے الفاظ اور مطلب دونوں اللہ کی طرف سے ہیں۔",
   "explanation_roman": "Hadith Qudsi mein matlab Allah ki taraf mansoob hota hai jabke alfaz Nabi Kareem Sallallahu Alaihi Wasallam ke hote hain. Quran ke alfaz aur matlab dono Allah ki taraf se hain.",
   "post": [
    "zamungkor",
@@ -8370,13 +8370,13 @@
  },
  {
   "id": "ISL-176",
-  "question_ur": "کون سا بیان حدیث قدسی اور قرآن کے درمیان درست فرق بیان کرتا ہے؟",
+  "question_ur": "کون سا بیان حدیث قدسی اور قرآن پاک کے درمیان درست فرق بتاتا ہے؟",
   "question_roman": "Kaun sa bayan Hadith Qudsi aur Quran ke darmiyan durust farq bayan karta hai?",
   "options_ur": [
-   "حدیث قدسی نماز میں قرآن کی طرح پڑھی جاتی ہے",
-   "حدیث قدسی قرآن کے متن کا حصہ ہے",
-   "حدیث قدسی کے الفاظ قرآن کی طرح معجزانہ ہیں",
-   "حدیث قدسی قرآن کا حصہ نہیں ہے اور نماز میں قرآن کے طور پر نہیں پڑھی جاتی"
+   "حدیث قدسی نماز میں قرآن پاک کی طرح پڑھی جاتی ہے",
+   "حدیث قدسی قرآن پاک کے متن کا حصہ ہے",
+   "حدیث قدسی کے الفاظ قرآن پاک کی طرح معجزانہ ہیں",
+   "حدیث قدسی قرآن پاک کا حصہ نہیں ہے اور نماز میں قرآن پاک کے طور پر نہیں پڑھی جاتی"
   ],
   "options_roman": [
    "Hadith Qudsi namaz mein Quran ki tarah parhi jati hai",
@@ -8384,7 +8384,7 @@
    "Hadith Qudsi ke alfaz Quran ki tarah mojizana hain",
    "Hadith Qudsi Quran ka hissa nahi hai aur namaz mein Quran ke tor par nahi parhi jati"
   ],
-  "explanation_ur": "حدیث قدسی قرآن کا حصہ نہیں ہے، اس کے الفاظ قرآن کی طرح معجزانہ نہیں ہیں، اور وہ نماز میں قرآن کے طور پر نہیں پڑھی جاتی۔",
+  "explanation_ur": "حدیث قدسی قرآن پاک کا حصہ نہیں ہے، اس کے الفاظ قرآن پاک کی طرح معجزانہ نہیں ہیں، اور وہ نماز میں قرآن پاک کے طور پر نہیں پڑھی جاتی۔",
   "explanation_roman": "Hadith Qudsi Quran ka hissa nahi hai, us ke alfaz Quran ki tarah mojizana nahi hain, aur woh namaz mein Quran ke tor par nahi parhi jati.",
   "post": [
    "zamungkor",
@@ -8417,7 +8417,7 @@
  },
  {
   "id": "ISL-177",
-  "question_ur": "حدیث کے راوی میں دو بنیادی شرطیں درکار ہوتی ہیں: عدالت (راستبازی) اور کیا؟",
+  "question_ur": "حدیث کے راوی میں عدالت (راستبازی) کے علاوہ دوسری بنیادی شرط کیا ہے؟",
   "question_roman": "Hadith ke ravi mein do bunyadi shartein darkar hoti hain: Adalah (rastbazi) aur kya?",
   "options_ur": [
    "دولت",
@@ -8431,7 +8431,7 @@
    "Shohrat",
    "Burhapa"
   ],
-  "explanation_ur": "قابلِ بھروسا راوی میں عدالت، یعنی راستباز کردار، اور ضبط، یعنی سننے، یاد رکھنے اور پہنچانے میں درستگی، ہونا ضروری ہے۔ علما ان خوبیوں کو جرح و تعدیل کے ذریعے جانچتے ہیں، جو علم الرجال کا حصہ ہے۔",
+  "explanation_ur": "قابلِ بھروسا راوی میں عدالت، یعنی راستباز کردار، اور ضبط، یعنی سننے، یاد رکھنے اور پہنچانے میں درستگی، ہونا ضروری ہے۔ علما ان خوبیوں کو جرح و تعدیل کے ذریعے جانچتے ہیں، جو علم الرجال میں راویوں کی جانچ کا علم ہے۔",
   "explanation_roman": "Qabil-e-bharosa ravi mein Adalah, yani rastbaz kirdaar, aur Dabt, yani sunne, yaad rakhne aur pahunchane mein durustgi, hona zaroori hai. Ulama in khoobiyon ko Jarh wa Ta'dil ke zariye jaanchte hain, jo Ilm al-Rijal ka hissa hai.",
   "post": [
    "zamungkor",
@@ -8464,12 +8464,12 @@
  },
  {
   "id": "ISL-178",
-  "question_ur": "قرآن کے ساتھ تعلق میں سنت بیان (وضاحت) اور تشریع (قانون سازی) دونوں کا کام کرتی ہے۔ اس کا کیا مطلب ہے؟",
+  "question_ur": "قرآن پاک کے ساتھ تعلق میں سنت بیان (وضاحت) اور تشریع (قانون سازی)، دونوں کا کام کرتی ہے۔ اس کا کیا مطلب ہے؟",
   "question_roman": "Quran ke sath talluq mein Sunnah Bayan (wazahat) aur Tashri (qanoon-sazi) dono ka kaam karti hai. Is ka kya matlab hai?",
   "options_ur": [
-   "سنت صرف قرآن کو لفظ بلفظ دہراتی ہے",
-   "سنت جہاں اختلاف ہو وہاں قرآن کی جگہ لے لیتی ہے",
-   "سنت قرآن کی وضاحت کرتی ہے اور اپنے طور پر احکام بھی مقرر کرتی ہے",
+   "سنت صرف قرآن پاک کو لفظ بلفظ دہراتی ہے",
+   "سنت جہاں اختلاف ہو وہاں قرآن پاک کی جگہ لے لیتی ہے",
+   "سنت قرآن پاک کی وضاحت کرتی ہے اور اپنے طور پر احکام بھی مقرر کرتی ہے",
    "سنت صرف تاریخی ریکارڈ ہے، اس کا کوئی شرعی کردار نہیں"
   ],
   "options_roman": [
@@ -8478,7 +8478,7 @@
    "Sunnah Quran ki wazahat karti hai aur apne tor par ahkam bhi muqarrar karti hai",
    "Sunnah sirf tareekhi record hai, us ka koi sharai kirdaar nahi"
   ],
-  "explanation_ur": "بیان اور تفسیر کے طور پر سنت قرآن کی وضاحت اور تفصیل کرتی ہے؛ تشریع کے طور پر وہ احکام بھی مقرر کرتی ہے، اس لیے وہ قرآن کے ساتھ اسلامی قانون کا ذریعہ ہے۔",
+  "explanation_ur": "بیان اور تفسیر کے طور پر سنت قرآن پاک کی وضاحت اور تفصیل کرتی ہے؛ تشریع کے طور پر وہ احکام بھی مقرر کرتی ہے، اس لیے وہ قرآن پاک کے ساتھ اسلامی قانون کا ماخذ ہے۔",
   "explanation_roman": "Bayan aur Tafseer ke tor par Sunnah Quran ki wazahat aur tafseel karti hai; Tashri ke tor par woh ahkam bhi muqarrar karti hai, is liye woh Quran ke sath Islami qanoon ka zariya hai.",
   "post": [
    "zamungkor",
@@ -8511,13 +8511,13 @@
  },
  {
   "id": "ISL-179",
-  "question_ur": "حدیث کی ابتدائی حفاظت میں صحابہ کرام کے پاس محفوظ صحیفوں سے کیا مراد ہے؟",
+  "question_ur": "حدیث کی ابتدائی حفاظت میں صحابہ کرام کے صحیفوں سے کیا مراد ہے؟",
   "question_roman": "Hadith ki ibtidai hifazat mein Sahaba Kiram ke paas mehfooz Sahifon se kya murad hai?",
   "options_ur": [
-   "عربی گرامر کی کتابیں",
-   "صحابہ کے پاس محفوظ حدیث کے تحریری مجموعے",
+   "عربی قواعد کی کتابیں",
+   "صحابہ کرام کے پاس محفوظ حدیث کے تحریری مجموعے",
    "خلفاء کے بھیجے ہوئے سرکاری خطوط",
-   "صحابہ کی تعریف میں نظمیں"
+   "صحابہ کرام کی تعریف میں نظمیں"
   ],
   "options_roman": [
    "Arbi grammar ki kitabein",
@@ -8619,7 +8619,7 @@
    "Har waqiye ke Hijri saal ke mutabiq",
    "Hadith ke matn ki huroof-e-tahajji ki tarteeb se"
   ],
-  "explanation_ur": "مسند میں حدیثیں انہیں روایت کرنے والے صحابی کے نام کے تحت جمع کی جاتی ہیں، اور امام احمد کی مسند بھی اسی ترتیب پر ہے۔",
+  "explanation_ur": "مسند میں حدیثیں انہیں روایت کرنے والے صحابی کے نام کے تحت جمع کی جاتی ہیں، اور امام احمد کی مسند بھی اسی ترتیب سے مرتب ہے۔",
   "explanation_roman": "Musnad mein Hadithein unhein riwayat karne wale Sahabi ke naam ke tehet jama ki jati hain, aur Imam Ahmad ki Musnad bhi isi tarteeb par hai.",
   "post": [
    "zamungkor",
@@ -8652,7 +8652,7 @@
  },
  {
   "id": "ISL-182",
-  "question_ur": "کون سا جوڑا دو ایسی مشہور حدیث کی کتابوں پر مشتمل ہے جو دونوں صحاح ستہ سے باہر ہیں؟",
+  "question_ur": "کون سے جوڑے کی دونوں مشہور حدیث کی کتابیں صحاح ستہ سے باہر ہیں؟",
   "question_roman": "Kaun sa joda do aisi mashhoor Hadith ki kitabon par mushtamil hai jo dono Sihah Sitta se bahar hain?",
   "options_ur": [
    "صحیح البخاری اور سنن الدارمی",
@@ -8703,7 +8703,7 @@
   "question_roman": "Imam Hakim ki kitab Al-Mustadrak ka maqsad kya tha?",
   "options_ur": [
    "قرآنی آیات کے معانی کی وضاحت کرنا",
-   "ایسی مستند حدیثیں جمع کرنا جو بخاری اور مسلم کی شرائط پر پوری اترتی ہوں مگر ان کی کتابوں میں شامل نہ ہوں",
+   "ایسی مستند حدیثیں جمع کرنا جو بخاری اور مسلم کی شرائط پر پوری اترتی ہوں، مگر ان کی کتابوں میں شامل نہ ہوں",
    "ابتدائی مسلمانوں کی جنگوں کی فہرست بنانا",
    "صرف فقہاء کے اقوال درج کرنا"
   ],
@@ -8713,7 +8713,7 @@
    "Ibtidai Musalmanon ki jangon ki fehrist banana",
    "Sirf fuqaha ke aqwal darj karna"
   ],
-  "explanation_ur": "المستدرک میں وہ حدیثیں جمع کی گئی ہیں جو بخاری اور مسلم کی شرائط پر پوری اترتی ہیں مگر ان کی دونوں صحیح کتابوں میں شامل نہیں ہیں۔",
+  "explanation_ur": "المستدرک میں وہ حدیثیں جمع کی گئی ہیں جو بخاری اور مسلم کی شرائط پر پوری اترتی ہیں، مگر ان کی دونوں صحیح کتابوں میں شامل نہیں ہیں۔",
   "explanation_roman": "Al-Mustadrak mein woh Hadithein jama ki gayi hain jo Bukhari aur Muslim ki sharaait par poori utarti hain magar un ki dono Sahih kitabon mein shamil nahi hain.",
   "post": [
    "zamungkor",
@@ -8807,7 +8807,7 @@
    "Baghdad",
    "Madinah"
   ],
-  "explanation_ur": "امام مسلم نیشاپور میں پیدا ہوئے، جو خراسان کا مشہور شہر تھا، اور وہ تیسری صدی ہجری میں زندہ رہے۔",
+  "explanation_ur": "امام مسلم خراسان کے علاقے کے شہر نیشاپور میں پیدا ہوئے۔ ان کی زندگی تیسری صدی ہجری میں گزری۔",
   "explanation_roman": "Imam Muslim Nishapur mein paida hue, jo Khurasan ka mashhoor sheher tha, aur woh teesri sadi Hijri mein zinda rahe.",
   "post": [
    "zamungkor",
@@ -8840,7 +8840,7 @@
  },
  {
   "id": "ISL-186",
-  "question_ur": "سنن کے مصنف امام ابو داؤد کو السجستانی اس لیے کہا جاتا ہے کہ ان کا تعلق کس علاقے سے تھا؟",
+  "question_ur": "سنن کے مصنف امام ابو داؤد کا تعلق کس علاقے سے تھا، جس کی وجہ سے انہیں السجستانی کہا جاتا ہے؟",
   "question_roman": "Sunan ke musannif Imam Abu Dawood ko Al-Sijistani is liye kaha jata hai ke un ka taalluq kis ilaqe se tha?",
   "options_ur": [
    "نسا",
@@ -8891,7 +8891,7 @@
   "question_roman": "Imam Tirmidhi ki doosri mashhoor kitab Ash-Shamail al-Muhammadiyyah kis mauzu par hai?",
   "options_ur": [
    "عباسی خلفاء کی تاریخ",
-   "نبی کریم ﷺ کی صورت، سیرت اور روزمرہ عادات",
+   "نبی کریم ﷺ کی صورت، اخلاق اور روزمرہ عادات",
    "عربی شاعری کے قواعد",
    "خراسان کا جغرافیہ"
   ],
@@ -9079,7 +9079,7 @@
   "question_roman": "Usul al-Fiqh mein Ijma se kya murad hai?",
   "options_ur": [
    "ایک جج کی ذاتی رائے",
-   "کسی دور کے اہل علم کا کسی حکم پر اتفاق",
+   "کسی دور کے مجتہد اہل علم کا کسی حکم پر اتفاق",
    "صرف مقامی رواج پر مبنی حکم",
    "حدیث کے لفظی الفاظ"
   ],
@@ -9136,7 +9136,7 @@
    "Kisi maloom masle ka hukm us naye masle par laagu karna jis mein wohi illat payi jaye",
    "Tamaam purane ahkaam ko radd kar dena"
   ],
-  "explanation_ur": "قیاس تمثیلی استدلال ہے: قرآن یا سنت کا حکم اس نئے مسئلے پر بھی لاگو کیا جاتا ہے جس میں وہی علت پائی جائے۔",
+  "explanation_ur": "قیاس تمثیلی استدلال ہے: قرآن پاک یا سنت کا حکم اس نئے مسئلے پر بھی لاگو کیا جاتا ہے جس میں وہی علت پائی جائے۔",
   "explanation_roman": "Qiyas tamseeli istedlal hai: Quran ya Sunnat ka hukm us naye masle par bhi laagu kiya jata hai jis mein wohi illat payi jaye.",
   "post": [
    "zamungkor",
@@ -9183,7 +9183,7 @@
    "Sirf hafizay se Hadithein jama karna",
    "Kisi kitab ka lafz ba lafz tarjuma karna"
   ],
-  "explanation_ur": "اجتہاد سے مراد اہل علم فقیہ کی بھرپور کوشش ہے جس سے وہ قرآن، سنت، اجماع اور قیاس سے حکم اخذ کرتا ہے۔",
+  "explanation_ur": "اجتہاد سے مراد اہل علم فقیہ کی بھرپور کوشش ہے، جس سے وہ قرآن پاک، سنت، اجماع اور قیاس سے حکم اخذ کرتا ہے۔",
   "explanation_roman": "Ijtihad se murad ahl-e-ilm faqeeh ki bharpoor koshish hai jis se woh Quran, Sunnat, Ijma aur Qiyas se hukm akhaz karta hai.",
   "post": [
    "zamungkor",
@@ -9216,7 +9216,7 @@
  },
  {
   "id": "ISL-194",
-  "question_ur": "امام شافعی کی کتاب الرسالہ نے کس چیز کو منظم کیا؟",
+  "question_ur": "امام شافعی کی کتاب الرسالہ میں کیا منظم کیا گیا ہے؟",
   "question_roman": "Imam Shafi ki kitab Al-Risala ne kis cheez ko munazzam kiya?",
   "options_ur": [
    "انبیاء کے قصے",
@@ -9230,7 +9230,7 @@
    "Sheher Baghdad ki tareekh",
    "Qanoon ke masadir se Islami ahkaam akhaz karne ke usool"
   ],
-  "explanation_ur": "الرسالہ میں اصول فقہ کے اصول بیان کیے گئے ہیں، جن سے معلوم ہوتا ہے کہ قرآن، سنت، اجماع اور قیاس سے منظم طریقے سے احکام کیسے اخذ کیے جاتے ہیں۔",
+  "explanation_ur": "الرسالہ میں اصول فقہ کے اصول بیان کیے گئے ہیں، جن سے معلوم ہوتا ہے کہ قرآن پاک، سنت، اجماع اور قیاس سے منظم طریقے سے احکام کیسے اخذ کیے جاتے ہیں۔",
   "explanation_roman": "Al-Risala mein Usul al-Fiqh ke usool bayan kiye gaye hain, jin se maloom hota hai ke Quran, Sunnat, Ijma aur Qiyas se munazzam tareeqay se ahkaam kaise akhaz kiye jate hain.",
   "post": [
    "zamungkor",
@@ -9263,7 +9263,7 @@
  },
  {
   "id": "ISL-195",
-  "question_ur": "حنبلی مکتب فقہ کے بانی کون تھے؟",
+  "question_ur": "حنبلی مکتبِ فقہ کے بانی کون تھے؟",
   "question_roman": "Hanbali maktab-e-Fiqh ke baani kaun thay?",
   "options_ur": [
    "امام ابو حنیفہ",
@@ -9418,7 +9418,7 @@
    "Allah hi tamam makhlooq ka Khaliq, Razzaq aur Rabb hai",
    "Farishte apne ikhtiyar se kaam karte hain"
   ],
-  "explanation_ur": "توحید ربوبیت یہ ایمان ہے کہ اللہ ہی سب کچھ پیدا کرتا ہے، روزی دیتا ہے اور تمام نظام چلاتا ہے۔",
+  "explanation_ur": "توحیدِ ربوبیت یہ ایمان ہے کہ اللہ ہی سب کچھ پیدا کرتا ہے، سب کو روزی دیتا ہے اور ساری مخلوق کا نظام چلاتا ہے۔",
   "explanation_roman": "Tawhid al-Rububiyyah yeh iman hai ke Allah hi sab kuch paida karta hai, rozi deta hai aur tamam nizam chalata hai.",
   "post": [
    "zamungkor",
@@ -9465,7 +9465,7 @@
    "Allah ke 99 naam hain",
    "Farishte insaanon ke aamal likhte hain"
   ],
-  "explanation_ur": "توحید الوہیت کا مطلب ہے کہ تمام عبادت، جیسے نماز، دعا اور قربانی، صرف اللہ کے لیے ہے۔",
+  "explanation_ur": "توحیدِ الوہیت کا مطلب ہے کہ تمام عبادت، جیسے نماز، دعا اور قربانی، صرف اللہ کے لیے ہے۔",
   "explanation_roman": "Tawhid al-Uluhiyyah ka matlab hai ke tamam ibadat, jaise namaz, dua aur qurbani, sirf Allah ke liye hai.",
   "post": [
    "zamungkor",
@@ -9504,7 +9504,7 @@
    "نازل شدہ کتابوں پر ایمان",
    "اس بات پر ایمان کہ فرشتوں کی کوئی ذمہ داری نہیں",
    "صرف ایک نبی پر ایمان",
-   "اللہ کے ناموں اور صفات پر اس طرح ایمان جیسا قرآن و سنت میں سکھایا گیا ہے"
+   "اللہ کے ناموں اور صفات پر اس طرح ایمان جیسا قرآن پاک اور سنت میں سکھایا گیا ہے"
   ],
   "options_roman": [
    "Nazil shuda kitabon par iman",
@@ -9512,7 +9512,7 @@
    "Sirf aik Nabi par iman",
    "Allah ke naamon aur sifaat par is tarah iman jaisa Quran o Sunnah mein sikhaya gaya hai"
   ],
-  "explanation_ur": "توحید اسماء و صفات کا مطلب ہے کہ اللہ کے ناموں اور صفات کو اسی طرح مانا جائے جیسا قرآن و سنت میں سکھایا گیا ہے، اور انہیں مخلوق سے مشابہ نہ سمجھا جائے۔",
+  "explanation_ur": "توحیدِ اسماء و صفات کا مطلب ہے کہ اللہ کے ناموں اور صفات کو اسی طرح مانا جائے جیسا قرآن پاک اور سنت میں سکھایا گیا ہے، اور انہیں مخلوق سے مشابہ نہ سمجھا جائے۔",
   "explanation_roman": "Tawhid al-Asma wa al-Sifat ka matlab hai ke Allah ke naamon aur sifaat ko usi tarah mana jaye jaisa Quran o Sunnah mein sikhaya gaya hai, aur unhein makhlooq se mushabeh na samjha jaye.",
   "post": [
    "zamungkor",
@@ -9545,7 +9545,7 @@
  },
  {
   "id": "ISL-201",
-  "question_ur": "اللہ کے خوبصورت نام، اسماء الحسنیٰ، کتنے ہیں؟",
+  "question_ur": "اللہ کے کتنے خوبصورت نام اسماء الحسنیٰ کہلاتے ہیں؟",
   "question_roman": "Allah ke khoobsurat naam, Asma al-Husna, kitne hain?",
   "options_ur": [
    "40",
@@ -9606,7 +9606,7 @@
    "Al-Quddus",
    "Al-Aziz"
   ],
-  "explanation_ur": "الرحمن کا مطلب ہے نہایت مہربان۔",
+  "explanation_ur": "الرحمن کا مطلب نہایت مہربان ہے۔",
   "explanation_roman": "Al-Rahman ka matlab hai Nihayat Meharban.",
   "post": [
    "zamungkor",
@@ -9639,7 +9639,7 @@
  },
  {
   "id": "ISL-203",
-  "question_ur": "اللہ کے کس نام کا مطلب ہے روزی دینے والا؟",
+  "question_ur": "اللہ کے کس نام کا مطلب روزی دینے والا ہے؟",
   "question_roman": "Allah ke kis naam ka matlab hai Rozi dene wala?",
   "options_ur": [
    "السلام",
@@ -9653,7 +9653,7 @@
    "Al-Razzaq",
    "Al-Khaliq"
   ],
-  "explanation_ur": "الرزاق کا مطلب ہے روزی دینے والا، جو تمام مخلوق کو روزی دیتا ہے۔",
+  "explanation_ur": "الرزاق کا مطلب روزی دینے والا ہے، جو تمام مخلوق کو روزی دیتا ہے۔",
   "explanation_roman": "Al-Razzaq ka matlab hai Rozi dene wala, jo tamam makhlooq ko rozi deta hai.",
   "post": [
    "zamungkor",
@@ -9686,7 +9686,7 @@
  },
  {
   "id": "ISL-204",
-  "question_ur": "الخالق نام کا کیا مطلب ہے؟",
+  "question_ur": "الخالق کا کیا مطلب ہے؟",
   "question_roman": "Al-Khaliq naam ka kya matlab hai?",
   "options_ur": [
    "بادشاہ",
@@ -9700,7 +9700,7 @@
    "Zabardast taqat wala",
    "Paida karne wala"
   ],
-  "explanation_ur": "الخالق کا مطلب ہے پیدا کرنے والا، جس نے ہر چیز کو پیدا کیا۔",
+  "explanation_ur": "الخالق کا مطلب پیدا کرنے والا ہے، جس نے ہر چیز کو پیدا کیا ہے۔",
   "explanation_roman": "Al-Khaliq ka matlab hai Paida karne wala, jis ne har cheez ko paida kiya.",
   "post": [
    "zamungkor",
@@ -9733,7 +9733,7 @@
  },
  {
   "id": "ISL-205",
-  "question_ur": "القدوس نام کا کیا مطلب ہے؟",
+  "question_ur": "القدوس کا کیا مطلب ہے؟",
   "question_roman": "Al-Quddus naam ka kya matlab hai?",
   "options_ur": [
    "روزی دینے والا",
@@ -9747,7 +9747,7 @@
    "Aman dene wala",
    "Nihayat Meharban"
   ],
-  "explanation_ur": "القدوس کا مطلب ہے سب سے زیادہ پاک، جو ہر عیب سے پاک ہے۔",
+  "explanation_ur": "القدوس کا مطلب سب سے زیادہ پاک ہے، جو ہر عیب سے پاک ہے۔",
   "explanation_roman": "Al-Quddus ka matlab hai Sab se ziyada Pak, jo har aib se pak hai.",
   "post": [
    "zamungkor",
@@ -9783,7 +9783,7 @@
   "question_ur": "شرک کا کیا مطلب ہے؟",
   "question_roman": "Shirk ka kya matlab hai?",
   "options_ur": [
-   "ایک خدا پر ایمان",
+   "اللہ واحد پر ایمان",
    "صرف اللہ کی عبادت",
    "اللہ کے ساتھ شریک ٹھہرانا",
    "نبیوں کا انکار"
@@ -9794,7 +9794,7 @@
    "Allah ke saath shareek thehrana",
    "Nabiyon ka inkar"
   ],
-  "explanation_ur": "شرک کا مطلب ہے اللہ کی ذات، اس کی صفات یا اس کی عبادت میں کسی کو شریک ٹھہرانا۔",
+  "explanation_ur": "شرک سے مراد اللہ کی ذات، اس کی صفات یا اس کی عبادت میں کسی کو شریک ٹھہرانا ہے۔",
   "explanation_roman": "Shirk ka matlab hai Allah ki zaat, Us ki sifaat ya Us ki ibadat mein kisi ko shareek thehrana.",
   "post": [
    "zamungkor",
@@ -9841,7 +9841,7 @@
    "Bhool kar namaz chhor dena",
    "Khamoshi se sadqa dena"
   ],
-  "explanation_ur": "اللہ کے سوا کسی اور کی عبادت کرنا شرک اکبر ہے، جو شریک ٹھہرانے کی بڑی قسم ہے۔",
+  "explanation_ur": "اللہ کے سوا کسی اور کی عبادت کرنا شرکِ اکبر ہے، جو شریک ٹھہرانے کی بڑی قسم ہے۔",
   "explanation_roman": "Allah ke siwa kisi aur ki ibadat karna Shirk Akbar hai, jo shareek thehrane ki bari qism hai.",
   "post": [
    "zamungkor",
@@ -9877,10 +9877,10 @@
   "question_ur": "ریا، یعنی لوگوں کو متاثر کرنے کے لیے عبادت میں دکھاوا کرنا، شرک کی کس قسم کی مثال ہے؟",
   "question_roman": "Riya, yani logon ko mutassir karne ke liye ibadat mein dikhawa karna, Shirk ki kis qism ki misaal hai?",
   "options_ur": [
-   "شرک اکبر",
+   "شرکِ اکبر",
    "کفر",
    "نفاق",
-   "شرک اصغر"
+   "شرکِ اصغر"
   ],
   "options_roman": [
    "Shirk Akbar",
@@ -9888,7 +9888,7 @@
    "Nifaq",
    "Shirk Asghar"
   ],
-  "explanation_ur": "ریا شرک اصغر کی مثال ہے، جو شرک کی چھوٹی قسم ہے، کیونکہ یہ عمل صرف اللہ کے لیے نہیں بلکہ لوگوں کو خوش کرنے کے لیے بھی کیا جاتا ہے۔",
+  "explanation_ur": "ریا شرکِ اصغر کی مثال ہے، جو شرک کی چھوٹی قسم ہے، کیونکہ یہ عمل صرف اللہ کے لیے نہیں، لوگوں کو خوش کرنے کے لیے بھی کیا جاتا ہے۔",
   "explanation_roman": "Riya Shirk Asghar ki misaal hai, jo Shirk ki chhoti qism hai, kyunke yeh amal sirf Allah ke liye nahi balkay logon ko khush karne ke liye bhi kiya jata hai.",
   "post": [
    "zamungkor",
@@ -9925,7 +9925,7 @@
   "question_roman": "Kufr ka bunyadi matlab kya hai?",
   "options_ur": [
    "منافقت",
-   "ایمان کا انکار اور بے دینی",
+   "بے ایمانی اور ایمان کا انکار",
    "عبادت میں دکھاوا",
    "اللہ کے ساتھ شریک ٹھہرانا"
   ],
@@ -9935,7 +9935,7 @@
    "Ibadat mein dikhawa",
    "Allah ke saath shareek thehrana"
   ],
-  "explanation_ur": "کفر کا مطلب ہے بے ایمانی، یعنی ایمان کی بنیادی سچائیوں کا انکار۔",
+  "explanation_ur": "کفر کا مطلب بے ایمانی ہے، یعنی ایمان کی بنیادی سچائیوں کا انکار۔",
   "explanation_roman": "Kufr ka matlab hai be-imani, yani iman ki bunyadi sachaiyon ka inkar.",
   "post": [
    "zamungkor",
@@ -9982,7 +9982,7 @@
    "Munafiqat, yani zahir mein Islam ka dawa aur dil mein kufr",
    "Ibadat mein dikhawa"
   ],
-  "explanation_ur": "نفاق کا مطلب ہے منافقت، جب کوئی شخص زبان سے اسلام کا دعویٰ کرے لیکن دل میں کفر ہو۔",
+  "explanation_ur": "نفاق کا مطلب منافقت ہے، جب کوئی شخص زبان سے اسلام کا دعویٰ کرے لیکن دل میں کفر ہو۔",
   "explanation_roman": "Nifaq ka matlab hai munafiqat, jab koi shakhs zaban se Islam ka dawa kare lekin dil mein kufr ho.",
   "post": [
    "zamungkor",
@@ -10029,7 +10029,7 @@
    "Is baat par iman ke kitabein sirf insaanon ne likhin",
    "Is baat par iman ke ibadat zaroori nahi"
   ],
-  "explanation_ur": "رسالت پر ایمان کا مطلب ہے کہ اللہ نے لوگوں کو سچائی کی طرف رہنمائی کے لیے نبی اور رسول بھیجے۔",
+  "explanation_ur": "رسالت پر ایمان کا مطلب یہ ہے کہ اللہ نے لوگوں کو سچائی کی طرف رہنمائی کے لیے نبی اور رسول بھیجے۔",
   "explanation_roman": "Risalat par iman ka matlab hai ke Allah ne logon ko sachai ki taraf rehnumai ke liye Nabi aur Rasool bheje.",
   "post": [
    "zamungkor",
@@ -10076,7 +10076,7 @@
    "Nubuwwat Hazrat Muhammad Sallallahu Alaihi Wasallam se pehle khatm ho gayi thi",
    "Hazrat Muhammad Sallallahu Alaihi Wasallam aakhri Nabi hain aur Un ke baad koi Nabi nahi aayega"
   ],
-  "explanation_ur": "ختم نبوت کا مطلب ہے کہ حضرت محمد ﷺ آخری نبی ہیں، اور ان کے بعد کوئی نبی نہیں آئے گا۔",
+  "explanation_ur": "ختمِ نبوت کا مطلب یہ ہے کہ حضرت محمد ﷺ آخری نبی ہیں اور ان کے بعد کوئی نبی نہیں آئے گا۔",
   "explanation_roman": "Khatm-e-Nubuwwat ka matlab hai ke Hazrat Muhammad Sallallahu Alaihi Wasallam aakhri Nabi hain, aur Un ke baad koi Nabi nahi aayega.",
   "post": [
    "zamungkor",
@@ -10264,7 +10264,7 @@
    "Woh insaanon ki tarah khate peete hain aur un ke khandan hote hain",
    "Woh Noor se paida kiye gaye hain aur hamesha Allah ki itaat karte hain"
   ],
-  "explanation_ur": "فرشتے نور سے پیدا کیے گئے ہیں، اور وہ بغیر نافرمانی کے ہمیشہ اللہ کے احکام کی اطاعت کرتے ہیں۔",
+  "explanation_ur": "فرشتے نور سے پیدا کیے گئے ہیں اور وہ ہمیشہ اللہ کے احکام کی اطاعت کرتے ہیں، کبھی نافرمانی نہیں کرتے۔",
   "explanation_roman": "Farishte Noor se paida kiye gaye hain, aur woh baghair nafarmani ke hamesha Allah ke ahkam ki itaat karte hain.",
   "post": [
    "zamungkor",
@@ -10767,7 +10767,7 @@
  },
  {
   "id": "ISL-227",
-  "question_ur": "قرآن پاک میں نام لے کر کتنے انبیاء کا ذکر آیا ہے؟",
+  "question_ur": "قرآن پاک میں کتنے انبیاء کا نام لے کر ذکر آیا ہے؟",
   "question_roman": "Quran Pak mein naam le kar kitne Anbiya ka zikr aaya hai?",
   "options_ur": [
    "24",
@@ -11566,7 +11566,7 @@
  },
  {
   "id": "ISL-244",
-  "question_ur": "روزِ قیامت نامۂ اعمال کیا ہے؟",
+  "question_ur": "روزِ قیامت نامۂ اعمال سے کیا مراد ہے؟",
   "question_roman": "Roz-e-Qiyamat Nama-e-Aamal kya hai?",
   "options_ur": [
    "فرشتوں کے لیے قوانین کی کتاب",
@@ -11660,7 +11660,7 @@
  },
  {
   "id": "ISL-246",
-  "question_ur": "روزِ قیامت پلِ صراط کیا ہے؟",
+  "question_ur": "روزِ قیامت پلِ صراط سے کیا مراد ہے؟",
   "question_roman": "Roz-e-Qiyamat Pul-e-Sirat kya hai?",
   "options_ur": [
    "جنت کی ایک نہر",
@@ -11707,7 +11707,7 @@
  },
  {
   "id": "ISL-247",
-  "question_ur": "آخرت کے عقائد میں کوثر کیا ہے؟",
+  "question_ur": "آخرت کے عقائد میں کوثر سے کیا مراد ہے؟",
   "question_roman": "Aakhirat ke aqaid mein Kausar kya hai?",
   "options_ur": [
    "مکہ کے قریب ایک پہاڑ",
@@ -12365,7 +12365,7 @@
  },
  {
   "id": "ISL-261",
-  "question_ur": "وضو میں وہ مسح جو فرض ہے وہ کس کا مسح ہے؟",
+  "question_ur": "وضو میں مسح کس کا فرض ہے؟",
   "question_roman": "Wudu mein woh Masah jo Farz hai woh kis ka Masah hai?",
   "options_ur": [
    "بازوؤں کا",
@@ -12553,7 +12553,7 @@
  },
  {
   "id": "ISL-265",
-  "question_ur": "غسل کب فرض ہوتا ہے؟",
+  "question_ur": "غسل، یعنی پورا شرعی غسل، کب فرض ہوتا ہے؟",
   "question_roman": "Ghusl kab Farz hota hai?",
   "options_ur": [
    "ہر کھانے کے بعد",
@@ -12708,7 +12708,7 @@
    "Jab insan ko thanda pani napasand ho",
    "Jab pani dastiyab na ho ya is ka istemal nuqsan deh ho"
   ],
-  "explanation_ur": "تیمم اس وقت جائز ہے جب پانی دستیاب نہ ہو یا اس کا استعمال نقصان دہ ہو، جیسے بیماری میں۔ محض جلدی یا ٹھنڈے پانی کی ناپسندیدگی درست عذر نہیں۔",
+  "explanation_ur": "تیمم اس وقت جائز ہے جب پانی دستیاب نہ ہو یا اس کا استعمال نقصان دہ ہو، جیسے بیماری میں۔ صرف جلدی ہونا یا ٹھنڈا پانی ناپسند ہونا درست عذر نہیں۔",
   "explanation_roman": "Tayammum is waqt jaiz hai jab pani dastiyab na ho ya is ka istemal nuqsan deh ho, jaise beemari mein. Mehaz jaldi ya thande pani ki napasandidgi durust uzr nahi.",
   "post": [
    "zamungkor",
@@ -12882,7 +12882,7 @@
  },
  {
   "id": "ISL-272",
-  "question_ur": "ہر روز کتنی فرض نمازیں پڑھنا ضروری ہیں؟",
+  "question_ur": "ایک مسلمان پر ہر روز کتنی فرض نمازیں لازم ہیں؟",
   "question_roman": "Har roz kitni Farz namazein parhna zaroori hain?",
   "options_ur": [
    "تین",
@@ -12976,7 +12976,7 @@
  },
  {
   "id": "ISL-274",
-  "question_ur": "فجر کی نماز میں کتنی رکعتیں ہیں؟",
+  "question_ur": "فجر کی نماز میں کون سی رکعتیں ہیں؟",
   "question_roman": "Fajr ki namaz mein kitni rakatein hain?",
   "options_ur": [
    "2 سنت اور 2 فرض",
@@ -13164,7 +13164,7 @@
  },
  {
   "id": "ISL-278",
-  "question_ur": "نماز شروع کرنے سے پہلے مندرجہ ذیل میں سے کن چیزوں کا پورا ہونا ضروری ہے؟",
+  "question_ur": "نماز شروع کرنے سے پہلے مندرجہ ذیل میں سے کون سی شرائط پوری ہونی چاہییں؟",
   "question_roman": "Namaz shuru karne se pehle mandrajah zail mein se kin cheezon ka poora hona zaroori hai?",
   "options_ur": [
    "نئے کپڑے پہننا اور بلند آواز سے نماز پڑھنا",
@@ -13540,7 +13540,7 @@
  },
  {
   "id": "ISL-286",
-  "question_ur": "مسافر کے لیے قصر کیا ہے؟",
+  "question_ur": "مسافر کے لیے قصر سے کیا مراد ہے؟",
   "question_roman": "Musafir ke liye Qasr kya hai?",
   "options_ur": [
    "مسافر 4 رکعت والی فرض نمازوں کو 2 رکعت پڑھتا ہے",
@@ -13648,7 +13648,7 @@
    "Apne khandan par kharch ki gayi raqam",
    "Namaz chhootne par ada kiya gaya jurmana"
   ],
-  "explanation_ur": "اصطلاحی طور پر زکوٰۃ مال کا ایک مقررہ حصہ ہے جو صاحب نصاب مسلمان پر مستحق لوگوں کو فرض عبادت کے طور پر دینا واجب ہے۔",
+  "explanation_ur": "اصطلاحی طور پر زکوٰۃ مال کا وہ مقررہ حصہ ہے جو صاحب نصاب مسلمان پر مستحق لوگوں کو دینا فرض ہے۔",
   "explanation_roman": "Istilahi tor par Zakat maal ka aik muqarrarah hissa hai jo sahib-e-Nisab Musalman par mustahiq logon ko farz ibadat ke tor par dena wajib hai.",
   "post": [
    "zamungkor",
@@ -13883,7 +13883,7 @@
    "10",
    "12"
   ],
-  "explanation_ur": "زکوٰۃ کے 8 مصارف ہیں، یعنی زکوٰۃ وصول کرنے والوں کی اقسام ہیں۔",
+  "explanation_ur": "زکوٰۃ وصول کرنے والوں کی 8 اقسام ہیں، جنہیں زکوٰۃ کے مصارف کہا جاتا ہے۔",
   "explanation_roman": "Zakat ke 8 Masarif hain, yani Zakat wasool karne walon ki aqsaam hain.",
   "post": [
    "zamungkor",
@@ -13919,10 +13919,10 @@
   "question_ur": "زکوٰۃ کے مصرف اور اس کے معنی کی کون سی جوڑی درست ہے؟",
   "question_roman": "Zakat ke Masraf aur us ke maani ki kaun si jodi durust hai?",
   "options_ur": [
-   "فی سبیل اللہ — سفر میں پھنسے ہوئے مسافر",
-   "رقاب — زکوٰۃ جمع کرنے اور اس کا انتظام کرنے والے لوگ",
-   "مؤلفۃ القلوب — مقروض لوگ جو قرض ادا نہیں کر سکتے",
-   "عاملین — زکوٰۃ جمع کرنے اور اس کا انتظام کرنے کے لیے مقرر کردہ لوگ"
+   "فی سبیل اللہ: سفر میں پھنسے ہوئے مسافر",
+   "رقاب: زکوٰۃ جمع کرنے اور اس کا انتظام کرنے والے لوگ",
+   "مؤلفۃ القلوب: مقروض لوگ جو قرض ادا نہیں کر سکتے",
+   "عاملین: زکوٰۃ جمع کرنے اور اس کا انتظام کرنے کے لیے مقرر کردہ لوگ"
   ],
   "options_roman": [
    "Fi Sabilillah — safar mein phanse hue musafir",
@@ -14118,7 +14118,7 @@
    "Paidawar ka 2.5 feesad",
    "Paidawar ka daswan hissa (1/10)"
   ],
-  "explanation_ur": "بارش سے سیراب ہونے والی فصلوں پر عشر دسواں حصہ ہے، جبکہ مصنوعی آبپاشی سے سیراب ہونے والی فصلوں پر بیسواں حصہ ہے۔",
+  "explanation_ur": "بارش سے سیراب ہونے والی فصلوں پر عشر دسواں حصہ ہے، جبکہ مصنوعی آبپاشی سے سیراب ہونے والی فصلوں پر عشر بیسواں حصہ ہے۔",
   "explanation_roman": "Barish se sairab hone wali faslon par Ushr daswan hissa hai, jabke masnooi aabpashi se sairab hone wali faslon par beeswan hissa hai.",
   "post": [
    "zamungkor",
@@ -14245,11 +14245,11 @@
  },
  {
   "id": "ISL-301",
-  "question_ur": "اسلامی تعلیمات میں روزے (صوم) کا بیان کردہ مقصد کیا ہے؟",
+  "question_ur": "اسلامی تعلیمات میں روزے (صوم) کا مقصد کیا بیان کیا گیا ہے؟",
   "question_roman": "Islami taleemat mein Roze (Sawm) ka bayan kardah maqsad kya hai?",
   "options_ur": [
    "دولت حاصل کرنا",
-   "تقویٰ (خدا خوفی) پیدا کرنا",
+   "تقویٰ (اللہ کا خوف) پیدا کرنا",
    "جسمانی طاقت حاصل کرنا",
    "سماجی مرتبہ حاصل کرنا"
   ],
@@ -14259,7 +14259,7 @@
    "Jismani taqat hasil karna",
    "Samaji martaba hasil karna"
   ],
-  "explanation_ur": "روزہ اس لیے فرض کیا گیا ہے تاکہ مومنوں میں تقویٰ پیدا ہو؛ صوم کا مطلب نیت کے ساتھ صبح صادق سے غروب آفتاب تک کھانے، پینے اور ازدواجی تعلقات سے رکنا ہے۔",
+  "explanation_ur": "روزہ اس لیے فرض کیا گیا ہے تاکہ مومنوں میں تقویٰ پیدا ہو۔ صوم کا مطلب ہے نیت کے ساتھ صبح صادق سے غروب آفتاب تک کھانے، پینے اور ازدواجی تعلقات سے رکے رہنا۔",
   "explanation_roman": "Roza is liye farz kiya gaya hai taake mominon mein Taqwa paida ho; Sawm ka matlab niyyat ke sath subh-e-sadiq se ghuroob-e-aftab tak khane, peene aur azdawaji talluqat se rukna hai.",
   "post": [
    "zamungkor",
@@ -14306,7 +14306,7 @@
    "Eid ke din roza rakh le",
    "Baad mein chhoote hue rozon ki Qada kare"
   ],
-  "explanation_ur": "مسافر اور بیمار لوگ جو رمضان کے روزے چھوڑ دیں، وہ صحت یاب ہونے یا سفر ختم ہونے پر بعد میں ان کی قضا کرتے ہیں؛ فدیہ ان لوگوں کے لیے ہے جو مستقل طور پر روزہ رکھنے سے عاجز ہوں۔",
+  "explanation_ur": "مسافر اور بیمار لوگ جو رمضان کے روزے چھوڑ دیں، بعد میں جب روزہ رکھ سکیں تو ان کی قضا کرتے ہیں۔ فدیہ ان لوگوں کے لیے ہے جو مستقل طور پر روزہ رکھنے سے عاجز ہوں۔",
   "explanation_roman": "Musafir aur beemar log jo Ramadan ke roze chhor dein, woh sehatyab hone ya safar khatam hone par baad mein un ki Qada karte hain; Fidya un logon ke liye hai jo mustaqil tor par roza rakhne se aajiz hon.",
   "post": [
    "zamungkor",
@@ -14386,7 +14386,7 @@
  },
  {
   "id": "ISL-304",
-  "question_ur": "مندرجہ ذیل میں سے کس چیز سے روزہ نہیں ٹوٹتا؟",
+  "question_ur": "مندرجہ ذیل میں سے کس سے روزہ نہیں ٹوٹتا؟",
   "question_roman": "Mandrajah zail mein se kis cheez se roza nahi toot-ta?",
   "options_ur": [
    "جان بوجھ کر کھانا کھانے سے",
@@ -14433,7 +14433,7 @@
  },
  {
   "id": "ISL-305",
-  "question_ur": "سحری وہ کھانا ہے جو کھایا جاتا ہے...",
+  "question_ur": "سحری وہ کھانا ہے جو کھایا جاتا ہے…",
   "question_roman": "Sehri woh khana hai jo khaya jata hai...",
   "options_ur": [
    "غروب آفتاب کے بعد، روزہ افطار کرنے کے لیے",
@@ -14447,7 +14447,7 @@
    "Roze ke dauran dopahar ko",
    "Eid ki namaz ke baad"
   ],
-  "explanation_ur": "سحری صبح صادق (فجر) سے پہلے روزہ شروع کرنے کے لیے کھائی جاتی ہے؛ روزہ غروب آفتاب پر افطاری سے کھولا جاتا ہے۔",
+  "explanation_ur": "سحری صبح صادق (فجر) سے پہلے روزہ شروع کرنے کے لیے کھائی جاتی ہے۔ روزہ غروب آفتاب کے وقت افطاری سے کھولا جاتا ہے۔",
   "explanation_roman": "Sehri subh-e-sadiq (Fajr) se pehle roza shuru karne ke liye khayi jati hai; roza ghuroob-e-aftab par Iftari se khola jata hai.",
   "post": [
    "zamungkor",
@@ -14494,7 +14494,7 @@
    "Ramadan mein sirf ghar par namaz parhna",
    "Ibadat ke liye masjid mein goshanashini ikhtiyar karna, khaas tor par Ramadan ke aakhri das dinon mein"
   ],
-  "explanation_ur": "اعتکاف عبادت کے لیے مسجد میں گوشہ نشینی اختیار کرنا ہے؛ رمضان کے آخری دس دنوں کا اعتکاف مردوں کے لیے سنت مؤکدہ ہے۔",
+  "explanation_ur": "اعتکاف عبادت کے لیے مسجد میں گوشہ نشینی اختیار کرنا ہے۔ رمضان کے آخری دس دنوں کا اعتکاف مردوں کے لیے سنت مؤکدہ ہے۔",
   "explanation_roman": "Itikaf ibadat ke liye masjid mein goshanashini ikhtiyar karna hai; Ramadan ke aakhri das dinon ka Itikaf mardon ke liye Sunnat-e-Muakkadah hai.",
   "post": [
    "zamungkor",
@@ -14527,7 +14527,7 @@
  },
  {
   "id": "ISL-307",
-  "question_ur": "لیلۃ القدر کس راتوں میں تلاش کی جاتی ہے؟",
+  "question_ur": "لیلۃ القدر کن راتوں میں تلاش کی جاتی ہے؟",
   "question_roman": "Laylatul Qadr kin raaton mein talash ki jati hai?",
   "options_ur": [
    "رمضان کے آخری دس دنوں کی طاق راتوں میں",
@@ -14574,7 +14574,7 @@
  },
  {
   "id": "ISL-308",
-  "question_ur": "پاکستان میں معیاری حنفی طریقے کے مطابق تراویح کی نماز کتنی رکعتوں پر مشتمل ہے؟",
+  "question_ur": "پاکستان میں معیاری حنفی طریقے کے مطابق تراویح کتنی رکعتوں کی ہوتی ہے؟",
   "question_roman": "Pakistan mein mayari Hanafi tareeqe ke mutabiq Taraweeh ki namaz kitni rakaton par mushtamil hai?",
   "options_ur": [
    "8 رکعتیں، اکیلے پڑھی جاتی ہیں",
@@ -14588,7 +14588,7 @@
    "20 rakatein, jamaat ke sath parhi jati hain",
    "40 rakatein, akele parhi jati hain"
   ],
-  "explanation_ur": "معیاری حنفی طریقے میں تراویح 20 رکعتیں ہیں جو رمضان میں نماز عشاء کے بعد جماعت کے ساتھ پڑھی جاتی ہیں۔",
+  "explanation_ur": "معیاری حنفی طریقے میں تراویح 20 رکعتوں کی ہوتی ہے، جو رمضان میں نماز عشاء کے بعد جماعت کے ساتھ پڑھی جاتی ہے۔",
   "explanation_roman": "Mayari Hanafi tareeqe mein Taraweeh 20 rakatein hain jo Ramadan mein namaz-e-Isha ke baad jamaat ke sath parhi jati hain.",
   "post": [
    "zamungkor",
@@ -15011,7 +15011,7 @@
    "Najd",
    "Madinah"
   ],
-  "explanation_ur": "یلملم یمن سے آنے والوں کی میقات ہے، جب کہ ذات عرق عراق، قرن المنازل نجد اور ذوالحلیفہ مدینہ سے آنے والوں کی میقات ہے۔",
+  "explanation_ur": "یلملم یمن سے آنے والوں کی میقات ہے، جب کہ ذات عرق عراق سے، قرن المنازل نجد سے اور ذوالحلیفہ مدینہ سے آنے والوں کی میقات ہے۔",
   "explanation_roman": "Yalamlam Yemen se aane walon ki Miqat hai, jab ke Dhat Irq Iraq, Qarn al-Manazil Najd aur Dhul-Hulayfah Madinah se aane walon ki Miqat hai.",
   "post": [
    "zamungkor",
@@ -15246,7 +15246,7 @@
    "Safa aur Marwah",
    "Mina aur Muzdalifah"
   ],
-  "explanation_ur": "سعی صفا اور مروہ کی پہاڑیوں کے درمیان سات چکروں میں ادا کی جاتی ہے، اور یہ حضرت ہاجرہ رضی اللہ عنہا کی اپنے بیٹے حضرت اسماعیل علیہ السلام کے لیے پانی کی تلاش کی یاد ہے۔",
+  "explanation_ur": "سعی صفا اور مروہ کی پہاڑیوں کے درمیان سات چکروں میں ادا کی جاتی ہے، اور یہ حضرت ہاجرہ رضی اللہ عنہا کی اپنے بیٹے حضرت اسماعیل علیہ السلام کے لیے پانی کی تلاش کی یادگار ہے۔",
   "explanation_roman": "Sai Safa aur Marwah ki pahadiyon ke darmiyan saat chakron mein ada ki jati hai, aur yeh Hazrat Hajar Raziallahu Anha ki apne bete Hazrat Ismail Alaihis Salam ke liye pani ki talash ki yaad hai.",
   "post": [
    "zamungkor",
@@ -15420,7 +15420,7 @@
  },
  {
   "id": "ISL-326",
-  "question_ur": "منیٰ میں حاجی کتنے پتھر کے ستونوں، جنہیں جمرات کہتے ہیں، پر رمی کرتے ہیں؟",
+  "question_ur": "منیٰ میں حاجی کتنے ستونوں پر رمی کرتے ہیں، جنہیں جمرات کہا جاتا ہے؟",
   "question_roman": "Mina mein Haji kitne pathar ke sutoonon, jinhein Jamarat kehte hain, par Rami karte hain?",
   "options_ur": [
    "دو",
@@ -15434,7 +15434,7 @@
    "Teen",
    "Paanch"
   ],
-  "explanation_ur": "منیٰ میں تین جمرات ہیں، اولیٰ، وسطیٰ اور عقبہ، اور حاجی ہر ستون پر سات کنکریاں مارتا ہے، عید کے دن صرف عقبہ پر اور ایام تشریق میں تینوں پر رمی کی جاتی ہے۔",
+  "explanation_ur": "منیٰ میں تین جمرات ہیں: اولیٰ، وسطیٰ اور عقبہ۔ حاجی ہر ستون پر سات کنکریاں پھینکتا ہے؛ عید کے دن صرف عقبہ پر اور ایام تشریق میں تینوں پر رمی کی جاتی ہے۔",
   "explanation_roman": "Mina mein teen Jamarat hain, Ula, Wusta aur Aqaba, aur Haji har sutoon par saat kankariyan marta hai, Eid ke din sirf Aqaba par aur Ayyam-e-Tashreeq mein teenon par Rami ki jati hai.",
   "post": [
    "zamungkor",
@@ -15514,7 +15514,7 @@
  },
  {
   "id": "ISL-328",
-  "question_ur": "عمرہ کے ارکان کا مجموعہ کون سا ہے، اور وقت کے لحاظ سے عمرہ حج سے کس طرح مختلف ہے؟",
+  "question_ur": "عمرہ کے ارکان کون سے ہیں، اور وقت کے لحاظ سے عمرہ حج سے کس طرح مختلف ہے؟",
   "question_roman": "Umrah ke arkan ka majmua kaun sa hai, aur waqt ke lihaza se Umrah Hajj se kis tarah mukhtalif hai?",
   "options_ur": [
    "احرام، عرفات میں وقوف، رمی، اور قربانی، جو صرف حج کے موسم میں ادا ہوتا ہے",
@@ -15810,7 +15810,7 @@
    "Aap Sallallahu Alaihi Wasallam ko Al-Amin ka laqab diya gaya",
    "Hazrat Jibreel Alaihis Salam ne Aap Sallallahu Alaihi Wasallam ka seena khol kar dil ko paak kiya"
   ],
-  "explanation_ur": "شق صدر کے دوران حضرت جبرئیل علیہ السلام نے آپ ﷺ کا سینہ کھول کر دل کو صاف کیا، جب آپ ﷺ بنو سعد کے ساتھ رہ رہے تھے۔",
+  "explanation_ur": "شق صدر کے دوران حضرت جبرئیل علیہ السلام نے آپ ﷺ کا سینہ کھول کر دل کو پاک کیا، جب آپ ﷺ بنو سعد کے ساتھ رہ رہے تھے۔",
   "explanation_roman": "Shaq-e-Sadr ke dauran Hazrat Jibreel Alaihis Salam ne Aap Sallallahu Alaihi Wasallam ka seena khol kar dil ko saaf kiya, jab Aap Sallallahu Alaihi Wasallam Banu Saad ke sath reh rahe thay.",
   "post": [
    "zamungkor",
@@ -15941,7 +15941,7 @@
   "question_roman": "Hilf al-Fudul ke muahide ka kya maqsad tha, jis mein Hazrat Muhammad Sallallahu Alaihi Wasallam ne jawani mein hissa liya?",
   "options_ur": [
    "شام جانے والے تجارتی قافلوں کو منظم کرنا",
-   "مظلوم لوگوں کی مدد کرنا اور مظلوموں کے حقوق واپس دلانا",
+   "مظلوموں کی مدد کرنا اور جن پر ظلم ہوا ہو ان کے حقوق واپس دلانا",
    "کعبہ کی تعمیر نو کرنا",
    "قریش کے قبائل کے لیے دولت جمع کرنا"
   ],
@@ -15951,7 +15951,7 @@
    "Kaaba ki tameer-e-nau karna",
    "Quraish ke qabail ke liye daulat jama karna"
   ],
-  "explanation_ur": "حلف الفضول مظلوموں کا ساتھ دینے، ظلم کے شکار لوگوں کی مدد کرنے اور ان کے حقوق واپس دلانے کا معاہدہ تھا۔",
+  "explanation_ur": "حلف الفضول مظلوموں کا ساتھ دینے، ستائے ہوئے لوگوں کی مدد کرنے اور ان کے حقوق واپس دلانے کا معاہدہ تھا۔",
   "explanation_roman": "Hilf al-Fudul mazloomon ka sath dene, zulm ke shikar logon ki madad karne aur un ke huqooq wapas dilane ka muahida tha.",
   "post": [
    "zamungkor",
@@ -16037,7 +16037,7 @@
    "آپ ﷺ کی سچائی، امانت داری اور اعلیٰ اخلاق",
    "مکہ میں آپ ﷺ کی بہت زیادہ دولت اور جائیداد",
    "شاعری اور تقریر میں آپ ﷺ کی مہارت",
-   "قریش کے سردار کی حیثیت سے آپ ﷺ کا مقام"
+   "قریش میں سرداری کا مقام"
   ],
   "options_roman": [
    "Aap Sallallahu Alaihi Wasallam ki sachai, amanat daari aur aala akhlaaq",
@@ -16360,7 +16360,7 @@
  },
  {
   "id": "ISL-346",
-  "question_ur": "شعب ابی طالب کی وادی میں بنو ہاشم کا مقاطعہ (بائیکاٹ) کتنے عرصے تک جاری رہا؟",
+  "question_ur": "شعب ابی طالب کی وادی میں بنو ہاشم کا مقاطعہ کتنے عرصے تک جاری رہا؟",
   "question_roman": "Shib Abi Talib ki waadi mein Banu Hashim ka muqata (boycott) kitne arse tak jari raha?",
   "options_ur": [
    "1 سال",
@@ -16410,7 +16410,7 @@
   "question_ur": "نبوت کے 10ویں سال کو عام الحزن (غم کا سال) کیوں کہا جاتا ہے؟",
   "question_roman": "Nabuwwat ke 10wein saal ko Aam-ul-Huzn (Gham ka saal) kyun kaha jata hai?",
   "options_ur": [
-   "اس سال ابو طالب اور حضرت خدیجہ رضی اللہ عنہا دونوں کا انتقال ہو گیا",
+   "اس سال ابو طالب اور حضرت خدیجہ رضی اللہ عنہا دونوں وفات پا گئے",
    "اس سال شعب ابی طالب کا مقاطعہ شروع ہوا",
    "اس سال حبشہ کی طرف ہجرت ہوئی",
    "اس سال عقبہ کی پہلی بیعت ہوئی"
@@ -16599,7 +16599,7 @@
   "question_roman": "Isra aur Miraj ki raat Hazrat Muhammad Sallallahu Alaihi Wasallam ne kis sawari par safar kiya?",
   "options_ur": [
    "براق",
-   "قصویٰ",
+   "قصواء",
    "دلدل",
    "عضباء"
   ],
@@ -16609,7 +16609,7 @@
    "Duldul",
    "Adba"
   ],
-  "explanation_ur": "براق اس رات کے سفر کی سواری تھی۔ قصویٰ اور عضباء اونٹنیاں تھیں اور دلدل ایک خچر تھا، جن کا تعلق دوسرے مواقع سے ہے۔",
+  "explanation_ur": "براق اس رات کے سفر کی سواری تھی۔ قصواء اور عضباء اونٹنیاں تھیں اور دلدل ایک خچر تھا، جن کا تعلق دوسرے مواقع سے ہے۔",
   "explanation_roman": "Buraq us raat ke safar ki sawari thi. Qaswa aur Adba oontniyan thin aur Duldul aik khachar tha, jin ka talluq doosre mauaqon se hai.",
   "post": [
    "zamungkor",
@@ -16656,7 +16656,7 @@
    "Us ka badshah Najashi aadil tha aur kisi par zulm nahi hone deta tha",
    "Habsha Makkah se qareeb tareen mulk tha"
   ],
-  "explanation_ur": "مسلمان دو گروہوں میں حبشہ گئے۔ بادشاہ نجاشی نے انہیں پناہ دی اور انہیں قریش کے حوالے کرنے سے انکار کر دیا۔",
+  "explanation_ur": "مسلمان دو گروہوں میں ہجرت کر کے حبشہ گئے۔ بادشاہ نجاشی نے انہیں پناہ دی اور انہیں قریش کے حوالے کرنے سے انکار کر دیا۔",
   "explanation_roman": "Musalman do grohon mein Habsha gaye. Badshah Najashi ne unhein panah di aur unhein Quraish ke hawale karne se inkar kar diya.",
   "post": [
    "zamungkor",
@@ -17018,7 +17018,7 @@
  },
  {
   "id": "ISL-360",
-  "question_ur": "ہجرت کے سفر کے دوران قریش کے اعلان کردہ انعام کی لالچ میں حضرت محمد ﷺ اور حضرت ابو بکر رضی اللہ عنہ کا پیچھا کس نے کیا؟",
+  "question_ur": "ہجرت کے سفر کے دوران قریش کے اعلان کردہ انعام کی امید میں حضرت محمد ﷺ اور حضرت ابو بکر رضی اللہ عنہ کا پیچھا کس نے کیا؟",
   "question_roman": "Hijrat ke safar ke dauran Quraish ke ailaan kardah inaam ki lalach mein Hazrat Muhammad Sallallahu Alaihi Wasallam aur Hazrat Abu Bakr Raziallahu Anhu ka peecha kis ne kiya?",
   "options_ur": [
    "ابو جہل",
@@ -17032,7 +17032,7 @@
    "Suraqah bin Malik",
    "Abu Lahab"
   ],
-  "explanation_ur": "سراقہ بن مالک انعام کی لالچ میں ان کے نقش قدم پر چلا، لیکن اس کا گھوڑا ٹھوکر کھا گیا اور اس نے پیچھا چھوڑ دیا۔",
+  "explanation_ur": "سراقہ بن مالک انعام کی امید میں ان کا پیچھا کرتا ہوا آیا، لیکن اس کا گھوڑا ٹھوکر کھا گیا اور اس نے پیچھا چھوڑ دیا۔",
   "explanation_roman": "Suraqah bin Malik inaam ki lalach mein un ke naqsh-e-qadam par chala, lekin us ka ghora thokar kha gaya aur us ne peecha chhor diya.",
   "post": [
    "zamungkor",
@@ -17065,7 +17065,7 @@
  },
  {
   "id": "ISL-361",
-  "question_ur": "مدینہ کی طرف سفر کے دوران حضرت محمد ﷺ شہر میں داخل ہونے سے پہلے کس قریبی مقام پر ٹھہرے تھے؟",
+  "question_ur": "مدینہ جاتے ہوئے شہر میں داخل ہونے سے پہلے حضرت محمد ﷺ کس قریبی بستی میں ٹھہرے تھے؟",
   "question_roman": "Madinah ke safar ke dauran Hazrat Muhammad Sallallahu Alaihi Wasallam sheher mein dakhil hone se pehle kis qareebi maqam par thehre thay?",
   "options_ur": [
    "طائف",
@@ -17206,7 +17206,7 @@
  },
  {
   "id": "ISL-364",
-  "question_ur": "مدینہ پہنچنے کے بعد حضرت محمد ﷺ کس صحابی کے گھر مہمان کے طور پر ٹھہرے تھے؟",
+  "question_ur": "مدینہ پہنچنے کے بعد حضرت محمد ﷺ کس صحابی کے گھر مہمان ٹھہرے تھے؟",
   "question_roman": "Madinah pahunchnay ke baad Hazrat Muhammad Sallallahu Alaihi Wasallam kis Sahabi ke ghar mehmaan ke tor par thehre thay?",
   "options_ur": [
    "سعد بن عبادہ رضی اللہ عنہ",
@@ -17220,7 +17220,7 @@
    "Umar bin Khattab Raziallahu Anhu",
    "Abu Ayyub Ansari Raziallahu Anhu"
   ],
-  "explanation_ur": "ابو ایوب انصاری رضی اللہ عنہ نے حضرت محمد ﷺ کی میزبانی کی یہاں تک کہ مسجد نبوی اور اس سے ملحق حجرے تعمیر ہو گئے۔",
+  "explanation_ur": "ابو ایوب انصاری رضی اللہ عنہ نے حضرت محمد ﷺ کی میزبانی کی، یہاں تک کہ مسجد نبوی اور اس سے ملحق حجرے تعمیر ہو گئے۔",
   "explanation_roman": "Abu Ayyub Ansari Raziallahu Anhu ne Hazrat Muhammad Sallallahu Alaihi Wasallam ki mezbani ki yahan tak ke Masjid Nabawi aur us se mulhiq hujray tameer ho gaye.",
   "post": [
    "zamungkor",
@@ -17253,11 +17253,11 @@
  },
  {
   "id": "ISL-365",
-  "question_ur": "میثاق مدینہ (چارٹر آف مدینہ) کن گروہوں کے درمیان معاہدہ تھا؟",
+  "question_ur": "میثاقِ مدینہ کن گروہوں کے درمیان معاہدہ تھا؟",
   "question_roman": "Misaq-e-Madinah (Charter of Madinah) kin grohon ke darmiyan muahida tha?",
   "options_ur": [
    "صرف مہاجرین کے درمیان",
-   "مدینہ کے مسلمانوں، یہودیوں اور دوسرے قبیلوں کے درمیان",
+   "مسلمانوں، یہودیوں اور مدینہ کے دوسرے قبیلوں کے درمیان",
    "قریش اور اہل طائف کے درمیان",
    "مکہ کے مسلمانوں اور رومیوں کے درمیان"
   ],
@@ -17267,7 +17267,7 @@
    "Quraysh aur Ahl-e-Taif ke darmiyan",
    "Makkah ke Musalmanon aur Romiyon ke darmiyan"
   ],
-  "explanation_ur": "میثاق مدینہ نے مدینہ میں رہنے والے مسلمانوں، یہودیوں اور دوسرے قبیلوں کو ایک تحریری معاہدے کے تحت متحد کیا۔",
+  "explanation_ur": "میثاقِ مدینہ نے مدینہ میں رہنے والے مسلمانوں، یہودیوں اور دوسرے قبیلوں کو ایک تحریری معاہدے کے تحت متحد کر دیا۔",
   "explanation_roman": "Misaq-e-Madinah ne Madinah mein rehne walay Musalmanon, Yahudiyon aur doosray qabeelon ko aik tehreeri muahiday ke tehet muttahid kiya.",
   "post": [
    "zamungkor",
@@ -17300,7 +17300,7 @@
  },
  {
   "id": "ISL-366",
-  "question_ur": "میثاق مدینہ کے مطابق شہر کے بارے میں تمام فریقوں کی مشترکہ ذمہ داری کیا تھی؟",
+  "question_ur": "میثاقِ مدینہ کے مطابق شہر کے بارے میں تمام فریقوں کی مشترکہ ذمہ داری کیا تھی؟",
   "question_roman": "Misaq-e-Madinah ke mutabiq sheher ke baaray mein tamam fareeqon ki mushtarika zimmedari kya thi?",
   "options_ur": [
    "قریش کو ٹیکس ادا کرنا",
@@ -17314,7 +17314,7 @@
    "Kisi bhi hamlawar ke khilaf mil kar Madinah ka difa karna",
    "Sheher ko aik qabeelay ke hawalay kar dena"
   ],
-  "explanation_ur": "میثاق مدینہ نے اہل مدینہ کو دفاع کے لیے ایک امت بنایا، اس لیے تمام فریق مل کر شہر کا دفاع کرتے۔ اس میں یہودیوں کو مذہبی آزادی کی ضمانت بھی دی گئی تھی اور حضرت محمد ﷺ کو تنازعات میں ثالث مقرر کیا گیا تھا۔",
+  "explanation_ur": "میثاقِ مدینہ نے اہل مدینہ کو دفاع کے لیے ایک امت بنایا، اس لیے تمام فریق مل کر شہر کا دفاع کرتے۔ اس میں یہودیوں کو مذہبی آزادی کی ضمانت بھی دی گئی تھی اور حضرت محمد ﷺ کو تنازعات میں ثالث مقرر کیا گیا تھا۔",
   "explanation_roman": "Misaq-e-Madinah ne Ahl-e-Madinah ko difa ke liye aik Ummat banaya, is liye tamam fareeq mil kar sheher ka difa karte. Is mein Yahudiyon ko mazhabi azadi ki zamanat bhi di gayi thi aur Hazrat Muhammad Sallallahu Alaihi Wasallam ko tanazaat mein saalis muqarrar kiya gaya tha.",
   "post": [
    "zamungkor",
@@ -17535,7 +17535,7 @@
  },
  {
   "id": "ISL-371",
-  "question_ur": "غزوہ بدر رمضان کے مہینے کی کس تاریخ کو لڑی گئی تھی؟",
+  "question_ur": "غزوہ بدر رمضان کے مہینے کی کس تاریخ کو ہوا تھا؟",
   "question_roman": "Ghazwa-e-Badr Ramadan ke mahinay ki kis tareekh ko lari gayi thi?",
   "options_ur": [
    "17 رمضان",
@@ -17549,7 +17549,7 @@
    "21 Ramadan",
    "27 Ramadan"
   ],
-  "explanation_ur": "غزوہ بدر 17 رمضان کو ہوئی تھی اور چھوٹی مسلمان فوج کو فیصلہ کن فتح ملی تھی، جس میں قریش کے سرکردہ مخالف ابو جہل مارا گیا تھا۔ قرآن میں بیان ہے کہ بدر میں فرشتوں نے مومنوں کی مدد کی تھی۔",
+  "explanation_ur": "غزوہ بدر 17 رمضان کو ہوا، اور چھوٹی مسلمان فوج کو فیصلہ کن فتح ملی، جس میں قریش کے سرکردہ مخالف ابو جہل مارا گیا۔ قرآن پاک میں بیان ہے کہ بدر میں فرشتوں نے مومنوں کی مدد کی۔",
   "explanation_roman": "Ghazwa-e-Badr 17 Ramadan ko hui thi aur chhoti Muslim fauj ko faisla kun fatah mili thi, jis mein Quraysh ke sarkardah mukhalif Abu Jahl mara gaya tha. Quran mein bayan hai ke Badr mein farishton ne mominon ki madad ki thi.",
   "post": [
    "zamungkor",
@@ -17596,7 +17596,7 @@
    "Madinah mein lashkar gaah ki hifazat karen",
    "Jo kuch bhi ho, apni jagah par qaim rahen"
   ],
-  "explanation_ur": "تیر اندازوں کو ہر حال میں پہاڑی پر اپنی جگہ قائم رہنے کا حکم دیا گیا تھا اور پہاڑی چھوڑنے سے ابتدائی کامیابی مسلمانوں کے لیے نقصان میں بدل گئی تھی۔",
+  "explanation_ur": "تیر اندازوں کو ہر حال میں پہاڑی پر اپنی جگہ قائم رہنے کا حکم دیا گیا تھا، اور پہاڑی چھوڑنے سے ابتدائی کامیابی پسپائی میں بدل گئی۔",
   "explanation_roman": "Teer andazon ko har haal mein pahari par apni jagah qaim rehne ka hukm diya gaya tha aur pahari chhorne se ibtedai kamyabi Musalmanon ke liye nuqsan mein badal gayi thi.",
   "post": [
    "zamungkor",
@@ -17629,7 +17629,7 @@
  },
  {
   "id": "ISL-373",
-  "question_ur": "حضرت محمد ﷺ کے کس چچا کو غزوہ احد میں شہید کیا گیا تھا؟",
+  "question_ur": "غزوہ احد میں حضرت محمد ﷺ کے کون سے چچا شہید ہوئے تھے؟",
   "question_roman": "Hazrat Muhammad Sallallahu Alaihi Wasallam ke kis chacha ko Ghazwa-e-Uhud mein shaheed kiya gaya tha?",
   "options_ur": [
    "عباس بن عبدالمطلب رضی اللہ عنہ",
@@ -17643,7 +17643,7 @@
    "Abu Talib",
    "Abu Lahab"
   ],
-  "explanation_ur": "حمزہ بن عبدالمطلب رضی اللہ عنہ، جو حضرت محمد ﷺ کے چچا تھے، احد میں شہید ہوئے تھے اور انہیں اسلام کے سرکردہ شہیدوں میں شمار کیا جاتا ہے۔",
+  "explanation_ur": "حمزہ بن عبدالمطلب رضی اللہ عنہ، حضرت محمد ﷺ کے چچا، احد میں شہید ہوئے اور انہیں اسلام کے سرکردہ شہید کا درجہ دیا جاتا ہے۔",
   "explanation_roman": "Hamza bin Abdul Muttalib Raziallahu Anhu, jo Hazrat Muhammad Sallallahu Alaihi Wasallam ke chacha thay, Uhud mein shaheed hue thay aur unhein Islam ke sarkardah shaheedon mein shumar kiya jata hai.",
   "post": [
    "zamungkor",
@@ -17831,7 +17831,7 @@
    "Ghair haziri ke dauran Madinah par hamlah hua",
    "Romiyon ke saath sulah ka muahida hua"
   ],
-  "explanation_ur": "مسلمان لشکر تبوک پہنچا لیکن کوئی جنگ نہیں ہوئی اور لشکر مدینہ واپس آ گیا۔ منافقین جنہوں نے جھوٹے بہانوں سے پیچھے رہنے کا فیصلہ کیا تھا، ان کی ملامت کی گئی۔",
+  "explanation_ur": "مسلمان لشکر تبوک پہنچا لیکن کوئی جنگ نہیں ہوئی اور لشکر مدینہ واپس آ گیا۔ جو منافق جھوٹے بہانوں سے پیچھے رہ گئے تھے، ان کی ملامت کی گئی۔",
   "explanation_roman": "Muslim lashkar Tabuk pahuncha lekin koi jang nahi hui aur lashkar Madinah wapas aa gaya. Munafiqeen jinhon ne jhootay bahanon se peechay rehne ka faisla kiya tha, un ki malamat ki gayi.",
   "post": [
    "zamungkor",
@@ -17878,7 +17878,7 @@
    "Hawazin aur Thaqif",
    "Banu Qaynuqa aur Banu Qurayzah"
   ],
-  "explanation_ur": "حنین میں مسلمانوں کو پہلے پیچھے ہٹنا پڑا، لیکن پھر انہوں نے دوبارہ منظم ہو کر ہوازن اور ثقیف کی مشترکہ طاقت کو شکست دی۔",
+  "explanation_ur": "حنین میں مسلمانوں کو پہلے پیچھے ہٹنا پڑا، لیکن پھر انہوں نے دوبارہ منظم ہو کر ہوازن اور ثقیف کی مشترکہ فوجوں کو شکست دی۔",
   "explanation_roman": "Hunayn mein Musalmanon ko pehle peechay hatna para, lekin phir unhon ne dobarah munazzam ho kar Hawazin aur Thaqif ki mushtarika taqat ko shikast di.",
   "post": [
    "zamungkor",
@@ -17925,7 +17925,7 @@
    "2 saal",
    "20 saal"
   ],
-  "explanation_ur": "معاہدے میں 10 سال کی جنگ بندی طے ہوئی، مسلمانوں کو اگلے سال عمرہ کرنے کی اجازت ملی اور منحرف افراد کی واپسی کے بارے میں شرائط شامل تھیں۔ سورہ الفتح میں حدیبیہ کے نتیجے کو واضح فتح قرار دیا گیا ہے۔",
+  "explanation_ur": "معاہدے میں 10 سال کی جنگ بندی طے ہوئی، مسلمانوں کو اگلے سال عمرہ کرنے کی اجازت ملی اور ایک طرف سے دوسری طرف جانے والوں کی واپسی کے بارے میں شرائط شامل تھیں۔ سورہ الفتح میں حدیبیہ کے نتیجے کو واضح فتح قرار دیا گیا ہے۔",
   "explanation_roman": "Muahiday mein 10 saal ki jang bandi tay hui, Musalmanon ko aglay saal Umrah karne ki ijazat mili aur munharif afraad ki wapsi ke baaray mein sharait shamil thin. Surah Al-Fath mein Hudaybiyyah ke nateejay ko wazeh fatah qarar diya gaya hai.",
   "post": [
    "zamungkor",
@@ -17972,7 +17972,7 @@
    "Baiat al-Mubahalah",
    "Baiat al-Ridwan"
   ],
-  "explanation_ur": "حدیبیہ میں درخت کے نیچے لی گئی بیعت کو بیعت رضوان کہا جاتا ہے، جو اس وقت لی گئی تھی جب یہ خبر پھیلی تھی کہ عثمان رضی اللہ عنہ کو نقصان پہنچایا گیا ہے۔",
+  "explanation_ur": "حدیبیہ میں درخت کے نیچے لی گئی بیعت کو بیعت رضوان کہا جاتا ہے، یعنی اللہ کی رضا کی بیعت، جو اس وقت لی گئی جب یہ خبر پھیلی کہ حضرت عثمان رضی اللہ عنہ کو نقصان پہنچایا گیا ہے۔",
   "explanation_roman": "Hudaybiyyah mein darakht ke neechay li gayi Baiat ko Baiat al-Ridwan kaha jata hai, jo us waqt li gayi thi jab yeh khabar phaili thi ke Usman Raziallahu Anhu ko nuqsan pahunchaya gaya hai.",
   "post": [
    "zamungkor",
@@ -18005,7 +18005,7 @@
  },
  {
   "id": "ISL-381",
-  "question_ur": "کس واقعے کی وجہ سے فتح مکہ کا راستہ ہموار ہوا؟",
+  "question_ur": "فتح مکہ کا براہ راست سبب کون سا واقعہ بنا؟",
   "question_roman": "Kis waqiye ki wajah se Fatah Makkah ka rasta hamwaar hua?",
   "options_ur": [
    "قریش نے مدینہ کے ساتھ تجارت سے انکار کر دیا",
@@ -18099,7 +18099,7 @@
  },
  {
   "id": "ISL-383",
-  "question_ur": "حجۃ الوداع کے دوران حضرت محمد ﷺ کا خطبہ حجۃ الوداع کس مقام پر دیا گیا تھا؟",
+  "question_ur": "حجۃ الوداع کے دوران خطبہ کس مقام پر دیا گیا تھا؟",
   "question_roman": "Hajjatul Wida ke dauran Hazrat Muhammad Sallallahu Alaihi Wasallam ka Khutbah Hajjatul Wida kis maqam par diya gaya tha?",
   "options_ur": [
    "عرفات",
@@ -18113,7 +18113,7 @@
    "Muzdalifah",
    "Quba"
   ],
-  "explanation_ur": "خطبہ حجۃ الوداع حجۃ الوداع کے دوران عرفات میں دیا گیا تھا۔ اسی زمانے میں یہ وحی آئی کہ مومنوں کے لیے دین مکمل کر دیا گیا ہے۔",
+  "explanation_ur": "خطبہ عرفات میں دیا گیا تھا، حجۃ الوداع کے موقع پر۔ اسی زمانے میں یہ وحی نازل ہوئی کہ مومنوں کے لیے دین مکمل کر دیا گیا ہے۔",
   "explanation_roman": "Khutbah Hajjatul Wida Hajjatul Wida ke dauran Arafat mein diya gaya tha. Isi zamanay mein yeh Wahi aayi ke mominon ke liye Deen mukammal kar diya gaya hai.",
   "post": [
    "zamungkor",
@@ -18160,7 +18160,7 @@
    "Kisi Arab ko kisi Ajmi par koi fauqiyat hasil nahi, siwaye Taqwa ke",
    "Qabaili nasab izzat ka faisla karta hai"
   ],
-  "explanation_ur": "خطبہ حجۃ الوداع میں سکھایا گیا کہ کسی عرب کو کسی عجمی پر تقویٰ اور اچھے اخلاق کے سوا کوئی فوقیت حاصل نہیں ہے۔ اس میں جان، مال اور عزت کی حرمت، عورتوں کے حقوق اور قرآن و سنت کو مضبوطی سے تھامنے پر بھی زور دیا گیا تھا۔",
+  "explanation_ur": "خطبہ حجۃ الوداع میں سکھایا گیا کہ کسی عرب کو کسی عجمی پر تقویٰ اور اچھے اخلاق کے سوا کوئی فوقیت حاصل نہیں ہے۔ اس میں جان، مال اور عزت کی حرمت، عورتوں کے حقوق اور قرآن پاک اور سنت کو مضبوطی سے تھامنے پر بھی زور دیا گیا تھا۔",
   "explanation_roman": "Khutbah Hajjatul Wida mein sikhaya gaya ke kisi Arab ko kisi Ajmi par Taqwa aur achhay akhlaaq ke siwa koi fauqiyat hasil nahi hai. Is mein jaan, maal aur izzat ki hurmat, auraton ke huqooq aur Quran-o-Sunnat ko mazbooti se thaamnay par bhi zor diya gaya tha.",
   "post": [
    "zamungkor",
@@ -18334,7 +18334,7 @@
  },
  {
   "id": "ISL-388",
-  "question_ur": "مدینہ میں کس جگہ مسلمان جمع ہوئے اور حضرت محمد ﷺ کے وصال کے بعد حضرت ابو بکر رضی اللہ عنہ کو خلیفہ منتخب کیا؟",
+  "question_ur": "حضرت محمد ﷺ کے وصال کے بعد مدینہ میں کس جگہ مسلمانوں نے جمع ہو کر حضرت ابو بکر رضی اللہ عنہ کو خلیفہ منتخب کیا؟",
   "question_roman": "Madinah mein kis jagah Musalman jama hue aur Hazrat Muhammad Sallallahu Alaihi Wasallam ke wisaal ke baad Hazrat Abu Bakr Raziallahu Anhu ko Khalifa muntakhab kiya?",
   "options_ur": [
    "سقیفہ بنی ساعدہ",
@@ -18348,7 +18348,7 @@
    "Masjid al-Haram",
    "Ghaar-e-Thawr"
   ],
-  "explanation_ur": "یہ اجتماع مدینہ میں سقیفہ بنی ساعدہ پر ہوا، جہاں حضرت ابو بکر رضی اللہ عنہ کی بیعت کی گئی۔ وہ ہجرت کے دوران حضرت محمد ﷺ کے قریبی ساتھی تھے۔",
+  "explanation_ur": "یہ اجتماع مدینہ میں سقیفہ بنی ساعدہ میں ہوا، جہاں حضرت ابو بکر رضی اللہ عنہ کی بیعت کی گئی۔ وہ ہجرت کے دوران حضرت محمد ﷺ کے قریبی ساتھی تھے۔",
   "explanation_roman": "Yeh ijtema Madinah mein Saqifah Bani Sa'idah par hua, jahan Hazrat Abu Bakr Raziallahu Anhu ki Baiat ki gayi. Woh Hijrat ke dauran Hazrat Muhammad Sallallahu Alaihi Wasallam ke qareebi saathi thay.",
   "post": [
    "zamungkor",
@@ -18663,7 +18663,7 @@
  },
  {
   "id": "ISL-395",
-  "question_ur": "حضرت عمر رضی اللہ عنہ کی خلافت میں وہ کس شہر کی سپردگی قبول کرنے خود وہاں تشریف لے گئے؟",
+  "question_ur": "کس شہر نے سپردگی اختیار کی تھی، جسے قبول کرنے حضرت عمر رضی اللہ عنہ خود وہاں تشریف لے گئے تھے؟",
   "question_roman": "Hazrat Umar Raziallahu Anhu ki Khilafat mein woh kis sheher ki supurdagi qubool karne khud wahan tashreef le gaye?",
   "options_ur": [
    "دمشق",
@@ -18724,7 +18724,7 @@
    "Jhoote dawedaron par muqadma chalane ki adalat",
    "Tarjuma shudah kitabon ki library"
   ],
-  "explanation_ur": "دیوان ایک سرکاری رجسٹر تھا جس میں ان لوگوں کا اندراج ہوتا تھا جو خزانے سے وظائف اور ادائیگیوں کے مستحق تھے۔ حضرت عمر رضی اللہ عنہ نے صوبائی گورنر بھی مقرر کیے، پولیس اور ڈاک کا نظام قائم کیا اور سرکاری دستاویزات پر 622 عیسوی کی ہجرت سے تاریخ ڈالی۔",
+  "explanation_ur": "دیوان ایک سرکاری رجسٹر تھا جس میں ان لوگوں کا اندراج ہوتا تھا جو خزانے سے وظائف اور ادائیگیوں کے مستحق تھے۔ حضرت عمر رضی اللہ عنہ نے صوبائی گورنر بھی مقرر کیے، پولیس اور ڈاک کا نظام قائم کیا اور سرکاری دستاویزات کی تاریخ 622 عیسوی کی ہجرت سے مقرر کی۔",
   "explanation_roman": "Diwan aik sarkari register tha jismein un logon ka indraj hota tha jo khazane se wazaif aur adayegiyon ke mustahiq thay. Hazrat Umar Raziallahu Anhu ne soobai governor bhi muqarrar kiye, police aur daak ka nizam qaim kiya aur sarkari dastavezat par 622 Eiswi ki Hijrat se tareekh daali.",
   "post": [
    "zamungkor",
@@ -18804,7 +18804,7 @@
  },
  {
   "id": "ISL-398",
-  "question_ur": "مدینہ میں نماز فجر کی امامت کے دوران حضرت عمر رضی اللہ عنہ کو کس نے شہید کیا؟",
+  "question_ur": "مدینہ میں نماز فجر کی امامت کے دوران حضرت عمر رضی اللہ عنہ کو کس نے شہید کر دیا تھا؟",
   "question_roman": "Madinah mein Namaz-e-Fajr ki imamat ke dauran Hazrat Umar Raziallahu Anhu ko kis ne shaheed kiya?",
   "options_ur": [
    "ابن ملجم",
@@ -18959,7 +18959,7 @@
    "Unhon ne do bahri muhimat ki qayadat ki",
    "Unhon ne do bar-e-azamon par hukumat ki"
   ],
-  "explanation_ur": "انہوں نے حضرت رقیہ رضی اللہ عنہا سے اور ان کے وصال کے بعد حضرت ام کلثوم رضی اللہ عنہا سے نکاح کیا، جو حضرت محمد ﷺ کی دو صاحبزادیاں تھیں، اس لیے انہیں ذو النورین کہا گیا۔",
+  "explanation_ur": "حضرت رقیہ رضی اللہ عنہا سے نکاح کیا اور ان کے وصال کے بعد حضرت ام کلثوم رضی اللہ عنہا سے۔ یہ دونوں حضرت محمد ﷺ کی صاحبزادیاں تھیں، اسی لیے انہیں ذو النورین کہا گیا۔",
   "explanation_roman": "Unhon ne Hazrat Ruqayyah Raziallahu Anha se aur unke wisaal ke baad Hazrat Umm Kulthum Raziallahu Anha se nikah kiya, jo Hazrat Muhammad Sallallahu Alaihi Wasallam ki do Sahibzadiyan thin, is liye unhein Dhun-Nurayn kaha gaya.",
   "post": [
    "zamungkor",
@@ -18992,7 +18992,7 @@
  },
  {
   "id": "ISL-402",
-  "question_ur": "حضرت عثمان رضی اللہ عنہ نے اپنی خلافت میں کون سی نئی فوجی قوت قائم کی؟",
+  "question_ur": "حضرت عثمان رضی اللہ عنہ نے اپنی خلافت میں کون سی نئی فوجی طاقت قائم کی؟",
   "question_roman": "Hazrat Usman Raziallahu Anhu ne apni Khilafat mein kaun si nayi fauji quwwat qaim ki?",
   "options_ur": [
    "صرف تجارت کے لیے دریائی کشتیوں کا بیڑہ",
@@ -19006,7 +19006,7 @@
    "Bahria (Navy)",
    "Sirf muhasire ke mahireen ki fauj"
   ],
-  "explanation_ur": "حضرت عثمان رضی اللہ عنہ نے پہلی اسلامی بحریہ قائم کی، جس نے بحیرہ روم میں مہمات کیں، جن میں قبرص کی طرف مہم بھی شامل تھی، جبکہ شمالی افریقہ میں بھی اسلامی اقتدار پھیلا۔ انہوں نے مسجد الحرام اور مسجد نبوی کی توسیع بھی کی اور مدینہ میں عوام کے استعمال کے لیے کنواں رومہ خریدا۔",
+  "explanation_ur": "حضرت عثمان رضی اللہ عنہ نے پہلی اسلامی بحریہ قائم کی، جس نے بحیرہ روم میں مہمات کیں، جن میں قبرص کی طرف مہم بھی شامل تھی، جبکہ شمالی افریقہ میں بھی اسلامی اقتدار پھیلا۔ انہوں نے مسجد الحرام اور مسجد نبوی کی توسیع بھی کی اور مدینہ میں عوام کے استعمال کے لیے رومہ کا کنواں خریدا۔",
   "explanation_roman": "Hazrat Usman Raziallahu Anhu ne pehli Islami Bahria qaim ki, jisne Bahira-e-Room mein muhimat kein, jinmein Cyprus ki taraf muhim bhi shamil thi, jabke Shumali Africa mein bhi Islami iqtidar phaila. Unhon ne Masjid al-Haram aur Masjid-e-Nabawi ki tausee bhi ki aur Madinah mein awaam ke istemal ke liye Kuan-e-Rumah khareeda.",
   "post": [
    "zamungkor",
@@ -19045,7 +19045,7 @@
    "فارس میں میدان جنگ میں",
    "قبرص کے قریب سمندری مہم کے دوران",
    "مکہ جاتے ہوئے حادثے میں",
-   "مدینہ میں اپنے گھر پر جب ان کے گھر کا محاصرہ کیا گیا تھا"
+   "مدینہ میں اپنے گھر میں، جب ان کا گھر محاصرے میں تھا"
   ],
   "options_roman": [
    "Faris mein maidan-e-jang mein",
@@ -19053,7 +19053,7 @@
    "Makkah jate hue haadse mein",
    "Madinah mein apne ghar par jab unke ghar ka muhasra kiya gaya tha"
   ],
-  "explanation_ur": "حضرت عثمان رضی اللہ عنہ مدینہ میں اپنے گھر پر شہید ہوئے، جب ان کے گھر کا محاصرہ کیا گیا تھا۔",
+  "explanation_ur": "حضرت عثمان رضی اللہ عنہ مدینہ میں اپنے گھر میں شہید ہوئے۔ اس سے پہلے ان کے گھر کا محاصرہ کیا جا چکا تھا۔",
   "explanation_roman": "Hazrat Usman Raziallahu Anhu Madinah mein apne ghar par shaheed hue, jab unke ghar ka muhasra kiya gaya tha.",
   "post": [
    "zamungkor",
@@ -19136,10 +19136,10 @@
   "question_ur": "حضرت علی رضی اللہ عنہ کی خلافت میں کون سے دو بڑے داخلی تنازعات پیش آئے؟",
   "question_roman": "Hazrat Ali Raziallahu Anhu ki Khilafat mein kaun se do bare daakhili tanazaat pesh aaye?",
   "options_ur": [
-   "جنگ جمل اور جنگ صفین",
-   "جنگ بدر اور جنگ احد",
-   "جنگ یرموک اور جنگ قادسیہ",
-   "جنگ حنین اور غزوہ تبوک"
+   "جنگِ جمل اور جنگِ صفین",
+   "جنگِ بدر اور جنگِ احد",
+   "جنگِ یرموک اور جنگِ قادسیہ",
+   "جنگِ حنین اور غزوہ تبوک"
   ],
   "options_roman": [
    "Jang-e-Jamal aur Jang-e-Siffin",
@@ -19147,7 +19147,7 @@
    "Jang-e-Yarmouk aur Jang-e-Qadisiyyah",
    "Jang-e-Hunayn aur Ghazwa-e-Tabuk"
   ],
-  "explanation_ur": "جنگ جمل اور جنگ صفین حضرت علی رضی اللہ عنہ کی خلافت میں مسلمانوں کے درمیان داخلی تنازعات تھے۔ دونوں حضرت عثمان رضی اللہ عنہ کی شہادت کے بعد کے غیر مستحکم دور میں سیاسی اختلافات سے پیدا ہوئے۔",
+  "explanation_ur": "جنگِ جمل اور جنگِ صفین حضرت علی رضی اللہ عنہ کی خلافت میں مسلمانوں کے درمیان داخلی تنازعات تھے۔ دونوں حضرت عثمان رضی اللہ عنہ کی شہادت کے بعد کے غیر مستحکم دور میں سیاسی اختلافات سے پیدا ہوئے۔",
   "explanation_roman": "Jang-e-Jamal aur Jang-e-Siffin Hazrat Ali Raziallahu Anhu ki Khilafat mein Musalmanon ke darmiyan daakhili tanazaat thay. Dono Hazrat Usman Raziallahu Anhu ki shahadat ke baad ke ghair mustahkam daur mein siyasi ikhtilafat se paida hue.",
   "post": [
    "zamungkor",
@@ -19184,8 +19184,8 @@
   "question_roman": "Khawarij Hazrat Ali Raziallahu Anhu ki Khilafat mein kis waqiye ke baad aik alag giroh ke tor par ubhre?",
   "options_ur": [
    "قرآن پاک کی تدوین",
-   "جنگ جمل",
-   "جنگ صفین کے بعد ہونے والی تحکیم",
+   "جنگِ جمل",
+   "جنگِ صفین کے بعد ہونے والی تحکیم",
    "دارالحکومت کی کوفہ منتقلی"
   ],
   "options_roman": [
@@ -19194,7 +19194,7 @@
    "Jang-e-Siffin ke baad hone wali Tahkeem",
    "Dar-ul-hukumat ki Kufa muntaqili"
   ],
-  "explanation_ur": "جنگ صفین کے بعد ہونے والی تحکیم پر اختلاف کی وجہ سے ایک گروہ حضرت علی رضی اللہ عنہ سے الگ ہو گیا اور خوارج کے نام سے جانا گیا۔",
+  "explanation_ur": "جنگِ صفین کے بعد ہونے والی تحکیم پر اختلاف کی وجہ سے ایک گروہ حضرت علی رضی اللہ عنہ سے الگ ہو گیا اور خوارج کے نام سے جانا گیا۔",
   "explanation_roman": "Jang-e-Siffin ke baad hone wali Tahkeem par ikhtilaf ki wajah se aik giroh Hazrat Ali Raziallahu Anhu se alag ho gaya aur Khawarij ke naam se jana gaya.",
   "post": [
    "zamungkor",
@@ -19241,7 +19241,7 @@
    "Tulayha",
    "Ibn Muljam"
   ],
-  "explanation_ur": "حضرت علی رضی اللہ عنہ پر کوفہ کی مسجد میں نماز فجر کے دوران ابن ملجم نے حملہ کیا اور وہ زخموں کی وجہ سے شہید ہو گئے۔ معیاری روایت کے مطابق وہ نجف میں دفن ہوئے۔",
+  "explanation_ur": "حضرت علی رضی اللہ عنہ پر کوفہ کی مسجد میں نمازِ فجر کے دوران ابن ملجم نے حملہ کیا اور وہ انہی زخموں سے شہید ہو گئے۔ معیاری روایت کے مطابق انہیں نجف میں دفن کیا گیا۔",
   "explanation_roman": "Hazrat Ali Raziallahu Anhu par Kufa ki masjid mein Namaz-e-Fajr ke dauran Ibn Muljam ne hamla kiya aur woh zakhmon ki wajah se shaheed ho gaye. Mayari riwayat ke mutabiq woh Najaf mein dafan hue.",
   "post": [
    "zamungkor",
@@ -19288,7 +19288,7 @@
    "Sachcha",
    "Haq aur batil mein farq karne wala"
   ],
-  "explanation_ur": "اسد اللہ کا مطلب ہے اللہ کا شیر، اور حضرت علی رضی اللہ عنہ حیدر کے نام سے بھی جانے جاتے تھے۔ وہ اپنے علم اور فیصلوں کے لیے بھی مشہور تھے اور باب العلم یعنی علم کے دروازے کی صفت سے بھی منسوب ہیں۔",
+  "explanation_ur": "اسد اللہ کا مطلب ہے اللہ کا شیر، اور حضرت علی رضی اللہ عنہ حیدر کے نام سے بھی جانے جاتے تھے۔ وہ اپنے علم اور فیصلوں کے لیے بھی مشہور تھے، اور انہیں بابِ علم یعنی علم کا دروازہ بھی کہا جاتا ہے۔",
   "explanation_roman": "Asadullah ka matlab hai Allah ka Sher, aur Hazrat Ali Raziallahu Anhu Haydar ke naam se bhi jane jate thay. Woh apne ilm aur faislon ke liye bhi mashhoor thay aur Bab-e-Ilm yani Ilm ke Darwaze ki sifat se bhi mansoob hain.",
   "post": [
    "zamungkor",
@@ -19335,7 +19335,7 @@
    "Naye soobon se wasool kiya jane wala tax",
    "Sirf faujiyon ki taraf se liya jane wala fauji halaf"
   ],
-  "explanation_ur": "بیعت وفاداری کا عوامی عہد تھی، جس کے ذریعے امت خلیفہ کو قبول کرتی تھی اور اسلام کی حدود میں اطاعت کا وعدہ کرتی تھی۔ خلیفہ کا انتخاب وراثت سے نہیں بلکہ بڑے صحابہ کے درمیان مشورے (شوریٰ) سے ہوتا تھا۔",
+  "explanation_ur": "بیعت وفاداری کا عوامی عہد تھی، جس کے ذریعے امت خلیفہ کو قبول کرتی تھی اور اسلام کی حدود میں اطاعت کا وعدہ کرتی تھی۔ خلیفہ کا انتخاب سرکردہ صحابہ کے درمیان مشورے (شوریٰ) سے ہوتا تھا، وراثت سے نہیں۔",
   "explanation_roman": "Baiat wafadari ka awami ahd thi, jiske zariye Ummat Khalifa ko qubool karti thi aur Islam ki hudood mein itaat ka wada karti thi. Khalifa ka intikhab wirasat se nahi balke bare Sahaba ke darmiyan mashware (Shura) se hota tha.",
   "post": [
    "zamungkor",
@@ -19368,7 +19368,7 @@
  },
  {
   "id": "ISL-410",
-  "question_ur": "کس صحابی نے عبرانی زبان سیکھی تھی تاکہ وہ حضرت محمد ﷺ کے لیے خط اور خط و کتابت پڑھ اور لکھ سکیں؟",
+  "question_ur": "کس صحابی نے عبرانی زبان سیکھی تھی تاکہ وہ حضرت محمد ﷺ کے لیے خط و کتابت پڑھ اور لکھ سکیں؟",
   "question_roman": "Kis Sahabi ne Ibrani zaban seekhi thi taake woh Hazrat Muhammad Sallallahu Alaihi Wasallam ke liye khat aur khat-o-kitabat padh aur likh sakein?",
   "options_ur": [
    "ابی بن کعب رضی اللہ عنہ",
@@ -19382,7 +19382,7 @@
    "Zayd bin Thabit Raziallahu Anhu",
    "Abu Hurayrah Raziallahu Anhu"
   ],
-  "explanation_ur": "زید بن ثابت رضی اللہ عنہ نے حضرت محمد ﷺ کے حکم پر عبرانی زبان سیکھی تھی تاکہ وہ خط و کتابت کا کام کر سکیں۔",
+  "explanation_ur": "زید بن ثابت رضی اللہ عنہ نے حضرت محمد ﷺ کے حکم پر عبرانی زبان سیکھی تھی تاکہ وہ تحریری خط و کتابت کا کام سنبھال سکیں۔",
   "explanation_roman": "Zayd bin Thabit Raziallahu Anhu ne Hazrat Muhammad Sallallahu Alaihi Wasallam ke hukm par Ibrani zaban seekhi thi taake woh khat-o-kitabat ka kaam kar sakein.",
   "post": [
    "zamungkor",
@@ -19415,7 +19415,7 @@
  },
  {
   "id": "ISL-411",
-  "question_ur": "عشرہ مبشرہ وہ دس صحابہ ہیں جنہیں جنت کی خوشخبری دی گئی تھی۔ ان میں سے کون ان میں شامل نہیں ہے؟",
+  "question_ur": "عشرہ مبشرہ وہ دس صحابہ ہیں جنہیں جنت کی خوشخبری دی گئی تھی۔ مندرجہ ذیل میں سے کون ان میں شامل نہیں ہے؟",
   "question_roman": "Ashra Mubashra woh dus Sahaba hain jinhein Jannat ki khushkhabri di gayi thi. In mein se kaun un mein shamil NAHI hai?",
   "options_ur": [
    "طلحہ بن عبید اللہ رضی اللہ عنہ",
@@ -19556,7 +19556,7 @@
  },
  {
   "id": "ISL-414",
-  "question_ur": "کس صحابی کا شمار کامیاب تاجروں میں ہوتا تھا اور وہ اللہ کی راہ میں اپنا مال کھلے دل سے خرچ کرنے کے لیے مشہور تھے؟",
+  "question_ur": "کون سے صحابی کامیاب تاجر تھے اور اللہ کی راہ میں اپنا مال کھلے دل سے خرچ کرنے کے لیے مشہور تھے؟",
   "question_roman": "Kis Sahabi ka shumaar kamyab tajiron mein hota tha aur woh Allah ki raah mein apna maal khule dil se kharch karne ke liye mashhoor the?",
   "options_ur": [
    "طلحہ بن عبید اللہ رضی اللہ عنہ",
@@ -19603,7 +19603,7 @@
  },
  {
   "id": "ISL-415",
-  "question_ur": "کس صحابی کو مشہور تیر انداز کہا جاتا ہے اور انہوں نے اللہ کی راہ میں پہلا تیر چلایا تھا؟",
+  "question_ur": "کون سے صحابی مشہور تیر انداز تھے اور انہوں نے اللہ کی راہ میں پہلا تیر چلایا تھا؟",
   "question_roman": "Kis Sahabi ko mashhoor teer-andaz kaha jata hai aur unhon ne Allah ki raah mein pehla teer chalaya tha?",
   "options_ur": [
    "حمزہ بن عبد المطلب رضی اللہ عنہ",
@@ -19617,7 +19617,7 @@
    "Khalid bin Walid Raziallahu Anhu",
    "Sa'd bin Abi Waqqas Raziallahu Anhu"
   ],
-  "explanation_ur": "سعد بن ابی وقاص رضی اللہ عنہ ایک ماہر تیر انداز تھے اور انہوں نے اللہ کی راہ میں پہلا تیر چلایا تھا۔ بعد میں انہوں نے قادسیہ میں مسلم فوج کی قیادت بھی کی۔",
+  "explanation_ur": "سعد بن ابی وقاص رضی اللہ عنہ ایک ماہر تیر انداز تھے اور انہوں نے اللہ کی راہ میں پہلا تیر چلایا تھا۔ بعد میں انہوں نے قادسیہ میں مسلمان فوج کی قیادت بھی کی۔",
   "explanation_roman": "Sa'd bin Abi Waqqas Raziallahu Anhu ek mahir teer-andaz the aur unhon ne Allah ki raah mein pehla teer chalaya tha. Baad mein unhon ne Qadisiyyah mein Muslim fauj ki qayadat bhi ki.",
   "post": [
    "zamungkor",
@@ -19664,7 +19664,7 @@
    "Zubayr bin al-Awwam Raziallahu Anhu",
    "Talhah bin Ubaydullah Raziallahu Anhu"
   ],
-  "explanation_ur": "ابو عبیدہ بن الجراح رضی اللہ عنہ کو ان کی امانت اور بھروسے کی وجہ سے اس امت کا امین کہا گیا۔",
+  "explanation_ur": "ابو عبیدہ بن الجراح رضی اللہ عنہ کو ان کی امانت داری کی وجہ سے اس امت کا امین کہا گیا۔",
   "explanation_roman": "Abu Ubaydah bin al-Jarrah Raziallahu Anhu ko un ki amanat aur bharose ki wajah se is Ummat ka Ameen kaha gaya.",
   "post": [
    "zamungkor",
@@ -19711,7 +19711,7 @@
    "Zaynab Raziallahu Anha",
    "Umm Kulthum Raziallahu Anha"
   ],
-  "explanation_ur": "فاطمہ رضی اللہ عنہا، جو حضرت محمد ﷺ کی بیٹی ہیں، انہیں جنت کی عورتوں کی سردار کہا جاتا ہے۔",
+  "explanation_ur": "حضرت محمد ﷺ کی بیٹی فاطمہ رضی اللہ عنہا کو جنت کی عورتوں کی سردار کہا جاتا ہے۔",
   "explanation_roman": "Fatimah Raziallahu Anha, jo Hazrat Muhammad Sallallahu Alaihi Wasallam ki beti hain, unhein Jannat ki auraton ki Sardar kaha jata hai.",
   "post": [
    "zamungkor",
@@ -19744,7 +19744,7 @@
  },
  {
   "id": "ISL-418",
-  "question_ur": "حضرت محمد ﷺ کے کن دو نواسوں کو جنت کے جوانوں کا سردار کہا جاتا ہے؟",
+  "question_ur": "حضرت محمد ﷺ کے کن دو نواسوں کو جنت کے جوانوں کے سردار کہا جاتا ہے؟",
   "question_roman": "Hazrat Muhammad Sallallahu Alaihi Wasallam ke kin do Nawason ko Jannat ke jawano ka Sardar kaha jata hai?",
   "options_ur": [
    "عبد اللہ بن عباس رضی اللہ عنہ اور عبد اللہ بن عمر رضی اللہ عنہ",
@@ -19758,7 +19758,7 @@
    "Hasan Raziallahu Anhu aur Husayn Raziallahu Anhu",
    "Qasim Raziallahu Anhu aur Abdullah Raziallahu Anhu, Hazrat Muhammad Sallallahu Alaihi Wasallam ke bete"
   ],
-  "explanation_ur": "حسن رضی اللہ عنہ اور حسین رضی اللہ عنہ، جو فاطمہ رضی اللہ عنہا کے بیٹے ہیں، انہیں جنت کے جوانوں کا سردار کہا جاتا ہے۔",
+  "explanation_ur": "فاطمہ رضی اللہ عنہا کے بیٹے حسن رضی اللہ عنہ اور حسین رضی اللہ عنہ کو جنت کے جوانوں کے سردار کہا جاتا ہے۔",
   "explanation_roman": "Hasan Raziallahu Anhu aur Husayn Raziallahu Anhu, jo Fatimah Raziallahu Anha ke bete hain, unhein Jannat ke jawano ka Sardar kaha jata hai.",
   "post": [
    "zamungkor",
@@ -19796,8 +19796,8 @@
   "options_ur": [
    "بچوں کو پڑھانے کے لیے",
    "زمین پر کھیتی کرنے کے لیے",
-   "کپڑا بننے کے لیے",
-   "تاجر اور کاروباری خاتون ہونے کے لیے"
+   "کپڑا بُننے کے لیے",
+   "کاروباری خاتون کے طور پر تجارت کرنے کے لیے"
   ],
   "options_roman": [
    "Bachchon ko padhane ke liye",
@@ -19852,7 +19852,7 @@
    "Sawda Raziallahu Anha",
    "Umm Salama Raziallahu Anha"
   ],
-  "explanation_ur": "عائشہ رضی اللہ عنہا، جو ابو بکر رضی اللہ عنہ کی بیٹی ہیں، اپنے علم کے لیے مشہور تھیں اور انہوں نے حضرت محمد ﷺ کی دوسری بیویوں سے زیادہ احادیث روایت کی ہیں۔",
+  "explanation_ur": "ابو بکر رضی اللہ عنہ کی بیٹی عائشہ رضی اللہ عنہا اپنے علم کے لیے مشہور تھیں اور انہوں نے حضرت محمد ﷺ کی دوسری بیویوں سے زیادہ احادیث روایت کی ہیں۔",
   "explanation_roman": "Aisha Raziallahu Anha, jo Abu Bakr Raziallahu Anhu ki beti hain, apne ilm ke liye mashhoor thin aur unhon ne Hazrat Muhammad Sallallahu Alaihi Wasallam ki dusri biwiyon se ziyada Ahadith riwayat ki hain.",
   "post": [
    "zamungkor",
@@ -19899,7 +19899,7 @@
    "Zaynab Raziallahu Anha",
    "Umm Salama Raziallahu Anha"
   ],
-  "explanation_ur": "قرآن پاک کا پہلا جمع شدہ نسخہ حفاظت کے لیے حفصہ رضی اللہ عنہا کے پاس رکھا گیا تھا، جو عمر رضی اللہ عنہ کی بیٹی تھیں۔",
+  "explanation_ur": "قرآن پاک کا پہلا جمع شدہ نسخہ حفاظت کے لیے عمر رضی اللہ عنہ کی بیٹی حفصہ رضی اللہ عنہا کے پاس رکھا گیا تھا۔",
   "explanation_roman": "Quran Pak ka pehla jama shuda nuskha hifazat ke liye Hafsa Raziallahu Anha ke paas rakha gaya tha, jo Umar Raziallahu Anhu ki beti thin.",
   "post": [
    "zamungkor",
@@ -19946,7 +19946,7 @@
    "Yaman",
    "Misr"
   ],
-  "explanation_ur": "بلال بن رباح رضی اللہ عنہ حبشہ سے تھے۔ وہ مکہ میں سخت تکلیفوں کے باوجود اپنے ایمان پر قائم رہے۔",
+  "explanation_ur": "بلال بن رباح رضی اللہ عنہ حبشہ سے تھے۔ وہ مکہ میں شدید اذیتوں کے باوجود اپنے ایمان پر قائم رہے۔",
   "explanation_roman": "Bilal bin Rabah Raziallahu Anhu Habsha se the. Woh Makkah mein sakht takleefon ke bawajood apne iman par qayem rahe.",
   "post": [
    "zamungkor",
@@ -19993,7 +19993,7 @@
    "Ammar bin Yasir Raziallahu Anhu",
    "Salman al-Farsi Raziallahu Anhu"
   ],
-  "explanation_ur": "سلمان الفارسی رضی اللہ عنہ فارس سے تھے اور انہوں نے سچ کی تلاش میں سالوں سفر کیا، پھر مدینہ میں اسلام قبول کیا۔",
+  "explanation_ur": "سلمان الفارسی رضی اللہ عنہ فارس سے تھے اور انہوں نے سچ کی تلاش میں کئی سال گزارے، پھر مدینہ میں اسلام قبول کیا۔",
   "explanation_roman": "Salman al-Farsi Raziallahu Anhu Faris se the aur unhon ne sach ki talash mein saalon safar kiya, phir Madinah mein Islam qabool kiya.",
   "post": [
    "zamungkor",
@@ -20040,7 +20040,7 @@
    "Anas bin Malik Raziallahu Anhu",
    "Abdullah bin Abbas Raziallahu Anhu"
   ],
-  "explanation_ur": "ابو ہریرہ رضی اللہ عنہ نے دوسرے صحابہ سے زیادہ احادیث روایت کی ہیں، کیونکہ وہ حضرت محمد ﷺ کے قریب رہتے تھے اور ان سے سیکھنے میں لگے رہتے تھے۔",
+  "explanation_ur": "ابو ہریرہ رضی اللہ عنہ نے دوسرے صحابہ سے زیادہ احادیث روایت کی ہیں، کیونکہ وہ حضرت محمد ﷺ کے قریب رہتے تھے اور انہوں نے خود کو ان سے سیکھنے کے لیے وقف کر رکھا تھا۔",
   "explanation_roman": "Abu Hurayrah Raziallahu Anhu ne dusre Sahaba se ziyada Ahadith riwayat ki hain, kyunke woh Hazrat Muhammad Sallallahu Alaihi Wasallam ke qareeb rehte the aur un se seekhne mein lage rehte the.",
   "post": [
    "zamungkor",
@@ -20087,7 +20087,7 @@
    "Mu'adh bin Jabal Raziallahu Anhu",
    "Ubayy bin Ka'b Raziallahu Anhu"
   ],
-  "explanation_ur": "عبد اللہ بن عباس رضی اللہ عنہ، جو حضرت محمد ﷺ کے چچا زاد بھائی تھے، انہیں قرآن اور اس کے معانی کے گہرے علم کی وجہ سے ترجمان القرآن کہا جاتا ہے۔",
+  "explanation_ur": "حضرت محمد ﷺ کے چچا زاد بھائی عبد اللہ بن عباس رضی اللہ عنہ کو قرآن اور اس کے معانی کے گہرے علم کی وجہ سے ترجمان القرآن کہا جاتا ہے۔",
   "explanation_roman": "Abdullah bin Abbas Raziallahu Anhu, jo Hazrat Muhammad Sallallahu Alaihi Wasallam ke chacha-zad bhai the, unhein Quran aur us ke maani ke gehre ilm ki wajah se Tarjuman al-Quran kaha jata hai.",
   "post": [
    "zamungkor",
@@ -20181,7 +20181,7 @@
    "Ahl al-Bayt",
    "Ansar"
   ],
-  "explanation_ur": "انصار مدینہ کے مسلمان تھے، جن کا تعلق اوس اور خزرج قبائل سے تھا، اور انہوں نے ان مہاجرین کی مدد کی جو مکہ سے ہجرت کر کے آئے تھے۔ حضرت محمد ﷺ نے مہاجرین اور انصار کے درمیان بھائی چارہ قائم کیا تھا۔",
+  "explanation_ur": "انصار مدینہ کے مسلمان تھے، جو اوس اور خزرج قبیلوں سے تعلق رکھتے تھے، اور انہوں نے ان مہاجرین کی مدد کی جو مکہ سے ہجرت کر کے آئے تھے۔ حضرت محمد ﷺ نے مہاجرین اور انصار کے درمیان بھائی چارہ قائم کیا تھا۔",
   "explanation_roman": "Ansar Madinah ke Musalman the, jinka taalluq Aws aur Khazraj qabail se tha, aur unhon ne un Muhajirun ki madad ki jo Makkah se hijrat kar ke aaye the. Hazrat Muhammad Sallallahu Alaihi Wasallam ne Muhajirun aur Ansar ke darmiyan bhai-chara qayem kiya tha.",
   "post": [
    "zamungkor",
@@ -20214,7 +20214,7 @@
  },
  {
   "id": "ISL-428",
-  "question_ur": "سیف اللہ کا لقب، جو خالد بن ولید رضی اللہ عنہ کو دیا گیا تھا، کا کیا مطلب ہے؟",
+  "question_ur": "خالد بن ولید رضی اللہ عنہ کو دیے گئے لقب سیف اللہ کا کیا مطلب ہے؟",
   "question_roman": "Saifullah ka laqab, jo Khalid bin Walid Raziallahu Anhu ko diya gaya tha, ka kya matlab hai?",
   "options_ur": [
    "اللہ کی تلوار",
@@ -20228,7 +20228,7 @@
    "Ummat ke Ameen",
    "Quran ke Tarjuman"
   ],
-  "explanation_ur": "سیف اللہ کا مطلب ہے اللہ کی تلوار۔ خالد بن ولید رضی اللہ عنہ کو یہ لقب دیا گیا تھا، اور انہیں ایک ایسے سپہ سالار کے طور پر یاد کیا جاتا ہے جو کبھی کوئی جنگ نہیں ہارے۔",
+  "explanation_ur": "سیف اللہ کا مطلب ہے اللہ کی تلوار۔ خالد بن ولید رضی اللہ عنہ کو یہ لقب دیا گیا تھا، اور انہیں ایسے سپہ سالار کے طور پر یاد کیا جاتا ہے جو کبھی کوئی جنگ نہیں ہارے۔",
   "explanation_roman": "Saifullah ka matlab hai Allah ki Talwar. Khalid bin Walid Raziallahu Anhu ko ye laqab diya gaya tha, aur unhein ek aise sipah-salar ke tor par yaad kiya jata hai jo kabhi koi jang nahi hare.",
   "post": [
    "zamungkor",
@@ -20308,7 +20308,7 @@
  },
  {
   "id": "ISL-430",
-  "question_ur": "کس صحابی نے حبشہ کے بادشاہ کے سامنے مسلمانوں کی نمائندگی کی تھی، اور بعد میں انہیں طیار کا لقب دیا گیا، جس کا مطلب ہے اڑنے والا؟",
+  "question_ur": "کس صحابی نے حبشہ کے بادشاہ کے سامنے مسلمانوں کی طرف سے بات کی تھی، اور بعد میں انہیں طیار کا لقب دیا گیا، جس کا مطلب ہے اڑنے والا؟",
   "question_roman": "Kis Sahabi ne Habsha ke badshah ke samne Musalmanon ki numaindagi ki thi, aur baad mein unhein Tayyar ka laqab diya gaya, jis ka matlab hai urne wala?",
   "options_ur": [
    "زید بن حارثہ رضی اللہ عنہ",
@@ -20322,7 +20322,7 @@
    "Ja'far bin Abi Talib Raziallahu Anhu",
    "Abdullah bin Mas'ud Raziallahu Anhu"
   ],
-  "explanation_ur": "جعفر بن ابی طالب رضی اللہ عنہ نے حبشہ کے بادشاہ کے سامنے مسلمانوں کی نمائندگی کی تھی، اور وہ جنگ موتہ میں شہید ہوئے تھے۔ انہیں طیار کا لقب دیا گیا، جس کا مطلب ہے اڑنے والا۔",
+  "explanation_ur": "جعفر بن ابی طالب رضی اللہ عنہ نے حبشہ کے بادشاہ کے سامنے مسلمانوں کی طرف سے بات کی تھی، اور وہ جنگِ موتہ میں شہید ہوئے تھے۔ انہیں طیار کا لقب دیا گیا، جس کا مطلب ہے اڑنے والا۔",
   "explanation_roman": "Ja'far bin Abi Talib Raziallahu Anhu ne Habsha ke badshah ke samne Musalmanon ki numaindagi ki thi, aur woh Jang-e-Mu'tah mein Shaheed hue the. Unhein Tayyar ka laqab diya gaya, jis ka matlab hai urne wala.",
   "post": [
    "zamungkor",
@@ -20449,7 +20449,7 @@
  },
  {
   "id": "ISL-433",
-  "question_ur": "کس اموی خلیفہ نے یروشلم میں گنبد صخرہ تعمیر کروایا، عربی کو سرکاری زبان بنایا اور سکوں کی اصلاح کی؟",
+  "question_ur": "کس اموی خلیفہ نے یروشلم میں گنبدِ صخرہ تعمیر کروایا، عربی کو سرکاری کاغذات کی زبان بنایا اور سکوں میں اصلاح کی؟",
   "question_roman": "Kis Umayyad Khalifa ne Jerusalem mein Dome of the Rock tameer karwaya, Arabi ko sarkari zuban banaya aur sikkon ki islah ki?",
   "options_ur": [
    "عبدالملک بن مروان",
@@ -20463,7 +20463,7 @@
    "Walid bin Abdul Malik",
    "Umar bin Abdul Aziz"
   ],
-  "explanation_ur": "عبدالملک بن مروان نے یروشلم میں گنبد صخرہ تعمیر کروایا اور عربی زبان اور سکوں کی اصلاحات نافذ کیں۔",
+  "explanation_ur": "عبدالملک بن مروان نے یروشلم میں گنبدِ صخرہ تعمیر کروایا اور عربی زبان اور سکوں کی اصلاحات نافذ کیں۔",
   "explanation_roman": "Abdul Malik bin Marwan ne Jerusalem mein Dome of the Rock tameer karwaya aur Arabi zuban aur sikkon ki islahat nafiz kin.",
   "post": [
    "zamungkor",
@@ -20637,7 +20637,7 @@
  },
  {
   "id": "ISL-437",
-  "question_ur": "کس اموی خلیفہ کو اس کے تقویٰ اور اصلاحات کی وجہ سے اکثر پانچواں خلیفہ راشد کہا جاتا ہے؟",
+  "question_ur": "کس اموی خلیفہ کو ان کے تقویٰ اور اصلاحات کی وجہ سے اکثر پانچواں خلیفہ راشد کہا جاتا ہے؟",
   "question_roman": "Kis Umayyad Khalifa ko is ke taqwa aur islahat ki wajah se aksar panchwan Khalifa Rashid kaha jata hai?",
   "options_ur": [
    "معاویہ بن ابی سفیان رضی اللہ عنہ",
@@ -20839,7 +20839,7 @@
    "Baghdad",
    "Cairo"
   ],
-  "explanation_ur": "1258 عیسوی میں ہلاکو خان کے بغداد پر حملے کے بعد عباسی خلافت قاہرہ میں جاری رہی۔",
+  "explanation_ur": "1258 عیسوی میں ہلاکو خان کے ہاتھوں بغداد کی تباہی کے بعد عباسی خلافت قاہرہ میں جاری رہی۔",
   "explanation_roman": "1258 Eiswi mein Hulagu Khan ke Baghdad par hamle ke baad Abbasi Khilafat Cairo mein jari rahi.",
   "post": [
    "zamungkor",
@@ -20886,7 +20886,7 @@
    "Abul Abbas al-Saffah",
    "Abdul Malik bin Marwan"
   ],
-  "explanation_ur": "المامون نے ترجمے کی تحریک کی بھرپور حمایت کی، اور اس کے دور میں بیت الحکمت میں بہت سی کتابیں عربی میں ترجمہ ہوئیں۔",
+  "explanation_ur": "المامون نے ترجمے کی تحریک کی بھرپور حمایت کی، اور ان کے دور میں بیت الحکمت میں بہت سی کتابیں عربی میں ترجمہ ہوئیں۔",
   "explanation_roman": "Al-Mamun ne tarjume ki tehreek ki bharpur himayat ki, aur is ke daur mein Bayt al-Hikmah mein bohat si kitabein Arabi mein tarjuma huin.",
   "post": [
    "zamungkor",
@@ -20919,7 +20919,7 @@
  },
  {
   "id": "ISL-443",
-  "question_ur": "اسپین میں قرطبہ میں اموی حکومت کی بنیاد کس نے رکھی، جسے صقر قریش کہا جاتا ہے؟",
+  "question_ur": "اسپین میں قرطبہ میں اموی حکومت کی بنیاد کس نے رکھی، جنہیں صقر قریش کہا جاتا ہے؟",
   "question_roman": "Spain mein Cordoba mein Umayyad hukumat ki buniyad kis ne rakhi, jise Falcon of Quraysh kaha jata hai?",
   "options_ur": [
    "طارق بن زیاد",
@@ -21060,7 +21060,7 @@
  },
  {
   "id": "ISL-446",
-  "question_ur": "1071 عیسوی میں جنگ ملازکرد میں سلجوق افواج کی قیادت کس نے کی اور فتح حاصل کی؟",
+  "question_ur": "1071 عیسوی میں جنگِ ملازکرد میں سلجوق افواج کی قیادت کس نے کی اور فتح حاصل کی؟",
   "question_roman": "1071 Eiswi mein Battle of Manzikert mein Seljuk afwaj ki qayadat kis ne ki aur fatah hasil ki?",
   "options_ur": [
    "الپ ارسلان",
@@ -21074,7 +21074,7 @@
    "Mehmed II",
    "Suleiman"
   ],
-  "explanation_ur": "الپ ارسلان نے 1071 عیسوی میں جنگ ملازکرد میں سلجوق افواج کی قیادت کی اور فتح حاصل کی۔",
+  "explanation_ur": "الپ ارسلان نے 1071 عیسوی میں جنگِ ملازکرد میں سلجوق افواج کی قیادت کی اور فتح حاصل کی۔",
   "explanation_roman": "Alp Arslan ne 1071 Eiswi mein Battle of Manzikert mein Seljuk afwaj ki qayadat ki aur fatah hasil ki.",
   "post": [
    "zamungkor",
@@ -21154,7 +21154,7 @@
  },
  {
   "id": "ISL-448",
-  "question_ur": "کس عثمانی سلطان کو سلیمان اعظم اور قانونی کہا جاتا ہے؟",
+  "question_ur": "کس عثمانی سلطان کو سلیمان اعظم اور قانونی یعنی قانون ساز کہا جاتا ہے؟",
   "question_roman": "Kis Ottoman Sultan ko Suleiman the Magnificent aur Qanuni (qanoon saz) kaha jata hai?",
   "options_ur": [
    "عثمان اول",
@@ -21168,7 +21168,7 @@
    "Suleiman",
    "Alp Arslan"
   ],
-  "explanation_ur": "سلیمان کو سلیمان اعظم اور قانونی کہا جاتا ہے۔ عثمانی خلافت بعد میں 1924 عیسوی میں ختم ہو گئی۔",
+  "explanation_ur": "سلیمان کو سلیمان اعظم اور قانونی یعنی قانون ساز کہا جاتا ہے۔ عثمانی خلافت بعد میں 1924 عیسوی میں ختم ہو گئی۔",
   "explanation_roman": "Suleiman ko Suleiman the Magnificent aur Qanuni kaha jata hai. Ottoman Khilafat baad mein 1924 Eiswi mein khatm ho gayi.",
   "post": [
    "zamungkor",
@@ -21262,7 +21262,7 @@
    "Shah Jahan",
    "Aurangzeb Alamgir"
   ],
-  "explanation_ur": "بابر نے 1526 عیسوی میں پانی پت کی پہلی جنگ جیت کر ہندوستان میں مغل حکومت کی بنیاد رکھی۔ اکبر، شاہ جہاں، جس نے تاج محل بنوایا، اور اورنگزیب عالمگیر بعد کے مغل حکمران تھے۔",
+  "explanation_ur": "بابر نے 1526 عیسوی میں پانی پت کی پہلی جنگ جیت کر ہندوستان میں مغل حکومت کی بنیاد رکھی۔ اکبر، شاہ جہاں، جنہوں نے تاج محل بنوایا، اور اورنگزیب عالمگیر بعد کے مغل حکمران تھے۔",
   "explanation_roman": "Babur ne 1526 Eiswi mein Panipat ki pehli jang jeet kar Hindustan mein Mughal hukumat ki buniyad rakhi. Akbar, Shah Jahan, jis ne Taj Mahal banwaya, aur Aurangzeb Alamgir baad ke Mughal hukmaran the.",
   "post": [
    "zamungkor",
@@ -21309,7 +21309,7 @@
    "Al-Zahrawi",
    "Ibn al-Nafis"
   ],
-  "explanation_ur": "ابن سینا نے القانون فی الطب لکھی تھی، یہ ایک مشہور طبی کتاب ہے جو صدیوں تک نصاب میں شامل رہی۔",
+  "explanation_ur": "ابن سینا نے القانون فی الطب لکھی تھی، جو ایک مشہور طبی کتاب ہے اور صدیوں تک درسی کتاب کے طور پر استعمال ہوتی رہی۔",
   "explanation_roman": "Ibn Sina ne Al-Qanun fi al-Tibb likhi thi, yeh aik mashhoor tibbi kitab hai jo sadiyon tak nisab mein shamil rahi.",
   "post": [
    "zamungkor",
@@ -21403,7 +21403,7 @@
    "Ibn Sina",
    "Al-Razi"
   ],
-  "explanation_ur": "الزہراوی نے کتاب التصریف لکھی تھی اور اسے جراحی کا باپ کہا جاتا ہے۔",
+  "explanation_ur": "الزہراوی نے کتاب التصریف لکھی تھی اور انہیں جراحی کا باپ کہا جاتا ہے۔",
   "explanation_roman": "Al-Zahrawi ne Kitab al-Tasrif likhi thi aur use jarahi ka baap kaha jata hai.",
   "post": [
    "zamungkor",
@@ -21497,7 +21497,7 @@
    "Omar Khayyam",
    "Al-Biruni"
   ],
-  "explanation_ur": "لفظ الگورتھم الخوارزمی کے نام کی لاطینی شکل سے آیا ہے۔ الخوارزمی نے الجبر پر بھی ایک مشہور کتاب لکھی تھی۔",
+  "explanation_ur": "لفظ الگورتھم Algoritmi سے آیا ہے، جو الخوارزمی کے نام کی لاطینی شکل ہے۔ انہوں نے الجبرا پر الجبر کے نام سے ایک مشہور کتاب بھی لکھی تھی۔",
   "explanation_roman": "Algorithm ka lafz Al-Khwarizmi ke naam ki Latini shakal se aaya hai. Al-Khwarizmi ne algebra (Al-Jabr) par bhi aik mashhoor kitab likhi thi.",
   "post": [
    "zamungkor",
@@ -21591,7 +21591,7 @@
    "Al-Biruni",
    "Ibn Khaldun"
   ],
-  "explanation_ur": "البیرونی نے ہندوستان کا مطالعہ کرنے کے بعد کتاب الہند لکھی تھی، اور اس نے زمین کے رداس کی پیمائش بھی کی تھی۔",
+  "explanation_ur": "البیرونی نے ہندوستان کا مطالعہ کرنے کے بعد کتاب الہند لکھی تھی، اور انہوں نے زمین کے رداس کی پیمائش بھی کی تھی۔",
   "explanation_roman": "Al-Biruni ne Hindustan ka mutala karne ke baad Kitab al-Hind likhi thi, aur us ne zameen ke radius ki paimaish bhi ki thi.",
   "post": [
    "zamungkor",
@@ -21685,7 +21685,7 @@
    "Al-Farabi",
    "Al-Ghazali"
   ],
-  "explanation_ur": "ابن خلدون نے مقدمہ لکھا تھا، جس میں اس نے عصبیت یعنی سماجی یکجہتی جیسے خیالات پیش کیے تھے۔",
+  "explanation_ur": "ابن خلدون نے مقدمہ لکھا تھا، جس میں انہوں نے عصبیت یعنی سماجی یکجہتی جیسے خیالات پیش کیے تھے۔",
   "explanation_roman": "Ibn Khaldun ne Muqaddimah likha tha, jis mein us ne Asabiyyah yani samaji yakjehti jaise khayalat pesh kiye thay.",
   "post": [
    "zamungkor",
@@ -21732,7 +21732,7 @@
    "Al-Biruni",
    "Ibn Khaldun"
   ],
-  "explanation_ur": "الادریسی ایک جغرافیہ دان تھا، اس نے ٹیبولا روجریانا تیار کی تھی، جس میں نقشے اور جغرافیائی معلومات شامل ہیں۔",
+  "explanation_ur": "الادریسی جغرافیہ دان تھے۔ انہوں نے ٹیبولا روجریانا تیار کی تھی، جس میں نقشے اور جغرافیائی معلومات شامل ہیں۔",
   "explanation_roman": "Al-Idrisi aik geographer tha, us ne Tabula Rogeriana tayyar ki thi, jis mein naqshe aur geographical maloomat shamil hain.",
   "post": [
    "zamungkor",
@@ -21779,7 +21779,7 @@
    "Ibn Battuta",
    "Abbas ibn Firnas"
   ],
-  "explanation_ur": "ابن بطوطہ نے اپنے سفرنامے رحلہ میں بہت سے ملکوں کے اپنے طویل سفر بیان کیے تھے۔",
+  "explanation_ur": "ابن بطوطہ نے اپنے سفرنامے رحلہ میں بہت سے ملکوں کا اپنا طویل سفر بیان کیا تھا۔",
   "explanation_roman": "Ibn Battuta ne apne safarname Rihla mein bohat se mulkon ke apne taweel safar bayan kiye thay.",
   "post": [
    "zamungkor",
@@ -21873,7 +21873,7 @@
    "Al-Ghazali",
    "Ibn Khaldun"
   ],
-  "explanation_ur": "الفارابی کو فلسفے میں اس کے کام کی وجہ سے معلم ثانی کہا جاتا ہے، جبکہ ارسطو کو پہلا استاد سمجھا جاتا ہے۔",
+  "explanation_ur": "الفارابی کو فلسفے میں ان کے کام کی وجہ سے معلم ثانی کہا جاتا ہے، جبکہ ارسطو کو پہلا استاد سمجھا جاتا ہے۔",
   "explanation_roman": "Al-Farabi ko falsafe mein us ke kaam ki wajah se Second Teacher kaha jata hai, jabke Aristotle ko pehla ustad samjha jata hai.",
   "post": [
    "zamungkor",
@@ -21920,7 +21920,7 @@
    "Ibn Rushd",
    "Ibn Khaldun"
   ],
-  "explanation_ur": "الغزالی نے احیاء علوم الدین لکھی تھی۔ اس نے تہافت الفلاسفہ بھی لکھی تھی۔",
+  "explanation_ur": "الغزالی نے احیاء علوم الدین لکھی تھی۔ انہوں نے تہافت الفلاسفہ بھی لکھی تھی۔",
   "explanation_roman": "Al-Ghazali ne Ihya Ulum al-Din likhi thi. Us ne Tahafut al-Falasifah bhi likhi thi.",
   "post": [
    "zamungkor",
@@ -21967,7 +21967,7 @@
    "Rumi",
    "Al-Ghazali"
   ],
-  "explanation_ur": "رومی، جنہیں جلال الدین رومی بھی کہا جاتا ہے، نے مثنوی لکھی تھی، جو فارسی صوفی شاعری کی ایک مشہور کتاب ہے۔",
+  "explanation_ur": "جلال الدین رومی کے نام سے بھی جانے جانے والے رومی نے مثنوی لکھی تھی، جو فارسی صوفی شاعری کی ایک مشہور کتاب ہے۔",
   "explanation_roman": "Rumi, jinhein Jalal al-Din Rumi bhi kaha jata hai, ne Masnavi likhi thi, jo Farsi Sufi shayari ki aik mashhoor kitab hai.",
   "post": [
    "zamungkor",
@@ -22047,7 +22047,7 @@
  },
  {
   "id": "ISL-467",
-  "question_ur": "کس صوفی بزرگ نے ہندوستان میں چشتیہ سلسلہ پھیلایا تھا اور اس کا تعلق اجمیر سے ہے؟",
+  "question_ur": "کس صوفی بزرگ نے ہندوستان میں چشتیہ سلسلہ پھیلایا تھا اور ان کا تعلق اجمیر سے ہے؟",
   "question_roman": "Kis Sufi buzurg ne Hindustan mein Chishtiyya silsila phailaya tha aur us ka taalluq Ajmer se hai?",
   "options_ur": [
    "عبدالقادر جیلانی",
@@ -22061,7 +22061,7 @@
    "Bahauddin Zakariya",
    "Data Ganj Bakhsh"
   ],
-  "explanation_ur": "معین الدین چشتی نے ہندوستان میں چشتیہ سلسلہ پھیلایا تھا اور اس کا تعلق اجمیر سے ہے۔",
+  "explanation_ur": "معین الدین چشتی نے ہندوستان میں چشتیہ سلسلہ پھیلایا تھا اور ان کا تعلق اجمیر سے ہے۔",
   "explanation_roman": "Mu'inuddin Chishti ne Hindustan mein Chishtiyya silsila phailaya tha aur us ka taalluq Ajmer se hai.",
   "post": [
    "zamungkor",
@@ -22094,7 +22094,7 @@
  },
  {
   "id": "ISL-468",
-  "question_ur": "کشف المحجوب کس نے لکھی تھی اور اس کا تعلق لاہور سے ہے؟",
+  "question_ur": "کشف المحجوب کس نے لکھی تھی اور ان کا تعلق لاہور سے ہے؟",
   "question_roman": "Kashf al-Mahjub kis ne likhi thi aur us ka taalluq Lahore se hai?",
   "options_ur": [
    "داتا گنج بخش (علی ہجویری)",
@@ -22108,7 +22108,7 @@
    "Shah Waliullah",
    "Mu'inuddin Chishti"
   ],
-  "explanation_ur": "داتا گنج بخش، جنہیں علی ہجویری بھی کہا جاتا ہے، نے کشف المحجوب لکھی تھی اور اس کا تعلق لاہور سے ہے۔",
+  "explanation_ur": "داتا گنج بخش، جنہیں علی ہجویری بھی کہا جاتا ہے، نے کشف المحجوب لکھی تھی اور ان کا تعلق لاہور سے ہے۔",
   "explanation_roman": "Data Ganj Bakhsh, jinhein Ali Hajweri bhi kaha jata hai, ne Kashf al-Mahjub likhi thi aur us ka taalluq Lahore se hai.",
   "post": [
    "zamungkor",
@@ -22296,7 +22296,7 @@
    "Karobari sathi ka",
    "Sathi musafir ka"
   ],
-  "explanation_ur": "اسلامی تعلیمات میں ماں کو حسن سلوک اور صحبت میں سب سے بلند مقام دیا گیا ہے، کیونکہ اس نے بچوں کی پرورش میں بہت محنت اور قربانیاں دی ہیں۔",
+  "explanation_ur": "اسلامی تعلیمات میں ماں کو حسن سلوک اور صحبت میں سب سے بلند مقام دیا گیا ہے، کیونکہ انہوں نے بچوں کی پرورش میں بہت محنت کی اور قربانیاں دی ہیں۔",
   "explanation_roman": "Islami taleemat mein maa ko husn-e-sulook aur sohbat mein sab se buland maqam diya gaya hai, kyunke us ne bachon ki parwarish mein bohat mehnat aur qurbaniyan di hain.",
   "post": [
    "zamungkor",
@@ -22437,7 +22437,7 @@
    "Sirf kisi mard rishtedar ke zariye jaidad ka haq",
    "Sirf bachpan mein taleem ka haq"
   ],
-  "explanation_ur": "اسلام عورتوں کو تعلیم حاصل کرنے اور اپنی جائیداد کی مالک بننے، اس کا انتظام کرنے اور اسے خرچ کرنے کا حق دیتا ہے، اور وراثت میں بھی ان کا حصہ مقرر کرتا ہے۔",
+  "explanation_ur": "اسلام عورتوں کو تعلیم حاصل کرنے اور اپنی جائیداد کی مالک بننے، اس کا انتظام کرنے اور اس میں تصرف کرنے کا حق دیتا ہے، اور وراثت میں بھی ان کا حصہ مقرر کرتا ہے۔",
   "explanation_roman": "Islam auraton ko taleem hasil karne aur apni jaidad ki malik banne, us ka intizam karne aur use kharch karne ka haq deta hai, aur wirasat mein bhi un ka hissa muqarrar karta hai.",
   "post": [
    "zamungkor",
@@ -22672,7 +22672,7 @@
    "Doosre insano ke huqooq ada karne ki",
    "Un rasmon ki jin ki Islami taleemat mein koi bunyad nahi"
   ],
-  "explanation_ur": "مہمان کی عزت کرنا، بیمار کی عیادت کرنا اور مسافروں اور غریبوں کی مدد کرنا سب ان حقوق کو ادا کرنے کا حصہ ہیں جو انسانوں پر ایک دوسرے کے لیے واجب ہیں۔",
+  "explanation_ur": "مہمان کی عزت کرنا، بیمار کی عیادت کرنا اور مسافروں اور غریبوں کی مدد کرنا سب ان حقوق کو ادا کرنے کا حصہ ہیں جو لوگوں پر ایک دوسرے کے لیے لازم ہیں۔",
   "explanation_roman": "Mehman ki izzat karna, bimar ki ayadat karna aur musafiron aur ghareebon ki madad karna sab un huqooq ko ada karne ka hissa hain jo insano par aik doosre ke liye wajib hain.",
   "post": [
    "zamungkor",
@@ -22705,7 +22705,7 @@
  },
  {
   "id": "ISL-481",
-  "question_ur": "اسلامی معاشیات میں سود (ربا) کا کیا مطلب ہے؟",
+  "question_ur": "اسلامی معاشیات میں ربا (سود) کا کیا مطلب ہے؟",
   "question_roman": "Islami maashiyat mein Sood (Riba) ka kya matlab hai?",
   "options_ur": [
    "قرض پر لی جانے والی مقررہ اضافی رقم",
@@ -22752,13 +22752,13 @@
  },
  {
   "id": "ISL-482",
-  "question_ur": "اسلامی تعلیمات میں جائز تجارت سود (ربا) سے کیسے مختلف ہے؟",
+  "question_ur": "اسلامی تعلیمات میں جائز تجارت ربا (سود) سے کیسے مختلف ہے؟",
   "question_roman": "Islami taleemat mein jaiz tijarat Sood (Riba) se kaise mukhtalif hai?",
   "options_ur": [
    "تجارت اور سود ہر لحاظ سے ایک جیسے ہیں",
    "تجارت منع ہے اور سود جائز ہے",
    "تجارت میں کوئی محنت نہیں ہوتی جبکہ سود میں محنت ہوتی ہے",
-   "تجارت باہمی رضامندی سے جائز لین دین ہے، جبکہ سود قرض پر مقررہ اضافہ ہے"
+   "تجارت باہمی رضامندی سے جائز لین دین ہے، جبکہ ربا قرض پر مقررہ اضافہ ہے"
   ],
   "options_roman": [
    "Tijarat aur Sood har lehaz se aik jaise hain",
@@ -22766,7 +22766,7 @@
    "Tijarat mein koi mehnat nahi hoti jabke Sood mein mehnat hoti hai",
    "Tijarat bahami razamandi se jaiz lain dain hai, jabke Sood qarz par muqarrarah izafa hai"
   ],
-  "explanation_ur": "تجارت جائز ہے کیونکہ یہ باہمی رضامندی سے محنت اور خطرے کے ساتھ لین دین ہے، جبکہ سود منع ہے کیونکہ یہ قرض لینے والے کا استحصال کرنے والا ناانصافی پر مبنی مقررہ اضافہ ہے۔",
+  "explanation_ur": "تجارت جائز ہے کیونکہ یہ باہمی رضامندی سے محنت اور خطرے کے ساتھ لین دین ہے، جبکہ ربا منع ہے کیونکہ یہ قرض لینے والے کے ساتھ ناانصافی اور استحصال پر مبنی مقررہ اضافہ ہے۔",
   "explanation_roman": "Tijarat jaiz hai kyunke ye bahami razamandi se mehnat aur khatre ke sath lain dain hai, jabke Sood mana hai kyunke ye qarz lene wale ka istehsal karne wala na-insafi par mabni muqarrarah izafa hai.",
   "post": [
    "zamungkor",
@@ -22846,10 +22846,10 @@
  },
  {
   "id": "ISL-484",
-  "question_ur": "قیمتیں بڑھانے کے لیے ضروری اشیا ذخیرہ کرنے (احتکار) کے بارے میں اسلام کا کیا حکم ہے؟",
+  "question_ur": "قیمتیں بڑھانے کے لیے ضروری سامان ذخیرہ کرنے (احتکار) کے بارے میں اسلام کا کیا حکم ہے؟",
   "question_roman": "Qeematein badhane ke liye zaroori ashya zakheera karne (Ihtikar) ke bare mein Islam ka kya hukm hai?",
   "options_ur": [
-   "یہ ہوشیار کاروبار کے طور پر اس کی حوصلہ افزائی کرتا ہے",
+   "اسے ہوشیار کاروبار سمجھ کر اس کی حوصلہ افزائی کی جاتی ہے",
    "جب ایک تاجر یہ کرے تو یہ جائز ہے",
    "یہ منع ہے کیونکہ اس سے لوگوں کو نقصان پہنچتا ہے",
    "فراوانی کے زمانے میں یہ جائز ہے"
@@ -22860,7 +22860,7 @@
    "Ye mana hai kyunke is se logon ko nuqsan pahunchta hai",
    "Farawani ke zamane mein ye jaiz hai"
   ],
-  "explanation_ur": "ضروری اشیا کو ذخیرہ کر کے قلت پیدا کرنا اور قیمتیں بڑھانا منع ہے، کیونکہ اس سے عام لوگوں کو تکلیف پہنچتی ہے۔",
+  "explanation_ur": "ضروری سامان ذخیرہ کر کے قلت پیدا کرنا اور قیمتیں بڑھانا منع ہے، کیونکہ اس سے عام لوگوں کو تکلیف پہنچتی ہے۔",
   "explanation_roman": "Zaroori ashya ko zakheera kar ke qillat paida karna aur qeematein badhana mana hai, kyunke is se aam logon ko takleef pahunchti hai.",
   "post": [
    "zamungkor",
@@ -22907,7 +22907,7 @@
    "Woh sirf tehreeri muahidon par lagu hote hain",
    "Ajnabi logon ke sath unhen nibhana zaroori nahi"
   ],
-  "explanation_ur": "معاہدوں کو پورا کرنا اور وعدوں کو نبھانا اسلام میں فرض ہے، اور بغیر جائز وجہ کے انہیں توڑنا بددیانتی کی علامت ہے۔",
+  "explanation_ur": "معاہدوں کو پورا کرنا اور وعدوں کو نبھانا اسلام میں لازم ہے، اور بغیر جائز وجہ کے انہیں توڑنا بددیانتی کی علامت ہے۔",
   "explanation_roman": "Muahidon ko poora karna aur waadon ko nibhana Islam mein farz hai, aur baghair jaiz wajah ke unhen todna baddiyanti ki alamat hai.",
   "post": [
    "zamungkor",
@@ -23134,7 +23134,7 @@
    "کسی مشورے کے بغیر ایک شخص کی حکمرانی",
    "چند مالدار لوگوں کا خفیہ طور پر فیصلے کرنا",
    "تمام معاملات میں حکمرانوں کی بلا سوال اطاعت",
-   "فیصلے کرنے سے پہلے مشورہ اور باہمی رائے لینا"
+   "فیصلے کرنے سے پہلے مشورہ کرنا اور ایک دوسرے سے رائے لینا"
   ],
   "options_roman": [
    "Kisi mashware ke baghair aik shakhs ki hukmarani",
@@ -23377,7 +23377,7 @@
    "Ilm hasil karna har Musalman mard aur aurat ke liye zindagi bhar ka fareeza hai",
    "Islam mein qudrati duniya ke ilm ki koi qadar nahi"
   ],
-  "explanation_ur": "اسلام علم حاصل کرنے کو تمام مسلمانوں کے لیے زندگی بھر کا فریضہ قرار دیتا ہے، اور قدرتی دنیا اور سائنس کا مطالعہ ایمان کے مطابق ہے۔",
+  "explanation_ur": "اسلام علم حاصل کرنے کو تمام مسلمانوں کے لیے زندگی بھر کا فریضہ قرار دیتا ہے، اور قدرتی دنیا اور سائنس کا مطالعہ ایمان سے ہم آہنگ ہے۔",
   "explanation_roman": "Islam ilm hasil karne ko tamam Musalmanon ke liye zindagi bhar ka fareeza qarar deta hai, aur qudrati duniya aur science ka mutala iman ke mutabiq hai.",
   "post": [
    "zamungkor",
@@ -23504,7 +23504,7 @@
  },
  {
   "id": "ISL-498",
-  "question_ur": "اسلام غیبت، بہتان اور لوگوں کے نجی عیبوں کو ظاہر کرنے کے بارے میں کیا تعلیم دیتا ہے، بشمول سوشل میڈیا پر؟",
+  "question_ur": "اسلام غیبت، بہتان اور لوگوں کے نجی عیب ظاہر کرنے کے بارے میں، سوشل میڈیا سمیت، کیا تعلیم دیتا ہے؟",
   "question_roman": "Islam Gheebat, Bohtan aur logon ke niji aibon ko zahir karne ke bare mein kya taleem deta hai, bashamool social media par?",
   "options_ur": [
    "جب عیب سچے ہوں تو یہ جائز ہیں",
@@ -23612,7 +23612,7 @@
    "Sachai, diyanat, sabr, shukr, haya, maafi aur aajizi",
    "Riyakari, doosron ka mazaq udana aur keena rakhna"
   ],
-  "explanation_ur": "اچھے اخلاق میں سچائی، دیانت، صبر، شکر، حیا، معافی، عاجزی، غصے پر قابو، وعدوں کی پاسداری، اور دوسروں کے سامنے مسکرانا بھی بطور صدقہ شامل ہے۔",
+  "explanation_ur": "اچھے اخلاق میں سچائی، دیانت، صبر، شکر، حیا، معافی، عاجزی، غصے پر قابو اور وعدوں کی پاسداری شامل ہیں، اور دوسروں سے مسکرا کر ملنا بھی صدقہ ہے۔",
   "explanation_roman": "Achhe akhlaq mein sachai, diyanat, sabr, shukr, haya, maafi, aajizi, gusse par qabu, waadon ki pasdari, aur doosron ke samne muskurana bhi ba-tor Sadqah shamil hai.",
   "post": [
    "zamungkor",

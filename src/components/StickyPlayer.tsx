@@ -24,6 +24,12 @@ export default function StickyPlayer() {
   const playing = status === "playing";
   const errored = status === "error";
   const otherSpeed = speed === 1 ? 0.5 : 1;
+  // U1 (F1.7) — the label truncates by design (.quran-player-label), so
+  // the full text is exposed via title, composed from the same pieces
+  // rendered below (no new strings).
+  const labelTitle = errored
+    ? t("quranAudioUnavailable")
+    : `${track.ruleLabel} · ${tf("quranAyahRef", { surah: lri(track.verse.surahName), ayah: track.verse.ayah })} · Mishary Alafasy`;
 
   return (
     <>
@@ -36,7 +42,7 @@ export default function StickyPlayer() {
         >
           {errored ? t("quranRetry") : playing ? t("quranPause") : t("quranPlay")}
         </button>
-        <p className="quran-player-label" dir="auto">
+        <p className="quran-player-label" dir="auto" title={labelTitle}>
           {errored ? (
             t("quranAudioUnavailable")
           ) : (

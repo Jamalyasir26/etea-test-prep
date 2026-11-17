@@ -353,15 +353,19 @@ check("5E digit runs unchanged in every translated note field", noteDigitBad.len
 // dropped, gloss kept verbatim in _roman, translated in _ur.
 const vitNote = NOTES["General Science"].find((n) => n.title === "Vitamins and Deficiency Diseases");
 check(
-  "5E Vitamins note: gloss content verbatim in body_roman, translated in body_ur, label dropped",
+  // U1: the echo gloss sentence was merged into the exam-tip sentence; the
+  // _ur half now asserts the gloss content in its embedded idiomatic form.
+  "5E Vitamins note: gloss content verbatim in body_roman, gloss content embedded in body_ur exam tip, label dropped",
   vitNote.body_roman.includes("vitamin ki kami se kaunsi bimari hoti hai — yehi sawal aata hai") &&
-    vitNote.body_ur.includes("وٹامن کی کمی سے کون سی بیماری ہوتی ہے — یہی سوال آتا ہے"),
+    vitNote.body_ur.includes("وٹامن کو اس کی بیماری سے ملائیں") && vitNote.body_ur.includes("بیماری پوچھی جاتی ہے"),
 );
 const bruNote = NOTES.Pedagogy.find((n) => n.title.startsWith("Bruner"));
 check(
-  "5E Bruner note: gloss content verbatim in body_roman, translated in body_ur, label dropped",
+  // U1: the echo gloss sentence was deleted as a pure echo (its content is
+  // the note's first sentence); the _ur half now asserts that content.
+  "5E Bruner note: gloss content verbatim in body_roman, gloss content in body_ur first sentence, label dropped",
   bruNote.body_roman.includes("aik hi mauzu baar baar, har dafa gehra — yehi spiral curriculum hai") &&
-    bruNote.body_ur.includes("ایک ہی موضوع بار بار، ہر دفعہ گہرا — یہی حلزونی نصاب ہے"),
+    bruNote.body_ur.includes("ایک ہی موضوع کو بار بار دہرایا جاتا ہے") && bruNote.body_ur.includes("حلزونی نصاب"),
 );
 // K2 stays "K2" (Latin) in both Geography note _ur bodies — the mountain
 // name is not transliterated (digit rule + consistency with PAK-037).

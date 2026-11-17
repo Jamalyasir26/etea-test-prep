@@ -690,7 +690,7 @@ for (const key of NEW_KEYS) {
 }
 check(
   "i18n: homeIntro names the teaching scope",
-  i18nSrc.includes("teaching post tracks") && i18nSrc.includes("تدریسی پوسٹ ٹریکس"),
+  i18nSrc.includes("teaching post tracks") && i18nSrc.includes("تدریسی عہدوں کے ٹریک"), // U1 wording (was: تدریسی پوسٹ ٹریکس)
 );
 
 // ------------------------------------------------------------------ summary

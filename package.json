@@ -97,7 +97,9 @@
     "test:phase3analysis": "node scripts/test-phase3-analysis.mjs",
     "test:phase3practiceui": "node scripts/test-phase3-practice-ui.mjs",
     "test:phase4library": "node scripts/test-phase4-library.mjs",
-    "test:phase4organize": "node scripts/test-phase4-organize.mjs"
+    "test:phase4organize": "node scripts/test-phase4-organize.mjs",
+    "test:uiux": "node scripts/test-uiux.mjs",
+    "test:idiomaticurdu": "node scripts/test-idiomatic-urdu.mjs"
   },
   "version": "3.0.0"
 }

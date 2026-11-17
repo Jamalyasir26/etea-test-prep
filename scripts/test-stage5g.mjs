@@ -452,12 +452,33 @@ for (const [subject, notes] of Object.entries(NOTES)) {
 }
 check("5G FINAL: all 13 note subjects fully translated (every note, both languages)", untranslatedNotes.length === 0, untranslatedNotes.slice(0, 3).join(", "));
 let noteDigitBad = [];
+// U1 ruling 1 (_ur only; _roman stays strict): echo-dedup legitimately
+// removes DUPLICATED digit runs from _ur bodies. Digit SET equality +
+// Urdu multiset ⊆ English multiset. Documented exemption D4: Hockey
+// body_ur lacks digit "4" — it occurs ONLY in the deleted echo gloss;
+// the main text spells "four" → چار.
+function relaxedDigitOk5G(en, ur) {
+  const E = digitRuns(en), U = digitRuns(ur);
+  const setE = new Set(E), setU = new Set(U);
+  if (setE.size !== setU.size || ![...setE].every((x) => setU.has(x))) return false;
+  const mE = {}; E.forEach((x) => { mE[x] = (mE[x] || 0) + 1; });
+  const mU = {}; U.forEach((x) => { mU[x] = (mU[x] || 0) + 1; });
+  return Object.entries(mU).every(([k, v]) => v <= (mE[k] || 0));
+}
+function d4ExemptOk5G(n, dst) {
+  if (n.title !== "Hockey — The Basics" || dst !== "body_ur") return false;
+  const E = digitRuns(n.body), U = digitRuns(n.body_ur);
+  const setE = new Set(E), setU = new Set(U);
+  return setE.size === setU.size + 1 && !setU.has("4") && [...setU].every((x) => setE.has(x)) &&
+    n.body_ur.includes("چار کوارٹر");
+}
 for (const n of NOTES["Drawing/PE"]) {
   for (const [src, dst] of [["title", "title_ur"], ["title", "title_roman"], ["body", "body_ur"], ["body", "body_roman"]]) {
-    if (!sameMultiset(digitRuns(n[src]), digitRuns(n[dst]))) noteDigitBad.push(`Drawing/PE:${n.title}:${dst}`);
+    const ok = dst.endsWith("_ur") ? (relaxedDigitOk5G(n[src], n[dst]) || d4ExemptOk5G(n, dst)) : sameMultiset(digitRuns(n[src]), digitRuns(n[dst]));
+    if (!ok) noteDigitBad.push(`Drawing/PE:${n.title}:${dst}`);
   }
 }
-check("5G digit runs unchanged in every translated note field", noteDigitBad.length === 0, noteDigitBad.slice(0, 3).join(", "));
+check("5G digit runs preserved in every translated note field (U1 ruling 1 for _ur, strict for _roman)", noteDigitBad.length === 0, noteDigitBad.slice(0, 3).join(", "));
 // Gloss rule on all 22 notes carrying a "Roman Urdu:" gloss sentence: label
 // dropped, gloss kept verbatim in _roman, translated in _ur.
 const glossNotes = NOTES["Drawing/PE"].filter((n) => /Roman Urdu:/.test(n.body));
@@ -470,9 +491,11 @@ for (const n of glossNotes) {
 check("5G all 22 note glosses verbatim in body_roman", glossBad.length === 0, glossBad.slice(0, 3).join(", "));
 const basicsNote = NOTES["Drawing/PE"].find((n) => n.title === "Drawing Basics — The Elements of Art");
 check(
-  "5G Drawing Basics note: gloss verbatim in body_roman, translated in body_ur, label dropped",
+  // U1: the echo gloss sentence was deleted as a pure echo (its content is
+  // the note's first sentence); the _ur half now asserts the six elements.
+  "5G Drawing Basics note: gloss verbatim in body_roman, gloss content in body_ur first sentence, label dropped",
   basicsNote.body_roman.includes("drawing ke bunyadi ajzaa — lakeer, shakal, rang, banawat aur jagah.") &&
-    basicsNote.body_ur.includes("ڈرائنگ کے بنیادی اجزا"),
+    basicsNote.body_ur.includes("لکیر، شکل، فارم، رنگ، بناوٹ اور جگہ"),
 );
 const hockeyNote = NOTES["Drawing/PE"].find((n) => n.title === "Hockey — The Basics");
 check(

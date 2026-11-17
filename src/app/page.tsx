@@ -39,7 +39,7 @@ import {
   type QuizSession,
   type Stats,
 } from "@/lib/tracking";
-import { countPlanDone, loadMigratedPlanState, planTaskId } from "@/lib/plan";
+import { countPlanDone, loadMigratedPlanState, planTaskId, resolvePlanTaskText } from "@/lib/plan";
 import { useLang } from "@/lib/i18n";
 import TutorHealth from "@/components/TutorHealth";
 import { TrackConfidenceBadge } from "@/components/StatusBadges";
@@ -84,7 +84,7 @@ const QUICK: {
 ];
 
 export default function Home() {
-  const { t, tf } = useLang();
+  const { t, tf, lang } = useLang();
   const [stats, setStats] = useState<Stats | null>(null);
   const [planDone, setPlanDone] = useState(0);
   const [planState, setPlanState] = useState<Record<string, boolean>>({});
@@ -130,7 +130,9 @@ export default function Home() {
     const tasks = PLAN21[di][1];
     for (let ti = 0; ti < tasks.length; ti++) {
       if (!planState[planTaskId(PLAN21[di][0], tasks[ti][0], tasks[ti][1])]) {
-        nextTask = tasks[ti][1];
+        // U1 (F1.6) — display text resolves via the plan resolver, like
+        // the plan page; the id above still hashes the English fields.
+        nextTask = resolvePlanTaskText(tasks[ti], lang).text;
         break outer;
       }
     }
@@ -372,7 +374,7 @@ export default function Home() {
                 aria-valuemax={63}
                 aria-label={`${t("planProgressLabel")}: ${planDone} / 63`}
               >
-                <div className="tw:h-full tw:rounded-full tw:bg-primary" style={{ width: `${(planDone / 63) * 100}%` }} />
+                <div className="tw:h-full tw:rounded-full tw:bg-primary tw:dark:bg-[#7fd4d8]" style={{ width: `${(planDone / 63) * 100}%` }} />
               </div>
             </Card>
           </FadeIn>
@@ -484,7 +486,7 @@ export default function Home() {
             <Link href={q.href} className="tw:block tw:h-full" style={{ textDecoration: "none", color: "inherit" }}>
               <Card className="tw:h-full tw:gap-1 tw:p-4">
                 <p className="tw:m-0 tw:flex tw:items-center tw:gap-2 tw:text-base tw:font-semibold">
-                  <q.Icon className="tw:size-5 tw:shrink-0 tw:text-brand-teal" aria-hidden="true" />
+                  <q.Icon className="tw:size-5 tw:shrink-0 tw:text-brand-teal tw:dark:text-[#7fd4d8]" aria-hidden="true" />
                   {t(q.key)}
                 </p>
                 <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">

@@ -207,12 +207,12 @@ button:disabled { opacity: 0.55; cursor: not-allowed; }
 .stat b { display: block; font-size: 1.8rem; line-height: 1.2; }
 .stat span { color: var(--muted); font-size: 0.85rem; }
 .alert {
-  border: 1px solid var(--amber); border-left: 6px solid var(--amber);
+  border: 1px solid var(--amber); border-inline-start: 6px solid var(--amber);
   background: color-mix(in srgb, var(--amber) 10%, var(--card));
   border-radius: 10px; padding: 12px 14px; margin: 12px 0;
 }
-.alert.red { border-color: var(--red); border-left-color: var(--red); background: color-mix(in srgb, var(--red) 8%, var(--card)); }
-.alert.green { border-color: var(--green); border-left-color: var(--green); background: color-mix(in srgb, var(--green) 8%, var(--card)); }
+.alert.red { border-color: var(--red); border-inline-start-color: var(--red); background: color-mix(in srgb, var(--red) 8%, var(--card)); }
+.alert.green { border-color: var(--green); border-inline-start-color: var(--green); background: color-mix(in srgb, var(--green) 8%, var(--card)); }
 .badge {
   display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 2px 8px;
   border-radius: 999px; background: var(--amber); color: #1b272b; margin-inline-end: 6px;
@@ -238,6 +238,11 @@ th { font-weight: 700; }
   background: var(--card); color: var(--ink); border: 1px solid var(--line);
 }
 .opt:hover { border-color: var(--teal); }
+/* U1 (F6.2) — a picked-but-unrevealed option: neutral teal border
+   (never green before reveal). Dark override follows the existing
+   #7fd4d8 pattern (see .shell-nav-active above). */
+.opt.picked { border-color: var(--teal); border-width: 2px; }
+[data-theme="dark"] .opt.picked { border-color: #7fd4d8; }
 .opt.picked-correct { border-color: var(--green); background: color-mix(in srgb, var(--green) 12%, var(--card)); }
 .opt.picked-wrong { border-color: var(--red); background: color-mix(in srgb, var(--red) 12%, var(--card)); }
 .opt.show-correct { border-color: var(--green); }
@@ -245,6 +250,9 @@ th { font-weight: 700; }
 .heat.red { background: var(--red); } .heat.yellow { background: var(--amber); } .heat.green { background: var(--green); }
 .bar { height: 10px; background: var(--line); border-radius: 999px; overflow: hidden; }
 .bar > i { display: block; height: 100%; background: var(--teal); }
+/* U1 (F3.1) — dark-mode bar fill: teal on the dark track fails
+   contrast (1.30:1); #7fd4d8 passes (6.49:1). */
+[data-theme="dark"] .bar > i { background: #7fd4d8; }
 .chatlog { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; }
 .msg {
   padding: 10px 12px; border-radius: 12px; max-width: 92%; white-space: pre-wrap;

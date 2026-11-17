@@ -335,15 +335,17 @@ for (const n of glossNotes) {
 check("5F all 13 note glosses verbatim in body_roman", glossBad.length === 0, glossBad.slice(0, 3).join(", "));
 const wordNote = NOTES["IT/Computer"].find((n) => n.title === "MS Word — Word Processing");
 check(
-  "5F MS Word note: gloss verbatim in body_roman, translated in body_ur, label dropped",
+  // U1: gloss sentence kept, reworded idiomatically (جیسے…اور for the dash list).
+  "5F MS Word note: gloss verbatim in body_roman, translated in body_ur (U1 wording), label dropped",
   wordNote.body_roman.includes("Word se dastavezat likhi jati hain — letter, darkhwast, mazmoon.") &&
-    wordNote.body_ur.includes("Word سے دستاویزات لکھی جاتی ہیں — خط، درخواست، مضمون۔"),
+    wordNote.body_ur.includes("Word سے دستاویزات لکھی جاتی ہیں، جیسے خط، درخواست اور مضمون۔"),
 );
 const binNote = NOTES["IT/Computer"].find((n) => n.title === "Binary — How Computers Count");
 check(
-  "5F Binary note: gloss verbatim in body_roman, translated in body_ur, label dropped",
+  // U1: gloss sentence kept, reworded idiomatically (بٹ/بائٹ for bit/byte).
+  "5F Binary note: gloss verbatim in body_roman, translated in body_ur (U1 wording), label dropped",
   binNote.body_roman.includes("computer sirf 0 aur 1 samajhta hai; 8 bit se 1 byte banta hai.") &&
-    binNote.body_ur.includes("کمپیوٹر صرف 0 اور 1 سمجھتا ہے؛ 8 bit سے 1 byte بنتا ہے۔"),
+    binNote.body_ur.includes("کمپیوٹر صرف 0 اور 1 سمجھتا ہے، اور 8 بٹ سے 1 بائٹ بنتا ہے۔"),
 );
 // Phase 4 rescope: the recall-first lead-in is a property of the 17
 // Stage 5F-batch IT/Computer notes only. The 7 Phase 4 notes (appended

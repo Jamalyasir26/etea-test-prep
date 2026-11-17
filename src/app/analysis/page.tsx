@@ -131,7 +131,7 @@ export default function Analysis() {
             (c.attemptsSkipped + c.issuesSkipped + c.sessionsSkipped > 0
               ? tf("importSkipped", { n: c.attemptsSkipped + c.issuesSkipped + c.sessionsSkipped })
               : "") +
-            ".",
+            (lang === "ur" ? "۔" : "."), // U1: Urdu terminal punctuation, not a Latin period
         );
       } else {
         setMsg(tf("importSimple", { n: res.imported ?? 0 }));
@@ -215,7 +215,7 @@ export default function Analysis() {
         ? `${adaptiveBase}&mode=adaptive`
         : `${adaptiveBase}?mode=adaptive`;
 
-  if (!loaded) return <p>{t("loading")}</p>;
+  if (!loaded) return <p role="status">{t("loading")}</p>;
   const last14 = stats.daily.slice(-14);
   const maxDay = Math.max(1, ...last14.map((d) => d.total));
   const recent = [...filteredAttempts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 20);
@@ -321,7 +321,7 @@ export default function Analysis() {
         </label>
       </div>
       <p className="muted">
-        <span dir="ltr">{tf("filteredNote", { n: filteredAttempts.length, total: attempts.length })}</span>
+        <span dir="auto">{tf("filteredNote", { n: filteredAttempts.length, total: attempts.length })}</span>
       </p>
       <div className="grid">
         <div className="card stat">
@@ -672,7 +672,7 @@ export default function Analysis() {
               </>
             )}
             {" · "}
-            <button className="secondary" style={{ minHeight: 36, padding: "4px 10px" }} onClick={() => setSelected(null)}>
+            <button className="secondary" onClick={() => setSelected(null)}>
               {t("closeWord")}
             </button>
           </p>
@@ -767,7 +767,7 @@ export default function Analysis() {
         </button>
       </div>
       {msg && (
-        <p dir="auto" className="muted">
+        <p dir="auto" className="muted" role="status">
           {msg}
         </p>
       )}

@@ -344,7 +344,7 @@ function PracticeInner() {
             </button>
           </div>
         ) : bank === null ? (
-          <p className="muted">{t("loading")}</p>
+          <p className="muted" role="status">{t("loading")}</p>
         ) : mode === "adaptive" ? (
           <QuizRunner
             key={`adaptive-${altSubjectKey}-${altRound}-${count}${timedKeySuffix}-${statsHash}`}
@@ -378,7 +378,7 @@ function PracticeInner() {
           </button>
         </div>
       ) : reviseQuestions === null ? (
-        <p className="muted">{t("loading")}</p>
+        <p className="muted" role="status">{t("loading")}</p>
       ) : reviseQuestions.length === 0 ? (
         <p>{t("reviseEmpty")}</p>
       ) : (

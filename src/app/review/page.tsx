@@ -238,7 +238,7 @@ export default function ReviewDashboard() {
     return (
       <div>
         <h1>{t("reviewTitle")}</h1>
-        <p className="muted">{t("loading")}</p>
+        <p className="muted" role="status">{t("loading")}</p>
       </div>
     );
   }

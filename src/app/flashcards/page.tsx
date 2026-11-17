@@ -319,7 +319,7 @@ function FlashcardsInner() {
       )}
       {saveRecovered && !saveFailed && <p className="muted">{t("flashSaveRecovered")}</p>}
       {!loaded ? (
-        <p>{t("loading")}</p>
+        <p role="status">{t("loading")}</p>
       ) : done ? (
         <div className="card">
           <h2>{t("sessionFinished")}</h2>

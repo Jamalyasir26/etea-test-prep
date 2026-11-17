@@ -82,7 +82,7 @@ const EXPECTED_NOTES = {
     "Expected pattern — ETEA has not published the official 2026 syllabus. Second set covering only the non-subject part (40 of 100 Q). The 60-Q subject portion needs your subject (Maths/Bio/Chem/IT) — use the Library + Practice sections.",
 };
 const STANDING_LABEL = "Expected pattern — ETEA has not published the official 2026 syllabus.";
-const STANDING_UR = "متوقع پیٹرن — ETEA نے 2026 کا سرکاری نصاب شائع نہیں کیا ہے۔";
+const STANDING_UR = "یہ متوقع پیٹرن ہے، کیونکہ ETEA نے 2026 کا سرکاری نصاب شائع نہیں کیا۔"; // U1 idiomatic rendering (was: متوقع پیٹرن — ETEA نے 2026 کا سرکاری نصاب شائع نہیں کیا ہے۔)
 const STANDING_RO = "Expected pattern — ETEA ne 2026 ka official syllabus publish nahi kiya hai.";
 
 // ---- §1 the 8 new defs: existence, shape, frozen English text ----

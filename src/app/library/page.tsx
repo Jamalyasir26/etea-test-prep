@@ -142,9 +142,9 @@ function LibraryInner() {
           no query is typed, the match count + query when searching. */}
       <p className="muted">
         {query.trim() ? (
-          <span dir="ltr">{tf("libraryMatchCountQuery", { n: notes.length, q: lri(query.trim()) })}</span>
+          <span dir="auto">{tf("libraryMatchCountQuery", { n: notes.length, q: lri(query.trim()) })}</span>
         ) : (
-          <span dir="ltr">{tf("libraryMatchCount", { n: notes.length, total: scoped.length })}</span>
+          <span dir="auto">{tf("libraryMatchCount", { n: notes.length, total: scoped.length })}</span>
         )}
       </p>
       {notes.length === 0 && <p>{t("noNotesMatch")}</p>}

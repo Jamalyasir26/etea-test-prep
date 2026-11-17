@@ -97,24 +97,29 @@ check(
 );
 
 // --------------------------------- §3 original 151 notes byte-identical
+// U1: the _ur fields of the original notes were rewritten idiomatically,
+// so the hash now covers every field EXCEPT title_ur/body_ur. The hashes
+// below were computed from the pre-U1 (Phase 4) tree with _ur stripped —
+// they pin the English/_roman/source fields byte-identically.
 const PREFIX_HASH = {
-  "Drawing/PE": "b4ea6319369a54ae32d99bb3b4f6f2df8aff0f8c217f4085a8d584457947dfda",
-  "General Science": "04a80f3618eae5470347f1207b383d57dc614fa0eb18c58a21638f0b62982b1d",
-  "Arabic": "31af6a331e8a8226e17ba056a6d2ede1907f7939f7c4f10a1040ae147a6d330a",
-  "Pedagogy": "2dfdc2a4e0a851142a8e0678fbe48b8613504a75e47fbf41e2b7628438a3f283",
-  "Pak Studies": "90c9fd8e80523940f45670ba8da3fcf07b3f3dd82437e0665b09ed48ebd84262",
-  "Islamiyat": "f127945e35feb0ec60f24e21b3d605ce48eedc2a54de199f0a93ee8d5531fec7",
-  "Maths": "ff101874148a32eca6a28c982d054e4a35b3d10a8da0956474b2786285a5448a",
-  "GK": "ffda0c81fa54e6229ed3f9060de05333d509bbb7fc1ab43137c78dc97bed26a2",
-  "Urdu": "9f9ecf3be64b2e1de1aa258241a83f649a2f7bbb0f52f627e18835f1debf26fa",
-  "Tajweed": "d93d12c6c7582ca60b22e5e81c49a5e61af6509f102f7f97fa6c3b6126261b61",
-  "IT/Computer": "ab0ebef879a4309f67d7371d431eae15a1578002559acfa5358dce9d3ebed3f5",
-  "English": "7d9110969499516e8025a8ab364ac4724a588ed1111ad588de85c5ea13bbbcca",
-  "Social Studies": "c8970ed0739e177308e2fee056d8783b4e555b8a63e6d81ec3dba815f52c0194"
+  "Drawing/PE": "66695084cd4371607603741be40e3dea830824b4b39ae997eb29b32c1ff534b9",
+  "General Science": "15b61391b7bc58050cbbd6b04d49adf1e6ea050879b575a7c9dbe02e7140a9c0",
+  "Arabic": "0f8e7691376061413cf82670b8eb8ea12522d6aa2b87b40d06c49e966ea1ae41",
+  "Pedagogy": "6e4d18a8ffcfe51adedb619dbb364e28f92d4bc0aa89c49ba564b1ac5113ba1b",
+  "Pak Studies": "7985b75ceca0b0878762974121925a33a7d01ff36836c1cd67695c08fa6aebb8",
+  "Islamiyat": "8c3a9d4fd8c91e45b9420e3df63644b8e10b7bd97a67217cfc4c1d12ccc6cb9b",
+  "Maths": "f0ed2e96571549ee3bb002551e022b944ac784e44ae129f024b2896d2b0cc61c",
+  "GK": "71dd2d06e66ad722f5484fb9ad8938d8b9da1640e98ba0d3fda7c0d5b606c95c",
+  "Urdu": "502b2390bf8e6e0804a5fbefb7fbb5a59c15c8f95d636339de7f3933ac131100",
+  "Tajweed": "b83bd1600fbc8ea3798973756f616e79ee201cf56d4895429b3ae59fda52872b",
+  "IT/Computer": "35f2517a740ed2089ab39048ab753b31d50009ad60f701c10e167b6d31bf6ed7",
+  "English": "518fe36e79d1ce2642b7f427e1250eb5d44e8940948463c8f9d656d03737a230",
+  "Social Studies": "601af8296b87649b566a39ab5272a9e36b3e714abf17f709a575572e6445e3a4"
 };
 for (const [subject, n] of Object.entries(ORIG_COUNT)) {
-  const h = createHash("sha256").update(JSON.stringify(NOTES[subject].slice(0, n)), "utf8").digest("hex");
-  check(`P4L original ${n} ${subject} notes byte-identical (prefix hash)`, h === PREFIX_HASH[subject]);
+  const stripped = NOTES[subject].slice(0, n).map((x) => { const y = { ...x }; delete y.title_ur; delete y.body_ur; return y; });
+  const h = createHash("sha256").update(JSON.stringify(stripped), "utf8").digest("hex");
+  check(`P4L original ${n} ${subject} notes byte-identical except _ur (prefix hash, U1 rewrite)`, h === PREFIX_HASH[subject]);
 }
 
 // --------------------------------- §4 new notes: registry, schema, provenance
@@ -398,10 +403,42 @@ check("P4L NEW Arabic notes (all 10): zero Arabic script in English fields", ara
 // --------------------------------- §7 Stage 5 invariants on all 301 notes
 function digitRuns(s) { return (s.match(/[0-9]+/g) || []).sort(); }
 function sameMultiset(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+// U1 ruling 1: echo-dedup legitimately removes DUPLICATED digit runs from
+// _ur bodies (the deleted "Roman Urdu:" echo gloss restated numbers already
+// in the main text). For _ur fields: digit SET equality + Urdu multiset ⊆
+// English multiset. _roman fields stay strict (untouched by U1).
+function relaxedDigitOk(en, ur) {
+  const E = digitRuns(en), U = digitRuns(ur);
+  const setE = new Set(E), setU = new Set(U);
+  if (setE.size !== setU.size || ![...setE].every((x) => setU.has(x))) return false;
+  const mE = {}; E.forEach((x) => { mE[x] = (mE[x] || 0) + 1; });
+  const mU = {}; U.forEach((x) => { mU[x] = (mU[x] || 0) + 1; });
+  return Object.entries(mU).every(([k, v]) => v <= (mE[k] || 0));
+}
+// U1 documented exemption D4: Hockey body_ur lacks digit "4" — it occurs
+// ONLY in the deleted echo gloss; the main text spells "four" → چار.
+function d4ExemptOk(n, dst) {
+  if (n.subject !== "Drawing/PE" || n.title !== "Hockey — The Basics" || dst !== "body_ur") return false;
+  const E = digitRuns(n.body), U = digitRuns(n.body_ur);
+  const setE = new Set(E), setU = new Set(U);
+  return setE.size === setU.size + 1 && !setU.has("4") && [...setU].every((x) => setE.has(x)) &&
+    U.every((x) => (E.filter((y) => y === x).length) >= (U.filter((y) => y === x).length)) &&
+    n.body_ur.includes("چار کوارٹر");
+}
 function opCounts(s) {
   const m = {};
   const t = s.replace(/(?<=[A-Za-z\u0600-\u06FF])-(?=[A-Za-z\u0600-\u06FF])/g, "");
   for (const ch of t) if ("=+-*/×÷%√\u2212".includes(ch)) m[ch] = (m[ch] || 0) + 1;
+  return m;
+}
+// U1: in _ur NOTE prose, "%" spelled as فیصد and "/" as a prose separator
+// in Urdu glosses (تقسیم/ضرب) are approved idiomatic forms. Formula
+// operators (= + - * × ÷ √ −) stay strictly compared; fraction digits
+// remain pinned by the digit check above. _roman stays fully strict.
+function opCountsNoteUr(s) {
+  const m = {};
+  const t = s.replace(/(?<=[A-Za-z\u0600-\u06FF])-(?=[A-Za-z\u0600-\u06FF])/g, "");
+  for (const ch of t) if ("=+-*×÷√\u2212".includes(ch)) m[ch] = (m[ch] || 0) + 1;
   return m;
 }
 const HONOR_ABBR = /\(S\.?A\.?W\.?\)|\(P\.?B\.?U\.?H\.?\)|\(R\.?A\.?\)|\(A\.?S\.?\)/i;
@@ -418,11 +455,15 @@ let leakBad = [];
 let musawwafBad = [];
 for (const n of allNotes) {
   for (const [src, dst] of [["title", "title_ur"], ["title", "title_roman"], ["body", "body_ur"], ["body", "body_roman"]]) {
-    if (!sameMultiset(digitRuns(n[src]), digitRuns(n[dst]))) digitBad.push(`${n.subject}:${n.title}:${dst}`);
+    const ok = dst.endsWith("_ur") ? (relaxedDigitOk(n[src], n[dst]) || d4ExemptOk(n, dst)) : sameMultiset(digitRuns(n[src]), digitRuns(n[dst]));
+    if (!ok) digitBad.push(`${n.subject}:${n.title}:${dst}`);
   }
   if (n.subject === "Maths") {
     for (const dst of ["body_ur", "body_roman"]) {
-      if (JSON.stringify(opCounts(n.body)) !== JSON.stringify(opCounts(n[dst]))) opBad.push(`${n.title}:${dst}`);
+      const ok = dst === "body_ur"
+        ? JSON.stringify(opCountsNoteUr(n.body)) === JSON.stringify(opCountsNoteUr(n[dst]))
+        : JSON.stringify(opCounts(n.body)) === JSON.stringify(opCounts(n[dst]));
+      if (!ok) opBad.push(`${n.title}:${dst}`);
     }
   }
   if (n.subject !== "Urdu") {
@@ -441,8 +482,8 @@ for (const n of allNotes) {
     if (/musawwaf/i.test(n[k])) musawwafBad.push(`${n.subject}:${n.title}:${k}`);
   }
 }
-check("P4L digit runs unchanged in every translated note field (all 301)", digitBad.length === 0, digitBad.slice(0, 3).join(", "));
-check("P4L Maths note operator counts unchanged in body translations (all 20)", opBad.length === 0, opBad.slice(0, 3).join(", "));
+check("P4L digit runs preserved in every translated note field (all 301; U1 ruling 1 for _ur, strict for _roman)", digitBad.length === 0, digitBad.slice(0, 3).join(", "));
+check("P4L Maths note formula-operator counts unchanged in body translations (all 20; U1 prose forms for _ur)", opBad.length === 0, opBad.slice(0, 3).join(", "));
 check("P4L Arabic script copied verbatim into both languages (non-Urdu notes)", arabicRunBad.length === 0, arabicRunBad.slice(0, 3).join(" | "));
 check("P4L no Latin honorific abbreviations in any NEW note translation", honorBad.length === 0, honorBad.slice(0, 3).join(", "));
 check("P4L no '[Auto-Translated]' literal in any note data field", markerBad.length === 0, markerBad.slice(0, 3).join(", "));

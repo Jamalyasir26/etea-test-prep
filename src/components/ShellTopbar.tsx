@@ -39,10 +39,10 @@ export default function ShellTopbar({ onOpenMobile, mobileOpen, toggleRef }: She
         </Button>
         <Link
           href="/"
-          className="tw:flex tw:items-center tw:gap-2 tw:font-semibold tw:text-foreground tw:no-underline tw:md:hidden"
+          className="tw:flex tw:min-w-0 tw:items-center tw:gap-2 tw:font-semibold tw:text-foreground tw:no-underline tw:md:hidden"
         >
-          <BookOpen className="tw:size-5 tw:shrink-0 tw:text-brand-teal" aria-hidden="true" />
-          <span dir="ltr">ETEA Prep Library</span>
+          <BookOpen className="tw:size-5 tw:shrink-0 tw:text-brand-teal tw:dark:text-[#7fd4d8]" aria-hidden="true" />
+          <span dir="ltr" className="tw:min-w-0 tw:truncate">ETEA Prep Library</span>
         </Link>
         <div className="tw:ms-auto tw:flex tw:items-center tw:gap-2">
           {/* Stage 4A (PWA) — honest offline badge, mount-gated so the
@@ -60,7 +60,7 @@ export default function ShellTopbar({ onOpenMobile, mobileOpen, toggleRef }: She
             aria-label={t("languageLabel")}
             value={lang}
             onChange={(e) => setLang(e.target.value as "en" | "roman" | "ur")}
-            className="tw:h-9 tw:rounded-md tw:border tw:border-input tw:bg-background tw:px-2 tw:text-sm tw:shadow-xs tw:outline-none tw:focus-visible:ring-ring/50 tw:focus-visible:ring-[3px]"
+            className="tw:h-11 tw:rounded-md tw:border tw:border-input tw:bg-background tw:px-2 tw:text-sm tw:shadow-xs tw:outline-none tw:focus-visible:ring-ring/50 tw:focus-visible:ring-[3px]"
           >
             <option value="en">English</option>
             <option value="roman">Roman Urdu</option>
@@ -69,6 +69,8 @@ export default function ShellTopbar({ onOpenMobile, mobileOpen, toggleRef }: She
           <Button
             variant="ghost"
             size="icon"
+            // Step 2a pattern — 44px touch target (icon size is 36px).
+            className="tw:size-11"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label={t("toggleDarkLabel")}
           >

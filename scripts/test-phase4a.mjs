@@ -61,7 +61,7 @@ check("4A skeleton branch carries no computed values", (() => {
   const branch = home.slice(start, home.indexOf("Step 2a — the empty state", start));
   return !branch.includes("stats.") && !branch.includes("planDone") && !branch.includes("dueCards") && !branch.includes("buckets");
 })());
-check("4A statsLoading key present (en + ur)", i18n.includes("statsLoading:") && i18n.includes('en: "Loading..."') && i18n.includes('ur: "لوڈ ہو رہا ہے..."'));
+check("4A statsLoading key present (en + ur)", i18n.includes("statsLoading:") && i18n.includes('en: "Loading..."') && i18n.includes('ur: "لوڈ ہو رہا ہے…"')); // U1: ellipsis char for "..."
 check("4A Start Here card still gated (no wrong-variant flash)", home.includes("Rendered only once stats load") && home.includes("{stats && ("));
 
 // --------------------------------- §4 bank data: Phase 4A added none;

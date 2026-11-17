@@ -199,6 +199,25 @@ function opCounts(s) {
   for (const ch of t) if ("=+-*/×÷%√\u2212".includes(ch)) m[ch] = (m[ch] || 0) + 1;
   return m;
 }
+// U1 ruling 1 (NOTE _ur fields only; MCQ checks above stay strict):
+// echo-dedup legitimately removes DUPLICATED digit runs from _ur bodies.
+// Digit SET equality + Urdu multiset ⊆ English multiset. _roman stays strict.
+function relaxedDigitOk(en, ur) {
+  const E = digitRuns(en), U = digitRuns(ur);
+  const setE = new Set(E), setU = new Set(U);
+  if (setE.size !== setU.size || ![...setE].every((x) => setU.has(x))) return false;
+  const mE = {}; E.forEach((x) => { mE[x] = (mE[x] || 0) + 1; });
+  const mU = {}; U.forEach((x) => { mU[x] = (mU[x] || 0) + 1; });
+  return Object.entries(mU).every(([k, v]) => v <= (mE[k] || 0));
+}
+// U1: in _ur NOTE prose, "%" spelled as فیصد and "/" as a prose separator
+// in Urdu glosses are approved idiomatic forms; formula operators stay strict.
+function opCountsNoteUr(s) {
+  const m = {};
+  const t = s.replace(/(?<=[A-Za-z\u0600-\u06FF])-(?=[A-Za-z\u0600-\u06FF])/g, "");
+  for (const ch of t) if ("=+-*×÷√\u2212".includes(ch)) m[ch] = (m[ch] || 0) + 1;
+  return m;
+}
 let digitBad = [];
 let opBad = [];
 for (const q of scopeQs) {
@@ -358,17 +377,21 @@ let noteOpBad = [];
 for (const subject of ["English", "Maths", "GK"]) {
   for (const n of NOTES[subject]) {
     for (const [src, dst] of [["title", "title_ur"], ["title", "title_roman"], ["body", "body_ur"], ["body", "body_roman"]]) {
-      if (!sameMultiset(digitRuns(n[src]), digitRuns(n[dst]))) noteDigitBad.push(`${subject}:${n.title}:${dst}`);
+      const ok = dst.endsWith("_ur") ? relaxedDigitOk(n[src], n[dst]) : sameMultiset(digitRuns(n[src]), digitRuns(n[dst]));
+      if (!ok) noteDigitBad.push(`${subject}:${n.title}:${dst}`);
     }
     if (subject === "Maths") {
       for (const dst of ["body_ur", "body_roman"]) {
-        if (JSON.stringify(opCounts(n.body)) !== JSON.stringify(opCounts(n[dst]))) noteOpBad.push(`${subject}:${n.title}:${dst}`);
+        const ok = dst === "body_ur"
+          ? JSON.stringify(opCountsNoteUr(n.body)) === JSON.stringify(opCountsNoteUr(n[dst]))
+          : JSON.stringify(opCounts(n.body)) === JSON.stringify(opCounts(n[dst]));
+        if (!ok) noteOpBad.push(`${subject}:${n.title}:${dst}`);
       }
     }
   }
 }
-check("5D digit runs unchanged in every translated note field", noteDigitBad.length === 0, noteDigitBad.slice(0, 3).join(", "));
-check("5D Maths note operator counts unchanged in body translations", noteOpBad.length === 0, noteOpBad.slice(0, 3).join(", "));
+check("5D digit runs preserved in every translated note field (U1 ruling 1 for _ur, strict for _roman)", noteDigitBad.length === 0, noteDigitBad.slice(0, 3).join(", "));
+check("5D Maths note formula-operator counts unchanged in body translations (U1 prose forms for _ur)", noteOpBad.length === 0, noteOpBad.slice(0, 3).join(", "));
 
 // --------------------------------- §10 resolver on real 5D items + notes
 for (const [bankKey, label] of [["english", "English"], ["maths", "Maths"], ["gk", "GK"]]) {

@@ -177,7 +177,7 @@ export default function Sidebar({
           )}
         >
           <Icon className="tw:size-5 tw:shrink-0" aria-hidden="true" />
-          {!collapsed && <span className="tw:truncate">{t(key)}</span>}
+          {!collapsed && <span className="tw:truncate" title={t(key)}>{t(key)}</span>}
         </Link>
       </li>
     );
@@ -205,15 +205,15 @@ export default function Sidebar({
           aria-label={collapsed ? "ETEA Prep Library" : undefined}
           onClick={onCloseMobile}
         >
-          <BookOpen className="tw:size-6 tw:shrink-0 tw:text-brand-teal" aria-hidden="true" />
+          <BookOpen className="tw:size-6 tw:shrink-0 tw:text-brand-teal tw:dark:text-[#7fd4d8]" aria-hidden="true" />
           {!collapsed && (
             <span className="tw:min-w-0 tw:flex-1">
               {/* Proper name kept in English, isolated LTR (same rule
                   as the legacy Nav brand). */}
-              <span dir="ltr" className="tw:block tw:truncate tw:text-sm">
+              <span dir="ltr" className="tw:block tw:truncate tw:text-sm" title="ETEA Prep Library">
                 ETEA Prep Library
               </span>
-              <span className="tw:block tw:truncate tw:text-xs tw:font-normal tw:text-muted-foreground">
+              <span className="tw:block tw:truncate tw:text-xs tw:font-normal tw:text-muted-foreground" title={t("brandTagline")}>
                 {t("brandTagline")}
               </span>
             </span>
@@ -269,7 +269,7 @@ export default function Sidebar({
               {!collapsed && (
                 <h2
                   id={headingId}
-                  className="tw:m-0 tw:px-3 tw:pb-1 tw:text-xs tw:font-semibold tw:tracking-wide tw:text-muted-foreground tw:uppercase"
+                  className="tw:m-0 tw:px-3 tw:pb-1 tw:text-xs tw:font-semibold tw:text-muted-foreground"
                 >
                   {t(g.key)}
                 </h2>
@@ -306,7 +306,7 @@ export default function Sidebar({
             <Link
               href="/flashcards"
               onClick={onCloseMobile}
-              className={cn(buttonVariants({ size: "sm" }), "tw:w-full")}
+              className={cn(buttonVariants({ size: "sm" }), "tw:w-full tw:min-h-11")}
             >
               {t("reviewNow")}
             </Link>
@@ -323,7 +323,7 @@ export default function Sidebar({
         <Button
           variant="ghost"
           size="sm"
-          className={cn("tw:w-full", collapsed ? "tw:justify-center" : "tw:justify-start")}
+          className={cn("tw:w-full tw:min-h-11", collapsed ? "tw:justify-center" : "tw:justify-start")}
           aria-expanded={!collapsed}
           aria-controls="app-sidebar"
           onClick={onToggleCollapse}

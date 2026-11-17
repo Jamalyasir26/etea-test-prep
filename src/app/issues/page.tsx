@@ -188,7 +188,6 @@ export default function IssuesPage() {
                 <td>
                   <button
                     className="secondary"
-                    style={{ minHeight: 36, padding: "4px 10px" }}
                     onClick={() => {
                       if (window.confirm(tf("deleteConfirm", { qid: lri(i.qid) }))) {
                         deleteIssue(i.id);
