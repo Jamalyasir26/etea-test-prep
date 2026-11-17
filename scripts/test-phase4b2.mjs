@@ -58,14 +58,14 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 // --- totals ---
-check("4B2 bank total 6590 MCQs", QUESTIONS.length === 6590, `got ${QUESTIONS.length}`);
+check("4B2 bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("4B2 notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check("4B2 flashcards still 70 (none added)", FLASHCARDS.length === 70, `got ${FLASHCARDS.length}`);
-check("4B2 VISIBLE_COUNTS 6590/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 6590 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
+check("4B2 VISIBLE_COUNTS 7040/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 7040 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
   VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 16, JSON.stringify(VISIBLE_COUNTS));
-check("4B2 Drawing bank 50 items", BY_SUBJECT.drawing.length === 50, `got ${BY_SUBJECT.drawing.length}`);
+check("4B2 Drawing bank 500 items (50 + 450 Phase 1)", BY_SUBJECT.drawing.length === 500, `got ${BY_SUBJECT.drawing.length}`);
 check("4B2 Tajweed bank 500 items (82 + 418 Phase 1)", BY_SUBJECT.tajweed.length === 500, `got ${BY_SUBJECT.tajweed.length}`);
 check("4B2 Drawing/PE notes 24 (shared bucket)", NOTES["Drawing/PE"].length === 24, `got ${NOTES["Drawing/PE"].length}`);
 check("4B2 Tajweed notes 24", NOTES["Tajweed"].length === 24, `got ${NOTES["Tajweed"].length}`);
@@ -74,7 +74,7 @@ check("4B2 Tajweed notes 24", NOTES["Tajweed"].length === 24, `got ${NOTES["Tajw
 const DRAW_NEW = Array.from({ length: 30 }, (_, i) => `DRW-${String(i + 31).padStart(3, "0")}`);
 const TAJ_NEW = Array.from({ length: 32 }, (_, i) => `TAJ-${String(i + 51).padStart(3, "0")}`);
 check("4B2 DRW-031..060 appended after DRW-030, in order",
-  JSON.stringify(BY_SUBJECT.drawing.slice(20).map((q) => q.id)) === JSON.stringify(DRAW_NEW));
+  JSON.stringify(BY_SUBJECT.drawing.slice(20, 50).map((q) => q.id)) === JSON.stringify(DRAW_NEW));
 check("4B2 TAJ-051..082 appended after TAJ-050, in order",
   JSON.stringify(BY_SUBJECT.tajweed.slice(50, 82).map((q) => q.id)) === JSON.stringify(TAJ_NEW));
 const NEW_QS = [...DRAW_NEW, ...TAJ_NEW].map((id) => BY_ID[id]);
@@ -200,7 +200,7 @@ const qariMD = MOCKS.find((m) => m.id === "qari-MD");
 const dmQs = await buildMockQuestions(dmB);
 const qariQs = await buildMockQuestions(qariB);
 const qariMdQs = await buildMockQuestions(qariMD);
-check("4B2 dm-B builds 100 with 20 drawing from the 50-item pool",
+check("4B2 dm-B builds 100 with 20 drawing from the 500-item pool",
   dmQs.length === 100 && dmQs.filter((q) => q.subjectKey === "drawing").length === 20);
 check("4B2 qari-B builds 100 with 20 tajweed from the 500-item pool",
   qariQs.length === 100 && qariQs.filter((q) => q.subjectKey === "tajweed").length === 20);
@@ -223,8 +223,8 @@ const dmRow = ledger.ledgerRowFor("dm");
 const qariRow = ledger.ledgerRowFor("qari");
 const drawRow = dmRow.subjects.find((s) => s.label === "Drawing");
 const qariBlock = qariRow.subjects.find((s) => s.label === "Tajweed/Hifz + Islamiyat (combined block)");
-check("4B2 ledger dm Drawing row: 50 MCQs / 24 notes / 0 cards (recomputed)",
-  drawRow.mcqs === 50 && drawRow.notes === 24 && drawRow.cards === 0, JSON.stringify(drawRow));
+check("4B2 ledger dm Drawing row: 500 MCQs / 24 notes / 0 cards (recomputed)",
+  drawRow.mcqs === 500 && drawRow.notes === 24 && drawRow.cards === 0, JSON.stringify(drawRow));
 check("4B2 ledger qari combined row: 1000 MCQs / 38 notes / 12 cards (recomputed; 500 Tajweed + 500 Islamiyat after Phase 1)",
   qariBlock.mcqs === 1000 && qariBlock.notes === 38 && qariBlock.cards === 12, JSON.stringify(qariBlock));
 check("4B2 ledger dm + qari coverage still exact", dmRow.coverage === "exact" && qariRow.coverage === "exact");
@@ -243,15 +243,15 @@ check("4B2 only dm + qari rows mention Phase 4B2",
 check("4B2 Phase 4B1 mentions still 2 (ctit + pet rows)",
   (ledgerSrc.match(/Phase 4B1/g) || []).length === 2);
 const contentJson = JSON.parse(read("src/data/content.json"));
-check("4B2 content.json counts: total 6590, Drawing 50, Tajweed 500, notes 151, cards 70",
-  contentJson.counts.total === 6590 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
-  contentJson.counts.bySubject.find((r) => r[0] === "Drawing")[1] === 50 &&
+check("4B2 content.json counts: total 7040, Drawing 500, Tajweed 500, notes 151, cards 70",
+  contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
+  contentJson.counts.bySubject.find((r) => r[0] === "Drawing")[1] === 500 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Tajweed")[1] === 500);
-check("4B2 content.json bySubject index matches banks (drawing 50 / tajweed 500)",
-  contentJson.bySubject.drawing.length === 50 && contentJson.bySubject.tajweed.length === 500 &&
-  contentJson.bySubject.drawing[49] === "DRW-060" && contentJson.bySubject.tajweed[499] === "TAJ-500");
-check("4B2 meta description + i18n counts updated (6590 / 151)",
-  read("src/app/layout.tsx").includes("6590 MCQs") &&
+check("4B2 content.json bySubject index matches banks (drawing 500 / tajweed 500)",
+  contentJson.bySubject.drawing.length === 500 && contentJson.bySubject.tajweed.length === 500 &&
+  contentJson.bySubject.drawing[49] === "DRW-060" && contentJson.bySubject.drawing[499] === "DRW-510" && contentJson.bySubject.tajweed[499] === "TAJ-500");
+check("4B2 meta description + i18n counts updated (7040 / 151)",
+  read("src/app/layout.tsx").includes("7040 MCQs") &&
   read("src/lib/i18n.tsx").includes("151 notes") &&
   read("src/lib/i18n.tsx").includes("share the same subject banks"));
 

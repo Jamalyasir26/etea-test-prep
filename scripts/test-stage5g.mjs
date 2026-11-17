@@ -66,19 +66,19 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5G bank total 6590 MCQs", QUESTIONS.length === 6590, `got ${QUESTIONS.length}`);
+check("5G bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5G notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5G VISIBLE_COUNTS 6590/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 6590 &&
+  "5G VISIBLE_COUNTS 7040/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 7040 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 16,
   JSON.stringify(VISIBLE_COUNTS),
 );
-check("5G drawing bank still 50 items", BY_SUBJECT.drawing.length === 50, `got ${BY_SUBJECT.drawing.length}`);
+check("5G drawing bank 500 items (50 + 450 Phase 1)", BY_SUBJECT.drawing.length === 500, `got ${BY_SUBJECT.drawing.length}`);
 check("5G pastpapers bank still 20 items", BY_SUBJECT.pastpapers.length === 20, `got ${BY_SUBJECT.pastpapers.length}`);
 check("5G pastpapers_reworded bank still 20 items", BY_SUBJECT.pastpapers_reworded.length === 20, `got ${BY_SUBJECT.pastpapers_reworded.length}`);
 check("5G Drawing/PE notes still 24", NOTES["Drawing/PE"].length === 24, `got ${NOTES["Drawing/PE"].length}`);
@@ -113,7 +113,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["drawing", "drawing", 50], ["pastpapers", "pastpapers", 20], ["pastpapers_reworded", "pastpapers_reworded", 20]]) {
+for (const [bankKey, label, expected] of [["drawing", "drawing", 500], ["pastpapers", "pastpapers", 20], ["pastpapers_reworded", "pastpapers_reworded", 20]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -199,8 +199,8 @@ check(
     !ppt001.explanation_ur.includes("The name Muhammad is mentioned"),
 );
 check(
-  "5G items without explanationEn (42 drawing + 19 pastpapers + 20 reworded) have plain English explanations translated to both",
-  scopeQs.filter((q) => !q.explanationEn).length === 81 &&
+  "5G items without explanationEn (492 drawing + 19 pastpapers + 20 reworded) have plain English explanations translated to both",
+  scopeQs.filter((q) => !q.explanationEn).length === 531 &&
     scopeQs.filter((q) => !q.explanationEn).every((q) => q.explanation_ur && q.explanation_roman),
 );
 let labelLeak = [];
@@ -514,7 +514,7 @@ for (const [bankKey, label] of [["drawing", "Drawing"], ["pastpapers", "Past Pap
 }
 check("5G quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5G content.json counts unchanged", contentJson.counts.total === 6590 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5G content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 // --------------------------------- §10 past-paper disclosure labels (FINAL)
 // The disclosure lives in `pastPaperRef`, rendered by the existing
@@ -561,7 +561,7 @@ check(
 );
 // Whole-bank final completeness, independent of the per-bank loops above.
 check(
-  "5G FINAL: all 6590 questions carry complete translation triples in both languages",
+  "5G FINAL: all 7040 questions carry complete translation triples in both languages",
   QUESTIONS.every((q) => tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid),
   `untranslated=${QUESTIONS.filter((q) => !(tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid)).map((q) => q.id).slice(0, 5).join(",")}`,
 );
