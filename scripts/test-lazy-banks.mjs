@@ -23,9 +23,10 @@
 //  Plus: bank/note/audio content, tracking.ts and sw.js are
 //  byte-identical to the pre-lazyload backup except the Phase 1
 //  files (islamiyat.json + tajweed.json + arabic.json + english.json +
-//  urdu.json + maths.json + content.json,
-//  whose delta is pinned exactly), and every loading/failure UI marker
-//  is present.
+//  urdu.json + maths.json + pakstudies.json + pedagogy.json +
+//  science.json + socialstudies.json + gk.json + it.json +
+//  content.json, whose delta is pinned exactly), and every
+//  loading/failure UI marker is present.
 // Run: npm run build && node scripts/test-lazy-banks.mjs (exit 0 = all pass)
 import { execSync } from "node:child_process";
 import { createRequire } from "node:module";
@@ -118,8 +119,8 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 
 // ---------- Content + storage schema unchanged vs backup ----------
 // Phase 1 exception (documented, narrow): islamiyat.json, tajweed.json,
-// arabic.json, english.json, urdu.json, maths.json, pakstudies.json, pedagogy.json, science.json, socialstudies.json, gk.json + content.json changed ONLY by the Phase 1 growth
-// batches (395 + 418 + 420 + 455 + 455 + 455 + 455 + 470 + 470 + 470 + 470 appended items, counts + bySubject indexes).
+// arabic.json, english.json, urdu.json, maths.json, pakstudies.json, pedagogy.json, science.json, socialstudies.json, gk.json, it.json + content.json changed ONLY by the Phase 1 growth
+// batches (395 + 418 + 420 + 455 + 455 + 455 + 455 + 470 + 470 + 470 + 470 + 440 appended items, counts + bySubject indexes).
 // Everything else stays byte-identical, and the changed files must match the backup
 // exactly outside the Phase 1 delta (byte-prefix for the banks,
 // parsed-diff for content.json).
@@ -131,9 +132,9 @@ if (fs.existsSync(BACKUP)) {
     "src/data/quran-examples.json",
     "src/lib/tracking.ts",
   ];
-  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/banks/maths.json", "src/data/banks/pakstudies.json", "src/data/banks/pedagogy.json", "src/data/banks/science.json", "src/data/banks/socialstudies.json", "src/data/banks/gk.json", "src/data/content.json"]);
+  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/banks/maths.json", "src/data/banks/pakstudies.json", "src/data/banks/pedagogy.json", "src/data/banks/science.json", "src/data/banks/socialstudies.json", "src/data/banks/gk.json", "src/data/banks/it.json", "src/data/content.json"]);
   const changed = contentPaths.filter((p) => !PHASE1_CHANGED.has(p) && sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
-  check("bank/note/audio content + tracking.ts byte-identical to backup except the twelve Phase 1 files", changed.length === 0, changed.join(", "));
+  check("bank/note/audio content + tracking.ts byte-identical to backup except the thirteen Phase 1 files", changed.length === 0, changed.join(", "));
   const backupBankRaw = fs.readFileSync(join(BACKUP, "src/data/banks/islamiyat.json"), "utf8");
   const curBankRaw = fs.readFileSync(join(ROOT, "src/data/banks/islamiyat.json"), "utf8");
   const backupPrefix = backupBankRaw.slice(0, -3); // strip trailing "\n]\n"
@@ -233,6 +234,15 @@ if (fs.existsSync(BACKUP)) {
     curGkRaw.startsWith(backupGkPrefix + ",") && backupGk.length === 30 && curGk.length === 500 &&
     JSON.stringify(curGk.slice(0, 30)) === JSON.stringify(backupGk) &&
     curGk[30].id === "GKN-031" && curGk[499].id === "GKN-500");
+  const backupItRaw = fs.readFileSync(join(BACKUP, "src/data/banks/it.json"), "utf8");
+  const curItRaw = fs.readFileSync(join(ROOT, "src/data/banks/it.json"), "utf8");
+  const backupItPrefix = backupItRaw.slice(0, -2); // strip trailing "\n]" — it.json has NO trailing newline (like pedagogy.json/science.json/socialstudies.json/gk.json)
+  const backupIt = JSON.parse(backupItRaw);
+  const curIt = JSON.parse(curItRaw);
+  check("Phase 1 it.json: backup bytes are an exact prefix (60 items untouched) + 440 appended",
+    curItRaw.startsWith(backupItPrefix + ",") && backupIt.length === 60 && curIt.length === 500 &&
+    JSON.stringify(curIt.slice(0, 60)) === JSON.stringify(backupIt) &&
+    curIt[60].id === "ITC-061" && curIt[499].id === "ITC-500");
   const backupContent = JSON.parse(fs.readFileSync(join(BACKUP, "src/data/content.json"), "utf8"));
   const curContent = JSON.parse(fs.readFileSync(join(ROOT, "src/data/content.json"), "utf8"));
   const reverted = JSON.parse(JSON.stringify(curContent));
@@ -259,6 +269,8 @@ if (fs.existsSync(BACKUP)) {
     backupContent.counts.bySubject.find((r) => r[0] === "Social Studies")[1];
   reverted.counts.bySubject.find((r) => r[0] === "GK")[1] =
     backupContent.counts.bySubject.find((r) => r[0] === "GK")[1];
+  reverted.counts.bySubject.find((r) => r[0] === "IT")[1] =
+    backupContent.counts.bySubject.find((r) => r[0] === "IT")[1];
   reverted.bySubject.islamiyat = backupContent.bySubject.islamiyat;
   reverted.bySubject.tajweed = backupContent.bySubject.tajweed;
   reverted.bySubject.arabic = backupContent.bySubject.arabic;
@@ -270,9 +282,10 @@ if (fs.existsSync(BACKUP)) {
   reverted.bySubject.science = backupContent.bySubject.science;
   reverted.bySubject.socialstudies = backupContent.bySubject.socialstudies;
   reverted.bySubject.gk = backupContent.bySubject.gk;
-  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk indexes differ from backup",
+  reverted.bySubject.it = backupContent.bySubject.it;
+  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it indexes differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
-    curContent.counts.total === 5696 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500 && curContent.bySubject.socialstudies.length === 500 && curContent.bySubject.gk.length === 500);
+    curContent.counts.total === 6136 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500 && curContent.bySubject.socialstudies.length === 500 && curContent.bySubject.gk.length === 500 && curContent.bySubject.it.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");
 }
@@ -343,7 +356,7 @@ check(
   "loadAllQuestions order == old static QUESTIONS order (bank order + file order)",
   JSON.stringify(allLoaded.map((q) => q.id)) === JSON.stringify(QUESTIONS.map((q) => q.id)),
 );
-check("loadAllQuestions total is 5696", allLoaded.length === 5696, `got ${allLoaded.length}`);
+check("loadAllQuestions total is 6136", allLoaded.length === 6136, `got ${allLoaded.length}`);
 check("loadBank of an unknown key returns [] (never throws)", JSON.stringify(await data.loadBank("no_such_bank")) === "[]");
 check(
   "BANK_COUNTS matches the bank files exactly",
@@ -355,7 +368,7 @@ check(
 );
 check(
   "ID_BANK maps every id to its bank",
-  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 5696,
+  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 6136,
 );
 
 // ---------- (e) availability: manifest == old computation == built ----------

@@ -55,14 +55,14 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 // --- totals ---
-check("4B1 bank total 5696 MCQs", QUESTIONS.length === 5696, `got ${QUESTIONS.length}`);
+check("4B1 bank total 6136 MCQs", QUESTIONS.length === 6136, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("4B1 notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check("4B1 flashcards still 70", FLASHCARDS.length === 70, `got ${FLASHCARDS.length}`);
-check("4B1 VISIBLE_COUNTS 5696/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 5696 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
+check("4B1 VISIBLE_COUNTS 6136/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 6136 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
   VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 16, JSON.stringify(VISIBLE_COUNTS));
-check("4B1 IT bank 60 items", BY_SUBJECT.it.length === 60, `got ${BY_SUBJECT.it.length}`);
+check("4B1 IT bank 500 items (Phase 1: original 60 + 440 new)", BY_SUBJECT.it.length === 500, `got ${BY_SUBJECT.it.length}`);
 check("4B1 PE bank 46 items", BY_SUBJECT.pe.length === 46, `got ${BY_SUBJECT.pe.length}`);
 check("4B1 IT/Computer notes 17", NOTES["IT/Computer"].length === 17, `got ${NOTES["IT/Computer"].length}`);
 check("4B1 Drawing/PE notes 24 (shared bucket, +10 Drawing in Phase 4B2)", NOTES["Drawing/PE"].length === 24, `got ${NOTES["Drawing/PE"].length}`);
@@ -70,8 +70,9 @@ check("4B1 Drawing/PE notes 24 (shared bucket, +10 Drawing in Phase 4B2)", NOTES
 // --- new items present, in order, appended after the old items ---
 const IT_NEW = Array.from({ length: 30 }, (_, i) => `ITC-${String(i + 31).padStart(3, "0")}`);
 const PE_NEW = Array.from({ length: 26 }, (_, i) => `PE-${String(i + 11).padStart(3, "0")}`);
-check("4B1 IT ids ITC-001..060 in order",
-  JSON.stringify(BY_SUBJECT.it.map((q) => q.id)) === JSON.stringify(Array.from({ length: 60 }, (_, i) => `ITC-${String(i + 1).padStart(3, "0")}`)));
+check("4B1 IT ids ITC-001..060 first, in order (Phase 1 appended ITC-061..500 after)",
+  JSON.stringify(BY_SUBJECT.it.slice(0, 60).map((q) => q.id)) === JSON.stringify(Array.from({ length: 60 }, (_, i) => `ITC-${String(i + 1).padStart(3, "0")}`)) &&
+  BY_SUBJECT.it.length === 500 && BY_SUBJECT.it[60].id === "ITC-061" && BY_SUBJECT.it[499].id === "ITC-500");
 check("4B1 PE ids DRW-011..020 + PE-001..036 in order",
   JSON.stringify(BY_SUBJECT.pe.map((q) => q.id)) === JSON.stringify([...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 11).padStart(3, "0")}`), ...Array.from({ length: 36 }, (_, i) => `PE-${String(i + 1).padStart(3, "0")}`)]));
 const NEW = [...IT_NEW, ...PE_NEW].map((id) => BY_ID[id]);
@@ -178,8 +179,8 @@ const petRow = ledger.ledgerRowFor("pet");
 const dmRow = ledger.ledgerRowFor("dm");
 const itRow = ctitRow.subjects.find((s) => s.label === "IT / Computer");
 const peRow = petRow.subjects.find((s) => s.label === "Physical Education");
-check("4B1 ledger ctit IT row: 60 MCQs / 17 notes / 6 cards (recomputed)",
-  itRow.mcqs === 60 && itRow.notes === 17 && itRow.cards === 6, JSON.stringify(itRow));
+check("4B1 ledger ctit IT row: 500 MCQs / 17 notes / 6 cards (recomputed; Phase 1 IT added 440)",
+  itRow.mcqs === 500 && itRow.notes === 17 && itRow.cards === 6, JSON.stringify(itRow));
 check("4B1 ledger pet PE row: 46 MCQs / 24 notes / 0 cards (recomputed)",
   peRow.mcqs === 46 && peRow.notes === 24 && peRow.cards === 0, JSON.stringify(peRow));
 check("4B1 ledger ctit + pet coverage still exact", ctitRow.coverage === "exact" && petRow.coverage === "exact");
@@ -201,13 +202,13 @@ check("4B1 DM + Qari rows untouched by this batch", (() => {
   return !blockFor("dm").includes("Phase 4B1") && !blockFor("qari").includes("Phase 4B1");
 })());
 const contentJson = JSON.parse(read("src/data/content.json"));
-check("4B1 content.json counts: total 5696, IT 60, PE 46, notes 151, cards 70",
-  contentJson.counts.total === 5696 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
-  contentJson.counts.bySubject.find((r) => r[0] === "IT")[1] === 60 &&
+check("4B1 content.json counts: total 6136, IT 500, PE 46, notes 151, cards 70",
+  contentJson.counts.total === 6136 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
+  contentJson.counts.bySubject.find((r) => r[0] === "IT")[1] === 500 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Physical Education")[1] === 46);
-check("4B1 content.json bySubject index matches banks (it 60 / pe 46)",
-  contentJson.bySubject.it.length === 60 && contentJson.bySubject.pe.length === 46 &&
-  contentJson.bySubject.it[59] === "ITC-060" && contentJson.bySubject.pe[45] === "PE-036");
+check("4B1 content.json bySubject index matches banks (it 500 / pe 46)",
+  contentJson.bySubject.it.length === 500 && contentJson.bySubject.pe.length === 46 &&
+  contentJson.bySubject.it[499] === "ITC-500" && contentJson.bySubject.pe[45] === "PE-036");
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

@@ -1,5 +1,10 @@
-// Stage 5F tests — IT (60 MCQs) + PE (46 MCQs) + IT/Computer notes (17),
+// Stage 5F tests — IT (500 MCQs after Phase 1: the 60 Stage-5F originals +
+// 440 Phase 1 additions) + PE (46 MCQs) + IT/Computer notes (17),
 // Urdu script + Roman Urdu, on the Stage 5A infrastructure.
+// Phase 1 rescope (IT batch): §2/§3 counts 60 -> 500 and the §4
+// no-explanationEn count 71 -> 511 (470 IT + 41 PE); every other 5F
+// assertion is filter-based over explanationEn items and holds unchanged
+// (new Phase 1 items carry no explanationEn).
 // Exercises the REAL data.ts (compiled to CommonJS in /tmp with tsc, same
 // approach as test-stage5a/b/c/d/e.mjs). Locks: counts unchanged; flat
 // _ur/_roman fields are all-or-none per language per item (whole items
@@ -59,19 +64,19 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5F bank total 5696 MCQs", QUESTIONS.length === 5696, `got ${QUESTIONS.length}`);
+check("5F bank total 6136 MCQs", QUESTIONS.length === 6136, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5F notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5F VISIBLE_COUNTS 5696/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 5696 &&
+  "5F VISIBLE_COUNTS 6136/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 6136 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 16,
   JSON.stringify(VISIBLE_COUNTS),
 );
-check("5F it bank still 60 items", BY_SUBJECT.it.length === 60, `got ${BY_SUBJECT.it.length}`);
+check("5F it bank 500 items (Phase 1: original 60 + 440 new)", BY_SUBJECT.it.length === 500, `got ${BY_SUBJECT.it.length}`);
 check("5F pe bank still 46 items", BY_SUBJECT.pe.length === 46, `got ${BY_SUBJECT.pe.length}`);
 check("5F IT/Computer notes still 17", NOTES["IT/Computer"].length === 17, `got ${NOTES["IT/Computer"].length}`);
 
@@ -104,7 +109,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["it", "it", 60], ["pe", "pe", 46]]) {
+for (const [bankKey, label, expected] of [["it", "it", 500], ["pe", "pe", 46]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -178,8 +183,8 @@ check(
   BY_SUBJECT.pe.filter((q) => q.explanationEn && q.explanation_roman !== q.explanation.split("Roman Urdu: ")[1]).map((q) => q.id).join(", "),
 );
 check(
-  "5F items without explanationEn (30 IT + 41 PE) have plain English explanations translated to both",
-  scopeQs.filter((q) => !q.explanationEn).length === 71 &&
+  "5F items without explanationEn (470 IT + 41 PE) have plain English explanations translated to both",
+  scopeQs.filter((q) => !q.explanationEn).length === 511 &&
     scopeQs.filter((q) => !q.explanationEn).every((q) => q.explanation_ur && q.explanation_roman),
 );
 let labelLeak = [];
@@ -370,7 +375,7 @@ for (const [bankKey, label] of [["it", "IT"], ["pe", "PE"]]) {
 }
 check("5F quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5F content.json counts unchanged", contentJson.counts.total === 5696 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5F content.json counts unchanged", contentJson.counts.total === 6136 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);
