@@ -1,9 +1,10 @@
 // U1 idiomatic Urdu + UI/UX: glossary consistency, digit preservation,
 // placeholder preservation, no-literal-marker audit, and the C2 flag-8
-// punctuation pins. Scoped to the U1-REWRITTEN surfaces only: chrome
-// (700 STRINGS keys), notes/flashcards/plan/mocks (content.json _ur), and
-// the Islamiyat pilot bank (500 items). The other 13 banks keep their
-// pre-U1 _ur wording until U2 and are NOT covered here (except the
+// punctuation pins. Scoped to the REWRITTEN surfaces only: chrome
+// (700 STRINGS keys), notes/flashcards/plan/mocks (content.json _ur),
+// the Islamiyat pilot bank (500 items, U1) and the Tajweed bank
+// (500 items, U2 subject 1). The other 12 banks keep their pre-U1 _ur
+// wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
 import fs from "node:fs";
@@ -256,6 +257,78 @@ check("U1 islamiyat: ذوالقعدہ present, ذی القعدہ absent", islUrT
 // Boundary-awareness guard: معاشیات occurs live and must NOT trip the اشیا ban.
 check("U1 islamiyat: معاشیات occurs (proves the اشیا check is token-aware, not substring)",
   islUrText.includes("معاشیات") && !islPairs.some(([, v]) => tokens(v).includes("اشیا")));
+
+// ---------- §3B Tajweed bank (U2 subject 1) ----------
+// U2 rewrote the Tajweed _ur fields (778 of 3000 changed). Digit rule is
+// STRICT on every field — questions, options AND explanations: the bank
+// was strict-clean before the rewrite and test-phase1-tajweed.mjs
+// enforces strict digit preservation on new items, so U1 ruling 1 does
+// not apply here. No Dhul-Hijjah/Qadah forms occur in this bank, so no
+// Dhul pins (unlike §2/§3). بے is NOT banned: بے قاعدہ / بے احتیاط /
+// بے ترتیب are legitimate prefix uses (TAJ-080/320/461); the letter-name
+// بے in TAJ-416 was normalized to با. شد is banned as a standalone token
+// only (شدہ / شدّت are distinct correct tokens and must survive).
+const taj = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/tajweed.json"), "utf8"));
+check("U2 tajweed: 500 items", taj.length === 500, `got ${taj.length}`);
+const tajIdsOk = taj.every((q, i) => q.id === `TAJ-${String(i + 1).padStart(3, "0")}`);
+check("U2 tajweed: IDs TAJ-001..TAJ-500 in order", tajIdsOk);
+const tajPairs = [];
+for (const q of taj) {
+  tajPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => tajPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  tajPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const TAJ_BANNED = [...CONTENT_BANNED, "تم", "گنتی", "مدِّ", "واو", "راء", "رے", "ثے", "طوئے", "ظوئے", "فے", "حے", "خے", "یے", "حمزہ", "شد", "صیلہ", "استعلا", "رخوت", "طبعی", "شدّہ", "غنّہ"];
+const tajBanned = bannedHits(tajPairs, TAJ_BANNED);
+check("U2 tajweed: no banned glossary/variant terms in any _ur field (token-aware)", tajBanned.length === 0, tajBanned.slice(0, 5).join(", "));
+const tajPhrases = tajPairs.filter(([, v]) => (v ?? "").includes("درج ذیل") || (v ?? "").includes("مد والا حرف") || (v ?? "").includes("مد والے حرف"));
+check("U2 tajweed: no 'درج ذیل' / 'مد والا حرف' / 'مد والے حرف' phrases", tajPhrases.length === 0, tajPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const tajEmdash = tajPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 tajweed: no em-dash in any _ur field", tajEmdash.length === 0, tajEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const tajMarker = tajPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 tajweed: no '[Auto-Translated]' literal in any _ur field", tajMarker.length === 0, tajMarker.slice(0, 3).map(([l]) => l).join(", "));
+const tajMojibake = tajPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 tajweed: no U+FFFD in any _ur field", tajMojibake.length === 0, tajMojibake.slice(0, 3).map(([l]) => l).join(", "));
+let tajDigitBad = [];
+for (const q of taj) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) tajDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) tajDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) tajDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 tajweed: digit preservation STRICT on all fields (questions/options/explanations)", tajDigitBad.length === 0, tajDigitBad.slice(0, 5).join(", "));
+let tajArabicBad = [];
+for (const q of taj) {
+  for (const [src, dst] of [["question", "question_ur"], ["explanation", "explanation_ur"]]) {
+    for (const run of (q[src].match(AR_RUN) || [])) {
+      if (!q[dst].includes(run)) tajArabicBad.push(`${q.id}:${dst}:${JSON.stringify(run)}`);
+    }
+  }
+  q.options.forEach((o, i) => {
+    for (const run of (o.match(AR_RUN) || [])) {
+      if (!q.options_ur[i].includes(run)) tajArabicBad.push(`${q.id}:options_ur[${i}]:${JSON.stringify(run)}`);
+    }
+  });
+}
+check("U2 tajweed: Arabic-script runs copied verbatim into _ur fields", tajArabicBad.length === 0, tajArabicBad.slice(0, 5).join(" | "));
+const tajUrText = tajPairs.map(([, v]) => v ?? "").join("\n");
+check("U2 tajweed: حرکات present (duration counts, never گنتی)", tajUrText.includes("حرکات"));
+check("U2 tajweed: غنہ / اظہار / ادغام / اخفا / اقلاب present", ["غنہ", "اظہار", "ادغام", "اخفا", "اقلاب"].every((t) => tajUrText.includes(t)));
+check("U2 tajweed: قرآن پاک present, مد طبیعی present, مخرج present", tajUrText.includes("قرآن پاک") && tajUrText.includes("مد طبیعی") && tajUrText.includes("مخرج"));
+check("U2 tajweed: مندرجہ ذیل present, شمسی حروف + قمری حروف present", tajUrText.includes("مندرجہ ذیل") && tajUrText.includes("شمسی حروف") && tajUrText.includes("قمری حروف"));
+let bareQuran = [];
+for (const [loc, v] of tajPairs) {
+  const tk = tokens(v);
+  tk.forEach((t, i) => { if (t === "قرآن" && tk[i + 1] !== "پاک") bareQuran.push(loc); });
+}
+check("U2 tajweed: bare قرآن never occurs — always قرآن پاک", bareQuran.length === 0, bareQuran.slice(0, 5).join(", "));
+const tajLatin = tajPairs.filter(([, v]) => /[A-Za-z]/.test(v ?? ""));
+check("U2 tajweed: only Latin letters are the approved (linking) gloss in TAJ-081:question_ur",
+  tajLatin.length === 1 && tajLatin[0][0] === "TAJ-081:question_ur" && tajLatin[0][1].includes("(linking)"),
+  tajLatin.map(([l]) => l).join(", "));
+const tajHonor = tajPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 tajweed: no Latin honorific abbreviations in any _ur field", tajHonor.length === 0, tajHonor.slice(0, 3).map(([l]) => l).join(", "));
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");
