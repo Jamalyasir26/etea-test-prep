@@ -85,21 +85,21 @@ check(
 // ---- Mock list + runner ----
 const mockList = read("src/app/mock/page.tsx");
 check("mock list: banner isolated LTR", mockList.includes('<span dir="ltr">{PATTERN_BANNER}</span>'));
-check("mock list: title + note dir=auto", mockList.includes('<span dir="auto">{m.title}</span>') && mockList.includes('<span dir="auto">{m.note}</span>'));
+check("mock list: title + note dir=auto", mockList.includes('<span dir="auto">{view.title}</span>') && mockList.includes('<span dir="auto">{view.note}</span>'));
 const mockRun = read("src/app/mock/[id]/page.tsx");
-check("mock runner: note dir=auto", mockRun.includes('<span dir="auto">{mock.note}</span>'));
+check("mock runner: note dir=auto", mockRun.includes('<span dir="auto">{view.note}</span>'));
 check("mock runner: policy note isolated LTR", mockRun.includes('<span dir="ltr">{scoring.policyNote}</span>'));
 
 // ---- Plan: day headings, task text, AI plan ----
 const plan = read("src/app/plan/page.tsx");
-check("plan: day heading dir=auto", plan.includes('<span dir="auto">{day}</span>'));
-check("plan: task text dir=auto", plan.includes('<span dir="auto">{text}</span>'));
+check("plan: day heading dir=auto", plan.includes('<span dir="auto">{dayView.label}</span>'));
+check("plan: task text dir=auto", plan.includes('<span dir="auto">{taskView.text}</span>'));
 check("plan: AI plan output dir=auto", plan.includes('<p dir="auto" style={{ whiteSpace: "pre-wrap" }}>'));
 
 // ---- Flashcards: card content, category, FSRS state line ----
 const flash = read("src/app/flashcards/page.tsx");
-check("flashcards: card content dir=auto", flash.includes('<span dir="auto">{flipped ? card.back : card.front}</span>'));
-check("flashcards: category isolated LTR", flash.includes('<span dir="ltr">{card.category}</span>'));
+check("flashcards: card content dir=auto", flash.includes('<span dir="auto">{flipped ? (cardView?.back ?? card.back) : (cardView?.front ?? card.front)}</span>'));
+check("flashcards: category dir=auto (localized label)", flash.includes('<span dir="auto">{cardView?.category ?? card.category}</span>'));
 // Stage 2: the old last-grade line is replaced by the FSRS state line;
 // the due value (a date or interval label) is wrapped in lri() so it
 // cannot flip the Urdu sentence order.
@@ -108,7 +108,7 @@ check("flashcards: FSRS state-line due value wrapped in lri()", flash.includes('
 // ---- Analysis: data cells + messages ----
 const analysis = read("src/app/analysis/page.tsx");
 check("analysis: title cells dir=auto", (analysis.match(/<td dir="auto">\{[am]\.title\}<\/td>/g) ?? []).length === 2);
-check("analysis: date/kind/mode/key/time cells dir=ltr", analysis.includes('<td dir="ltr">{m.date.slice(0, 10)}</td>') && analysis.includes('<td dir="ltr">{a.kind}</td>') && analysis.includes('<td dir="ltr">{r.mode}</td>') && analysis.includes('<td dir="ltr">{fmtMs(r.responseMs)}</td>'));
+check("analysis: date cells dir=auto (localized), kind/mode/time cells dir=ltr", analysis.includes('<td dir="auto">{formatStoredDate(m.date, lang)}</td>') && analysis.includes('<td dir="auto">{formatStoredDate(a.date, lang)}</td>') && analysis.includes('<td dir="ltr">{a.kind}</td>') && analysis.includes('<td dir="ltr">{r.mode}</td>') && analysis.includes('<td dir="ltr">{fmtMs(r.responseMs)}</td>'));
 check("analysis: item question/answers dir=auto", analysis.includes('<td dir="auto">{r.question}</td>') && analysis.includes('<td dir="auto">{r.firstAnswer ?? "—"}</td>'));
 check("analysis: status message dir=auto", analysis.includes('<p dir="auto" className="muted">'));
 check("analysis: quarantine keys wrapped in lri()", analysis.includes("keys: lri("));
@@ -122,12 +122,12 @@ check("review: question id isolated LTR", review.includes('<span dir="ltr">{q.id
 // (<span dir="auto">{q.explanation}</span>) no longer exists; the
 // card isolation below is unchanged.
 check("review: question/options/explanation dir=auto", review.includes('<span dir="auto">{q.question}</span>') && review.includes('<span dir="auto">{o}</span>') && review.includes('<span dir="auto">{expl.text}</span>'));
-check("review: reviewer + timestamp isolated LTR", review.includes('<span dir="ltr">{by}</span>') && review.includes('<span dir="ltr">{new Date(at).toLocaleString()}</span>'));
+check("review: reviewer isolated LTR, timestamp dir=auto (localized)", review.includes('<span dir="ltr">{by}</span>') && review.includes('<span dir="auto">{formatAppDateTime(new Date(at), lang)}</span>'));
 check("review: structural issues dir=auto", review.includes('<span dir="auto">{st.issues.join("; ")}</span>'));
 
 // ---- Issues: ids/dates LTR, free text auto ----
 const issues = read("src/app/issues/page.tsx");
-check("issues: date/qid/subject isolated LTR", issues.includes('<td dir="ltr">{i.date.slice(0, 10)}</td>') && issues.includes('<code dir="ltr">{i.qid}</code>') && issues.includes('<td dir="ltr">{i.subject ?? "—"}</td>'));
+check("issues: date dir=auto (localized), qid/subject isolated LTR", issues.includes('<td dir="auto">{formatStoredDate(i.date, lang)}</td>') && issues.includes('<code dir="ltr">{i.qid}</code>') && issues.includes('<td dir="ltr">{i.subject ?? "—"}</td>'));
 // Step 2b — the correction cell keeps dir="auto" and the "—" fallback,
 // with the explicit no-suggested-correction choice rendered instead
 // of an empty dash when the reporter chose it.
@@ -141,7 +141,7 @@ check("vacancies: etea.online link isolated LTR", vac.includes('<a dir="ltr" hre
 const tracks = read("src/app/tracks/page.tsx");
 check("tracks: name/pattern dir=auto, bps/conf LTR", tracks.includes('<span dir="auto">{tr.name}</span>') && tracks.includes('<span dir="auto">{tr.pattern}</span>') && tracks.includes('<span dir="ltr" className="badge teal">'));
 const trackDetail = read("src/app/tracks/[id]/page.tsx");
-check("track detail: content isolated", trackDetail.includes('<p dir="auto">{tr.elig}</p>') && trackDetail.includes('<p dir="auto">{tr.pattern}</p>') && trackDetail.includes('<span dir="auto">{m.note}</span>'));
+check("track detail: content isolated", trackDetail.includes('<p dir="auto">{tr.elig}</p>') && trackDetail.includes('<p dir="auto">{tr.pattern}</p>') && trackDetail.includes('<span dir="auto">{view.note}</span>'));
 const topics = read("src/app/topics/page.tsx");
 check("topics: label list items dir=auto", (topics.match(/<li dir="auto">/g) ?? []).length === 2);
 const links = read("src/app/links/page.tsx");

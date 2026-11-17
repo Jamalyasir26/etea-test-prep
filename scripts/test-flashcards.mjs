@@ -216,9 +216,14 @@ check(
   gradeButtonLabel("again", "1m", "ur"),
 );
 check(
-  "grade buttons fall back to English for roman",
-  gradeButtonLabel("hard", "2d", "roman") === "Hard — 2d",
-  gradeButtonLabel("hard", "2d", "roman"),
+  // Phase 2 — Roman grade names (the old English fallback is gone by
+  // design: every surface renders in the chosen language).
+  "grade buttons translate the grade name (roman)",
+  gradeButtonLabel("again", "1 minute", "roman") === "Dobara — 1 minute" &&
+    gradeButtonLabel("hard", "2 din", "roman") === "Mushkil — 2 din" &&
+    gradeButtonLabel("good", "3 din", "roman") === "Achha — 3 din" &&
+    gradeButtonLabel("easy", "4 din", "roman") === "Asan — 4 din",
+  gradeButtonLabel("hard", "2 din", "roman"),
 );
 check(
   'no "SM-2" wording in grade labels',

@@ -52,12 +52,12 @@ export async function GET(req: NextRequest) {
   // browser tab) is still allowed — see src/lib/apiGuard.ts.
   if (!isSameOriginRequest(req.headers, "GET")) {
     return NextResponse.json(
-      { error: "This API only accepts requests from the ETEA Prep site itself." },
+      { error: "This API only accepts requests from the ETEA Prep site itself.", code: "same_origin" },
       { status: 403 }
     );
   }
   const rl = rateLimitOk(clientIpFromHeaders(req.headers));
-  if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
+  if (!rl.ok) return NextResponse.json({ error: rl.message, code: rl.code }, { status: 429 });
   const coldStart = !instanceWarmed;
   instanceWarmed = true;
   const { value: base, cached } = await healthCache.load(async () => {

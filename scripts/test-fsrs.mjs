@@ -142,7 +142,11 @@ check("fmt 400d -> 1.1y", fmt(400 * DAY, "en") === "1.1y", fmt(400 * DAY, "en"))
 check("fmt negative -> 1m", fmt(-5000, "en") === "1m");
 check("fmt ur 10m", fmt(600_000, "ur") === "10 منٹ", fmt(600_000, "ur"));
 check("fmt ur 1d", fmt(DAY, "ur") === "1 دن", fmt(DAY, "ur"));
-check("fmt roman = en units", fmt(600_000, "roman") === "10m");
+// Phase 2 — Roman units mirror the Urdu meanings (the old English
+// fallback is gone by design).
+check("fmt roman 10m", fmt(600_000, "roman") === "10 minute", fmt(600_000, "roman"));
+check("fmt roman 1d", fmt(DAY, "roman") === "1 din", fmt(DAY, "roman"));
+check("fmt roman 45d", fmt(45 * DAY, "roman") === "1.5 mah", fmt(45 * DAY, "roman"));
 
 // --- Migration counts from fixtures (convertFlashStateToFsrs) ---
 const cards = [

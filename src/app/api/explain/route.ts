@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     // first, then validation, then the rate limit (see src/lib/apiGuard.ts).
     if (!isSameOriginRequest(req.headers, "POST")) {
       return NextResponse.json(
-        { error: "This API only accepts requests from the ETEA Prep site itself." },
+        { error: "This API only accepts requests from the ETEA Prep site itself.", code: "same_origin" },
         { status: 403 }
       );
     }
@@ -20,10 +20,10 @@ export async function POST(req: NextRequest) {
     // the same languages (including "ar"); unknown values fall back to "en".
     const lang = normalizeTutorLang(body.lang);
     const q = await findQuestionById(String(body.questionId ?? ""));
-    if (!q) return NextResponse.json({ error: "Question not found." }, { status: 404 });
+    if (!q) return NextResponse.json({ error: "Question not found.", code: "question_not_found" }, { status: 404 });
     // Rate limit AFTER validation: unknown question IDs never consumed quota.
     const rl = rateLimitOk(clientIpFromHeaders(req.headers));
-    if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
+    if (!rl.ok) return NextResponse.json({ error: rl.message, code: rl.code }, { status: 429 });
     const prompt =
       `Explain this practice MCQ to a student preparing for a KP government job test.\n` +
       `Question: ${q.question}\n` +
@@ -35,6 +35,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ explanation: text, provider, questionId: q.id });
   } catch (e) {
     if (e instanceof AiError) return NextResponse.json({ error: e.message }, { status: e.status });
-    return NextResponse.json({ error: "Could not explain this question right now." }, { status: 500 });
+    return NextResponse.json({ error: "Could not explain this question right now.", code: "explain_failed" }, { status: 500 });
   }
 }

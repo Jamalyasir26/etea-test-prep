@@ -11,8 +11,8 @@
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { buildMockQuestions, isTrusted, VISIBLE_MOCKS, trustedOnlyCount, type Question } from "@/lib/data";
-import { useLang } from "@/lib/i18n";
+import { buildMockQuestions, isTrusted, resolveMockView, VISIBLE_MOCKS, trustedOnlyCount, type Question } from "@/lib/data";
+import { lri, useLang } from "@/lib/i18n";
 import { loadReviews, loadSession } from "@/lib/tracking";
 import { localizedScoringLabel, resolveScoring } from "@/lib/scoring";
 import QuizRunner from "@/components/QuizRunner";
@@ -95,24 +95,25 @@ function MockRunInner() {
       </div>
     );
   }
+  // Phase 2 — title/note resolve into the chosen language
+  // (item-level fallback); variant/comp/seeds are untouched.
+  const view = resolveMockView(mock, lang);
   // Stage 1 P1 Tier 4 (B03) — the trusted-only counts are isolated LTR
   // so they cannot reverse in RTL (Urdu) mode; the note prop is a
   // ReactNode for exactly this reason (see QuizRunner Props).
-  // Localization Pass 1 — the mock note is English content, isolated
+  // Phase 2 — the mock note renders in the chosen language, isolated
   // with dir="auto"; the scoring note is JSX so the (English) policy
   // note can be isolated LTR while the label is translated.
   const note = trustedOnly ? (
     <>
       {t("trustedOnlyLabel")}{" "}
-      <span dir="ltr">
-        {questions?.length ?? 0} of {mock.total}
-      </span>{" "}
+      {tf("ofCount", { a: lri(String(questions?.length ?? 0)), b: lri(String(mock.total)) })}{" "}
       {t("trustedNoteRest")} —{" "}
       <span dir="ltr">{trustedCount}</span> {t("reviewedWord")}{" "}
-      {t("trustedNoteInMock")}. {t("trustedNoteShortfall")} <span dir="auto">{mock.note}</span>
+      {t("trustedNoteInMock")}. {t("trustedNoteShortfall")} <span dir="auto">{view.note}</span>
     </>
   ) : (
-    <span dir="auto">{mock.note}</span>
+    <span dir="auto">{view.note}</span>
   );
   const scoringNote = (
     <>
@@ -135,7 +136,7 @@ function MockRunInner() {
   if (bankError !== null) {
     return (
       <div>
-        <h1>{mock.title}</h1>
+        <h1>{view.title}</h1>
         <div className="alert">
           <p>{t(bankError === "offline" ? "bankLoadFailedOffline" : "bankLoadFailed")}</p>
           <button className="secondary" onClick={() => setRetryNonce((n) => n + 1)}>
@@ -151,7 +152,7 @@ function MockRunInner() {
   if (questions === null) {
     return (
       <div>
-        <h1>{mock.title}</h1>
+        <h1>{view.title}</h1>
         <p className="muted">{t("loading")}</p>
       </div>
     );
@@ -174,7 +175,7 @@ function MockRunInner() {
   return (
     <QuizRunner
       key={scope}
-      title={mock.title}
+      title={view.title}
       questions={questions}
       minutes={mock.minutes}
       mode="mock"

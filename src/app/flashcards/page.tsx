@@ -19,7 +19,12 @@
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
-import { FLASHCARDS } from "@/lib/data";
+import {
+  FLASHCARDS,
+  flashcardCategoryLabel,
+  resolveFlashcardView,
+  type Flashcard,
+} from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
 import {
   advanceReviewQueue,
@@ -45,7 +50,7 @@ import {
   type FsrsScheduler,
 } from "@/lib/fsrs";
 
-type CardWithId = { id: string; front: string; back: string; category: string };
+type CardWithId = Flashcard & { id: string };
 
 const STATE_KEY = ["stateNew", "stateLearning", "stateReview", "stateRelearning"] as const;
 
@@ -151,6 +156,10 @@ function FlashcardsInner() {
 
   const card = queue[pos] !== undefined ? byId.get(queue[pos]) : undefined;
   const cardState = card ? state[card.id] : undefined;
+  // Phase 2 — resolved card text in the chosen language (item-level
+  // fallback: whole English card when any translated field is
+  // missing). The stored card object — and its id — never change.
+  const cardView = card ? resolveFlashcardView(card, lang) : null;
 
   // FSRS-computed intervals for the current card, one per grade. Pure
   // and fast (preview never mutates the card); recomputed on every
@@ -193,6 +202,9 @@ function FlashcardsInner() {
       setDone(true);
       recordAttempt({
         kind: "flash",
+        // Phase 2 — stored attempt titles keep the ENGLISH category:
+        // attempts are history records, and the category key must
+        // stay stable across language switches.
         subject: category === "All" ? undefined : category,
         title: `Flashcards — ${category}${cram ? " (cram)" : ""}`,
         total: newSession.total,
@@ -235,7 +247,10 @@ function FlashcardsInner() {
         >
           {categories.map((c) => (
             <option key={c} value={c}>
-              {c}
+              {/* Phase 2 — option VALUES stay English (filter keys +
+                  ?category= deep links); only the displayed label is
+                  resolved into the chosen language. */}
+              {c === "All" ? t("allWord") : flashcardCategoryLabel(c, lang)}
             </option>
           ))}
         </select>
@@ -273,7 +288,7 @@ function FlashcardsInner() {
       {lastGraded && (
         <p className="muted">
           {tf("flashGradedNextReview", {
-            date: lri(formatLocalDueDate(lastGraded.dueAt)),
+            date: lri(formatLocalDueDate(lastGraded.dueAt, lang)),
             interval: lri(formatFsrsInterval(lastGraded.intervalMs, lang)),
           })}
         </p>
@@ -310,7 +325,7 @@ function FlashcardsInner() {
           <h2>{t("sessionFinished")}</h2>
           <p>
             {tf("sessionFinishedBody", {
-              fraction: lri(`${session.correct} of ${session.total}`),
+              fraction: tf("ofCount", { a: String(session.correct), b: String(session.total) }),
             })}
           </p>
           <button
@@ -325,10 +340,21 @@ function FlashcardsInner() {
         <div>
           <p className="muted">
             {t("cardLabel")}{" "}
-            <span dir="ltr">
-              {pos + 1} of {queue.length}
-            </span>{" "}
-            · <span dir="ltr">{card.category}</span>
+            {tf("ofCount", { a: lri(String(pos + 1)), b: lri(String(queue.length)) })}{" "}
+            · <span dir="auto">{cardView?.category ?? card.category}</span>
+            {cardView?.translated && (
+              <>
+                {" "}
+                <span
+                  dir="ltr"
+                  className="badge grey"
+                  title={t("autoTranslatedBadgeAria")}
+                  aria-label={t("autoTranslatedBadgeAria")}
+                >
+                  [Auto-Translated]
+                </span>
+              </>
+            )}
             {cardState
               ? ` · ${tf("fsrsStateLine", {
                   state: t(STATE_KEY[cardState.state] ?? "stateNew"),
@@ -338,8 +364,8 @@ function FlashcardsInner() {
                   // card's due date is visible in every state.
                   due: lri(
                     cardState.state === 1 || cardState.state === 3
-                      ? `${formatFsrsInterval(new Date(cardState.dueAt).getTime() - Date.now(), lang)} · ${formatLocalDueDate(cardState.dueAt)}`
-                      : formatLocalDueDate(cardState.dueAt),
+                      ? `${formatFsrsInterval(new Date(cardState.dueAt).getTime() - Date.now(), lang)} · ${formatLocalDueDate(cardState.dueAt, lang)}`
+                      : formatLocalDueDate(cardState.dueAt, lang),
                   ),
                 })}`
               : ` · ${t("newCard")}`}
@@ -353,11 +379,11 @@ function FlashcardsInner() {
               reader hears only the visible side. aria-pressed reports
               the flip state. Reduced-motion renders the plain
               instant-swap button above this comment's branch.
-              Card content stays dir="auto" (English + future
-              Urdu/Arabic card text). */}
+              Card content stays dir="auto" (English, Urdu and Roman
+              card text all flow correctly). */}
           {reduceMotion ? (
             <button type="button" className="card flashcard" onClick={() => setFlipped(!flipped)} aria-pressed={flipped}>
-              <span dir="auto">{flipped ? card.back : card.front}</span>
+              <span dir="auto">{flipped ? (cardView?.back ?? card.back) : (cardView?.front ?? card.front)}</span>
             </button>
           ) : (
             <div className="flip-scene">
@@ -370,10 +396,10 @@ function FlashcardsInner() {
                 transition={{ duration: 0.45, ease: "easeInOut" }}
               >
                 <span dir="auto" className="flip-face flip-front" aria-hidden={flipped}>
-                  {card.front}
+                  {cardView?.front ?? card.front}
                 </span>
                 <span dir="auto" className="flip-face flip-back" aria-hidden={!flipped}>
-                  {card.back}
+                  {cardView?.back ?? card.back}
                 </span>
               </motion.button>
             </div>

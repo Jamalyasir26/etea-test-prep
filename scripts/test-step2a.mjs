@@ -65,7 +65,13 @@ check(
 const urReviewed = reviewStatusBadge("owner-reviewed", "ur");
 check("reviewStatusBadge ur label differs from en", urReviewed.label !== "Owner-reviewed" && urReviewed.label.length > 0);
 check("reviewStatusBadge ur detail is Urdu", /[\u0600-\u06FF]/.test(urReviewed.detail));
-check("reviewStatusBadge roman falls back to English", reviewStatusBadge("draft", "roman").label === "Draft");
+// Phase 2 — Roman labels (the old English fallback is gone by design).
+check("reviewStatusBadge roman label is Roman Urdu", reviewStatusBadge("draft", "roman").label === "Masooda");
+check(
+  "reviewStatusBadge roman detail is Roman Urdu, tone preserved",
+  reviewStatusBadge("owner-reviewed", "roman").detail.includes("zaati jaiza") &&
+    reviewStatusBadge("owner-reviewed", "roman").tone === "reviewed",
+);
 
 // --- topicBadge: null without a ref; Original vs Reworded; disclosure ---
 check("topicBadge null without ref", topicBadge(null) === null && topicBadge(undefined) === null && topicBadge("") === null);

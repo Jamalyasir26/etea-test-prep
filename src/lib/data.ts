@@ -126,7 +126,23 @@ export type Note = {
   body_ur?: string;
   body_roman?: string;
 };
-export type Flashcard = { front: string; back: string; category: string };
+/** Phase 2 — flashcards carry flat `_ur`/`_roman` translations
+ *  alongside the English source fields. The English `front`/`back`
+ *  NEVER change: flashcardId() hashes them, and every stored FSRS
+ *  state key derives from that hash (see tracking.ts). Translations
+ *  are display-only; the id rule is pinned by
+ *  scripts/test-phase2-flashcards.mjs. */
+export type Flashcard = {
+  front: string;
+  back: string;
+  category: string;
+  front_ur?: string;
+  front_roman?: string;
+  back_ur?: string;
+  back_roman?: string;
+  category_ur?: string;
+  category_roman?: string;
+};
 export type Track = {
   id: string;
   name: string;
@@ -146,6 +162,14 @@ export type MockDef = {
   total: number;
   comp?: Record<string, number>;
   note: string;
+  // Phase 2 — flat `_ur`/`_roman` translations of title/note only.
+  // `variant` (a code), `comp`, `fixed`, `minutes` and `total` are
+  // never translated: selection, seeds and timers are
+  // language-independent by design.
+  title_ur?: string;
+  title_roman?: string;
+  note_ur?: string;
+  note_roman?: string;
   // Stage 1 P0.1 — per-mock scoring config (optional). Absent = the
   // zero-penalty default (policy unknown). Only sst-kppsc carries a
   // config today (0.25 penalty, labelled "unverified assumption").
@@ -202,10 +226,16 @@ export const COMP_A: Record<string, Record<string, number>> = content.compA as R
   string,
   Record<string, number>
 >;
-export const PLAN21: [string, [number, string][]][] = content.plan21 as [
-  string,
-  [number, string][],
-][];
+/** Phase 2 — plan shape. A task tuple keeps the English text at
+ *  index 1 (planTaskId hashes day + minutes + English text, and
+ *  planTaskLink / planDayForSubject match the English text); the
+ *  translations are EXTRA elements that never enter the hash or the
+ *  matchers. A day entry keeps the English label at index 0 with
+ *  translations appended the same way. The id rule is pinned by
+ *  scripts/test-phase2-plan.mjs. */
+export type PlanTask = [minutes: number, text: string, textUr?: string, textRoman?: string];
+export type PlanDay = [dayLabel: string, tasks: PlanTask[], dayLabelUr?: string, dayLabelRoman?: string];
+export const PLAN21: PlanDay[] = content.plan21 as PlanDay[];
 export const VACANCIES: Vacancy[] = content.vacancies as Vacancy[];
 export const OFFICIAL_LINKS: [string, string, string][] = content.links as [
   string,
@@ -491,6 +521,76 @@ export function resolveNoteView(note: Note, lang: ContentLang): ResolvedNote {
   return { title: note.title, body: note.body, translated: false };
 }
 
+/** Phase 2 — flashcard view in `lang`, with the item-level fallback
+ *  rule (same as resolveQuestionView): the translated card renders
+ *  ONLY when front, back AND category are all present in the chosen
+ *  language; otherwise the whole English card renders — never a mix.
+ *  `translated` tells the UI whether to show the literal
+ *  [Auto-Translated] badge. Never mutates; never touches the id
+ *  inputs (front/back stay English in the stored object). */
+export type ResolvedFlashcard = {
+  front: string;
+  back: string;
+  category: string;
+  translated: boolean;
+};
+export function resolveFlashcardView(card: Flashcard, lang: ContentLang): ResolvedFlashcard {
+  if (lang === "en")
+    return { front: card.front, back: card.back, category: card.category, translated: false };
+  const f = lang === "ur" ? card.front_ur : card.front_roman;
+  const b = lang === "ur" ? card.back_ur : card.back_roman;
+  const c = lang === "ur" ? card.category_ur : card.category_roman;
+  if (
+    typeof f === "string" &&
+    f.trim().length > 0 &&
+    typeof b === "string" &&
+    b.trim().length > 0 &&
+    typeof c === "string" &&
+    c.trim().length > 0
+  ) {
+    return { front: f, back: b, category: c, translated: true };
+  }
+  return { front: card.front, back: card.back, category: card.category, translated: false };
+}
+
+/** Phase 2 — display label for a flashcard CATEGORY in `lang`.
+ *  Categories are shared vocabulary: the label comes from the first
+ *  card carrying that English category. Filtering and `?category=`
+ *  deep links keep using the ENGLISH category value; only the
+ *  displayed label is resolved. Unknown categories render verbatim. */
+export function flashcardCategoryLabel(category: string, lang: ContentLang): string {
+  if (lang === "en") return category;
+  const card = FLASHCARDS.find((c) => c.category === category);
+  if (!card) return category;
+  const label = lang === "ur" ? card.category_ur : card.category_roman;
+  return typeof label === "string" && label.trim().length > 0 ? label : category;
+}
+
+/** Phase 2 — mock view in `lang`, with the item-level fallback rule:
+ *  the translated title + note render ONLY when both are present in
+ *  the chosen language; otherwise the whole English metadata renders.
+ *  `variant`, `comp`, `fixed`, `minutes` and `total` are returned
+ *  unchanged (language-independent). Never mutates. */
+export type ResolvedMock = {
+  title: string;
+  note: string;
+  translated: boolean;
+};
+export function resolveMockView(mock: MockDef, lang: ContentLang): ResolvedMock {
+  if (lang === "en") return { title: mock.title, note: mock.note, translated: false };
+  const tt = lang === "ur" ? mock.title_ur : mock.title_roman;
+  const tn = lang === "ur" ? mock.note_ur : mock.note_roman;
+  if (
+    typeof tt === "string" &&
+    tt.trim().length > 0 &&
+    typeof tn === "string" &&
+    tn.trim().length > 0
+  ) {
+    return { title: tt, note: tn, translated: true };
+  }
+  return { title: mock.title, note: mock.note, translated: false };
+}
+
 /** Stage 1 P2 — provenance badge for one item. Returns null when the
  *  item carries no sourceKind (no provenance claimed, no badge). The
  *  label is the badge text; detail is the plain-language explanation
@@ -500,7 +600,9 @@ export function resolveNoteView(note: Note, lang: ContentLang): ResolvedNote {
  *  generic wording rather than inventing a source name).
  *  Localization Pass 1 — optional `lang`: "ur" renders Urdu
  *  label/detail (source names and clauses stay English, wrapped in
- *  bidi isolates); "roman"/omitted keeps English (fallback rule). */
+ *  bidi isolates); Phase 2 adds "roman" (Roman Urdu label/detail,
+ *  source names and clauses stay English, wrapped in bidi isolates,
+ *  same rule as Urdu). */
 export function provenanceBadge(
   item: {
     source?: string | null;
@@ -512,6 +614,7 @@ export function provenanceBadge(
   const kind = item.sourceKind;
   if (!kind) return null;
   if (lang === "ur") return provenanceBadgeUr(item);
+  if (lang === "roman") return provenanceBadgeRoman(item);
   const clause = item.syllabusClause ? ` Maps to: ${item.syllabusClause}.` : "";
   switch (kind) {
     case "official":
@@ -583,6 +686,48 @@ function provenanceBadgeUr(item: {
   }
 }
 
+/** Phase 2 — Roman Urdu provenance badge. Mirrors provenanceBadgeUr:
+ *  the label/detail are Roman Urdu; the source NAME and the syllabus
+ *  clause stay English (factual provenance, never translated),
+ *  wrapped in bidi isolates. */
+function provenanceBadgeRoman(item: {
+  source?: string | null;
+  sourceKind?: SourceKind;
+  syllabusClause?: string;
+}): { label: string; detail: string; tone: "teal" | "green" | "grey" } | null {
+  const kind = item.sourceKind;
+  if (!kind) return null;
+  const clause = item.syllabusClause
+    ? ` Nisab hawala: ${LRI}${item.syllabusClause}${PDI}.`
+    : "";
+  switch (kind) {
+    case "official":
+      return { label: "Sarkari makhaz", detail: `Sarkari makhaz se.${clause}`, tone: "green" };
+    case "concept-extracted": {
+      const src = (item.source ?? "").replace(/^Original content — concept-extracted from\s*/, "").trim();
+      return {
+        label: "Tasawwur se akhaz shuda",
+        detail: src
+          ? `Apne alfaz mein asal mawaad — ${LRI}${src}${PDI} se tasawwurat akhaz kiye gaye, naqal nahi.${clause}`
+          : `Apne alfaz mein asal mawaad — naam wale makhaz se tasawwurat akhaz kiye gaye, naqal nahi.${clause}`,
+        tone: "teal",
+      };
+    }
+    case "proxy":
+      return {
+        label: "Mashqi mutabadil",
+        detail: `Is tasawwur ki mashq karwata hai; sarkari parche se nahi.${clause}`,
+        tone: "grey",
+      };
+    case "partial":
+      return {
+        label: "Juzwi ihata",
+        detail: `Is mauzu ke sirf aik hisse ka ihata karta hai.${clause}`,
+        tone: "grey",
+      };
+  }
+}
+
 /** Step 2a — semantic badge tones. One tone per MEANING; tones never
  *  merge distinct meanings. "official" (success green) is ONLY for
  *  genuine official-source confirmation; "reviewed" (teal-tinted
@@ -604,8 +749,8 @@ export type BadgeInfo = { label: string; detail: string; tone: BadgeTone };
  *  (unlike provenanceBadge): every item has a review status, and
  *  "Draft" is the honest default for unreviewed material. Unknown
  *  status strings map to "Unknown", never to a trusted-looking tone.
- *  "roman"/omitted keeps English (same fallback rule as
- *  provenanceBadge); "ur" renders Urdu label/detail. */
+ *  "ur" renders Urdu label/detail; Phase 2 adds "roman" (Roman Urdu
+ *  label/detail, mirroring the Urdu meanings). */
 export function reviewStatusBadge(status: string | undefined | null, lang: ContentLang = "en"): BadgeInfo {
   const s = (status ?? "").trim();
   if (lang === "ur") {
@@ -643,6 +788,43 @@ export function reviewStatusBadge(status: string | undefined | null, lang: Conte
         };
       default:
         return { label: "نامعلوم", detail: "جائزے کی حیثیت پہچانی نہیں گئی۔", tone: "unknown" };
+    }
+  }
+  if (lang === "roman") {
+    switch (s) {
+      case "owner-reviewed":
+        return {
+          label: "Malik se jaiza shuda",
+          detail: "Malik ne is device par khud is ka jaiza liya — zaati jaiza, sarkari tasdeeq nahi.",
+          tone: "reviewed",
+        };
+      case "approved":
+        return {
+          label: "Manzoor shuda",
+          detail: "Malik ne is device par ise manzoor kiya — zaati jaiza, sarkari tasdeeq nahi.",
+          tone: "reviewed",
+        };
+      case "needs-review":
+        return {
+          label: "Jaiza darkar",
+          detail: "Malik ne ise dobara dekhne ke liye nishan zad kiya hai.",
+          tone: "partial",
+        };
+      case "disputed":
+        return {
+          label: "Mutanaza",
+          detail: "Malik is ke jawab ya alfaz se ikhtilaf rakhta hai.",
+          tone: "error",
+        };
+      case "draft":
+      case "":
+        return {
+          label: "Masooda",
+          detail: "Ghair jaiza shuda mashqi mawaad — malik ne abhi ise nahi dekha.",
+          tone: "draft",
+        };
+      default:
+        return { label: "Namaloom", detail: "Jaize ki haisiyat pehchani nahi gayi.", tone: "unknown" };
     }
   }
   switch (s) {
@@ -685,8 +867,9 @@ export function reviewStatusBadge(status: string | undefined | null, lang: Conte
 /** Step 2a — topic-inspired badge for the 40 past-paper-topic items.
  *  Returns null when the item carries no pastPaperRef. The English
  *  detail is the stored ref string itself (the standing disclosure,
- *  verbatim); the Urdu detail is the matching Urdu disclosure. The
- *  label always says "Topic-inspired" first, so the item can never be
+ *  verbatim); the Urdu detail is the matching Urdu disclosure, and
+ *  the Roman detail (Phase 2) is the matching Roman Urdu disclosure.
+ *  The label always says "Topic-inspired" first, so the item can never be
  *  mistaken for an actual past paper. */
 export function topicBadge(pastPaperRef: string | null | undefined, lang: ContentLang = "en"): BadgeInfo | null {
   if (!pastPaperRef) return null;
@@ -701,6 +884,19 @@ export function topicBadge(pastPaperRef: string | null | undefined, lang: Conten
       : {
           label: "موضوع سے متاثر · اصل",
           detail: "پاسٹ پیپر کے موضوعات پر مبنی اصل مشقی سوال — اصل پرچہ نہیں۔",
+          tone: "topic",
+        };
+  }
+  if (lang === "roman") {
+    return reworded
+      ? {
+          label: "Mauzu se mutasir · Dobara likha gaya",
+          detail: "Past paper ke sawal ka wohi tasawwur, mukhtalif andaaz mein dobara likha gaya — asal parcha nahi.",
+          tone: "topic",
+        }
+      : {
+          label: "Mauzu se mutasir · Asal",
+          detail: "Past paper ke mauzu par mabni asal mashqi sawal — asal parcha nahi.",
           tone: "topic",
         };
   }
@@ -741,6 +937,25 @@ export function trackConfidenceBadge(conf: string, lang: ContentLang = "en"): Ba
     return {
       label: conf,
       detail: "ماخذ کی تصدیق ایک نام والے سرکاری دستاویز سے ہوئی۔",
+      tone: "official",
+    };
+  }
+  if (lang === "roman") {
+    if (unknown)
+      return {
+        label: conf,
+        detail: "Kisi sarkari makhaz se tasdeeq nahi hui — ise sarkari na samjhen.",
+        tone: "unknown",
+      };
+    if (partial)
+      return {
+        label: conf,
+        detail: "Is daawe ka kuch hissa sarkari makhaz se tasdeeq shuda hai, kuch hissa nahi.",
+        tone: "partial",
+      };
+    return {
+      label: conf,
+      detail: "Makhaz ki tasdeeq aik naam wale sarkari dastavez se hui.",
       tone: "official",
     };
   }

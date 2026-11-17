@@ -22,7 +22,8 @@
 // migration therefore runs in the plan/home pages, not inside
 // loadPlanState(); backups merge raw keys and the next plan read
 // migrates them.
-import { PLAN21 } from "./data";
+import { PLAN21, type PlanDay, type PlanTask } from "./data";
+import { formatAppDate } from "./format";
 import { loadPlanState, safeWrite, savePlanState } from "./tracking";
 
 /** Plan content version. Bump when PLAN21 changes shape (reorder,
@@ -112,6 +113,35 @@ export function migratePlanState(raw: Record<string, boolean>): PlanMigration {
   return { state: out, migrated };
 }
 
+/** Phase 2 — display label for one plan day in `lang`. The English
+ *  label (tuple index 0) is the id input and never changes; the
+ *  translation (index 2/3) renders when present, else English.
+ *  `translated` tells the UI whether to show the literal
+ *  [Auto-Translated] badge. */
+export function resolvePlanDayLabel(
+  day: PlanDay,
+  lang: "en" | "roman" | "ur",
+): { label: string; translated: boolean } {
+  if (lang === "en") return { label: day[0], translated: false };
+  const tr = lang === "ur" ? day[2] : day[3];
+  if (typeof tr === "string" && tr.trim().length > 0) return { label: tr, translated: true };
+  return { label: day[0], translated: false };
+}
+
+/** Phase 2 — display text for one plan task in `lang`. The English
+ *  text (tuple index 1) is the id input and the link-matcher input
+ *  and never changes; the translation (index 2/3) renders when
+ *  present, else English. */
+export function resolvePlanTaskText(
+  task: PlanTask,
+  lang: "en" | "roman" | "ur",
+): { text: string; translated: boolean } {
+  if (lang === "en") return { text: task[1], translated: false };
+  const tr = lang === "ur" ? task[2] : task[3];
+  if (typeof tr === "string" && tr.trim().length > 0) return { text: tr, translated: true };
+  return { text: task[1], translated: false };
+}
+
 /** Storage key for the plan version marker, written once a migration
  *  has run (see PLAN_VERSION). Read-only signal for debugging; the
  *  migration itself is idempotent and needs no marker to be safe. */
@@ -154,23 +184,31 @@ export function parseLocalDateKey(key: string): Date | null {
   return Number.isNaN(d.getTime()) ? null : d;
 }
 
-/** Format one calendar date for display (local timezone, browser
- *  locale). The year is shown only when it differs from the plan
- *  start year, so ranges crossing New Year stay unambiguous without
- *  repeating the year on every line. */
-export function formatPlanDay(d: Date, refYear: number): string {
+/** Format one calendar date for display (local timezone, app
+ *  language — Phase 2 passes the selected language through
+ *  formatAppDate so Urdu mode shows Urdu month names; omitted keeps
+ *  the previous browser-locale rendering). The year is shown only
+ *  when it differs from the plan start year, so ranges crossing New
+ *  Year stay unambiguous without repeating the year on every line. */
+export function formatPlanDay(d: Date, refYear: number, lang: "en" | "roman" | "ur" = "en"): string {
   const opts: Intl.DateTimeFormatOptions =
     d.getFullYear() === refYear
       ? { day: "numeric", month: "short" }
       : { day: "numeric", month: "short", year: "numeric" };
-  return d.toLocaleDateString(undefined, opts);
+  if (lang === "en") return d.toLocaleDateString(undefined, opts);
+  return formatAppDate(d, lang, opts);
 }
 
 /** Format an inclusive date range: a single date when start == end,
  *  else "start – end". */
-export function formatPlanRange(start: Date, end: Date, refYear: number): string {
-  if (start.getTime() === end.getTime()) return formatPlanDay(start, refYear);
-  return `${formatPlanDay(start, refYear)} – ${formatPlanDay(end, refYear)}`;
+export function formatPlanRange(
+  start: Date,
+  end: Date,
+  refYear: number,
+  lang: "en" | "roman" | "ur" = "en",
+): string {
+  if (start.getTime() === end.getTime()) return formatPlanDay(start, refYear, lang);
+  return `${formatPlanDay(start, refYear, lang)} – ${formatPlanDay(end, refYear, lang)}`;
 }
 
 // ---------- calendar: dates, rest days, catch-up days, cycles ----------

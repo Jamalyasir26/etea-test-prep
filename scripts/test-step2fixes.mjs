@@ -295,14 +295,14 @@ const flashPage = read("src/app/flashcards/page.tsx");
 check("flash: lastGraded state exists", flashPage.includes("const [lastGraded, setLastGraded]"));
 check("flash: grade() captures dueAt + interval at grade time", flashPage.includes("setLastGraded({ dueAt: updated.dueAt, intervalMs:"));
 check("flash: startSession clears lastGraded", flashPage.includes("setLastGraded(null)"));
-check("flash: renders the graded card's local date", flashPage.includes("formatLocalDueDate(lastGraded.dueAt)"));
+check("flash: renders the graded card's local date", flashPage.includes("formatLocalDueDate(lastGraded.dueAt, lang)"));
 check("flash: renders the graded card's interval alongside", flashPage.includes("formatFsrsInterval(lastGraded.intervalMs, lang)"));
 check("flash: renders via the flashGradedNextReview key", flashPage.includes('tf("flashGradedNextReview"'));
 check(
   "flash: learning/relearning state line shows date alongside interval",
-  flashPage.includes("formatFsrsInterval(new Date(cardState.dueAt).getTime() - Date.now(), lang)} · ${formatLocalDueDate(cardState.dueAt)}"),
+  flashPage.includes("formatFsrsInterval(new Date(cardState.dueAt).getTime() - Date.now(), lang)} · ${formatLocalDueDate(cardState.dueAt, lang)}"),
 );
-check("flash: review-state line still shows the local date", flashPage.includes(": formatLocalDueDate(cardState.dueAt)"));
+check("flash: review-state line still shows the local date", flashPage.includes(": formatLocalDueDate(cardState.dueAt, lang)"));
 check("flash: grade buttons keep their relative intervals", flashPage.includes('intervalLabel("again")') && flashPage.includes('intervalLabel("easy")'));
 
 const i18n = read("src/lib/i18n.tsx");

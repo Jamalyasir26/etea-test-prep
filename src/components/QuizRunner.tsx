@@ -1057,12 +1057,16 @@ export default function QuizRunner({
       {note && <div className="alert">{note}</div>}
       {trustedOnly && <p className="muted">{t("trustedOnlyLine")}</p>}
       <p className="muted">
-        {/* Stage 1 P1 Tier 4 (B03) — question counter and timer isolated
-            LTR so neither can reverse in RTL (Urdu) mode. */}
+        {/* Stage 1 P1 Tier 4 (B03) — the timer stays isolated LTR so
+            it cannot reverse in RTL (Urdu) mode. The question
+            counter renders through the ofCount key (Phase 2) with
+            per-number lri() isolation instead of a phrase-level
+            LTR span, so the localized wording flows correctly. */}
         {t("questionWord")}{" "}
-        <span dir="ltr">
-          {idx + 1} of {total}
-        </span>
+        {/* Phase 2 — the counter renders through the ofCount key so
+            Urdu/Roman modes show the localized wording; the numbers
+            stay bidi-isolated via lri(). */}
+        {tf("ofCount", { a: lri(String(idx + 1)), b: lri(String(total)) })}
         {mode === "mock" && minutes > 0 && (
           <>
             {" · "}⏱ <span dir="ltr">{mm}:{ss}</span> {t("timeLeft")}
@@ -1082,7 +1086,7 @@ export default function QuizRunner({
         aria-valuenow={idx + 1}
         aria-valuemin={0}
         aria-valuemax={total}
-        aria-label={`${t("questionWord")} ${idx + 1} of ${total}`}
+        aria-label={`${t("questionWord")} ${tf("ofCount", { a: String(idx + 1), b: String(total) })}`}
       >
         <i style={{ width: `${((idx + 1) / total) * 100}%` }} />
       </div>
@@ -1288,7 +1292,7 @@ export default function QuizRunner({
       <p className="muted">
         {t("firstPassSoFar")} {firstPassCount} {t("correctCount")}
         {retries.length > 0
-          ? ` · ${tf("retriesNotCounted", { n: retries.length, plural: retries.length === 1 ? "y" : "ies" })}`
+          ? ` · ${retries.length === 1 ? tf("retriesNotCountedOne", { n: retries.length }) : tf("retriesNotCounted", { n: retries.length })}`
           : ""}
         {mode === "mock" && minutes > 0 ? ` · ${t("timerNote")}` : ""}
       </p>

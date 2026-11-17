@@ -26,7 +26,7 @@ import {
   safeRead,
   safeWrite,
 } from "@/lib/tracking";
-import { lri, useLang } from "@/lib/i18n";
+import { apiErrorText, lri, useLang } from "@/lib/i18n";
 import { providerDisplayName } from "@/lib/tutorHealth";
 import TutorHealth from "@/components/TutorHealth";
 import BoldText from "@/components/BoldText";
@@ -209,7 +209,7 @@ function TutorInner() {
         // Offline fallback: search the library directly (same content
         // as before, now with clickable citations). The prompt is
         // preserved in the input + Retry/offline actions below.
-        const { text: fb, sources } = await offlineResult(q, j.error ?? t("liveUnavailable"));
+        const { text: fb, sources } = await offlineResult(q, apiErrorText(j, t, "liveUnavailable"));
         setMsgs((m) => [...m, { role: "ai", text: fb, sources }]);
         setInput(q);
         setFailedPrompt(q);
@@ -262,7 +262,7 @@ function TutorInner() {
         body: JSON.stringify({ questionId: id, lang: effectiveTutorLang }),
       });
       const j = await res.json();
-      setExplainOut(res.ok ? j.explanation : (j.error ?? t("explainError")));
+      setExplainOut(res.ok ? j.explanation : apiErrorText(j, t, "explainError"));
     } catch {
       setExplainOut(t("reachTutorError"));
     }

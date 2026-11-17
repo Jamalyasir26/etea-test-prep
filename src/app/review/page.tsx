@@ -19,8 +19,9 @@ import {
   type Question,
 } from "@/lib/data";
 import { loadAllQuestions } from "@/lib/banks";
+import { formatAppDateTime } from "@/lib/format";
 import structural from "@/data/structural-checks.json";
-import { useLang } from "@/lib/i18n";
+import { lri, useLang } from "@/lib/i18n";
 import {
   clearFlags,
   loadFlags,
@@ -313,7 +314,7 @@ export default function ReviewDashboard() {
                     <span className="muted">
                       · {f.source === "mock" ? t("flagsFromMock") : t("flagsFromPractice")} ·{" "}
                       <span dir="auto">{f.title}</span> ·{" "}
-                      {tf("flagsFlaggedOn", { date: new Date(f.flaggedAt).toLocaleString() })}
+                      {tf("flagsFlaggedOn", { date: formatAppDateTime(new Date(f.flaggedAt), lang) })}
                     </span>{" "}
                     <button className="secondary" onClick={() => unflag(f.qid)}>
                       {t("flagsRemove")}
@@ -365,9 +366,7 @@ export default function ReviewDashboard() {
       </div>
       <p className="muted">
         {t("showingWord")}{" "}
-        <span dir="ltr">
-          {shown.length} of {filtered.length}
-        </span>{" "}
+        {tf("ofCount", { a: lri(String(shown.length)), b: lri(String(filtered.length)) })}{" "}
         {t("showingRest")}
       </p>
       {shown.length === 0 && <p>{t("noItemsMatch")}</p>}
@@ -427,7 +426,7 @@ export default function ReviewDashboard() {
                   <>
                     {" · "}
                     {t("byWord")} <span dir="ltr">{by}</span> ·{" "}
-                    <span dir="ltr">{new Date(at).toLocaleString()}</span>
+                    <span dir="auto">{formatAppDateTime(new Date(at), lang)}</span>
                   </>
                 ) : (
                   <>

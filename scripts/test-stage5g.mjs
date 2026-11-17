@@ -518,8 +518,9 @@ check("5G content.json counts unchanged", contentJson.counts.total === 7040 && c
 
 // --------------------------------- §10 past-paper disclosure labels (FINAL)
 // The disclosure lives in `pastPaperRef`, rendered by the existing
-// topicBadge() (data.ts) — English detail verbatim in en/roman modes, the
-// hardcoded Urdu disclosure in ur mode. No schema/rendering change: the
+// topicBadge() (data.ts) — English detail verbatim in en mode, the
+// hardcoded Urdu disclosure in ur mode, the hardcoded Roman Urdu
+// disclosure in roman mode (Phase 2). No schema/rendering change: the
 // labels must stay byte-identical so the badge's `includes("reworded")`
 // classification keeps working, and the translated fields must not copy
 // the label text (the badge owns it).

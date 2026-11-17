@@ -772,31 +772,38 @@ export function advanceReviewQueue(
  *  interval for THIS card (pre-formatted by formatFsrsInterval, e.g.
  *  "10m" / "3d"). The interval is computed, never hardcoded.
  *  Localization Pass 1 — optional `lang`: "ur" renders the Urdu grade
- *  name; "roman"/omitted keeps the English grade name (the i18n
- *  fallback rule). The interval label itself is already lang-formatted
+ *  name; Phase 2 adds "roman" (Roman Urdu grade names, mirroring the
+ *  Urdu meanings). The interval label itself is already lang-formatted
  *  by the caller. */
 export function gradeButtonLabel(
   grade: "again" | "hard" | "good" | "easy",
   intervalLabel: string,
   lang: "en" | "roman" | "ur" = "en",
 ): string {
-  const ur = lang === "ur";
   const name =
     grade === "again"
-      ? ur
+      ? lang === "ur"
         ? "دوبارہ"
-        : "Again"
+        : lang === "roman"
+          ? "Dobara"
+          : "Again"
       : grade === "hard"
-        ? ur
+        ? lang === "ur"
           ? "مشکل"
-          : "Hard"
+          : lang === "roman"
+            ? "Mushkil"
+            : "Hard"
         : grade === "good"
-          ? ur
+          ? lang === "ur"
             ? "اچھا"
-            : "Good"
-          : ur
+            : lang === "roman"
+              ? "Achha"
+              : "Good"
+          : lang === "ur"
             ? "آسان"
-            : "Easy";
+            : lang === "roman"
+              ? "Asan"
+              : "Easy";
   return `${name} — ${intervalLabel}`;
 }
 

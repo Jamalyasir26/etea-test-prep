@@ -12,8 +12,8 @@
 //    in the audited pages/components (comments stripped; documented
 //    exceptions — proper names, acronyms, IDs, scoring policy notes,
 //    CORRECTIONS/PATTERN_BANNER, format examples — are not listed).
-// 6. Localized labels: localizedScoringLabel (Urdu + roman fallback),
-//    gradeButtonLabel (Urdu + English default), provenanceBadge Urdu
+// 6. Localized labels: localizedScoringLabel (Urdu + Roman Urdu),
+//    gradeButtonLabel (Urdu + Roman Urdu), provenanceBadge Urdu
 //    variant (via tsc-compiled data.ts, same approach as
 //    test-provenance.mjs).
 // Run: node scripts/test-i18n.mjs  (exit 0 = all pass)
@@ -181,7 +181,7 @@ function stripLiterals(text) {
     } else if (mode === "tpl") {
       if (esc) esc = false; else if (ch === "\\") esc = true;
       else if (ch === "`") mode = "code";
-      else if (ch === "$" && nx === "{") { interpStack.push(depth); depth++; mode = "code"; out += "  "; i++; continue; }
+      else if (ch === "$" && nx === "{") { interpStack.push(depth); depth++; mode = "code"; out += " {"; i++; continue; }
       out += " ";
     }
   }
@@ -361,7 +361,13 @@ check(
   urLabel.includes("نمبر فی درست جواب") && urLabel.includes("کوئی کٹوتی نہیں") && urLabel.includes("پالیسی نامعلوم"),
   urLabel,
 );
-check("scoring label (roman) falls back to English", localizedScoringLabel(DEFAULT_SCORING, "roman") === enLabel);
+check(
+  // Phase 2 — Roman scoring label (the old English fallback is gone
+  // by design: every surface renders in the chosen language).
+  "scoring label (roman) translated",
+  localizedScoringLabel(DEFAULT_SCORING, "roman") === "1 number fi durust jawab · koi katoti nahi (policy namaloom)",
+  localizedScoringLabel(DEFAULT_SCORING, "roman"),
+);
 const penaltyLabel = localizedScoringLabel({ ...DEFAULT_SCORING, wrongPenalty: 0.25, policyStatus: "unverified-assumption" }, "ur");
 check(
   "scoring label (ur) with penalty",
@@ -377,7 +383,13 @@ check(
     gradeButtonLabel("good", "3d", "ur").includes("اچھا") &&
     gradeButtonLabel("easy", "7d", "ur").includes("آسان"),
 );
-check("grade labels (roman) fall back to English", gradeButtonLabel("good", "3d", "roman") === gradeButtonLabel("good", "3d", "en"));
+check(
+  // Phase 2 — Roman grade label (the old English fallback is gone by
+  // design: every surface renders in the chosen language).
+  "grade labels (roman) translated",
+  gradeButtonLabel("good", "3 din", "roman") === "Achha — 3 din",
+  gradeButtonLabel("good", "3 din", "roman"),
+);
 
 // ---------- Provenance badge Urdu variant (compiled data.ts) ----------
 const OUT = "/tmp/loc1-i18n";

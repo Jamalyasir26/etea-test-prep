@@ -104,8 +104,8 @@ export function scoringLabel(config: ScoringConfig): string {
 }
 
 /** Localization Pass 1 — the same one-line label in the UI language.
- *  `lang` is "en" | "roman" | "ur"; roman falls back to English (the
- *  i18n fallback rule). The policy WORDS are translated, but the full
+ *  `lang` is "en" | "roman" | "ur"; Phase 2 adds the "roman" branch
+ *  (Roman Urdu policy words, mirroring the Urdu branch). The full
  *  policyNote stays English (a factual precision statement — see
  *  i18n.tsx exceptions) and is rendered LTR-isolated where shown. */
 export function localizedScoringLabel(
@@ -113,6 +113,19 @@ export function localizedScoringLabel(
   lang: "en" | "roman" | "ur",
 ): string {
   const cfg = isValidScoringConfig(config) ? config : DEFAULT_SCORING;
+  if (lang === "roman") {
+    const penalty =
+      cfg.wrongPenalty === 0
+        ? "koi katoti nahi"
+        : `har ghalat jawab par ${cfg.wrongPenalty} katoti`;
+    const policy =
+      cfg.policyStatus === "unknown"
+        ? "policy namaloom"
+        : cfg.policyStatus === "unverified-assumption"
+          ? "ghair musaddiqa mafrooza"
+          : "sarkari policy";
+    return `${cfg.correctMarks} number fi durust jawab · ${penalty} (${policy})`;
+  }
   if (lang !== "ur") return scoringLabelEn(cfg);
   const penalty =
     cfg.wrongPenalty === 0

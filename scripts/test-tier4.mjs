@@ -98,8 +98,8 @@ function countDirLtr(src) {
 }
 check("B03: plan progress fraction isolated", plan.includes('<span dir="ltr">') && plan.includes("{doneCount}/{totalTasks}"));
 check("B03: quiz score + raw accuracy + exam score isolated", countDirLtr(quizRunner) >= 4);
-check("B03: quiz question counter + timer isolated", quizRunner.includes("{idx + 1} of {total}") && quizRunner.includes("{mm}:{ss}"));
-check("B03: mock list trusted count isolated", mockList.includes('<span dir="ltr">') && mockList.includes("{trusted} of {m.total}"));
+check("B03: quiz question counter + timer isolated", quizRunner.includes('tf("ofCount", { a: lri(String(idx + 1)), b: lri(String(total)) })') && quizRunner.includes('<span dir="ltr">{mm}:{ss}</span>'));
+check("B03: mock list trusted count isolated", mockList.includes('<span dir="ltr">') && mockList.includes('tf("ofCount", { a: lri(String(trusted)), b: lri(String(m.total)) })'));
 check("B03: mock runner note counts isolated", countDirLtr(mockRun) >= 2 && quizRunner.includes("note?: ReactNode"));
 check("B03: review progress + showing + show-more isolated", countDirLtr(review) >= 3);
 check("B03: flashcard session + recalled + card counter isolated", countDirLtr(flashcards) >= 3);

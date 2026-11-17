@@ -86,7 +86,11 @@
     "test:phase1gk": "node scripts/test-phase1-gk.mjs",
     "test:phase1it": "node scripts/test-phase1-it.mjs",
     "test:phase1pe": "node scripts/test-phase1-pe.mjs",
-    "test:phase1drawing": "node scripts/test-phase1-drawing.mjs"
+    "test:phase1drawing": "node scripts/test-phase1-drawing.mjs",
+    "test:phase2flashcards": "node scripts/test-phase2-flashcards.mjs",
+    "test:phase2plan": "node scripts/test-phase2-plan.mjs",
+    "test:phase2mocks": "node scripts/test-phase2-mocks.mjs",
+    "test:phase2chrome": "node scripts/test-phase2-chrome.mjs"
   },
   "version": "3.0.0"
 }

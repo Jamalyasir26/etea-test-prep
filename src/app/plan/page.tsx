@@ -24,11 +24,13 @@ import {
   planCalendarTotals,
   planTaskId,
   planTaskLink,
+  resolvePlanDayLabel,
+  resolvePlanTaskText,
   toLocalDateKey,
   type PlanTaskLinkKind,
 } from "@/lib/plan";
 import { computeStats, loadAttempts, safeRead, safeWrite, savePlanState } from "@/lib/tracking";
-import { lri, useLang } from "@/lib/i18n";
+import { apiErrorText, lri, useLang } from "@/lib/i18n";
 import BoldText from "@/components/BoldText";
 
 const LINK_KEY: Record<PlanTaskLinkKind, string> = {
@@ -103,7 +105,7 @@ export default function PlanPage() {
         body: JSON.stringify({ weeks, lang, weakSubjects }),
       });
       const j = await res.json();
-      setAiPlan(res.ok ? j.plan : j.error ?? t("planError"));
+      setAiPlan(res.ok ? j.plan : apiErrorText(j, t, "planError"));
     } catch {
       setAiPlan(t("reachTutorError"));
     } finally {
@@ -154,7 +156,7 @@ export default function PlanPage() {
       <p className="muted">{t("planPrivacy")}</p>
       {startDate && (
         <p className="muted">
-          {tf("planStartDate", { date: lri(formatPlanDay(startDate, refYear)) })}{" "}
+          {tf("planStartDate", { date: lri(formatPlanDay(startDate, refYear, lang)) })}{" "}
           <button className="secondary" onClick={resetDates}>
             {t("planResetDates")}
           </button>{" "}
@@ -197,7 +199,7 @@ export default function PlanPage() {
               <h3>{t("planRestDay")}</h3>
               {startDate && (
                 <p className="muted">
-                  <span dir="ltr">{formatPlanDay(entry.startDate, refYear)}</span>
+                  <span dir="ltr">{formatPlanDay(entry.startDate, refYear, lang)}</span>
                 </p>
               )}
               <p className="muted">{t("planRestDayNote")}</p>
@@ -205,14 +207,30 @@ export default function PlanPage() {
           );
         }
         const day = entry.dayLabel;
-        const tasks = PLAN21[entry.unitIndex][1];
+        const dayEntry = PLAN21[entry.unitIndex];
+        const dayView = resolvePlanDayLabel(dayEntry, lang);
+        const tasks = dayEntry[1];
         const workload = tasks.reduce((s, [mins]) => s + mins, 0);
         return (
           <div className="card" key={day} id={`plan-day-${entry.unitIndex + 1}`}>
             <h3>
-              {/* Day headings and task text are English content — isolated
-                  so their punctuation cannot jump in RTL mode. */}
-              <span dir="auto">{day}</span>
+              {/* Phase 2 — day headings render in the chosen language
+                  (English source stays the id input); the badge shows
+                  only when the translated heading renders. */}
+              <span dir="auto">{dayView.label}</span>
+              {dayView.translated && (
+                <>
+                  {" "}
+                  <span
+                    dir="ltr"
+                    className="badge grey"
+                    title={t("autoTranslatedBadgeAria")}
+                    aria-label={t("autoTranslatedBadgeAria")}
+                  >
+                    [Auto-Translated]
+                  </span>
+                </>
+              )}
               {entry.catchUp && (
                 <>
                   {" "}
@@ -223,7 +241,7 @@ export default function PlanPage() {
             <p className="muted">
               {startDate && (
                 <>
-                  <span dir="ltr">{formatPlanRange(entry.startDate, entry.endDate, refYear)}</span>
+                  <span dir="ltr">{formatPlanRange(entry.startDate, entry.endDate, refYear, lang)}</span>
                   {" · "}
                 </>
               )}
@@ -235,14 +253,19 @@ export default function PlanPage() {
             {startDate && entry.cycle2Start && entry.cycle2End && (
               <p className="muted">
                 <b>{t("planCycle2Label")}:</b>{" "}
-                <span dir="ltr">{formatPlanRange(entry.cycle2Start, entry.cycle2End, refYear)}</span>
+                <span dir="ltr">{formatPlanRange(entry.cycle2Start, entry.cycle2End, refYear, lang)}</span>
                 {" — "}
                 {t("planCycle2Note")}
               </p>
             )}
-            {tasks.map(([mins, text]) => {
+            {tasks.map((task) => {
+              const [mins, text] = task;
               const id = planTaskId(day, mins, text);
               const link = planTaskLink(text);
+              // Phase 2 — display text resolves into the chosen
+              // language; the id and the link still derive from the
+              // ENGLISH text above, never from the translation.
+              const taskView = resolvePlanTaskText(task, lang);
               return (
                 <label key={id} style={{ display: "flex", gap: 8, alignItems: "flex-start", padding: "6px 0" }}>
                   <input type="checkbox" checked={!!checked[id]} onChange={() => toggle(id)} style={{ marginTop: 6 }} />
@@ -251,7 +274,7 @@ export default function PlanPage() {
                     <b>
                       <span dir="ltr">{tf("minsLabel", { mins })}</span>
                     </b>{" "}
-                    — <span dir="auto">{text}</span>
+                    — <span dir="auto">{taskView.text}</span>
                     {link && (
                       <>
                         {" — "}

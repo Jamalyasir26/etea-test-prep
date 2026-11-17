@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     // and sanitised; a malformed body still never reaches the generator.
     if (!isSameOriginRequest(req.headers, "POST")) {
       return NextResponse.json(
-        { error: "This API only accepts requests from the ETEA Prep site itself." },
+        { error: "This API only accepts requests from the ETEA Prep site itself.", code: "same_origin" },
         { status: 403 }
       );
     }
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
       ? body.weakSubjects.filter((s: unknown) => typeof s === "string").slice(0, 5)
       : [];
     const rl = rateLimitOk(clientIpFromHeaders(req.headers));
-    if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
+    if (!rl.ok) return NextResponse.json({ error: rl.message, code: rl.code }, { status: 429 });
     const prompt =
       `Create a ${weeks}-week study plan for one student preparing for KP government job tests (ETEA/KPPSC).\n` +
       `${planContext(weeks, weakSubjects)}\n\n` +
@@ -38,6 +38,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ plan: text, provider, weeks });
   } catch (e) {
     if (e instanceof AiError) return NextResponse.json({ error: e.message }, { status: e.status });
-    return NextResponse.json({ error: "Could not generate a plan right now." }, { status: 500 });
+    return NextResponse.json({ error: "Could not generate a plan right now.", code: "plan_failed" }, { status: 500 });
   }
 }

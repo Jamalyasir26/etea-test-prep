@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { VISIBLE_MOCKS, PATTERN_BANNER, mockLabels, mockLabelsSync, type MockLabels } from "@/lib/data";
+import { VISIBLE_MOCKS, PATTERN_BANNER, mockLabels, mockLabelsSync, resolveMockView, type MockLabels } from "@/lib/data";
 import { lri, useLang } from "@/lib/i18n";
 import { loadReviews, type ReviewRecord } from "@/lib/tracking";
 import { DEFAULT_SCORING, localizedScoringLabel, type ScoringConfig } from "@/lib/scoring";
@@ -110,12 +110,25 @@ export default function MockList() {
         const labels = labelsById[m.id] ?? mockLabelsSync(m);
         const trusted = labels.trusted;
         const trustedDisabled = mode === "trusted" && trusted === 0;
+        // Phase 2 — title/note resolve into the chosen language
+        // (item-level fallback); variant/comp/seeds are untouched.
+        const view = resolveMockView(m, lang);
         return (
           <div className="card" key={m.id}>
             <h3>
-              <span dir="auto">{m.title}</span>{" "}
+              <span dir="auto">{view.title}</span>{" "}
+              {view.translated && (
+                <span
+                  dir="ltr"
+                  className="badge grey"
+                  title={t("autoTranslatedBadgeAria")}
+                  aria-label={t("autoTranslatedBadgeAria")}
+                >
+                  [Auto-Translated]
+                </span>
+              )}{" "}
               <span dir="ltr" className="badge teal">
-                {m.total} Q
+                {tf("questionsShort", { n: m.total })}
               </span>{" "}
               <span dir="ltr" className="badge grey">
                 {tf("minsLabel", { mins: m.minutes })}
@@ -159,16 +172,14 @@ export default function MockList() {
               )}
             </p>
             <p className="muted">
-              <span dir="auto">{m.note}</span>
+              <span dir="auto">{view.note}</span>
             </p>
             <p className="muted">
               {trusted > 0 ? (
                 <>
-                  {/* Stage 1 P1 Tier 4 (B03) — count isolated LTR so it
-                      cannot reverse in RTL (Urdu) mode. */}
-                  <span dir="ltr">
-                    {trusted} of {m.total}
-                  </span>{" "}
+                  {/* Phase 2 — count renders through the ofCount key;
+                      numbers stay bidi-isolated via lri(). */}
+                  {tf("ofCount", { a: lri(String(trusted)), b: lri(String(m.total)) })}{" "}
                   {t("trustedAvailableRest")}
                 </>
               ) : (
@@ -182,7 +193,7 @@ export default function MockList() {
             <label>
               <span className="muted">{t("scoringForRun")}</span>
               <select
-                aria-label={tf("scoringForAria", { title: lri(m.title) })}
+                aria-label={tf("scoringForAria", { title: lri(view.title) })}
                 value={penaltyOverride[m.id] ?? "default"}
                 onChange={(e) =>
                   setPenaltyOverride((prev) => ({ ...prev, [m.id]: e.target.value }))

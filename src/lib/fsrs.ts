@@ -366,37 +366,44 @@ export function previewFsrsGrades(
 // shows hours; under 30 days shows days (one decimal under 10 days when
 // fractional, matching Anki-style "4.8d"); under 365 days shows months
 // (days/30, one decimal); otherwise years (days/365, one decimal).
-// `lang` picks the unit words; "roman" uses the English units (the i18n
-// fallback rule — short chrome in Roman Urdu keeps English units).
+// `lang` picks the unit words; "ur" uses Urdu unit words and "roman"
+// (Phase 2) uses Roman Urdu unit words, mirroring the Urdu meanings.
 // ---------------------------------------------------------------------------
 
 export function formatFsrsInterval(ms: number, lang: "en" | "roman" | "ur" = "en"): string {
   const safe = Math.max(0, ms);
   const minutes = safe / 60000;
-  const ur = lang === "ur";
-  const unit = (en: string, u: string) => (ur ? u : en);
-  if (minutes < 1.5) return `1${unit("m", " منٹ")}`;
-  if (minutes < 60) return `${Math.round(minutes)}${unit("m", " منٹ")}`;
+  const unit = (en: string, roman: string, u: string) =>
+    lang === "ur" ? u : lang === "roman" ? roman : en;
+  if (minutes < 1.5) return `1${unit("m", " minute", " منٹ")}`;
+  if (minutes < 60) return `${Math.round(minutes)}${unit("m", " minute", " منٹ")}`;
   const hours = minutes / 60;
-  if (hours < 24) return `${Math.round(hours)}${unit("h", " گھنٹے")}`;
+  if (hours < 24) return `${Math.round(hours)}${unit("h", " ghante", " گھنٹے")}`;
   const days = hours / 24;
   if (days < 30) {
     const d = days < 10 && days % 1 !== 0 ? Math.round(days * 10) / 10 : Math.round(days);
-    return `${d}${unit("d", " دن")}`;
+    return `${d}${unit("d", " din", " دن")}`;
   }
   const months = days / 30;
-  if (months < 12) return `${Math.round(months * 10) / 10}${unit("mo", " ماہ")}`;
+  if (months < 12) return `${Math.round(months * 10) / 10}${unit("mo", " mah", " ماہ")}`;
   const years = days / 365;
-  return `${Math.round(years * 10) / 10}${unit("y", " سال")}`;
+  return `${Math.round(years * 10) / 10}${unit("y", " saal", " سال")}`;
 }
 
 /** Step 2b — an FSRS due datetime as a LOCAL calendar date. The stored
  *  dueAt is an ISO (UTC) string; slicing its first 10 characters showed
  *  the UTC date, which can be a day ahead of the owner's local date.
- *  toLocaleDateString() formats in the browser's local timezone. An
- *  unparseable value falls back to the raw string, never crashes. */
-export function formatLocalDueDate(iso: string): string {
+ *  Phase 2 — optional `lang`: Urdu renders with the ur-PK locale
+ *  (Urdu month names); English/Roman keep the previous browser-locale
+ *  rendering. The locale choice mirrors appDateLocale() in
+ *  src/lib/format.ts, inlined here because this module is imported
+ *  via Node type-stripping by the test suites, which cannot resolve
+ *  extensionless relative imports. An unparseable value falls back
+ *  to the raw string, never crashes. */
+export function formatLocalDueDate(iso: string, lang: "en" | "roman" | "ur" = "en"): string {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return iso;
-  return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+  const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "short", day: "numeric" };
+  if (lang === "ur") return d.toLocaleDateString("ur-PK", opts);
+  return d.toLocaleDateString(undefined, opts);
 }

@@ -32,29 +32,29 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Nav ----
   home: { en: "Home", roman: "Home", ur: "ہوم" },
   library: { en: "Library", roman: "Library", ur: "لائبریری" },
-  practice: { en: "Practice", roman: "Practice", ur: "مشق" },
+  practice: { en: "Practice", roman: "Mashq", ur: "مشق" },
   mocks: { en: "Mock Tests", roman: "Mock Tests", ur: "موک ٹیسٹ" },
   flashcards: { en: "Flashcards", roman: "Flashcards", ur: "فلیش کارڈز" },
-  tutor: { en: "AI Tutor", roman: "AI Tutor", ur: "اے آئی استاد" },
-  plan: { en: "Study Plan", roman: "Study Plan", ur: "مطالعہ منصوبہ" },
-  analysis: { en: "Analysis", roman: "Analysis", ur: "تجزیہ" },
+  tutor: { en: "AI Tutor", roman: "AI Ustad", ur: "اے آئی استاد" },
+  plan: { en: "Study Plan", roman: "Mutalaa Mansooba", ur: "مطالعہ منصوبہ" },
+  analysis: { en: "Analysis", roman: "Tajziya", ur: "تجزیہ" },
   tracks: { en: "Post Tracks", roman: "Post Tracks", ur: "پوسٹ ٹریکس" },
-  topics: { en: "Past-Paper Topics", roman: "Past-Paper Topics", ur: "پاسٹ پیپر موضوعات" },
-  vacancies: { en: "Vacancies", roman: "Vacancies", ur: "آسامیاں" },
-  links: { en: "Official Links", roman: "Official Links", ur: "سرکاری لنکس" },
-  issues: { en: "Issues", roman: "Issues", ur: "مسائل" },
-  review: { en: "Review", roman: "Review", ur: "جائزہ" },
+  topics: { en: "Past-Paper Topics", roman: "Past-Paper Mozuaat", ur: "پاسٹ پیپر موضوعات" },
+  vacancies: { en: "Vacancies", roman: "Aasamiyan", ur: "آسامیاں" },
+  links: { en: "Official Links", roman: "Sarkari Links", ur: "سرکاری لنکس" },
+  issues: { en: "Issues", roman: "Masaail", ur: "مسائل" },
+  review: { en: "Review", roman: "Jaaiza", ur: "جائزہ" },
   brandTagline: {
     en: "KP Government Jobs — personal preparation",
-    roman: "KP Government Jobs — personal preparation",
+    roman: "KP Sarkari Mulazmatein — zaati tayyari",
     ur: "کے پی سرکاری ملازمتیں — ذاتی تیاری",
   },
-  navMenuLabel: { en: "Navigation menu", roman: "Navigation menu", ur: "مینیو" },
-  mainNavLabel: { en: "Main", roman: "Main", ur: "مرکزی" },
-  languageLabel: { en: "Language", roman: "Language", ur: "زبان" },
+  navMenuLabel: { en: "Navigation menu", roman: "Menu", ur: "مینیو" },
+  mainNavLabel: { en: "Main", roman: "Markazi", ur: "مرکزی" },
+  languageLabel: { en: "Language", roman: "Zubaan", ur: "زبان" },
   toggleDarkLabel: { en: "Toggle dark mode", roman: "Dark mode badlein", ur: "تاریک موڈ بدلیں" },
-  light: { en: "Light", roman: "Light", ur: "روشن" },
-  dark: { en: "Dark", roman: "Dark", ur: "تاریک" },
+  light: { en: "Light", roman: "Roshan", ur: "روشن" },
+  dark: { en: "Dark", roman: "Tareek", ur: "تاریک" },
 
   // ---- App shell (Stage 3 foundation) ----
   sidebarCollapse: { en: "Collapse sidebar", roman: "Sidebar sametein", ur: "سائڈبار سمیٹیں" },
@@ -96,13 +96,13 @@ const STRINGS: Record<string, StrEntry> = {
   submit: { en: "Submit", roman: "Submit karein", ur: "جمع کریں" },
   correct: { en: "Correct!", roman: "Sahi!", ur: "درست!" },
   wrong: { en: "Wrong", roman: "Ghalat", ur: "غلط" },
-  score: { en: "Score", roman: "Score", ur: "نمبر" },
-  accuracy: { en: "Accuracy", roman: "Accuracy", ur: "درستگی" },
-  attempts: { en: "Attempts", roman: "Attempts", ur: "کوششیں" },
-  streak: { en: "Day streak", roman: "Day streak", ur: "مسلسل دن" },
+  score: { en: "Score", roman: "Number", ur: "نمبر" },
+  accuracy: { en: "Accuracy", roman: "Durustgi", ur: "درستگی" },
+  attempts: { en: "Attempts", roman: "Koshishein", ur: "کوششیں" },
+  streak: { en: "Day streak", roman: "Musalsal din", ur: "مسلسل دن" },
   // Phase 4A — Home stats loading skeleton (shown only until the real
   // computed values load after mount; never a fake number).
-  statsLoading: { en: "Loading...", roman: "Loading...", ur: "لوڈ ہو رہا ہے..." },
+  statsLoading: { en: "Loading...", roman: "Load ho raha hai...", ur: "لوڈ ہو رہا ہے..." },
   // Stage 4A (PWA) — install affordance, offline badge, tutor offline
   // state, and the service-worker update notice.
   pwaInstallTitle: { en: "Install the app", roman: "App install karein", ur: "ایپ انسٹال کریں" },
@@ -148,7 +148,7 @@ const STRINGS: Record<string, StrEntry> = {
   quranPlay: { en: "Play", roman: "Chalayein", ur: "چلائیں" },
   quranPause: { en: "Pause", roman: "Rokein", ur: "روکیں" },
   quranRetry: { en: "Retry", roman: "Dobara koshish", ur: "دوبارہ کوشش" },
-  quranRepeat: { en: "Repeat", roman: "Repeat", ur: "تکرار" },
+  quranRepeat: { en: "Repeat", roman: "Takraar", ur: "تکرار" },
   quranClosePlayer: { en: "Close player", roman: "Player band karein", ur: "پلیئر بند کریں" },
   quranPlayerLabel: { en: "Quran audio player", roman: "Quran audio player", ur: "قرآن آڈیو پلیئر" },
   quranSpeedToggle: { en: "Playback speed: {speed}", roman: "Raftar: {speed}", ur: "رفتار: {speed}" },
@@ -164,13 +164,13 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Audio load nahi ho saki. Connection check kar ke dobara koshish karein.",
     ur: "آڈیو لوڈ نہیں ہو سکی۔ کنکشن چیک کر کے دوبارہ کوشش کریں۔",
   },
-  timeSpent: { en: "Time spent", roman: "Time spent", ur: "وقت" },
-  weakAreas: { en: "Weak Areas", roman: "Weak Areas", ur: "کمزور حصے" },
-  drill: { en: "Drill", roman: "Drill", ur: "مشق" },
-  drillArrow: { en: "Drill →", roman: "Drill →", ur: "← مشق" },
+  timeSpent: { en: "Time spent", roman: "Waqt", ur: "وقت" },
+  weakAreas: { en: "Weak Areas", roman: "Kamzor Hissay", ur: "کمزور حصے" },
+  drill: { en: "Drill", roman: "Mashq", ur: "مشق" },
+  drillArrow: { en: "Drill →", roman: "Mashq →", ur: "← مشق" },
   export: { en: "Export progress", roman: "Progress export karein", ur: "پیش رفت محفوظ کریں" },
   import: { en: "Import progress", roman: "Progress import karein", ur: "پیش رفت لائیں" },
-  loading: { en: "Loading…", roman: "Loading…", ur: "لوڈ ہو رہا ہے…" },
+  loading: { en: "Loading…", roman: "Load ho raha hai…", ur: "لوڈ ہو رہا ہے…" },
   // Lazy banks — chunk-load failure states. The offline variant is
   // shown when the device reports offline (a subject never opened
   // online has no cached chunk); the generic variant otherwise.
@@ -185,32 +185,35 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "آپ آف لائن ہیں اور یہ مضمون پہلے کبھی نہیں کھولا گیا، اس لیے اس کے سوالات اس ڈیوائس پر محفوظ نہیں ہیں۔ اسے لوڈ کرنے کے لیے ایک دفعہ انٹرنیٹ سے جڑیں۔",
   },
   close: { en: "Close", roman: "Band karein", ur: "بند کریں" },
-  cancel: { en: "Cancel", roman: "Cancel", ur: "منسوخ کریں" },
-  subjectWord: { en: "Subject", roman: "Subject", ur: "مضمون" },
-  totalWord: { en: "Total", roman: "Total", ur: "کل" },
+  cancel: { en: "Cancel", roman: "Mansookh karein", ur: "منسوخ کریں" },
+  subjectWord: { en: "Subject", roman: "Mazmoon", ur: "مضمون" },
+  totalWord: { en: "Total", roman: "Kul", ur: "کل" },
   correctWord: { en: "Correct", roman: "Sahi", ur: "درست" },
-  dateWord: { en: "Date", roman: "Date", ur: "تاریخ" },
+  dateWord: { en: "Date", roman: "Tareekh", ur: "تاریخ" },
   questionWord: { en: "Question", roman: "Sawal", ur: "سوال" },
-  topicWord: { en: "Topic", roman: "Topic", ur: "موضوع" },
-  sourceWord: { en: "Source", roman: "Source", ur: "ماخذ" },
-  sourceLabel: { en: "Source:", roman: "Source:", ur: "ماخذ:" },
-  allWord: { en: "All", roman: "All", ur: "تمام" },
+  topicWord: { en: "Topic", roman: "Mauzoo", ur: "موضوع" },
+  sourceWord: { en: "Source", roman: "Maakhaz", ur: "ماخذ" },
+  sourceLabel: { en: "Source:", roman: "Maakhaz:", ur: "ماخذ:" },
+  allWord: { en: "All", roman: "Tamaam", ur: "تمام" },
   passWord: { en: "Pass", roman: "Pass", ur: "پاس" },
-  problemWord: { en: "Problem", roman: "Problem", ur: "مسئلہ" },
-  typeWord: { en: "Type", roman: "Type", ur: "قسم" },
-  titleWord: { en: "Title", roman: "Title", ur: "عنوان" },
+  problemWord: { en: "Problem", roman: "Masla", ur: "مسئلہ" },
+  typeWord: { en: "Type", roman: "Qism", ur: "قسم" },
+  titleWord: { en: "Title", roman: "Unwaan", ur: "عنوان" },
   modeWord: { en: "Mode", roman: "Mode", ur: "موڈ" },
-  keyWord: { en: "Key", roman: "Key", ur: "کلید" },
-  messageWord: { en: "Message", roman: "Message", ur: "پیغام" },
-  minsLabel: { en: "{mins} min", roman: "{mins} min", ur: "{mins} منٹ" },
+  keyWord: { en: "Key", roman: "Kaleed", ur: "کلید" },
+  messageWord: { en: "Message", roman: "Paighaam", ur: "پیغام" },
+  minsLabel: { en: "{mins} min", roman: "{mins} minute", ur: "{mins} منٹ" },
+  // Phase 2 — count fragments (replaces hardcoded "of" / "Q" literals).
+  ofCount: { en: "{a} of {b}", roman: "{b} mein se {a}", ur: "{b} میں سے {a}" },
+  questionsShort: { en: "{n} Q", roman: "{n} sawalat", ur: "{n} سوالات" },
   weeksLabel: { en: "{n} weeks", roman: "{n} haftay", ur: "{n} ہفتے" },
   daysLabel: { en: "{n} days", roman: "{n} din", ur: "{n} دن" },
-  marksLabel: { en: "marks", roman: "marks", ur: "نمبر" },
-  scoringWord: { en: "Scoring:", roman: "Scoring:", ur: "نمبر بندی:" },
-  statusWord: { en: "Status:", roman: "Status:", ur: "حالت:" },
-  byWord: { en: "by", roman: "by", ur: "بذریعہ" },
-  unreviewedWord: { en: "unreviewed", roman: "unreviewed", ur: "غیر جائزہ شدہ" },
-  structuralWord: { en: "Structural:", roman: "Structural:", ur: "ساختی:" },
+  marksLabel: { en: "marks", roman: "number", ur: "نمبر" },
+  scoringWord: { en: "Scoring:", roman: "Number bandi:", ur: "نمبر بندی:" },
+  statusWord: { en: "Status:", roman: "Haalat:", ur: "حالت:" },
+  byWord: { en: "by", roman: "bazaria", ur: "بذریعہ" },
+  unreviewedWord: { en: "unreviewed", roman: "ghair jaaiza shuda", ur: "غیر جائزہ شدہ" },
+  structuralWord: { en: "Structural:", roman: "Saakhti:", ur: "ساختی:" },
 
   // ---- Home ----
   homeIntro: {
@@ -223,22 +226,22 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "⚠️ Corrections — pehle parhein.",
     ur: "⚠️ تصحیحات — پہلے پڑھیں۔",
   },
-  planTasksDone: { en: "Plan tasks done", roman: "Plan tasks done", ur: "منصوبے کے کام مکمل" },
+  planTasksDone: { en: "Plan tasks done", roman: "Mansoobay ke kaam mukammal", ur: "منصوبے کے کام مکمل" },
   // Stage 3 part 2 — Command Center (home) + analysis charts.
-  planProgressLabel: { en: "Plan progress", roman: "Plan progress", ur: "منصوبے کی پیش رفت" },
+  planProgressLabel: { en: "Plan progress", roman: "Mansoobay ki peshraft", ur: "منصوبے کی پیش رفت" },
   chartDueForecast: { en: "Cards due — next 7 days", roman: "Cards due — agle 7 din", ur: "واجب کارڈز — اگلے 7 دن" },
   chartAccuracyTrend: { en: "Accuracy trend — last 14 days", roman: "Accuracy trend — aakhri 14 din", ur: "درستگی کا رجحان — آخری 14 دن" },
   chartNoData: { en: "No data for this chart yet.", roman: "Is chart ke liye abhi koi data nahi.", ur: "اس چارٹ کے لیے ابھی کوئی ڈیٹا نہیں۔" },
-  chartDueWord: { en: "Due", roman: "Due", ur: "واجب" },
-  chartAccuracyWord: { en: "Accuracy", roman: "Accuracy", ur: "درستگی" },
-  chartQuestionsWord: { en: "Questions", roman: "Questions", ur: "سوالات" },
-  fullAnalysis: { en: "Full analysis →", roman: "Full analysis →", ur: "← مکمل تجزیہ" },
+  chartDueWord: { en: "Due", roman: "Waajib", ur: "واجب" },
+  chartAccuracyWord: { en: "Accuracy", roman: "Durustgi", ur: "درستگی" },
+  chartQuestionsWord: { en: "Questions", roman: "Sawalaat", ur: "سوالات" },
+  fullAnalysis: { en: "Full analysis →", roman: "Mukammal tajziya →", ur: "← مکمل تجزیہ" },
   patternSelectorHeading: {
     en: "Pattern selector — pick the version your advert follows",
     roman: "Pattern selector — woh version chunein jo aap ke advert ke mutabiq ho",
     ur: "پیٹرن منتخب کریں — وہ ورژن چنیں جو آپ کے اشتہار کے مطابق ہو",
   },
-  tutorLiveHeading: { en: "AI Tutor — live.", roman: "AI Tutor — live.", ur: "اے آئی استاد — براہ راست۔" },
+  tutorLiveHeading: { en: "AI Tutor — live.", roman: "AI Ustad — braah-e-raast.", ur: "اے آئی استاد — براہ راست۔" },
   tutorLiveBody: {
     en: "The tutor calls Gemini (primary) with Groq and OpenRouter (free model) as fallbacks, server-side only. It answers from this library only, and says so when a question is outside the library. If live AI is down, the offline Study Assistant (library search) still works.",
     roman: "Tutor Gemini (primary) ko call karta hai, aur Groq aur OpenRouter (free model) fallback ke tor par hain, sirf server par. Woh sirf is library se jawab deta hai, aur jab sawal library se bahar ho to bata deta hai. Agar live AI band ho to offline Study Assistant (library search) phir bhi kaam karta hai.",
@@ -256,17 +259,17 @@ const STRINGS: Record<string, StrEntry> = {
   },
   quickMocksDesc: {
     en: "{mocks} timed mocks / practice tests",
-    roman: "{mocks} timed mocks / practice tests",
+    roman: "{mocks} waqt walay mock / mashqi test",
     ur: "{mocks} وقت والے موک / مشقی ٹیسٹ",
   },
   quickFlashDesc: {
     en: "70 cards, FSRS-7 adaptive spaced repetition",
-    roman: "70 cards, FSRS-7 adaptive spaced repetition",
+    roman: "70 card, FSRS-7 mutabiqti waqfa takraar",
     ur: "70 کارڈ، FSRS-7 مطابقتی وقفہ تکرار",
   },
   quickTutorDesc: {
     en: "Live AI tutor (Gemini, Groq + OpenRouter fallbacks)",
-    roman: "Live AI tutor (Gemini, Groq + OpenRouter fallbacks)",
+    roman: "Braah-e-raast AI ustad (Gemini, Groq + OpenRouter mutabadil)",
     ur: "براہ راست اے آئی استاد (Gemini، Groq اور OpenRouter متبادل)",
   },
   quickPlanDesc: {
@@ -276,7 +279,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   quickAnalysisDesc: {
     en: "Live accuracy, trends, weak areas",
-    roman: "Live accuracy, trends, weak areas",
+    roman: "Braah-e-raast durustgi, rujhanaat, kamzor hissay",
     ur: "براہ راست درستگی، رجحانات، کمزور حصے",
   },
   quickTracksDesc: {
@@ -286,7 +289,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
 
   // ---- Tutor ----
-  tutorTitle: { en: "AI Tutor — Ustad", roman: "AI Tutor — Ustad", ur: "اے آئی استاد" },
+  tutorTitle: { en: "AI Tutor — Ustad", roman: "AI Ustad", ur: "اے آئی استاد" },
   tutorIntro: {
     en: "This is the live tutor. It answers from this library only (RAG), in your selected language. If a question is outside the library, it says so instead of inventing. Mocks are provisional practice built from unreviewed AI-generated questions; Trusted mode uses reviewed items only.",
     roman: "Yeh live tutor hai. Woh sirf is library se jawab deta hai (RAG), aap ki muntakhab zuban mein. Agar sawal library se bahar ho to gharne ke bajaye bata deta hai. Mock ghair jaiza shuda AI se bane sawalat par mabni aarzi mashq hain; Trusted mode sirf jaiza shuda cheezain istemal karta hai.",
@@ -308,7 +311,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Jawab isi language mein aayein ge. Baqi site aap ki selected language mein rahe gi.",
     ur: "جوابات اسی زبان میں آئیں گے۔ باقی سائٹ آپ کی منتخب زبان میں رہے گی۔",
   },
-  tutorLangAria: { en: "Tutor answer language", roman: "Tutor answer language", ur: "استاد کے جواب کی زبان" },
+  tutorLangAria: { en: "Tutor answer language", roman: "Ustad ke jawaab ki zubaan", ur: "استاد کے جواب کی زبان" },
   tutorGreeting: {
     en: "Ustad — your AI tutor. Ask about any topic in this library, ask it to explain a wrong answer, or ask for a revision plan. Answers come from this library only.",
     roman: "Ustad — aap ka AI tutor. Is library ke kisi bhi topic par poochhein, ghalat jawab ki wazahat mangein, ya revision plan mangein. Jawab sirf is library se aate hain.",
@@ -339,7 +342,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Mukammal wazahat ke liye question ID likhein (masalan ISL-001).",
     ur: "مکمل وضاحت کے لیے سوال کا نمبر لکھیں (مثلاً ISL-001)۔",
   },
-  explainIdLabel: { en: "Question ID", roman: "Question ID", ur: "سوال کا نمبر" },
+  explainIdLabel: { en: "Question ID", roman: "Sawaal ka number", ur: "سوال کا نمبر" },
   explainButton: { en: "Explain", roman: "Wazahat karein", ur: "وضاحت کریں" },
   explaining: { en: "Explaining…", roman: "Wazahat ho rahi hai…", ur: "وضاحت ہو رہی ہے…" },
   explainError: {
@@ -362,6 +365,55 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Live AI abhi available nahi hai.",
     ur: "براہ راست اے آئی ابھی دستیاب نہیں ہے۔",
   },
+  // Phase 2 — API error codes: routes return { error, code }; the
+  // client renders the matching key below when the code is known and
+  // falls back to the raw `error` string otherwise (provider
+  // diagnostics stay English — see the report's exception list).
+  apiErrSameOrigin: {
+    en: "This API only accepts requests from the ETEA Prep site itself.",
+    roman: "Yeh API sirf ETEA Prep site se requests leti hai.",
+    ur: "یہ اے پی آئی صرف ایٹا پریپ سائٹ سے درخواستیں لیتی ہے۔",
+  },
+  apiErrEmptyQuestion: {
+    en: "Please type a question first.",
+    roman: "Pehle aik sawal likhein.",
+    ur: "پہلے ایک سوال لکھیں۔",
+  },
+  apiErrQuestionTooLong: {
+    en: "Please keep the question under 2000 characters.",
+    roman: "Sawal 2000 characters se kam rakhein.",
+    ur: "سوال 2000 حروف سے کم رکھیں۔",
+  },
+  apiErrRateDaily: {
+    en: "Daily limit reached (100 tutor requests/day for one user). Please try again tomorrow — your quizzes, mocks and flashcards still work offline.",
+    roman: "Daily limit poori ho gayi (aik user ke liye 100 tutor requests/day). Kal dobara koshish karein — aap ke quiz, mock aur flashcards offline kaam karte hain.",
+    ur: "روزانہ کی حد پوری ہو گئی (ایک صارف کے لیے 100 ٹیوٹر درخواستیں روزانہ)۔ کل دوبارہ کوشش کریں — آپ کے کوئز، موک اور فلیش کارڈز آف لائن کام کرتے ہیں۔",
+  },
+  apiErrRateMinute: {
+    en: "Too many requests — please wait a minute and try again (10/minute).",
+    roman: "Zyada requests — aik minute intezar karein aur dobara koshish karein (10/minute).",
+    ur: "زیادہ درخواستیں — ایک منٹ انتظار کریں اور دوبارہ کوشش کریں (10/منٹ)۔",
+  },
+  apiErrQuestionNotFound: {
+    en: "Question not found.",
+    roman: "Sawal nahi mila.",
+    ur: "سوال نہیں ملا۔",
+  },
+  apiErrExplainFailed: {
+    en: "Could not explain this question right now.",
+    roman: "Is sawal ki wazahat abhi nahi ho saki.",
+    ur: "اس سوال کی وضاحت ابھی نہیں ہو سکی۔",
+  },
+  apiErrPlanFailed: {
+    en: "Could not generate a plan right now.",
+    roman: "Abhi plan nahi ban saka.",
+    ur: "ابھی منصوبہ نہیں بن سکا۔",
+  },
+  apiErrTutorFailed: {
+    en: "The tutor could not answer right now. Please try again.",
+    roman: "Tutor abhi jawab nahi de saka. Dobara koshish karein.",
+    ur: "استاد ابھی جواب نہیں دے سکا۔ دوبارہ کوشش کریں۔",
+  },
   offlineFound: {
     en: "Offline search in this library found:",
     roman: "Is library mein offline search ko mila:",
@@ -381,7 +433,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   viaLine: {
     en: "— via {provider} (live AI)",
-    roman: "— via {provider} (live AI)",
+    roman: "— bazaria {provider} (braah-e-raast AI)",
     ur: "— بذریعہ {provider} (براہ راست اے آئی)",
   },
 
@@ -428,7 +480,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "koi provider jawab nahi de raha — tutor offline library search use kare ga.",
     ur: "کوئی فراہم کنندہ جواب نہیں دے رہا — استاد آف لائن لائبریری تلاش استعمال کرے گا۔",
   },
-  summaryResponding: { en: "{names} responding", roman: "{names} responding", ur: "{names} جواب دے رہا ہے" },
+  summaryResponding: { en: "{names} responding", roman: "{names} jawaab de raha hai", ur: "{names} جواب دے رہا ہے" },
   summaryNotResponding: {
     en: "{names} not responding",
     roman: "{names} jawab nahi de raha",
@@ -439,11 +491,11 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Yeh check cold instance par chali — yahan ka timeout aam tor par dobara koshish par saaf ho jata hai.",
     ur: "یہ جانچ کولڈ انسٹینس پر چلی — یہاں کا ٹائم آؤٹ عام طور پر دوبارہ کوشش پر صاف ہو جاتا ہے۔",
   },
-  statusResponding: { en: "responding", roman: "responding", ur: "جواب دے رہا ہے" },
-  statusNotConfigured: { en: "not configured", roman: "not configured", ur: "ترتیب نہیں دی گئی" },
-  statusError: { en: "error", roman: "error", ur: "خرابی" },
-  statusErrorClass: { en: "error ({errorClass})", roman: "error ({errorClass})", ur: "خرابی ({errorClass})" },
-  unknownModel: { en: "unknown model", roman: "unknown model", ur: "نامعلوم ماڈل" },
+  statusResponding: { en: "responding", roman: "jawaab de raha hai", ur: "جواب دے رہا ہے" },
+  statusNotConfigured: { en: "not configured", roman: "tarteeb nahi di gayi", ur: "ترتیب نہیں دی گئی" },
+  statusError: { en: "error", roman: "kharaabi", ur: "خرابی" },
+  statusErrorClass: { en: "error ({errorClass})", roman: "kharaabi ({errorClass})", ur: "خرابی ({errorClass})" },
+  unknownModel: { en: "unknown model", roman: "namalum model", ur: "نامعلوم ماڈل" },
 
   // ---- Library ----
   libraryTitle: { en: "Library — Notes", roman: "Library — Notes", ur: "لائبریری — نوٹس" },
@@ -504,7 +556,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
 
   // ---- Practice ----
-  practiceTitle: { en: "Practice — Topic Quizzes", roman: "Practice — Topic Quizzes", ur: "مشق — موضوعی کوئز" },
+  practiceTitle: { en: "Practice — Topic Quizzes", roman: "Mashq — Mozui Quizzes", ur: "مشق — موضوعی کوئز" },
   practiceIntro1: {
     en: "20 questions per attempt, shuffled every time. Instant feedback after each question. All questions are original practice questions, labelled “AI-generated — not verified” (drafted by AI, structurally checked).",
     roman: "Har koshish mein 20 sawalat, har bar mile jule. Har sawal ke baad fori feedback. Tamam sawalat asli mashqi sawalat hain, jin par “AI-generated — not verified” ka label hai (AI se likhe gaye, structurally check shuda).",
@@ -516,7 +568,7 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "یہ ETEA کے سوالات نہیں ہیں۔",
   },
   newSet: { en: "New set (shuffle again)", roman: "Naya set (dobara shuffle)", ur: "نیا سیٹ (دوبارہ ملائیں)" },
-  quizTitle: { en: "{subject} quiz — 20 questions", roman: "{subject} quiz — 20 questions", ur: "{subject} کوئز — 20 سوالات" },
+  quizTitle: { en: "{subject} quiz — 20 questions", roman: "{subject} quiz — 20 sawalat", ur: "{subject} کوئز — 20 سوالات" },
 
   // ---- Mock list ----
   mockIntroA: {
@@ -524,7 +576,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Har mock batata hai ke woh kis pattern variant par hai. ZamungKor mock alag alag hain (un mein koi sawal dohraya nahi jata). Track mock",
     ur: "ہر موک بتاتا ہے کہ وہ کس پیٹرن ورژن پر ہے۔ زمونگ کور موک الگ الگ ہیں (ان میں کوئی سوال دہرایا نہیں جاتا)۔ ٹریک موک",
   },
-  mockIntroB: { en: "shared practice bank", roman: "shared practice bank", ur: "مشترکہ مشقی بینک" },
+  mockIntroB: { en: "shared practice bank", roman: "mushtarika mashqi bank", ur: "مشترکہ مشقی بینک" },
   mockIntroC: {
     en: "— questions may repeat across track mocks; this is stated on each mock because the track mocks share the same subject banks.",
     roman: "se bante hain — track mockon mein sawalat dohraye ja sakte hain; yeh har mock par likha hai kyunke track mock aik hi subject bankon se bante hain.",
@@ -540,7 +592,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Mocks ghair jaiza shuda AI-generated questions par mabni provisional practice hain.",
     ur: "موک غیر جائزہ شدہ اے آئی سے بنے سوالات پر مبنی عارضی مشق ہیں۔",
   },
-  trustedModeLabel: { en: "Trusted mode", roman: "Trusted mode", ur: "قابل اعتماد موڈ" },
+  trustedModeLabel: { en: "Trusted mode", roman: "Qabil-e-aitemad mode", ur: "قابل اعتماد موڈ" },
   mockProv2: {
     en: "uses reviewed questions only and returns fewer questions when not enough have been reviewed yet — it never fills the gap with unreviewed items.",
     roman: "sirf jaiza shuda sawalat istemal karta hai aur jab kaafi jaiza shuda sawalat na hon to kam sawalat deta hai — khali jagah kabhi ghair jaiza shuda cheezon se nahi bharta.",
@@ -568,10 +620,10 @@ const STRINGS: Record<string, StrEntry> = {
   scoringForRun: { en: "Scoring for this run: ", roman: "Is run ke liye scoring: ", ur: "اس کوشش کے لیے نمبر بندی: " },
   scoringForAria: { en: "Scoring for {title}", roman: "{title} ke liye scoring", ur: "{title} کے لیے نمبر بندی" },
   scoringDefaultOption: { en: "Mock default ({label})", roman: "Mock default ({label})", ur: "موک ڈیفالٹ ({label})" },
-  scoringZeroOption: { en: "No penalty (policy unknown)", roman: "No penalty (policy unknown)", ur: "کوئی کٹوتی نہیں (پالیسی نامعلوم)" },
+  scoringZeroOption: { en: "No penalty (policy unknown)", roman: "Koi katoti nahi (policy namalum)", ur: "کوئی کٹوتی نہیں (پالیسی نامعلوم)" },
   scoringPenaltyOption: {
     en: "−0.25 per wrong answer (unverified assumption)",
-    roman: "−0.25 per wrong answer (unverified assumption)",
+    roman: "Har ghalat jawab par −0.25 katoti (ghair musaddaqa mafrooza)",
     ur: "ہر غلط جواب پر 0.25 کٹوتی (غیر مصدقہ مفروضہ)",
   },
   startMock: { en: "Start mock", roman: "Mock shuru karein", ur: "موک شروع کریں" },
@@ -580,14 +632,14 @@ const STRINGS: Record<string, StrEntry> = {
   // ---- Mock runner ----
   mockNotFound: { en: "Mock not found", roman: "Mock nahi mila", ur: "موک نہیں ملا" },
   backToMocks: { en: "Back to all mocks", roman: "Tamam mocks par wapas", ur: "تمام موکوں پر واپس" },
-  trustedOnlyLabel: { en: "Trusted-only:", roman: "Trusted-only:", ur: "صرف قابل اعتماد:" },
+  trustedOnlyLabel: { en: "Trusted-only:", roman: "Sirf qabil-e-aitemad:", ur: "صرف قابل اعتماد:" },
   trustedNoteRest: {
     en: "questions — only owner-reviewed/approved items",
     roman: "questions — sirf owner-reviewed/approved items",
     ur: "سوالات — صرف مالک سے جائزہ شدہ/منظور شدہ اشیاء",
   },
-  trustedNoteReviewed: { en: "{reviewed} reviewed", roman: "{reviewed} reviewed", ur: "{reviewed} جائزہ شدہ" },
-  reviewedWord: { en: "reviewed", roman: "reviewed", ur: "جائزہ شدہ" },
+  trustedNoteReviewed: { en: "{reviewed} reviewed", roman: "{reviewed} jaiza shuda", ur: "{reviewed} جائزہ شدہ" },
+  reviewedWord: { en: "reviewed", roman: "jaiza shuda", ur: "جائزہ شدہ" },
   trustedNoteInMock: { en: "in this mock", roman: "is mock mein", ur: "اس موک میں" },
   trustedNoteShortfall: { en: "the shortfall is not filled.", roman: "kami poori nahi ki jati.", ur: "کمی پوری نہیں کی جاتی۔" },
   overrideSuffix: {
@@ -597,7 +649,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
 
   // ---- Plan ----
-  studyPlanHeading: { en: "Study Plan", roman: "Study Plan", ur: "مطالعہ منصوبہ" },
+  studyPlanHeading: { en: "Study Plan", roman: "Mutalaa Mansuba", ur: "مطالعہ منصوبہ" },
   daysWord: { en: "days", roman: "din", ur: "دن" },
   planAlertTitle: { en: "Sample timetable — adjust to your schedule.", roman: "Sample timetable — apne schedule ke mutabiq adjust karein.", ur: "نمونہ ٹائم ٹیبل — اپنے شیڈول کے مطابق بدلیں۔" },
   planAlertBody: {
@@ -605,7 +657,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Koi motabar source ETEA ke liye rozana 2–3 ghante tajweez nahi karta. Base plan 21 din, rozana 2–3 ghante, 63 tasks (~50 ghante) hai.",
     ur: "کوئی معتبر ماخذ ETEA کے لیے روزانہ 2–3 گھنٹے تجویز نہیں کرتا۔ بنیادی منصوبہ 21 دن، روزانہ 2–3 گھنٹے، 63 کام (~50 گھنٹے) ہے۔",
   },
-  tasksDone: { en: "tasks done", roman: "tasks done", ur: "کام مکمل" },
+  tasksDone: { en: "tasks done", roman: "kaam mukammal", ur: "کام مکمل" },
   generateAiPlan: { en: "Generate AI plan", roman: "AI plan banayein", ur: "اے آئی منصوبہ بنائیں" },
   planPrivacy: {
     en: "Privacy: generating an AI plan sends your chosen length and weakest subjects to Gemini, Groq or OpenRouter (the AI providers). Don't share sensitive personal data.",
@@ -620,12 +672,12 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "AI-generated — not verified. Sample timetable; apne schedule ke mutabiq adjust karein.",
     ur: "اے آئی سے بنایا گیا — تصدیق نہیں ہوئی۔ نمونہ ٹائم ٹیبل؛ اپنے شیڈول کے مطابق بدلیں۔",
   },
-  tasksDoneAria: { en: "{done} of {total} tasks done", roman: "{done} of {total} tasks done", ur: "{total} میں سے {done} کام مکمل" },
+  tasksDoneAria: { en: "{done} of {total} tasks done", roman: "{total} mein se {done} kaam mukammal", ur: "{total} میں سے {done} کام مکمل" },
 
   // ---- Flashcards ----
   flashTitle: {
     en: "Flashcards — FSRS-7 (adaptive spaced repetition)",
-    roman: "Flashcards — FSRS-7 (adaptive spaced repetition)",
+    roman: "Flashcards — FSRS-7 (mutabiqti waqfa takrar)",
     ur: "فلیش کارڈز — FSRS-7 (مطابقتی وقفہ تکرار)",
   },
   flashIntro: {
@@ -633,14 +685,14 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Card palatne se pehle jawab den (retrieval practice). Khud ko grade den: Again / Hard / Good / Easy. FSRS-7 har card ka interval us ke stability aur difficulty ke mutabiq banata hai: naye card mukhtasar same-day steps (taqreeban 1 aur 10 minute) se shuru hote hain, aur har grade button woh exact interval dikhata hai jo woh grade set kare ga. Session mein sirf abhi due card (aur naye card) hote hain — future-due card bahar rehte hain jab tak aap cram mode enable na karen.",
     ur: "کارڈ پلٹنے سے پہلے جواب دیں (حافظے سے یاد کرنے کی مشق)۔ خود کو درجہ دیں: دوبارہ / مشکل / اچھا / آسان۔ FSRS-7 ہر کارڈ کا وقفہ اس کے استحکام اور مشکل کے مطابق بناتا ہے: نئے کارڈ مختصر ہم روزہ مراحل (تقریباً 1 اور 10 منٹ) سے شروع ہوتے ہیں، اور ہر درجہ بٹن وہ درست وقفہ دکھاتا ہے جو وہ درجہ مقرر کرے گا۔ سیشن میں صرف ابھی واجب کارڈ (اور نئے کارڈ) ہوتے ہیں — مستقبل میں واجب کارڈ باہر رہتے ہیں جب تک آپ کرام موڈ فعال نہ کریں۔",
   },
-  categoryLabel: { en: "Category", roman: "Category", ur: "زمرہ" },
+  categoryLabel: { en: "Category", roman: "Zumra", ur: "زمرہ" },
   cramLabel: {
     en: "Cram mode (also show future-due cards)",
     roman: "Cram mode (future-due cards bhi dikhayein)",
     ur: "کرام موڈ (مستقبل میں واجب کارڈ بھی دکھائیں)",
   },
   sessionLabel: { en: "Session:", roman: "Session:", ur: "سیشن:" },
-  recalledLabel: { en: "recalled", roman: "recalled", ur: "یاد کیے گئے" },
+  recalledLabel: { en: "recalled", roman: "yaad kiye gaye", ur: "یاد کیے گئے" },
   sessionFinished: { en: "Session finished", roman: "Session mukammal", ur: "سیشن مکمل" },
   sessionFinishedBody: {
     en: "Recalled {fraction} cards. Cards still in learning were shown again this session; the rest return on their FSRS-scheduled day. Flashcard self-ratings are kept separate from quiz/mock accuracy on the Analysis page.",
@@ -653,8 +705,8 @@ const STRINGS: Record<string, StrEntry> = {
   // short chrome (roman included); the migration notice is a long
   // paragraph, so roman falls back to English per the fallback rule.
   stateNew: { en: "New", roman: "Naya", ur: "نیا" },
-  stateLearning: { en: "Learning", roman: "Learning", ur: "سیکھنا" },
-  stateReview: { en: "Review", roman: "Review", ur: "جائزہ" },
+  stateLearning: { en: "Learning", roman: "Seekhna", ur: "سیکھنا" },
+  stateReview: { en: "Review", roman: "Jaiza", ur: "جائزہ" },
   stateRelearning: { en: "Relearning", roman: "Dobara seekhna", ur: "دوبارہ سیکھنا" },
   fsrsStateLine: {
     en: "FSRS: {state} · next review {due}",
@@ -688,10 +740,10 @@ const STRINGS: Record<string, StrEntry> = {
 
   // ---- Analysis ----
   mockWord: { en: "Mock", roman: "Mock", ur: "موک" },
-  scoreWord: { en: "Score", roman: "Score", ur: "نمبر" },
-  timeWord: { en: "Time", roman: "Time", ur: "وقت" },
+  scoreWord: { en: "Score", roman: "Number", ur: "نمبر" },
+  timeWord: { en: "Time", roman: "Waqt", ur: "وقت" },
   closeWord: { en: "Close", roman: "Band karein", ur: "بند کریں" },
-  liveSuffix: { en: "— live", roman: "— live", ur: "— براہ راست" },
+  liveSuffix: { en: "— live", roman: "— barah-e-raast", ur: "— براہ راست" },
   storageWarningTitle: {
     en: "Saved-data problem — nothing was deleted.",
     roman: "Saved-data problem — kuch delete nahi hua.",
@@ -731,10 +783,10 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "قرنطینہ شدہ ڈیٹا صاف کریں اور یہ وارننگ ختم کریں؟ یہ صرف کاپی ڈاؤن لوڈ کرنے کے بعد کریں — خام متن ہٹ جائے گا۔",
   },
   quarantineClearedMsg: { en: "Quarantined data cleared by your choice.", roman: "Quarantined data aap ki choice se clear ho gaya.", ur: "قرنطینہ شدہ ڈیٹا آپ کی مرضی سے صاف ہو گیا۔" },
-  mcqOnly: { en: "(MCQ only)", roman: "(MCQ only)", ur: "(صرف ایم سی کیو)" },
+  mcqOnly: { en: "(MCQ only)", roman: "(Sirf MCQ)", ur: "(صرف ایم سی کیو)" },
   mcqCorrectLabel: {
     en: "MCQ questions correct (first-pass)",
-    roman: "MCQ questions correct (first-pass)",
+    roman: "MCQ sawalat durust (pehli koshish)",
     ur: "ایم سی کیو سوالات درست (پہلی کوشش)",
   },
   flashRecalledLabel: {
@@ -747,38 +799,43 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Score har sawal ke aap ke pehle jawab par hote hain; durust shuda dobara koshishain kabhi score nahi badaltin. Flashcard self-ratings MCQ accuracy se alag rakhi jati hain.",
     ur: "نمبر ہر سوال کے آپ کے پہلے جواب پر ہوتے ہیں؛ درست شدہ دوبارہ کوششیں کبھی نمبر نہیں بدلتیں۔ فلیش کارڈ کی خود درجہ بندی ایم سی کیو درستگی سے الگ رکھی جاتی ہے۔",
   },
-  perSubjectHeading: { en: "Per-subject accuracy", roman: "Per-subject accuracy", ur: "مضمون کے لحاظ سے درستگی" },
+  perSubjectHeading: { en: "Per-subject accuracy", roman: "Mazmun ke lehaz se durusti", ur: "مضمون کے لحاظ سے درستگی" },
   noSubjectData: { en: "No subject data yet.", roman: "Abhi koi subject data nahi.", ur: "ابھی مضمون کا کوئی ڈیٹا نہیں۔" },
-  weakHeatmap: { en: "Weak-area heatmap", roman: "Weak-area heatmap", ur: "کمزور حصوں کا نقشہ" },
+  weakHeatmap: { en: "Weak-area heatmap", roman: "Kamzor hisson ka naqsha", ur: "کمزور حصوں کا نقشہ" },
   weakNeedData: {
     en: "Need at least 5 questions per subject before weak areas show.",
     roman: "Weak areas dikhane se pehle har subject mein kam az kam 5 questions chahiye.",
     ur: "کمزور حصے دکھانے سے پہلے ہر مضمون میں کم از کم 5 سوالات چاہیے۔",
   },
   weakOver: { en: "over {total} questions", roman: "{total} questions mein", ur: "{total} سوالات میں" },
-  last14Heading: { en: "Last 14 days (MCQ questions per day)", roman: "Last 14 days (MCQ questions per day)", ur: "آخری 14 دن (روزانہ ایم سی کیو سوالات)" },
+  last14Heading: { en: "Last 14 days (MCQ questions per day)", roman: "Aakhri 14 din (rozana MCQ sawalat)", ur: "آخری 14 دن (روزانہ ایم سی کیو سوالات)" },
   noActivity: { en: "No activity yet.", roman: "Abhi koi activity nahi.", ur: "ابھی کوئی سرگرمی نہیں۔" },
-  mockHistoryHeading: { en: "Mock history", roman: "Mock history", ur: "موک کی تاریخ" },
+  mockHistoryHeading: { en: "Mock history", roman: "Mock ki tareekh", ur: "موک کی تاریخ" },
   noMocks: { en: "No mocks taken yet.", roman: "Abhi koi mock nahi diya.", ur: "ابھی کوئی موک نہیں دیا۔" },
   clickDetailTitle: { en: "Click to see the per-item table", roman: "Per-item table dekhne ke liye click karein", ur: "فی سوال جدول دیکھنے کے لیے کلک کریں" },
-  allAttemptsHeading: { en: "All attempts (latest 20)", roman: "All attempts (latest 20)", ur: "تمام کوششیں (تازہ ترین 20)" },
+  allAttemptsHeading: { en: "All attempts (latest 20)", roman: "Tamam koshishein (taaza tareen 20)", ur: "تمام کوششیں (تازہ ترین 20)" },
   noAttemptsYet: { en: "No attempts yet.", roman: "Abhi koi attempt nahi.", ur: "ابھی کوئی کوشش نہیں۔" },
-  retriesWord: { en: "Retries", roman: "Retries", ur: "دوبارہ کوششیں" },
+  retriesWord: { en: "Retries", roman: "Dobara koshishein", ur: "دوبارہ کوششیں" },
   firstAnswerWord: { en: "First answer", roman: "Pehla jawab", ur: "پہلا جواب" },
   finalAnswerWord: { en: "Final answer", roman: "Aakhri jawab", ur: "آخری جواب" },
   answeredAtWord: { en: "Answered at", roman: "Jawab diya gaya", ur: "جواب دیا گیا" },
-  responseTimeWord: { en: "Response time", roman: "Response time", ur: "جواب دینے کا وقت" },
-  attemptDetailHeading: { en: "Attempt detail — {title} ({date})", roman: "Attempt detail — {title} ({date})", ur: "کوشش کی تفصیل — {title} ({date})" },
+  responseTimeWord: { en: "Response time", roman: "Jawab dene ka waqt", ur: "جواب دینے کا وقت" },
+  attemptDetailHeading: { en: "Attempt detail — {title} ({date})", roman: "Koshish ki tafseel — {title} ({date})", ur: "کوشش کی تفصیل — {title} ({date})" },
   flashSessionNote: {
     en: "Flashcard session (self-rated). No per-item MCQ table applies.",
     roman: "Flashcard session (self-rated). Koi per-item MCQ table nahi banti.",
     ur: "فلیش کارڈ سیشن (خود درجہ بندی)۔ فی سوال ایم سی کیو جدول لاگو نہیں ہوتا۔",
   },
-  firstPassScore: { en: "First-pass score", roman: "First-pass score", ur: "پہلی کوشش کا نمبر" },
+  firstPassScore: { en: "First-pass score", roman: "Pehli koshish ka number", ur: "پہلی کوشش کا نمبر" },
   retriesCounted: {
-    en: "{n} corrected retr{plural} (not counted in the score)",
-    roman: "{n} corrected retr{plural} (score mein nahi gina gaya)",
+    en: "{n} corrected retries (not counted in the score)",
+    roman: "{n} corrected retries (score mein nahi gina gaya)",
     ur: "{n} درست شدہ دوبارہ کوششیں (نمبر میں شامل نہیں)",
+  },
+  retriesCountedOne: {
+    en: "{n} corrected retry (not counted in the score)",
+    roman: "{n} corrected retry (score mein nahi gina gaya)",
+    ur: "{n} درست شدہ دوبارہ کوشش (نمبر میں شامل نہیں)",
   },
   noRetries: { en: "no corrected retries", roman: "koi corrected retry nahi", ur: "کوئی درست شدہ دوبارہ کوشش نہیں" },
   noItemData: {
@@ -826,14 +883,14 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Mazhabi content (Islamiyat, Tajweed, Arabic, Fiqh) ki tasdeeq aap, yani malik, karte hain — AI kabhi nahi karta. Structural check pass karne wali cheezain yahan aap ki tasdeeq tak",
     ur: "مذہبی مواد (اسلامیات، تجوید، عربی، فقہ) کی تصدیق آپ، یعنی مالک، کرتے ہیں — اے آئی کبھی نہیں کرتا۔ ساختی جانچ پاس کرنے والی اشیاء یہاں آپ کی تصدیق تک",
   },
-  draftWord: { en: "draft", roman: "draft", ur: "مسودہ" },
+  draftWord: { en: "draft", roman: "masuda", ur: "مسودہ" },
   reviewAlertBody2: {
     en: "until you verify them here. Verified items feed Trusted Mode; everything else stays provisional.",
     roman: "rehti hain. Tasdeeq shuda cheezain Trusted Mode mein jati hain; baqi sab aarzi rehta hai.",
     ur: "رہتی ہیں۔ تصدیق شدہ اشیاء قابل اعتماد موڈ میں جاتی ہیں؛ باقی سب عارضی رہتا ہے۔",
   },
-  zamProgressLabel: { en: "ZamungKor Mock 1 + 2 progress:", roman: "ZamungKor Mock 1 + 2 progress:", ur: "زمونگ کور موک 1 + 2 کی پیش رفت:" },
-  verifiedWord: { en: "verified", roman: "verified", ur: "تصدیق شدہ" },
+  zamProgressLabel: { en: "ZamungKor Mock 1 + 2 progress:", roman: "ZamungKor Mock 1 + 2 ki peshraft:", ur: "زمونگ کور موک 1 + 2 کی پیش رفت:" },
+  verifiedWord: { en: "verified", roman: "tasdeeq shuda", ur: "تصدیق شدہ" },
   zamProgressNone: {
     en: "Trusted Mode has no verified items yet, so it returns 0 questions. Verify items below to unlock it.",
     roman: "Trusted Mode mein abhi koi verified items nahi, is liye wo 0 questions deta hai. Unlock karne ke liye neeche items verify karein.",
@@ -850,9 +907,9 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "موجودہ فلٹر: {total} اشیاء — {draft} مسودہ · {needs} جائزہ درکار · {disputed} متنازع · {verified} تصدیق شدہ۔ ساختی جانچ: {pass} پاس · {sneeds} جائزہ درکار · {prob} مسئلہ۔",
   },
   mockFilterLabel: { en: "Mock", roman: "Mock", ur: "موک" },
-  postFilterLabel: { en: "Post", roman: "Post", ur: "عہدہ" },
-  statusFilterLabel: { en: "Status", roman: "Status", ur: "حالت" },
-  structuralFilterLabel: { en: "Structural", roman: "Structural", ur: "ساختی" },
+  postFilterLabel: { en: "Post", roman: "Ohda", ur: "عہدہ" },
+  statusFilterLabel: { en: "Status", roman: "Haalat", ur: "حالت" },
+  structuralFilterLabel: { en: "Structural", roman: "Saakhti", ur: "ساختی" },
   mockFilterZam12: {
     en: "ZamungKor Mock 1 + 2 (200) — TT + Qari first",
     roman: "ZamungKor Mock 1 + 2 (200) — TT + Qari pehle",
@@ -865,43 +922,43 @@ const STRINGS: Record<string, StrEntry> = {
   mockFilterQariB: { en: "Qari Mock — Version B (pool)", roman: "Qari Mock — Version B (pool)", ur: "قاری موک — ورژن B (پول)" },
   mockFilterATB: { en: "AT Mock — Version B (pool)", roman: "AT Mock — Version B (pool)", ur: "اے ٹی موک — ورژن B (پول)" },
   mockFilterAll: { en: "All draft items (whole bank)", roman: "All draft items (poora bank)", ur: "تمام مسودہ اشیاء (پورا بینک)" },
-  allStatuses: { en: "All statuses", roman: "All statuses", ur: "تمام حالتیں" },
-  statusDraft: { en: "Draft", roman: "Draft", ur: "مسودہ" },
-  statusNeedsReview: { en: "Needs review", roman: "Needs review", ur: "جائزہ درکار" },
-  statusDisputed: { en: "Disputed", roman: "Disputed", ur: "متنازع" },
-  statusOwnerReviewed: { en: "Owner-reviewed", roman: "Owner-reviewed", ur: "مالک سے جائزہ شدہ" },
-  statusApproved: { en: "Approved", roman: "Approved", ur: "منظور شدہ" },
+  allStatuses: { en: "All statuses", roman: "Tamam haalatein", ur: "تمام حالتیں" },
+  statusDraft: { en: "Draft", roman: "Masuda", ur: "مسودہ" },
+  statusNeedsReview: { en: "Needs review", roman: "Jaiza darkaar", ur: "جائزہ درکار" },
+  statusDisputed: { en: "Disputed", roman: "Mutanaza", ur: "متنازع" },
+  statusOwnerReviewed: { en: "Owner-reviewed", roman: "Maalik se jaiza shuda", ur: "مالک سے جائزہ شدہ" },
+  statusApproved: { en: "Approved", roman: "Manzoor shuda", ur: "منظور شدہ" },
   structuralPass: { en: "pass", roman: "pass", ur: "پاس" },
-  structuralNeedsReview: { en: "needs-review", roman: "needs-review", ur: "جائزہ درکار" },
-  structuralProblem: { en: "problem", roman: "problem", ur: "مسئلہ" },
-  allPosts: { en: "All posts", roman: "All posts", ur: "تمام عہدے" },
+  structuralNeedsReview: { en: "needs-review", roman: "jaiza-darkaar", ur: "جائزہ درکار" },
+  structuralProblem: { en: "problem", roman: "masla", ur: "مسئلہ" },
+  allPosts: { en: "All posts", roman: "Tamam ohde", ur: "تمام عہدے" },
   postTTFirst: { en: "TT (Theology Teacher) first", roman: "TT (Theology Teacher) pehle", ur: "ٹی ٹی (تھیالوجی ٹیچر) پہلے" },
   postQariFirst: { en: "Qari / Imam Masjid first", roman: "Qari / Imam Masjid pehle", ur: "قاری / امام مسجد پہلے" },
   showingRest: { en: "items in this filter.", roman: "items is filter mein.", ur: "اشیاء اس فلٹر میں۔" },
-  showingWord: { en: "Showing", roman: "Showing", ur: "دکھا رہے ہیں" },
+  showingWord: { en: "Showing", roman: "Dikha rahe hain", ur: "دکھا رہے ہیں" },
   noItemsMatch: { en: "No items match this filter.", roman: "Is filter par koi item nahi mila.", ur: "اس فلٹر پر کوئی شے نہیں ملی۔" },
   verifyAction: { en: "Verify", roman: "Verify karein", ur: "تصدیق کریں" },
   approveAction: { en: "Approve", roman: "Approve karein", ur: "منظور کریں" },
-  needsReviewAction: { en: "Needs review", roman: "Needs review", ur: "جائزہ درکار" },
-  disputedAction: { en: "Disputed", roman: "Disputed", ur: "متنازع" },
+  needsReviewAction: { en: "Needs review", roman: "Jaiza darkaar", ur: "جائزہ درکار" },
+  disputedAction: { en: "Disputed", roman: "Mutanaza", ur: "متنازع" },
   resetDraftAction: { en: "Reset to draft", roman: "Draft par wapas le jayein", ur: "مسودے پر واپس لے جائیں" },
   showMore: { en: "Show 25 more", roman: "25 aur dikhayein", ur: "25 اور دکھائیں" },
   leftCount: { en: "({left} left)", roman: "({left} baqi)", ur: "({left} باقی)" },
 
   // ---- Issues ----
-  issuesTitle: { en: "Issues — private correction inbox", roman: "Issues — private correction inbox", ur: "مسائل — نجی تصحیح ان باکس" },
+  issuesTitle: { en: "Issues — private correction inbox", roman: "Masaail — niji tasheeh inbox", ur: "مسائل — نجی تصحیح ان باکس" },
   issuesIntro: {
     en: "Reports saved privately on this device only — nothing was sent anywhere. Review them here, fix the bank, then delete the resolved ones. Legacy reports (from before the reason / correction fields existed) show “—” for the missing fields.",
     roman: "Reports sirf is device par niji tor par mehfooz hain — kahin nahi bheji gayin. Yahan un ka jaiza len, bank durust karen, phir hal shuda delete kar den. Purani reports (reason / correction fields se pehle ki) ghaib fields ke liye “—” dikhati hain.",
     ur: "رپورٹیں صرف اس ڈیوائس پر نجی طور پر محفوظ ہیں — کہیں نہیں بھیجی گئیں۔ یہاں ان کا جائزہ لیں، بینک درست کریں، پھر حل شدہ حذف کر دیں۔ پرانی رپورٹیں (وجہ / تصحیح والے خانوں سے پہلے کی) غائب خانوں کے لیے “—” دکھاتی ہیں۔",
   },
   filterReasonAria: { en: "Filter by reason", roman: "Reason se filter karein", ur: "وجہ سے فلٹر کریں" },
-  allReasons: { en: "All reasons ({n})", roman: "All reasons ({n})", ur: "تمام وجوہات ({n})" },
+  allReasons: { en: "All reasons ({n})", roman: "Tamam wajuhaat ({n})", ur: "تمام وجوہات ({n})" },
   issueReasonWrongAnswer: { en: "Wrong answer", roman: "Ghalat jawab", ur: "غلط جواب" },
   issueReasonWrongExplanation: { en: "Wrong explanation", roman: "Ghalat wazahat", ur: "غلط وضاحت" },
   issueReasonTypo: { en: "Typo", roman: "Typo", ur: "ٹائپو" },
-  issueReasonOutdated: { en: "Outdated", roman: "Outdated", ur: "پرانا" },
-  issueReasonOther: { en: "Other", roman: "Other", ur: "دیگر" },
+  issueReasonOutdated: { en: "Outdated", roman: "Purana", ur: "پرانا" },
+  issueReasonOther: { en: "Other", roman: "Deegar", ur: "دیگر" },
   noReason: { en: "No reason given", roman: "Koi reason nahi diya", ur: "کوئی وجہ نہیں دی گئی" },
   filterPlaceholder: {
     en: "Filter by subject or question id",
@@ -921,7 +978,7 @@ const STRINGS: Record<string, StrEntry> = {
   exportedCsvMsg: { en: "Exported {n} report(s) as CSV.", roman: "{n} report(s) CSV mein export ho gayein.", ur: "{n} رپورٹ(یں) CSV میں برآمد ہوئیں۔" },
   noReports: { en: "No issue reports yet.", roman: "Abhi koi issue report nahi.", ur: "ابھی کوئی مسئلہ رپورٹ نہیں۔" },
   noReportsMatch: { en: "No reports match this filter.", roman: "Is filter par koi report nahi mili.", ur: "اس فلٹر پر کوئی رپورٹ نہیں ملی۔" },
-  proposedCorrectionWord: { en: "Proposed correction", roman: "Proposed correction", ur: "تجویز شدہ تصحیح" },
+  proposedCorrectionWord: { en: "Proposed correction", roman: "Tajweez shuda tasheeh", ur: "تجویز شدہ تصحیح" },
   deleteWord: { en: "Delete", roman: "Delete karein", ur: "حذف کریں" },
   deleteConfirm: { en: "Delete this report ({qid})?", roman: "Is report ({qid}) ko delete karein?", ur: "اس رپورٹ ({qid}) کو حذف کریں؟" },
   telemetryHeading: { en: "Client errors (this device only)", roman: "Client errors (sirf is device par)", ur: "کلائنٹ خرابیاں (صرف اس ڈیوائس پر)" },
@@ -938,23 +995,23 @@ const STRINGS: Record<string, StrEntry> = {
   },
   telemetryClearedMsg: { en: "Client-error telemetry cleared.", roman: "Client-error telemetry clear ho gayi.", ur: "کلائنٹ خرابی ٹیلی میٹری صاف ہو گئی۔" },
   noTelemetry: { en: "No client errors recorded.", roman: "Koi client error record nahi hua.", ur: "کوئی کلائنٹ خرابی ریکارڈ نہیں ہوئی۔" },
-  timeUtcWord: { en: "Time (UTC)", roman: "Time (UTC)", ur: "وقت (UTC)" },
-  routeWord: { en: "Route", roman: "Route", ur: "راستہ" },
+  timeUtcWord: { en: "Time (UTC)", roman: "Waqt (UTC)", ur: "وقت (UTC)" },
+  routeWord: { en: "Route", roman: "Raasta", ur: "راستہ" },
 
   // ---- Vacancies ----
-  vacTitle: { en: "Vacancy Tracker", roman: "Vacancy Tracker", ur: "خالی آسامیوں کی فہرست" },
-  vacAlertA: { en: "Manually curated — check", roman: "Manually curated — check karein", ur: "دستی طور پر مرتب — تازہ ترین کے لیے" },
-  vacAlertB: { en: "for the latest.", roman: "for the latest.", ur: "دیکھیں۔" },
+  vacTitle: { en: "Vacancy Tracker", roman: "Khaali aasamiyon ki fehrist", ur: "خالی آسامیوں کی فہرست" },
+  vacAlertA: { en: "Manually curated — check", roman: "Dasti tor par murattab — taaza tareen ke liye", ur: "دستی طور پر مرتب — تازہ ترین کے لیے" },
+  vacAlertB: { en: "for the latest.", roman: "dekhain.", ur: "دیکھیں۔" },
   vacAlertC: {
     en: "No next ESED date is published here — the “Dec 2026/Jan 2027” claim is an unverified Facebook rumour.",
     roman: "Agli ESED date yahan shaya nahi ki jati — “Dec 2026/Jan 2027” ka daawa ghair musaddaqa Facebook afwah hai.",
     ur: "اگلی ESED تاریخ یہاں شائع نہیں کی جاتی — “دسمبر 2026/جنوری 2027” کا دعویٰ غیر مصدقہ فیس بک افواہ ہے۔",
   },
-  postWord: { en: "Post", roman: "Post", ur: "عہدہ" },
-  vacanciesWord: { en: "Vacancies", roman: "Vacancies", ur: "آسامیاں" },
-  lastDateWord: { en: "Last date", roman: "Last date", ur: "آخری تاریخ" },
-  eligibilityWord: { en: "Eligibility", roman: "Eligibility", ur: "اہلیت" },
-  vacTableAria: { en: "Vacancy table", roman: "Vacancy table", ur: "آسامیوں کی جدول" },
+  postWord: { en: "Post", roman: "Ohda", ur: "عہدہ" },
+  vacanciesWord: { en: "Vacancies", roman: "Aasamiyan", ur: "آسامیاں" },
+  lastDateWord: { en: "Last date", roman: "Aakhri tareekh", ur: "آخری تاریخ" },
+  eligibilityWord: { en: "Eligibility", roman: "Ahliyat", ur: "اہلیت" },
+  vacTableAria: { en: "Vacancy table", roman: "Aasamiyon ki jadwal", ur: "آسامیوں کی جدول" },
 
   // ---- Step 3a — teaching-only scope + coverage ledger ----
   teachingOnlyNote: {
@@ -969,7 +1026,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   ledgerHeading: {
     en: "Vacancy Coverage Ledger",
-    roman: "Vacancy Coverage Ledger",
+    roman: "Aasamiyon ke ihate ki fehrist",
     ur: "آسامیوں کے احاطے کی فہرست",
   },
   ledgerIntro: {
@@ -977,15 +1034,15 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Har teaching post ke liye ek row. “Exact” ka matlab hai ke har blueprint subject ke liye kam az kam ek note aur ek mashqi sawal maujood hai — yeh gehrai ya kifayat ka daawa nahi; har subject ki ginti batati hai ke material kitna kam ya zyada hai. Sources ki aakhri tasdeeq 11 Nov 2026 ko hui; hamesha apna ishtihar aur roll-number slip dobara dekhen.",
     ur: "ہر تدریسی عہدے کے لیے ایک قطار۔ “Exact” کا مطلب ہے کہ ہر نصابی مضمون کے لیے کم از کم ایک نوٹ اور ایک مشقی سوال موجود ہے — یہ گہرائی یا کفایت کا دعویٰ نہیں؛ ہر مضمون کی گنتی بتاتی ہے کہ مواد کتنا کم یا زیادہ ہے۔ ماخذ کی آخری تصدیق 11 نومبر 2026 کو ہوئی؛ ہمیشہ اپنا اشتہار اور رول نمبر سلپ دوبارہ دیکھیں۔",
   },
-  ledgerSourceLabel: { en: "Official source", roman: "Official source", ur: "سرکاری ماخذ" },
-  ledgerLastVerified: { en: "Last verified", roman: "Last verified", ur: "آخری تصدیق" },
-  ledgerTotalLabel: { en: "Total", roman: "Total", ur: "کل" },
-  ledgerTimeLabel: { en: "Time", roman: "Time", ur: "وقت" },
-  ledgerLanguageLabel: { en: "Language", roman: "Language", ur: "زبان" },
-  ledgerNegativeLabel: { en: "Negative marking", roman: "Negative marking", ur: "منفی نمبر" },
+  ledgerSourceLabel: { en: "Official source", roman: "Sarkari makhaz", ur: "سرکاری ماخذ" },
+  ledgerLastVerified: { en: "Last verified", roman: "Aakhri tasdeeq", ur: "آخری تصدیق" },
+  ledgerTotalLabel: { en: "Total", roman: "Kul", ur: "کل" },
+  ledgerTimeLabel: { en: "Time", roman: "Waqt", ur: "وقت" },
+  ledgerLanguageLabel: { en: "Language", roman: "Zuban", ur: "زبان" },
+  ledgerNegativeLabel: { en: "Negative marking", roman: "Manfi number", ur: "منفی نمبر" },
   ledgerAvailableLabel: {
     en: "Available material per subject",
-    roman: "Available material per subject",
+    roman: "Har mazmoon ke liye dastiyab mawad",
     ur: "ہر مضمون کے لیے دستیاب مواد",
   },
   ledgerSubjectCounts: {
@@ -994,47 +1051,47 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "{notes} نوٹس · {mcqs} ایم سی کیوز · {cards} کارڈز",
   },
   ledgerMocksLabel: { en: "Mocks", roman: "Mocks", ur: "موک" },
-  ledgerSharedMock: { en: "shared", roman: "shared", ur: "مشترکہ" },
+  ledgerSharedMock: { en: "shared", roman: "mushtaraka", ur: "مشترکہ" },
   ledgerNoMock: { en: "No mock yet", roman: "Abhi koi mock nahi", ur: "ابھی کوئی موک نہیں" },
   ledgerBankReview: {
     en: "Owner-reviewed in bank: {n} of {total} MCQs (bank data — your on-device decisions may add more).",
     roman: "Bank mein malik se jaiza shuda: {total} MCQs mein se {n} (bank data — aap ke device ke faisle mazeed shamil kar sakte hain).",
     ur: "بینک میں مالک سے جائزہ شدہ: {total} ایم سی کیوز میں سے {n} (بینک کا ڈیٹا — آپ کے آلے کے فیصلے مزید شامل کر سکتے ہیں)۔",
   },
-  ledgerMissingLabel: { en: "Missing", roman: "Missing", ur: "کمی" },
-  ledgerNextLabel: { en: "Next action", roman: "Next action", ur: "اگلا اقدام" },
+  ledgerMissingLabel: { en: "Missing", roman: "Kami", ur: "کمی" },
+  ledgerNextLabel: { en: "Next action", roman: "Agla iqdam", ur: "اگلا اقدام" },
   ledgerViewTrack: { en: "View track", roman: "Track dekhein", ur: "ٹریک دیکھیں" },
-  ledgerCoverageExact: { en: "Exact", roman: "Exact", ur: "عین مطابق" },
+  ledgerCoverageExact: { en: "Exact", roman: "Ain mutabiq", ur: "عین مطابق" },
   ledgerCoverageExactDetail: {
     en: "Every blueprint subject has at least one note and one practice question, and a mock exists. Not a claim of depth.",
     roman: "Har blueprint subject ke liye kam az kam ek note aur ek mashqi sawal maujood hai, aur mock bhi hai. Gehrai ka daawa nahi.",
     ur: "ہر نصابی مضمون کے لیے کم از کم ایک نوٹ اور ایک مشقی سوال موجود ہے، اور موک بھی ہے۔ گہرائی کا دعویٰ نہیں۔",
   },
-  ledgerCoverageProxy: { en: "Proxy", roman: "Proxy", ur: "متبادل" },
+  ledgerCoverageProxy: { en: "Proxy", roman: "Mutabadil", ur: "متبادل" },
   ledgerCoverageProxyDetail: {
     en: "No official pattern — preparing on another post's pattern.",
     roman: "Koi official pattern nahi — doosre post ke pattern par tayari.",
     ur: "کوئی سرکاری پیٹرن نہیں — دوسرے عہدے کے پیٹرن پر تیاری۔",
   },
-  ledgerCoveragePartial: { en: "Partial", roman: "Partial", ur: "جزوی" },
+  ledgerCoveragePartial: { en: "Partial", roman: "Juzvi", ur: "جزوی" },
   ledgerCoveragePartialDetail: {
     en: "Pattern confirmed or provisional, but some subject has no material, or no mock exists.",
     roman: "Pattern confirmed ya aarzi hai, lekin kisi subject ka material nahi ya mock nahi.",
     ur: "پیٹرن مصدقہ یا عارضی ہے، لیکن کسی مضمون کا مواد نہیں یا موک نہیں۔",
   },
-  ledgerCoverageUnknown: { en: "Unknown", roman: "Unknown", ur: "نامعلوم" },
+  ledgerCoverageUnknown: { en: "Unknown", roman: "Namaloom", ur: "نامعلوم" },
   ledgerCoverageUnknownDetail: {
     en: "No verified pattern source.",
     roman: "Pattern ka koi verified source nahi.",
     ur: "پیٹرن کا کوئی مصدقہ ماخذ نہیں۔",
   },
-  ledgerSourceConfirmed: { en: "Source Confirmed", roman: "Source Confirmed", ur: "ماخذ مصدقہ" },
+  ledgerSourceConfirmed: { en: "Source Confirmed", roman: "Makhaz musaddaqa", ur: "ماخذ مصدقہ" },
   ledgerSourceConfirmedDetail: {
     en: "Pattern confirmed against a named official source.",
     roman: "Pattern ki tasdeeq naam wale official source se hui.",
     ur: "پیٹرن کی تصدیق نام والے سرکاری ماخذ سے ہوئی۔",
   },
-  ledgerSourceProvisional: { en: "Provisional", roman: "Provisional", ur: "عارضی" },
+  ledgerSourceProvisional: { en: "Provisional", roman: "Aarzi", ur: "عارضی" },
   ledgerSourceProvisionalDetail: {
     en: "Pattern breakdown provisional — verify against the official document.",
     roman: "Pattern ki tafseel aarzi hai — official document se tasdeeq karen.",
@@ -1042,7 +1099,7 @@ const STRINGS: Record<string, StrEntry> = {
   },
   ledgerSourceUnavailable: {
     en: "Official scope unavailable",
-    roman: "Official scope unavailable",
+    roman: "Sarkari daira dastiyab nahi",
     ur: "سرکاری دائرہ دستیاب نہیں",
   },
   ledgerSourceUnavailableDetail: {
@@ -1055,7 +1112,7 @@ const STRINGS: Record<string, StrEntry> = {
   mocksCount: { en: "{n} mock(s)", roman: "{n} mock(s)", ur: "{n} موک" },
   trackNotFound: { en: "Track not found", roman: "Track nahi mila", ur: "ٹریک نہیں ملا" },
   backToTracks: { en: "Back to all tracks", roman: "Tamam tracks par wapas", ur: "تمام ٹریکس پر واپس" },
-  eligibilityHeading: { en: "Eligibility", roman: "Eligibility", ur: "اہلیت" },
+  eligibilityHeading: { en: "Eligibility", roman: "Ahliyat", ur: "اہلیت" },
   patternHeading: { en: "Pattern", roman: "Pattern", ur: "پیٹرن" },
   mocksForTrack: { en: "Mocks for this track", roman: "Is track ke mocks", ur: "اس ٹریک کے موک" },
   noMockYet: {
@@ -1063,10 +1120,10 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Abhi koi mock nahi — subject bank nahi bana. Is pattern ke subjects ke liye Library + Practice sections use karein.",
     ur: "ابھی کوئی موک نہیں — مضمون کا بینک نہیں بنا۔ اس پیٹرن کے مضامین کے لیے لائبریری + مشق کے حصے استعمال کریں۔",
   },
-  allTracksLink: { en: "← All tracks", roman: "← All tracks", ur: "تمام ٹریکس →" },
+  allTracksLink: { en: "← All tracks", roman: "← Tamam tracks", ur: "تمام ٹریکس →" },
 
   // ---- Topics ----
-  topicsTitle: { en: "Practice from Past-Paper Topics", roman: "Practice from Past-Paper Topics", ur: "پاسٹ پیپر موضوعات سے مشق" },
+  topicsTitle: { en: "Practice from Past-Paper Topics", roman: "Past-paper mauzuaat se mashq", ur: "پاسٹ پیپر موضوعات سے مشق" },
   topicsAlertBold: {
     en: "No past-paper documents or PDFs are hosted here, and no past-paper question is copied verbatim.",
     roman: "Yahan past paper ki koi document ya PDF host nahi ki jati, aur past paper ka koi sawal verbatim copy nahi kiya gaya.",
@@ -1087,16 +1144,16 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Reworded versions par label hai: “Same concept as a past-paper question, reworded in a different style — not the actual paper”.",
     ur: "دوبارہ لکھے گئے ورژن پر لیبل ہے: “Same concept as a past-paper question, reworded in a different style — not the actual paper”۔",
   },
-  topicsOrigHeading: { en: "Original practice — {n} questions", roman: "Original practice — {n} questions", ur: "اصل مشق — {n} سوالات" },
-  topicsRewordHeading: { en: "Same concepts, reworded — {n} questions", roman: "Same concepts, reworded — {n} questions", ur: "وہی تصورات، دوبارہ لکھے گئے — {n} سوالات" },
+  topicsOrigHeading: { en: "Original practice — {n} questions", roman: "Asli mashq — {n} sawalat", ur: "اصل مشق — {n} سوالات" },
+  topicsRewordHeading: { en: "Same concepts, reworded — {n} questions", roman: "Wohi tasawwurat, dobara likhe gaye — {n} sawalat", ur: "وہی تصورات، دوبارہ لکھے گئے — {n} سوالات" },
   topicsOrigTitle: {
     en: "Past-paper topics — original practice (20 questions)",
-    roman: "Past-paper topics — original practice (20 questions)",
+    roman: "Past-paper mauzuaat — asli mashq (20 sawalat)",
     ur: "پاسٹ پیپر موضوعات — اصل مشق (20 سوالات)",
   },
   topicsRewordTitle: {
     en: "Past-paper topics — same concepts, reworded (20 questions)",
-    roman: "Past-paper topics — same concepts, reworded (20 questions)",
+    roman: "Past-paper mauzuaat — wohi tasawwurat, dobara likhe gaye (20 sawalat)",
     ur: "پاسٹ پیپر موضوعات — وہی تصورات، دوبارہ لکھے گئے (20 سوالات)",
   },
 
@@ -1119,29 +1176,29 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Sirf is device par privately save hota hai — kahin nahi bheja jata.",
     ur: "صرف اس ڈیوائس پر نجی طور پر محفوظ ہوتا ہے — کہیں نہیں بھیجا جاتا۔",
   },
-  reasonWord: { en: "Reason", roman: "Reason", ur: "وجہ" },
+  reasonWord: { en: "Reason", roman: "Wajah", ur: "وجہ" },
   chooseReason: { en: "Choose a reason…", roman: "Aik reason chunein…", ur: "ایک وجہ چنیں…" },
-  correctionWord: { en: "Proposed correction", roman: "Proposed correction", ur: "تجویز شدہ تصحیح" },
+  correctionWord: { en: "Proposed correction", roman: "Tajweez shuda tasheeh", ur: "تجویز شدہ تصحیح" },
   correctionPlaceholder: {
     en: "What should it say instead?",
     roman: "Is ki jagah kya likha hona chahiye?",
     ur: "اس کی جگہ کیا لکھا ہونا چاہیے؟",
   },
-  sourceOptional: { en: "Source (optional)", roman: "Source (optional)", ur: "ماخذ (اختیاری)" },
+  sourceOptional: { en: "Source (optional)", roman: "Makhaz (ikhtiyari)", ur: "ماخذ (اختیاری)" },
   sourcePlaceholder: { en: "e.g. ETEA advert, textbook page", roman: "masalan ETEA advert, textbook page", ur: "مثلاً ETEA اشتہار، نصابی کتاب کا صفحہ" },
   savePrivately: { en: "Save privately", roman: "Privately save karein", ur: "نجی طور پر محفوظ کریں" },
   noQuestions: { en: "No questions available for this set.", roman: "Is set ke liye koi questions nahi hain.", ur: "اس سیٹ کے لیے کوئی سوالات نہیں ہیں۔" },
-  provisionalBadge: { en: "Provisional — not verified", roman: "Provisional — not verified", ur: "عارضی — تصدیق نہیں ہوئی" },
-  verifiedBadge: { en: "Verified items — owner-reviewed", roman: "Verified items — owner-reviewed", ur: "تصدیق شدہ اشیاء — مالک سے جائزہ شدہ" },
+  provisionalBadge: { en: "Provisional — not verified", roman: "Aarzi — tasdeeq nahi hui", ur: "عارضی — تصدیق نہیں ہوئی" },
+  verifiedBadge: { en: "Verified items — owner-reviewed", roman: "Tasdeeq shuda cheezain — malik se jaiza shuda", ur: "تصدیق شدہ اشیاء — مالک سے جائزہ شدہ" },
   trustedOnlyNote: {
     en: "Trusted-only (owner-reviewed/approved questions)",
-    roman: "Trusted-only (owner-reviewed/approved questions)",
+    roman: "Trusted-only (malik se jaiza shuda/manzoor shuda sawalat)",
     ur: "صرف قابل اعتماد (مالک سے جائزہ شدہ/منظور شدہ سوالات)",
   },
-  rawVsExam: { en: "Raw accuracy vs exam score", roman: "Raw accuracy vs exam score", ur: "خام درستگی بمقابلہ امتحانی نمبر" },
-  rawAccuracyWord: { en: "Raw accuracy:", roman: "Raw accuracy:", ur: "خام درستگی:" },
+  rawVsExam: { en: "Raw accuracy vs exam score", roman: "Khaam durusti bamuqabla imtihani number", ur: "خام درستگی بمقابلہ امتحانی نمبر" },
+  rawAccuracyWord: { en: "Raw accuracy:", roman: "Khaam durusti:", ur: "خام درستگی:" },
   rawAccuracyNote: { en: "correct answers only, no penalty.", roman: "sirf sahi jawab, koi penalty nahi.", ur: "صرف درست جوابات، کوئی کٹوتی نہیں۔" },
-  examScoreWord: { en: "Exam score:", roman: "Exam score:", ur: "امتحانی نمبر:" },
+  examScoreWord: { en: "Exam score:", roman: "Imtihani number:", ur: "امتحانی نمبر:" },
   flooredNote: {
     en: " (floored at 0 — the raw score was negative)",
     roman: " (0 par floor — raw score negative tha)",
@@ -1157,9 +1214,9 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Corrected retries: {n} (score mein nahi gine gaye).",
     ur: "درست شدہ دوبارہ کوششیں: {n} (نمبر میں شامل نہیں)۔",
   },
-  unansweredWord: { en: "Unanswered", roman: "Unanswered", ur: "جواب نہیں دیا" },
-  perSubjectFirst: { en: "Per subject (first-pass)", roman: "Per subject (first-pass)", ur: "فی مضمون (پہلی کوشش)" },
-  badgeUnanswered: { en: "Unanswered", roman: "Unanswered", ur: "جواب نہیں دیا" },
+  unansweredWord: { en: "Unanswered", roman: "Jawab nahi diya", ur: "جواب نہیں دیا" },
+  perSubjectFirst: { en: "Per subject (first-pass)", roman: "Fi mazmoon (pehli koshish)", ur: "فی مضمون (پہلی کوشش)" },
+  badgeUnanswered: { en: "Unanswered", roman: "Jawab nahi diya", ur: "جواب نہیں دیا" },
   badgeCorrectFirst: { en: "Correct (first try)", roman: "Sahi (pehli koshish)", ur: "درست (پہلی کوشش)" },
   badgeWrongFirst: { en: "Wrong (first try)", roman: "Ghalat (pehli koshish)", ur: "غلط (پہلی کوشش)" },
   yourFirstAnswer: { en: " — your first answer", roman: " — aap ka pehla jawab", ur: " — آپ کا پہلا جواب" },
@@ -1171,8 +1228,8 @@ const STRINGS: Record<string, StrEntry> = {
   },
   changedAnswerMid: { en: "· Final answer:", roman: "· Aakhri jawab:", ur: "· آخری جواب:" },
   changedAnswerEnd: { en: "· Score uses the first answer.", roman: "· Score pehle jawab par hai.", ur: "· نمبر پہلے جواب پر ہے۔" },
-  ownerReviewedLabel: { en: "owner-reviewed", roman: "owner-reviewed", ur: "مالک سے جائزہ شدہ" },
-  notVerifiedLabel: { en: "not verified", roman: "not verified", ur: "تصدیق نہیں ہوئی" },
+  ownerReviewedLabel: { en: "owner-reviewed", roman: "malik se jaiza shuda", ur: "مالک سے جائزہ شدہ" },
+  notVerifiedLabel: { en: "not verified", roman: "tasdeeq nahi hui", ur: "تصدیق نہیں ہوئی" },
   restartButton: { en: "Restart (discard session)", roman: "Restart (session discard karein)", ur: "دوبارہ شروع کریں (سیشن ختم کریں)" },
   trustedOnlyLine: {
     en: "Trusted-only: only owner-reviewed/approved questions.",
@@ -1188,9 +1245,14 @@ const STRINGS: Record<string, StrEntry> = {
   firstPassSoFar: { en: "First-pass score so far:", roman: "First-pass score ab tak:", ur: "اب تک پہلی کوشش کا نمبر:" },
   correctCount: { en: "correct", roman: "sahi", ur: "درست" },
   retriesNotCounted: {
-    en: "{n} corrected retr{plural} (not counted)",
-    roman: "{n} corrected retr{plural} (nahi gina gaya)",
+    en: "{n} corrected retries (not counted)",
+    roman: "{n} corrected retries (nahi gina gaya)",
     ur: "{n} درست شدہ دوبارہ کوششیں (شامل نہیں)",
+  },
+  retriesNotCountedOne: {
+    en: "{n} corrected retry (not counted)",
+    roman: "{n} corrected retry (nahi gina gaya)",
+    ur: "{n} درست شدہ دوبارہ کوشش (شامل نہیں)",
   },
   timerNote: {
     en: "The timer ends at a fixed time — reloading the page does not reset it.",
@@ -1202,8 +1264,8 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Yeh in-progress session khatam kar ke dobara shuru karen? Aap ki record shuda attempts mutasir nahi hon gi.",
     ur: "یہ جاری سیشن ختم کر کے دوبارہ شروع کریں؟ آپ کی ریکارڈ شدہ کوششیں متاثر نہیں ہوں گی۔",
   },
-  originalBadge: { en: "Original", roman: "Original", ur: "اصل" },
-  rewordedBadge: { en: "Reworded", roman: "Reworded", ur: "دوبارہ لکھا گیا" },
+  originalBadge: { en: "Original", roman: "Asal", ur: "اصل" },
+  rewordedBadge: { en: "Reworded", roman: "Dobara likha gaya", ur: "دوبارہ لکھا گیا" },
 
   // ---- Step 2a — semantic badges, Start Here, nav groups, scroll regions, chart alternatives ----
   provisionalBadgeDetail: {
@@ -1216,16 +1278,16 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Is run ke tamam sawalat malik ne is device par dekhe — zaati jaiza, official certification nahi.",
     ur: "اس رن کے تمام سوالات مالک نے اس آلے پر دیکھے — ذاتی جائزہ، سرکاری تصدیق نہیں۔",
   },
-  mockScoringUnknown: { en: "Scoring policy unknown", roman: "Scoring policy unknown", ur: "اسکورنگ پالیسی نامعلوم" },
+  mockScoringUnknown: { en: "Scoring policy unknown", roman: "Scoring policy namaloom", ur: "اسکورنگ پالیسی نامعلوم" },
   mockScoringUnknownDetail: {
     en: "No official scoring policy is published for this mock; the zero-penalty default is used.",
     roman: "Is test ki koi official scoring policy shaya nahi; zero-penalty default istemal hota hai.",
     ur: "اس ٹیسٹ کی کوئی سرکاری اسکورنگ پالیسی شائع نہیں؛ صفر جرمانہ ڈیفالٹ استعمال ہوتا ہے۔",
   },
-  navGroupStudy: { en: "Study", roman: "Study", ur: "مطالعہ" },
-  navGroupProgress: { en: "Progress", roman: "Progress", ur: "پیش رفت" },
-  navGroupResources: { en: "Exam Resources", roman: "Exam Resources", ur: "امتحانی وسائل" },
-  navGroupQuality: { en: "Quality", roman: "Quality", ur: "معیار" },
+  navGroupStudy: { en: "Study", roman: "Mutalaa", ur: "مطالعہ" },
+  navGroupProgress: { en: "Progress", roman: "Pesh raft", ur: "پیش رفت" },
+  navGroupResources: { en: "Exam Resources", roman: "Imtihani wasail", ur: "امتحانی وسائل" },
+  navGroupQuality: { en: "Quality", roman: "Mayaar", ur: "معیار" },
   startHereHeading: { en: "Start here", roman: "Yahan se shuru karein", ur: "یہاں سے شروع کریں" },
   startHereFresh: {
     en: "Pick where to begin — everything below is built from your own study data.",
@@ -1242,12 +1304,12 @@ const STRINGS: Record<string, StrEntry> = {
   startHereCards: { en: "Review due cards", roman: "Due cards review karein", ur: "واجب کارڈز کا جائزہ لیں" },
   startHerePlan: { en: "Build study plan", roman: "Study plan banayein", ur: "مطالعہ منصوبہ بنائیں" },
   startHereContinuePlan: { en: "Continue plan", roman: "Plan jaari rakhein", ur: "منصوبہ جاری رکھیں" },
-  resumeSession: { en: "Resume: {title}", roman: "Resume: {title}", ur: "جاری رکھیں: {title}" },
+  resumeSession: { en: "Resume: {title}", roman: "Jaari rakhein: {title}", ur: "جاری رکھیں: {title}" },
   continuePractice: { en: "Continue practice: {subject}", roman: "Practice jaari rakhen: {subject}", ur: "مشق جاری رکھیں: {subject}" },
   cardsDueNew: { en: "{due} due · {fresh} new", roman: "{due} due · {fresh} naye", ur: "{due} واجب · {fresh} نئے" },
   planNextLabel: { en: "Next:", roman: "Agla:", ur: "اگلا:" },
   planComplete: { en: "Study plan complete — all 63 tasks done.", roman: "Study plan complete — tamam 63 tasks done.", ur: "مطالعہ منصوبہ مکمل — تمام 63 کام مکمل۔" },
-  attemptsScope: { en: "{mcq} MCQ questions · {flash} flashcard reviews", roman: "{mcq} MCQ questions · {flash} flashcard reviews", ur: "{mcq} ایم سی کیو سوالات · {flash} فلیش کارڈ جائزے" },
+  attemptsScope: { en: "{mcq} MCQ questions · {flash} flashcard reviews", roman: "{mcq} MCQ sawalat · {flash} flashcard jaize", ur: "{mcq} ایم سی کیو سوالات · {flash} فلیش کارڈ جائزے" },
   accuracySample: { en: "{correct} of {total} first-pass answers", roman: "Pehli koshish ke {total} jawabat mein se {correct} durust", ur: "پہلی کوشش کے {total} جوابات میں سے {correct} درست" },
   accuracyNoData: { en: "No answers yet", roman: "Abhi koi jawab nahi", ur: "ابھی کوئی جواب نہیں" },
   streakRule: { en: "Consecutive days with any study", roman: "Musalsal din jin mein koi study hui", ur: "مسلسل دن جن میں کوئی مطالعہ ہوا" },
@@ -1281,7 +1343,7 @@ const STRINGS: Record<string, StrEntry> = {
 
   // ---- Step 2b — pre-start disclosure + session compatibility ----
   prestartHeading: { en: "Before you start", roman: "Shuru karne se pehle", ur: "شروع کرنے سے پہلے" },
-  prestartSubjectLabel: { en: "Subject", roman: "Subject", ur: "مضمون" },
+  prestartSubjectLabel: { en: "Subject", roman: "Mazmoon", ur: "مضمون" },
   prestartPatternLabel: { en: "Pattern", roman: "Pattern", ur: "پیٹرن" },
   prestartNoPattern: {
     en: "Subject drill — no exam pattern is claimed for this set.",
@@ -1295,7 +1357,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "{n} aarzi (malik se jaiza shuda nahi)",
     ur: "{n} عارضی (مالک سے جائزہ شدہ نہیں)",
   },
-  prestartDurationLabel: { en: "Duration", roman: "Duration", ur: "دورانیہ" },
+  prestartDurationLabel: { en: "Duration", roman: "Doraniya", ur: "دورانیہ" },
   prestartNoTimer: { en: "No timer", roman: "Koi timer nahi", ur: "کوئی ٹائمر نہیں" },
   prestartUnanswered: { en: "Unanswered questions score {marks} marks.", roman: "Bila jawab sawalat ke {marks} marks milte hain.", ur: "بلا جواب سوالات کے {marks} نمبر ملتے ہیں۔" },
   prestartAllocation: { en: "Questions by subject", roman: "Subject ke mutabiq sawal", ur: "مضمون کے مطابق سوالات" },
@@ -1320,10 +1382,10 @@ const STRINGS: Record<string, StrEntry> = {
   startFreshButton: { en: "Start fresh", roman: "Naye sire se shuru karein", ur: "نئے سرے سے شروع کریں" },
   questionMapToggle: { en: "Question map", roman: "Sawalon ka map", ur: "سوالات کا نقشہ" },
   questionMapLabel: { en: "Question map — jump to a question", roman: "Sawalat ka map — kisi sawal par jayen", ur: "سوالات کا نقشہ — کسی سوال پر جائیں" },
-  questionMapAnswered: { en: "answered", roman: "answered", ur: "جواب دیا گیا" },
-  questionMapCurrent: { en: "current", roman: "current", ur: "موجودہ" },
-  questionMapFlagged: { en: "flagged", roman: "flagged", ur: "نشان زد" },
-  questionMapUnanswered: { en: "unanswered", roman: "unanswered", ur: "بلا جواب" },
+  questionMapAnswered: { en: "answered", roman: "jawab diya gaya", ur: "جواب دیا گیا" },
+  questionMapCurrent: { en: "current", roman: "maujooda", ur: "موجودہ" },
+  questionMapFlagged: { en: "flagged", roman: "nishan zad", ur: "نشان زد" },
+  questionMapUnanswered: { en: "unanswered", roman: "bila jawab", ur: "بلا جواب" },
   flagButton: { en: "Flag for review", roman: "Review ke liye flag karein", ur: "جائزے کے لیے نشان زد کریں" },
   flaggedButton: { en: "Flagged — tap to unflag", roman: "Flagged — hatane ke liye tap karein", ur: "نشان زد — ہٹانے کے لیے تھپتھپائیں" },
   yourAnswerLine: { en: "Your answer: {answer}", roman: "Aap ka jawab: {answer}", ur: "آپ کا جواب: {answer}" },
@@ -1355,25 +1417,25 @@ const STRINGS: Record<string, StrEntry> = {
   noSuggestedCorrectionLabel: { en: "No suggested correction", roman: "Koi tajweez shuda tasheeh nahi", ur: "کوئی تجویز شدہ تصحیح نہیں" },
 
   // ---- Step 2b — mock labels ----
-  mockLabelFull: { en: "Full", roman: "Full", ur: "مکمل" },
+  mockLabelFull: { en: "Full", roman: "Mukammal", ur: "مکمل" },
   mockLabelFullDetail: {
     en: "All {total} questions are available in this mock.",
     roman: "Is mock mein tamam {total} sawalat dastiyab hain.",
     ur: "اس موک میں تمام {total} سوالات دستیاب ہیں۔",
   },
-  mockLabelPartial: { en: "Partial", roman: "Partial", ur: "جزوی" },
+  mockLabelPartial: { en: "Partial", roman: "Juzvi", ur: "جزوی" },
   mockLabelPartialDetail: {
     en: "Only {n} of {total} questions are available in this mock.",
     roman: "Is mock mein {total} mein se sirf {n} sawalat dastiyab hain.",
     ur: "اس موک میں {total} میں سے صرف {n} سوالات دستیاب ہیں۔",
   },
-  mockLabelProxy: { en: "Proxy", roman: "Proxy", ur: "متبادل" },
+  mockLabelProxy: { en: "Proxy", roman: "Mutabadil", ur: "متبادل" },
   mockLabelProxyDetail: {
     en: "A proxy mock: practises the pattern from practice items — not an official paper, and ZamungKor has no published syllabus.",
     roman: "Proxy mock: practice items se pattern ki mashq karwata hai — official paper nahi, aur ZamungKor ka koi shaya shuda syllabus nahi.",
     ur: "متبادل موک: مشقی سوالات سے پیٹرن کی مشق کرواتا ہے — سرکاری پرچہ نہیں، اور زمونگ کور کا کوئی شائع شدہ نصاب نہیں۔",
   },
-  mockLabelReviewedSubset: { en: "Reviewed subset", roman: "Reviewed subset", ur: "جائزہ شدہ حصہ" },
+  mockLabelReviewedSubset: { en: "Reviewed subset", roman: "Jaiza shuda hissa", ur: "جائزہ شدہ حصہ" },
   mockLabelReviewedSubsetDetail: {
     en: "{n} of {total} questions are owner-reviewed; trusted mode uses only those.",
     roman: "{total} mein se {n} sawalat malik se jaiza shuda hain; trusted mode sirf unhi ko istemal karta hai.",
@@ -1441,7 +1503,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "Aage barhne se pehle chhoota hua kaam mukammal karein.",
     ur: "آگے بڑھنے سے پہلے چھوٹا ہوا کام مکمل کریں۔",
   },
-  planCycle2Label: { en: "Cycle 2 revisit", roman: "Cycle 2 revisit", ur: "دوسرے مرحلے میں دہرائی" },
+  planCycle2Label: { en: "Cycle 2 revisit", roman: "Doosre marhale mein dohrai", ur: "دوسرے مرحلے میں دہرائی" },
   planCycle2Note: {
     en: "Revisit this unit with unseen items and mixed practice — not the same questions repeated.",
     roman: "Is unit ko unseen items aur mixed practice ke sath dobara dekhen — wahi sawalat dohraye nahi jate.",
@@ -1452,7 +1514,7 @@ const STRINGS: Record<string, StrEntry> = {
     roman: "12-week plan: do cycles. Cycle 1 units banata hai; Cycle 2 har unit ko unseen items aur mixed practice ke sath dobara dekhta hai. Har task ke liye ek checkbox — use tick karne se task dono cycles mein done mark hota hai.",
     ur: "12 ہفتوں کا منصوبہ: دو مراحل۔ پہلا مرحلہ یونٹس بناتا ہے؛ دوسرا مرحلہ ہر یونٹ کو نئے سوالات اور مخلوط مشق کے ساتھ دہراتا ہے۔ ہر کام کے لیے ایک چیک باکس — اسے نشان زد کرنے سے کام دونوں مرحلوں میں مکمل شمار ہوتا ہے۔",
   },
-  planWorkloadWord: { en: "Workload", roman: "Workload", ur: "کام کا بوجھ" },
+  planWorkloadWord: { en: "Workload", roman: "Kaam ka bojh", ur: "کام کا بوجھ" },
   planStartDate: { en: "Plan starts: {date}", roman: "Plan shuru: {date}", ur: "منصوبہ شروع: {date}" },
   planResetDates: { en: "Restart plan dates from today", roman: "Plan ki tareekhein aaj se dobara shuru karein", ur: "منصوبے کی تاریخیں آج سے دوبارہ شروع کریں" },
   planResetDatesNote: {
@@ -1467,8 +1529,8 @@ const STRINGS: Record<string, StrEntry> = {
   planTaskLinkAnalysis: { en: "Open analysis", roman: "Analysis kholein", ur: "تجزیہ کھولیں" },
 
   // ---- Step 2b — flashcards counters + save failure ----
-  flashNewLabel: { en: "New", roman: "New", ur: "نئے" },
-  flashDueReviewsLabel: { en: "Due reviews", roman: "Due reviews", ur: "واجب دہرائی" },
+  flashNewLabel: { en: "New", roman: "Naye", ur: "نئے" },
+  flashDueReviewsLabel: { en: "Due reviews", roman: "Wajib dohrai", ur: "واجب دہرائی" },
   flashSessionReviewed: { en: "reviewed this session", roman: "is session mein reviewed", ur: "اس سیشن میں دہرائے گئے" },
   flashSaveFailed: {
     en: "Could not save this grade — the card's progress is not stored yet. Retry, or export your progress first.",
@@ -1509,7 +1571,7 @@ const STRINGS: Record<string, StrEntry> = {
   searchAllSubjects: { en: "Search all subjects", roman: "Tamam subjects talaash karein", ur: "تمام مضامین تلاش کریں" },
   libraryMatchCount: { en: "{n} of {total} notes", roman: "{total} mein se {n} notes", ur: "{total} میں سے {n} نوٹ" },
   libraryMatchCountQuery: { en: "{n} notes match “{q}”", roman: "“{q}” se {n} notes milte hain", ur: "“{q}” سے {n} نوٹ ملتے ہیں" },
-  englishSourceText: { en: "English source text", roman: "English source text", ur: "انگریزی ماخذ متن" },
+  englishSourceText: { en: "English source text", roman: "English makhaz matn", ur: "انگریزی ماخذ متن" },
   relatedLabel: { en: "Related:", roman: "Mutalliqa:", ur: "متعلقہ:" },
   relatedPractice: { en: "Related practice drill", roman: "Mutalliqa practice drill", ur: "متعلقہ مشقی ڈرل" },
   relatedFlashcards: { en: "Related flashcards", roman: "Mutalliqa flashcards", ur: "متعلقہ فلیش کارڈز" },
@@ -1544,7 +1606,7 @@ const STRINGS: Record<string, StrEntry> = {
   flagsRemove: { en: "Remove", roman: "Hata dein", ur: "ہٹا دیں" },
   flagsClearAll: { en: "Clear all flags", roman: "Tamam flags saaf karein", ur: "تمام نشانات صاف کریں" },
   flagsFromMock: { en: "Mock", roman: "Mock", ur: "موک" },
-  flagsFromPractice: { en: "Practice", roman: "Practice", ur: "مشق" },
+  flagsFromPractice: { en: "Practice", roman: "Mashq", ur: "مشق" },
   flagsFlaggedOn: { en: "Flagged {date}", roman: "{date} ko flag kiya gaya", ur: "{date} کو نشان زد کیا گیا" },
 
   // ---- Step 3b-audit2 (F07/F08/F09) — storage failure + multi-tab warnings ----
@@ -1608,6 +1670,36 @@ function replaceVars(template: string, vars: Record<string, string | number>): s
  *  JSX, prefer <span dir="ltr"> / dir="auto" instead. */
 export function lri(text: string): string {
   return "\u2066" + text + "\u2069";
+}
+
+/** Phase 2 — API error codes → STRINGS keys. Routes return
+ *  `{ error, code }`: the `error` string stays English (backward
+ *  compatibility + provider diagnostics), and `code` names one of
+ *  the fixed, localizable failures. Unknown/absent codes fall back
+ *  to the raw `error` string, never to a guessed message. */
+export const API_ERROR_KEYS: Record<string, string> = {
+  same_origin: "apiErrSameOrigin",
+  empty_question: "apiErrEmptyQuestion",
+  question_too_long: "apiErrQuestionTooLong",
+  rate_daily: "apiErrRateDaily",
+  rate_minute: "apiErrRateMinute",
+  question_not_found: "apiErrQuestionNotFound",
+  explain_failed: "apiErrExplainFailed",
+  plan_failed: "apiErrPlanFailed",
+  tutor_failed: "apiErrTutorFailed",
+};
+
+/** Display text for an API error payload: the localized message for
+ *  a known code, else the raw `error` string, else the caller's
+ *  fallback key. Pure; takes `t` so tests can pass a stub. */
+export function apiErrorText(
+  body: { error?: unknown; code?: unknown },
+  t: (key: string) => string,
+  fallbackKey: string,
+): string {
+  const key = typeof body.code === "string" ? API_ERROR_KEYS[body.code] : undefined;
+  if (key) return t(key);
+  return typeof body.error === "string" && body.error.length > 0 ? body.error : t(fallbackKey);
 }
 
 export function useLang() {

@@ -7,12 +7,12 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { VISIBLE_MOCKS, VISIBLE_TRACKS } from "@/lib/data";
+import { resolveMockView, VISIBLE_MOCKS, VISIBLE_TRACKS } from "@/lib/data";
 import { useLang } from "@/lib/i18n";
 import { TrackConfidenceBadge } from "@/components/StatusBadges";
 
 export default function TrackDetail() {
-  const { t, tf } = useLang();
+  const { lang, t, tf } = useLang();
   const params = useParams();
   const id = String(params.id ?? "");
   // Step 3a — hidden tracks resolve to the not-found screen below
@@ -52,25 +52,41 @@ export default function TrackDetail() {
       {mocks.length === 0 ? (
         <p className="muted">{t("noMockYet")}</p>
       ) : (
-        mocks.map((m) => (
+        mocks.map((m) => {
+          // Phase 2 — mock title/note resolve into the chosen
+          // language (item-level fallback); track content itself
+          // stays English (later phase).
+          const view = resolveMockView(m, lang);
+          return (
           <div className="card" key={m.id}>
             <h3>
-              <span dir="auto">{m.title}</span>{" "}
+              <span dir="auto">{view.title}</span>{" "}
+              {view.translated && (
+                <span
+                  dir="ltr"
+                  className="badge grey"
+                  title={t("autoTranslatedBadgeAria")}
+                  aria-label={t("autoTranslatedBadgeAria")}
+                >
+                  [Auto-Translated]
+                </span>
+              )}{" "}
               <span dir="ltr" className="badge teal">
-                {m.total} Q
+                {tf("questionsShort", { n: m.total })}
               </span>{" "}
               <span dir="ltr" className="badge grey">
                 {tf("minsLabel", { mins: m.minutes })}
               </span>
             </h3>
             <p className="muted">
-              <span dir="auto">{m.note}</span>
+              <span dir="auto">{view.note}</span>
             </p>
             <Link className="btn" href={`/mock/${m.id}`}>
               {t("startMock")}
             </Link>
           </div>
-        ))
+          );
+        })
       )}
       <p>
         <Link href="/tracks">{t("allTracksLink")}</Link>

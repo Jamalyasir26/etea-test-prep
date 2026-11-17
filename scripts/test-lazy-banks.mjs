@@ -121,20 +121,49 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 // Phase 1 exception (documented, narrow): islamiyat.json, tajweed.json,
 // arabic.json, english.json, urdu.json, maths.json, pakstudies.json, pedagogy.json, science.json, socialstudies.json, gk.json, it.json, pe.json, drawing.json + content.json changed ONLY by the Phase 1 growth
 // batches (395 + 418 + 420 + 455 + 455 + 455 + 455 + 470 + 470 + 470 + 470 + 440 + 454 + 450 appended items, counts + bySubject indexes).
-// Everything else stays byte-identical, and the changed files must match the backup
-// exactly outside the Phase 1 delta (byte-prefix for the banks,
-// parsed-diff for content.json).
+// Phase 2 exception (documented, narrow): tracking.ts changed ONLY inside
+// gradeButtonLabel (Roman grade names) and content.json gained ONLY the
+// _ur/_roman translation fields on flashcards, plan tuples, and mock
+// defs. Everything else stays byte-identical, and the changed files must
+// match the backup exactly outside the Phase 1 + Phase 2 deltas
+// (byte-prefix for the banks, parsed-diff for content.json, function-strip
+// for tracking.ts).
 if (fs.existsSync(BACKUP)) {
   const contentPaths = [
     ...BANK_KEYS.map((k) => `src/data/banks/${k}.json`),
     "src/data/banks/drawing_pe.json",
     "src/data/content.json",
     "src/data/quran-examples.json",
-    "src/lib/tracking.ts",
   ];
   const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/banks/maths.json", "src/data/banks/pakstudies.json", "src/data/banks/pedagogy.json", "src/data/banks/science.json", "src/data/banks/socialstudies.json", "src/data/banks/gk.json", "src/data/banks/it.json", "src/data/banks/pe.json", "src/data/banks/drawing.json", "src/data/content.json"]);
   const changed = contentPaths.filter((p) => !PHASE1_CHANGED.has(p) && sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
-  check("bank/note/audio content + tracking.ts byte-identical to backup except the fifteen Phase 1 files", changed.length === 0, changed.join(", "));
+  check("bank/note/audio content byte-identical to backup except the fifteen Phase 1 files", changed.length === 0, changed.join(", "));
+  // Phase 2 tracking.ts: the ONLY permitted delta is gradeButtonLabel
+  // (its JSDoc + body). Strip that one function from both files; the
+  // remainders must be byte-identical, and the Roman names must exist
+  // only in the current file.
+  const stripGradeButtonLabel = (src) => {
+    const fnStart = src.indexOf("export function gradeButtonLabel");
+    const commentStart = src.lastIndexOf("/**", fnStart);
+    let i = src.indexOf("{", fnStart);
+    let depth = 0;
+    for (; i < src.length; i++) {
+      if (src[i] === "{") depth++;
+      else if (src[i] === "}") {
+        depth--;
+        if (depth === 0) break;
+      }
+    }
+    return src.slice(0, commentStart) + "/* STRIPPED gradeButtonLabel */" + src.slice(i + 1);
+  };
+  const backupTracking = fs.readFileSync(join(BACKUP, "src/lib/tracking.ts"), "utf8");
+  const curTracking = fs.readFileSync(join(ROOT, "src/lib/tracking.ts"), "utf8");
+  check(
+    "Phase 2 tracking.ts: identical to backup outside gradeButtonLabel, Roman names only in current",
+    stripGradeButtonLabel(curTracking) === stripGradeButtonLabel(backupTracking) &&
+      ["Dobara", "Mushkil", "Achha", "Asan"].every((n) => curTracking.includes(`"${n}"`)) &&
+      ["Dobara", "Mushkil", "Achha", "Asan"].every((n) => !backupTracking.includes(`"${n}"`)),
+  );
   const backupBankRaw = fs.readFileSync(join(BACKUP, "src/data/banks/islamiyat.json"), "utf8");
   const curBankRaw = fs.readFileSync(join(ROOT, "src/data/banks/islamiyat.json"), "utf8");
   const backupPrefix = backupBankRaw.slice(0, -3); // strip trailing "\n]\n"
@@ -307,7 +336,28 @@ if (fs.existsSync(BACKUP)) {
   reverted.bySubject.it = backupContent.bySubject.it;
   reverted.bySubject.pe = backupContent.bySubject.pe;
   reverted.bySubject.drawing = backupContent.bySubject.drawing;
-  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes differ from backup",
+  // Phase 2 revert (documented, narrow): strip ONLY the _ur/_roman
+  // translation fields added to flashcards, plan tuples, and mock defs.
+  // The remaining English fields must match the backup exactly.
+  for (const c of reverted.flashcards) {
+    delete c.front_ur;
+    delete c.front_roman;
+    delete c.back_ur;
+    delete c.back_roman;
+    delete c.category_ur;
+    delete c.category_roman;
+  }
+  for (const d of reverted.plan21) {
+    for (const t of d[1]) t.length = 2;
+    d.length = 2;
+  }
+  for (const m of reverted.mocks) {
+    delete m.title_ur;
+    delete m.title_roman;
+    delete m.note_ur;
+    delete m.note_roman;
+  }
+  check("Phase 1 + Phase 2 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes + Phase 2 translation fields differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
     curContent.counts.total === 7040 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500 && curContent.bySubject.socialstudies.length === 500 && curContent.bySubject.gk.length === 500 && curContent.bySubject.it.length === 500 && curContent.bySubject.pe.length === 500 && curContent.bySubject.drawing.length === 500);
 } else {

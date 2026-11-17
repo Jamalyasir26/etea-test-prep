@@ -22,6 +22,7 @@ import {
   type TelemetryEntry,
 } from "@/lib/telemetry";
 import { lri, useLang } from "@/lib/i18n";
+import { formatStoredDate } from "@/lib/format";
 
 // Localization Pass 1 — stored issue-reason values are stable English
 // keys; only their DISPLAY labels are translated (via i18n.tsx). Same
@@ -40,7 +41,7 @@ function csvCell(v: string | null): string {
 }
 
 export default function IssuesPage() {
-  const { t, tf } = useLang();
+  const { lang, t, tf } = useLang();
   const [issues, setIssues] = useState<IssueReport[]>([]);
   const [reasonFilter, setReasonFilter] = useState<IssueReason | "all" | "__none">("all");
   const [subjectFilter, setSubjectFilter] = useState("");
@@ -170,7 +171,7 @@ export default function IssuesPage() {
           <tbody>
             {filtered.map((i) => (
               <tr key={i.id}>
-                <td dir="ltr">{i.date.slice(0, 10)}</td>
+                <td dir="auto">{formatStoredDate(i.date, lang)}</td>
                 <td>
                   <code dir="ltr">{i.qid}</code>
                 </td>

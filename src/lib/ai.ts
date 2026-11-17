@@ -54,7 +54,7 @@ export const LIMITS = { perDay: 100, perMinute: 10 };
 type Bucket = { day: string; dayCount: number; minute: number; minuteCount: number };
 const buckets = new Map<string, Bucket>();
 
-export function rateLimitOk(ip: string): { ok: boolean; message?: string } {
+export function rateLimitOk(ip: string): { ok: boolean; message?: string; code?: string } {
   const now = new Date();
   const day = now.toISOString().slice(0, 10);
   const minute = Math.floor(now.getTime() / 60000);
@@ -68,10 +68,10 @@ export function rateLimitOk(ip: string): { ok: boolean; message?: string } {
     b.minuteCount = 0;
   }
   if (b.dayCount >= LIMITS.perDay) {
-    return { ok: false, message: `Daily limit reached (${LIMITS.perDay} tutor requests/day for one user). Please try again tomorrow — your quizzes, mocks and flashcards still work offline.` };
+    return { ok: false, code: "rate_daily", message: `Daily limit reached (${LIMITS.perDay} tutor requests/day for one user). Please try again tomorrow — your quizzes, mocks and flashcards still work offline.` };
   }
   if (b.minuteCount >= LIMITS.perMinute) {
-    return { ok: false, message: `Too many requests — please wait a minute and try again (${LIMITS.perMinute}/minute).` };
+    return { ok: false, code: "rate_minute", message: `Too many requests — please wait a minute and try again (${LIMITS.perMinute}/minute).` };
   }
   b.dayCount += 1;
   b.minuteCount += 1;

@@ -38,6 +38,7 @@ import {
   type StorageWarning,
 } from "@/lib/tracking";
 import { lri, useLang } from "@/lib/i18n";
+import { formatAppDateTime, formatStoredDate } from "@/lib/format";
 import { AccuracyTrendChart, DueForecastChart } from "@/components/AnalysisCharts";
 
 function heat(acc: number) {
@@ -50,7 +51,7 @@ function fmtMs(ms?: number) {
 }
 
 export default function Analysis() {
-  const { t, tf } = useLang();
+  const { lang, t, tf } = useLang();
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [selected, setSelected] = useState<Attempt | null>(null);
@@ -508,7 +509,7 @@ export default function Analysis() {
                 style={{ cursor: "pointer" }}
                 title={t("clickDetailTitle")}
               >
-                <td dir="ltr">{m.date.slice(0, 10)}</td>
+                <td dir="auto">{formatStoredDate(m.date, lang)}</td>
                 <td dir="auto">{m.title}</td>
                 <td>
                   <span dir="ltr">
@@ -552,7 +553,7 @@ export default function Analysis() {
                 style={{ cursor: "pointer" }}
                 title={t("clickDetailTitle")}
               >
-                <td dir="ltr">{a.date.slice(0, 10)}</td>
+                <td dir="auto">{formatStoredDate(a.date, lang)}</td>
                 <td dir="ltr">{a.kind}</td>
                 <td dir="auto">{a.title}</td>
                 <td>
@@ -574,7 +575,7 @@ export default function Analysis() {
           <h3>
             {tf("attemptDetailHeading", {
               title: lri(selected.title),
-              date: lri(selected.date.slice(0, 10)),
+              date: lri(formatStoredDate(selected.date, lang)),
             })}
           </h3>
           <p className="muted">
@@ -588,7 +589,7 @@ export default function Analysis() {
                   {selected.correct}/{selected.total}
                 </span>
                 {selected.retryCount
-                  ? ` · ${tf("retriesCounted", { n: selected.retryCount, plural: selected.retryCount === 1 ? "y" : "ies" })}`
+                  ? ` · ${selected.retryCount === 1 ? tf("retriesCountedOne", { n: selected.retryCount }) : tf("retriesCounted", { n: selected.retryCount })}`
                   : ` · ${t("noRetries")}`}{" "}
                 {/* Step 2a (RTL) — duration isolated. */}
                 · <span dir="ltr">{tf("minsLabel", { mins: Math.round(selected.seconds / 60) })}</span>
@@ -653,11 +654,11 @@ export default function Analysis() {
           last backup happened. Stored locally with the backup flow. */}
       <p className="muted">
         {lastExport
-          ? tf("lastExportLine", { date: lri(new Date(lastExport).toLocaleString()) })
+          ? tf("lastExportLine", { date: lri(formatAppDateTime(new Date(lastExport), lang)) })
           : t("neverExported")}
         <br />
         {lastImport
-          ? tf("lastImportLine", { date: lri(new Date(lastImport).toLocaleString()) })
+          ? tf("lastImportLine", { date: lri(formatAppDateTime(new Date(lastImport), lang)) })
           : t("neverImported")}
       </p>
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>

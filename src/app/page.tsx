@@ -440,7 +440,7 @@ export default function Home() {
               <span className={`heat ${w.accuracy < 50 ? "red" : w.accuracy < 70 ? "yellow" : "green"}`} />
               <span dir="ltr">{w.subject}</span> —{" "}
               <span dir="ltr">
-                {Math.round(w.accuracy)}% ({w.total} Q)
+                {Math.round(w.accuracy)}% ({tf("questionsShort", { n: w.total })})
               </span>{" "}
               <Link href={drillHref(w.subject)}>{t("drillArrow")}</Link>
             </p>

@@ -676,7 +676,7 @@ check("home: capability wording comes from the same TutorHealth component", read
 const flashPage = read("src/app/flashcards/page.tsx");
 check("flashcards: New / Due reviews / Session shown separately", flashPage.includes('t("flashNewLabel")') && flashPage.includes('t("flashDueReviewsLabel")') && flashPage.includes('t("flashSessionReviewed")'));
 check("flashcards: composition snapshotted at session start", flashPage.includes("setComposition({ fresh, due:"));
-check("flashcards: next-due in the local timezone", flashPage.includes("formatLocalDueDate(cardState.dueAt)"));
+check("flashcards: next-due in the local timezone", flashPage.includes("formatLocalDueDate(cardState.dueAt, lang)"));
 check("flashcards: failed-save warning with retry + export", flashPage.includes('t("flashSaveFailed")') && flashPage.includes('t("flashRetrySave")') && flashPage.includes('t("flashSaveRecovered")') && flashPage.includes("setSaveFailed(!saved)"));
 check("flashcards: ?category= deep link", flashPage.includes('search.get("category")'));
 check("flashcards: old conflated dueTotal is gone", !flashPage.includes("dueTotal") && !flashPage.includes('t("dueToday")'));

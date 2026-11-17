@@ -13,7 +13,7 @@ import { retrieve } from "@/lib/data";
 export async function GET(req: NextRequest) {
   if (!isSameOriginRequest(req.headers, "GET")) {
     return NextResponse.json(
-      { error: "This API only accepts requests from the ETEA Prep site itself." },
+      { error: "This API only accepts requests from the ETEA Prep site itself.", code: "same_origin" },
       { status: 403 }
     );
   }
@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
   try {
     if (!isSameOriginRequest(req.headers, "POST")) {
       return NextResponse.json(
-        { error: "This API only accepts requests from the ETEA Prep site itself." },
+        { error: "This API only accepts requests from the ETEA Prep site itself.", code: "same_origin" },
         { status: 403 }
       );
     }
@@ -42,12 +42,12 @@ export async function POST(req: NextRequest) {
     // Stage 1 P1 Tier 2: "ar" (Arabic) is a valid tutor answer language;
     // unknown values fall back to "en" (the previous default).
     const lang = normalizeTutorLang(body.lang);
-    if (!message) return NextResponse.json({ error: "Please type a question first." }, { status: 400 });
+    if (!message) return NextResponse.json({ error: "Please type a question first.", code: "empty_question" }, { status: 400 });
     if (message.length > 2000)
-      return NextResponse.json({ error: "Please keep the question under 2000 characters." }, { status: 400 });
+      return NextResponse.json({ error: "Please keep the question under 2000 characters.", code: "question_too_long" }, { status: 400 });
     // Rate limit AFTER validation: invalid requests above never consumed quota.
     const rl = rateLimitOk(clientIpFromHeaders(req.headers));
-    if (!rl.ok) return NextResponse.json({ error: rl.message }, { status: 429 });
+    if (!rl.ok) return NextResponse.json({ error: rl.message, code: rl.code }, { status: 429 });
     const history = Array.isArray(body.history) ? body.history.slice(-6) : [];
     const historyText = history
       .map((m: { role?: string; text?: string }) => `${m.role === "user" ? "Student" : "Ustad"}: ${String(m.text ?? "").slice(0, 500)}`)
@@ -82,6 +82,6 @@ export async function POST(req: NextRequest) {
     });
   } catch (e) {
     if (e instanceof AiError) return NextResponse.json({ error: e.message }, { status: e.status });
-    return NextResponse.json({ error: "The tutor could not answer right now. Please try again." }, { status: 500 });
+    return NextResponse.json({ error: "The tutor could not answer right now. Please try again.", code: "tutor_failed" }, { status: 500 });
   }
 }
