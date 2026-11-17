@@ -68,11 +68,11 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 // --------------------------------- §2 counts unchanged
 check("5G bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
-check("5G notes total 151", notesTotal === 151, `got ${notesTotal}`);
+check("5G notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check(
-  "5G VISIBLE_COUNTS 7040/151/70, 12 tracks / 24 mocks",
+  "5G VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
   VISIBLE_COUNTS.total === 7040 &&
-    VISIBLE_COUNTS.notes === 151 &&
+    VISIBLE_COUNTS.notes === 301 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 24,
@@ -81,7 +81,7 @@ check(
 check("5G drawing bank 500 items (50 + 450 Phase 1)", BY_SUBJECT.drawing.length === 500, `got ${BY_SUBJECT.drawing.length}`);
 check("5G pastpapers bank still 20 items", BY_SUBJECT.pastpapers.length === 20, `got ${BY_SUBJECT.pastpapers.length}`);
 check("5G pastpapers_reworded bank still 20 items", BY_SUBJECT.pastpapers_reworded.length === 20, `got ${BY_SUBJECT.pastpapers_reworded.length}`);
-check("5G Drawing/PE notes still 24", NOTES["Drawing/PE"].length === 24, `got ${NOTES["Drawing/PE"].length}`);
+check("5G Drawing/PE notes still 29 (24 + 5 Phase 4)", NOTES["Drawing/PE"].length === 29, `got ${NOTES["Drawing/PE"].length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
 const MCQ_TR_KEYS = ["question_ur", "question_roman", "options_ur", "options_roman", "explanation_ur", "explanation_roman"];
@@ -441,8 +441,8 @@ const NOTE_ORIG_KEYS = new Set(["title", "body", "source", "conceptId", "syllabu
   }
   check("5G Drawing/PE notes: no unexpected keys added", noteBadKeys.length === 0, noteBadKeys.slice(0, 3).join(", "));
   check("5G Drawing/PE notes: translation fields all-4-or-none + valid", noteBadShape.length === 0, noteBadShape.slice(0, 3).join(", "));
-  check("5G Drawing/PE notes: all 24 translated", noteTranslated.length === 24, `translated=${noteTranslated.length}`);
-  console.log(`INFO  5G Drawing/PE notes translated: ${noteTranslated.length}/24`);
+  check("5G Drawing/PE notes: all 29 translated", noteTranslated.length === 29, `translated=${noteTranslated.length}`);
+  console.log(`INFO  5G Drawing/PE notes translated: ${noteTranslated.length}/29`);
 }
 let untranslatedNotes = [];
 for (const [subject, notes] of Object.entries(NOTES)) {
@@ -480,9 +480,14 @@ check(
   hockeyNote.body_roman.includes("hockey mein 11 khilari, 60 minute ka match aur 4 quarter hote hain.") &&
     hockeyNote.body_ur.includes("11 کھلاڑی"),
 );
+// Phase 4 rescope: the recall-first lead-in is a property of the 24
+// Stage 5G-batch Drawing/PE notes only. The 5 Phase 4 notes (appended
+// after them) were never specified to carry it, so this check covers
+// the original 24 exactly — same assertion, same 24 notes, unchanged.
+const DRAWING_PE_ORIG24 = NOTES["Drawing/PE"].slice(0, 24);
 check(
-  "5G Recall-first lead-in kept in body_roman ('Recall first:') and body_ur ('پہلے یاد کریں:') on all 24 notes",
-  NOTES["Drawing/PE"].every((n) => n.body_roman.includes("Recall first:") && n.body_ur.includes("پہلے یاد کریں:")),
+  "5G Recall-first lead-in kept in body_roman ('Recall first:') and body_ur ('پہلے یاد کریں:') on the original 24 notes",
+  DRAWING_PE_ORIG24.every((n) => n.body_roman.includes("Recall first:") && n.body_ur.includes("پہلے یاد کریں:")),
 );
 
 // --------------------------------- §9 resolver on real 5G items + notes
@@ -514,7 +519,7 @@ for (const [bankKey, label] of [["drawing", "Drawing"], ["pastpapers", "Past Pap
 }
 check("5G quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5G content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5G content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
 
 // --------------------------------- §10 past-paper disclosure labels (FINAL)
 // The disclosure lives in `pastPaperRef`, rendered by the existing
@@ -567,7 +572,7 @@ check(
   `untranslated=${QUESTIONS.filter((q) => !(tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid)).map((q) => q.id).slice(0, 5).join(",")}`,
 );
 check(
-  "5G FINAL: all 151 notes carry all 4 translation fields",
+  "5G FINAL: all 301 notes carry all 4 translation fields",
   Object.values(NOTES).flat().every((n) => NOTE_TR_KEYS.every((k) => typeof n[k] === "string" && n[k].trim().length > 0)),
 );
 

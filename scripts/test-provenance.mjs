@@ -99,7 +99,7 @@ check(
 );
 
 // 5. The 15 P0.3 notes: all concept-extracted with conceptId + clause.
-check("56 concept-extracted notes", sourcedNotes.length === 56, `got ${sourcedNotes.length}`);
+check("206 concept-extracted notes (56 + 150 Phase 4)", sourcedNotes.length === 206, `got ${sourcedNotes.length}`);
 check(
   "all 15 notes have conceptId + clause",
   sourcedNotes.every((n) => !!n.conceptId && !!n.syllabusClause),

@@ -60,18 +60,18 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 // --------------------------------- §2 counts unchanged
 check("5B bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
-check("5B notes total 151", notesTotal === 151, `got ${notesTotal}`);
+check("5B notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check(
-  "5B VISIBLE_COUNTS 7040/151/70, 12 tracks / 24 mocks",
+  "5B VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
   VISIBLE_COUNTS.total === 7040 &&
-    VISIBLE_COUNTS.notes === 151 &&
+    VISIBLE_COUNTS.notes === 301 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 24,
   JSON.stringify(VISIBLE_COUNTS),
 );
 check("5B tajweed bank 500 items (82 pilot + 418 Phase 1)", BY_SUBJECT.tajweed.length === 500, `got ${BY_SUBJECT.tajweed.length}`);
-check("5B tajweed notes still 24", NOTES.Tajweed.length === 24, `got ${NOTES.Tajweed.length}`);
+check("5B tajweed notes still 35 (24 + 11 Phase 4)", NOTES.Tajweed.length === 35, `got ${NOTES.Tajweed.length}`);
 check("5B islamiyat bank 500 items (grown from 105 by Phase 1)", BY_SUBJECT.islamiyat.length === 500, `got ${BY_SUBJECT.islamiyat.length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
@@ -212,8 +212,8 @@ for (const n of NOTES.Tajweed) {
 }
 check("5B tajweed notes: no unexpected keys added", noteBadKeys.length === 0, noteBadKeys.slice(0, 3).join(", "));
 check("5B tajweed notes: translation fields all-4-or-none + valid", noteBadShape.length === 0, noteBadShape.slice(0, 3).join(", "));
-check("5B tajweed notes: all 24 translated", noteTranslated.length === 24, `translated=${noteTranslated.length}`);
-console.log(`INFO  5B tajweed notes translated: ${noteTranslated.length}/24`);
+check("5B tajweed notes: all 35 translated", noteTranslated.length === 35, `translated=${noteTranslated.length}`);
+console.log(`INFO  5B tajweed notes translated: ${noteTranslated.length}/35`);
 // Stage 5C: Arabic + Urdu notes are translated too.
 // Stage 5D: English + Maths + GK notes are translated too.
 const TRANSLATED_NOTE_SUBJECTS = new Set(["Islamiyat", "Tajweed", "Arabic", "Urdu", "English", "Maths", "GK", "General Science", "Pak Studies", "Social Studies", "Pedagogy", "IT/Computer", "Drawing/PE"]);
@@ -251,7 +251,7 @@ if (translatedN) {
 }
 check("5B quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5B content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5B content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

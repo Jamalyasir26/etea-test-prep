@@ -248,9 +248,9 @@ const STRINGS: Record<string, StrEntry> = {
     ur: "استاد Gemini (بنیادی) کو پکارتا ہے، اور Groq اور OpenRouter (مفت ماڈل) متبادل کے طور پر ہیں، صرف سرور پر۔ وہ صرف اس لائبریری سے جواب دیتا ہے، اور جب سوال لائبریری سے باہر ہو تو بتا دیتا ہے۔ اگر براہ راست اے آئی بند ہو تو آف لائن معاون (لائبریری تلاش) پھر بھی کام کرتا ہے۔",
   },
   quickLibraryDesc: {
-    en: "151 notes with recall-first prompts",
-    roman: "151 notes, recall-first prompts ke saath",
-    ur: "151 نوٹس، پہلے یاد کرنے کی ترغیب کے ساتھ",
+    en: "301 notes with recall-first prompts",
+    roman: "301 notes, recall-first prompts ke saath",
+    ur: "301 نوٹس، پہلے یاد کرنے کی ترغیب کے ساتھ",
   },
   quickPracticeDesc: {
     en: "Topic quizzes, 20 per attempt",

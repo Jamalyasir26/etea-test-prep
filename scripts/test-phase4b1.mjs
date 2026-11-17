@@ -57,15 +57,15 @@ const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 // --- totals ---
 check("4B1 bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
-check("4B1 notes total 151", notesTotal === 151, `got ${notesTotal}`);
+check("4B1 notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check("4B1 flashcards still 70", FLASHCARDS.length === 70, `got ${FLASHCARDS.length}`);
-check("4B1 VISIBLE_COUNTS 7040/151/70, 12 tracks / 24 mocks",
-  VISIBLE_COUNTS.total === 7040 && VISIBLE_COUNTS.notes === 151 && VISIBLE_COUNTS.cards === 70 &&
+check("4B1 VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
+  VISIBLE_COUNTS.total === 7040 && VISIBLE_COUNTS.notes === 301 && VISIBLE_COUNTS.cards === 70 &&
   VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 24, JSON.stringify(VISIBLE_COUNTS));
 check("4B1 IT bank 500 items (Phase 1: original 60 + 440 new)", BY_SUBJECT.it.length === 500, `got ${BY_SUBJECT.it.length}`);
 check("4B1 PE bank 500 items (Phase 1: original 46 + 454 new)", BY_SUBJECT.pe.length === 500, `got ${BY_SUBJECT.pe.length}`);
-check("4B1 IT/Computer notes 17", NOTES["IT/Computer"].length === 17, `got ${NOTES["IT/Computer"].length}`);
-check("4B1 Drawing/PE notes 24 (shared bucket, +10 Drawing in Phase 4B2)", NOTES["Drawing/PE"].length === 24, `got ${NOTES["Drawing/PE"].length}`);
+check("4B1 IT/Computer notes 24 (17 + 7 Phase 4)", NOTES["IT/Computer"].length === 24, `got ${NOTES["IT/Computer"].length}`);
+check("4B1 Drawing/PE notes 29 (24 + 5 Phase 4, shared bucket, +10 Drawing in Phase 4B2)", NOTES["Drawing/PE"].length === 29, `got ${NOTES["Drawing/PE"].length}`);
 
 // --- new items present, in order, appended after the old items ---
 const IT_NEW = Array.from({ length: 30 }, (_, i) => `ITC-${String(i + 31).padStart(3, "0")}`);
@@ -142,7 +142,9 @@ const PE_NOTE_TITLES = [
   "First Aid on the Field — RICE and Prevention",
   "Sports Bodies and the Olympic Games",
 ];
-const itNotes = NOTES["IT/Computer"].slice(6);
+// Phase 4 appended 7 IT notes after the 11 Phase 4B1 notes (indices
+// 6..16), so the 4B1 slice is bounded to indices 6..16.
+const itNotes = NOTES["IT/Computer"].slice(6, 17);
 // Phase 4B2 appended 10 Drawing notes after the 10 PE notes (indices 14..23),
 // so the PE slice is bounded to indices 4..13.
 const peNotes = NOTES["Drawing/PE"].slice(4, 14);
@@ -152,8 +154,8 @@ const NEW_NOTES = [...itNotes, ...peNotes];
 check("4B1 new notes: provenance + conceptId + clause + house style",
   NEW_NOTES.every((n) => n.sourceKind === "concept-extracted" && n.source.startsWith("Original content — concept-extracted from ") &&
     !!n.conceptId && !!n.syllabusClause && n.body.includes("Roman Urdu:") && n.body.includes("Recall first:")));
-check("4B1 concept-extracted notes total 56 (15 + 21 + 20 in Phase 4B2)",
-  Object.values(NOTES).flat().filter((n) => n.sourceKind === "concept-extracted").length === 56);
+check("4B1 concept-extracted notes total 206 (56 + 150 in Phase 4)",
+  Object.values(NOTES).flat().filter((n) => n.sourceKind === "concept-extracted").length === 206);
 
 // --- mocks draw from the grown pools ---
 const ctitB = MOCKS.find((m) => m.id === "ctit-B");
@@ -180,16 +182,16 @@ const petRow = ledger.ledgerRowFor("pet");
 const dmRow = ledger.ledgerRowFor("dm");
 const itRow = ctitRow.subjects.find((s) => s.label === "IT / Computer");
 const peRow = petRow.subjects.find((s) => s.label === "Physical Education");
-check("4B1 ledger ctit IT row: 500 MCQs / 17 notes / 6 cards (recomputed; Phase 1 IT added 440)",
-  itRow.mcqs === 500 && itRow.notes === 17 && itRow.cards === 6, JSON.stringify(itRow));
-check("4B1 ledger pet PE row: 500 MCQs / 24 notes / 0 cards (recomputed; Phase 1 PE added 454)",
-  peRow.mcqs === 500 && peRow.notes === 24 && peRow.cards === 0, JSON.stringify(peRow));
+check("4B1 ledger ctit IT row: 500 MCQs / 24 notes / 6 cards (recomputed; Phase 1 IT added 440, Phase 4 added 7 notes)",
+  itRow.mcqs === 500 && itRow.notes === 24 && itRow.cards === 6, JSON.stringify(itRow));
+check("4B1 ledger pet PE row: 500 MCQs / 29 notes / 0 cards (recomputed; Phase 1 PE added 454, Phase 4 added 5 notes)",
+  peRow.mcqs === 500 && peRow.notes === 29 && peRow.cards === 0, JSON.stringify(peRow));
 check("4B1 ledger ctit + pet coverage still exact", ctitRow.coverage === "exact" && petRow.coverage === "exact");
 check("4B1 ledger ctit/pet prose: count-free, Phase 4B1 noted",
   ctitRow.missing.includes("Phase 4B1") && !/30 MCQs/.test(ctitRow.missing) &&
   petRow.missing.includes("Phase 4B1") && !/20 MCQs/.test(petRow.missing));
-check("4B1 ledger DM row follows the shared Drawing/PE bucket (24 notes)",
-  dmRow.subjects.find((s) => s.label === "Drawing").notes === 24,
+check("4B1 ledger DM row follows the shared Drawing/PE bucket (29 notes)",
+  dmRow.subjects.find((s) => s.label === "Drawing").notes === 29,
   "DM prose updated in Phase 4B2 — see VERIFY-phase4b2.md");
 check("4B1 ledger still 12 rows", ledger.buildLedger().length === 12);
 
@@ -203,8 +205,8 @@ check("4B1 DM + Qari rows untouched by this batch", (() => {
   return !blockFor("dm").includes("Phase 4B1") && !blockFor("qari").includes("Phase 4B1");
 })());
 const contentJson = JSON.parse(read("src/data/content.json"));
-check("4B1 content.json counts: total 7040, IT 500, PE 500, notes 151, cards 70",
-  contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70 &&
+check("4B1 content.json counts: total 7040, IT 500, PE 500, notes 301, cards 70",
+  contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70 &&
   contentJson.counts.bySubject.find((r) => r[0] === "IT")[1] === 500 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Physical Education")[1] === 500);
 check("4B1 content.json bySubject index matches banks (it 500 / pe 500)",

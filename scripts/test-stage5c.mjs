@@ -60,11 +60,11 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 // --------------------------------- §2 counts unchanged
 check("5C bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
-check("5C notes total 151", notesTotal === 151, `got ${notesTotal}`);
+check("5C notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check(
-  "5C VISIBLE_COUNTS 7040/151/70, 12 tracks / 24 mocks",
+  "5C VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
   VISIBLE_COUNTS.total === 7040 &&
-    VISIBLE_COUNTS.notes === 151 &&
+    VISIBLE_COUNTS.notes === 301 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 24,
@@ -72,8 +72,8 @@ check(
 );
 check("5C arabic bank still 500 items", BY_SUBJECT.arabic.length === 500, `got ${BY_SUBJECT.arabic.length}`);
 check("5C urdu bank still 500 items", BY_SUBJECT.urdu.length === 500, `got ${BY_SUBJECT.urdu.length}`);
-check("5C Arabic notes still 13", NOTES.Arabic.length === 13, `got ${NOTES.Arabic.length}`);
-check("5C Urdu notes still 6", NOTES.Urdu.length === 6, `got ${NOTES.Urdu.length}`);
+check("5C Arabic notes still 23 (13 + 10 Phase 4)", NOTES.Arabic.length === 23, `got ${NOTES.Arabic.length}`);
+check("5C Urdu notes still 20 (6 + 14 Phase 4)", NOTES.Urdu.length === 20, `got ${NOTES.Urdu.length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
 const MCQ_TR_KEYS = ["question_ur", "question_roman", "options_ur", "options_roman", "explanation_ur", "explanation_roman"];
@@ -205,7 +205,7 @@ check("5C no bank other than islamiyat/tajweed/arabic/urdu/english/maths/gk carr
 // --------------------------------- §7 notes: completeness + scope
 const NOTE_TR_KEYS = ["title_ur", "title_roman", "body_ur", "body_roman"];
 const NOTE_ORIG_KEYS = new Set(["title", "body", "source", "conceptId", "syllabusClause", "sourceKind", "ur", "roman"]);
-for (const [subject, expected] of [["Arabic", 13], ["Urdu", 6]]) {
+for (const [subject, expected] of [["Arabic", 23], ["Urdu", 20]]) {
   let noteBadShape = [];
   let noteBadKeys = [];
   let noteTranslated = [];
@@ -273,7 +273,7 @@ if (translatedUrN) {
 }
 check("5C quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5C content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5C content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

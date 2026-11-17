@@ -105,14 +105,15 @@ check(
 );
 if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
   // SW caching logic unchanged: the ONLY allowed difference vs the backup is
-  // the CACHE_VERSION bump v1 -> v2 (evicts the old monolithic chunk now that
-  // banks load lazily). Compare with the version line normalized.
+  // the CACHE_VERSION bump (v1 -> v2 at lazy-load, v2 -> v3 in Phase 4 to
+  // evict the stale v2 caches behind the /mock list observation).
+  // Compare with the version line normalized.
   const norm = (s) => s.replace(/const CACHE_VERSION = "etea-prep-v\d+";/, 'const CACHE_VERSION = "X";');
   check(
     "public/sw.js identical to the pre-lazyload backup except the CACHE_VERSION bump (SW logic unchanged)",
     norm(fs.readFileSync(join(ROOT, "public/sw.js"), "utf8")) === norm(fs.readFileSync(join(BACKUP, "public/sw.js"), "utf8")),
   );
-  check('SW CACHE_VERSION bumped to "etea-prep-v2"', swSrc.includes('const CACHE_VERSION = "etea-prep-v2";'));
+  check('SW CACHE_VERSION bumped to "etea-prep-v3" (Phase 4)', swSrc.includes('const CACHE_VERSION = "etea-prep-v3";'));
 } else {
   info("pre-lazyload backup not found — SW byte-compare skipped");
 }
@@ -129,8 +130,11 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 // one-line comment change on the deadlineTs field ("(mock only)" ->
 // "(timed runs: mock + timed practice)", W3 timed mode; no code change),
 // and content.json gained ONLY the 8 new mock defs + counts.mocks 20 -> 28.
-// Everything else stays byte-identical, and the changed files must
-// match the backup exactly outside the Phase 1 + Phase 2 + Phase 3 deltas
+// Phase 4 exception (documented, narrow): content.json gained ONLY the
+// 150 appended notes (per-subject tails beyond the backup lengths) +
+// counts.notes 151 -> 301; public/sw.js gained ONLY the CACHE_VERSION
+// bump v2 -> v3. Everything else stays byte-identical, and the changed files must
+// match the backup exactly outside the Phase 1 + Phase 2 + Phase 3 + Phase 4 deltas
 // (byte-prefix for the banks, parsed-diff for content.json, function-strip
 // for tracking.ts).
 if (fs.existsSync(BACKUP)) {
@@ -312,6 +316,15 @@ if (fs.existsSync(BACKUP)) {
   reverted.mocks = reverted.mocks.filter((m) => !PHASE3_NEW_MOCK_IDS.includes(m.id));
   reverted.counts.mocks = backupContent.counts.mocks;
   const curOnlyMockIds = curContent.mocks.map((m) => m.id).filter((id) => !backupContent.mocks.some((b) => b.id === id));
+  // Phase 4 revert (documented, narrow): drop ONLY the 150 appended
+  // notes (each subject's tail beyond the backup length) and reset
+  // counts.notes to the backup value before comparing. The original
+  // 151 notes must match the backup exactly.
+  const PHASE4_NEW_PER_SUBJECT = {"Drawing/PE": 5, "General Science": 12, Arabic: 10, Pedagogy: 10, "Pak Studies": 13, Islamiyat: 12, Maths: 13, GK: 14, Urdu: 14, Tajweed: 11, "IT/Computer": 7, English: 12, "Social Studies": 17};
+  for (const subject of Object.keys(PHASE4_NEW_PER_SUBJECT)) {
+    reverted.notes[subject] = reverted.notes[subject].slice(0, backupContent.notes[subject].length);
+  }
+  reverted.counts.notes = backupContent.counts.notes;
   reverted.counts.total = backupContent.counts.total;
   reverted.counts.bySubject.find((r) => r[0] === "Islamiyat")[1] =
     backupContent.counts.bySubject.find((r) => r[0] === "Islamiyat")[1];
@@ -376,9 +389,11 @@ if (fs.existsSync(BACKUP)) {
     delete m.note_ur;
     delete m.note_roman;
   }
-  check("Phase 1 + Phase 2 + Phase 3 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes + Phase 2 translation fields + the 8 Phase 3 mock defs differ from backup",
+  check("Phase 1 + Phase 2 + Phase 3 + Phase 4 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes + Phase 2 translation fields + the 8 Phase 3 mock defs + the 150 Phase 4 notes differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
     curContent.counts.mocks === 28 && curContent.mocks.length === 28 && JSON.stringify(curOnlyMockIds) === JSON.stringify(PHASE3_NEW_MOCK_IDS) &&
+    curContent.counts.notes === 301 &&
+    Object.entries(PHASE4_NEW_PER_SUBJECT).every(([s, a]) => curContent.notes[s].length === backupContent.notes[s].length + a) &&
     curContent.counts.total === 7040 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500 && curContent.bySubject.socialstudies.length === 500 && curContent.bySubject.gk.length === 500 && curContent.bySubject.it.length === 500 && curContent.bySubject.pe.length === 500 && curContent.bySubject.drawing.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");

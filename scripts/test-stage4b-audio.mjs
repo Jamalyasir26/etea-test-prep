@@ -107,20 +107,33 @@ check("4B stored ayah text equals the API-verified snapshot (NFC)", textsNfcEqua
 // --------------------------------- §3 mapping titles exist exactly once
 const content = JSON.parse(read("src/data/content.json"));
 const tajweedTitles = content.notes["Tajweed"].map((n) => n.title);
-check("4B Tajweed notes: 24 total", tajweedTitles.length === 24, String(tajweedTitles.length));
+check("4B Tajweed notes: 35 total (24 + 11 Phase 4)", tajweedTitles.length === 35, String(tajweedTitles.length));
 let titlesExact = true;
 for (const title of Object.keys(noteAudio)) {
   if (tajweedTitles.filter((t) => t === title).length !== 1) titlesExact = false;
 }
 check("4B every mapped title exists exactly once in Tajweed notes", titlesExact);
 const unmapped = tajweedTitles.filter((t) => !(t in noteAudio));
-check("4B exactly 11 Tajweed notes stay text-only", unmapped.length === 11, unmapped.join(" | "));
+check("4B exactly 22 Tajweed notes stay text-only (11 + 11 Phase 4, no new audio mappings)", unmapped.length === 22, unmapped.join(" | "));
 for (const t of [
   "Makharij — The Places of Articulation",
   "Sifaat — The Qualities of Letters",
   "Hifz Method — Sabq, Sabqi and Amukhta",
   "Revision Cycles — Keeping What You Memorised",
   "Listening, a Teacher and One Mushaf — Hifz Supports",
+  // Phase 4: all 11 new Tajweed notes are text-only — Phase 4 added
+  // no audio mappings, so each new title must stay unmapped.
+  "Ghunnah — The Nasal Sound and Its Counts",
+  "Noon and Meem Mushaddad — Compulsory Ghunnah",
+  "Madd Lazim — The Longest Stretch",
+  "Waqf Types — Tam, Kafi, Hasan and Qabih",
+  "Ibtida — How to Resume After Stopping",
+  "The Rules of Raa — Heavy and Light in Detail",
+  "Surah Al-Fatiha — Names and Place",
+  "Ayat-ul-Kursi — Place and Virtue",
+  "First and Last Revealed Verses",
+  "Dua-e-Qunoot and Durood-e-Ibrahimi — Where They Are Read",
+  "Juz and Para — How the Quran Is Divided",
 ]) {
   check(`4B text-only (no audio): ${t}`, unmapped.includes(t));
 }

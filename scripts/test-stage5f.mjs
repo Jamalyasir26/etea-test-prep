@@ -69,11 +69,11 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 // --------------------------------- §2 counts unchanged
 check("5F bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
-check("5F notes total 151", notesTotal === 151, `got ${notesTotal}`);
+check("5F notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check(
-  "5F VISIBLE_COUNTS 7040/151/70, 12 tracks / 24 mocks",
+  "5F VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
   VISIBLE_COUNTS.total === 7040 &&
-    VISIBLE_COUNTS.notes === 151 &&
+    VISIBLE_COUNTS.notes === 301 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 24,
@@ -81,7 +81,7 @@ check(
 );
 check("5F it bank 500 items (Phase 1: original 60 + 440 new)", BY_SUBJECT.it.length === 500, `got ${BY_SUBJECT.it.length}`);
 check("5F pe bank 500 items (Phase 1: original 46 + 454 new)", BY_SUBJECT.pe.length === 500, `got ${BY_SUBJECT.pe.length}`);
-check("5F IT/Computer notes still 17", NOTES["IT/Computer"].length === 17, `got ${NOTES["IT/Computer"].length}`);
+check("5F IT/Computer notes still 24 (17 + 7 Phase 4)", NOTES["IT/Computer"].length === 24, `got ${NOTES["IT/Computer"].length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
 const MCQ_TR_KEYS = ["question_ur", "question_roman", "options_ur", "options_roman", "explanation_ur", "explanation_roman"];
@@ -304,8 +304,8 @@ const NOTE_ORIG_KEYS = new Set(["title", "body", "source", "conceptId", "syllabu
   }
   check("5F IT/Computer notes: no unexpected keys added", noteBadKeys.length === 0, noteBadKeys.slice(0, 3).join(", "));
   check("5F IT/Computer notes: translation fields all-4-or-none + valid", noteBadShape.length === 0, noteBadShape.slice(0, 3).join(", "));
-  check("5F IT/Computer notes: all 17 translated", noteTranslated.length === 17, `translated=${noteTranslated.length}`);
-  console.log(`INFO  5F IT/Computer notes translated: ${noteTranslated.length}/17`);
+  check("5F IT/Computer notes: all 24 translated", noteTranslated.length === 24, `translated=${noteTranslated.length}`);
+  console.log(`INFO  5F IT/Computer notes translated: ${noteTranslated.length}/24`);
 }
 const TRANSLATED_NOTE_SUBJECTS = new Set(["Islamiyat", "Tajweed", "Arabic", "Urdu", "English", "Maths", "GK", "General Science", "Pak Studies", "Social Studies", "Pedagogy", "IT/Computer", "Drawing/PE"]);
 let otherNoteTouched = [];
@@ -345,9 +345,14 @@ check(
   binNote.body_roman.includes("computer sirf 0 aur 1 samajhta hai; 8 bit se 1 byte banta hai.") &&
     binNote.body_ur.includes("کمپیوٹر صرف 0 اور 1 سمجھتا ہے؛ 8 bit سے 1 byte بنتا ہے۔"),
 );
+// Phase 4 rescope: the recall-first lead-in is a property of the 17
+// Stage 5F-batch IT/Computer notes only. The 7 Phase 4 notes (appended
+// after them) were never specified to carry it, so this check covers
+// the original 17 exactly — same assertion, same 17 notes, unchanged.
+const IT_ORIG17 = NOTES["IT/Computer"].slice(0, 17);
 check(
-  "5F Recall-first lead-in kept in body_roman ('Recall first:') and body_ur ('پہلے یاد کریں:') on all 17 notes",
-  NOTES["IT/Computer"].every((n) => n.body_roman.includes("Recall first:") && n.body_ur.includes("پہلے یاد کریں:")),
+  "5F Recall-first lead-in kept in body_roman ('Recall first:') and body_ur ('پہلے یاد کریں:') on the original 17 notes",
+  IT_ORIG17.every((n) => n.body_roman.includes("Recall first:") && n.body_ur.includes("پہلے یاد کریں:")),
 );
 
 // --------------------------------- §9 resolver on real 5F items + notes
@@ -378,7 +383,7 @@ for (const [bankKey, label] of [["it", "IT"], ["pe", "PE"]]) {
 }
 check("5F quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5F content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5F content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

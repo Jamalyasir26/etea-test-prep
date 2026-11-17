@@ -61,11 +61,11 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 // --------------------------------- §2 counts unchanged
 check("5D bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
-check("5D notes total 151", notesTotal === 151, `got ${notesTotal}`);
+check("5D notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check(
-  "5D VISIBLE_COUNTS 7040/151/70, 12 tracks / 24 mocks",
+  "5D VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
   VISIBLE_COUNTS.total === 7040 &&
-    VISIBLE_COUNTS.notes === 151 &&
+    VISIBLE_COUNTS.notes === 301 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 24,
@@ -74,9 +74,9 @@ check(
 check("5D english bank still 500 items", BY_SUBJECT.english.length === 500, `got ${BY_SUBJECT.english.length}`);
 check("5D maths bank still 500 items", BY_SUBJECT.maths.length === 500, `got ${BY_SUBJECT.maths.length}`);
 check("5D gk bank 500 items (Phase 1 growth)", BY_SUBJECT.gk.length === 500, `got ${BY_SUBJECT.gk.length}`);
-check("5D English notes still 8", NOTES.English.length === 8, `got ${NOTES.English.length}`);
-check("5D Maths notes still 7", NOTES.Maths.length === 7, `got ${NOTES.Maths.length}`);
-check("5D GK notes still 6", NOTES.GK.length === 6, `got ${NOTES.GK.length}`);
+check("5D English notes still 20 (8 + 12 Phase 4)", NOTES.English.length === 20, `got ${NOTES.English.length}`);
+check("5D Maths notes still 20 (7 + 13 Phase 4)", NOTES.Maths.length === 20, `got ${NOTES.Maths.length}`);
+check("5D GK notes still 20 (6 + 14 Phase 4)", NOTES.GK.length === 20, `got ${NOTES.GK.length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
 const MCQ_TR_KEYS = ["question_ur", "question_roman", "options_ur", "options_roman", "explanation_ur", "explanation_roman"];
@@ -324,7 +324,7 @@ check("5D drawing_pe.json (dead, unregistered) untouched: no translation fields"
 // --------------------------------- §9 notes: completeness + scope + Maths formula preservation
 const NOTE_TR_KEYS = ["title_ur", "title_roman", "body_ur", "body_roman"];
 const NOTE_ORIG_KEYS = new Set(["title", "body", "source", "conceptId", "syllabusClause", "sourceKind", "ur", "roman"]);
-for (const [subject, expected] of [["English", 8], ["Maths", 7], ["GK", 6]]) {
+for (const [subject, expected] of [["English", 20], ["Maths", 20], ["GK", 20]]) {
   let noteBadShape = [];
   let noteBadKeys = [];
   let noteTranslated = [];
@@ -398,7 +398,7 @@ for (const subject of ["English", "Maths", "GK"]) {
 }
 check("5D quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5D content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5D content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

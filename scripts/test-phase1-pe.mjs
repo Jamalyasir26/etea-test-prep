@@ -352,9 +352,9 @@ const LABEL_TO_MAP = {
     const label = { arabic: "Arabic", drawing: "Drawing", english: "English", gk: "GK", islamiyat: "Islamiyat", it: "IT", maths: "Maths", pakstudies: "Pak Studies", pastpapers: "Past-Paper Topics", pastpapers_reworded: "Past-Paper Topics (Reworded)", pedagogy: "Pedagogy", science: "General Science", socialstudies: "Social Studies", tajweed: "Tajweed", urdu: "Urdu" }[k];
     return bySubj[label] === n;
   });
-  check("Phase1 content.json counts: total 7040, Physical Education 500, other rows unchanged, 151/70/19/28",
+  check("Phase1 content.json counts: total 7040, Physical Education 500, other rows unchanged, 301/70/19/28",
     content.counts.total === 7040 && bySubj["Physical Education"] === 500 && otherRowsOk &&
-    content.counts.notes === 151 && content.counts.cards === 70 && content.counts.tracks === 19 && content.counts.mocks === 28,
+    content.counts.notes === 301 && content.counts.cards === 70 && content.counts.tracks === 19 && content.counts.mocks === 28,
     `total=${content.counts.total} pe=${bySubj["Physical Education"]}`);
 }
 

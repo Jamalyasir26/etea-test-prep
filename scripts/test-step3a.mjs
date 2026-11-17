@@ -147,7 +147,7 @@ check(
   data.VISIBLE_COUNTS.tracks === 12 &&
     data.VISIBLE_COUNTS.mocks === 24 &&
     data.VISIBLE_COUNTS.total === 7040 &&
-    data.VISIBLE_COUNTS.notes === 151 &&
+    data.VISIBLE_COUNTS.notes === 301 &&
     data.VISIBLE_COUNTS.cards === 70,
   JSON.stringify(data.VISIBLE_COUNTS),
 );

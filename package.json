@@ -95,7 +95,9 @@
     "test:phase3practice": "node scripts/test-phase3-practice.mjs",
     "test:phase3timed": "node scripts/test-phase3-timed.mjs",
     "test:phase3analysis": "node scripts/test-phase3-analysis.mjs",
-    "test:phase3practiceui": "node scripts/test-phase3-practice-ui.mjs"
+    "test:phase3practiceui": "node scripts/test-phase3-practice-ui.mjs",
+    "test:phase4library": "node scripts/test-phase4-library.mjs",
+    "test:phase4organize": "node scripts/test-phase4-organize.mjs"
   },
   "version": "3.0.0"
 }

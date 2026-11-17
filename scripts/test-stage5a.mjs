@@ -59,18 +59,18 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 // --------------------------------- §2 counts unchanged
 check("5A bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
-check("5A notes total 151", notesTotal === 151, `got ${notesTotal}`);
+check("5A notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check(
-  "5A VISIBLE_COUNTS 7040/151/70, 12 tracks / 24 mocks",
+  "5A VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
   VISIBLE_COUNTS.total === 7040 &&
-    VISIBLE_COUNTS.notes === 151 &&
+    VISIBLE_COUNTS.notes === 301 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 24,
   JSON.stringify(VISIBLE_COUNTS),
 );
 check("5A islamiyat bank 500 items (grown from 105 by Phase 1)", BY_SUBJECT.islamiyat.length === 500, `got ${BY_SUBJECT.islamiyat.length}`);
-check("5A islamiyat notes still 14", NOTES.Islamiyat.length === 14, `got ${NOTES.Islamiyat.length}`);
+check("5A islamiyat notes still 26 (14 + 12 Phase 4)", NOTES.Islamiyat.length === 26, `got ${NOTES.Islamiyat.length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
 const MCQ_TR_KEYS = ["question_ur", "question_roman", "options_ur", "options_roman", "explanation_ur", "explanation_roman"];
@@ -186,7 +186,7 @@ for (const n of NOTES.Islamiyat) {
 check("5A islamiyat notes: no unexpected keys added", noteBadKeys.length === 0, noteBadKeys.slice(0, 3).join(", "));
 check("5A islamiyat notes: translation fields all-4-or-none + valid", noteBadShape.length === 0, noteBadShape.slice(0, 3).join(", "));
 check("5A islamiyat notes: at least one note translated", noteTranslated.length > 0, `translated=${noteTranslated.length}`);
-console.log(`INFO  5A islamiyat notes translated: ${noteTranslated.length}/14`);
+console.log(`INFO  5A islamiyat notes translated: ${noteTranslated.length}/26`);
 let otherNoteTouched = [];
 for (const [subject, notes] of Object.entries(NOTES)) {
   // Stage 5C: Arabic + Urdu notes are translated too.
@@ -295,7 +295,7 @@ check("5A /review untouched: no badge, no resolver", !review.includes("[Auto-Tra
 const quranExamples = read("src/data/quran-examples.json");
 check("5A quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(quranExamples));
 const contentJson = readJson("src/data/content.json");
-check("5A content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5A content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);
