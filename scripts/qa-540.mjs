@@ -1,6 +1,6 @@
 // qa-540.mjs — structural + consistency-heuristic QA for the ETEA Prep banks.
 // NOTE: the filename is historical — it dates from when the bank held 540
-// items. The active total is now 4756 (Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455, Phase 1 Urdu added 455, Phase 1 Maths added 455, Phase 1 Pak Studies added 455, Phase 1 Pedagogy added 470 and Phase 1 Science added 470 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
+// items. The active total is now 5226 (Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455, Phase 1 Urdu added 455, Phase 1 Maths added 455, Phase 1 Pak Studies added 455, Phase 1 Pedagogy added 470, Phase 1 Science added 470 and Phase 1 Social Studies added 470 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
 // references (`npm run qa`, QA-540.md, VERIFY-phase2.md) keep working.
 // Plain node, no dependencies. Run: npm run qa  (node scripts/qa-540.mjs)
 // Exit code 0 = all checks pass; 1 = any check fails.
@@ -8,7 +8,7 @@
 // SCOPE: this is STRUCTURAL + consistency-heuristic QA only. It checks counts,
 // option shape, ID uniqueness, near-duplicate stems, the PED-009 regression and
 // mock-composition consistency. It does NOT declare the bank subject-matter
-// verified — full subject verification of all 4756 items is out of scope.
+// verified — full subject verification of all 5226 items is out of scope.
 //
 // Bank layout note: drawing_pe.json is LEGACY — kept on disk, superseded by
 // drawing.json (DRW-001..DRW-010 + DRW-021..DRW-060) + pe.json (DRW-011..020 + PE-001..PE-036).
@@ -27,9 +27,9 @@ const CONTENT_PATH = join(ROOT, "src/data/content.json");
 const EXPECTED = {
   arabic: 500, drawing: 50, pe: 46, english: 500, gk: 30, islamiyat: 500,
   it: 60, maths: 500, pakstudies: 500, pastpapers: 20, pastpapers_reworded: 20,
-  pedagogy: 500, science: 500, socialstudies: 30, tajweed: 500, urdu: 500,
+  pedagogy: 500, science: 500, socialstudies: 500, tajweed: 500, urdu: 500,
 };
-const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 4756
+const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 5226
 const LEGACY_FILE = "drawing_pe.json";
 
 const results = []; // { name, pass, detail }
@@ -203,10 +203,16 @@ check("review status: exactly the 15 owner-approved items are owner-reviewed (by
   const newDrawingOk = drawing.slice(10).every((x) => x.subject === "Drawing" && x.subjectKey === "drawing");
   const newPeOk = pe.slice(10, 20).every((x) => x.subject === "Physical Education" && x.subjectKey === "pe");
   check("new items carry split labels (drawing / pe, not drawing_pe)", newDrawingOk && newPeOk);
-  // new SS bank
+  // new SS bank (Phase 1 Social Studies: grown 30 -> 500; the original 30
+  // keep the pre-existing sourceNote provenance key, the 470 appended
+  // items follow the standard convention — no sourceNote — asserted by
+  // test-phase1-socialstudies.mjs. Rescoping preserves exactly what this
+  // check asserted.)
   const ss = banks.socialstudies || [];
-  const ssOk = ss.length === 30 && ss.every((x) => x.id.startsWith("SS-") && x.sourceNote === "AI-drafted from ETEA 453 Social Studies block; unreviewed" && x.reviewStatus === "draft" && x.verified === false);
-  check("socialstudies.json: 30 items, SS-### ids, sourceNote + draft + unverified", ssOk, `got ${ss.length} items`);
+  const ssOk = ss.length === 500 && ss.every((x) => x.id.startsWith("SS-") && x.reviewStatus === "draft" && x.verified === false) &&
+    ss.slice(0, 30).every((x) => x.sourceNote === "AI-drafted from ETEA 453 Social Studies block; unreviewed") &&
+    ss.slice(30).every((x) => !("sourceNote" in x));
+  check("socialstudies.json: 500 items, SS-### ids, draft + unverified, original 30 keep sourceNote", ssOk, `got ${ss.length} items`);
 }
 
 // ---------- 7. GK rework regression (no generic world-capitals items) ----------
@@ -298,9 +304,9 @@ const content = loadJson(CONTENT_PATH);
 
   // content.json counts agree with the banks.
   const counts = content.counts || {};
-  check("content.json counts.total = 4756 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
+  check("content.json counts.total = 5226 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
   const bySubjectSum = (counts.bySubject || []).reduce((s, [, n]) => s + n, 0);
-  check("content.json counts.bySubject sums to 4756", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
+  check("content.json counts.bySubject sums to 5226", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
   const bySubject = content.bySubject || {};
   const indexBad = [];
   for (const [key, expected] of Object.entries(EXPECTED)) {

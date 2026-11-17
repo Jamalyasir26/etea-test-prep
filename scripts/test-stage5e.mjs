@@ -60,12 +60,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5E bank total 4756 MCQs", QUESTIONS.length === 4756, `got ${QUESTIONS.length}`);
+check("5E bank total 5226 MCQs", QUESTIONS.length === 5226, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5E notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5E VISIBLE_COUNTS 4756/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 4756 &&
+  "5E VISIBLE_COUNTS 5226/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 5226 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -74,7 +74,7 @@ check(
 );
 check("5E science bank 500 items (Phase 1: 30 original + 470 new)", BY_SUBJECT.science.length === 500, `got ${BY_SUBJECT.science.length}`);
 check("5E pakstudies bank 500 items (Phase 1: 45 original + 455 new)", BY_SUBJECT.pakstudies.length === 500, `got ${BY_SUBJECT.pakstudies.length}`);
-check("5E socialstudies bank still 30 items", BY_SUBJECT.socialstudies.length === 30, `got ${BY_SUBJECT.socialstudies.length}`);
+check("5E socialstudies bank 500 items (Phase 1 Social Studies added 470)", BY_SUBJECT.socialstudies.length === 500, `got ${BY_SUBJECT.socialstudies.length}`);
 check("5E pedagogy bank 500 items (Phase 1: 30 original + 470 new)", BY_SUBJECT.pedagogy.length === 500, `got ${BY_SUBJECT.pedagogy.length}`);
 check("5E General Science notes still 8", NOTES["General Science"].length === 8, `got ${NOTES["General Science"].length}`);
 check("5E Pak Studies notes still 7", NOTES["Pak Studies"].length === 7, `got ${NOTES["Pak Studies"].length}`);
@@ -88,7 +88,7 @@ const MCQ_ORIG_KEYS = new Set([
   "explanation", "explanationEn", "explanationLang", "explanationUrdu", "difficulty",
   "pastPaperRef", "verified", "source", "reviewStatus", "reviewedBy", "reviewedAt",
   "conceptId", "syllabusClause", "sourceKind", "ur", "roman",
-  // Pre-existing provenance key on all 30 socialstudies items (also on
+  // Pre-existing provenance key on the original 30 socialstudies items (also on
   // drawing/pe) — present in the pre-Stage-5 backup, not added by 5E.
   "sourceNote",
 ]);
@@ -110,7 +110,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["science", "science", 500], ["pakstudies", "pakstudies", 500], ["socialstudies", "socialstudies", 30], ["pedagogy", "pedagogy", 500]]) {
+for (const [bankKey, label, expected] of [["science", "science", 500], ["pakstudies", "pakstudies", 500], ["socialstudies", "socialstudies", 500], ["pedagogy", "pedagogy", 500]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -399,7 +399,7 @@ for (const subject of ["General Science", "Pak Studies", "Social Studies", "Peda
 }
 check("5E quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5E content.json counts unchanged", contentJson.counts.total === 4756 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5E content.json counts unchanged", contentJson.counts.total === 5226 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

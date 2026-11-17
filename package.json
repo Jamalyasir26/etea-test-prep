@@ -81,7 +81,8 @@
     "test:phase1maths": "node scripts/test-phase1-maths.mjs",
     "test:phase1pakstudies": "node scripts/test-phase1-pakstudies.mjs",
     "test:phase1pedagogy": "node scripts/test-phase1-pedagogy.mjs",
-    "test:phase1science": "node scripts/test-phase1-science.mjs"
+    "test:phase1science": "node scripts/test-phase1-science.mjs",
+    "test:phase1socialstudies": "node scripts/test-phase1-socialstudies.mjs"
   },
   "version": "3.0.0"
 }
