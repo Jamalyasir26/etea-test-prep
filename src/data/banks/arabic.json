@@ -1,10 +1,10 @@
 [
  {
   "id": "ARB-001",
-  "question_ur": "علمِ نحو بنیادی طور پر کس چیز کا مطالعہ کرتا ہے؟",
+  "question_ur": "علمِ نحو بنیادی طور پر کس کا مطالعہ کرتا ہے؟",
   "question_roman": "Nahw ka ilm bunyadi tor par kis cheez ka mutala'a karta hai?",
   "options_ur": [
-   "جڑوں سے الفاظ کی بناوٹ",
+   "مادے سے الفاظ کی بناوٹ",
    "جملے کی ساخت اور الفاظ کے آخر پر آنے والے اعراب",
    "عربی ادب کی تاریخ",
    "صرف حروف کا تلفظ"
@@ -15,7 +15,7 @@
    "Arabi adab ki tareekh",
    "Sirf huroof ka talafuz"
   ],
-  "explanation_ur": "نحو جملے کی ترکیب اور اعراب پڑھتا ہے۔",
+  "explanation_ur": "نحو جملے کی ترکیب اور اعراب بتاتا ہے۔",
   "explanation_roman": "Nahw sentence ki tarkeeb aur i'rab parhta hai.",
   "post": [
    "at"
@@ -44,11 +44,11 @@
  },
  {
   "id": "ARB-002",
-  "question_ur": "علمِ صرف بنیادی طور پر کس چیز کا مطالعہ کرتا ہے؟",
+  "question_ur": "علمِ صرف بنیادی طور پر کس کا مطالعہ کرتا ہے؟",
   "question_roman": "Sarf ka ilm bunyadi tor par kis cheez ka mutala'a karta hai?",
   "options_ur": [
    "جملے کی ساخت اور اعراب",
-   "الفاظ جڑوں اور اوزان سے کیسے بنتے ہیں",
+   "الفاظ مادے اور اوزان سے کیسے بنتے ہیں",
    "عربی خطاطی کے انداز",
    "صرف قرآنی آیات کے معانی"
   ],
@@ -58,7 +58,7 @@
    "Arabi khattati ke andaaz",
    "Sirf Qur'ani aayaat ke ma'ani"
   ],
-  "explanation_ur": "صرف لفظوں کی بناوٹ اور وزن پڑھتا ہے۔",
+  "explanation_ur": "صرف لفظوں کی بناوٹ اور وزن بتاتا ہے۔",
   "explanation_roman": "Sarf lafzon ki banawat aur wazan parhta hai.",
   "post": [
    "at"
@@ -87,11 +87,11 @@
  },
  {
   "id": "ARB-003",
-  "question_ur": "درج ذیل میں سے کون سا اسم ہے؟",
+  "question_ur": "مندرجہ ذیل میں سے کون سا اسم ہے؟",
   "question_roman": "Darj-e-zail mein se kaun sa Ism (noun) hai?",
   "options_ur": [
    "کَتَبَ (اس نے لکھا)",
-   "کتاب (کتاب)",
+   "کتاب",
    "فی (میں)",
    "یَکْتُبُ (وہ لکھتا ہے)"
   ],
@@ -130,7 +130,7 @@
  },
  {
   "id": "ARB-004",
-  "question_ur": "درج ذیل میں سے کون سا فعل ہے؟",
+  "question_ur": "مندرجہ ذیل میں سے کون سا فعل ہے؟",
   "question_roman": "Darj-e-zail mein se kaun sa Fi'l (verb) hai?",
   "options_ur": [
    "بیت (گھر)",
@@ -173,10 +173,10 @@
  },
  {
   "id": "ARB-005",
-  "question_ur": "درج ذیل میں سے کون سا حرف ہے؟",
+  "question_ur": "مندرجہ ذیل میں سے کون سا حرف ہے؟",
   "question_roman": "Darj-e-zail mein se kaun sa Harf (particle) hai?",
   "options_ur": [
-   "قلم (قلم)",
+   "قلم",
    "مدرسہ (اسکول)",
    "فی (میں)",
    "رجب (ایک مہینے کا نام)"
@@ -345,7 +345,7 @@
  },
  {
   "id": "ARB-009",
-  "question_ur": "جملہ اسمیہ (اسمی جملہ) کس چیز سے شروع ہوتا ہے؟",
+  "question_ur": "جملہ اسمیہ کس سے شروع ہوتا ہے؟",
   "question_roman": "Jumlah Ismiyyah (ismi jumla / nominal sentence) kis cheez se shuru hota hai?",
   "options_ur": [
    "ایک فعل",
@@ -517,7 +517,7 @@
  },
  {
   "id": "ARB-013",
-  "question_ur": "جملہ فعلیہ (فعلی جملہ) کس چیز سے شروع ہوتا ہے؟",
+  "question_ur": "جملہ فعلیہ کس سے شروع ہوتا ہے؟",
   "question_roman": "Jumlah Fi'liyyah (fi'li jumla / verbal sentence) kis cheez se shuru hota hai?",
   "options_ur": [
    "ایک اسم",
@@ -565,7 +565,7 @@
   "options_ur": [
    "فعل کا مفعول",
    "کام کرنے والا",
-   "اسمی جملے کی خبر",
+   "جملہ اسمیہ کی خبر",
    "ایک حرفِ جر"
   ],
   "options_roman": [
@@ -651,7 +651,7 @@
   "options_ur": [
    "کام کرنے والا",
    "وہ چیز جس پر کام کیا جائے",
-   "اسمی جملے کا پہلا اسم",
+   "جملہ اسمیہ کا پہلا اسم",
    "ایک سوالیہ لفظ"
   ],
   "options_roman": [
@@ -918,7 +918,7 @@
    "Madi",
    "Masdar"
   ],
-  "explanation_ur": "کتب ماضی ہے — اس نے لکھا۔",
+  "explanation_ur": "کتب ماضی ہے: اس نے لکھا۔",
   "explanation_roman": "Kataba madi hai — us ne likha.",
   "post": [
    "at"
@@ -961,7 +961,7 @@
    "Amr",
    "Nahy"
   ],
-  "explanation_ur": "یکتب مضارع ہے — وہ لکھتا ہے / لکھے گا۔",
+  "explanation_ur": "یکتب مضارع ہے: وہ لکھتا ہے / لکھے گا۔",
   "explanation_roman": "Yaktubu mudari' hai — woh likhta hai / likhe ga.",
   "post": [
    "at"
@@ -1004,7 +1004,7 @@
    "Amr (imperative)",
    "Masdar"
   ],
-  "explanation_ur": "اکتب امر ہے — لکھو!",
+  "explanation_ur": "اکتب امر ہے: لکھو!",
   "explanation_roman": "Uktub amr hai — likho!",
   "post": [
    "at"
@@ -1076,7 +1076,7 @@
  },
  {
   "id": "ARB-026",
-  "question_ur": "'کتاب' (کتاب) کا تثنیہ کیا ہے؟",
+  "question_ur": "'کتاب' کا تثنیہ کیا ہے؟",
   "question_roman": "'Kitab' (kitab) ka tasnia kya hai?",
   "options_ur": [
    "کتابان",
@@ -1090,7 +1090,7 @@
    "Katibani",
    "Maktabani"
   ],
-  "explanation_ur": "دو کتاب کے لیے کتابان کہتے ہیں۔",
+  "explanation_ur": "دو کتابوں کے لیے کتابان کہتے ہیں۔",
   "explanation_roman": "Do kitab ke liye kitabani kehte hain.",
   "post": [
    "at"
@@ -1176,7 +1176,7 @@
    "Tasnia ke ikhtitam '-ani' ki wajah se",
    "Jama ke ikhtitam '-un' ki wajah se"
   ],
-  "explanation_ur": "تا مربوطہ عام طور پر مؤنث (feminine) کی علامت ہوتی ہے۔",
+  "explanation_ur": "تا مربوطہ عام طور پر مؤنث کی علامت ہوتی ہے۔",
   "explanation_roman": "Ta marbuta aam tor par mu'annath (feminine) ki alamat hoti hai.",
   "post": [
    "at"
@@ -1208,10 +1208,10 @@
   "question_ur": "عربی میں کون سا لفظ مؤنث ہے؟",
   "question_roman": "Arbi mein kaun sa lafz mu'annath hai?",
   "options_ur": [
-   "قلم (قلم)",
+   "قلم",
    "بیت (گھر)",
    "مدرسہ (اسکول)",
-   "کتاب (کتاب)"
+   "کتاب"
   ],
   "options_roman": [
    "Qalam (qalam)",
@@ -1252,7 +1252,7 @@
   "question_roman": "'Al-' (ال) sabiqa ism ke sath kya karta hai?",
   "options_ur": [
    "یہ اسے جمع بنا دیتا ہے",
-   "یہ اسے معرفہ (the) بنا دیتا ہے",
+   "یہ اسے معرفہ بنا دیتا ہے",
    "یہ اسے مؤنث بنا دیتا ہے",
    "یہ اسے فعل بنا دیتا ہے"
   ],
@@ -1262,7 +1262,7 @@
    "Yeh isay mu'annath bana deta hai",
    "Yeh isay fi'l bana deta hai"
   ],
-  "explanation_ur": "ال- اسم کو معرفہ (definite) بناتا ہے، جیسے الکتاب — the book۔",
+  "explanation_ur": "ال- اسم کو معرفہ بناتا ہے، جیسے الکتاب۔",
   "explanation_roman": "Al- ism ko ma'rifa (definite) banata hai, jaise al-kitab — the book.",
   "post": [
    "at"
@@ -1295,7 +1295,7 @@
   "question_roman": "Tanween (dohri harkat wala ikhtitam, misaal kitabun) aam tor par kya zahir karti hai?",
   "options_ur": [
    "اسم معرفہ ہے",
-   "اسم نکرہ ہے (a / an)",
+   "اسم نکرہ ہے",
    "اسم تثنیہ ہے",
    "اسم فعل ہے"
   ],
@@ -1305,7 +1305,7 @@
    "Ism tasnia hai",
    "Ism fi'l hai"
   ],
-  "explanation_ur": "تنوین نکرہ (indefinite) کی علامت ہے۔",
+  "explanation_ur": "تنوین نکرہ کی علامت ہے۔",
   "explanation_roman": "Tanween nakira (indefinite) ki alamat hai.",
   "post": [
    "at"
@@ -1334,7 +1334,7 @@
  },
  {
   "id": "ARB-032",
-  "question_ur": "کون سی ضمیر کا مطلب 'وہ' (مذکر) ہے؟",
+  "question_ur": "کون سا ضمیر کا مطلب 'وہ' (مذکر) ہے؟",
   "question_roman": "Kaun si zameer ka matlab 'he' (woh, muzakkar) hai?",
   "options_ur": [
    "ہی",
@@ -1377,7 +1377,7 @@
  },
  {
   "id": "ARB-033",
-  "question_ur": "کون سی ضمیر کا مطلب 'وہ' (مؤنث) ہے؟",
+  "question_ur": "کون سا ضمیر کا مطلب 'وہ' (مؤنث) ہے؟",
   "question_roman": "Kaun si zameer ka matlab 'she' (woh, mu'annath) hai?",
   "options_ur": [
    "ہو",
@@ -1420,7 +1420,7 @@
  },
  {
   "id": "ARB-034",
-  "question_ur": "کون سی ضمیر کا مطلب 'تم' (مذکر واحد) ہے؟",
+  "question_ur": "کون سا ضمیر کا مطلب 'تم' (مذکر واحد) ہے؟",
   "question_roman": "Kaun si zameer ka matlab 'you' (tum, muzakkar wahid) hai?",
   "options_ur": [
    "انتِ",
@@ -1463,7 +1463,7 @@
  },
  {
   "id": "ARB-035",
-  "question_ur": "کون سی ضمیر کا مطلب 'تم' (مؤنث واحد) ہے؟",
+  "question_ur": "کون سا ضمیر کا مطلب 'تم' (مؤنث واحد) ہے؟",
   "question_roman": "Kaun si zameer ka matlab 'you' (tum, mu'annath wahid) hai?",
   "options_ur": [
    "انتَ",
@@ -1506,7 +1506,7 @@
  },
  {
   "id": "ARB-036",
-  "question_ur": "کون سی ضمیر کا مطلب 'ہم' ہے؟",
+  "question_ur": "کون سا ضمیر کا مطلب 'ہم' ہے؟",
   "question_roman": "Kaun si zameer ka matlab 'we' (hum) hai?",
   "options_ur": [
    "انا",
@@ -1721,7 +1721,7 @@
  },
  {
   "id": "ARB-041",
-  "question_ur": "مندرجہ ذیل میں سے کون سا حرفِ جر (preposition) ہے؟",
+  "question_ur": "مندرجہ ذیل میں سے کون سا حرفِ جر ہے؟",
   "question_roman": "Mandrajah zail mein se kaun sa Harf-e-Jarr (preposition) hai?",
   "options_ur": [
    "کتب",
@@ -1778,7 +1778,7 @@
    "Se",
    "Par"
   ],
-  "explanation_ur": "من کا مطلب ہے 'سے' — from۔",
+  "explanation_ur": "من کا مطلب ہے 'سے'۔",
   "explanation_roman": "Min ka matlab hai 'se' — from.",
   "post": [
    "at"
@@ -1821,7 +1821,7 @@
    "Par",
    "Mein"
   ],
-  "explanation_ur": "الی کا مطلب ہے 'کی طرف / کو' — to۔",
+  "explanation_ur": "الی کا مطلب ہے 'کی طرف / کو'۔",
   "explanation_roman": "Ila ka matlab hai 'ki taraf / ko' — to.",
   "post": [
    "at"
@@ -1856,7 +1856,7 @@
    "مرفوع",
    "منصوب",
    "مجرور",
-   "یہ حالت (case) کو نہیں بدلتا"
+   "یہ حالت کو نہیں بدلتا"
   ],
   "options_roman": [
    "Marfu'",
@@ -1950,7 +1950,7 @@
    "Kahan",
    "Kab"
   ],
-  "explanation_ur": "ما کا مطلب ہے 'کیا' — what۔",
+  "explanation_ur": "ما کا مطلب ہے 'کیا'۔",
   "explanation_roman": "Ma ka matlab hai 'kya' — what.",
   "post": [
    "at"
@@ -1993,7 +1993,7 @@
    "Kahan",
    "Kaise"
   ],
-  "explanation_ur": "من کا مطلب ہے 'کون' — who۔",
+  "explanation_ur": "من کا مطلب ہے 'کون'۔",
   "explanation_roman": "Man ka matlab hai 'kaun' — who.",
   "post": [
    "at"
@@ -2036,7 +2036,7 @@
    "Kaise",
    "Kyun"
   ],
-  "explanation_ur": "این کا مطلب ہے 'کہاں' — where۔",
+  "explanation_ur": "این کا مطلب ہے 'کہاں'۔",
   "explanation_roman": "Ayna ka matlab hai 'kahan' — where.",
   "post": [
    "at"
@@ -2079,7 +2079,7 @@
    "Kahan",
    "Kitne"
   ],
-  "explanation_ur": "کیف کا مطلب ہے 'کیسے' — how۔",
+  "explanation_ur": "کیف کا مطلب ہے 'کیسے'۔",
   "explanation_roman": "Kayfa ka matlab hai 'kaise' — how.",
   "post": [
    "at"
@@ -2122,7 +2122,7 @@
    "Kitne / kitna",
    "Kyun"
   ],
-  "explanation_ur": "کم کا مطلب ہے 'کتنے / کتنا' — how many۔",
+  "explanation_ur": "کم کا مطلب ہے 'کتنے / کتنا'۔",
   "explanation_roman": "Kam ka matlab hai 'kitne / kitna' — how many.",
   "post": [
    "at"
@@ -2208,7 +2208,7 @@
    "Library",
    "Likha hua"
   ],
-  "explanation_ur": "کاتب کا مطلب ہے 'لکھنے والا' — writer۔",
+  "explanation_ur": "کاتب کا مطلب ہے 'لکھنے والا'۔",
   "explanation_roman": "Katib ka matlab hai 'likhne wala' — writer.",
   "post": [
    "at"
@@ -2251,7 +2251,7 @@
    "Likha hua / ek khat",
    "Likhne wala"
   ],
-  "explanation_ur": "مکتوب کا مطلب ہے 'لکھا ہوا' یا 'خط' — written / letter۔",
+  "explanation_ur": "مکتوب کا مطلب ہے 'لکھا ہوا' یا 'خط'۔",
   "explanation_roman": "Maktub ka matlab hai 'likha hua' ya 'khat' — written / letter.",
   "post": [
    "at"
@@ -2423,7 +2423,7 @@
    "Kitab",
    "Masjid"
   ],
-  "explanation_ur": "بیت کا مطلب ہے 'گھر' — house۔",
+  "explanation_ur": "بیت کا مطلب ہے 'گھر'۔",
   "explanation_roman": "Bayt ka matlab hai 'ghar' — house.",
   "post": [
    "at"
@@ -2466,7 +2466,7 @@
    "Suraj",
    "Aasman"
   ],
-  "explanation_ur": "شمس کا مطلب ہے 'سورج' — sun۔",
+  "explanation_ur": "شمس کا مطلب ہے 'سورج'۔",
   "explanation_roman": "Shams ka matlab hai 'suraj' — sun.",
   "post": [
    "at"
@@ -2495,7 +2495,7 @@
  },
  {
   "id": "ARB-059",
-  "question_ur": "اسلامی تاریخ میں 'بدر' کس چیز کا نام ہے؟",
+  "question_ur": "اسلامی تاریخ میں 'بدر' کس کا نام ہے؟",
   "question_roman": "Islami tareekh mein 'Badr' kis cheez ka naam hai?",
   "options_ur": [
    "ایک مشہور ابتدائی جنگ",
@@ -2538,7 +2538,7 @@
  },
  {
   "id": "ARB-060",
-  "question_ur": "اسلامی تاریخ میں 'احد' کس چیز کا نام ہے؟",
+  "question_ur": "اسلامی تاریخ میں 'احد' کس کا نام ہے؟",
   "question_roman": "Islami tareekh mein 'Uhud' kis cheez ka naam hai?",
   "options_ur": [
    "ایک مشہور پہاڑ اور جنگ",
@@ -2595,7 +2595,7 @@
    "Marfu'",
    "Sukoon"
   ],
-  "explanation_ur": "الفاعل (الفاعل) نحو (النحو) میں ہمیشہ مرفوع ہوتا ہے (رفع کی حالت میں)۔",
+  "explanation_ur": "الفاعل نحو (النحو) میں ہمیشہ مرفوع ہوتا ہے (رفع کی حالت میں)۔",
   "explanation_roman": "Al-Fa'il (الفاعل) Nahw (النحو) mein hamesha Marfu' hota hai (Raf' ki haalat mein, nominative state).",
   "post": [
    "at"
@@ -2677,7 +2677,7 @@
    "ضمہ",
    "واؤ",
    "الف",
-   "یاء"
+   "یا"
   ],
   "options_roman": [
    "Damma",
@@ -2851,7 +2851,7 @@
  },
  {
   "id": "ARB-067",
-  "question_ur": "جمع سالم مونث مفعول کے لیے نصب کی علامت کیا ہے؟",
+  "question_ur": "جمع سالم مؤنث مفعول کے لیے نصب کی علامت کیا ہے؟",
   "question_roman": "Jama salim mu'annas maf'ul ke liye Nasb ki alamat kya hai?",
   "options_ur": [
    "فتحہ",
@@ -2865,7 +2865,7 @@
    "Kasra",
    "Waw"
   ],
-  "explanation_ur": "کسرہ جمع سالم مونث کے لیے نصب کی علامت ہے جب وہ مفعول بہ (المفعول به) ہو — یہ عام فتحہ سے مستثنیٰ ہے۔",
+  "explanation_ur": "کسرہ جمع سالم مؤنث کے لیے نصب کی علامت ہے جب وہ مفعول بہ (المفعول به) ہو۔ یہ عام فتحہ سے مستثنیٰ ہے۔",
   "explanation_roman": "Kasra jama salim mu'annas ke liye Nasb ki alamat hai jab woh Maf'ul Bihi (المفعول به) ho — yeh aam Fatha se mustasna hai.",
   "post": [
    "at"
@@ -3121,7 +3121,7 @@
  },
  {
   "id": "ARB-073",
-  "question_ur": "عربی کی سب سے عام جڑ (روٹ) میں کتنے حروف ہوتے ہیں؟",
+  "question_ur": "عربی کے سب سے عام مادے میں کتنے حروف ہوتے ہیں؟",
   "question_roman": "Arbi ki sab se aam jarr (root) mein kitne huruf hote hain?",
   "options_ur": [
    "دو حروف",
@@ -3135,7 +3135,7 @@
    "Char huruf",
    "Panch huruf"
   ],
-  "explanation_ur": "عربی کے زیادہ تر الفاظ تین حرفی جڑ سے بنتے ہیں، جسے صرف (صرف) میں ف ع ل کے وزن سے ظاہر کیا جاتا ہے۔",
+  "explanation_ur": "عربی کے زیادہ تر الفاظ تین حرفی مادے سے بنتے ہیں، جسے صرف میں ف ع ل کے وزن سے ظاہر کیا جاتا ہے۔",
   "explanation_roman": "Arbi ke zyada tar alfaz teen-hurfi jarr se bante hain, jise Sarf (صرف) mein ف ع ل ke wazn se zahir kiya jata hai.",
   "post": [
    "at"
@@ -3169,10 +3169,10 @@
   "question_ur": "كَتَبَ (کتبہ) کیا ہے؟",
   "question_roman": "'Kataba' (كَتَبَ) kya hai?",
   "options_ur": [
-   "حال — وہ لکھتا ہے",
-   "ماضی — اس نے لکھا",
-   "امر — لکھو!",
-   "اسم — لکھنے والا"
+   "حال: وہ لکھتا ہے",
+   "ماضی: اس نے لکھا",
+   "امر: لکھو!",
+   "اسم: لکھنے والا"
   ],
   "options_roman": [
    "Haal — woh likhta hai",
@@ -3180,7 +3180,7 @@
    "Amr — likho!",
    "Ism — likhne wala"
   ],
-  "explanation_ur": "کتبہ صرف (صرف) میں ماضی (گذرا ہوا زمانہ) ہے: اس نے لکھا۔",
+  "explanation_ur": "کتبہ صرف میں ماضی (گذرا ہوا زمانہ) ہے: اس نے لکھا۔",
   "explanation_roman": "Kataba Sarf (صرف) mein mazi (guzra hua zamana) hai: us ne likha.",
   "post": [
    "at"
@@ -3214,10 +3214,10 @@
   "question_ur": "اُكْتُبْ (اُکتب) کیا ہے؟",
   "question_roman": "'Uktub' (اُكْتُبْ) kya hai?",
   "options_ur": [
-   "ماضی — اس نے لکھا",
-   "حال — وہ لکھتا ہے",
-   "امر — لکھو!",
-   "اسم — کتاب"
+   "ماضی: اس نے لکھا",
+   "حال: وہ لکھتا ہے",
+   "امر: لکھو!",
+   "اسم: کتاب"
   ],
   "options_roman": [
    "Mazi — us ne likha",
@@ -3225,7 +3225,7 @@
    "Amr — likho!",
    "Ism — kitab"
   ],
-  "explanation_ur": "اُکتب صرف (صرف) میں امر (حکم) ہے: لکھو!",
+  "explanation_ur": "اُکتب صرف میں امر (حکم) ہے: لکھو!",
   "explanation_roman": "Uktub Sarf (صرف) mein Amr (hukm) hai: likho!",
   "post": [
    "at"
@@ -3260,7 +3260,7 @@
   "question_roman": "Wazn ف ع ل kya zahir karta hai?",
   "options_ur": [
    "کسی لفظ کا اعراب",
-   "کسی لفظ کا جڑی نمونہ",
+   "کسی لفظ کے مادے کا نمونہ",
    "کسی اسم کی جمع",
    "کسی فعل کا زمانہ"
   ],
@@ -3270,7 +3270,7 @@
    "Kisi ism ki jama",
    "Kisi fi'l ka zamana"
   ],
-  "explanation_ur": "وزن ف ع ل صرف (صرف) میں کسی لفظ کا جڑی نمونہ ظاہر کرتا ہے: عربی کے زیادہ تر الفاظ تین حرفی جڑ سے بنتے ہیں۔",
+  "explanation_ur": "وزن ف ع ل صرف میں کسی لفظ کے مادے کا نمونہ ظاہر کرتا ہے: عربی کے زیادہ تر الفاظ تین حرفی مادے سے بنتے ہیں۔",
   "explanation_roman": "Wazn ف ع ل Sarf (صرف) mein kisi lafz ka jarri namuna zahir karta hai: Arbi ke zyada tar alfaz teen-hurfi jarr se bante hain.",
   "post": [
    "at"
@@ -3307,7 +3307,7 @@
    "فتحہ",
    "کسرہ",
    "ضمہ",
-   "یاء"
+   "یا"
   ],
   "options_roman": [
    "Fatha",
@@ -3395,9 +3395,9 @@
   "question_roman": "Sarf bunyadi tor par kis bare mein hai?",
   "options_ur": [
    "جملے کی ساخت",
-   "الفاظ کی شکلیں اور جڑوں سے بناوٹ",
+   "الفاظ کی صورتیں اور مادے سے بناوٹ",
    "حروف کا تلفظ",
-   "اعراب (حالت کے اختتام)"
+   "اعراب"
   ],
   "options_roman": [
    "Jumle ki sakht",
@@ -3405,7 +3405,7 @@
    "Huruf ka talaffuz",
    "I'rab (haalat ke ikhtitam)"
   ],
-  "explanation_ur": "صرف (صرف) الفاظ کی شکلوں کا علم ہے: ایک جڑ سے کئی متعلقہ الفاظ کیسے بنتے ہیں۔",
+  "explanation_ur": "صرف الفاظ کی صورتوں کا علم ہے: ایک مادے سے کئی متعلقہ الفاظ کیسے بنتے ہیں۔",
   "explanation_roman": "Sarf (صرف) alfaz ki shaklon ka ilm hai: ek jarr se kai mutalliq alfaz kaise bante hain.",
   "post": [
    "at"
@@ -3439,7 +3439,7 @@
   "question_ur": "نحو بنیادی طور پر کس بارے میں ہے؟",
   "question_roman": "Nahw bunyadi tor par kis bare mein hai?",
   "options_ur": [
-   "جڑوں سے الفاظ کی شکلیں",
+   "مادے سے الفاظ کی صورتیں",
    "جملے کی ساخت اور اعراب",
    "عربی کی تاریخ",
    "شاعری کے اوزان"
@@ -3450,7 +3450,7 @@
    "Arbi ki tareekh",
    "Shayari ke auzan"
   ],
-  "explanation_ur": "نحو (النحو) اس کا مطالعہ کرتا ہے کہ الفاظ جملے میں کیسے کام کرتے ہیں: ساخت اور الفاظ کے اعراب (حالت کے اختتام)۔",
+  "explanation_ur": "نحو (النحو) اس کا مطالعہ کرتا ہے کہ الفاظ جملے میں کیسے کام کرتے ہیں: ساخت اور الفاظ کے اعراب۔",
   "explanation_roman": "Nahw (النحو) is ka mutala karta hai ke alfaz jumle mein kaise kaam karte hain: sakht aur alfaz ke i'rab (haalat ke ikhtitam).",
   "post": [
    "at"
@@ -3481,7 +3481,7 @@
  },
  {
   "id": "ARB-081",
-  "question_ur": "عربی گرامر میں کلمہ کی کتنی قسمیں ہیں؟",
+  "question_ur": "عربی قواعد میں کلمہ کی کتنی قسمیں ہیں؟",
   "question_roman": "Arbi grammar mein kalimah ki kitni qismein hain?",
   "options_ur": [
    "دو",
@@ -3523,7 +3523,7 @@
  },
  {
   "id": "ARB-082",
-  "question_ur": "اسم فعل سے اس لیے مختلف ہے کہ اسم میں کس چیز کا حوالہ نہیں ہوتا؟",
+  "question_ur": "اسم فعل سے اس لیے مختلف ہے کہ اسم میں کس کا حوالہ نہیں ہوتا؟",
   "question_roman": "Ism fi'l se is liye mukhtalif hai ke ism mein kis cheez ka hawala nahi hota?",
   "options_ur": [
    "زمانہ",
@@ -3901,7 +3901,7 @@
  },
  {
   "id": "ARB-091",
-  "question_ur": "فعل وہ لفظ ہے جو کسی کام کے ساتھ کس چیز کو ظاہر کرتا ہے؟",
+  "question_ur": "فعل وہ لفظ ہے جو کسی کام کے ساتھ کیا ظاہر کرتا ہے؟",
   "question_roman": "Fi'l woh lafz hai jo kisi kaam ke sath kis cheez ko zahir karta hai?",
   "options_ur": [
    "زمانہ",
@@ -4153,7 +4153,7 @@
  },
  {
   "id": "ARB-097",
-  "question_ur": "اکتب (لکھو!) فعل ہے کیونکہ یہ کس چیز کا اظہار کرتا ہے؟",
+  "question_ur": "اکتب (لکھو!) فعل ہے کیونکہ یہ کس کا اظہار کرتا ہے؟",
   "question_roman": "Uktub (likho!) fi'l hai kyunke yeh kis cheez ka izhar karta hai?",
   "options_ur": [
    "ایک نام",
@@ -4241,7 +4241,7 @@
   "question_roman": "Akala, Kursi, Ala aur Shams mein se kaun sa lafz fi'l hai?",
   "options_ur": [
    "اکل (اس نے کھایا)",
-   "کرسی (کرسی)",
+   "کرسی",
    "علىٰ (پر)",
    "شمس (سورج)"
   ],
@@ -4321,7 +4321,7 @@
  },
  {
   "id": "ARB-101",
-  "question_ur": "الی، جس کا مطلب کو یا کی طرف ہے، کلمہ کی کس قسم سے تعلق رکھتا ہے؟",
+  "question_ur": "الی، جس کا مطلب کو یا کی طرف ہے، کلمہ کی کون سی قسم ہے؟",
   "question_roman": "Ila, jis ka matlab ko ya ki taraf hai, kalimah ki kis qism se ta'alluq rakhta hai?",
   "options_ur": [
    "اسم",
@@ -4363,7 +4363,7 @@
  },
  {
   "id": "ARB-102",
-  "question_ur": "علىٰ، جس کا مطلب پر ہے، کلمہ کی کس قسم کی مثال ہے؟",
+  "question_ur": "علىٰ، جس کا مطلب پر ہے، کلمہ کی کون سی قسم کی مثال ہے؟",
   "question_roman": "Ala, jis ka matlab par hai, kalimah ki kis qism ki misaal hai?",
   "options_ur": [
    "اسم",
@@ -4447,7 +4447,7 @@
  },
  {
   "id": "ARB-104",
-  "question_ur": "اعراب (حالت کے اختتام) کلمہ کی کس قسم پر کبھی ظاہر نہیں ہوتے؟",
+  "question_ur": "کلمہ کی کون سی قسم پر اعراب کبھی ظاہر نہیں ہوتے؟",
   "question_roman": "I'rab (haalat ke ikhtitam) kalimah ki kis qism par kabhi zahir nahi hote?",
   "options_ur": [
    "اسم",
@@ -4461,7 +4461,7 @@
    "Jumlah (sentence)",
    "Harf (particle)"
   ],
-  "explanation_ur": "حرف کی صورت ثابت رہتی ہے اور اس پر کبھی اعراب نہیں آتے، جبکہ اسم رفع، نصب اور جر کے ساتھ بدلتا ہے۔",
+  "explanation_ur": "حرف کی صورت ثابت رہتی ہے اور اس پر کبھی اعراب نہیں آتے، جبکہ اسم رفع، نصب اور جر کے مطابق بدلتا ہے۔",
   "explanation_roman": "Harf ki surat sabit rehti hai aur us par kabhi i'rab nahi aate, jabke ism raf', nasb aur jarr ke sath badalta hai.",
   "post": [
    "at"
@@ -4494,7 +4494,7 @@
   "options_ur": [
    "کتب (اس نے لکھا)",
    "عن (کے بارے میں)",
-   "کتاب (کتاب)",
+   "کتاب",
    "کبیر (بڑا)"
   ],
   "options_roman": [
@@ -4573,7 +4573,7 @@
  },
  {
   "id": "ARB-107",
-  "question_ur": "و، جس کا مطلب اور ہے، دو الفاظ کو جوڑتا ہے، تو یہ کلمہ کی کون سی قسم سے تعلق رکھتا ہے؟",
+  "question_ur": "و، جس کا مطلب اور ہے، دو الفاظ کو جوڑتا ہے، تو یہ کلمہ کی کون سی قسم ہے؟",
   "question_roman": "Wa, jis ka matlab aur hai, do alfaz ko jorta hai, to yeh kalimah ki kaun si qism se ta'alluq rakhta hai?",
   "options_ur": [
    "حرف",
@@ -4615,7 +4615,7 @@
  },
  {
   "id": "ARB-108",
-  "question_ur": "عبارت فی البیت الکبیر میں کون سا لفظ حرف ہے؟",
+  "question_ur": "عبارت 'فی البیت الکبیر' میں کون سا لفظ حرف ہے؟",
   "question_roman": "Ibarat 'Fi al-bayt al-kabir' mein kaun sa lafz harf hai?",
   "options_ur": [
    "البیت (گھر)",
@@ -4657,13 +4657,13 @@
  },
  {
   "id": "ARB-109",
-  "question_ur": "معرفہ، بطور اسم کی اصطلاح، کس قسم کی چیز کی طرف اشارہ کرتا ہے؟",
+  "question_ur": "معرفہ، اسم کی اصطلاح کے طور پر، کون سی قسم کی چیز کی طرف اشارہ کرتا ہے؟",
   "question_roman": "Ma'rifa, ism ki istilah ke tor par, kis qisam ki cheez ki taraf ishara karta hai?",
   "options_ur": [
-   "کسی خاص معروف شخص یا چیز کی طرف",
-   "کسی عام قسم کے بے نام فرد کی طرف",
-   "وقت سے جڑے ہوئے کسی کام کی طرف",
-   "ایسے حرف کی طرف جس کا اکیلا کوئی مطلب نہ ہو"
+   "کسی خاص معروف شخص یا چیز",
+   "کسی عام قسم کے بے نام فرد",
+   "وقت سے جڑے ہوئے کسی کام",
+   "ایسے حرف جس کا اکیلا کوئی مطلب نہ ہو"
   ],
   "options_roman": [
    "Kisi khaas maruf shakhs ya cheez ki taraf",
@@ -4671,7 +4671,7 @@
    "Waqt se jude hue kisi kaam ki taraf",
    "Aise harf ki taraf jis ka akela koi matlab na ho"
   ],
-  "explanation_ur": "معرفہ اسم کسی خاص معروف چیز کی طرف اشارہ کرتا ہے، جبکہ نکرہ اسم کسی غیر متعین فرد کی طرف اشارہ کرتا ہے۔",
+  "explanation_ur": "معرفہ اسم کسی خاص معروف چیز کی طرف اشارہ کرتا ہے، جبکہ نکرہ اسم کسی قسم کے غیر متعین فرد کی طرف اشارہ کرتا ہے۔",
   "explanation_roman": "Ma'rifa ism kisi khaas maruf cheez ki taraf ishara karta hai, jab ke nakira ism kisi ghair mutayyan fard ki taraf ishara karta hai.",
   "post": [
    "at"
@@ -4699,13 +4699,13 @@
  },
  {
   "id": "ARB-110",
-  "question_ur": "نکرہ اسموں کو بہتر طور پر کس کی طرف اشارہ کرنے والا کہا جاتا ہے؟",
+  "question_ur": "نکرہ اسم کس کی طرف اشارہ کرتا ہے؟",
   "question_roman": "Nakira ismon ko behtar tor par kis ki taraf ishara karne wala kaha jata hai?",
   "options_ur": [
-   "کسی نام والے شہر یا شخص کی طرف",
-   "کسی عام قسم کے غیر متعین فرد کی طرف",
-   "ماضی میں مکمل ہونے والے کام کی طرف",
-   "دو جملوں کو جوڑنے والے لفظ کی طرف"
+   "کسی نام والے شہر یا شخص",
+   "کسی عام قسم کے غیر متعین فرد",
+   "ماضی میں مکمل ہونے والے کام",
+   "دو جملوں کو جوڑنے والے لفظ"
   ],
   "options_roman": [
    "Kisi naam wale sheher ya shakhs ki taraf",
@@ -4741,13 +4741,13 @@
  },
  {
   "id": "ARB-111",
-  "question_ur": "احمد بطور ذاتی نام اسم کی کس قسم سے تعلق رکھتا ہے؟",
+  "question_ur": "احمد بطور ذاتی نام اسم کی کون سی قسم ہے؟",
   "question_roman": "Ahmad bator zaati naam ism ki kis qisam se taluq rakhta hai?",
   "options_ur": [
    "عام اسم",
    "مصدر",
    "اسم علم",
-   "حرف تاکید"
+   "حرفِ تاکید"
   ],
   "options_roman": [
    "Aam ism",
@@ -4755,7 +4755,7 @@
    "Ism-e-alam",
    "Harf-e-taqeed"
   ],
-  "explanation_ur": "ذاتی نام علم ہوتا ہے، یعنی خاص اسم جو کسی ایک خاص شخص کا نام ہوتا ہے۔",
+  "explanation_ur": "ذاتی نام علم ہوتا ہے، یعنی وہ اسم جو کسی ایک خاص شخص کا نام ہوتا ہے۔",
   "explanation_roman": "Zaati naam alam hota hai, yani khaas ism jo kisi ek khaas shakhs ka naam hota hai.",
   "post": [
    "at"
@@ -4783,11 +4783,11 @@
  },
  {
   "id": "ARB-112",
-  "question_ur": "لفظ رجل بمعنی عام آدمی اسم کی کس قسم کی مثال ہے؟",
+  "question_ur": "رجل، جس کا مطلب عام آدمی ہے، اسم کی کون سی قسم کی مثال ہے؟",
   "question_roman": "Lafz rajul bamani aam aadmi ism ki kis qisam ki misaal hai?",
   "options_ur": [
    "ایک شخص کا نام بتانے والا اسم علم",
-   "اسم کی جگہ آنے والی ضمیر",
+   "اسم کی جگہ آنے والا ضمیر",
    "قریب کی طرف اشارہ کرنے والا اسم اشارہ",
    "پوری جنس کے لیے عام اسم"
   ],
@@ -4825,13 +4825,13 @@
  },
  {
   "id": "ARB-113",
-  "question_ur": "مکہ بطور معروف شہر کے نام کی کیا درجہ بندی ہے؟",
+  "question_ur": "مکہ، جو ایک معروف شہر کا نام ہے، اسم کی کون سی قسم ہے؟",
   "question_roman": "Makka bator maruf sheher ke naam ki kya darja bandi hai?",
   "options_ur": [
    "اسم علم",
    "عام اسم",
    "ماضی کا فعل",
-   "جگہ کا حرف جر"
+   "جگہ کا حرفِ جر"
   ],
   "options_roman": [
    "Ism-e-alam",
@@ -4909,7 +4909,7 @@
  },
  {
   "id": "ARB-115",
-  "question_ur": "درج ذیل اسموں میں سے معرفہ کون سا ہے؟",
+  "question_ur": "مندرجہ ذیل اسموں میں سے معرفہ کون سا ہے؟",
   "question_roman": "Darj-e-zail ismon mein se marifa kaun sa hai?",
   "options_ur": [
    "قلمٌ، ایک قلم",
@@ -4951,7 +4951,7 @@
  },
  {
   "id": "ARB-116",
-  "question_ur": "درج ذیل الفاظ میں سے نکرہ اسم کو منتخب کریں۔",
+  "question_ur": "مندرجہ ذیل الفاظ میں سے نکرہ اسم کو منتخب کریں۔",
   "question_roman": "Darj-e-zail alfaz mein se nakira ism ko muntakhab karein.",
   "options_ur": [
    "البیتُ، گھر",
@@ -4993,7 +4993,7 @@
  },
  {
   "id": "ARB-117",
-  "question_ur": "ھو جیسی ضمیریں اسموں کی کس قسم میں شمار ہوتی ہیں؟",
+  "question_ur": "ھو جیسی ضمیریں اسموں کی کون سی قسم میں شمار ہوتی ہیں؟",
   "question_roman": "Huwa jaisi zameerein ismon ki kis qisam mein shumar hoti hain?",
   "options_ur": [
    "معرفہ اسم",
@@ -5035,7 +5035,7 @@
  },
  {
   "id": "ARB-118",
-  "question_ur": "ھذا جیسے اسمائے اشارہ عربی نحو میں اسم کی کس قسم سے تعلق رکھتے ہیں؟",
+  "question_ur": "ھذا جیسے اسمائے اشارہ عربی نحو میں اسم کی کون سی قسم ہیں؟",
   "question_roman": "Hadha jaise asma-e-ishara Arabi nahw mein ism ki kis qisam se taluq rakhte hain?",
   "options_ur": [
    "نکرہ عام اسم",
@@ -5080,10 +5080,10 @@
   "question_ur": "لفظ کے آخر میں تنوین کس قسم کے کلمے کی دلیل ہے؟",
   "question_roman": "Lafz ke aakhir mein tanween kis qisam ke kalime ki daleel hai?",
   "options_ur": [
-   "فعل کی، کیونکہ فعل تنوین لیتے ہیں",
+   "فعل کی، کیونکہ فعل تنوین لیتا ہے",
    "حرف کی، کیونکہ حروف تنوین لیتے ہیں",
    "اسم کی، کیونکہ تنوین صرف اسم پر آتی ہے",
-   "امر کی، کیونکہ امر تنوین لیتے ہیں"
+   "امر کی، کیونکہ امر تنوین لیتا ہے"
   ],
   "options_roman": [
    "Fi'l ki, kyun ke fi'l tanween lete hain",
@@ -5119,7 +5119,7 @@
  },
  {
   "id": "ARB-120",
-  "question_ur": "ال کا سابقہ قبول کرنا لفظ کو کس قسم سے تعلق رکھنے والا ثابت کرتا ہے؟",
+  "question_ur": "ال کا سابقہ قبول کرنا لفظ کو کس قسم کا ثابت کرتا ہے؟",
   "question_roman": "Al- ka sabiqa qubool karna lafz ko kis qisam se taluq rakhne wala sabit karta hai?",
   "options_ur": [
    "ماضی کا فعل",
@@ -5161,7 +5161,7 @@
  },
  {
   "id": "ARB-121",
-  "question_ur": "حرف جر کے بعد مجرور حالت میں آنا لفظ کے کیا ہونے کی دلیل ہے؟",
+  "question_ur": "حرفِ جر کے بعد مجرور حالت میں آنے والا لفظ کس قسم کا ہوتا ہے؟",
   "question_roman": "Harf-e-jarr ke baad majrur haalat mein aana lafz ke kya hone ki daleel hai?",
   "options_ur": [
    "اسم",
@@ -5175,7 +5175,7 @@
    "Harf",
    "Amr ki surat"
   ],
-  "explanation_ur": "حرف جر کے بعد صرف اسم مجرور ہوتا ہے، اس لیے جر اسم کی علامت ہے۔",
+  "explanation_ur": "حرفِ جر کے بعد صرف اسم مجرور ہوتا ہے، اس لیے جر اسم کی علامت ہے۔",
   "explanation_roman": "Harf-e-jarr ke baad sirf ism majrur hota hai, is liye jarr ism ki alamat hai.",
   "post": [
    "at"
@@ -5245,12 +5245,12 @@
  },
  {
   "id": "ARB-123",
-  "question_ur": "ایک ہی اسم پر ایک ہی وقت میں ال اور تنوین کو بہتر طور پر کیا کہا جاتا ہے؟",
+  "question_ur": "ایک ہی اسم پر ایک ہی وقت میں ال اور تنوین کو کیا کہا جاتا ہے؟",
   "question_roman": "Ek hi ism par ek hi waqt mein al- aur tanween ko behtar tor par kya kaha jata hai?",
   "options_ur": [
    "ہمیشہ ایک ساتھ استعمال ہوتے ہیں",
    "آزادانہ طور پر بدل سکتے ہیں",
-   "ایک دوسرے کے ضد، کبھی ایک ساتھ نہیں",
+   "ایک دوسرے کو خارج کرنے والے، کبھی ایک ساتھ نہیں",
    "تثنیہ اسموں کے لیے ضروری ہیں"
   ],
   "options_roman": [
@@ -5413,7 +5413,7 @@
  },
  {
   "id": "ARB-127",
-  "question_ur": "حرف ندا یا کے ساتھ مخاطب ہونا لفظ کو کس قسم کا ثابت کرتا ہے؟",
+  "question_ur": "حرفِ ندا یا کے ساتھ مخاطب ہونا لفظ کو کس قسم کا ثابت کرتا ہے؟",
   "question_roman": "Harf-e-nida ya ke sath mukhatab hona lafz ko kis qisam ka sabit karta hai?",
   "options_ur": [
    "فعل کی صورت",
@@ -5497,7 +5497,7 @@
  },
  {
   "id": "ARB-129",
-  "question_ur": "من، الی اور فی مل کر حروف کے کس گروہ کی مثال بناتے ہیں؟",
+  "question_ur": "من، الی اور فی حروف کے کس گروہ کی مثال ہیں؟",
   "question_roman": "Min, ila aur fi mil kar huroof ke kis group ki misaal banate hain?",
   "options_ur": [
    "حروف جر",
@@ -5511,7 +5511,7 @@
    "Huruf al-nasb",
    "Huruf al-jazm"
   ],
-  "explanation_ur": "من، الی اور فی حروف جر ہیں، یعنی جار والے حروف۔",
+  "explanation_ur": "من، الی اور فی حروف جر ہیں۔",
   "explanation_roman": "Min, ila aur fi huruf al-jarr hain, yani jarr wale huroof.",
   "post": [
    "at"
@@ -5581,13 +5581,13 @@
  },
  {
   "id": "ARB-131",
-  "question_ur": "معطوف، حرف عطف سے جڑا ہوا لفظ، اپنے سے پہلے لفظ کی کس بات میں پیروی کرتا ہے؟",
+  "question_ur": "معطوف، حرفِ عطف سے جڑا ہوا لفظ، اپنے سے پہلے والے لفظ کی کس لحاظ سے پیروی کرتا ہے؟",
   "question_roman": "Matuf, harf-e-atf se juda hua lafz, apne se pehle lafz ki kis baat mein pairwi karta hai?",
   "options_ur": [
    "صرف زمانے میں",
    "صرف عدد میں",
    "اعراب میں",
-   "جڑ کے حروف میں"
+   "اصلی حروف میں"
   ],
   "options_roman": [
    "Sirf zamane mein",
@@ -5679,7 +5679,7 @@
    "Mukammal hukm mein",
    "Jagah ke sawal mein"
   ],
-  "explanation_ur": "لن مضارع کی مستقبل میں نفی کرتا ہے، یعنی ہرگز نہیں یا نہیں کرے گا۔",
+  "explanation_ur": "لن مضارع فعل کی مستقبل میں نفی کرتا ہے، یعنی ہرگز نہیں یا نہیں کرے گا۔",
   "explanation_roman": "Lan mudari ki mustaqbil mein nafi karta hai, yani hargiz nahi ya nahi kare ga.",
   "post": [
    "at"
@@ -5707,7 +5707,7 @@
  },
  {
   "id": "ARB-134",
-  "question_ur": "على بمعنی پر حروف کے کس گروہ سے تعلق رکھتا ہے؟",
+  "question_ur": "على، جس کا مطلب پر ہے، حروف کے کس گروہ کا ہے؟",
   "question_roman": "Ala, bamani par, huroof ke kis group se taluq rakhta hai?",
   "options_ur": [
    "حروف عطف",
@@ -5721,7 +5721,7 @@
    "Huruf al-nasb",
    "Huruf al-istifham"
   ],
-  "explanation_ur": "على حرف جر ہے، یعنی جار والے حروف میں سے ایک ہے۔",
+  "explanation_ur": "على حرفِ جر ہے، یعنی حروف جر میں سے ایک ہے۔",
   "explanation_roman": "Ala harf-e-jarr hai, yani jarr wale huroof mein se ek hai.",
   "post": [
    "at"
@@ -5749,7 +5749,7 @@
  },
  {
   "id": "ARB-135",
-  "question_ur": "ف بطور حرف عطف اگلے لفظ کو کس اضافی معنی کے ساتھ جوڑتا ہے؟",
+  "question_ur": "ف بطور حرفِ عطف اگلے لفظ کو کس اضافی معنی کے ساتھ جوڑتا ہے؟",
   "question_roman": "Fa bator harf-e-atf agle lafz ko kis izafi ma'na ke sath jodta hai?",
   "options_ur": [
    "طویل تاخیر",
@@ -5805,7 +5805,7 @@
    "Rukne ka hukm",
    "Maqsad, yani taake"
   ],
-  "explanation_ur": "کی حرف نصب ہے جو مقصد ظاہر کرتا ہے، یعنی تاکہ یا اس لیے کہ۔",
+  "explanation_ur": "کی حرفِ نصب ہے جو مقصد ظاہر کرتا ہے، یعنی تاکہ یا اس لیے کہ۔",
   "explanation_roman": "Kay harf al-nasb hai jo maqsad zahir karta hai, yani taake ya is liye ke.",
   "post": [
    "at"
@@ -5833,11 +5833,11 @@
  },
  {
   "id": "ARB-137",
-  "question_ur": "نحو میں اعراب سے لفظ کی کس خصوصیت کی طرف اشارہ ہوتا ہے؟",
+  "question_ur": "نحو میں اعراب سے لفظ کی کون سی خصوصیت مراد ہوتی ہے؟",
   "question_roman": "Nahw mein i'rab se lafz ki kis khususiyat ki taraf ishara hota hai?",
   "options_ur": [
-   "اس کے آخر میں تبدیلی جو اس کا گرامری کردار ظاہر کرے",
-   "اس کے جڑی حروف میں تبدیلی",
+   "اس کے آخر میں تبدیلی جو اس کا نحوی کردار ظاہر کرتی ہے",
+   "اس کے اصلی حروف میں تبدیلی",
    "لفظ میں حروف کی تعداد",
    "جملے میں الفاظ کی ترتیب"
   ],
@@ -5847,7 +5847,7 @@
    "Lafz mein huruf ki tadad",
    "Jumle mein alfaz ki tarteeb"
   ],
-  "explanation_ur": "اعراب لفظ کے آخر میں وہ تبدیلی ہے جو جملے میں اس کا گرامری کردار ظاہر کرتی ہے۔",
+  "explanation_ur": "اعراب لفظ کے آخر میں وہ تبدیلی ہے جو جملے میں اس کا نحوی کردار ظاہر کرتی ہے۔",
   "explanation_roman": "I'rab lafz ke aakhir mein woh tabdeeli hai jo jumle mein us ka gramari kirdar zahir karti hai.",
   "post": [
    "at"
@@ -5875,7 +5875,7 @@
  },
  {
   "id": "ARB-138",
-  "question_ur": "رفع اسم کی کس گرامری حالت کا نام ہے؟",
+  "question_ur": "رفع اسم کی کون سی نحوی حالت کا نام ہے؟",
   "question_roman": "Raf' ism ki kis gramari haalat ka naam hai?",
   "options_ur": [
    "حالتِ نصبی",
@@ -5917,7 +5917,7 @@
  },
  {
   "id": "ARB-139",
-  "question_ur": "نصب اسم کی کس گرامری حالت کا نام ہے؟",
+  "question_ur": "نصب اسم کی کون سی نحوی حالت کا نام ہے؟",
   "question_roman": "Nasb ism ki kis gramari haalat ka naam hai?",
   "options_ur": [
    "حالتِ جری",
@@ -5959,7 +5959,7 @@
  },
  {
   "id": "ARB-140",
-  "question_ur": "جر اسم کی کس گرامری حالت کا نام ہے؟",
+  "question_ur": "جر اسم کی کون سی نحوی حالت کا نام ہے؟",
   "question_roman": "Jarr ism ki kis gramari haalat ka naam hai?",
   "options_ur": [
    "حالتِ رفعی",
@@ -6001,7 +6001,7 @@
  },
  {
   "id": "ARB-141",
-  "question_ur": "ایک مکمل منصرف عربی اسم کتنی گرامری حالتیں ظاہر کر سکتا ہے؟",
+  "question_ur": "ایک مکمل منصرف عربی اسم کتنی نحوی حالتیں ظاہر کر سکتا ہے؟",
   "question_roman": "Ek mukammal munsarif Arbi ism kitni gramari haalatein zahir kar sakta hai?",
   "options_ur": [
    "دو",
@@ -6295,7 +6295,7 @@
  },
  {
   "id": "ARB-148",
-  "question_ur": "جمع مکسر (Jama Mukassar) کس قسم کے اسم کی اعرابی علامتیں لیتی ہے؟",
+  "question_ur": "جمع مکسر کس قسم کے اسم کی اعرابی علامتیں لیتی ہے؟",
   "question_roman": "Jama mukassar kis qism ke ism ki i'rabi alamatein leti hai?",
   "options_ur": [
    "تثنیہ اسم",
@@ -6547,7 +6547,7 @@
  },
  {
   "id": "ARB-154",
-  "question_ur": "حرفِ جر Fi کے بعد 'Fi ...' (دو کتابوں میں) میں کون سی تثنیہ صورت درست ہے؟",
+  "question_ur": "'Fi ...' (دو کتابوں میں) میں حرفِ جر Fi کے بعد کون سی تثنیہ صورت درست ہے؟",
   "question_roman": "Harf-e-jarr Fi ke baad 'Fi ...' (do kitabon mein) mein kaun si tasnia surat durust hai?",
   "options_ur": [
    "al-kitabani",
@@ -6595,7 +6595,7 @@
    "وہ گر جاتا ہے",
    "وہ دوگنا ہو جاتا ہے",
    "وہ واؤ میں بدل جاتا ہے",
-   "وہ یاء میں بدل جاتا ہے"
+   "وہ یا میں بدل جاتا ہے"
   ],
   "options_roman": [
    "Woh gir jata hai",
@@ -6847,7 +6847,7 @@
    "وہ واؤ میں بدل جاتا ہے",
    "وہ گر جاتا ہے",
    "وہ دوگنا ہو جاتا ہے",
-   "وہ یاء میں بدل جاتا ہے"
+   "وہ یا میں بدل جاتا ہے"
   ],
   "options_roman": [
    "Woh waw mein badal jata hai",
@@ -7093,7 +7093,7 @@
  },
  {
   "id": "ARB-167",
-  "question_ur": "حرف جر کے بعد رجال (مرد) جیسی عام جمع مکسر جر کی کون سی علامت ظاہر کرتی ہے؟",
+  "question_ur": "حرفِ جر کے بعد رجال (مرد) جیسی عام جمع مکسر جر کی کون سی علامت ظاہر کرتی ہے؟",
   "question_roman": "Harf-e-jarr ke baad Rijal (mard) jaisi aam jama-e-mukassar jarr ki kaun si alamat zahir karti hai?",
   "options_ur": [
    "ضمہ",
@@ -7261,7 +7261,7 @@
  },
  {
   "id": "ARB-171",
-  "question_ur": "الکتب (کتابیں) حالت نصب میں کس واحد علامت کے ساتھ ختم ہوتی ہے؟",
+  "question_ur": "الکتب (کتابیں) حالت نصب میں کس ایک علامت کے ساتھ ختم ہوتی ہے؟",
   "question_roman": "Al-Kutub (kitabein) haalat-e-nasb mein kis wahid alamat ke sath khatm hoti hai?",
   "options_ur": [
    "ضمہ",
@@ -7303,7 +7303,7 @@
  },
  {
   "id": "ARB-172",
-  "question_ur": "یکتب ضمہ کے ساتھ ختم ہوتا ہے کیونکہ نصب یا جزم کا کوئی حرف نہ ہونے پر مضارع فعل کس حالت میں ہوتا ہے؟",
+  "question_ur": "یکتب ضمہ کے ساتھ ختم ہوتا ہے۔ نصب یا جزم کا کوئی حرف سامنے نہ ہو تو مضارع فعل کس حالت میں ہوتا ہے؟",
   "question_roman": "Yaktubu damma ke sath khatm hota hai kyun ke nasb ya jazm ka koi harf na hone par Mudari' fi'l kis haalat mein hota hai?",
   "options_ur": [
    "منصوب",
@@ -7471,7 +7471,7 @@
  },
  {
   "id": "ARB-176",
-  "question_ur": "لم یکتب سکون کے ساتھ ختم ہوتا ہے کیونکہ صحیح مضارع فعل کے لیے جزم کی علامت کیا ہے؟",
+  "question_ur": "صحیح مضارع فعل کے لیے جزم کی علامت کیا ہے، جس کی وجہ سے لم یکتب سکون کے ساتھ ختم ہوتا ہے؟",
   "question_roman": "Lam yaktub sukun ke sath khatm hota hai kyun ke sahih Mudari' fi'l ke liye jazm ki alamat kya hai?",
   "options_ur": [
    "فتحہ",
@@ -7597,13 +7597,13 @@
  },
  {
   "id": "ARB-179",
-  "question_ur": "یکتبان (وہ دو لکھتے ہیں) مرفوع ہے کیونکہ اس کے آخر میں نون کس حالت میں ہے؟",
+  "question_ur": "یکتبان (وہ دو لکھتے ہیں) مرفوع ہے۔ اس کے آخر میں نون کس حالت میں ہے؟",
   "question_roman": "Yaktubani (woh do likhte hain) marfu' hai kyun ke is ke aakhir mein Nun kis haalat mein hai?",
   "options_ur": [
    "گرا ہوا",
    "دوہرا",
    "باقی",
-   "الف سے بدل ہوا"
+   "الف سے بدلا ہوا"
   ],
   "options_roman": [
    "Gira hua",
@@ -7681,7 +7681,7 @@
  },
  {
   "id": "ARB-181",
-  "question_ur": "ان، لن اور کی مضارع فعل کے لیے حروف کے کس گروہ سے تعلق رکھتے ہیں؟",
+  "question_ur": "ان، لن اور کی مضارع فعل کے لیے حروف کے کس گروہ کے ہیں؟",
   "question_roman": "An, Lan aur Kay Mudari' fi'l ke liye huroof ke kis giroh se ta'alluq rakhte hain?",
   "options_ur": [
    "نصب کے حروف",
@@ -7723,7 +7723,7 @@
  },
  {
   "id": "ARB-182",
-  "question_ur": "کون سا گروہ اسماء خمسہ کی درست فہرست دیتا ہے؟",
+  "question_ur": "اسماء خمسہ کی درست فہرست کس گروہ میں ہے؟",
   "question_roman": "Kaun sa giroh Asma al-Khamsa ki durust fehrist deta hai?",
   "options_ur": [
    "ابو، ام، اخو، اخت، ابن",
@@ -7765,7 +7765,7 @@
  },
  {
   "id": "ARB-183",
-  "question_ur": "ابو (باپ) مضاف الیہ کے ساتھ فاعل بن کر رفع کو کس حرف سے ظاہر کرتا ہے؟",
+  "question_ur": "ابو (باپ) اپنے بعد مضاف الیہ کے ساتھ فاعل بن کر رفع کو کس حرف سے ظاہر کرتا ہے؟",
   "question_roman": "Abu (baap) Mudaf Ilayh ke sath Fa'il ban kar raf' ko kis harf se zahir karta hai?",
   "options_ur": [
    "الف",
@@ -7849,7 +7849,7 @@
  },
  {
   "id": "ARB-185",
-  "question_ur": "ابی (باپ) حرف جر کے بعد جر کو کس حرف سے ظاہر کرتا ہے؟",
+  "question_ur": "ابی (باپ) حرفِ جر کے بعد جر کو کس حرف سے ظاہر کرتا ہے؟",
   "question_roman": "Abi (baap) harf-e-jarr ke baad jarr ko kis harf se zahir karta hai?",
   "options_ur": [
    "یا",
@@ -7933,7 +7933,7 @@
  },
  {
   "id": "ARB-187",
-  "question_ur": "ممنوع من الصرف (diptote) عام اسم سے اس لحاظ سے مختلف ہے کہ وہ کبھی کیا نہیں لیتا؟",
+  "question_ur": "ممنوع من الصرف عام اسم سے اس لحاظ سے مختلف ہے کہ وہ کبھی کیا نہیں لیتا؟",
   "question_roman": "Mamnu' min al-Sarf (diptote) aam ism se is lihaz se mukhtalif hai ke woh kabhi kya nahi leta?",
   "options_ur": [
    "ضمہ",
@@ -7975,7 +7975,7 @@
  },
  {
   "id": "ARB-188",
-  "question_ur": "حالت جر میں ممنوع من الصرف عام طور پر کس معمول کی علامت کے بجائے فتحہ لیتا ہے؟",
+  "question_ur": "حالت جر میں ممنوع من الصرف معمول کی کس علامت کے بجائے فتحہ لیتا ہے؟",
   "question_roman": "Haalat-e-jarr mein Mamnu' min al-Sarf aam tor par kis mamool ki alamat ke bajaye fatha leta hai?",
   "options_ur": [
    "ضمہ",
@@ -8148,7 +8148,7 @@
   "options_ur": [
    "جمع سالم مذکر",
    "جمع مکسر",
-   "اسم تثنیہ",
+   "تثنیہ اسم",
    "ممنوع من الصرف"
   ],
   "options_roman": [
@@ -8199,7 +8199,7 @@
    "Al-sayyaratu (gaari)",
    "Sari'a (raftaar)"
   ],
-  "explanation_ur": "السیارۃ جملے کا پہلا اسم اور موضوع ہے، اس لیے وہ مبتدا ہے، جبکہ سریعة اس کے بارے میں خبر دیتی ہے۔",
+  "explanation_ur": "السیارۃ جملے کا پہلا اسم اور موضوع ہے، اس لیے وہ مبتدا ہے، جبکہ سریعة اس کے بارے میں معلومات دیتی ہے، اس لیے وہ خبر ہے۔",
   "explanation_roman": "Al-sayyaratu jumle ka pehla ism aur mauzu hai, is liye woh Mubtada' hai, jabke sari'atun is ke baare mein khabar deti hai.",
   "post": [
    "at"
@@ -8241,7 +8241,7 @@
    "Qamar (ek chaand)",
    "Jamal (khubsurti)"
   ],
-  "explanation_ur": "جمیل مبتدا القمر کے بارے میں معلومات دیتا ہے، اس لیے جمیل خبر ہے۔",
+  "explanation_ur": "جمیل القمر کے بارے میں معلومات دیتا ہے، اس لیے جمیل خبر ہے اور القمر مبتدا ہے۔",
   "explanation_roman": "Jamilun Mubtada' al-qamaru ke baare mein maloomat deta hai, is liye jamilun Khabar hai.",
   "post": [
    "at"
@@ -8693,8 +8693,8 @@
   "question_roman": "Jumle 'Al-mu'allimu mukhlisun' (Ustad mukhlis hai) mein mukhlisun kis qisam ki Khabar hai?",
   "options_ur": [
    "خبر مفرد (ایک لفظ)",
-   "خبر جملہ فعلیہ (فعلی جملہ)",
-   "خبر جملہ اسمیہ (اسمی جملہ)",
+   "خبر جملہ فعلیہ",
+   "خبر جملہ اسمیہ",
    "خبر شبہ جملہ (نیم جملہ)"
   ],
   "options_roman": [
@@ -8735,9 +8735,9 @@
   "question_roman": "Jumle 'Al-kitabu 'ala al-tawilati' (Kitab mez par hai) mein 'ala al-tawilati kis qisam ki Khabar hai?",
   "options_ur": [
    "خبر مفرد (ایک لفظ)",
-   "خبر جملہ فعلیہ (فعلی جملہ)",
+   "خبر جملہ فعلیہ",
    "خبر شبہ جملہ (نیم جملہ)",
-   "خبر جملہ اسمیہ (اسمی جملہ)"
+   "خبر جملہ اسمیہ"
   ],
   "options_roman": [
    "Khabar Mufrad (ek lafz)",
@@ -8777,9 +8777,9 @@
   "question_roman": "Jumle 'Al-talibu yadrusu al-nahwa' (Talib-e-ilm nahw parhta hai) mein yadrusu al-nahwa kis qisam ki Khabar hai?",
   "options_ur": [
    "خبر مفرد (ایک لفظ)",
-   "خبر جملہ فعلیہ (فعلی جملہ)",
+   "خبر جملہ فعلیہ",
    "خبر شبہ جملہ (نیم جملہ)",
-   "خبر جملہ اسمیہ (اسمی جملہ)"
+   "خبر جملہ اسمیہ"
   ],
   "options_roman": [
    "Khabar Mufrad (ek lafz)",
@@ -8819,8 +8819,8 @@
   "question_roman": "Jumle 'Al-baytu fawqa al-jabali' (Ghar pahaadi ke upar hai) mein fawqa al-jabali kis qisam ki Khabar hai?",
   "options_ur": [
    "خبر مفرد (ایک لفظ)",
-   "خبر جملہ فعلیہ (فعلی جملہ)",
-   "خبر جملہ اسمیہ (اسمی جملہ)",
+   "خبر جملہ فعلیہ",
+   "خبر جملہ اسمیہ",
    "خبر شبہ جملہ (نیم جملہ)"
   ],
   "options_roman": [
@@ -8860,10 +8860,10 @@
   "question_ur": "جملے 'الولد خلقه حسن' (لڑکا، اس کا اخلاق اچھا ہے) میں خلقه حسن کس قسم کی خبر ہے؟",
   "question_roman": "Jumle 'Al-waladu khuluquhu hasanun' (Ladka, is ka ikhlaq achha hai) mein khuluquhu hasanun kis qisam ki Khabar hai?",
   "options_ur": [
-   "خبر جملہ اسمیہ (اسمی جملہ)",
+   "خبر جملہ اسمیہ",
    "خبر مفرد (ایک لفظ)",
    "خبر شبہ جملہ (نیم جملہ)",
-   "خبر جملہ فعلیہ (فعلی جملہ)"
+   "خبر جملہ فعلیہ"
   ],
   "options_roman": [
    "Khabar Jumlah Ismiyyah (ismi jumla)",
@@ -9319,7 +9319,7 @@
  },
  {
   "id": "ARB-220",
-  "question_ur": "قرا المعلم الکتاب — اس جملے میں کون سا لفظ فاعل ہے؟",
+  "question_ur": "جملے 'قرا المعلم الکتاب' میں کون سا لفظ فاعل ہے؟",
   "question_roman": "Qara'a al-mu'allimu al-kitaba — is jumle mein kaun sa lafz Fa'il hai?",
   "options_ur": [
    "قرا",
@@ -9333,7 +9333,7 @@
    "Al-kitaba",
    "Al-madrasa"
   ],
-  "explanation_ur": "المعلم پڑھنے کا کام کرنے والا ہے، اس لیے وہ فاعل ہے اور مرفوع ہے۔",
+  "explanation_ur": "المعلم پڑھنے والا ہے، اس لیے وہ فاعل ہے اور مرفوع ہے۔",
   "explanation_roman": "Al-mu'allimu parhne ka kaam karne wala hai, is liye woh Fa'il hai aur Marfu' hai.",
   "post": [
    "at"
@@ -9361,7 +9361,7 @@
  },
  {
   "id": "ARB-221",
-  "question_ur": "شرب الولد الماء — اس جملے میں کون سا لفظ مفعول بہ ہے؟",
+  "question_ur": "جملے 'شرب الولد الماء' میں کون سا لفظ مفعول بہ ہے؟",
   "question_roman": "Shariba al-waladu al-ma'a — is jumle mein kaun sa lafz Maf'ul bihi hai?",
   "options_ur": [
    "شرب",
@@ -9403,7 +9403,7 @@
  },
  {
   "id": "ARB-222",
-  "question_ur": "فتح الطالب الباب — اس جملے میں کون سا لفظ فعل ہے؟",
+  "question_ur": "جملے 'فتح الطالب الباب' میں کون سا لفظ فعل ہے؟",
   "question_roman": "Fataha al-talibu al-baba — is jumle mein kaun sa lafz Fi'l hai?",
   "options_ur": [
    "فتح",
@@ -9445,7 +9445,7 @@
  },
  {
   "id": "ARB-223",
-  "question_ur": "درس الطالب الدرس — اس جملے میں الطالب کا کیا کردار ہے؟",
+  "question_ur": "جملے 'درس الطالب الدرس' میں الطالب کا کیا کردار ہے؟",
   "question_roman": "Darasa al-talibu al-darsa — is jumle mein al-talibu ka kya kirdar hai?",
   "options_ur": [
    "مفعول بہ",
@@ -9487,7 +9487,7 @@
  },
  {
   "id": "ARB-224",
-  "question_ur": "اکل الرجل الخبز — اس جملے میں کون سا لفظ مفعول بہ ہے؟",
+  "question_ur": "جملے 'اکل الرجل الخبز' میں کون سا لفظ مفعول بہ ہے؟",
   "question_roman": "Akala al-rajulu al-khubza — is jumle mein kaun sa lafz Maf'ul bihi hai?",
   "options_ur": [
    "اکل",
@@ -9529,7 +9529,7 @@
  },
  {
   "id": "ARB-225",
-  "question_ur": "ذہب المعلم الی المدرسۃ — اس جملے میں کون سا لفظ فاعل ہے؟",
+  "question_ur": "جملے 'ذہب المعلم الی المدرسۃ' میں کون سا لفظ فاعل ہے؟",
   "question_roman": "Dhahaba al-mu'allimu ila al-madrasati — is jumle mein kaun sa lafz Fa'il hai?",
   "options_ur": [
    "ذہب",
@@ -9571,7 +9571,7 @@
  },
  {
   "id": "ARB-226",
-  "question_ur": "کتبت البنت الدرس — اس جملے میں کون سا لفظ فعل ہے؟",
+  "question_ur": "جملے 'کتبت البنت الدرس' میں کون سا لفظ فعل ہے؟",
   "question_roman": "Katabat al-bintu al-darsa — is jumle mein kaun sa lafz Fi'l hai?",
   "options_ur": [
    "کتبت",
@@ -9585,7 +9585,7 @@
    "Al-darsa",
    "Al-kitaba"
   ],
-  "explanation_ur": "کتبت عمل والا لفظ ہے جس کا مطلب اس نے لکھا ہے، اس لیے وہ جملے کا فعل ہے۔",
+  "explanation_ur": "کتبت عمل والا لفظ ہے جس کا مطلب ہے اس (عورت) نے لکھا، اس لیے وہ جملے کا فعل ہے۔",
   "explanation_roman": "Katabat amal wala lafz hai jis ka matlab us ne likha hai, is liye woh jumle ka Fi'l hai.",
   "post": [
    "at"
@@ -9613,7 +9613,7 @@
  },
  {
   "id": "ARB-227",
-  "question_ur": "سمع الطالب الدرس — اس جملے میں الدرس کا کیا کردار ہے؟",
+  "question_ur": "جملے 'سمع الطالب الدرس' میں الدرس کا کیا کردار ہے؟",
   "question_roman": "Sami'a al-talibu al-darsa — is jumle mein al-darsa ka kya kirdar hai?",
   "options_ur": [
    "فاعل",
@@ -9655,7 +9655,7 @@
  },
  {
   "id": "ARB-228",
-  "question_ur": "جلس الطبیب فی البیت — اس جملے میں کون سا لفظ فاعل ہے؟",
+  "question_ur": "جملے 'جلس الطبیب فی البیت' میں کون سا لفظ فاعل ہے؟",
   "question_roman": "Jalasa al-tabibu fi al-bayti — is jumle mein kaun sa lafz Fa'il hai?",
   "options_ur": [
    "جلس",
@@ -9697,7 +9697,7 @@
  },
  {
   "id": "ARB-229",
-  "question_ur": "رای الولد القمر — اس جملے میں کون سا لفظ مفعول بہ ہے؟",
+  "question_ur": "جملے 'رای الولد القمر' میں کون سا لفظ مفعول بہ ہے؟",
   "question_roman": "Ra'a al-waladu al-qamara — is jumle mein kaun sa lafz Maf'ul bihi hai?",
   "options_ur": [
    "رای",
@@ -9739,7 +9739,7 @@
  },
  {
   "id": "ARB-230",
-  "question_ur": "عمل الرجل فی المدرسۃ — اس جملے میں کون سا لفظ فعل ہے؟",
+  "question_ur": "جملے 'عمل الرجل فی المدرسۃ' میں کون سا لفظ فعل ہے؟",
   "question_roman": "'Amila al-rajulu fi al-madrasati — is jumle mein kaun sa lafz Fi'l hai?",
   "options_ur": [
    "عمل",
@@ -9781,7 +9781,7 @@
  },
  {
   "id": "ARB-231",
-  "question_ur": "قام المعلم — اس مختصر جملے میں المعلم کا کیا کردار ہے؟",
+  "question_ur": "مختصر جملے 'قام المعلم' میں المعلم کا کیا کردار ہے؟",
   "question_roman": "Qama al-mu'allimu — is mukhtasar jumle mein al-mu'allimu ka kya kirdar hai?",
   "options_ur": [
    "مفعول بہ",
@@ -9823,7 +9823,7 @@
  },
  {
   "id": "ARB-232",
-  "question_ur": "کتب الولد الدرس فعل فاعل مفعول بہ کی ترتیب پر ہے، اس ترتیب کو کس نام سے جانا جاتا ہے؟",
+  "question_ur": "کتب الولد الدرس فعل، فاعل، مفعول بہ کی ترتیب پر ہے، اس ترتیب کو کس نام سے جانا جاتا ہے؟",
   "question_roman": "Kataba al-waladu al-darsa Fi'l-Fa'il-Maf'ul bihi ki tarteeb par hai, is tarteeb ko kis naam se jana jata hai?",
   "options_ur": [
    "فاعل، فعل، مفعول کی ترتیب",
@@ -9837,7 +9837,7 @@
    "VOS order",
    "OVS order"
   ],
-  "explanation_ur": "پہلے فعل، پھر فاعل، پھر مفعول بہ — یہ فعل فاعل مفعول کی ترتیب ہے جو فعلی جملے کی عام ترتیب ہے۔",
+  "explanation_ur": "پہلے فعل آتا ہے، پھر فاعل، پھر مفعول بہ۔ یہ VSO ترتیب ہے، جو فعلی جملے کی عام ترتیب ہے۔",
   "explanation_roman": "Pehle Fi'l, phir Fa'il, phir Maf'ul bihi — yeh VSO order hai jo fi'li jumle ki aam tarteeb hai.",
   "post": [
    "at"
@@ -9865,7 +9865,7 @@
  },
  {
   "id": "ARB-233",
-  "question_ur": "الدرس کتب الولد میں مفعول زور دینے کے لیے فعل سے پہلے آیا ہے — یہاں کسے آگے لایا گیا ہے؟",
+  "question_ur": "الدرس کتب الولد میں مفعول زور دینے کے لیے فعل سے پہلے آیا ہے۔ یہاں کسے آگے لایا گیا ہے؟",
   "question_roman": "Al-darsa kataba al-waladu mein maf'ul zor dene ke liye fi'l se pehle aaya hai — yahan kise aage laya gaya hai?",
   "options_ur": [
    "فعل",
@@ -9879,7 +9879,7 @@
    "Maf'ul bihi",
    "Mubtada'"
   ],
-  "explanation_ur": "الدرس، جو مفعول ہے، زور دینے کے لیے فعل سے پہلے لایا گیا ہے، جبکہ اس کا کردار اور اعراب وہی رہتا ہے۔",
+  "explanation_ur": "الدرس، جو مفعول ہے، زور دینے کے لیے فعل سے پہلے لایا گیا ہے، جبکہ اس کا کردار اور اعراب وہی رہتے ہیں۔",
   "explanation_roman": "Al-darsa, jo maf'ul hai, zor dene ke liye fi'l se pehle laya gaya hai, jab ke is ka kirdar aur i'rab wohi rehta hai.",
   "post": [
    "at"
@@ -9907,7 +9907,7 @@
  },
  {
   "id": "ARB-234",
-  "question_ur": "کتب الدرس الولد میں فاعل آخر میں آیا ہے — الولد کو فاعل کے طور پر پھر بھی کیسے پہچانا جا سکتا ہے؟",
+  "question_ur": "کتب الدرس الولد میں فاعل آخر میں آیا ہے۔ الولد کو فاعل کے طور پر پھر بھی کیسے پہچانا جا سکتا ہے؟",
   "question_roman": "Kataba al-darsa al-waladu mein fa'il aakhir mein aaya hai — al-waladu ko Fa'il ke tor par phir bhi kaise pehchana ja sakta hai?",
   "options_ur": [
    "وہ مرفوع ہے",
@@ -9949,7 +9949,7 @@
  },
  {
   "id": "ARB-235",
-  "question_ur": "یکتب الطالب الدرس میں مضارع فعل ہے — کیا زمانہ حال میں فعل پہلے آنے کی ترتیب بدل جاتی ہے؟",
+  "question_ur": "یکتب الطالب الدرس میں مضارع فعل ہے۔ کیا زمانہ حال میں فعل پہلے آنے کی ترتیب بدل جاتی ہے؟",
   "question_roman": "Yaktubu al-talibu al-darsa mein Mudari' fi'l hai — kya zamana haal mein fi'l pehle aane ki tarteeb badal jati hai?",
   "options_ur": [
    "فاعل کو پہلے آنا چاہیے",
@@ -9991,7 +9991,7 @@
  },
  {
   "id": "ARB-236",
-  "question_ur": "کتب الدرس میں فعل کے بعد کوئی اسم نہیں ہے — اس جملے میں فاعل کہاں ہے؟",
+  "question_ur": "کتب الدرس میں فعل کے بعد کوئی اسم نہیں ہے۔ اس جملے میں فاعل کہاں ہے؟",
   "question_roman": "Kataba al-darsa mein fi'l ke baad koi ism nahi hai — is jumle mein Fa'il kahan hai?",
   "options_ur": [
    "کوئی فاعل ہے ہی نہیں",
@@ -10033,7 +10033,7 @@
  },
  {
   "id": "ARB-237",
-  "question_ur": "قراہ الطالب میں ضمیر ہُ فعل کے ساتھ ملی ہوئی ہے — یہ ملی ہوئی ضمیر کس طور پر کام کرتی ہے؟",
+  "question_ur": "قراہ الطالب میں ضمیر ہُ فعل کے ساتھ ملا ہوا ہے۔ یہ ملا ہوا ضمیر کس طور پر کام کرتا ہے؟",
   "question_roman": "Qara'ahu al-talibu mein zameer -hu fi'l ke sath mili hui hai — yeh mili hui zameer kis tor par kaam karti hai?",
   "options_ur": [
    "فاعل",
@@ -10047,7 +10047,7 @@
    "Maf'ul bihi",
    "Harf-e-Jarr"
   ],
-  "explanation_ur": "ملی ہوئی ضمیر ہُ کا مطلب اسے ہے اور اس پر پڑھنے کا عمل ہوا ہے، اس لیے وہ مفعول بہ ہے۔",
+  "explanation_ur": "ملا ہوا ضمیر ہُ کا مطلب اسے ہے اور اس پر پڑھنے کا عمل ہوا ہے، اس لیے وہ مفعول بہ ہے۔",
   "explanation_roman": "Mili hui zameer -hu ka matlab usay hai aur is par parhne ka amal hua hai, is liye woh Maf'ul bihi hai.",
   "post": [
    "at"
@@ -10075,7 +10075,7 @@
  },
  {
   "id": "ARB-238",
-  "question_ur": "الکتاب قرا المعلم میں مفعول زور دینے کے لیے آگے لایا گیا ہے — الکتاب کس حالت میں رہتا ہے؟",
+  "question_ur": "الکتاب قرا المعلم میں مفعول زور دینے کے لیے آگے لایا گیا ہے۔ الکتاب کس حالت میں رہتا ہے؟",
   "question_roman": "Al-kitaba qara'a al-mu'allimu mein maf'ul zor dene ke liye aage laya gaya hai — al-kitaba kis haalat mein rehta hai?",
   "options_ur": [
    "منصوب",
@@ -10117,7 +10117,7 @@
  },
  {
   "id": "ARB-239",
-  "question_ur": "کتب الدرس کا مطلب ہے سبق لکھا گیا — اس مجہول جملے میں الدرس کیا ہے؟",
+  "question_ur": "کتب الدرس کا مطلب ہے سبق لکھا گیا۔ اس مجہول جملے میں الدرس کیا ہے؟",
   "question_roman": "Kutiba al-darsu ka matlab hai sabaq likha gaya — is majhul jumle mein al-darsu kya hai?",
   "options_ur": [
    "مفعول بہ",
@@ -10131,7 +10131,7 @@
    "Khabar",
    "Na'ib al-Fa'il"
   ],
-  "explanation_ur": "مجہول جملے میں مفعول غائب فاعل کی جگہ لیتا ہے، اس لیے الدرس نائب الفاعل ہے۔",
+  "explanation_ur": "مجہول جملے میں مفعول اس فاعل کی جگہ لیتا ہے جس کا ذکر نہیں ہوتا، اس لیے الدرس نائب الفاعل ہے۔",
   "explanation_roman": "Majhul jumle mein maf'ul ghaib Fa'il ki jagah leta hai, is liye al-darsu Na'ib al-Fa'il hai.",
   "post": [
    "at"
@@ -10159,7 +10159,7 @@
  },
  {
   "id": "ARB-240",
-  "question_ur": "کُتِبَ، کَتَبَ سے آواز میں مختلف ہے — کُتِبَ کس قسم کا فعل ہے؟",
+  "question_ur": "کُتِبَ، کَتَبَ سے آواز میں مختلف ہے۔ کُتِبَ کس قسم کا فعل ہے؟",
   "question_roman": "Kutiba, Kataba se voice mein mukhtalif hai — Kutiba kis qism ka fi'l hai?",
   "options_ur": [
    "معلوم فعل",
@@ -10201,7 +10201,7 @@
  },
  {
   "id": "ARB-241",
-  "question_ur": "نائب الفاعل مجہول جملے میں فاعل کی جگہ لیتا ہے — وہ کس حالت میں ہوتا ہے؟",
+  "question_ur": "نائب الفاعل مجہول جملے میں فاعل کی جگہ لیتا ہے۔ وہ کس حالت میں ہوتا ہے؟",
   "question_roman": "Na'ib al-Fa'il majhul jumle mein Fa'il ki jagah leta hai — woh kis haalat mein hota hai?",
   "options_ur": [
    "منصوب",
@@ -10243,7 +10243,7 @@
  },
  {
   "id": "ARB-242",
-  "question_ur": "فُتِحَ الباب کا مطلب ہے دروازہ کھولا گیا — فُتِحَ کس آواز والا فعل ہے؟",
+  "question_ur": "فُتِحَ الباب کا مطلب ہے دروازہ کھولا گیا۔ فُتِحَ کس آواز والا فعل ہے؟",
   "question_roman": "Futiha al-babu ka matlab hai darwaza khola gaya — Futiha kis voice wala fi'l hai?",
   "options_ur": [
    "مجہول آواز",
@@ -10285,7 +10285,7 @@
  },
  {
   "id": "ARB-243",
-  "question_ur": "لیس المعلم غائبا — غائبا منصوب ہے کیونکہ وہ اس جملے میں کس طور پر کام کرتا ہے؟",
+  "question_ur": "لیس المعلم غائبا میں غائبا منصوب ہے۔ وہ اس جملے میں کس طور پر کام کرتا ہے؟",
   "question_roman": "Laysa al-mu'allimu gha'iban — gha'iban Mansub hai kyun ke woh is jumle mein kis tor par kaam karta hai?",
   "options_ur": [
    "فاعل",
@@ -10327,7 +10327,7 @@
  },
  {
   "id": "ARB-244",
-  "question_ur": "لیس الکتاب کبیرا لیس سے شروع ہوتا ہے — لیس اس اسمی جملے کے ساتھ کیا کرتا ہے؟",
+  "question_ur": "لیس الکتاب کبیرا لیس سے شروع ہوتا ہے۔ لیس اس اسمی جملے کے ساتھ کیا کرتا ہے؟",
   "question_roman": "Laysa al-kitabu kabiran Laysa se shuru hota hai — Laysa is ismi jumle ke sath kya karta hai?",
   "options_ur": [
    "وہ اسے سوال بنا دیتا ہے",
@@ -10677,7 +10677,7 @@
    "Fatahu",
    "Fatahat"
   ],
-  "explanation_ur": "Fatahā، جس کے آخر میں لمبی آواز ہے، تیسرے شخص مذکر تثنیہ ہے، اس لیے اس کا مطلب ہے ان دو (مردوں) نے کھولا۔",
+  "explanation_ur": "Fatahā، جس کے آخر میں لمبی آواز ہے، تیسرا شخص مذکر تثنیہ ہے، اس لیے اس کا مطلب ہے ان دو (مردوں) نے کھولا۔",
   "explanation_roman": "Fatahā, jis ke aakhir mein lambi aawaz hai, teesre shakhs muzakkar tasnia hai, is liye is ka matlab hai un do (mardon) ne khola.",
   "post": [
    "at"
@@ -10705,7 +10705,7 @@
  },
  {
   "id": "ARB-253",
-  "question_ur": "Katabna دو گردانی جگہوں پر آتا ہے: 'ہم نے لکھا' کے علاوہ اس کا مطلب اور کیا ہے؟",
+  "question_ur": "Katabna ایک ہی صورت ہے جو دو جگہ استعمال ہوتی ہے: 'ہم نے لکھا' کے علاوہ اس کا مطلب اور کیا ہے؟",
   "question_roman": "Katabna do gardaani jaghon par aata hai: 'hum ne likha' ke ilawa is ka matlab aur kya hai?",
   "options_ur": [
    "اس نے لکھا، ایک مرد کے بارے میں",
@@ -10747,7 +10747,7 @@
  },
  {
   "id": "ARB-254",
-  "question_ur": "کئی عورتوں کے لیے 'انہوں نے پڑھا' کے لیے Darasa کی کون سی ماضی صورت استعمال ہوتی ہے؟",
+  "question_ur": "کئی عورتوں کے بارے میں 'انہوں نے پڑھا' کے لیے Darasa کی کون سی ماضی صورت استعمال ہوتی ہے؟",
   "question_roman": "Kai auraton ke liye 'unhon ne parha' ke liye Darasa ki kaun si madi surat istemal hoti hai?",
   "options_ur": [
    "Darasat",
@@ -10845,7 +10845,7 @@
    "Katabtunna",
    "Katabtu"
   ],
-  "explanation_ur": "Katabtum کے آخر میں -tum ہے جو دوسرے شخص مذکر جمع کی علامت ہے، اس لیے اس کا مطلب ہے تم نے لکھا، کئی مردوں سے خطاب پر۔",
+  "explanation_ur": "Katabtum کے آخر میں -tum ہے جو دوسرے شخص مذکر جمع کی علامت ہے، اس لیے اس کا مطلب ہے تم نے لکھا، جب کئی مردوں سے خطاب ہو۔",
   "explanation_roman": "Katabtum ke aakhir mein -tum hai jo doosre shakhs muzakkar jama ki alamat hai, is liye is ka matlab hai tum ne likha, kai mardon se khitab par.",
   "post": [
    "at"
@@ -10887,7 +10887,7 @@
    "Kai auratein",
    "Kai mard"
   ],
-  "explanation_ur": "اختتام -tunna دوسرے شخص مؤنث جمع کی علامت ہے، اس لیے Katabtunna کا مطلب ہے تم نے لکھا، کئی عورتوں سے خطاب پر۔",
+  "explanation_ur": "اختتام -tunna دوسرے شخص مؤنث جمع کی علامت ہے، اس لیے Katabtunna کا مطلب ہے تم نے لکھا، جب کئی عورتوں سے خطاب ہو۔",
   "explanation_roman": "Ikhtitam -tunna doosre shakhs mu'annath jama ki alamat hai, is liye Katabtunna ka matlab hai tum ne likha, kai auraton se khitab par.",
   "post": [
    "at"
@@ -10999,7 +10999,7 @@
  },
  {
   "id": "ARB-260",
-  "question_ur": "'Shariba al-waladu al-ma'a' (لڑکے نے پانی پیا) جملے میں ماضی فعل کون سا لفظ ہے؟",
+  "question_ur": "جملے 'Shariba al-waladu al-ma'a' (لڑکے نے پانی پیا) میں ماضی فعل کون سا لفظ ہے؟",
   "question_roman": "'Shariba al-waladu al-ma'a' (Ladke ne pani piya) jumle mein madi fi'l kaun sa lafz hai?",
   "options_ur": [
    "Al-waladu",
@@ -11209,7 +11209,7 @@
  },
  {
   "id": "ARB-265",
-  "question_ur": "Ma kataba کا انگریزی میں کیا مطلب ہے؟",
+  "question_ur": "Ma kataba کا کیا مطلب ہے؟",
   "question_roman": "Ma kataba ka Angrezi mein kya matlab hai?",
   "options_ur": [
    "وہ لکھتا ہے",
@@ -11461,7 +11461,7 @@
  },
  {
   "id": "ARB-271",
-  "question_ur": "ضمیر ہوا کے لیے درس کا مضارع کون سی صورت اختیار کرتا ہے؟",
+  "question_ur": "ضمیر ہو کے لیے درس کا مضارع کون سی صورت اختیار کرتا ہے؟",
   "question_roman": "Zameer Huwa ke liye Darasa ka Mudari' kaun si surat ikhtiyar karta hai?",
   "options_ur": [
    "یدرسو",
@@ -11503,7 +11503,7 @@
  },
  {
   "id": "ARB-272",
-  "question_ur": "تکتب مضارع کی صورت کے طور پر 'وہ لکھتی ہے' کا معنی بھی دے سکتی ہے اور اس کے علاوہ کون سا معنی؟",
+  "question_ur": "تکتب مضارع کی صورت کے طور پر 'وہ لکھتی ہے' کا معنی بھی دے سکتی ہے۔ اس کے علاوہ اس کا کون سا معنی ہو سکتا ہے؟",
   "question_roman": "Taktubu Mudari' ki surat ke tor par 'woh likhti hai' ka ma'na bhi de sakti hai aur is ke ilawa kaun sa ma'na?",
   "options_ur": [
    "میں لکھتا ہوں",
@@ -11517,7 +11517,7 @@
    "Tum likhte ho (muzakkar wahid)",
    "Woh likhte hain (muzakkar jama)"
   ],
-  "explanation_ur": "تکتب ہی اور انت دونوں کے لیے آتی ہے، اس لیے اس کا معنی وہ لکھتی ہے یا تم لکھتے ہو بھی ہو سکتا ہے۔",
+  "explanation_ur": "تکتب ہی اور انت دونوں کے لیے آتی ہے، اس لیے تکتب کا معنی 'وہ لکھتی ہے' یا 'تم لکھتے ہو' ہو سکتا ہے۔",
   "explanation_roman": "Taktubu Hiya aur Anta dono ke liye aati hai, is liye is ka ma'na woh likhti hai ya tum likhte ho bhi ho sakta hai.",
   "post": [
    "at"
@@ -11755,7 +11755,7 @@
  },
  {
   "id": "ARB-278",
-  "question_ur": "تکتبین، جس کے آخر میں 'ین' ہے، کس واحد شخص کو مخاطب کر کے مضارع کی صورت ہے؟",
+  "question_ur": "تکتبین، جس کے آخر میں 'ین' ہے، کس واحد شخص سے خطاب کے لیے مضارع کی صورت ہے؟",
   "question_roman": "Taktubina, jis ke aakhir mein '-ina' hai, kis wahid shakhs ko mukhatib kar ke Mudari' ki surat hai?",
   "options_ur": [
    "انت (مذکر)",
@@ -11839,7 +11839,7 @@
  },
  {
   "id": "ARB-280",
-  "question_ur": "تثنیہ مضارع کا اختتام 'ان' ضمیروں کے کس جوڑے کی صورتوں میں آتا ہے؟",
+  "question_ur": "ضمیروں کے کس جوڑے کی صورتوں میں تثنیہ مضارع کا اختتام 'ان' آتا ہے؟",
   "question_roman": "Tasnia Mudari' ka ikhtitam '-ani' zameeron ke kis jode ki suraton mein aata hai?",
   "options_ur": [
    "ہم اور انتم",
@@ -11937,7 +11937,7 @@
    "Tajlisuna",
    "Yajlisuna"
   ],
-  "explanation_ur": "مذکر جمع 'ہم' یا کا سابقہ اور 'ون' کا اختتام لیتی ہے، اس لیے یجلس سے یجلسون بنتا ہے۔",
+  "explanation_ur": "مذکر جمع 'ہم' کے لیے یا کا سابقہ اور 'ون' کا اختتام آتا ہے، اس لیے یجلس سے یجلسون بنتا ہے۔",
   "explanation_roman": "Muzakkar jama 'Hum' Ya ka sabiqa aur '-una' ka ikhtitam leti hai, is liye Yajlisu se Yajlisuna banta hai.",
   "post": [
    "at"
@@ -12301,7 +12301,7 @@
  },
  {
   "id": "ARB-291",
-  "question_ur": "مضارع کے چار سابقہ حروف، جو لفظ 'انیت' سے یاد رکھے جاتے ہیں، کون سا مجموعہ ہیں؟",
+  "question_ur": "مضارع کے چار سابقہ حروف، جو لفظ 'انیت' سے یاد رکھے جاتے ہیں، کون سے ہیں؟",
   "question_roman": "Mudari' ke chaar sabiqa huroof, jo lafz 'Anaytu' se yaad rakhe jate hain, kaun sa majmua hain?",
   "options_ur": [
    "ہمزہ، نون، یا، تا",
@@ -12469,7 +12469,7 @@
  },
  {
   "id": "ARB-295",
-  "question_ur": "تکتب سے اکتب بنانے میں مضارع کی شکل کا کون سا حصہ ہٹایا جاتا ہے؟",
+  "question_ur": "تکتب سے اکتب بنانے میں مضارع کی صورت کا کون سا حصہ ہٹایا جاتا ہے؟",
   "question_roman": "Taktubu se Uktub banane mein Mudari ki shakl ka kaun sa hissa hataya jata hai?",
   "options_ur": [
    "سابقہ حرف تا",
@@ -12637,7 +12637,7 @@
  },
  {
   "id": "ARB-299",
-  "question_ur": "نہی کی ممانعت والا لا تکتب مضارع کی کس شکل سے بنتا ہے؟",
+  "question_ur": "نہی کی ممانعت والا لا تکتب مضارع کی کون سی صورت سے بنتا ہے؟",
   "question_roman": "Nahy ki muman'at wala La Taktub Mudari ki kis shakl se banta hai?",
   "options_ur": [
    "کتب",
@@ -12721,7 +12721,7 @@
  },
  {
   "id": "ARB-301",
-  "question_ur": "لا تکتب میں ممانعت والا لا مضارع فعل کو کس حالت میں ختم کرتا ہے؟",
+  "question_ur": "لا تکتب میں ممانعت والے لا سے مضارع فعل کس حالت میں ختم ہوتا ہے؟",
   "question_roman": "La Taktub mein muman'at wala La Mudari fi'l ko kis haalat mein khatm karta hai?",
   "options_ur": [
    "مرفوع",
@@ -12805,7 +12805,7 @@
  },
  {
   "id": "ARB-303",
-  "question_ur": "اکتب کے پہلے ہمزہ پر ضمہ اس لیے ہے کہ یکتب کے درمیانی حرف پر کون سی حرکت ہے؟",
+  "question_ur": "یکتب کے درمیانی حرف پر کون سی حرکت ہے، جس کی وجہ سے اکتب کا پہلا ہمزہ ضمہ لیتا ہے؟",
   "question_roman": "Uktub ke pehle hamza par damma is liye hai ke Yaktubu ke darmiyani harf par kaun si harkat hai?",
   "options_ur": [
    "فتحہ",
@@ -12819,7 +12819,7 @@
    "Kasra",
    "Sukun"
   ],
-  "explanation_ur": "امر کا ہمزہ ضمہ لیتا ہے جب مضارع کی شکل کے درمیانی اصلی حرف پر ضمہ ہو، جیسے یکتب سے اکتب بنتا ہے۔",
+  "explanation_ur": "امر کا ہمزہ ضمہ لیتا ہے جب مضارع کی صورت کے درمیانی اصلی حرف پر ضمہ ہو، جیسے یکتب سے اکتب بنتا ہے۔",
   "explanation_roman": "Amr ka hamza damma leta hai jab Mudari ki shakl ke darmiyani asli harf par damma ho, jaise Yaktubu se Uktub banta hai.",
   "post": [
    "at"
@@ -12861,7 +12861,7 @@
    "Ek aurat ko",
    "Mardon ke giroh ko"
   ],
-  "explanation_ur": "ایک عورت کے لیے نہی کی شکل مؤنث مضارع کی آخری یا برقرار رکھتی ہے، اس لیے لا تکتبی کا مطلب ہے ایک عورت کو مت لکھو۔",
+  "explanation_ur": "ایک عورت کے لیے نہی کی صورت مؤنث مضارع کی آخری یا برقرار رکھتی ہے، اس لیے لا تکتبی سے ایک عورت کو لکھنے سے منع کیا جاتا ہے۔",
   "explanation_roman": "Ek aurat ke liye Nahy ki shakl mu'annath Mudari ki aakhri Ya barqarar rakhti hai, is liye La Taktubi ka matlab hai ek aurat ko mat likho.",
   "post": [
    "at"
@@ -12889,7 +12889,7 @@
  },
  {
   "id": "ARB-305",
-  "question_ur": "کتب المعلمون میں کتب واحد اس لیے ہے کہ فعل فاعل کے کس طرف کھڑا ہے؟",
+  "question_ur": "کتب المعلمون میں کتب واحد اس لیے ہے کہ فعل فاعل کے کس طرف ہے؟",
   "question_roman": "Kataba al-mu'allimuna mein Kataba wahid is liye hai ke fi'l fa'il ke kis taraf khara hai?",
   "options_ur": [
    "فاعل سے پہلے",
@@ -12945,7 +12945,7 @@
    "Na jins mein na adad mein",
    "Sirf jins mein"
   ],
-  "explanation_ur": "فاعل سے پہلے آنے والا فعل جنس میں مطابقت رکھتا ہے لیکن واحد رہتا ہے، اس لیے کتبت مؤنث جنس ظاہر کرتا ہے بغیر جمع عدد کے۔",
+  "explanation_ur": "فاعل سے پہلے آنے والا فعل جنس میں مطابقت رکھتا ہے لیکن واحد رہتا ہے، اس لیے کتبت جمع عدد کے بغیر صرف مؤنث جنس ظاہر کرتا ہے۔",
   "explanation_roman": "Fa'il se pehle aane wala fi'l jins mein mutabiqat rakhta hai lekin wahid rehta hai, is liye Katabat mu'annath jins zahir karta hai baghair jama adad ke.",
   "post": [
    "at"
@@ -13029,7 +13029,7 @@
    "Mu'annath jama",
    "Mu'annath tasnia"
   ],
-  "explanation_ur": "کتبن مؤنث جمع ماضی کی شکل ہے، اس لیے وہ مؤنث جمع فاعل المعلمات سے مطابقت رکھتا ہے۔",
+  "explanation_ur": "کتبن مؤنث جمع ماضی کی صورت ہے، اس لیے وہ مؤنث جمع فاعل المعلمات سے مطابقت رکھتا ہے۔",
   "explanation_roman": "Katabna mu'annath jama mazi ki shakl hai, is liye woh mu'annath jama fa'il al-mu'allimatu se mutabiqat rakhta hai.",
   "post": [
    "at"
@@ -13057,7 +13057,7 @@
  },
  {
   "id": "ARB-309",
-  "question_ur": "کتب الطالبان میں فعل واحد ہے حالانکہ فاعل کتنے طالب علموں کا نام لیتا ہے؟",
+  "question_ur": "کتب الطالبان میں فعل واحد ہے، حالانکہ فاعل سے کتنے طالب علم مراد ہیں؟",
   "question_roman": "Kataba al-talibani mein fi'l wahid hai halanke fa'il kitne talib-ilmon ka naam leta hai?",
   "options_ur": [
    "دو",
@@ -13071,7 +13071,7 @@
    "Teen",
    "Bohat se"
   ],
-  "explanation_ur": "الطالبان دو طالب علموں کا نام ہے، لیکن فاعل سے پہلے آنے والا فعل واحد رہتا ہے، اس لیے کتب واحد رہتا ہے۔",
+  "explanation_ur": "الطالبان سے دو طالب علم مراد ہیں، لیکن فاعل سے پہلے آنے والا فعل واحد رہتا ہے، اس لیے کتب واحد رہتا ہے۔",
   "explanation_roman": "Al-talibani do talib-ilmon ka naam hai, lekin fa'il se pehle aane wala fi'l wahid rehta hai, is liye Kataba wahid rehta hai.",
   "post": [
    "at"
@@ -13099,7 +13099,7 @@
  },
  {
   "id": "ARB-310",
-  "question_ur": "المعلمة کے بعد تکتب تا سے اس لیے شروع ہوتا ہے کہ فاعل کس قسم کا ہے؟",
+  "question_ur": "المعلمة کے بعد تکتب تا سے شروع ہوتا ہے۔ فاعل کس قسم کا ہے؟",
   "question_roman": "Al-mu'allimatu ke baad Taktubu Ta se is liye shuru hota hai ke fa'il kis qism ka hai?",
   "options_ur": [
    "مذکر واحد",
@@ -13113,7 +13113,7 @@
    "Mu'annath jama",
    "Mu'annath wahid"
   ],
-  "explanation_ur": "مؤنث واحد فاعل کے لیے مضارع کی شکل تا سے شروع ہوتی ہے، اس لیے تکتب مؤنث واحد المعلمة سے مطابقت رکھتا ہے۔",
+  "explanation_ur": "مؤنث واحد فاعل کے لیے مضارع کی صورت تا سے شروع ہوتی ہے، اس لیے تکتب مؤنث واحد المعلمة سے مطابقت رکھتا ہے۔",
   "explanation_roman": "Mu'annath wahid fa'il ke liye Mudari ki shakl Ta se shuru hoti hai, is liye Taktubu mu'annath wahid al-mu'allimatu se mutabiqat rakhta hai.",
   "post": [
    "at"
@@ -13141,7 +13141,7 @@
  },
  {
   "id": "ARB-311",
-  "question_ur": "مذکر جمع فاعل کے بعد یکتبون واؤ اور نون پر ختم ہوتا ہے تاکہ کس مطابقت کو ظاہر کرے؟",
+  "question_ur": "مذکر جمع فاعل کے بعد یکتبون کا واؤ اور نون پر ختم ہونا کون سی مطابقت ظاہر کرتا ہے؟",
   "question_roman": "Muzakkar jama fa'il ke baad Yaktubuna Waw aur Nun par khatm hota hai taake kis mutabiqat ko zahir kare?",
   "options_ur": [
    "مؤنث واحد",
@@ -13183,7 +13183,7 @@
  },
  {
   "id": "ARB-312",
-  "question_ur": "غیر انسانی چیزوں کا نام لینے والی جمع مکسر فعل کی مطابقت کے لیے عام طور پر کیا سمجھی جاتی ہے؟",
+  "question_ur": "غیر انسانی چیزوں کی جمع مکسر فعل کی مطابقت کے لیے عام طور پر کیا سمجھی جاتی ہے؟",
   "question_roman": "Ghair-insani cheezon ka naam lene wali jama mukassar fi'l ki mutabiqat ke liye aam tor par kya samjhi jati hai?",
   "options_ur": [
    "مؤنث واحد",
@@ -13197,7 +13197,7 @@
    "Tasnia",
    "Muzakkar wahid"
   ],
-  "explanation_ur": "غیر انسانی چیزوں کی جمع مکسر عام طور پر مؤنث واحد سمجھی جاتی ہے، اس لیے فعل مؤنث واحد کی شکل لیتا ہے۔",
+  "explanation_ur": "غیر انسانی چیزوں کی جمع مکسر عام طور پر مؤنث واحد سمجھی جاتی ہے، اس لیے فعل مؤنث واحد کی صورت لیتا ہے۔",
   "explanation_roman": "Ghair-insani cheezon ki jama mukassar aam tor par mu'annath wahid samjhi jati hai, is liye fi'l mu'annath wahid ki shakl leta hai.",
   "post": [
    "at"
@@ -13225,7 +13225,7 @@
  },
  {
   "id": "ARB-313",
-  "question_ur": "صحیح فعل کی جڑ کن عناصر سے خالی ہوتی ہے؟",
+  "question_ur": "صحیح فعل کا مادہ کن عناصر سے خالی ہوتا ہے؟",
   "question_roman": "Sahih fi'l ki jarr kin anasir se khali hoti hai?",
   "options_ur": [
    "صرف حرف یا سے",
@@ -13239,7 +13239,7 @@
    "Huruf-e-illat, Hamza aur tashdeed se",
    "Tamam harkaat se"
   ],
-  "explanation_ur": "صحیح فعل کی جڑ میں کوئی حرف علت، کوئی ہمزہ اور کوئی مشدد حرف نہیں ہوتا، اس لیے اس کی شکلیں باقاعدہ نمونے پر چلتی ہیں۔",
+  "explanation_ur": "صحیح فعل کے مادے میں کوئی حرف علت، کوئی ہمزہ اور کوئی مشدد حرف نہیں ہوتا، اس لیے اس کی صورتیں باقاعدہ نمونے پر چلتی ہیں۔",
   "explanation_roman": "Sahih fi'l ki jarr mein koi harf-e-illat, koi Hamza aur koi mushaddad harf nahi hota, is liye us ki shaklein baqaida namune par chalti hain.",
   "post": [
    "at"
@@ -13267,13 +13267,13 @@
  },
  {
   "id": "ARB-314",
-  "question_ur": "مثال فعلوں میں حرف علت جڑ کی کس جگہ ہوتا ہے؟",
+  "question_ur": "مثال فعلوں میں حرف علت مادے میں کس جگہ ہوتا ہے؟",
   "question_roman": "Mithal fi'lon mein harf-e-illat jarr ki kis jagah hota hai?",
   "options_ur": [
    "درمیان میں",
    "پہلے",
    "آخر میں",
-   "جڑ کے کسی حرف میں نہیں"
+   "مادے کے کسی حرف میں نہیں"
   ],
   "options_roman": [
    "Darmiyan mein",
@@ -13281,7 +13281,7 @@
    "Aakhir mein",
    "Jarr ke kisi harf mein nahi"
   ],
-  "explanation_ur": "مثال فعل کی جڑ کے پہلے حرف میں حرف علت ہوتا ہے، جیسے وجد۔",
+  "explanation_ur": "مثال فعل کے مادے کے پہلے حرف میں حرف علت ہوتا ہے، جیسے وجد۔",
   "explanation_roman": "Mithal fi'l ki jarr ke pehle harf mein harf-e-illat hota hai, jaise Wajada.",
   "post": [
    "at"
@@ -13309,13 +13309,13 @@
  },
  {
   "id": "ARB-315",
-  "question_ur": "اجوف فعلوں میں حرف علت جڑ کی کس جگہ ہوتا ہے؟",
+  "question_ur": "اجوف فعلوں میں حرف علت مادے میں کس جگہ ہوتا ہے؟",
   "question_roman": "Ajwaf fi'lon mein harf-e-illat jarr ki kis jagah hota hai?",
   "options_ur": [
    "درمیان میں",
    "پہلے",
    "آخر میں",
-   "جڑ کے کسی حرف میں نہیں"
+   "مادے کے کسی حرف میں نہیں"
   ],
   "options_roman": [
    "Darmiyan mein",
@@ -13323,7 +13323,7 @@
    "Aakhir mein",
    "Jarr ke kisi harf mein nahi"
   ],
-  "explanation_ur": "اجوف فعل کی جڑ کے درمیانی حرف میں حرف علت ہوتا ہے، جیسے قال۔",
+  "explanation_ur": "اجوف فعل کے مادے کے درمیانی حرف میں حرف علت ہوتا ہے، جیسے قال۔",
   "explanation_roman": "Ajwaf fi'l ki jarr ke darmiyani harf mein harf-e-illat hota hai, jaise Qala.",
   "post": [
    "at"
@@ -13351,12 +13351,12 @@
  },
  {
   "id": "ARB-316",
-  "question_ur": "ناقص فعلوں میں حرف علت جڑ کی کس جگہ ہوتا ہے؟",
+  "question_ur": "ناقص فعلوں میں حرف علت مادے میں کس جگہ ہوتا ہے؟",
   "question_roman": "Naqis fi'lon mein harf-e-illat jarr ki kis jagah hota hai?",
   "options_ur": [
    "پہلے",
    "درمیان میں",
-   "جڑ کے کسی حرف میں نہیں",
+   "مادے کے کسی حرف میں نہیں",
    "آخر میں"
   ],
   "options_roman": [
@@ -13365,7 +13365,7 @@
    "Jarr ke kisi harf mein nahi",
    "Aakhir mein"
   ],
-  "explanation_ur": "ناقص فعل کی جڑ کے آخری حرف میں حرف علت ہوتا ہے، جیسے رمی۔",
+  "explanation_ur": "ناقص فعل کے مادے کے آخری حرف میں حرف علت ہوتا ہے، جیسے رمی۔",
   "explanation_roman": "Naqis fi'l ki jarr ke aakhri harf mein harf-e-illat hota hai, jaise Rama.",
   "post": [
    "at"
@@ -13477,7 +13477,7 @@
  },
  {
   "id": "ARB-319",
-  "question_ur": "مکتب (دفتر) کس تین حرفی جڑ سے بنا ہے؟",
+  "question_ur": "مکتب (دفتر) کس تین حرفی مادے سے بنا ہے؟",
   "question_roman": "Maktab (daftar) kis teen-harfi jarr se bana hai?",
   "options_ur": [
    "ک-ت-ب",
@@ -13491,7 +13491,7 @@
    "'-L-M",
    "F-T-H"
   ],
-  "explanation_ur": "مکتب ک-ت-ب کی جڑ سے آیا ہے، جو لکھنے کی جڑ ہے، اور یہ لکھنے سے متعلق جگہ یعنی دفتر کو کہتے ہیں۔",
+  "explanation_ur": "مکتب ک-ت-ب کے مادے سے آیا ہے، جو لکھنے کا مادہ ہے، اور اس سے لکھنے سے متعلق جگہ، یعنی دفتر، مراد ہے۔",
   "explanation_roman": "Maktab K-T-B ki jarr se aaya hai, jo likhne ki jarr hai, aur yeh likhne se mutalliq jagah yani daftar ko kehte hain.",
   "post": [
    "at"
@@ -13519,7 +13519,7 @@
  },
  {
   "id": "ARB-320",
-  "question_ur": "درس (سبق) کو اس کی جڑ تک لے جائیں۔ کون سی جڑ باقی رہتی ہے؟",
+  "question_ur": "درس (سبق) سے مادہ الگ کریں۔ کون سا مادہ باقی رہتا ہے؟",
   "question_roman": "Dars (sabaq) ko us ki jarr tak le jayen. Kaun si jarr baqi rehti hai?",
   "options_ur": [
    "ک-ت-ب",
@@ -13533,7 +13533,7 @@
    "S-L-M",
    "Q-R-A"
   ],
-  "explanation_ur": "درس د-ر-س کی جڑ سے آیا ہے، جو پڑھنے اور سیکھنے کی جڑ ہے، اور اس کا مطلب سبق ہے۔",
+  "explanation_ur": "درس د-ر-س کے مادے سے آیا ہے، جو پڑھنے اور سیکھنے کا مادہ ہے، اور اس کا مطلب سبق ہے۔",
   "explanation_roman": "Dars D-R-S ki jarr se aaya hai, jo parhne aur seekhne ki jarr hai, aur is ka matlab sabaq hai.",
   "post": [
    "at"
@@ -13561,7 +13561,7 @@
  },
  {
   "id": "ARB-321",
-  "question_ur": "عالم (علم والا) کے پیچھے کون سی جڑ ہے؟",
+  "question_ur": "عالم (علم والا) کا مادہ کون سا ہے؟",
   "question_roman": "'Alim (ilm wala) ke peeche kaun si jarr hai?",
   "options_ur": [
    "ک-ت-ب",
@@ -13575,7 +13575,7 @@
    "'-L-M",
    "D-R-S"
   ],
-  "explanation_ur": "عالم ع-ل-م کی جڑ سے آیا ہے، جو علم کی جڑ ہے، اور اس کا مطلب علم والا یعنی عالم ہے۔",
+  "explanation_ur": "عالم ع-ل-م کے مادے سے آیا ہے، جو علم کا مادہ ہے، اور اس کا مطلب علم والا یعنی عالم ہے۔",
   "explanation_roman": "'Alim '-L-M ki jarr se aaya hai, jo ilm ki jarr hai, aur is ka matlab ilm wala yani aalim hai.",
   "post": [
    "at"
@@ -13603,7 +13603,7 @@
  },
  {
   "id": "ARB-322",
-  "question_ur": "فتح (کھولنا) کس جڑ سے بنا ہے؟",
+  "question_ur": "فتح (کھولنا) کس مادے سے بنا ہے؟",
   "question_roman": "Fath (kholna) kis jarr se bana hai?",
   "options_ur": [
    "د-ر-س",
@@ -13617,7 +13617,7 @@
    "K-T-B",
    "F-T-H"
   ],
-  "explanation_ur": "فتح ف-ت-ح کی جڑ سے آیا ہے، جو کھولنے کی جڑ ہے، اور اس کا مطلب کھولنا یا فتح ہے۔",
+  "explanation_ur": "فتح ف-ت-ح کے مادے سے آیا ہے، جو کھولنے کا مادہ ہے، اور اس کا مطلب کھولنا یا فتح ہے۔",
   "explanation_roman": "Fath F-T-H ki jarr se aaya hai, jo kholne ki jarr hai, aur is ka matlab kholna ya fath hai.",
   "post": [
    "at"
@@ -13645,7 +13645,7 @@
  },
  {
   "id": "ARB-323",
-  "question_ur": "سلام (امن) کس جڑ کے خاندان سے تعلق رکھتا ہے؟",
+  "question_ur": "سلام (امن) کس مادے کے خاندان سے تعلق رکھتا ہے؟",
   "question_roman": "Salam (aman) kis jarr ke khandan se talluq rakhta hai?",
   "options_ur": [
    "س-ل-م",
@@ -13659,7 +13659,7 @@
    "D-R-S",
    "F-T-H"
   ],
-  "explanation_ur": "سلام س-ل-م کی جڑ سے آیا ہے، جو امن اور سلامتی کی جڑ ہے، اور اس کا مطلب سلامتی ہے۔",
+  "explanation_ur": "سلام س-ل-م کے مادے سے آیا ہے، جو امن اور سلامتی کا مادہ ہے، اور اس کا مطلب سلامتی ہے۔",
   "explanation_roman": "Salam S-L-M ki jarr se aaya hai, jo aman aur salamti ki jarr hai, aur is ka matlab salamti hai.",
   "post": [
    "at"
@@ -13687,7 +13687,7 @@
  },
  {
   "id": "ARB-324",
-  "question_ur": "مدرس (استاد) کس جڑ کی طرف لوٹتا ہے؟",
+  "question_ur": "مدرس (استاد) کا مادہ کون سا ہے؟",
   "question_roman": "Mudarris (ustad) kis jarr ki taraf lautta hai?",
   "options_ur": [
    "ع-ل-م",
@@ -13701,7 +13701,7 @@
    "K-T-B",
    "Q-R-A"
   ],
-  "explanation_ur": "مدرس د-ر-س کی جڑ سے آیا ہے، جو پڑھنے کی جڑ ہے، اور اس کا مطلب سبق پڑھانے والا ہے۔",
+  "explanation_ur": "مدرس د-ر-س کے مادے سے آیا ہے، جو پڑھنے کا مادہ ہے، اور اس کا مطلب سبق پڑھانے والا ہے۔",
   "explanation_roman": "Mudarris D-R-S ki jarr se aaya hai, jo parhne ki jarr hai, aur is ka matlab sabaq parhane wala hai.",
   "post": [
    "at"
@@ -13729,7 +13729,7 @@
  },
  {
   "id": "ARB-325",
-  "question_ur": "تعلیم کس جڑ سے آئی ہے؟",
+  "question_ur": "تعلیم کس مادے سے آئی ہے؟",
   "question_roman": "Ta'lim kis jarr se aayi hai?",
   "options_ur": [
    "ک-ت-ب",
@@ -13743,7 +13743,7 @@
    "'-L-M",
    "S-L-M"
   ],
-  "explanation_ur": "تعلیم ع-ل-م کی جڑ سے آئی ہے، جو علم کی جڑ ہے، اور اس کا مطلب پڑھانا یا تعلیم ہے۔",
+  "explanation_ur": "تعلیم ع-ل-م کے مادے سے آئی ہے، جو علم کا مادہ ہے، اور اس کا مطلب پڑھانا یا تعلیم ہے۔",
   "explanation_roman": "Ta'lim '-L-M ki jarr se aayi hai, jo ilm ki jarr hai, aur is ka matlab parhana ya taleem hai.",
   "post": [
    "at"
@@ -13771,7 +13771,7 @@
  },
  {
   "id": "ARB-326",
-  "question_ur": "مفتاح (چابی) کس جڑ سے بنا ہے؟",
+  "question_ur": "مفتاح (چابی) کس مادے سے بنا ہے؟",
   "question_roman": "Miftah (chabi) kis jarr se bana hai?",
   "options_ur": [
    "ک-ت-ب",
@@ -13785,7 +13785,7 @@
    "'-L-M",
    "F-T-H"
   ],
-  "explanation_ur": "مفتاح ف-ت-ح کی جڑ سے آیا ہے، جو کھولنے کی جڑ ہے، اور اس کا مطلب چابی ہے، یعنی کھولنے کا آلہ۔",
+  "explanation_ur": "مفتاح ف-ت-ح کے مادے سے آیا ہے، جو کھولنے کا مادہ ہے، اور اس کا مطلب چابی ہے، یعنی کھولنے کا آلہ۔",
   "explanation_roman": "Miftah F-T-H ki jarr se aaya hai, jo kholne ki jarr hai, aur is ka matlab chabi hai, yani kholne ka aala.",
   "post": [
    "at"
@@ -13813,7 +13813,7 @@
  },
  {
   "id": "ARB-327",
-  "question_ur": "ان میں سے کون سا لفظ ک-ت-ب کی جڑ سے بنا ہے؟",
+  "question_ur": "ان میں سے کون سا لفظ ک-ت-ب کے مادے سے بنا ہے؟",
   "question_roman": "In mein se kaun sa lafz K-T-B ki jarr se bana hai?",
   "options_ur": [
    "درس (سبق)",
@@ -13827,7 +13827,7 @@
    "Salam (aman)",
    "Fath (kholna)"
   ],
-  "explanation_ur": "مکتب ک-ت-ب سے بنا ہے، جو لکھنے کی جڑ ہے۔ درس د-ر-س سے، سلام س-ل-م سے اور فتح ف-ت-ح سے آیا ہے۔",
+  "explanation_ur": "مکتب ک-ت-ب سے بنا ہے، جو لکھنے کا مادہ ہے۔ درس د-ر-س سے، سلام س-ل-م سے اور فتح ف-ت-ح سے آیا ہے۔",
   "explanation_roman": "Maktab K-T-B se bana hai, jo likhne ki jarr hai. Dars D-R-S se, Salam S-L-M se aur Fath F-T-H se aaya hai.",
   "post": [
    "at"
@@ -13855,10 +13855,10 @@
  },
  {
   "id": "ARB-328",
-  "question_ur": "د-ر-س کی جڑ سے ان میں سے کون سا لفظ بنا ہے؟",
+  "question_ur": "د-ر-س کے مادے سے ان میں سے کون سا لفظ بنا ہے؟",
   "question_roman": "D-R-S ki jarr se in mein se kaun sa lafz bana hai?",
   "options_ur": [
-   "کتاب (کتاب)",
+   "کتاب",
    "سلام (امن)",
    "تدریس (پڑھانا)",
    "فتح (کھولنا)"
@@ -13869,7 +13869,7 @@
    "Tadris (parhana)",
    "Fath (kholna)"
   ],
-  "explanation_ur": "تدریس د-ر-س سے آئی ہے، جو پڑھنے کی جڑ ہے۔ کتاب ک-ت-ب سے، سلام س-ل-م سے اور فتح ف-ت-ح سے آیا ہے۔",
+  "explanation_ur": "تدریس د-ر-س سے آئی ہے، جو پڑھنے کا مادہ ہے۔ کتاب ک-ت-ب سے، سلام س-ل-م سے اور فتح ف-ت-ح سے آیا ہے۔",
   "explanation_roman": "Tadris D-R-S se aayi hai, jo parhne ki jarr hai. Kitab K-T-B se, Salam S-L-M se aur Fath F-T-H se aaya hai.",
   "post": [
    "at"
@@ -13897,7 +13897,7 @@
  },
  {
   "id": "ARB-329",
-  "question_ur": "وہ لفظ چنیں جو ع-ل-م کی جڑ سے آیا ہے۔",
+  "question_ur": "وہ لفظ منتخب کریں جو ع-ل-م کے مادے سے آیا ہے۔",
   "question_roman": "Woh lafz chunein jo '-L-M ki jarr se aaya hai.",
   "options_ur": [
    "مکتب (دفتر)",
@@ -13911,7 +13911,7 @@
    "Miftah (chabi)",
    "Ma'lum (jana hua)"
   ],
-  "explanation_ur": "معلوم ع-ل-م سے آیا ہے، جو علم کی جڑ ہے، اور اس کا مطلب جانا ہوا ہے۔ مکتب، درس اور مفتاح دوسری جڑوں سے آئے ہیں۔",
+  "explanation_ur": "معلوم ع-ل-م سے آیا ہے، جو علم کا مادہ ہے، اور اس کا مطلب جانا ہوا ہے۔ مکتب، درس اور مفتاح دوسرے مادے سے آئے ہیں۔",
   "explanation_roman": "Ma'lum '-L-M se aaya hai, jo ilm ki jarr hai, aur is ka matlab jana hua hai. Maktab, Dars aur Miftah dusri jarron se aaye hain.",
   "post": [
    "at"
@@ -13939,7 +13939,7 @@
  },
  {
   "id": "ARB-330",
-  "question_ur": "ف-ت-ح نیچے دیے گئے کس لفظ کی جڑ ہے؟",
+  "question_ur": "ف-ت-ح نیچے دیے گئے کس لفظ کا مادہ ہے؟",
   "question_roman": "F-T-H neeche diye gaye kis lafz ki jarr hai?",
   "options_ur": [
    "فاتح (کھولنے والا)",
@@ -13953,7 +13953,7 @@
    "Mudarris (ustad)",
    "'Alim (ilm wala)"
   ],
-  "explanation_ur": "فاتح ف-ت-ح سے آیا ہے، جو کھولنے کی جڑ ہے۔ کاتب ک-ت-ب سے، مدرس د-ر-س سے اور عالم ع-ل-م سے آیا ہے۔",
+  "explanation_ur": "فاتح ف-ت-ح سے آیا ہے، جو کھولنے کا مادہ ہے۔ کاتب ک-ت-ب سے، مدرس د-ر-س سے اور عالم ع-ل-م سے آیا ہے۔",
   "explanation_roman": "Fatih F-T-H se aaya hai, jo kholne ki jarr hai. Katib K-T-B se, Mudarris D-R-S se aur 'Alim '-L-M se aaya hai.",
   "post": [
    "at"
@@ -13981,7 +13981,7 @@
  },
  {
   "id": "ARB-331",
-  "question_ur": "مسلم، سلام اور اسلام ایک جڑ رکھتے ہیں۔ وہ کون سی جڑ ہے؟",
+  "question_ur": "مسلم، سلام اور اسلام ایک مادہ رکھتے ہیں۔ وہ کون سا مادہ ہے؟",
   "question_roman": "Muslim, Salam aur Islam ek jarr rakhte hain. Woh kaun si jarr hai?",
   "options_ur": [
    "ک-ت-ب",
@@ -13995,7 +13995,7 @@
    "D-R-S",
    "F-T-H"
   ],
-  "explanation_ur": "مسلم، سلام اور اسلام سب س-ل-م سے آئے ہیں، جو امن، سلامتی اور سپردگی کی جڑ ہے۔",
+  "explanation_ur": "مسلم، سلام اور اسلام سب س-ل-م سے آئے ہیں، جو امن، سلامتی اور سپردگی کا مادہ ہے۔",
   "explanation_roman": "Muslim, Salam aur Islam sab S-L-M se aaye hain, jo aman, salamti aur supurdagi ki jarr hai.",
   "post": [
    "at"
@@ -14026,7 +14026,7 @@
   "question_ur": "ان میں سے تین الفاظ ک-ت-ب سے آئے ہیں۔ کون سا نہیں آیا؟",
   "question_roman": "In mein se teen alfaz K-T-B se aaye hain. Kaun sa nahi aaya?",
   "options_ur": [
-   "کتاب (کتاب)",
+   "کتاب",
    "کاتب (لکھنے والا)",
    "مدرسہ (اسکول)",
    "مکتب (دفتر)"
@@ -14037,7 +14037,7 @@
    "Madrasa (school)",
    "Maktab (daftar)"
   ],
-  "explanation_ur": "مدرسہ د-ر-س سے آیا ہے، جو پڑھنے کی جڑ ہے۔ کتاب، کاتب اور مکتب سب ک-ت-ب سے آئے ہیں۔",
+  "explanation_ur": "مدرسہ د-ر-س سے آیا ہے، جو پڑھنے کا مادہ ہے۔ کتاب، کاتب اور مکتب سب ک-ت-ب سے آئے ہیں۔",
   "explanation_roman": "Madrasa D-R-S se aaya hai, jo parhne ki jarr hai. Kitab, Katib aur Maktab sab K-T-B se aaye hain.",
   "post": [
    "at"
@@ -14065,7 +14065,7 @@
  },
  {
   "id": "ARB-333",
-  "question_ur": "ف-ت-ح کی جڑ سے بنے الفاظ، جیسے فتح اور مفتاح، کس بنیادی مفہوم میں شریک ہیں؟",
+  "question_ur": "ف-ت-ح کے مادے سے بنے الفاظ، جیسے فتح اور مفتاح، کس بنیادی مفہوم میں شریک ہیں؟",
   "question_roman": "F-T-H ki jarr se bane alfaz, jaise Fath aur Miftah, kis bunyadi mafhoom mein shareek hain?",
   "options_ur": [
    "لکھنا",
@@ -14107,7 +14107,7 @@
  },
  {
   "id": "ARB-334",
-  "question_ur": "س-ل-م کی جڑ، جو سلام اور اسلام کے پیچھے ہے، کس بنیادی مفہوم کو لیے ہوئے ہے؟",
+  "question_ur": "س-ل-م کا مادہ، جس سے سلام اور اسلام بنے ہیں، کس بنیادی مفہوم کو لیے ہوئے ہے؟",
   "question_roman": "S-L-M ki jarr, jo Salam aur Islam ke peeche hai, kis bunyadi mafhoom ko liye hue hai?",
   "options_ur": [
    "امن اور سلامتی",
@@ -14149,12 +14149,12 @@
  },
  {
   "id": "ARB-335",
-  "question_ur": "وزن میں ف، ع اور ل کے حروف کس کے لیے کھڑے ہیں؟",
+  "question_ur": "وزن میں ف، ع اور ل کس کی جگہ آتے ہیں؟",
   "question_roman": "Wazn mein Fa, 'Ayn aur Lam ke huruf kis ke liye khare hain?",
   "options_ur": [
    "تین حرکتی علامات",
    "اسم کی تین حالتیں",
-   "ترتیب سے تین جڑی حروف",
+   "ترتیب سے تین اصلی حروف",
    "فعل کے تین زمانے"
   ],
   "options_roman": [
@@ -14163,7 +14163,7 @@
    "Tarteeb se teen jarri huruf",
    "Fi'l ke teen zamane"
   ],
-  "explanation_ur": "ف، ع اور ل پہلے، دوسرے اور تیسرے جڑی حرف کے لیے ہیں، تاکہ کوئی بھی جڑ وزن میں ڈھالی جا سکے۔",
+  "explanation_ur": "ف، ع اور ل پہلے، دوسرے اور تیسرے اصلی حرف کی جگہ آتے ہیں، تاکہ کوئی بھی مادہ وزن میں ڈھالا جا سکے۔",
   "explanation_roman": "Fa, 'Ayn aur Lam pehle, dusre aur teesre jarri harf ke liye hain, taake koi bhi jarr wazn mein dhali ja sake.",
   "post": [
    "at"
@@ -14205,7 +14205,7 @@
    "Maf'ul",
    "Fa'il"
   ],
-  "explanation_ur": "کتب فعل کے وزن پر ہے، جو ماضی کا بنیادی وزن ہے: ک-ت-ب کی جڑ پر تین فتحے ہیں۔",
+  "explanation_ur": "کتب فعل کے وزن پر ہے، جو ماضی کا بنیادی وزن ہے: ک-ت-ب کے مادے پر تین فتحے ہیں۔",
   "explanation_roman": "Kataba Fa'ala ke wazn par hai, jo mazi ka bunyadi wazn hai: K-T-B ki jarr par teen fathe hain.",
   "post": [
    "at"
@@ -14233,7 +14233,7 @@
  },
  {
   "id": "ARB-337",
-  "question_ur": "یکتب (وہ لکھتا ہے) کس وزن کی پیروی کرتا ہے؟",
+  "question_ur": "یکتب (وہ لکھتا ہے) کس وزن پر ہے؟",
   "question_roman": "Yaktubu (woh likhta hai) kis wazn ki pairwi karta hai?",
   "options_ur": [
    "فعل",
@@ -14247,7 +14247,7 @@
    "Fa'il",
    "Yaf'alu"
   ],
-  "explanation_ur": "یکتب یفعل کے وزن پر ہے، جو حال کا وزن ہے: سابقہ ی کے ساتھ ک-ت-ب کی جڑ اور اس کی حرکات ہیں۔",
+  "explanation_ur": "یکتب یفعل کے وزن پر ہے، جو حال کا وزن ہے: سابقہ ی کے ساتھ ک-ت-ب کا مادہ اور اس کی حرکات ہیں۔",
   "explanation_roman": "Yaktubu Yaf'alu ke wazn par hai, jo haal ka wazn hai: sabiqa Ya ke sath K-T-B ki jarr aur us ki harkaat hain.",
   "post": [
    "at"
@@ -14275,7 +14275,7 @@
  },
  {
   "id": "ARB-338",
-  "question_ur": "فاعل کے وزن پر بنا لفظ، جیسے کاتب، کس کو ظاہر کرتا ہے؟",
+  "question_ur": "فاعل کے وزن پر بنا لفظ، جیسے کاتب، کس کا نام ہے؟",
   "question_roman": "Fa'il ke wazn par bana lafz, jaise Katib, kis ko zahir karta hai?",
   "options_ur": [
    "کام کرنے والا",
@@ -14317,7 +14317,7 @@
  },
  {
   "id": "ARB-339",
-  "question_ur": "مفعول، جو مکتوب کا وزن ہے، کس کو بیان کرتا ہے؟",
+  "question_ur": "مفعول، جو مکتوب کا وزن ہے، کس کا نام ہے؟",
   "question_roman": "Maf'ul, jo Maktub ka wazn hai, kis ko bayan karta hai?",
   "options_ur": [
    "کام کرنے والا",
@@ -14373,7 +14373,7 @@
    "Fa'il",
    "Maf'ul"
   ],
-  "explanation_ur": "درسَ اور کتب دونوں فعل کے وزن پر ہیں: دونوں ماضی کے فعل ہیں جن کی تین جڑی حروف پر فتحے ہیں۔",
+  "explanation_ur": "درسَ اور کتب دونوں فعل کے وزن پر ہیں: دونوں ماضی کے فعل ہیں جن کے تین اصلی حروف پر فتحے ہیں۔",
   "explanation_roman": "Darasa aur Kataba dono Fa'ala ke wazn par hain: dono mazi ke fi'l hain jin ke teen jarri huruf par fathe hain.",
   "post": [
    "at"
@@ -14401,13 +14401,13 @@
  },
  {
   "id": "ARB-341",
-  "question_ur": "جب دو الفاظ کا وزن ایک ہو لیکن جڑیں مختلف ہوں، تو کیا ایک جیسا رہتا ہے؟",
+  "question_ur": "جب دو الفاظ کا وزن ایک ہو لیکن مادے مختلف ہوں، تو کیا ایک جیسا رہتا ہے؟",
   "question_roman": "Jab do alfaz ka wazn ek ho lekin jarrein mukhtalif hon, to kya ek jaisa rehta hai?",
   "options_ur": [
-   "جڑی حروف",
+   "اصلی حروف",
    "مطلب",
    "اضافی حروف اور حرکات کا نمونہ",
-   "حالت کا اختتام"
+   "اعراب"
   ],
   "options_roman": [
    "Jarri huruf",
@@ -14415,7 +14415,7 @@
    "Izafi huruf aur harkaat ka namuna",
    "Haalat ka ikhtitam"
   ],
-  "explanation_ur": "وزن شکل کو طے کرتا ہے: اضافی حروف اور حرکات کا نمونہ ایک جیسا رہتا ہے، جبکہ جڑی حروف بدل جاتے ہیں۔",
+  "explanation_ur": "وزن صورت کو طے کرتا ہے: اضافی حروف اور حرکات کا نمونہ ایک جیسا رہتا ہے، جبکہ اصلی حروف بدل جاتے ہیں۔",
   "explanation_roman": "Wazn shakl ko tay karta hai: izafi huruf aur harkaat ka namuna ek jaisa rehta hai, jabke jarri huruf badal jate hain.",
   "post": [
    "at"
@@ -14443,7 +14443,7 @@
  },
  {
   "id": "ARB-342",
-  "question_ur": "کاتب، جو کتب سے بنا ہے، اس شخص کو بیان کرتا ہے جو کیا کرتا ہے؟",
+  "question_ur": "کاتب، جو کتب سے بنا ہے، اس شخص کو کہتے ہیں جو کیا کرتا ہے؟",
   "question_roman": "Katib, jo Kataba se bana hai, us shakhs ko bayan karta hai jo kya karta hai?",
   "options_ur": [
    "لکھا گیا ہے",
@@ -14457,7 +14457,7 @@
    "Parhata hai",
    "Parhaya gaya hai"
   ],
-  "explanation_ur": "کاتب کتب کا اسم فاعل ہے، اس لیے یہ کام کرنے والے کو بیان کرتا ہے، یعنی لکھنے والا۔",
+  "explanation_ur": "کاتب کتب کا اسم فاعل ہے، اس لیے یہ کام کرنے والے کا نام ہے، یعنی لکھنے والا۔",
   "explanation_roman": "Katib Kataba ka Ism al-Fa'il hai, is liye yeh kaam karne wale ko bayan karta hai, yani likhne wala.",
   "post": [
    "at"
@@ -14499,7 +14499,7 @@
    "Parhne wala",
    "Jisay parhaya jaye"
   ],
-  "explanation_ur": "دارس درس کا اسم فاعل ہے، اس لیے یہ کام کرنے والے کو بیان کرتا ہے، یعنی پڑھنے والا۔",
+  "explanation_ur": "دارس درس کا اسم فاعل ہے، اس لیے یہ کام کرنے والے کا نام ہے، یعنی پڑھنے والا۔",
   "explanation_roman": "Daris Darasa ka Ism al-Fa'il hai, is liye yeh kaam karne wale ko bayan karta hai, yani parhne wala.",
   "post": [
    "at"
@@ -14527,7 +14527,7 @@
  },
  {
   "id": "ARB-344",
-  "question_ur": "سمیع، جو سمع کا اسم فاعل ہے، اس شخص کی طرف اشارہ کرتا ہے جو کیا کرتا ہے؟",
+  "question_ur": "سمیع، جو سمع کا اسم فاعل ہے، اس شخص کے لیے ہے جو کیا کرتا ہے؟",
   "question_roman": "Sami', jo Sami'a ka Ism al-Fa'il hai, us shakhs ki taraf ishara karta hai jo kya karta hai?",
   "options_ur": [
    "سنتا یا توجہ سے سنتا ہے",
@@ -14541,7 +14541,7 @@
    "Buland awaz se parhta hai",
    "Parha jata hai"
   ],
-  "explanation_ur": "سمیع سمع کا اسم فاعل ہے، اس لیے یہ کام کرنے والے کو بیان کرتا ہے، یعنی سننے والا۔",
+  "explanation_ur": "سمیع سمع کا اسم فاعل ہے، اس لیے یہ کام کرنے والے کا نام ہے، یعنی سننے والا۔",
   "explanation_roman": "Sami' Sami'a ka Ism al-Fa'il hai, is liye yeh kaam karne wale ko bayan karta hai, yani sunne wala.",
   "post": [
    "at"
@@ -14569,7 +14569,7 @@
  },
  {
   "id": "ARB-345",
-  "question_ur": "کاتبہ، جو کاتب کی مؤنث ہے، کس اختتام کے اضافے سے بنتی ہے؟",
+  "question_ur": "کاتبہ، جو کاتب کی مؤنث ہے، کاتب میں کس اختتام کے اضافے سے بنتی ہے؟",
   "question_roman": "Katiba, jo Katib ki mu'annath hai, kis ikhtitam ke izafe se banti hai?",
   "options_ur": [
    "جمع کا اختتام ون",
@@ -14583,7 +14583,7 @@
    "Sabiqa Al-",
    "Ta marbuta"
   ],
-  "explanation_ur": "مؤنث اسم فاعل مذکر صورت میں تا مربوطہ کے اضافے سے بنتا ہے، اس لیے کاتب سے کاتبہ بنتی ہے۔",
+  "explanation_ur": "مؤنث اسم فاعل مذکر صورت کے آخر میں تا مربوطہ لگانے سے بنتا ہے، اس لیے کاتب سے کاتبہ بنتی ہے۔",
   "explanation_roman": "Mu'annath Ism al-Fa'il muzakkar surat mein ta marbuta ke izafe se banta hai, is liye Katib se Katiba banti hai.",
   "post": [
    "at"
@@ -14667,7 +14667,7 @@
    "Madad karne wala",
    "Madad ki jagah"
   ],
-  "explanation_ur": "ناصر نصر کا اسم فاعل ہے، اس لیے یہ کام کرنے والے کو بیان کرتا ہے، یعنی مدد کرنے والا۔",
+  "explanation_ur": "ناصر نصر کا اسم فاعل ہے، اس لیے یہ کام کرنے والے کا نام ہے، یعنی مدد کرنے والا۔",
   "explanation_roman": "Nasir Nasara ka Ism al-Fa'il hai, is liye yeh kaam karne wale ko bayan karta hai, yani madad karne wala.",
   "post": [
    "at"
@@ -14695,7 +14695,7 @@
  },
  {
   "id": "ARB-348",
-  "question_ur": "مکتوب، جو کتب سے بنا ہے، اس چیز کو بیان کرتا ہے جس کے ساتھ کیا ہوا ہو؟",
+  "question_ur": "مکتوب، جو کتب سے بنا ہے، اس چیز کے لیے آتا ہے جس کے ساتھ کیا ہوا ہو؟",
   "question_roman": "Maktub, jo Kataba se bana hai, us cheez ko bayan karta hai jis ke sath kya hua ho?",
   "options_ur": [
    "لکھا گیا ہو",
@@ -14709,7 +14709,7 @@
    "Parha raha ho",
    "Parh raha ho"
   ],
-  "explanation_ur": "مکتوب کتب کا اسم مفعول ہے، اس لیے یہ اس چیز کو بیان کرتا ہے جس پر عمل ہوا ہو، یعنی لکھی ہوئی چیز۔",
+  "explanation_ur": "مکتوب کتب کا اسم مفعول ہے، اس لیے یہ اس چیز کا نام ہے جس پر عمل ہوا ہو، یعنی لکھی ہوئی چیز۔",
   "explanation_roman": "Maktub Kataba ka Ism al-Maf'ul hai, is liye yeh us cheez ko bayan karta hai jis par 'amal hua ho, yani likhi hui cheez.",
   "post": [
    "at"
@@ -14793,7 +14793,7 @@
    "Jis ki madad ki jaye",
    "Likhne wala"
   ],
-  "explanation_ur": "منصور نصر کا اسم مفعول ہے، اس لیے یہ اس شخص کو بیان کرتا ہے جس کی مدد کی جائے۔",
+  "explanation_ur": "منصور نصر کا اسم مفعول ہے، اس لیے یہ اس شخص کا نام ہے جس کی مدد کی جائے۔",
   "explanation_roman": "Mansur Nasara ka Ism al-Maf'ul hai, is liye yeh us shakhs ko bayan karta hai jis ki madad ki jaye.",
   "post": [
    "at"
@@ -14821,7 +14821,7 @@
  },
  {
   "id": "ARB-351",
-  "question_ur": "مدروس، جو درس کا اسم مفعول ہے، اس سبق کی طرف اشارہ کرتا ہے جس کے ساتھ کیا ہوتا ہے؟",
+  "question_ur": "مدروس، جو درس کا اسم مفعول ہے، کیسے سبق کو کہتے ہیں؟",
   "question_roman": "Madrus, jo Darasa ka Ism al-Maf'ul hai, us sabaq ki taraf ishara karta hai jis ke sath kya hota hai?",
   "options_ur": [
    "استاد پڑھاتا ہو",
@@ -14835,7 +14835,7 @@
    "Doosron ko parhata ho",
    "Likha gaya ho"
   ],
-  "explanation_ur": "مدروس درس کا اسم مفعول ہے، اس لیے یہ اس سبق کو بیان کرتا ہے جو پڑھا جاتا ہو۔",
+  "explanation_ur": "مدروس درس کا اسم مفعول ہے، اس لیے یہ اس سبق کا نام ہے جو پڑھا جاتا ہو۔",
   "explanation_roman": "Madrus Darasa ka Ism al-Maf'ul hai, is liye yeh us sabaq ko bayan karta hai jo parha jata ho.",
   "post": [
    "at"
@@ -14877,7 +14877,7 @@
    "Katib fi'l hai aur Maktub ism hai",
    "Katib mu'annath hai aur Maktub muzakkar hai"
   ],
-  "explanation_ur": "کاتب اسم فاعل ہے، یعنی کام کرنے والا، جبکہ مکتوب اسم مفعول ہے، یعنی وہ جس پر عمل ہوا ہو۔",
+  "explanation_ur": "کاتب اسم فاعل ہے، یعنی کام کرنے والا، جبکہ مکتوب اسم مفعول ہے، یعنی وہ چیز جس پر عمل ہوا ہو۔",
   "explanation_roman": "Katib Ism al-Fa'il hai, yani kaam karne wala, jabke Maktub Ism al-Maf'ul hai, yani woh jis par 'amal hua ho.",
   "post": [
    "at"
@@ -14947,7 +14947,7 @@
  },
  {
   "id": "ARB-354",
-  "question_ur": "کتابہ، جو کتب کا مصدر ہے، کس چیز کا نام ہے؟",
+  "question_ur": "کتابہ، جو کتب کا مصدر ہے، کس کا نام ہے؟",
   "question_roman": "Kitaba, jo Kataba ka Masdar hai, kis cheez ka naam hai?",
   "options_ur": [
    "لکھنے والا",
@@ -15157,7 +15157,7 @@
  },
  {
   "id": "ARB-359",
-  "question_ur": "باب دوم کا فعل علّم، جو علم سے بنا ہے، اکثر کون سا معنی دیتا ہے؟",
+  "question_ur": "باب دوم کا فعل علّم، جو علم سے بنا ہے، اکثر کس معنی کا اضافہ کرتا ہے؟",
   "question_roman": "Form II ka fi'l 'Allama, jo 'Alima se bana hai, aksar kaun sa ma'na deta hai?",
   "options_ur": [
    "پڑھانا، یعنی کسی کو علم دینا",
@@ -15171,7 +15171,7 @@
    "'Ilm ke baare mein poochna",
    "Mil kar janna"
   ],
-  "explanation_ur": "علّم علم کا باب دوم کا سببی فعل ہے، اس لیے اس کا مطلب ہے پڑھانا، یعنی کسی کو علم دینا۔",
+  "explanation_ur": "علّم علم سے بنا باب دوم کا سببی فعل ہے، اس لیے اس کا مطلب ہے پڑھانا، یعنی کسی کو علم دینا۔",
   "explanation_roman": "'Allama 'Alima ka Form II causative fi'l hai, is liye is ka matlab hai parhana, yani kisi ko 'ilm dena.",
   "post": [
    "at"
@@ -15255,7 +15255,7 @@
    "Ma'lum hona",
    "'Ilm talash karna"
   ],
-  "explanation_ur": "أعلم علم کا باب چہارم کا سببی فعل ہے، اس لیے اس کا مطلب ہے خبر دینا، یعنی کسی کو علم دینا۔",
+  "explanation_ur": "أعلم علم سے بنا باب چہارم کا سببی فعل ہے، اس لیے اس کا مطلب ہے خبر دینا، یعنی کسی کو علم دینا۔",
   "explanation_roman": "A'lama 'Alima ka Form IV causative fi'l hai, is liye is ka matlab hai khabar dena, yani kisi ko 'ilm dena.",
   "post": [
    "at"
@@ -15297,7 +15297,7 @@
    "Us par shadda",
    "Aakhir mein -un"
   ],
-  "explanation_ur": "باب دوم کا فعل درمیانی اصلی حرف پر شدّہ سے بنتا ہے، جیسے علّم۔",
+  "explanation_ur": "باب دوم کے فعل میں درمیانی اصلی حرف پر شدّہ ہوتا ہے، جیسے علّم۔",
   "explanation_roman": "Form II ka fi'l darmiyani asli harf par shadda se banta hai, jaise 'Allama.",
   "post": [
    "at"
@@ -15367,7 +15367,7 @@
  },
  {
   "id": "ARB-364",
-  "question_ur": "ہما بطور منفصل ضمیر کن کے لیے استعمال ہوتی ہے؟",
+  "question_ur": "ہما بطور منفصل ضمیر کن کے لیے استعمال ہوتا ہے؟",
   "question_roman": "Huma, bator munfasil zameer, kin ke liye istemal hoti hai?",
   "options_ur": [
    "صرف ایک مذکر شخص کے لیے",
@@ -15381,7 +15381,7 @@
    "Sirf bahut se muzakkar ashakhas ke liye",
    "Sirf ek mu'annath shakhs ke liye"
   ],
-  "explanation_ur": "ہما تثنیہ کی ضمیر ہے جو دو مذکر یا دو مؤنث کے لیے استعمال ہوتی ہے۔",
+  "explanation_ur": "ہما تثنیہ کا ضمیر ہے جو دو مذکر یا دو مؤنث کے لیے استعمال ہوتا ہے۔",
   "explanation_roman": "Huma tasnia ki zameer hai jo do muzakkar ya do mu'annath ke liye istemal hoti hai.",
   "post": [
    "at"
@@ -15409,7 +15409,7 @@
  },
  {
   "id": "ARB-365",
-  "question_ur": "انتما کتنے مخاطبوں کو مخاطب کرتی ہے، اور کس جنس کے؟",
+  "question_ur": "انتما کتنے مخاطبوں کو مخاطب کرتا ہے، اور کس جنس کے؟",
   "question_roman": "Antuma kitne mukhatibon ko mukhatib karti hai, aur kis jins ke?",
   "options_ur": [
    "صرف ایک مذکر مخاطب کو",
@@ -15423,7 +15423,7 @@
    "Do mukhatibon ko, muzakkar ya mu'annath",
    "Sirf ek mu'annath mukhatib ko"
   ],
-  "explanation_ur": "انتما تثنیہ کی ضمیر ہے جو دو مذکر یا دو مؤنث مخاطبوں کے لیے استعمال ہوتی ہے۔",
+  "explanation_ur": "انتما تثنیہ کا ضمیر ہے جو دو مذکر یا دو مؤنث مخاطبوں کے لیے استعمال ہوتا ہے۔",
   "explanation_roman": "Antuma tasnia ki zameer hai jo do muzakkar ya do mu'annath mukhatibon ke liye istemal hoti hai.",
   "post": [
    "at"
@@ -15451,7 +15451,7 @@
  },
  {
   "id": "ARB-366",
-  "question_ur": "کئی مردوں کو ایک ساتھ مخاطب کرنے کے لیے تم کی جمع منفصل ضمیر کون سی ہے؟",
+  "question_ur": "کئی مردوں کو ایک ساتھ مخاطب کرنے کے لیے تم کا جمع منفصل ضمیر کون سا ہے؟",
   "question_roman": "Kai mardon ko ek sath mukhatib karne ke liye tum ki jama munfasil zameer kaun si hai?",
   "options_ur": [
    "انتم",
@@ -15465,7 +15465,7 @@
    "Antuma",
    "Anti"
   ],
-  "explanation_ur": "انتم مذکر جمع کی ضمیر ہے جو کئی مردوں یا مخلوط گروہ کو مخاطب کرنے کے لیے استعمال ہوتی ہے۔",
+  "explanation_ur": "انتم مذکر جمع کا ضمیر ہے جو کئی مردوں یا مخلوط گروہ کو مخاطب کرنے کے لیے استعمال ہوتا ہے۔",
   "explanation_roman": "Antum muzakkar jama ki zameer hai jo kai mardon ya makhlut giroh ko mukhatib karne ke liye istemal hoti hai.",
   "post": [
    "at"
@@ -15507,7 +15507,7 @@
    "Katabta",
    "Katabna"
   ],
-  "explanation_ur": "ہن مؤنث جمع کی ضمیر ہے، اور اس کا فعل ماضی نون کے ساتھ ختم ہوتا ہے، جیسے کتبن۔",
+  "explanation_ur": "ہن مؤنث جمع کا ضمیر ہے، اور اس کا فعل ماضی نون کے ساتھ ختم ہوتا ہے، جیسے کتبن۔",
   "explanation_roman": "Hunna mu'annath jama ki zameer hai, aur us ka fi'l madi na ke sath khatm hota hai, jaise katabna.",
   "post": [
    "at"
@@ -15619,7 +15619,7 @@
  },
  {
   "id": "ARB-370",
-  "question_ur": "متکلم کے لیے تثنیہ کی الگ ضمیر نہیں ہے، اس لیے دو بولنے والے ایک ساتھ کون سی ضمیر استعمال کرتے ہیں؟",
+  "question_ur": "متکلم کے لیے تثنیہ کا الگ ضمیر نہیں ہے، اس لیے دو بولنے والے ایک ساتھ کون سا ضمیر استعمال کرتے ہیں؟",
   "question_roman": "Mutakallim ke liye tasnia ki alag zameer nahi hai, is liye do bolne wale ek sath kaun si zameer istemal karte hain?",
   "options_ur": [
    "نحن",
@@ -15633,7 +15633,7 @@
    "Antuma",
    "Ana"
   ],
-  "explanation_ur": "متکلم کی ضمیروں کی تثنیہ کی صورت نہیں ہے، اس لیے نحن دو بولنے والوں کے لیے بھی اور بہت سے بولنے والوں کے لیے بھی استعمال ہوتی ہے۔",
+  "explanation_ur": "متکلم کے ضمیروں میں تثنیہ کی صورت نہیں ہوتی، اس لیے نحن دو بولنے والوں کے لیے بھی اور بہت سے بولنے والوں کے لیے بھی استعمال ہوتا ہے۔",
   "explanation_roman": "Mutakallim ki zameeron ki tasnia ki surat nahi hai, is liye Nahnu do bolne walon ke liye bhi aur bahut se bolne walon ke liye bhi istemal hoti hai.",
   "post": [
    "at"
@@ -15759,7 +15759,7 @@
    "Tasnia",
    "Mu'annath wahid"
   ],
-  "explanation_ur": "متصل ضمیر ہما دو اشخاص کی ملکیت ظاہر کرتی ہے، مذکر یا مؤنث، اس لیے کتابہما کا مطلب ان دونوں کی کتاب ہے۔",
+  "explanation_ur": "متصل ضمیر ہما دو اشخاص کی ملکیت ظاہر کرتا ہے، مذکر یا مؤنث، اس لیے کتابہما کا مطلب ان دونوں کی کتاب ہے۔",
   "explanation_roman": "Muttasil zameer huma do ashakhas ki milkiyat zahir karti hai, muzakkar ya mu'annath, is liye kitabuhuma ka matlab un donon ki kitab hai.",
   "post": [
    "at"
@@ -15792,7 +15792,7 @@
   "options_ur": [
    "فعل کا مفعول",
    "فعل کا فاعل",
-   "ایک حرف جر",
+   "ایک حرفِ جر",
    "ایک اسم اشارہ"
   ],
   "options_roman": [
@@ -15829,7 +15829,7 @@
  },
  {
   "id": "ARB-375",
-  "question_ur": "فیہ میں ہُ کے بجائے ہِ استعمال ہوتا ہے کیونکہ متصل ضمیر کس آواز کے بعد اپنی حرکت بدلتی ہے؟",
+  "question_ur": "فیہ میں ہُ کے بجائے ہِ استعمال ہوتا ہے کیونکہ متصل ضمیر کس آواز کے بعد اپنی حرکت بدلتا ہے؟",
   "question_roman": "Fihi mein hu ke bajaye hi istemal hota hai kyunke muttasil zameer kis aawaz ke baad apni harakat badalti hai?",
   "options_ur": [
    "فتحہ کے بعد",
@@ -15885,7 +15885,7 @@
    "Kai aurat malikon ki",
    "Ek mard malik ki"
   ],
-  "explanation_ur": "لاحقہ کم تم کی مذکر جمع متصل ضمیر ہے، اس لیے کتابکم کا مطلب کئی مردوں سے مخاطب ہو کر تمہاری کتاب ہے۔",
+  "explanation_ur": "لاحقہ کم تم کا مذکر جمع متصل ضمیر ہے، اس لیے کتابکم کا مطلب کئی مردوں سے مخاطب ہو کر تمہاری کتاب ہے۔",
   "explanation_roman": "Lahqa kum tum ki muzakkar jama muttasil zameer hai, is liye kitabukum ka matlab kai mardon se mukhatib ho kar tumhari kitab hai.",
   "post": [
    "at"
@@ -16123,7 +16123,7 @@
  },
  {
   "id": "ARB-382",
-  "question_ur": "ذانک دور کے دو مردوں کی طرف اشارہ کرتا ہے، اس لیے یہ تثنیہ عدد کے ساتھ کس قسم کے اشارے کو جوڑتا ہے؟",
+  "question_ur": "ذانک دور کے دو مردوں کی طرف اشارہ کرتا ہے۔ اس میں تثنیہ عدد کے ساتھ کس قسم کا اشارہ ہے؟",
   "question_roman": "Dhanika door ke do mardon ki taraf ishara karta hai, is liye yeh tasnia adad ke sath kis qism ke ishare ko jodta hai?",
   "options_ur": [
    "بعید اشارہ",
@@ -16501,7 +16501,7 @@
  },
  {
   "id": "ARB-391",
-  "question_ur": "حرفِ جر 'علٰی' کا انگریزی میں سب سے عام ترجمہ کون سا لفظ ہے؟",
+  "question_ur": "حرفِ جر 'علٰی' کا سب سے عام مطلب کیا ہے؟",
   "question_roman": "Ala ka Angrezi mein sab se aam tarjuma kaun sa lafz hai?",
   "options_ur": [
    "سے",
@@ -16585,7 +16585,7 @@
  },
  {
   "id": "ARB-393",
-  "question_ur": "بالقلم (قلم کے ساتھ) میں حرفِ جر 'ب' کس مفہوم کو ظاہر کرتی ہے؟",
+  "question_ur": "بالقلم (قلم کے ساتھ) میں حرفِ جر 'ب' کس مفہوم کو ظاہر کرتا ہے؟",
   "question_roman": "'Bi al-qalami' (qalam ke sath) mein harf-e-jarr 'Bi' kis mafhum ko zahir karti hai?",
   "options_ur": [
    "کے ساتھ یا کے ذریعے",
@@ -16627,7 +16627,7 @@
  },
  {
   "id": "ARB-394",
-  "question_ur": "'للمعلم' (استاد کے لیے) میں 'ل' کس تعلق کو ظاہر کرتی ہے؟",
+  "question_ur": "'للمعلم' (استاد کے لیے) میں 'ل' کس تعلق کو ظاہر کرتا ہے؟",
   "question_roman": "'Li al-mu'allimi' (ustad ke liye) mein 'Li' kis ta'alluq ko zahir karti hai?",
   "options_ur": [
    "جدائی",
@@ -16641,7 +16641,7 @@
    "Andar ki jagah",
    "Muwazna"
   ],
-  "explanation_ur": "ل ملکیت، تعلق یا مقصد کو ظاہر کرتی ہے، جیسے استاد کے لیے یا استاد کا۔",
+  "explanation_ur": "ل ملکیت، تعلق یا مقصد کو ظاہر کرتا ہے، جیسے استاد کے لیے یا استاد کا۔",
   "explanation_roman": "Li milkiyat, ta'alluq ya maqsad ko zahir karti hai, jaise ustad ke liye ya ustad ka.",
   "post": [
    "at"
@@ -16669,7 +16669,7 @@
  },
  {
   "id": "ARB-395",
-  "question_ur": "'کالاسد' (شیر کی طرح) میں 'ک' کیا ظاہر کرتی ہے؟",
+  "question_ur": "'کالاسد' (شیر کی طرح) میں 'ک' کیا ظاہر کرتا ہے؟",
   "question_roman": "'Ka al-asadi' (sher ki tarah) mein 'Ka' kya zahir karti hai?",
   "options_ur": [
    "وقت",
@@ -16683,7 +16683,7 @@
    "Mushabahat ya muwazna",
    "Milkiyat"
   ],
-  "explanation_ur": "ک کا مطلب 'کی طرح' یا 'جیسا' ہے اور یہ موازنے کے لیے استعمال ہوتی ہے، جیسے شیر کی طرح۔",
+  "explanation_ur": "ک کا مطلب 'کی طرح' یا 'جیسا' ہے اور یہ موازنے کے لیے استعمال ہوتا ہے، جیسے شیر کی طرح۔",
   "explanation_roman": "Ka ka matlab 'ki tarah' ya 'jaisa' hai aur yeh muwazne ke liye istemal hoti hai, jaise sher ki tarah.",
   "post": [
    "at"
@@ -16725,7 +16725,7 @@
    "Un mein",
    "Is mein"
   ],
-  "explanation_ur": "فی کو ہو کے ساتھ ملانے سے فیہ بنتا ہے، جس کا مطلب ہے اس میں، اور ضمیر حرفِ جر کے ساتھ جڑی ہوتی ہے۔",
+  "explanation_ur": "فی کو ہو کے ساتھ ملانے سے فیہ بنتا ہے، جس کا مطلب ہے اس میں، اور ضمیر حرفِ جر کے ساتھ جڑا ہوتا ہے۔",
   "explanation_roman": "Fi ko Hu ke sath milane se Fihi banta hai, jis ka matlab hai is mein, aur zameer harf-e-jarr ke sath judi hoti hai.",
   "post": [
    "at"
@@ -16756,7 +16756,7 @@
   "question_ur": "'ب'، 'ل' اور 'ک' 'فی' اور 'علٰی' سے کس لحاظ سے مختلف ہیں؟",
   "question_roman": "'Bi', 'Li' aur 'Ka' 'Fi' aur 'Ala' se kis lihaz se mukhtalif hain?",
   "options_ur": [
-   "وہ بعد والے لفظ کے ساتھ براہِ راست جڑ جاتے ہیں",
+   "وہ بعد والے لفظ کے ساتھ براہِ راست مل جاتے ہیں",
    "وہ بعد والے اسم پر کبھی اثر نہیں ڈالتے",
    "وہ ہمیشہ اسم کے بعد آتے ہیں",
    "وہ صرف افعال کے ساتھ جڑتے ہیں"
@@ -16767,7 +16767,7 @@
    "Woh hamesha ism ke baad aate hain",
    "Woh sirf af'aal ke sath judte hain"
   ],
-  "explanation_ur": "ب، ل اور ک واحد حروف ہیں جو بعد والے لفظ کے ساتھ براہِ راست جڑ جاتے ہیں، جبکہ فی اور علٰی الگ الفاظ کے طور پر آتے ہیں۔",
+  "explanation_ur": "ب، ل اور ک واحد حروف ہیں جو بعد والے لفظ کے ساتھ براہِ راست مل جاتے ہیں، جبکہ فی اور علٰی الگ الفاظ کے طور پر آتے ہیں۔",
   "explanation_roman": "Bi, Li aur Ka wahid huroof hain jo baad wale lafz ke sath barah-e-rast jud jate hain, jab ke Fi aur Ala alag alfaz ke tor par aate hain.",
   "post": [
    "at"
@@ -16795,7 +16795,7 @@
  },
  {
   "id": "ARB-398",
-  "question_ur": "'متٰی' پوچھنے پر جواب میں کس چیز کی توقع ہوتی ہے؟",
+  "question_ur": "'متٰی' سے کس بارے میں پوچھا جاتا ہے؟",
   "question_roman": "'Mata' poochne par jawab mein kis cheez ki tawaqqa hoti hai?",
   "options_ur": [
    "جگہ",
@@ -16935,7 +16935,7 @@
    "Jagah",
    "Miqdar"
   ],
-  "explanation_ur": "من شخص کے بارے میں پوچھتا ہے، یعنی کون، جبکہ ما چیز یا معاملے کے بارے میں پوچھتا ہے، یعنی کیا۔",
+  "explanation_ur": "'من' سے شخص کے بارے میں پوچھا جاتا ہے، یعنی کون، جبکہ 'ما' سے چیز یا معاملے کے بارے میں پوچھا جاتا ہے، یعنی کیا۔",
   "explanation_roman": "Man shakhs ke baare mein poochta hai, ya'ni kaun, jab ke Ma cheez ya mu'amle ke baare mein poochta hai, ya'ni kya.",
   "post": [
    "at"
@@ -17005,7 +17005,7 @@
  },
  {
   "id": "ARB-403",
-  "question_ur": "عربی لفظ 'خمسہ' کس عدد کے لیے استعمال ہوتا ہے؟",
+  "question_ur": "عربی لفظ 'خمسہ' سے کون سا عدد مراد ہے؟",
   "question_roman": "Arbi lafz 'Khamsa' kis adad ke liye istemal hota hai?",
   "options_ur": [
    "3",
@@ -17047,7 +17047,7 @@
  },
  {
   "id": "ARB-404",
-  "question_ur": "ثالث کس درجے کو ظاہر کرنے والا ترتیبی لفظ ہے؟",
+  "question_ur": "ثالث فہرست میں کس درجے کے لیے ترتیبی لفظ ہے؟",
   "question_roman": "Thalith kis darje ko zahir karne wala tarteebi lafz hai?",
   "options_ur": [
    "پہلا",
@@ -17103,7 +17103,7 @@
    "Bhai",
    "Behen"
   ],
-  "explanation_ur": "'ام' کا مطلب عربی میں ماں ہے۔",
+  "explanation_ur": "عربی میں 'ام' کا مطلب ماں ہے۔",
   "explanation_roman": "'Umm' ka matlab Arbi mein maa hai.",
   "post": [
    "at"
@@ -17145,7 +17145,7 @@
    "Akh",
    "Ukht"
   ],
-  "explanation_ur": "'اب' کا مطلب عربی میں باپ ہے۔",
+  "explanation_ur": "عربی میں 'اب' کا مطلب باپ ہے۔",
   "explanation_roman": "'Ab' ka matlab Arbi mein baap hai.",
   "post": [
    "at"
@@ -17173,7 +17173,7 @@
  },
  {
   "id": "ARB-407",
-  "question_ur": "عربی لفظ 'اخ' سے کس رشتے دار کا ذکر ہوتا ہے؟",
+  "question_ur": "عربی لفظ 'اخ' سے کون سا رشتہ دار مراد ہے؟",
   "question_roman": "Arbi lafz 'Akh' se kis rishtedar ka zikr hota hai?",
   "options_ur": [
    "بہن",
@@ -17187,7 +17187,7 @@
    "Bhai",
    "Maa"
   ],
-  "explanation_ur": "'اخ' کا مطلب عربی میں بھائی ہے۔",
+  "explanation_ur": "عربی میں 'اخ' کا مطلب بھائی ہے۔",
   "explanation_roman": "'Akh' ka matlab Arbi mein bhai hai.",
   "post": [
    "at"
@@ -17229,7 +17229,7 @@
    "Bint",
    "Ukht"
   ],
-  "explanation_ur": "'اخت' کا مطلب عربی میں بہن ہے۔",
+  "explanation_ur": "عربی میں 'اخت' کا مطلب بہن ہے۔",
   "explanation_roman": "'Ukht' ka matlab Arbi mein behen hai.",
   "post": [
    "at"
@@ -17257,7 +17257,7 @@
  },
  {
   "id": "ARB-409",
-  "question_ur": "عربی میں 'ابن' سے خاندان کے کس فرد کا ذکر ہوتا ہے؟",
+  "question_ur": "عربی میں 'ابن' سے خاندان کا کون سا فرد مراد ہے؟",
   "question_roman": "Arbi mein 'Ibn' se khandan ke kis fard ka zikr hota hai?",
   "options_ur": [
    "بیٹی",
@@ -17271,7 +17271,7 @@
    "Baap",
    "Maa"
   ],
-  "explanation_ur": "'ابن' کا مطلب عربی میں بیٹا ہے۔",
+  "explanation_ur": "عربی میں 'ابن' کا مطلب بیٹا ہے۔",
   "explanation_roman": "'Ibn' ka matlab Arbi mein beta hai.",
   "post": [
    "at"
@@ -17313,7 +17313,7 @@
    "Ra's",
    "Qalb"
   ],
-  "explanation_ur": "'رأس' کا مطلب عربی میں سر ہے۔",
+  "explanation_ur": "عربی میں 'رأس' کا مطلب سر ہے۔",
   "explanation_roman": "'Ra's' ka matlab Arbi mein sar hai.",
   "post": [
    "at"
@@ -17341,7 +17341,7 @@
  },
  {
   "id": "ARB-411",
-  "question_ur": "'عین' سے جسم کے کس حصے کا ذکر ہوتا ہے؟",
+  "question_ur": "'عین' سے جسم کا کون سا حصہ مراد ہے؟",
   "question_roman": "'Ayn' se jism ke kis hisse ka zikr hota hai?",
   "options_ur": [
    "آنکھ",
@@ -17355,7 +17355,7 @@
    "Sar",
    "Dil"
   ],
-  "explanation_ur": "'عین' کا مطلب عربی میں آنکھ ہے۔",
+  "explanation_ur": "عربی میں 'عین' کا مطلب آنکھ ہے۔",
   "explanation_roman": "'Ayn' ka matlab Arbi mein aankh hai.",
   "post": [
    "at"
@@ -17397,7 +17397,7 @@
    "Qalb",
    "Yad"
   ],
-  "explanation_ur": "'ید' کا مطلب عربی میں ہاتھ ہے۔",
+  "explanation_ur": "عربی میں 'ید' کا مطلب ہاتھ ہے۔",
   "explanation_roman": "'Yad' ka matlab Arbi mein haath hai.",
   "post": [
    "at"
@@ -17439,7 +17439,7 @@
    "Kursi",
    "Mez"
   ],
-  "explanation_ur": "'باب' کا مطلب عربی میں دروازہ ہے۔",
+  "explanation_ur": "عربی میں 'باب' کا مطلب دروازہ ہے۔",
   "explanation_roman": "'Bab' ka matlab Arbi mein darwaza hai.",
   "post": [
    "at"
@@ -17481,7 +17481,7 @@
    "Nafidha",
    "Tawila"
   ],
-  "explanation_ur": "'نافذہ' کا مطلب عربی میں کھڑکی ہے۔",
+  "explanation_ur": "عربی میں 'نافذہ' کا مطلب کھڑکی ہے۔",
   "explanation_roman": "'Nafidha' ka matlab Arbi mein khirki hai.",
   "post": [
    "at"
@@ -17509,7 +17509,7 @@
  },
  {
   "id": "ARB-415",
-  "question_ur": "عربی لفظ 'کرسی' سے گھر کی کس چیز کا ذکر ہوتا ہے؟",
+  "question_ur": "عربی لفظ 'کرسی' سے گھر کی کون سی چیز مراد ہے؟",
   "question_roman": "Arbi lafz 'Kursi' se ghar ki kis cheez ka zikr hota hai?",
   "options_ur": [
    "کرسی",
@@ -17565,7 +17565,7 @@
    "Sabura",
    "Daftar"
   ],
-  "explanation_ur": "'دفتر' کا مطلب عربی میں کاپی یا نوٹ بک ہے۔",
+  "explanation_ur": "عربی میں 'دفتر' کا مطلب کاپی یا نوٹ بک ہے۔",
   "explanation_roman": "'Daftar' ka matlab Arbi mein copy ya notebook hai.",
   "post": [
    "at"
@@ -17593,7 +17593,7 @@
  },
  {
   "id": "ARB-417",
-  "question_ur": "کلاس روم میں 'سبورہ' سے کس چیز کا ذکر ہوتا ہے؟",
+  "question_ur": "کلاس روم میں 'سبورہ' سے کون سی چیز مراد ہے؟",
   "question_roman": "Classroom mein 'Sabura' se kis cheez ka zikr hota hai?",
   "options_ur": [
    "قلم",
@@ -17607,7 +17607,7 @@
    "Kitab",
    "School"
   ],
-  "explanation_ur": "'سبورہ' کا مطلب عربی میں تختہ سیاہ ہے۔",
+  "explanation_ur": "عربی میں 'سبورہ' کا مطلب تختہ سیاہ ہے۔",
   "explanation_roman": "'Sabura' ka matlab Arbi mein takhta-e-siyah hai.",
   "post": [
    "at"
@@ -17649,7 +17649,7 @@
    "Khubz",
    "Tamr"
   ],
-  "explanation_ur": "'خبز' کا مطلب عربی میں روٹی ہے۔",
+  "explanation_ur": "عربی میں 'خبز' کا مطلب روٹی ہے۔",
   "explanation_roman": "'Khubz' ka matlab Arbi mein roti hai.",
   "post": [
    "at"
@@ -17691,7 +17691,7 @@
    "Pani",
    "Khajoor"
   ],
-  "explanation_ur": "'لبن' کا مطلب عربی میں دودھ ہے۔",
+  "explanation_ur": "عربی میں 'لبن' کا مطلب دودھ ہے۔",
   "explanation_roman": "'Laban' ka matlab Arbi mein doodh hai.",
   "post": [
    "at"
@@ -17887,7 +17887,7 @@
  },
  {
   "id": "ARB-424",
-  "question_ur": "'غنی' (امیر) کے معنی کے الٹ کون سا لفظ ہے؟",
+  "question_ur": "'غنی' (امیر) کی ضد کون سا لفظ ہے؟",
   "question_roman": "'Ghani' (ameer) ke ma'na ke ult kaun sa lafz hai?",
   "options_ur": [
    "قوی",
@@ -18307,7 +18307,7 @@
  },
  {
   "id": "ARB-434",
-  "question_ur": "اسلامی استعمال میں صلاۃ سے سب سے زیادہ براہ راست کس عبادت کا مطلب لیا جاتا ہے؟",
+  "question_ur": "اسلامی استعمال میں صلاۃ سے براہ راست کون سی عبادت مراد ہے؟",
   "question_roman": "Islami istemal mein Salah se sab se zyada barah-e-rast kis ibadat ka matlab liya jata hai?",
   "options_ur": [
    "طلوع فجر سے غروب آفتاب تک روزہ رکھنا",
@@ -18321,7 +18321,7 @@
    "Gharibon ko farz sadqa dena",
    "Makkah ka Hajj karna"
   ],
-  "explanation_ur": "صلاۃ فرض نماز ہے جو روزانہ مقررہ اوقات میں ادا کی جاتی ہے۔",
+  "explanation_ur": "صلاۃ وہ نماز ہے جو روزانہ مقررہ اوقات میں ادا کی جاتی ہے۔",
   "explanation_roman": "Salah farz namaz hai jo rozana muqarrara auqat mein ada ki jati hai.",
   "post": [
    "at"
@@ -18349,7 +18349,7 @@
  },
  {
   "id": "ARB-435",
-  "question_ur": "طلوع فجر سے غروب آفتاب تک کھانے پینے سے رکے رہنا کس اصطلاح کا مطلب ہے؟",
+  "question_ur": "طلوع فجر سے غروب آفتاب تک کھانے پینے سے رکا رہنا کس اصطلاح کا مطلب ہے؟",
   "question_roman": "Tulu-e-fajr se ghurub-e-aftab tak khane peene se ruke rehna kis istilah ka matlab hai?",
   "options_ur": [
    "زکوٰۃ",
@@ -18397,7 +18397,7 @@
    "مال کا ایک مقررہ حصہ غریبوں کو دینا",
    "رمضان کے مہینے میں روزے رکھنا",
    "روزانہ نماز ادا کرنا",
-   "قرآن بلند آواز سے پڑھنا"
+   "قرآن پاک بلند آواز سے پڑھنا"
   ],
   "options_roman": [
    "Maal ka ek muqarrara hissa gharibon ko dena",
@@ -18433,7 +18433,7 @@
  },
  {
   "id": "ARB-437",
-  "question_ur": "دل سے یقین اور زبان سے اقرار کس لفظ کا معروف مطلب ہے؟",
+  "question_ur": "دل سے یقین اور زبان سے اقرار کس لفظ کی تعریف ہے؟",
   "question_roman": "Dil se yaqeen aur zaban se iqrar kis lafz ka maroof matlab hai?",
   "options_ur": [
    "تقویٰ",
@@ -18475,7 +18475,7 @@
  },
  {
   "id": "ARB-438",
-  "question_ur": "تقویٰ کو مومن کی کس باطنی خوبی کے طور پر سب سے بہتر سمجھا جاتا ہے؟",
+  "question_ur": "تقویٰ سے مومن کی کون سی باطنی خوبی مراد ہے؟",
   "question_roman": "Taqwa ko momin ki kis batini khoobi ke tor par sab se behtar samjha jata hai?",
   "options_ur": [
    "دولت اور سخاوت",
@@ -18517,7 +18517,7 @@
  },
  {
   "id": "ARB-439",
-  "question_ur": "مشکل میں صبر اور ثابت قدمی سے رہنا کس عربی اصطلاح کا مطلب ہے؟",
+  "question_ur": "مشکل میں صبر اور ثابت قدمی سے کام لینا کس عربی اصطلاح کا مطلب ہے؟",
   "question_roman": "Mushkil mein sabr aur sabit-qadmi se rehna kis Arbi istilah ka matlab hai?",
   "options_ur": [
    "شکر",
@@ -18531,7 +18531,7 @@
    "Sabr",
    "Iman"
   ],
-  "explanation_ur": "صبر کا مطلب صبر اور ثابت قدمی ہے، خاص طور پر مشکل کے وقت۔",
+  "explanation_ur": "صبر کا مطلب مشکل کے وقت صبر سے کام لینا اور ثابت قدم رہنا ہے۔",
   "explanation_roman": "Sabr ka matlab sabr aur sabit-qadmi hai, khaas tor par mushkil ke waqt.",
   "post": [
    "at"
@@ -18601,7 +18601,7 @@
  },
  {
   "id": "ARB-441",
-  "question_ur": "اسلامی الفاظ میں نیک لوگوں کے انعام کے طور پر وعدہ کیا گیا باغ کیا کہلاتا ہے؟",
+  "question_ur": "اسلامی اصطلاح میں نیک لوگوں کے انعام کے طور پر وعدہ کیا گیا باغ کیا کہلاتا ہے؟",
   "question_roman": "Islami alfaz mein nek logon ke inaam ke tor par wada kiya gaya bagh kya kehlata hai?",
   "options_ur": [
    "جہنم",
@@ -18643,7 +18643,7 @@
  },
  {
   "id": "ARB-442",
-  "question_ur": "نماز اور سجدے کے لیے بنائی گئی جگہ عربی میں کس لفظ سے جانی جاتی ہے؟",
+  "question_ur": "نماز اور سجدے کے لیے بنائی گئی جگہ عربی میں کیا کہلاتی ہے؟",
   "question_roman": "Namaz aur sajde ke liye banayi gayi jagah Arbi mein kis lafz se jani jati hai?",
   "options_ur": [
    "مدرسہ",
@@ -18685,7 +18685,7 @@
  },
  {
   "id": "ARB-443",
-  "question_ur": "اللہ سے دعا مانگنا اور اس سے مدد طلب کرنا کس لفظ کا مطلب ہے؟",
+  "question_ur": "اللہ کو پکارنا اور اس سے مدد مانگنا کس لفظ کا مطلب ہے؟",
   "question_roman": "Allah se dua mangna aur us se madad talab karna kis lafz ka matlab hai?",
   "options_ur": [
    "زکوٰۃ",
@@ -18699,7 +18699,7 @@
    "Du'a",
    "Hajj"
   ],
-  "explanation_ur": "دعا کا مطلب اللہ سے مانگنا اور اس سے مدد طلب کرنا ہے۔",
+  "explanation_ur": "دعا سے مراد اللہ کو پکارنا اور اس سے مدد مانگنا ہے۔",
   "explanation_roman": "Du'a ka matlab Allah se mangna aur us se madad talab karna hai.",
   "post": [
    "at"
@@ -18727,7 +18727,7 @@
  },
  {
   "id": "ARB-444",
-  "question_ur": "سلام، اسلام اور مسلم سب ایک ہی جڑ سے آئے ہیں؛ ان کو جوڑنے والا خیال کون سا ہے؟",
+  "question_ur": "سلام، اسلام اور مسلم سب ایک ہی مادے سے آئے ہیں؛ ان کو جوڑنے والا خیال کون سا ہے؟",
   "question_roman": "Salam, Islam aur Muslim sab ek hi jad se aaye hain; un ko jodne wala khayal kaun sa hai?",
   "options_ur": [
    "امن، سلامتی اور اطاعت",
@@ -18741,7 +18741,7 @@
    "Daulat aur tijarat",
    "Safar aur hijrat"
   ],
-  "explanation_ur": "جڑ س ل م میں امن، سلامتی اور اطاعت کا خیال پایا جاتا ہے۔",
+  "explanation_ur": "مادے س ل م میں امن، سلامتی اور اطاعت کا خیال پایا جاتا ہے۔",
   "explanation_roman": "Jad S-L-M mein aman, salamti aur ita'at ka khayal paya jata hai.",
   "post": [
    "at"
@@ -18769,7 +18769,7 @@
  },
  {
   "id": "ARB-445",
-  "question_ur": "جڑ ع ب د سے کون سا جوڑا عبادت اور بندگی کے خیال میں شریک ہے؟",
+  "question_ur": "مادے ع ب د سے کون سا جوڑا عبادت اور بندگی کے خیال میں شریک ہے؟",
   "question_roman": "Jad '-B-D se kaun sa joda ibadat aur bandagi ke khayal mein shareek hai?",
   "options_ur": [
    "کاتب اور کتاب",
@@ -18783,7 +18783,7 @@
    "Qari aur Qur'an",
    "'Abd aur 'Ibadah"
   ],
-  "explanation_ur": "جڑ ع ب د سے عبد یعنی بندہ اور عبادت یعنی بندگی کے الفاظ بنتے ہیں۔",
+  "explanation_ur": "مادے ع ب د سے عبد یعنی بندہ اور عبادت یعنی بندگی کے الفاظ بنتے ہیں۔",
   "explanation_roman": "Jad '-B-D se 'Abd yani banda aur 'Ibadah yani bandagi ke alfaz bante hain.",
   "post": [
    "at"
@@ -18825,7 +18825,7 @@
    "Taqat ka khayal",
    "Roshni ka khayal"
   ],
-  "explanation_ur": "جڑ ر ح م میں رحمت کا خیال ہے جو رحمن، رحیم اور رحمہ میں نظر آتا ہے۔",
+  "explanation_ur": "مادے ر ح م میں رحمت کا خیال ہے جو رحمن، رحیم اور رحمہ میں نظر آتا ہے۔",
   "explanation_roman": "Jad R-H-M mein rehmat ka khayal hai jo Rahman, Rahim aur Rahmah mein nazar aata hai.",
   "post": [
    "at"
@@ -18853,7 +18853,7 @@
  },
  {
   "id": "ARB-447",
-  "question_ur": "ح م د کی جڑ سے، جو حمد کی جڑ ہے، الفاظ کا کون سا مجموعہ بنتا ہے؟",
+  "question_ur": "حمد کے مادے ح م د سے الفاظ کا کون سا مجموعہ بنتا ہے؟",
   "question_roman": "H-M-D ki jad se, jo hamd ki jad hai, alfaz ka kaun sa majmua banta hai?",
   "options_ur": [
    "نور اور منیر",
@@ -18867,7 +18867,7 @@
    "Hamd, Ahmad aur Mahmud",
    "Fath aur Miftah"
   ],
-  "explanation_ur": "جڑ ح م د سے حمد یعنی تعریف اور احمد اور محمود کے نام بنتے ہیں۔",
+  "explanation_ur": "مادے ح م د سے حمد یعنی تعریف اور احمد اور محمود کے نام بنتے ہیں۔",
   "explanation_roman": "Jad H-M-D se Hamd yani tareef aur Ahmad aur Mahmud ke naam bante hain.",
   "post": [
    "at"
@@ -18895,7 +18895,7 @@
  },
  {
   "id": "ARB-448",
-  "question_ur": "نور اور منیر ایک جڑ میں شریک ہیں جو کس معنی سے جڑی ہے؟",
+  "question_ur": "نور اور منیر کا مشترکہ مادہ کس معنی سے تعلق رکھتا ہے؟",
   "question_roman": "Nur aur Munir ek jad mein shareek hain jo kis ma'na se judi hai?",
   "options_ur": [
    "روشنی",
@@ -18909,7 +18909,7 @@
    "Sabr",
    "Daulat"
   ],
-  "explanation_ur": "جڑ ن و ر میں روشنی کا خیال ہے جو نور اور منیر میں نظر آتا ہے۔",
+  "explanation_ur": "مادے ن و ر میں روشنی کا خیال ہے جو نور اور منیر میں نظر آتا ہے۔",
   "explanation_roman": "Jad N-W-R mein roshni ka khayal hai jo Nur aur Munir mein nazar aata hai.",
   "post": [
    "at"
@@ -18937,7 +18937,7 @@
  },
  {
   "id": "ARB-449",
-  "question_ur": "پڑھنا اور تلاوت ایک ہی جڑ سے آئے ہوئے الفاظ کے کس گروہ کو جوڑتے ہیں؟",
+  "question_ur": "پڑھنا اور تلاوت ایک ہی مادے سے آئے ہوئے الفاظ کے کس گروہ کو جوڑتے ہیں؟",
   "question_roman": "Parhna aur tilawat ek hi jad se aaye hue alfaz ke kis giroh ko jodte hain?",
   "options_ur": [
    "کاتب، کتاب اور مکتبہ",
@@ -18951,7 +18951,7 @@
    "Hafiz aur Hifz",
    "Qara'a, Qur'an aur Qari"
   ],
-  "explanation_ur": "جڑ ق ر أ میں پڑھنے کا خیال ہے جو قرأ، قرآن اور قاری میں نظر آتا ہے۔",
+  "explanation_ur": "مادے ق ر أ میں پڑھنے کا خیال ہے جو قرأ، قرآن اور قاری میں نظر آتا ہے۔",
   "explanation_roman": "Jad Q-R-A mein parhne ka khayal hai jo Qara'a, Qur'an aur Qari mein nazar aata hai.",
   "post": [
    "at"
@@ -18979,7 +18979,7 @@
  },
  {
   "id": "ARB-450",
-  "question_ur": "کام اور اعمال کا مشترکہ خیال جڑ ع م ل کے کس جوڑے کے پیچھے ہے؟",
+  "question_ur": "مادے ع م ل کے کس جوڑے میں کام اور اعمال کا مشترکہ خیال پایا جاتا ہے؟",
   "question_roman": "Kaam aur a'maal ka mushtarika khayal jad '-M-L ke kis jode ke peeche hai?",
   "options_ur": [
    "علم اور معلم",
@@ -18993,7 +18993,7 @@
    "Hamd aur Ahmad",
    "Nur aur Munir"
   ],
-  "explanation_ur": "جڑ ع م ل سے عمل یعنی کام اور عامل یعنی کام کرنے والا بنتے ہیں۔",
+  "explanation_ur": "مادے ع م ل سے عمل یعنی کام اور عامل یعنی کام کرنے والا بنتے ہیں۔",
   "explanation_roman": "Jad '-M-L se 'Amal yani kaam aur 'Amil yani kaam karne wala bante hain.",
   "post": [
    "at"
@@ -19021,7 +19021,7 @@
  },
  {
   "id": "ARB-451",
-  "question_ur": "حفاظت اور حفظ کرنا کن دو متعلقہ الفاظ کے پیچھے خیالات ہیں؟",
+  "question_ur": "حفاظت اور حفظ کرنا کن دو متعلقہ الفاظ کا مشترکہ خیال ہے؟",
   "question_roman": "Hifazat aur hifz karna kin do mutalliqa alfaz ke peeche khayalat hain?",
   "options_ur": [
    "فتح اور فاتح",
@@ -19035,7 +19035,7 @@
    "Hafiz aur Hifz",
    "Katib aur Maktub"
   ],
-  "explanation_ur": "جڑ ح ف ظ سے حافظ یعنی حفاظت یا حفظ کرنے والا اور حفظ یعنی حفاظت یا یاد کرنا بنتے ہیں۔",
+  "explanation_ur": "مادے ح ف ظ سے حافظ یعنی حفاظت یا حفظ کرنے والا اور حفظ یعنی حفاظت یا یاد کرنا بنتے ہیں۔",
   "explanation_roman": "Jad H-F-Z se Hafiz yani hifazat ya hifz karne wala aur Hifz yani hifazat ya yaad karna bante hain.",
   "post": [
    "at"
@@ -19063,7 +19063,7 @@
  },
  {
   "id": "ARB-452",
-  "question_ur": "فتح، فاتح اور مفتاح سب ایک جڑ میں شریک ہیں؛ کون سا خیال ان کو جوڑتا ہے؟",
+  "question_ur": "فتح، فاتح اور مفتاح سب ایک مادے میں شریک ہیں؛ کون سا خیال ان کو جوڑتا ہے؟",
   "question_roman": "Fath, Fatih aur Miftah sab ek jad mein shareek hain; kaun sa khayal un ko jodta hai?",
   "options_ur": [
    "کھولنا",
@@ -19077,7 +19077,7 @@
    "Parhana",
    "Safar karna"
   ],
-  "explanation_ur": "جڑ ف ت ح میں کھولنے کا خیال ہے جو فتح، فاتح اور مفتاح میں نظر آتا ہے۔",
+  "explanation_ur": "مادے ف ت ح میں کھولنے کا خیال ہے جو فتح، فاتح اور مفتاح میں نظر آتا ہے۔",
   "explanation_roman": "Jad F-T-H mein kholne ka khayal hai jo Fath, Fatih aur Miftah mein nazar aata hai.",
   "post": [
    "at"
@@ -19105,7 +19105,7 @@
  },
  {
   "id": "ARB-453",
-  "question_ur": "ایک طلوع آفتاب سے اگلے طلوع آفتاب تک کا وقت عربی میں کس لفظ سے کہا جاتا ہے؟",
+  "question_ur": "ایک طلوع آفتاب سے اگلے طلوع آفتاب تک کا وقت عربی میں کیا کہلاتا ہے؟",
   "question_roman": "Ek tulu-e-aftab se agle tulu-e-aftab tak ka waqt Arbi mein kis lafz se kaha jata hai?",
   "options_ur": [
    "لیلہ",
@@ -19147,7 +19147,7 @@
  },
  {
   "id": "ARB-454",
-  "question_ur": "لیلہ روزانہ کے چکر کے کس حصے کا نام ہے؟",
+  "question_ur": "لیلہ دن رات کے چکر کے کس حصے کا نام ہے؟",
   "question_roman": "Layla rozana ke chakkar ke kis hisse ka naam hai?",
   "options_ur": [
    "صبح",
@@ -19161,7 +19161,7 @@
    "Dopahar",
    "Hafta"
   ],
-  "explanation_ur": "لیلہ کا مطلب رات ہے، جو روزانہ کے چکر کا تاریک حصہ ہے۔",
+  "explanation_ur": "لیلہ کا مطلب رات ہے، جو دن رات کے چکر کا تاریک حصہ ہے۔",
   "explanation_roman": "Layla ka matlab raat hai, jo rozana ke chakkar ka tareek hissa hai.",
   "post": [
    "at"
@@ -19189,7 +19189,7 @@
  },
  {
   "id": "ARB-455",
-  "question_ur": "دن کے شروع میں، طلوع آفتاب کے بعد کا وقت کس عربی لفظ سے بیان کیا جاتا ہے؟",
+  "question_ur": "طلوع آفتاب کے بعد دن کے شروع کے وقت کے لیے کون سا عربی لفظ استعمال ہوتا ہے؟",
   "question_roman": "Din ke shuru mein, tulu-e-aftab ke baad ka waqt kis Arbi lafz se bayan kiya jata hai?",
   "options_ur": [
    "مساء",
@@ -19231,7 +19231,7 @@
  },
  {
   "id": "ARB-456",
-  "question_ur": "عام عربی الفاظ میں مدینہ کس قسم کی بستی کو کہتے ہیں؟",
+  "question_ur": "عام عربی میں مدینہ کس قسم کی بستی کو کہتے ہیں؟",
   "question_roman": "Aam Arbi alfaz mein Madinah kis qism ki basti ko kehte hain?",
   "options_ur": [
    "شہر",
@@ -19357,7 +19357,7 @@
  },
  {
   "id": "ARB-459",
-  "question_ur": "کوئلے اور رات کے آسمان کا رنگ کس عربی لفظ سے کہا جاتا ہے؟",
+  "question_ur": "کوئلے اور رات کے آسمان کے رنگ کے لیے کون سا عربی لفظ ہے؟",
   "question_roman": "Koyle aur raat ke aasman ka rang kis Arbi lafz se kaha jata hai?",
   "options_ur": [
    "ابیض",
@@ -19441,7 +19441,7 @@
  },
  {
   "id": "ARB-461",
-  "question_ur": "کتا کہلانے والے عام پالتو جانور کو عربی میں کس لفظ سے کہا جاتا ہے؟",
+  "question_ur": "کتا کہلانے والے عام پالتو جانور کے لیے عربی میں کون سا لفظ ہے؟",
   "question_roman": "Kutta kehlane wale aam paltu janwar ko Arbi mein kis lafz se kaha jata hai?",
   "options_ur": [
    "قط",
@@ -19567,7 +19567,7 @@
  },
  {
   "id": "ARB-464",
-  "question_ur": "'الحمد للہ' کہنے سے انگریزی میں کیا مطلب ظاہر ہوتا ہے؟",
+  "question_ur": "'الحمد للہ' کہنے سے کیا مطلب ظاہر ہوتا ہے؟",
   "question_roman": "'Alhamdulillah' kehne se Angrezi mein kya matlab zahir hota hai?",
   "options_ur": [
    "تمام تعریفیں اللہ کے لیے ہیں۔",
@@ -19609,7 +19609,7 @@
  },
  {
   "id": "ARB-465",
-  "question_ur": "'سبحان اللہ' کا انگریزی میں درست مطلب بتائیں۔",
+  "question_ur": "'سبحان اللہ' کا درست مطلب بتائیں۔",
   "question_roman": "'SubhanAllah' ka Angrezi mein durust matlab batayen.",
   "options_ur": [
    "تمام تعریفیں اللہ کے لیے ہیں۔",
@@ -19651,7 +19651,7 @@
  },
  {
   "id": "ARB-466",
-  "question_ur": "'اللہ اکبر' کا انگریزی میں کیا مطلب ہے؟",
+  "question_ur": "'اللہ اکبر' کا کیا مطلب ہے؟",
   "question_roman": "'Allahu Akbar' ka Angrezi mein kya matlab hai?",
   "options_ur": [
    "تم پر سلامتی ہو۔",
@@ -19693,7 +19693,7 @@
  },
  {
   "id": "ARB-467",
-  "question_ur": "جب کوئی مسلمان دوسرے شخص کو 'السلام علیکم' کہہ کر سلام کرتا ہے تو اس سلام کا انگریزی میں کیا مطلب ہے؟",
+  "question_ur": "جب کوئی مسلمان دوسرے شخص کو 'السلام علیکم' کہہ کر سلام کرتا ہے تو اس سلام کا کیا مطلب ہے؟",
   "question_roman": "Jab koi Musalman dusre shakhs ko 'Assalamu Alaikum' keh kar salam karta hai to is salam ka Angrezi mein kya matlab hai?",
   "options_ur": [
    "اللہ تمہیں اچھا بدلہ دے۔",
@@ -19735,7 +19735,7 @@
  },
  {
   "id": "ARB-468",
-  "question_ur": "'ان شاء اللہ' کہنے والا مستقبل کے کسی منصوبے کے بارے میں کیا مطلب ظاہر کرتا ہے؟",
+  "question_ur": "مستقبل کے کسی منصوبے کے بارے میں 'ان شاء اللہ' کہنے سے کیا مطلب ظاہر ہوتا ہے؟",
   "question_roman": "'In Sha Allah' kehne wala mustaqbil ke kisi mansube ke baare mein kya matlab zahir karta hai?",
   "options_ur": [
    "اگر اللہ چاہے۔",
@@ -19777,7 +19777,7 @@
  },
  {
   "id": "ARB-469",
-  "question_ur": "کسی اچھی چیز کی تعریف کرتے وقت 'ماشاء اللہ' کا انگریزی میں درست مطلب منتخب کریں۔",
+  "question_ur": "کسی اچھی چیز کی تعریف کرتے وقت 'ماشاء اللہ' کا درست مطلب منتخب کریں۔",
   "question_roman": "Kisi achhi cheez ki tareef karte waqt 'Masha Allah' ka Angrezi mein durust matlab muntakhab karen.",
   "options_ur": [
    "اگر اللہ چاہے۔",
@@ -19791,7 +19791,7 @@
    "Allah ne aisa chaha hai.",
    "Main Allah se bakhshish mangta hoon."
   ],
-  "explanation_ur": "ماشاء اللہ کا مطلب ہے اللہ نے ایسا چاہا ہے، اور یہ کسی اچھی چیز پر خوشی اور تعریف کے طور پر کہا جاتا ہے۔",
+  "explanation_ur": "ماشاء اللہ کا مطلب ہے اللہ نے ایسا چاہا ہے، اور یہ اللہ کی بنائی یا دی ہوئی کسی اچھی چیز پر تعریف کے طور پر کہا جاتا ہے۔",
   "explanation_roman": "Masha Allah ka matlab hai Allah ne aisa chaha hai, aur yeh kisi achhi cheez par khushi aur tareef ke tor par kaha jata hai.",
   "post": [
    "at"
@@ -19819,7 +19819,7 @@
  },
  {
   "id": "ARB-470",
-  "question_ur": "'لا الہ الا اللہ' انگریزی میں کس مطلب کا اعلان کرتا ہے؟",
+  "question_ur": "'لا الہ الا اللہ' کس مطلب کا اعلان کرتا ہے؟",
   "question_roman": "'La ilaha illallah' Angrezi mein kis matlab ka elan karta hai?",
   "options_ur": [
    "اللہ سب سے بڑا ہے۔",
@@ -19861,7 +19861,7 @@
  },
  {
   "id": "ARB-471",
-  "question_ur": "کوئی شخص شکریہ کے طور پر 'جزاک اللہ خیرا' کہتا ہے؛ اس عبارت کا انگریزی میں کیا مطلب ہے؟",
+  "question_ur": "کوئی شخص شکریہ کے طور پر 'جزاک اللہ خیرا' کہتا ہے؛ اس عبارت کا کیا مطلب ہے؟",
   "question_roman": "Koi shakhs shukriya ke tor par 'JazakAllahu Khairan' kehta hai; is ibarat ka Angrezi mein kya matlab hai?",
   "options_ur": [
    "تم پر سلامتی ہو۔",
@@ -19903,7 +19903,7 @@
  },
  {
   "id": "ARB-472",
-  "question_ur": "'استغفر اللہ' کا بہترین انگریزی مطلب کون سا جملہ دیتا ہے؟",
+  "question_ur": "'استغفر اللہ' کا بہترین مطلب کون سا جملہ دیتا ہے؟",
   "question_roman": "'Astaghfirullah' ka behtareen Angrezi matlab kaun sa jumla deta hai?",
   "options_ur": [
    "میں اللہ سے بخشش مانگتا ہوں۔",
@@ -19945,7 +19945,7 @@
  },
  {
   "id": "ARB-473",
-  "question_ur": "'محمد رسول اللہ' انگریزی میں کس مطلب کو بیان کرتا ہے؟",
+  "question_ur": "'محمد رسول اللہ' کس مطلب کو بیان کرتا ہے؟",
   "question_roman": "'Muhammadur Rasulullah' Angrezi mein kis matlab ko bayan karta hai?",
   "options_ur": [
    "محمد ایک عظیم استاد ہیں۔",
@@ -19987,7 +19987,7 @@
  },
  {
   "id": "ARB-474",
-  "question_ur": "سلام کے جواب میں 'وعلیکم السلام' کا انگریزی میں کیا مطلب ہے؟",
+  "question_ur": "سلام کے جواب میں 'وعلیکم السلام' کا کیا مطلب ہے؟",
   "question_roman": "Salam ke jawab mein 'Wa Alaikum Assalam' ka Angrezi mein kya matlab hai?",
   "options_ur": [
    "تم پر سلامتی ہو۔",
@@ -20029,7 +20029,7 @@
  },
  {
   "id": "ARB-475",
-  "question_ur": "اسلامی تاریخ میں 'ہجرت' کس واقعے کی طرف اشارہ کرتی ہے؟",
+  "question_ur": "اسلامی تاریخ میں 'ہجرت' سے کون سا واقعہ مراد ہے؟",
   "question_roman": "Islami tareekh mein 'Hijrah' kis waqiye ki taraf ishara karti hai?",
   "options_ur": [
    "مکہ سے مدینہ کی طرف ہجرت۔",
@@ -20077,7 +20077,7 @@
    "اسلامی کیلنڈر کا ایک مہینہ۔",
    "غریبوں کو دیا جانے والا نفلی صدقہ۔",
    "ایک جنگ یا مہم جس میں نبی خود شریک ہوئے۔",
-   "قرآن سیکھنے کے لیے ایک مجلس۔"
+   "قرآن پاک سیکھنے کے لیے ایک مجلس۔"
   ],
   "options_roman": [
    "Islami calendar ka ek mahina.",
@@ -20197,7 +20197,7 @@
  },
  {
   "id": "ARB-479",
-  "question_ur": "'مہاجرین' یہ نام کن لوگوں کو دیا گیا ہے؟",
+  "question_ur": "'مہاجرین' کن لوگوں کا نام ہے؟",
   "question_roman": "'Muhajirun' yeh naam kin logon ko diya gaya hai?",
   "options_ur": [
    "وہ لوگ جو مکہ سے مدینہ ہجرت کر گئے۔",
@@ -20244,7 +20244,7 @@
   "options_ur": [
    "عربی نحو کے قواعد۔",
    "مدینہ شہر کی تاریخ۔",
-   "نبی کی مثال، ان کے اقوال اور افعال میں۔",
+   "اقوال اور افعال میں نبی کی مثال۔",
    "اسلامی کیلنڈر کے مہینوں کی فہرست۔"
   ],
   "options_roman": [
@@ -20281,7 +20281,7 @@
  },
  {
   "id": "ARB-481",
-  "question_ur": "'صدقہ' فرض زکوٰۃ سے اس لیے مختلف ہے کہ یہ کیا ہے؟",
+  "question_ur": "'صدقہ' فرض زکوٰۃ سے کیوں مختلف ہے؟",
   "question_roman": "'Sadaqah' farz Zakat se is liye mukhtalif hai ke yeh kya hai?",
   "options_ur": [
    "سال میں ایک بار ادا کیا جانے والا ٹیکس۔",
@@ -20327,7 +20327,7 @@
   "question_roman": "'Tawhid' Islam mein kis aqeede ka naam hai?",
   "options_ur": [
    "مکہ سے مدینہ کی طرف ہجرت۔",
-   "نبی کی مثال، ان کے اقوال اور افعال میں۔",
+   "اقوال اور افعال میں نبی کی مثال۔",
    "غریبوں کو دیا جانے والا نفلی صدقہ۔",
    "اللہ کی وحدانیت۔"
   ],
@@ -20365,7 +20365,7 @@
  },
  {
   "id": "ARB-483",
-  "question_ur": "عربی جملہ 'الكتاب على الطاولة' کا درست انگریزی ترجمہ کون سا ہے؟",
+  "question_ur": "عربی جملہ 'الكتاب على الطاولة' کا درست ترجمہ کون سا ہے؟",
   "question_roman": "Arbi jumla 'Al-kitabu ala al-tawilah' ka durust Angrezi tarjuma kaun sa hai?",
   "options_ur": [
    "قلم میز پر ہے۔",
@@ -20407,7 +20407,7 @@
  },
  {
   "id": "ARB-484",
-  "question_ur": "عربی جملہ 'الولد في البيت' کا درست ترجمہ کرنے والا انگریزی جملہ منتخب کریں۔",
+  "question_ur": "عربی جملہ 'الولد في البيت' کا درست ترجمہ کرنے والا جملہ منتخب کریں۔",
   "question_roman": "Arbi jumla 'Al-waladu fi al-bayt' ka durust tarjuma karne wala Angrezi jumla muntakhab karen.",
   "options_ur": [
    "لڑکی گھر میں ہے۔",
@@ -20449,7 +20449,7 @@
  },
  {
   "id": "ARB-485",
-  "question_ur": "'المعلم في المدرسة' کا انگریزی میں ترجمہ کریں۔",
+  "question_ur": "'المعلم في المدرسة' کا درست ترجمہ منتخب کریں۔",
   "question_roman": "'Al-mu'allimu fi al-madrasa' ka Angrezi mein tarjuma karen.",
   "options_ur": [
    "استاد اسکول میں ہے۔",
@@ -20491,7 +20491,7 @@
  },
  {
   "id": "ARB-486",
-  "question_ur": "عربی جملہ 'ذهب الطالب إلى المسجد' انگریزی میں کیا واقعہ بیان کرتا ہے؟",
+  "question_ur": "عربی جملہ 'ذهب الطالب إلى المسجد' کیا واقعہ بیان کرتا ہے؟",
   "question_roman": "Arbi jumla 'Dhahaba al-talibu ila al-masjid' Angrezi mein kya waqiya bayan karta hai?",
   "options_ur": [
    "طالب علم مسجد سے آیا۔",
@@ -20533,7 +20533,7 @@
  },
  {
   "id": "ARB-487",
-  "question_ur": "کون سا انگریزی جملہ 'قرأ الولد الكتاب' سے مطابقت رکھتا ہے؟",
+  "question_ur": "کون سا جملہ 'قرأ الولد الكتاب' سے مطابقت رکھتا ہے؟",
   "question_roman": "Kaun sa Angrezi jumla 'Qara'a al-waladu al-kitab' se mutabiqat rakhta hai?",
   "options_ur": [
    "لڑکے نے کتاب لکھی۔",
@@ -20575,7 +20575,7 @@
  },
  {
   "id": "ARB-488",
-  "question_ur": "'البنت جميلة' کے ہم معنی انگریزی جملے کا انتخاب کریں۔",
+  "question_ur": "'البنت جميلة' کا مطلب دینے والا جملہ منتخب کریں۔",
   "question_roman": "'Al-bintu jamila' ke hum-ma'na Angrezi jumle ka intikhab karen.",
   "options_ur": [
    "لڑکا خوبصورت ہے۔",
@@ -20617,7 +20617,7 @@
  },
  {
   "id": "ARB-489",
-  "question_ur": "'كتب الطالب الدرس' کا درست انگریزی ترجمہ بتائیں۔",
+  "question_ur": "'كتب الطالب الدرس' کا درست ترجمہ بتائیں۔",
   "question_roman": "'Kataba al-talibu al-dars' ka durust Angrezi tarjuma batayen.",
   "options_ur": [
    "طالب علم نے سبق لکھا۔",
@@ -20659,7 +20659,7 @@
  },
  {
   "id": "ARB-490",
-  "question_ur": "'شرب الرجل الماء' کے ہم معنی عمل کو کون سا انگریزی جملہ بیان کرتا ہے؟",
+  "question_ur": "'شرب الرجل الماء' کے ہم معنی عمل کو کون سا جملہ بیان کرتا ہے؟",
   "question_roman": "'Shariba al-rajulu al-ma'a' ke hum-ma'na amal ko kaun sa Angrezi jumla bayan karta hai?",
   "options_ur": [
    "آدمی نے روٹی کھائی۔",
@@ -20701,7 +20701,7 @@
  },
  {
   "id": "ARB-491",
-  "question_ur": "'هذه مدرسة جديدة' کا انگریزی میں کیا مطلب ہے؟",
+  "question_ur": "'هذه مدرسة جديدة' کا کیا مطلب ہے؟",
   "question_roman": "'Hadhihi madrasatun jadidah' ka Angrezi mein kya matlab hai?",
   "options_ur": [
    "وہ ایک نیا اسکول ہے۔",
@@ -20743,7 +20743,7 @@
  },
  {
   "id": "ARB-492",
-  "question_ur": "'أين القلم؟' کے ہم معنی انگریزی سوال کون سا ہے؟",
+  "question_ur": "'أين القلم؟' کا مطلب دینے والا سوال کون سا ہے؟",
   "question_roman": "'Ayna al-qalam?' ke hum-ma'na Angrezi sawal kaun sa hai?",
   "options_ur": [
    "قلم کیا ہے؟",
@@ -20869,7 +20869,7 @@
  },
  {
   "id": "ARB-495",
-  "question_ur": "'یہ ایک بڑا گھر ہے' کے ہم معنی عربی جملے کا انتخاب کریں۔",
+  "question_ur": "'یہ ایک بڑا گھر ہے' کے ہم معنی عربی جملہ منتخب کریں۔",
   "question_roman": "'Yeh ek bara ghar hai' ke hum-ma'na Arbi jumle ka intikhab karen.",
   "options_ur": [
    "هذا بيت صغير",

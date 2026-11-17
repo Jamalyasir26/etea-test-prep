@@ -2,8 +2,9 @@
 // placeholder preservation, no-literal-marker audit, and the C2 flag-8
 // punctuation pins. Scoped to the REWRITTEN surfaces only: chrome
 // (700 STRINGS keys), notes/flashcards/plan/mocks (content.json _ur),
-// the Islamiyat pilot bank (500 items, U1) and the Tajweed bank
-// (500 items, U2 subject 1). The other 12 banks keep their pre-U1 _ur
+// the Islamiyat pilot bank (500 items, U1), the Tajweed bank
+// (500 items, U2 subject 1) and the Arabic bank (500 items, U2
+// subject 2). The other 11 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -329,6 +330,102 @@ check("U2 tajweed: only Latin letters are the approved (linking) gloss in TAJ-08
   tajLatin.map(([l]) => l).join(", "));
 const tajHonor = tajPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
 check("U2 tajweed: no Latin honorific abbreviations in any _ur field", tajHonor.length === 0, tajHonor.slice(0, 3).map(([l]) => l).join(", "));
+
+// ---------- §3C Arabic bank (U2 subject 2) ----------
+// U2 rewrote the Arabic _ur fields (406 of 3000 changed). Digit rule is
+// STRICT on every field: the bank was strict-clean before the rewrite
+// (0 mismatches; only 10 digit-carrying fields) and
+// test-phase1-arabic.mjs enforces strict digit preservation on new
+// items, so U1 ruling 1 does not apply here. Latin rule: every Latin
+// run in _ur mirrors the same field's English (transliterated Arabic
+// forms are the tested material); Latin echo-glosses were dropped.
+// تم is NOT banned: 34 subject-matter uses (Arabic pronoun "you",
+// greetings). بے is NOT banned: بے نام / بے جان / بے حد prefix uses.
+// مبتدأ is deliberately NOT normalized to مبتدا (uniform cluster in
+// ARB-068..072, incl. المبتدأ forms; verbatim rule). حرف علت is
+// deliberately left without izafat (uniform 12× class, a letter type,
+// distinct from the حرفِ X particle construction).
+const arb = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/arabic.json"), "utf8"));
+check("U2 arabic: 500 items", arb.length === 500, `got ${arb.length}`);
+const arbIdsOk = arb.every((q, i) => q.id === `ARB-${String(i + 1).padStart(3, "0")}`);
+check("U2 arabic: IDs ARB-001..ARB-500 in order", arbIdsOk);
+const arbPairs = [];
+for (const q of arb) {
+  arbPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => arbPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  arbPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const ARB_BANNED = [...CONTENT_BANNED, "گرامر", "گرامری", "جڑ", "جڑوں", "جڑی", "جڑیں", "مونث", "مادوں", "شکل", "شکلیں", "شکلوں", "یاء", "چنیں", "مبتداء"];
+const arbBanned = bannedHits(arbPairs, ARB_BANNED);
+check("U2 arabic: no banned glossary/variant terms in any _ur field (token-aware)", arbBanned.length === 0, arbBanned.slice(0, 5).join(", "));
+const ARB_PHRASES = ["درج ذیل", "قرآن مجید", "صرف (صرف)", "(اسمی جملہ)", "(فعلی جملہ)", "(روٹ)", "(the)", "(definite)", "(indefinite)", "(feminine)", "(preposition)", "(a / an)", "(case)", "کون سی ضمیر", "حرف جر", "حالت کا اختتام", "حالت کے اختتام"];
+const arbPhrases = arbPairs.filter(([, v]) => ARB_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 arabic: no banned phrases (echo glosses, درج ذیل, un-izafat حرف جر, حالت اختتام)", arbPhrases.length === 0, arbPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const arbEmdash = arbPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 arabic: no em-dash in any _ur field", arbEmdash.length === 0, arbEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const arbMarker = arbPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 arabic: no '[Auto-Translated]' literal in any _ur field", arbMarker.length === 0, arbMarker.slice(0, 3).map(([l]) => l).join(", "));
+const arbMojibake = arbPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 arabic: no U+FFFD in any _ur field", arbMojibake.length === 0, arbMojibake.slice(0, 3).map(([l]) => l).join(", "));
+let arbDigitBad = [];
+for (const q of arb) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) arbDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) arbDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) arbDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 arabic: digit preservation STRICT on all fields (questions/options/explanations)", arbDigitBad.length === 0, arbDigitBad.slice(0, 5).join(", "));
+let arbArabicBad = [];
+for (const q of arb) {
+  for (const [src, dst] of [["question", "question_ur"], ["explanation", "explanation_ur"]]) {
+    for (const run of (q[src].match(AR_RUN) || [])) {
+      if (!q[dst].includes(run)) arbArabicBad.push(`${q.id}:${dst}:${JSON.stringify(run)}`);
+    }
+  }
+  q.options.forEach((o, i) => {
+    for (const run of (o.match(AR_RUN) || [])) {
+      if (!q.options_ur[i].includes(run)) arbArabicBad.push(`${q.id}:options_ur[${i}]:${JSON.stringify(run)}`);
+    }
+  });
+}
+check("U2 arabic: Arabic-script runs copied verbatim into _ur fields", arbArabicBad.length === 0, arbArabicBad.slice(0, 5).join(" | "));
+const arbUrText = arbPairs.map(([, v]) => v ?? "").join("\n");
+check("U2 arabic: مادہ + مادے + قواعد + نحوی present", ["مادہ", "مادے", "قواعد", "نحوی"].every((t) => arbUrText.includes(t)));
+check("U2 arabic: حرفِ جر + مبتدا + تثنیہ + مؤنث + معرفہ + نکرہ present", ["حرفِ جر", "مبتدا", "تثنیہ", "مؤنث", "معرفہ", "نکرہ"].every((t) => arbUrText.includes(t)));
+check("U2 arabic: مندرجہ ذیل + قرآن پاک present", arbUrText.includes("مندرجہ ذیل") && arbUrText.includes("قرآن پاک"));
+let arbBareQuran = [];
+for (const [loc, v] of arbPairs) {
+  const tk = tokens(v);
+  tk.forEach((t, i) => { if (t === "قرآن" && tk[i + 1] !== "پاک") arbBareQuran.push(loc); });
+}
+check("U2 arabic: bare قرآن only in the ARB-445/449 word-family listings",
+  arbBareQuran.length === 3 && arbBareQuran.includes("ARB-445:options_ur[2]") && arbBareQuran.includes("ARB-449:options_ur[3]") && arbBareQuran.includes("ARB-449:explanation_ur"),
+  arbBareQuran.join(", "));
+const ARB_LAT = /[A-Za-z][A-Za-z0-9.'\-]*/g;
+let arbLatinBad = [];
+for (const q of arb) {
+  const fields = [[q.question, q.question_ur, "question_ur"], [q.explanation, q.explanation_ur, "explanation_ur"]];
+  q.options.forEach((o, i) => fields.push([o, q.options_ur[i], `options_ur[${i}]`]));
+  for (const [en, ur, fname] of fields) {
+    for (const run of (ur.match(ARB_LAT) || [])) {
+      if (!en.includes(run)) arbLatinBad.push(`${q.id}:${fname}:${JSON.stringify(run)}`);
+    }
+  }
+}
+check("U2 arabic: every Latin run in _ur mirrors the same field's English (no new Latin)", arbLatinBad.length === 0, arbLatinBad.slice(0, 5).join(" | "));
+const arbHonor = arbPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 arabic: no Latin honorific abbreviations in any _ur field", arbHonor.length === 0, arbHonor.slice(0, 3).map(([l]) => l).join(", "));
+const arbEnglishWord = arbPairs.filter(([, v]) => (v ?? "").includes("انگریزی"));
+check("U2 arabic: no انگریزی in any _ur field (T7/T8 medium-artifact decision)", arbEnglishWord.length === 0, arbEnglishWord.slice(0, 3).map(([l]) => l).join(", "));
+const arbMubtadaHamza = arbPairs.filter(([, v]) => (v ?? "").includes("مبتدأ"));
+check("U2 arabic: مبتدأ occurs only in the ARB-068..072 cluster (11×, deliberate)",
+  arbMubtadaHamza.length === 8 && arbMubtadaHamza.every(([l]) => /^ARB-0(68|69|70|71|72):/.test(l)) &&
+  arbUrText.match(/مبتدأ/g).length === 11,
+  arbMubtadaHamza.map(([l]) => l).join(", "));
+const harfIllat = (arbUrText.match(/حرف علت/g) || []).length;
+const harfIllatIzafat = (arbUrText.match(/حرفِ علت/g) || []).length;
+check("U2 arabic: حرف علت uniform class (12×) left without izafat", harfIllat === 12 && harfIllatIzafat === 0, `حرف علت ${harfIllat}, حرفِ علت ${harfIllatIzafat}`);
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");
