@@ -60,19 +60,19 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5E bank total 4286 MCQs", QUESTIONS.length === 4286, `got ${QUESTIONS.length}`);
+check("5E bank total 4756 MCQs", QUESTIONS.length === 4756, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5E notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5E VISIBLE_COUNTS 4286/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 4286 &&
+  "5E VISIBLE_COUNTS 4756/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 4756 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
     VISIBLE_COUNTS.mocks === 16,
   JSON.stringify(VISIBLE_COUNTS),
 );
-check("5E science bank still 30 items", BY_SUBJECT.science.length === 30, `got ${BY_SUBJECT.science.length}`);
+check("5E science bank 500 items (Phase 1: 30 original + 470 new)", BY_SUBJECT.science.length === 500, `got ${BY_SUBJECT.science.length}`);
 check("5E pakstudies bank 500 items (Phase 1: 45 original + 455 new)", BY_SUBJECT.pakstudies.length === 500, `got ${BY_SUBJECT.pakstudies.length}`);
 check("5E socialstudies bank still 30 items", BY_SUBJECT.socialstudies.length === 30, `got ${BY_SUBJECT.socialstudies.length}`);
 check("5E pedagogy bank 500 items (Phase 1: 30 original + 470 new)", BY_SUBJECT.pedagogy.length === 500, `got ${BY_SUBJECT.pedagogy.length}`);
@@ -110,7 +110,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["science", "science", 30], ["pakstudies", "pakstudies", 500], ["socialstudies", "socialstudies", 30], ["pedagogy", "pedagogy", 500]]) {
+for (const [bankKey, label, expected] of [["science", "science", 500], ["pakstudies", "pakstudies", 500], ["socialstudies", "socialstudies", 30], ["pedagogy", "pedagogy", 500]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -149,18 +149,24 @@ check(
   scopeQs.every((q) => q.explanationLang !== "roman"),
   scopeQs.filter((q) => q.explanationLang === "roman").map((q) => q.id).join(", "),
 );
+// Phase 1 Science: the pure-Roman-original findings below apply to the
+// ORIGINAL 30 items only (SCI-001..SCI-030). The 470 appended items follow
+// the standard convention (pure-English explanation + faithful _ur/_roman
+// translations, no explanationEn) and are asserted by
+// test-phase1-science.mjs. Rescoping preserves exactly what §4 asserted.
+const SCI_ORIG30 = BY_SUBJECT.science.slice(0, 30);
 check(
   "5E science: all 30 carry explanationEn",
-  BY_SUBJECT.science.every((q) => q.explanationEn) && BY_SUBJECT.science.length === 30,
+  SCI_ORIG30.every((q) => q.explanationEn) && SCI_ORIG30.length === 30,
 );
 check(
   "5E science: stored explanations are pure Roman originals (do not start with explanationEn, no 'Roman Urdu:' label)",
-  BY_SUBJECT.science.every((q) => !q.explanation.startsWith(q.explanationEn) && !/Roman Urdu:/.test(q.explanation)),
+  SCI_ORIG30.every((q) => !q.explanation.startsWith(q.explanationEn) && !/Roman Urdu:/.test(q.explanation)),
 );
 check(
   "5E science: explanation_roman is a verbatim copy of `explanation` (all 30)",
-  BY_SUBJECT.science.every((q) => q.explanation_roman === q.explanation),
-  BY_SUBJECT.science.filter((q) => q.explanation_roman !== q.explanation).map((q) => q.id).join(", "),
+  SCI_ORIG30.every((q) => q.explanation_roman === q.explanation),
+  SCI_ORIG30.filter((q) => q.explanation_roman !== q.explanation).map((q) => q.id).join(", "),
 );
 // Phase 1 Pak Studies: the mixed-explanation findings below apply to the
 // ORIGINAL 45 items only (PAK-001..PAK-045). The 455 appended items follow
@@ -228,9 +234,10 @@ for (const q of scopeQs) {
     }
   });
 }
-// Science: _roman is verbatim (digits trivially equal); _ur must keep the
-// Roman original's digits.
-for (const q of BY_SUBJECT.science) {
+// Science original 30: _roman is verbatim (digits trivially equal); _ur
+// must keep the Roman original's digits. Original 30 only (Phase 1
+// rescope — new items follow the plain-English digit rule below).
+for (const q of BY_SUBJECT.science.slice(0, 30)) {
   if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) digitBad.push(`${q.id}:explanation_ur`);
 }
 // Pak Studies: _roman is verbatim; _ur digits must lie between the
@@ -243,8 +250,11 @@ for (const q of BY_SUBJECT.pakstudies.slice(0, 45)) {
   if (!isSubMultiset(ur, digitRuns(q.explanation)) || !isSubMultiset(digitRuns(q.explanationEn), ur))
     digitBad.push(`${q.id}:explanation_ur`);
 }
-// Social Studies + Pedagogy: plain English explanations, digits equal in both.
-for (const q of [...BY_SUBJECT.socialstudies, ...BY_SUBJECT.pedagogy]) {
+// Social Studies + Pedagogy + new Science items: plain English
+// explanations, digits equal in both. (Phase 1 Science: the 470 appended
+// items carry no explanationEn; their digit preservation is asserted here
+// and by test-phase1-science.mjs.)
+for (const q of [...BY_SUBJECT.socialstudies, ...BY_SUBJECT.pedagogy, ...BY_SUBJECT.science.slice(30)]) {
   for (const dst of ["explanation_ur", "explanation_roman"]) {
     if (!sameMultiset(digitRuns(q.explanation), digitRuns(q[dst]))) digitBad.push(`${q.id}:${dst}`);
   }
@@ -389,7 +399,7 @@ for (const subject of ["General Science", "Pak Studies", "Social Studies", "Peda
 }
 check("5E quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5E content.json counts unchanged", contentJson.counts.total === 4286 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5E content.json counts unchanged", contentJson.counts.total === 4756 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

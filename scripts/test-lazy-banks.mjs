@@ -118,8 +118,8 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 
 // ---------- Content + storage schema unchanged vs backup ----------
 // Phase 1 exception (documented, narrow): islamiyat.json, tajweed.json,
-// arabic.json, english.json, urdu.json, maths.json, pakstudies.json, pedagogy.json + content.json changed ONLY by the Phase 1 growth
-// batches (395 + 418 + 420 + 455 + 455 + 455 + 455 + 470 appended items, counts + bySubject indexes).
+// arabic.json, english.json, urdu.json, maths.json, pakstudies.json, pedagogy.json, science.json + content.json changed ONLY by the Phase 1 growth
+// batches (395 + 418 + 420 + 455 + 455 + 455 + 455 + 470 + 470 appended items, counts + bySubject indexes).
 // Everything else stays byte-identical, and the changed files must match the backup
 // exactly outside the Phase 1 delta (byte-prefix for the banks,
 // parsed-diff for content.json).
@@ -131,9 +131,9 @@ if (fs.existsSync(BACKUP)) {
     "src/data/quran-examples.json",
     "src/lib/tracking.ts",
   ];
-  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/banks/maths.json", "src/data/banks/pakstudies.json", "src/data/banks/pedagogy.json", "src/data/content.json"]);
+  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/banks/maths.json", "src/data/banks/pakstudies.json", "src/data/banks/pedagogy.json", "src/data/banks/science.json", "src/data/content.json"]);
   const changed = contentPaths.filter((p) => !PHASE1_CHANGED.has(p) && sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
-  check("bank/note/audio content + tracking.ts byte-identical to backup except the nine Phase 1 files", changed.length === 0, changed.join(", "));
+  check("bank/note/audio content + tracking.ts byte-identical to backup except the ten Phase 1 files", changed.length === 0, changed.join(", "));
   const backupBankRaw = fs.readFileSync(join(BACKUP, "src/data/banks/islamiyat.json"), "utf8");
   const curBankRaw = fs.readFileSync(join(ROOT, "src/data/banks/islamiyat.json"), "utf8");
   const backupPrefix = backupBankRaw.slice(0, -3); // strip trailing "\n]\n"
@@ -206,6 +206,15 @@ if (fs.existsSync(BACKUP)) {
     curPedRaw.startsWith(backupPedPrefix + ",") && backupPed.length === 30 && curPed.length === 500 &&
     JSON.stringify(curPed.slice(0, 30)) === JSON.stringify(backupPed) &&
     curPed[30].id === "PED-031" && curPed[499].id === "PED-500");
+  const backupSciRaw = fs.readFileSync(join(BACKUP, "src/data/banks/science.json"), "utf8");
+  const curSciRaw = fs.readFileSync(join(ROOT, "src/data/banks/science.json"), "utf8");
+  const backupSciPrefix = backupSciRaw.slice(0, -2); // strip trailing "\n]" — science.json has NO trailing newline (like pedagogy.json)
+  const backupSci = JSON.parse(backupSciRaw);
+  const curSci = JSON.parse(curSciRaw);
+  check("Phase 1 science.json: backup bytes are an exact prefix (30 items untouched) + 470 appended",
+    curSciRaw.startsWith(backupSciPrefix + ",") && backupSci.length === 30 && curSci.length === 500 &&
+    JSON.stringify(curSci.slice(0, 30)) === JSON.stringify(backupSci) &&
+    curSci[30].id === "SCI-031" && curSci[499].id === "SCI-500");
   const backupContent = JSON.parse(fs.readFileSync(join(BACKUP, "src/data/content.json"), "utf8"));
   const curContent = JSON.parse(fs.readFileSync(join(ROOT, "src/data/content.json"), "utf8"));
   const reverted = JSON.parse(JSON.stringify(curContent));
@@ -226,6 +235,8 @@ if (fs.existsSync(BACKUP)) {
     backupContent.counts.bySubject.find((r) => r[0] === "Pak Studies")[1];
   reverted.counts.bySubject.find((r) => r[0] === "Pedagogy")[1] =
     backupContent.counts.bySubject.find((r) => r[0] === "Pedagogy")[1];
+  reverted.counts.bySubject.find((r) => r[0] === "General Science")[1] =
+    backupContent.counts.bySubject.find((r) => r[0] === "General Science")[1];
   reverted.bySubject.islamiyat = backupContent.bySubject.islamiyat;
   reverted.bySubject.tajweed = backupContent.bySubject.tajweed;
   reverted.bySubject.arabic = backupContent.bySubject.arabic;
@@ -234,9 +245,10 @@ if (fs.existsSync(BACKUP)) {
   reverted.bySubject.maths = backupContent.bySubject.maths;
   reverted.bySubject.pakstudies = backupContent.bySubject.pakstudies;
   reverted.bySubject.pedagogy = backupContent.bySubject.pedagogy;
-  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy indexes differ from backup",
+  reverted.bySubject.science = backupContent.bySubject.science;
+  check("Phase 1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science indexes differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
-    curContent.counts.total === 4286 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500);
+    curContent.counts.total === 4756 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");
 }
@@ -307,7 +319,7 @@ check(
   "loadAllQuestions order == old static QUESTIONS order (bank order + file order)",
   JSON.stringify(allLoaded.map((q) => q.id)) === JSON.stringify(QUESTIONS.map((q) => q.id)),
 );
-check("loadAllQuestions total is 4286", allLoaded.length === 4286, `got ${allLoaded.length}`);
+check("loadAllQuestions total is 4756", allLoaded.length === 4756, `got ${allLoaded.length}`);
 check("loadBank of an unknown key returns [] (never throws)", JSON.stringify(await data.loadBank("no_such_bank")) === "[]");
 check(
   "BANK_COUNTS matches the bank files exactly",
@@ -319,7 +331,7 @@ check(
 );
 check(
   "ID_BANK maps every id to its bank",
-  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 4286,
+  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 4756,
 );
 
 // ---------- (e) availability: manifest == old computation == built ----------

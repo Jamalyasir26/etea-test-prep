@@ -1,6 +1,6 @@
 // qa-540.mjs — structural + consistency-heuristic QA for the ETEA Prep banks.
 // NOTE: the filename is historical — it dates from when the bank held 540
-// items. The active total is now 4286 (Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455, Phase 1 Urdu added 455, Phase 1 Maths added 455, Phase 1 Pak Studies added 455 and Phase 1 Pedagogy added 470 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
+// items. The active total is now 4756 (Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455, Phase 1 Urdu added 455, Phase 1 Maths added 455, Phase 1 Pak Studies added 455, Phase 1 Pedagogy added 470 and Phase 1 Science added 470 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
 // references (`npm run qa`, QA-540.md, VERIFY-phase2.md) keep working.
 // Plain node, no dependencies. Run: npm run qa  (node scripts/qa-540.mjs)
 // Exit code 0 = all checks pass; 1 = any check fails.
@@ -8,7 +8,7 @@
 // SCOPE: this is STRUCTURAL + consistency-heuristic QA only. It checks counts,
 // option shape, ID uniqueness, near-duplicate stems, the PED-009 regression and
 // mock-composition consistency. It does NOT declare the bank subject-matter
-// verified — full subject verification of all 4286 items is out of scope.
+// verified — full subject verification of all 4756 items is out of scope.
 //
 // Bank layout note: drawing_pe.json is LEGACY — kept on disk, superseded by
 // drawing.json (DRW-001..DRW-010 + DRW-021..DRW-060) + pe.json (DRW-011..020 + PE-001..PE-036).
@@ -27,9 +27,9 @@ const CONTENT_PATH = join(ROOT, "src/data/content.json");
 const EXPECTED = {
   arabic: 500, drawing: 50, pe: 46, english: 500, gk: 30, islamiyat: 500,
   it: 60, maths: 500, pakstudies: 500, pastpapers: 20, pastpapers_reworded: 20,
-  pedagogy: 500, science: 30, socialstudies: 30, tajweed: 500, urdu: 500,
+  pedagogy: 500, science: 500, socialstudies: 30, tajweed: 500, urdu: 500,
 };
-const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 4286
+const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 4756
 const LEGACY_FILE = "drawing_pe.json";
 
 const results = []; // { name, pass, detail }
@@ -298,9 +298,9 @@ const content = loadJson(CONTENT_PATH);
 
   // content.json counts agree with the banks.
   const counts = content.counts || {};
-  check("content.json counts.total = 4286 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
+  check("content.json counts.total = 4756 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
   const bySubjectSum = (counts.bySubject || []).reduce((s, [, n]) => s + n, 0);
-  check("content.json counts.bySubject sums to 4286", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
+  check("content.json counts.bySubject sums to 4756", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
   const bySubject = content.bySubject || {};
   const indexBad = [];
   for (const [key, expected] of Object.entries(EXPECTED)) {

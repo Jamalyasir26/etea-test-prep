@@ -146,7 +146,7 @@ check(
   "VISIBLE_COUNTS: 12 tracks / 16 mocks, bank counts as of Phase 4B1",
   data.VISIBLE_COUNTS.tracks === 12 &&
     data.VISIBLE_COUNTS.mocks === 16 &&
-    data.VISIBLE_COUNTS.total === 4286 &&
+    data.VISIBLE_COUNTS.total === 4756 &&
     data.VISIBLE_COUNTS.notes === 151 &&
     data.VISIBLE_COUNTS.cards === 70,
   JSON.stringify(data.VISIBLE_COUNTS),
