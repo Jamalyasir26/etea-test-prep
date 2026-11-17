@@ -3,8 +3,9 @@
 // punctuation pins. Scoped to the REWRITTEN surfaces only: chrome
 // (700 STRINGS keys), notes/flashcards/plan/mocks (content.json _ur),
 // the Islamiyat pilot bank (500 items, U1), the Tajweed bank
-// (500 items, U2 subject 1) and the Arabic bank (500 items, U2
-// subject 2). The other 11 banks keep their pre-U1 _ur
+// (500 items, U2 subject 1), the Arabic bank (500 items, U2
+// subject 2) and the Urdu bank (500 items, U2 subject 3).
+// The other 10 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -426,6 +427,84 @@ check("U2 arabic: مبتدأ occurs only in the ARB-068..072 cluster (11×, deli
 const harfIllat = (arbUrText.match(/حرف علت/g) || []).length;
 const harfIllatIzafat = (arbUrText.match(/حرفِ علت/g) || []).length;
 check("U2 arabic: حرف علت uniform class (12×) left without izafat", harfIllat === 12 && harfIllatIzafat === 0, `حرف علت ${harfIllat}, حرفِ علت ${harfIllatIzafat}`);
+
+// ---------- §3D Urdu bank (U2 subject 3) ----------
+// U2 rewrote the Urdu _ur fields (118 of 3000 changed; 92/500 items).
+// Digit rule is STRICT on every field: the bank has ZERO digit-carrying
+// fields, so strict multiset equality holds vacuously and any digit
+// introduced fails. Latin rule is ZERO: the only 14 Latin-letter fields
+// were parenthetical English echo-glosses in URD-026..043 explanations
+// and were all dropped. مونث→مؤنث is a deliberate spelling correction
+// (51×, uniform): the EN fields of URD-035..038 contain the misspelled
+// run مونث, so the verbatim check below accepts مؤنث in _ur for that
+// run only (adjudicated; _roman keeps مونث verbatim, untouched).
+// Quoted material (idioms, proverbs, example sentences, poet names,
+// tested word forms) stays byte-identical — coordinator-verified with
+// 0 quote warnings, not suite-pinned. تم is NOT banned: 1 subject-matter
+// use (URD-066 option, the pronoun). بے is NOT banned: 13 prefix uses.
+// حرف جار is the established Urdu-grammar term (distinct from Arabic
+// حرفِ جر) and is kept exactly; مسواف in any spelling is banned.
+const urd = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/urdu.json"), "utf8"));
+check("U2 urdu: 500 items", urd.length === 500, `got ${urd.length}`);
+const urdIdsOk = urd.every((q, i) => q.id === `URD-${String(i + 1).padStart(3, "0")}`);
+check("U2 urdu: IDs URD-001..URD-500 in order", urdIdsOk);
+const urdPairs = [];
+for (const q of urd) {
+  urdPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => urdPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  urdPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const URD_BANNED = [...CONTENT_BANNED, "گرامر", "گرامری", "مونث", "مسواف", "موسوف", "معسوف", "چنیں"];
+const urdBanned = bannedHits(urdPairs, URD_BANNED);
+check("U2 urdu: no banned glossary/variant terms in any _ur field (token-aware)", urdBanned.length === 0, urdBanned.slice(0, 5).join(", "));
+const URD_PHRASES = ["درج ذیل", "قرآن مجید", "(noun)", "(verb)", "(pronoun)", "(adjective)", "(singular)", "(masculine)", "(feminine)", "(past tense)", "(future tense)", "(present tense)", "(proper noun)", "(common noun)", "کون سی ضمیر"];
+const urdPhrases = urdPairs.filter(([, v]) => URD_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 urdu: no banned phrases (echo glosses, درج ذیل)", urdPhrases.length === 0, urdPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const urdEmdash = urdPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 urdu: no em-dash in any _ur field", urdEmdash.length === 0, urdEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const urdMarker = urdPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 urdu: no '[Auto-Translated]' literal in any _ur field", urdMarker.length === 0, urdMarker.slice(0, 3).map(([l]) => l).join(", "));
+const urdMojibake = urdPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 urdu: no U+FFFD in any _ur field", urdMojibake.length === 0, urdMojibake.slice(0, 3).map(([l]) => l).join(", "));
+let urdDigitBad = [];
+for (const q of urd) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) urdDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) urdDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) urdDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 urdu: digit preservation STRICT on all fields (questions/options/explanations)", urdDigitBad.length === 0, urdDigitBad.slice(0, 5).join(", "));
+let urdScriptBad = [];
+for (const q of urd) {
+  for (const [src, dst] of [["question", "question_ur"], ["explanation", "explanation_ur"]]) {
+    for (const run of (q[src].match(AR_RUN) || [])) {
+      if (run === "مونث") { if (!q[dst].includes("مؤنث")) urdScriptBad.push(`${q.id}:${dst}:مونث-unsatisfied`); continue; }
+      if (!q[dst].includes(run)) urdScriptBad.push(`${q.id}:${dst}:${JSON.stringify(run)}`);
+    }
+  }
+  q.options.forEach((o, i) => {
+    for (const run of (o.match(AR_RUN) || [])) {
+      if (run === "مونث") { if (!q.options_ur[i].includes("مؤنث")) urdScriptBad.push(`${q.id}:options_ur[${i}]:مونث-unsatisfied`); continue; }
+      if (!q.options_ur[i].includes(run)) urdScriptBad.push(`${q.id}:options_ur[${i}]:${JSON.stringify(run)}`);
+    }
+  });
+}
+check("U2 urdu: script runs copied verbatim into _ur fields (مونث→مؤنث exemption)", urdScriptBad.length === 0, urdScriptBad.slice(0, 5).join(" | "));
+const urdUrText = urdPairs.map(([, v]) => v ?? "").join("\n");
+check("U2 urdu: مؤنث + مذکر + قواعد present", ["مؤنث", "مذکر", "قواعد"].every((t) => urdUrText.includes(t)));
+check("U2 urdu: حرف جار + اسم ضمیر + اسم موصول + مندرجہ ذیل present", ["حرف جار", "اسم ضمیر", "اسم موصول", "مندرجہ ذیل"].every((t) => urdUrText.includes(t)));
+const urdLatin = urdPairs.filter(([, v]) => /[A-Za-z]/.test(v ?? ""));
+check("U2 urdu: zero Latin letters in any _ur field", urdLatin.length === 0, urdLatin.slice(0, 3).map(([l]) => l).join(", "));
+const urdArCodepoints = urdPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 urdu: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", urdArCodepoints.length === 0, urdArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+const urdHonor = urdPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 urdu: no Latin honorific abbreviations in any _ur field", urdHonor.length === 0, urdHonor.slice(0, 3).map(([l]) => l).join(", "));
+check("U2 urdu: مؤنث occurs exactly 51× (uniform normalization)", (urdUrText.match(/مؤنث/g) || []).length === 51, `got ${(urdUrText.match(/مؤنث/g) || []).length}`);
+const harfJaar = (urdUrText.match(/حرف جار/g) || []).length;
+const harfJaarIzafat = (urdUrText.match(/حرفِ جار/g) || []).length;
+const harfJarr = (urdUrText.match(/حرف جر/g) || []).length;
+check("U2 urdu: حرف جار uniform class (25×), no izafat/variant forms", harfJaar === 25 && harfJaarIzafat === 0 && harfJarr === 0, `حرف جار ${harfJaar}, حرفِ جار ${harfJaarIzafat}, حرف جر ${harfJarr}`);
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");

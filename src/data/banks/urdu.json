@@ -15,7 +15,7 @@
    "ajnabi (اجنبی)",
    "hareef (حریف)"
   ],
-  "explanation_ur": "’دوست‘ کا مطلب ’ساتھی‘ ہے۔ ’دوست‘ کا ہم معنی ’ساتھی‘ ہے۔",
+  "explanation_ur": "’دوست‘ کا مترادف ’ساتھی‘ ہے۔",
   "explanation_roman": "'دوست' ka matlab hai saathi. Roman Urdu: dost ka hum-ma'ni saathi hai.",
   "post": [
    "zamungkor",
@@ -1243,7 +1243,7 @@
    "harf (حرف)",
    "sifat (صفت)"
   ],
-  "explanation_ur": "’کتاب‘ کسی چیز کا نام ہے، اس لیے یہ ’اسم‘ (noun) ہے۔",
+  "explanation_ur": "’کتاب‘ کسی چیز کا نام ہے، اس لیے یہ ’اسم‘ ہے۔",
   "explanation_roman": "'کتاب' kisi cheez ka naam hai, is liye ye 'اسم' (noun) hai.",
   "post": [
    "zamungkor",
@@ -1292,7 +1292,7 @@
    "fail (فعل)",
    "harf (حرف)"
   ],
-  "explanation_ur": "’کھیلنا‘ کسی کام کو ظاہر کرتا ہے، اس لیے یہ ’فعل‘ (verb) ہے۔",
+  "explanation_ur": "’کھیلنا‘ کسی کام کو ظاہر کرتا ہے، اس لیے یہ ’فعل‘ ہے۔",
   "explanation_roman": "'کھیلنا' kisi kaam ko zahir karta hai, is liye ye 'فعل' (verb) hai.",
   "post": [
    "zamungkor",
@@ -1341,7 +1341,7 @@
    "sifat (صفت)",
    "zameer (ضمیر)"
   ],
-  "explanation_ur": "’وہ‘ نام کی جگہ استعمال ہوتا ہے، اس لیے یہ ’ضمیر‘ (pronoun) ہے۔",
+  "explanation_ur": "’وہ‘ نام کی جگہ استعمال ہوتا ہے، اس لیے یہ ’ضمیر‘ ہے۔",
   "explanation_roman": "'وہ' naam ki jagah use hota hai, is liye ye 'ضمیر' (pronoun) hai.",
   "post": [
    "zamungkor",
@@ -1390,7 +1390,7 @@
    "ism (اسم)",
    "zameer (ضمیر)"
   ],
-  "explanation_ur": "’خوبصورت‘ پھول کی خوبی بتاتا ہے، اس لیے یہ ’صفت‘ (adjective) ہے۔",
+  "explanation_ur": "’خوبصورت‘ پھول کی خوبی بتاتا ہے، اس لیے یہ ’صفت‘ ہے۔",
   "explanation_roman": "'خوبصورت' phool ki khoobi batata hai, is liye ye 'صفت' (adjective) hai.",
   "post": [
    "zamungkor",
@@ -1586,7 +1586,7 @@
    "bachiyaan (بچیاں)",
    "bachpan (بچپن)"
   ],
-  "explanation_ur": "’بچے‘ کا واحد (singular) ’بچہ‘ ہے۔",
+  "explanation_ur": "’بچے‘ کا واحد ’بچہ‘ ہے۔",
   "explanation_roman": "'بچے' ka wahid (singular) 'بچہ' hai.",
   "post": [
    "zamungkor",
@@ -1670,11 +1670,11 @@
  },
  {
   "id": "URD-035",
-  "question_ur": "’قلم‘ مذکر ہے یا مونث؟",
+  "question_ur": "’قلم‘ مذکر ہے یا مؤنث؟",
   "question_roman": "'قلم' mazakkar (مذکر) hai ya moannas (مونث)?",
   "options_ur": [
    "دونوں",
-   "مونث",
+   "مؤنث",
    "مذکر",
    "کوئی نہیں"
   ],
@@ -1684,7 +1684,7 @@
    "mazakkar (مذکر)",
    "koi nahin (کوئی نہیں)"
   ],
-  "explanation_ur": "’قلم‘ مذکر (masculine) ہے۔ ہم کہتے ہیں: یہ قلم ہے، میرا قلم۔",
+  "explanation_ur": "’قلم‘ مذکر ہے۔ ہم کہتے ہیں: یہ قلم ہے، میرا قلم۔",
   "explanation_roman": "'قلم' mazakkar (masculine) hai. Hum kehte hain: ye qalam hai, mera qalam.",
   "post": [
    "zamungkor",
@@ -1719,13 +1719,13 @@
  },
  {
   "id": "URD-036",
-  "question_ur": "’کتاب‘ مذکر ہے یا مونث؟",
+  "question_ur": "’کتاب‘ مذکر ہے یا مؤنث؟",
   "question_roman": "'کتاب' mazakkar (مذکر) hai ya moannas (مونث)?",
   "options_ur": [
    "مذکر",
    "کوئی نہیں",
    "دونوں",
-   "مونث"
+   "مؤنث"
   ],
   "options_roman": [
    "mazakkar (مذکر)",
@@ -1733,7 +1733,7 @@
    "donon (دونوں)",
    "moannas (مونث)"
   ],
-  "explanation_ur": "’کتاب‘ مونث (feminine) ہے۔ ہم کہتے ہیں: یہ کتاب ہے، میری کتاب۔",
+  "explanation_ur": "’کتاب‘ مؤنث ہے۔ ہم کہتے ہیں: یہ کتاب ہے، میری کتاب۔",
   "explanation_roman": "'کتاب' moannas (feminine) hai. Hum kehte hain: ye kitab hai, meri kitab.",
   "post": [
    "zamungkor",
@@ -1768,10 +1768,10 @@
  },
  {
   "id": "URD-037",
-  "question_ur": "’کرسی‘ مذکر ہے یا مونث؟",
+  "question_ur": "’کرسی‘ مذکر ہے یا مؤنث؟",
   "question_roman": "'کرسی' mazakkar (مذکر) hai ya moannas (مونث)?",
   "options_ur": [
-   "مونث",
+   "مؤنث",
    "مذکر",
    "دونوں",
    "کوئی نہیں"
@@ -1782,7 +1782,7 @@
    "donon (دونوں)",
    "koi nahin (کوئی نہیں)"
   ],
-  "explanation_ur": "’کرسی‘ مونث (feminine) ہے۔ ہم کہتے ہیں: میری کرسی۔",
+  "explanation_ur": "’کرسی‘ مؤنث ہے۔ ہم کہتے ہیں: میری کرسی۔",
   "explanation_roman": "'کرسی' moannas (feminine) hai. Hum kehte hain: meri kursi.",
   "post": [
    "zamungkor",
@@ -1817,10 +1817,10 @@
  },
  {
   "id": "URD-038",
-  "question_ur": "’پنکھا‘ مذکر ہے یا مونث؟",
+  "question_ur": "’پنکھا‘ مذکر ہے یا مؤنث؟",
   "question_roman": "'پنکھا' mazakkar (مذکر) hai ya moannas (مونث)?",
   "options_ur": [
-   "مونث",
+   "مؤنث",
    "مذکر",
    "دونوں",
    "کوئی نہیں"
@@ -1831,7 +1831,7 @@
    "donon (دونوں)",
    "koi nahin (کوئی نہیں)"
   ],
-  "explanation_ur": "’پنکھا‘ مذکر (masculine) ہے۔ ہم کہتے ہیں: میرا پنکھا۔",
+  "explanation_ur": "’پنکھا‘ مذکر ہے۔ ہم کہتے ہیں: میرا پنکھا۔",
   "explanation_roman": "'پنکھا' mazakkar (masculine) hai. Hum kehte hain: mera pankha.",
   "post": [
    "zamungkor",
@@ -1880,7 +1880,7 @@
    "us ne padha (اس نے پڑھا)",
    "woh padh raha hai (وہ پڑھ رہا ہے)"
   ],
-  "explanation_ur": "’اس نے پڑھا‘ گزرا ہوا وقت بتاتا ہے، یہ ’فعل ماضی‘ (past tense) ہے۔",
+  "explanation_ur": "’اس نے پڑھا‘ گزرا ہوا وقت بتاتا ہے، یہ ’فعل ماضی‘ ہے۔",
   "explanation_roman": "'اس نے پڑھا' guzra hua waqt batata hai, ye 'فعل ماضی' (past tense) hai.",
   "post": [
    "zamungkor",
@@ -1929,7 +1929,7 @@
    "woh ja raha hai (وہ جا رہا ہے)",
    "woh jaaye ga (وہ جائے گا)"
   ],
-  "explanation_ur": "’وہ جائے گا‘ آنے والا وقت بتاتا ہے، یہ ’فعل مستقبل‘ (future tense) ہے۔",
+  "explanation_ur": "’وہ جائے گا‘ آنے والا وقت بتاتا ہے، یہ ’فعل مستقبل‘ ہے۔",
   "explanation_roman": "'وہ جائے گا' aane wala waqt batata hai, ye 'فعل مستقبل' (future tense) hai.",
   "post": [
    "zamungkor",
@@ -1978,7 +1978,7 @@
    "woh padhe ga (وہ پڑھے گا)",
    "woh gaya (وہ گیا)"
   ],
-  "explanation_ur": "’وہ پڑھتا ہے‘ موجودہ وقت بتاتا ہے، یہ ’فعل حال‘ (present tense) ہے۔",
+  "explanation_ur": "’وہ پڑھتا ہے‘ موجودہ وقت بتاتا ہے، یہ ’فعل حال‘ ہے۔",
   "explanation_roman": "'وہ پڑھتا ہے' maujooda waqt batata hai, ye 'فعل حال' (present tense) hai.",
   "post": [
    "zamungkor",
@@ -2027,7 +2027,7 @@
    "ism zameer (اسم ضمیر)",
    "ism sifat (اسم صفت)"
   ],
-  "explanation_ur": "’احمد‘ کسی خاص شخص کا نام ہے، اس لیے یہ ’اسم علم‘ (proper noun) ہے۔",
+  "explanation_ur": "’احمد‘ کسی خاص شخص کا نام ہے، اس لیے یہ ’اسم علم‘ ہے۔",
   "explanation_roman": "'احمد' kisi khaas shakhs ka naam hai, is liye ye 'اسم علم' (proper noun) hai.",
   "post": [
    "zamungkor",
@@ -2076,7 +2076,7 @@
    "ism nakira (اسم نکرہ)",
    "ism fail (اسم فعل)"
   ],
-  "explanation_ur": "’شہر‘ کسی عام چیز کا نام ہے، اس لیے یہ ’اسم نکرہ‘ (common noun) ہے۔",
+  "explanation_ur": "’شہر‘ کسی عام چیز کا نام ہے، اس لیے یہ ’اسم نکرہ‘ ہے۔",
   "explanation_roman": "'شہر' kisi aam cheez ka naam hai, is liye ye 'اسم نکرہ' (common noun) hai.",
   "post": [
    "zamungkor",
@@ -4849,7 +4849,7 @@
  },
  {
   "id": "URD-101",
-  "question_ur": "’دوڑنا‘ اسم کی کس قسم میں شمار کیا جاتا ہے؟",
+  "question_ur": "’دوڑنا‘ کس قسم کا اسم ہے؟",
   "question_roman": "'Daurna' ism ki kis qism mein shumar kiya jata hai?",
   "options_ur": [
    "اسم مصدر",
@@ -4945,7 +4945,7 @@
  },
  {
   "id": "URD-103",
-  "question_ur": "لفظ ’پڑھائی‘ ’پڑھنا‘ سے بنی ہے، یہ کس قسم کا اسم ہے؟",
+  "question_ur": "’پڑھائی‘ ’پڑھنا‘ سے بنی ہے، یہ کس قسم کا اسم ہے؟",
   "question_roman": "Lafz 'parhai' 'parhna' se bani hai, ye kis qism ka ism hai?",
   "options_ur": [
    "اسم جامد",
@@ -4993,7 +4993,7 @@
  },
  {
   "id": "URD-104",
-  "question_ur": "لفظ ’صفائی‘ لفظ ’صاف‘ سے بنی ہے، یہ کس قسم کا اسم ہے؟",
+  "question_ur": "’صفائی‘ ’صاف‘ سے بنی ہے، یہ کس قسم کا اسم ہے؟",
   "question_roman": "'Safai' lafz 'saaf' se bani hai, ye kis qism ka ism hai?",
   "options_ur": [
    "اسم مشتق",
@@ -5329,7 +5329,7 @@
  },
  {
   "id": "URD-111",
-  "question_ur": "’پڑھنے والا‘ پڑھنے والے کا نام ہے، یہ کس قسم کا اسم ہے؟",
+  "question_ur": "’پڑھنے والا‘ پڑھنے والے کو ظاہر کرتا ہے، یہ کس قسم کا اسم ہے؟",
   "question_roman": "'Parhne wala' parhne wale ka naam hai, ye kis qism ka ism hai?",
   "options_ur": [
    "اسم مفعول",
@@ -6385,7 +6385,7 @@
  },
  {
   "id": "URD-133",
-  "question_ur": "مونث واحد کے لیے ’دیکھنا‘ کی فعل مستقبل کی صورت کون سی ہے؟",
+  "question_ur": "مؤنث واحد کے لیے ’دیکھنا‘ کی فعل مستقبل کی صورت کون سی ہے؟",
   "question_roman": "Moannas wahid ke liye 'dekhna' ki Fi'l-e-Mustaqbil ki soorat kaun si hai?",
   "options_ur": [
    "دیکھے گی",
@@ -6529,7 +6529,7 @@
  },
  {
   "id": "URD-136",
-  "question_ur": "مونث واحد کے لیے ’بولنا‘ کی فعل ماضی کی صورت کون سی ہے؟",
+  "question_ur": "مؤنث واحد کے لیے ’بولنا‘ کی فعل ماضی کی صورت کون سی ہے؟",
   "question_roman": "Moannas wahid ke liye 'bolna' ki Fi'l-e-Mazi ki soorat kaun si hai?",
   "options_ur": [
    "بولتی ہے",
@@ -7105,7 +7105,7 @@
  },
  {
   "id": "URD-148",
-  "question_ur": "’عثمان نے بوتل بھری‘ کی فعل مجہول صورت کیا ہے؟",
+  "question_ur": "’عثمان نے بوتل بھری‘ کی فعل مجہول کی صورت کیا ہے؟",
   "question_roman": "'Usman ne botal bhari' ki Fi'l-e-Majhool soorat kya hai?",
   "options_ur": [
    "عثمان نے بوتل بھری",
@@ -7153,7 +7153,7 @@
  },
  {
   "id": "URD-149",
-  "question_ur": "’طارق نے صندوق اٹھائے‘ کی فعل مجہول صورت کیا ہے؟",
+  "question_ur": "’طارق نے صندوق اٹھائے‘ کی فعل مجہول کی صورت کیا ہے؟",
   "question_roman": "'Tariq ne sandooq uthaye' ki Fi'l-e-Majhool soorat kya hai?",
   "options_ur": [
    "صندوق اٹھایا گیا",
@@ -7201,7 +7201,7 @@
  },
  {
   "id": "URD-150",
-  "question_ur": "’زینب نے دیوار رنگی‘ کی فعل مجہول صورت کیا ہے؟",
+  "question_ur": "’زینب نے دیوار رنگی‘ کی فعل مجہول کی صورت کیا ہے؟",
   "question_roman": "'Zainab ne diwar rangi' ki Fi'l-e-Majhool soorat kya hai?",
   "options_ur": [
    "دیوار رنگا گیا",
@@ -7551,7 +7551,7 @@
    "Zainab ne diwar rangi",
    "Omar ne khana kha liya"
   ],
-  "explanation_ur": "صرف عمر والے جملے میں ’کھا لیا‘ میں دو فعل ملے ہیں، اس لیے یہ فعل مرکب ہے۔",
+  "explanation_ur": "صرف عمر والے جملے کے ’کھا لیا‘ میں دو فعل ملے ہیں، اس لیے یہ فعل مرکب ہے۔",
   "explanation_roman": "Sirf Omar wale jumle mein 'kha liya' mein do fi'l mile hain, is liye ye Fi'l-e-Murakkab hai.",
   "post": [
    "zamungkor",
@@ -8319,7 +8319,7 @@
    "parh",
    "daur"
   ],
-  "explanation_ur": "'رہا' دوسرے فعل کی مدد کرتا ہے، باقی لفظ اصل فعل ہیں۔",
+  "explanation_ur": "'رہا' دوسرے فعل کی مدد کرتا ہے، باقی الفاظ اصل فعل ہیں۔",
   "explanation_roman": "'Raha' dusre fi'l ki madad karta hai, baaki lafz asal fi'l hain.",
   "post": [
    "zamungkor",
@@ -9841,7 +9841,7 @@
  },
  {
   "id": "URD-205",
-  "question_ur": "عام بات میں ایک چیز کو الگ کرنے والا حرف کیا کہلاتا ہے؟",
+  "question_ur": "عام بات میں ایک چیز کو استثنا کے طور پر الگ کرنے والا حرف کیا کہلاتا ہے؟",
   "question_roman": "Aam baat mein aik cheez ko alag karne wala harf kya kehlata hai?",
   "options_ur": [
    "حرف جار",
@@ -9855,7 +9855,7 @@
    "Harf-e-Istisna",
    "Harf-e-Takhsees"
   ],
-  "explanation_ur": "عام بات میں ایک چیز کو الگ کرنا حرف استثنا کا کام ہے۔",
+  "explanation_ur": "عام بات میں ایک چیز کو استثنا کے طور پر الگ کرنا حرف استثنا کا کام ہے۔",
   "explanation_roman": "Aam baat mein aik cheez ko alag karna Harf-e-Istisna ka kaam hai.",
   "post": [
    "zamungkor",
@@ -10239,7 +10239,7 @@
    "agar",
    "nahi"
   ],
-  "explanation_ur": "’نہیں‘ کسی کام کی نفی کرتا ہے، جبکہ دوسرے لفظ جوڑنے، حد یا شرط ظاہر کرتے ہیں۔",
+  "explanation_ur": "’نہیں‘ کسی کام کی نفی کرتا ہے، جبکہ دوسرے لفظ جوڑتے ہیں، حد بتاتے ہیں یا شرط ظاہر کرتے ہیں۔",
   "explanation_roman": "'nahi' kisi kaam ki nafi karta hai, jabke dusre lafz jorne, hadd ya shart zahir karte hain.",
   "post": [
    "zamungkor",
@@ -10657,7 +10657,7 @@
  },
  {
   "id": "URD-222",
-  "question_ur": "مفعول خاص شخص ہو تو ’کو‘ کا درست استعمال کس جملے میں ہے؟",
+  "question_ur": "جب مفعول خاص شخص ہو تو ’کو‘ کا درست استعمال کس جملے میں ہے؟",
   "question_roman": "Mafool khaas shakhs ho to 'ko' ka durust istemal kis jumle mein hai?",
   "options_ur": [
    "کامران نے سعدیہ بلائی۔",
@@ -10767,7 +10767,7 @@
    "Kaam ka waqt",
    "Tohfa paane wali"
   ],
-  "explanation_ur": "’کو‘ عائشہ کو تحفہ پانے والی کے طور پر ظاہر کرتا ہے۔ فاعل کے ساتھ ’نے‘ آتا ہے، ’کو‘ نہیں۔",
+  "explanation_ur": "’کو‘ سے معلوم ہوتا ہے کہ عائشہ تحفہ پانے والی ہے۔ فاعل کے ساتھ ’نے‘ آتا ہے، ’کو‘ نہیں۔",
   "explanation_roman": "'ko' Ayesha ko tohfa paane wali ke taur par zahir karta hai. Faail ke saath 'ne' aata hai, 'ko' nahin.",
   "post": [
    "zamungkor",
@@ -11089,7 +11089,7 @@
  },
  {
   "id": "URD-231",
-  "question_ur": "’فرید نے سیب خریدا‘ جملے کی قسم کیا ہے؟",
+  "question_ur": "’فرید نے سیب خریدا‘ خبر کے لحاظ سے کس قسم کا جملہ ہے؟",
   "question_roman": "'Farid ne seb khareeda' jumle ki qism kya hai?",
   "options_ur": [
    "جملہ نفیہ",
@@ -11137,7 +11137,7 @@
  },
  {
   "id": "URD-232",
-  "question_ur": "’حنا محنتی ہے‘ جملے کے لیے کون سا نام درست ہے؟",
+  "question_ur": "’حنا محنتی ہے‘ خبر کے لحاظ سے کس قسم کا جملہ ہے؟",
   "question_roman": "'Hina mehnati hai' jumle ke liye kaun sa naam durust hai?",
   "options_ur": [
    "جملہ اسمیہ",
@@ -12625,7 +12625,7 @@
  },
  {
   "id": "URD-263",
-  "question_ur": "جس جملے میں کسی کام کا حکم دیا جائے، کس قسم کا جملہ کہلاتا ہے؟",
+  "question_ur": "جس جملے میں کسی کام کا حکم دیا جائے، وہ کس قسم کا جملہ کہلاتا ہے؟",
   "question_roman": "Jis jumle mein kisi kaam ka hukm diya jaye, kis qism ka jumla kehlata hai?",
   "options_ur": [
    "جملہ انشائیہ",
@@ -12735,7 +12735,7 @@
    "maf'ul",
    "fa'il"
   ],
-  "explanation_ur": "’ذہین‘ موضوع کے بارے میں ایک خوبی بیان کرتا ہے، اس لیے یہ ’مسند‘ ہے۔",
+  "explanation_ur": "’ذہین‘ مسند الیہ کے بارے میں ایک خوبی بیان کرتا ہے، اس لیے یہ ’مسند‘ ہے۔",
   "explanation_roman": "'zaheen' mauzu ke bare mein ek khoobi bayan karta hai, is liye ye 'musnad' hai.",
   "post": [
    "zamungkor",
@@ -12831,7 +12831,7 @@
    "maf'ul",
    "musnad"
   ],
-  "explanation_ur": "’نیک‘ موضوع کے بارے میں ایک خوبی بیان کرتا ہے، اس لیے یہ ’مسند‘ ہے۔",
+  "explanation_ur": "’نیک‘ مسند الیہ کے بارے میں ایک خوبی بیان کرتا ہے، اس لیے یہ ’مسند‘ ہے۔",
   "explanation_roman": "'nek' mauzu ke bare mein ek khoobi bayan karta hai, is liye ye 'musnad' hai.",
   "post": [
    "zamungkor",
@@ -13057,7 +13057,7 @@
  },
  {
   "id": "URD-272",
-  "question_ur": "بہ لحاظ معنی وہ جملہ کون سا ہے جس میں کوئی خبر دی جائے اور جس کے درست یا غلط ہونے کا فیصلہ کیا جا سکے؟",
+  "question_ur": "معنی کے لحاظ سے وہ جملہ کون سا ہے جس میں کوئی خبر دی جائے اور جس کے درست یا غلط ہونے کا فیصلہ کیا جا سکے؟",
   "question_roman": "Ba-lehaz-e-ma'ni woh jumla kaun sa hai jis mein koi khabar di jaye aur jis ke durust ya ghalat hone ka faisla kiya ja sake?",
   "options_ur": [
    "جملہ خبریہ",
@@ -13105,7 +13105,7 @@
  },
  {
   "id": "URD-273",
-  "question_ur": "بہ لحاظ معنی وہ جملہ کون سا ہے جس میں خواہش یا ایسا ہی جذبہ ظاہر کیا جائے اور جسے درست یا غلط نہیں کہا جا سکتا؟",
+  "question_ur": "معنی کے لحاظ سے وہ جملہ کون سا ہے جس میں خواہش یا ایسا ہی جذبہ ظاہر کیا جائے اور جسے درست یا غلط نہیں کہا جا سکتا؟",
   "question_roman": "Ba-lehaz-e-ma'ni woh jumla kaun sa hai jis mein khwahish ya aisa hi jazba zahir kiya jaye aur jise durust ya ghalat nahin kaha ja sakta?",
   "options_ur": [
    "جملہ خبریہ",
@@ -13153,7 +13153,7 @@
  },
  {
   "id": "URD-274",
-  "question_ur": "بہ لحاظ معنی وہ جملہ کون سا ہے جو سوال پوچھنے اور معلومات حاصل کرنے کے لیے استعمال ہوتا ہے؟",
+  "question_ur": "معنی کے لحاظ سے وہ جملہ کون سا ہے جو سوال پوچھنے اور معلومات حاصل کرنے کے لیے استعمال ہوتا ہے؟",
   "question_roman": "Ba-lehaz-e-ma'ni woh jumla kaun sa hai jo sawal poochhne aur maloomat hasil karne ke liye istemal hota hai?",
   "options_ur": [
    "جملہ خبریہ",
@@ -13201,7 +13201,7 @@
  },
  {
   "id": "URD-275",
-  "question_ur": "بہ لحاظ معنی وہ جملہ کون سا ہے جو حکم یا امر دینے کے لیے استعمال ہوتا ہے؟",
+  "question_ur": "معنی کے لحاظ سے وہ جملہ کون سا ہے جو حکم یا امر دینے کے لیے استعمال ہوتا ہے؟",
   "question_roman": "Ba-lehaz-e-ma'ni woh jumla kaun sa hai jo hukm ya amr dene ke liye istemal hota hai?",
   "options_ur": [
    "جملہ استفہامیہ",
@@ -13253,7 +13253,7 @@
   "question_roman": "'ghar' ki jins kya hai?",
   "options_ur": [
    "مذکر",
-   "مونث",
+   "مؤنث",
    "دونوں",
    "کوئی نہیں"
   ],
@@ -13297,11 +13297,11 @@
  },
  {
   "id": "URD-277",
-  "question_ur": "’زمین‘ مذکر ہے یا مونث؟",
+  "question_ur": "’زمین‘ مذکر ہے یا مؤنث؟",
   "question_roman": "'zameen' mazakkar hai ya moannas?",
   "options_ur": [
    "مذکر",
-   "مونث",
+   "مؤنث",
    "دونوں",
    "کوئی نہیں"
   ],
@@ -13311,7 +13311,7 @@
    "donon",
    "koi nahin"
   ],
-  "explanation_ur": "’زمین‘ معیاری اردو میں مونث ہے۔",
+  "explanation_ur": "’زمین‘ معیاری اردو میں مؤنث ہے۔",
   "explanation_roman": "'zameen' mayari Urdu mein moannas hai.",
   "post": [
    "zamungkor",
@@ -13345,10 +13345,10 @@
  },
  {
   "id": "URD-278",
-  "question_ur": "’سورج‘ کا تعلق کس جنس سے ہے؟",
+  "question_ur": "’سورج‘ کی جنس کیا ہے؟",
   "question_roman": "'suraj' ka taluq kis jins se hai?",
   "options_ur": [
-   "مونث",
+   "مؤنث",
    "دونوں",
    "مذکر",
    "کوئی نہیں"
@@ -13399,7 +13399,7 @@
    "مذکر",
    "دونوں",
    "کوئی نہیں",
-   "مونث"
+   "مؤنث"
   ],
   "options_roman": [
    "mazakkar",
@@ -13407,7 +13407,7 @@
    "koi nahin",
    "moannas"
   ],
-  "explanation_ur": "’گھڑی‘ معیاری اردو میں مونث ہے۔",
+  "explanation_ur": "’گھڑی‘ معیاری اردو میں مؤنث ہے۔",
   "explanation_roman": "'ghadi' mayari Urdu mein moannas hai.",
   "post": [
    "zamungkor",
@@ -13444,7 +13444,7 @@
   "question_ur": "اردو میں ’چاند‘ کس جنس کا اسم ہے؟",
   "question_roman": "Urdu mein 'chand' kis jins ka ism hai?",
   "options_ur": [
-   "مونث",
+   "مؤنث",
    "مذکر",
    "دونوں",
    "کوئی نہیں"
@@ -13489,12 +13489,12 @@
  },
  {
   "id": "URD-281",
-  "question_ur": "’دیوار‘ کی جنس کیا ہے، مذکر یا مونث؟",
+  "question_ur": "’دیوار‘ کی جنس کیا ہے، مذکر یا مؤنث؟",
   "question_roman": "'deewar' ki jins kya hai, mazakkar ya moannas?",
   "options_ur": [
    "دونوں",
    "کوئی نہیں",
-   "مونث",
+   "مؤنث",
    "مذکر"
   ],
   "options_roman": [
@@ -13503,7 +13503,7 @@
    "moannas",
    "mazakkar"
   ],
-  "explanation_ur": "’دیوار‘ معیاری اردو میں مونث ہے۔",
+  "explanation_ur": "’دیوار‘ معیاری اردو میں مؤنث ہے۔",
   "explanation_roman": "'deewar' mayari Urdu mein moannas hai.",
   "post": [
    "zamungkor",
@@ -13540,7 +13540,7 @@
   "question_ur": "معیاری اردو میں ’پانی‘ کی جنس کیا ہے؟",
   "question_roman": "Mayari Urdu mein 'paani' ki jins kya hai?",
   "options_ur": [
-   "مونث",
+   "مؤنث",
    "دونوں",
    "کوئی نہیں",
    "مذکر"
@@ -13585,7 +13585,7 @@
  },
  {
   "id": "URD-283",
-  "question_ur": "’بیٹا‘ کا مونث کیا ہے؟",
+  "question_ur": "’بیٹا‘ کا مؤنث کیا ہے؟",
   "question_roman": "'beta' ka moannas kya hai?",
   "options_ur": [
    "بہن",
@@ -13599,7 +13599,7 @@
    "chachi",
    "dadi"
   ],
-  "explanation_ur": "’بیٹا‘ کا مونث ’بیٹی‘ ہے۔",
+  "explanation_ur": "’بیٹا‘ کا مؤنث ’بیٹی‘ ہے۔",
   "explanation_roman": "'beta' ka moannas 'beti' hai.",
   "post": [
    "zamungkor",
@@ -13681,7 +13681,7 @@
  },
  {
   "id": "URD-285",
-  "question_ur": "’گھوڑا‘ کا مونث کون سا لفظ ہے؟",
+  "question_ur": "’گھوڑا‘ کا مؤنث کون سا لفظ ہے؟",
   "question_roman": "'ghora' ka moannas kaun sa lafz hai?",
   "options_ur": [
    "شیرنی",
@@ -13695,7 +13695,7 @@
    "ghorri",
    "murgi"
   ],
-  "explanation_ur": "’گھوڑا‘ کا مونث ’گھوڑی‘ ہے۔",
+  "explanation_ur": "’گھوڑا‘ کا مؤنث ’گھوڑی‘ ہے۔",
   "explanation_roman": "'ghora' ka moannas 'ghorri' hai.",
   "post": [
    "zamungkor",
@@ -13729,7 +13729,7 @@
  },
  {
   "id": "URD-286",
-  "question_ur": "’شیر‘ کا مونث کون سا ہے؟",
+  "question_ur": "’شیر‘ کا مؤنث کون سا ہے؟",
   "question_roman": "'sher' ka moannas kaun sa hai?",
   "options_ur": [
    "گھوڑی",
@@ -13743,7 +13743,7 @@
    "murgi",
    "sherni"
   ],
-  "explanation_ur": "’شیر‘ کا مونث ’شیرنی‘ ہے۔",
+  "explanation_ur": "’شیر‘ کا مؤنث ’شیرنی‘ ہے۔",
   "explanation_roman": "'sher' ka moannas 'sherni' hai.",
   "post": [
    "zamungkor",
@@ -13777,7 +13777,7 @@
  },
  {
   "id": "URD-287",
-  "question_ur": "’مرد‘ کا مونث کیا ہے؟",
+  "question_ur": "’مرد‘ کا مؤنث کیا ہے؟",
   "question_roman": "'mard' ka moannas kya hai?",
   "options_ur": [
    "بیٹی",
@@ -13791,7 +13791,7 @@
    "aurat",
    "biwi"
   ],
-  "explanation_ur": "’مرد‘ کا مونث ’عورت‘ ہے۔",
+  "explanation_ur": "’مرد‘ کا مؤنث ’عورت‘ ہے۔",
   "explanation_roman": "'mard' ka moannas 'aurat' hai.",
   "post": [
    "zamungkor",
@@ -13825,7 +13825,7 @@
  },
  {
   "id": "URD-288",
-  "question_ur": "’شوہر‘ کے لیے مونث لفظ کون سا ہے؟",
+  "question_ur": "’شوہر‘ کے لیے مؤنث لفظ کون سا ہے؟",
   "question_roman": "'shohar' ke liye moannas lafz kaun sa hai?",
   "options_ur": [
    "بیوی",
@@ -13839,7 +13839,7 @@
    "behen",
    "dadi"
   ],
-  "explanation_ur": "’شوہر‘ کا مونث ’بیوی‘ ہے۔",
+  "explanation_ur": "’شوہر‘ کا مؤنث ’بیوی‘ ہے۔",
   "explanation_roman": "'shohar' ka moannas 'biwi' hai.",
   "post": [
    "zamungkor",
@@ -13873,7 +13873,7 @@
  },
  {
   "id": "URD-289",
-  "question_ur": "’بکرا‘ کا مونث کون سا لفظ ہے؟",
+  "question_ur": "’بکرا‘ کا مؤنث کون سا لفظ ہے؟",
   "question_roman": "'bakra' ka moannas kaun sa lafz hai?",
   "options_ur": [
    "گھوڑی",
@@ -13887,7 +13887,7 @@
    "sherni",
    "murgi"
   ],
-  "explanation_ur": "’بکرا‘ کا مونث ’بکری‘ ہے۔",
+  "explanation_ur": "’بکرا‘ کا مؤنث ’بکری‘ ہے۔",
   "explanation_roman": "'bakra' ka moannas 'bakri' hai.",
   "post": [
    "zamungkor",
@@ -13921,7 +13921,7 @@
  },
  {
   "id": "URD-290",
-  "question_ur": "’گھر‘، ’بازار‘، ’دریا‘ اور ’ہوا‘ میں سے مونث لفظ کون سا ہے؟",
+  "question_ur": "’گھر‘، ’بازار‘، ’دریا‘ اور ’ہوا‘ میں سے مؤنث لفظ کون سا ہے؟",
   "question_roman": "'ghar', 'bazaar', 'darya' aur 'hawa' mein se moannas lafz kaun sa hai?",
   "options_ur": [
    "گھر",
@@ -13935,7 +13935,7 @@
    "darya",
    "hawa"
   ],
-  "explanation_ur": "’ہوا‘ مونث ہے، جبکہ ’گھر‘، ’بازار‘ اور ’دریا‘ مذکر ہیں۔",
+  "explanation_ur": "’ہوا‘ مؤنث ہے، جبکہ ’گھر‘، ’بازار‘ اور ’دریا‘ مذکر ہیں۔",
   "explanation_roman": "'hawa' moannas hai, jabke 'ghar', 'bazaar' aur 'darya' mazakkar hain.",
   "post": [
    "zamungkor",
@@ -13983,7 +13983,7 @@
    "darakht",
    "sabzi"
   ],
-  "explanation_ur": "’درخت‘ مذکر ہے، جبکہ ’روٹی‘، ’دال‘ اور ’سبزی‘ مونث ہیں۔",
+  "explanation_ur": "’درخت‘ مذکر ہے، جبکہ ’روٹی‘، ’دال‘ اور ’سبزی‘ مؤنث ہیں۔",
   "explanation_roman": "'darakht' mazakkar hai, jabke 'roti', 'daal' aur 'sabzi' moannas hain.",
   "post": [
    "zamungkor",
@@ -14017,7 +14017,7 @@
  },
  {
   "id": "URD-292",
-  "question_ur": "’چچا‘، ’دادا‘ اور ’راجا‘ کے لیے کون سا جوڑا مذکر اسم اور اس کی درست مونث شکل دکھاتا ہے؟",
+  "question_ur": "’چچا‘، ’دادا‘ اور ’راجا‘ کے لیے کون سا جوڑا مذکر اسم اور اس کی درست مؤنث شکل دکھاتا ہے؟",
   "question_roman": "'chacha', 'dada' aur 'raja' ke liye kaun sa jora mazakkar ism aur us ki durust moannas shakl dikhata hai?",
   "options_ur": [
    "چچا اور دادی",
@@ -14031,7 +14031,7 @@
    "dada aur chachi",
    "raja aur murgi"
   ],
-  "explanation_ur": "’چچی‘ ’چچا‘ کی درست مونث شکل ہے، دوسرے جوڑوں میں غیر متعلقہ الفاظ ہیں۔",
+  "explanation_ur": "’چچی‘ ’چچا‘ کی درست مؤنث شکل ہے، دوسرے جوڑوں میں غیر متعلقہ الفاظ ہیں۔",
   "explanation_roman": "'chachi' 'chacha' ki durust moannas shakl hai, dusre joron mein ghair mutaliqa alfaaz hain.",
   "post": [
    "zamungkor",
@@ -14069,7 +14069,7 @@
   "question_roman": "'meri topi' se zahir hota hai ke 'topi' kis jins ka lafz hai?",
   "options_ur": [
    "مذکر",
-   "مونث",
+   "مؤنث",
    "دونوں",
    "کوئی نہیں"
   ],
@@ -14079,7 +14079,7 @@
    "donon",
    "koi nahin"
   ],
-  "explanation_ur": "’میری‘ مونث کی علامت ہے، اس لیے ’ٹوپی‘ مونث ہے۔",
+  "explanation_ur": "’میری‘ مؤنث کی علامت ہے، اس لیے ’ٹوپی‘ مؤنث ہے۔",
   "explanation_roman": "'meri' moannas ki alamat hai, is liye 'topi' moannas hai.",
   "post": [
    "zamungkor",
@@ -14116,7 +14116,7 @@
   "question_ur": "’میرا دفتر‘ سے ظاہر ہوتا ہے کہ ’دفتر‘ کس جنس کا لفظ ہے؟",
   "question_roman": "'mera daftar' se zahir hota hai ke 'daftar' kis jins ka lafz hai?",
   "options_ur": [
-   "مونث",
+   "مؤنث",
    "دونوں",
    "مذکر",
    "کوئی نہیں"
@@ -14167,7 +14167,7 @@
    "دونوں",
    "مذکر",
    "کوئی نہیں",
-   "مونث"
+   "مؤنث"
   ],
   "options_roman": [
    "donon",
@@ -14175,7 +14175,7 @@
    "koi nahin",
    "moannas"
   ],
-  "explanation_ur": "’ی‘ پر ختم ہونے والے اسم، جیسے ’روٹی‘، ’ٹوپی‘ اور ’بلی‘، عام طور پر مونث ہوتے ہیں۔",
+  "explanation_ur": "’ی‘ پر ختم ہونے والے اسم، جیسے ’روٹی‘، ’ٹوپی‘ اور ’بلی‘، عام طور پر مؤنث ہوتے ہیں۔",
   "explanation_roman": "'i' par khatam hone wale ism, jaise 'roti', 'topi' aur 'billi', aam tor par moannas hote hain.",
   "post": [
    "zamungkor",
@@ -14213,7 +14213,7 @@
   "question_roman": "'joota', 'kapra' aur 'kela' 'a' par khatam hote hain aur aam tor par kis jins ke hote hain?",
   "options_ur": [
    "مذکر",
-   "مونث",
+   "مؤنث",
    "دونوں",
    "کوئی نہیں"
   ],
@@ -14271,7 +14271,7 @@
    "auqaat",
    "auqaaton"
   ],
-  "explanation_ur": "’وقت‘ کی جمع ’اوقات‘ ہے۔",
+  "explanation_ur": "’وقت‘ کی جمع ’اوقات‘ ہے، جو عربی کے جمع مکسر کے نمونے پر بنتی ہے۔",
   "explanation_roman": "'waqt' ki jama 'auqaat' hai.",
   "post": [
    "zamungkor",
@@ -14511,7 +14511,7 @@
    "ghodiyaan",
    "ghodaon"
   ],
-  "explanation_ur": "’گھوڑا‘ کا آخری ’ا‘ ’ے‘ میں بدل کر جمع ’گھوڑے‘ بنتی ہے۔",
+  "explanation_ur": "’گھوڑا‘ کا آخری ’ا‘ ’ے‘ میں بدل جاتا ہے، اس لیے جمع ’گھوڑے‘ بنتی ہے۔",
   "explanation_roman": "'ghoda' ka aakhri 'a' 'e' mein badal kar jama 'ghode' banti hai.",
   "post": [
    "zamungkor",
@@ -14559,7 +14559,7 @@
    "ghadain",
    "ghadiyaan"
   ],
-  "explanation_ur": "’گھڑی‘ مونث ہے اور ’یاں‘ کے اضافے سے اس کی جمع ’گھڑیاں‘ بنتی ہے۔",
+  "explanation_ur": "’گھڑی‘ مؤنث ہے اور ’یاں‘ کے اضافے سے اس کی جمع ’گھڑیاں‘ بنتی ہے۔",
   "explanation_roman": "'ghadi' moannas hai aur 'iyaan' ke izaafe se is ki jama 'ghadiyaan' banti hai.",
   "post": [
    "zamungkor",
@@ -15169,7 +15169,7 @@
  },
  {
   "id": "URD-316",
-  "question_ur": "’ی‘ پر ختم ہونے والے مونث اسم، جیسے ’بلی‘، کی جمع میں کون سا لاحقہ لگتا ہے؟",
+  "question_ur": "’ی‘ پر ختم ہونے والے مؤنث اسم، جیسے ’بلی‘، کی جمع میں کون سا لاحقہ لگتا ہے؟",
   "question_roman": "'i' par khatm hone wale moannas ism, jaise 'billi', ki jama mein kaun sa lahqa lagta hai?",
   "options_ur": [
    "یں",
@@ -15183,7 +15183,7 @@
    "aat",
    "e"
   ],
-  "explanation_ur": "’ی‘ پر ختم ہونے والے مونث اسم میں ’یاں‘ کا اضافہ ہوتا ہے، جیسے ’بلی‘ سے ’بلیاں‘۔",
+  "explanation_ur": "’ی‘ پر ختم ہونے والے مؤنث اسم میں ’یاں‘ کا اضافہ ہوتا ہے، جیسے ’بلی‘ سے ’بلیاں‘۔",
   "explanation_roman": "'i' par khatm hone wale moannas ism mein 'iyaan' ka izaafa hota hai, jaise 'billi' se 'billiyaan'.",
   "post": [
    "zamungkor",
@@ -18447,7 +18447,7 @@
    "mazdooron mein paise baantna",
    "kaam ke baad haath dhona"
   ],
-  "explanation_ur": "سب نے صفائی میں مدد کی اور ساتھ دیا، اور 'ہاتھ بٹانا' کا مطلب ہے کسی کام میں مدد کرنا۔",
+  "explanation_ur": "سب نے صفائی میں مدد کی اور ساتھ دیا۔ 'ہاتھ بٹانا' کا مطلب ہے کسی کام میں مدد کرنا اور ساتھ دینا۔",
   "explanation_roman": "Sab ne safai mein madad ki aur saath diya, aur 'haath baantna' ka matlab hai kisi kaam mein madad karna.",
   "post": [
    "zamungkor",
@@ -19263,7 +19263,7 @@
    "Baghair wazeh kahe kisi matlab ki taraf ishara karna",
    "Kisi purane waqeye ya kahani ki taraf ishara karna"
   ],
-  "explanation_ur": "تشبیہ میں دو چیزوں کا موازنہ مشترک صفت کی بنیاد پر کیا جاتا ہے۔",
+  "explanation_ur": "تشبیہ میں دو چیزوں کا موازنہ مشترک صفت کی بنیاد پر کیا جاتا ہے، اور حرف تشبیہ دونوں کو جوڑتا ہے۔",
   "explanation_roman": "Tashbeeh mein do cheezon ka mawazna mushtarak sifat ki bunyaad par kiya jata hai.",
   "post": [
    "zamungkor",
@@ -19695,7 +19695,7 @@
    "Wajh-e-Shabah",
    "Harf-e-Tashbeeh"
   ],
-  "explanation_ur": "استعارہ میں مشبہ بہ مشبہ کی جگہ استعمال ہوتا ہے، اس لیے مشبہ بہ درست جواب ہے۔",
+  "explanation_ur": "استعارہ میں مشبہ بہ مشبہ کی جگہ براہ راست استعمال ہوتا ہے۔",
   "explanation_roman": "Istiara mein Mushabbah Bihi Mushabbah ki jagah istemal hota hai, is liye Mushabbah Bihi durust jawab hai.",
   "post": [
    "zamungkor",
@@ -20305,7 +20305,7 @@
  },
  {
   "id": "URD-423",
-  "question_ur": "’تضمین‘ میں اپنی نظم میں کیا شامل کیا جاتا ہے؟",
+  "question_ur": "’تضمین‘ میں شاعر اپنی نظم میں کیا شامل کرتا ہے؟",
   "question_roman": "'tazmeen' mein apni nazm mein kya shaamil kiya jata hai?",
   "options_ur": [
    "اسی شاعر کا لکھا ہوا اپنا مصرع",
@@ -20449,7 +20449,7 @@
  },
  {
   "id": "URD-426",
-  "question_ur": "صنعت لفظی میں زینت بنیادی طور پر کس چیز پر منحصر ہوتی ہے؟",
+  "question_ur": "صنعت لفظی میں زینت بنیادی طور پر کس پر منحصر ہوتی ہے؟",
   "question_roman": "San'at-e-Lafzi mein zeenat bunyaadi taur par kis cheez par munhasir hoti hai?",
   "options_ur": [
    "لفظوں کے پوشیدہ معنوں پر",
@@ -20497,7 +20497,7 @@
  },
  {
   "id": "URD-427",
-  "question_ur": "صنعت معنوی میں زینت بنیادی طور پر کس چیز پر منحصر ہوتی ہے؟",
+  "question_ur": "صنعت معنوی میں زینت بنیادی طور پر کس پر منحصر ہوتی ہے؟",
   "question_roman": "San'at-e-Manvi mein zeenat bunyaadi taur par kis cheez par munhasir hoti hai?",
   "options_ur": [
    "لفظوں کی آواز اور قافیے پر",
@@ -20593,7 +20593,7 @@
  },
  {
   "id": "URD-429",
-  "question_ur": "’اس کی بات میٹھی تھی، لیکن اس کا لہجہ کڑوا تھا‘، اس جملے میں متضاد مطلب ایک ساتھ آئے ہیں۔ اس میں کون سی صنعت ہے؟",
+  "question_ur": "’اس کی بات میٹھی تھی، لیکن اس کا لہجہ کڑوا تھا‘، اس جملے میں متضاد معنی ایک ساتھ آئے ہیں۔ اس میں کون سی صنعت ہے؟",
   "question_roman": "'Us ki baat meethi thi, lekin us ka lehja karwa tha', is jumle mein mutazaad matlab ek saath aaye hain. Is mein kaun si san'at hai?",
   "options_ur": [
    "تجنیس",
@@ -20641,7 +20641,7 @@
  },
  {
   "id": "URD-430",
-  "question_ur": "’آسمان پر چاند اور ستارے چمک رہے تھے‘، اس جملے میں ایک ہی میدان کے متعلقہ لفظ ایک ساتھ آئے ہیں۔ اس میں کون سی صنعت ہے؟",
+  "question_ur": "’آسمان پر چاند اور ستارے چمک رہے تھے‘، اس جملے میں ایک ہی میدان کے متعلقہ الفاظ ایک ساتھ آئے ہیں۔ اس میں کون سی صنعت ہے؟",
   "question_roman": "'Aasman par chaand aur sitare chamak rahe the', is jumle mein ek hi maidaan ke muta'alluqa lafz ek saath aaye hain. Is mein kaun si san'at hai?",
   "options_ur": [
    "تضاد",
@@ -21039,7 +21039,7 @@
    "Mir Taqi Mir",
    "Allama Iqbal"
   ],
-  "explanation_ur": "بانگ درا علامہ اقبال کا شعری مجموعہ ہے۔",
+  "explanation_ur": "بانگ درا علامہ اقبال کا پہلا اردو شعری مجموعہ ہے۔",
   "explanation_roman": "Bang-e-Dara Allama Iqbal ka shairi majmua hai.",
   "post": [
    "zamungkor",
@@ -21135,7 +21135,7 @@
    "Qasida",
    "Masnavi"
   ],
-  "explanation_ur": "اکبر الہ آبادی مزاحیہ شاعری کے لیے مشہور ہیں۔",
+  "explanation_ur": "اکبر الہ آبادی طنزیہ لہجے والی مزاحیہ شاعری کے لیے مشہور ہیں۔",
   "explanation_roman": "Akbar Allahabadi Mazahiya shairi ke liye mashhoor hain.",
   "post": [
    "zamungkor",
@@ -21279,7 +21279,7 @@
    "Firaq",
    "Hasrat"
   ],
-  "explanation_ur": "علی سکندر کا تخلص جگر ہے۔",
+  "explanation_ur": "علی سکندر کا تخلص جگر ہے، اور وہ جگر مراد آبادی کے نام سے مشہور ہیں۔",
   "explanation_roman": "Ali Sikandar ka takhallus Jigar hai.",
   "post": [
    "zamungkor",
@@ -21327,7 +21327,7 @@
    "Jigar",
    "Majaz"
   ],
-  "explanation_ur": "سید فضل حسن کا تخلص حسرت ہے۔",
+  "explanation_ur": "سید فضل حسن کا تخلص حسرت ہے، اور وہ حسرت موہانی کے نام سے مشہور ہیں۔",
   "explanation_roman": "Syed Fazlul Hasan ka takhallus Hasrat hai.",
   "post": [
    "zamungkor",
@@ -21567,7 +21567,7 @@
    "Dhanpat Rai",
    "Asrarul Haq"
   ],
-  "explanation_ur": "پریم چند دھنپت رائے کا تخلص ہے۔",
+  "explanation_ur": "پریم چند ناولوں اور افسانوں کے مشہور مصنف دھنپت رائے کا تخلص ہے۔",
   "explanation_roman": "Premchand Dhanpat Rai ka takhallus hai.",
   "post": [
    "zamungkor",
@@ -21903,7 +21903,7 @@
    "qasida",
    "masnavi"
   ],
-  "explanation_ur": "غزل کا پہلا شعر مطلع کہلاتا ہے۔ مطلع کے دونوں مصرعوں میں قافیہ اور ردیف ہوتی ہے۔",
+  "explanation_ur": "غزل کا پہلا شعر مطلع کہلاتا ہے، جس کے دونوں مصرعوں میں قافیہ اور ردیف ہوتی ہے۔",
   "explanation_roman": "Ghazal ka pehla sher matla kehlata hai aur matla ke donon misron mein qafiya aur radeef hoti hai.",
   "post": [
    "zamungkor",
@@ -21951,7 +21951,7 @@
    "maqta",
    "radeef"
   ],
-  "explanation_ur": "غزل کا آخری شعر مقطع کہلاتا ہے۔ مقطع میں شاعر اپنا تخلص استعمال کرتا ہے۔",
+  "explanation_ur": "غزل کا آخری شعر مقطع کہلاتا ہے، جس میں شاعر اپنا تخلص استعمال کرتا ہے۔",
   "explanation_roman": "Ghazal ka aakhri sher maqta kehlata hai aur maqta mein shayar apna takhallus istemal karta hai.",
   "post": [
    "zamungkor",
@@ -21999,7 +21999,7 @@
    "beher",
    "takhallus"
   ],
-  "explanation_ur": "ردیف سے پہلے آنے والے ہم آواز الفاظ قافیہ کہلاتے ہیں۔ قافیہ کے الفاظ کی آواز ایک جیسی ہوتی ہے۔",
+  "explanation_ur": "ردیف سے پہلے آنے والے ہم آواز الفاظ قافیہ کہلاتے ہیں، جن کی آواز ایک جیسی ہوتی ہے۔",
   "explanation_roman": "Radeef se pehle aane wale hum awaz alfaz qafiya kehlate hain aur qafiya ke alfaz ki awaz ek jaisi hoti hai.",
   "post": [
    "zamungkor",
@@ -22047,7 +22047,7 @@
    "matla",
    "radeef"
   ],
-  "explanation_ur": "قافیہ کے بعد بار بار آنے والا ایک ہی لفظ یا جملہ ردیف کہلاتا ہے۔ ردیف ہر شعر میں ایک جیسی رہتی ہے۔",
+  "explanation_ur": "قافیہ کے بعد بار بار آنے والا ایک ہی لفظ یا جملہ ردیف کہلاتا ہے، جو ہر شعر میں ایک جیسی رہتی ہے۔",
   "explanation_roman": "Qafiya ke baad baar baar aane wala ek hi lafz ya jumla radeef kehlata hai aur radeef har sher mein ek jaisi rehti hai.",
   "post": [
    "zamungkor",
@@ -22095,7 +22095,7 @@
    "teen misray",
    "chaar misray"
   ],
-  "explanation_ur": "ایک شعر میں دو مصرعے ہوتے ہیں۔ دو مصرعے مل کر ایک شعر بناتے ہیں۔",
+  "explanation_ur": "ایک شعر دو مصرعوں سے بنتا ہے۔",
   "explanation_roman": "Ek sher mein do misray hote hain aur do misray mil kar ek sher banate hain.",
   "post": [
    "zamungkor",
@@ -22143,7 +22143,7 @@
    "beher",
    "tazkira"
   ],
-  "explanation_ur": "شعر کی مقررہ آہنگ اور وزن بحر کہلاتی ہے۔ بحر شعر کے مصرعوں کی آہنگ کو مقرر کرتی ہے۔",
+  "explanation_ur": "شعر کی مقررہ آہنگ اور وزن بحر کہلاتی ہے، جو شعر کے مصرعوں کی آہنگ کو مقرر کرتی ہے۔",
   "explanation_roman": "Sher ki muqarrara aahang aur wazan beher kehlati hai aur beher sher ke misron ki aahang ko muqarrar karti hai.",
   "post": [
    "zamungkor",
@@ -22191,7 +22191,7 @@
    "qasida",
    "marsiya"
   ],
-  "explanation_ur": "نظم میں ایک ہی موضوع پر مسلسل خیال چلتا ہے۔ غزل کے ہر شعر کا خیال الگ ہوتا ہے۔",
+  "explanation_ur": "نظم میں ایک ہی موضوع پر مسلسل خیال چلتا ہے، جبکہ غزل کے ہر شعر کا خیال الگ ہوتا ہے۔",
   "explanation_roman": "Nazm mein ek hi mauzu par musalsal khayal chalta hai aur ghazal ke har sher ka khayal alag hota hai.",
   "post": [
    "zamungkor",
@@ -22239,7 +22239,7 @@
    "sheher-ashob",
    "marsiya"
   ],
-  "explanation_ur": "کربلا کے شہیدوں پر غم کا اظہار کرنے والی نظم مرثیہ کہلاتی ہے۔ مرثیہ میں غم اور ماتم کا اظہار ہوتا ہے۔",
+  "explanation_ur": "کربلا کے شہیدوں پر غم کا اظہار کرنے والی نظم مرثیہ کہلاتی ہے، جس میں غم اور ماتم کا اظہار ہوتا ہے۔",
   "explanation_roman": "Karbala ke shaheedon par gham ka izhar karne wali nazm marsiya kehlati hai aur marsiya mein gham aur maatam ka izhar hota hai.",
   "post": [
    "zamungkor",
@@ -22287,7 +22287,7 @@
    "chhe misray",
    "aath misray"
   ],
-  "explanation_ur": "ایک رباعی میں چار مصرعے ہوتے ہیں۔ چار مصرعے مل کر ایک مکمل خیال پیش کرتے ہیں۔",
+  "explanation_ur": "ایک رباعی میں چار مصرعے ہوتے ہیں، جو مل کر ایک مکمل خیال پیش کرتے ہیں۔",
   "explanation_roman": "Ek rubai mein chaar misray hote hain aur chaar misray mil kar ek mukammal khayal pesh karte hain.",
   "post": [
    "zamungkor",
@@ -22335,7 +22335,7 @@
    "qasida",
    "qata"
   ],
-  "explanation_ur": "قصیدہ بادشاہ یا کسی بڑے آدمی کی تعریف میں کہی جانے والی طویل نظم ہے۔ قصیدہ میں تعریف اور عزت کا اظہار ہوتا ہے۔",
+  "explanation_ur": "قصیدہ بادشاہ یا کسی بڑے آدمی کی تعریف میں کہی جانے والی طویل نظم ہے، جس میں اس کی عزت کا اظہار ہوتا ہے۔",
   "explanation_roman": "Qasida badshah ya kisi bare aadmi ki tareef mein kahi jaane wali taweel nazm hai aur qasida mein tareef aur izzat ka izhar hota hai.",
   "post": [
    "zamungkor",
@@ -22383,7 +22383,7 @@
    "rubai",
    "qasida"
   ],
-  "explanation_ur": "کہانی بیان کرنے والی طویل نظم مثنوی کہلاتی ہے۔ مثنوی کے ہر شعر کا قافیہ الگ ہوتا ہے۔",
+  "explanation_ur": "کہانی بیان کرنے والی طویل نظم مثنوی کہلاتی ہے، جس کے ہر شعر کا قافیہ الگ ہوتا ہے۔",
   "explanation_roman": "Kahani bayan karne wali taweel nazm masnavi kehlati hai aur masnavi ke har sher ka qafiya alag hota hai.",
   "post": [
    "zamungkor",
@@ -22431,7 +22431,7 @@
    "ghazal",
    "qata"
   ],
-  "explanation_ur": "قطعہ ایک مختصر نظم ہے جو چند شعروں میں ایک ہی خیال پیش کرتی ہے۔ قطعہ کا خیال ایک ہی موضوع پر رہتا ہے۔",
+  "explanation_ur": "قطعہ ایک مختصر نظم ہے جو چند شعروں میں ایک ہی خیال پیش کرتی ہے اور ایک ہی موضوع پر رہتی ہے۔",
   "explanation_roman": "Qata ek mukhtasar nazm hai jo chand sheron mein ek hi khayal pesh karti hai aur qata ka khayal ek hi mauzu par rehta hai.",
   "post": [
    "zamungkor",
@@ -22479,7 +22479,7 @@
    "qasida",
    "nazm"
   ],
-  "explanation_ur": "کسی شہر کی تباہی اور خراب حالت پر غم کا اظہار کرنے والی نظم شہر آشوب کہلاتی ہے۔ شہر آشوب میں شہر کی تباہی پر غم کیا جاتا ہے۔",
+  "explanation_ur": "کسی شہر کی تباہی اور خراب حالت پر غم کا اظہار کرنے والی نظم شہر آشوب کہلاتی ہے، جس میں شہر کے زوال اور تباہی پر غم کیا جاتا ہے۔",
   "explanation_roman": "Kisi sheher ki tabahi aur kharab haalat par gham ka izhar karne wali nazm sheher-ashob kehlati hai aur sheher-ashob mein sheher ki tabahi par gham kiya jata hai.",
   "post": [
    "zamungkor",
@@ -22527,7 +22527,7 @@
    "takhallus",
    "beher"
   ],
-  "explanation_ur": "شاعر کا قلمی نام تخلص کہلاتا ہے۔ شاعر اپنا تخلص غزل کے آخری شعر میں استعمال کرتا ہے۔",
+  "explanation_ur": "شاعر کا قلمی نام تخلص کہلاتا ہے، جسے شاعر غزل کے آخری شعر میں استعمال کرتا ہے۔",
   "explanation_roman": "Shayar ka qalmi naam takhallus kehlata hai aur shayar apna takhallus ghazal ke aakhri sher mein istemal karta hai.",
   "post": [
    "zamungkor",
@@ -22575,7 +22575,7 @@
    "tazkira",
    "masnavi"
   ],
-  "explanation_ur": "شاعر کی غزلوں کا مجموعہ دیوان کہلاتا ہے۔ دیوان میں غزلیں قافیہ کے حساب سے ترتیب دی جاتی ہیں۔",
+  "explanation_ur": "شاعر کی غزلوں کا مجموعہ دیوان کہلاتا ہے، جس میں غزلیں قافیہ کے حساب سے ترتیب دی جاتی ہیں، جبکہ شاعر کا مکمل کلام کلیات کہلاتا ہے۔",
   "explanation_roman": "Shayar ki ghazlon ka majmua diwan kehlata hai aur diwan mein ghazlen qafiya ke hisab se tarteeb di jati hain.",
   "post": [
    "zamungkor",
@@ -23761,7 +23761,7 @@
  },
  {
   "id": "URD-495",
-  "question_ur": "’مجھے‘ کے لیے روزمرہ کے مطابق کون سا جملہ درست ہے؟",
+  "question_ur": "روزمرہ کے مطابق ’مجھے‘ کے لیے کون سا جملہ درست ہے؟",
   "question_roman": "'mujhe' ke liye rozmarrah ke mutabiq kaun sa jumla durust hai?",
   "options_ur": [
    "میرے کو جانا ہے",

@@ -154,8 +154,16 @@ function arabicRuns(s) {
 }
 let arabicBad = [];
 let honorBad = [];
-function auditField(src, tr, where) {
+// U2-Urdu adjudication: the EN fields of URD-035..038 contain the
+// misspelled script run مونث; the deliberate U2 spelling correction to
+// مؤنث in _ur (8 fields) satisfies the verbatim rule for _ur only.
+// _roman keeps مونث verbatim and is NOT exempted.
+function auditField(src, tr, where, lang) {
   for (const run of arabicRuns(src)) {
+    if (run === "مونث" && lang === "ur") {
+      if (!tr.includes("مؤنث")) arabicBad.push(`${where}: ${JSON.stringify(run)} (unsatisfied by مؤنث)`);
+      continue;
+    }
     if (!tr.includes(run)) arabicBad.push(`${where}: ${JSON.stringify(run)}`);
   }
   if (HONOR_ABBR.test(tr)) honorBad.push(where);
@@ -163,16 +171,16 @@ function auditField(src, tr, where) {
 for (const q of [...BY_SUBJECT.arabic, ...BY_SUBJECT.urdu]) {
   for (const lang of ["ur", "roman"]) {
     if (q[`question_${lang}`] === undefined) continue;
-    auditField(q.question, q[`question_${lang}`], `${q.id} question_${lang}`);
-    q.options.forEach((opt, i) => auditField(opt, q[`options_${lang}`][i], `${q.id} options_${lang}[${i}]`));
-    auditField(q.explanation, q[`explanation_${lang}`], `${q.id} explanation_${lang}`);
+    auditField(q.question, q[`question_${lang}`], `${q.id} question_${lang}`, lang);
+    q.options.forEach((opt, i) => auditField(opt, q[`options_${lang}`][i], `${q.id} options_${lang}[${i}]`, lang));
+    auditField(q.explanation, q[`explanation_${lang}`], `${q.id} explanation_${lang}`, lang);
   }
 }
 for (const n of NOTES.Arabic) {
   for (const lang of ["ur", "roman"]) {
     if (n[`title_${lang}`] === undefined) continue;
-    auditField(n.title, n[`title_${lang}`], `Arabic note "${n.title}" title_${lang}`);
-    auditField(n.body, n[`body_${lang}`], `Arabic note "${n.title}" body_${lang}`);
+    auditField(n.title, n[`title_${lang}`], `Arabic note "${n.title}" title_${lang}`, lang);
+    auditField(n.body, n[`body_${lang}`], `Arabic note "${n.title}" body_${lang}`, lang);
   }
 }
 check("5C Arabic script copied verbatim into both languages (MCQs + Arabic notes)", arabicBad.length === 0, arabicBad.slice(0, 3).join(" | "));

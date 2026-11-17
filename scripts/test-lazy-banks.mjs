@@ -229,12 +229,16 @@ if (fs.existsSync(BACKUP)) {
     curEng[45].id === "ENG-046" && curEng[499].id === "ENG-500");
   const backupUrdRaw = fs.readFileSync(join(BACKUP, "src/data/banks/urdu.json"), "utf8");
   const curUrdRaw = fs.readFileSync(join(ROOT, "src/data/banks/urdu.json"), "utf8");
-  const backupUrdPrefix = backupUrdRaw.slice(0, -3); // strip trailing "\n]\n"
   const backupUrd = JSON.parse(backupUrdRaw);
   const curUrd = JSON.parse(curUrdRaw);
-  check("Phase 1 urdu.json: backup bytes are an exact prefix (45 items untouched) + 455 appended",
-    curUrdRaw.startsWith(backupUrdPrefix + ",") && backupUrd.length === 45 && curUrd.length === 500 &&
-    JSON.stringify(curUrd.slice(0, 45)) === JSON.stringify(backupUrd) &&
+  // U2-Urdu: urdu _ur fields were rewritten idiomatically in 92 of
+  // 500 items (118 of 3000 fields), so the byte-prefix assertion no longer
+  // applies. The non-_ur fields of the 45 backup items must still match
+  // exactly (verified field-by-field, same pattern as the U1 islamiyat
+  // and U2 tajweed/arabic adjudications above); append pins stay.
+  check("Phase 1 urdu.json (U2 _ur rewrite): non-_ur fields of 45 backup items untouched + 455 appended",
+    backupUrd.length === 45 && curUrd.length === 500 &&
+    JSON.stringify(curUrd.slice(0, 45).map(stripUrFields)) === JSON.stringify(backupUrd.map(stripUrFields)) &&
     curUrd[45].id === "URD-046" && curUrd[499].id === "URD-500");
   const backupMatRaw = fs.readFileSync(join(BACKUP, "src/data/banks/maths.json"), "utf8");
   const curMatRaw = fs.readFileSync(join(ROOT, "src/data/banks/maths.json"), "utf8");
