@@ -59,12 +59,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5D bank total 5226 MCQs", QUESTIONS.length === 5226, `got ${QUESTIONS.length}`);
+check("5D bank total 5696 MCQs", QUESTIONS.length === 5696, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5D notes total 151", notesTotal === 151, `got ${notesTotal}`);
 check(
-  "5D VISIBLE_COUNTS 5226/151/70, 12 tracks / 16 mocks",
-  VISIBLE_COUNTS.total === 5226 &&
+  "5D VISIBLE_COUNTS 5696/151/70, 12 tracks / 16 mocks",
+  VISIBLE_COUNTS.total === 5696 &&
     VISIBLE_COUNTS.notes === 151 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -73,7 +73,7 @@ check(
 );
 check("5D english bank still 500 items", BY_SUBJECT.english.length === 500, `got ${BY_SUBJECT.english.length}`);
 check("5D maths bank still 500 items", BY_SUBJECT.maths.length === 500, `got ${BY_SUBJECT.maths.length}`);
-check("5D gk bank still 30 items", BY_SUBJECT.gk.length === 30, `got ${BY_SUBJECT.gk.length}`);
+check("5D gk bank 500 items (Phase 1 growth)", BY_SUBJECT.gk.length === 500, `got ${BY_SUBJECT.gk.length}`);
 check("5D English notes still 8", NOTES.English.length === 8, `got ${NOTES.English.length}`);
 check("5D Maths notes still 7", NOTES.Maths.length === 7, `got ${NOTES.Maths.length}`);
 check("5D GK notes still 6", NOTES.GK.length === 6, `got ${NOTES.GK.length}`);
@@ -104,7 +104,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["english", "english", 500], ["maths", "maths", 500], ["gk", "gk", 30]]) {
+for (const [bankKey, label, expected] of [["english", "english", 500], ["maths", "maths", 500], ["gk", "gk", 500]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -398,7 +398,7 @@ for (const subject of ["English", "Maths", "GK"]) {
 }
 check("5D quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5D content.json counts unchanged", contentJson.counts.total === 5226 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
+check("5D content.json counts unchanged", contentJson.counts.total === 5696 && contentJson.counts.notes === 151 && contentJson.counts.cards === 70);
 
 if (failures > 0) {
   console.log(`\n${failures} FAILURES`);

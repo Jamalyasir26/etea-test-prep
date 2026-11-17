@@ -27,7 +27,7 @@ const sansArabic = Noto_Sans_Arabic({
 export const metadata: Metadata = {
   title: "ETEA Prep Library — KP Government Jobs",
   description:
-    "Personal preparation library for KP government job tests (ETEA / KPPSC): 5226 MCQs, notes, flashcards, mocks, live AI tutor and preparation tracking.",
+    "Personal preparation library for KP government job tests (ETEA / KPPSC): 5696 MCQs, notes, flashcards, mocks, live AI tutor and preparation tracking.",
   // Stage 4A (PWA) — the manifest + iOS home-screen metadata. The
   // manifest and icons live in public/ and are served same-origin.
   manifest: "/manifest.webmanifest",

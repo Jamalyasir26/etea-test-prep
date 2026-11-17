@@ -54,7 +54,7 @@ const REVIEWED15 = [
 
 // 1. Backward compat: the bank loads at full size and items without the
 // new fields get no badge (null) instead of crashing.
-check("bank loads: 5226 MCQs", QUESTIONS.length === 5226, `got ${QUESTIONS.length}`);
+check("bank loads: 5696 MCQs", QUESTIONS.length === 5696, `got ${QUESTIONS.length}`);
 const legacy = QUESTIONS.find((q) => !q.sourceKind);
 check("legacy items exist without sourceKind", !!legacy);
 check("legacy item gets no badge", provenanceBadge(legacy) === null);

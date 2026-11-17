@@ -134,7 +134,7 @@ const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "mat
 const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8"))]));
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
-check("counts: 5226 MCQs", QUESTIONS.length === 5226, `got ${QUESTIONS.length}`);
+check("counts: 5696 MCQs", QUESTIONS.length === 5696, `got ${QUESTIONS.length}`);
 check("counts: 151 notes", Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 151);
 check("counts: 70 flashcards", data.FLASHCARDS.length === 70, `got ${data.FLASHCARDS.length}`);
 check("counts: 19 tracks", data.TRACKS.length === 19, `got ${data.TRACKS.length}`);
