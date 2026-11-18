@@ -4,8 +4,9 @@
 // (700 STRINGS keys), notes/flashcards/plan/mocks (content.json _ur),
 // the Islamiyat pilot bank (500 items, U1), the Tajweed bank
 // (500 items, U2 subject 1), the Arabic bank (500 items, U2
-// subject 2) and the Urdu bank (500 items, U2 subject 3).
-// The other 10 banks keep their pre-U1 _ur
+// subject 2), the Urdu bank (500 items, U2 subject 3) and the
+// English bank (500 items, U2 subject 4).
+// The other 9 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -505,6 +506,148 @@ const harfJaar = (urdUrText.match(/حرف جار/g) || []).length;
 const harfJaarIzafat = (urdUrText.match(/حرفِ جار/g) || []).length;
 const harfJarr = (urdUrText.match(/حرف جر/g) || []).length;
 check("U2 urdu: حرف جار uniform class (25×), no izafat/variant forms", harfJaar === 25 && harfJaarIzafat === 0 && harfJarr === 0, `حرف جار ${harfJaar}, حرفِ جار ${harfJaarIzafat}, حرف جر ${harfJarr}`);
+
+// ---------- §3E English bank (U2 subject 4) ----------
+// U2 rewrote the English _ur fields (315 of 3000 changed; 245/500 items).
+// This bank's subject matter IS English: quoted/tested English words,
+// sentences, idioms and all 2000 options stay byte-identical Latin; the
+// rewrite targets the instructional framing. Digit rule is STRICT on
+// every field: the bank has ZERO digit-carrying fields, so strict
+// multiset equality holds vacuously and any digit introduced fails.
+// Latin rule is the MIRROR RULE: every Latin word in a _ur field must
+// appear in the item's English fields (baseline: exactly 4 violations,
+// the word "object" in ENG-185..188 explanations, fixed by the rewrite).
+// Banned Latin frame words are checked on the FRAME REMAINDER only:
+// quoted spans, ≥2-word option phrases, tense/form phrases, and ≥3-word
+// verbatim English runs are removed first, so tested material is never
+// flagged. Tense names stay Latin (guide §2H; Urdu-script tense tokens
+// banned) — the dominant bank form, flagged for owner confirmation.
+// "form" splits by collocation: شکل for inflected word-forms (جمع/مؤنث/
+// ماضی کی شکل, 31×) vs صورت for named grammatical forms (فعل کی/تقابلی/
+// عالیٰ/بنیادی صورت, 44×). "phrase" splits by sense: فقرہ for grammar
+// phrases, عبارت for expressions/passages. فجائیہ (5×) is kept for
+// exclamatory (brief's تعجبیہ reversed); اجتماعی اسم (7×) for collective
+// (brief's مجموعی reversed); قابلِ شمار (15×) with izafat, symmetric
+// with ناقابلِ شمار (11×) (brief's asymmetric pin reversed). موڈل is
+// the bank form (موڈل فعل as noun, موڈل as adjective). تم is NOT
+// banned: 1 subject-matter use (ENG-144 explanation, the "you" of the
+// example sentence). Quoted-span preservation was coordinator-verified
+// (1 regex-artifact warning, ENG-015, reviewed — see VERIFY report),
+// not suite-pinned.
+const eng = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/english.json"), "utf8"));
+check("U2 english: 500 items", eng.length === 500, `got ${eng.length}`);
+const engIdsOk = eng.every((q, i) => q.id === `ENG-${String(i + 1).padStart(3, "0")}`);
+check("U2 english: IDs ENG-001..ENG-500 in order", engIdsOk);
+const engPairs = [];
+for (const q of eng) {
+  engPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => engPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  engPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const engQE = engPairs.filter(([l]) => !l.includes("options_ur"));
+const ENG_BANNED = [...CONTENT_BANNED, "گرامر", "گرامری", "مونث", "مسواف", "موسوف", "معسوف", "چنیں",
+  "پریزنٹ", "پاسٹ", "فیوچر", "سمپل", "کنٹینیوس", "پرفیکٹ", "تجریدی", "مجموعی", "تعجبیہ", "امر"];
+const engBanned = bannedHits(engPairs, ENG_BANNED);
+check("U2 english: no banned glossary/variant terms in any _ur field (token-aware)", engBanned.length === 0, engBanned.slice(0, 5).join(", "));
+const ENG_PHRASES = ["درج ذیل", "قرآن مجید", "کون سی ضمیر", "قابل شمار", "ناقابل شمار"];
+const engPhrases = engQE.filter(([, v]) => ENG_PHRASES.some((p) => (v ?? "").includes(p)));
+const ENG_LATIN_PHRASES = ["part of speech", "passive voice", "active voice", "indirect speech", "direct speech", "helping verb", "main verb", "reported speech", "topic sentence", "phrasal verb", "yes/no"];
+const engLatinPhrases = engQE.filter(([, v]) => ENG_LATIN_PHRASES.some((p) => (v ?? "").toLowerCase().includes(p)));
+check("U2 english: no banned phrases in Q+E (echo glosses, درج ذیل, non-izafat قابل/ناقابل شمار, Latin frame phrases)",
+  engPhrases.length === 0 && engLatinPhrases.length === 0,
+  [...engPhrases.slice(0, 3).map(([l]) => l), ...engLatinPhrases.slice(0, 3).map(([l]) => l)].join(", "));
+const engEmdash = engPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 english: no em-dash in any _ur field", engEmdash.length === 0, engEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const engMarker = engPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 english: no '[Auto-Translated]' literal in any _ur field", engMarker.length === 0, engMarker.slice(0, 3).map(([l]) => l).join(", "));
+const engMojibake = engPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 english: no U+FFFD in any _ur field", engMojibake.length === 0, engMojibake.slice(0, 3).map(([l]) => l).join(", "));
+let engDigitBad = [];
+for (const q of eng) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) engDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) engDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) engDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 english: digit preservation STRICT on all fields (questions/options/explanations)", engDigitBad.length === 0, engDigitBad.slice(0, 5).join(", "));
+// Mirror rule: every Latin word in _ur must appear in the item's EN fields.
+const engNormWords = (s) => (s.toLowerCase().match(/[a-z]+/g) || []).join(" ");
+let engMirrorBad = [];
+for (const q of eng) {
+  const enWords = new Set(engNormWords([q.question, q.explanation, ...q.options].join(" ")).split(" ").filter(Boolean));
+  for (const [loc, val] of [[`${q.id}:question_ur`, q.question_ur], [`${q.id}:explanation_ur`, q.explanation_ur], ...q.options_ur.map((o, i) => [`${q.id}:options_ur[${i}]`, o])]) {
+    for (const w of engNormWords(val).split(" ").filter(Boolean)) {
+      if (!enWords.has(w)) engMirrorBad.push(`${loc}:${w}`);
+    }
+  }
+}
+check("U2 english: mirror rule — every Latin word in _ur appears in the item's English fields", engMirrorBad.length === 0, engMirrorBad.slice(0, 5).join(" | "));
+// Frame remainder: strip quoted spans, ≥2-word option phrases, tense/form
+// phrases, and ≥3-word verbatim English runs; banned Latin frame words
+// and Latin punctuation are checked on what remains (the Urdu frame).
+const ENG_TENSE_PHRASES = ["present perfect continuous", "past perfect continuous", "future perfect continuous", "present perfect", "past perfect", "future perfect", "present continuous", "past continuous", "future continuous", "present simple", "past simple", "future simple", "present participle", "past participle"];
+const engEscRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function engStripQuotes(s) {
+  return s.replace(/"[^"]*"/g, " ").replace(/'[^']*'/g, " ").replace(/‘[^’]*’/g, " ").replace(/“[^”]*”/g, " ");
+}
+function engFrameRemainder(text, item) {
+  let s = engStripQuotes(text);
+  for (const o of item.options) {
+    if (o.split(/\s+/).filter(Boolean).length >= 2) s = s.replace(new RegExp(engEscRe(o), "gi"), " ");
+  }
+  for (const p of ENG_TENSE_PHRASES) s = s.replace(new RegExp("\\b" + p.replace(/ /g, "\\s+") + "\\b", "gi"), " ");
+  const enNorm = " " + engNormWords([item.question, item.explanation, ...item.options].join(" ")) + " ";
+  s = s.replace(/[A-Za-z]+(?:[ ,.;:?!'\u2019-]+[A-Za-z]+){2,}[.?;:]?/g, (m) => {
+    const nw = engNormWords(m);
+    return nw && enNorm.includes(" " + nw + " ") ? " " : m;
+  });
+  return s;
+}
+const ENG_BANNED_LATIN = new Set(("preposition verb noun adjective adverb pronoun article tense clause sentence object subject phrase voice speech gerund infinitive conjunction interjection synonym antonym singular plural countable uncountable helping modal reported reporting form part word question statement order degree quality quantity number place time manner frequency agent opposite completed definite determiner determiners transitive intransitive finite compound complex dependent independent exclamatory declarative optative superlative comparative possessive demonstrative reflexive interrogative relative collective abstract common proper material personal indefinite irregular being been base topic main written phrasal imperative present past future simple continuous perfect participle yes no grammar grammatical").split(" "));
+let engFrameBad = [];
+let engPunctBad = [];
+for (const q of eng) {
+  for (const [loc, val] of [[`${q.id}:question_ur`, q.question_ur], [`${q.id}:explanation_ur`, q.explanation_ur]]) {
+    const rem = engFrameRemainder(val, q);
+    for (const w of (rem.toLowerCase().match(/[a-z]+/g) || [])) {
+      if (ENG_BANNED_LATIN.has(w)) engFrameBad.push(`${loc}:${w}`);
+    }
+    const remPunct = rem.replace(/\.{2,}/g, " ");
+    if (remPunct.match(/[.?;]/g)) engPunctBad.push(loc);
+  }
+}
+check("U2 english: no banned Latin frame words in the frame remainder (Q+E)", engFrameBad.length === 0, engFrameBad.slice(0, 5).join(" | "));
+check("U2 english: no Latin . ? ; punctuation in the frame remainder (Q+E; ellipsis runs allowed)", engPunctBad.length === 0, engPunctBad.slice(0, 5).join(", "));
+const engOptUrdu = engPairs.filter(([l, v]) => l.includes("options_ur") && /[\u0600-\u06FF]/.test(v ?? ""));
+check("U2 english: all 2000 options_ur elements pure English (zero Urdu-script runs)", engOptUrdu.length === 0, engOptUrdu.slice(0, 3).map(([l]) => l).join(", "));
+const engHonor = engPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 english: no Latin honorific abbreviations in any _ur field", engHonor.length === 0, engHonor.slice(0, 3).map(([l]) => l).join(", "));
+const engArCodepoints = engPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 english: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", engArCodepoints.length === 0, engArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+let engEnScriptRuns = 0;
+for (const q of eng) {
+  engEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { engEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 english: zero Arabic-script runs in English fields (measured baseline; verbatim check vacuous)", engEnScriptRuns === 0, `got ${engEnScriptRuns}`);
+const engUrText = engPairs.map(([, v]) => v ?? "").join("\n");
+const engQEText = engQE.map(([, v]) => v ?? "").join("\n");
+check("U2 english: glossary terms present (کلام کا کون سا جز, پَیسیو وائس, ان ڈائریکٹ اسپیچ, پریپوزیشن, آرٹیکل, زمانہ)",
+  ["کلام کا کون سا جز", "پَیسیو وائس", "ان ڈائریکٹ اسپیچ", "پریپوزیشن", "آرٹیکل", "زمانہ"].every((t) => engQEText.includes(t)));
+check("U2 english: glossary terms present (موضوعی جملہ, مرکب فعل, جیرنڈ, انفنیٹو, موڈل, فجائیہ, رپورٹنگ ورب, واول, کانسوننٹ)",
+  ["موضوعی جملہ", "مرکب فعل", "جیرنڈ", "انفنیٹو", "موڈل", "فجائیہ", "رپورٹنگ ورب", "واول", "کانسوننٹ"].every((t) => engQEText.includes(t)));
+const engCount = (re) => (engQEText.match(re) || []).length;
+check("U2 english: exact counts — قابلِ شمار 15×, ناقابلِ شمار 11×, اجتماعی 7×, مجرد 2×",
+  engCount(/قابلِ شمار/g) === 15 && engCount(/ناقابلِ شمار/g) === 11 && engCount(/اجتماعی/g) === 7 && engCount(/مجرد/g) === 2,
+  `قابلِ شمار ${engCount(/قابلِ شمار/g)}, ناقابلِ شمار ${engCount(/ناقابلِ شمار/g)}, اجتماعی ${engCount(/اجتماعی/g)}, مجرد ${engCount(/مجرد/g)}`);
+check("U2 english: exact counts — جیرنڈ 8×, انفنیٹو 8×, امریہ 8×, فجائیہ 5×, موضوعی جملہ 5×, مرکب فعل 6×, کلام کا کون سا جز 17×",
+  engCount(/جیرنڈ/g) === 8 && engCount(/انفنیٹو/g) === 8 && engCount(/امریہ/g) === 8 && engCount(/فجائیہ/g) === 5 && engCount(/موضوعی جملہ/g) === 5 && engCount(/مرکب فعل/g) === 6 && engCount(/کلام کا کون سا جز/g) === 17,
+  `جیرنڈ ${engCount(/جیرنڈ/g)}, انفنیٹو ${engCount(/انفنیٹو/g)}, امریہ ${engCount(/امریہ/g)}, فجائیہ ${engCount(/فجائیہ/g)}, موضوعی جملہ ${engCount(/موضوعی جملہ/g)}, مرکب فعل ${engCount(/مرکب فعل/g)}, کلام کا کون سا جز ${engCount(/کلام کا کون سا جز/g)}`);
+check("U2 english: exact counts — شکل 31× (inflected forms), صورت 44× (named grammatical forms)",
+  engCount(/شکل/g) === 31 && engCount(/صورت/g) === 44, `شکل ${engCount(/شکل/g)}, صورت ${engCount(/صورت/g)}`);
+check("U2 english: Latin tense names present in _ur (past simple, present perfect, past participle)",
+  ["past simple", "present perfect", "past participle"].every((t) => engQEText.toLowerCase().includes(t)));
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");

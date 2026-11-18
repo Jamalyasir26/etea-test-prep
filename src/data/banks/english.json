@@ -253,7 +253,7 @@
    "A letter is being written by her.",
    "A letter has been written by her."
   ],
-  "explanation_ur": "پریزنٹ سمپل پَیسیو 'is + past participle' ہوتا ہے: is written۔",
+  "explanation_ur": "present simple پَیسیو 'is + past participle' ہوتا ہے: 'is written'۔",
   "explanation_roman": "Present simple passive 'is + past participle' hota hai: is written.",
   "post": [
    "zamungkor",
@@ -315,7 +315,7 @@
    "He said that I was busy.",
    "He said that he had been busy."
   ],
-  "explanation_ur": "ان ڈائریکٹ اسپیچ میں، پریزنٹ سمپل 'am'، پاسٹ سمپل 'was' میں بدل جاتا ہے۔",
+  "explanation_ur": "ان ڈائریکٹ اسپیچ میں، present simple 'am'، past simple 'was' میں بدل جاتا ہے۔",
   "explanation_roman": "Indirect speech mein, present simple 'am' past simple 'was' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -676,7 +676,7 @@
    "A house has been built by them.",
    "A house was built by them."
   ],
-  "explanation_ur": "پاسٹ سمپل پَیسیو 'was + past participle' ہوتا ہے: was built۔",
+  "explanation_ur": "past simple پَیسیو 'was + past participle' ہوتا ہے: was built۔",
   "explanation_roman": "Past simple passive 'was + past participle' hota hai: was built.",
   "post": [
    "zamungkor",
@@ -859,7 +859,7 @@
    "He doesn't like tea.",
    "He do not like tea."
   ],
-  "explanation_ur": "'he' کے ساتھ ہم 'doesn't' + بیس ورب 'like' استعمال کرتے ہیں۔",
+  "explanation_ur": "'he' کے ساتھ ہم 'doesn't' + بنیادی فعل 'like' استعمال کرتے ہیں۔",
   "explanation_roman": "'he' ke sath hum 'doesn't' + base verb 'like' use karte hain.",
   "post": [
    "zamungkor",
@@ -1081,7 +1081,7 @@
  },
  {
   "id": "ENG-019",
-  "question_ur": "اس کا passive voice منتخب کریں: \"The cat chased the mouse.\"",
+  "question_ur": "اس کا پَیسیو وائس منتخب کریں: \"The cat chased the mouse.\"",
   "question_roman": "Is ka passive voice muntakhab karein: \"The cat chased the mouse.\"",
   "options_ur": [
    "The mouse is chased by the cat.",
@@ -1095,7 +1095,7 @@
    "The mouse was chased by the cat.",
    "The mouse is being chased by the cat."
   ],
-  "explanation_ur": "Past simple passive میں 'was + past participle' استعمال ہوتا ہے — was chased۔",
+  "explanation_ur": "past simple پَیسیو میں 'was + past participle' استعمال ہوتا ہے: was chased۔",
   "explanation_roman": "Past simple passive mein 'was + past participle' istemal hota hai — was chased.",
   "post": [
    "zamungkor",
@@ -1143,7 +1143,7 @@
  },
  {
   "id": "ENG-020",
-  "question_ur": "اس کی indirect speech منتخب کریں: He asked, \"Are you coming?\"",
+  "question_ur": "اس کی ان ڈائریکٹ اسپیچ منتخب کریں: He asked, \"Are you coming?\"",
   "question_roman": "Is ki indirect speech muntakhab karein: He asked, \"Are you coming?\"",
   "options_ur": [
    "He asked if I am coming.",
@@ -1157,7 +1157,7 @@
    "He asked that I was coming.",
    "He asked if I was coming."
   ],
-  "explanation_ur": "Yes/no سوال 'asked if' بن جاتا ہے اور present simple، past simple میں بدل جاتا ہے۔",
+  "explanation_ur": "ہاں یا نہیں والا سوال 'asked if' بن جاتا ہے اور present simple، past simple میں بدل جاتا ہے۔",
   "explanation_roman": "Yes/no sawal 'asked if' ban jata hai aur present simple, past simple mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -1205,7 +1205,7 @@
  },
  {
   "id": "ENG-021",
-  "question_ur": "درست preposition منتخب کریں: \"He is afraid ___ dogs.\"",
+  "question_ur": "درست پریپوزیشن منتخب کریں: \"He is afraid ___ dogs.\"",
   "question_roman": "Durust preposition muntakhab karein: \"He is afraid ___ dogs.\"",
   "options_ur": [
    "of",
@@ -1264,7 +1264,7 @@
  },
  {
   "id": "ENG-022",
-  "question_ur": "درست article منتخب کریں: \"___ sun rises in the east.\"",
+  "question_ur": "درست آرٹیکل منتخب کریں: \"___ sun rises in the east.\"",
   "question_roman": "Durust article muntakhab karein: \"___ sun rises in the east.\"",
   "options_ur": [
    "A",
@@ -1441,7 +1441,7 @@
  },
  {
   "id": "ENG-025",
-  "question_ur": "اس کا passive voice منتخب کریں: \"Open the door.\"",
+  "question_ur": "اس کا پَیسیو وائس منتخب کریں: \"Open the door.\"",
   "question_roman": "Is ka passive voice muntakhab karein: \"Open the door.\"",
   "options_ur": [
    "Let the door be opened.",
@@ -1455,7 +1455,7 @@
    "Let the door opened.",
    "The door be opened."
   ],
-  "explanation_ur": "Imperative passive کی شروعات 'Let' + object + 'be' + past participle سے ہوتی ہے۔",
+  "explanation_ur": "امریہ پَیسیو کی شروعات 'Let' + مفعول + 'be' + past participle سے ہوتی ہے۔",
   "explanation_roman": "Imperative passive ki shuruaat 'Let' + object + 'be' + past participle se hoti hai.",
   "post": [
    "zamungkor",
@@ -1503,7 +1503,7 @@
  },
  {
   "id": "ENG-026",
-  "question_ur": "اس کی indirect speech منتخب کریں: He said, \"I have finished my work.\"",
+  "question_ur": "اس کی ان ڈائریکٹ اسپیچ منتخب کریں: He said, \"I have finished my work.\"",
   "question_roman": "Is ki indirect speech muntakhab karein: He said, \"I have finished my work.\"",
   "options_ur": [
    "He said that he has finished his work.",
@@ -1517,7 +1517,7 @@
    "He said that he finished his work.",
    "He said that he finishes his work."
   ],
-  "explanation_ur": "Indirect speech میں present perfect 'have finished'، past perfect 'had finished' میں بدل جاتا ہے۔",
+  "explanation_ur": "ان ڈائریکٹ اسپیچ میں present perfect 'have finished'، past perfect 'had finished' میں بدل جاتا ہے۔",
   "explanation_roman": "Indirect speech mein present perfect 'have finished', past perfect 'had finished' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -1743,7 +1743,7 @@
  },
  {
   "id": "ENG-030",
-  "question_ur": "درست preposition منتخب کریں: \"Listen ___ the teacher.\"",
+  "question_ur": "درست پریپوزیشن منتخب کریں: \"Listen ___ the teacher.\"",
   "question_roman": "Durust preposition muntakhab karein: \"Listen ___ the teacher.\"",
   "options_ur": [
    "in",
@@ -1802,7 +1802,7 @@
  },
  {
   "id": "ENG-031",
-  "question_ur": "درست article منتخب کریں: \"She is ___ best student in the class.\"",
+  "question_ur": "درست آرٹیکل منتخب کریں: \"She is ___ best student in the class.\"",
   "question_roman": "Durust article muntakhab karein: \"She is ___ best student in the class.\"",
   "options_ur": [
    "a",
@@ -1816,7 +1816,7 @@
    "the",
    "no article"
   ],
-  "explanation_ur": "Superlative adjectives جیسے 'best' کے ساتھ 'the' استعمال ہوتا ہے۔",
+  "explanation_ur": "عالیٰ صفات جیسے 'best' کے ساتھ 'the' استعمال ہوتا ہے۔",
   "explanation_roman": "Superlative adjectives jaise 'best' ke saath 'the' istemal hota hai.",
   "post": [
    "zamungkor",
@@ -1861,7 +1861,7 @@
  },
  {
   "id": "ENG-032",
-  "question_ur": "اس کا passive voice منتخب کریں: \"Someone stole my bike.\"",
+  "question_ur": "اس کا پَیسیو وائس منتخب کریں: \"Someone stole my bike.\"",
   "question_roman": "Is ka passive voice muntakhab karein: \"Someone stole my bike.\"",
   "options_ur": [
    "My bike is stolen.",
@@ -1875,7 +1875,7 @@
    "My bike has stolen.",
    "My bike was stolen."
   ],
-  "explanation_ur": "Past simple passive: 'was + stolen' ہوتا ہے۔ Agent 'someone' کو حذف کر دیا جاتا ہے۔",
+  "explanation_ur": "past simple پَیسیو: 'was + stolen' ہوتا ہے۔ فاعل 'someone' کو حذف کر دیا جاتا ہے۔",
   "explanation_roman": "Past simple passive: 'was + stolen' hota hai. Agent 'someone' ko hazf kar diya jata hai.",
   "post": [
    "zamungkor",
@@ -1920,7 +1920,7 @@
  },
  {
   "id": "ENG-033",
-  "question_ur": "اس کی indirect speech منتخب کریں: The teacher said, \"Work hard.\"",
+  "question_ur": "اس کی ان ڈائریکٹ اسپیچ منتخب کریں: The teacher said, \"Work hard.\"",
   "question_roman": "Is ki indirect speech muntakhab karein: The teacher said, \"Work hard.\"",
   "options_ur": [
    "The teacher advised us to work hard.",
@@ -1934,7 +1934,7 @@
    "The teacher asked to work hard.",
    "The teacher told that work hard."
   ],
-  "explanation_ur": "مشورہ دینے والے imperative کو 'advised' + object + 'to' + verb کے ساتھ reported کیا جاتا ہے۔",
+  "explanation_ur": "مشورہ دینے والے امریہ جملے کو 'advised' + مفعول + 'to' + فعل کے ساتھ نقل کیا جاتا ہے۔",
   "explanation_roman": "Mashwara dene wale imperative ko 'advised' + object + 'to' + verb ke saath reported kiya jata hai.",
   "post": [
    "zamungkor",
@@ -2038,7 +2038,7 @@
  },
  {
   "id": "ENG-035",
-  "question_ur": "'difficult' کا synonym کیا ہے؟",
+  "question_ur": "'difficult' کا مترادف کیا ہے؟",
   "question_roman": "'difficult' ka synonym kya hai?",
   "options_ur": [
    "Easy",
@@ -2097,7 +2097,7 @@
  },
  {
   "id": "ENG-036",
-  "question_ur": "'beginning' کا antonym کیا ہے؟",
+  "question_ur": "'beginning' کا متضاد کیا ہے؟",
   "question_roman": "'beginning' ka antonym kya hai?",
   "options_ur": [
    "Start",
@@ -2111,7 +2111,7 @@
    "Commencement",
    "End"
   ],
-  "explanation_ur": "'Beginning' کا مطلب the start ہے؛ اس کا opposite 'end' ہے۔",
+  "explanation_ur": "'Beginning' کا مطلب the start ہے؛ اس کا الٹ 'end' ہے۔",
   "explanation_roman": "'Beginning' ka matlab the start hai; is ka opposite 'end' hai.",
   "post": [
    "zamungkor",
@@ -2156,7 +2156,7 @@
  },
  {
   "id": "ENG-037",
-  "question_ur": "درست preposition منتخب کریں: \"He is suffering ___ fever.\"",
+  "question_ur": "درست پریپوزیشن منتخب کریں: \"He is suffering ___ fever.\"",
   "question_roman": "Durust preposition muntakhab karein: \"He is suffering ___ fever.\"",
   "options_ur": [
    "from",
@@ -2215,7 +2215,7 @@
  },
  {
   "id": "ENG-038",
-  "question_ur": "درست verb منتخب کریں: \"By next year, I ___ completed my course.\"",
+  "question_ur": "درست فعل منتخب کریں: \"By next year, I ___ completed my course.\"",
   "question_roman": "Durust verb muntakhab karein: \"By next year, I ___ completed my course.\"",
   "options_ur": [
    "will has",
@@ -2229,7 +2229,7 @@
    "have",
    "had"
   ],
-  "explanation_ur": "Future perfect tense 'will have + past participle' ہوتا ہے: will have completed۔",
+  "explanation_ur": "future perfect زمانہ 'will have + past participle' ہوتا ہے: 'will have completed'۔",
   "explanation_roman": "Future perfect tense 'will have + past participle' hota hai: will have completed.",
   "post": [
    "zamungkor",
@@ -2274,7 +2274,7 @@
  },
  {
   "id": "ENG-039",
-  "question_ur": "اس کا passive voice منتخب کریں: \"She is cooking food.\"",
+  "question_ur": "اس کا پَیسیو وائس منتخب کریں: \"She is cooking food.\"",
   "question_roman": "Is ka passive voice muntakhab karein: \"She is cooking food.\"",
   "options_ur": [
    "Food is cooked by her.",
@@ -2288,7 +2288,7 @@
    "Food is being cooked by her.",
    "Food has been cooked by her."
   ],
-  "explanation_ur": "Present continuous passive 'is being + past participle' ہوتا ہے: is being cooked۔",
+  "explanation_ur": "present continuous پَیسیو 'is being + past participle' ہوتا ہے: is being cooked۔",
   "explanation_roman": "Present continuous passive 'is being + past participle' hota hai: is being cooked.",
   "post": [
    "zamungkor",
@@ -2333,7 +2333,7 @@
  },
  {
   "id": "ENG-040",
-  "question_ur": "اس کی indirect speech منتخب کریں: He said, \"Where do you live?\"",
+  "question_ur": "اس کی ان ڈائریکٹ اسپیچ منتخب کریں: He said, \"Where do you live?\"",
   "question_roman": "Is ki indirect speech muntakhab karein: He said, \"Where do you live?\"",
   "options_ur": [
    "He asked where do I live.",
@@ -2347,7 +2347,7 @@
    "He asked where did I live.",
    "He asked where I lived."
   ],
-  "explanation_ur": "Wh-question میں question word برقرار رہتا ہے، statement word order استعمال ہوتی ہے، اور present simple بدل کر past simple ہو جاتا ہے۔",
+  "explanation_ur": "Wh- والے سوالیہ جملے میں سوالیہ لفظ برقرار رہتا ہے، بیانیہ الفاظ کی ترتیب استعمال ہوتی ہے، اور present simple بدل کر past simple ہو جاتا ہے۔",
   "explanation_roman": "Wh-question mein question word barqarar rehta hai, statement word order istemal hoti hai, aur present simple badal kar past simple ho jata hai.",
   "post": [
    "zamungkor",
@@ -2392,7 +2392,7 @@
  },
  {
   "id": "ENG-041",
-  "question_ur": "درست verb منتخب کریں: \"Neither he nor his friends ___ here.\"",
+  "question_ur": "درست فعل منتخب کریں: \"Neither he nor his friends ___ here.\"",
   "question_roman": "Durust verb muntakhab karein: \"Neither he nor his friends ___ here.\"",
   "options_ur": [
    "are",
@@ -2406,7 +2406,7 @@
    "is",
    "has"
   ],
-  "explanation_ur": "'neither...nor' کے ساتھ verb قریب ترین subject ('friends'، plural) کے مطابق آتا ہے، اس لیے 'are' درست ہے۔",
+  "explanation_ur": "'neither...nor' کے ساتھ فعل قریب ترین فاعل ('friends'، جمع) کے مطابق آتا ہے، اس لیے 'are' درست ہے۔",
   "explanation_roman": "'neither...nor' ke saath verb qareeb tareen subject ('friends', plural) ke mutabiq aata hai, is liye 'are' durust hai.",
   "post": [
    "zamungkor",
@@ -2451,7 +2451,7 @@
  },
  {
   "id": "ENG-042",
-  "question_ur": "'polite' کا synonym کیا ہے؟",
+  "question_ur": "'polite' کا مترادف کیا ہے؟",
   "question_roman": "'polite' ka synonym kya hai?",
   "options_ur": [
    "Rude",
@@ -2511,7 +2511,7 @@
  },
  {
   "id": "ENG-043",
-  "question_ur": "'expand' کا antonym کیا ہے؟",
+  "question_ur": "'expand' کا متضاد کیا ہے؟",
   "question_roman": "'expand' ka antonym kya hai?",
   "options_ur": [
    "Increase",
@@ -2525,7 +2525,7 @@
    "Contract",
    "Extend"
   ],
-  "explanation_ur": "'Expand' کا مطلب بڑا ہونا ہے؛ اس کا opposite 'contract' ہے (to shrink)۔",
+  "explanation_ur": "'Expand' کا مطلب بڑا ہونا ہے؛ اس کا الٹ 'contract' ہے (to shrink)۔",
   "explanation_roman": "'Expand' ka matlab bara hona hai; is ka opposite 'contract' hai (to shrink).",
   "post": [
    "zamungkor",
@@ -2570,7 +2570,7 @@
  },
  {
   "id": "ENG-044",
-  "question_ur": "درست preposition منتخب کریں: \"I believe ___ God.\"",
+  "question_ur": "درست پریپوزیشن منتخب کریں: \"I believe ___ God.\"",
   "question_roman": "Durust preposition muntakhab karein: \"I believe ___ God.\"",
   "options_ur": [
    "on",
@@ -2629,7 +2629,7 @@
  },
  {
   "id": "ENG-045",
-  "question_ur": "درست verb منتخب کریں: \"The news ___ good.\"",
+  "question_ur": "درست فعل منتخب کریں: \"The news ___ good.\"",
   "question_roman": "Durust verb muntakhab karein: \"The news ___ good.\"",
   "options_ur": [
    "is",
@@ -2643,7 +2643,7 @@
    "are",
    "have"
   ],
-  "explanation_ur": "'News' ایک uncountable noun ہے اور singular verb لیتی ہے: 'is'۔",
+  "explanation_ur": "'News' ایک ناقابلِ شمار اسم ہے اور واحد فعل لیتی ہے: 'is'۔",
   "explanation_roman": "'News' ek uncountable noun hai aur singular verb leti hai: 'is'.",
   "post": [
    "zamungkor",
@@ -2702,7 +2702,7 @@
    "Collective noun",
    "Abstract noun"
   ],
-  "explanation_ur": "'Ahmed' ایک خاص شخص کا نام ہے، اس لیے یہ proper noun ہے۔ Proper noun بڑے حرف سے شروع ہوتا ہے۔",
+  "explanation_ur": "'Ahmed' ایک خاص شخص کا نام ہے، اس لیے یہ proper noun ہے۔ اسم علم بڑے حرف سے شروع ہوتا ہے۔",
   "explanation_roman": "'Ahmed' aik khaas shakhs ka naam hai, is liye yeh proper noun hai. Proper noun bare harf se shuru hota hai.",
   "post": [
    "zamungkor",
@@ -3986,7 +3986,7 @@
  },
  {
   "id": "ENG-068",
-  "question_ur": "جملے \"She wore a red dress.\" میں 'red' کون سا part of speech ہے؟",
+  "question_ur": "جملے \"She wore a red dress.\" میں 'red' کلام کا کون سا جز ہے؟",
   "question_roman": "Jumle \"She wore a red dress.\" mein 'red' kaun sa part of speech hai?",
   "options_ur": [
    "Adjective",
@@ -4000,7 +4000,7 @@
    "Verb",
    "Noun"
   ],
-  "explanation_ur": "'Red' لباس کی صفت بیان کرتا ہے، اس لیے یہ adjective ہے۔ Adjective اسم کی صفت بیان کرتا ہے۔",
+  "explanation_ur": "'Red' لباس کی صفت بیان کرتا ہے، اس لیے یہ صفت ہے۔ صفت اسم کی صفت بیان کرتی ہے۔",
   "explanation_roman": "'Red' libaas ki sifat bayan karta hai, is liye yeh adjective hai. Adjective ism ki sifat bayan karta hai.",
   "post": [
    "zamungkor",
@@ -4045,7 +4045,7 @@
  },
  {
   "id": "ENG-069",
-  "question_ur": "جملے \"Birds fly in the sky,\" میں 'fly' کون سا part of speech ہے؟",
+  "question_ur": "جملے \"Birds fly in the sky,\" میں 'fly' کلام کا کون سا جز ہے؟",
   "question_roman": "Jumle \"Birds fly in the sky,\" mein 'fly' kaun sa part of speech hai?",
   "options_ur": [
    "Noun",
@@ -4059,7 +4059,7 @@
    "Verb",
    "Adverb"
   ],
-  "explanation_ur": "'Fly' پرندوں کا عمل ظاہر کرتا ہے، اس لیے یہ verb ہے۔",
+  "explanation_ur": "'Fly' پرندوں کا عمل ظاہر کرتا ہے، اس لیے یہ فعل ہے۔",
   "explanation_roman": "'Fly' parindon ka amal zahir karta hai, is liye yeh verb hai.",
   "post": [
    "zamungkor",
@@ -4104,7 +4104,7 @@
  },
  {
   "id": "ENG-070",
-  "question_ur": "جملے \"He speaks slowly.\" میں لفظ 'slowly' کون سا part of speech ہے؟",
+  "question_ur": "جملے \"He speaks slowly.\" میں لفظ 'slowly' کلام کا کون سا جز ہے؟",
   "question_roman": "Jumle \"He speaks slowly.\" mein lafz 'slowly' kaun sa part of speech hai?",
   "options_ur": [
    "Adjective",
@@ -4118,7 +4118,7 @@
    "Preposition",
    "Adverb"
   ],
-  "explanation_ur": "'Slowly' بتاتا ہے کہ وہ کیسے بولتا ہے، اس لیے یہ adverb ہے۔ Adverb فعل کی صفت بیان کرتا ہے۔",
+  "explanation_ur": "'Slowly' بتاتا ہے کہ وہ کیسے بولتا ہے، اس لیے یہ متعلق فعل ہے۔ متعلق فعل فعل کی صفت بیان کرتا ہے۔",
   "explanation_roman": "'Slowly' batata hai ke woh kaise bolta hai, is liye yeh adverb hai. Adverb fail ki sifat bayan karta hai.",
   "post": [
    "zamungkor",
@@ -4163,7 +4163,7 @@
  },
  {
   "id": "ENG-071",
-  "question_ur": "جملے \"The cat is under the table\" میں 'under' کون سا part of speech ہے؟",
+  "question_ur": "جملے \"The cat is under the table\" میں 'under' کلام کا کون سا جز ہے؟",
   "question_roman": "Jumle \"The cat is under the table\" mein 'under' kaun sa part of speech hai?",
   "options_ur": [
    "Conjunction",
@@ -4177,7 +4177,7 @@
    "Interjection",
    "Adjective"
   ],
-  "explanation_ur": "'Under' میز کے سلسلے میں بلی کی جگہ ظاہر کرتا ہے، اس لیے یہ preposition ہے۔",
+  "explanation_ur": "'Under' میز کے سلسلے میں بلی کی جگہ ظاہر کرتا ہے، اس لیے یہ پریپوزیشن ہے۔",
   "explanation_roman": "'Under' mez ke silsile mein billi ki jagah zahir karta hai, is liye yeh preposition hai.",
   "post": [
    "zamungkor",
@@ -4222,7 +4222,7 @@
  },
  {
   "id": "ENG-072",
-  "question_ur": "جملے \"Ali and Sara went to school,\" میں 'and' کون سا part of speech ہے؟",
+  "question_ur": "جملے \"Ali and Sara went to school,\" میں 'and' کلام کا کون سا جز ہے؟",
   "question_roman": "Jumle \"Ali and Sara went to school,\" mein 'and' kaun sa part of speech hai?",
   "options_ur": [
    "Preposition",
@@ -4236,7 +4236,7 @@
    "Conjunction",
    "Interjection"
   ],
-  "explanation_ur": "'And' 'Ali' اور 'Sara' کو جوڑتا ہے، اس لیے یہ conjunction ہے۔",
+  "explanation_ur": "'And' 'Ali' اور 'Sara' کو جوڑتا ہے، اس لیے یہ حرف عطف ہے۔",
   "explanation_roman": "'And' 'Ali' aur 'Sara' ko jorta hai, is liye yeh conjunction hai.",
   "post": [
    "zamungkor",
@@ -4281,7 +4281,7 @@
  },
  {
   "id": "ENG-073",
-  "question_ur": "جملے \"Hurrah! We won the match.\" میں 'Hurrah' کون سا part of speech ہے؟",
+  "question_ur": "جملے \"Hurrah! We won the match.\" میں 'Hurrah' کلام کا کون سا جز ہے؟",
   "question_roman": "Jumle \"Hurrah! We won the match.\" mein 'Hurrah' kaun sa part of speech hai?",
   "options_ur": [
    "Interjection",
@@ -4295,7 +4295,7 @@
    "Conjunction",
    "Verb"
   ],
-  "explanation_ur": "'Hurrah' خوشی کے اچانک احساس کا اظہار کرتا ہے، اس لیے یہ interjection ہے۔",
+  "explanation_ur": "'Hurrah' خوشی کے اچانک احساس کا اظہار کرتا ہے، اس لیے یہ حرف ندا ہے۔",
   "explanation_roman": "'Hurrah' khushi ke achanak ehsaas ka izhar karta hai, is liye yeh interjection hai.",
   "post": [
    "zamungkor",
@@ -4340,7 +4340,7 @@
  },
  {
   "id": "ENG-074",
-  "question_ur": "جملے \"The children play in the garden.\" میں 'children' کون سا part of speech ہے؟",
+  "question_ur": "جملے \"The children play in the garden.\" میں 'children' کلام کا کون سا جز ہے؟",
   "question_roman": "Jumle \"The children play in the garden.\" mein 'children' kaun sa part of speech hai?",
   "options_ur": [
    "Pronoun",
@@ -4354,7 +4354,7 @@
    "Adjective",
    "Noun"
   ],
-  "explanation_ur": "'Children' لوگوں کا نام ہے، اس لیے یہ noun ہے۔",
+  "explanation_ur": "'Children' لوگوں کا نام ہے، اس لیے یہ اسم ہے۔",
   "explanation_roman": "'Children' logon ka naam hai, is liye yeh noun hai.",
   "post": [
    "zamungkor",
@@ -4399,7 +4399,7 @@
  },
  {
   "id": "ENG-075",
-  "question_ur": "جملے \"We eat lunch at home\" میں 'we' کون سا part of speech ہے؟",
+  "question_ur": "جملے \"We eat lunch at home\" میں 'we' کلام کا کون سا جز ہے؟",
   "question_roman": "Jumle \"We eat lunch at home\" mein 'we' kaun sa part of speech hai?",
   "options_ur": [
    "Noun",
@@ -4413,7 +4413,7 @@
    "Pronoun",
    "Adjective"
   ],
-  "explanation_ur": "'We' بولنے والوں کے لیے استعمال ہوتا ہے اور فاعل کے طور پر کام کرتا ہے، اس لیے یہ pronoun ہے۔",
+  "explanation_ur": "'We' بولنے والوں کے لیے استعمال ہوتا ہے اور فاعل کے طور پر کام کرتا ہے، اس لیے یہ ضمیر ہے۔",
   "explanation_roman": "'We' bolne walon ke liye istemal hota hai aur fa'il ke tor par kaam karta hai, is liye yeh pronoun hai.",
   "post": [
    "zamungkor",
@@ -4458,7 +4458,7 @@
  },
  {
   "id": "ENG-076",
-  "question_ur": "\"She bought a beautiful dress.\" جملے میں لفظ 'beautiful' کس قسم کا adjective ہے؟",
+  "question_ur": "\"She bought a beautiful dress.\" جملے میں لفظ 'beautiful' کس قسم کی صفت ہے؟",
   "question_roman": "\"She bought a beautiful dress.\" Jumle mein lafz 'beautiful' kis qism ka adjective hai?",
   "options_ur": [
    "Adjective of quality",
@@ -4517,7 +4517,7 @@
  },
  {
   "id": "ENG-077",
-  "question_ur": "\"This book belongs to Sara.\" جملے میں لفظ 'This' کس قسم کا adjective ہے؟",
+  "question_ur": "\"This book belongs to Sara.\" جملے میں لفظ 'This' کس قسم کی صفت ہے؟",
   "question_roman": "\"This book belongs to Sara.\" Jumle mein lafz 'This' kis qism ka adjective hai?",
   "options_ur": [
    "Adjective of quality",
@@ -4576,7 +4576,7 @@
  },
  {
   "id": "ENG-078",
-  "question_ur": "\"Our teacher praised the class.\" جملے میں لفظ 'Our' کس قسم کا adjective ہے؟",
+  "question_ur": "\"Our teacher praised the class.\" جملے میں لفظ 'Our' کس قسم کی صفت ہے؟",
   "question_roman": "\"Our teacher praised the class.\" Jumle mein lafz 'Our' kis qism ka adjective hai?",
   "options_ur": [
    "Demonstrative adjective",
@@ -4635,7 +4635,7 @@
  },
  {
   "id": "ENG-079",
-  "question_ur": "\"She drank little water during the walk.\" جملے میں لفظ 'little' کس قسم کا adjective ہے؟",
+  "question_ur": "\"She drank little water during the walk.\" جملے میں لفظ 'little' کس قسم کی صفت ہے؟",
   "question_roman": "\"She drank little water during the walk.\" Jumle mein lafz 'little' kis qism ka adjective hai?",
   "options_ur": [
    "Adjective of number",
@@ -4694,7 +4694,7 @@
  },
  {
   "id": "ENG-080",
-  "question_ur": "\"Five students won prizes in the contest.\" جملے میں لفظ 'Five' کس قسم کا adjective ہے؟",
+  "question_ur": "\"Five students won prizes in the contest.\" جملے میں لفظ 'Five' کس قسم کی صفت ہے؟",
   "question_roman": "\"Five students won prizes in the contest.\" Jumle mein lafz 'Five' kis qism ka adjective hai?",
   "options_ur": [
    "Adjective of number",
@@ -4753,7 +4753,7 @@
  },
  {
   "id": "ENG-081",
-  "question_ur": "\"Sara is ___ than her sister.\" لفظ 'tall' کی comparative form منتخب کریں۔",
+  "question_ur": "\"Sara is ___ than her sister.\" لفظ 'tall' کی تقابلی صورت منتخب کریں۔",
   "question_roman": "\"Sara is ___ than her sister.\" Lafz 'tall' ki comparative form muntakhab karein.",
   "options_ur": [
    "tall",
@@ -4767,7 +4767,7 @@
    "tallest",
    "most tall"
   ],
-  "explanation_ur": "'Tall' کی comparative form 'taller' ہے، اور یہ دو افراد کا موازنہ کرتی ہے۔",
+  "explanation_ur": "'Tall' کی تقابلی صورت 'taller' ہے، اور یہ دو افراد کا موازنہ کرتی ہے۔",
   "explanation_roman": "'Tall' ki comparative form 'taller' hai, aur yeh do afraad ka mawazna karti hai.",
   "post": [
    "zamungkor",
@@ -4812,7 +4812,7 @@
  },
  {
   "id": "ENG-082",
-  "question_ur": "\"Mount Everest is the ___ mountain in the world.\" لفظ 'high' کی superlative form منتخب کریں۔",
+  "question_ur": "\"Mount Everest is the ___ mountain in the world.\" لفظ 'high' کی عالیٰ صورت منتخب کریں۔",
   "question_roman": "\"Mount Everest is the ___ mountain in the world.\" Lafz 'high' ki superlative form muntakhab karein.",
   "options_ur": [
    "high",
@@ -4826,7 +4826,7 @@
    "highest",
    "most high"
   ],
-  "explanation_ur": "'High' کی superlative form 'highest' ہے، اور یہ 'the' کے ساتھ سب سے زیادہ بلندی کے لیے استعمال ہوتی ہے۔",
+  "explanation_ur": "'High' کی عالیٰ صورت 'highest' ہے، اور یہ 'the' کے ساتھ سب سے زیادہ بلندی کے لیے استعمال ہوتی ہے۔",
   "explanation_roman": "'High' ki superlative form 'highest' hai, aur yeh 'the' ke sath sab se zyada bulandi ke liye istemal hoti hai.",
   "post": [
    "zamungkor",
@@ -4871,7 +4871,7 @@
  },
  {
   "id": "ENG-083",
-  "question_ur": "\"This book is ___ than that one.\" لفظ 'good' کی comparative form منتخب کریں۔",
+  "question_ur": "\"This book is ___ than that one.\" لفظ 'good' کی تقابلی صورت منتخب کریں۔",
   "question_roman": "\"This book is ___ than that one.\" Lafz 'good' ki comparative form muntakhab karein.",
   "options_ur": [
    "gooder",
@@ -4885,7 +4885,7 @@
    "more good",
    "better"
   ],
-  "explanation_ur": "'Good' کی irregular comparative form 'better' ہے؛ 'gooder' درست انگریزی لفظ نہیں ہے۔",
+  "explanation_ur": "'Good' کی بے قاعدہ تقابلی صورت 'better' ہے؛ 'gooder' درست انگریزی لفظ نہیں ہے۔",
   "explanation_roman": "'Good' ki irregular comparative form 'better' hai; 'gooder' durust English lafz nahi hai.",
   "post": [
    "zamungkor",
@@ -4930,7 +4930,7 @@
  },
  {
   "id": "ENG-084",
-  "question_ur": "\"The children play in the park every evening.\" جملے میں لفظ 'play' کون سا part of speech ہے؟",
+  "question_ur": "\"The children play in the park every evening.\" جملے میں لفظ 'play' کلام کا کون سا جز ہے؟",
   "question_roman": "\"The children play in the park every evening.\" Jumle mein lafz 'play' kaun sa part of speech hai?",
   "options_ur": [
    "Main verb",
@@ -4944,7 +4944,7 @@
    "Adverb",
    "Adjective"
   ],
-  "explanation_ur": "'Play' جملے کا اصل عمل ہے، اس لیے یہ main verb ہے۔",
+  "explanation_ur": "'Play' جملے کا اصل عمل ہے، اس لیے یہ اصلی فعل ہے۔",
   "explanation_roman": "'Play' jumle ka asal amal hai, is liye yeh main verb hai.",
   "post": [
    "zamungkor",
@@ -4989,7 +4989,7 @@
  },
  {
   "id": "ENG-085",
-  "question_ur": "\"She is reading a storybook now.\" جملے میں لفظ 'is' کون سا part of speech ہے؟",
+  "question_ur": "\"She is reading a storybook now.\" جملے میں لفظ 'is' کلام کا کون سا جز ہے؟",
   "question_roman": "\"She is reading a storybook now.\" Jumle mein lafz 'is' kaun sa part of speech hai?",
   "options_ur": [
    "Main verb",
@@ -5003,7 +5003,7 @@
    "Adverb",
    "Preposition"
   ],
-  "explanation_ur": "'Is'، main verb 'reading' کی مدد کرتا ہے اور present continuous tense بناتا ہے۔",
+  "explanation_ur": "'Is'، اصلی فعل 'reading' کی مدد کرتا ہے اور present continuous زمانہ بناتا ہے۔",
   "explanation_roman": "'Is', main verb 'reading' ki madad karta hai aur present continuous tense banata hai.",
   "post": [
    "zamungkor",
@@ -5048,7 +5048,7 @@
  },
  {
   "id": "ENG-086",
-  "question_ur": "\"They have finished their homework already.\" جملے میں لفظ 'have' کون سا part of speech ہے؟",
+  "question_ur": "\"They have finished their homework already.\" جملے میں لفظ 'have' کلام کا کون سا جز ہے؟",
   "question_roman": "\"They have finished their homework already.\" Jumle mein lafz 'have' kaun sa part of speech hai?",
   "options_ur": [
    "Adjective",
@@ -5062,7 +5062,7 @@
    "Helping verb",
    "Main verb"
   ],
-  "explanation_ur": "'Have'، main verb 'finished' کی مدد کرتا ہے اور present perfect tense بناتا ہے۔",
+  "explanation_ur": "'Have'، اصلی فعل 'finished' کی مدد کرتا ہے اور present perfect زمانہ بناتا ہے۔",
   "explanation_roman": "'Have', main verb 'finished' ki madad karta hai aur present perfect tense banata hai.",
   "post": [
    "zamungkor",
@@ -5107,7 +5107,7 @@
  },
  {
   "id": "ENG-087",
-  "question_ur": "\"Students must reach school on time.\" جملے میں لفظ 'must' کون سا part of speech ہے؟",
+  "question_ur": "\"Students must reach school on time.\" جملے میں لفظ 'must' کلام کا کون سا جز ہے؟",
   "question_roman": "\"Students must reach school on time.\" Jumle mein lafz 'must' kaun sa part of speech hai?",
   "options_ur": [
    "Main verb",
@@ -5121,7 +5121,7 @@
    "Interjection",
    "Helping verb"
   ],
-  "explanation_ur": "'Must' ایک modal verb ہے جو main verb 'reach' کی مدد کرتا ہے اور فرض ظاہر کرتا ہے۔",
+  "explanation_ur": "'Must' ایک موڈل فعل ہے جو اصلی فعل 'reach' کی مدد کرتا ہے اور فرض ظاہر کرتا ہے۔",
   "explanation_roman": "'Must' aik modal verb hai jo main verb 'reach' ki madad karta hai aur farz zahir karta hai.",
   "post": [
    "zamungkor",
@@ -5166,7 +5166,7 @@
  },
  {
   "id": "ENG-088",
-  "question_ur": "\"The farmer was watering the plants in the morning.\" جملے میں لفظ 'watering' کون سا part of speech ہے؟",
+  "question_ur": "\"The farmer was watering the plants in the morning.\" جملے میں لفظ 'watering' کلام کا کون سا جز ہے؟",
   "question_roman": "\"The farmer was watering the plants in the morning.\" Jumle mein lafz 'watering' kaun sa part of speech hai?",
   "options_ur": [
    "Main verb",
@@ -5180,7 +5180,7 @@
    "Preposition",
    "Adverb"
   ],
-  "explanation_ur": "'Watering' اصل عمل ہے، جبکہ 'was' صرف اس کی مدد کر کے past continuous tense بناتا ہے۔",
+  "explanation_ur": "'Watering' اصل عمل ہے، جبکہ 'was' صرف اس کی مدد کر کے past continuous زمانہ بناتا ہے۔",
   "explanation_roman": "'Watering' asal amal hai, jabke 'was' sirf is ki madad kar ke past continuous tense banata hai.",
   "post": [
    "zamungkor",
@@ -5225,7 +5225,7 @@
  },
  {
   "id": "ENG-089",
-  "question_ur": "\"We ___ playing cricket in the field.\" درست helping verb منتخب کریں۔",
+  "question_ur": "\"We ___ playing cricket in the field.\" درست معاون فعل منتخب کریں۔",
   "question_roman": "\"We ___ playing cricket in the field.\" Durust helping verb muntakhab karein.",
   "options_ur": [
    "is",
@@ -5239,7 +5239,7 @@
    "am",
    "be"
   ],
-  "explanation_ur": "'We' کے ساتھ main verb 'playing' سے پہلے helping verb 'are' استعمال ہوتا ہے۔",
+  "explanation_ur": "'We' کے ساتھ اصلی فعل 'playing' سے پہلے معاون فعل 'are' استعمال ہوتا ہے۔",
   "explanation_roman": "'We' ke sath main verb 'playing' se pehle helping verb 'are' istemal hota hai.",
   "post": [
    "zamungkor",
@@ -5284,7 +5284,7 @@
  },
  {
   "id": "ENG-090",
-  "question_ur": "\"He ___ written three letters today.\" درست helping verb منتخب کریں۔",
+  "question_ur": "\"He ___ written three letters today.\" درست معاون فعل منتخب کریں۔",
   "question_roman": "\"He ___ written three letters today.\" Durust helping verb muntakhab karein.",
   "options_ur": [
    "have",
@@ -5298,7 +5298,7 @@
    "has",
    "are"
   ],
-  "explanation_ur": "'He' کے ساتھ past participle 'written' سے پہلے helping verb 'has' استعمال ہوتا ہے۔",
+  "explanation_ur": "'He' کے ساتھ past participle 'written' سے پہلے معاون فعل 'has' استعمال ہوتا ہے۔",
   "explanation_roman": "'He' ke sath past participle 'written' se pehle helping verb 'has' istemal hota hai.",
   "post": [
    "zamungkor",
@@ -5343,7 +5343,7 @@
  },
  {
   "id": "ENG-091",
-  "question_ur": "\"I ___ learning English these days.\" درست helping verb منتخب کریں۔",
+  "question_ur": "\"I ___ learning English these days.\" درست معاون فعل منتخب کریں۔",
   "question_roman": "\"I ___ learning English these days.\" Durust helping verb muntakhab karein.",
   "options_ur": [
    "is",
@@ -5357,7 +5357,7 @@
    "be",
    "am"
   ],
-  "explanation_ur": "'I' کے ساتھ main verb 'learning' سے پہلے helping verb 'am' استعمال ہوتا ہے۔",
+  "explanation_ur": "'I' کے ساتھ اصلی فعل 'learning' سے پہلے معاون فعل 'am' استعمال ہوتا ہے۔",
   "explanation_roman": "'I' ke sath main verb 'learning' se pehle helping verb 'am' istemal hota hai.",
   "post": [
    "zamungkor",
@@ -5402,7 +5402,7 @@
  },
  {
   "id": "ENG-092",
-  "question_ur": "\"The old man walked slowly across the street.\" جملے میں لفظ 'slowly' کس قسم کا adverb ہے؟",
+  "question_ur": "\"The old man walked slowly across the street.\" جملے میں لفظ 'slowly' کس قسم کا متعلق فعل ہے؟",
   "question_roman": "\"The old man walked slowly across the street.\" Jumle mein lafz 'slowly' kis qism ka adverb hai?",
   "options_ur": [
    "Adverb of manner",
@@ -5461,7 +5461,7 @@
  },
  {
   "id": "ENG-093",
-  "question_ur": "\"The teacher asked Ali to come here.\" جملے میں لفظ 'here' کس قسم کا adverb ہے؟",
+  "question_ur": "\"The teacher asked Ali to come here.\" جملے میں لفظ 'here' کس قسم کا متعلق فعل ہے؟",
   "question_roman": "\"The teacher asked Ali to come here.\" Jumle mein lafz 'here' kis qism ka adverb hai?",
   "options_ur": [
    "Adverb of manner",
@@ -5520,7 +5520,7 @@
  },
  {
   "id": "ENG-094",
-  "question_ur": "\"We visited the museum yesterday with our class.\" جملے میں لفظ 'yesterday' کس قسم کا adverb ہے؟",
+  "question_ur": "\"We visited the museum yesterday with our class.\" جملے میں لفظ 'yesterday' کس قسم کا متعلق فعل ہے؟",
   "question_roman": "\"We visited the museum yesterday with our class.\" Jumle mein lafz 'yesterday' kis qism ka adverb hai?",
   "options_ur": [
    "Adverb of place",
@@ -5579,7 +5579,7 @@
  },
  {
   "id": "ENG-095",
-  "question_ur": "\"She always brushes her teeth before breakfast.\" جملے میں لفظ 'always' کس قسم کا adverb ہے؟",
+  "question_ur": "\"She always brushes her teeth before breakfast.\" جملے میں لفظ 'always' کس قسم کا متعلق فعل ہے؟",
   "question_roman": "\"She always brushes her teeth before breakfast.\" Jumle mein lafz 'always' kis qism ka adverb hai?",
   "options_ur": [
    "Adverb of time",
@@ -5638,7 +5638,7 @@
  },
  {
   "id": "ENG-096",
-  "question_ur": "\"The soup is very hot for the little child.\" جملے میں لفظ 'very' کس قسم کا adverb ہے؟",
+  "question_ur": "\"The soup is very hot for the little child.\" جملے میں لفظ 'very' کس قسم کا متعلق فعل ہے؟",
   "question_roman": "\"The soup is very hot for the little child.\" Jumle mein lafz 'very' kis qism ka adverb hai?",
   "options_ur": [
    "Adverb of degree",
@@ -5697,7 +5697,7 @@
  },
  {
   "id": "ENG-097",
-  "question_ur": "\"The driver drove the bus ___ on the narrow road.\" adverb of manner منتخب کریں۔",
+  "question_ur": "\"The driver drove the bus ___ on the narrow road.\" انداز کا متعلق فعل منتخب کریں۔",
   "question_roman": "\"The driver drove the bus ___ on the narrow road.\" Adverb of manner muntakhab karein.",
   "options_ur": [
    "careful",
@@ -5711,7 +5711,7 @@
    "care",
    "carefulness"
   ],
-  "explanation_ur": "'Carefully' adverb of manner ہے کیونکہ یہ بتاتا ہے کہ ڈرائیور نے بس کیسے چلائی۔",
+  "explanation_ur": "'Carefully' انداز کا متعلق فعل ہے کیونکہ یہ بتاتا ہے کہ ڈرائیور نے بس کیسے چلائی۔",
   "explanation_roman": "'Carefully' adverb of manner hai kyunke yeh batata hai ke driver ne bus kaise chalayi.",
   "post": [
    "zamungkor",
@@ -5756,7 +5756,7 @@
  },
  {
   "id": "ENG-098",
-  "question_ur": "\"She ___ reads storybooks in the evening.\" adverb of frequency منتخب کریں۔",
+  "question_ur": "\"She ___ reads storybooks in the evening.\" تعدد کا متعلق فعل منتخب کریں۔",
   "question_roman": "\"She ___ reads storybooks in the evening.\" Adverb of frequency muntakhab karein.",
   "options_ur": [
    "quickly",
@@ -5770,7 +5770,7 @@
    "often",
    "quick"
   ],
-  "explanation_ur": "'Often' بتاتا ہے کہ وہ کتنی بار کہانیوں کی کتابیں پڑھتی ہے، اس لیے یہ adverb of frequency ہے۔",
+  "explanation_ur": "'Often' بتاتا ہے کہ وہ کتنی بار کہانیوں کی کتابیں پڑھتی ہے، اس لیے یہ تعدد کا متعلق فعل ہے۔",
   "explanation_roman": "'Often' batata hai ke woh kitni baar kahaniyon ki kitabein parhti hai, is liye yeh adverb of frequency hai.",
   "post": [
    "zamungkor",
@@ -5815,7 +5815,7 @@
  },
  {
   "id": "ENG-099",
-  "question_ur": "\"The mother is proud ___ her kind son.\" درست preposition منتخب کریں۔",
+  "question_ur": "\"The mother is proud ___ her kind son.\" درست پریپوزیشن منتخب کریں۔",
   "question_roman": "\"The mother is proud ___ her kind son.\" Durust preposition muntakhab karein.",
   "options_ur": [
    "at",
@@ -5874,7 +5874,7 @@
  },
  {
   "id": "ENG-100",
-  "question_ur": "\"Please wait ___ me near the school gate.\" درست preposition منتخب کریں۔",
+  "question_ur": "\"Please wait ___ me near the school gate.\" درست پریپوزیشن منتخب کریں۔",
   "question_roman": "\"Please wait ___ me near the school gate.\" Durust preposition muntakhab karein.",
   "options_ur": [
    "for",
@@ -5933,7 +5933,7 @@
  },
  {
   "id": "ENG-101",
-  "question_ur": "\"We play hockey ___ the morning before school.\" درست preposition منتخب کریں۔",
+  "question_ur": "\"We play hockey ___ the morning before school.\" درست پریپوزیشن منتخب کریں۔",
   "question_roman": "\"We play hockey ___ the morning before school.\" Durust preposition muntakhab karein.",
   "options_ur": [
    "on",
@@ -5992,7 +5992,7 @@
  },
  {
   "id": "ENG-102",
-  "question_ur": "\"She stayed at home because she was unwell.\" جملے میں لفظ 'because' کون سا part of speech ہے؟",
+  "question_ur": "\"She stayed at home because she was unwell.\" جملے میں لفظ 'because' کلام کا کون سا جز ہے؟",
   "question_roman": "\"She stayed at home because she was unwell.\" Jumle mein lafz 'because' kaun sa part of speech hai?",
   "options_ur": [
    "Preposition",
@@ -6006,7 +6006,7 @@
    "Conjunction",
    "Interjection"
   ],
-  "explanation_ur": "'Because' وجہ والے clause کو main clause سے جوڑتا ہے، اس لیے یہ conjunction ہے۔",
+  "explanation_ur": "'Because' وجہ والے جملے کے جز کو اصلی جملے کے جز سے جوڑتا ہے، اس لیے یہ حرف عطف ہے۔",
   "explanation_roman": "'Because' wajah wale clause ko main clause se jorta hai, is liye yeh conjunction hai.",
   "post": [
    "zamungkor",
@@ -6051,7 +6051,7 @@
  },
  {
   "id": "ENG-103",
-  "question_ur": "\"You may take tea or coffee with breakfast.\" جملے میں لفظ 'or' کون سا part of speech ہے؟",
+  "question_ur": "\"You may take tea or coffee with breakfast.\" جملے میں لفظ 'or' کلام کا کون سا جز ہے؟",
   "question_roman": "\"You may take tea or coffee with breakfast.\" Jumle mein lafz 'or' kaun sa part of speech hai?",
   "options_ur": [
    "Adverb",
@@ -6065,7 +6065,7 @@
    "Adjective",
    "Conjunction"
   ],
-  "explanation_ur": "'Or' دو انتخابوں، چائے اور کافی، کو جوڑتا ہے، اس لیے یہ conjunction ہے۔",
+  "explanation_ur": "'Or' دو انتخابوں، چائے اور کافی، کو جوڑتا ہے، اس لیے یہ حرف عطف ہے۔",
   "explanation_roman": "'Or' do intikhabon, chaye aur coffee, ko jorta hai, is liye yeh conjunction hai.",
   "post": [
    "zamungkor",
@@ -6110,7 +6110,7 @@
  },
  {
   "id": "ENG-104",
-  "question_ur": "\"Wow! What a beautiful garden.\" جملے میں لفظ 'Wow' کون سا part of speech ہے؟",
+  "question_ur": "\"Wow! What a beautiful garden.\" جملے میں لفظ 'Wow' کلام کا کون سا جز ہے؟",
   "question_roman": "\"Wow! What a beautiful garden.\" Jumle mein lafz 'Wow' kaun sa part of speech hai?",
   "options_ur": [
    "Interjection",
@@ -6124,7 +6124,7 @@
    "Conjunction",
    "Adjective"
   ],
-  "explanation_ur": "'Wow' اچانک حیرت ظاہر کرتا ہے اور جملے کے باقی حصے سے الگ رہتا ہے، اس لیے یہ interjection ہے۔",
+  "explanation_ur": "'Wow' اچانک حیرت ظاہر کرتا ہے اور جملے کے باقی حصے سے الگ رہتا ہے، اس لیے یہ حرف ندا ہے۔",
   "explanation_roman": "'Wow' achanak hairat zahir karta hai aur jumle ke baaqi hisse se alag rehta hai, is liye yeh interjection hai.",
   "post": [
    "zamungkor",
@@ -6169,7 +6169,7 @@
  },
  {
   "id": "ENG-105",
-  "question_ur": "\"Alas! The old house caught fire last night.\" جملے میں لفظ 'Alas' کون سا part of speech ہے؟",
+  "question_ur": "\"Alas! The old house caught fire last night.\" جملے میں لفظ 'Alas' کلام کا کون سا جز ہے؟",
   "question_roman": "\"Alas! The old house caught fire last night.\" Jumle mein lafz 'Alas' kaun sa part of speech hai?",
   "options_ur": [
    "Verb",
@@ -6183,7 +6183,7 @@
    "Preposition",
    "Adverb"
   ],
-  "explanation_ur": "'Alas' اچانک غم ظاہر کرتا ہے اور جملے کے باقی حصے سے الگ رہتا ہے، اس لیے یہ interjection ہے۔",
+  "explanation_ur": "'Alas' اچانک غم ظاہر کرتا ہے اور جملے کے باقی حصے سے الگ رہتا ہے، اس لیے یہ حرف ندا ہے۔",
   "explanation_roman": "'Alas' achanak gham zahir karta hai aur jumle ke baaqi hisse se alag rehta hai, is liye yeh interjection hai.",
   "post": [
    "zamungkor",
@@ -6287,7 +6287,7 @@
  },
  {
   "id": "ENG-107",
-  "question_ur": "اس جملے میں کون سا زمانہ (tense) استعمال ہوا ہے: \"Birds fly south in winter.\"",
+  "question_ur": "اس جملے میں کون سا زمانہ استعمال ہوا ہے: \"Birds fly south in winter.\"",
   "question_roman": "Is jumle mein kaun sa zamana (tense) istemal hua hai: \"Birds fly south in winter.\"",
   "options_ur": [
    "Present simple",
@@ -6464,7 +6464,7 @@
  },
  {
   "id": "ENG-110",
-  "question_ur": "اس جملے کے زمانے (tense) کا نام بتائیں: \"She is reading a newspaper at the moment.\"",
+  "question_ur": "اس جملے کے زمانے کا نام بتائیں: \"She is reading a newspaper at the moment.\"",
   "question_roman": "Is jumle ke zamane (tense) ka naam batayen: \"She is reading a newspaper at the moment.\"",
   "options_ur": [
    "Past simple",
@@ -6523,7 +6523,7 @@
  },
  {
   "id": "ENG-111",
-  "question_ur": "خالی جگہ کے لیے درست فعل کی صورت چنیں: \"The teacher ___ on the board right now.\"",
+  "question_ur": "خالی جگہ کے لیے درست فعل کی صورت منتخب کریں: \"The teacher ___ on the board right now.\"",
   "question_roman": "Khaali jagah ke liye durust fail ki soorat chunein: \"The teacher ___ on the board right now.\"",
   "options_ur": [
    "is writing",
@@ -6641,7 +6641,7 @@
  },
  {
   "id": "ENG-113",
-  "question_ur": "اس جملے میں کون سا زمانہ (tense) استعمال ہوا ہے: \"They sell fresh vegetables in the market every Friday.\"",
+  "question_ur": "اس جملے میں کون سا زمانہ استعمال ہوا ہے: \"They sell fresh vegetables in the market every Friday.\"",
   "question_roman": "Is jumle mein kaun sa zamana (tense) istemal hua hai: \"They sell fresh vegetables in the market every Friday.\"",
   "options_ur": [
    "Present simple",
@@ -6759,7 +6759,7 @@
  },
  {
   "id": "ENG-115",
-  "question_ur": "اس جملے میں کون سا زمانہ (tense) استعمال ہوا ہے: \"We have lived in Peshawar for ten years.\"",
+  "question_ur": "اس جملے میں کون سا زمانہ استعمال ہوا ہے: \"We have lived in Peshawar for ten years.\"",
   "question_roman": "Is jumle mein kaun sa zamana (tense) istemal hua hai: \"We have lived in Peshawar for ten years.\"",
   "options_ur": [
    "Past simple",
@@ -6936,7 +6936,7 @@
  },
  {
   "id": "ENG-118",
-  "question_ur": "اس جملے کے زمانے (tense) کا نام بتائیں: \"The students have been preparing for the test since Monday.\"",
+  "question_ur": "اس جملے کے زمانے کا نام بتائیں: \"The students have been preparing for the test since Monday.\"",
   "question_roman": "Is jumle ke zamane (tense) ka naam batayen: \"The students have been preparing for the test since Monday.\"",
   "options_ur": [
    "Present perfect",
@@ -6950,7 +6950,7 @@
    "Present simple",
    "Present perfect continuous"
   ],
-  "explanation_ur": "'Have been preparing' کا ڈھانچہ 'have been + verb-ing' ہے، جو present perfect continuous کو ظاہر کرتا ہے۔",
+  "explanation_ur": "'Have been preparing' کا ڈھانچہ 'have been + verb-ing' ہے، جو 'present perfect continuous' کو ظاہر کرتا ہے۔",
   "explanation_roman": "'Have been preparing' ka dhancha 'have been + verb-ing' hai, jo present perfect continuous ko zahir karta hai.",
   "post": [
    "zamungkor",
@@ -6995,7 +6995,7 @@
  },
  {
   "id": "ENG-119",
-  "question_ur": "خالی جگہ کے لیے درست فعل کی صورت چنیں: \"I ___ never seen snow.\"",
+  "question_ur": "خالی جگہ کے لیے درست فعل کی صورت منتخب کریں: \"I ___ never seen snow.\"",
   "question_roman": "Khaali jagah ke liye durust fail ki soorat chunein: \"I ___ never seen snow.\"",
   "options_ur": [
    "has",
@@ -7113,7 +7113,7 @@
  },
  {
   "id": "ENG-121",
-  "question_ur": "اس جملے میں کون سا زمانہ (tense) استعمال ہوا ہے: \"The merchant closed his shop early last night.\"",
+  "question_ur": "اس جملے میں کون سا زمانہ استعمال ہوا ہے: \"The merchant closed his shop early last night.\"",
   "question_roman": "Is jumle mein kaun sa zamana (tense) istemal hua hai: \"The merchant closed his shop early last night.\"",
   "options_ur": [
    "Past simple",
@@ -7290,7 +7290,7 @@
  },
  {
   "id": "ENG-124",
-  "question_ur": "اس جملے میں کون سا زمانہ (tense) استعمال ہوا ہے: \"The workers were repairing the road when the rain started.\"",
+  "question_ur": "اس جملے میں کون سا زمانہ استعمال ہوا ہے: \"The workers were repairing the road when the rain started.\"",
   "question_roman": "Is jumle mein kaun sa zamana (tense) istemal hua hai: \"The workers were repairing the road when the rain started.\"",
   "options_ur": [
    "Past simple",
@@ -7408,7 +7408,7 @@
  },
  {
   "id": "ENG-126",
-  "question_ur": "خالی جگہ کے لیے درست فعل کی صورت چنیں: \"She ___ a letter when the bell rang.\"",
+  "question_ur": "خالی جگہ کے لیے درست فعل کی صورت منتخب کریں: \"She ___ a letter when the bell rang.\"",
   "question_roman": "Khaali jagah ke liye durust fail ki soorat chunein: \"She ___ a letter when the bell rang.\"",
   "options_ur": [
    "writes",
@@ -7467,7 +7467,7 @@
  },
  {
   "id": "ENG-127",
-  "question_ur": "اس جملے کے زمانے (tense) کا نام بتائیں: \"The driver stopped the bus at the market.\"",
+  "question_ur": "اس جملے کے زمانے کا نام بتائیں: \"The driver stopped the bus at the market.\"",
   "question_roman": "Is jumle ke zamane (tense) ka naam batayen: \"The driver stopped the bus at the market.\"",
   "options_ur": [
    "Present simple",
@@ -7821,7 +7821,7 @@
  },
  {
   "id": "ENG-133",
-  "question_ur": "کون سی فعل کی شکل اس جملے کو مکمل کرتی ہے؟ \"He ___ for two hours when the bus arrived.\"",
+  "question_ur": "کون سی فعل کی صورت اس جملے کو مکمل کرتی ہے؟ \"He ___ for two hours when the bus arrived.\"",
   "question_roman": "Kaun si fail ki shakal is jumle ko mukammal karti hai? \"He ___ for two hours when the bus arrived.\"",
   "options_ur": [
    "has been waiting",
@@ -7880,7 +7880,7 @@
  },
  {
   "id": "ENG-134",
-  "question_ur": "فعل کی درست شکل منتخب کریں: \"They ___ cricket since morning when it started to rain.\"",
+  "question_ur": "فعل کی درست صورت منتخب کریں: \"They ___ cricket since morning when it started to rain.\"",
   "question_roman": "Fail ki durust shakal muntakhab karein: \"They ___ cricket since morning when it started to rain.\"",
   "options_ur": [
    "had been playing",
@@ -7939,7 +7939,7 @@
  },
  {
   "id": "ENG-135",
-  "question_ur": "درست شکل سے خالی جگہ پُر کریں: \"After she ___ the shop, she went home.\"",
+  "question_ur": "درست صورت سے خالی جگہ پُر کریں: \"After she ___ the shop, she went home.\"",
   "question_roman": "Durust shakal se khali jagah pur karein: \"After she ___ the shop, she went home.\"",
   "options_ur": [
    "locks",
@@ -8057,7 +8057,7 @@
  },
  {
   "id": "ENG-137",
-  "question_ur": "درست شکل منتخب کریں: \"At this time tomorrow, we ___ to Lahore.\"",
+  "question_ur": "درست صورت منتخب کریں: \"At this time tomorrow, we ___ to Lahore.\"",
   "question_roman": "Durust shakal muntakhab karein: \"At this time tomorrow, we ___ to Lahore.\"",
   "options_ur": [
    "travel",
@@ -8175,7 +8175,7 @@
  },
  {
   "id": "ENG-139",
-  "question_ur": "کون سی شکل جملے کو مکمل کرتی ہے؟ \"We ___ our grandmother next week.\"",
+  "question_ur": "کون سی صورت جملے کو مکمل کرتی ہے؟ \"We ___ our grandmother next week.\"",
   "question_roman": "Kaun si shakal jumle ko mukammal karti hai? \"We ___ our grandmother next week.\"",
   "options_ur": [
    "will visiting",
@@ -8234,7 +8234,7 @@
  },
  {
   "id": "ENG-140",
-  "question_ur": "فعل کی درست شکل منتخب کریں: \"The sky is very dark. It ___ heavily soon.\"",
+  "question_ur": "فعل کی درست صورت منتخب کریں: \"The sky is very dark. It ___ heavily soon.\"",
   "question_roman": "Fail ki durust shakal muntakhab karein: \"The sky is very dark. It ___ heavily soon.\"",
   "options_ur": [
    "rains",
@@ -8307,7 +8307,7 @@
    "to carry",
    "carry"
   ],
-  "explanation_ur": "'Shall' کے بعد فعل کی بنیادی شکل آتی ہے، اس لیے 'carry' درست ہے۔",
+  "explanation_ur": "'Shall' کے بعد فعل کی بنیادی صورت آتی ہے، اس لیے 'carry' درست ہے۔",
   "explanation_roman": "'Shall' ke baad fail ki bunyadi shakal aati hai, is liye 'carry' durust hai.",
   "post": [
    "zamungkor",
@@ -8411,7 +8411,7 @@
  },
  {
   "id": "ENG-143",
-  "question_ur": "فعل کی درست شکل منتخب کریں: \"She ___ tonight when you call her.\"",
+  "question_ur": "فعل کی درست صورت منتخب کریں: \"She ___ tonight when you call her.\"",
   "question_roman": "Fail ki durust shakal muntakhab karein: \"She ___ tonight when you call her.\"",
   "options_ur": [
    "studies",
@@ -8470,7 +8470,7 @@
  },
  {
   "id": "ENG-144",
-  "question_ur": "درست شکل منتخب کریں: \"By the time you arrive, I ___ already finished my work.\"",
+  "question_ur": "درست صورت منتخب کریں: \"By the time you arrive, I ___ already finished my work.\"",
   "question_roman": "Durust shakal muntakhab karein: \"By the time you arrive, I ___ already finished my work.\"",
   "options_ur": [
    "will",
@@ -8588,7 +8588,7 @@
  },
  {
   "id": "ENG-146",
-  "question_ur": "اس جملے کا tense کیا ہے؟ \"She had finished her homework before sunset.\"",
+  "question_ur": "اس جملے کا زمانہ کیا ہے؟ \"She had finished her homework before sunset.\"",
   "question_roman": "Is jumle ka tense kya hai? \"She had finished her homework before sunset.\"",
   "options_ur": [
    "Past perfect",
@@ -8602,7 +8602,7 @@
    "Past simple",
    "Future perfect"
   ],
-  "explanation_ur": "'Had finished' میں 'had' کے ساتھ past participle ہے، جو past perfect tense بناتا ہے۔",
+  "explanation_ur": "'Had finished' میں 'had' کے ساتھ past participle ہے، جو past perfect زمانہ بناتا ہے۔",
   "explanation_roman": "'Had finished' mein 'had' ke sath past participle hai, jo past perfect tense banata hai.",
   "post": [
    "zamungkor",
@@ -8647,7 +8647,7 @@
  },
  {
   "id": "ENG-147",
-  "question_ur": "اس جملے کے tense کا نام بتائیں: \"They will be playing football tomorrow evening.\"",
+  "question_ur": "اس جملے کے زمانے کا نام بتائیں: \"They will be playing football tomorrow evening.\"",
   "question_roman": "Is jumle ke tense ka naam batayen: \"They will be playing football tomorrow evening.\"",
   "options_ur": [
    "Future simple",
@@ -8661,7 +8661,7 @@
    "Present continuous",
    "Future perfect"
   ],
-  "explanation_ur": "'Will be playing' میں 'will be' کے ساتھ -ing والا فعل ہے، جو future continuous tense بناتا ہے۔",
+  "explanation_ur": "'Will be playing' میں 'will be' کے ساتھ -ing والا فعل ہے، جو future continuous زمانہ بناتا ہے۔",
   "explanation_roman": "'Will be playing' mein 'will be' ke sath -ing wala fail hai, jo future continuous tense banata hai.",
   "post": [
    "zamungkor",
@@ -8706,7 +8706,7 @@
  },
  {
   "id": "ENG-148",
-  "question_ur": "باغبان کے بارے میں کون سا جملہ past perfect continuous tense میں ہے؟",
+  "question_ur": "باغبان کے بارے میں کون سا جملہ past perfect continuous زمانے میں ہے؟",
   "question_roman": "Baghban ke bare mein kaun sa jumla past perfect continuous tense mein hai?",
   "options_ur": [
    "The gardener has been watering the plants for an hour.",
@@ -8765,7 +8765,7 @@
  },
  {
   "id": "ENG-149",
-  "question_ur": "اس جملے میں کون سا tense استعمال ہوا ہے؟ \"He had been reading since morning.\"",
+  "question_ur": "اس جملے میں کون سا زمانہ استعمال ہوا ہے؟ \"He had been reading since morning.\"",
   "question_roman": "Is jumle mein kaun sa tense use hua hai? \"He had been reading since morning.\"",
   "options_ur": [
    "Present perfect continuous",
@@ -8779,7 +8779,7 @@
    "Past perfect",
    "Past perfect continuous"
   ],
-  "explanation_ur": "'Had been reading' میں 'had been' کے ساتھ -ing والا فعل ہے، جو past perfect continuous tense بناتا ہے۔",
+  "explanation_ur": "'Had been reading' میں 'had been' کے ساتھ -ing والا فعل ہے، جو 'past perfect continuous' زمانہ بناتا ہے۔",
   "explanation_roman": "'Had been reading' mein 'had been' ke sath -ing wala fail hai, jo past perfect continuous tense banata hai.",
   "post": [
    "zamungkor",
@@ -8824,7 +8824,7 @@
  },
  {
   "id": "ENG-150",
-  "question_ur": "طلبہ کے بارے میں کون سا جملہ future perfect tense میں ہے؟",
+  "question_ur": "طلبہ کے بارے میں کون سا جملہ future perfect زمانے میں ہے؟",
   "question_roman": "Talaba ke bare mein kaun sa jumla future perfect tense mein hai?",
   "options_ur": [
    "The students will have completed their exams by Friday.",
@@ -8838,7 +8838,7 @@
    "The students have completed their exams.",
    "The students completed their exams yesterday."
   ],
-  "explanation_ur": "'Will have completed' میں 'will have' کے ساتھ past participle ہے، جو future perfect tense بناتا ہے۔",
+  "explanation_ur": "'Will have completed' میں 'will have' کے ساتھ past participle ہے، جو future perfect زمانہ بناتا ہے۔",
   "explanation_roman": "'Will have completed' mein 'will have' ke sath past participle hai, jo future perfect tense banata hai.",
   "post": [
    "zamungkor",
@@ -8883,7 +8883,7 @@
  },
  {
   "id": "ENG-151",
-  "question_ur": "اس جملے کا tense پہچانیں: \"We are going to plant trees next month.\"",
+  "question_ur": "اس جملے کا زمانہ پہچانیں: \"We are going to plant trees next month.\"",
   "question_roman": "Is jumle ka tense pehchanen: \"We are going to plant trees next month.\"",
   "options_ur": [
    "Present continuous",
@@ -8942,7 +8942,7 @@
  },
  {
   "id": "ENG-152",
-  "question_ur": "ڈاکٹر کے بارے میں کون سا جملہ future continuous tense میں ہے؟",
+  "question_ur": "ڈاکٹر کے بارے میں کون سا جملہ future continuous زمانے میں ہے؟",
   "question_roman": "Doctor ke bare mein kaun sa jumla future continuous tense mein hai?",
   "options_ur": [
    "The doctor will see patients tomorrow morning.",
@@ -8956,7 +8956,7 @@
    "The doctor will be seeing patients tomorrow morning.",
    "The doctor saw patients yesterday."
   ],
-  "explanation_ur": "'Will be seeing' میں 'will be' کے ساتھ -ing والا فعل ہے، جو future continuous tense بناتا ہے۔",
+  "explanation_ur": "'Will be seeing' میں 'will be' کے ساتھ -ing والا فعل ہے، جو future continuous زمانہ بناتا ہے۔",
   "explanation_roman": "'Will be seeing' mein 'will be' ke sath -ing wala fail hai, jo future continuous tense banata hai.",
   "post": [
    "zamungkor",
@@ -9001,7 +9001,7 @@
  },
  {
   "id": "ENG-153",
-  "question_ur": "اس جملے کا tense کیا ہے؟ \"I shall return your book tomorrow.\"",
+  "question_ur": "اس جملے کا زمانہ کیا ہے؟ \"I shall return your book tomorrow.\"",
   "question_roman": "Is jumle ka tense kya hai? \"I shall return your book tomorrow.\"",
   "options_ur": [
    "Present simple",
@@ -9015,7 +9015,7 @@
    "Future continuous",
    "Future simple"
   ],
-  "explanation_ur": "'Shall return' میں 'shall' کے ساتھ فعل کی بنیادی شکل ہے، جو future simple tense بناتا ہے۔",
+  "explanation_ur": "'Shall return' میں 'shall' کے ساتھ فعل کی بنیادی صورت ہے، جو future simple زمانہ بناتا ہے۔",
   "explanation_roman": "'Shall return' mein 'shall' ke sath fail ki bunyadi shakal hai, jo future simple tense banata hai.",
   "post": [
    "zamungkor",
@@ -9074,7 +9074,7 @@
    "The homework is being checked by the teacher every day.",
    "The homework has been checked by the teacher every day."
   ],
-  "explanation_ur": "پریزنٹ سمپل پَیسیو 'is + past participle' ہوتا ہے: is checked۔",
+  "explanation_ur": "present simple پَیسیو 'is + past participle' ہوتا ہے: is checked۔",
   "explanation_roman": "Present simple passive 'is + past participle' hota hai: is checked.",
   "post": [
    "zamungkor",
@@ -9133,7 +9133,7 @@
    "Fresh vegetables are sold by the shopkeeper in the market.",
    "Fresh vegetables are being sold by the shopkeeper in the market."
   ],
-  "explanation_ur": "پریزنٹ سمپل پَیسیو 'are + past participle' ہوتا ہے: are sold۔",
+  "explanation_ur": "present simple پَیسیو 'are + past participle' ہوتا ہے: are sold۔",
   "explanation_roman": "Present simple passive 'are + past participle' hota hai: are sold.",
   "post": [
    "zamungkor",
@@ -9192,7 +9192,7 @@
    "The plants are being watered by Ali in the garden.",
    "The plants are watered by Ali in the garden."
   ],
-  "explanation_ur": "پریزنٹ سمپل پَیسیو 'are + past participle' ہوتا ہے: are watered۔",
+  "explanation_ur": "present simple پَیسیو 'are + past participle' ہوتا ہے: are watered۔",
   "explanation_roman": "Present simple passive 'are + past participle' hota hai: are watered.",
   "post": [
    "zamungkor",
@@ -9251,7 +9251,7 @@
    "The classroom is being cleaned by the students before assembly.",
    "The classroom has been cleaned by the students before assembly."
   ],
-  "explanation_ur": "پریزنٹ سمپل پَیسیو 'is + past participle' ہوتا ہے: is cleaned۔",
+  "explanation_ur": "present simple پَیسیو 'is + past participle' ہوتا ہے: is cleaned۔",
   "explanation_roman": "Present simple passive 'is + past participle' hota hai: is cleaned.",
   "post": [
    "zamungkor",
@@ -9310,7 +9310,7 @@
    "The trees are being trimmed by the gardener in the park.",
    "The trees have been trimmed by the gardener in the park."
   ],
-  "explanation_ur": "پریزنٹ کنٹینیوس پَیسیو 'are being + past participle' ہوتا ہے: are being trimmed۔",
+  "explanation_ur": "present continuous پَیسیو 'are being + past participle' ہوتا ہے: are being trimmed۔",
   "explanation_roman": "Present continuous passive 'are being + past participle' hota hai: are being trimmed.",
   "post": [
    "zamungkor",
@@ -9369,7 +9369,7 @@
    "An essay was being written by Sara for the competition.",
    "An essay has been written by Sara for the competition."
   ],
-  "explanation_ur": "پریزنٹ کنٹینیوس پَیسیو 'is being + past participle' ہوتا ہے: is being written۔",
+  "explanation_ur": "present continuous پَیسیو 'is being + past participle' ہوتا ہے: is being written۔",
   "explanation_roman": "Present continuous passive 'is being + past participle' hota hai: is being written.",
   "post": [
    "zamungkor",
@@ -9428,7 +9428,7 @@
    "Cricket was being practised by the players on the ground.",
    "Cricket has been practised by the players on the ground."
   ],
-  "explanation_ur": "پریزنٹ کنٹینیوس پَیسیو 'is being + past participle' ہوتا ہے: is being practised۔",
+  "explanation_ur": "present continuous پَیسیو 'is being + past participle' ہوتا ہے: is being practised۔",
   "explanation_roman": "Present continuous passive 'is being + past participle' hota hai: is being practised.",
   "post": [
    "zamungkor",
@@ -9487,7 +9487,7 @@
    "The wheat has been harvested by the farmer last month.",
    "The wheat was harvested by the farmer last month."
   ],
-  "explanation_ur": "پاسٹ سمپل پَیسیو 'was + past participle' ہوتا ہے: was harvested۔",
+  "explanation_ur": "past simple پَیسیو 'was + past participle' ہوتا ہے: was harvested۔",
   "explanation_roman": "Past simple passive 'was + past participle' hota hai: was harvested.",
   "post": [
    "zamungkor",
@@ -9546,7 +9546,7 @@
    "The books were being arranged by the librarian on the shelves.",
    "The books have been arranged by the librarian on the shelves."
   ],
-  "explanation_ur": "پاسٹ سمپل پَیسیو 'were + past participle' ہوتا ہے: were arranged۔",
+  "explanation_ur": "past simple پَیسیو 'were + past participle' ہوتا ہے: were arranged۔",
   "explanation_roman": "Past simple passive 'were + past participle' hota hai: were arranged.",
   "post": [
    "zamungkor",
@@ -9605,7 +9605,7 @@
    "The school bus was being repaired by the mechanic yesterday.",
    "The school bus has been repaired by the mechanic yesterday."
   ],
-  "explanation_ur": "پاسٹ سمپل پَیسیو 'was + past participle' ہوتا ہے: was repaired۔",
+  "explanation_ur": "past simple پَیسیو 'was + past participle' ہوتا ہے: was repaired۔",
   "explanation_roman": "Past simple passive 'was + past participle' hota hai: was repaired.",
   "post": [
    "zamungkor",
@@ -9664,7 +9664,7 @@
    "Delicious food was prepared by the cook for the guests.",
    "Delicious food has been prepared by the cook for the guests."
   ],
-  "explanation_ur": "پاسٹ سمپل پَیسیو 'was + past participle' ہوتا ہے: was prepared۔",
+  "explanation_ur": "past simple پَیسیو 'was + past participle' ہوتا ہے: was prepared۔",
   "explanation_roman": "Past simple passive 'was + past participle' hota hai: was prepared.",
   "post": [
    "zamungkor",
@@ -9723,7 +9723,7 @@
    "Kites are being flown by the children in the field.",
    "Kites had been flown by the children in the field."
   ],
-  "explanation_ur": "پاسٹ کنٹینیوس پَیسیو 'were being + past participle' ہوتا ہے: were being flown۔",
+  "explanation_ur": "past continuous پَیسیو 'were being + past participle' ہوتا ہے: were being flown۔",
   "explanation_roman": "Past continuous passive 'were being + past participle' hota hai: were being flown.",
   "post": [
    "zamungkor",
@@ -9782,7 +9782,7 @@
    "The office walls have been painted by the workers all morning.",
    "The office walls were being painted by the workers all morning."
   ],
-  "explanation_ur": "پاسٹ کنٹینیوس پَیسیو 'were being + past participle' ہوتا ہے: were being painted۔",
+  "explanation_ur": "past continuous پَیسیو 'were being + past participle' ہوتا ہے: were being painted۔",
   "explanation_roman": "Past continuous passive 'were being + past participle' hota hai: were being painted.",
   "post": [
    "zamungkor",
@@ -9841,7 +9841,7 @@
    "The dishes are being washed by Amina after lunch.",
    "The dishes have been washed by Amina after lunch."
   ],
-  "explanation_ur": "پاسٹ کنٹینیوس پَیسیو 'were being + past participle' ہوتا ہے: were being washed۔",
+  "explanation_ur": "past continuous پَیسیو 'were being + past participle' ہوتا ہے: were being washed۔",
   "explanation_roman": "Past continuous passive 'were being + past participle' hota hai: were being washed.",
   "post": [
    "zamungkor",
@@ -9900,7 +9900,7 @@
    "The result has been announced by the teacher today.",
    "The result is being announced by the teacher today."
   ],
-  "explanation_ur": "پریزنٹ پرفیکٹ پَیسیو 'has been + past participle' ہوتا ہے: has been announced۔",
+  "explanation_ur": "present perfect پَیسیو 'has been + past participle' ہوتا ہے: has been announced۔",
   "explanation_roman": "Present perfect passive 'has been + past participle' hota hai: has been announced.",
   "post": [
    "zamungkor",
@@ -9959,7 +9959,7 @@
    "The match has won by the team this season.",
    "The match has been won by the team this season."
   ],
-  "explanation_ur": "پریزنٹ پرفیکٹ پَیسیو 'has been + past participle' ہوتا ہے: has been won۔",
+  "explanation_ur": "present perfect پَیسیو 'has been + past participle' ہوتا ہے: has been won۔",
   "explanation_roman": "Present perfect passive 'has been + past participle' hota hai: has been won.",
   "post": [
    "zamungkor",
@@ -10018,7 +10018,7 @@
    "The project was completed by the students on time.",
    "The project has completed by the students on time."
   ],
-  "explanation_ur": "پریزنٹ پرفیکٹ پَیسیو 'has been + past participle' ہوتا ہے: has been completed۔",
+  "explanation_ur": "present perfect پَیسیو 'has been + past participle' ہوتا ہے: has been completed۔",
   "explanation_roman": "Present perfect passive 'has been + past participle' hota hai: has been completed.",
   "post": [
    "zamungkor",
@@ -10077,7 +10077,7 @@
    "The classroom window was broken.",
    "The classroom window is being broken."
   ],
-  "explanation_ur": "پریزنٹ پرفیکٹ پَیسیو 'has been + past participle' ہوتا ہے: has been broken۔ Agent 'someone' کو حذف کر دیا جاتا ہے۔",
+  "explanation_ur": "present perfect پَیسیو 'has been + past participle' ہوتا ہے: has been broken۔ فاعل 'someone' کو حذف کر دیا جاتا ہے۔",
   "explanation_roman": "Present perfect passive 'has been + past participle' hota hai: has been broken. Agent 'someone' ko hazf kar diya jata hai.",
   "post": [
    "zamungkor",
@@ -10136,7 +10136,7 @@
    "The new schedule has been approved by the manager.",
    "The new schedule is being approved by the manager."
   ],
-  "explanation_ur": "پریزنٹ پرفیکٹ پَیسیو 'has been + past participle' ہوتا ہے: has been approved۔",
+  "explanation_ur": "present perfect پَیسیو 'has been + past participle' ہوتا ہے: has been approved۔",
   "explanation_roman": "Present perfect passive 'has been + past participle' hota hai: has been approved.",
   "post": [
    "zamungkor",
@@ -10195,7 +10195,7 @@
    "The wound is being cleaned by the nurse carefully.",
    "The wound has been cleaned by the nurse carefully."
   ],
-  "explanation_ur": "پریزنٹ پرفیکٹ پَیسیو 'has been + past participle' ہوتا ہے: has been cleaned۔",
+  "explanation_ur": "present perfect پَیسیو 'has been + past participle' ہوتا ہے: has been cleaned۔",
   "explanation_roman": "Present perfect passive 'has been + past participle' hota hai: has been cleaned.",
   "post": [
    "zamungkor",
@@ -10254,7 +10254,7 @@
    "The plants were watered by the gardener before noon.",
    "The plants had been watering by the gardener before noon."
   ],
-  "explanation_ur": "پاسٹ پرفیکٹ پَیسیو میں 'had been' + past participle استعمال ہوتا ہے: had been watered۔",
+  "explanation_ur": "past perfect پَیسیو میں 'had been' + past participle استعمال ہوتا ہے: had been watered۔",
   "explanation_roman": "Past perfect passive mein 'had been' + past participle use hota hai: had been watered.",
   "post": [
    "zamungkor",
@@ -10313,7 +10313,7 @@
    "The answer sheets had checked by the teacher before lunch.",
    "The answer sheets had been checked by the teacher before lunch."
   ],
-  "explanation_ur": "پاسٹ پرفیکٹ پَیسیو میں 'had been' + past participle استعمال ہوتا ہے: had been checked۔",
+  "explanation_ur": "past perfect پَیسیو میں 'had been' + past participle استعمال ہوتا ہے: had been checked۔",
   "explanation_roman": "Past perfect passive mein 'had been' + past participle use hota hai: had been checked.",
   "post": [
    "zamungkor",
@@ -10372,7 +10372,7 @@
    "The bicycle was repaired by Ali before school.",
    "The bicycle had been repair by Ali before school."
   ],
-  "explanation_ur": "پاسٹ پرفیکٹ پَیسیو میں 'had been' + past participle استعمال ہوتا ہے: had been repaired۔",
+  "explanation_ur": "past perfect پَیسیو میں 'had been' + past participle استعمال ہوتا ہے: had been repaired۔",
   "explanation_roman": "Past perfect passive mein 'had been' + past participle use hota hai: had been repaired.",
   "post": [
    "zamungkor",
@@ -10431,7 +10431,7 @@
    "The school hall will be painted by the workers next week.",
    "The school hall would be painted by the workers next week."
   ],
-  "explanation_ur": "فیوچر سمپل پَیسیو میں 'will be' + past participle استعمال ہوتا ہے: will be painted۔",
+  "explanation_ur": "future simple پَیسیو میں 'will be' + past participle استعمال ہوتا ہے: will be painted۔",
   "explanation_roman": "Future simple passive mein 'will be' + past participle use hota hai: will be painted.",
   "post": [
    "zamungkor",
@@ -10490,7 +10490,7 @@
    "The clothes are washed by Sara tomorrow.",
    "The clothes will have been washed by Sara tomorrow."
   ],
-  "explanation_ur": "فیوچر سمپل پَیسیو میں 'will be' + past participle استعمال ہوتا ہے: will be washed۔",
+  "explanation_ur": "future simple پَیسیو میں 'will be' + past participle استعمال ہوتا ہے: will be washed۔",
   "explanation_roman": "Future simple passive mein 'will be' + past participle use hota hai: will be washed.",
   "post": [
    "zamungkor",
@@ -10549,7 +10549,7 @@
    "The wheat will be harvest by the farmer in June.",
    "The wheat will be harvested by the farmer in June."
   ],
-  "explanation_ur": "فیوچر سمپل پَیسیو میں 'will be' + past participle استعمال ہوتا ہے: will be harvested۔",
+  "explanation_ur": "future simple پَیسیو میں 'will be' + past participle استعمال ہوتا ہے: will be harvested۔",
   "explanation_roman": "Future simple passive mein 'will be' + past participle use hota hai: will be harvested.",
   "post": [
    "zamungkor",
@@ -10903,7 +10903,7 @@
    "Let the window closed.",
    "Let the window be close."
   ],
-  "explanation_ur": "امپریٹو پَیسیو 'Let' + object + 'be' + past participle سے شروع ہوتا ہے: Let the window be closed۔",
+  "explanation_ur": "امریہ پَیسیو 'Let' + مفعول + 'be' + past participle سے شروع ہوتا ہے: Let the window be closed۔",
   "explanation_roman": "Imperative passive 'Let' + object + 'be' + past participle se shuru hota hai: Let the window be closed.",
   "post": [
    "zamungkor",
@@ -10962,7 +10962,7 @@
    "Let your hands be wash before lunch.",
    "Let your hands be washed before lunch."
   ],
-  "explanation_ur": "امپریٹو پَیسیو 'Let' + object + 'be' + past participle سے شروع ہوتا ہے: Let your hands be washed before lunch۔",
+  "explanation_ur": "امریہ پَیسیو 'Let' + مفعول + 'be' + past participle سے شروع ہوتا ہے: Let your hands be washed before lunch۔",
   "explanation_roman": "Imperative passive 'Let' + object + 'be' + past participle se shuru hota hai: Let your hands be washed before lunch.",
   "post": [
    "zamungkor",
@@ -11021,7 +11021,7 @@
    "Let water not wasted.",
    "Let water not be waste."
   ],
-  "explanation_ur": "منفی امپریٹو پَیسیو میں 'Let' + object + 'not be' + past participle استعمال ہوتا ہے: Let water not be wasted۔",
+  "explanation_ur": "منفی امریہ پَیسیو میں 'Let' + مفعول + 'not be' + past participle استعمال ہوتا ہے: Let water not be wasted۔",
   "explanation_roman": "Manfi imperative passive mein 'Let' + object + 'not be' + past participle use hota hai: Let water not be wasted.",
   "post": [
    "zamungkor",
@@ -11080,7 +11080,7 @@
    "Let the homework be finished before dinner.",
    "Let the homework be finish before dinner."
   ],
-  "explanation_ur": "امپریٹو پَیسیو 'Let' + object + 'be' + past participle سے شروع ہوتا ہے: Let the homework be finished before dinner۔",
+  "explanation_ur": "امریہ پَیسیو 'Let' + مفعول + 'be' + past participle سے شروع ہوتا ہے: Let the homework be finished before dinner۔",
   "explanation_roman": "Imperative passive 'Let' + object + 'be' + past participle se shuru hota hai: Let the homework be finished before dinner.",
   "post": [
    "zamungkor",
@@ -11139,7 +11139,7 @@
    "Was rice grow by the farmer in this field?",
    "Did rice grown by the farmer in this field?"
   ],
-  "explanation_ur": "پاسٹ سمپل سوال کا پَیسیو 'Was' سے شروع ہوتا ہے اور past participle استعمال ہوتا ہے: Was rice grown by the farmer in this field?۔",
+  "explanation_ur": "past simple سوال کا پَیسیو 'Was' سے شروع ہوتا ہے اور past participle استعمال ہوتا ہے: Was rice grown by the farmer in this field?۔",
   "explanation_roman": "Past simple sawal ka passive 'Was' se shuru hota hai aur past participle use hota hai: Was rice grown by the farmer in this field?",
   "post": [
    "zamungkor",
@@ -11198,7 +11198,7 @@
    "Are the test papers marked by the teacher?",
    "Have the test papers been marked by the teacher?"
   ],
-  "explanation_ur": "پریزنٹ پرفیکٹ سوال کا پَیسیو 'Have' + 'been' + past participle سے بنتا ہے: Have the test papers been marked by the teacher?۔",
+  "explanation_ur": "present perfect سوال کا پَیسیو 'Have' + 'been' + past participle سے بنتا ہے: Have the test papers been marked by the teacher?۔",
   "explanation_roman": "Present perfect sawal ka passive 'Have' + 'been' + past participle se banta hai: Have the test papers been marked by the teacher?",
   "post": [
    "zamungkor",
@@ -11316,7 +11316,7 @@
    "Why was the glass broken by Ali?",
    "Why did the glass broken by Ali?"
   ],
-  "explanation_ur": "پاسٹ سمپل سوال کا پَیسیو سوالیہ لفظ برقرار رکھتا ہے اور 'was' + past participle استعمال ہوتا ہے: Why was the glass broken by Ali?۔",
+  "explanation_ur": "past simple سوال کا پَیسیو سوالیہ لفظ برقرار رکھتا ہے اور 'was' + past participle استعمال ہوتا ہے: Why was the glass broken by Ali?۔",
   "explanation_roman": "Past simple sawal ka passive sawalia lafz barqarar rakhta hai aur 'was' + past participle use hota hai: Why was the glass broken by Ali?",
   "post": [
    "zamungkor",
@@ -11375,7 +11375,7 @@
    "Ahmed said that he had needed a new pen.",
    "Ahmed said that I needed a new pen."
   ],
-  "explanation_ur": "ان ڈائریکٹ اسپیچ میں پریزنٹ سمپل 'need'، پاسٹ سمپل 'needed' میں بدل جاتا ہے اور 'I'، 'he' میں بدل جاتا ہے۔",
+  "explanation_ur": "ان ڈائریکٹ اسپیچ میں present simple 'need'، past simple 'needed' میں بدل جاتا ہے اور 'I'، 'he' میں بدل جاتا ہے۔",
   "explanation_roman": "Indirect speech mein present simple 'need', past simple 'needed' mein badal jata hai aur 'I', 'he' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -11434,7 +11434,7 @@
    "Sara said that she had been reading a storybook.",
    "Sara said that she reads a storybook."
   ],
-  "explanation_ur": "پریزنٹ کنٹینیوس 'am reading'، ان ڈائریکٹ اسپیچ میں پاسٹ کنٹینیوس 'was reading' میں بدل جاتا ہے۔",
+  "explanation_ur": "present continuous 'am reading'، ان ڈائریکٹ اسپیچ میں past continuous 'was reading' میں بدل جاتا ہے۔",
   "explanation_roman": "Present continuous 'am reading', indirect speech mein past continuous 'was reading' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -11493,7 +11493,7 @@
    "Bilal said that he had washed the dishes.",
    "Bilal said that he was washing the dishes."
   ],
-  "explanation_ur": "پریزنٹ پرفیکٹ 'have washed'، ان ڈائریکٹ اسپیچ میں پاسٹ پرفیکٹ 'had washed' میں بدل جاتا ہے۔",
+  "explanation_ur": "present perfect 'have washed'، ان ڈائریکٹ اسپیچ میں past perfect 'had washed' میں بدل جاتا ہے۔",
   "explanation_roman": "Present perfect 'have washed', indirect speech mein past perfect 'had washed' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -11552,7 +11552,7 @@
    "Fatima said that she buys a red umbrella.",
    "Fatima said that she had bought a red umbrella."
   ],
-  "explanation_ur": "پاسٹ سمپل 'bought'، ان ڈائریکٹ اسپیچ میں پاسٹ پرفیکٹ 'had bought' میں بدل جاتا ہے۔",
+  "explanation_ur": "past simple 'bought'، ان ڈائریکٹ اسپیچ میں past perfect 'had bought' میں بدل جاتا ہے۔",
   "explanation_roman": "Past simple 'bought', indirect speech mein past perfect 'had bought' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -11611,7 +11611,7 @@
    "Usman said that he shall repair the bicycle.",
    "Usman said that he repairs the bicycle."
   ],
-  "explanation_ur": "ان ڈائریکٹ اسپیچ میں 'will'، 'would' میں بدل جاتا ہے جب رپورٹنگ ورب پاسٹ میں ہو۔",
+  "explanation_ur": "ان ڈائریکٹ اسپیچ میں 'will'، 'would' میں بدل جاتا ہے جب رپورٹنگ ورب ماضی میں ہو۔",
   "explanation_roman": "Indirect speech mein 'will', 'would' mein badal jata hai jab reporting verb past mein ho.",
   "post": [
    "zamungkor",
@@ -11670,7 +11670,7 @@
    "Ayesha said that she may speak French fluently.",
    "Ayesha said that she speaks French fluently."
   ],
-  "explanation_ur": "ان ڈائریکٹ اسپیچ میں 'can'، 'could' میں بدل جاتا ہے جب رپورٹنگ ورب پاسٹ میں ہو۔",
+  "explanation_ur": "ان ڈائریکٹ اسپیچ میں 'can'، 'could' میں بدل جاتا ہے جب رپورٹنگ ورب ماضی میں ہو۔",
   "explanation_roman": "Indirect speech mein 'can', 'could' mein badal jata hai jab reporting verb past mein ho.",
   "post": [
    "zamungkor",
@@ -11729,7 +11729,7 @@
    "Hassan said that his brother worked in a bank.",
    "Hassan said that my brother worked in a bank."
   ],
-  "explanation_ur": "پریزنٹ سمپل 'works'، پاسٹ سمپل 'worked' میں بدل جاتا ہے اور 'my'، 'his' میں بدل جاتا ہے۔",
+  "explanation_ur": "present simple 'works'، past simple 'worked' میں بدل جاتا ہے اور 'my'، 'his' میں بدل جاتا ہے۔",
   "explanation_roman": "Present simple 'works', past simple 'worked' mein badal jata hai aur 'my', 'his' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -11788,7 +11788,7 @@
    "Maryam said that they had prepared lunch.",
    "Maryam said that they were preparing lunch."
   ],
-  "explanation_ur": "پریزنٹ کنٹینیوس 'are preparing'، پاسٹ کنٹینیوس 'were preparing' میں بدل جاتا ہے اور 'we'، 'they' میں بدل جاتا ہے۔",
+  "explanation_ur": "present continuous 'are preparing'، past continuous 'were preparing' میں بدل جاتا ہے اور 'we'، 'they' میں بدل جاتا ہے۔",
   "explanation_roman": "Present continuous 'are preparing', past continuous 'were preparing' mein badal jata hai aur 'we', 'they' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -11847,7 +11847,7 @@
    "Omar said that he can join the cricket team.",
    "Omar said that he joins the cricket team."
   ],
-  "explanation_ur": "ان ڈائریکٹ اسپیچ میں 'may'، 'might' میں بدل جاتا ہے جب رپورٹنگ ورب پاسٹ میں ہو۔",
+  "explanation_ur": "ان ڈائریکٹ اسپیچ میں 'may'، 'might' میں بدل جاتا ہے جب رپورٹنگ ورب ماضی میں ہو۔",
   "explanation_roman": "Indirect speech mein 'may', 'might' mein badal jata hai jab reporting verb past mein ho.",
   "post": [
    "zamungkor",
@@ -11906,7 +11906,7 @@
    "Zainab said that she is writing a letter to her friend.",
    "Zainab said that she had written a letter to her friend."
   ],
-  "explanation_ur": "پاسٹ کنٹینیوس 'was writing'، ان ڈائریکٹ اسپیچ میں پاسٹ پرفیکٹ کنٹینیوس 'had been writing' میں بدل جاتا ہے۔",
+  "explanation_ur": "past continuous 'was writing'، ان ڈائریکٹ اسپیچ میں past perfect continuous 'had been writing' میں بدل جاتا ہے۔",
   "explanation_roman": "Past continuous 'was writing', indirect speech mein past perfect continuous 'had been writing' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -12201,7 +12201,7 @@
    "Hina said that they had completed their project before the deadline.",
    "Hina said that they had completed our project before the deadline."
   ],
-  "explanation_ur": "ان ڈائریکٹ اسپیچ میں 'We'، 'they' میں اور 'our'، 'their' میں بدل جاتا ہے، اور پریزنٹ پرفیکٹ 'have completed'، پاسٹ پرفیکٹ 'had completed' میں بدل جاتا ہے۔",
+  "explanation_ur": "ان ڈائریکٹ اسپیچ میں 'We'، 'they' میں اور 'our'، 'their' میں بدل جاتا ہے، اور present perfect 'have completed'، past perfect 'had completed' میں بدل جاتا ہے۔",
   "explanation_roman": "Indirect speech mein 'We', 'they' mein aur 'our', 'their' mein badal jata hai, aur present perfect 'have completed', past perfect 'had completed' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -12260,7 +12260,7 @@
    "Danish said that the train had left then.",
    "Danish said that the train was leaving then."
   ],
-  "explanation_ur": "پریزنٹ کنٹینیوس 'is leaving'، پاسٹ کنٹینیوس 'was leaving' میں بدل جاتا ہے اور 'now'، 'then' میں بدل جاتا ہے۔",
+  "explanation_ur": "present continuous 'is leaving'، past continuous 'was leaving' میں بدل جاتا ہے اور 'now'، 'then' میں بدل جاتا ہے۔",
   "explanation_roman": "Present continuous 'is leaving', past continuous 'was leaving' mein badal jata hai aur 'now', 'then' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -12378,7 +12378,7 @@
    "Salman said that he lives there with his family.",
    "Salman said that he lived there with my family."
   ],
-  "explanation_ur": "پریزنٹ سمپل 'live'، پاسٹ سمپل 'lived' میں بدل جاتا ہے اور 'here'، 'there' میں بدل جاتا ہے۔",
+  "explanation_ur": "present simple 'live'، past simple 'lived' میں بدل جاتا ہے اور 'here'، 'there' میں بدل جاتا ہے۔",
   "explanation_roman": "Present simple 'live', past simple 'lived' mein badal jata hai aur 'here', 'there' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -12437,7 +12437,7 @@
    "Tariq said that he had met an old friend the previous day.",
    "Tariq said that he has met an old friend the previous day."
   ],
-  "explanation_ur": "پاسٹ سمپل 'met'، پاسٹ پرفیکٹ 'had met' میں بدل جاتا ہے اور 'yesterday'، 'the previous day' میں بدل جاتا ہے۔",
+  "explanation_ur": "past simple 'met'، past perfect 'had met' میں بدل جاتا ہے اور 'yesterday'، 'the previous day' میں بدل جاتا ہے۔",
   "explanation_roman": "Past simple 'met', past perfect 'had met' mein badal jata hai aur 'yesterday', 'the previous day' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -12555,7 +12555,7 @@
    "Ali asked Sara that she liked apples.",
    "Ali asked Sara whether did she like apples."
   ],
-  "explanation_ur": "Yes/no سوال 'asked if' یا 'asked whether' سے reported ہوتا ہے، اور present simple 'like'، past simple 'liked' میں بدل جاتا ہے۔",
+  "explanation_ur": "ہاں یا نہیں والا سوال 'asked if' یا 'asked whether' سے نقل کیا جاتا ہے، اور present simple 'like'، past simple 'liked' میں بدل جاتا ہے۔",
   "explanation_roman": "Yes/no sawal 'asked if' ya 'asked whether' se reported hota hai, aur present simple 'like', past simple 'liked' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -12614,7 +12614,7 @@
    "Ahmed asked Bilal whether he had read that book.",
    "Ahmed asked Bilal whether had he read that book."
   ],
-  "explanation_ur": "Yes/no سوال 'asked whether' سے reported ہوتا ہے، present perfect 'have read'، past perfect 'had read' میں بدل جاتا ہے، اور 'this'، 'that' میں بدل جاتا ہے۔",
+  "explanation_ur": "ہاں یا نہیں والا سوال 'asked whether' سے نقل کیا جاتا ہے، present perfect 'have read'، past perfect 'had read' میں بدل جاتا ہے، اور 'this'، 'that' میں بدل جاتا ہے۔",
   "explanation_roman": "Yes/no sawal 'asked whether' se reported hota hai, present perfect 'have read', past perfect 'had read' mein badal jata hai, aur 'this', 'that' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -12732,7 +12732,7 @@
    "Hassan asked Omar if could he help him with his homework.",
    "Hassan asked Omar whether he could help him with his homework."
   ],
-  "explanation_ur": "Yes/no سوال 'asked whether' سے reported ہوتا ہے، 'can'، 'could' میں بدل جاتا ہے، اور ضمیریں بولنے والے اور سننے والے کے مطابق بدل جاتی ہیں۔",
+  "explanation_ur": "ہاں یا نہیں والا سوال 'asked whether' سے نقل کیا جاتا ہے، 'can'، 'could' میں بدل جاتا ہے، اور ضمیریں بولنے والے اور سننے والے کے مطابق بدل جاتی ہیں۔",
   "explanation_roman": "Yes/no sawal 'asked whether' se reported hota hai, 'can', 'could' mein badal jata hai, aur zameerein bolne wale aur sunne wale ke mutabiq badal jati hain.",
   "post": [
    "zamungkor",
@@ -12791,7 +12791,7 @@
    "Maryam asked Zainab that she was going to school that day.",
    "Maryam asked Zainab if was she going to school that day."
   ],
-  "explanation_ur": "Yes/no سوال 'asked whether' سے reported ہوتا ہے، present continuous 'are going'، past continuous 'was going' میں بدل جاتا ہے، اور 'today'، 'that day' میں بدل جاتا ہے۔",
+  "explanation_ur": "ہاں یا نہیں والا سوال 'asked whether' سے نقل کیا جاتا ہے، present continuous 'are going'، past continuous 'was going' میں بدل جاتا ہے، اور 'today'، 'that day' میں بدل جاتا ہے۔",
   "explanation_roman": "Yes/no sawal 'asked whether' se reported hota hai, present continuous 'are going', past continuous 'was going' mein badal jata hai, aur 'today', 'that day' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -12850,7 +12850,7 @@
    "Usman asked Tariq if he had watched the match the previous day.",
    "Usman asked Tariq if did he watch the match the previous day."
   ],
-  "explanation_ur": "Yes/no سوال 'asked if' سے reported ہوتا ہے، past simple 'did watch'، past perfect 'had watched' میں بدل جاتا ہے، اور 'yesterday'، 'the previous day' میں بدل جاتا ہے۔",
+  "explanation_ur": "ہاں یا نہیں والا سوال 'asked if' سے نقل کیا جاتا ہے، past simple 'did watch'، past perfect 'had watched' میں بدل جاتا ہے، اور 'yesterday'، 'the previous day' میں بدل جاتا ہے۔",
   "explanation_roman": "Yes/no sawal 'asked if' se reported hota hai, past simple 'did watch', past perfect 'had watched' mein badal jata hai, aur 'yesterday', 'the previous day' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -13204,7 +13204,7 @@
    "The teacher told the students to opened their books.",
    "The teacher told the students to open their books."
   ],
-  "explanation_ur": "امر والے جملے کو 'told' + object + 'to' + base verb سے reported کیا جاتا ہے، اور ضمیر سننے والے کے مطابق بدل جاتا ہے۔",
+  "explanation_ur": "امریہ جملے کو 'told' + مفعول + 'to' + فعل کی بنیادی صورت سے نقل کیا جاتا ہے، اور ضمیر سننے والے کے مطابق بدل جاتا ہے۔",
   "explanation_roman": "Amr wale jumle ko 'told' + object + 'to' + base verb se reported kiya jata hai, aur zameer sunne wale ke mutabiq badal jata hai.",
   "post": [
    "zamungkor",
@@ -13263,7 +13263,7 @@
    "Mother told Ali not play in the street.",
    "Mother said to Ali that not to play in the street."
   ],
-  "explanation_ur": "منفی امر والے جملے کو 'told' + object + 'not to' + base verb سے reported کیا جاتا ہے۔",
+  "explanation_ur": "منفی امریہ جملے کو 'told' + مفعول + 'not to' + فعل کی بنیادی صورت سے نقل کیا جاتا ہے۔",
   "explanation_roman": "Manfi amr wale jumle ko 'told' + object + 'not to' + base verb se reported kiya jata hai.",
   "post": [
    "zamungkor",
@@ -13322,7 +13322,7 @@
    "The doctor advised the patient to take that medicine twice a day.",
    "The doctor advised the patient to took that medicine twice a day."
   ],
-  "explanation_ur": "ڈاکٹر کے مشورے کو 'advised' + object + 'to' + base verb سے reported کیا جاتا ہے، اور 'this'، 'that' میں بدل جاتا ہے۔",
+  "explanation_ur": "ڈاکٹر کے مشورے کو 'advised' + مفعول + 'to' + فعل کی بنیادی صورت سے نقل کیا جاتا ہے، اور 'this'، 'that' میں بدل جاتا ہے۔",
   "explanation_roman": "Doctor ke mashware ko 'advised' + object + 'to' + base verb se reported kiya jata hai, aur 'this', 'that' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -13381,7 +13381,7 @@
    "Sara said to her brother that lend me your pen.",
    "Sara ordered her brother to lend her his pen."
   ],
-  "explanation_ur": "'Please' والی شائستہ درخواست کو 'requested' + object + 'to' + base verb سے reported کیا جاتا ہے۔",
+  "explanation_ur": "'Please' والی شائستہ درخواست کو 'requested' + مفعول + 'to' + فعل کی بنیادی صورت سے نقل کیا جاتا ہے۔",
   "explanation_roman": "'Please' wali shayista darkhwast ko 'requested' + object + 'to' + base verb se reported kiya jata hai.",
   "post": [
    "zamungkor",
@@ -13440,7 +13440,7 @@
    "The officer said to the clerk that finish this report by evening.",
    "The officer ordered the clerk to finish that report by evening."
   ],
-  "explanation_ur": "افسر کے حکم کو 'ordered' + object + 'to' + base verb سے reported کیا جاتا ہے، اور 'this'، 'that' میں بدل جاتا ہے۔",
+  "explanation_ur": "افسر کے حکم کو 'ordered' + مفعول + 'to' + فعل کی بنیادی صورت سے نقل کیا جاتا ہے، اور 'this'، 'that' میں بدل جاتا ہے۔",
   "explanation_roman": "Afsar ke hukm ko 'ordered' + object + 'to' + base verb se reported kiya jata hai, aur 'this', 'that' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -13499,7 +13499,7 @@
    "Ali said that what a beautiful garden this is.",
    "Ali exclaimed what a beautiful garden it was."
   ],
-  "explanation_ur": "'What' والے فجائیہ جملے کو 'exclaimed that' سے reported کیا جاتا ہے، 'is'، 'was' میں بدل جاتا ہے، اور فجائیہ صورت 'very' کے ساتھ بیانیہ جملہ بن جاتی ہے۔",
+  "explanation_ur": "'What' والے فجائیہ جملے کو 'exclaimed that' سے نقل کیا جاتا ہے، 'is'، 'was' میں بدل جاتا ہے، اور فجائیہ صورت 'very' کے ساتھ بیانیہ جملہ بن جاتی ہے۔",
   "explanation_roman": "'What' wale fajaiya jumle ko 'exclaimed that' se reported kiya jata hai, 'is', 'was' mein badal jata hai, aur fajaiya surat 'very' ke sath bayaniya jumla ban jati hai.",
   "post": [
    "zamungkor",
@@ -13558,7 +13558,7 @@
    "The old man prayed that Ali might succeed in life.",
    "The old man ordered that Ali might succeed in life."
   ],
-  "explanation_ur": "خواہش یا دعا والے optative جملے کو 'prayed that' سے reported کیا جاتا ہے، اور 'may'، 'might' میں بدل جاتا ہے۔",
+  "explanation_ur": "خواہش یا دعا کا اظہار کرنے والے دعائیہ جملے کو 'prayed that' سے نقل کیا جاتا ہے، اور 'may'، 'might' میں بدل جاتا ہے۔",
   "explanation_roman": "Khwahish ya dua wale optative jumle ko 'prayed that' se reported kiya jata hai, aur 'may', 'might' mein badal jata hai.",
   "post": [
    "zamungkor",
@@ -13617,7 +13617,7 @@
    "Sara said that how cold the weather is today.",
    "Sara exclaimed how cold the weather was that day."
   ],
-  "explanation_ur": "'How' والے فجائیہ جملے کو 'exclaimed that' سے reported کیا جاتا ہے، 'is'، 'was' میں بدل جاتا ہے، 'today'، 'that day' میں بدل جاتا ہے، اور فجائیہ صورت 'very' کے ساتھ بیانیہ جملہ بن جاتی ہے۔",
+  "explanation_ur": "'How' والے فجائیہ جملے کو 'exclaimed that' سے نقل کیا جاتا ہے، 'is'، 'was' میں بدل جاتا ہے، 'today'، 'that day' میں بدل جاتا ہے، اور فجائیہ صورت 'very' کے ساتھ بیانیہ جملہ بن جاتی ہے۔",
   "explanation_roman": "'How' wale fajaiya jumle ko 'exclaimed that' se reported kiya jata hai, 'is', 'was' mein badal jata hai, 'today', 'that day' mein badal jata hai, aur fajaiya surat 'very' ke sath bayaniya jumla ban jati hai.",
   "post": [
    "zamungkor",
@@ -14148,7 +14148,7 @@
    "An",
    "No article"
   ],
-  "explanation_ur": "Superlative adjectives جیسے 'tallest' سے پہلے 'The' استعمال ہوتا ہے۔",
+  "explanation_ur": "عالیٰ صفتوں جیسے 'tallest' سے پہلے 'The' استعمال ہوتا ہے۔",
   "explanation_roman": "Superlative adjectives jaise 'tallest' se pehle 'The' use hota hai.",
   "post": [
    "zamungkor",
@@ -14266,7 +14266,7 @@
    "An",
    "The"
   ],
-  "explanation_ur": "عام معنوں میں استعمال ہونے والے abstract noun سے پہلے کوئی آرٹیکل استعمال نہیں ہوتا۔",
+  "explanation_ur": "عام معنوں میں استعمال ہونے والے مجرد اسم سے پہلے کوئی آرٹیکل استعمال نہیں ہوتا۔",
   "explanation_roman": "Aam maano mein use hone wale abstract noun se pehle koi article use nahi hota.",
   "post": [
    "zamungkor",
@@ -15682,7 +15682,7 @@
    "Personal pronoun",
    "Indefinite pronoun"
   ],
-  "explanation_ur": "'That' ایک relative pronoun ہے۔ یہ 'that I read yesterday' والے جز کو اسم 'book' سے جوڑتا ہے۔",
+  "explanation_ur": "'That' ایک relative pronoun ہے۔ یہ جملے کے جز 'that I read yesterday' کو اسم 'book' سے جوڑتا ہے۔",
   "explanation_roman": "'That' aik relative pronoun hai. Yeh 'that I read yesterday' wale juz ko ism 'book' se jodta hai.",
   "post": [
    "zamungkor",
@@ -15741,7 +15741,7 @@
    "his",
    "himself"
   ],
-  "explanation_ur": "'His' ایک possessive pronoun ہے۔ یہ ظاہر کرتا ہے کہ کتاب احمد کی ہے۔",
+  "explanation_ur": "'His' ایک ملکیتی ضمیر ہے۔ یہ ظاہر کرتا ہے کہ کتاب احمد کی ہے۔",
   "explanation_roman": "'His' aik possessive pronoun hai. Yeh zahir karta hai ke kitaab Ahmed ki hai.",
   "post": [
    "zamungkor",
@@ -15918,7 +15918,7 @@
    "their",
    "they"
   ],
-  "explanation_ur": "'Themselves' ایک reflexive pronoun ہے۔ یہ جمع فاعل 'children' کی طرف لوٹتا ہے۔",
+  "explanation_ur": "'Themselves' ایک انعکاسی ضمیر ہے۔ یہ جمع فاعل 'children' کی طرف لوٹتا ہے۔",
   "explanation_roman": "'Themselves' aik reflexive pronoun hai. Yeh jama faail 'children' ki taraf lautta hai.",
   "post": [
    "zamungkor",
@@ -19635,7 +19635,7 @@
    "babyes",
    "babyies"
   ],
-  "explanation_ur": "کنسوننٹ اور 'y' پر ختم ہونے والے اسم میں 'y' بدل کر 'ies' ہو جاتا ہے۔ 'baby' کی جمع 'babies' ہے۔",
+  "explanation_ur": "کانسوننٹ اور 'y' پر ختم ہونے والے اسم میں 'y' بدل کر 'ies' ہو جاتا ہے۔ 'baby' کی جمع 'babies' ہے۔",
   "explanation_roman": "Consonant aur 'y' par khatam hone wale ism mein 'y' badal kar 'ies' ho jata hai. 'baby' ki jama 'babies' hai.",
   "post": [
    "zamungkor",
@@ -19812,7 +19812,7 @@
    "cityes",
    "cityies"
   ],
-  "explanation_ur": "کنسوننٹ اور 'y' پر ختم ہونے والے اسم میں 'y' بدل کر 'ies' ہو جاتا ہے۔ 'city' کی جمع 'cities' ہے۔",
+  "explanation_ur": "کانسوننٹ اور 'y' پر ختم ہونے والے اسم میں 'y' بدل کر 'ies' ہو جاتا ہے۔ 'city' کی جمع 'cities' ہے۔",
   "explanation_roman": "Consonant aur 'y' par khatam hone wale ism mein 'y' badal kar 'ies' ho jata hai. 'city' ki jama 'cities' hai.",
   "post": [
    "zamungkor",
@@ -21214,7 +21214,7 @@
  },
  {
   "id": "ENG-360",
-  "question_ur": "کون سا اسم ناقابل شمار ہے: 'water'، 'book'، 'chair' یا 'pencil'؟",
+  "question_ur": "کون سا اسم ناقابلِ شمار ہے: 'water'، 'book'، 'chair' یا 'pencil'؟",
   "question_roman": "Kaun sa noun uncountable hai: 'water', 'book', 'chair' ya 'pencil'?",
   "options_ur": [
    "Water",
@@ -21228,7 +21228,7 @@
    "Chair",
    "Pencil"
   ],
-  "explanation_ur": "'Water' ناقابل شمار ہے کیونکہ یہ ایک مادے کا نام ہے جسے ہم ایک ایک کر کے شمار نہیں کر سکتے۔",
+  "explanation_ur": "'Water' ناقابلِ شمار ہے کیونکہ یہ ایک مادے کا نام ہے جسے ہم ایک ایک کر کے شمار نہیں کر سکتے۔",
   "explanation_roman": "'Water' uncountable hai kyunke yeh aik madde ka naam hai jise hum aik aik kar ke shumar nahi kar sakte.",
   "post": [
    "zamungkor",
@@ -21287,7 +21287,7 @@
    "few",
    "a few"
   ],
-  "explanation_ur": "'Sugar' ناقابل شمار ہے، اس لیے منفی جملے میں ہم 'much' استعمال کرتے ہیں۔",
+  "explanation_ur": "'Sugar' ناقابلِ شمار ہے، اس لیے منفی جملے میں ہم 'much' استعمال کرتے ہیں۔",
   "explanation_roman": "'Sugar' uncountable hai, is liye negative jumle mein hum 'much' istemal karte hain.",
   "post": [
    "zamungkor",
@@ -21346,7 +21346,7 @@
    "many",
    "a little"
   ],
-  "explanation_ur": "'Books' قابل شمار ہے، اس لیے تعداد کے بارے میں پوچھنے کے لیے ہم 'many' استعمال کرتے ہیں۔",
+  "explanation_ur": "'Books' قابلِ شمار ہے، اس لیے تعداد کے بارے میں پوچھنے کے لیے ہم 'many' استعمال کرتے ہیں۔",
   "explanation_roman": "'Books' countable hai, is liye tadad ke bare mein poochne ke liye hum 'many' istemal karte hain.",
   "post": [
    "zamungkor",
@@ -21405,7 +21405,7 @@
    "few",
    "a little"
   ],
-  "explanation_ur": "'Salt' ناقابل شمار ہے، اس لیے تھوڑی مقدار کے لیے ہم 'a little' استعمال کرتے ہیں۔",
+  "explanation_ur": "'Salt' ناقابلِ شمار ہے، اس لیے تھوڑی مقدار کے لیے ہم 'a little' استعمال کرتے ہیں۔",
   "explanation_roman": "'Salt' uncountable hai, is liye thori miqdar ke liye hum 'a little' istemal karte hain.",
   "post": [
    "zamungkor",
@@ -21464,7 +21464,7 @@
    "a little",
    "little"
   ],
-  "explanation_ur": "'Apples' قابل شمار ہے، اس لیے تھوڑی تعداد کے لیے ہم 'a few' استعمال کرتے ہیں۔",
+  "explanation_ur": "'Apples' قابلِ شمار ہے، اس لیے تھوڑی تعداد کے لیے ہم 'a few' استعمال کرتے ہیں۔",
   "explanation_roman": "'Apples' countable hai, is liye thori tadad ke liye hum 'a few' istemal karte hain.",
   "post": [
    "zamungkor",
@@ -21523,7 +21523,7 @@
    "many",
    "a few"
   ],
-  "explanation_ur": "'Rice' ناقابل شمار ہے، اور مثبت جملے میں 'some' استعمال ہوتا ہے۔",
+  "explanation_ur": "'Rice' ناقابلِ شمار ہے، اور مثبت جملے میں 'some' استعمال ہوتا ہے۔",
   "explanation_roman": "'Rice' uncountable hai, aur positive jumle mein 'some' istemal hota hai.",
   "post": [
    "zamungkor",
@@ -21568,7 +21568,7 @@
  },
  {
   "id": "ENG-366",
-  "question_ur": "کون سا اسم ناقابل شمار ہے: 'furniture'، 'table'، 'window' یا 'door'؟",
+  "question_ur": "کون سا اسم ناقابلِ شمار ہے: 'furniture'، 'table'، 'window' یا 'door'؟",
   "question_roman": "Kaun sa noun uncountable hai: 'furniture', 'table', 'window' ya 'door'?",
   "options_ur": [
    "Table",
@@ -21582,7 +21582,7 @@
    "Furniture",
    "Door"
   ],
-  "explanation_ur": "'Furniture' ناقابل شمار ہے اور اس کی کوئی جمع شکل نہیں ہے۔",
+  "explanation_ur": "'Furniture' ناقابلِ شمار ہے اور اس کی کوئی جمع شکل نہیں ہے۔",
   "explanation_roman": "'Furniture' uncountable hai aur is ki koi plural shakal nahi hai.",
   "post": [
    "zamungkor",
@@ -21641,7 +21641,7 @@
    "Material noun",
    "Abstract noun"
   ],
-  "explanation_ur": "'Honesty' ایک خوبی کا نام ہے جسے ہم دیکھ یا چھو نہیں سکتے، اس لیے یہ تجریدی اسم ہے۔",
+  "explanation_ur": "'Honesty' ایک خوبی کا نام ہے جسے ہم دیکھ یا چھو نہیں سکتے، اس لیے یہ مجرد اسم ہے۔",
   "explanation_roman": "'Honesty' aik khoobi ka naam hai jise hum dekh ya chhoo nahi sakte, is liye yeh abstract noun hai.",
   "post": [
    "zamungkor",
@@ -21759,7 +21759,7 @@
    "Proper noun",
    "Material noun"
   ],
-  "explanation_ur": "'Team' لوگوں کے ایک گروہ کا نام ہے، اس لیے یہ مجموعی اسم ہے۔",
+  "explanation_ur": "'Team' لوگوں کے ایک گروہ کا نام ہے، اس لیے یہ اجتماعی اسم ہے۔",
   "explanation_roman": "'Team' logon ke aik group ka naam hai, is liye yeh collective noun hai.",
   "post": [
    "zamungkor",
@@ -22172,7 +22172,7 @@
    "were",
    "have been"
   ],
-  "explanation_ur": "غیر قابل شمار اسم کے ساتھ 'None' واحد فعل 'is' لیتا ہے۔",
+  "explanation_ur": "ناقابلِ شمار اسم کے ساتھ 'None' واحد فعل 'is' لیتا ہے۔",
   "explanation_roman": "Ghair qabil shumar ism ke sath 'None' wahid fail 'is' leta hai.",
   "post": [
    "zamungkor",
@@ -22925,7 +22925,7 @@
  },
  {
   "id": "ENG-389",
-  "question_ur": "صبح کی ٹرین کے بارے میں کون سا جملہ گرامر کے لحاظ سے درست ہے؟",
+  "question_ur": "صبح کی ٹرین کے بارے میں کون سا جملہ قواعد کے لحاظ سے درست ہے؟",
   "question_roman": "Subah ki train ke bare mein kaun sa jumla grammar ke lihaza se durust hai?",
   "options_ur": [
    "The train leave at six o'clock in the morning.",
@@ -22939,7 +22939,7 @@
    "The train leaves at six o'clock in the morning.",
    "The train leaves on six o'clock in the morning."
   ],
-  "explanation_ur": "واحد فاعل 'train' کے ساتھ 'leaves' آتا ہے، اس سے پہلے definite article 'The' ضروری ہے، اور وقت کے لیے 'at' استعمال ہوتا ہے۔",
+  "explanation_ur": "واحد فاعل 'train' کے ساتھ 'leaves' آتا ہے، اس سے پہلے معین آرٹیکل 'The' ضروری ہے، اور وقت کے لیے 'at' استعمال ہوتا ہے۔",
   "explanation_roman": "Wahid subject 'train' ke sath 'leaves' aata hai, is se pehle definite article 'The' zaroori hai, aur waqt ke liye 'at' istemal hota hai.",
   "post": [
    "zamungkor",
@@ -23043,7 +23043,7 @@
  },
  {
   "id": "ENG-391",
-  "question_ur": "شام کے باغ کے کام کی وضاحت کرنے والا گرامر کے لحاظ سے درست جملہ منتخب کریں:",
+  "question_ur": "شام کے باغ کے کام کی وضاحت کرنے والا قواعد کے لحاظ سے درست جملہ منتخب کریں:",
   "question_roman": "Shaam ke baagh ke kaam ki wazahat karne wala grammar ke lihaza se durust jumla muntakhab karein:",
   "options_ur": [
    "She waters a flowers in the garden every evening.",
@@ -23161,7 +23161,7 @@
  },
  {
   "id": "ENG-393",
-  "question_ur": "بچوں اور صبح کی اسمبلی کے بارے میں وہ جملہ منتخب کریں جس میں گرامر کی کوئی غلطی نہ ہو:",
+  "question_ur": "بچوں اور صبح کی اسمبلی کے بارے میں وہ جملہ منتخب کریں جس میں قواعد کی کوئی غلطی نہ ہو:",
   "question_roman": "Bachon aur subah ki assembly ke bare mein woh jumla muntakhab karein jis mein grammar ki koi ghalti na ho:",
   "options_ur": [
    "The children sings a song in the morning assembly every day.",
@@ -23234,7 +23234,7 @@
    "It rained heavily last night, so we stayed in home.",
    "It rained heavily last night, so we stayed at the home."
   ],
-  "explanation_ur": "'Last night' کے ساتھ ماضی کی شکل 'rained' آتی ہے، اور مقررہ اظہار 'at home' ہے جس میں کوئی article یا دوسرا preposition نہیں آتا۔",
+  "explanation_ur": "'Last night' کے ساتھ ماضی کی شکل 'rained' آتی ہے، اور مقررہ اظہار 'at home' ہے جس میں کوئی آرٹیکل یا دوسرا پریپوزیشن نہیں آتا۔",
   "explanation_roman": "'Last night' ke sath maazi ki shakal 'rained' aati hai, aur muqarrara izhaar 'at home' hai jis mein koi article ya dusra preposition nahi aata.",
   "post": [
    "zamungkor",
@@ -23293,7 +23293,7 @@
    "Ali has went to the doctor because he had a fever.",
    "Ali went at the doctor because he had a fever."
   ],
-  "explanation_ur": "ایک واحد قابلِ شمار اسم سے پہلے article ضروری ہے، 'has' کے ساتھ past participle 'gone' آتا ہے، اور کسی جگہ جانے کے لیے 'to' استعمال ہوتا ہے۔",
+  "explanation_ur": "ایک واحد قابلِ شمار اسم سے پہلے آرٹیکل ضروری ہے، 'has' کے ساتھ past participle 'gone' آتا ہے، اور کسی جگہ جانے کے لیے 'to' استعمال ہوتا ہے۔",
   "explanation_roman": "Aik wahid countable ism se pehle article zaroori hai, 'has' ke sath past participle 'gone' aata hai, aur kisi jagah jane ke liye 'to' istemal hota hai.",
   "post": [
    "zamungkor",
@@ -23352,7 +23352,7 @@
    "The workers repaired the old bridge over the river in last month.",
    "The workers repaired the old bridge over the river last month."
   ],
-  "explanation_ur": "'Last month' کے ساتھ ماضی کی شکل 'repaired' آتی ہے، مخصوص پل سے پہلے 'the' آتا ہے، اور 'last month' سے پہلے کوئی preposition نہیں آتا۔",
+  "explanation_ur": "'Last month' کے ساتھ ماضی کی شکل 'repaired' آتی ہے، مخصوص پل سے پہلے 'the' آتا ہے، اور 'last month' سے پہلے کوئی پریپوزیشن نہیں آتا۔",
   "explanation_roman": "'Last month' ke sath maazi ki shakal 'repaired' aati hai, makhsoos pul se pehle 'the' aata hai, aur 'last month' se pehle koi preposition nahi aata.",
   "post": [
    "zamungkor",
@@ -23397,7 +23397,7 @@
  },
  {
   "id": "ENG-397",
-  "question_ur": "سارہ اور گزشتہ روز کی دوڑ کے بارے میں کون سا جملہ گرامر کے لحاظ سے درست ہے؟",
+  "question_ur": "سارہ اور گزشتہ روز کی دوڑ کے بارے میں کون سا جملہ قواعد کے لحاظ سے درست ہے؟",
   "question_roman": "Sara aur guzishta roz ki daur ke bare mein kaun sa jumla grammar ke lihaza se durust hai?",
   "options_ur": [
    "Sara won the race yesterday without no difficulty.",
@@ -23529,7 +23529,7 @@
    "The baker bakes fresh bread in his shop yesterday morning.",
    "The baker bakes fresh bread in his shop every morning."
   ],
-  "explanation_ur": "'Bread' ناقابلِ شمار ہے اور اس سے پہلے article 'a' نہیں آتا، واحد فاعل 'baker' کے ساتھ 'bakes' آتا ہے، اور present simple کے ساتھ 'yesterday' نہیں آ سکتا۔",
+  "explanation_ur": "'Bread' ناقابلِ شمار ہے اور اس سے پہلے آرٹیکل 'a' نہیں آتا، واحد فاعل 'baker' کے ساتھ 'bakes' آتا ہے، اور present simple کے ساتھ 'yesterday' نہیں آ سکتا۔",
   "explanation_roman": "'Bread' naqabil-e-shumaar hai aur is se pehle article 'a' nahi aata, wahid subject 'baker' ke sath 'bakes' aata hai, aur present simple ke sath 'yesterday' nahi aa sakta.",
   "post": [
    "zamungkor",
@@ -23588,7 +23588,7 @@
    "The teacher checked our homework and returned it at today.",
    "The teacher checked our homework and returned it tomorrow."
   ],
-  "explanation_ur": "دو determiners ایک ساتھ نہیں آ سکتے، 'today' سے پہلے کوئی preposition نہیں آتا، اور مکمل شدہ عمل کے ساتھ 'tomorrow' نہیں آ سکتا۔",
+  "explanation_ur": "دو تعیین کنندہ ایک ساتھ نہیں آ سکتے، 'today' سے پہلے کوئی پریپوزیشن نہیں آتا، اور مکمل شدہ عمل کے ساتھ 'tomorrow' نہیں آ سکتا۔",
   "explanation_roman": "Do determiners aik sath nahi aa sakte, 'today' se pehle koi preposition nahi aata, aur mukammal shuda amal ke sath 'tomorrow' nahi aa sakta.",
   "post": [
    "zamungkor",
@@ -23647,7 +23647,7 @@
    "The farmer grows wheat in his fields and sells it in the market.",
    "The farmer grows wheat at his fields and sells it in the market."
   ],
-  "explanation_ur": "واحد فاعل 'farmer' کے ساتھ 'grows' آتا ہے، 'wheat' ناقابلِ شمار ہے اور اس سے پہلے article 'a' نہیں آتا، اور فصلیں کھیتوں میں 'in' کے ساتھ اگتی ہیں۔",
+  "explanation_ur": "واحد فاعل 'farmer' کے ساتھ 'grows' آتا ہے، 'wheat' ناقابلِ شمار ہے اور اس سے پہلے آرٹیکل 'a' نہیں آتا، اور فصلیں کھیتوں میں 'in' کے ساتھ اگتی ہیں۔",
   "explanation_roman": "Wahid subject 'farmer' ke sath 'grows' aata hai, 'wheat' naqabil-e-shumaar hai aur is se pehle article 'a' nahi aata, aur faslein kheton mein 'in' ke sath ugti hain.",
   "post": [
    "zamungkor",
@@ -23765,7 +23765,7 @@
    "The driver drives carefully the bus and stops at every station.",
    "The driver drives the bus carefully and stops at every station."
   ],
-  "explanation_ur": "فعل کے ساتھ adverb 'carefully' آتا ہے، واحد فاعل 'driver' کے ساتھ 'stops' آتا ہے، اور مفعول فعل کے فوراً بعد آتا ہے۔",
+  "explanation_ur": "فعل کے ساتھ متعلق فعل 'carefully' آتا ہے، واحد فاعل 'driver' کے ساتھ 'stops' آتا ہے، اور مفعول فعل کے فوراً بعد آتا ہے۔",
   "explanation_roman": "Verb ke sath adverb 'carefully' aata hai, wahid subject 'driver' ke sath 'stops' aata hai, aur maf'ool verb ke foran baad aata hai.",
   "post": [
    "zamungkor",
@@ -23810,7 +23810,7 @@
  },
  {
   "id": "ENG-404",
-  "question_ur": "بڑھئی اور لکڑی کی کرسی کے بارے میں وہ جملہ تلاش کریں جس میں گرامر کی کوئی غلطی نہ ہو:",
+  "question_ur": "بڑھئی اور لکڑی کی کرسی کے بارے میں وہ جملہ تلاش کریں جس میں قواعد کی کوئی غلطی نہ ہو:",
   "question_roman": "Barhai aur lakri ki kursi ke bare mein woh jumla talaash karein jis mein grammar ki koi ghalti na ho:",
   "options_ur": [
    "The carpenter made a strong chair from wood last week.",
@@ -23824,7 +23824,7 @@
    "The carpenter made a strong chair from wood in last week.",
    "The carpenter makes a strong chair from wood last week."
   ],
-  "explanation_ur": "ایک واحد قابلِ شمار اسم سے پہلے article 'a' ضروری ہے، 'last week' سے پہلے کوئی preposition نہیں آتا، اور ماضی کے وقت کے ساتھ ماضی کی شکل 'made' آتی ہے۔",
+  "explanation_ur": "ایک واحد قابلِ شمار اسم سے پہلے آرٹیکل 'a' ضروری ہے، 'last week' سے پہلے کوئی پریپوزیشن نہیں آتا، اور ماضی کے وقت کے ساتھ ماضی کی شکل 'made' آتی ہے۔",
   "explanation_roman": "Aik wahid countable ism se pehle article 'a' zaroori hai, 'last week' se pehle koi preposition nahi aata, aur maazi ke waqt ke sath maazi ki shakal 'made' aati hai.",
   "post": [
    "zamungkor",
@@ -23942,7 +23942,7 @@
    "Past participle",
    "Adjective"
   ],
-  "explanation_ur": "'Swimming' ایک '-ing' والا فعل ہے جو جملے میں اسم کے طور پر فاعل کا کام کرتا ہے، اس لیے یہ gerund ہے۔",
+  "explanation_ur": "'Swimming' ایک '-ing' والا فعل ہے جو جملے میں اسم کے طور پر فاعل کا کام کرتا ہے، اس لیے یہ جیرنڈ ہے۔",
   "explanation_roman": "'Swimming' aik '-ing' wala fail hai jo jumlay mein ism ke tor par subject ka kaam karta hai, is liye yeh gerund hai.",
   "post": [
    "zamungkor",
@@ -24001,7 +24001,7 @@
    "Infinitive",
    "Finite verb"
   ],
-  "explanation_ur": "'Reading' فعل 'enjoys' کے بعد آتا ہے اور مفعول اسم کے طور پر کام کرتا ہے، اس لیے یہ gerund ہے۔",
+  "explanation_ur": "'Reading' فعل 'enjoys' کے بعد آتا ہے اور مفعول اسم کے طور پر کام کرتا ہے، اس لیے یہ جیرنڈ ہے۔",
   "explanation_roman": "'Reading' fail 'enjoys' ke baad aata hai aur object ism ke tor par kaam karta hai, is liye yeh gerund hai.",
   "post": [
    "zamungkor",
@@ -24060,7 +24060,7 @@
    "arriving",
    "arrived"
   ],
-  "explanation_ur": "فعل 'avoid' کے بعد gerund آتا ہے، اس لیے 'arriving' درست ہے۔",
+  "explanation_ur": "فعل 'avoid' کے بعد جیرنڈ آتا ہے، اس لیے 'arriving' درست ہے۔",
   "explanation_roman": "Fail 'avoid' ke baad gerund aata hai, is liye 'arriving' durust hai.",
   "post": [
    "zamungkor",
@@ -24119,7 +24119,7 @@
    "written",
    "writing"
   ],
-  "explanation_ur": "فعل 'finish' کے بعد gerund آتا ہے، اس لیے 'writing' درست ہے۔",
+  "explanation_ur": "فعل 'finish' کے بعد جیرنڈ آتا ہے، اس لیے 'writing' درست ہے۔",
   "explanation_roman": "Fail 'finish' ke baad gerund aata hai, is liye 'writing' durust hai.",
   "post": [
    "zamungkor",
@@ -24178,7 +24178,7 @@
    "speak",
    "spoken"
   ],
-  "explanation_ur": "فعل 'practise' کے بعد gerund آتا ہے، اس لیے 'speaking' درست ہے۔",
+  "explanation_ur": "فعل 'practise' کے بعد جیرنڈ آتا ہے، اس لیے 'speaking' درست ہے۔",
   "explanation_roman": "Fail 'practise' ke baad gerund aata hai, is liye 'speaking' durust hai.",
   "post": [
    "zamungkor",
@@ -24237,7 +24237,7 @@
    "wait",
    "waited"
   ],
-  "explanation_ur": "فعل 'suggest' کے بعد gerund آتا ہے، اس لیے 'waiting' درست ہے۔",
+  "explanation_ur": "فعل 'suggest' کے بعد جیرنڈ آتا ہے، اس لیے 'waiting' درست ہے۔",
   "explanation_roman": "Fail 'suggest' ke baad gerund aata hai, is liye 'waiting' durust hai.",
   "post": [
    "zamungkor",
@@ -24296,7 +24296,7 @@
    "Gerund",
    "Finite verb"
   ],
-  "explanation_ur": "'Reading' '-ing' پر ختم ہوتا ہے اور جملے میں فاعل اسم کے طور پر کام کرتا ہے، اس لیے یہ gerund ہے۔",
+  "explanation_ur": "'Reading' '-ing' پر ختم ہوتا ہے اور جملے میں فاعل اسم کے طور پر کام کرتا ہے، اس لیے یہ جیرنڈ ہے۔",
   "explanation_roman": "'Reading' '-ing' par khatam hota hai aur jumlay mein subject ism ke tor par kaam karta hai, is liye yeh gerund hai.",
   "post": [
    "zamungkor",
@@ -24355,7 +24355,7 @@
    "Finite verb",
    "Gerund"
   ],
-  "explanation_ur": "'Travelling' حرفِ جار 'about' کے بعد آتا ہے اور اسم کے طور پر کام کرتا ہے، اس لیے یہ gerund ہے۔",
+  "explanation_ur": "'Travelling' پریپوزیشن 'about' کے بعد آتا ہے اور اسم کے طور پر کام کرتا ہے، اس لیے یہ جیرنڈ ہے۔",
   "explanation_roman": "'Travelling' preposition 'about' ke baad aata hai aur ism ke tor par kaam karta hai, is liye yeh gerund hai.",
   "post": [
    "zamungkor",
@@ -24414,7 +24414,7 @@
    "Past participle",
    "Finite verb"
   ],
-  "explanation_ur": "'To learn' 'to' کے ساتھ بنیادی فعل ہے، اس لیے یہ infinitive ہے۔",
+  "explanation_ur": "'To learn' 'to' کے ساتھ بنیادی فعل ہے، اس لیے یہ انفنیٹو ہے۔",
   "explanation_roman": "'To learn' 'to' ke sath base verb hai, is liye yeh infinitive hai.",
   "post": [
    "zamungkor",
@@ -24473,7 +24473,7 @@
    "leave",
    "left"
   ],
-  "explanation_ur": "فعل 'decide' کے بعد infinitive آتا ہے، اس لیے 'to leave' درست ہے۔",
+  "explanation_ur": "فعل 'decide' کے بعد انفنیٹو آتا ہے، اس لیے 'to leave' درست ہے۔",
   "explanation_roman": "Fail 'decide' ke baad infinitive aata hai, is liye 'to leave' durust hai.",
   "post": [
    "zamungkor",
@@ -24532,7 +24532,7 @@
    "to build",
    "built"
   ],
-  "explanation_ur": "فعل 'plan' کے بعد infinitive آتا ہے، اس لیے 'to build' درست ہے۔",
+  "explanation_ur": "فعل 'plan' کے بعد انفنیٹو آتا ہے، اس لیے 'to build' درست ہے۔",
   "explanation_roman": "Fail 'plan' ke baad infinitive aata hai, is liye 'to build' durust hai.",
   "post": [
    "zamungkor",
@@ -24591,7 +24591,7 @@
    "passed",
    "to pass"
   ],
-  "explanation_ur": "فعل 'hope' کے بعد infinitive آتا ہے، اس لیے 'to pass' درست ہے۔",
+  "explanation_ur": "فعل 'hope' کے بعد انفنیٹو آتا ہے، اس لیے 'to pass' درست ہے۔",
   "explanation_roman": "Fail 'hope' ke baad infinitive aata hai, is liye 'to pass' durust hai.",
   "post": [
    "zamungkor",
@@ -24650,7 +24650,7 @@
    "help",
    "helped"
   ],
-  "explanation_ur": "فعل 'promise' کے بعد infinitive آتا ہے، اس لیے 'to help' درست ہے۔",
+  "explanation_ur": "فعل 'promise' کے بعد انفنیٹو آتا ہے، اس لیے 'to help' درست ہے۔",
   "explanation_roman": "Fail 'promise' ke baad infinitive aata hai, is liye 'to help' durust hai.",
   "post": [
    "zamungkor",
@@ -24709,7 +24709,7 @@
    "The place of the action",
    "The subject of the sentence"
   ],
-  "explanation_ur": "Infinitive 'to buy' بتاتا ہے کہ وہ بازار کیوں گیا، اس لیے یہ مقصد ظاہر کرتا ہے۔",
+  "explanation_ur": "انفنیٹو 'to buy' بتاتا ہے کہ وہ بازار کیوں گیا، اس لیے یہ مقصد ظاہر کرتا ہے۔",
   "explanation_roman": "Infinitive 'to buy' batata hai ke woh bazaar kyun gaya, is liye yeh maqsad zahir karta hai.",
   "post": [
    "zamungkor",
@@ -24768,7 +24768,7 @@
    "Infinitive",
    "Finite verb"
   ],
-  "explanation_ur": "'To read' 'to' کے ساتھ بنیادی فعل ہے اور فاعل کے طور پر کام کرتا ہے، اس لیے یہ infinitive ہے۔",
+  "explanation_ur": "'To read' 'to' کے ساتھ بنیادی فعل ہے اور فاعل کے طور پر کام کرتا ہے، اس لیے یہ انفنیٹو ہے۔",
   "explanation_roman": "'To read' 'to' ke sath base verb hai aur subject ke tor par kaam karta hai, is liye yeh infinitive hai.",
   "post": [
    "zamungkor",
@@ -25181,7 +25181,7 @@
    "A gerund",
    "An infinitive"
   ],
-  "explanation_ur": "فعل 'watered' مفعول 'the plants' لیتا ہے، اس لیے یہ transitive ہے۔",
+  "explanation_ur": "فعل 'watered' مفعول 'the plants' لیتا ہے، اس لیے یہ فعل متعدی ہے۔",
   "explanation_roman": "Fail 'watered' object 'the plants' leta hai, is liye yeh transitive hai.",
   "post": [
    "zamungkor",
@@ -25240,7 +25240,7 @@
    "Intransitive",
    "An infinitive"
   ],
-  "explanation_ur": "فعل 'slept' کوئی مفعول نہیں لیتا، اس لیے یہ intransitive ہے۔",
+  "explanation_ur": "فعل 'slept' کوئی مفعول نہیں لیتا، اس لیے یہ فعل لازم ہے۔",
   "explanation_roman": "Fail 'slept' koi object nahi leta, is liye yeh intransitive hai.",
   "post": [
    "zamungkor",
@@ -25299,7 +25299,7 @@
    "A participle",
    "A finite verb"
   ],
-  "explanation_ur": "'Sings' زمانہ ظاہر کرتا ہے اور فاعل 'She' کے مطابق ہے، اس لیے یہ finite verb ہے۔",
+  "explanation_ur": "'Sings' زمانہ ظاہر کرتا ہے اور فاعل 'She' کے مطابق ہے، اس لیے یہ 'finite verb' ہے۔",
   "explanation_roman": "'Sings' tense zahir karta hai aur subject 'She' ke mutabiq hai, is liye yeh finite verb hai.",
   "post": [
    "zamungkor",
@@ -25358,7 +25358,7 @@
    "Transitive verb",
    "Intransitive verb"
   ],
-  "explanation_ur": "'To sing' ایک infinitive ہے جو کوئی زمانہ ظاہر نہیں کرتا اور فاعل کے مطابق نہیں ہوتا، اس لیے یہ non-finite verb ہے۔",
+  "explanation_ur": "'To sing' ایک انفنیٹو ہے جو کوئی زمانہ ظاہر نہیں کرتا اور فاعل کے مطابق نہیں ہوتا، اس لیے یہ non-finite verb ہے۔",
   "explanation_roman": "'To sing' aik infinitive hai jo koi tense zahir nahi karta aur subject ke mutabiq nahi hota, is liye yeh non-finite verb hai.",
   "post": [
    "zamungkor",
@@ -25403,7 +25403,7 @@
  },
  {
   "id": "ENG-431",
-  "question_ur": "جملے \"I believe that honesty wins respect.\" میں clause \"that honesty wins respect\" کس قسم کا ہے؟",
+  "question_ur": "جملے \"I believe that honesty wins respect.\" میں جملے کا جز \"that honesty wins respect\" کس قسم کا ہے؟",
   "question_roman": "Jumlay \"I believe that honesty wins respect.\" mein clause \"that honesty wins respect\" kis qism ka hai?",
   "options_ur": [
    "Noun clause",
@@ -25417,7 +25417,7 @@
    "Adverb clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause فعل 'believe' کا مفعول ہے، اس لیے یہ اسم کی طرح کام کرتا ہے اور noun clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز فعل 'believe' کا مفعول ہے، اس لیے یہ اسم کی طرح کام کرتا ہے اور noun clause ہے۔",
   "explanation_roman": "Ye clause fail 'believe' ka maf'ool hai, is liye ye ism ki tarah kaam karta hai aur noun clause hai.",
   "post": [
    "zamungkor",
@@ -25462,7 +25462,7 @@
  },
  {
   "id": "ENG-432",
-  "question_ur": "جملے \"The boy who won the prize studies in class five.\" میں clause \"who won the prize\" کی قسم پہچانیں۔",
+  "question_ur": "جملے \"The boy who won the prize studies in class five.\" میں جملے کے جز \"who won the prize\" کی قسم پہچانیں۔",
   "question_roman": "Jumlay \"The boy who won the prize studies in class five.\" mein clause \"who won the prize\" ki qism pehchanain.",
   "options_ur": [
    "Adverb clause",
@@ -25476,7 +25476,7 @@
    "Noun clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause اسم 'boy' کی وضاحت کرتا ہے، اس لیے یہ صفت کی طرح کام کرتا ہے اور adjective clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز اسم 'boy' کی وضاحت کرتا ہے، اس لیے یہ صفت کی طرح کام کرتا ہے اور adjective clause ہے۔",
   "explanation_roman": "Ye clause ism 'boy' ki wazahat karta hai, is liye ye sifat ki tarah kaam karta hai aur adjective clause hai.",
   "post": [
    "zamungkor",
@@ -25521,7 +25521,7 @@
  },
  {
   "id": "ENG-433",
-  "question_ur": "جملے \"We waited until the rain stopped\" میں clause \"until the rain stopped\" کس قسم کا ہے؟",
+  "question_ur": "جملے \"We waited until the rain stopped\" میں جملے کا جز \"until the rain stopped\" کس قسم کا ہے؟",
   "question_roman": "Jumlay \"We waited until the rain stopped\" mein clause \"until the rain stopped\" kis qism ka hai?",
   "options_ur": [
    "Noun clause",
@@ -25535,7 +25535,7 @@
    "Adverb clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause انتظار کے وقت کو بتاتا ہے، اس لیے یہ فعل کی وضاحت کرتا ہے اور adverb clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز انتظار کے وقت کو بتاتا ہے، اس لیے یہ فعل کی وضاحت کرتا ہے اور adverb clause ہے۔",
   "explanation_roman": "Ye clause intizar ke waqt ko batata hai, is liye ye fail ki wazahat karta hai aur adverb clause hai.",
   "post": [
    "zamungkor",
@@ -25580,7 +25580,7 @@
  },
  {
   "id": "ENG-434",
-  "question_ur": "جملے \"That the earth moves round the sun is a fact.\" میں clause \"That the earth moves round the sun\" کس قسم کا ہے؟",
+  "question_ur": "جملے \"That the earth moves round the sun is a fact.\" میں جملے کا جز \"That the earth moves round the sun\" کس قسم کا ہے؟",
   "question_roman": "Jumlay \"That the earth moves round the sun is a fact.\" mein clause \"That the earth moves round the sun\" kis qism ka hai?",
   "options_ur": [
    "Adjective clause",
@@ -25594,7 +25594,7 @@
    "Main clause",
    "Noun clause"
   ],
-  "explanation_ur": "یہ clause فعل 'is' کا فاعل ہے، اس لیے یہ اسم کی طرح کام کرتا ہے اور noun clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز فعل 'is' کا فاعل ہے، اس لیے یہ اسم کی طرح کام کرتا ہے اور noun clause ہے۔",
   "explanation_roman": "Ye clause fail 'is' ka fa'il hai, is liye ye ism ki tarah kaam karta hai aur noun clause hai.",
   "post": [
    "zamungkor",
@@ -25639,7 +25639,7 @@
  },
  {
   "id": "ENG-435",
-  "question_ur": "جملے \"The book that you gave me is very useful.\" میں clause \"that you gave me\" کس قسم کا clause ہے؟",
+  "question_ur": "جملے \"The book that you gave me is very useful.\" میں جملے کا جز \"that you gave me\" کس قسم کا جملے کا جز ہے؟",
   "question_roman": "Jumlay \"The book that you gave me is very useful.\" mein clause \"that you gave me\" kis qism ka clause hai?",
   "options_ur": [
    "Noun clause",
@@ -25653,7 +25653,7 @@
    "Adverb clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause اسم 'book' کی وضاحت کرتا ہے، اس لیے یہ صفت کی طرح کام کرتا ہے اور adjective clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز اسم 'book' کی وضاحت کرتا ہے، اس لیے یہ صفت کی طرح کام کرتا ہے اور adjective clause ہے۔",
   "explanation_roman": "Ye clause ism 'book' ki wazahat karta hai, is liye ye sifat ki tarah kaam karta hai aur adjective clause hai.",
   "post": [
    "zamungkor",
@@ -25698,7 +25698,7 @@
  },
  {
   "id": "ENG-436",
-  "question_ur": "جملے \"She stayed at home because she was ill.\" میں clause \"because she was ill\" کس قسم کا ہے؟",
+  "question_ur": "جملے \"She stayed at home because she was ill.\" میں جملے کا جز \"because she was ill\" کس قسم کا ہے؟",
   "question_roman": "Jumlay \"She stayed at home because she was ill.\" mein clause \"because she was ill\" kis qism ka hai?",
   "options_ur": [
    "Adverb clause",
@@ -25712,7 +25712,7 @@
    "Adjective clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause گھر پر رہنے کی وجہ بتاتا ہے، اس لیے یہ فعل کی وضاحت کرتا ہے اور adverb clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز گھر پر رہنے کی وجہ بتاتا ہے، اس لیے یہ فعل کی وضاحت کرتا ہے اور adverb clause ہے۔",
   "explanation_roman": "Ye clause ghar par rehne ki wajah batata hai, is liye ye fail ki wazahat karta hai aur adverb clause hai.",
   "post": [
    "zamungkor",
@@ -25757,7 +25757,7 @@
  },
  {
   "id": "ENG-437",
-  "question_ur": "جملے \"Listen to what the teacher says\" میں clause \"what the teacher says\" کی قسم پہچانیں۔",
+  "question_ur": "جملے \"Listen to what the teacher says\" میں جملے کے جز \"what the teacher says\" کی قسم پہچانیں۔",
   "question_roman": "Jumlay \"Listen to what the teacher says\" mein clause \"what the teacher says\" ki qism pehchanain.",
   "options_ur": [
    "Adjective clause",
@@ -25771,7 +25771,7 @@
    "Noun clause",
    "Adverb clause"
   ],
-  "explanation_ur": "یہ clause حرف جار 'to' کا مفعول ہے، اس لیے یہ اسم کی طرح کام کرتا ہے اور noun clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز پریپوزیشن 'to' کا مفعول ہے، اس لیے یہ اسم کی طرح کام کرتا ہے اور noun clause ہے۔",
   "explanation_roman": "Ye clause harf-e-jar 'to' ka maf'ool hai, is liye ye ism ki tarah kaam karta hai aur noun clause hai.",
   "post": [
    "zamungkor",
@@ -25816,7 +25816,7 @@
  },
  {
   "id": "ENG-438",
-  "question_ur": "جملے \"The man whom we met yesterday is a doctor.\" میں clause \"whom we met yesterday\" کس قسم کا clause ہے؟",
+  "question_ur": "جملے \"The man whom we met yesterday is a doctor.\" میں جملے کا جز \"whom we met yesterday\" کس قسم کا جملے کا جز ہے؟",
   "question_roman": "Jumlay \"The man whom we met yesterday is a doctor.\" mein clause \"whom we met yesterday\" kis qism ka clause hai?",
   "options_ur": [
    "Noun clause",
@@ -25830,7 +25830,7 @@
    "Main clause",
    "Adjective clause"
   ],
-  "explanation_ur": "یہ clause اسم 'man' کی وضاحت کرتا ہے، اس لیے یہ صفت کی طرح کام کرتا ہے اور adjective clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز اسم 'man' کی وضاحت کرتا ہے، اس لیے یہ صفت کی طرح کام کرتا ہے اور adjective clause ہے۔",
   "explanation_roman": "Ye clause ism 'man' ki wazahat karta hai, is liye ye sifat ki tarah kaam karta hai aur adjective clause hai.",
   "post": [
    "zamungkor",
@@ -25875,7 +25875,7 @@
  },
  {
   "id": "ENG-439",
-  "question_ur": "جملے \"If you work hard, you will pass.\" میں clause \"If you work hard\" کس قسم کا ہے؟",
+  "question_ur": "جملے \"If you work hard, you will pass.\" میں جملے کا جز \"If you work hard\" کس قسم کا ہے؟",
   "question_roman": "Jumlay \"If you work hard, you will pass.\" mein clause \"If you work hard\" kis qism ka hai?",
   "options_ur": [
    "Noun clause",
@@ -25889,7 +25889,7 @@
    "Adjective clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause کامیاب ہونے کی شرط بتاتا ہے، اس لیے یہ مرکزی فعل کی وضاحت کرتا ہے اور adverb clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز کامیاب ہونے کی شرط بتاتا ہے، اس لیے یہ اصلی فعل کی وضاحت کرتا ہے اور adverb clause ہے۔",
   "explanation_roman": "Ye clause kamyab hone ki shart batata hai, is liye ye markazi fail ki wazahat karta hai aur adverb clause hai.",
   "post": [
    "zamungkor",
@@ -25934,7 +25934,7 @@
  },
  {
   "id": "ENG-440",
-  "question_ur": "جملے \"The truth is that he was absent.\" میں clause \"that he was absent\" کی قسم پہچانیں۔",
+  "question_ur": "جملے \"The truth is that he was absent.\" میں جملے کے جز \"that he was absent\" کی قسم پہچانیں۔",
   "question_roman": "Jumlay \"The truth is that he was absent.\" mein clause \"that he was absent\" ki qism pehchanain.",
   "options_ur": [
    "Adjective clause",
@@ -25948,7 +25948,7 @@
    "Noun clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause فعل 'is' کے بعد معنی مکمل کرتا ہے، اس لیے یہ اسم کی طرح کام کرتا ہے اور noun clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز فعل 'is' کے بعد معنی مکمل کرتا ہے، اس لیے یہ اسم کی طرح کام کرتا ہے اور noun clause ہے۔",
   "explanation_roman": "Ye clause fail 'is' ke baad ma'na mukammal karta hai, is liye ye ism ki tarah kaam karta hai aur noun clause hai.",
   "post": [
    "zamungkor",
@@ -25993,7 +25993,7 @@
  },
  {
   "id": "ENG-441",
-  "question_ur": "جملے \"Stay where you are\" میں clause \"where you are\" کس قسم کا ہے؟",
+  "question_ur": "جملے \"Stay where you are\" میں جملے کا جز \"where you are\" کس قسم کا ہے؟",
   "question_roman": "Jumlay \"Stay where you are\" mein clause \"where you are\" kis qism ka hai?",
   "options_ur": [
    "Adverb clause",
@@ -26007,7 +26007,7 @@
    "Adjective clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause رہنے کی جگہ بتاتا ہے، اس لیے یہ فعل کی وضاحت کرتا ہے اور adverb clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز رہنے کی جگہ بتاتا ہے، اس لیے یہ فعل کی وضاحت کرتا ہے اور adverb clause ہے۔",
   "explanation_roman": "Ye clause rehne ki jagah batata hai, is liye ye fail ki wazahat karta hai aur adverb clause hai.",
   "post": [
    "zamungkor",
@@ -26052,7 +26052,7 @@
  },
  {
   "id": "ENG-442",
-  "question_ur": "جملے \"Students who read daily gain more knowledge.\" میں clause \"who read daily\" کس قسم کا ہے؟",
+  "question_ur": "جملے \"Students who read daily gain more knowledge.\" میں جملے کا جز \"who read daily\" کس قسم کا ہے؟",
   "question_roman": "Jumlay \"Students who read daily gain more knowledge.\" mein clause \"who read daily\" kis qism ka hai?",
   "options_ur": [
    "Adverb clause",
@@ -26066,7 +26066,7 @@
    "Adjective clause",
    "Main clause"
   ],
-  "explanation_ur": "یہ clause اسم 'Students' کی وضاحت کرتا ہے، اس لیے یہ صفت کی طرح کام کرتا ہے اور adjective clause ہے۔",
+  "explanation_ur": "یہ جملے کا جز اسم 'Students' کی وضاحت کرتا ہے، اس لیے یہ صفت کی طرح کام کرتا ہے اور adjective clause ہے۔",
   "explanation_roman": "Ye clause ism 'Students' ki wazahat karta hai, is liye ye sifat ki tarah kaam karta hai aur adjective clause hai.",
   "post": [
    "zamungkor",
@@ -26125,7 +26125,7 @@
    "Complex sentence",
    "Compound-complex sentence"
   ],
-  "explanation_ur": "اس جملے میں صرف ایک independent clause ہے جس میں ایک فاعل اور ایک فعل ہے، اس لیے یہ simple sentence ہے۔",
+  "explanation_ur": "اس جملے میں صرف ایک آزاد جملے کا جز ہے جس میں ایک فاعل اور ایک فعل ہے، اس لیے یہ simple sentence ہے۔",
   "explanation_roman": "Is jumlay mein sirf aik independent clause hai jis mein aik fa'il aur aik fail hai, is liye ye simple sentence hai.",
   "post": [
    "zamungkor",
@@ -26184,7 +26184,7 @@
    "Compound sentence",
    "Compound-complex sentence"
   ],
-  "explanation_ur": "اس جملے میں دو independent clauses کو 'and' سے جوڑا گیا ہے، اس لیے یہ compound sentence ہے۔",
+  "explanation_ur": "اس جملے میں دو آزاد جملے کے اجزا کو 'and' سے جوڑا گیا ہے، اس لیے یہ compound sentence ہے۔",
   "explanation_roman": "Is jumlay mein do independent clauses ko 'and' se jora gaya hai, is liye ye compound sentence hai.",
   "post": [
    "zamungkor",
@@ -26243,7 +26243,7 @@
    "Compound-complex sentence",
    "Complex sentence"
   ],
-  "explanation_ur": "اس جملے میں ایک independent clause اور ایک dependent clause ہے، اس لیے یہ complex sentence ہے۔",
+  "explanation_ur": "اس جملے میں ایک آزاد جملے کا جز اور ایک تابع جملے کا جز ہے، اس لیے یہ complex sentence ہے۔",
   "explanation_roman": "Is jumlay mein aik independent clause aur aik dependent clause hai, is liye ye complex sentence hai.",
   "post": [
    "zamungkor",
@@ -26479,7 +26479,7 @@
    "Compound sentence",
    "Compound-complex sentence"
   ],
-  "explanation_ur": "اس جملے میں ایک independent clause اور ایک dependent clause ہے جو 'because' سے شروع ہوتا ہے، اس لیے یہ complex sentence ہے۔",
+  "explanation_ur": "اس جملے میں ایک آزاد جملے کا جز اور ایک تابع جملے کا جز ہے جو 'because' سے شروع ہوتا ہے، اس لیے یہ complex sentence ہے۔",
   "explanation_roman": "Is jumlay mein aik independent clause aur aik dependent clause hai jo 'because' se shuru hota hai, is liye ye complex sentence hai.",
   "post": [
    "zamungkor",
@@ -26583,7 +26583,7 @@
  },
  {
   "id": "ENG-451",
-  "question_ur": "اس پیراگراف کو پڑھیں: \"Books open new worlds for young readers. They teach new words and new ideas. They help children think clearly and imagine freely. A child who reads often learns faster at school.\" اس کے لیے بہترین topic sentence کون سا ہے؟",
+  "question_ur": "اس پیراگراف کو پڑھیں: \"Books open new worlds for young readers. They teach new words and new ideas. They help children think clearly and imagine freely. A child who reads often learns faster at school.\" اس کے لیے بہترین موضوعی جملہ کون سا ہے؟",
   "question_roman": "Is paragraph ko parhain: \"Books open new worlds for young readers. They teach new words and new ideas. They help children think clearly and imagine freely. A child who reads often learns faster at school.\" Is ke liye behtareen topic sentence kaun sa hai?",
   "options_ur": [
    "Children should play in the park every day.",
@@ -26642,7 +26642,7 @@
  },
  {
   "id": "ENG-452",
-  "question_ur": "اس پیراگراف کو پڑھیں: \"Clean drinking water keeps people healthy. Dirty water carries germs that cause illness. Families should boil unsafe water before drinking it. Safe water protects children from many diseases.\" اس میں topic sentence کون سا ہے؟",
+  "question_ur": "اس پیراگراف کو پڑھیں: \"Clean drinking water keeps people healthy. Dirty water carries germs that cause illness. Families should boil unsafe water before drinking it. Safe water protects children from many diseases.\" اس میں موضوعی جملہ کون سا ہے؟",
   "question_roman": "Is paragraph ko parhain: \"Clean drinking water keeps people healthy. Dirty water carries germs that cause illness. Families should boil unsafe water before drinking it. Safe water protects children from many diseases.\" Is mein topic sentence kaun sa hai?",
   "options_ur": [
    "Clean drinking water keeps people healthy.",
@@ -26701,7 +26701,7 @@
  },
  {
   "id": "ENG-453",
-  "question_ur": "اس پیراگراف کو پڑھیں: \"A morning walk wakes up the body gently. Fresh air fills the lungs and clears the mind. Walking daily keeps the heart strong and the body active. People who walk in the morning feel fresh all day.\" اس کے لیے بہترین topic sentence کون سا ہے؟",
+  "question_ur": "اس پیراگراف کو پڑھیں: \"A morning walk wakes up the body gently. Fresh air fills the lungs and clears the mind. Walking daily keeps the heart strong and the body active. People who walk in the morning feel fresh all day.\" اس کے لیے بہترین موضوعی جملہ کون سا ہے؟",
   "question_roman": "Is paragraph ko parhain: \"A morning walk wakes up the body gently. Fresh air fills the lungs and clears the mind. Walking daily keeps the heart strong and the body active. People who walk in the morning feel fresh all day.\" Is ke liye behtareen topic sentence kaun sa hai?",
   "options_ur": [
    "Evening games are fun for children.",
@@ -26760,7 +26760,7 @@
  },
  {
   "id": "ENG-454",
-  "question_ur": "اس پیراگراف کو پڑھیں: \"Our school library is a quiet place for study. Students sit at long tables and read their books. The librarian helps them find the books they need. New books arrive in the library every month.\" اس میں topic sentence کون سا ہے؟",
+  "question_ur": "اس پیراگراف کو پڑھیں: \"Our school library is a quiet place for study. Students sit at long tables and read their books. The librarian helps them find the books they need. New books arrive in the library every month.\" اس میں موضوعی جملہ کون سا ہے؟",
   "question_roman": "Is paragraph ko parhain: \"Our school library is a quiet place for study. Students sit at long tables and read their books. The librarian helps them find the books they need. New books arrive in the library every month.\" Is mein topic sentence kaun sa hai?",
   "options_ur": [
    "Students sit at long tables and read their books.",
@@ -26819,7 +26819,7 @@
  },
  {
   "id": "ENG-455",
-  "question_ur": "اس پیراگراف کو پڑھیں: \"Trees give us shade on hot days. They clean the air and give us fresh oxygen. Their roots hold the soil and stop it from washing away. Birds build nests in their branches and sing there.\" اس کے لیے بہترین topic sentence کون سا ہے؟",
+  "question_ur": "اس پیراگراف کو پڑھیں: \"Trees give us shade on hot days. They clean the air and give us fresh oxygen. Their roots hold the soil and stop it from washing away. Birds build nests in their branches and sing there.\" اس کے لیے بہترین موضوعی جملہ کون سا ہے؟",
   "question_roman": "Is paragraph ko parhain: \"Trees give us shade on hot days. They clean the air and give us fresh oxygen. Their roots hold the soil and stop it from washing away. Birds build nests in their branches and sing there.\" Is ke liye behtareen topic sentence kaun sa hai?",
   "options_ur": [
    "Farmers grow wheat in their fields.",
@@ -27128,7 +27128,7 @@
    "A lucky guess in a game",
    "A prayer said in private"
   ],
-  "explanation_ur": "'a blessing in disguise' کا مطلب ہے ایسی اچھی چیز جو پہلے بری یا بدقسمتی لگتی تھی۔",
+  "explanation_ur": "'a blessing in disguise' کا مطلب ہے ایسی اچھی چیز جو پہلے بری یا بدقسمت لگتی تھی۔",
   "explanation_roman": "'a blessing in disguise' ka matlab hai aisi achi cheez jo pehle buri ya badqismati lagti thi.",
   "post": [
    "zamungkor",
@@ -27468,7 +27468,7 @@
  },
  {
   "id": "ENG-466",
-  "question_ur": "Phrasal verb 'give up' کا مطلب کیا ہے؟",
+  "question_ur": "مرکب فعل 'give up' کا مطلب کیا ہے؟",
   "question_roman": "Phrasal verb 'give up' ka matlab kya hai?",
   "options_ur": [
    "To stop trying and admit defeat",
@@ -27527,7 +27527,7 @@
  },
  {
   "id": "ENG-467",
-  "question_ur": "Phrasal verb 'look after' کا مطلب کیا ہے؟",
+  "question_ur": "مرکب فعل 'look after' کا مطلب کیا ہے؟",
   "question_roman": "Phrasal verb 'look after' ka matlab kya hai?",
   "options_ur": [
    "To search for something lost",
@@ -27586,7 +27586,7 @@
  },
  {
   "id": "ENG-468",
-  "question_ur": "Phrasal verb 'put off' کا مطلب کیا ہے؟",
+  "question_ur": "مرکب فعل 'put off' کا مطلب کیا ہے؟",
   "question_roman": "Phrasal verb 'put off' ka matlab kya hai?",
   "options_ur": [
    "To switch a light off",
@@ -27645,7 +27645,7 @@
  },
  {
   "id": "ENG-469",
-  "question_ur": "Phrasal verb 'call off' کا مطلب کیا ہے؟",
+  "question_ur": "مرکب فعل 'call off' کا مطلب کیا ہے؟",
   "question_roman": "Phrasal verb 'call off' ka matlab kya hai?",
   "options_ur": [
    "To shout the name of a friend",
@@ -27704,7 +27704,7 @@
  },
  {
   "id": "ENG-470",
-  "question_ur": "Phrasal verb 'run out of' کا مطلب کیا ہے؟",
+  "question_ur": "مرکب فعل 'run out of' کا مطلب کیا ہے؟",
   "question_roman": "Phrasal verb 'run out of' ka matlab kya hai?",
   "options_ur": [
    "To have no more of something left",
@@ -27763,7 +27763,7 @@
  },
  {
   "id": "ENG-471",
-  "question_ur": "Phrasal verb 'get over' کا مطلب کیا ہے؟",
+  "question_ur": "مرکب فعل 'get over' کا مطلب کیا ہے؟",
   "question_roman": "Phrasal verb 'get over' ka matlab kya hai?",
   "options_ur": [
    "To climb over a wall",
@@ -28353,7 +28353,7 @@
  },
  {
   "id": "ENG-481",
-  "question_ur": "ہفتے کی صبح امینہ اپنی والدہ کے ساتھ مصروف بازار گئی۔ انہوں نے تازہ سبزیاں، پکے پھل اور ایک ڈبل روٹی خریدی۔ امینہ نے چھوٹے تھیلے اٹھانے میں مدد کی اور بقایا رقم احتیاط سے گنی۔ بازار دوستانہ دکانداروں اور چمکدار رنگوں سے بھرا ہوا تھا۔ اس اقتباس کا مرکزی خیال کیا ہے؟",
+  "question_ur": "ہفتے کی صبح امینہ اپنی والدہ کے ساتھ مصروف بازار گئی۔ انہوں نے تازہ سبزیاں، پکے پھل اور ایک ڈبل روٹی خریدی۔ امینہ نے چھوٹے تھیلے اٹھانے میں مدد کی اور بقایا رقم احتیاط سے گنی۔ بازار دوستانہ دکانداروں اور چمکدار رنگوں سے بھرا ہوا تھا۔ اس عبارت کا مرکزی خیال کیا ہے؟",
   "question_roman": "Hafte ki subah Amina apni walida ke sath masroof bazaar gayi. Unhon ne taza sabziyan, pake phal aur aik double roti kharidi. Amina ne chhote thailay uthane mein madad ki aur baqaya raqam ehtiyat se gini. Bazaar dostana dukandaron aur chamakdar rangon se bhara hua tha. Is iqtibas ka markazi khayal kya hai?",
   "options_ur": [
    "Amina and her mother shop at a busy market.",
@@ -28367,7 +28367,7 @@
    "Amina opens a shop in the market.",
    "Amina sells vegetables to shopkeepers."
   ],
-  "explanation_ur": "پورا اقتباس امینہ اور اس کی والدہ کے مصروف بازار میں خریداری کرنے کے بارے میں ہے۔ دوسرے انتخاب ایسے کام بتاتے ہیں جو اقتباس میں کبھی نہیں ہوتے۔",
+  "explanation_ur": "پوری عبارت امینہ اور اس کی والدہ کے مصروف بازار میں خریداری کرنے کے بارے میں ہے۔ دوسرے انتخاب ایسے کام بتاتے ہیں جو عبارت میں کبھی نہیں ہوتے۔",
   "explanation_roman": "Pura iqtibas Amina aur us ki walida ke masroof bazaar mein kharidari karne ke bare mein hai. Dusre intikhab aise kaam batate hain jo iqtibas mein kabhi nahi hote.",
   "post": [
    "zamungkor",
@@ -28412,7 +28412,7 @@
  },
  {
   "id": "ENG-482",
-  "question_ur": "بلال ہر دوپہر کے کھانے کے وقفے میں اسکول کی لائبریری جاتا ہے۔ وہ جانوروں کے بارے میں ایک کتاب منتخب کرتا ہے، کھڑکی کے پاس بیٹھتا ہے اور گھنٹی بجنے تک پڑھتا رہتا ہے۔ کبھی کبھی وہ ایک چھوٹی نوٹ بک میں نئے الفاظ لکھ لیتا ہے۔ خاموش لائبریری اسکول میں اس کی پسندیدہ جگہ بن گئی ہے۔ اس اقتباس کا مرکزی خیال کیا ہے؟",
+  "question_ur": "بلال ہر دوپہر کے کھانے کے وقفے میں اسکول کی لائبریری جاتا ہے۔ وہ جانوروں کے بارے میں ایک کتاب منتخب کرتا ہے، کھڑکی کے پاس بیٹھتا ہے اور گھنٹی بجنے تک پڑھتا رہتا ہے۔ کبھی کبھی وہ ایک چھوٹی نوٹ بک میں نئے الفاظ لکھ لیتا ہے۔ خاموش لائبریری اسکول میں اس کی پسندیدہ جگہ بن گئی ہے۔ اس عبارت کا مرکزی خیال کیا ہے؟",
   "question_roman": "Bilal har dopahar ke khane ke waqfe mein school ki library jata hai. Woh janwaron ke bare mein aik kitab muntakhab karta hai, khirki ke paas baithta hai aur ghanti bajne tak parhta rehta hai. Kabhi kabhi woh aik chhoti note book mein naye alfaz likh leta hai. Khamosh library school mein us ki pasandida jagah ban gayi hai. Is iqtibas ka markazi khayal kya hai?",
   "options_ur": [
    "Bilal works as the school librarian.",
@@ -28471,7 +28471,7 @@
  },
  {
   "id": "ENG-483",
-  "question_ur": "سردی گاؤں میں ٹھنڈی صبحیں اور چھوٹے دن لاتی ہے۔ لوگ گرم شالیں پہنتے ہیں اور کھانے کے بعد گرم چائے پیتے ہیں۔ کسان چھوٹے پودوں کو کہرے سے بچاتے ہیں، اور بچے دوپہر میں ہلکی دھوپ میں کھیلتے ہیں۔ ہر کوئی بہار کا انتظار کرتا ہے تاکہ گرم دن آئیں۔ اس اقتباس کا مرکزی خیال کیا ہے؟",
+  "question_ur": "سردی گاؤں میں ٹھنڈی صبحیں اور چھوٹے دن لاتی ہے۔ لوگ گرم شالیں پہنتے ہیں اور کھانے کے بعد گرم چائے پیتے ہیں۔ کسان چھوٹے پودوں کو کہرے سے بچاتے ہیں، اور بچے دوپہر میں ہلکی دھوپ میں کھیلتے ہیں۔ ہر کوئی بہار کا انتظار کرتا ہے تاکہ گرم دن آئیں۔ اس عبارت کا مرکزی خیال کیا ہے؟",
   "question_roman": "Sardi gaon mein thandi subhein aur chhote din lati hai. Log garam shawlein pehente hain aur khane ke baad garam chai peete hain. Kisan chhote paudon ko kohre se bachate hain, aur bachche dopahar mein halki dhoop mein khelte hain. Har koi bahar ka intezar karta hai taake garam din aayein. Is iqtibas ka markazi khayal kya hai?",
   "options_ur": [
    "Winter is the best season for farming.",
@@ -28485,7 +28485,7 @@
    "Winter changes daily life in the village until spring arrives.",
    "Children stay indoors all winter."
   ],
-  "explanation_ur": "اقتباس بیان کرتا ہے کہ سردی گاؤں میں لباس، کھیتی باڑی، کھیل اور روزمرہ کی زندگی پر کیسے اثر ڈالتی ہے۔ اس میں یہ نہیں کہا گیا کہ کھیتی باڑی بہترین ہے، گاؤں والے چلے جاتے ہیں یا بچے اندر رہتے ہیں۔",
+  "explanation_ur": "عبارت بیان کرتی ہے کہ سردی گاؤں میں لباس، کھیتی باڑی، کھیل اور روزمرہ کی زندگی پر کیسے اثر ڈالتی ہے۔ اس میں یہ نہیں کہا گیا کہ کھیتی باڑی بہترین ہے، گاؤں والے چلے جاتے ہیں یا بچے اندر رہتے ہیں۔",
   "explanation_roman": "Iqtibas bayan karta hai ke sardi gaon mein libas, kheti bari, khel aur rozmarra ki zindagi par kaise asar dalti hai. Is mein yeh nahi kaha gaya ke kheti bari behtareen hai, gaon wale chale jate hain ya bachche andar rehte hain.",
   "post": [
    "zamungkor",
@@ -28530,7 +28530,7 @@
  },
  {
   "id": "ENG-484",
-  "question_ur": "ٹرین اسٹیشن سے اس وقت روانہ ہوئی جب سورج پہاڑیوں پر طلوع ہوا۔ اپنی کھڑکی سے مریم نے سبز کھیت، چھوٹے دریا اور کام پر جاتے ہوئے کسان دیکھے۔ اس نے اپنے ساتھ بیٹھی ایک بوڑھی خاتون کے ساتھ اپنا دوپہر کا کھانا بانٹا۔ شام تک ٹرین شہر پہنچ گئی، اور مریم اپنے سفر پر خوش تھی۔ اس اقتباس کا مرکزی خیال کیا ہے؟",
+  "question_ur": "ٹرین اسٹیشن سے اس وقت روانہ ہوئی جب سورج پہاڑیوں پر طلوع ہوا۔ اپنی کھڑکی سے مریم نے سبز کھیت، چھوٹے دریا اور کام پر جاتے ہوئے کسان دیکھے۔ اس نے اپنے ساتھ بیٹھی ایک بوڑھی خاتون کے ساتھ اپنا دوپہر کا کھانا بانٹا۔ شام تک ٹرین شہر پہنچ گئی، اور مریم اپنے سفر پر خوش تھی۔ اس عبارت کا مرکزی خیال کیا ہے؟",
   "question_roman": "Train station se us waqt rawana hui jab suraj pahariyon par tulu hua. Apni khirki se Maryam ne sabz khet, chhote darya aur kaam par jate hue kisan dekhe. Us ne apne sath baithi aik boorhi khatoon ke sath apna dopahar ka khana baanta. Shaam tak train sheher pahunch gayi, aur Maryam apne safar par khush thi. Is iqtibas ka markazi khayal kya hai?",
   "options_ur": [
    "Maryam misses her train to the city.",
@@ -28544,7 +28544,7 @@
    "Maryam visits green fields to meet farmers.",
    "Maryam enjoys a pleasant train journey to the city."
   ],
-  "explanation_ur": "اقتباس مریم کے مناظر دیکھنے، دوپہر کا کھانا بانٹنے اور خوشی سے شہر پہنچنے کی کہانی بیان کرتا ہے۔ وہ ٹرین پکڑتی ہے اور اس پر کام نہیں کرتی۔",
+  "explanation_ur": "عبارت مریم کے مناظر دیکھنے، دوپہر کا کھانا بانٹنے اور خوشی سے شہر پہنچنے کی کہانی بیان کرتی ہے۔ وہ ٹرین پکڑتی ہے اور اس پر کام نہیں کرتی۔",
   "explanation_roman": "Iqtibas Maryam ke manazir dekhne, dopahar ka khana baantne aur khushi se sheher pahunchne ki kahani bayan karta hai. Woh train pakarti hai aur is par kaam nahi karti.",
   "post": [
    "zamungkor",
@@ -28589,7 +28589,7 @@
  },
  {
   "id": "ENG-485",
-  "question_ur": "رحیم ایک کسان ہے جو ہر روز صبح سویرے اٹھتا ہے۔ وہ اپنے گندم کے کھیتوں کو پانی دیتا ہے، اپنی مرغیوں کو کھانا دیتا ہے اور ٹوٹی ہوئی باڑوں کی مرمت کرتا ہے۔ شام کو وہ ایک بڑے درخت کے نیچے بیٹھتا ہے اور اگلے دن کے کام کی منصوبہ بندی کرتا ہے۔ اس کی محنت اس کے خاندان کو کھانا دیتی ہے اور اس کا کھیت اچھی حالت میں رہتا ہے۔ اس اقتباس کا مرکزی خیال کیا ہے؟",
+  "question_ur": "رحیم ایک کسان ہے جو ہر روز صبح سویرے اٹھتا ہے۔ وہ اپنے گندم کے کھیتوں کو پانی دیتا ہے، اپنی مرغیوں کو کھانا دیتا ہے اور ٹوٹی ہوئی باڑوں کی مرمت کرتا ہے۔ شام کو وہ ایک بڑے درخت کے نیچے بیٹھتا ہے اور اگلے دن کے کام کی منصوبہ بندی کرتا ہے۔ اس کی محنت اس کے خاندان کو کھانا دیتی ہے اور اس کا کھیت اچھی حالت میں رہتا ہے۔ اس عبارت کا مرکزی خیال کیا ہے؟",
   "question_roman": "Rahim aik kisan hai jo har roz subah sawere uthta hai. Woh apne gandum ke kheton ko pani deta hai, apni murghiyon ko khana deta hai aur tooti hui baaron ki marammat karta hai. Shaam ko woh aik bare darakht ke neeche baithta hai aur agle din ke kaam ki mansuba bandi karta hai. Us ki mehnat us ke khandan ko khana deti hai aur us ka khet achi halat mein rehta hai. Is iqtibas ka markazi khayal kya hai?",
   "options_ur": [
    "Rahim works hard every day to care for his farm and family.",
@@ -28603,7 +28603,7 @@
    "Rahim sleeps late and ignores his fields.",
    "Rahim plants wheat only in the evening."
   ],
-  "explanation_ur": "ہر جملہ دکھاتا ہے کہ رحیم صبح سے شام تک اپنے کھیت اور خاندان کے لیے کام کرتا ہے۔ دوسرے انتخاب اقتباس کے خلاف ہیں۔",
+  "explanation_ur": "ہر جملہ دکھاتا ہے کہ رحیم صبح سے شام تک اپنے کھیت اور خاندان کے لیے کام کرتا ہے۔ دوسرے انتخاب عبارت کے خلاف ہیں۔",
   "explanation_roman": "Har jumla dikhata hai ke Rahim subah se shaam tak apne khet aur khandan ke liye kaam karta hai. Dusre intikhab iqtibas ke khilaf hain.",
   "post": [
    "zamungkor",
@@ -28648,7 +28648,7 @@
  },
  {
   "id": "ENG-486",
-  "question_ur": "پچھلے جمعے کو دو اسکول کی ٹیموں نے گاؤں کے میدان میں دوستانہ کرکٹ میچ کھیلا۔ دونوں ٹیموں نے رنز بنائے، اچھی فیلڈنگ کی اور اچھے شاٹس پر تالیاں بجائیں۔ میچ برابر ختم ہوا، لیکن ہر کھلاڑی نے مسکراہٹ کے ساتھ ہاتھ ملایا۔ اساتذہ نے دونوں ٹیموں کی منصفانہ اور اچھے جذبے سے کھیلنے پر تعریف کی۔ اس اقتباس کا مرکزی خیال کیا ہے؟",
+  "question_ur": "پچھلے جمعے کو دو اسکول کی ٹیموں نے گاؤں کے میدان میں دوستانہ کرکٹ میچ کھیلا۔ دونوں ٹیموں نے رنز بنائے، اچھی فیلڈنگ کی اور اچھے شاٹس پر تالیاں بجائیں۔ میچ برابر ختم ہوا، لیکن ہر کھلاڑی نے مسکراہٹ کے ساتھ ہاتھ ملایا۔ اساتذہ نے دونوں ٹیموں کی منصفانہ اور اچھے جذبے سے کھیلنے پر تعریف کی۔ اس عبارت کا مرکزی خیال کیا ہے؟",
   "question_roman": "Pichle jume ko do school ki teamon ne gaon ke maidan mein dostana cricket match khela. Dono teamon ne runs banaye, achi fielding ki aur ache shots par taaliyan bajayein. Match barabar khatam hua, lekin har khiladi ne muskurahat ke sath hath milaya. Asatiza ne dono teamon ki munsifana aur ache jazbe se khelne par tareef ki. Is iqtibas ka markazi khayal kya hai?",
   "options_ur": [
    "One team cheated to win the match.",
@@ -28662,7 +28662,7 @@
    "The teachers cancel the cricket match.",
    "The players refuse to shake hands after the match."
   ],
-  "explanation_ur": "اقتباس ایک دوستانہ میچ بیان کرتا ہے جو منصفانہ کھیل اور ہاتھ ملانے کے ساتھ برابر ختم ہوتا ہے۔ اقتباس میں کوئی دھوکہ، منسوخی یا انکار نہیں ہے۔",
+  "explanation_ur": "عبارت ایک دوستانہ میچ بیان کرتی ہے جو منصفانہ کھیل اور ہاتھ ملانے کے ساتھ برابر ختم ہوتا ہے۔ عبارت میں کوئی دھوکہ، منسوخی یا انکار نہیں ہے۔",
   "explanation_roman": "Iqtibas aik dostana match bayan karta hai jo munsifana khel aur hath milane ke sath barabar khatam hota hai. Iqtibas mein koi dhoka, mansookhi ya inkar nahi hai.",
   "post": [
    "zamungkor",
@@ -28707,7 +28707,7 @@
  },
  {
   "id": "ENG-487",
-  "question_ur": "ہر شام شازیہ پانی کا برتن بھرتی ہے اور اپنے گھر کے پیچھے چھوٹے باغ کی طرف جاتی ہے۔ وہ اپنی انگلیوں سے مٹی چیک کرتی ہے اور صرف ان پودوں کو پانی دیتی ہے جو خشک نظر آتے ہیں۔ وہ جڑی بوٹیاں نکالتی ہے اور کمزور تنوں کو لکڑیوں سے باندھتی ہے۔ اس کے گلاب چمکدار کھلتے ہیں جبکہ اس کے پڑوسی کے پودے اکثر مرجھا جاتے ہیں۔ اقتباس سے کیا نتیجہ نکالا جا سکتا ہے؟",
+  "question_ur": "ہر شام شازیہ پانی کا برتن بھرتی ہے اور اپنے گھر کے پیچھے چھوٹے باغ کی طرف جاتی ہے۔ وہ اپنی انگلیوں سے مٹی جانچتی ہے اور صرف ان پودوں کو پانی دیتی ہے جو خشک نظر آتے ہیں۔ وہ جڑی بوٹیاں نکالتی ہے اور کمزور تنوں کو لکڑیوں سے باندھتی ہے۔ اس کے گلاب چمکدار کھلتے ہیں جبکہ اس کے پڑوسی کے پودے اکثر مرجھا جاتے ہیں۔ عبارت سے کیا نتیجہ نکالا جا سکتا ہے؟",
   "question_roman": "Har shaam Shazia pani ka bartan bharti hai aur apne ghar ke peeche chhote bagh ki taraf jati hai. Woh apni ungliyon se mitti check karti hai aur sirf un paudon ko pani deti hai jo khushk nazar aate hain. Woh jari bootiyan nikalti hai aur kamzor tanon ko lakriyon se bandhti hai. Us ke gulab chamakdar khilte hain jabke us ke parosi ke pauday aksar murjha jate hain. Iqtibas se kya natija nikala ja sakta hai?",
   "options_ur": [
    "Shazia dislikes gardening.",
@@ -28721,7 +28721,7 @@
    "Shazia's careful gardening keeps her plants healthy.",
    "Shazia's neighbour helps her in the garden."
   ],
-  "explanation_ur": "شازیہ مٹی چیک کرتی ہے، صرف خشک پودوں کو پانی دیتی ہے، جڑی بوٹیاں نکالتی ہے اور کمزور تنوں کو سہارا دیتی ہے، اور اس کے گلاب چمکدار کھلتے ہیں۔ یہ احتیاط ہی اس کے پودوں کو صحت مند رکھتی ہے۔",
+  "explanation_ur": "شازیہ مٹی جانچتی ہے، صرف خشک پودوں کو پانی دیتی ہے، جڑی بوٹیاں نکالتی ہے اور کمزور تنوں کو سہارا دیتی ہے، اور اس کے گلاب چمکدار کھلتے ہیں۔ یہ احتیاط ہی اس کے پودوں کو صحت مند رکھتی ہے۔",
   "explanation_roman": "Shazia mitti check karti hai, sirf khushk paudon ko pani deti hai, jari bootiyan nikalti hai aur kamzor tanon ko sahara deti hai, aur us ke gulab chamakdar khilte hain. Yeh ehtiyat hi us ke paudon ko sehat mand rakhti hai.",
   "post": [
    "zamungkor",
@@ -28766,7 +28766,7 @@
  },
  {
   "id": "ENG-488",
-  "question_ur": "عثمان اپنی پڑھائی کی میز پر ایک چھوٹا ٹن کا ڈبہ رکھتا ہے۔ ہر ہفتے وہ مٹھائیاں خریدنے کے بجائے اپنی بچی ہوئی جیب خرچ ڈبے میں ڈال دیتا ہے۔ وہ ڈھکن پر چسپاں کاغذ کے ٹکڑے پر کل رقم لکھتا ہے۔ کئی ہفتوں کے بعد اس کے پاس وہ کہانی کی کتاب خریدنے کے لیے کافی رقم ہو جاتی ہے جو وہ چاہتا تھا۔ اقتباس سے کیا نتیجہ نکالا جا سکتا ہے؟",
+  "question_ur": "عثمان اپنی پڑھائی کی میز پر ایک چھوٹا ٹن کا ڈبہ رکھتا ہے۔ ہر ہفتے وہ مٹھائیاں خریدنے کے بجائے اپنی بچی ہوئی جیب خرچ ڈبے میں ڈال دیتا ہے۔ وہ ڈھکن پر چسپاں کاغذ کے ٹکڑے پر کل رقم لکھتا ہے۔ کئی ہفتوں کے بعد اس کے پاس وہ کہانی کی کتاب خریدنے کے لیے کافی رقم ہو جاتی ہے جو وہ چاہتا تھا۔ عبارت سے کیا نتیجہ نکالا جا سکتا ہے؟",
   "question_roman": "Usman apni parhai ki mez par aik chhota tin ka dabba rakhta hai. Har hafte woh mithaiyan kharidne ke bajaye apni bachi hui jeb kharch dabbe mein daal deta hai. Woh dhakkan par chaspaan kagaz ke tukre par kul raqam likhta hai. Kai hafton ke baad us ke paas woh kahani ki kitab kharidne ke liye kafi raqam ho jati hai jo woh chahta tha. Iqtibas se kya natija nikala ja sakta hai?",
   "options_ur": [
    "Usman spends all his money on sweets.",
@@ -28825,7 +28825,7 @@
  },
  {
   "id": "ENG-489",
-  "question_ur": "شہر پر کالے بادل چھا گئے، اور ٹھنڈی ہوا چلنے لگی۔ دکانداروں نے جلدی سے اپنے شٹر بند کر دیے، اور بچے کھیل کے میدان سے گھر بھاگ گئے۔ امینہ اسکول جانے سے پہلے الماری سے اپنی چھتری لے آئی۔ جلد ہی موسلا دھار بارش نے گرد آلود سڑکوں کو صاف کر دیا۔ اقتباس سے کیا نتیجہ نکالا جا سکتا ہے؟",
+  "question_ur": "شہر پر کالے بادل چھا گئے، اور ٹھنڈی ہوا چلنے لگی۔ دکانداروں نے جلدی سے اپنے شٹر بند کر دیے، اور بچے کھیل کے میدان سے گھر بھاگ گئے۔ امینہ اسکول جانے سے پہلے الماری سے اپنی چھتری لے آئی۔ جلد ہی موسلا دھار بارش نے گرد آلود سڑکوں کو صاف کر دیا۔ عبارت سے کیا نتیجہ نکالا جا سکتا ہے؟",
   "question_roman": "Sheher par kale badal chha gaye, aur thandi hawa chalne lagi. Dukandaron ne jaldi se apne shutter band kar diye, aur bachche khel ke maidan se ghar bhag gaye. Amina school jane se pehle almari se apni chhatri le aayi. Jald hi mosla dhar barish ne gard alood sarkon ko saaf kar diya. Iqtibas se kya natija nikala ja sakta hai?",
   "options_ur": [
    "People in the town prepared for rain before it started.",
@@ -28884,7 +28884,7 @@
  },
  {
   "id": "ENG-490",
-  "question_ur": "جب علی بیمار ہوا تو وہ پورا ہفتہ اسکول نہ جا سکا۔ اس کی دوست ثنا اسکول کے بعد اس سے ملنے آئی اور اس نے اپنی کلاس کے نوٹس اس کے ساتھ بانٹے۔ اس نے ریاضی کا نیا سبق آہستہ آہستہ سمجھایا یہاں تک کہ علی سمجھ گیا۔ پیر کو علی اسکول واپس آیا اور مسکراہٹ کے ساتھ ثنا کا شکریہ ادا کیا۔ اقتباس سے کیا نتیجہ نکالا جا سکتا ہے؟",
+  "question_ur": "جب علی بیمار ہوا تو وہ پورا ہفتہ اسکول نہ جا سکا۔ اس کی دوست ثنا اسکول کے بعد اس سے ملنے آئی اور اس نے اپنی کلاس کے نوٹس اس کے ساتھ بانٹے۔ اس نے ریاضی کا نیا سبق آہستہ آہستہ سمجھایا یہاں تک کہ علی سمجھ گیا۔ پیر کو علی اسکول واپس آیا اور مسکراہٹ کے ساتھ ثنا کا شکریہ ادا کیا۔ عبارت سے کیا نتیجہ نکالا جا سکتا ہے؟",
   "question_roman": "Jab Ali beemar hua to woh pura hafta school na ja saka. Us ki dost Sana school ke baad us se milne aayi aur us ne apni class ke notes us ke sath baante. Us ne riyazi ka naya sabaq ahista ahista samjhaya yahan tak ke Ali samajh gaya. Peer ko Ali school wapas aaya aur muskurahat ke sath Sana ka shukriya ada kiya. Iqtibas se kya natija nikala ja sakta hai?",
   "options_ur": [
    "Sana ignores Ali when he is ill.",
@@ -28943,7 +28943,7 @@
  },
  {
   "id": "ENG-491",
-  "question_ur": "حاجی صاحب ہر روز صبح سویرے مسجد جاتے ہیں، سرد موسم میں بھی۔ وہ کوئی چھڑی نہیں پکڑتے اور بغیر رکے مسجد کی سیڑھیاں چڑھ جاتے ہیں۔ ان کے پڑوسی کہتے ہیں کہ انہوں نے کئی سالوں میں اپنی صبح کی سیر کبھی نہیں چھوڑی۔ گلی کے نوجوان احترام سے انہیں سلام کرتے ہیں اور ان کی صحت کے بارے میں پوچھتے ہیں۔ اقتباس سے کیا نتیجہ نکالا جا سکتا ہے؟",
+  "question_ur": "حاجی صاحب ہر روز صبح سویرے مسجد جاتے ہیں، سرد موسم میں بھی۔ وہ کوئی چھڑی نہیں پکڑتے اور بغیر رکے مسجد کی سیڑھیاں چڑھ جاتے ہیں۔ ان کے پڑوسی کہتے ہیں کہ انہوں نے کئی سالوں میں اپنی صبح کی سیر کبھی نہیں چھوڑی۔ گلی کے نوجوان احترام سے انہیں سلام کرتے ہیں اور ان کی صحت کے بارے میں پوچھتے ہیں۔ عبارت سے کیا نتیجہ نکالا جا سکتا ہے؟",
   "question_roman": "Haji Sahib har roz subah sawere masjid jate hain, sard mausam mein bhi. Woh koi chhari nahi pakarte aur baghair ruke masjid ki seedhiyan charh jate hain. Un ke parosi kehte hain ke unhon ne kai salon mein apni subah ki sair kabhi nahi chhori. Gali ke naujawan ehtiram se unhein salam karte hain aur un ki sehat ke bare mein poochte hain. Iqtibas se kya natija nikala ja sakta hai?",
   "options_ur": [
    "Haji Sahib is too weak to walk alone.",
@@ -28957,7 +28957,7 @@
    "Haji Sahib is strong and regular in his morning walk.",
    "Haji Sahib dislikes his neighbours."
   ],
-  "explanation_ur": "بغیر چھڑی کے روزانہ چلنا، بغیر رکے سیڑھیاں چڑھنا اور کبھی سیر نہ چھوڑنا طاقت اور باقاعدہ عادت دکھاتا ہے۔ دوسرے انتخاب اقتباس کے خلاف ہیں۔",
+  "explanation_ur": "بغیر چھڑی کے روزانہ چلنا، بغیر رکے سیڑھیاں چڑھنا اور کبھی سیر نہ چھوڑنا طاقت اور باقاعدہ عادت دکھاتا ہے۔ دوسرے انتخاب عبارت کے خلاف ہیں۔",
   "explanation_roman": "Baghair chhari ke rozana chalna, baghair ruke seedhiyan charhna aur kabhi sair na chhorna taqat aur baqaida aadat dikhata hai. Dusre intikhab iqtibas ke khilaf hain.",
   "post": [
    "zamungkor",
@@ -29002,7 +29002,7 @@
  },
  {
   "id": "ENG-492",
-  "question_ur": "پانچویں جماعت کے شاگردوں نے پچھلی بہار میں اسکول کی دیوار کے ساتھ پودے لگائے۔ انہوں نے چھوٹے درختوں کو پانی دیا، انہیں بکریوں سے بچایا اور ہر مہینے ان کی نشوونما ناپی۔ اب پودے دیوار سے اونچے ہو گئے ہیں اور کھیل کے میدان کو سایہ دیتے ہیں۔ مہمان اکثر اسکول کے سبز کونے کی تعریف کرتے ہیں۔ اقتباس سے کیا نتیجہ نکالا جا سکتا ہے؟",
+  "question_ur": "پانچویں جماعت کے شاگردوں نے پچھلی بہار میں اسکول کی دیوار کے ساتھ پودے لگائے۔ انہوں نے چھوٹے درختوں کو پانی دیا، انہیں بکریوں سے بچایا اور ہر مہینے ان کی نشوونما ناپی۔ اب پودے دیوار سے اونچے ہو گئے ہیں اور کھیل کے میدان کو سایہ دیتے ہیں۔ مہمان اکثر اسکول کے سبز کونے کی تعریف کرتے ہیں۔ عبارت سے کیا نتیجہ نکالا جا سکتا ہے؟",
   "question_roman": "Panchwin jamaat ke shagirdon ne pichli bahar mein school ki deewar ke sath pauday lagaye. Unhon ne chhote darakhton ko pani diya, unhein bakriyon se bachaya aur har mahine un ki nashonuma naapi. Ab pauday deewar se unche ho gaye hain aur khel ke maidan ko saya dete hain. Mehman aksar school ke sabz kone ki tareef karte hain. Iqtibas se kya natija nikala ja sakta hai?",
   "options_ur": [
    "The pupils cut down the trees they planted.",
@@ -29075,7 +29075,7 @@
    "A school bag.",
    "Three dictionaries."
   ],
-  "explanation_ur": "اقتباس میں کہا گیا ہے کہ فاطمہ نے صاف چھپائی والی نیلی لغت منتخب کی۔ اس نے دوسری لغتیں صرف دیکھیں اور انہیں نہیں خریدا۔",
+  "explanation_ur": "عبارت میں کہا گیا ہے کہ فاطمہ نے صاف چھپائی والی نیلی لغت منتخب کی۔ اس نے دوسری لغتیں صرف دیکھیں اور انہیں نہیں خریدا۔",
   "explanation_roman": "Iqtibas mein kaha gaya hai ke Fatima ne saaf chhapayi wali neeli lughat muntakhab ki. Us ne dusri lughatein sirf dekhein aur unhein nahi kharida.",
   "post": [
    "zamungkor",
@@ -29120,7 +29120,7 @@
  },
  {
   "id": "ENG-494",
-  "question_ur": "لاہور جانے والی بس ٹرمینل سے طلوع آفتاب کے وقت روانہ ہوتی ہے اور راستے میں تین قصبوں میں رکتی ہے۔ مسافر مرکزی دروازے کے پاس ایک چھوٹی کھڑکی سے ٹکٹ خریدتے ہیں۔ ڈرائیور یونس ہر سفر سے پہلے ٹائر اور ایندھن چیک کرتا ہے۔ سفر میں پوری صبح لگتی ہے، اور بس دوپہر سے پہلے لاہور پہنچ جاتی ہے۔ مسافر ٹکٹ کہاں سے خریدتے ہیں؟",
+  "question_ur": "لاہور جانے والی بس ٹرمینل سے طلوع آفتاب کے وقت روانہ ہوتی ہے اور راستے میں تین قصبوں میں رکتی ہے۔ مسافر مرکزی دروازے کے پاس ایک چھوٹی کھڑکی سے ٹکٹ خریدتے ہیں۔ ڈرائیور یونس ہر سفر سے پہلے ٹائر اور ایندھن جانچتا ہے۔ سفر میں پوری صبح لگتی ہے، اور بس دوپہر سے پہلے لاہور پہنچ جاتی ہے۔ مسافر ٹکٹ کہاں سے خریدتے ہیں؟",
   "question_roman": "Lahore jane wali bus terminal se tulu aftab ke waqt rawana hoti hai aur raste mein teen qasbon mein rukti hai. Musafir markazi darwaze ke paas aik chhoti khirki se ticket kharidte hain. Driver Younas har safar se pehle tyre aur eindhan check karta hai. Safar mein puri subah lagti hai, aur bus dopahar se pehle Lahore pahunch jati hai. Musafir ticket kahan se kharidte hain?",
   "options_ur": [
    "From the driver on the bus.",
@@ -29134,7 +29134,7 @@
    "At the Lahore terminal.",
    "From shops in the three towns."
   ],
-  "explanation_ur": "اقتباس میں واضح طور پر کہا گیا ہے کہ مسافر مرکزی دروازے کے پاس ایک چھوٹی کھڑکی سے ٹکٹ خریدتے ہیں۔ دوسری جگہوں کا ٹکٹ کاؤنٹر کے طور پر ذکر نہیں ہے۔",
+  "explanation_ur": "عبارت میں واضح طور پر کہا گیا ہے کہ مسافر مرکزی دروازے کے پاس ایک چھوٹی کھڑکی سے ٹکٹ خریدتے ہیں۔ دوسری جگہوں کا ٹکٹ کاؤنٹر کے طور پر ذکر نہیں ہے۔",
   "explanation_roman": "Iqtibas mein wazeh tor par kaha gaya hai ke musafir markazi darwaze ke paas aik chhoti khirki se ticket kharidte hain. Dusri jagahon ka ticket counter ke tor par zikr nahi hai.",
   "post": [
    "zamungkor",
@@ -29193,7 +29193,7 @@
    "Every Sunday.",
    "Only in winter."
   ],
-  "explanation_ur": "پہلے جملے میں کہا گیا ہے کہ دادی ہر اتوار کو چاولوں کی کھیر پکاتی ہیں۔ اقتباس میں اس عادت کے لیے کوئی اور دن یا موسم نہیں دیا گیا۔",
+  "explanation_ur": "پہلے جملے میں کہا گیا ہے کہ دادی ہر اتوار کو چاولوں کی کھیر پکاتی ہیں۔ عبارت میں اس عادت کے لیے کوئی اور دن یا موسم نہیں دیا گیا۔",
   "explanation_roman": "Pehle jumle mein kaha gaya hai ke dadi har itwar ko chawalon ki kheer pakati hain. Iqtibas mein is aadat ke liye koi aur din ya mausam nahi diya gaya.",
   "post": [
    "zamungkor",
@@ -29297,7 +29297,7 @@
  },
  {
   "id": "ENG-497",
-  "question_ur": "نادیہ ایک diligent طالبہ ہے جو کھیلنے سے پہلے اپنا ہوم ورک مکمل کرتی ہے۔ وہ روزانہ اپنے اسباق دہراتی ہے اور جب سمجھ نہیں آتی تو استانی سے پوچھتی ہے۔ اس کی نوٹ بکیں صاف ستھری ہیں، اور اس کا کام ہمیشہ وقت پر تیار ہوتا ہے۔ اس کی ہم جماعت لڑکیاں اس کی مستقل محنت کی تعریف کرتی ہیں۔ اقتباس میں لفظ 'diligent' کا قریب ترین مطلب کیا ہے؟",
+  "question_ur": "نادیہ ایک diligent طالبہ ہے جو کھیلنے سے پہلے اپنا ہوم ورک مکمل کرتی ہے۔ وہ روزانہ اپنے اسباق دہراتی ہے اور جب سمجھ نہیں آتی تو استانی سے پوچھتی ہے۔ اس کی نوٹ بکیں صاف ستھری ہیں، اور اس کا کام ہمیشہ وقت پر تیار ہوتا ہے۔ اس کی ہم جماعت لڑکیاں اس کی مستقل محنت کی تعریف کرتی ہیں۔ عبارت میں لفظ 'diligent' کا قریب ترین مطلب کیا ہے؟",
   "question_roman": "Nadia aik diligent taliba hai jo khelne se pehle apna home work mukammal karti hai. Woh rozana apne asbaq dohrati hai aur jab samajh nahi aati to ustani se poochti hai. Us ki note bookein saaf suthri hain, aur us ka kaam hamesha waqt par tayyar hota hai. Us ki hum jamaat larkiyan us ki mustaqil mehnat ki tareef karti hain. Iqtibas mein lafz 'diligent' ka qareeb tareen matlab kya hai?",
   "options_ur": [
    "Hardworking and careful.",
@@ -29356,7 +29356,7 @@
  },
  {
   "id": "ENG-498",
-  "question_ur": "bustling ریلوے اسٹیشن تھیلوں اور ٹوکریوں والے مسافروں سے بھرا ہوا تھا۔ قلی پلیٹ فارم پر جلدی جلدی چل رہے تھے، اور دکاندار چائے اور ہلکی پھلکی چیزیں بیچنے کے لیے آوازیں لگا رہے تھے۔ لاؤڈ اسپیکروں سے اعلانات گونج رہے تھے جبکہ بچے اپنے والدین کے ہاتھ پکڑے ہوئے تھے۔ شور اور بھاگ دوڑ کے درمیان اسٹیشن ماسٹر سکون سے کھڑا سب کچھ دیکھ رہا تھا۔ اقتباس میں لفظ 'bustling' کا قریب ترین مطلب کیا ہے؟",
+  "question_ur": "bustling ریلوے اسٹیشن تھیلوں اور ٹوکریوں والے مسافروں سے بھرا ہوا تھا۔ قلی پلیٹ فارم پر جلدی جلدی چل رہے تھے، اور دکاندار چائے اور ہلکی پھلکی چیزیں بیچنے کے لیے آوازیں لگا رہے تھے۔ لاؤڈ اسپیکروں سے اعلانات گونج رہے تھے جبکہ بچے اپنے والدین کے ہاتھ پکڑے ہوئے تھے۔ شور اور بھاگ دوڑ کے درمیان اسٹیشن ماسٹر سکون سے کھڑا سب کچھ دیکھ رہا تھا۔ عبارت میں لفظ 'bustling' کا قریب ترین مطلب کیا ہے؟",
   "question_roman": "bustling railway station thailon aur tokriyon wale musafiron se bhara hua tha. Quli platform par jaldi jaldi chal rahe the, aur dukandar chai aur halki phulki cheezein bechne ke liye aawazein laga rahe the. Loud speakeron se elanat goonj rahe the jabke bachche apne walidain ke hath pakre hue the. Shor aur bhag daur ke darmiyan station master sukoon se khara sab kuch dekh raha tha. Iqtibas mein lafz 'bustling' ka qareeb tareen matlab kya hai?",
   "options_ur": [
    "Empty and silent.",
