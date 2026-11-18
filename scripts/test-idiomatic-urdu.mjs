@@ -6,9 +6,10 @@
 // (500 items, U2 subject 1), the Arabic bank (500 items, U2
 // subject 2), the Urdu bank (500 items, U2 subject 3), the
 // English bank (500 items, U2 subject 4), the Maths bank
-// (500 items, U2 subject 5) and the Pak Studies bank
-// (500 items, U2 subject 6).
-// The other 7 banks keep their pre-U1 _ur
+// (500 items, U2 subject 5), the Pak Studies bank
+// (500 items, U2 subject 6) and the Pedagogy bank
+// (500 items, U2 subject 7).
+// The other 6 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -965,6 +966,181 @@ for (const q of pak) {
   }
 }
 check("U2 pakstudies: % never added in any _ur field; 16 total, all in bare-number options, 0 in questions/explanations", pakPctBad.length === 0 && pakPctTotal === 16 && pakPctQE === 0, `added in ${pakPctBad.slice(0, 3).join(", ")}, total ${pakPctTotal}, Q/E ${pakPctQE}`);
+
+// ---------- §3H Pedagogy bank (U2 subject 7) ----------
+// U2 rewrote the Pedagogy _ur fields (339 of 3000 field-values
+// changed; 212/500 items incl. 13 coordinator-normalization-only
+// items). Pedagogy terminology is the TESTED MATERIAL: digit rule
+// is STRICT on every field (all 500 questions, options, and
+// explanations — no explanationEn, no mixed explanations,
+// explanationUrdu null in all 500; baseline measured 0
+// digit-multiset mismatches). Latin rule is an ALLOWLIST: single
+// letters (option labels A–E in PED-324E, class labels A/B in
+// PED-410Q, the letter S in PED-241Q) + ABCD (PED-243Q/244Q) +
+// ZPD (gloss in PED-026E only). No Latin comma anywhere (EN
+// commas 1100× all render as ،); no Latin . ? ; outside decimals.
+// % survives only in the 8 bare-number options of PED-414/418
+// (4 each); prose % → فیصد everywhere (13×). Splits KEPT (same
+// EN, different sense, cluster, or grammar — not spelling
+// variants): تقویم (13×, ONLY the 290/291/292/298 distinction
+// cluster where assessment-vs-evaluation is the tested content)
+// vs جائزہ (128×, everywhere else incl. course/programme/
+// curriculum evaluation and Bloom's جائزہ لینا level —
+// collapsing 337/387's تشکیلی/اختتامی جائزہ toward تقویم would
+// split the formative/summative type names); سلیبس (12×, ONLY
+// the technical curriculum-vs-syllabus distinction in
+// 356/357/367/369) vs نصاب (185× substring, loose "course
+// content" senses — guide §2A bans سلیبس; collapsing breaks
+// PED-357, flagged as a guide conflict); گریڈ/گریڈنگ (14×/6×,
+// grading system) vs درجہ بندی (50×, taxonomy + rating scale +
+// rank ordering — collapsing collides); گروپ (17×, بز گروپ term
+// + statistics comparison/norm group) vs گروہ (68×, all other
+// generic groups); ٹیسٹ (70×, instrument/type) vs امتحان (66×,
+// school-exam event/score + all EN "exam"); علمی (9×, Bloom's
+// cognitive domain) vs ادراکی (11×, cognitive style only);
+// شاگرد (15×, EN "pupil" only, guide-sanctioned) vs طالب علم /
+// طلبہ / سیکھنے والا (student/learner); جماعت (60×, grade +
+// formal class) vs standalone کلاس (group/setting senses +
+// کلاس کوئز / کلاس رجسٹر compounds); نظام الاوقات (16×) vs
+// ٹائم ٹیبل (3×, brief-protected); منصوبہ بند (38×) vs منصوبہ
+// بندی شدہ (4×, parallel-participle + definition formula);
+// کنٹرول (4×, managerial/behavioral) vs قابو (13×, mastery +
+// overcome); مکمل (54×, complete) vs پورا (21×, whole);
+// انفرادی (34×, individual) vs ذاتی (33×, personal); سمارٹ
+// (2×, acronym kept transliterated, expansion in options —
+// guide §5.1 Latin tension flagged, no Latin introduced).
+// Coinages (flagged for owner): لمس سے سیکھنے والے (tactile),
+// زبانی سیکھنے والے (verbal), پڑھانے والے طالب علم/طلبہ
+// (tutor), بالغ عمر (adulthood, PED-051E), کثیر الوقوع (mode,
+// Maths-aligned). Fidelity fixes (EN-mirroring, not fact
+// changes): PED-335/336/337 تشخیص→جائزہ (EN "evaluation";
+// تشخیص now diagnosis-only, PED-377 contrast clean);
+// PED-352Q dropped a _ur-only second question; PED-370O1 مشاہد→
+// مبصر; PED-305E "have not mastered" restored; PED-397E "to
+// users" restored. PED-051 EN defect mirrored (Q asks "which
+// stage", options are age ranges). PED-387O0 مجموعی جائزہ for
+// "Summative evaluation" deliberately NOT اختتامی جائزہ (O3
+// already uses it for "Terminal evaluation"). No echo-gloss
+// cases; no honorifics added; theorist spellings uniform
+// (وائیگاٹسکی, میسلو, پیاجے, سکنر, گارڈنر, برونر, ایرکسن,
+// پاولوف, ڈیوی, مونٹیسوری, ہربارٹ, روسو, ٹائلر, ٹابا,
+// کلپٹرک, کراتھول, اینڈرسن, سٹرن, بلوم).
+const ped = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/pedagogy.json"), "utf8"));
+check("U2 pedagogy: 500 items", ped.length === 500, `got ${ped.length}`);
+const pedIdsOk = ped.every((q, i) => q.id === `PED-${String(i + 1).padStart(3, "0")}`);
+check("U2 pedagogy: IDs PED-001..PED-500 in order", pedIdsOk);
+const pedPairs = [];
+for (const q of ped) {
+  pedPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => pedPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  pedPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const PED_BANNED = [...CONTENT_BANNED, "چنیں", "مونث", "مؤنث", "فارمیٹو", "سمٹیو", "سمیٹو", "ڈائیگناسٹک", "اسیسمنٹ", "اسکورز", "اسکورنگ", "فیڈ", "فیڈبیک", "لرنر", "لرنرز", "ویژول", "آڈیٹری", "ٹیکٹائل", "وربل", "ڈایاگرام", "کنیس", "اسکیفولڈنگ", "سرپل", "وائگٹسکی", "وائگوتسکی", "ماسلو", "ایریکسن", "اسپیچ", "پرائیویٹ", "گرامر", "ٹیکسانومی", "موڈ", "ٹیوٹر", "کشاکش", "بداعتمادی", "خودمختاری", "خوشخطی", "مشاہد", "ٹرم", "معاشرتی", "تعمیم", "مؤثر", "فورا", "تقریبا", "مثلا", "نسبتا"];
+const pedBanned = bannedHits(pedPairs, PED_BANNED);
+check("U2 pedagogy: no banned glossary/variant/transliteration terms in any _ur field (token-aware)", pedBanned.length === 0, pedBanned.slice(0, 5).join(", "));
+const PED_PHRASES = ["درج ذیل", "کمرہ جماعت", "زون آف پراکسیمل", "پورے کلاس", "بہتر طور پر", "ہینڈز آن", "لیسن پلان", "جب کہ", "منتخب کریں", "تشخیص کنندگان", "مضمون والے", "نارم حوالہ", "کثیر الانتخابی", "سہار بندی", "سہارا دینے والی", "احساسِ جرم", "محنت بمقابلہ کمتری", "لگ بھگ", "سرپل نصاب", "فارمیٹو اسیسمنٹ", "سمٹیو اسیسمنٹ", "ڈائیگناسٹک اسیسمنٹ", "فیڈ بیک", "معمول کی کلاس روم میں"];
+const pedPhrases = pedPairs.filter(([, v]) => PED_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 pedagogy: no banned phrases in any _ur field (variant spellings, dropped terms, agreement fix)", pedPhrases.length === 0, pedPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const pedEmdash = pedPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 pedagogy: no em-dash in any _ur field", pedEmdash.length === 0, pedEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const pedMarker = pedPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 pedagogy: no '[Auto-Translated]' literal in any _ur field", pedMarker.length === 0, pedMarker.slice(0, 3).map(([l]) => l).join(", "));
+const pedMojibake = pedPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 pedagogy: no U+FFFD in any _ur field", pedMojibake.length === 0, pedMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const pedIndic = pedPairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 pedagogy: no Urdu-Indic digits in any _ur field", pedIndic.length === 0, pedIndic.slice(0, 3).map(([l]) => l).join(", "));
+const pedEllipsis = pedPairs.filter(([, v]) => (v ?? "").includes("...") || (v ?? "").includes("…"));
+check("U2 pedagogy: no ellipsis runs in any _ur field", pedEllipsis.length === 0, pedEllipsis.slice(0, 3).map(([l]) => l).join(", "));
+let pedDigitBad = [];
+for (const q of ped) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) pedDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) pedDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) pedDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 pedagogy: digit preservation STRICT on every field (all 500 questions, options, explanations)", pedDigitBad.length === 0, pedDigitBad.slice(0, 5).join(", "));
+// Latin allowlist: single letters + ABCD + ZPD, nothing else.
+const PED_LATIN_ALLOWED = new Set(["abcd", "zpd"]);
+let pedLatinBad = [];
+for (const [loc, val] of pedPairs) {
+  for (const w of ((val ?? "").match(/[A-Za-z]+/g) || [])) {
+    const lw = w.toLowerCase();
+    if (lw.length > 1 && !PED_LATIN_ALLOWED.has(lw)) pedLatinBad.push(`${loc}:${w}`);
+  }
+}
+check("U2 pedagogy: Latin allowlist — every multi-letter Latin word in _ur is ABCD or ZPD", pedLatinBad.length === 0, pedLatinBad.slice(0, 5).join(" | "));
+let pedPunctBad = [], pedCommaBad = [], pedSpaceBad = [];
+for (const q of ped) {
+  const fields = [["question_ur", q.question_ur], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o]), ["explanation_ur", q.explanation_ur]];
+  for (const [loc, val] of fields) {
+    const p = (val ?? "").replace(/\d\.\d/g, " ");
+    if (/[.?;]/.test(p)) pedPunctBad.push(`${q.id}:${loc}`);
+    if ((val ?? "").includes(",")) pedCommaBad.push(`${q.id}:${loc}`);
+    if (/ [،؟؛۔]/.test(val ?? "")) pedSpaceBad.push(`${q.id}:${loc}`);
+  }
+}
+check("U2 pedagogy: no Latin . ? ; punctuation outside decimals (digit.digit)", pedPunctBad.length === 0, pedPunctBad.slice(0, 5).join(", "));
+check("U2 pedagogy: no Latin comma in any _ur field (EN commas render as ،)", pedCommaBad.length === 0, pedCommaBad.slice(0, 5).join(", "));
+check("U2 pedagogy: no space before Urdu punctuation", pedSpaceBad.length === 0, pedSpaceBad.slice(0, 5).join(", "));
+const pedHonor = pedPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 pedagogy: no Latin honorific abbreviations in any _ur field", pedHonor.length === 0, pedHonor.slice(0, 3).map(([l]) => l).join(", "));
+const pedArCodepoints = pedPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 pedagogy: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", pedArCodepoints.length === 0, pedArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+let pedEnScriptRuns = 0;
+for (const q of ped) {
+  pedEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { pedEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 pedagogy: zero Arabic-script runs in English fields (measured baseline)", pedEnScriptRuns === 0, `got ${pedEnScriptRuns}`);
+const pedUrText = pedPairs.map(([, v]) => v ?? "").join("\n");
+const pedCount = (t) => pedUrText.split(t).length - 1;
+check("U2 pedagogy: glossary terms present (کلاس روم, تشکیلی جائزہ, اختتامی جائزہ, تشخیصی جائزہ, بازخورد, مندرجہ ذیل, سبق کا منصوبہ, حلزونی نصاب, قربِ نشوونما, سکیفولڈنگ, نمبر بندی, خرد تدریس, تقویم, جائزہ, نظر ثانی, درجہ بندی, نصاب, جائزہ لینا)",
+  ["کلاس روم", "تشکیلی جائزہ", "اختتامی جائزہ", "تشخیصی جائزہ", "بازخورد", "مندرجہ ذیل", "سبق کا منصوبہ", "حلزونی نصاب", "قربِ نشوونما", "سکیفولڈنگ", "نمبر بندی", "خرد تدریس", "تقویم", "جائزہ", "نظر ثانی", "درجہ بندی", "نصاب", "جائزہ لینا"].every((t) => pedUrText.includes(t)));
+check("U2 pedagogy: glossary terms present (وائیگاٹسکی, میسلو, پیاجے, بلوم, ٹائلر, ٹابا, ڈسٹریکٹر, سٹیم, روبرک, پرسنٹائل, تھنک پیئر شیئر, ایس ایل او, کثیر الوقوع, عمومیت, کثیر انتخابی, انشائی, علمی پہلو, ادراکی اسلوب, نفسی حرکی, سلیبس, گریڈ, نظام الاوقات, موسیقی ذہانت, جگسا)",
+  ["وائیگاٹسکی", "میسلو", "پیاجے", "بلوم", "ٹائلر", "ٹابا", "ڈسٹریکٹر", "سٹیم", "روبرک", "پرسنٹائل", "تھنک پیئر شیئر", "ایس ایل او", "کثیر الوقوع", "عمومیت", "کثیر انتخابی", "انشائی", "علمی پہلو", "ادراکی اسلوب", "نفسی حرکی", "سلیبس", "گریڈ", "نظام الاوقات", "موسیقی ذہانت", "جگسا"].every((t) => pedUrText.includes(t)));
+check("U2 pedagogy: exact counts — کلاس روم 85×, تشکیلی جائزہ 13×, اختتامی جائزہ 9×, تشخیصی جائزہ 9×, بازخورد 19×, مندرجہ ذیل 4×, سبق کا منصوبہ 8×, سبق کے منصوبے 4×, حلزونی نصاب 2×, قربِ نشوونما 6×, سکیفولڈنگ 12×, نمبر بندی 4×, نمبر 144×, چیزیں 3×, چیزوں 16×, جذر المربع 1×, جذر 1× (substring counts)",
+  pedCount("کلاس روم") === 85 && pedCount("تشکیلی جائزہ") === 13 && pedCount("اختتامی جائزہ") === 9 && pedCount("تشخیصی جائزہ") === 9 && pedCount("بازخورد") === 19 && pedCount("مندرجہ ذیل") === 4 && pedCount("سبق کا منصوبہ") === 8 && pedCount("سبق کے منصوبے") === 4 && pedCount("حلزونی نصاب") === 2 && pedCount("قربِ نشوونما") === 6 && pedCount("سکیفولڈنگ") === 12 && pedCount("نمبر بندی") === 4 && pedCount("نمبر") === 144 && pedCount("چیزیں") === 3 && pedCount("چیزوں") === 16 && pedCount("جذر المربع") === 1 && pedCount("جذر") === 1,
+  `کلاس روم ${pedCount("کلاس روم")}, تشکیلی جائزہ ${pedCount("تشکیلی جائزہ")}, اختتامی جائزہ ${pedCount("اختتامی جائزہ")}, تشخیصی جائزہ ${pedCount("تشخیصی جائزہ")}, بازخورد ${pedCount("بازخورد")}, مندرجہ ذیل ${pedCount("مندرجہ ذیل")}, سبق کا منصوبہ ${pedCount("سبق کا منصوبہ")}, سبق کے منصوبے ${pedCount("سبق کے منصوبے")}, حلزونی نصاب ${pedCount("حلزونی نصاب")}, قربِ نشوونما ${pedCount("قربِ نشوونما")}, سکیفولڈنگ ${pedCount("سکیفولڈنگ")}, نمبر بندی ${pedCount("نمبر بندی")}, نمبر ${pedCount("نمبر")}, چیزیں ${pedCount("چیزیں")}, چیزوں ${pedCount("چیزوں")}, جذر المربع ${pedCount("جذر المربع")}, جذر ${pedCount("جذر")}`);
+check("U2 pedagogy: exact counts — بصری/سماعی/حرکی سیکھنے والے 6× each, پڑھ کر/لمس سے/زبانی سیکھنے والے 1× each, خاکے 5×, نجی گفتگو 4×, اندرونی گفتگو 3×, سماجی گفتگو 2×, خرد تدریس 8×, وائیگاٹسکی 11×, میسلو 11×, پیاجے 13×, سکنر 4×, گارڈنر 8×, برونر 10×, ایرکسن 10×",
+  pedCount("بصری سیکھنے والے") === 6 && pedCount("سماعی سیکھنے والے") === 6 && pedCount("حرکی سیکھنے والے") === 6 && pedCount("پڑھ کر سیکھنے والے") === 1 && pedCount("لمس سے سیکھنے والے") === 1 && pedCount("زبانی سیکھنے والے") === 1 && pedCount("خاکے") === 5 && pedCount("نجی گفتگو") === 4 && pedCount("اندرونی گفتگو") === 3 && pedCount("سماجی گفتگو") === 2 && pedCount("خرد تدریس") === 8 && pedCount("وائیگاٹسکی") === 11 && pedCount("میسلو") === 11 && pedCount("پیاجے") === 13 && pedCount("سکنر") === 4 && pedCount("گارڈنر") === 8 && pedCount("برونر") === 10 && pedCount("ایرکسن") === 10,
+  `بصری ${pedCount("بصری سیکھنے والے")}, سماعی ${pedCount("سماعی سیکھنے والے")}, حرکی ${pedCount("حرکی سیکھنے والے")}, پڑھ کر ${pedCount("پڑھ کر سیکھنے والے")}, لمس سے ${pedCount("لمس سے سیکھنے والے")}, زبانی ${pedCount("زبانی سیکھنے والے")}, خاکے ${pedCount("خاکے")}, نجی گفتگو ${pedCount("نجی گفتگو")}, اندرونی گفتگو ${pedCount("اندرونی گفتگو")}, سماجی گفتگو ${pedCount("سماجی گفتگو")}, خرد تدریس ${pedCount("خرد تدریس")}, وائیگاٹسکی ${pedCount("وائیگاٹسکی")}, میسلو ${pedCount("میسلو")}, پیاجے ${pedCount("پیاجے")}, سکنر ${pedCount("سکنر")}, گارڈنر ${pedCount("گارڈنر")}, برونر ${pedCount("برونر")}, ایرکسن ${pedCount("ایرکسن")}`);
+check("U2 pedagogy: exact counts — پاولوف 1×, ڈیوی 10×, مونٹیسوری 2×, ہربارٹ 5×, روسو 2×, ٹائلر 14×, ٹابا 14×, کلپٹرک 5×, کراتھول 2×, اینڈرسن 2×, سٹرن 7×, بلوم 10×, تقویم 13×, جائزہ 128×, تشخیص 20× (incl. تشخیصی 11×), نظر ثانی 18×, دہرائی 5×",
+  pedCount("پاولوف") === 1 && pedCount("ڈیوی") === 10 && pedCount("مونٹیسوری") === 2 && pedCount("ہربارٹ") === 5 && pedCount("روسو") === 2 && pedCount("ٹائلر") === 14 && pedCount("ٹابا") === 14 && pedCount("کلپٹرک") === 5 && pedCount("کراتھول") === 2 && pedCount("اینڈرسن") === 2 && pedCount("سٹرن") === 7 && pedCount("بلوم") === 10 && pedCount("تقویم") === 13 && pedCount("جائزہ") === 128 && pedCount("تشخیص") === 20 && pedCount("تشخیصی") === 11 && pedCount("نظر ثانی") === 18 && pedCount("دہرائی") === 5,
+  `پاولوف ${pedCount("پاولوف")}, ڈیوی ${pedCount("ڈیوی")}, مونٹیسوری ${pedCount("مونٹیسوری")}, ہربارٹ ${pedCount("ہربارٹ")}, روسو ${pedCount("روسو")}, ٹائلر ${pedCount("ٹائلر")}, ٹابا ${pedCount("ٹابا")}, کلپٹرک ${pedCount("کلپٹرک")}, کراتھول ${pedCount("کراتھول")}, اینڈرسن ${pedCount("اینڈرسن")}, سٹرن ${pedCount("سٹرن")}, بلوم ${pedCount("بلوم")}, تقویم ${pedCount("تقویم")}, جائزہ ${pedCount("جائزہ")}, تشخیص ${pedCount("تشخیص")}, تشخیصی ${pedCount("تشخیصی")}, نظر ثانی ${pedCount("نظر ثانی")}, دہرائی ${pedCount("دہرائی")}`);
+check("U2 pedagogy: exact counts — پوری کلاس 6×, بہترین وضاحت 9×, بہترین تعریف 11×, عمومیت 6×, جبکہ 55×, فوراً 15×, تقریباً 17×, مثلاً 6×, نسبتاً 7×, موثر 12×, کثیر انتخابی 8×, انشائی 9×, جائزہ لینا 9×, مدت 11×, معمول کے کلاس روم میں 3×, معمول کی کلاس روم تدریس 1×",
+  pedCount("پوری کلاس") === 6 && pedCount("بہترین وضاحت") === 9 && pedCount("بہترین تعریف") === 11 && pedCount("عمومیت") === 6 && pedCount("جبکہ") === 55 && pedCount("فوراً") === 15 && pedCount("تقریباً") === 17 && pedCount("مثلاً") === 6 && pedCount("نسبتاً") === 7 && pedCount("موثر") === 12 && pedCount("کثیر انتخابی") === 8 && pedCount("انشائی") === 9 && pedCount("جائزہ لینا") === 9 && pedCount("مدت") === 11 && pedCount("معمول کے کلاس روم میں") === 3 && pedCount("معمول کی کلاس روم تدریس") === 1,
+  `پوری کلاس ${pedCount("پوری کلاس")}, بہترین وضاحت ${pedCount("بہترین وضاحت")}, بہترین تعریف ${pedCount("بہترین تعریف")}, عمومیت ${pedCount("عمومیت")}, جبکہ ${pedCount("جبکہ")}, فوراً ${pedCount("فوراً")}, تقریباً ${pedCount("تقریباً")}, مثلاً ${pedCount("مثلاً")}, نسبتاً ${pedCount("نسبتاً")}, موثر ${pedCount("موثر")}, کثیر انتخابی ${pedCount("کثیر انتخابی")}, انشائی ${pedCount("انشائی")}, جائزہ لینا ${pedCount("جائزہ لینا")}, مدت ${pedCount("مدت")}, معمول کے ${pedCount("معمول کے کلاس روم میں")}, معمول کی تدریس ${pedCount("معمول کی کلاس روم تدریس")}`);
+check("U2 pedagogy: exact counts, kept transliterations — ڈسٹریکٹر 6× (incl. ڈسٹریکٹرز 4×), سٹیم 9×, آپشن 16×, تھنک پیئر شیئر 4×, این سی پی 2×, ایس ایل او 10×, ڈرائیو 1×, میٹا کوگنیٹو 2×, نارم 6×, پرسنٹائل 6×, روبرک 9×, ٹائم ٹیبل 3×, کریکولم 2×, واجبات 1×, چیک لسٹ 9×, بلیو پرنٹ 2×, مارک اسکیمیں 1×, پورٹ فولیو 4×, سیشن 6×",
+  pedCount("ڈسٹریکٹر") === 6 && pedCount("ڈسٹریکٹرز") === 4 && pedCount("سٹیم") === 9 && pedCount("آپشن") === 16 && pedCount("تھنک پیئر شیئر") === 4 && pedCount("این سی پی") === 2 && pedCount("ایس ایل او") === 10 && pedCount("ڈرائیو") === 1 && pedCount("میٹا کوگنیٹو") === 2 && pedCount("نارم") === 6 && pedCount("پرسنٹائل") === 6 && pedCount("روبرک") === 9 && pedCount("ٹائم ٹیبل") === 3 && pedCount("کریکولم") === 2 && pedCount("واجبات") === 1 && pedCount("چیک لسٹ") === 9 && pedCount("بلیو پرنٹ") === 2 && pedCount("مارک اسکیمیں") === 1 && pedCount("پورٹ فولیو") === 4 && pedCount("سیشن") === 6,
+  `ڈسٹریکٹر ${pedCount("ڈسٹریکٹر")}, ڈسٹریکٹرز ${pedCount("ڈسٹریکٹرز")}, سٹیم ${pedCount("سٹیم")}, آپشن ${pedCount("آپشن")}, تھنک پیئر شیئر ${pedCount("تھنک پیئر شیئر")}, این سی پی ${pedCount("این سی پی")}, ایس ایل او ${pedCount("ایس ایل او")}, ڈرائیو ${pedCount("ڈرائیو")}, میٹا کوگنیٹو ${pedCount("میٹا کوگنیٹو")}, نارم ${pedCount("نارم")}, پرسنٹائل ${pedCount("پرسنٹائل")}, روبرک ${pedCount("روبرک")}, ٹائم ٹیبل ${pedCount("ٹائم ٹیبل")}, کریکولم ${pedCount("کریکولم")}, واجبات ${pedCount("واجبات")}, چیک لسٹ ${pedCount("چیک لسٹ")}, بلیو پرنٹ ${pedCount("بلیو پرنٹ")}, مارک اسکیمیں ${pedCount("مارک اسکیمیں")}, پورٹ فولیو ${pedCount("پورٹ فولیو")}, سیشن ${pedCount("سیشن")}`);
+check("U2 pedagogy: exact counts, kept splits A — سلیبس 12×, نصاب 185× (substring, incl. نصابی), گریڈ 14× (incl. گریڈنگ 6×), درجہ بندی 50×, گروپ 17×, گروہ 68×, ٹیسٹ 70×, امتحان 66×, کورس 18×, نظام الاوقات 16×, سمارٹ 2×, شیئر 6×, علمی 9×, ادراکی 11×, علمی پہلو 6×, ادراکی اسلوب 11×",
+  pedCount("سلیبس") === 12 && pedCount("نصاب") === 185 && pedCount("گریڈ") === 14 && pedCount("گریڈنگ") === 6 && pedCount("درجہ بندی") === 50 && pedCount("گروپ") === 17 && pedCount("گروہ") === 68 && pedCount("ٹیسٹ") === 70 && pedCount("امتحان") === 66 && pedCount("کورس") === 18 && pedCount("نظام الاوقات") === 16 && pedCount("سمارٹ") === 2 && pedCount("شیئر") === 6 && pedCount("علمی") === 9 && pedCount("ادراکی") === 11 && pedCount("علمی پہلو") === 6 && pedCount("ادراکی اسلوب") === 11,
+  `سلیبس ${pedCount("سلیبس")}, نصاب ${pedCount("نصاب")}, گریڈ ${pedCount("گریڈ")}, گریڈنگ ${pedCount("گریڈنگ")}, درجہ بندی ${pedCount("درجہ بندی")}, گروپ ${pedCount("گروپ")}, گروہ ${pedCount("گروہ")}, ٹیسٹ ${pedCount("ٹیسٹ")}, امتحان ${pedCount("امتحان")}, کورس ${pedCount("کورس")}, نظام الاوقات ${pedCount("نظام الاوقات")}, سمارٹ ${pedCount("سمارٹ")}, شیئر ${pedCount("شیئر")}, علمی ${pedCount("علمی")}, ادراکی ${pedCount("ادراکی")}, علمی پہلو ${pedCount("علمی پہلو")}, ادراکی اسلوب ${pedCount("ادراکی اسلوب")}`);
+check("U2 pedagogy: exact counts, kept splits B — شاگرد 15×, جماعت 60×, ہم جماعت 20×, اسکول 121×, کلاس کوئز 1×, کلاس رجسٹر 1×, سیکھنے والا 31×, سیکھنے والے 110×, طالب علم 133×, طلبہ 219×, استاد 139×, خصوصی 39×, خاص 7×, انفرادی 34×, ذاتی 33×, مکمل 54×, پورا 21×, واضح 57×",
+  pedCount("شاگرد") === 15 && pedCount("جماعت") === 60 && pedCount("ہم جماعت") === 20 && pedCount("اسکول") === 121 && pedCount("کلاس کوئز") === 1 && pedCount("کلاس رجسٹر") === 1 && pedCount("سیکھنے والا") === 31 && pedCount("سیکھنے والے") === 110 && pedCount("طالب علم") === 133 && pedCount("طلبہ") === 219 && pedCount("استاد") === 139 && pedCount("خصوصی") === 39 && pedCount("خاص") === 7 && pedCount("انفرادی") === 34 && pedCount("ذاتی") === 33 && pedCount("مکمل") === 54 && pedCount("پورا") === 21 && pedCount("واضح") === 57,
+  `شاگرد ${pedCount("شاگرد")}, جماعت ${pedCount("جماعت")}, ہم جماعت ${pedCount("ہم جماعت")}, اسکول ${pedCount("اسکول")}, کلاس کوئز ${pedCount("کلاس کوئز")}, کلاس رجسٹر ${pedCount("کلاس رجسٹر")}, سیکھنے والا ${pedCount("سیکھنے والا")}, سیکھنے والے ${pedCount("سیکھنے والے")}, طالب علم ${pedCount("طالب علم")}, طلبہ ${pedCount("طلبہ")}, استاد ${pedCount("استاد")}, خصوصی ${pedCount("خصوصی")}, خاص ${pedCount("خاص")}, انفرادی ${pedCount("انفرادی")}, ذاتی ${pedCount("ذاتی")}, مکمل ${pedCount("مکمل")}, پورا ${pedCount("پورا")}, واضح ${pedCount("واضح")}`);
+check("U2 pedagogy: exact counts, gap keeps — تعاونی 8×, دائمیت پسندی 7×, پیداواریت 11×, جمود 10×, لاشعوری 4×, مقصدی 9×, تدریسی 16×, مشق 49×, قواعد 34×, تقویت 21×, ترغیب 7×, اعتمادیت 18×, جوازیت 49×, معیار 65×, مقصد 56×, فیصد 13×, کشمکش 15×, بے اعتمادی 4×, پہل قدمی 6×, احساس جرم 6×, محنت بمقابلہ احساس کمتری 8×, خود مختاری 6×, خودمختار 1×",
+  pedCount("تعاونی") === 8 && pedCount("دائمیت پسندی") === 7 && pedCount("پیداواریت") === 11 && pedCount("جمود") === 10 && pedCount("لاشعوری") === 4 && pedCount("مقصدی") === 9 && pedCount("تدریسی") === 16 && pedCount("مشق") === 49 && pedCount("قواعد") === 34 && pedCount("تقویت") === 21 && pedCount("ترغیب") === 7 && pedCount("اعتمادیت") === 18 && pedCount("جوازیت") === 49 && pedCount("معیار") === 65 && pedCount("مقصد") === 56 && pedCount("فیصد") === 13 && pedCount("کشمکش") === 15 && pedCount("بے اعتمادی") === 4 && pedCount("پہل قدمی") === 6 && pedCount("احساس جرم") === 6 && pedCount("محنت بمقابلہ احساس کمتری") === 8 && pedCount("خود مختاری") === 6 && pedCount("خودمختار") === 1,
+  `تعاونی ${pedCount("تعاونی")}, دائمیت پسندی ${pedCount("دائمیت پسندی")}, پیداواریت ${pedCount("پیداواریت")}, جمود ${pedCount("جمود")}, لاشعوری ${pedCount("لاشعوری")}, مقصدی ${pedCount("مقصدی")}, تدریسی ${pedCount("تدریسی")}, مشق ${pedCount("مشق")}, قواعد ${pedCount("قواعد")}, تقویت ${pedCount("تقویت")}, ترغیب ${pedCount("ترغیب")}, اعتمادیت ${pedCount("اعتمادیت")}, جوازیت ${pedCount("جوازیت")}, معیار ${pedCount("معیار")}, مقصد ${pedCount("مقصد")}, فیصد ${pedCount("فیصد")}, کشمکش ${pedCount("کشمکش")}, بے اعتمادی ${pedCount("بے اعتمادی")}, پہل قدمی ${pedCount("پہل قدمی")}, احساس جرم ${pedCount("احساس جرم")}, محنت بمقابلہ احساس کمتری ${pedCount("محنت بمقابلہ احساس کمتری")}, خود مختاری ${pedCount("خود مختاری")}, خودمختار ${pedCount("خودمختار")}`);
+check("U2 pedagogy: exact counts, more gap keeps — منصوبہ بند 38×, منصوبہ بندی شدہ 4×, وصول 5×, سینٹریشن 11×, سکیما 8×, پروبنگ 2×, شیڈول 11×, موسیقی ذہانت 6×, جگسا 6×, زمانی عمر 4×, انتظار کا وقت 2×, ڈیزائن 6×, ذہانت کا حصہ 1×, قابو شدہ 1×, گائیڈ 4×, کنٹرول 4×, قابو 13×, ہوم ورک 2×, رینک 4×, رینج 2×, کثیر الوقوع 9×, نفسی حرکی 4×, نفسی جنسی 3×, اکائی کا منصوبہ 4×, ہفتہ وار منصوبہ 2×, تشریح 4×, ذخیرہ الفاظ 1×, جوانی 2×, بالغ عمر 1×, بالغ 6×, سہارے 2×, ہم مرتبہ 1×, نصابی کتاب 26×, سماجی 47×, تاثرات 4×",
+  pedCount("منصوبہ بند") === 38 && pedCount("منصوبہ بندی شدہ") === 4 && pedCount("وصول") === 5 && pedCount("سینٹریشن") === 11 && pedCount("سکیما") === 8 && pedCount("پروبنگ") === 2 && pedCount("شیڈول") === 11 && pedCount("موسیقی ذہانت") === 6 && pedCount("جگسا") === 6 && pedCount("زمانی عمر") === 4 && pedCount("انتظار کا وقت") === 2 && pedCount("ڈیزائن") === 6 && pedCount("ذہانت کا حصہ") === 1 && pedCount("قابو شدہ") === 1 && pedCount("گائیڈ") === 4 && pedCount("کنٹرول") === 4 && pedCount("قابو") === 13 && pedCount("ہوم ورک") === 2 && pedCount("رینک") === 4 && pedCount("رینج") === 2 && pedCount("کثیر الوقوع") === 9 && pedCount("نفسی حرکی") === 4 && pedCount("نفسی جنسی") === 3 && pedCount("اکائی کا منصوبہ") === 4 && pedCount("ہفتہ وار منصوبہ") === 2 && pedCount("تشریح") === 4 && pedCount("ذخیرہ الفاظ") === 1 && pedCount("جوانی") === 2 && pedCount("بالغ عمر") === 1 && pedCount("بالغ") === 6 && pedCount("سہارے") === 2 && pedCount("ہم مرتبہ") === 1 && pedCount("نصابی کتاب") === 26 && pedCount("سماجی") === 47 && pedCount("تاثرات") === 4,
+  `منصوبہ بند ${pedCount("منصوبہ بند")}, منصوبہ بندی شدہ ${pedCount("منصوبہ بندی شدہ")}, وصول ${pedCount("وصول")}, سینٹریشن ${pedCount("سینٹریشن")}, سکیما ${pedCount("سکیما")}, پروبنگ ${pedCount("پروبنگ")}, شیڈول ${pedCount("شیڈول")}, موسیقی ذہانت ${pedCount("موسیقی ذہانت")}, جگسا ${pedCount("جگسا")}, زمانی عمر ${pedCount("زمانی عمر")}, انتظار کا وقت ${pedCount("انتظار کا وقت")}, ڈیزائن ${pedCount("ڈیزائن")}, ذہانت کا حصہ ${pedCount("ذہانت کا حصہ")}, قابو شدہ ${pedCount("قابو شدہ")}, گائیڈ ${pedCount("گائیڈ")}, کنٹرول ${pedCount("کنٹرول")}, قابو ${pedCount("قابو")}, ہوم ورک ${pedCount("ہوم ورک")}, رینک ${pedCount("رینک")}, رینج ${pedCount("رینج")}, کثیر الوقوع ${pedCount("کثیر الوقوع")}, نفسی حرکی ${pedCount("نفسی حرکی")}, نفسی جنسی ${pedCount("نفسی جنسی")}, اکائی کا منصوبہ ${pedCount("اکائی کا منصوبہ")}, ہفتہ وار منصوبہ ${pedCount("ہفتہ وار منصوبہ")}, تشریح ${pedCount("تشریح")}, ذخیرہ الفاظ ${pedCount("ذخیرہ الفاظ")}, جوانی ${pedCount("جوانی")}, بالغ عمر ${pedCount("بالغ عمر")}, بالغ ${pedCount("بالغ")}, سہارے ${pedCount("سہارے")}, ہم مرتبہ ${pedCount("ہم مرتبہ")}, نصابی کتاب ${pedCount("نصابی کتاب")}, سماجی ${pedCount("سماجی")}, تاثرات ${pedCount("تاثرات")}`);
+// % rule: prose % → فیصد; the 8 kept are the bare-number options
+// of PED-414/418 (4 each). No % in any question or explanation.
+// No % may ever be ADDED in _ur.
+let pedPctBad = [], pedPctTotal = 0, pedPctQE = 0;
+for (const q of ped) {
+  const qe = (q.question_ur.match(/%/g) || []).length + (q.explanation_ur.match(/%/g) || []).length;
+  pedPctQE += qe;
+  const fields = [[q.question, q.question_ur], [q.explanation, q.explanation_ur], ...q.options.map((o, i) => [o, q.options_ur[i]])];
+  for (const [en, ur] of fields) {
+    const ce = (en.match(/%/g) || []).length, cu = (ur.match(/%/g) || []).length;
+    pedPctTotal += cu;
+    if (cu > ce) pedPctBad.push(q.id);
+  }
+}
+check("U2 pedagogy: % never added in any _ur field; 8 total, all in bare-number options, 0 in questions/explanations", pedPctBad.length === 0 && pedPctTotal === 8 && pedPctQE === 0, `added in ${pedPctBad.slice(0, 3).join(", ")}, total ${pedPctTotal}, Q/E ${pedPctQE}`);
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");

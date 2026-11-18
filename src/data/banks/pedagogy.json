@@ -15,7 +15,7 @@
    "Yaad rakhna",
    "Tajzia karna"
   ],
-  "explanation_ur": "بلوم کی درجہ بندی میں یاد رکھنا سب سے نچلی سطح ہے — حقائق اور بنیادی تصورات کو یاد کرنا۔",
+  "explanation_ur": "بلوم کی درجہ بندی میں یاد رکھنا سب سے نچلی سطح ہے، جس میں حقائق اور بنیادی تصورات کو یاد کیا جاتا ہے۔",
   "explanation_roman": "Bloom ki darja bandi mein yaad rakhna sab se nichli satah hai — haqaiq aur bunyadi tasawwurat ko yaad karna.",
   "post": [
    "zamungkor",
@@ -67,7 +67,7 @@
    "Itlaaq karna",
    "Yaad rakhna"
   ],
-  "explanation_ur": "تخلیق کرنا نظر ثانی شدہ بلوم کی درجہ بندی میں سب سے اونچی سطح ہے — نیا یا اصل کام تیار کرنا۔",
+  "explanation_ur": "تخلیق کرنا نظر ثانی شدہ بلوم کی درجہ بندی میں سب سے اونچی سطح ہے، جس میں نیا یا اصل کام تیار کیا جاتا ہے۔",
   "explanation_roman": "Takhleeq karna nazar saani shuda Bloom ki darja bandi mein sab se unchi satah hai — naya ya asal kaam tayyar karna.",
   "post": [
    "zamungkor",
@@ -261,7 +261,7 @@
  },
  {
   "id": "PED-006",
-  "question_ur": "بلوم کی درجہ بندی میں، کسی خیال کی قدر کا معیار کے مقابلے میں فیصلہ کرنا کیا کہلاتا ہے؟",
+  "question_ur": "بلوم کی درجہ بندی میں، کسی خیال کی قدر کے بارے میں معیار کی بنیاد پر فیصلہ کرنا کیا کہلاتا ہے؟",
   "question_roman": "Bloom ki darja bandi mein, kisi khayal ki qadar ka meyaar ke muqable mein faisla karna kya kehlata hai?",
   "options_ur": [
    "جائزہ لینا",
@@ -365,7 +365,7 @@
  },
  {
   "id": "PED-008",
-  "question_ur": "پیاجے کا قبل از عملیاتی مرحلہ کس عمر کی حد پر محیط ہے؟",
+  "question_ur": "پیاجے کا قبل از عملیاتی مرحلہ کس عمر کے درمیان ہوتا ہے؟",
   "question_roman": "Piaget ka qabl az amaliyati marhala kis umar ki hadd par muheet hai?",
   "options_ur": [
    "0-2 سال",
@@ -431,7 +431,7 @@
    "Tajridi istedlal",
    "Makoosiat"
   ],
-  "explanation_ur": "خود مرکزیت — دوسرے شخص کے نقطہ نظر سے چیزوں کو دیکھنے میں دشواری — قبل از عملیاتی مرحلے کی خصوصیت ہے۔",
+  "explanation_ur": "دوسرے شخص کے نقطہ نظر سے چیزوں کو دیکھنے میں دشواری کو خود مرکزیت کہتے ہیں، اور یہ قبل از عملیاتی مرحلے کی خصوصیت ہے۔",
   "explanation_roman": "Khud markaziat — dusre shakhs ke nuqta-e-nazar se cheezon ko dekhne mein dushwari — qabl az amaliyati marhale ki khususiyat hai.",
   "post": [
    "zamungkor",
@@ -483,7 +483,7 @@
    "Farzi istedlal",
    "Shay ka mustaqil wujood"
   ],
-  "explanation_ur": "ٹھوس عملیاتی مرحلے (تقریباً 7-11 سال) میں بچے بقا کو سمجھتے ہیں — کہ شکل بدلنے پر بھی مقدار وہی رہتی ہے۔",
+  "explanation_ur": "ٹھوس عملیاتی مرحلے (تقریباً 7-11 سال) میں بچے بقا کو سمجھتے ہیں، یعنی شکل بدلنے پر بھی مقدار وہی رہتی ہے۔",
   "explanation_roman": "Thoos amaliyati marhale (taqreeban 7-11 saal) mein bachche baqa ko samajhte hain — ke shakl badalne par bhi miqdar wohi rehti hai.",
   "post": [
    "zamungkor",
@@ -579,7 +579,7 @@
    "مطابقت",
    "انضمام",
    "توازن",
-   "سہار بندی"
+   "سکیفولڈنگ"
   ],
   "options_roman": [
    "Mutabiqat",
@@ -732,9 +732,9 @@
   "question_ur": "ایرکسن کے مطابق، شیر خوارگی میں کس کشمکش کا سامنا ہوتا ہے؟",
   "question_roman": "Erikson ke mutabiq, sheer khwargi mein kis kashmakash ka samna hota hai?",
   "options_ur": [
-   "اعتماد بمقابلہ بداعتمادی",
+   "اعتماد بمقابلہ بے اعتمادی",
    "خود مختاری بمقابلہ شرم",
-   "پہل بمقابلہ احساسِ جرم",
+   "پہل قدمی بمقابلہ احساس جرم",
    "شناخت بمقابلہ کردار کی الجھن"
   ],
   "options_roman": [
@@ -743,7 +743,7 @@
    "Pehal vs ehsaas-e-jurm",
    "Shanakht vs kirdar ki uljhan"
   ],
-  "explanation_ur": "اعتماد بمقابلہ بداعتمادی ایرکسن کا پہلا مرحلہ ہے، شیر خوارگی میں، جب بچہ یہ سیکھتا ہے کہ دنیا محفوظ اور قابلِ بھروسا ہے یا نہیں۔",
+  "explanation_ur": "اعتماد بمقابلہ بے اعتمادی ایرکسن کا پہلا مرحلہ ہے، شیر خوارگی میں، جب بچہ یہ سیکھتا ہے کہ دنیا محفوظ اور قابلِ بھروسا ہے یا نہیں۔",
   "explanation_roman": "Aitmaad vs bad-aitmadi Erikson ka pehla marhala hai, sheer khwargi mein, jab bachcha yeh seekhta hai ke duniya mehfooz aur qabil-e-bharosa hai ya nahi.",
   "post": [
    "zamungkor",
@@ -781,7 +781,7 @@
  },
  {
   "id": "PED-016",
-  "question_ur": "ایرکسن کے مطابق، خود سے کام کرنا سیکھنے والا چھوٹا بچہ (ٹاڈلر) کس کشاکش کا سامنا کر رہا ہے؟",
+  "question_ur": "ایرکسن کے مطابق، خود سے کام کرنا سیکھنے والا چھوٹا بچہ کس کشمکش کا سامنا کر رہا ہے؟",
   "question_roman": "Erikson ke mutabiq, khud se kaam karna seekhne wala chhota bachcha (toddler) kis kashakash ka saamna kar raha hai?",
   "options_ur": [
    "اعتماد بمقابلہ بے اعتمادی",
@@ -795,7 +795,7 @@
    "Mehnat vs ehsaas-e-kamtari",
    "Paidaawaariyat vs jamood"
   ],
-  "explanation_ur": "خود مختاری بمقابلہ شرم اور شک چھوٹے بچے (ٹاڈلر) کا مرحلہ ہے، جب بچے خود سے کام کرنا سیکھتے ہیں۔",
+  "explanation_ur": "خود مختاری بمقابلہ شرم اور شک چھوٹے بچے کا مرحلہ ہے، جب بچے خود سے کام کرنا سیکھتے ہیں۔",
   "explanation_roman": "Khud mukhtaari vs sharm aur shak chhote bachche (toddler) ka marhala hai, jab bachche khud se kaam karna seekhte hain.",
   "post": [
    "zamungkor",
@@ -833,7 +833,7 @@
  },
  {
   "id": "PED-017",
-  "question_ur": "ایرکسن کے مطابق، تقریباً 3-5 سال کی عمر کے پری اسکول بچوں کو کس کشاکش کا سامنا ہوتا ہے؟",
+  "question_ur": "ایرکسن کے مطابق، تقریباً 3-5 سال کی عمر کے پری اسکول کے بچوں کو کس کشمکش کا سامنا ہوتا ہے؟",
   "question_roman": "Erikson ke mutabiq, taqreeban 3-5 saal ki umar ke preschool bachchon ko kis kashakash ka saamna hota hai?",
   "options_ur": [
    "اعتماد بمقابلہ بے اعتمادی",
@@ -885,7 +885,7 @@
  },
  {
   "id": "PED-018",
-  "question_ur": "ایرکسن کے مطابق، اسکول جانے کی عمر کے بچوں کو کس کشاکش کا سامنا ہوتا ہے؟",
+  "question_ur": "ایرکسن کے مطابق، اسکول جانے کی عمر کے بچوں کو کس کشمکش کا سامنا ہوتا ہے؟",
   "question_roman": "Erikson ke mutabiq, school jaane ki umar ke bachchon ko kis kashakash ka saamna hota hai?",
   "options_ur": [
    "پہل قدمی بمقابلہ احساس جرم",
@@ -937,7 +937,7 @@
  },
  {
   "id": "PED-019",
-  "question_ur": "ایرکسن کے مطابق، نوعمروں کو کس کشاکش کا سامنا ہوتا ہے؟",
+  "question_ur": "ایرکسن کے مطابق، نوعمروں کو کس کشمکش کا سامنا ہوتا ہے؟",
   "question_roman": "Erikson ke mutabiq, no-umron ko kis kashakash ka saamna hota hai?",
   "options_ur": [
    "شناخت بمقابلہ کردار کی الجھن",
@@ -989,7 +989,7 @@
  },
  {
   "id": "PED-020",
-  "question_ur": "لیسن پلان کا بنیادی مقصد کیا ہے؟",
+  "question_ur": "سبق کے منصوبے کا بنیادی مقصد کیا ہے؟",
   "question_roman": "Lesson plan ka bunyaadi maqsad kya hai?",
   "options_ur": [
    "ریکارڈ بک بھرنے کے لیے",
@@ -1003,7 +1003,7 @@
    "Waazeh maqaasid aur sargarmiyon ke saath tadrees ki rehnumaai karne ke liye",
    "Nisaab jaldi khatam karne ke liye"
   ],
-  "explanation_ur": "لیسن پلان کا بنیادی مقصد تدریس کی رہنمائی کرنا ہے — یہ سبق کے لیے واضح مقاصد، سرگرمیاں اور جائزہ مقرر کرتا ہے۔",
+  "explanation_ur": "سبق کے منصوبے کا بنیادی مقصد تدریس کی رہنمائی کرنا ہے۔ یہ سبق کے لیے واضح مقاصد، سرگرمیاں اور جائزہ مقرر کرتا ہے۔",
   "explanation_roman": "Lesson plan ka bunyaadi maqsad tadrees ki rehnumaai karna hai — ye sabq ke liye waazeh maqaasid, sargarmiyan aur jaaiza muqarrar karta hai.",
   "post": [
    "zamungkor",
@@ -1041,11 +1041,11 @@
  },
  {
   "id": "PED-021",
-  "question_ur": "درج ذیل میں سے کون سا لیسن پلان کا ایک ضروری حصہ ہے؟",
+  "question_ur": "مندرجہ ذیل میں سے کون سا سبق کے منصوبے کا ایک ضروری حصہ ہے؟",
   "question_roman": "Darj zail mein se kaun sa lesson plan ka ek zaroori hissa hai?",
   "options_ur": [
    "طلبہ کی فہرست",
-   "لرننگ آبجیکٹیوز",
+   "سیکھنے کے مقاصد",
    "اسکول کا ٹائم ٹیبل",
    "استاد کی تنخواہ"
   ],
@@ -1055,7 +1055,7 @@
    "School ka timetable",
    "Ustaad ki tankhwaah"
   ],
-  "explanation_ur": "لرننگ آبجیکٹیوز واضح طور پر بتاتے ہیں کہ سبق کے اختتام تک طلبہ کو کیا جاننا چاہیے یا وہ کیا کرنے کے قابل ہونے چاہییں۔",
+  "explanation_ur": "سیکھنے کے مقاصد واضح طور پر بتاتے ہیں کہ سبق کے اختتام تک طلبہ کو کیا جاننا چاہیے یا وہ کیا کرنے کے قابل ہونے چاہییں۔",
   "explanation_roman": "Learning objectives waazeh taur par bataate hain ke sabq ke ikhtitaam tak talaba ko kya jaanna chahiye ya woh kya karne ke qaabil hone chahiyein.",
   "post": [
    "zamungkor",
@@ -1093,11 +1093,11 @@
  },
  {
   "id": "PED-022",
-  "question_ur": "فیڈ بیک دینے کے لیے تدریس و تعلم کے عمل کے دوران کی جانے والی اسیسمنٹ کو کیا کہا جاتا ہے؟",
+  "question_ur": "بازخورد دینے کے لیے تدریس و تعلم کے عمل کے دوران کیا جانے والے جائزے کو کیا کہا جاتا ہے؟",
   "question_roman": "Feedback dene ke liye tadrees-o-taallum ke amal ke dauraan ki jaane wali assessment ko kya kaha jata hai?",
   "options_ur": [
-   "فارمیٹو اسیسمنٹ",
-   "سمٹیو اسیسمنٹ",
+   "تشکیلی جائزہ",
+   "اختتامی جائزہ",
    "سالانہ امتحان",
    "آخری ٹیسٹ"
   ],
@@ -1107,7 +1107,7 @@
    "Saalaana imtihaan",
    "Aakhri test"
   ],
-  "explanation_ur": "فارمیٹو اسیسمنٹ تعلم کے دوران پیش رفت جانچنے اور فیڈ بیک دینے کے لیے کی جاتی ہے، تاکہ تدریس کو بہتر بنایا جا سکے۔",
+  "explanation_ur": "تشکیلی جائزہ تعلم کے دوران پیش رفت جانچنے اور بازخورد دینے کے لیے کیا جاتا ہے، تاکہ تدریس کو بہتر بنایا جا سکے۔",
   "explanation_roman": "Formative assessment taallum ke dauraan pesh raft jaanchne aur feedback dene ke liye ki jati hai, taake tadrees ko behtar banaya ja sake.",
   "post": [
    "zamungkor",
@@ -1145,12 +1145,12 @@
  },
  {
   "id": "PED-023",
-  "question_ur": "ٹرم کے اختتام پر ہونے والا آخری امتحان کس کی مثال ہے؟",
+  "question_ur": "مدت کے اختتام پر ہونے والا آخری امتحان کس کی مثال ہے؟",
   "question_roman": "Term ke ikhtitaam par hone wala aakhri imtihaan kis ki misaal hai?",
   "options_ur": [
    "سبق کے دوران کلاس کوئز",
-   "ہوم ورک پر فیڈ بیک",
-   "سمٹیو اسیسمنٹ",
+   "ہوم ورک پر بازخورد",
+   "اختتامی جائزہ",
    "کلاس میں زبانی سوال"
   ],
   "options_roman": [
@@ -1159,7 +1159,7 @@
    "Summative assessment",
    "Class mein zabaani sawaal"
   ],
-  "explanation_ur": "سمٹیو اسیسمنٹ کورس یا ٹرم کے اختتام پر مجموعی کامیابی کو جانچنے کے لیے کی جاتی ہے، مثال کے طور پر آخری امتحان۔",
+  "explanation_ur": "اختتامی جائزہ کورس یا مدت کے اختتام پر مجموعی کامیابی کو جانچنے کے لیے کیا جاتا ہے، مثال کے طور پر آخری امتحان۔",
   "explanation_roman": "Summative assessment course ya term ke ikhtitaam par majmooi kaamyaabi ko jaanchne ke liye ki jati hai, misaal ke taur par aakhri imtihaan.",
   "post": [
    "zamungkor",
@@ -1197,12 +1197,12 @@
  },
  {
   "id": "PED-024",
-  "question_ur": "طلبہ کے سابقہ علم اور مشکلات معلوم کرنے کے لیے تدریس سے پہلے کی جانے والی اسیسمنٹ کو کیا کہا جاتا ہے؟",
+  "question_ur": "طلبہ کے سابقہ علم اور مشکلات معلوم کرنے کے لیے تدریس سے پہلے کیا جانے والے جائزے کو کیا کہا جاتا ہے؟",
   "question_roman": "Talaba ke saabqa ilm aur mushkilaat maloom karne ke liye tadrees se pehle ki jaane wali assessment ko kya kaha jata hai?",
   "options_ur": [
-   "سمٹیو اسیسمنٹ",
-   "ڈائیگناسٹک اسیسمنٹ",
-   "فارمیٹو اسیسمنٹ",
+   "اختتامی جائزہ",
+   "تشخیصی جائزہ",
+   "تشکیلی جائزہ",
    "سالانہ امتحان"
   ],
   "options_roman": [
@@ -1211,7 +1211,7 @@
    "Formative assessment",
    "Saalaana imtihaan"
   ],
-  "explanation_ur": "ڈائیگناسٹک اسیسمنٹ تدریس سے پہلے یہ معلوم کرنے کے لیے کی جاتی ہے کہ طلبہ پہلے سے کیا جانتے ہیں اور انہیں کہاں مشکلات پیش آتی ہیں۔",
+  "explanation_ur": "تشخیصی جائزہ تدریس سے پہلے یہ معلوم کرنے کے لیے کیا جاتا ہے کہ طلبہ پہلے سے کیا جانتے ہیں اور انہیں کہاں مشکلات پیش آتی ہیں۔",
   "explanation_roman": "Diagnostic assessment tadrees se pehle ye maloom karne ke liye ki jati hai ke talaba pehle se kya jaante hain aur unhein kahan mushkilaat pesh aati hain.",
   "post": [
    "zamungkor",
@@ -1249,7 +1249,7 @@
  },
  {
   "id": "PED-025",
-  "question_ur": "تدریس میں اسکیفولڈنگ کیا ہے؟",
+  "question_ur": "تدریس میں سکیفولڈنگ کیا ہے؟",
   "question_roman": "Tadrees mein scaffolding kya hai?",
   "options_ur": [
    "غلطیوں پر سزا دینا",
@@ -1263,7 +1263,7 @@
    "Fauran aakhri jawaab de dena",
    "Baghair kisi madad ke parhaana"
   ],
-  "explanation_ur": "اسکیفولڈنگ استاد کی طرف سے دی جانے والی عارضی مدد ہے جو آہستہ آہستہ ہٹا لی جاتی ہے جیسے جیسے سیکھنے والا اکیلے کام کرنے کے قابل ہوتا جاتا ہے۔",
+  "explanation_ur": "سکیفولڈنگ استاد کی طرف سے دی جانے والی عارضی مدد ہے جو آہستہ آہستہ ہٹا لی جاتی ہے جیسے جیسے سیکھنے والا اکیلے کام کرنے کے قابل ہوتا جاتا ہے۔",
   "explanation_roman": "Scaffolding ustaad ki taraf se di jaane wali aarzi madad hai jo aahista aahista hata li jati hai jaise jaise seekhne wala akele kaam karne ke qaabil hota jata hai.",
   "post": [
    "zamungkor",
@@ -1301,7 +1301,7 @@
  },
  {
   "id": "PED-026",
-  "question_ur": "وائیگاٹسکی کے مطابق، زون آف پراکسیمل ڈیولپمنٹ کیا ہے؟",
+  "question_ur": "وائیگاٹسکی کے مطابق، قربِ نشوونما کا زون کیا ہے؟",
   "question_roman": "Vygotsky ke mutabiq, Zone of Proximal Development kya hai?",
   "options_ur": [
    "وہ کام جو بچہ اکیلے کر سکتا ہے",
@@ -1315,7 +1315,7 @@
    "Aazaadaana kaarkardagi aur rehnumaai ke saath kaarkardagi ke darmiyaan farq",
    "Bachche ki umar ki satah"
   ],
-  "explanation_ur": "زون آف پراکسیمل ڈیولپمنٹ (ZPD) وہ فرق ہے جو سیکھنے والے کے اکیلے کرنے کی صلاحیت اور مدد کے ساتھ کرنے کی صلاحیت کے درمیان ہوتا ہے۔",
+  "explanation_ur": "قربِ نشوونما کا زون (ZPD) وہ فرق ہے جو سیکھنے والے کی اکیلے کام کرنے کی صلاحیت اور مدد سے کام کرنے کی صلاحیت کے درمیان ہوتا ہے۔",
   "explanation_roman": "Zone of Proximal Development (ZPD) woh farq hai jo seekhne wale ke akele karne ki salaahiyat aur madad ke saath karne ki salaahiyat ke darmiyaan hota hai.",
   "post": [
    "zamungkor",
@@ -1353,7 +1353,7 @@
  },
  {
   "id": "PED-027",
-  "question_ur": "کولیبریٹو لرننگ کیا ہے؟",
+  "question_ur": "اشتراکی سیکھنا کیا ہے؟",
   "question_roman": "Collaborative learning kya hai?",
   "options_ur": [
    "طلبہ اکیلے پڑھتے ہیں",
@@ -1367,7 +1367,7 @@
    "Ustaad sirf lecture deta hai",
    "Talaba ek doosre se muqaabla karte hain"
   ],
-  "explanation_ur": "کولیبریٹو لرننگ میں طلبہ گروپوں میں مل کر کام کرتے ہیں، خیالات کا تبادلہ کرتے ہیں اور ایک دوسرے سے سیکھتے ہیں۔",
+  "explanation_ur": "اشتراکی سیکھنے میں طلبہ گروپوں میں مل کر کام کرتے ہیں، خیالات کا تبادلہ کرتے ہیں اور ایک دوسرے سے سیکھتے ہیں۔",
   "explanation_roman": "Collaborative learning mein talaba groups mein mil kar kaam karte hain, khayalaat ka tabaadla karte hain aur ek doosre se seekhte hain.",
   "post": [
    "zamungkor",
@@ -1405,13 +1405,13 @@
  },
  {
   "id": "PED-028",
-  "question_ur": "وہ سیکھنے والے جو تصاویر، ڈایاگرام اور چارٹ کے ذریعے سب سے بہتر سمجھتے ہیں، کیا کہلاتے ہیں؟",
+  "question_ur": "وہ سیکھنے والے جو تصاویر، خاکوں اور چارٹ کے ذریعے سب سے بہتر سمجھتے ہیں، کیا کہلاتے ہیں؟",
   "question_roman": "Woh seekhne wale jo tasveeron, diagrams aur charts ke zariye sab se behtar samajhte hain, kya kehlate hain?",
   "options_ur": [
-   "ویژول لرنرز",
-   "آڈیٹری لرنرز",
-   "کنیس تھیٹک لرنرز",
-   "ریڈنگ لرنرز"
+   "بصری سیکھنے والے",
+   "سماعی سیکھنے والے",
+   "حرکی سیکھنے والے",
+   "پڑھ کر سیکھنے والے"
   ],
   "options_roman": [
    "Visual learners",
@@ -1419,7 +1419,7 @@
    "Kinesthetic learners",
    "Reading learners"
   ],
-  "explanation_ur": "ویژول لرنرز تصاویر، ڈایاگرام، چارٹ اور تحریری مواد کے ذریعے سب سے بہتر سیکھتے ہیں۔",
+  "explanation_ur": "بصری سیکھنے والے تصاویر، خاکوں، چارٹ اور تحریری مواد سے سب سے بہتر سیکھتے ہیں۔",
   "explanation_roman": "Visual learners tasveeron, diagrams, charts aur tehreeri mawaad ke zariye sab se behtar seekhte hain.",
   "post": [
    "zamungkor",
@@ -1460,10 +1460,10 @@
   "question_ur": "وہ سیکھنے والے جو سن کر اور بحث کر کے سب سے بہتر سیکھتے ہیں، کیا کہلاتے ہیں؟",
   "question_roman": "Woh seekhne wale jo sun kar aur behes kar ke sab se behtar seekhte hain, kya kehlate hain?",
   "options_ur": [
-   "ویژول لرنرز",
-   "آڈیٹری لرنرز",
-   "کنیس تھیٹک لرنرز",
-   "ٹیکٹائل لرنرز"
+   "بصری سیکھنے والے",
+   "سماعی سیکھنے والے",
+   "حرکی سیکھنے والے",
+   "لمس سے سیکھنے والے"
   ],
   "options_roman": [
    "Visual learners",
@@ -1471,7 +1471,7 @@
    "Kinesthetic learners",
    "Tactile learners"
   ],
-  "explanation_ur": "آڈیٹری لرنرز سن کر، بحث کر کے اور وضاحتیں سن کر سب سے بہتر سیکھتے ہیں۔",
+  "explanation_ur": "سماعی سیکھنے والے سن کر، بحث کر کے اور وضاحتیں سن کر سب سے بہتر سیکھتے ہیں۔",
   "explanation_roman": "Auditory learners sun kar, behes kar ke aur wazaahatein sun kar sab se behtar seekhte hain.",
   "post": [
    "zamungkor",
@@ -1509,13 +1509,13 @@
  },
  {
   "id": "PED-030",
-  "question_ur": "وہ سیکھنے والے جو ہینڈز آن سرگرمیوں اور حرکت کے ذریعے سب سے بہتر سیکھتے ہیں، کیا کہلاتے ہیں؟",
+  "question_ur": "وہ سیکھنے والے جو عملی سرگرمیوں اور حرکت کے ذریعے سب سے بہتر سیکھتے ہیں، کیا کہلاتے ہیں؟",
   "question_roman": "Woh seekhne wale jo hands-on sargarmiyon aur harkat ke zariye sab se behtar seekhte hain, kya kehlate hain?",
   "options_ur": [
-   "ویژول لرنرز",
-   "آڈیٹری لرنرز",
-   "کنیس تھیٹک لرنرز",
-   "وربل لرنرز"
+   "بصری سیکھنے والے",
+   "سماعی سیکھنے والے",
+   "حرکی سیکھنے والے",
+   "زبانی سیکھنے والے"
   ],
   "options_roman": [
    "Visual learners",
@@ -1523,7 +1523,7 @@
    "Kinesthetic learners",
    "Verbal learners"
   ],
-  "explanation_ur": "کنیس تھیٹک لرنرز عمل کر کے، حرکت کر کے اور ہینڈز آن سرگرمیوں کے ذریعے سب سے بہتر سیکھتے ہیں۔",
+  "explanation_ur": "حرکی سیکھنے والے عمل کر کے، حرکت کر کے اور عملی سرگرمیوں کے ذریعے سب سے بہتر سیکھتے ہیں۔",
   "explanation_roman": "Kinesthetic learners amal kar ke, harkat kar ke aur hands-on sargarmiyon ke zariye sab se behtar seekhte hain.",
   "post": [
    "zamungkor",
@@ -1565,9 +1565,9 @@
   "question_roman": "Bloom ki darja bandi par 2001 mein hone wali nazar saani ki qayadat kin mahireen ne ki?",
   "options_ur": [
    "اینڈرسن اور کراتھول",
-   "پیاجے اور وائگٹسکی",
+   "پیاجے اور وائیگاٹسکی",
    "اسکنر اور تھارنڈائیک",
-   "ماسلو اور راجرز"
+   "میسلو اور راجرز"
   ],
   "options_roman": [
    "Anderson aur Krathwohl",
@@ -1769,7 +1769,7 @@
  },
  {
   "id": "PED-035",
-  "question_ur": "نظر ثانی شدہ درجہ بندی میں علم کی چار اقسام بیان کی گئی ہیں۔ درج ذیل میں سے کون سی ایک ان چار اقسام میں سے ہے؟",
+  "question_ur": "نظر ثانی شدہ درجہ بندی میں علم کی چار اقسام بیان کی گئی ہیں۔ مندرجہ ذیل میں سے کون سی ان چار اقسام میں سے ایک ہے؟",
   "question_roman": "Nazar saani shuda darja bandi mein ilm ki chaar aqsaam bayan ki gayi hain. Darj zail mein se kaun si aik in chaar aqsaam mein se hai?",
   "options_ur": [
    "حسی علم",
@@ -1821,7 +1821,7 @@
  },
  {
   "id": "PED-036",
-  "question_ur": "نظر ثانی شدہ درجہ بندی میں یاد رکھنا کی سطح سے تعلق رکھنے والا فعل کون سا ہے؟",
+  "question_ur": "نظر ثانی شدہ درجہ بندی میں یاد رکھنے کی سطح سے تعلق رکھنے والا فعل کون سا ہے؟",
   "question_roman": "Nazar saani shuda darja bandi mein yaad rakhna ki satah se talluq rakhne wala fail kaun sa hai?",
   "options_ur": [
    "خلاصہ کرنا",
@@ -1835,7 +1835,7 @@
    "hal karna",
    "faisla karna"
   ],
-  "explanation_ur": "یاد کرنا یاد رکھنا کی سطح کا فعل ہے، جو سب سے نچلی علمی سطح ہے، جہاں سیکھنے والے سیکھی ہوئی معلومات کو ذہن میں لاتے ہیں۔",
+  "explanation_ur": "یاد کرنا یاد رکھنے کی سطح کا فعل ہے، جو سب سے نچلی علمی سطح ہے، جہاں سیکھنے والے سیکھی ہوئی معلومات کو ذہن میں لاتے ہیں۔",
   "explanation_roman": "Yaad karna yaad rakhna ki satah ka fail hai, jo sab se nichli ilmi satah hai, jahan seekhne wale seekhi hui maloomat ko zehen mein late hain.",
   "post": [
    "zamungkor",
@@ -1873,7 +1873,7 @@
  },
  {
   "id": "PED-037",
-  "question_ur": "ایک مقصد جس میں سیکھنے والوں سے اشیاء کو گروہوں میں درجہ بندی کرنے کو کہا جائے، نظر ثانی شدہ درجہ بندی کی کس سطح کو جانچتا ہے؟",
+  "question_ur": "ایک مقصد جس میں سیکھنے والوں سے چیزوں کو گروہوں میں درجہ بندی کرنے کو کہا جائے، نظر ثانی شدہ درجہ بندی کی کس سطح کو جانچتا ہے؟",
   "question_roman": "Aik maqsad jis mein seekhne walon se ashya ko grohon mein darja bandi karne ko kaha jaye, nazar saani shuda darja bandi ki kis satah ko janchta hai?",
   "options_ur": [
    "سمجھنا",
@@ -1887,7 +1887,7 @@
    "itlaaq karna",
    "tajziya karna"
   ],
-  "explanation_ur": "درجہ بندی کرنے کا مطلب ہے نظریات یا اشیاء کو مشترکہ خصوصیات کی بنیاد پر گروہوں میں رکھنا، جو مواد کی سمجھ کو ظاہر کرتا ہے۔",
+  "explanation_ur": "درجہ بندی کرنے کا مطلب ہے نظریات یا چیزوں کو مشترکہ خصوصیات کی بنیاد پر گروہوں میں رکھنا، جو مواد کی سمجھ کو ظاہر کرتا ہے۔",
   "explanation_roman": "Darja bandi karne ka matlab hai nazriyat ya ashya ko mushtaraka khususiyat ki bunyad par grohon mein rakhna, jo mawad ki samajh ko zahir karta hai.",
   "post": [
    "zamungkor",
@@ -1925,7 +1925,7 @@
  },
  {
   "id": "PED-038",
-  "question_ur": "نظر ثانی شدہ درجہ بندی میں اطلاق کرنا کی سطح سے تعلق رکھنے والا فعل کون سا ہے؟",
+  "question_ur": "نظر ثانی شدہ درجہ بندی میں اطلاق کرنے کی سطح سے تعلق رکھنے والا فعل کون سا ہے؟",
   "question_roman": "Nazar saani shuda darja bandi mein itlaaq karna ki satah se talluq rakhne wala fail kaun sa hai?",
   "options_ur": [
    "تعریف کرنا",
@@ -1939,7 +1939,7 @@
    "mawazna karna",
    "muzahira karna"
   ],
-  "explanation_ur": "مظاہرہ کرنا اطلاق کرنا کی سطح کا فعل ہے، جہاں سیکھنے والے سیکھی ہوئی بات کو نئی صورتحال میں استعمال کرتے ہیں۔",
+  "explanation_ur": "مظاہرہ کرنا اطلاق کرنے کی سطح کا فعل ہے، جہاں سیکھنے والے سیکھی ہوئی بات کو نئی صورتحال میں استعمال کرتے ہیں۔",
   "explanation_roman": "Muzahira karna itlaaq karna ki satah ka fail hai, jahan seekhne wale seekhi hui baat ko nayi surat haal mein istemal karte hain.",
   "post": [
    "zamungkor",
@@ -1991,7 +1991,7 @@
    "tajziya karna",
    "jaiza lena"
   ],
-  "explanation_ur": "امتیاز کرنے کا مطلب ہے مواد کے حصوں کو الگ الگ پہچاننا، جیسے حقائق اور آراء، جو تجزیہ کرنا کی سطح سے تعلق رکھتا ہے۔",
+  "explanation_ur": "امتیاز کرنے کا مطلب ہے مواد کے حصوں کو الگ الگ پہچاننا، جیسے حقائق اور آراء، جو تجزیہ کرنے کی سطح سے تعلق رکھتا ہے۔",
   "explanation_roman": "Imtiaz karne ka matlab hai mawad ke hisson ko alag alag pehchanna, jaise haqaiq aur aara, jo tajziya karna ki satah se talluq rakhta hai.",
   "post": [
    "zamungkor",
@@ -2029,7 +2029,7 @@
  },
  {
   "id": "PED-040",
-  "question_ur": "نظر ثانی شدہ درجہ بندی میں جائزہ لینا کی سطح سے تعلق رکھنے والا فعل کون سا ہے؟",
+  "question_ur": "نظر ثانی شدہ درجہ بندی میں جائزہ لینے کی سطح سے تعلق رکھنے والا فعل کون سا ہے؟",
   "question_roman": "Nazar saani shuda darja bandi mein jaiza lena ki satah se talluq rakhne wala fail kaun sa hai?",
   "options_ur": [
    "فہرست بنانا",
@@ -2043,7 +2043,7 @@
    "bayan karna",
    "muzahira karna"
   ],
-  "explanation_ur": "جواز پیش کرنا جائزہ لینا کی سطح کا فعل ہے، جہاں سیکھنے والے وجوہات اور معیار کی بنیاد پر کسی فیصلے کا دفاع کرتے ہیں۔",
+  "explanation_ur": "جواز پیش کرنا جائزہ لینے کی سطح کا فعل ہے، جہاں سیکھنے والے وجوہات اور معیار کی بنیاد پر کسی فیصلے کا دفاع کرتے ہیں۔",
   "explanation_roman": "Jawaz pesh karna jaiza lena ki satah ka fail hai, jahan seekhne wale wajohat aur miyar ki bunyad par kisi faisle ka difa karte hain.",
   "post": [
    "zamungkor",
@@ -2081,7 +2081,7 @@
  },
  {
   "id": "PED-041",
-  "question_ur": "ایک مقصد جس میں سیکھنے والوں سے نیا اسکول باغ ڈیزائن کرنے کو کہا جائے، نظر ثانی شدہ درجہ بندی کی کس سطح کو جانچتا ہے؟",
+  "question_ur": "ایک مقصد جس میں سیکھنے والوں سے اسکول کا نیا باغ ڈیزائن کرنے کو کہا جائے، نظر ثانی شدہ درجہ بندی کی کس سطح کو جانچتا ہے؟",
   "question_roman": "Aik maqsad jis mein seekhne walon se naya school bagh design karne ko kaha jaye, nazar saani shuda darja bandi ki kis satah ko janchta hai?",
   "options_ur": [
    "تخلیق کرنا",
@@ -2095,7 +2095,7 @@
    "tajziya karna",
    "jaiza lena"
   ],
-  "explanation_ur": "نیا باغ ڈیزائن کرنے کا مطلب ہے نظریات کو ملا کر ایک اصل منصوبہ بنانا، جو تخلیق کرنا کی سطح سے تعلق رکھتا ہے۔",
+  "explanation_ur": "نیا باغ ڈیزائن کرنے کا مطلب ہے نظریات کو ملا کر ایک اصل منصوبہ بنانا، جو تخلیق کرنے کی سطح سے تعلق رکھتا ہے۔",
   "explanation_roman": "Naya bagh design karne ka matlab hai nazriyat ko mila kar aik asal mansooba banana, jo takhleeq karna ki satah se talluq rakhta hai.",
   "post": [
    "zamungkor",
@@ -2133,7 +2133,7 @@
  },
  {
   "id": "PED-042",
-  "question_ur": "تجزیہ کرنا، جائزہ لینا اور تخلیق کرنا کو کلاس روم کی زبان میں کس مشترکہ نام سے پکارا جاتا ہے؟",
+  "question_ur": "تجزیہ کرنا، جائزہ لینا اور تخلیق کرنا کلاس روم کی مشق میں کس مشترکہ نام سے جانے جاتے ہیں؟",
   "question_roman": "Tajziya karna, jaiza lena aur takhleeq karna ko classroom ki zaban mein kis mushtaraka naam se pukara jata hai?",
   "options_ur": [
    "نچلے درجے کی سوچ کی مہارتیں",
@@ -2147,7 +2147,7 @@
    "harki maharatein",
    "aala darje ki soch ki maharatein"
   ],
-  "explanation_ur": "تجزیہ کرنا، جائزہ لینا اور تخلیق کرنا پیچیدہ سوچ کا تقاضا کرتے ہیں، اس لیے انہیں اعلی درجے کی سوچ کی مہارتوں میں گروہ بندی کیا جاتا ہے۔",
+  "explanation_ur": "تجزیہ کرنا، جائزہ لینا اور تخلیق کرنا پیچیدہ سوچ کا تقاضا کرتے ہیں، اس لیے انہیں اعلی درجے کی سوچ کی مہارتیں کہا جاتا ہے۔",
   "explanation_roman": "Tajziya karna, jaiza lena aur takhleeq karna pechida soch ka taqaza karte hain, is liye inhein aala darje ki soch ki maharaton mein groh bandi kiya jata hai.",
   "post": [
    "zamungkor",
@@ -2199,7 +2199,7 @@
    "nichle darje ki soch ki maharatein",
    "harki maharatein"
   ],
-  "explanation_ur": "یاد رکھنا، سمجھنا اور اطلاق کرنا سیکھی ہوئی معلومات کو یاد کرنے اور استعمال کرنے سے متعلق ہیں، اس لیے انہیں نچلے درجے کی سوچ کی مہارتوں میں گروہ بندی کیا جاتا ہے۔",
+  "explanation_ur": "یاد رکھنا، سمجھنا اور اطلاق کرنا سیکھی ہوئی معلومات کو یاد کرنے اور استعمال کرنے سے متعلق ہیں، اس لیے انہیں نچلے درجے کی سوچ کی مہارتیں کہا جاتا ہے۔",
   "explanation_roman": "Yaad rakhna, samajhna aur itlaaq karna seekhi hui maloomat ko yaad karne aur istemal karne se mutalliq hain, is liye inhein nichle darje ki soch ki maharaton mein groh bandi kiya jata hai.",
   "post": [
    "zamungkor",
@@ -2303,7 +2303,7 @@
    "jazbati pehlu",
    "lasani pehlu"
   ],
-  "explanation_ur": "نفسی حرکی پہلو جسمانی حرکت، ہم آہنگی اور لکھنے اور آلات سنبھالنے جیسے کاموں میں جسم کے ماہر استعمال سے متعلق ہے۔",
+  "explanation_ur": "نفسی حرکی پہلو جسمانی حرکت، ہم آہنگی اور لکھنے اور آلات سنبھالنے جیسے کاموں میں جسم کو مہارت سے استعمال کرنے سے متعلق ہے۔",
   "explanation_roman": "Nafsi harki pehlu jismani harkat, hum aahangi aur likhne aur aalaat sambhalne jaise kamon mein jism ke mahir istemal se mutalliq hai.",
   "post": [
    "zamungkor",
@@ -2511,7 +2511,7 @@
    "7-11 saal",
    "11 saal aur is se zyada"
   ],
-  "explanation_ur": "حسی حرکی مرحلہ زندگی کے پہلے دو سالوں پر محیط ہے، جب شیر خوار بچے حواس اور حرکت کے ذریعے سیکھتے ہیں۔",
+  "explanation_ur": "حسی حرکی مرحلہ زندگی کے پہلے دو سالوں تک ہوتا ہے، جب شیر خوار بچے حواس اور حرکت کے ذریعے سیکھتے ہیں۔",
   "explanation_roman": "Hissi harkati marhala zindagi ke pehle do saalon par muheet hai, jab sheer khwar bachche hawaas aur harkat ke zariye seekhte hain.",
   "post": [
    "zamungkor",
@@ -2563,7 +2563,7 @@
    "11 saal aur is se zyada",
    "7-11 saal"
   ],
-  "explanation_ur": "ٹھوس عملیاتی مرحلہ تقریباً سات سے گیارہ سال کی عمر تک چلتا ہے، جب بچے حقیقی اشیاء اور واقعات کے بارے میں منطقی انداز میں سوچ سکتے ہیں۔",
+  "explanation_ur": "ٹھوس عملیاتی مرحلہ تقریباً سات سے گیارہ سال کی عمر تک چلتا ہے، جب بچے حقیقی چیزوں اور واقعات کے بارے میں منطقی انداز میں سوچ سکتے ہیں۔",
   "explanation_roman": "Thoos amaliyati marhala taqreeban saat se gyarah saal ki umar tak chalta hai, jab bachche haqeeqi ashya aur waqiat ke bare mein mantaqi andaaz mein soch sakte hain.",
   "post": [
    "zamungkor",
@@ -2615,7 +2615,7 @@
    "11 saal aur is se zyada",
    "0-2 saal"
   ],
-  "explanation_ur": "رسمی عملیاتی مرحلہ تقریباً گیارہ سال کی عمر سے شروع ہوتا ہے اور جوانی تک جاری رہتا ہے، اور اس میں تجریدی اور منظم استدلال پیدا ہوتا ہے۔",
+  "explanation_ur": "رسمی عملیاتی مرحلہ تقریباً گیارہ سال کی عمر سے شروع ہوتا ہے اور بالغ عمر میں بھی جاری رہتا ہے، اور اس میں تجریدی اور منظم استدلال پیدا ہوتا ہے۔",
   "explanation_roman": "Rasmi amaliyati marhala taqreeban gyarah saal ki umar se shuru hota hai aur jawani tak jari rehta hai, aur is mein tajridi aur munazzam istedlal paida hota hai.",
   "post": [
    "zamungkor",
@@ -2667,7 +2667,7 @@
    "Makoosiat",
    "Alamati soch"
   ],
-  "explanation_ur": "علامتی سوچ بچے کو ایک چیز کو دوسری چیز کی نمائندگی کے لیے استعمال کرنے دیتی ہے، جیسے فرضی کھیل میں کیلا ٹیلی فون کی نمائندگی کرتا ہے۔",
+  "explanation_ur": "علامتی سوچ سے بچہ ایک چیز کو دوسری چیز کی نمائندگی کے لیے استعمال کر سکتا ہے، جیسے فرضی کھیل میں کیلا ٹیلی فون کی نمائندگی کرتا ہے۔",
   "explanation_roman": "Alamati soch bachche ko ek cheez ko dusri cheez ki numaindagi ke liye istemal karne deti hai, jaise farzi khel mein kela telephone ki numaindagi karta hai.",
   "post": [
    "zamungkor",
@@ -2705,7 +2705,7 @@
  },
  {
   "id": "PED-053",
-  "question_ur": "پیاجے نے اس سمجھ کو کیا نام دیا کہ اشیاء اس وقت بھی موجود رہتی ہیں جب انہیں دیکھا نہیں جا سکتا؟",
+  "question_ur": "پیاجے نے اس سمجھ کو کیا نام دیا کہ چیزیں اس وقت بھی موجود رہتی ہیں جب انہیں دیکھا نہیں جا سکتا؟",
   "question_roman": "Piaget ne is samajh ko kya naam diya ke ashya us waqt bhi maujood rehti hain jab unhein dekha nahi ja sakta?",
   "options_ur": [
    "شے کا مستقل وجود",
@@ -2757,7 +2757,7 @@
  },
  {
   "id": "PED-054",
-  "question_ur": "ایک شیر خوار بچہ جو کپڑے کے نیچے چھپائے گئے کھلونے کو فعال طور پر تلاش کرتا ہے، وہ کیا ظاہر کرنا شروع کر رہا ہے؟",
+  "question_ur": "ایک شیر خوار بچہ جو کپڑے کے نیچے چھپائے گئے کھلونے کو سرگرمی سے تلاش کرتا ہے، وہ کیا ظاہر کرنا شروع کر رہا ہے؟",
   "question_roman": "Ek sheer khwar bachcha jo kapde ke neeche chhupaye gaye khilone ko faal taur par talaash karta hai, woh kya zahir karna shuru kar raha hai?",
   "options_ur": [
    "سینٹریشن",
@@ -2813,7 +2813,7 @@
   "question_roman": "Piaget ne centration ki istilah kis rujhan ke liye istemal ki?",
   "options_ur": [
    "ذہنی عمل کو الٹ دینا",
-   "اشیاء کی نمائندگی کے لیے علامات استعمال کرنا",
+   "چیزوں کی نمائندگی کے لیے علامات استعمال کرنا",
    "کسی صورتحال کی ایک خصوصیت پر توجہ دینا اور باقی کو نظر انداز کرنا",
    "تجریدی خیالات کے بارے میں سوچنا"
   ],
@@ -3083,7 +3083,7 @@
    "Makoosiat",
    "Khud markaziat"
   ],
-  "explanation_ur": "معکوسیت کسی عمل کو ذہنی طور پر ختم کرنے کی صلاحیت ہے، جو بچے کو یہ سمجھنے میں مدد دیتی ہے کہ بدلی ہوئی شکل یا ترتیب اپنی پہلی حالت میں واپس آ سکتی ہے۔",
+  "explanation_ur": "معکوسیت کسی عمل کو ذہنی طور پر الٹنے کی صلاحیت ہے، جو بچے کو یہ سمجھنے میں مدد دیتی ہے کہ بدلی ہوئی شکل یا ترتیب اپنی پہلی حالت میں واپس آ سکتی ہے۔",
   "explanation_roman": "Makoosiat kisi amal ko zehni taur par khatam karne ki salaahiyat hai, jo bachche ko yeh samajhne mein madad deti hai ke badli hui shakl ya tarteeb apni pehli haalat mein wapas aa sakti hai.",
   "post": [
    "zamungkor",
@@ -3239,7 +3239,7 @@
    "Makoosiat",
    "Silsila bandi"
   ],
-  "explanation_ur": "اینمزم قبل از عملیاتی رجحان ہے جس میں بے جان اشیاء کو زندگی جیسی خصوصیات، جیسے احساسات، دی جاتی ہیں۔",
+  "explanation_ur": "اینمزم قبل از عملیاتی رجحان ہے جس میں بے جان چیزوں کو زندگی جیسی خصوصیات، جیسے احساسات، دی جاتی ہیں۔",
   "explanation_roman": "Animism qabl az amaliyati rujhan hai jis mein be-jaan ashya ko zindagi jaisi khusoosiyat, jaise ehsaasaat, di jati hain.",
   "post": [
    "zamungkor",
@@ -3277,7 +3277,7 @@
  },
  {
   "id": "PED-064",
-  "question_ur": "قبل از عملیاتی بچے کی یہ ناکامی کہ وہ نہیں سمجھتا کہ کسی عمل کو ذہنی طور پر ختم کیا جا سکتا ہے، کیا کہلاتی ہے؟",
+  "question_ur": "قبل از عملیاتی بچے کی یہ ناکامی کہ وہ نہیں سمجھتا کہ کسی عمل کو ذہنی طور پر الٹا جا سکتا ہے، کیا کہلاتی ہے؟",
   "question_roman": "Qabl az amaliyati bachche ki yeh nakaami ke woh nahi samajhta ke kisi amal ko zehni taur par khatam kiya ja sakta hai, kya kehlati hai?",
   "options_ur": [
    "سینٹریشن",
@@ -3329,7 +3329,7 @@
  },
  {
   "id": "PED-065",
-  "question_ur": "چھڑیوں کے ایک مجموعے کو سب سے چھوٹی سے سب سے لمبی تک ترتیب دینا ٹھوس عملیاتی مہارت کی کون سی مثال ہے؟",
+  "question_ur": "چھڑیوں کے ایک مجموعے کو سب سے چھوٹی سے سب سے لمبی تک ترتیب دینا کس ٹھوس عملیاتی مہارت کی مثال ہے؟",
   "question_roman": "Chhadiyon ke ek majmooe ko sab se chhoti se sab se lambi tak tarteeb dena thoos amaliyati maharat ki kaun si misaal hai?",
   "options_ur": [
    "اینمزم",
@@ -3343,7 +3343,7 @@
    "Silsila bandi",
    "Centration"
   ],
-  "explanation_ur": "سلسلہ بندی اشیاء کو کسی خصوصیت، جیسے لمبائی، کے لحاظ سے ترتیب میں رکھنا ہے، اور یہ ٹھوس عملیاتی مرحلے کے دوران پیدا ہوتی ہے۔",
+  "explanation_ur": "سلسلہ بندی چیزوں کو کسی خصوصیت، جیسے لمبائی، کے لحاظ سے ترتیب میں رکھنا ہے، اور یہ ٹھوس عملیاتی مرحلے کے دوران پیدا ہوتی ہے۔",
   "explanation_roman": "Silsila bandi ashya ko kisi khusoosiyat, jaise lambai, ke lihaaz se tarteeb mein rakhna hai, aur yeh thoos amaliyati marhale ke dauraan paida hoti hai.",
   "post": [
    "zamungkor",
@@ -3433,7 +3433,7 @@
  },
  {
   "id": "PED-067",
-  "question_ur": "ایرکسن نے انسانی نشوونما کو کتنے نفسیاتی سماجی مراحل سے گزرنا بیان کیا ہے؟",
+  "question_ur": "ایرکسن نے انسانی نشوونما کے کتنے نفسیاتی سماجی مراحل بیان کیے ہیں؟",
   "question_roman": "Erikson ne insani nashonuma ko kitne psychosocial stages se guzarna bayan kiya hai?",
   "options_ur": [
    "6 مراحل",
@@ -3491,7 +3491,7 @@
    "قربت بمقابلہ تنہائی",
    "پیداواریت بمقابلہ جمود",
    "شناخت بمقابلہ کردار کی الجھن",
-   "محنت بمقابلہ کمتری"
+   "محنت بمقابلہ احساس کمتری"
   ],
   "options_roman": [
    "Qurbat bamuqabla tanhai",
@@ -3647,7 +3647,7 @@
    "پیداواریت بمقابلہ جمود",
    "قربت بمقابلہ تنہائی",
    "انا کی سلامیت بمقابلہ مایوسی",
-   "محنت بمقابلہ کمتری"
+   "محنت بمقابلہ احساس کمتری"
   ],
   "options_roman": [
    "Paidawariyat bamuqabla jamood",
@@ -3751,7 +3751,7 @@
    "انا کی سلامیت بمقابلہ مایوسی",
    "پیداواریت بمقابلہ جمود",
    "قربت بمقابلہ تنہائی",
-   "خودمختاری بمقابلہ شرم اور شک"
+   "خود مختاری بمقابلہ شرم اور شک"
   ],
   "options_roman": [
    "Ana ki salmiyat bamuqabla mayusi",
@@ -3800,10 +3800,10 @@
   "question_ur": "پیداواریت بمقابلہ جمود عام طور پر کس عمر کے دور سے وابستہ ہے؟",
   "question_roman": "Paidawariyat bamuqabla jamood aam tor par kis umar ke dor se wabasta hai?",
   "options_ur": [
-   "لگ بھگ 18 سے 25 سال",
-   "لگ بھگ 25 سے 40 سال",
-   "لگ بھگ 6 سے 12 سال",
-   "لگ بھگ 40 سے 65 سال"
+   "تقریباً 18 سے 25 سال",
+   "تقریباً 25 سے 40 سال",
+   "تقریباً 6 سے 12 سال",
+   "تقریباً 40 سے 65 سال"
   ],
   "options_roman": [
    "Taqreeban 18 se 25 saal",
@@ -3811,7 +3811,7 @@
    "Taqreeban 6 se 12 saal",
    "Taqreeban 40 se 65 saal"
   ],
-  "explanation_ur": "پیداواریت بمقابلہ جمود درمیانی عمر کی کشمکش ہے، لگ بھگ 40 سے 65 سال کی عمر۔",
+  "explanation_ur": "پیداواریت بمقابلہ جمود درمیانی عمر کی کشمکش ہے، تقریباً 40 سے 65 سال کی عمر۔",
   "explanation_roman": "Paidawariyat bamuqabla jamood darmiyani umar ka tanaza hai, taqreeban 40 se 65 saal ki umar.",
   "post": [
    "zamungkor",
@@ -3853,9 +3853,9 @@
   "question_roman": "Wafadari woh khoobi hai jo kis psychosocial tanaza ke kamyab hal ke baad paida hoti hai?",
   "options_ur": [
    "قربت بمقابلہ تنہائی",
-   "محنت بمقابلہ کمتری",
+   "محنت بمقابلہ احساس کمتری",
    "شناخت بمقابلہ کردار کی الجھن",
-   "پہل بمقابلہ احساس جرم"
+   "پہل قدمی بمقابلہ احساس جرم"
   ],
   "options_roman": [
    "Qurbat bamuqabla tanhai",
@@ -3967,7 +3967,7 @@
    "6 stages",
    "7 stages"
   ],
-  "explanation_ur": "کوہلبرگ نے کل 6 مراحل بیان کیے، ہر درجے میں 2 مراحل اور کل 3 درجے ہیں۔",
+  "explanation_ur": "کوہلبرگ نے کل 6 مراحل بیان کیے ہیں، 3 درجوں میں سے ہر درجے میں 2 مراحل۔",
   "explanation_roman": "Kohlberg ne kul 6 stages bayan kiye, har level mein 2 stages aur kul 3 levels hain.",
   "post": [
    "zamungkor",
@@ -4057,7 +4057,7 @@
  },
  {
   "id": "PED-079",
-  "question_ur": "کسی عمل کو اس لیے درست سمجھنا کہ وہ اپنی ضروریات کو پورا کرتا ہے، کس مرحلے کو بیان کرتا ہے؟",
+  "question_ur": "کسی عمل کو اس لیے درست سمجھنا کہ وہ اپنی ضروریات کو پورا کرتا ہے، کس مرحلے کو ظاہر کرتا ہے؟",
   "question_roman": "Kisi amal ko is liye durust samajhna ke woh apni zarooriyat ko poora karta hai, kis stage ko bayan karta hai?",
   "options_ur": [
    "اطاعت اور سزا کا رجحان",
@@ -4369,7 +4369,7 @@
  },
  {
   "id": "PED-085",
-  "question_ur": "وائیگاٹسکی کے نظریے میں، زیادہ جاننے والے دوسرے فرد کی بہترین وضاحت کون سی ہے؟",
+  "question_ur": "وائیگاٹسکی کے نظریے میں، کون سا بیان زیادہ جاننے والے دوسرے فرد کی بہترین وضاحت کرتا ہے؟",
   "question_roman": "Vygotsky ke nazariye mein, more knowledgeable other ki behtareen wazahat kaun si hai?",
   "options_ur": [
    "وہ سیکھنے والا جو بغیر کسی رہنمائی کے مکمل طور پر اکیلے کام کرتا ہے",
@@ -4421,7 +4421,7 @@
  },
  {
   "id": "PED-086",
-  "question_ur": "وہ کام جو بچہ بالغ کی رہنمائی کے ساتھ بھی مکمل نہیں کر سکتا، زون آف پراکسیمل ڈیولپمنٹ کے لحاظ سے کہاں آتا ہے؟",
+  "question_ur": "وہ کام جو بچہ بالغ کی رہنمائی کے ساتھ بھی مکمل نہیں کر سکتا، قربِ نشوونما کے زون کے لحاظ سے کہاں آتا ہے؟",
   "question_roman": "Woh kaam jo bachcha baaligh ki rehnumaai ke saath bhi mukammal nahin kar sakta, Zone of Proximal Development ke lihaaz se kahaan aata hai?",
   "options_ur": [
    "زون سے اوپر، جہاں رہنمائی بھی ابھی مدد نہیں کر سکتی",
@@ -4473,7 +4473,7 @@
  },
  {
   "id": "PED-087",
-  "question_ur": "جب سیکھنے والا زیادہ خودمختار بن جاتا ہے تو اچھی اسکیفولڈنگ میں کیا تبدیلی آنی چاہیے؟",
+  "question_ur": "جب سیکھنے والا زیادہ خودمختار بن جاتا ہے تو موثر سکیفولڈنگ میں کیا تبدیلی آنی چاہیے؟",
   "question_roman": "Jab seekhne wala ziyada khudmukhtaar ban jata hai to achchhi scaffolding mein kya tabdeeli aani chahiye?",
   "options_ur": [
    "وہ ہر سبق کے لیے بالکل ویسی ہی رہنی چاہیے",
@@ -4487,7 +4487,7 @@
    "Usay waqt ke saath ziyada mazboot aur ziyada tafseeli hona chahiye",
    "Usay fauran tehreeri imtehaan se badal dena chahiye"
   ],
-  "explanation_ur": "اسکیفولڈنگ اپنی نوعیت سے عارضی ہوتی ہے، اس لیے مدد کو مرحلہ وار کم کیا جاتا ہے جیسے جیسے سیکھنے والا مہارت حاصل کرتا ہے اور کم مدد سے کام کر سکتا ہے۔",
+  "explanation_ur": "سکیفولڈنگ اپنی نوعیت سے عارضی ہوتی ہے، اس لیے مدد کو مرحلہ وار کم کیا جاتا ہے جیسے جیسے سیکھنے والا مہارت حاصل کرتا ہے اور کم مدد سے کام کر سکتا ہے۔",
   "explanation_roman": "Scaffolding apni noiyat se aarzi hoti hai, is liye madad ko marhala waar kam kiya jata hai jaise jaise seekhne wala mahaarat haasil karta hai aur kam madad se kaam kar sakta hai.",
   "post": [
    "zamungkor",
@@ -4580,9 +4580,9 @@
   "question_ur": "وہ بچہ جو مشکل پہیلی حل کرتے ہوئے اپنے اعمال کی رہنمائی کے لیے بلند آواز سے بولتا ہے، کس کی مثال پیش کر رہا ہے؟",
   "question_roman": "Woh bachcha jo mushkil paheli hal karte hue apne aamaal ki rehnumaai ke liye buland aawaaz se bolta hai, kis ki misaal pesh kar raha hai?",
   "options_ur": [
-   "سماجی اسپیچ جو دوستوں سے بات چیت کے لیے استعمال ہوتی ہے",
-   "اندرونی اسپیچ جو خاموش سوچ میں استعمال ہوتی ہے",
-   "پرائیویٹ اسپیچ جو سوچ کی رہنمائی کے لیے استعمال ہوتی ہے",
+   "سماجی گفتگو جو دوستوں سے بات چیت کے لیے استعمال ہوتی ہے",
+   "اندرونی گفتگو جو خاموش سوچ میں استعمال ہوتی ہے",
+   "نجی گفتگو جو سوچ کی رہنمائی کے لیے استعمال ہوتی ہے",
    "خاموش مطالعہ جو حقائق جمع کرنے کے لیے استعمال ہوتا ہے"
   ],
   "options_roman": [
@@ -4591,7 +4591,7 @@
    "Private speech jo soch ki rehnumaai ke liye istemaal hoti hai",
    "Khaamosh mutaala jo haqaiq jama karne ke liye istemaal hota hai"
   ],
-  "explanation_ur": "پرائیویٹ اسپیچ بلند آواز سے خود سے کی جانے والی گفتگو ہے، اور وائیگاٹسکی اسے بچوں کے اپنی سوچ اور رویے کو منظم کرنے کا طریقہ سمجھتا تھا۔",
+  "explanation_ur": "نجی گفتگو خود سے بلند آواز میں بات کرنا ہے، اور وائیگاٹسکی اسے بچوں کے اپنی سوچ اور رویے کو منظم کرنے کا طریقہ سمجھتا تھا۔",
   "explanation_roman": "Private speech buland aawaaz se khud se ki jaane wali guftagu hai, aur Vygotsky isay bachchon ke apni soch aur rawaiye ko munazzam karne ka tareeqa samajhta tha.",
   "post": [
    "zamungkor",
@@ -4634,7 +4634,7 @@
   "options_ur": [
    "ہجے کے امتحانات کے لیے الفاظ کی فہرستیں حفظ کرنا",
    "سماجی رابطے کے ذریعے سوچ اور ذہنی نشوونما",
-   "آزادانہ نشست کے کام کے دوران بچوں کو خاموش رکھنا",
+   "آزادانہ طور پر میز پر کیے جانے والے کام کے دوران بچوں کو خاموش رکھنا",
    "بالغ کی رہنمائی کی ضرورت کو ختم کرنا"
   ],
   "options_roman": [
@@ -4643,7 +4643,7 @@
    "Aazaadaana nashist ke kaam ke dauraan bachchon ko khaamosh rakhna",
    "Baaligh ki rehnumaai ki zaroorat ko khatam karna"
   ],
-  "explanation_ur": "وائیگاٹسکی زبان کو سوچ کا مرکزی اوزار سمجھتا تھا، کیونکہ دوسروں سے گفتگو اس بات کو تشکیل دیتی ہے کہ بچے کیسے سوچتے ہیں، منصوبہ بناتے ہیں اور یاد رکھتے ہیں۔",
+  "explanation_ur": "وائیگاٹسکی زبان کو سوچ کا مرکزی اوزار سمجھتا تھا، کیونکہ دوسروں سے گفتگو بچوں کے سوچنے، منصوبہ بنانے اور یاد رکھنے کے انداز کو تشکیل دیتی ہے۔",
   "explanation_roman": "Vygotsky zabaan ko soch ka markazi auzaar samajhta tha, kyunke doosron se guftagu is baat ko tashkeel deti hai ke bachche kaise sochte hain, mansooba banate hain aur yaad rakhte hain.",
   "post": [
    "zamungkor",
@@ -4681,10 +4681,10 @@
  },
  {
   "id": "PED-091",
-  "question_ur": "وائیگاٹسکی کے نشوونما کے بیان میں، اندرونی اسپیچ گفتگو کی کس پہلی شکل سے بنتی ہے؟",
+  "question_ur": "وائیگاٹسکی کے نشوونما کے بیان میں، اندرونی گفتگو گفتگو کی کس پہلی شکل سے بنتی ہے؟",
   "question_roman": "Vygotsky ke nashonuma ke bayaan mein, inner speech guftagu ki kis pehli shakal se banti hai?",
   "options_ur": [
-   "پرائیویٹ اسپیچ جو خود سے بلند آواز سے بولی جاتی ہے",
+   "نجی گفتگو جو خود سے بلند آواز سے بولی جاتی ہے",
    "تحریری گفتگو جو نصابی کتابوں کی نقل سے سیکھی جاتی ہے",
    "خاموش گفتگو جو صرف امتحانات میں استعمال ہوتی ہے",
    "رسمی گفتگو جو عوامی پیشکشوں میں استعمال ہوتی ہے"
@@ -4695,7 +4695,7 @@
    "Khaamosh guftagu jo sirf imtehaanaat mein istemaal hoti hai",
    "Rasmi guftagu jo awaami peshkashon mein istemaal hoti hai"
   ],
-  "explanation_ur": "وائیگاٹسکی نے سماجی اسپیچ سے پرائیویٹ اسپیچ اور پھر اندرونی اسپیچ تک کا راستہ بیان کیا، جو خود کی طرف ہدایت شدہ خاموش سوچ بن جاتی ہے۔",
+  "explanation_ur": "وائیگاٹسکی نے سماجی گفتگو سے نجی گفتگو اور پھر اندرونی گفتگو تک کا راستہ بیان کیا، جو اپنے آپ سے مخاطب خاموش سوچ بن جاتی ہے۔",
   "explanation_roman": "Vygotsky ne social speech se private speech aur phir inner speech tak ka raasta bayaan kiya, jo khud ki taraf hidaayat shuda khaamosh soch ban jati hai.",
   "post": [
    "zamungkor",
@@ -4747,7 +4747,7 @@
    "Baalighon se alaihdagi taake bachcha akele daryaaft kar sake",
    "Auzaar, aqdaar aur sochne ke tareeqe jo baraadari mein mushtarak hote hain"
   ],
-  "explanation_ur": "ثقافت زبان اور عددی نظام جیسے نفسیاتی اوزار فراہم کرتی ہے، ساتھ ہی اقدار اور روایات بھی، جو اس بات کو تشکیل دیتے ہیں کہ بچہ کیسے سوچتا ہے۔",
+  "explanation_ur": "ثقافت زبان اور عددی نظام جیسے نفسیاتی اوزار فراہم کرتی ہے، ساتھ ہی اقدار اور روایات بھی، جو بچے کے سوچنے کے انداز کو تشکیل دیتے ہیں۔",
   "explanation_roman": "Saqaafat zabaan aur adadi nizaam jaise nafsiati auzaar faraham karti hai, saath hi aqdaar aur rawaayaat bhi, jo is baat ko tashkeel dete hain ke bachcha kaise sochta hai.",
   "post": [
    "zamungkor",
@@ -4799,7 +4799,7 @@
    "Madad ke saath aazaadaana salaahiyat se zara aage ke kaamon ki koshish karna",
    "Un kaamon par akele kaam karna jo pehle se bohat aasaan hain"
   ],
-  "explanation_ur": "زیادہ قابل ہم جماعت زون آف پراکسیمل ڈیولپمنٹ کے اندر رہنما کا کام کرتا ہے، اس لیے سیکھنے والا مدد سے کامیاب ہو سکتا ہے اور بعد میں اکیلے کامیاب ہو سکتا ہے۔",
+  "explanation_ur": "زیادہ قابل ہم جماعت قربِ نشوونما کے زون کے اندر رہنما کا کام کرتا ہے، اس لیے سیکھنے والا مدد سے کامیاب ہو سکتا ہے اور بعد میں اکیلے کامیاب ہو سکتا ہے۔",
   "explanation_roman": "Ziyada qaabil hum jamaat Zone of Proximal Development ke andar rehnuma ka kaam karta hai, is liye seekhne wala madad se kaamyab ho sakta hai aur baad mein akele kaamyab ho sakta hai.",
   "post": [
    "zamungkor",
@@ -4837,7 +4837,7 @@
  },
  {
   "id": "PED-094",
-  "question_ur": "تحریری سبق کے دوران اسکیفولڈنگ کی سب سے واضح مثال کون سا کلاس روم عمل ہے؟",
+  "question_ur": "تحریری سبق کے دوران سکیفولڈنگ کی سب سے واضح مثال کلاس روم کا کون سا عمل ہے؟",
   "question_roman": "Tehreeri sabq ke dauraan scaffolding ki sab se waazeh misaal kaun sa classroom amal hai?",
   "options_ur": [
    "سیکھنے والوں سے بغیر کسی رہنمائی کے مکمل مضمون لکھنے کو کہنا",
@@ -4851,7 +4851,7 @@
    "Sabq khatam hone ke baad hi mukammal shuda kaam ki jaanch karna",
    "Nisaabi kitaab ko buland aawaaz se parhna jabke seekhne wale khaamoshi se sunte hain"
   ],
-  "explanation_ur": "اشارے، رہنما سوالات، نمونے اور چھوٹے مرحلے اسکیفولڈنگ کی عام شکلیں ہیں، کیونکہ وہ سیکھنے والے کی مدد کرتے ہیں جبکہ سیکھنے والا خود سوچتا رہتا ہے۔",
+  "explanation_ur": "اشارے، رہنما سوالات، نمونے اور چھوٹے مرحلے سکیفولڈنگ کی عام شکلیں ہیں، کیونکہ وہ سیکھنے والے کی مدد کرتے ہیں جبکہ سیکھنے والا خود سوچتا رہتا ہے۔",
   "explanation_roman": "Ishaare, rehnuma sawaalaat, namoone aur chhote marhale scaffolding ki aam shaklein hain, kyunke woh seekhne wale ki madad karte hain jabke seekhne wala khud sochta rehta hai.",
   "post": [
    "zamungkor",
@@ -4892,7 +4892,7 @@
   "question_ur": "وائیگاٹسکی کا یہ خیال کہ اچھی تدریس کو نشوونما سے آگے ہونا چاہیے، اس کا مطلب ہے کہ ہدایت بنیادی طور پر کس سطح پر ہونی چاہیے؟",
   "question_roman": "Vygotsky ka yeh khayaal ke achchhi tadrees ko nashonuma se aage hona chahiye, is ka matlab hai ke hidaayat bunyadi tor par kis satah par honi chahiye?",
   "options_ur": [
-   "زون آف پراکسیمل ڈیولپمنٹ کے اندر کے کام، جو سیکھنے والے کی اکیلے کرنے کی صلاحیت سے ذرا آگے ہوں",
+   "قربِ نشوونما کے زون کے اندر کے کام، جو سیکھنے والے کی اکیلے کرنے کی صلاحیت سے ذرا آگے ہوں",
    "وہ کام جن پر سیکھنے والا بغیر کسی مدد کے پہلے سے عبور حاصل کر چکا ہو",
    "زون سے بہت آگے کے کام جن کی کوئی رہنمائی ابھی مدد نہیں کر سکتی",
    "صرف نصابی کتاب کے سب سے آسان حصے سے منتخب کردہ کام"
@@ -4903,7 +4903,7 @@
    "Zone se bohat aage ke kaam jin ki koi rehnumaai abhi madad nahin kar sakti",
    "Sirf nisaabi kitaab ke sab se aasaan hisse se muntakhab kardah kaam"
   ],
-  "explanation_ur": "جب تدریس زون آف پراکسیمل ڈیولپمنٹ کو ہدف بناتی ہے تو سیکھنا نشوونما کو آگے لے جاتا ہے، بجائے اس کے کہ سیکھنے والے کے اکیلے تیار ہونے کا انتظار کیا جائے۔",
+  "explanation_ur": "جب تدریس قربِ نشوونما کے زون کو ہدف بناتی ہے تو سیکھنا نشوونما کو آگے لے جاتا ہے، بجائے اس کے کہ سیکھنے والے کے اکیلے تیار ہونے کا انتظار کیا جائے۔",
   "explanation_roman": "Jab tadrees Zone of Proximal Development ko hadaf banati hai to seekhna nashonuma ko aage le jata hai, bajaaye is ke ke seekhne wale ke akele tayyar hone ka intezaar kiya jaaye.",
   "post": [
    "zamungkor",
@@ -4947,7 +4947,7 @@
    "ہر موضوع کو ایک بار پڑھا کر ہمیشہ کے لیے آگے بڑھ جانا",
    "ہر جماعت کا آغاز مکمل طور پر غیر متعلقہ نئے موضوعات سے کرنا",
    "کسی موضوع کی مشکل کو ہر سال بالکل ایک جیسی رکھنا",
-   "سرپل نصاب جس میں موضوعات کو زیادہ گہرائی کے ساتھ دہرایا جاتا ہے"
+   "حلزونی نصاب جس میں موضوعات کو زیادہ گہرائی کے ساتھ دہرایا جاتا ہے"
   ],
   "options_roman": [
    "Har mauzu ko ek baar parha kar hamesha ke liye aage barh jaana",
@@ -4955,7 +4955,7 @@
    "Kisi mauzu ki mushkil ko har saal bilkul ek jaisi rakhna",
    "Spiral curriculum jis mein mauzuaat ko ziyada gehraai ke saath dohraaya jata hai"
   ],
-  "explanation_ur": "سرپل نصاب میں سیکھنے والے اہم خیالات کی طرف بار بار واپس آتے ہیں، ہر بار مشکل اور سمجھ کی زیادہ بلند سطح پر۔",
+  "explanation_ur": "حلزونی نصاب میں سیکھنے والے اہم خیالات کی طرف بار بار واپس آتے ہیں، ہر بار مشکل اور سمجھ کی زیادہ بلند سطح پر۔",
   "explanation_roman": "Spiral curriculum mein seekhne wale aham khayalaat ki taraf baar baar waapas aate hain, har baar mushkil aur samajh ki ziyada buland satah par.",
   "post": [
    "zamungkor",
@@ -4997,7 +4997,7 @@
   "question_roman": "Jooton ke tasme khud jismaani amal kar ke baandhna seekhna Bruner ke numaindagi ke kis andaaz ki misaal hai?",
   "options_ur": [
    "تصویری انداز، جو تصاویر اور بصری صورتوں پر مبنی ہے",
-   "عملی انداز، جو عمل اور جسمانی کرنے پر مبنی ہے",
+   "عملی انداز، جو عمل اور جسمانی کام پر مبنی ہے",
    "علامتی انداز، جو الفاظ اور تجریدی علامتوں پر مبنی ہے",
    "زبانی انداز، جو صرف لیکچر سننے پر مبنی ہے"
   ],
@@ -5007,7 +5007,7 @@
    "Symbolic mode, jo alfaaz aur tajreedhi alaamaton par mabni hai",
    "Verbal mode, jo sirf lecture sunne par mabni hai"
   ],
-  "explanation_ur": "عملی انداز میں جاننا عمل کے ذریعے ہوتا ہے، اس لیے اشیا کو سنبھالنا اور جسمانی اعمال انجام دینا ابتدائی سمجھ کے لیے مرکزی اہمیت رکھتے ہیں۔",
+  "explanation_ur": "عملی انداز میں جاننا عمل کے ذریعے ہوتا ہے، اس لیے چیزوں کو سنبھالنا اور جسمانی اعمال انجام دینا ابتدائی سمجھ کے لیے مرکزی اہمیت رکھتے ہیں۔",
   "explanation_roman": "Enactive mode mein jaanna amal ke zariye hota hai, is liye ashya ko sambhaalna aur jismaani aamaal anjaam dena ibtidaai samajh ke liye markazi ahmiyat rakhte hain.",
   "post": [
    "zamungkor",
@@ -5097,11 +5097,11 @@
  },
  {
   "id": "PED-099",
-  "question_ur": "اشیا یا تصاویر کے بغیر الفاظ، اعداد اور ریاضی کی علامتوں سے مسئلہ حل کرنا برونر کے کس انداز کی مثال ہے؟",
+  "question_ur": "چیزوں یا تصاویر کے بغیر الفاظ، اعداد اور ریاضی کی علامتوں سے مسئلہ حل کرنا برونر کے کس انداز کی مثال ہے؟",
   "question_roman": "Ashya ya tasaveer ke baghair alfaaz, adaad aur riyaazi ki alaamaton se masla hal karna Bruner ke kis andaaz ki misaal hai?",
   "options_ur": [
    "علامتی انداز، جو زبان اور تجریدی علامتوں پر مبنی ہے",
-   "عملی انداز، جو حقیقی اشیا کو سنبھالنے پر مبنی ہے",
+   "عملی انداز، جو حقیقی چیزوں کو سنبھالنے پر مبنی ہے",
    "تصویری انداز، جو خاکوں اور تصاویر پر مبنی ہے",
    "تکراری انداز، جو بار بار جسمانی مشقوں پر مبنی ہے"
   ],
@@ -5201,13 +5201,13 @@
  },
  {
   "id": "PED-101",
-  "question_ur": "دریافتی سیکھنے میں، برونر کے سیکھنے والے سے بنیادی طور پر کس ذریعے سے اصول تک پہنچنے کی توقع کی جاتی ہے؟",
+  "question_ur": "دریافتی سیکھنے میں، برونر کے سیکھنے والے سے بنیادی طور پر کس ذریعے اصول تک پہنچنے کی توقع کی جاتی ہے؟",
   "question_roman": "Discovery learning mein, Bruner ke seekhne wale se bunyadi tor par kis zariye se usool tak pahunchne ki tawaqqa ki jati hai?",
   "options_ur": [
    "لیکچر سے اصول کو لفظ بہ لفظ حفظ کرنا",
    "نصابی کتاب سے حل شدہ جواب کی نقل کرنا",
    "مواد کی کھوج لگا کر اور فعال تحقیق کے ذریعے خیال کو دریافت کرنا",
-   "استاد کے ہر قاعدہ پہلے بیان کرنے کا انتظار کرنا"
+   "استاد کے ہر قاعدے کو پہلے بیان کرنے کا انتظار کرنا"
   ],
   "options_roman": [
    "Lecture se usool ko lafz ba lafz hifz karna",
@@ -5253,11 +5253,11 @@
  },
  {
   "id": "PED-102",
-  "question_ur": "دریافتی سیکھنے کے سبق میں، استاد کا بنیادی کردار سیکھنے والوں کے لیے کیا کرنا ہے؟",
+  "question_ur": "دریافتی سیکھنے کے سبق میں استاد سیکھنے والوں کے لیے بنیادی طور پر کیا کرتا ہے؟",
   "question_roman": "Discovery learning ke sabq mein, ustaad ka bunyadi kirdaar seekhne walon ke liye kya karna hai?",
   "options_ur": [
    "بغیر رکے لیکچر دینا اور تمام سوالات پر پابندی لگانا",
-   "مواد، سوالات اور بروقت اشاروں کے ساتھ کھوج کی رہنمائی کرنا",
+   "مواد، سوالات اور بروقت اشاروں سے کھوج کی رہنمائی کرنا",
    "سیکھنے والوں کے کام شروع کرنے سے پہلے حتمی جواب دے دینا",
    "سیکھنے والوں کو بغیر کسی مواد کے مکمل طور پر اکیلا چھوڑ دینا"
   ],
@@ -5409,7 +5409,7 @@
  },
  {
   "id": "PED-105",
-  "question_ur": "دوستی، پیار اور تعلق کا احساس میسلو کی درجہ بندی کے کس درجے سے تعلق رکھتا ہے؟",
+  "question_ur": "دوستی، پیار اور تعلق کا احساس میسلو کی درجہ بندی کے کس درجے میں آتا ہے؟",
   "question_roman": "Dosti, pyaar aur talluq ka ehsaas Maslow ki hierarchy ke kis level se talluq rakhta hai?",
   "options_ur": [
    "جسمانی ضروریات",
@@ -5513,7 +5513,7 @@
  },
  {
   "id": "PED-107",
-  "question_ur": "اپنی ذاتی صلاحیتوں کو مکمل طور پر استعمال کرنا اور وہ بننا جس کی انسان میں صلاحیت ہے، میسلو کے مطابق کیا کہلاتا ہے؟",
+  "question_ur": "اپنی ذاتی صلاحیت کو مکمل طور پر بروئے کار لانا اور وہ بننا جس کی انسان میں صلاحیت ہے، میسلو کے مطابق کیا کہلاتا ہے؟",
   "question_roman": "Apni zati salahiyaton ko mukammal taur par istemal karna aur woh banna jis ki insan mein salahiyat hai, Maslow ke mutabiq kya kehlata hai?",
   "options_ur": [
    "تحفظ کی ضروریات",
@@ -5617,7 +5617,7 @@
  },
  {
   "id": "PED-109",
-  "question_ur": "وہ سیکھنا جو اس وقت ہوتا ہے جب رویہ اس کے بعد آنے والے نتائج سے بنتا ہے، کیا کہلاتا ہے؟",
+  "question_ur": "وہ سیکھنا جو اس وقت ہوتا ہے جب رویہ اس کے بعد آنے والے نتائج سے تشکیل پاتا ہے، کیا کہلاتا ہے؟",
   "question_roman": "Woh seekhna jo is waqt hota hai jab behavior is ke baad aane wale nataij se banta hai, kya kehlata hai?",
   "options_ur": [
    "کلاسیکی مشروطیت",
@@ -5721,7 +5721,7 @@
  },
  {
   "id": "PED-111",
-  "question_ur": "جب طالب علم کام درست طریقے سے مکمل کرتا ہے تو ناگوار کام ہٹا دینا، جس سے درست کام بڑھ جاتا ہے، کس کی وضاحت کرتا ہے؟",
+  "question_ur": "جب طالب علم کام درست طریقے سے مکمل کرتا ہے تو ناگوار کام ہٹا دینا، جس سے درست کام بڑھ جاتا ہے، کس کی مثال ہے؟",
   "question_roman": "Jab talib-e-ilm kaam durust tareeqe se mukammal karta hai to nagawar kaam hata dena, jis se durust kaam barh jata hai, kis ki wazahat karta hai?",
   "options_ur": [
    "مثبت سزا",
@@ -5735,7 +5735,7 @@
    "Negative reinforcement",
    "Negative punishment"
   ],
-  "explanation_ur": "منفی تقویت رویے کو بڑھاتی ہے جب مطلوبہ رویہ ہوتا ہے تو ناگوار محرک ہٹا دیا جاتا ہے۔",
+  "explanation_ur": "منفی تقویت رویے کو بڑھاتی ہے، جب مطلوبہ رویہ ہوتا ہے تو ناگوار محرک ہٹا دیا جاتا ہے۔",
   "explanation_roman": "Negative reinforcement behavior ko barhati hai jab matlooba behavior hota hai to nagawar stimulus hata diya jata hai.",
   "post": [
    "zamungkor",
@@ -5773,7 +5773,7 @@
  },
  {
   "id": "PED-112",
-  "question_ur": "کون سا نتیجہ رویے کے مستقبل میں ہونے کو کم کرنے کے لیے بنایا جاتا ہے؟",
+  "question_ur": "کون سا نتیجہ رویے کے مستقبل میں دوبارہ ہونے کے امکان کو کم کرتا ہے؟",
   "question_roman": "Kaun sa nateeja behavior ke mustaqbil mein hone ko kam karne ke liye banaya jata hai?",
   "options_ur": [
    "سزا",
@@ -5995,7 +5995,7 @@
    "Superego",
    "Libido"
   ],
-  "explanation_ur": "ایگو حقیقت کے اصول پر کام کرتا ہے اور اڈ کے تقاضوں کو حقیقت پسندانہ اور معاشرتی طور پر قابل قبول طریقوں سے پورا کرنے کی کوشش کرتا ہے۔",
+  "explanation_ur": "ایگو حقیقت کے اصول پر کام کرتا ہے اور اڈ کے تقاضوں کو حقیقت پسندانہ اور سماجی طور پر قابل قبول طریقوں سے پورا کرنے کی کوشش کرتا ہے۔",
   "explanation_roman": "Ego reality principle par kaam karta hai aur id ke taqazon ko haqeeqat pasandana aur muasharti taur par qabil-e-qabool tareeqon se poora karne ki koshish karta hai.",
   "post": [
    "zamungkor",
@@ -6137,7 +6137,7 @@
  },
  {
   "id": "PED-119",
-  "question_ur": "فیلک مرحلے کے دوران، فرائیڈ کے مطابق لذت کا بنیادی مرکز کس طرف منتقل ہوتا ہے؟",
+  "question_ur": "فیلک مرحلے کے دوران، فرائیڈ کے مطابق لذت کا بنیادی مرکز کس پر منتقل ہوتا ہے؟",
   "question_roman": "Phallic stage ke dauran, Freud ke mutabiq lazzat ka buniyadi markaz kis taraf muntaqil hota hai?",
   "options_ur": [
    "منہ اور چوسنا",
@@ -6246,7 +6246,7 @@
   "options_ur": [
    "جسمانی حجم، قد اور وزن میں اضافہ",
    "صرف استدلال اور سوچنے کی مہارتوں میں بہتری",
-   "صرف سماجی برتاؤ اور خیالات میں تبدیلی",
+   "صرف سماجی رویے اور رجحانات میں تبدیلی",
    "صرف اسکولی مضامین کے علم میں اضافہ"
   ],
   "options_roman": [
@@ -6255,7 +6255,7 @@
    "Sirf samaji bartao aur khayalat mein tabdeeli",
    "Sirf school mazameen ke ilm mein izafa"
   ],
-  "explanation_ur": "بڑھوتری کا مطلب جسم کے جسمانی حجم میں قابل پیمائش اضافہ ہے، جیسے قد اور وزن۔",
+  "explanation_ur": "بڑھوتری کا مطلب جسم کے حجم میں قابل پیمائش اضافہ ہے، جیسے قد اور وزن۔",
   "explanation_roman": "Growth ka matlab jism ke jismani size mein qaabil-e-pemaish izafa hai, jaise qad aur wazan.",
   "post": [
    "zamungkor",
@@ -6307,7 +6307,7 @@
    "Sirf school ke imtihani nataij",
    "Sirf qad aur wazan"
   ],
-  "explanation_ur": "نشوونما میں بچے کے تمام پہلوؤں میں مجموعی اور ترقی پذیر تبدیلی شامل ہوتی ہے، جن میں جسمانی، ذہنی، سماجی اور جذباتی بڑھوتری شامل ہے۔",
+  "explanation_ur": "نشوونما بچے کے تمام پہلوؤں میں مجموعی اور ترقی پذیر تبدیلی ہے، جس میں جسمانی، ذہنی، سماجی اور جذباتی بڑھوتری شامل ہے۔",
   "explanation_roman": "Nashonuma mein bachay ke tamam pehluon mein majmooi aur taraqqi pazeer tabdeeli shamil hoti hai, jin mein jismani, zehni, samaji aur jazbati barhotri shamil hai.",
   "post": [
    "zamungkor",
@@ -6348,10 +6348,10 @@
   "question_ur": "بڑھوتری اور نشوونما کے درمیان بنیادی فرق کیا ہے؟",
   "question_roman": "Barhotri aur nashonuma ke darmiyan bunyadi farq kya hai?",
   "options_ur": [
-   "بڑھوتری سیکھی جاتی ہے، جب کہ نشوونما وراثت سے ملتی ہے",
+   "بڑھوتری سیکھی جاتی ہے، جبکہ نشوونما وراثت سے ملتی ہے",
    "بڑھوتری اور نشوونما کا مطلب بالکل ایک ہی عمل ہے",
-   "بڑھوتری کا تعلق بنیادی طور پر جسمانی حجم سے ہے، جب کہ نشوونما کا تعلق تمام پہلوؤں میں مجموعی تبدیلی سے ہے",
-   "بڑھوتری ساری عمر جاری رہتی ہے، جب کہ نشوونما بچپن میں رک جاتی ہے"
+   "بڑھوتری کا تعلق بنیادی طور پر جسمانی حجم سے ہے، جبکہ نشوونما کا تعلق تمام پہلوؤں میں مجموعی تبدیلی سے ہے",
+   "بڑھوتری ساری عمر جاری رہتی ہے، جبکہ نشوونما بچپن میں رک جاتی ہے"
   ],
   "options_roman": [
    "Barhotri seekhi jati hai, jab ke nashonuma wirasat se milti hai",
@@ -6359,7 +6359,7 @@
    "Barhotri ka talluq bunyadi tor par jismani size se hai, jab ke nashonuma ka talluq tamam pehluon mein majmooi tabdeeli se hai",
    "Barhotri sari umar jari rehti hai, jab ke nashonuma bachpan mein ruk jati hai"
   ],
-  "explanation_ur": "بڑھوتری بنیادی طور پر حجم میں جسمانی اور قابل پیمائش اضافہ ہے، جب کہ نشوونما پختگی کی طرف مجموعی تبدیلی کا وسیع تر عمل ہے۔",
+  "explanation_ur": "بڑھوتری بنیادی طور پر حجم میں جسمانی اور قابل پیمائش اضافہ ہے، جبکہ نشوونما پختگی کی طرف مجموعی تبدیلی کا وسیع تر عمل ہے۔",
   "explanation_roman": "Barhotri bunyadi tor par size mein jismani aur qaabil-e-pemaish izafa hai, jab ke nashonuma pukhtagi ki taraf majmooi tabdeeli ka wasee tar amal hai.",
   "post": [
    "zamungkor",
@@ -6819,7 +6819,7 @@
    "عمر کے ساتھ وراثتی خصوصیات کا خودکار ظہور",
    "صرف جسمانی بڑھوتری سے پیدا ہونے والی تبدیلی",
    "صرف وراثت سے پیدا ہونے والی تبدیلی",
-   "تجربے اور مشق سے پیدا ہونے والی رویے میں نسبتا پائیدار تبدیلی"
+   "تجربے اور مشق سے پیدا ہونے والی رویے میں نسبتاً پائیدار تبدیلی"
   ],
   "options_roman": [
    "Umar ke sath wirasati khususiyat ka khudkar zahoor",
@@ -6827,7 +6827,7 @@
    "Sirf wirasat se paida honay wali tabdeeli",
    "Tajarbay aur mashq se paida honay wali bartao mein nisabatan paedar tabdeeli"
   ],
-  "explanation_ur": "سیکھنا رویے میں نسبتا پائیدار تبدیلی ہے جو تجربے، مشق اور ماحول سے تعامل کے نتیجے میں پیدا ہوتی ہے۔",
+  "explanation_ur": "سیکھنا رویے میں نسبتاً پائیدار تبدیلی ہے جو تجربے، مشق اور ماحول سے تعامل کے نتیجے میں پیدا ہوتی ہے۔",
   "explanation_roman": "Seekhna bartao mein nisabatan paedar tabdeeli hai jo tajarbay, mashq aur mahol se taamul ke nateejay mein paida hoti hai.",
   "post": [
    "zamungkor",
@@ -6879,7 +6879,7 @@
    "Mashq se zarb ke jadwal seekhna",
    "Mashq se cycle chalana seekhna"
   ],
-  "explanation_ur": "بلوغت کے وقت جسمانی تبدیلیاں عمر کے ساتھ قدرتی طور پر ظاہر ہوتی ہیں جب وراثتی نمونے پختہ ہوتے ہیں، جب کہ پڑھنا، جدول اور سائیکل چلانا تدریس اور مشق سے سیکھے جاتے ہیں۔",
+  "explanation_ur": "بلوغت کے وقت جسمانی تبدیلیاں عمر کے ساتھ قدرتی طور پر ظاہر ہوتی ہیں جب وراثتی نمونے پختہ ہوتے ہیں، جبکہ پڑھنا، جدول اور سائیکل چلانا تدریس اور مشق سے سیکھے جاتے ہیں۔",
   "explanation_roman": "Balooghat ke waqt jismani tabdeelian umar ke sath qudrati tor par zahir hoti hain jab wirasati namoonay pukhta hotay hain, jab ke parhna, jadwal aur cycle chalana tadrees aur mashq se seekhay jatay hain.",
   "post": [
    "zamungkor",
@@ -7021,7 +7021,7 @@
  },
  {
   "id": "PED-136",
-  "question_ur": "بچے کی نشوونما میں ماحول میں شامل ہے:",
+  "question_ur": "بچے کی نشوونما کے ماحول میں کیا شامل ہے؟",
   "question_roman": "Bachay ki nashonuma mein mahol mein shamil hai:",
   "options_ur": [
    "صرف والدین سے وراثت میں ملنے والے جینز",
@@ -7035,7 +7035,7 @@
    "Sirf wirasati namoonon ki pukhtagi",
    "Khandan, school, ghizaiyat, saqafat aur tamam deegar beruni asraat"
   ],
-  "explanation_ur": "ماحول میں حمل کے بعد بچے پر اثر ڈالنے والا ہر بیرونی اثر شامل ہے، جن میں گھر، اسکول، غذائیت، سماجی زندگی اور ثقافت شامل ہیں۔",
+  "explanation_ur": "ماحول میں حمل کے بعد بچے پر اثر ڈالنے والے تمام بیرونی اثرات شامل ہیں، جیسے گھر، اسکول، غذائیت، سماجی زندگی اور ثقافت۔",
   "explanation_roman": "Mahol mein hamal ke baad bachay par asar dalnay wala har beruni asar shamil hai, jin mein ghar, school, ghizaiyat, samaji zindagi aur saqafat shamil hain.",
   "post": [
    "zamungkor",
@@ -7073,7 +7073,7 @@
  },
  {
   "id": "PED-137",
-  "question_ur": "کون سا بیان بہترین طور پر بیان کرتا ہے کہ وراثت اور ماحول نشوونما میں ایک ساتھ کیسے کام کرتے ہیں؟",
+  "question_ur": "کون سا بیان وراثت اور ماحول کے نشوونما میں ایک ساتھ کام کرنے کی بہترین وضاحت کرتا ہے؟",
   "question_roman": "Kaun sa bayan behtareen tor par bayan karta hai ke wirasat aur mahol nashonuma mein aik sath kaise kaam kartay hain?",
   "options_ur": [
    "وراثت صلاحیت فراہم کرتی ہے، اور ماحول تجربے کے ذریعے اس صلاحیت کو عملی جامہ پہنانے میں مدد کرتا ہے",
@@ -7347,7 +7347,7 @@
    "Mental age aur chronological age ko jama kar ke 100 se multiply karna",
    "Mental age ko chronological age par divide kar ke 10 se multiply karna"
   ],
-  "explanation_ur": "ولیم سٹرن نے یہ فارمولا پیش کیا تھا، اور 100 کا اسکور اوسط مانا جاتا ہے۔",
+  "explanation_ur": "ولیم سٹرن نے یہ فارمولا پیش کیا تھا، اور 100 نمبر اوسط مانا جاتا ہے۔",
   "explanation_roman": "William Stern ne ye formula propose kiya tha, aur 100 ka score average mana jata hai.",
   "post": [
    "zamungkor",
@@ -7385,7 +7385,7 @@
  },
  {
   "id": "PED-143",
-  "question_ur": "سپیئرمین نے تمام ذہنی کاموں میں مشترک عنصر کو کس نام سے پکارا؟",
+  "question_ur": "سپیئرمین نے تمام ذہنی کاموں میں مشترک عنصر کو کون سا نام دیا؟",
   "question_roman": "Spearman ne tamam zehni tasks mein mushtarak factor ko kis naam se pukara?",
   "options_ur": [
    "مخصوص ذہانت",
@@ -7437,7 +7437,7 @@
  },
  {
   "id": "PED-144",
-  "question_ur": "ماضی کی سیکھی ہوئی باتوں پر انحصار کیے بغیر استدلال کرنے اور نئے مسائل حل کرنے کی صلاحیت کو کس قسم کی ذہانت کہا جاتا ہے؟",
+  "question_ur": "پہلے سے سیکھے ہوئے علم پر انحصار کیے بغیر استدلال کرنے اور نئے مسائل حل کرنے کی صلاحیت کو کس قسم کی ذہانت کہا جاتا ہے؟",
   "question_roman": "Maazi ki seekhi hui baaton par inhisar kiye baghair reasoning karne aur naye problems solve karne ki salahiyat ko kis qism ki intelligence kaha jata hai?",
   "options_ur": [
    "متبلور ذہانت",
@@ -7749,7 +7749,7 @@
  },
  {
   "id": "PED-150",
-  "question_ur": "وہ رقاص یا کھلاڑی جو جسمانی حرکت کے ذریعے بہتر سیکھتا ہے، کس ذہانت کو ظاہر کرتا ہے؟",
+  "question_ur": "وہ رقاص یا کھلاڑی جو جسمانی حرکت کے ذریعے سب سے بہتر سیکھتا ہے، کس ذہانت کو ظاہر کرتا ہے؟",
   "question_roman": "Wo dancer ya athlete jo body movement ke zariye behtar seekhta hai, kis intelligence ko zahir karta hai?",
   "options_ur": [
    "موسیقی ذہانت",
@@ -8335,7 +8335,7 @@
    "Extrinsic motivation",
    "Personality trait"
   ],
-  "explanation_ur": "بیرونی تحریک سیکھنے والے کے باہر سے آتی ہے، جیسے نمبر، تعریف، انعام یا سزا سے بچنا۔ سرگرمی بیرونی انعام کے لیے کی جاتی ہے، نہ کہ اپنی خوشی کے لیے۔",
+  "explanation_ur": "بیرونی تحریک سیکھنے والے کے باہر سے آتی ہے، جیسے نمبر، تعریف، انعام یا سزا سے بچنا۔ سرگرمی بیرونی انعام کے لیے کی جاتی ہے، سرگرمی کی اپنی خاطر نہیں۔",
   "explanation_roman": "Extrinsic motivation seekhnay walay ke bahar se aati hai, jaisay number, tareef, inaam ya saza se bachna. Sargarmi bahari inaam ke liye ki jati hai, na ke apni khushi ke liye.",
   "post": [
    "zamungkor",
@@ -8373,7 +8373,7 @@
  },
  {
   "id": "PED-162",
-  "question_ur": "جب استاد کسی شاگرد کے گھر کا کام اچھے طریقے سے مکمل کرنے پر فوراً ایک ستارہ دیتا ہے، تو ستارے کو بہتر طور پر کیا کہا جائے گا؟",
+  "question_ur": "جب استاد کسی شاگرد کے گھر کا کام اچھے طریقے سے مکمل کرنے پر فوراً ایک ستارہ دیتا ہے، تو ستارے کو کیا کہا جائے گا؟",
   "question_roman": "Jab ustad kisi shagird ke ghar ka kaam achay tareeqay se mukammal karnay par foran aik sitara deta hai, to sitaray ko behtar taur par kya kaha jaye ga?",
   "options_ur": [
    "سزا",
@@ -8387,7 +8387,7 @@
    "Aadat",
    "Reward"
   ],
-  "explanation_ur": "انعام مطلوبہ رویے کے بعد دیا جانے والا خوشگوار نتیجہ ہے جو اس رویے کو دوبارہ دہرانے کی ترغیب دیتا ہے۔ ستارہ اچھے کام کی قدر کرتا ہے اور شاگرد کو اسے دہرانے کی تحریک دیتا ہے۔",
+  "explanation_ur": "انعام مطلوبہ رویے کے بعد دیا جانے والا خوشگوار نتیجہ ہے جو اس رویے کو دہرانے کی ترغیب دیتا ہے۔ ستارہ اچھے کام کی قدر کرتا ہے اور شاگرد کو اسے دہرانے کی تحریک دیتا ہے۔",
   "explanation_roman": "Reward matlooba ravayye ke baad diya janay wala khushgawar nateeja hai jo is ravayye ko dobara dohranay ki targheeb deta hai. Sitara achay kaam ki qadar karta hai aur shagird ko usay dohranay ki motivation deta hai.",
   "post": [
    "zamungkor",
@@ -8439,7 +8439,7 @@
    "Seekhnay walay ka tajassus poora karna",
    "Sabaq ke mawaad ki yaaddasht ko mazboot karna"
   ],
-  "explanation_ur": "سزا ناپسندیدہ رویے کے بعد ناخوشگوار نتیجہ دیتی ہے یا خوشگوار چیز ہٹا لیتی ہے، تاکہ وہ رویہ کم ممکن ہو جائے۔ ناخوشگوار کام ہٹا کر رویے کو بڑھانا منفی تقویت ہے، سزا نہیں۔",
+  "explanation_ur": "سزا ناپسندیدہ رویے کے بعد ناخوشگوار نتیجہ دیتی ہے یا خوشگوار چیز ہٹا لیتی ہے، تاکہ اس رویے کا امکان کم ہو جائے۔ ناخوشگوار کام ہٹا کر رویے کو بڑھانا منفی تقویت ہے، سزا نہیں۔",
   "explanation_roman": "Saza napasandeeda ravayye ke baad nakhushgawar nateeja deti hai ya khushgawar cheez hata leti hai, taake woh ravayya kam mumkin ho jaye. Nakhushgawar kaam hata kar ravayye ko barhana negative reinforcement hai, saza nahi.",
   "post": [
    "zamungkor",
@@ -8477,7 +8477,7 @@
  },
  {
   "id": "PED-164",
-  "question_ur": "تحریک کے نظریے میں، ترغیب کو بہتر طور پر کس طرح سمجھا جاتا ہے؟",
+  "question_ur": "تحریک کے نظریے میں ترغیب سے کیا مراد ہے؟",
   "question_roman": "Motivation ke nazriye mein, incentive ko behtar taur par kis tarah samjha jata hai?",
   "options_ur": [
    "بھوک جیسی اندرونی جسمانی ضرورت",
@@ -8581,7 +8581,7 @@
  },
  {
   "id": "PED-166",
-  "question_ur": "جو استاد شاگردوں کے درمیان انفرادی اختلافات کو تسلیم کرتا ہے، وہ سب سے زیادہ ممکنہ طور پر کیا کرے گا؟",
+  "question_ur": "جو استاد شاگردوں کے درمیان انفرادی اختلافات کو تسلیم کرتا ہے، اس کے کیا کرنے کا سب سے زیادہ امکان ہے؟",
   "question_roman": "Jo ustad shagirdon ke darmiyan individual differences ko tasleem karta hai, woh sab se zyada mumkinah taur par kya karay ga?",
   "options_ur": [
    "ہر شاگرد کو بالکل ایک ہی طریقے سے اور ایک ہی رفتار سے پڑھائے گا",
@@ -8595,7 +8595,7 @@
    "Poori class ke liye textbook ki sirf aik sargarmi istemal karay ga",
    "Mukhtalif seekhnay walon ke mutabiq tareeqon, mawaad aur raftaar mein tabdeeli karay ga"
   ],
-  "explanation_ur": "انفرادی اختلافات کو تسلیم کرنے کا مطلب یہ قبول کرنا ہے کہ سیکھنے والے مختلف ہوتے ہیں اور تدریس کو ان کی مختلف ضروریات کے مطابق ڈھالا جائے۔ مختلف طریقے، مواد اور رفتار مختلف سیکھنے والوں کو بہتر طور پر سیکھنے میں مدد دیتے ہیں۔",
+  "explanation_ur": "انفرادی اختلافات کو تسلیم کرنے کا مطلب یہ قبول کرنا ہے کہ سیکھنے والے مختلف ہوتے ہیں اور تدریس کو ان کی مختلف ضروریات کے مطابق ڈھالا جائے۔ مختلف طریقے، مواد اور رفتار مختلف سیکھنے والوں کو موثر طریقے سے سیکھنے میں مدد دیتے ہیں۔",
   "explanation_roman": "Individual differences ko tasleem karnay ka matlab yeh qubool karna hai ke seekhnay walay mukhtalif hotay hain aur tadrees ko un ki mukhtalif zarooraton ke mutabiq dhala jaye. Mukhtalif tareeqay, mawaad aur raftaar mukhtalif seekhnay walon ko behtar taur par seekhnay mein madad detay hain.",
   "post": [
    "zamungkor",
@@ -8647,7 +8647,7 @@
    "Un ki yaaddasht aur tawajjoh ki muddat bilkul aik jaisi hoti hai",
    "Saza diye baghair kuch nahi seekhtay"
   ],
-  "explanation_ur": "سیکھنے کی رفتار شاگرد سے شاگرد تک مختلف ہوتی ہے، اس لیے بعض سیکھنے والے نیا مواد جلدی سیکھ لیتے ہیں جبکہ دوسروں کو زیادہ وقت اور مشق درکار ہوتی ہے۔ اس لیے ایک ہی سبق سے ترقی کی مختلف رفتاریں پیدا ہوتی ہیں۔",
+  "explanation_ur": "سیکھنے کی رفتار شاگرد سے شاگرد تک مختلف ہوتی ہے، اس لیے بعض سیکھنے والے نیا مواد جلدی سیکھ لیتے ہیں جبکہ دوسروں کو زیادہ وقت اور مشق درکار ہوتی ہے۔ اس لیے ایک ہی سبق میں ہر شاگرد کی ترقی کی رفتار مختلف ہوتی ہے۔",
   "explanation_roman": "Seekhnay ki raftaar shagird se shagird tak mukhtalif hoti hai, is liye baaz seekhnay walay naya mawaad jaldi seekh letay hain jabke doosron ko zyada waqt aur mashq darkaar hoti hai. Is liye aik hi sabaq se taraqqi ki mukhtalif raftarein paida hoti hain.",
   "post": [
    "zamungkor",
@@ -8699,7 +8699,7 @@
    "Sabaq ke dauraan aarzi mizaaj",
    "Kitabon ki tadaad jo aik shagird parhta hai"
   ],
-  "explanation_ur": "ادراکی اسلوب معلومات کو سمجھنے، دنیا کو دیکھنے اور مسائل سے نمٹنے کا کسی شخص کا عادی انداز ہے۔ یہ مختلف حالات میں نسبتاً مستقل رہتا ہے۔",
+  "explanation_ur": "ادراکی اسلوب معلومات پر کام کرنے، دنیا کو دیکھنے اور مسائل سے نمٹنے کا کسی شخص کا عادی انداز ہے۔ یہ مختلف حالات میں نسبتاً مستقل رہتا ہے۔",
   "explanation_roman": "Cognitive style maloomat ko samajhnay, duniya ko dekhnay aur masail se nimatnay ka kisi shakhs ka aadi andaaz hai. Yeh mukhtalif halaton mein nisbatun mustaqil rehta hai.",
   "post": [
    "zamungkor",
@@ -9049,12 +9049,12 @@
  },
  {
   "id": "PED-175",
-  "question_ur": "جب ماہرین تعلیم سیکھنے کے انداز کی بات کرتے ہیں، تو ان کی مراد سیکھنے والے کا یہ پہلو ہوتی ہے:",
+  "question_ur": "جب ماہرین تعلیم سیکھنے کے انداز کی بات کرتے ہیں، تو ان کی مراد سیکھنے والے کا یہ پہلو ہے:",
   "question_roman": "Jab mahireen taleem seekhnay ke andaaz ki baat kartay hain, to un ki muraad seekhnay walay ka yeh pehlu hoti hai:",
   "options_ur": [
    "ذہانت کے امتحان میں مقررہ نمبر",
    "نئی معلومات حاصل کرنے اور ان پر کام کرنے کا ترجیحی انداز",
-   "ہر شام مکمل کیا جانے والا گھر کے کام کی مقدار",
+   "ہر شام مکمل کیے جانے والے گھر کے کام کی مقدار",
    "کلاس کے لیے مقرر کردہ نصابی کتاب"
   ],
   "options_roman": [
@@ -9115,7 +9115,7 @@
    "Aural learners",
    "Kinesthetic learners"
   ],
-  "explanation_ur": "وارک درجہ بندی میں، پڑھنے اور لکھنے والے سیکھنے والے تحریری الفاظ میں معلومات کو ترجیح دیتے ہیں، جن میں فہرستیں، نوٹس اور نصابی کتب شامل ہیں۔ بصری سیکھنے والے خاکوں کو، سماعی سیکھنے والے سننے کو، اور حرکی سیکھنے والے عملی تجربے کو ترجیح دیتے ہیں۔",
+  "explanation_ur": "وارک درجہ بندی میں، پڑھنے اور لکھنے والے سیکھنے والے تحریری الفاظ کی صورت میں معلومات کو ترجیح دیتے ہیں، جن میں فہرستیں، نوٹس اور نصابی کتب شامل ہیں۔ بصری سیکھنے والے خاکوں کو، سماعی سیکھنے والے سننے کو، اور حرکی سیکھنے والے عملی تجربے کو ترجیح دیتے ہیں۔",
   "explanation_roman": "VARK classification mein, read/write learners tehreeri alfaaz mein maloomat ko tarjeeh detay hain, jin mein fehristein, notes aur textbooks shamil hain. Visual learners khakon ko, aural learners sunnay ko, aur kinesthetic learners amali tajarbay ko tarjeeh detay hain.",
   "post": [
    "zamungkor",
@@ -9314,7 +9314,7 @@
   "options_ur": [
    "اس کے لیے ہر سبق میں مہنگا سامان درکار ہوتا ہے",
    "اس میں بہت کم مواد پڑھایا جاتا ہے",
-   "طلبہ غیر فعال رہتے ہیں اور استاد کو کم فیڈ بیک ملتا ہے",
+   "طلبہ غیر فعال رہتے ہیں اور استاد کو کم بازخورد ملتا ہے",
    "اسے بالغ طلبہ کے ساتھ بالکل استعمال نہیں کیا جا سکتا"
   ],
   "options_roman": [
@@ -9323,7 +9323,7 @@
    "Talaba ghair faa'al rehte hain aur ustad ko kam feedback milta hai",
    "Isay baligh talaba ke saath bilkul istemal nahi kiya ja sakta"
   ],
-  "explanation_ur": "لیکچر بڑی حد تک یک طرفہ رابطہ ہے، اس لیے طلبہ غیر فعال رہ سکتے ہیں اور سبق کے دوران استاد کو کم فیڈ بیک ملتا ہے۔",
+  "explanation_ur": "لیکچر بڑی حد تک یک طرفہ رابطہ ہے، اس لیے طلبہ غیر فعال رہ سکتے ہیں اور سبق کے دوران استاد کو کم بازخورد ملتا ہے۔",
   "explanation_roman": "Lecture bari had tak yak tarfa rabta hai, is liye talaba ghair faa'al reh sakte hain aur sabaq ke doran ustad ko kam feedback milta hai.",
   "post": [
    "zamungkor",
@@ -9621,7 +9621,7 @@
  },
  {
   "id": "PED-186",
-  "question_ur": "کون سا عمل پوری جماعت کے لیے مظاہرے کو سب سے زیادہ مؤثر بناتا ہے؟",
+  "question_ur": "کون سا عمل پوری جماعت کے لیے مظاہرے کو سب سے زیادہ موثر بناتا ہے؟",
   "question_roman": "Kaun sa amal poori jamaat ke liye muzahire ko sab se zyada moassar banata hai?",
   "options_ur": [
    "قدم بغیر کسی تبصرے کے تیزی سے انجام دینا",
@@ -9635,7 +9635,7 @@
    "Qadam sirf chand talaba ko aik baar dikhana",
    "Qadam wahan dikhana jahan tamam talaba dekh sakein, har qadam ki wazahat karna aur baad mein talaba ko mashq karne dena"
   ],
-  "explanation_ur": "مؤثر مظاہرہ سب کو نظر آتا ہے، قدم بہ قدم اس کی وضاحت کی جاتی ہے اور اس کے بعد طلبہ مشق کرتے ہیں۔",
+  "explanation_ur": "موثر مظاہرہ سب کو نظر آتا ہے، قدم بہ قدم اس کی وضاحت کی جاتی ہے اور اس کے بعد طلبہ مشق کرتے ہیں۔",
   "explanation_roman": "Moassar muzahira sab ko nazar aata hai, qadam ba qadam is ki wazahat ki jati hai aur is ke baad talaba mashq karte hain.",
   "post": [
    "zamungkor",
@@ -9725,7 +9725,7 @@
  },
  {
   "id": "PED-188",
-  "question_ur": "کس قسم کا سوال طویل جوابات اور ایک سے زیادہ قابل قبول جواب کی دعوت دیتا ہے؟",
+  "question_ur": "کس قسم کا سوال طویل جوابات اور ایک سے زیادہ قابل قبول جوابات کی دعوت دیتا ہے؟",
   "question_roman": "Kis qisam ka sawaal taveel jawabat aur aik se zyada qabil-e-qubool jawab ki dawat deta hai?",
   "options_ur": [
    "بند سوال جس کا ایک مختصر جواب ہوتا ہے",
@@ -9739,7 +9739,7 @@
    "Khula sawaal jo wazahat aur behes ki dawat deta hai",
    "Haan ya nahi wala sawaal jis mein do muqarrara intikhab hote hain"
   ],
-  "explanation_ur": "کھلے سوالات طویل جوابات، وضاحت اور ایک سے زیادہ قابل قبول جواب کی دعوت دیتے ہیں۔",
+  "explanation_ur": "کھلے سوالات طویل جوابات، وضاحت اور ایک سے زیادہ قابل قبول جوابات کی دعوت دیتے ہیں۔",
   "explanation_roman": "Khule sawalaat taveel jawabat, wazahat aur aik se zyada qabil-e-qubool jawab ki dawat dete hain.",
   "post": [
    "zamungkor",
@@ -9777,7 +9777,7 @@
  },
  {
   "id": "PED-189",
-  "question_ur": "سوال پوچھنے کے بعد جواب طلب کرنے سے پہلے وقفہ کرنے والا استاد کون سی تکنیک استعمال کر رہا ہے؟",
+  "question_ur": "سوال پوچھنے کے بعد کسی طالب علم کو جواب کے لیے بلانے سے پہلے وقفہ کرنے والا استاد کون سی تکنیک استعمال کر رہا ہے؟",
   "question_roman": "Sawaal poochne ke baad jawab talab karne se pehle waqfa karne wala ustad kaun si technique istemal kar raha hai?",
   "options_ur": [
    "انتظار کا وقت، جو طلبہ کو جواب دینے سے پہلے سوچنے کا وقت دیتا ہے",
@@ -10103,7 +10103,7 @@
    "Sirf laboratory ka samaan istemal karne ki maharat",
    "Zabaan, takhayyul, sunna aur aqdaar ki samajh"
   ],
-  "explanation_ur": "کہانیاں ذخیرہ الفاظ اور زبان بناتی ہیں، تخیل کو جگاتی ہیں، سننے کی تربیت دیتی ہیں اور کم عمر طلبہ کو اقدار سمجھنے میں مدد دیتی ہیں۔",
+  "explanation_ur": "کہانیاں ذخیرہ الفاظ بڑھاتی ہیں، زبان کو بہتر بناتی ہیں، تخیل کو جگاتی ہیں، سننے کی تربیت دیتی ہیں اور کم عمر طلبہ کو اقدار سمجھنے میں مدد دیتی ہیں۔",
   "explanation_roman": "Kahaniyan zakheera-e-alfaaz aur zabaan banati hain, takhayyul ko jagati hain, sunne ki tarbiyat deti hain aur kam umar talaba ko aqdaar samajhne mein madad deti hain.",
   "post": [
    "zamungkor",
@@ -10141,7 +10141,7 @@
  },
  {
   "id": "PED-196",
-  "question_ur": "استاد کا کون سا عمل کمرہ جماعت میں کہانی سنانے کو سب سے زیادہ مؤثر بناتا ہے؟",
+  "question_ur": "استاد کا کون سا عمل کلاس روم میں کہانی سنانے کو سب سے زیادہ موثر بناتا ہے؟",
   "question_roman": "Ustad ka kaun sa amal kamra-e-jamaat mein kahani sunane ko sab se zyada moassar banata hai?",
   "options_ur": [
    "جاندار آواز، تاثرات اور اشارے استعمال کرنا اور طلبہ سے کہانی کے بارے میں پوچھنا",
@@ -10453,7 +10453,7 @@
  },
  {
   "id": "PED-202",
-  "question_ur": "بز گروپ کی بہترین تعریف یہ ہے کہ یہ ایک چھوٹے گروہ کی مختصر بحث ہے جسے کس قسم کا کام سوچنے کے لیے دیا جاتا ہے؟",
+  "question_ur": "بز گروپ کی بہترین تعریف یہ ہے کہ یہ ایک چھوٹے گروہ کی مختصر بحث ہے جسے کس قسم کے کام پر غور کرنے کے لیے کہا جاتا ہے؟",
   "question_roman": "Buzz group ki behtareen tareef yeh hai ke yeh aik chhote group ki mukhtasar behes hai jisay kis qism ka kaam sochne ke liye diya jata hai?",
   "options_ur": [
    "بغیر آخری تاریخ کے مکمل مدتی منصوبہ",
@@ -10557,7 +10557,7 @@
  },
  {
   "id": "PED-204",
-  "question_ur": "تھنک پیئر شیئر کمرہ جماعت میں کن مراحل کی ترتیب پر عمل کرتا ہے؟",
+  "question_ur": "تھنک پیئر شیئر کلاس روم میں کن مراحل کی ترتیب پر عمل کرتا ہے؟",
   "question_roman": "Think-Pair-Share classroom mein kin stages ki tarteeb par amal karta hai?",
   "options_ur": [
    "جماعت کے ساتھ بانٹنا، جوڑے میں بحث، انفرادی سوچ",
@@ -10675,7 +10675,7 @@
    "Low pressure exchange mein aik partner ke sath",
    "Assembly mein bari audience ke sath"
   ],
-  "explanation_ur": "ایک ساتھی کے ساتھ مشق کرنا پوری جماعت سے فورا بولنے سے کم خوفناک ہوتا ہے، اس لیے خاموش طلبہ زیادہ خوشی سے حصہ لیتے ہیں۔",
+  "explanation_ur": "ایک ساتھی کے ساتھ مشق کرنا پوری جماعت سے فوراً بولنے سے کم خوفناک ہوتا ہے، اس لیے خاموش طلبہ زیادہ خوشی سے حصہ لیتے ہیں۔",
   "explanation_roman": "Aik partner ke sath rehearsal karna poori class se foran bolne se kam threatening hota hai, is liye khamosh learners zyada khushi se hissa lete hain.",
   "post": [
    "zamungkor",
@@ -10869,7 +10869,7 @@
  },
  {
   "id": "PED-210",
-  "question_ur": "استاد یہ جانچنے کے لیے کہ گروہی کام کے دوران ہر رکن نے سیکھا ہے، سب سے براہ راست کس قسم کا بعد والا کام پوچھ سکتا ہے؟",
+  "question_ur": "استاد یہ جانچنے کے لیے کہ گروہی کام کے دوران ہر رکن نے سیکھا ہے، سب سے براہ راست کس قسم کا تعاقبی کام پوچھ سکتا ہے؟",
   "question_roman": "Teacher yeh janchnay ke liye ke group work ke doran har member ne seekha hai, sab se direct kis qism ka follow up task pooch sakta hai?",
   "options_ur": [
    "بغیر ناموں والا گروہی پوسٹر",
@@ -10921,7 +10921,7 @@
  },
  {
   "id": "PED-211",
-  "question_ur": "کمرہ جماعت میں ہم عمر تدریس کا مطلب ہے کہ طالب علم کو استاد کی رہنمائی میں کس سے تدریسی مدد ملتی ہے؟",
+  "question_ur": "کلاس روم میں ہم عمر تدریس کا مطلب ہے کہ طالب علم کو استاد کی رہنمائی میں کس سے تدریسی مدد ملتی ہے؟",
   "question_roman": "Classroom mein peer tutoring ka matlab hai ke learner ko teacher ki guidance mein kis se teaching support milti hai?",
   "options_ur": [
    "صرف گھر پر والدین سے",
@@ -10973,7 +10973,7 @@
  },
  {
   "id": "PED-212",
-  "question_ur": "کسی موضوع کو ہم جماعت کو سمجھانا ٹیوٹر کی اپنی سمجھ کو مضبوط کرتا ہے کیونکہ تدریس کے لیے ٹیوٹر کو مواد کے ساتھ کیا کرنا ہوتا ہے؟",
+  "question_ur": "کسی موضوع کو ہم جماعت کو سمجھانا پڑھانے والے طالب علم کی اپنی سمجھ کو مضبوط کرتا ہے کیونکہ تدریس کے لیے اسے مواد کے ساتھ کیا کرنا ہوتا ہے؟",
   "question_roman": "Kisi topic ko classmate ko samjhana tutor ki apni understanding ko mazboot karta hai kyunke teaching ke liye tutor ko material ke sath kya karna hota hai?",
   "options_ur": [
    "موضوع کے مشکل حصوں کو نظر انداز کرنا",
@@ -10987,7 +10987,7 @@
    "Classmate se answers naqal karna",
    "Ideas ko apne words mein organise, clarify aur recall karna"
   ],
-  "explanation_ur": "واضح طور پر سکھانے کے لیے ٹیوٹر کو خیالات کو ترتیب دینا، سمجھ کی کمیاں پوری کرنا اور انہیں سادہ انداز میں بیان کرنا ہوتا ہے، جس سے ذاتی سیکھنا گہرا ہوتا ہے۔",
+  "explanation_ur": "واضح طور پر سکھانے کے لیے پڑھانے والے طالب علم کو خیالات کو ترتیب دینا، سمجھ کی کمیاں پوری کرنا اور انہیں سادہ انداز میں بیان کرنا ہوتا ہے، جس سے ذاتی سیکھنا گہرا ہوتا ہے۔",
   "explanation_roman": "Wazeh tor par sikhane ke liye tutor ko ideas ko tartib dena, understanding ki kamiyan poori karna aur unhein simple andaz mein bayan karna hota hai, jis se personal learning gehri hoti hai.",
   "post": [
    "zamungkor",
@@ -11025,7 +11025,7 @@
  },
  {
   "id": "PED-213",
-  "question_ur": "ہم عمر تدریس کے سیشن شروع ہونے سے پہلے استاد کو طالب علم ٹیوٹروں کو کیا دے کر تیار کرنا چاہیے؟",
+  "question_ur": "ہم عمر تدریس کے سیشن شروع ہونے سے پہلے استاد کو پڑھانے والے طلبہ کو کیا دے کر تیار کرنا چاہیے؟",
   "question_roman": "Peer tutoring sessions shuru hone se pehle teacher ko student tutors ko kya de kar tayyar karna chahiye?",
   "options_ur": [
    "واضح مواد، سادہ مراحل اور سمجھانے کی مشق",
@@ -11039,7 +11039,7 @@
    "Sirf final examination paper",
    "Slow learners ke liye punishments ki list"
   ],
-  "explanation_ur": "تیار شدہ ٹیوٹر جانتے ہیں کہ کیا سکھانا ہے، اسے کیسے سمجھانا ہے اور استاد سے مدد کب مانگنی ہے، اس لیے سیشن درست اور مددگار رہتے ہیں۔",
+  "explanation_ur": "تیار شدہ پڑھانے والے طلبہ جانتے ہیں کہ کیا سکھانا ہے، اسے کیسے سمجھانا ہے اور استاد سے مدد کب مانگنی ہے، اس لیے سیشن درست اور مددگار رہتے ہیں۔",
   "explanation_roman": "Tayyar tutors jante hain ke kya sikhana hai, usay kaise samjhana hai aur teacher se madad kab mangni hai, is liye sessions accurate aur supportive rehte hain.",
   "post": [
    "zamungkor",
@@ -11132,7 +11132,7 @@
   "question_ur": "جب گروہ کا ایک رکن بہت کم کام کرتا ہے اور دوسروں کی محنت پر انحصار کرتا ہے تو اساتذہ گروہی کام کے اس مسئلے کو کس اصطلاح سے بیان کرتے ہیں؟",
   "question_roman": "Jab group ka aik member bohat kam kaam karta hai aur doosron ki mehnat par inhisar karta hai to teachers group work ke is masle ko kis term se bayan karte hain?",
   "options_ur": [
-   "سہارا دینے والی تدریس",
+   "سکیفولڈنگ",
    "سماجی کاہلی",
    "دریافتی سیکھنا",
    "مہارت پر مبنی سیکھنا"
@@ -11195,7 +11195,7 @@
    "Drill and practice",
    "Rote memorization"
   ],
-  "explanation_ur": "تحقیق پر مبنی سیکھنے میں سیکھنے والے تفتیش کے مرکز میں ہوتے ہیں، وہ سوالات پوچھتے ہیں، ثبوت جمع کرتے ہیں اور استاد کی رہنمائی سے نتائج تک پہنچتے ہیں.",
+  "explanation_ur": "تحقیق پر مبنی سیکھنے میں سیکھنے والے تفتیش کے مرکز میں ہوتے ہیں، وہ سوالات پوچھتے ہیں، ثبوت جمع کرتے ہیں اور استاد کی رہنمائی سے نتائج تک پہنچتے ہیں۔",
   "explanation_roman": "Inquiry based learning mein seekhne wale tafteesh ke markaz mein hote hain, woh sawalat poochte hain, saboot jama karte hain aur ustad ki rehnumai se nataij tak pahunchte hain.",
   "post": [
    "zamungkor",
@@ -11247,7 +11247,7 @@
    "Discovery learning",
    "Expository teaching"
   ],
-  "explanation_ur": "برونر کے مطابق دریافتی سیکھنے میں سیکھنے والے کھوج اور فعال تفتیش سے نظریات اور اصول دریافت کرتے ہیں، نہ کہ تیار شدہ حقائق حاصل کرتے ہیں.",
+  "explanation_ur": "برونر کے مطابق دریافتی سیکھنے میں سیکھنے والے کھوج اور فعال تفتیش سے نظریات اور اصول دریافت کرتے ہیں، نہ کہ تیار شدہ حقائق حاصل کرتے ہیں۔",
   "explanation_roman": "Bruner ke mutabiq discovery learning mein seekhne wale khoj aur fa'al tafteesh se nazriyat aur usool daryaft karte hain, na ke tayyar shuda haqaiq hasil karte hain.",
   "post": [
    "zamungkor",
@@ -11299,7 +11299,7 @@
    "Seekhne walon ko mazeed sawalat poochne se rokna",
    "Tafteesh ki jagah notes naqal karwana"
   ],
-  "explanation_ur": "تحقیق پر مبنی سبق میں استاد سیکھنے والوں کی رہنمائی کرتا ہے، سوالات کی حوصلہ افزائی کرتا ہے اور پیشگی تمام جوابات دینے کے بجائے تفتیش میں مدد کرتا ہے.",
+  "explanation_ur": "تحقیق پر مبنی سبق میں استاد سیکھنے والوں کی رہنمائی کرتا ہے، سوالات کی حوصلہ افزائی کرتا ہے اور پیشگی تمام جوابات دینے کے بجائے تفتیش میں مدد کرتا ہے۔",
   "explanation_roman": "Inquiry lesson mein ustad seekhne walon ki rehnumai karta hai, sawalat ki hosla afzai karta hai aur peshgi tamam jawab dene ke bajaye tafteesh mein madad karta hai.",
   "post": [
    "zamungkor",
@@ -11351,7 +11351,7 @@
    "Saboot jama karna",
    "Masle ki tareef karna"
   ],
-  "explanation_ur": "مسئلہ حل کرنے کا آغاز مسئلے کی واضح تعریف سے ہوتا ہے، کیونکہ واضح بیان معلومات اور ممکنہ حل کی تلاش کی رہنمائی کرتا ہے.",
+  "explanation_ur": "مسئلہ حل کرنے کا آغاز مسئلے کی واضح تعریف سے ہوتا ہے، کیونکہ واضح بیان معلومات اور ممکنہ حل کی تلاش کی رہنمائی کرتا ہے۔",
   "explanation_roman": "Masla hal karne ka aghaz masle ki wazeh tareef se hota hai, kyunke wazeh bayan maloomat aur mumkinah hal ki talash ki rehnumai karta hai.",
   "post": [
    "zamungkor",
@@ -11403,7 +11403,7 @@
    "Nisabi kitab se namuna jawabat naqal karen",
    "Marahil ko samjhe baghair hifz karen"
   ],
-  "explanation_ur": "مسئلہ حل کرنے میں سیکھنے والوں کو صورتحال کا تجزیہ کرنا، متبادل پر غور کرنا اور عملی راستے کا فیصلہ کرنا ہوتا ہے، جس سے آزاد اور تنقیدی سوچ پیدا ہوتی ہے.",
+  "explanation_ur": "مسئلہ حل کرنے میں سیکھنے والوں کو صورتحال کا تجزیہ کرنا، متبادل پر غور کرنا اور عملی راستے کا فیصلہ کرنا ہوتا ہے، جس سے آزاد اور تنقیدی سوچ پیدا ہوتی ہے۔",
   "explanation_roman": "Masla hal karne mein seekhne walon ko surtehal ka tajziya karna, mutabadil par ghaur karna aur amli raste ka faisla karna hota hai, jis se azad aur tanqeedi soch paida hoti hai.",
   "post": [
    "zamungkor",
@@ -11447,7 +11447,7 @@
    "نتیجہ",
    "مشاہدہ",
    "مفروضہ",
-   "تعمیم"
+   "عمومیت"
   ],
   "options_roman": [
    "Nateeja",
@@ -11455,7 +11455,7 @@
    "Mafrooza",
    "Tameem"
   ],
-  "explanation_ur": "مفروضہ ایک عارضی وضاحت یا مجوزہ جواب ہوتا ہے جسے سیکھنے والے نتیجے تک پہنچنے سے پہلے ثبوت سے جانچتے ہیں.",
+  "explanation_ur": "مفروضہ ایک عارضی وضاحت یا مجوزہ جواب ہوتا ہے جسے سیکھنے والے نتیجے تک پہنچنے سے پہلے ثبوت سے جانچتے ہیں۔",
   "explanation_roman": "Mafrooza aik arzi wazahat ya mujawwaza jawab hota hai jise seekhne wale nateeje tak pahunchne se pehle saboot se janchte hain.",
   "post": [
    "zamungkor",
@@ -11507,7 +11507,7 @@
    "Drill method",
    "Recitation method"
   ],
-  "explanation_ur": "کلپٹرک نے منصوبے کا طریقہ تیار کیا، جس میں سیکھنے والے ایک مقصدی سرگرمی یا کام مکمل کرتے ہیں اور یہ ڈیوی کے تجربے سے سیکھنے کے نظریات پر مبنی ہے.",
+  "explanation_ur": "کلپٹرک نے منصوبے کا طریقہ تیار کیا، جس میں سیکھنے والے ایک مقصدی سرگرمی یا کام مکمل کرتے ہیں اور یہ ڈیوی کے تجربے سے سیکھنے کے نظریات پر مبنی ہے۔",
   "explanation_roman": "Kilpatrick ne project method tayyar kiya, jis mein seekhne wale aik maqsadi sargarmi ya kaam mukammal karte hain aur yeh Dewey ke tajrube se seekhne ke nazriyat par mabni hai.",
   "post": [
    "zamungkor",
@@ -11545,7 +11545,7 @@
  },
  {
   "id": "PED-223",
-  "question_ur": "سیکھنے والے پودوں کی نشوونما کا مطالعہ کرنے کے لیے حقیقی ماحول میں باغ کا کام منصوبہ بندی کر کے مکمل کرتے ہیں. یہ کلاس روم کی سرگرمی کس طریقے کی بہترین مثال ہے؟",
+  "question_ur": "سیکھنے والے پودوں کی نشوونما کا مطالعہ کرنے کے لیے حقیقی ماحول میں باغ کا کام منصوبہ بندی کر کے مکمل کرتے ہیں۔ یہ کلاس روم کی سرگرمی کس طریقے کی بہترین مثال ہے؟",
   "question_roman": "Seekhne wale paudon ki nashonuma ka mutala karne ke liye haqeeqi mahol mein bagh ka kaam mansuba bandi kar ke mukammal karte hain. Yeh classroom ki sargarmi kis tareeqe ki behtreen misaal hai?",
   "options_ur": [
    "لیکچر کا طریقہ",
@@ -11559,7 +11559,7 @@
    "Textbook method",
    "Project method"
   ],
-  "explanation_ur": "منصوبے کے طریقے میں سیکھنے والے حقیقی ماحول میں ایک مقصدی کام کی منصوبہ بندی کرتے ہیں اور اسے انجام دیتے ہیں، اس لیے سیکھنا براہ راست سرگرمی اور تجربے سے پیدا ہوتا ہے.",
+  "explanation_ur": "منصوبے کے طریقے میں سیکھنے والے حقیقی ماحول میں ایک مقصدی کام کی منصوبہ بندی کرتے ہیں اور اسے انجام دیتے ہیں، اس لیے سیکھنا براہ راست سرگرمی اور تجربے سے پیدا ہوتا ہے۔",
   "explanation_roman": "Project method mein seekhne wale haqeeqi mahol mein aik maqsadi kaam ki mansuba bandi karte hain aur use anjam dete hain, is liye seekhna barah rast sargarmi aur tajrube se paida hota hai.",
   "post": [
    "zamungkor",
@@ -11600,7 +11600,7 @@
   "question_ur": "کلپٹرک نے اس منصوبے کو کس قسم میں شمار کیا جس میں سیکھنے والے کوئی مفید چیز، جیسے نمونہ، تیار کرتے ہیں؟",
   "question_roman": "Kilpatrick ne us mansoobe ko kis qisam mein shumar kiya jis mein seekhne wale koi mufeed cheez, jaise namuna, tayyar karte hain?",
   "options_ur": [
-   "مسئلہ قسم کا منصوبہ",
+   "مسئلہ کی قسم کا منصوبہ",
    "پیداواری قسم کا منصوبہ",
    "صارفی قسم کا منصوبہ",
    "مشقی قسم کا منصوبہ"
@@ -11611,7 +11611,7 @@
    "Consumer type project",
    "Drill type project"
   ],
-  "explanation_ur": "کلپٹرک نے پیداواری قسم کے منصوبے کو ایسا منصوبہ قرار دیا جس میں سیکھنے والے کوئی مفید چیز بناتے یا تیار کرتے ہیں، جیسے نمونہ یا چارٹ.",
+  "explanation_ur": "کلپٹرک نے پیداواری قسم کے منصوبے کو ایسا منصوبہ قرار دیا جس میں سیکھنے والے کوئی مفید چیز بناتے یا تیار کرتے ہیں، جیسے نمونہ یا چارٹ۔",
   "explanation_roman": "Kilpatrick ne producer type project ko aisa mansooba qarar diya jis mein seekhne wale koi mufeed cheez banate ya tayyar karte hain, jaise namuna ya chart.",
   "post": [
    "zamungkor",
@@ -11663,7 +11663,7 @@
    "Play-way method",
    "Examination centred teaching"
   ],
-  "explanation_ur": "کالڈویل کک نے کھیل کے ذریعے سیکھنے کے طریقے کو فروغ دیا، جس میں سیکھنا کھیل کی سرگرمیوں سے ہوتا ہے جو سیکھنے والوں کی دلچسپی برقرار رکھتی ہیں اور انہیں فعال طور پر شامل رکھتی ہیں.",
+  "explanation_ur": "کالڈویل کک نے کھیل کے ذریعے سیکھنے کے طریقے کو فروغ دیا، جس میں سیکھنا کھیل کی سرگرمیوں سے ہوتا ہے جو سیکھنے والوں کی دلچسپی برقرار رکھتی ہیں اور انہیں فعال طور پر شامل رکھتی ہیں۔",
   "explanation_roman": "Caldwell Cook ne play-way method ko farogh diya, jis mein seekhna khel ki sargarmiyon se hota hai jo seekhne walon ki dilchaspi barqarar rakhti hain aur unhen fa'al tor par shamil rakhti hain.",
   "post": [
    "zamungkor",
@@ -11701,7 +11701,7 @@
  },
  {
   "id": "PED-226",
-  "question_ur": "چھوٹے سیکھنے والے عددی تصورات کو زیادہ آسانی سے سمجھتے ہیں جب گنتی کھیلوں اور کھیل جیسی سرگرمیوں سے پڑھائی جائے. یہ عمل کس طریقے کے بنیادی نظریے کو ظاہر کرتا ہے؟",
+  "question_ur": "چھوٹے سیکھنے والے عددی تصورات کو زیادہ آسانی سے سمجھتے ہیں جب گنتی کھیلوں اور کھیل جیسی سرگرمیوں سے پڑھائی جائے۔ یہ عمل کس طریقے کے بنیادی نظریے کو ظاہر کرتا ہے؟",
   "question_roman": "Chhote seekhne wale adadi tasawwurat ko zyada asani se samajhte hain jab ginti khelon aur khel jaisi sargarmiyon se parhai jaye. Yeh amal kis tareeqe ke bunyadi nazriye ko zahir karta hai?",
   "options_ur": [
    "کھیل کے ذریعے سیکھنے کا طریقہ",
@@ -11715,7 +11715,7 @@
    "Drill method",
    "Recitation method"
   ],
-  "explanation_ur": "کھیل کے ذریعے سیکھنے کے طریقے میں کھیل اور خوشگوار سرگرمیوں کو سیکھنے کا ذریعہ بنایا جاتا ہے، اس لیے چھوٹے سیکھنے والے کھیلوں اور کھیل جیسی سرگرمیوں میں حصہ لیتے ہوئے خوشی سے سیکھتے ہیں.",
+  "explanation_ur": "کھیل کے ذریعے سیکھنے کے طریقے میں کھیل اور خوشگوار سرگرمیوں کو سیکھنے کا ذریعہ بنایا جاتا ہے، اس لیے چھوٹے سیکھنے والے کھیلوں اور کھیل جیسی سرگرمیوں میں حصہ لیتے ہوئے خوشی سے سیکھتے ہیں۔",
   "explanation_roman": "Play-way method mein khel aur khushgawar sargarmiyon ko seekhne ka zariya banaya jata hai, is liye chhote seekhne wale khelon aur khel jaisi sargarmiyon mein hissa lete hue khushi se seekhte hain.",
   "post": [
    "zamungkor",
@@ -11753,7 +11753,7 @@
  },
  {
   "id": "PED-227",
-  "question_ur": "سیکھنے والے شائستہ گفتگو کی مشق کے لیے دکاندار اور گاہک کے کردار ادا کرتے ہیں. تدریس کی کون سی حکمت عملی استعمال ہو رہی ہے؟",
+  "question_ur": "سیکھنے والے شائستہ گفتگو کی مشق کے لیے دکاندار اور گاہک کے کردار ادا کرتے ہیں۔ تدریس کی کون سی حکمت عملی استعمال ہو رہی ہے؟",
   "question_roman": "Seekhne wale shayesta guftagu ki mashq ke liye dukandar aur gahak ke kirdar ada karte hain. Tadrees ki kaun si hikmat amli istemal ho rahi hai?",
   "options_ur": [
    "کہانی سنانا",
@@ -11767,7 +11767,7 @@
    "Drill and practice",
    "Role play"
   ],
-  "explanation_ur": "کردار ادا کرنے میں سیکھنے والوں سے کہا جاتا ہے کہ وہ فرضی صورتحال میں کردار ادا کریں، جس سے انہیں حقیقت جیسی صورتحال میں زبان، رویے اور جوابات کی مشق میں مدد ملتی ہے.",
+  "explanation_ur": "کردار ادا کرنے میں سیکھنے والوں سے کہا جاتا ہے کہ وہ فرضی صورتحال میں کردار ادا کریں، جس سے انہیں حقیقت جیسی صورتحال میں زبان، رویے اور جوابات کی مشق میں مدد ملتی ہے۔",
   "explanation_roman": "Role play mein seekhne walon se kaha jata hai ke woh farzi surtehal mein kirdar ada karen, jis se unhen haqeeqat jaisi surtehal mein zaban, ravayye aur jawabat ki mashq mein madad milti hai.",
   "post": [
    "zamungkor",
@@ -11819,7 +11819,7 @@
    "Ustad ko akele adakari karte dekhna",
    "Kisi door ke waqiye par notes likhna"
   ],
-  "explanation_ur": "کردار اپنا کر سیکھنے والے غور کرتے ہیں کہ دوسرا شخص کیسے سوچ سکتا ہے اور محسوس کر سکتا ہے، جس سے ہمدردی اور مختلف نقطہ نظر کی واضح سمجھ پیدا ہوتی ہے.",
+  "explanation_ur": "کردار اپنا کر سیکھنے والے غور کرتے ہیں کہ دوسرا شخص کیسے سوچ سکتا ہے اور محسوس کر سکتا ہے، جس سے ہمدردی اور مختلف نقطہ نظر کی واضح سمجھ پیدا ہوتی ہے۔",
   "explanation_roman": "Kirdar apna kar seekhne wale ghaur karte hain ke dusra shakhs kaise soch sakta hai aur mehsoos kar sakta hai, jis se hamdardi aur mukhtalif nuqta nazar ki wazeh samajh paida hoti hai.",
   "post": [
    "zamungkor",
@@ -11871,7 +11871,7 @@
    "Seekhne walon ko tajrube par ghaur karne aur us se sabaq akhaz karne mein madad dena",
    "Ustad ki rehnumai ki zaroorat khatam karna"
   ],
-  "explanation_ur": "کردار ادا کرنے کے بعد ہونے والی گفتگو سے سیکھنے والے جذبات، اعمال اور نتائج پر غور کرتے ہیں اور فرضی تجربے کو حقیقی زندگی کے سیکھنے سے جوڑتے ہیں.",
+  "explanation_ur": "کردار ادا کرنے کے بعد ہونے والی گفتگو سے سیکھنے والے جذبات، اعمال اور نتائج پر غور کرتے ہیں اور فرضی تجربے کو حقیقی زندگی کے سیکھنے سے جوڑتے ہیں۔",
   "explanation_roman": "Role play ke baad hone wali guftagu se seekhne wale jazbat, aamal aur nataij par ghaur karte hain aur farzi tajrube ko haqeeqi zindagi ke seekhne se jodte hain.",
   "post": [
    "zamungkor",
@@ -11915,7 +11915,7 @@
    "ایک وقت میں ایک مخصوص تدریسی مہارت کی",
    "ایک ہی نشست میں پورے نصاب کی",
    "کئی غیر متعلقہ مضامین کی ایک ساتھ",
-   "بغیر کسی تاثرات کے کلاس روم نظم و ضبط کی"
+   "بغیر کسی بازخورد کے کلاس روم کے نظم و ضبط کی"
   ],
   "options_roman": [
    "Aik waqt mein aik makhsoos tadreesi maharat ki",
@@ -11923,7 +11923,7 @@
    "Kai ghair mutalliqa mazameen ki aik sath",
    "Baghair kisi feedback ke classroom discipline ki"
   ],
-  "explanation_ur": "خرد تدریس میں تدریس کو مختصر سبق، چھوٹے گروہ اور ایک مہارت تک محدود کیا جاتا ہے، تاکہ زیر تربیت استاد اس مہارت کی مشق کر سکے اور مرکوز تاثرات حاصل کر سکے.",
+  "explanation_ur": "خرد تدریس میں تدریس کو مختصر سبق، چھوٹے گروہ اور ایک مہارت تک محدود کیا جاتا ہے، تاکہ زیر تربیت استاد اس مہارت کی مشق کر سکے اور مرکوز بازخورد حاصل کر سکے۔",
   "explanation_roman": "Micro-teaching mein tadrees ko mukhtasar sabaq, chhote group aur aik maharat tak mehdood kiya jata hai, taake zir tarbiyat ustad us maharat ki mashq kar sake aur markooz feedback hasil kar sake.",
   "post": [
    "zamungkor",
@@ -11961,11 +11961,11 @@
  },
  {
   "id": "PED-231",
-  "question_ur": "خرد تدریس کے چکر میں، زیر تربیت استاد سبق پر تاثرات حاصل کرنے کے فورا بعد کیا کرتا ہے؟",
+  "question_ur": "خرد تدریس کے چکر میں، زیر تربیت استاد سبق پر بازخورد حاصل کرنے کے فوراً بعد کیا کرتا ہے؟",
   "question_roman": "Micro-teaching ke cycle mein, zir tarbiyat ustad sabaq par feedback hasil karne ke foran baad kya karta hai?",
   "options_ur": [
    "مہارت کو مکمل طور پر ترک کر دیتا ہے",
-   "فورا نئے مضمون کی طرف چلا جاتا ہے",
+   "فوراً نئے مضمون کی طرف چلا جاتا ہے",
    "بغیر کسی تبدیلی کے سبق دہراتا ہے",
    "سبق کی دوبارہ منصوبہ بندی کرتا ہے اور دوبارہ پڑھاتا ہے"
   ],
@@ -11975,7 +11975,7 @@
    "Baghair kisi tabdeeli ke sabaq dohrata hai",
    "Sabaq ki dobara mansuba bandi karta hai aur dobara parhata hai"
   ],
-  "explanation_ur": "خرد تدریس کا چکر تدریس سے تاثرات، پھر دوبارہ منصوبہ بندی اور دوبارہ تدریس کی طرف بڑھتا ہے، تاکہ زیر تربیت استاد نظر ثانی شدہ سبق میں اسی مہارت کو بہتر بنا سکے.",
+  "explanation_ur": "خرد تدریس کا چکر تدریس سے بازخورد، پھر دوبارہ منصوبہ بندی اور دوبارہ تدریس کی طرف بڑھتا ہے، تاکہ زیر تربیت استاد نظر ثانی شدہ سبق میں اسی مہارت کو بہتر بنا سکے۔",
   "explanation_roman": "Micro-teaching ka cycle tadrees se feedback, phir dobara mansuba bandi aur dobara tadrees ki taraf barhta hai, taake zir tarbiyat ustad nazar sani shuda sabaq mein usi maharat ko behtar bana sake.",
   "post": [
    "zamungkor",
@@ -12027,7 +12027,7 @@
    "School ke liye timetable banana",
    "Imtihani parche ki chhapai"
   ],
-  "explanation_ur": "خرد تدریس میں تدریس کو جزوی مہارتوں میں تقسیم کیا جاتا ہے، جیسے سوال پوچھنا، وضاحت کرنا اور تقویت دینا، اور ہر مہارت کی الگ الگ مشق کر کے اسے بہتر بنایا جاتا ہے.",
+  "explanation_ur": "خرد تدریس میں تدریس کو جزوی مہارتوں میں تقسیم کیا جاتا ہے، جیسے سوال پوچھنا، وضاحت کرنا اور تقویت دینا، اور ہر مہارت کی الگ الگ مشق کر کے اسے بہتر بنایا جاتا ہے۔",
   "explanation_roman": "Micro-teaching mein tadrees ko juzwi maharaton mein taqseem kiya jata hai, jaise sawal poochna, wazahat karna aur taqwiat dena, aur har maharat ki alag alag mashq kar ke use behtar banaya jata hai.",
   "post": [
    "zamungkor",
@@ -12079,7 +12079,7 @@
    "Dwight Allen",
    "William Kilpatrick"
   ],
-  "explanation_ur": "خرد تدریس سب سے پہلے اسٹینفورڈ یونیورسٹی میں ڈوائٹ ایلن کی قیادت میں تیار کی گئی، تاکہ اساتذہ کو مختصر اور محدود اسباق میں ایک مہارت کی مشق سے تربیت دی جا سکے.",
+  "explanation_ur": "خرد تدریس سب سے پہلے اسٹینفورڈ یونیورسٹی میں ڈوائٹ ایلن کی قیادت میں تیار کی گئی، تاکہ اساتذہ کو مختصر اور محدود اسباق میں ایک مہارت کی مشق سے تربیت دی جا سکے۔",
   "explanation_roman": "Micro-teaching sab se pehle Stanford University mein Dwight Allen ki qayadat mein tayyar ki gayi, taake asatiza ko mukhtasar aur mehdood asbaq mein aik maharat ki mashq se tarbiyat di ja sake.",
   "post": [
    "zamungkor",
@@ -12117,7 +12117,7 @@
  },
  {
   "id": "PED-234",
-  "question_ur": "ایک استاد تحریری کام کو چھوٹے مراحل میں تقسیم کرتا ہے، پہلے مرحلے کا نمونہ پیش کرتا ہے اور اگلے مراحل کے لیے اشارے دیتا ہے. اس سبق کی مدد کو بہترین طور پر کیا کہا جاتا ہے:",
+  "question_ur": "ایک استاد تحریری کام کو چھوٹے مراحل میں تقسیم کرتا ہے، پہلے مرحلے کا نمونہ پیش کرتا ہے اور اگلے مراحل کے لیے اشارے دیتا ہے۔ اس سبق کی مدد کی بہترین تعریف ہے:",
   "question_roman": "Aik ustad tehriri kaam ko chhote marahil mein taqseem karta hai, pehle marhale ka namuna pesh karta hai aur agle marahil ke liye ishare deta hai. Is sabaq ki madad ko behtreen tor par kya kaha jata hai:",
   "options_ur": [
    "سکیفولڈنگ",
@@ -12131,7 +12131,7 @@
    "Free play without guidance",
    "Summative testing"
   ],
-  "explanation_ur": "سکیفولڈنگ میں عارضی اور منظم مدد دی جاتی ہے، جیسے نمونہ پیش کرنا، اشارے دینا اور کام کو مراحل میں تقسیم کرنا، تاکہ سیکھنے والے وہ کام کر سکیں جو وہ اکیلے نہیں کر سکتے.",
+  "explanation_ur": "سکیفولڈنگ میں عارضی اور منظم مدد دی جاتی ہے، جیسے نمونہ پیش کرنا، اشارے دینا اور کام کو مراحل میں تقسیم کرنا، تاکہ سیکھنے والے وہ کام کر سکیں جو وہ اکیلے نہیں کر سکتے۔",
   "explanation_roman": "Scaffolding mein arzi aur munazzam madad di jati hai, jaise namuna pesh karna, ishare dena aur kaam ko marahil mein taqseem karna, taake seekhne wale woh kaam kar saken jo woh akele nahi kar sakte.",
   "post": [
    "zamungkor",
@@ -12183,7 +12183,7 @@
    "Madad ki jagah saza dena",
    "Madad ko marhala war wapas lena"
   ],
-  "explanation_ur": "سکیفولڈنگ اپنی بناوٹ میں عارضی ہوتی ہے، اس لیے مدد کو بتدریج کم کیا جاتا ہے جیسے جیسے سیکھنے والے مہارت اور اعتماد حاصل کرتے ہیں، یہاں تک کہ وہ آزادانہ کام کر سکیں.",
+  "explanation_ur": "سکیفولڈنگ اپنی بناوٹ میں عارضی ہوتی ہے، اس لیے مدد کو بتدریج کم کیا جاتا ہے جیسے جیسے سیکھنے والے مہارت اور اعتماد حاصل کرتے ہیں، یہاں تک کہ وہ آزادانہ کام کر سکیں۔",
   "explanation_roman": "Scaffolding apni banawat mein arzi hoti hai, is liye madad ko batadreej kam kiya jata hai jaise jaise seekhne wale maharat aur aitmad hasil karte hain, yahan tak ke woh azadana kaam kar saken.",
   "post": [
    "zamungkor",
@@ -12533,7 +12533,7 @@
  },
  {
   "id": "PED-242",
-  "question_ur": "تعلیمی مقصد کو واضح آخری تاریخ کب ملتی ہے جب وہ سمارٹ کی کس شرط پر پورا اترتا ہے؟",
+  "question_ur": "سمارٹ کی کس شرط پر پورا اترنے سے تعلیمی مقصد کو واضح آخری تاریخ ملتی ہے؟",
   "question_roman": "Learning objective ko clear deadline kab milti hai jab woh SMART ki kis requirement par pura utarta hai?",
   "options_ur": [
    "مخصوص",
@@ -13053,7 +13053,7 @@
  },
  {
   "id": "PED-252",
-  "question_ur": "پورے کلاس کے لیکچرز اور براہ راست تدریس کے لیے، نشست کی کون سی ترتیب ہر طالب علم کو سیدھی قطاروں میں استاد کی طرف رخ کیے ہوئے رکھتی ہے؟",
+  "question_ur": "پوری کلاس کے لیکچرز اور براہ راست تدریس کے لیے، نشست کی کون سی ترتیب ہر طالب علم کو سیدھی قطاروں میں استاد کی طرف رخ کیے ہوئے رکھتی ہے؟",
   "question_roman": "Poori class ke lectures aur direct instruction ke liye, kaun si seating arrangement har talib ilm ko seedhi qataron mein ustad ki taraf rukh kiye hue rakhti hai?",
   "options_ur": [
    "قطاروں کی ترتیب",
@@ -13157,7 +13157,7 @@
  },
  {
   "id": "PED-254",
-  "question_ur": "مشترکہ میزوں کے گرد چھوٹے گروہوں میں بیٹھے ہوئے طلبہ کو بنیادی طور پر کمرہ جماعت کی کس سرگرمی کی مدد کے لیے بٹھایا جاتا ہے؟",
+  "question_ur": "مشترکہ میزوں کے گرد چھوٹے گروہوں میں بیٹھے ہوئے طلبہ کو بنیادی طور پر کلاس روم کی کس سرگرمی کی مدد کے لیے بٹھایا جاتا ہے؟",
   "question_roman": "Mushtaraka mezon ke gird chhote grohon mein baithe hue talaba ko bunyadi tor par classroom ki kis sargarmi ki madad ke liye bithaya jata hai?",
   "options_ur": [
    "خاموش انفرادی امتحان",
@@ -13209,7 +13209,7 @@
  },
  {
   "id": "PED-255",
-  "question_ur": "جو استاد لیکچرز، گروہی کام اور امتحانات کے لیے نشست کی ترتیب بدلتا ہے، وہ کمرہ جماعت کی تنظیم کے کس اصول پر عمل کر رہا ہے؟",
+  "question_ur": "جو استاد لیکچرز، گروہی کام اور امتحانات کے لیے نشست کی ترتیب بدلتا ہے، وہ کلاس روم کی تنظیم کے کس اصول پر عمل کر رہا ہے؟",
   "question_roman": "Jo ustad lectures, group work aur tests ke liye seating pattern badalta hai, woh classroom organization ke kis usool par amal kar raha hai?",
   "options_ur": [
    "تمام اسباق کے لیے ایک مقررہ ترتیب رکھنا",
@@ -13316,7 +13316,7 @@
   "question_ur": "میزوں کے درمیان کشادہ راستے، جن سے استاد ہر طالب علم تک جا سکتا ہے، نشست پر کام کے دوران استاد کی بنیادی طور پر کس کام میں مدد کرتے ہیں؟",
   "question_roman": "Mezon ke darmiyan kushada raste, jin se ustad har talib ilm tak ja sakta hai, seat work ke doran ustad ki bunyadi tor par kis kaam mein madad karte hain?",
   "options_ur": [
-   "کمرہ جماعت کی دیواروں کو سجانا",
+   "کلاس روم کی دیواروں کو سجانا",
    "کام کے دوران طلبہ کی نگرانی، رہنمائی اور مدد کرنا",
    "کمرے میں میزوں کی تعداد کم کرنا",
    "کمرے کا دروازہ بند رکھنا"
@@ -13473,7 +13473,7 @@
   "question_roman": "Jab ustad period ka sab se lamba hissa ahem naye mawad ko deta hai aur aghaz ko mukhtasar rakhta hai, to ustad kis maharat ka muzahira kar raha hai?",
   "options_ur": [
    "سبق کی مناسب رفتار",
-   "کمرہ جماعت کی دیواروں کو رنگ کرنا",
+   "کلاس روم کی دیواروں کو رنگ کرنا",
    "موجود طلبہ کو گننا",
    "تختے پر نظام الاوقات لکھنا"
   ],
@@ -14055,7 +14055,7 @@
    "Rules sakht honay chahiye aur bar bar tabdeel honay chahiye",
    "Rules kam, wazeh aur musbat andaz mein bayan honay chahiye"
   ],
-  "explanation_ur": "کم، واضح اور مثبت انداز میں بیان کیے گئے قواعد یاد رکھنا اور ان پر عمل کرنا آسان ہوتا ہے، اس لیے طلبہ سمجھتے ہیں کہ اچھا رویہ کیسا لگتا ہے۔",
+  "explanation_ur": "کم، واضح اور مثبت انداز میں بیان کیے گئے قواعد یاد رکھنا اور ان پر عمل کرنا آسان ہوتا ہے، اس لیے طلبہ سمجھتے ہیں کہ اچھا رویہ کیسا ہوتا ہے۔",
   "explanation_roman": "Kam, wazeh aur musbat andaz mein bayan kiye gaye rules yaad rakhna aur un par amal karna aasan hota hai, is liye talaba samajhte hain ke acha ravayya kaisa lagta hai.",
   "post": [
    "zamungkor",
@@ -14197,7 +14197,7 @@
  },
  {
   "id": "PED-274",
-  "question_ur": "ملتی جلتی صورتوں میں ہر طالب علم پر ایک ہی قاعدے کو منصفانہ طور پر لاگو کرنا، کسی طالب علم کے ساتھ رعایت یا سختی کے بغیر، منصفانہ کلاس روم نظم و ضبط کی ایک ضروری خصوصیت ہے۔ یہاں کس خصوصیت کی وضاحت کی گئی ہے؟",
+  "question_ur": "ملتی جلتی صورتوں میں ہر طالب علم پر ایک ہی قاعدے کو منصفانہ طور پر لاگو کرنا، کسی طالب علم کے ساتھ رعایت یا سختی کے بغیر، منصفانہ کلاس روم کے نظم و ضبط کی ایک ضروری خصوصیت ہے۔ یہاں کس خصوصیت کی وضاحت کی گئی ہے؟",
   "question_roman": "Milti julti suraton mein har talib ilm par aik hi rule ko munsifana tor par lagu karna, kisi talib ilm ke sath riayat ya sakhti ke baghair, munsifana classroom discipline ki aik zaroori khususiyat hai. Yahan kis khususiyat ki wazahat ki gayi hai?",
   "options_ur": [
    "قواعد کا جزوی نفاذ",
@@ -14249,7 +14249,7 @@
  },
  {
   "id": "PED-275",
-  "question_ur": "مددگار رویے کے فورا بعد طالب علم کی تعریف کرنا، اسی رویے کو دوبارہ بڑھاوا دینے کے لیے، رویے کے انتظام کی ایک عام تکنیک ہے۔ یہاں کس تکنیک کی وضاحت کی گئی ہے؟",
+  "question_ur": "مددگار رویے کے فوراً بعد طالب علم کی تعریف کرنا، اسی رویے کو دوبارہ بڑھاوا دینے کے لیے، رویے کے انتظام کی ایک عام تکنیک ہے۔ یہاں کس تکنیک کی وضاحت کی گئی ہے؟",
   "question_roman": "Madadgar ravayye ke foran baad talib ilm ki tareef karna, isi ravayye ko dobara barhawa denay ke liye, ravayye ke intizam ki aik aam technique hai. Yahan kis technique ki wazahat ki gayi hai?",
   "options_ur": [
    "کلاس روم میں تمام اچھے رویے کو نظر انداز کرنا",
@@ -14263,7 +14263,7 @@
    "Classroom ki zindagi se tamam inaamaat ko hata dena",
    "Matlooba ravayye ke liye positive reinforcement ka istemal karna"
   ],
-  "explanation_ur": "مثبت تقویت مطلوبہ رویے کو مضبوط کرتی ہے، اس کے بعد تعریف یا کوئی اور خوشگوار نتیجہ دے کر۔",
+  "explanation_ur": "مثبت تقویت مطلوبہ رویے کے بعد تعریف یا کوئی اور خوشگوار نتیجہ دے کر اسے مضبوط کرتی ہے۔",
   "explanation_roman": "Positive reinforcement matlooba ravayye ko mazboot karta hai, is ke baad tareef ya koi aur khushgawar nateeja de kar.",
   "post": [
    "zamungkor",
@@ -14405,7 +14405,7 @@
  },
  {
   "id": "PED-278",
-  "question_ur": "گرم جوش کلاس روم کا ماحول اس وقت بڑھتا ہے جب استاد طلبہ کے ساتھ احترام سے پیش آتا ہے، ان کے خیالات کو سنتا ہے اور ہر روز ان کی کوششوں کی حوصلہ افزائی کرتا ہے۔ استاد کا کون سا عمل ایسا ماحول بہترین طور پر بناتا ہے؟",
+  "question_ur": "گرم جوش کلاس روم کا ماحول اس وقت بڑھتا ہے جب استاد طلبہ کے ساتھ احترام سے پیش آتا ہے، ان کے خیالات کو سنتا ہے اور ہر روز ان کی کوششوں کی حوصلہ افزائی کرتا ہے۔ استاد کا کون سا عمل ایسا ماحول سب سے بہتر بناتا ہے؟",
   "question_roman": "Garam josh classroom climate us waqt barhta hai jab ustad talaba ke sath ehtiram se pesh aata hai, un ke khayalat ko sunta hai aur har roz un ki koshishon ki hosla afzai karta hai. Ustad ka kaun sa amal aisa mahaul behtareen tor par banata hai?",
   "options_ur": [
    "ہر چھوٹی غلطی پر طلبہ کو ڈانٹنا",
@@ -14613,7 +14613,7 @@
  },
  {
   "id": "PED-282",
-  "question_ur": "کلاس روم کے نظم و ضبط کے طریقے کے طور پر جسمانی سزا کی جدید استاد کی تعلیم میں عام طور پر حوصلہ شکنی کی جاتی ہے۔ کون سی وجہ بہترین طور پر وضاحت کرتی ہے کہ جسمانی سزا کی حوصلہ شکنی کیوں کی جاتی ہے؟",
+  "question_ur": "کلاس روم کے نظم و ضبط کے طریقے کے طور پر جسمانی سزا کی جدید اساتذہ کی تربیت میں عام طور پر حوصلہ شکنی کی جاتی ہے۔ کون سی وجہ سب سے بہتر وضاحت کرتی ہے کہ جسمانی سزا کی حوصلہ شکنی کیوں کی جاتی ہے؟",
   "question_roman": "Classroom discipline ke tareeqay ke tor par jismani saza ki jadeed ustad ki taleem mein aam tor par hosla shikni ki jati hai. Kaun si wajah behtareen tor par wazahat karti hai ke jismani saza ki hosla shikni kyun ki jati hai?",
   "options_ur": [
    "جسمانی سزا ہمیشہ امتحان کے نتائج کو بہتر کرتی ہے",
@@ -15081,7 +15081,7 @@
  },
  {
   "id": "PED-291",
-  "question_ur": "ایک استاد جماعتی کام، گھر کا کام، جوابات اور جانچ کے نتائج جمع کرتا ہے تاکہ یہ سمجھ سکے کہ سیکھنے والے کتنی اچھی پیش رفت کر رہے ہیں۔ شواہد کے اس جمع کرنے کو بہتر طور پر کیا کہا جاتا ہے؟",
+  "question_ur": "ایک استاد جماعتی کام، گھر کا کام، جوابات اور جانچ کے نتائج جمع کرتا ہے تاکہ یہ سمجھ سکے کہ سیکھنے والے کتنی اچھی پیش رفت کر رہے ہیں۔ شواہد کے اس جمع کرنے کو کیا کہا جاتا ہے؟",
   "question_roman": "Aik teacher classwork, homework, jawab aur test ke nataij jama karta hai taake yeh samajh sakay ke seekhnay walay kitni achi paish raft kar rahay hain. Shawahid ke is jama karnay ko behtar tor par kya kaha jata hai?",
   "options_ur": [
    "تقویم",
@@ -15133,7 +15133,7 @@
  },
  {
   "id": "PED-292",
-  "question_ur": "کون سا بیان بہتر طور پر واضح کرتا ہے کہ پیمائش، جائزہ اور تقویم کا آپس میں کیا تعلق ہے؟",
+  "question_ur": "کون سا بیان پیمائش، جائزہ اور تقویم کے باہمی تعلق کی بہترین وضاحت کرتا ہے؟",
   "question_roman": "Kaun sa bayan behtar tor par wazeh karta hai ke measurement, assessment aur evaluation ka aapas mein kya talluq hai?",
   "options_ur": [
    "تقویم نمبر دیتی ہے، جائزہ حتمی فیصلے کرتا ہے، اور پیمائش سیکھنے کے بارے میں شواہد جمع کرتی ہے",
@@ -15237,7 +15237,7 @@
  },
  {
   "id": "PED-294",
-  "question_ur": "اختتامی جائزہ سب سے زیادہ درج ذیل میں سے کن فیصلوں کے لیے استعمال ہوتا ہے؟",
+  "question_ur": "اختتامی جائزہ سب سے زیادہ مندرجہ ذیل میں سے کن فیصلوں کے لیے استعمال ہوتا ہے؟",
   "question_roman": "Summative assessment sab se zyada darj zail mein se kin faislon ke liye istemal hota hai?",
   "options_ur": [
    "تدریس کی روزانہ تبدیلی",
@@ -15355,7 +15355,7 @@
    "Prediction",
    "Remediation"
   ],
-  "explanation_ur": "پیش گوئی مستقبل کی کارکردگی کا اندازہ لگانے کے لیے موجودہ جائزہ شواہد کو استعمال کرتی ہے، جیسے بعد کے کورس یا پروگرام میں کامیابی۔",
+  "explanation_ur": "پیش گوئی مستقبل کی کارکردگی کا اندازہ لگانے کے لیے موجودہ جائزے کے شواہد کو استعمال کرتی ہے، جیسے بعد کے کورس یا پروگرام میں کامیابی۔",
   "explanation_roman": "Prediction mustaqbil ki karkardagi ka andaza laganay ke liye maujooda assessment shawahid ko istemal karti hai, jaisay baad ke course ya programme mein kamyabi.",
   "post": [
    "zamungkor",
@@ -15604,7 +15604,7 @@
   "question_ur": "معروضی ٹیسٹ کی سب سے نمایاں پہچان کون سی ہے؟",
   "question_roman": "Objective test ko sab se behtar tareeqe se kaun si khoobi define karti hai?",
   "options_ur": [
-   "استاد ذاتی فیصلے سے جوابات چیک کرتا ہے",
+   "استاد ذاتی فیصلے سے جوابات جانچتا ہے",
    "نمبر ایک مقررہ جوابی کلید کے مطابق دیے جاتے ہیں",
    "طلبہ اپنے الفاظ میں لمبے جوابات لکھتے ہیں",
    "نمبر طلبہ کی تحریر پر منحصر ہوتے ہیں"
@@ -15656,7 +15656,7 @@
   "question_ur": "انشائی ٹیسٹ کی سب سے بڑی خوبی کیا ہے؟",
   "question_roman": "Essay test ki sab se bari khoobi kya hai?",
   "options_ur": [
-   "اسے کوئی بھی بہت جلدی چیک کر سکتا ہے",
+   "اسے کوئی بھی بہت جلدی جانچ سکتا ہے",
    "اس میں ہر طالب علم کو ایک جیسے نمبر ملتے ہیں",
    "اس کے لیے پہلے سے کسی منصوبہ بندی کی ضرورت نہیں ہوتی",
    "اس سے پتہ چلتا ہے کہ طلبہ خیالات کو کس طرح منظم اور بیان کرتے ہیں"
@@ -15709,9 +15709,9 @@
   "question_roman": "Essay marking mukhtalif check karne walon ke darmiyan aksar kyun mukhtalif hoti hai?",
   "options_ur": [
    "ذاتی فیصلہ اس بات پر اثر ڈالتا ہے کہ ہر جانچنے والا کس طرح نمبر دیتا ہے",
-   "مضمون والے جواب کا ہمیشہ ایک مقررہ درست جواب ہوتا ہے",
+   "انشائی جواب کا ہمیشہ ایک مقررہ درست جواب ہوتا ہے",
    "انشائی ٹیسٹ میں نمبر دینے کے لیے مقررہ جوابی کلید استعمال ہوتی ہے",
-   "مضمون والے جوابات ہر صورت میں مشین سے چیک ہوتے ہیں"
+   "انشائی جوابات ہر صورت میں مشین سے جانچے جاتے ہیں"
   ],
   "options_roman": [
    "Zaati faisla asar dalta hai ke har checker kis tarah number deta hai",
@@ -15771,7 +15771,7 @@
    "Stem",
    "Option bank"
   ],
-  "explanation_ur": "سٹیم وہ سوال یا نامکمل بیان ہے جو مسئلہ پیش کرتا ہے، جب کہ آپشنز ممکنہ جوابات فراہم کرتے ہیں۔",
+  "explanation_ur": "سٹیم وہ سوال یا نامکمل بیان ہے جو مسئلہ پیش کرتا ہے، جبکہ آپشنز ممکنہ جوابات فراہم کرتے ہیں۔",
   "explanation_roman": "Stem woh sawal ya namukammal bayan hai jo masla pesh karta hai, jab ke options mumkinah jawab faraham karte hain.",
   "post": [
    "zamungkor",
@@ -15823,7 +15823,7 @@
    "Blueprints",
    "Mark schemes"
   ],
-  "explanation_ur": "ڈسٹریکٹرز وہ غلط آپشنز ہوتے ہیں جو ان طلبہ کو درست لگتے ہیں جنہوں نے وہ نکتہ نہیں سیکھا ہوتا۔",
+  "explanation_ur": "ڈسٹریکٹرز وہ غلط آپشنز ہوتے ہیں جو ان طلبہ کو درست لگتے ہیں جنہوں نے اس نکتے پر مہارت حاصل نہیں کی ہوتی۔",
   "explanation_roman": "Distractors woh ghalat options hote hain jo un learners ko durust lagte hain jinhon ne woh nukta nahi seekha hota.",
   "post": [
    "zamungkor",
@@ -16031,7 +16031,7 @@
    "Pehle answer key parh chuke hain",
    "Test paper khud likhte hain"
   ],
-  "explanation_ur": "قابل قبول ڈسٹریکٹرز ان طلبہ کو متوجہ کرتے ہیں جن کے پاس ضروری معلومات نہیں ہوتیں، جب کہ جاننے والے طلبہ کلید کو منتخب کرتے ہیں۔",
+  "explanation_ur": "قابل قبول ڈسٹریکٹرز ان طلبہ کو متوجہ کرتے ہیں جن کے پاس ضروری معلومات نہیں ہوتیں، جبکہ جاننے والے طلبہ کلید کو منتخب کرتے ہیں۔",
   "explanation_roman": "Plausible distractors un learners ko attract karte hain jin ke paas zaroori maloomat nahi hoti, jab ke janne wale learners key ko muntakhib karte hain.",
   "post": [
    "zamungkor",
@@ -16135,7 +16135,7 @@
    "Handwriting ko zyada tawajjo se judge karna",
    "Aik hi waqt mein zyada content cover karna"
   ],
-  "explanation_ur": "مختصر جوابات لکھنے اور چیک کرنے میں کم وقت لگتا ہے، اس لیے مختصر جوابی ٹیسٹ میں زیادہ مواد پر زیادہ سوالات شامل ہو سکتے ہیں۔",
+  "explanation_ur": "مختصر جوابات لکھنے اور جانچنے میں کم وقت لگتا ہے، اس لیے مختصر جوابی ٹیسٹ میں زیادہ مواد پر زیادہ سوالات شامل ہو سکتے ہیں۔",
   "explanation_roman": "Mukhtasar jawab likhne aur check karne mein kam waqt lagta hai, is liye short answer test mein zyada content par zyada sawal shamil ho sakte hain.",
   "post": [
    "zamungkor",
@@ -16178,7 +16178,7 @@
   "options_ur": [
    "ان کا جواب دینے میں بہت زیادہ وقت لگتا ہے",
    "ان سے وسیع مواد شامل نہیں ہو سکتا",
-   "طلبہ اندازہ لگا کر تقریبا آدھی بار درست جواب چن سکتے ہیں",
+   "طلبہ اندازہ لگا کر تقریباً آدھی بار درست جواب چن سکتے ہیں",
    "ان میں طلبہ کو لمبے تحریری جوابات لکھنے ہوتے ہیں"
   ],
   "options_roman": [
@@ -16239,7 +16239,7 @@
    "Aik sath kai ghair mutaliqa facts",
    "Aik lambi aur tafseeli dalil"
   ],
-  "explanation_ur": "ایک خیال والا درست غلط بیان واضح طور پر درست یا غلط جانچا جا سکتا ہے، جب کہ ملا جلا بیان طلبہ کو الجھا دیتا ہے۔",
+  "explanation_ur": "ایک خیال والا درست غلط بیان واضح طور پر درست یا غلط جانچا جا سکتا ہے، جبکہ ملا جلا بیان طلبہ کو الجھا دیتا ہے۔",
   "explanation_roman": "Aik idea wala true/false bayan wazeh tor par durust ya ghalat judge ho sakta hai, jab ke mila jula bayan learners ko confuse karta hai.",
   "post": [
    "zamungkor",
@@ -16384,7 +16384,7 @@
   "question_ur": "تفصیلات کا جدول استاد کو ٹیسٹ کی منصوبہ بندی میں کس طرح مدد کرتا ہے؟",
   "question_roman": "Table of specifications teacher ko test plan karne mein kis tarah madad karta hai?",
   "options_ur": [
-   "ہر ٹیسٹ میں صرف مضمون والے سوالات استعمال کر کے",
+   "ہر ٹیسٹ میں صرف انشائی سوالات استعمال کر کے",
    "طلبہ کے لیے تمام مشکل سوالات سے بچ کر",
    "مواد اور مقاصد کو منصوبہ بند تناسب میں شامل کر کے",
    "ہر ایک سبق کو ایک جیسا وزن دے کر"
@@ -16488,7 +16488,7 @@
   "question_ur": "کلاس روم جائزے میں روبرک کیا ہے؟",
   "question_roman": "Classroom assessment mein rubric kya hai?",
   "options_ur": [
-   "ایک اسکورنگ گائیڈ جو معیار اور کارکردگی کی سطحیں درج کرتی ہے",
+   "ایک نمبر بندی کی گائیڈ جو معیار اور کارکردگی کی سطحیں درج کرتی ہے",
    "حاضری کے لیے طلبہ کے ناموں کی فہرست",
    "اسکول کے امتحانات کا ٹائم ٹیبل",
    "طلبہ کی فیسوں اور واجبات کا ریکارڈ"
@@ -16499,7 +16499,7 @@
    "School ke imtihanat ka timetable",
    "Students ki fees aur wajibat ka record"
   ],
-  "explanation_ur": "روبرک واضح معیار دیتی ہے اور ہر سطح پر کارکردگی بیان کرتی ہے، اس لیے اسکورنگ مستقل اور شفاف ہوتی ہے۔",
+  "explanation_ur": "روبرک واضح معیار دیتی ہے اور ہر سطح پر کارکردگی بیان کرتی ہے، اس لیے نمبر بندی مستقل اور شفاف ہوتی ہے۔",
   "explanation_roman": "Rubric wazeh criteria deti hai aur har level par performance bayan karti hai, is liye scoring mustaqil aur shaffaf hoti hai.",
   "post": [
    "zamungkor",
@@ -16537,13 +16537,13 @@
  },
  {
   "id": "PED-319",
-  "question_ur": "ایک تجزیاتی روبرک دوسری اسکورنگ گائیڈز سے مختلف ہے کیونکہ یہ کیا فراہم کرتی ہے؟",
+  "question_ur": "ایک تجزیاتی روبرک نمبر بندی کی دوسری گائیڈز سے مختلف ہے کیونکہ یہ کیا فراہم کرتی ہے؟",
   "question_roman": "Aik analytic rubric dusri scoring guides se mukhtalif hai kyunke ye kya faraham karti hai?",
   "options_ur": [
-   "پورے کام کے لیے ایک مجموعی اسکور",
-   "جائزہ لیے گئے ہر معیار کے لیے الگ اسکور",
+   "پورے کام کے لیے ایک مجموعی نمبر",
+   "جائزہ لیے گئے ہر معیار کے لیے الگ نمبر",
    "صرف پاس یا فیل کا فیصلہ",
-   "صرف املا اور خوشخطی کی بنیاد پر اسکور"
+   "صرف املا اور تحریر کی بنیاد پر نمبر"
   ],
   "options_roman": [
    "Poore kaam ke liye aik overall score",
@@ -16551,7 +16551,7 @@
    "Sirf pass ya fail ka faisla",
    "Sirf spelling aur handwriting ki bunyad par score"
   ],
-  "explanation_ur": "تجزیاتی روبرک ہر معیار کا الگ اسکور دیتی ہے، اس لیے کام کے مختلف حصوں کی خوبیاں اور کمزوریاں واضح ہو جاتی ہیں۔",
+  "explanation_ur": "تجزیاتی روبرک ہر معیار کا الگ نمبر دیتی ہے، اس لیے کام کے مختلف حصوں کی خوبیاں اور کمزوریاں واضح ہو جاتی ہیں۔",
   "explanation_roman": "Analytic rubric har criterion ka alag score deti hai, is liye kaam ke mukhtalif hisson ki khoobiyan aur kamzoriyan wazeh ho jati hain.",
   "post": [
    "zamungkor",
@@ -16589,7 +16589,7 @@
  },
  {
   "id": "PED-320",
-  "question_ur": "کون سا اسکورنگ طریقہ کسی پورے کام کے معیار کے بارے میں ایک مجموعی فیصلہ دیتا ہے؟",
+  "question_ur": "کون سا نمبر بندی کا طریقہ کسی پورے کام کے معیار کے بارے میں ایک مجموعی فیصلہ دیتا ہے؟",
   "question_roman": "Kaun sa scoring tareeqa kisi poore kaam ke mayaar ke bare mein aik overall faisla deta hai?",
   "options_ur": [
    "تجزیاتی روبرک",
@@ -16603,7 +16603,7 @@
    "Holistic rubric",
    "Anecdotal record"
   ],
-  "explanation_ur": "مجموعی روبرک کام کو مجموعی طور پر جانچتی ہے اور ایک مجموعی اسکور دیتی ہے، الگ معیاروں کا اسکور نہیں دیتی۔",
+  "explanation_ur": "مجموعی روبرک کام کو مجموعی طور پر جانچتی ہے اور ایک مجموعی نمبر دیتی ہے، الگ معیاروں کے نمبر نہیں دیتی۔",
   "explanation_roman": "Holistic rubric kaam ko overall tor par judge karti hai aur aik overall score deti hai, alag criteria ka score nahi deti.",
   "post": [
    "zamungkor",
@@ -16745,7 +16745,7 @@
  },
  {
   "id": "PED-323",
-  "question_ur": "جائزے میں پورٹ فولیو استعمال کرنے کی بنیادی خوبی یہ ہے کہ یہ کیا ظاہر کرتا ہے؟",
+  "question_ur": "جائزے میں پورٹ فولیو استعمال کرنے کی بنیادی خوبی یہ ہے کہ اس سے کیا ظاہر ہوتا ہے؟",
   "question_roman": "Assessment mein portfolio istemal karne ki bunyadi khoobi ye hai ke ye kya zahir karta hai?",
   "options_ur": [
    "صرف سب سے زیادہ نمبر جو طالب علم نے کبھی حاصل کیے",
@@ -16797,7 +16797,7 @@
  },
  {
   "id": "PED-324",
-  "question_ur": "حروف والی گریڈنگ نظام میں حرفی گریڈ بنیادی طور پر کیا ظاہر کرتا ہے؟",
+  "question_ur": "حروف والے گریڈنگ نظام میں حرفی گریڈ بنیادی طور پر کیا ظاہر کرتا ہے؟",
   "question_roman": "Letter grading system mein letter grade bunyadi tor par kya zahir karta hai?",
   "options_ur": [
    "ان دنوں کی تعداد جن میں طالب علم اسکول آیا",
@@ -16953,7 +16953,7 @@
  },
  {
   "id": "PED-327",
-  "question_ur": "تدریس میں فیڈ بیک کی بہترین تعریف کیا ہے؟",
+  "question_ur": "تدریس میں بازخورد کی بہترین تعریف کیا ہے؟",
   "question_roman": "Teaching mein feedback ki behtareen tareef kya hai?",
   "options_ur": [
    "صرف رپورٹ کارڈ کے آخر میں لکھے گئے نمبر",
@@ -16967,7 +16967,7 @@
    "Ghalat jawabat par di gayi saza",
    "Sab se zyada number lene wale student ko diya gaya inaam"
   ],
-  "explanation_ur": "فیڈ بیک سیکھنے والوں کو بتاتا ہے کہ ان کی کارکردگی توقعات سے کیسی ہے اور سیکھنے میں اگلے اقدامات کی رہنمائی کرتا ہے۔",
+  "explanation_ur": "بازخورد سیکھنے والوں کو بتاتا ہے کہ ان کی کارکردگی توقعات سے کیسی ہے اور سیکھنے میں اگلے اقدامات کی رہنمائی کرتا ہے۔",
   "explanation_roman": "Feedback learners ko batata hai ke un ki performance expectations se kaisi hai aur seekhne mein agle steps ki rehnumai karta hai.",
   "post": [
    "zamungkor",
@@ -17005,12 +17005,12 @@
  },
  {
   "id": "PED-328",
-  "question_ur": "کون سی خصوصیت فیڈ بیک کو طلبہ کے سیکھنے کی بہتری کے لیے سب سے زیادہ مفید بناتی ہے؟",
+  "question_ur": "کون سی خصوصیت بازخورد کو طلبہ کے سیکھنے کی بہتری کے لیے سب سے زیادہ مفید بناتی ہے؟",
   "question_roman": "Kaun si khususiyat feedback ko students ke seekhne ki behtari ke liye sab se zyada mufeed banati hai?",
   "options_ur": [
    "یہ کام مکمل ہونے کے بہت بعد دیا جاتا ہے",
    "اس میں صرف عمومی تعریف ہوتی ہے جیسے اچھا کام",
-   "یہ مخصوص، واضح ہوتا ہے اور کام کے فورا بعد دیا جاتا ہے",
+   "یہ مخصوص، واضح ہوتا ہے اور کام کے فوراً بعد دیا جاتا ہے",
    "یہ طالب علم کا موازنہ کلاس کے بہترین طالب علم سے کرتا ہے"
   ],
   "options_roman": [
@@ -17019,7 +17019,7 @@
    "Ye specific, clear hota hai aur kaam ke foran baad diya jata hai",
    "Ye student ka muqabla class ke behtareen student se karta hai"
   ],
-  "explanation_ur": "مخصوص اور بروقت فیڈ بیک بالکل واضح کرتا ہے کہ کیا اچھا تھا اور کس چیز میں بہتری چاہیے، جب کام ابھی تازہ ہوتا ہے۔",
+  "explanation_ur": "مخصوص اور بروقت بازخورد بالکل واضح کرتا ہے کہ کیا اچھا تھا اور کس چیز میں بہتری چاہیے، جب کام ابھی تازہ ہوتا ہے۔",
   "explanation_roman": "Specific aur timely feedback bilkul wazeh karta hai ke kya acha tha aur kis cheez mein behtari chahiye, jab kaam abhi taza hota hai.",
   "post": [
    "zamungkor",
@@ -17057,7 +17057,7 @@
  },
  {
   "id": "PED-329",
-  "question_ur": "کلاس روم میں اصلاحی فیڈ بیک وہ فیڈ بیک ہے جو کیا کرتا ہے؟",
+  "question_ur": "کلاس روم میں اصلاحی بازخورد کیا کرتا ہے؟",
   "question_roman": "Classroom mein corrective feedback wo feedback hai jo kya karta hai?",
   "options_ur": [
    "غلطیوں کا ذکر کیے بغیر محنت کی تعریف کرتا ہے",
@@ -17071,7 +17071,7 @@
    "Confidence bachane ke liye ghaltiyon ko nazar andaz karta hai",
    "Ghaltiyon ki nishandahi karta hai aur correction ki rehnumai karta hai"
   ],
-  "explanation_ur": "اصلاحی فیڈ بیک غلطیوں کی نشاندہی کرتا ہے اور سیکھنے والوں کو یہ سمجھنے میں مدد کرتا ہے کہ ان کی اصلاح کیسے کی جائے۔",
+  "explanation_ur": "اصلاحی بازخورد غلطیوں کی نشاندہی کرتا ہے اور سیکھنے والوں کو یہ سمجھنے میں مدد کرتا ہے کہ ان کی اصلاح کیسے کی جائے۔",
   "explanation_roman": "Corrective feedback ghaltiyon ki nishandahi karta hai aur learners ko ye samajhne mein madad karta hai ke un ki correction kaise ki jaye.",
   "post": [
    "zamungkor",
@@ -17109,7 +17109,7 @@
  },
  {
   "id": "PED-330",
-  "question_ur": "تشریحی فیڈ بیک سادہ تعریف سے مختلف ہے کیونکہ یہ کیا کرتا ہے؟",
+  "question_ur": "تشریحی بازخورد سادہ تعریف سے کس طرح مختلف ہے؟",
   "question_roman": "Descriptive feedback simple tareef se mukhtalif hai kyunke ye kya karta hai?",
   "options_ur": [
    "بیان کرتا ہے کہ کیا اچھا کیا گیا اور آگے کس چیز میں بہتری لانی ہے",
@@ -17123,7 +17123,7 @@
    "Learners ko sab se zyada se sab se kam rank deta hai",
    "Har learner ke liye aik hi comment dohrata hai"
   ],
-  "explanation_ur": "تشریحی فیڈ بیک کارکردگی اور اگلے اقدامات کے بارے میں تفصیلی معلومات دیتا ہے، جبکہ سادہ تعریف صرف عمومی طور پر کام کا فیصلہ کرتی ہے۔",
+  "explanation_ur": "تشریحی بازخورد کارکردگی اور اگلے اقدامات کے بارے میں تفصیلی معلومات دیتا ہے، جبکہ سادہ تعریف صرف عمومی طور پر کام کا فیصلہ کرتی ہے۔",
   "explanation_roman": "Descriptive feedback performance aur agle steps ke bare mein detailed maloomat deta hai, jabke simple tareef sirf general tor par kaam ka faisla karti hai.",
   "post": [
    "zamungkor",
@@ -17167,7 +17167,7 @@
    "گروپ کے تمام طلبہ",
    "گروپ کے 75 فیصد طلبہ",
    "گروپ کے ایک چوتھائی طلبہ",
-   "صرف وہ طلبہ جن کا اسکور برابر ہے"
+   "صرف وہ طلبہ جن کا نمبر برابر ہے"
   ],
   "options_roman": [
    "Group ke tamam students",
@@ -17175,7 +17175,7 @@
    "Group ke aik chauthai students",
    "Sirf wo students jin ka score barabar hai"
   ],
-  "explanation_ur": "75 پرسنٹائل رینک کا مطلب ہے کہ اسکور گروپ کے 75 فیصد طلبہ کے اسکورز سے زیادہ تھا۔",
+  "explanation_ur": "75 پرسنٹائل رینک کا مطلب ہے کہ نمبر گروپ کے 75 فیصد طلبہ کے نمبروں سے زیادہ تھا۔",
   "explanation_roman": "75 percentile rank ka matlab hai ke score group ke 75 percent students ke scores se zyada tha.",
   "post": [
    "zamungkor",
@@ -17219,7 +17219,7 @@
    "ہر دوسرے طالب علم سے زیادہ",
    "ہر دوسرے طالب علم سے کم",
    "موازنے والے گروپ کے درمیان میں",
-   "مکمل اسکور کے برابر"
+   "مکمل نمبر کے برابر"
   ],
   "options_roman": [
    "Har dusre student se zyada",
@@ -17227,7 +17227,7 @@
    "Comparison group ke darmiyan mein",
    "Perfect score ke barabar"
   ],
-  "explanation_ur": "50 پرسنٹائل رینک درمیانی نقطہ ہے، جس میں گروپ کے 50 فیصد طلبہ نیچے اور 50 فیصد طلبہ اوپر اسکور کرتے ہیں۔",
+  "explanation_ur": "50 پرسنٹائل رینک درمیانی نقطہ ہے، جس میں گروپ کے 50 فیصد طلبہ کے نمبر اس سے کم اور 50 فیصد طلبہ کے نمبر اس سے زیادہ ہوتے ہیں۔",
   "explanation_roman": "50 percentile rank darmiyani point hai, jis mein group ke 50 percent students neeche aur 50 percent students oopar score karte hain.",
   "post": [
    "zamungkor",
@@ -17265,7 +17265,7 @@
  },
  {
   "id": "PED-333",
-  "question_ur": "نارم ریفرینسڈ جائزہ وہ جائزہ ہے جو کیا کرتا ہے؟",
+  "question_ur": "نارم ریفرینسڈ جائزہ کیا کرتا ہے؟",
   "question_roman": "Norm-referenced assessment wo assessment hai jo kya karta hai?",
   "options_ur": [
    "سیکھنے کو صرف مقررہ کورس مقاصد کے مقابلے میں ناپتا ہے",
@@ -17279,7 +17279,7 @@
    "Sirf ye record karta hai ke skill master hui ya nahi",
    "Student ki performance ka aik group ki performance se muqabla karta hai"
   ],
-  "explanation_ur": "نارم ریفرینسڈ جائزہ اسکور کی تشریح نارم گروپ کے اسکورز سے موازنہ کر کے کرتا ہے، جس سے نسبتی مقام ظاہر ہوتا ہے۔",
+  "explanation_ur": "نارم ریفرینسڈ جائزہ نمبر کی تشریح نارم گروپ کے نمبروں سے موازنہ کر کے کرتا ہے، جس سے نسبتی مقام ظاہر ہوتا ہے۔",
   "explanation_roman": "Norm-referenced assessment score ki tashreeh norm group ke scores se muqabla kar ke karta hai, jis se relative standing zahir hoti hai.",
   "post": [
    "zamungkor",
@@ -17374,7 +17374,7 @@
   "options_ur": [
    "ایک ٹیسٹ کے پرچے پر نمبر لگانا",
    "روزانہ حاضری درج کرنا",
-   "کورس کی تشخیص",
+   "کورس کا جائزہ",
    "گھر کے کام کے سوالات تیار کرنا"
   ],
   "options_roman": [
@@ -17383,7 +17383,7 @@
    "Course evaluation",
    "Ghar ke kaam ke sawalat tayyar karna"
   ],
-  "explanation_ur": "کورس کی تشخیص یہ جانچتی ہے کہ پورا کورس اپنے مقاصد حاصل کر رہا ہے یا نہیں اور اس میں کیسے بہتری لائی جا سکتی ہے۔",
+  "explanation_ur": "کورس کا جائزہ یہ جانچتا ہے کہ پورا کورس اپنے مقاصد حاصل کر رہا ہے یا نہیں اور اس میں کیسے بہتری لائی جا سکتی ہے۔",
   "explanation_roman": "Course evaluation ye janchti hai ke pura course apne maqasid hasil kar raha hai ya nahi aur is mein kaise behtri lai ja sakti hai.",
   "post": [
    "zamungkor",
@@ -17421,7 +17421,7 @@
  },
  {
   "id": "PED-336",
-  "question_ur": "پروگرام کی تشخیص کسی ایک طالب علم کے امتحان سے بنیادی طور پر اس لیے مختلف ہے کہ پروگرام کی تشخیص کس چیز پر توجہ دیتی ہے؟",
+  "question_ur": "پروگرام کا جائزہ کسی ایک طالب علم کے امتحان سے بنیادی طور پر اس لیے مختلف ہے کہ پروگرام کا جائزہ کس چیز پر توجہ دیتا ہے؟",
   "question_roman": "Programme evaluation kisi aik talib ilm ke imtihan se bunyadi tor par is liye mukhtalif hai ke programme evaluation kis cheez par tawajju deti hai?",
   "options_ur": [
    "پروگرام کا معیار اور اس کے نتائج",
@@ -17435,7 +17435,7 @@
    "Kisi talib ilm ki tehreer",
    "Jamaat mein baithne ka mansooba"
   ],
-  "explanation_ur": "پروگرام کی تشخیص پروگرام، اس کی ساخت اور اس کے نتائج کا جائزہ لیتی ہے، نہ کہ کسی ایک طالب علم کو نمبر دیتی ہے۔",
+  "explanation_ur": "پروگرام کا جائزہ پروگرام، اس کی ساخت اور اس کے نتائج کو جانچتا ہے، نہ کہ کسی ایک طالب علم کو نمبر دیتا ہے۔",
   "explanation_roman": "Programme evaluation programme, us ki saakht aur us ke nataij ka jaiza leti hai, na ke kisi aik talib ilm ko number deti hai.",
   "post": [
    "zamungkor",
@@ -17473,11 +17473,11 @@
  },
  {
   "id": "PED-337",
-  "question_ur": "جب تشخیص کنندگان کسی پروگرام کا مطالعہ اس کے جاری رہنے کے دوران اس لیے کرتے ہیں کہ عمل درآمد کے دوران اس میں بہتری لائی جائے، تو اس قسم کی پروگرام کی تشخیص کو کیا کہا جاتا ہے؟",
+  "question_ur": "جب جائزہ لینے والے کسی پروگرام کا مطالعہ اس کے جاری رہنے کے دوران اس لیے کرتے ہیں کہ عمل درآمد کے دوران اس میں بہتری لائی جائے، تو اس قسم کے پروگرام کے جائزے کو کیا کہا جاتا ہے؟",
   "question_roman": "Jab evaluators kisi programme ka mutala us ke jari rehne ke doran is liye karte hain ke implementation ke doran is mein behtri lai jaye, to is qisam ki programme evaluation ko kya kaha jata hai?",
   "options_ur": [
-   "اختتامی تشخیص",
-   "تشکیلی تشخیص",
+   "اختتامی جائزہ",
+   "تشکیلی جائزہ",
    "حتمی نمبر دینا",
    "سالانہ معائنہ"
   ],
@@ -17487,7 +17487,7 @@
    "Hatmi number dena",
    "Salana muaina"
   ],
-  "explanation_ur": "تشکیلی تشخیص پروگرام کے دوران ہوتی ہے اور اس کے نتائج پروگرام میں اس کے جاری رہنے کے دوران بہتری لانے کے لیے استعمال ہوتے ہیں۔",
+  "explanation_ur": "تشکیلی جائزہ پروگرام کے دوران ہوتا ہے اور اس کے نتائج پروگرام میں اس کے جاری رہنے کے دوران بہتری لانے کے لیے استعمال ہوتے ہیں۔",
   "explanation_roman": "Formative evaluation programme ke doran hoti hai aur us ke nataij programme mein us ke jari rehne ke doran behtri lane ke liye istemal hote hain.",
   "post": [
    "zamungkor",
@@ -17528,7 +17528,7 @@
   "question_ur": "وہ جائزہ جس میں طلبہ سے حقیقی زندگی کے مسائل سے ملتے جلتے کام مکمل کرنے کو کہا جاتا ہے، جیسے رپورٹ تیار کرنا یا تحقیق کرنا، کس قسم کا جائزہ کہلاتا ہے؟",
   "question_roman": "Wo jaiza jis mein talaba se haqeeqi zindagi ke masail se milte julte kaam mukammal karne ko kaha jata hai, jaise report tayyar karna ya tehqeeq karna, kis qisam ka jaiza kehlata hai?",
   "options_ur": [
-   "نارم حوالہ جائزہ",
+   "نارم ریفرینسڈ جائزہ",
    "تشخیصی جانچ",
    "معروضی جانچ",
    "مستند جائزہ"
@@ -17580,7 +17580,7 @@
   "question_ur": "ایک استاد طلبہ سے اسکول کے باغ کا بجٹ تیار کرنے اور اپنا منصوبہ جماعت کے سامنے پیش کرنے کو کہتا ہے۔ یہ کام کس قسم کے جائزے کی واضح ترین مثال ہے؟",
   "question_roman": "Aik ustad talaba se school ke bagh ka budget tayyar karne aur apna mansooba jamaat ke samne pesh karne ko kehta hai. Ye kaam kis qisam ke jaize ki wazeh tareen misaal hai?",
   "options_ur": [
-   "کثیر الانتخابی امتحان",
+   "کثیر انتخابی امتحان",
    "مستند جائزہ",
    "صحیح غلط کوئز",
    "ہجے کی مشق"
@@ -17629,7 +17629,7 @@
  },
  {
   "id": "PED-340",
-  "question_ur": "مختصر یادداشت کے امتحان کے مقابلے میں مستند جائزے کا سب سے بڑا فائدہ یہ بتایا جاتا ہے کہ مستند جائزہ سب سے بہتر طور پر کیا ظاہر کر سکتا ہے؟",
+  "question_ur": "مختصر یادداشت کے امتحان کے مقابلے میں مستند جائزے کا سب سے بڑا فائدہ یہ بتایا جاتا ہے کہ مستند جائزہ کیا سب سے بہتر ظاہر کر سکتا ہے؟",
   "question_roman": "Mukhtasar yaddasht ke imtihan ke muqable mein authentic assessment ka sab se bara faida ye bataya jata hai ke authentic assessment sab se behtar tor par kya zahir kar sakta hai?",
   "options_ur": [
    "طالب علم کتنی جلدی حقائق یاد کر سکتا ہے",
@@ -17889,7 +17889,7 @@
  },
  {
   "id": "PED-345",
-  "question_ur": "کسی طالب علم سے متعلق ایک اہم واقعے کی مختصر تحریری تفصیل، جو استاد واقعے کے فورا بعد درج کرے، کس ریکارڈ کے نام سے جانی جاتی ہے؟",
+  "question_ur": "کسی طالب علم سے متعلق ایک اہم واقعے کی مختصر تحریری تفصیل، جو استاد واقعے کے فوراً بعد درج کرے، کس ریکارڈ کے نام سے جانی جاتی ہے؟",
   "question_roman": "Kisi talib ilm se mutaliq aik aham waqiye ki mukhtasar tehreeri tafseel, jo ustad waqiye ke foran baad darj kare, kis record ke naam se jani jati hai?",
   "options_ur": [
    "واقعاتی ریکارڈ",
@@ -17903,7 +17903,7 @@
    "An attendance register",
    "A stock register"
   ],
-  "explanation_ur": "واقعاتی ریکارڈ مشاہدہ کیے گئے واقعے کی مختصر حقیقی تفصیل ہوتا ہے، جو بعد میں مطالعے کے لیے واقعے کے فورا بعد لکھا جاتا ہے۔",
+  "explanation_ur": "واقعاتی ریکارڈ مشاہدہ کیے گئے واقعے کی مختصر حقیقی تفصیل ہوتا ہے، جو بعد میں مطالعے کے لیے واقعے کے فوراً بعد لکھا جاتا ہے۔",
   "explanation_roman": "Anecdotal record mushahida kiye gaye waqiye ki mukhtasar haqeeqi tafseel hota hai, jo baad mein mutale ke liye waqiye ke foran baad likha jata hai.",
   "post": [
    "zamungkor",
@@ -17941,7 +17941,7 @@
  },
  {
   "id": "PED-346",
-  "question_ur": "واقعاتی ریکارڈ لکھتے وقت استاد کو سب سے زیادہ احتیاط سے درج ذیل میں سے کون سا کام کرنا چاہیے؟",
+  "question_ur": "واقعاتی ریکارڈ لکھتے وقت استاد کو سب سے زیادہ احتیاط سے مندرجہ ذیل میں سے کون سا کام کرنا چاہیے؟",
   "question_roman": "Anecdotal record likhte waqt ustad ko sab se zyada ehtiyat se darj zail mein se kaun sa kaam karna chahiye?",
   "options_ur": [
    "طالب علم کے بارے میں ذاتی آراء شامل کرنا",
@@ -17955,7 +17955,7 @@
    "Sirf wo waqiyat darj karna jo ustad ko khush karen",
    "Qabil e mushahida haqaiq ko ghair janibdarana aur fori tor par darj karna"
   ],
-  "explanation_ur": "واقعاتی ریکارڈ سب سے زیادہ مفید اس وقت ہوتے ہیں جب وہ واقعے کے فورا بعد، بغیر کسی اضافی فیصلے کے، وہی بیان کریں جو واقعی دیکھا اور سنا گیا ہو۔",
+  "explanation_ur": "واقعاتی ریکارڈ سب سے زیادہ مفید اس وقت ہوتے ہیں جب وہ واقعے کے فوراً بعد، بغیر کسی اضافی فیصلے کے، وہی بیان کریں جو واقعی دیکھا اور سنا گیا ہو۔",
   "explanation_roman": "Anecdotal record sab se zyada mufeed us waqt hote hain jab wo waqiye ke foran baad, baghair kisi izafi faisle ke, wohi bayan karen jo waqai dekha aur suna gaya ho.",
   "post": [
    "zamungkor",
@@ -18253,7 +18253,7 @@
  },
  {
   "id": "PED-352",
-  "question_ur": "انگریزی لفظ کریکولم کس لاطینی لفظ سے ماخوذ ہے اور اس کا مطلب کیا ہے؟",
+  "question_ur": "انگریزی لفظ کریکولم جس لاطینی لفظ سے ماخوذ ہے، اس کا مطلب کیا ہے؟",
   "question_roman": "Lafz curriculum kis Latin lafz se aaya hai aur us ka matlab kya hai?",
   "options_ur": [
    "ایک دوڑ کا میدان یا دوڑنے کا راستہ",
@@ -19193,7 +19193,7 @@
   "question_roman": "Child-centred curriculum mein teacher asbaaq ke doran bunyadi taur par kis kirdar mein hota hai?",
   "options_ur": [
    "ہر جواب کو سختی سے قابو کرنے والا",
-   "ایک دور کھڑا مشاہد جو اسباق میں کوئی حصہ نہ لے",
+   "ایک دور کھڑا مبصر جو اسباق میں کوئی حصہ نہ لے",
    "ایک لیکچرر جو صرف مضمون کے حقائق بیان کرتا ہے",
    "ایک رہنما جو سیکھنے والوں کی ان کی اپنی سیکھ میں مدد کرتا ہے"
   ],
@@ -19453,7 +19453,7 @@
   "question_roman": "Hilda Taba ke namoonay ko nichli satah ka namoona is liye kaha jata hai ke nisaab ki tayyari ka kaam kis satah se shuru hota hai?",
   "options_ur": [
    "قومی وزارت",
-   "کمرہ جماعت اور اس کے اساتذہ",
+   "کلاس روم اور اس کے اساتذہ",
    "امتحانی بورڈ",
    "نصابی کتب کا بورڈ"
   ],
@@ -19463,7 +19463,7 @@
    "Imtihaani board",
    "Nisaabi kutub ka board"
   ],
-  "explanation_ur": "ٹابا نے ایک استقرائی، نیچے سے اوپر کی طرف جانے والا نمونہ پیش کیا جس میں اساتذہ کمرہ جماعت کی ضروریات سے نصاب تیار کرتے ہیں بجائے اس کے کہ وہ اوپر سے تیار شدہ وصول کریں۔",
+  "explanation_ur": "ٹابا نے ایک استقرائی، نیچے سے اوپر کی طرف جانے والا نمونہ پیش کیا جس میں اساتذہ کلاس روم کی ضروریات سے نصاب تیار کرتے ہیں بجائے اس کے کہ وہ اوپر سے تیار شدہ وصول کریں۔",
   "explanation_roman": "Taba ne aik istiqrai, neechay se oopar ki taraf jaane wala namoona paish kiya jis mein asaatza kamra e jamaat ki zarooriyaat se nisaab tayyar karte hain bajaye is ke ke woh oopar se tayyar shudah wasool karein.",
   "post": [
    "zamungkor",
@@ -19504,7 +19504,7 @@
   "question_ur": "ٹابا کے نمونے میں کام کی اکائی تیار کرنے کا پہلا کام کس چیز کی تشخیص کرنا ہے؟",
   "question_roman": "Taba ke namoonay mein kaam ki ikai tayyar karne ka pehla kaam kis cheez ki tashkhees karna hai?",
   "options_ur": [
-   "کمرہ جماعت کے فرنیچر کی لاگت",
+   "کلاس روم کے فرنیچر کی لاگت",
    "نصابی کتابوں کے مصنفین کے نام",
    "سیکھنے والوں کی ضروریات",
    "حتمی امتحان کی تاریخیں"
@@ -19605,13 +19605,13 @@
  },
  {
   "id": "PED-378",
-  "question_ur": "نصاب کی تیاری کے ٹابا نمونے میں کمرہ جماعت کے اساتذہ کیا کردار ادا کرتے ہیں؟",
+  "question_ur": "نصاب کی تیاری کے ٹابا نمونے میں کلاس روم کے اساتذہ کیا کردار ادا کرتے ہیں؟",
   "question_roman": "Nisaab ki tayyari ke Taba namoonay mein kamra e jamaat ke asaatza kya kirdaar ada karte hain?",
   "options_ur": [
    "وہ بیرونی ماہرین کے تیار کردہ نصاب کو صرف نافذ کرتے ہیں",
    "وہ نصاب کو آزماتے ہیں لیکن اس میں تبدیلی کی توقع نہیں کی جاتی",
    "وہ تیار شدہ نصاب کا دوسری زبانوں میں ترجمہ کرتے ہیں",
-   "وہ کمرہ جماعت کی ضروریات سے اس کی تیاری میں نمایاں کردار ادا کرتے ہیں"
+   "وہ کلاس روم کی ضروریات سے اس کی تیاری میں نمایاں کردار ادا کرتے ہیں"
   ],
   "options_roman": [
    "Woh bairooni mahireen ke tayyar kardah nisaab ko sirf naafiz karte hain",
@@ -19619,7 +19619,7 @@
    "Woh tayyar shudah nisaab ka doosri zabanon mein tarjuma karte hain",
    "Woh kamra e jamaat ki zarooriyaat se is ki tayyari mein numayan kirdaar ada karte hain"
   ],
-  "explanation_ur": "ٹابا نے اساتذہ کو مرکزی کردار دیا، اور ان سے توقع کی کہ وہ اپنے کمرہ جماعت میں مشاہدہ کی گئی ضروریات سے نصابی اکائیاں بنائیں۔",
+  "explanation_ur": "ٹابا نے اساتذہ کو مرکزی کردار دیا، اور ان سے توقع کی کہ وہ اپنے کلاس روم میں مشاہدہ کی گئی ضروریات سے نصابی اکائیاں بنائیں۔",
   "explanation_roman": "Taba ne asaatza ko markazi kirdaar diya, aur un se tawaqqa ki ke woh apne kamra e jamaat mein mushaahida ki gayi zarooriyaat se nisaabi ikaiyaan banayein.",
   "post": [
    "zamungkor",
@@ -19661,7 +19661,7 @@
   "question_roman": "Kaun sa bayaan Taba namoonay aur Tyler ke istedlal ke darmiyan farq ko behtareen andaaz mein bayaan karta hai?",
   "options_ur": [
    "ٹابا کا کام قومی امتحانات سے شروع ہوتا ہے، جبکہ ٹائلر کا کام نصابی کتابوں سے شروع ہوتا ہے",
-   "ٹابا کا کام کمرہ جماعت میں اساتذہ کے ساتھ شروع ہوتا ہے، جبکہ ٹائلر کا کام عمومی مقاصد سے شروع ہوتا ہے",
+   "ٹابا کا کام کلاس روم میں اساتذہ کے ساتھ شروع ہوتا ہے، جبکہ ٹائلر کا کام عمومی مقاصد سے شروع ہوتا ہے",
    "ٹابا کا کام مقاصد کو نظر انداز کرتا ہے، جبکہ ٹائلر کا کام سیکھنے والوں کو نظر انداز کرتا ہے",
    "ٹابا کا کام کوئی جائزہ استعمال نہیں کرتا، جبکہ ٹائلر کا کام کوئی مواد استعمال نہیں کرتا"
   ],
@@ -19671,7 +19671,7 @@
    "Taba ka kaam maqasid ko nazar andaaz karta hai, jabke Tyler ka kaam seekhne walon ko nazar andaaz karta hai",
    "Taba ka kaam koi jaiza istemaal nahi karta, jabke Tyler ka kaam koi mawaad istemaal nahi karta"
   ],
-  "explanation_ur": "ٹابا کا نمونہ استقرائی ہے اور اساتذہ اور کمرہ جماعت کی ضروریات سے شروع ہوتا ہے، جبکہ ٹائلر کا استدلال استنباطی ہے اور وسیع مقاصد سے شروع ہوتا ہے جن سے باقی کام پیدا ہوتا ہے۔",
+  "explanation_ur": "ٹابا کا نمونہ استقرائی ہے اور اساتذہ اور کلاس روم کی ضروریات سے شروع ہوتا ہے، جبکہ ٹائلر کا استدلال استنباطی ہے اور وسیع مقاصد سے شروع ہوتا ہے جن سے باقی کام پیدا ہوتا ہے۔",
   "explanation_roman": "Taba ka namoona istiqrai hai aur asaatza aur kamra e jamaat ki zarooriyaat se shuru hota hai, jabke Tyler ka istedlal istinbati hai aur wasee maqasid se shuru hota hai jin se baaqi kaam paida hota hai.",
   "post": [
    "zamungkor",
@@ -19765,7 +19765,7 @@
   "question_roman": "Nisaabi dastaveez mein SLO ki behtareen wazaahat kaun si hai?",
   "options_ur": [
    "اس بات کا واضح بیان کہ سیکھنے کے بعد سیکھنے والوں کو کیا حاصل کرنا چاہیے",
-   "کمرہ جماعت میں درکار فرنیچر کی فہرست",
+   "کلاس روم میں درکار فرنیچر کی فہرست",
    "ہر روز موجود اساتذہ کا ریکارڈ",
    "نظام الاوقات جس میں دکھایا گیا ہو کہ ہر مضمون کب پڑھایا جاتا ہے"
   ],
@@ -19973,7 +19973,7 @@
   "question_roman": "Pakistan ki maujoodah nisaabi policy mein huroof NCP ka matlab kaun sa hai?",
   "options_ur": [
    "قومی کالج پروگرام",
-   "نیا کمرہ جماعت منصوبہ",
+   "نیا کلاس روم منصوبہ",
    "پاکستان کا قومی نصاب",
    "کامیابی کا قومی سرٹیفکیٹ"
   ],
@@ -20025,7 +20025,7 @@
   "question_roman": "Nisaab ka jaiza bunyadi tor par kis cheez ke baare mein faisla karne se mutalliq hai?",
   "options_ur": [
    "اسکول کے بستوں کا وزن",
-   "کمرہ جماعت کی دیواروں کا رنگ",
+   "کلاس روم کی دیواروں کا رنگ",
    "سال میں تعطیلات کی تعداد",
    "نصاب کی قدر اور موثریت"
   ],
@@ -20177,7 +20177,7 @@
  },
  {
   "id": "PED-389",
-  "question_ur": "نصابی کتاب نصاب کی خدمت بنیادی طور پر اساتذہ اور سیکھنے والوں کو کیا پیش کر کے کرتی ہے؟",
+  "question_ur": "نصابی کتاب بنیادی طور پر اساتذہ اور سیکھنے والوں کو کیا پیش کر کے نصاب کی خدمت کرتی ہے؟",
   "question_roman": "Nisaabi kitaab nisaab ki khidmat bunyadi tor par asaatza aur seekhne walon ko kya paish kar ke karti hai?",
   "options_ur": [
    "مصنفین کے بارے میں کہانیاں",
@@ -20229,7 +20229,7 @@
  },
  {
   "id": "PED-390",
-  "question_ur": "جب کسی نصابی کتاب کو کمرہ جماعت میں استعمال کے لیے جانچا جاتا ہے، تو کون سی خصوصیت سب سے واضح طور پر ظاہر کرتی ہے کہ وہ نصاب سے مطابقت رکھتی ہے؟",
+  "question_ur": "جب کسی نصابی کتاب کو کلاس روم میں استعمال کے لیے جانچا جاتا ہے، تو کون سی خصوصیت سب سے واضح طور پر ظاہر کرتی ہے کہ وہ نصاب سے مطابقت رکھتی ہے؟",
   "question_roman": "Jab kisi nisaabi kitaab ko kamra e jamaat mein istemaal ke liye jaancha jata hai, to kaun si khususiyat sab se waazeh tor par zaahir karti hai ke woh nisaab se mutaabiqat rakhti hai?",
   "options_ur": [
    "ایک روشن اور رنگین سرورق",
@@ -20607,7 +20607,7 @@
    "Face validity",
    "Criterion-related validity"
   ],
-  "explanation_ur": "ظاہری جوازیت وہ سطحی تاثر ہے کہ ٹیسٹ اسی چیز کی پیمائش کرتا ہے جس کی پیمائش کا دعویٰ کرتا ہے، جس کا فیصلہ ٹیسٹ کو دیکھ کر کیا جاتا ہے۔",
+  "explanation_ur": "ظاہری جوازیت وہ سطحی تاثر ہے کہ ٹیسٹ اسی چیز کی پیمائش کرتا ہے جس کی پیمائش کا دعویٰ کرتا ہے، اور اس کا فیصلہ اس سے ہوتا ہے کہ ٹیسٹ دیکھنے والوں کو کیسا لگتا ہے۔",
   "explanation_roman": "Face validity woh sathi taasur hai ke test usi cheez ki paimaish karta hai jis ki paimaish ka dawa karta hai, jis ka faisla test ko dekh kar kiya jata hai.",
   "post": [
    "zamungkor",
@@ -20801,11 +20801,11 @@
  },
  {
   "id": "PED-401",
-  "question_ur": "ایک ٹیسٹ کے دو مختلف لیکن برابر نسخے وہی طلبہ کو دیے جاتے ہیں، اور ان کے نمبروں کا موازنہ کیا جاتا ہے۔ اعتمادیت کا کون سا طریقہ ان برابر نسخوں کو استعمال کرتا ہے؟",
+  "question_ur": "ایک ٹیسٹ کے دو مختلف لیکن برابر نسخے انہی طلبہ کو دیے جاتے ہیں، اور ان کے نمبروں کا موازنہ کیا جاتا ہے۔ اعتمادیت کا کون سا طریقہ ان برابر نسخوں کو استعمال کرتا ہے؟",
   "question_roman": "Aik test ke do mukhtalif lekin barabar nuskhe wohi talaba ko diye jate hain, aur un ke numberon ka mawazna kiya jata hai. Reliability ka kaun sa tareeqa in barabar nuskhon ko istemal karta hai?",
   "options_ur": [
-   "ٹیسٹ دوبارہ ٹیسٹ طریقہ",
-   "نصف تقسیم طریقہ",
+   "ٹیسٹ اور دوبارہ ٹیسٹ کا طریقہ",
+   "نصف تقسیم کا طریقہ",
    "متوازی صورتوں کا طریقہ",
    "ماہرین کی رائے کا طریقہ"
   ],
@@ -20815,7 +20815,7 @@
    "Parallel forms method",
    "Expert judgment method"
   ],
-  "explanation_ur": "متوازی صورتوں کی اعتمادیت میں ٹیسٹ کی دو برابر صورتوں کے نمبروں کا موازنہ کیا جاتا ہے جو وہی گروہ کو دی جاتی ہیں، اس لیے دونوں صورتوں کا مواد اور مشکل درجہ برابر ہونا چاہیے۔",
+  "explanation_ur": "متوازی صورتوں کی اعتمادیت میں ٹیسٹ کی دو برابر صورتوں کے نمبروں کا موازنہ کیا جاتا ہے جو اسی گروہ کو دی جاتی ہیں، اس لیے دونوں صورتوں کا مواد اور مشکل کا درجہ برابر ہونا چاہیے۔",
   "explanation_roman": "Parallel forms reliability mein test ki do barabar formon ke numberon ka mawazna kiya jata hai jo wohi giroh ko di jati hain, is liye donon formon ka mawaad aur mushkil darja barabar hona chahiye.",
   "post": [
    "zamungkor",
@@ -20919,7 +20919,7 @@
    "Reliability",
    "Usability"
   ],
-  "explanation_ur": "معروضیت کا مطلب ہے کہ نمبر دینا جانچ کنندہ کے ذاتی فیصلے سے آزاد ہو، اس لیے مختلف جانچ کنندہ وہی جوابات کو وہی نمبر دیتے ہیں۔",
+  "explanation_ur": "معروضیت کا مطلب ہے کہ نمبر دینا جانچ کنندہ کے ذاتی فیصلے سے آزاد ہو، اس لیے مختلف جانچ کنندہ انہی جوابات کو وہی نمبر دیتے ہیں۔",
   "explanation_roman": "Objectivity ka matlab hai ke number dena jaanch kuninda ke zaati faisle se aazad ho, is liye mukhtalif jaanch kuninda wohi jawabat ko wohi number dete hain.",
   "post": [
    "zamungkor",
@@ -21165,7 +21165,7 @@
  },
  {
   "id": "PED-408",
-  "question_ur": "ایک املا کے امتحان میں نمبر 5، 7، 7، 9، 11، 7 اور 13 ہیں۔ کون سا نمبر موڈ ہے؟",
+  "question_ur": "ایک املا کے امتحان میں نمبر 5، 7، 7، 9، 11، 7 اور 13 ہیں۔ کون سا نمبر کثیر الوقوع ہے؟",
   "question_roman": "Ek spelling test mein number 5, 7, 7, 9, 11, 7 aur 13 hain. Kaun sa number mode hai?",
   "options_ur": [
    "7",
@@ -21335,7 +21335,7 @@
    "3",
    "5"
   ],
-  "explanation_ur": "اوسط 5 سے مربع فرق 9، 9، 9 اور 9 ہیں۔ ان کا مجموعہ 36 ہے، 36 کو 4 سے تقسیم کرنے سے 9 حاصل ہوتا ہے، اور 9 کا جذر 3 ہے۔",
+  "explanation_ur": "اوسط 5 سے فرقوں کے مربع 9، 9، 9 اور 9 ہیں۔ ان کا مجموعہ 36 ہے، 36 کو 4 سے تقسیم کرنے سے 9 حاصل ہوتا ہے، اور 9 کا جذر المربع 3 ہے۔",
   "explanation_roman": "Mean 5 se murabba farq 9, 9, 9 aur 9 hain. In ka majmooa 36 hai, 36 ko 4 se taqseem karne se 9 hasil hota hai, aur 9 ka jazar 3 hai.",
   "post": [
    "zamungkor",
@@ -21633,13 +21633,13 @@
  },
  {
   "id": "PED-417",
-  "question_ur": "امتحانی نمبروں کی مکمل معمول کی تقسیم میں اوسط، وسطانیہ اور موڈ کے بارے میں کیا درست ہے؟",
+  "question_ur": "امتحانی نمبروں کی مکمل معمول کی تقسیم میں اوسط، وسطانیہ اور کثیر الوقوع کے بارے میں کیا درست ہے؟",
   "question_roman": "Imtihani numberon ki mukammal normal distribution mein mean, median aur mode ke baare mein kya durust hai?",
   "options_ur": [
    "اوسط وسطانیہ سے زیادہ ہے",
-   "موڈ اوسط سے زیادہ ہے",
-   "وسطانیہ موڈ سے زیادہ ہے",
-   "اوسط، وسطانیہ اور موڈ برابر ہیں"
+   "کثیر الوقوع اوسط سے زیادہ ہے",
+   "وسطانیہ کثیر الوقوع سے زیادہ ہے",
+   "اوسط، وسطانیہ اور کثیر الوقوع برابر ہیں"
   ],
   "options_roman": [
    "Mean median se ziyada hai",
@@ -21647,7 +21647,7 @@
    "Median mode se ziyada hai",
    "Mean, median aur mode barabar hain"
   ],
-  "explanation_ur": "معمول کی تقسیم میں اوسط، وسطانیہ اور موڈ سب مرکز پر ہوتے ہیں، اس لیے وہ برابر ہیں۔",
+  "explanation_ur": "معمول کی تقسیم میں اوسط، وسطانیہ اور کثیر الوقوع سب مرکز پر ہوتے ہیں، اس لیے وہ برابر ہیں۔",
   "explanation_roman": "Normal distribution mein mean, median aur mode sab markaz par hote hain, is liye woh barabar hain.",
   "post": [
    "zamungkor",
@@ -21685,7 +21685,7 @@
  },
  {
   "id": "PED-418",
-  "question_ur": "معمول کی تقسیم میں، تقریبا کتنے فیصد نمبر اوسط کے 1 معیاری انحراف کے اندر آتے ہیں؟",
+  "question_ur": "معمول کی تقسیم میں تقریباً کتنے فیصد نمبر اوسط کے 1 معیاری انحراف کے اندر آتے ہیں؟",
   "question_roman": "Normal distribution mein, taqreeban kitne percent number mean ke 1 standard deviation ke andar aate hain?",
   "options_ur": [
    "50%",
@@ -21699,7 +21699,7 @@
    "95%",
    "99%"
   ],
-  "explanation_ur": "معمول کی تقسیم میں تقریبا 68 فیصد نمبر اوسط کے 1 معیاری انحراف کے اندر آتے ہیں۔",
+  "explanation_ur": "معمول کی تقسیم میں تقریباً 68 فیصد نمبر اوسط کے 1 معیاری انحراف کے اندر آتے ہیں۔",
   "explanation_roman": "Normal distribution mein taqreeban 68 percent number mean ke 1 standard deviation ke andar aate hain.",
   "post": [
    "zamungkor",
@@ -21789,12 +21789,12 @@
  },
  {
   "id": "PED-420",
-  "question_ur": "ایک کوئز میں نمبر 3، 5، 5، 7، 7 اور 9 ہیں۔ ان نمبروں کا موڈ کیا ہے؟",
+  "question_ur": "ایک کوئز میں نمبر 3، 5، 5، 7، 7 اور 9 ہیں۔ ان نمبروں کا کثیر الوقوع کیا ہے؟",
   "question_roman": "Ek quiz mein number 3, 5, 5, 7, 7 aur 9 hain. In numberon ka mode kya hai?",
   "options_ur": [
    "صرف 5",
    "صرف 7",
-   "کوئی موڈ نہیں",
+   "کوئی کثیر الوقوع نہیں",
    "5 اور 7"
   ],
   "options_roman": [
@@ -21803,7 +21803,7 @@
    "Koi mode nahi",
    "5 aur 7"
   ],
-  "explanation_ur": "نمبر 5، 2 بار آیا ہے اور نمبر 7، 2 بار آیا ہے، اس لیے 2 موڈ ہیں، 5 اور 7۔",
+  "explanation_ur": "نمبر 5، 2 بار آیا ہے اور نمبر 7، 2 بار آیا ہے، اس لیے 2 کثیر الوقوع ہیں، 5 اور 7۔",
   "explanation_roman": "Number 5, 2 baar aaya hai aur number 7, 2 baar aaya hai, is liye 2 mode hain, 5 aur 7.",
   "post": [
    "zamungkor",
@@ -21997,7 +21997,7 @@
  },
  {
   "id": "PED-424",
-  "question_ur": "ایک استاد جو سبق کو بولی ہوئی باتوں، تصویروں اور عملی اشیا کے ذریعے پیش کرتا ہے، شمولیت کا کون سا طریقہ اپنا رہا ہے؟",
+  "question_ur": "ایک استاد جو سبق کو بولی ہوئی باتوں، تصویروں اور عملی چیزوں کے ذریعے پیش کرتا ہے، شمولیت کا کون سا طریقہ اپنا رہا ہے؟",
   "question_roman": "Aik teacher jo lesson ko boli hui baton, tasveeron aur hands-on cheezon ke zariye paish karta hai, inclusion ka kaun sa tareeqa apna raha hai?",
   "options_ur": [
    "ہر سیکھنے والے کو ایک ہی مقررہ طریقے سے پڑھانا",
@@ -22106,7 +22106,7 @@
   "options_ur": [
    "ایک تحریری کوڈ جو صرف امتحانات میں استعمال ہوتا ہے",
    "خاموش پڑھائی کے لیے کلاس روم کے قواعد کا مجموعہ",
-   "اسکول کی لائبریری میں اشیا پر نام لگانے کا طریقہ",
+   "اسکول کی لائبریری میں چیزوں پر نام لگانے کا طریقہ",
    "ہاتھوں کی شکلوں، اشاروں اور چہرے کے تاثرات پر مبنی ایک بصری زبان"
   ],
   "options_roman": [
@@ -22205,7 +22205,7 @@
  },
  {
   "id": "PED-428",
-  "question_ur": "ذہنی معذوری والے طلبہ عام طور پر اس وقت بہتر سیکھتے ہیں جب استاد ایسی ہدایات دے جو کیسی ہوں؟",
+  "question_ur": "ذہنی معذوری والے طلبہ عام طور پر اس وقت بہتر سیکھتے ہیں جب استاد کی ہدایات کیسی ہوں؟",
   "question_roman": "Intellectual disabilities walay students aam tor par us waqt behtar seekhtay hain jab teacher aisi instructions day jo kaisi hon?",
   "options_ur": [
    "طویل، تجریدی اور صرف ایک بار دی گئی ہوں",
@@ -22517,7 +22517,7 @@
  },
  {
   "id": "PED-434",
-  "question_ur": "معاون ٹیکنالوجی معذوری والے سیکھنے والوں کی بنیادی طور پر کس چیز کی فراہمی سے مدد کرتی ہے؟",
+  "question_ur": "معاون ٹیکنالوجی معذوری والے سیکھنے والوں کو بنیادی طور پر کیا فراہم کرتی ہے؟",
   "question_roman": "Assistive technology disability walay learners ki bunyadi tor par kis cheez ki farahami se madad karti hai?",
   "options_ur": [
    "ایسے اوزار اور آلات جو سیکھنے، بات چیت اور شرکت میں مدد کرتے ہیں",
@@ -22574,7 +22574,7 @@
   "options_ur": [
    "نصابی کتاب کے ہر باب کی تیز تکمیل",
    "بغیر پڑھائی کے ہر مضمون میں زیادہ نمبر",
-   "انسانی اختلافات کی قبولیت، احترام اور سمجھ بوجھ",
+   "انسانی اختلافات کی قبولیت، ان کا احترام اور ان کی سمجھ بوجھ",
    "کلاس روم کے تمام قواعد و ضوابط سے آزادی"
   ],
   "options_roman": [
@@ -22687,7 +22687,7 @@
    "Sirf aik mazmoon ke nambaron par",
    "Sirf khel ke maidan ke rawaiye par"
   ],
-  "explanation_ur": "منصفانہ پہچان کئی ذرائع سے ثبوت استعمال کرتی ہے کیونکہ ایک نمبر کلاس ورک، تخلیق یا مشاہدے میں ظاہر ہونے والی صلاحیت کو چھپا سکتا ہے۔ صرف ایک مضمون کے نمبر یا کھیل کے میدان کا رویہ نامکمل تصویر دیتے ہیں۔",
+  "explanation_ur": "منصفانہ پہچان کئی ذرائع سے ثبوت استعمال کرتی ہے کیونکہ ایک نمبر کلاس ورک، تخلیق یا مشاہدے میں ظاہر ہونے والی صلاحیت کو نظر انداز کر سکتا ہے۔ صرف ایک مضمون کے نمبر یا کھیل کے میدان کا رویہ نامکمل تصویر دیتے ہیں۔",
   "explanation_roman": "Munsifana pehchan kai zarai se saboot istemal karti hai kyunke aik score classwork, takhleeq ya mushahide mein zahir hone wali salahiyat ko chhupa sakta hai. Sirf aik mazmoon ke nambar ya khel ke maidan ka rawaiya na mukammal tasveer dete hain.",
   "post": [
    "zamungkor",
@@ -22791,7 +22791,7 @@
    "Differentiation",
    "Acceleration"
   ],
-  "explanation_ur": "تسریع سیکھنے والے کو معمول کی رفتار سے تیز نصاب سے گزرنے کی اجازت دیتی ہے، مثلا پہلے آگے کے درجے کے مواد تک پہنچا کر۔ اصلاحی تدریس پیچھے رہنے والے سیکھنے والوں کی مدد کرتی ہے، جبکہ تکرار وہی مواد دہراتا ہے۔",
+  "explanation_ur": "تسریع سیکھنے والے کو معمول کی رفتار سے تیز نصاب سے گزرنے کی اجازت دیتی ہے، مثلاً پہلے آگے کے درجے کے مواد تک پہنچا کر۔ اصلاحی تدریس پیچھے رہنے والے سیکھنے والوں کی مدد کرتی ہے، جبکہ تکرار میں وہی مواد دہرایا جاتا ہے۔",
   "explanation_roman": "Acceleration learner ko mamul ki raftaar se tez nisaab se guzarne ki ijazat deta hai, masalan pehle aala darje ke mawad tak pahuncha kar. Remedial teaching peeche rehne wale learners ki madad karta hai, jabke takraar wahi mawad dohrata hai.",
   "post": [
    "zamungkor",
@@ -22985,7 +22985,7 @@
  },
  {
   "id": "PED-443",
-  "question_ur": "معمول کی کلاس روم میں سست سیکھنے والوں کی مدد کے لیے کون سا طریقہ تدریس سب سے مناسب ہے؟",
+  "question_ur": "معمول کے کلاس روم میں سست سیکھنے والوں کی مدد کے لیے کون سا طریقہ تدریس سب سے مناسب ہے؟",
   "question_roman": "Mamul ki classroom mein slow learners ki madad ke liye kaun sa tareeqa tadrees sab se munasib hai?",
   "options_ur": [
    "بہت زیادہ نیا مواد بہت تیز پیش کرنا",
@@ -23103,7 +23103,7 @@
    "Seating arrangement",
    "School timetable"
   ],
-  "explanation_ur": "مواد کی تفریق یہ بدلتی ہے کہ سیکھنے والے کیا پڑھتے ہیں یا کون سا مواد استعمال کرتے ہیں، مثلا وہی موضوع کے لیے مختلف سطحوں کا پڑھنے کا مواد۔ مصنوع کی تفریق یہ بدلتی ہے کہ سیکھنے والے اپنی سمجھ کیسے ظاہر کرتے ہیں، مواد خود نہیں۔",
+  "explanation_ur": "مواد کی تفریق یہ بدلتی ہے کہ سیکھنے والے کیا پڑھتے ہیں یا کون سا مواد استعمال کرتے ہیں، مثلاً وہی موضوع کے لیے مختلف سطحوں کا پڑھنے کا مواد۔ مصنوع کی تفریق یہ بدلتی ہے کہ سیکھنے والے اپنی سمجھ کیسے ظاہر کرتے ہیں، مواد خود نہیں۔",
   "explanation_roman": "Content differentiation yeh badalti hai ke learners kya parhte hain ya kaun sa mawad istemal karte hain, masalan wahi mozua ke liye mukhtalif satahon ka parhne ka mawad. Product differentiation yeh badalti hai ke learners apni samajh kaise zahir karte hain, mawad khud nahi.",
   "post": [
    "zamungkor",
@@ -23141,7 +23141,7 @@
  },
  {
   "id": "PED-446",
-  "question_ur": "جب سیکھنے والے اپنی سمجھ مختلف مصنوعات سے ظاہر کرتے ہیں، مثلا ایک پوسٹر، زبانی پیشکش یا تحریری رپورٹ، تو استاد کس میں تفریق کر رہا ہے؟",
+  "question_ur": "جب سیکھنے والے اپنی سمجھ مختلف مصنوعات سے ظاہر کرتے ہیں، مثلاً ایک پوسٹر، زبانی پیشکش یا تحریری رپورٹ، تو استاد کس میں تفریق کر رہا ہے؟",
   "question_roman": "Jab learners apni samajh mukhtalif products se zahir karte hain, masalan aik poster, zabani peshkash ya tehriri report, to teacher kis mein differentiation kar raha hai?",
   "options_ur": [
    "مواد",
@@ -23155,7 +23155,7 @@
    "Product",
    "School timetable"
   ],
-  "explanation_ur": "مصنوع کی تفریق سیکھنے والوں کو اپنی سیکھی ہوئی بات مختلف طریقوں سے ظاہر کرنے کی اجازت دیتی ہے، مثلا ایک پوسٹر، زبانی پیشکش یا تحریری رپورٹ۔ سیکھنے کا مقصد وہی رہتا ہے جبکہ آخری کام کی شکل مختلف ہوتی ہے۔",
+  "explanation_ur": "مصنوع کی تفریق سیکھنے والوں کو اپنی سیکھی ہوئی بات مختلف طریقوں سے ظاہر کرنے کی اجازت دیتی ہے، مثلاً ایک پوسٹر، زبانی پیشکش یا تحریری رپورٹ۔ سیکھنے کا مقصد وہی رہتا ہے جبکہ آخری کام کی شکل مختلف ہوتی ہے۔",
   "explanation_roman": "Product differentiation learners ko apni seekhi hui baat mukhtalif tareeqon se zahir karne ki ijazat deti hai, masalan aik poster, zabani peshkash ya tehriri report. Seekhne ka maqsad wahi rehta hai jabke aakhri kaam ki shakal mukhtalif hoti hai.",
   "post": [
    "zamungkor",
@@ -23248,7 +23248,7 @@
   "question_ur": "شمولیتی تعلیم اور الگ خصوصی تعلیم کے درمیان بنیادی فرق یہ ہے کہ شمولیتی تعلیم",
   "question_roman": "Inclusive education aur alag special education ke darmiyan bunyadi farq yeh hai ke inclusive education",
   "options_ur": [
-   "خاص ضرورتوں والے سیکھنے والوں کو مدد کے ساتھ معمول کی کلاس روم میں ان کے ہم جماعت بچوں کے ساتھ پڑھاتی ہے",
+   "خاص ضرورتوں والے سیکھنے والوں کو مدد کے ساتھ معمول کے کلاس روم میں ان کے ہم جماعت بچوں کے ساتھ پڑھاتی ہے",
    "خاص ضرورتوں والے سیکھنے والوں کو صرف الگ اسکولوں میں ہم جماعت بچوں سے دور پڑھاتی ہے",
    "تمام مدد ہٹا دیتی ہے تاکہ سیکھنے والے بالکل اکیلے سنبھالیں",
    "صرف ذہین سیکھنے والوں پر لاگو ہوتی ہے اور کسی اور سیکھنے والے پر نہیں"
@@ -23259,7 +23259,7 @@
    "Tamam madad hata deti hai taake learners bilkul akele manage karen",
    "Sirf gifted learners par lagoo hoti hai aur kisi aur learner par nahi"
   ],
-  "explanation_ur": "شمولیتی تعلیم خاص ضرورتوں والے سیکھنے والوں کو مدد کے ساتھ ہم جماعت بچوں کے ساتھ معمول کی کلاس روم میں لاتی ہے، تاکہ وہ حصہ لے سکیں۔ الگ نظام انہیں ہم جماعت بچوں سے دور پڑھاتا ہے، جبکہ شمولیت میں ایک ساتھ سیکھنا مرکزی خیال ہے۔",
+  "explanation_ur": "شمولیتی تعلیم خاص ضرورتوں والے سیکھنے والوں کو مدد کے ساتھ ہم جماعت بچوں کے ساتھ معمول کے کلاس روم میں لاتی ہے، تاکہ وہ حصہ لے سکیں۔ الگ نظام انہیں ہم جماعت بچوں سے دور پڑھاتا ہے، جبکہ شمولیت میں ایک ساتھ سیکھنا مرکزی خیال ہے۔",
   "explanation_roman": "Inclusive education khaas zarooraton wale learners ko madad ke saath ham jamaat bachon ke saath mamul ki classroom mein lati hai, taake woh hissa le saken. Alag nizaam unhen ham jamaat bachon se door parhata hai, jabke inclusion mein aik saath seekhna markazi khayal hai.",
   "post": [
    "zamungkor",
@@ -23303,7 +23303,7 @@
    "ہر سیکھنے والے کو ایک جیسے کام اور ایک جیسا وقت دے کر",
    "کاموں میں تفریق کر کے اور ضرورت کے مطابق مختلف مدد فراہم کر کے",
    "فرق کو نظر انداز کر کے صرف درمیانی گروہ کو پڑھا کر",
-   "تمام سیکھنے والوں کو بغیر کسی پسند کے ایک ہی سرگرمی پر رکھ کر"
+   "تمام سیکھنے والوں کو بغیر کسی انتخاب کے ایک ہی سرگرمی پر رکھ کر"
   ],
   "options_roman": [
    "Har learner ko aik jaisi tasks aur aik jaisa waqt de kar",
@@ -23311,7 +23311,7 @@
    "Farq ko nazar andaz kar ke sirf darmiyani groh ko parha kar",
    "Tamam learners ko baghair kisi pasand ke aik hi sargarmi par rakh kar"
   ],
-  "explanation_ur": "تفریق استاد کو ایک ہی کلاس روم میں ذہین سیکھنے والوں کو چیلنج کرنے اور سست سیکھنے والوں کی مدد کرنے کی اجازت دیتی ہے، مختلف کاموں اور ضرورت سے مطابق مدد کے ساتھ۔ ایک جیسے کام، فرق کو نظر انداز کرنا یا بغیر پسند کے ایک سرگرمی کسی گروہ کی اچھی خدمت نہیں کرتی۔",
+  "explanation_ur": "تفریق استاد کو ایک ہی کلاس روم میں ذہین سیکھنے والوں کو چیلنج کرنے اور سست سیکھنے والوں کی مدد کرنے کی اجازت دیتی ہے، مختلف کاموں اور ضرورت سے مطابق مدد کے ساتھ۔ ایک جیسے کام، فرق کو نظر انداز کرنا یا بغیر انتخاب کے ایک سرگرمی کسی گروہ کی اچھی خدمت نہیں کرتی۔",
   "explanation_roman": "Differentiation teacher ko aik hi classroom mein gifted learners ko challenge karne aur slow learners ki madad karne ki ijazat deta hai, mukhtalif tasks aur zaroorat se mutabiq madad ke saath. Aik jaisi tasks, farq ko nazar andaz karna ya baghair pasand ke aik sargarmi kisi groh ki achhi khidmat nahi karti.",
   "post": [
    "zamungkor",
@@ -24233,7 +24233,7 @@
  },
  {
   "id": "PED-467",
-  "question_ur": "اقبال نے سچی تعلیم کو کردار اور عمل سے گہرا جوڑا۔ تعلیم یافتہ شخص میں وہ کس نتیجے کو سب سے زیادہ قیمتی سمجھتے؟",
+  "question_ur": "اقبال نے سچی تعلیم کو کردار اور عمل سے گہرا جوڑا۔ تعلیم یافتہ شخص میں وہ کس نتیجے کو سب سے زیادہ قیمتی سمجھتے تھے؟",
   "question_roman": "Iqbal ne sachi taleem ko kirdar aur amal se gehra jora. Taleem yafta shakhs mein woh kis nateeje ko sab se zyada qeemti samajhte?",
   "options_ur": [
    "ایک شخص جو مقصد، ہمت اور ذمہ داری سے عمل کرے",
@@ -25016,7 +25016,7 @@
   "question_ur": "ذاتی رہنمائی کا بنیادی تعلق ہے:",
   "question_roman": "Personal guidance ka bunyadi talluq hai:",
   "options_ur": [
-   "طالب علموں کے جذباتی مطابقت اور ذاتی مسائل سے",
+   "طالب علموں کی جذباتی مطابقت اور ان کے ذاتی مسائل سے",
    "اسکول کے نظام الاوقات کی تیاری سے",
    "اسکول کی وردیوں کے انتخاب سے",
    "تجربہ گاہ کے سامان کی خریداری سے"
@@ -25027,7 +25027,7 @@
    "School ki wardiyon ke intikhab se",
    "Laboratory ke saman ki kharidari se"
   ],
-  "explanation_ur": "ذاتی رہنمائی طالب علموں کی احساسات، مطابقت اور ذاتی مشکلات میں مدد کرتی ہے۔",
+  "explanation_ur": "ذاتی رہنمائی احساسات، مطابقت اور ذاتی مشکلات کے معاملے میں طالب علموں کی مدد کرتی ہے۔",
   "explanation_roman": "Personal guidance students ki ehsaasat, adjustment aur zaati mushkilat mein madad karti hai.",
   "post": [
    "zamungkor",
@@ -25227,7 +25227,7 @@
    "خاموشی سے سنتا ہے اور کبھی نہیں بولتا",
    "مشورہ دیتا ہے اور مسئلے کے حل تجویز کرتا ہے",
    "مسئلے پر بات کرنے سے انکار کرتا ہے",
-   "شخص سے فورا جانے کو کہتا ہے"
+   "شخص سے فوراً جانے کو کہتا ہے"
   ],
   "options_roman": [
    "Khamoshi se sunta hai aur kabhi nahi bolta",
@@ -25287,7 +25287,7 @@
    "B. F. Skinner",
    "Sigmund Freud"
   ],
-  "explanation_ur": "کارل راجرز نے مراجع مرکز مشاورت تیار کی، جس میں شخص گفتگو کی رہنمائی کرتا ہے اور ذاتی حل تلاش کرتا ہے۔",
+  "explanation_ur": "کارل راجرز نے مراجع پر مرکوز مشاورت تیار کی، جس میں شخص گفتگو کی رہنمائی کرتا ہے اور ذاتی حل تلاش کرتا ہے۔",
   "explanation_roman": "Carl Rogers ne client-centred counselling tayyar ki, jis mein shakhs guftagu ki rehnumai karta hai aur zaati hal talash karta hai.",
   "post": [
    "zamungkor",
@@ -25429,7 +25429,7 @@
  },
  {
   "id": "PED-490",
-  "question_ur": "مشیر کی موثر سننے سے مراد ہے:",
+  "question_ur": "مشیر کے موثر سننے سے مراد ہے:",
   "question_roman": "Counsellor ki effective listening se murad hai:",
   "options_ur": [
    "الفاظ سننا اور احساسات اور مطلب کو بھی سمجھنا",
@@ -25484,7 +25484,7 @@
   "question_ur": "مددگار مشاورتی تعلق قائم کرنے کا پہلا قدم عام طور پر ہے:",
   "question_roman": "Madadgar counselling talluq qaim karne ka pehla qadam aam tor par hai:",
   "options_ur": [
-   "فورا حتمی فیصلے کا اعلان کرنا",
+   "فوراً حتمی فیصلے کا اعلان کرنا",
    "شخص سے اسکول کی فیس وصول کرنا",
    "شخص کو گھر کا کام دینا",
    "شخص کے ساتھ اعتماد اور دوستانہ تعلق قائم کرنا"
@@ -25533,13 +25533,13 @@
  },
  {
   "id": "PED-492",
-  "question_ur": "مشیر کو اجلاس میں بتائی گئی ذاتی معلومات کو نجی کیوں رکھنا چاہیے؟",
+  "question_ur": "مشیر کو سیشن میں بتائی گئی ذاتی معلومات کو نجی کیوں رکھنا چاہیے؟",
   "question_roman": "Counsellor ko session mein batayi gayi zaati maloomat ko private kyun rakhna chahiye?",
   "options_ur": [
    "اساتذہ سے اسکول کا ریکارڈ چھپانے کے لیے",
    "والدین سے ہر رابطہ سے بچنے کے لیے",
-   "اعتماد کی حفاظت اور ایماندارانہ اشتراک کی حوصلہ افزائی کے لیے",
-   "اجلاسوں کو مختصر کرنے کے لیے"
+   "اعتماد کی حفاظت اور ایماندارانہ اظہار کی حوصلہ افزائی کے لیے",
+   "سیشنوں کو مختصر کرنے کے لیے"
   ],
   "options_roman": [
    "Teachers se school ka record chhupane ke liye",
