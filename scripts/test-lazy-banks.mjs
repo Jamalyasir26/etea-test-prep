@@ -319,12 +319,18 @@ if (fs.existsSync(BACKUP)) {
     curSs[30].id === "SS-031" && curSs[499].id === "SS-500");
   const backupGkRaw = fs.readFileSync(join(BACKUP, "src/data/banks/gk.json"), "utf8");
   const curGkRaw = fs.readFileSync(join(ROOT, "src/data/banks/gk.json"), "utf8");
-  const backupGkPrefix = backupGkRaw.slice(0, -2); // strip trailing "\n]" — gk.json has NO trailing newline (like pedagogy.json/science.json/socialstudies.json)
   const backupGk = JSON.parse(backupGkRaw);
   const curGk = JSON.parse(curGkRaw);
-  check("Phase 1 gk.json: backup bytes are an exact prefix (30 items untouched) + 470 appended",
-    curGkRaw.startsWith(backupGkPrefix + ",") && backupGk.length === 30 && curGk.length === 500 &&
-    JSON.stringify(curGk.slice(0, 30)) === JSON.stringify(backupGk) &&
+  // U2-GK: gk _ur fields were rewritten idiomatically
+  // in 95 of 500 items (142 of 3000 field-values), so the
+  // byte-prefix assertion no longer applies. The non-_ur fields of
+  // the 30 backup items must still match exactly (verified
+  // field-by-field, same pattern as the U1 islamiyat and U2
+  // tajweed/arabic/urdu/english/maths/pakstudies/pedagogy/science/
+  // socialstudies adjudications above); append pins stay.
+  check("Phase 1 gk.json (U2 _ur rewrite): non-_ur fields of 30 backup items untouched + 470 appended",
+    backupGk.length === 30 && curGk.length === 500 &&
+    JSON.stringify(curGk.slice(0, 30).map(stripUrFields)) === JSON.stringify(backupGk.map(stripUrFields)) &&
     curGk[30].id === "GKN-031" && curGk[499].id === "GKN-500");
   const backupItRaw = fs.readFileSync(join(BACKUP, "src/data/banks/it.json"), "utf8");
   const curItRaw = fs.readFileSync(join(ROOT, "src/data/banks/it.json"), "utf8");

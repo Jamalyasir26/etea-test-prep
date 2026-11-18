@@ -337,7 +337,7 @@
  },
  {
   "id": "GKN-007",
-  "question_ur": "”پاکستان“ کا نام کس نے وضع کیا تھا؟",
+  "question_ur": "'پاکستان' کا نام کس نے وضع کیا تھا؟",
   "question_roman": "Pakistan ka naam kis ne waza kiya tha?",
   "options_ur": [
    "علامہ اقبال",
@@ -351,7 +351,7 @@
    "Muhammad Ali Jinnah",
    "Liaquat Ali Khan"
   ],
-  "explanation_ur": "”پاکستان“ کا نام چوہدری رحمت علی نے وضع کیا تھا۔",
+  "explanation_ur": "'پاکستان' کا نام چوہدری رحمت علی نے وضع کیا تھا۔",
   "explanation_roman": "'Pakistan' ka naam Chaudhry Rahmat Ali ne waza kiya tha.",
   "post": [
    "tt",
@@ -855,7 +855,7 @@
    "Tanzeem, Ittehad, Iman",
    "Iman, Tanzeem, Ittehad"
   ],
-  "explanation_ur": "پاکستان کا قومی نعرہ 'Iman, Ittehad, Tanzeem' ہے — ایمان، اتحاد، تنظیم۔",
+  "explanation_ur": "پاکستان کا قومی نعرہ 'ایمان، اتحاد، تنظیم' ہے۔",
   "explanation_roman": "Pakistan ka qaumi motto 'Iman, Ittehad, Tanzeem' hai — Iman, Ittehad, Tanzeem.",
   "post": [
    "tt",
@@ -1009,7 +1009,7 @@
  },
  {
   "id": "GKN-019",
-  "question_ur": "قرآن مجید کا سب سے پہلے نازل ہونے والا لفظ کون سا تھا؟",
+  "question_ur": "قرآن پاک کا سب سے پہلے نازل ہونے والا لفظ کون سا تھا؟",
   "question_roman": "Quran Majeed ka sab se pehle nazil hone wala lafz kaun sa tha?",
   "options_ur": [
    "الحمد",
@@ -1023,7 +1023,7 @@
    "Qul",
    "Bismillah"
   ],
-  "explanation_ur": "سب سے پہلے نازل ہونے والا لفظ 'اقرا' (پڑھو) تھا — سورۃ العلق کا آغاز۔",
+  "explanation_ur": "سب سے پہلے نازل ہونے والا لفظ 'اقرا' (پڑھو) تھا۔ یہ سورہ العلق کا آغاز ہے۔",
   "explanation_roman": "Sab se pehle nazil hone wala lafz 'Iqra' (Parho) tha — Surah Al-Alaq ka aghaz.",
   "post": [
    "tt",
@@ -1068,10 +1068,10 @@
   "question_ur": "سب سے پہلے کون سی سورت نازل ہوئی؟",
   "question_roman": "Sab se pehle kaun si Surah nazil hui?",
   "options_ur": [
-   "سورۃ الفاتحہ",
-   "سورۃ العلق",
-   "سورۃ البقرہ",
-   "سورۃ یٰسین"
+   "سورہ الفاتحہ",
+   "سورہ العلق",
+   "سورہ البقرہ",
+   "سورہ یٰسین"
   ],
   "options_roman": [
    "Surah Al-Fatiha",
@@ -1079,7 +1079,7 @@
    "Surah Al-Baqarah",
    "Surah Yaseen"
   ],
-  "explanation_ur": "سورۃ العلق سب سے پہلے نازل ہونے والی سورت تھی۔",
+  "explanation_ur": "سورہ العلق سب سے پہلے نازل ہونے والی سورت تھی۔",
   "explanation_roman": "Surah Al-Alaq sab se pehle nazil hone wali Surah thi.",
   "post": [
    "tt",
@@ -1121,7 +1121,7 @@
  },
  {
   "id": "GKN-021",
-  "question_ur": "قرآن مجید میں کل کتنی سورتیں ہیں؟",
+  "question_ur": "قرآن پاک میں کل کتنی سورتیں ہیں؟",
   "question_roman": "Quran Majeed mein kul kitni Surahen hain?",
   "options_ur": [
    "110",
@@ -1135,7 +1135,7 @@
    "116",
    "120"
   ],
-  "explanation_ur": "قرآن مجید میں 114 سورتیں ہیں۔",
+  "explanation_ur": "قرآن پاک میں 114 سورتیں ہیں۔",
   "explanation_roman": "Quran Majeed mein 114 Surahen hain.",
   "post": [
    "tt",
@@ -1177,7 +1177,7 @@
  },
  {
   "id": "GKN-022",
-  "question_ur": "قرآن مجید کو کتنے پاروں (جزء) میں تقسیم کیا گیا ہے؟",
+  "question_ur": "قرآن پاک کو کتنے پاروں (جزء) میں تقسیم کیا گیا ہے؟",
   "question_roman": "Quran Majeed ko kitne Paron (Juz) mein taqseem kiya gaya hai?",
   "options_ur": [
    "25",
@@ -1191,7 +1191,7 @@
    "30",
    "33"
   ],
-  "explanation_ur": "قرآن مجید کو 30 پاروں (اجزاء) میں تقسیم کیا گیا ہے۔",
+  "explanation_ur": "قرآن پاک کو 30 پاروں (اجزاء) میں تقسیم کیا گیا ہے۔",
   "explanation_roman": "Quran Majeed ko 30 Paron (Ajza) mein taqseem kiya gaya hai.",
   "post": [
    "tt",
@@ -1471,7 +1471,7 @@
    "5%",
    "10%"
   ],
-  "explanation_ur": "نقدی، سونے، چاندی اور تجارتی سامان پر زکوٰۃ ایک سال تک رکھی ہوئی دولت کا 2.5% ہے۔",
+  "explanation_ur": "نقدی، سونے، چاندی اور تجارتی سامان پر زکوٰۃ ایک سال تک رکھی ہوئی دولت کا 2.5 فیصد ہے۔",
   "explanation_roman": "Naqdi, sone, chandi aur tijarti saman par Zakat ek saal tak rakhi hui daulat ka 2.5% hai.",
   "post": [
    "tt",
@@ -1863,7 +1863,7 @@
    "3:4",
    "3:5"
   ],
-  "explanation_ur": "قومی پرچم کی لمبائی اور چوڑائی کا تناسب 2 اور 3 ہے۔",
+  "explanation_ur": "قومی پرچم کی لمبائی اور چوڑائی کا تناسب 2:3 ہے۔",
   "explanation_roman": "Qaumi parcham ki lambai aur chorai ka tanasub 2 aur 3 hai.",
   "post": [
    "tt",
@@ -2021,7 +2021,7 @@
   "question_roman": "Pakistan ke riyasati nishan ke markaz mein dhaal ke gird kya hai?",
   "options_ur": [
    "گلاب کے پھولوں کا ہار",
-   "دو تلواریں",
+   "ایک دوسرے پر رکھی ہوئی دو تلواریں",
    "گندم کی بالیوں کا حلقہ",
    "چنبیلی کے پھولوں کا ہار"
   ],
@@ -2423,7 +2423,7 @@
    "23 March aur 6 September",
    "6 September aur 25 December"
   ],
-  "explanation_ur": "یوم پاکستان 23 مارچ کو اور یوم دفاع 6 ستمبر کو منایا جاتا ہے۔",
+  "explanation_ur": "یوم پاکستان 23 مارچ کو اور یوم دفاع 6 ستمبر کو منائے جاتے ہیں۔",
   "explanation_roman": "Youm e Pakistan 23 March ko aur Youm e Difa 6 September ko manaya jata hai.",
   "post": [
    "tt",
@@ -3308,7 +3308,7 @@
   "question_ur": "گڈو بیراج شمالی سندھ کے کس قصبے کے قریب واقع ہے؟",
   "question_roman": "Guddu Barrage shumali Sindh ke kis qasbe ke qareeb waqeh hai?",
   "options_ur": [
-   "حیدر آباد",
+   "حیدرآباد",
    "کشمور",
    "سکھر",
    "لاڑکانہ"
@@ -3366,7 +3366,7 @@
   "options_ur": [
    "سکھر",
    "لاڑکانہ",
-   "حیدر آباد",
+   "حیدرآباد",
    "میرپور خاص"
   ],
   "options_roman": [
@@ -3375,7 +3375,7 @@
    "Hyderabad",
    "Mirpur Khas"
   ],
-  "explanation_ur": "کوٹری بیراج سندھ میں حیدر آباد کے قریب دریائے سندھ پر واقع ہے۔",
+  "explanation_ur": "کوٹری بیراج سندھ میں حیدرآباد کے قریب دریائے سندھ پر واقع ہے۔",
   "explanation_roman": "Kotri Barrage Sindh mein Hyderabad ke qareeb Indus River par waqeh hai.",
   "post": [
    "tt",
@@ -4593,7 +4593,7 @@
  },
  {
   "id": "GKN-083",
-  "question_ur": "مظفرآباد دریائے جہلم اور کس دوسرے دریا کے سنگم پر واقع ہے؟",
+  "question_ur": "مظفر آباد دریائے جہلم اور کس دوسرے دریا کے سنگم پر واقع ہے؟",
   "question_roman": "Muzaffarabad darya e Jhelum aur kis dusre darya ke sangam par waqe hai?",
   "options_ur": [
    "دریائے چناب",
@@ -4607,7 +4607,7 @@
    "Neelum River",
    "Beas River"
   ],
-  "explanation_ur": "مظفرآباد وہاں واقع ہے جہاں دریائے نیلم دریائے جہلم سے ملتا ہے۔",
+  "explanation_ur": "مظفر آباد وہاں واقع ہے جہاں دریائے نیلم دریائے جہلم سے ملتا ہے۔",
   "explanation_roman": "Muzaffarabad wahan waqe hai jahan darya e Neelum darya e Jhelum se milta hai.",
   "post": [
    "tt",
@@ -4943,7 +4943,7 @@
    "Nayyar Ali Dada",
    "Nasreddin Murat-Khan"
   ],
-  "explanation_ur": "نصرالدین مورات خان نے لاہور میں مینار پاکستان کا ڈیزائن تیار کیا تھا۔ یہ مینار گریٹر اقبال پارک میں لاہور قرارداد کی جگہ پر کھڑا ہے۔",
+  "explanation_ur": "نصرالدین مورات خان نے لاہور میں مینار پاکستان کا ڈیزائن تیار کیا تھا۔ یہ مینار گریٹر اقبال پارک میں قراردادِ لاہور کی جگہ پر کھڑا ہے۔",
   "explanation_roman": "Nasreddin Murat-Khan ne Lahore mein Minar-e-Pakistan ka design tayyar kiya tha. Yeh minar Greater Iqbal Park mein Lahore Resolution ki jagah par khara hai.",
   "post": [
    "tt",
@@ -7508,7 +7508,7 @@
   "question_ur": "گوبی کا صحرا بنیادی طور پر منگولیا اور کس پڑوسی ملک میں واقع ہے؟",
   "question_roman": "Gobi ka sehra bunyadi tor par Mongolia aur kis parosi mulk mein waqeh hai?",
   "options_ur": [
-   "انڈیا",
+   "بھارت",
    "چین",
    "روس",
    "قازقستان"
@@ -7575,7 +7575,7 @@
    "Morocco",
    "Botswana"
   ],
-  "explanation_ur": "کالاہاری کا صحرا جنوبی افریقہ میں بوٹسوانا کے بڑے حصے پر پھیلا ہوا ہے۔ یہ نمیبیا اور جمہوریہ جنوبی افریقہ تک بھی پھیلا ہوا ہے۔",
+  "explanation_ur": "کالاہاری کا صحرا جنوبی افریقہ میں بوٹسوانا کے بڑے حصے پر پھیلا ہوا ہے۔ یہ نمیبیا اور جنوبی افریقہ تک بھی پھیلا ہوا ہے۔",
   "explanation_roman": "Kalahari ka sehra junubi Africa mein Botswana ke baray hissay par phaila hua hai. Yeh Namibia aur South Africa tak bhi phaila hua hai.",
   "post": [
    "tt",
@@ -7743,7 +7743,7 @@
    "Zambia",
    "Zimbabwe"
   ],
-  "explanation_ur": "نامیب کا صحرا بنیادی طور پر نمیبیا میں جنوب مغربی افریقہ میں بحر اوقیانوس کے ساحل کے ساتھ واقع ہے۔ یہ انگولا اور جمہوریہ جنوبی افریقہ تک بھی پھیلا ہوا ہے۔",
+  "explanation_ur": "نامیب کا صحرا بنیادی طور پر نمیبیا میں جنوب مغربی افریقہ میں بحر اوقیانوس کے ساحل کے ساتھ واقع ہے۔ یہ انگولا اور جنوبی افریقہ تک بھی پھیلا ہوا ہے۔",
   "explanation_roman": "Namib ka sehra bunyadi tor par Namibia mein junub maghribi Africa mein Atlantic ke sahil ke sath waqeh hai. Yeh Angola aur South Africa tak bhi phaila hua hai.",
   "post": [
    "tt",
@@ -8516,7 +8516,7 @@
   "question_ur": "کرائسٹ دی ریڈیمر کا مجسمہ کس شہر کے اوپر کھڑا ہے؟",
   "question_roman": "Christ the Redeemer ka mujasma kis sheher ke oopar khara hai?",
   "options_ur": [
-   "بوینس آئرس",
+   "بیونس آئرس",
    "لیما",
    "ریو ڈی جنیرو",
    "سینٹیاگو"
@@ -9031,7 +9031,7 @@
    "Canada and the United States",
    "Brazil and Argentina"
   ],
-  "explanation_ur": "کینیڈا اور امریکہ دنیا کی سب سے لمبی زمینی سرحد رکھتے ہیں، جو شمالی امریکہ میں بحر اوقیانوس کی طرف سے بحر الکاہل کی طرف تک جاتی ہے۔",
+  "explanation_ur": "کینیڈا اور امریکہ دنیا کی سب سے لمبی زمینی سرحد رکھتے ہیں، جو شمالی امریکہ میں بحر اوقیانوس کی طرف سے بحرالکاہل کی طرف تک جاتی ہے۔",
   "explanation_roman": "Canada aur United States duniya ki sab se lambi zameeni sarhad rakhte hain, jo shumali America mein Atlantic ki taraf se Pacific ki taraf tak jati hai.",
   "post": [
    "tt",
@@ -9073,7 +9073,7 @@
  },
  {
   "id": "GKN-163",
-  "question_ur": "گیزا کے عظیم ہرم کی تعمیر کا حکم کس فرعون نے دیا تھا، جو مصر کا سب سے بڑا ہرم ہے؟",
+  "question_ur": "گیزا کے عظیم ہرم، جو مصر کا سب سے بڑا ہرم ہے، کی تعمیر کا حکم کس فرعون نے دیا تھا؟",
   "question_roman": "Giza ke Azeem Haram ki tameer ka hukm kis Firaun ne diya tha, jo Misr ka sab se bara Haram hai?",
   "options_ur": [
    "خوفو",
@@ -9353,7 +9353,7 @@
  },
  {
   "id": "GKN-168",
-  "question_ur": "776 قبل مسیح میں اولمپیا میں ہونے والے پہلے قدیم اولمپک کھیلوں کا ملک کون سا تھا؟",
+  "question_ur": "776 قبل مسیح میں اولمپیا میں پہلے قدیم اولمپک کھیل کس ملک میں ہوئے تھے؟",
   "question_roman": "776 BCE mein Olympia mein honay walay pehlay qadeem Olympic khelon ka mulk kaun sa tha?",
   "options_ur": [
    "اٹلی",
@@ -9521,7 +9521,7 @@
  },
  {
   "id": "GKN-171",
-  "question_ur": "قدیم میسوپوٹیمیا کے سومریوں نے کیونیفارم کو کس کی ابتدائی شکل کے طور پر تیار کیا تھا؟",
+  "question_ur": "قدیم میسوپوٹیمیا کے سومریوں نے کیونیفارم کو کس کی ابتدائی ترین شکلوں میں سے ایک کے طور پر تیار کیا تھا؟",
   "question_roman": "Qadeem Mesopotamia ke Sumeriyon ne cuneiform ko kis ki ibtedai shakal ke tor par tayyar kiya tha?",
   "options_ur": [
    "تحریر",
@@ -9689,7 +9689,7 @@
  },
  {
   "id": "GKN-174",
-  "question_ur": "کتابیں چھاپنے کے لیے دوبارہ قابل استعمال حروف والی کون سی چینی ایجاد جدید چھاپہ خانوں سے بہت پہلے استعمال ہوتی تھی؟",
+  "question_ur": "جدید چھاپہ خانوں سے بہت پہلے، کتابیں چھاپنے کے لیے دوبارہ قابل استعمال حروف کون سی چینی ایجاد میں استعمال ہوتے تھے؟",
   "question_roman": "Kitabein chhapne ke liye dobara qabil istemal huroof wali kaun si Cheeni eejad jadeed chhapa khanon se bohat pehle istemal hoti thi?",
   "options_ur": [
    "مقناطیسی قطب نما",
@@ -9703,7 +9703,7 @@
    "Cheeni Mitti ke Bartan",
    "Mutaharrik Huroof"
   ],
-  "explanation_ur": "متحرک حروف میں دوبارہ قابل استعمال حروف سے چین میں کتابیں چھاپی جاتی تھیں، جو یورپ میں جدید چھاپہ خانوں کے عام ہونے سے بہت پہلے کی بات ہے۔",
+  "explanation_ur": "چین میں متحرک حروف سے کتابیں چھاپی جاتی تھیں، جن میں حروف دوبارہ استعمال ہو سکتے تھے، اور یہ یورپ میں جدید چھاپہ خانوں کے عام ہونے سے بہت پہلے کی بات ہے۔",
   "explanation_roman": "Mutaharrik Huroof mein dobara qabil istemal huroof se Cheen mein kitabein chhapi jati thin, jo Europe mein jadeed chhapa khanon ke aam honay se bohat pehle ki baat hai.",
   "post": [
    "tt",
@@ -9913,7 +9913,7 @@
  },
  {
   "id": "GKN-178",
-  "question_ur": "قدیم فارسی سلطنت کے قلبی علاقے کا بیشتر حصہ کس جدید ملک میں واقع ہے؟",
+  "question_ur": "قدیم فارسی سلطنت کے مرکزی علاقے کا بیشتر حصہ کس جدید ملک میں واقع ہے؟",
   "question_roman": "Qadeem Farsi saltanat ke qalbi ilaqay ka beshtar hissa kis jadeed mulk mein waqay hai?",
   "options_ur": [
    "عراق",
@@ -9927,7 +9927,7 @@
    "Egypt",
    "Iran"
   ],
-  "explanation_ur": "قدیم فارسی سلطنت کے قلبی علاقے کا بیشتر حصہ جدید ایران میں واقع ہے، اور قریبی زمینیں بھی سلطنت کے عروج پر اس کا حصہ تھیں۔",
+  "explanation_ur": "قدیم فارسی سلطنت کے مرکزی علاقے کا بیشتر حصہ جدید ایران میں واقع ہے، اور قریبی زمینیں بھی سلطنت کے عروج پر اس کا حصہ تھیں۔",
   "explanation_roman": "Qadeem Farsi saltanat ke qalbi ilaqay ka beshtar hissa jadeed Iran mein waqay hai, aur qareebi zaminein bhi saltanat ke urooj par us ka hissa thin.",
   "post": [
    "tt",
@@ -10263,7 +10263,7 @@
    "Germany",
    "The Netherlands"
   ],
-  "explanation_ur": "صنعتی انقلاب کا آغاز برطانیہ میں 1760 کے آس پاس ہوا، جس نے سب سے پہلے نئی مشینوں سے کپڑا بنانے کا طریقہ بدلا۔",
+  "explanation_ur": "صنعتی انقلاب کا آغاز برطانیہ میں 1760 کے آس پاس ہوا، اور اس نے سب سے پہلے نئی مشینوں سے کپڑا بنانے کا طریقہ بدلا۔",
   "explanation_roman": "Sanati Inqilab ka aaghaz Britain mein 1760 ke aas paas hua, jis ne sab se pehle nayi machinon se kapra bananay ka tareeqa badla.",
   "post": [
    "tt",
@@ -10703,7 +10703,7 @@
    "مغربی جرمنی",
    "مشرقی جرمنی",
    "فرانس",
-   "ریاستہائے متحدہ"
+   "امریکہ"
   ],
   "options_roman": [
    "West Germany",
@@ -10977,7 +10977,7 @@
  },
  {
   "id": "GKN-197",
-  "question_ur": "1905 میں البرٹ آئن اسٹائن نے کون سا نظریہ شائع کیا جس نے خلا اور وقت کے بارے میں سائنسی خیالات بدل دیے؟",
+  "question_ur": "1905 میں البرٹ آئن اسٹائن نے کون سا نظریہ شائع کیا، جس نے خلا اور وقت کے بارے میں سائنسی خیالات بدل دیے؟",
   "question_roman": "1905 mein Albert Einstein ne kaun sa nazriya shaya kiya jis ne khala aur waqt ke bare mein scienci khayalat badal diye?",
   "options_ur": [
    "نظریہ اضافیت",
@@ -11201,7 +11201,7 @@
  },
  {
   "id": "GKN-201",
-  "question_ur": "ولیم شیکسپیئر، جو 1564 سے 1616 تک زندہ رہے، نے رومیو اور جولیٹ کے بارے میں کون سی مشہور محبت کی کہانی لکھی؟",
+  "question_ur": "1564 سے 1616 تک زندہ رہنے والے ولیم شیکسپیئر نے رومیو اور جولیٹ کے بارے میں کون سی مشہور محبت کی کہانی لکھی؟",
   "question_roman": "William Shakespeare, jo 1564 se 1616 tak zinda rahe, ne Romeo aur Juliet ke bare mein kaun si mashhoor mohabbat ki kahani likhi?",
   "options_ur": [
    "رومیو اور جولیٹ",
@@ -11215,7 +11215,7 @@
    "Jane Eyre",
    "Wuthering Heights"
   ],
-  "explanation_ur": "ولیم شیکسپیئر، جو 1564 سے 1616 تک زندہ رہے، نے رومیو اور جولیٹ لکھی۔ یہ ڈراما رومیو اور جولیٹ کی محبت کی کہانی بیان کرتا ہے۔",
+  "explanation_ur": "1564 سے 1616 تک زندہ رہنے والے ولیم شیکسپیئر نے رومیو اور جولیٹ لکھی۔ یہ ڈراما رومیو اور جولیٹ کی محبت کی کہانی بیان کرتا ہے۔",
   "explanation_roman": "William Shakespeare, jo 1564 se 1616 tak zinda rahe, ne Romeo aur Juliet likhi. Yeh drama Romeo aur Juliet ki mohabbat ki kahani bayan karta hai.",
   "post": [
    "tt",
@@ -11495,7 +11495,7 @@
    "Aamdani ka tax",
    "Kapre ka tax"
   ],
-  "explanation_ur": "مہاتما گاندھی نے 1930 میں بھارت میں نمک مارچ میں نمک ٹیکس کے خلاف احتجاج کیا۔ اس مارچ نے نمک کی پیداوار اور فروخت پر برطانوی کنٹرول کی مخالفت کی۔",
+  "explanation_ur": "مہاتما گاندھی نے 1930 میں بھارت میں نمک مارچ میں نمک کے ٹیکس کے خلاف احتجاج کیا۔ اس مارچ نے نمک کی پیداوار اور فروخت پر برطانوی کنٹرول کی مخالفت کی۔",
   "explanation_roman": "Mahatma Gandhi ne 1930 mein Bharat mein Namak March mein namak tax ke khilaf ehtijaj kiya. Is march ne namak ki paidawar aur farokht par Bartanvi control ki mukhalifat ki.",
   "post": [
    "tt",
@@ -11593,7 +11593,7 @@
  },
  {
   "id": "GKN-208",
-  "question_ur": "مدر ٹریسا نے 1950 میں کولکاتا میں غریبوں اور بیماروں کی خدمت کے لیے کون سا مذہبی سلسلہ قائم کیا؟",
+  "question_ur": "مدر ٹریسا نے 1950 میں کولکاتا میں غریبوں اور بیماروں کی خدمت کے لیے کون سی مذہبی جماعت قائم کی؟",
   "question_roman": "Mother Teresa ne 1950 mein Kolkata mein ghareebon aur beemaron ki khidmat ke liye kaun sa mazhabi silsila qaim kiya?",
   "options_ur": [
    "سسٹرز آف مرسی",
@@ -11607,7 +11607,7 @@
    "Franciscan Sisters",
    "Missionaries of Charity"
   ],
-  "explanation_ur": "مدر ٹریسا نے 1950 میں کولکاتا میں غریبوں اور بیماروں کی خدمت کے لیے مشنریز آف چیریٹی قائم کیا۔ یہ سلسلہ دنیا بھر کی مذہبی جماعت بن گیا۔",
+  "explanation_ur": "مدر ٹریسا نے 1950 میں کولکاتا میں غریبوں اور بیماروں کی خدمت کے لیے مشنریز آف چیریٹی قائم کی۔ یہ دنیا بھر کی مذہبی جماعت بن گئی۔",
   "explanation_roman": "Mother Teresa ne 1950 mein Kolkata mein ghareebon aur beemaron ki khidmat ke liye Missionaries of Charity qaim kiya. Yeh silsila duniya bhar ki mazhabi jamaat ban gaya.",
   "post": [
    "tt",
@@ -11761,7 +11761,7 @@
  },
  {
   "id": "GKN-211",
-  "question_ur": "میری کیوری نے 1903 اور 1911 میں کن دو مختلف سائنسوں میں نوبل انعامات جیتے؟",
+  "question_ur": "میری کیوری نے 1903 اور 1911 میں کن دو مختلف علوم میں نوبل انعامات جیتے؟",
   "question_roman": "Marie Curie ne 1903 aur 1911 mein kin do mukhtalif scienceon mein Nobel Inaamat jeete?",
   "options_ur": [
    "طبیعیات اور طب",
@@ -11775,7 +11775,7 @@
    "Physics aur Chemistry",
    "Physics aur Aman"
   ],
-  "explanation_ur": "میری کیوری نے 1903 اور 1911 میں طبیعیات اور کیمیا میں نوبل انعامات جیتے۔ اس نے دو مختلف سائنسوں میں انعامات جیتے، پہلے طبیعیات میں اور بعد میں کیمیا میں۔",
+  "explanation_ur": "میری کیوری نے 1903 اور 1911 میں طبیعیات اور کیمیا میں نوبل انعامات جیتے۔ اس نے دو مختلف علوم میں انعامات جیتے، پہلے طبیعیات میں اور بعد میں کیمیا میں۔",
   "explanation_roman": "Marie Curie ne 1903 aur 1911 mein Physics aur Chemistry mein Nobel Inaamat jeete. Us ne do mukhtalif scienceon mein inaamat jeete, pehle Physics mein aur baad mein Chemistry mein.",
   "post": [
    "tt",
@@ -11887,7 +11887,7 @@
    "50",
    "60"
   ],
-  "explanation_ur": "اقوام متحدہ کا آغاز 1945 میں 51 اصل رکن ممالک سے ہوا۔ پچاس ممالک نے سان فرانسسکو میں چارٹر پر دستخط کیے، اور پولینڈ نے جلد بعد دستخط کیے اور اسے اصل اراکین میں شمار کیا جاتا ہے۔",
+  "explanation_ur": "اقوام متحدہ کا آغاز 1945 میں 51 اصل رکن ممالک سے ہوا۔ پچاس ممالک نے سان فرانسسکو میں چارٹر پر دستخط کیے، اور پولینڈ نے جلد ہی دستخط کیے اور اسے اصل اراکین میں شمار کیا جاتا ہے۔",
   "explanation_roman": "United Nations ka aaghaz 1945 mein 51 asal rukun mumalik se hua. Pachas mumalik ne San Francisco mein Charter par dastakhat kiye, aur Poland ne jald baad dastakhat kiye aur ise asal arkaan mein shumar kiya jata hai.",
   "post": [
    "tt",
@@ -11929,7 +11929,7 @@
  },
  {
   "id": "GKN-214",
-  "question_ur": "اقوام متحدہ کا چارٹر 1945 میں سان فرانسسکو میں کس تاریخ کو دستخط ہوا؟",
+  "question_ur": "اقوام متحدہ کے چارٹر پر 1945 میں سان فرانسسکو میں کس تاریخ کو دستخط ہوئے؟",
   "question_roman": "United Nations ka Charter 1945 mein San Francisco mein kis tareekh ko dastakhat hua?",
   "options_ur": [
    "24 اکتوبر 1945",
@@ -11943,7 +11943,7 @@
    "26 June 1945",
    "1 January 1945"
   ],
-  "explanation_ur": "اقوام متحدہ کا چارٹر 26 جون 1945 کو سان فرانسسکو میں دستخط ہوا۔ یہ 24 اکتوبر 1945 کو نافذ ہوا۔",
+  "explanation_ur": "اقوام متحدہ کے چارٹر پر 26 جون 1945 کو سان فرانسسکو میں دستخط ہوئے۔ یہ 24 اکتوبر 1945 کو نافذ ہوا۔",
   "explanation_roman": "United Nations ka Charter 26 June 1945 ko San Francisco mein dastakhat hua. Yeh 24 October 1945 ko naafiz hua.",
   "post": [
    "tt",
@@ -13049,7 +13049,7 @@
  },
  {
   "id": "GKN-234",
-  "question_ur": "کون سا ادارہ عالمی ادارہ صحت کے اہم پالیسی فیصلے کرتا ہے؟",
+  "question_ur": "کون سا ادارہ عالمی ادارہ صحت کی پالیسی کے اہم فیصلے کرتا ہے؟",
   "question_roman": "Kaun sa idara Aalmi Idara Sehat ke ahem policy faisle karta hai?",
   "options_ur": [
    "جنرل اسمبلی",
@@ -13063,7 +13063,7 @@
    "World Health Assembly",
    "Economic and Social Council"
   ],
-  "explanation_ur": "عالمی صحت اسمبلی عالمی ادارہ صحت کا اہم پالیسی فیصلے کرنے والا ادارہ ہے، اور یہ ادارے کی پالیسیاں طے کرتی ہے۔",
+  "explanation_ur": "عالمی صحت اسمبلی عالمی ادارہ صحت کا مرکزی فیصلہ ساز ادارہ ہے، اور یہ ادارے کی پالیسیاں طے کرتی ہے۔",
   "explanation_roman": "Aalmi Sehat Assembly Aalmi Idara Sehat ka ahem policy faisle karne wala idara hai, aur yeh idare ki polician tay karti hai.",
   "post": [
    "tt",
@@ -13166,7 +13166,7 @@
   "options_ur": [
    "وفاقی زرعی تنظیم",
    "خوراک اور زراعت کی تنظیم",
-   "خوراک انتظامی دفتر",
+   "خوراک انتظامیہ کا دفتر",
    "غیر ملکی زرعی تنظیم"
   ],
   "options_roman": [
@@ -14281,7 +14281,7 @@
  },
  {
   "id": "GKN-256",
-  "question_ur": "کون سا شہر یورپی کمیشن کا صدر دفتر رکھتا ہے اور یورپی یونین کا مرکزی مقام ہے؟",
+  "question_ur": "یورپی کمیشن کا صدر دفتر کس شہر میں ہے، جو یورپی یونین کا مرکزی مقام بھی ہے؟",
   "question_roman": "Kaun sa sheher European Commission ka sadar daftar rakhta hai aur European Union ka markazi muqam hai?",
   "options_ur": [
    "اسٹراسبرگ",
@@ -14841,7 +14841,7 @@
  },
  {
   "id": "GKN-266",
-  "question_ur": "1769 میں کس موجد کو بہتر بھاپ انجن کا پیٹنٹ ملا جو کم ایندھن ضائع کرتا تھا؟",
+  "question_ur": "1769 میں کس موجد کو بہتر بھاپ کے انجن کا پیٹنٹ ملا جو کم ایندھن ضائع کرتا تھا؟",
   "question_roman": "1769 mein kis mojid ko behtar bhaap engine ka patent mila jo kam eendhan zaya karta tha?",
   "options_ur": [
    "تھامس نیوکامن",
@@ -14855,7 +14855,7 @@
    "Richard Trevithick",
    "James Watt"
   ],
-  "explanation_ur": "جیمز واٹ کو 1769 میں اپنے بہتر بھاپ انجن کا پیٹنٹ ملا جس میں الگ کنڈینسر استعمال ہوتا تھا اور کم ایندھن ضائع ہوتا تھا۔",
+  "explanation_ur": "جیمز واٹ کو 1769 میں اپنے بہتر بھاپ کے انجن کا پیٹنٹ ملا، جس میں الگ کنڈینسر استعمال ہوتا تھا اور کم ایندھن ضائع ہوتا تھا۔",
   "explanation_roman": "James Watt ko 1769 mein apne behtar bhaap engine ka patent mila jis mein alag condenser istemal hota tha aur kam eendhan zaya hota tha.",
   "post": [
    "tt",
@@ -14953,7 +14953,7 @@
  },
  {
   "id": "GKN-268",
-  "question_ur": "1895 میں کس موجد نے ہوا کے ذریعے بغیر تار کے اشارے کامیابی سے بھیجے جو ریڈیو کی طرف ایک ابتدائی قدم تھا؟",
+  "question_ur": "1895 میں کس موجد نے ہوا کے ذریعے بغیر تار کے اشارے کامیابی سے بھیجے، جو ریڈیو کی طرف ایک ابتدائی قدم تھا؟",
   "question_roman": "1895 mein kis mojid ne hawa ke zariye baghair taar ke isharay kamyabi se bheje jo radio ki taraf aik ibtedai qadam tha?",
   "options_ur": [
    "گگلیلمو مارکونی",
@@ -14967,7 +14967,7 @@
    "Thomas Edison",
    "Heinrich Hertz"
   ],
-  "explanation_ur": "گگلیلمو مارکونی نے 1895 میں ہوا کے ذریعے بغیر تار کے اشارے کامیابی سے بھیجے جو ریڈیو کی طرف ایک ابتدائی قدم تھا۔",
+  "explanation_ur": "گگلیلمو مارکونی نے 1895 میں ہوا کے ذریعے بغیر تار کے اشارے کامیابی سے بھیجے، جو ریڈیو کی طرف ایک ابتدائی قدم تھا۔",
   "explanation_roman": "Guglielmo Marconi ne 1895 mein hawa ke zariye baghair taar ke isharay kamyabi se bheje jo radio ki taraf aik ibtedai qadam tha.",
   "post": [
    "tt",
@@ -15121,7 +15121,7 @@
  },
  {
   "id": "GKN-271",
-  "question_ur": "1895 میں ایکس ریز کس نے دریافت کیں جو تابکاری کی ایک قسم ہیں اور جسم کے نرم حصوں سے گزر سکتی ہیں؟",
+  "question_ur": "1895 میں ایکس ریز کس نے دریافت کیں، جو تابکاری کی ایک قسم ہیں اور جسم کے نرم حصوں سے گزر سکتی ہیں؟",
   "question_roman": "1895 mein X rays kis ne daryaft keen jo tabkari ki aik qisam hain aur jism ke naram hisson se guzar sakti hain?",
   "options_ur": [
    "میری کیوری",
@@ -15177,7 +15177,7 @@
  },
  {
   "id": "GKN-272",
-  "question_ur": "1867 میں ڈائنامائٹ کا پیٹنٹ کس نے حاصل کیا جو کان کنی اور تعمیرات میں استعمال ہونے والا ایک طاقتور دھماکا خیز مواد ہے؟",
+  "question_ur": "1867 میں ڈائنامائٹ کا پیٹنٹ کس نے حاصل کیا، جو کان کنی اور تعمیرات میں استعمال ہونے والا ایک طاقتور دھماکا خیز مواد ہے؟",
   "question_roman": "1867 mein dynamite ka patent kis ne haasil kiya jo kaan kuni aur tameerat mein istemal hone wala aik taqatwar dhamaka khaiz mawaad hai?",
   "options_ur": [
    "الفریڈ نوبل",
@@ -15289,7 +15289,7 @@
  },
  {
   "id": "GKN-274",
-  "question_ur": "1839 میں کس موجد نے ڈاگیوروٹائپ متعارف کرایا جو عکاسی کا ایک ابتدائی عملی طریقہ تھا؟",
+  "question_ur": "1839 میں کس موجد نے ڈاگیوروٹائپ متعارف کرایا، جو عکاسی کا ایک ابتدائی عملی طریقہ تھا؟",
   "question_roman": "1839 mein kis mojid ne daguerreotype mutaarif karaya jo akkasi ka aik ibtedai amli tareeqa tha?",
   "options_ur": [
    "جوزف نیپس",
@@ -15303,7 +15303,7 @@
    "William Fox Talbot",
    "Louis Daguerre"
   ],
-  "explanation_ur": "لوئس ڈاگیئر نے 1839 میں ڈاگیوروٹائپ متعارف کرایا جو عکاسی کا ایک ابتدائی عملی طریقہ تھا۔",
+  "explanation_ur": "لوئس ڈاگیئر نے 1839 میں ڈاگیوروٹائپ متعارف کرایا، جو عکاسی کا ایک ابتدائی عملی طریقہ تھا۔",
   "explanation_roman": "Louis Daguerre ne 1839 mein daguerreotype mutaarif karaya jo akkasi ka aik ibtedai amli tareeqa tha.",
   "post": [
    "tt",
@@ -15345,7 +15345,7 @@
  },
  {
   "id": "GKN-275",
-  "question_ur": "1834 میں کس نے ابتدائی عملی ریفریجریٹر کا پیٹنٹ حاصل کیا جو بخارات کے دباؤ سے ٹھنڈا کرتا تھا؟",
+  "question_ur": "1834 میں کس نے ابتدائی عملی ریفریجریٹر کا پیٹنٹ حاصل کیا، جو بخارات کے دباؤ سے ٹھنڈا کرتا تھا؟",
   "question_roman": "1834 mein kis ne ibtedai amli refrigerator ka patent haasil kiya jo bukharat ke dabao se thanda karta tha?",
   "options_ur": [
    "ولیم کلن",
@@ -15359,7 +15359,7 @@
    "Carl von Linde",
    "Willis Carrier"
   ],
-  "explanation_ur": "جیکب پرکنز کو 1834 میں ابتدائی عملی ریفریجریٹر کا پیٹنٹ ملا جو بخارات کے دباؤ سے ٹھنڈا کرتا تھا۔",
+  "explanation_ur": "جیکب پرکنز کو 1834 میں ابتدائی عملی ریفریجریٹر کا پیٹنٹ ملا، جو بخارات کے دباؤ سے ٹھنڈا کرتا تھا۔",
   "explanation_roman": "Jacob Perkins ko 1834 mein ibtedai amli refrigerator ka patent mila jo bukharat ke dabao se thanda karta tha.",
   "post": [
    "tt",
@@ -15457,7 +15457,7 @@
  },
  {
   "id": "GKN-277",
-  "question_ur": "1643 میں بیرومیٹر کس نے ایجاد کیا جو ہوا کا دباؤ ناپنے کا آلہ ہے؟",
+  "question_ur": "1643 میں بیرومیٹر کس نے ایجاد کیا، جو ہوا کا دباؤ ناپنے کا آلہ ہے؟",
   "question_roman": "1643 mein barometer kis ne ijaad kiya jo hawa ka dabao naapne ka aala hai?",
   "options_ur": [
    "گلیلیو گلیلی",
@@ -15513,7 +15513,7 @@
  },
  {
   "id": "GKN-278",
-  "question_ur": "1800 میں وولٹائک پائل کس نے بنایا جو پہلی حقیقی بجلی کی بیٹری تھی؟",
+  "question_ur": "1800 میں وولٹائک پائل کس نے بنایا، جو پہلی حقیقی بجلی کی بیٹری تھی؟",
   "question_roman": "1800 mein voltaic pile kis ne banaya jo pehli haqeeqi bijli ki battery thi?",
   "options_ur": [
    "لوئیجی گالوانی",
@@ -15639,7 +15639,7 @@
    "Soviet Union",
    "France"
   ],
-  "explanation_ur": "اسپوتنک 1 کو سوویت یونین نے 1957 میں لانچ کیا تھا اور یہ زمین کے مدار میں رکھا جانے والا پہلا مصنوعی سیٹلائٹ بنا۔",
+  "explanation_ur": "اسپوتنک 1 کو سوویت یونین نے 1957 میں لانچ کیا تھا اور یہ زمین کے مدار میں بھیجا جانے والا پہلا مصنوعی سیٹلائٹ بنا۔",
   "explanation_roman": "Sputnik 1 ko Soviet Union ne 1957 mein launch kiya tha aur yeh zameen ke madaar mein rakha jane wala pehla masnooi satellite bana.",
   "post": [
    "tt",
@@ -16017,7 +16017,7 @@
  },
  {
   "id": "GKN-287",
-  "question_ur": "1971 میں لانچ کیا گیا کون سا اسٹیشن زمین کے مدار میں رکھا جانے والا پہلا خلائی اسٹیشن تھا؟",
+  "question_ur": "1971 میں لانچ کیا گیا کون سا اسٹیشن زمین کے مدار میں بھیجا جانے والا پہلا خلائی اسٹیشن تھا؟",
   "question_roman": "1971 mein launch kiya gaya kaun sa station zameen ke madaar mein rakha jane wala pehla khalai station tha?",
   "options_ur": [
    "سالیوٹ 1",
@@ -16031,7 +16031,7 @@
    "Skylab",
    "Tiangong 1"
   ],
-  "explanation_ur": "سالیوٹ 1 کو سوویت یونین نے 1971 میں لانچ کیا تھا اور یہ زمین کے مدار میں رکھا جانے والا پہلا خلائی اسٹیشن بنا۔",
+  "explanation_ur": "سالیوٹ 1 کو سوویت یونین نے 1971 میں لانچ کیا تھا اور یہ زمین کے مدار میں بھیجا جانے والا پہلا خلائی اسٹیشن بنا۔",
   "explanation_roman": "Salyut 1 ko Soviet Union ne 1971 mein launch kiya tha aur yeh zameen ke madaar mein rakha jane wala pehla khalai station bana.",
   "post": [
    "tt",
@@ -16241,7 +16241,7 @@
  },
  {
   "id": "GKN-291",
-  "question_ur": "کون سا مریخ روور 2021 میں مریخ پر اترا اور اپنے ساتھ انجینیوٹی ہیلی کاپٹر لے کر گیا تھا؟",
+  "question_ur": "کون سا روور 2021 میں مریخ پر اترا اور اپنے ساتھ انجینیوٹی ہیلی کاپٹر لے کر گیا تھا؟",
   "question_roman": "Kaun sa Mars rover 2021 mein Mars par utra aur apne saath Ingenuity helicopter le kar gaya tha?",
   "options_ur": [
    "کیوریوسٹی",
@@ -16409,7 +16409,7 @@
  },
  {
   "id": "GKN-294",
-  "question_ur": "1977 میں لانچ کیا گیا کون سا خلائی جہاز 2012 میں انٹرسٹیلر خلا میں داخل ہونے والا پہلا انسان ساختہ خلائی جہاز بنا؟",
+  "question_ur": "1977 میں لانچ کیا گیا کون سا خلائی جہاز 2012 میں انٹرسٹیلر خلا میں داخل ہونے والی پہلی انسان ساختہ چیز بنا؟",
   "question_roman": "1977 mein launch kiya gaya kaun sa khalai jahaz 2012 mein interstellar khala mein dakhil hone wala pehla insaan saakhta khalai jahaz bana?",
   "options_ur": [
    "وایجر 2",
@@ -16423,7 +16423,7 @@
    "Pioneer 11",
    "Voyager 1"
   ],
-  "explanation_ur": "وایجر 1 کو 1977 میں لانچ کیا گیا تھا اور یہ 2012 میں انٹرسٹیلر خلا میں داخل ہونے والا پہلا انسان ساختہ خلائی جہاز بنا۔",
+  "explanation_ur": "وایجر 1 کو 1977 میں لانچ کیا گیا تھا اور یہ 2012 میں انٹرسٹیلر خلا میں داخل ہونے والی پہلی انسان ساختہ چیز بنا۔",
   "explanation_roman": "Voyager 1 ko 1977 mein launch kiya gaya tha aur yeh 2012 mein interstellar khala mein dakhil hone wala pehla insaan saakhta khalai jahaz bana.",
   "post": [
    "tt",
@@ -16759,7 +16759,7 @@
    "Larry Page",
    "Ray Tomlinson"
   ],
-  "explanation_ur": "رے ٹوملنسن نے 1971 میں کمپیوٹر نیٹ ورک پر پہلا ای میل بھیجا، اور اس نے صارف کا نام میزبان کے نام سے الگ کرنے کے لیے @ کی علامت منتخب کی۔",
+  "explanation_ur": "رے ٹوملنسن نے 1971 میں کمپیوٹر نیٹ ورک پر پہلا ای میل بھیجا، اور اس نے صارف کا نام میزبان کے نام سے الگ کرنے کے لیے @ کا نشان منتخب کیا۔",
   "explanation_roman": "Ray Tomlinson ne 1971 mein computer network par pehla email bheja, aur us ne user ka naam host ke naam se alag karne ke liye @ ka nishan muntakhab kiya.",
   "post": [
    "tt",
@@ -17305,7 +17305,7 @@
  },
  {
   "id": "GKN-310",
-  "question_ur": "ڈیسی بل کس چیز کو ماپنے کے لیے استعمال ہونے والی اکائی ہے؟",
+  "question_ur": "ڈیسی بل کس چیز کو ماپنے کی اکائی ہے؟",
   "question_roman": "Decibel kis cheez ko mapne ke liye istemal hone wali ikai hai?",
   "options_ur": [
    "روشنی کی شدت",
@@ -17319,7 +17319,7 @@
    "Sound intensity",
    "Heat energy"
   ],
-  "explanation_ur": "ڈیسی بل آواز کی شدت کو ماپنے کے لیے استعمال ہونے والی اکائی ہے۔",
+  "explanation_ur": "ڈیسی بل آواز کی شدت کو ماپنے کی اکائی ہے۔",
   "explanation_roman": "Decibel aawaz ki shiddat ko mapne ke liye istemal hone wali ikai hai.",
   "post": [
    "tt",
@@ -17585,7 +17585,7 @@
  },
  {
   "id": "GKN-315",
-  "question_ur": "فیلڈ ہاکی میں سب سے زیادہ اولمپک طلائی تمغے کس ملک نے جیتے ہیں؟",
+  "question_ur": "فیلڈ ہاکی میں سب سے زیادہ اولمپک سونے کے تمغے کس ملک نے جیتے ہیں؟",
   "question_roman": "Field hockey mein sab se zyada Olympic gold medals kis mulk ne jeete hain?",
   "options_ur": [
    "پاکستان",
@@ -17599,7 +17599,7 @@
    "Netherlands",
    "India"
   ],
-  "explanation_ur": "بھارت نے فیلڈ ہاکی میں 8 اولمپک طلائی تمغے جیتے ہیں، جو کسی بھی دوسرے ملک سے زیادہ ہیں۔",
+  "explanation_ur": "بھارت نے فیلڈ ہاکی میں 8 اولمپک سونے کے تمغے جیتے ہیں، جو کسی بھی دوسرے ملک سے زیادہ ہیں۔",
   "explanation_roman": "India ne field hockey mein 8 Olympic gold medals jeete hain, jo kisi bhi dusre mulk se zyada hain.",
   "post": [
    "tt",
@@ -17655,7 +17655,7 @@
    "Abner Doubleday",
    "Walter Camp"
   ],
-  "explanation_ur": "جیمز نیسمتھ، اسپرنگ فیلڈ کے ایک انسٹرکٹر، نے 1891 میں باسکٹ بال ایجاد کی۔",
+  "explanation_ur": "اسپرنگ فیلڈ کے انسٹرکٹر جیمز نیسمتھ نے 1891 میں باسکٹ بال ایجاد کی۔",
   "explanation_roman": "James Naismith, Springfield ke aik instructor, ne 1891 mein basketball ijaad ki.",
   "post": [
    "tt",
@@ -18487,7 +18487,7 @@
    "انگلینڈ",
    "آسٹریلیا",
    "ویسٹ انڈیز",
-   "انڈیا"
+   "بھارت"
   ],
   "options_roman": [
    "England",
@@ -18607,7 +18607,7 @@
    "5",
    "6"
   ],
-  "explanation_ur": "اولمپک پرچم پر پانچ باہم جڑے ہوئے حلقے دکھائے گئے ہیں۔",
+  "explanation_ur": "اولمپک پرچم پر پانچ باہم جڑے ہوئے حلقے نظر آتے ہیں۔",
   "explanation_roman": "Olympic parcham par paanch baaham jure hue halqay dikhaye gaye hain.",
   "post": [
    "tt",
@@ -18719,7 +18719,7 @@
    "Delphi",
    "Olympia"
   ],
-  "explanation_ur": "اولمپک شعلہ روایتی طور پر یونان کے مقام اولمپیا میں روشن کیا جاتا ہے، جہاں قدیم کھیل منعقد ہوتے تھے۔",
+  "explanation_ur": "اولمپک شعلہ روایتی طور پر یونان میں اولمپیا کے مقام پر روشن کیا جاتا ہے، جہاں قدیم کھیل منعقد ہوتے تھے۔",
   "explanation_roman": "Olympic shola rawayati tor par Yunan ke maqam Olympia mein roshan kiya jata hai, jahan qadeem khel munaqid hote thay.",
   "post": [
    "tt",
@@ -18985,7 +18985,7 @@
  },
  {
   "id": "GKN-340",
-  "question_ur": "کامن ویلتھ کھیلوں کا اصل نام کیا تھا جب یہ 1930 میں شروع ہوئے؟",
+  "question_ur": "کامن ویلتھ کھیل جب 1930 میں شروع ہوئے تو ان کا اصل نام کیا تھا؟",
   "question_roman": "Commonwealth khelon ka asal naam kya tha jab yeh 1930 mein shuru hue?",
   "options_ur": [
    "ایمپائر گیمز فیسٹیول",
@@ -19447,7 +19447,7 @@
    "355",
    "655"
   ],
-  "explanation_ur": "جہانگیر خان نے 1981 سے 1986 تک بغیر شکست کے لگاتار 555 اسکواش میچ جیتے، یہ سلسلہ گنیز ورلڈ ریکارڈز میں درج ہے۔",
+  "explanation_ur": "جہانگیر خان نے 1981 سے 1986 تک بغیر شکست کے لگاتار 555 اسکواش میچ جیتے۔ یہ سلسلہ گنیز ورلڈ ریکارڈز میں درج ہے۔",
   "explanation_roman": "Jahangir Khan ne 1981 se 1986 tak baghair shikast ke lagatar 555 squash matches jeete, yeh silsila Guinness World Records mein darj hai.",
   "post": [
    "tt",
@@ -19671,7 +19671,7 @@
    "42",
    "33"
   ],
-  "explanation_ur": "عمران خان نے 1992 کے کرکٹ ورلڈ کپ فائنل میں انگلینڈ کے خلاف 72 رنز بنائے، یہ میچ پاکستان نے 22 رنز سے جیتا۔",
+  "explanation_ur": "عمران خان نے 1992 کے کرکٹ ورلڈ کپ فائنل میں انگلینڈ کے خلاف 72 رنز بنائے۔ یہ میچ پاکستان نے 22 رنز سے جیتا۔",
   "explanation_roman": "Imran Khan ne 1992 ke Cricket World Cup final mein England ke khilaf 72 runs banaye, yeh match Pakistan ne 22 runs se jeeta.",
   "post": [
    "tt",
@@ -19937,7 +19937,7 @@
  },
  {
   "id": "GKN-357",
-  "question_ur": "پیرس 2024 اولمپک گیمز میں مردوں کے جیولن تھرو میں سونے کا تمغہ کس پاکستانی کھلاڑی نے جیتا؟",
+  "question_ur": "پیرس 2024 اولمپک کھیلوں میں مردوں کے جیولن تھرو میں سونے کا تمغہ کس پاکستانی کھلاڑی نے جیتا؟",
   "question_roman": "Paris 2024 Olympic Games mein mardon ke javelin throw mein sone ka tamgha kis Pakistani khiladi ne jeeta?",
   "options_ur": [
    "نیرج چوپڑا",
@@ -19951,7 +19951,7 @@
    "Arshad Nadeem",
    "Jan Zelezny"
   ],
-  "explanation_ur": "ارشد ندیم نے پیرس 2024 اولمپک گیمز میں مردوں کے جیولن تھرو میں سونے کا تمغہ جیتا، یہ پاکستان کے لیے پہلا انفرادی اولمپک سونے کا تمغہ تھا۔",
+  "explanation_ur": "ارشد ندیم نے پیرس 2024 اولمپک کھیلوں میں مردوں کے جیولن تھرو میں سونے کا تمغہ جیتا۔ یہ پاکستان کے لیے پہلا انفرادی اولمپک سونے کا تمغہ تھا۔",
   "explanation_roman": "Arshad Nadeem ne Paris 2024 Olympic Games mein mardon ke javelin throw mein sone ka tamgha jeeta, yeh Pakistan ke liye pehla infiradi Olympic sone ka tamgha tha.",
   "post": [
    "tt",
@@ -19993,7 +19993,7 @@
  },
  {
   "id": "GKN-358",
-  "question_ur": "ارشد ندیم کی اولمپک ریکارڈ جیولن تھرو، جس نے پیرس 2024 اولمپک گیمز میں سونے کا تمغہ جیتا، کی دوری کتنی تھی؟",
+  "question_ur": "ارشد ندیم نے پیرس 2024 اولمپک کھیلوں میں سونے کا تمغہ جیتا اور اولمپک ریکارڈ قائم کیا۔ ان کی جیولن تھرو کی دوری کتنی تھی؟",
   "question_roman": "Arshad Nadeem ke Olympic record javelin throw, jis ne Paris 2024 Olympic Games mein sone ka tamgha jeeta, ki doori kitni thi?",
   "options_ur": [
    "90.57 میٹر",
@@ -20007,7 +20007,7 @@
    "91.79 metres",
    "92.97 metres"
   ],
-  "explanation_ur": "ارشد ندیم نے پیرس 2024 اولمپک گیمز میں جیولن 92.97 میٹر دور پھینکا، اور نیا اولمپک ریکارڈ قائم کیا۔",
+  "explanation_ur": "ارشد ندیم نے پیرس 2024 اولمپک کھیلوں میں جیولن 92.97 میٹر دور پھینکا، اور نیا اولمپک ریکارڈ قائم کیا۔",
   "explanation_roman": "Arshad Nadeem ne Paris 2024 Olympic Games mein javelin 92.97 metres door phenka, aur naya Olympic record qaim kiya.",
   "post": [
    "tt",
@@ -20497,7 +20497,7 @@
  },
  {
   "id": "GKN-367",
-  "question_ur": "پاکستان کی 2023 کی مردم شماری میں شمار کنندگان نے گھریلو معلومات بنیادی طور پر کس چیز کے ذریعے درج کیں؟",
+  "question_ur": "پاکستان کی 2023 کی مردم شماری میں شمار کنندگان نے گھریلو معلومات بنیادی طور پر کس ذریعے سے درج کیں؟",
   "question_roman": "Pakistan ki 2023 ki mardum shumari mein shumar kunindgan ne gharailu maloomat bunyadi tor par kis cheez ke zariye darj kein?",
   "options_ur": [
    "صرف کاغذی فارم",
@@ -21351,7 +21351,7 @@
    "The Commonwealth",
    "The Association of Southeast Asian Nations"
   ],
-  "explanation_ur": "برطانیہ 31 جنوری 2020 کو یورپی اتحاد سے نکل گیا، اس واقعے کو بریکزٹ کہا جاتا ہے۔",
+  "explanation_ur": "برطانیہ 31 جنوری 2020 کو یورپی اتحاد سے نکل گیا۔ اس واقعے کو بریکزٹ کہا جاتا ہے۔",
   "explanation_roman": "Bartania 31 January 2020 ko European Union se nikal gaya, is waqiye ko Brexit kaha jata hai.",
   "post": [
    "tt",
@@ -21393,7 +21393,7 @@
  },
  {
   "id": "GKN-383",
-  "question_ur": "بریکزٹ کا لفظ 2020 میں یورپی اتحاد سے کس ملک کے انخلا کو بیان کرتا ہے؟",
+  "question_ur": "بریکزٹ سے مراد 2020 میں یورپی اتحاد سے کس ملک کا انخلا ہے؟",
   "question_roman": "Brexit ka lafz 2020 mein European Union se kis mulk ke inkhila ko bayan karta hai?",
   "options_ur": [
    "آئرلینڈ",
@@ -21617,7 +21617,7 @@
  },
  {
   "id": "GKN-387",
-  "question_ur": "جیمز ویب خلائی دوربین، جو دسمبر 2021 میں روانہ ہوئی، کس پہلی خلائی دوربین کی جانشین ہے؟",
+  "question_ur": "جیمز ویب خلائی دوربین، جو دسمبر 2021 میں روانہ ہوئی، اس سے پہلے کی کس خلائی دوربین کی جانشین ہے؟",
   "question_roman": "James Webb Space Telescope, jo December 2021 mein rawana hui, kis pehli khalai doorbeen ki janashin hai?",
   "options_ur": [
    "کیپلر خلائی دوربین",
@@ -21673,7 +21673,7 @@
  },
  {
   "id": "GKN-388",
-  "question_ur": "2022 میں ہونے والا فیفا عالمی کپ پہلی بار کس خطے میں منعقد ہوا؟",
+  "question_ur": "2022 میں ہونے والا فیفا ورلڈ کپ پہلی بار کس خطے میں منعقد ہوا؟",
   "question_roman": "2022 mein hone wala FIFA World Cup pehli baar kis khatte mein munaqid hua?",
   "options_ur": [
    "جنوبی ایشیا",
@@ -21687,7 +21687,7 @@
    "East Asia",
    "North Africa"
   ],
-  "explanation_ur": "2022 میں قطر میں ہونے والا فیفا عالمی کپ پہلی بار مشرق وسطی میں منعقد ہوا۔",
+  "explanation_ur": "2022 میں قطر میں ہونے والا فیفا ورلڈ کپ پہلی بار مشرق وسطی میں منعقد ہوا۔",
   "explanation_roman": "2022 mein Qatar mein hone wala FIFA World Cup pehli baar Middle East mein munaqid hua.",
   "post": [
    "tt",
@@ -21729,7 +21729,7 @@
  },
  {
   "id": "GKN-389",
-  "question_ur": "2022 میں قطر میں ہونے والا فیفا عالمی کپ کس قومی ٹیم نے جیتا؟",
+  "question_ur": "2022 میں قطر میں ہونے والا فیفا ورلڈ کپ کس قومی ٹیم نے جیتا؟",
   "question_roman": "2022 mein Qatar mein hone wala FIFA World Cup kis qaumi team ne jeeta?",
   "options_ur": [
    "فرانس",
@@ -21743,7 +21743,7 @@
    "Croatia",
    "Argentina"
   ],
-  "explanation_ur": "ارجنٹائن نے 2022 میں قطر میں ہونے والا فیفا عالمی کپ جیتا، فائنل میں فرانس کو شکست دی۔",
+  "explanation_ur": "ارجنٹائن نے 2022 میں قطر میں ہونے والا فیفا ورلڈ کپ جیتا اور فائنل میں فرانس کو شکست دی۔",
   "explanation_roman": "Argentina ne 2022 mein Qatar mein hone wala FIFA World Cup jeeta, final mein France ko shikast di.",
   "post": [
    "tt",
@@ -21785,7 +21785,7 @@
  },
  {
   "id": "GKN-390",
-  "question_ur": "پیرس میں 2024 کے گرمائی اولمپک کھیل اس شہر میں آخری کھیلوں کے 100 سال بعد ہوئے، آخری کھیل کس سال ہوئے تھے؟",
+  "question_ur": "2024 کے پیرس گرمائی اولمپک کھیلوں سے 100 سال پہلے پیرس نے آخری بار ان کھیلوں کی میزبانی کس سال کی تھی؟",
   "question_roman": "Paris mein 2024 ke Summer Olympic Games is shehar mein aakhri khelon ke 100 saal baad hue, aakhri khel kis saal hue thay?",
   "options_ur": [
    "1924",
@@ -21799,7 +21799,7 @@
    "1936",
    "1952"
   ],
-  "explanation_ur": "پیرس نے 2024 میں گرمائی اولمپک کھیلوں کی میزبانی کی، جو 1924 میں آخری میزبانی کے 100 سال بعد تھی۔",
+  "explanation_ur": "پیرس نے 2024 میں گرمائی اولمپک کھیلوں کی میزبانی کی، جو 1924 میں ہونے والی آخری میزبانی کے 100 سال بعد تھی۔",
   "explanation_roman": "Paris ne 2024 mein Summer Olympic Games ki mezbani ki, jo 1924 mein aakhri mezbani ke 100 saal baad thi.",
   "post": [
    "tt",
@@ -21967,7 +21967,7 @@
    "Hina Rabbani Khar",
    "Sherry Rehman"
   ],
-  "explanation_ur": "مریم نواز 2024 میں پنجاب کی وزیر اعلی بنیں، وہ اس عہدے پر فائز ہونے والی پہلی خاتون تھیں۔",
+  "explanation_ur": "مریم نواز 2024 میں پنجاب کی وزیر اعلی بنیں۔ وہ اس عہدے پر فائز ہونے والی پہلی خاتون تھیں۔",
   "explanation_roman": "Maryam Nawaz 2024 mein Punjab ki Wazir-e-Aala bani, woh is uhde par faiz hone wali pehli khatoon thin.",
   "post": [
    "tt",
@@ -24585,7 +24585,7 @@
  },
  {
   "id": "GKN-440",
-  "question_ur": "فٹ بال میں، مخفف FIFA کا انگریزی میں مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "فٹ بال میں، مخفف FIFA کا انگریزی میں مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Football mein, mukhaffaf FIFA ka matlab English mein darj zail mein se kaun sa hai?",
   "options_ur": [
    "بین الاقوامی فٹ بال ایسوسی ایشنز کی فیڈریشن",
@@ -24977,7 +24977,7 @@
  },
  {
   "id": "GKN-447",
-  "question_ur": "بینک میں، مخفف ATM کا مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "بینک میں، مخفف ATM کا مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Bank mein, mukhaffaf ATM ka matlab darj zail mein se kaun sa hai?",
   "options_ur": [
    "خودکار منتقلی مشین",
@@ -25033,7 +25033,7 @@
  },
  {
   "id": "GKN-448",
-  "question_ur": "موبائل فون میں، مخفف SIM کا مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "موبائل فون میں، مخفف SIM کا مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Mobile phone mein, mukhaffaf SIM ka matlab darj zail mein se kaun sa hai?",
   "options_ur": [
    "مشترک شناخت ماڈیول",
@@ -25089,7 +25089,7 @@
  },
  {
   "id": "GKN-449",
-  "question_ur": "جب بینک کارڈ PIN مانگتا ہے تو مخفف PIN کا مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "جب بینک کارڈ PIN مانگتا ہے تو مخفف PIN کا مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Jab bank card PIN maangta hai to mukhaffaf PIN ka matlab darj zail mein se kaun sa hai?",
   "options_ur": [
    "نجی شناخت نمبر",
@@ -25145,7 +25145,7 @@
  },
  {
   "id": "GKN-450",
-  "question_ur": "کمپیوٹنگ میں، مخفف PDF کا مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "کمپیوٹنگ میں، مخفف PDF کا مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Computing mein, mukhaffaf PDF ka matlab darj zail mein se kaun sa hai?",
   "options_ur": [
    "پورٹیبل ڈاکومنٹ فارمیٹ",
@@ -25201,7 +25201,7 @@
  },
  {
   "id": "GKN-451",
-  "question_ur": "ویب سائٹ کے پتے کے شروع میں، مخفف HTTP کا مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "ویب سائٹ کے پتے کے شروع میں، مخفف HTTP کا مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Website ke patte ke shuru mein, mukhaffaf HTTP ka matlab darj zail mein se kaun sa hai?",
   "options_ur": [
    "ہائپر لنک ٹرانسفر پروٹوکول",
@@ -25257,7 +25257,7 @@
  },
  {
   "id": "GKN-452",
-  "question_ur": "ویب صفحات میں، مخفف HTML کا مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "ویب صفحات میں، مخفف HTML کا مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Web pages mein, mukhaffaf HTML ka matlab darj zail mein se kaun sa hai?",
   "options_ur": [
    "ہائی ٹیکسٹ مشین لینگویج",
@@ -25425,7 +25425,7 @@
  },
  {
   "id": "GKN-455",
-  "question_ur": "روشنی اور الیکٹرانکس میں، مخفف LED کا مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "روشنی اور الیکٹرانکس میں، مخفف LED کا مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Roshni aur electronics mein, mukhaffaf LED ka matlab darj zail mein se kaun sa hai?",
   "options_ur": [
    "روشنی توانائی ڈائیوڈ",
@@ -25481,7 +25481,7 @@
  },
  {
   "id": "GKN-456",
-  "question_ur": "حفاظتی کیمروں میں، مخفف CCTV کا مطلب درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "حفاظتی کیمروں میں، مخفف CCTV کا مطلب مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Hifazati cameron mein, mukhaffaf CCTV ka matlab darj zail mein se kaun sa hai?",
   "options_ur": [
    "مرکزی سرکٹ ٹیلی ویژن",
@@ -25537,7 +25537,7 @@
  },
  {
   "id": "GKN-457",
-  "question_ur": "کتاب دی ڈسکوری آف انڈیا کس نے لکھی?",
+  "question_ur": "کتاب دی ڈسکوری آف انڈیا کس نے لکھی؟",
   "question_roman": "The Discovery of India kitab kis ne likhi?",
   "options_ur": [
    "جواہر لال نہرو",
@@ -25551,7 +25551,7 @@
    "Muhammad Ali Jinnah",
    "Rabindranath Tagore"
   ],
-  "explanation_ur": "دی ڈسکوری آف انڈیا جواہر لال نہرو نے لکھی.",
+  "explanation_ur": "دی ڈسکوری آف انڈیا جواہر لال نہرو نے لکھی۔",
   "explanation_roman": "The Discovery of India Jawaharlal Nehru ne likhi.",
   "post": [
    "tt",
@@ -25593,7 +25593,7 @@
  },
  {
   "id": "GKN-458",
-  "question_ur": "کتاب مائی ایکسپیریمنٹس ود ٹروتھ کس رہنما کی خودنوشت ہے?",
+  "question_ur": "کتاب مائی ایکسپیریمنٹس ود ٹروتھ کس رہنما کی خودنوشت ہے؟",
   "question_roman": "My Experiments with Truth kitab kis rehnuma ki aap beeti hai?",
   "options_ur": [
    "جواہر لال نہرو",
@@ -25607,7 +25607,7 @@
    "Nelson Mandela",
    "Leo Tolstoy"
   ],
-  "explanation_ur": "مائی ایکسپیریمنٹس ود ٹروتھ مہاتما گاندھی کی خودنوشت ہے.",
+  "explanation_ur": "مائی ایکسپیریمنٹس ود ٹروتھ مہاتما گاندھی کی خودنوشت ہے۔",
   "explanation_roman": "My Experiments with Truth Mahatma Gandhi ki aap beeti hai.",
   "post": [
    "tt",
@@ -25649,7 +25649,7 @@
  },
  {
   "id": "GKN-459",
-  "question_ur": "لانگ واک ٹو فریڈم کے مصنف کون ہیں?",
+  "question_ur": "لانگ واک ٹو فریڈم کے مصنف کون ہیں؟",
   "question_roman": "Long Walk to Freedom ke musannif kaun hain?",
   "options_ur": [
    "مہاتما گاندھی",
@@ -25663,7 +25663,7 @@
    "Nelson Mandela",
    "Martin Luther King Jr."
   ],
-  "explanation_ur": "لانگ واک ٹو فریڈم نیلسن منڈیلا کی خودنوشت ہے.",
+  "explanation_ur": "لانگ واک ٹو فریڈم نیلسن منڈیلا کی خودنوشت ہے۔",
   "explanation_roman": "Long Walk to Freedom Nelson Mandela ki aap beeti hai.",
   "post": [
    "tt",
@@ -25705,7 +25705,7 @@
  },
  {
   "id": "GKN-460",
-  "question_ur": "دی ری پبلک، فلسفے کی ایک مشہور تصنیف، کس نے لکھی?",
+  "question_ur": "دی ری پبلک، فلسفے کی ایک مشہور تصنیف، کس نے لکھی؟",
   "question_roman": "The Republic, falsafe ki aik mashhoor tasneef, kis ne likhi?",
   "options_ur": [
    "ارسطو",
@@ -25719,7 +25719,7 @@
    "Homer",
    "Plato"
   ],
-  "explanation_ur": "دی ری پبلک یونانی فلسفی افلاطون نے لکھی.",
+  "explanation_ur": "دی ری پبلک یونانی فلسفی افلاطون نے لکھی۔",
   "explanation_roman": "The Republic Yunani falsafi Plato ne likhi.",
   "post": [
    "tt",
@@ -25761,7 +25761,7 @@
  },
  {
   "id": "GKN-461",
-  "question_ur": "داس کیپیٹل کس نے لکھی?",
+  "question_ur": "داس کیپیٹل کس نے لکھی؟",
   "question_roman": "Das Kapital kis ne likhi?",
   "options_ur": [
    "کارل مارکس",
@@ -25775,7 +25775,7 @@
    "Adam Smith",
    "Vladimir Lenin"
   ],
-  "explanation_ur": "داس کیپیٹل کارل مارکس نے لکھی.",
+  "explanation_ur": "داس کیپیٹل کارل مارکس نے لکھی۔",
   "explanation_roman": "Das Kapital Karl Marx ne likhi.",
   "post": [
    "tt",
@@ -25817,7 +25817,7 @@
  },
  {
   "id": "GKN-462",
-  "question_ur": "ایلس ان ونڈر لینڈ کس نے لکھی?",
+  "question_ur": "ایلس ان ونڈر لینڈ کس نے لکھی؟",
   "question_roman": "Alice in Wonderland kis ne likhi?",
   "options_ur": [
    "چارلس ڈکنز",
@@ -25831,7 +25831,7 @@
    "Mark Twain",
    "Jane Austen"
   ],
-  "explanation_ur": "ایلس ان ونڈر لینڈ لوئس کیرل نے لکھی.",
+  "explanation_ur": "ایلس ان ونڈر لینڈ لوئس کیرل نے لکھی۔",
   "explanation_roman": "Alice in Wonderland Lewis Carroll ne likhi.",
   "post": [
    "tt",
@@ -25873,7 +25873,7 @@
  },
  {
   "id": "GKN-463",
-  "question_ur": "ڈرامہ ہیملٹ کس ملک میں واقع ہے?",
+  "question_ur": "ڈرامہ ہیملٹ کس ملک میں واقع ہے؟",
   "question_roman": "Hamlet dramah kis mulk mein waqe hai?",
   "options_ur": [
    "انگلستان",
@@ -25887,7 +25887,7 @@
    "Denmark",
    "Sweden"
   ],
-  "explanation_ur": "ڈرامہ ہیملٹ ڈنمارک میں واقع ہے، ایلسینور کے قلعے میں.",
+  "explanation_ur": "ڈرامہ ہیملٹ ڈنمارک میں واقع ہے، ایلسینور کے قلعے میں۔",
   "explanation_roman": "Hamlet dramah Denmark mein waqe hai, Elsinore ke qile mein.",
   "post": [
    "tt",
@@ -25929,7 +25929,7 @@
  },
  {
   "id": "GKN-464",
-  "question_ur": "ناول وار اینڈ پیس کے مصنف کون ہیں?",
+  "question_ur": "ناول وار اینڈ پیس کے مصنف کون ہیں؟",
   "question_roman": "War and Peace novel ke musannif kaun hain?",
   "options_ur": [
    "فیوڈور دوستوفسکی",
@@ -25943,7 +25943,7 @@
    "Victor Hugo",
    "Leo Tolstoy"
   ],
-  "explanation_ur": "ناول وار اینڈ پیس لیو ٹالسٹائی نے لکھا.",
+  "explanation_ur": "ناول وار اینڈ پیس لیو ٹالسٹائی نے لکھا۔",
   "explanation_roman": "War and Peace novel Leo Tolstoy ne likha.",
   "post": [
    "tt",
@@ -25985,7 +25985,7 @@
  },
  {
   "id": "GKN-465",
-  "question_ur": "ناول 1984 کس نے لکھا?",
+  "question_ur": "ناول 1984 کس نے لکھا؟",
   "question_roman": "1984 novel kis ne likha?",
   "options_ur": [
    "جارج آرویل",
@@ -25999,7 +25999,7 @@
    "John Steinbeck",
    "Virginia Woolf"
   ],
-  "explanation_ur": "ناول 1984 جارج آرویل نے لکھا.",
+  "explanation_ur": "ناول 1984 جارج آرویل نے لکھا۔",
   "explanation_roman": "1984 novel George Orwell ne likha.",
   "post": [
    "tt",
@@ -26041,7 +26041,7 @@
  },
  {
   "id": "GKN-466",
-  "question_ur": "رابندر ناتھ ٹیگور نے ادب کا نوبل انعام کس سال میں جیتا?",
+  "question_ur": "رابندر ناتھ ٹیگور نے ادب کا نوبل انعام کس سال میں جیتا؟",
   "question_roman": "Rabindranath Tagore ne adab ka Nobel Prize kis saal mein jeeta?",
   "options_ur": [
    "1901",
@@ -26055,7 +26055,7 @@
    "1907",
    "1921"
   ],
-  "explanation_ur": "رابندر ناتھ ٹیگور نے 1913 میں گیتانجلی پر ادب کا نوبل انعام جیتا.",
+  "explanation_ur": "رابندر ناتھ ٹیگور نے 1913 میں گیتانجلی پر ادب کا نوبل انعام جیتا۔",
   "explanation_roman": "Rabindranath Tagore ne 1913 mein Gitanjali par adab ka Nobel Prize jeeta.",
   "post": [
    "tt",
@@ -26097,7 +26097,7 @@
  },
  {
   "id": "GKN-467",
-  "question_ur": "عالمی یوم ماحولیات ہر سال کس تاریخ کو منایا جاتا ہے?",
+  "question_ur": "عالمی یوم ماحولیات ہر سال کس تاریخ کو منایا جاتا ہے؟",
   "question_roman": "World Environment Day har saal kis tareekh ko manaya jata hai?",
   "options_ur": [
    "22 اپریل",
@@ -26111,7 +26111,7 @@
    "5 June",
    "5 July"
   ],
-  "explanation_ur": "عالمی یوم ماحولیات ہر سال 5 جون کو منایا جاتا ہے.",
+  "explanation_ur": "عالمی یوم ماحولیات ہر سال 5 جون کو منایا جاتا ہے۔",
   "explanation_roman": "World Environment Day har saal 5 June ko manaya jata hai.",
   "post": [
    "tt",
@@ -26153,7 +26153,7 @@
  },
  {
   "id": "GKN-468",
-  "question_ur": "عالمی یوم آب ہر سال کس تاریخ کو منایا جاتا ہے?",
+  "question_ur": "عالمی یوم آب ہر سال کس تاریخ کو منایا جاتا ہے؟",
   "question_roman": "World Water Day har saal kis tareekh ko manaya jata hai?",
   "options_ur": [
    "12 مارچ",
@@ -26167,7 +26167,7 @@
    "30 March",
    "22 March"
   ],
-  "explanation_ur": "عالمی یوم آب ہر سال 22 مارچ کو منایا جاتا ہے.",
+  "explanation_ur": "عالمی یوم آب ہر سال 22 مارچ کو منایا جاتا ہے۔",
   "explanation_roman": "World Water Day har saal 22 March ko manaya jata hai.",
   "post": [
    "tt",
@@ -26209,7 +26209,7 @@
  },
  {
   "id": "GKN-469",
-  "question_ur": "عالمی یوم صحت کس تاریخ کو منایا جاتا ہے?",
+  "question_ur": "عالمی یوم صحت کس تاریخ کو منایا جاتا ہے؟",
   "question_roman": "World Health Day kis tareekh ko manaya jata hai?",
   "options_ur": [
    "7 اپریل",
@@ -26223,7 +26223,7 @@
    "14 April",
    "21 April"
   ],
-  "explanation_ur": "عالمی یوم صحت ہر سال 7 اپریل کو منایا جاتا ہے.",
+  "explanation_ur": "عالمی یوم صحت ہر سال 7 اپریل کو منایا جاتا ہے۔",
   "explanation_roman": "World Health Day har saal 7 April ko manaya jata hai.",
   "post": [
    "tt",
@@ -26265,7 +26265,7 @@
  },
  {
   "id": "GKN-470",
-  "question_ur": "عالمی یوم اساتذہ ہر سال کس تاریخ کو منایا جاتا ہے?",
+  "question_ur": "عالمی یوم اساتذہ ہر سال کس تاریخ کو منایا جاتا ہے؟",
   "question_roman": "World Teachers Day har saal kis tareekh ko manaya jata hai?",
   "options_ur": [
    "5 ستمبر",
@@ -26279,7 +26279,7 @@
    "12 October",
    "24 October"
   ],
-  "explanation_ur": "عالمی یوم اساتذہ ہر سال 5 اکتوبر کو منایا جاتا ہے.",
+  "explanation_ur": "عالمی یوم اساتذہ ہر سال 5 اکتوبر کو منایا جاتا ہے۔",
   "explanation_roman": "World Teachers Day har saal 5 October ko manaya jata hai.",
   "post": [
    "tt",
@@ -26321,7 +26321,7 @@
  },
  {
   "id": "GKN-471",
-  "question_ur": "ایڈز کا عالمی دن ہر سال کس تاریخ کو منایا جاتا ہے?",
+  "question_ur": "ایڈز کا عالمی دن ہر سال کس تاریخ کو منایا جاتا ہے؟",
   "question_roman": "World AIDS Day har saal kis tareekh ko manaya jata hai?",
   "options_ur": [
    "1 نومبر",
@@ -26335,7 +26335,7 @@
    "1 December",
    "1 September"
   ],
-  "explanation_ur": "ایڈز کا عالمی دن ہر سال 1 دسمبر کو منایا جاتا ہے.",
+  "explanation_ur": "ایڈز کا عالمی دن ہر سال 1 دسمبر کو منایا جاتا ہے۔",
   "explanation_roman": "World AIDS Day har saal 1 December ko manaya jata hai.",
   "post": [
    "tt",
@@ -26377,7 +26377,7 @@
  },
  {
   "id": "GKN-472",
-  "question_ur": "نوبل انعام جیتنے والی پہلی خاتون کون تھیں?",
+  "question_ur": "نوبل انعام جیتنے والی پہلی خاتون کون تھیں؟",
   "question_roman": "Nobel Prize jeetne wali pehli khatoon kaun thin?",
   "options_ur": [
    "مدر ٹریسا",
@@ -26391,7 +26391,7 @@
    "Malala Yousafzai",
    "Marie Curie"
   ],
-  "explanation_ur": "میری کیوری نوبل انعام جیتنے والی پہلی خاتون تھیں، انہوں نے 1903 میں فزکس کا نوبل انعام جیتا.",
+  "explanation_ur": "میری کیوری نوبل انعام جیتنے والی پہلی خاتون تھیں، انہوں نے 1903 میں فزکس کا نوبل انعام جیتا۔",
   "explanation_roman": "Marie Curie Nobel Prize jeetne wali pehli khatoon thin, unhon ne 1903 mein Physics ka Nobel Prize jeeta.",
   "post": [
    "tt",
@@ -27273,7 +27273,7 @@
  },
  {
   "id": "GKN-488",
-  "question_ur": "قرآن مجید میں کس نبی کا نام سب سے زیادہ بار آیا ہے؟",
+  "question_ur": "قرآن پاک میں کس نبی کا نام سب سے زیادہ بار آیا ہے؟",
   "question_roman": "Quran Majeed mein kis Nabi ka naam sab se zyada baar aaya hai?",
   "options_ur": [
    "حضرت ابراہیم علیہ السلام",
@@ -27287,7 +27287,7 @@
    "Hazrat Nuh Alaihis Salam",
    "Hazrat Isa Alaihis Salam"
   ],
-  "explanation_ur": "حضرت موسیٰ علیہ السلام کا نام قرآن مجید میں کسی بھی دوسرے نبی سے زیادہ بار آیا ہے۔",
+  "explanation_ur": "حضرت موسیٰ علیہ السلام کا نام قرآن پاک میں کسی بھی دوسرے نبی سے زیادہ بار آیا ہے۔",
   "explanation_roman": "Hazrat Musa Alaihis Salam ka naam Quran Majeed mein kisi bhi dusre Nabi se zyada baar aaya hai.",
   "post": [
    "tt",
@@ -27557,7 +27557,7 @@
   "question_roman": "Hijri calendar ke saal kis waqiye se gine jate hain?",
   "options_ur": [
    "حضرت محمد ﷺ کی ولادت",
-   "قرآن مجید کی پہلی وحی",
+   "قرآن پاک کی پہلی وحی",
    "فتح مکہ",
    "ہجرت"
   ],

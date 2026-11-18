@@ -9,9 +9,10 @@
 // (500 items, U2 subject 5), the Pak Studies bank
 // (500 items, U2 subject 6), the Pedagogy bank
 // (500 items, U2 subject 7), the Science bank
-// (500 items, U2 subject 8) and the Social Studies bank
-// (500 items, U2 subject 9).
-// The other 4 banks keep their pre-U1 _ur
+// (500 items, U2 subject 8), the Social Studies bank
+// (500 items, U2 subject 9) and the GK bank
+// (500 items, U2 subject 10).
+// The other 3 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -1507,6 +1508,262 @@ for (const q of ss) {
   }
 }
 check("U2 socialstudies: % never added in any _ur field; 0 total in the whole bank", ssPctBad.length === 0 && ssPctTotal === 0, `added in ${ssPctBad.slice(0, 3).join(", ")}, total ${ssPctTotal}`);
+
+// ---------- §3K GK bank (U2 subject 10) ----------
+// U2 rewrote the GK _ur fields (142 of 3000
+// field-values changed; 95/500 items). All 60 Current
+// Affairs items carry a 4-digit year in EN Q+E, and years,
+// dates, figures, and place/person names are the TESTED
+// MATERIAL: digit rule is STRICT on every field (all 500
+// questions, options, and explanations — baseline measured
+// 0 digit-group-multiset mismatches, and the single-digit
+// multiset also 0 for GKN-031..500). explanationUrdu is
+// null in all 500; NO explanationEn field exists (no mixed
+// explanations). Latin rule is an ALLOWLIST: single letters
+// (K inside K2, I inside Artemis I, G inside G20, V inside
+// Saturn V/Atlas V, b inside 58(2)(b)) + exactly FAO,
+// UNICEF, UNHCR, WFP, ILO, COP, ChatGPT, FIFA, NATO, UNESCO,
+// WHO, IMF, GPS, ATM, SIM, PIN, PDF, HTTP, HTML, CPU, RAM,
+// LED, CCTV (guide §5.1 acronyms — tested labels in "What
+// does X stand for?" items, bare-acronym options, and tested
+// names). Latin comma survives ONLY in the 5 GKN-066 fields
+// (7,708 figure — the digit-group multiset requires the
+// comma). % survives ONLY in the 4 GKN-027 option fields
+// (bare-number options, mirroring EN); prose GKN-027E uses
+// فیصد (1×).
+// Normalizations: قرآن مجید→قرآن پاک (8), سورۃ→سورہ (6),
+// درج ذیل→مندرجہ ذیل (9), حیدر آباد→حیدرآباد (3), national
+// motto Latin quote→Urdu script (GKN-016E), GKN-019E
+// em-dash split, GKN-457..472 punctuation pocket (16 Q ?
+// →؟, 16 E .→۔), مظفرآباد→مظفر آباد (2, Pak Studies
+// alignment, parent mandate), لاہور قرارداد→قراردادِ لاہور
+// (GKN-089E, Pak Studies alignment, parent mandate),
+// انڈیا→بھارت (EN "India" only; book title keeps انڈیا),
+// جمہوریہ جنوبی افریقہ→جنوبی افریقہ, بوینس آئرس→بیونس
+// آئرس, بحر الکاہل→بحرالکاہل, ریاستہائے متحدہ→امریکہ,
+// عالمی کپ→ورلڈ کپ (4), طلائی تمغے→سونے کے تمغے (2),
+// گیمز→کھیلوں (Olympic Games only; event names keep
+// گیمز), علامت→نشان (GKN-300E), سائنسوں→علوم,
+// سلسلہ→جماعت (religious order, GKN-208), رکھا جانے
+// والا→بھیجا جانے والا (placed into orbit, 3), قلبی→
+// مرکزی علاقہ coinage for EN "heartland" (GKN-178,
+// flagged for owner confirmation), GKN-387Q fidelity fix
+// ("پہلی"→"اس سے پہلے کی", EN "earlier"), GKN-358Q
+// restructure (agreement + buried question), comma-splice
+// splits (GKN-348/352/357/382/393E). Splits KEPT
+// (different EN, sense, cluster, or grammar — not
+// spelling variants): فٹ بال (EN "football") vs فٹبال
+// (EN "American football" ONLY, EN-correspondence pinned
+// below); ترکی (EN "Turkey") vs ترکیہ (EN "Turkiye",
+// EN-correspondence pinned below — the EN inconsistency
+// is flagged, not resolved); انڈیا (book title "The
+// Discovery of India" ONLY); ہجرت (EN "Hijrah" —
+// DELIBERATE divergence from Social Studies نقل مکانی,
+// whose EN was "migration"); درجہ حرارت (4) + درجے (1,
+// EN "position") vs ڈگری 0× (no longitude items — do not
+// import the SS ڈگری rule); آرٹیکل (1, constitutional
+// article) vs دفعات 0× (cross-bank tension with SS,
+// flagged); جنوبی قطب (the MOON's south pole, GKN-296)
+// vs قطب جنوبی 0×; فیڈریشن (FIFA expansion, 4) vs
+// وفاقی (federal adjective, 10×; bare وفاق token 0×);
+// روپیہ (nominative) vs روپے (oblique); یونیسکو prose
+// (5) vs UNESCO tested acronym (2); یونیسف 5; کس سال
+// میں (3) vs کس سال (26); موسم (seasons) vs آب و ہوا
+// 0×; اسلامی تعاون کی تنظیم (5) vs SS تنظیم تعاون
+// اسلامی (cross-bank difference, flagged); جنگ zer-less
+// (جنگِ 0×); مزار قائد (zer-less); سلطنت عثمانیہ
+// (zer-less); ریال for both EN "riyal" and "rial";
+// ایڈز کا عالمی دن (2) vs عالمی یوم (8); گیمز (event
+// names ONLY, 4); گیٹ (GATT transliteration, GKN-242E)
+// vs بل گیٹس (5); مقولہ (Olympic motto) vs نعرہ
+// (national motto/slogan); قمری (lunar adjective) vs
+// چاند (Moon); سیل (احتساب سیل) vs سیلاب; سامان
+// (تجارتی سامان) vs اشیا/اشیاء 0× (suite-ban kept —
+// DELIBERATE divergence from SS اشیا, whose EN was
+// "goods"); پچاس ممالک (words, mirrors EN "Fifty
+// states" — guide §6.1 exception). Flagged facts
+// mirrored, not resolved: GKN-066, GKN-072, GKN-085,
+// GKN-213, GKN-264, GKN-408, GKN-488, GKN-492, GKN-496,
+// Turkey/Turkiye EN inconsistency.
+const gk = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/gk.json"), "utf8"));
+check("U2 gk: 500 items", gk.length === 500, `got ${gk.length}`);
+const gkIdsOk = gk.every((q, i) => q.id === `GKN-${String(i + 1).padStart(3, "0")}`);
+check("U2 gk: IDs GKN-001..GKN-500 in order", gkIdsOk);
+const gkPairs = [];
+for (const q of gk) {
+  gkPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => gkPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  gkPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const GK_BANNED = [...CONTENT_BANNED, "چنیں", "مونث", "مؤنث", "وزیراعظم", "تقریبا", "فورا", "محمدن", "ووٹرز", "ججز", "جمہوریہ", "قلبی", "طلائی", "سائنسوں"];
+const gkBanned = bannedHits(gkPairs, GK_BANNED);
+check("U2 gk: no banned glossary/variant/transliteration terms in any _ur field (token-aware; اشیا/اشیاء suite-ban kept, درجے excepted — EN 'position' keep)", gkBanned.length === 0, gkBanned.slice(0, 5).join(", "));
+const GK_PHRASES = ["درج ذیل", "جب کہ", "ایک دفعہ", "بہتر طور پر", "بہتر بیان", "قرآن مجید", "حیدر آباد", "مظفرآباد", "لاہور قرارداد", "عالمی کپ", "رکھا جانے والا", "بوینس آئرس", "بحر الکاہل", "ریاستہائے متحدہ", "قطب جنوبی", "تنظیم تعاون اسلامی", "نقل مکانی", "جنگِ", "مزارِ"];
+const gkPhrases = gkPairs.filter(([, v]) => GK_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 gk: no banned phrases in any _ur field (variant spellings, dropped terms, calques, cross-bank forms)", gkPhrases.length === 0, gkPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const gkEmdash = gkPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 gk: no em-dash in any _ur field", gkEmdash.length === 0, gkEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const gkMarker = gkPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 gk: no '[Auto-Translated]' literal in any _ur field", gkMarker.length === 0, gkMarker.slice(0, 3).map(([l]) => l).join(", "));
+const gkMojibake = gkPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 gk: no U+FFFD in any _ur field", gkMojibake.length === 0, gkMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const gkIndic = gkPairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 gk: no Urdu-Indic digits in any _ur field", gkIndic.length === 0, gkIndic.slice(0, 3).map(([l]) => l).join(", "));
+const gkEllipsis = gkPairs.filter(([, v]) => (v ?? "").includes("...") || (v ?? "").includes("…"));
+check("U2 gk: no ellipsis runs in any _ur field", gkEllipsis.length === 0, gkEllipsis.slice(0, 3).map(([l]) => l).join(", "));
+let gkDigitBad = [];
+for (const q of gk) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) gkDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) gkDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) gkDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 gk: digit preservation STRICT on every field (all 500 questions, options, explanations)", gkDigitBad.length === 0, gkDigitBad.slice(0, 5).join(", "));
+// Latin allowlist: single letters + FAO/UNICEF/UNHCR/WFP/ILO/COP/ChatGPT/FIFA/NATO/UNESCO/WHO/IMF/GPS/ATM/SIM/PIN/PDF/HTTP/HTML/CPU/RAM/LED/CCTV (guide §5.1 acronyms), nothing else.
+const GK_LATIN_ALLOWED = new Set(["fao", "unicef", "unhcr", "wfp", "ilo", "cop", "chatgpt", "fifa", "nato", "unesco", "who", "imf", "gps", "atm", "sim", "pin", "pdf", "http", "html", "cpu", "ram", "led", "cctv"]);
+let gkLatinBad = [];
+const gkLatinWords = {};
+for (const [loc, val] of gkPairs) {
+  for (const w of ((val ?? "").match(/[A-Za-z]+/g) || [])) {
+    const lw = w.toLowerCase();
+    if (lw.length > 1) {
+      gkLatinWords[w] = (gkLatinWords[w] || 0) + 1;
+      if (!GK_LATIN_ALLOWED.has(lw)) gkLatinBad.push(`${loc}:${w}`);
+    }
+  }
+}
+check("U2 gk: Latin allowlist — every multi-letter Latin word in _ur is FAO, UNICEF, UNHCR, WFP, ILO, COP, ChatGPT, FIFA, NATO, UNESCO, WHO, IMF, GPS, ATM, SIM, PIN, PDF, HTTP, HTML, CPU, RAM, LED, or CCTV", gkLatinBad.length === 0, gkLatinBad.slice(0, 5).join(" | "));
+check("U2 gk: Latin inventory exact — FAO 2×, UNICEF 4×, UNHCR 2×, WFP 1×, ILO 1×, COP 6×, ChatGPT 2×, FIFA 2×, NATO 2×, UNESCO 2×, WHO 2×, IMF 2×, GPS 2×, ATM 2×, SIM 2×, PIN 3×, PDF 2×, HTTP 2×, HTML 2×, CPU 2×, RAM 2×, LED 2×, CCTV 2× (55 multi-letter words total)",
+  gkLatinWords["FAO"] === 2 && gkLatinWords["UNICEF"] === 4 && gkLatinWords["UNHCR"] === 2 && gkLatinWords["WFP"] === 1 && gkLatinWords["ILO"] === 1 && gkLatinWords["COP"] === 6 && gkLatinWords["ChatGPT"] === 2 && gkLatinWords["FIFA"] === 2 && gkLatinWords["NATO"] === 2 && gkLatinWords["UNESCO"] === 2 && gkLatinWords["WHO"] === 2 && gkLatinWords["IMF"] === 2 && gkLatinWords["GPS"] === 2 && gkLatinWords["ATM"] === 2 && gkLatinWords["SIM"] === 2 && gkLatinWords["PIN"] === 3 && gkLatinWords["PDF"] === 2 && gkLatinWords["HTTP"] === 2 && gkLatinWords["HTML"] === 2 && gkLatinWords["CPU"] === 2 && gkLatinWords["RAM"] === 2 && gkLatinWords["LED"] === 2 && gkLatinWords["CCTV"] === 2 && Object.keys(gkLatinWords).length === 23,
+  JSON.stringify(gkLatinWords));
+let gkPunctBad = [], gkCommaBad = [], gkSpaceBad = [];
+const gkCommaFields = [];
+for (const q of gk) {
+  const fields = [["question_ur", q.question_ur], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o]), ["explanation_ur", q.explanation_ur]];
+  for (const [loc, val] of fields) {
+    const p = (val ?? "").replace(/\d\.\d/g, " ");
+    if (/[.?;]/.test(p)) gkPunctBad.push(`${q.id}:${loc}`);
+    const c = (val ?? "").replace(/\d,\d/g, " ");
+    if (c.includes(",")) gkCommaBad.push(`${q.id}:${loc}`);
+    if ((val ?? "").includes(",")) gkCommaFields.push(`${q.id}:${loc}`);
+    if (/ [،؟؛۔]/.test(val ?? "")) gkSpaceBad.push(`${q.id}:${loc}`);
+  }
+}
+check("U2 gk: no Latin . ? ; punctuation outside decimals (digit.digit)", gkPunctBad.length === 0, gkPunctBad.slice(0, 5).join(", "));
+check("U2 gk: Latin comma ONLY between digits, in exactly the 5 GKN-066 fields (7,708 figure)", gkCommaBad.length === 0 && gkCommaFields.length === 5 && gkCommaFields.every((f) => f.startsWith("GKN-066:")), `${gkCommaBad.slice(0, 3).join(", ")} / ${gkCommaFields.join(", ")}`);
+check("U2 gk: no space before Urdu punctuation", gkSpaceBad.length === 0, gkSpaceBad.slice(0, 5).join(", "));
+const gkHonor = gkPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 gk: no Latin honorific abbreviations in any _ur field", gkHonor.length === 0, gkHonor.slice(0, 3).map(([l]) => l).join(", "));
+const gkArCodepoints = gkPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 gk: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", gkArCodepoints.length === 0, gkArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+let gkEnScriptRuns = 0;
+for (const q of gk) {
+  gkEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { gkEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 gk: zero Arabic-script runs in English fields (measured baseline)", gkEnScriptRuns === 0, `got ${gkEnScriptRuns}`);
+const gkUrText = gkPairs.map(([, v]) => v ?? "").join("\n");
+const gkCount = (t) => gkUrText.split(t).length - 1;
+check("U2 gk: glossary terms present (قرآن پاک, سورہ, سورت, مندرجہ ذیل, حیدرآباد, مظفر آباد, قراردادِ لاہور, فیصد, بھارت, جنوبی افریقہ, بیونس آئرس, بحرالکاہل, امریکہ, ورلڈ کپ, سونے کے تمغے, اولمپک کھیل, بھیجا جانے والا, مرکزی علاقے, جماعت, تقریباً, جبکہ)",
+  ["قرآن پاک", "سورہ", "سورت", "مندرجہ ذیل", "حیدرآباد", "مظفر آباد", "قراردادِ لاہور", "فیصد", "بھارت", "جنوبی افریقہ", "بیونس آئرس", "بحرالکاہل", "امریکہ", "ورلڈ کپ", "سونے کے تمغے", "اولمپک کھیل", "بھیجا جانے والا", "مرکزی علاقے", "جماعت", "تقریباً", "جبکہ"].every((t) => gkUrText.includes(t)));
+check("U2 gk: glossary terms present (وزیر اعظم, قائد اعظم, اقوام متحدہ, صدر دفتر, دریائے سندھ, دریائے جہلم, دریائے نیلم, حکومت, کونسل, سینیٹ, پارلیمنٹ, سپریم کورٹ, ہائی کورٹ, قومی اسمبلی, کرنسی, بینک, زبان, قانون, امن, تجارت, یونیسکو, یونیسف, اسلامی تعاون کی تنظیم, بحیرہ, سمندر, صحرا, پہاڑ, جھیل, جزیرہ, وادی, بندرگاہ, موسم, مسجد, مندر, حج, نبی, زکوٰۃ, کتاب, مصنف, شاعر, ویژن)",
+  ["وزیر اعظم", "قائد اعظم", "اقوام متحدہ", "صدر دفتر", "دریائے سندھ", "دریائے جہلم", "دریائے نیلم", "حکومت", "کونسل", "سینیٹ", "پارلیمنٹ", "سپریم کورٹ", "ہائی کورٹ", "قومی اسمبلی", "کرنسی", "بینک", "زبان", "قانون", "امن", "تجارت", "یونیسکو", "یونیسف", "اسلامی تعاون کی تنظیم", "بحیرہ", "سمندر", "صحرا", "پہاڑ", "جھیل", "جزیرہ", "وادی", "بندرگاہ", "موسم", "مسجد", "مندر", "حج", "نبی", "زکوٰۃ", "کتاب", "مصنف", "شاعر", "ویژن"].every((t) => gkUrText.includes(t)));
+check("U2 gk: exact counts, normalizations — قرآن پاک 8×, سورہ 6×, سورت 4× (incl. سورتیں 2×), مندرجہ ذیل 9×, حیدرآباد 3×, مظفر آباد 4×, قراردادِ لاہور 1×, فیصد 1×, بھارت 26×, انڈیا 2×, جنوبی افریقہ 10×, بیونس آئرس 3×, بحرالکاہل 7×, امریکہ 30×, ورلڈ کپ 18×, سونے کے تمغے 4×, اولمپک کھیل 14×, گیمز 4×, بھیجا جانے والا 3×, مرکزی علاقے 2×, جماعت 3×, تقریباً 3×, جبکہ 8×, بنیادی طور پر 11×, عام طور پر 6× (substring counts)",
+  gkCount("قرآن پاک") === 8 && gkCount("سورہ") === 6 && gkCount("سورت") === 4 && gkCount("مندرجہ ذیل") === 9 && gkCount("حیدرآباد") === 3 && gkCount("مظفر آباد") === 4 && gkCount("قراردادِ لاہور") === 1 && gkCount("فیصد") === 1 && gkCount("بھارت") === 26 && gkCount("انڈیا") === 2 && gkCount("جنوبی افریقہ") === 10 && gkCount("بیونس آئرس") === 3 && gkCount("بحرالکاہل") === 7 && gkCount("امریکہ") === 30 && gkCount("ورلڈ کپ") === 18 && gkCount("سونے کے تمغے") === 4 && gkCount("اولمپک کھیل") === 14 && gkCount("گیمز") === 4 && gkCount("بھیجا جانے والا") === 3 && gkCount("مرکزی علاقے") === 2 && gkCount("جماعت") === 3 && gkCount("تقریباً") === 3 && gkCount("جبکہ") === 8 && gkCount("بنیادی طور پر") === 11 && gkCount("عام طور پر") === 6,
+  `قرآن پاک ${gkCount("قرآن پاک")}, سورہ ${gkCount("سورہ")}, سورت ${gkCount("سورت")}, مندرجہ ذیل ${gkCount("مندرجہ ذیل")}, حیدرآباد ${gkCount("حیدرآباد")}, مظفر آباد ${gkCount("مظفر آباد")}, قراردادِ لاہور ${gkCount("قراردادِ لاہور")}, فیصد ${gkCount("فیصد")}, بھارت ${gkCount("بھارت")}, انڈیا ${gkCount("انڈیا")}, جنوبی افریقہ ${gkCount("جنوبی افریقہ")}, بیونس آئرس ${gkCount("بیونس آئرس")}, بحرالکاہل ${gkCount("بحرالکاہل")}, امریکہ ${gkCount("امریکہ")}, ورلڈ کپ ${gkCount("ورلڈ کپ")}, سونے کے تمغے ${gkCount("سونے کے تمغے")}, اولمپک کھیل ${gkCount("اولمپک کھیل")}, گیمز ${gkCount("گیمز")}, بھیجا جانے والا ${gkCount("بھیجا جانے والا")}, مرکزی علاقے ${gkCount("مرکزی علاقے")}, جماعت ${gkCount("جماعت")}, تقریباً ${gkCount("تقریباً")}, جبکہ ${gkCount("جبکہ")}, بنیادی طور پر ${gkCount("بنیادی طور پر")}, عام طور پر ${gkCount("عام طور پر")}`);
+check("U2 gk: exact counts, institutions/places — وزیر اعظم 6×, قائد اعظم 1×, اقوام متحدہ 48×, صدر دفتر 17×, دریائے 68×, دریا 106× (incl. دریائے 68×), دریائے سندھ 7×, دریائے جہلم 7×, دریائے نیلم 2×, حکومت 62×, کونسل 29×, سینیٹ 3×, پارلیمنٹ 1×, سپریم کورٹ 1×, ہائی کورٹ 3×, قومی اسمبلی 6×, کرنسی 34×, بینک 16×, زبان 21×, قانون 13×, امن 34×, تجارت 15×, یونیسکو 5×, یونیسف 5×, اسلامی تعاون کی تنظیم 5×, بحیرہ 21×, سمندر 17×, صحرا 26×, پہاڑ 19×, جھیل 19×, جزیرہ 17×, وادی 6×, بندرگاہ 6×, زمین 19×, موسم 7×, آبادی 3×, مسجد 30×, مندر 26×, حج 21×, نبی 8×, زکوٰۃ 2×, کتاب 12×, مصنف 4×, شاعر 3×, ویژن 9× (substring counts)",
+  gkCount("وزیر اعظم") === 6 && gkCount("قائد اعظم") === 1 && gkCount("اقوام متحدہ") === 48 && gkCount("صدر دفتر") === 17 && gkCount("دریائے") === 68 && gkCount("دریا") === 106 && gkCount("دریائے سندھ") === 7 && gkCount("دریائے جہلم") === 7 && gkCount("دریائے نیلم") === 2 && gkCount("حکومت") === 62 && gkCount("کونسل") === 29 && gkCount("سینیٹ") === 3 && gkCount("پارلیمنٹ") === 1 && gkCount("سپریم کورٹ") === 1 && gkCount("ہائی کورٹ") === 3 && gkCount("قومی اسمبلی") === 6 && gkCount("کرنسی") === 34 && gkCount("بینک") === 16 && gkCount("زبان") === 21 && gkCount("قانون") === 13 && gkCount("امن") === 34 && gkCount("تجارت") === 15 && gkCount("یونیسکو") === 5 && gkCount("یونیسف") === 5 && gkCount("اسلامی تعاون کی تنظیم") === 5 && gkCount("بحیرہ") === 21 && gkCount("سمندر") === 17 && gkCount("صحرا") === 26 && gkCount("پہاڑ") === 19 && gkCount("جھیل") === 19 && gkCount("جزیرہ") === 17 && gkCount("وادی") === 6 && gkCount("بندرگاہ") === 6 && gkCount("زمین") === 19 && gkCount("موسم") === 7 && gkCount("آبادی") === 3 && gkCount("مسجد") === 30 && gkCount("مندر") === 26 && gkCount("حج") === 21 && gkCount("نبی") === 8 && gkCount("زکوٰۃ") === 2 && gkCount("کتاب") === 12 && gkCount("مصنف") === 4 && gkCount("شاعر") === 3 && gkCount("ویژن") === 9,
+  `وزیر اعظم ${gkCount("وزیر اعظم")}, قائد اعظم ${gkCount("قائد اعظم")}, اقوام متحدہ ${gkCount("اقوام متحدہ")}, صدر دفتر ${gkCount("صدر دفتر")}, دریائے ${gkCount("دریائے")}, دریا ${gkCount("دریا")}, دریائے سندھ ${gkCount("دریائے سندھ")}, دریائے جہلم ${gkCount("دریائے جہلم")}, دریائے نیلم ${gkCount("دریائے نیلم")}, حکومت ${gkCount("حکومت")}, کونسل ${gkCount("کونسل")}, سینیٹ ${gkCount("سینیٹ")}, پارلیمنٹ ${gkCount("پارلیمنٹ")}, سپریم کورٹ ${gkCount("سپریم کورٹ")}, ہائی کورٹ ${gkCount("ہائی کورٹ")}, قومی اسمبلی ${gkCount("قومی اسمبلی")}, کرنسی ${gkCount("کرنسی")}, بینک ${gkCount("بینک")}, زبان ${gkCount("زبان")}, قانون ${gkCount("قانون")}, امن ${gkCount("امن")}, تجارت ${gkCount("تجارت")}, یونیسکو ${gkCount("یونیسکو")}, یونیسف ${gkCount("یونیسف")}, اسلامی تعاون کی تنظیم ${gkCount("اسلامی تعاون کی تنظیم")}, بحیرہ ${gkCount("بحیرہ")}, سمندر ${gkCount("سمندر")}, صحرا ${gkCount("صحرا")}, پہاڑ ${gkCount("پہاڑ")}, جھیل ${gkCount("جھیل")}, جزیرہ ${gkCount("جزیرہ")}, وادی ${gkCount("وادی")}, بندرگاہ ${gkCount("بندرگاہ")}, زمین ${gkCount("زمین")}, موسم ${gkCount("موسم")}, آبادی ${gkCount("آبادی")}, مسجد ${gkCount("مسجد")}, مندر ${gkCount("مندر")}, حج ${gkCount("حج")}, نبی ${gkCount("نبی")}, زکوٰۃ ${gkCount("زکوٰۃ")}, کتاب ${gkCount("کتاب")}, مصنف ${gkCount("مصنف")}, شاعر ${gkCount("شاعر")}, ویژن ${gkCount("ویژن")}`);
+check("U2 gk: exact counts, kept splits — فٹ بال 9×, فٹبال 2×, امریکی فٹبال 2×, ترکی 10× (incl. ترکیہ 2×), ترکیہ 2×, ترکیہ اور شام 2×, ہجرت 5×, درجہ حرارت 4×, درجہ 13× (incl. مندرجہ ذیل 9× + درجہ حرارت 4×), درجے 1×, آرٹیکل 1×, جنوبی قطب 2×, فیڈریشن 4×, وفاقی 10×, روپیہ 8×, روپے 1×, سامان 2×, احتساب سیل 2×, سیلاب 2×, کس سال میں 3×, کس سال 26×, جنگ بدر 3×, مزار قائد 3×, سلطنت عثمانیہ 2×, ریال 8×, ایڈز کا عالمی دن 2×, عالمی یوم 8×, بیلنس 1×, اسمگلنگ 1×, نشان 9×, علامتی 1×, گیٹ 6× (incl. بل گیٹس 5×), بل گیٹس 5×, مقولہ 2×, نعرہ 4×, قمری 1×, چاند 21×, علوم 13×, سلسلہ 4×, لانچ 17×, نرسنگ 3×, عظیم برطانیہ 2×, جمعیت اقوام 2×, قبل مسیح 6×, ٹائم زون 2×, خشکی میں گھرا ہوا 2×, پچاس ممالک 1×, کھیل 36×, اولمپک 27×, کرکٹ 15×, ہاکی 10×, تمغہ 4×, ریکارڈ 6×, خلائی 29×, کمپیوٹر 16×, سائنس 8×, سورج 3×, ستارہ 4×, ایمان، اتحاد، تنظیم 2×, دی ڈسکوری آف انڈیا 2× (substring counts)",
+  gkCount("فٹ بال") === 9 && gkCount("فٹبال") === 2 && gkCount("امریکی فٹبال") === 2 && gkCount("ترکی") === 10 && gkCount("ترکیہ") === 2 && gkCount("ترکیہ اور شام") === 2 && gkCount("ہجرت") === 5 && gkCount("درجہ حرارت") === 4 && gkCount("درجہ") === 13 && gkCount("درجے") === 1 && gkCount("آرٹیکل") === 1 && gkCount("جنوبی قطب") === 2 && gkCount("فیڈریشن") === 4 && gkCount("وفاقی") === 10 && gkCount("روپیہ") === 8 && gkCount("روپے") === 1 && gkCount("سامان") === 2 && gkCount("احتساب سیل") === 2 && gkCount("سیلاب") === 2 && gkCount("کس سال میں") === 3 && gkCount("کس سال") === 26 && gkCount("جنگ بدر") === 3 && gkCount("مزار قائد") === 3 && gkCount("سلطنت عثمانیہ") === 2 && gkCount("ریال") === 8 && gkCount("ایڈز کا عالمی دن") === 2 && gkCount("عالمی یوم") === 8 && gkCount("بیلنس") === 1 && gkCount("اسمگلنگ") === 1 && gkCount("نشان") === 9 && gkCount("علامتی") === 1 && gkCount("گیٹ") === 6 && gkCount("بل گیٹس") === 5 && gkCount("مقولہ") === 2 && gkCount("نعرہ") === 4 && gkCount("قمری") === 1 && gkCount("چاند") === 21 && gkCount("علوم") === 13 && gkCount("سلسلہ") === 4 && gkCount("لانچ") === 17 && gkCount("نرسنگ") === 3 && gkCount("عظیم برطانیہ") === 2 && gkCount("جمعیت اقوام") === 2 && gkCount("قبل مسیح") === 6 && gkCount("ٹائم زون") === 2 && gkCount("خشکی میں گھرا ہوا") === 2 && gkCount("پچاس ممالک") === 1 && gkCount("کھیل") === 36 && gkCount("اولمپک") === 27 && gkCount("کرکٹ") === 15 && gkCount("ہاکی") === 10 && gkCount("تمغہ") === 4 && gkCount("ریکارڈ") === 6 && gkCount("خلائی") === 29 && gkCount("کمپیوٹر") === 16 && gkCount("سائنس") === 8 && gkCount("سورج") === 3 && gkCount("ستارہ") === 4 && gkCount("ایمان، اتحاد، تنظیم") === 2 && gkCount("دی ڈسکوری آف انڈیا") === 2,
+  `فٹ بال ${gkCount("فٹ بال")}, فٹبال ${gkCount("فٹبال")}, امریکی فٹبال ${gkCount("امریکی فٹبال")}, ترکی ${gkCount("ترکی")}, ترکیہ ${gkCount("ترکیہ")}, ترکیہ اور شام ${gkCount("ترکیہ اور شام")}, ہجرت ${gkCount("ہجرت")}, درجہ حرارت ${gkCount("درجہ حرارت")}, درجہ ${gkCount("درجہ")}, درجے ${gkCount("درجے")}, آرٹیکل ${gkCount("آرٹیکل")}, جنوبی قطب ${gkCount("جنوبی قطب")}, فیڈریشن ${gkCount("فیڈریشن")}, وفاقی ${gkCount("وفاقی")}, روپیہ ${gkCount("روپیہ")}, روپے ${gkCount("روپے")}, سامان ${gkCount("سامان")}, احتساب سیل ${gkCount("احتساب سیل")}, سیلاب ${gkCount("سیلاب")}, کس سال میں ${gkCount("کس سال میں")}, کس سال ${gkCount("کس سال")}, جنگ بدر ${gkCount("جنگ بدر")}, مزار قائد ${gkCount("مزار قائد")}, سلطنت عثمانیہ ${gkCount("سلطنت عثمانیہ")}, ریال ${gkCount("ریال")}, ایڈز کا عالمی دن ${gkCount("ایڈز کا عالمی دن")}, عالمی یوم ${gkCount("عالمی یوم")}, بیلنس ${gkCount("بیلنس")}, اسمگلنگ ${gkCount("اسمگلنگ")}, نشان ${gkCount("نشان")}, علامتی ${gkCount("علامتی")}, گیٹ ${gkCount("گیٹ")}, بل گیٹس ${gkCount("بل گیٹس")}, مقولہ ${gkCount("مقولہ")}, نعرہ ${gkCount("نعرہ")}, قمری ${gkCount("قمری")}, چاند ${gkCount("چاند")}, علوم ${gkCount("علوم")}, سلسلہ ${gkCount("سلسلہ")}, لانچ ${gkCount("لانچ")}, نرسنگ ${gkCount("نرسنگ")}, عظیم برطانیہ ${gkCount("عظیم برطانیہ")}, جمعیت اقوام ${gkCount("جمعیت اقوام")}, قبل مسیح ${gkCount("قبل مسیح")}, ٹائم زون ${gkCount("ٹائم زون")}, خشکی میں گھرا ہوا ${gkCount("خشکی میں گھرا ہوا")}, پچاس ممالک ${gkCount("پچاس ممالک")}, کھیل ${gkCount("کھیل")}, اولمپک ${gkCount("اولمپک")}, کرکٹ ${gkCount("کرکٹ")}, ہاکی ${gkCount("ہاکی")}, تمغہ ${gkCount("تمغہ")}, ریکارڈ ${gkCount("ریکارڈ")}, خلائی ${gkCount("خلائی")}, کمپیوٹر ${gkCount("کمپیوٹر")}, سائنس ${gkCount("سائنس")}, سورج ${gkCount("سورج")}, ستارہ ${gkCount("ستارہ")}, ایمان، اتحاد، تنظیم ${gkCount("ایمان، اتحاد، تنظیم")}, دی ڈسکوری آف انڈیا ${gkCount("دی ڈسکوری آف انڈیا")}`);
+// EN-correspondence: فٹبال (joined) occurs ONLY where EN
+// says "American football" (2 fields); spaced فٹ بال occurs
+// ONLY where EN says "football" without "American" (8 fields).
+let gkFootballJoined = 0, gkFootballSpaced = 0, gkFootballBad = [];
+for (const q of gk) {
+  const fields = [[q.question, q.question_ur], ...q.options.map((o, i) => [o, q.options_ur[i]]), [q.explanation, q.explanation_ur]];
+  for (const [en, ur] of fields) {
+    if (tokens(ur).includes("فٹبال")) {
+      gkFootballJoined += 1;
+      if (!/american football/i.test(en)) gkFootballBad.push(q.id);
+    }
+    if ((ur ?? "").includes("فٹ بال")) {
+      gkFootballSpaced += 1;
+      if (!/football/i.test(en) || /american football/i.test(en)) gkFootballBad.push(q.id);
+    }
+  }
+}
+check("U2 gk: فٹبال token in exactly 2 fields, every one with EN 'American football'; فٹ بال in exactly 8 fields, every one with EN 'football' without 'American'", gkFootballJoined === 2 && gkFootballSpaced === 8 && gkFootballBad.length === 0, `joined ${gkFootballJoined}, spaced ${gkFootballSpaced}, bad ${gkFootballBad.slice(0, 3).join(", ")}`);
+// EN-correspondence: ترکی token ↔ EN "Turkey" (8 fields);
+// ترکیہ token ↔ EN "Turkiye" (2 fields). The EN
+// inconsistency is pinned, not resolved.
+let gkTurkey = 0, gkTurkiye = 0, gkTurkeyBad = [];
+for (const q of gk) {
+  const fields = [[q.question, q.question_ur], ...q.options.map((o, i) => [o, q.options_ur[i]]), [q.explanation, q.explanation_ur]];
+  for (const [en, ur] of fields) {
+    const tk = tokens(ur);
+    if (tk.includes("ترکی")) {
+      gkTurkey += 1;
+      if (!/\bTurkey\b/.test(en)) gkTurkeyBad.push(q.id);
+    }
+    if (tk.includes("ترکیہ")) {
+      gkTurkiye += 1;
+      if (!/\bTurkiye\b/.test(en)) gkTurkeyBad.push(q.id);
+    }
+  }
+}
+check("U2 gk: ترکی token in exactly 8 fields, every one with EN 'Turkey'; ترکیہ token in exactly 2 fields, every one with EN 'Turkiye'", gkTurkey === 8 && gkTurkiye === 2 && gkTurkeyBad.length === 0, `Turkey ${gkTurkey}, Turkiye ${gkTurkiye}, bad ${gkTurkeyBad.slice(0, 3).join(", ")}`);
+// EN-correspondence: انڈیا token occurs ONLY in the book
+// title "The Discovery of India" (GKN-457 Q+E).
+let gkIndiaFields = 0, gkIndiaBad = [];
+for (const q of gk) {
+  const fields = [[q.question, q.question_ur], ...q.options.map((o, i) => [o, q.options_ur[i]]), [q.explanation, q.explanation_ur]];
+  for (const [en, ur] of fields) {
+    if (tokens(ur).includes("انڈیا")) {
+      gkIndiaFields += 1;
+      if (!/The Discovery of India/.test(en)) gkIndiaBad.push(q.id);
+    }
+  }
+}
+check("U2 gk: انڈیا token in exactly 2 fields, both EN 'The Discovery of India' (book title)", gkIndiaFields === 2 && gkIndiaBad.length === 0, `fields ${gkIndiaFields}, bad ${gkIndiaBad.slice(0, 3).join(", ")}`);
+let gkDarjaBad = [];
+for (const [loc, val] of gkPairs) {
+  if (tokens(val).includes("درجہ") && !(val ?? "").includes("درجہ حرارت")) gkDarjaBad.push(loc);
+}
+check("U2 gk: درجہ token survives ONLY inside درجہ حرارت (4×); ڈگری 0×", gkDarjaBad.length === 0 && gkCount("درجہ حرارت") === 4 && gkCount("ڈگری") === 0, gkDarjaBad.slice(0, 3).join(", "));
+// % rule: % in exactly the 4 GKN-027 option fields,
+// matching EN counts field-by-field; no % added anywhere;
+// prose uses فیصد (1×, GKN-027E).
+let gkPctBad = [], gkPctFields = [];
+for (const q of gk) {
+  const fields = [[q.question, q.question_ur], [q.explanation, q.explanation_ur], ...q.options.map((o, i) => [o, q.options_ur[i]])];
+  for (const [en, ur] of fields) {
+    const ce = (en.match(/%/g) || []).length, cu = (ur.match(/%/g) || []).length;
+    if (cu > 0) gkPctFields.push(q.id);
+    if (cu > ce) gkPctBad.push(q.id);
+  }
+}
+check("U2 gk: % never added in any _ur field; exactly 4 % fields, all GKN-027 options; فیصد 1×", gkPctBad.length === 0 && gkPctFields.length === 4 && gkPctFields.every((id) => id === "GKN-027") && gkCount("فیصد") === 1, `added in ${gkPctBad.slice(0, 3).join(", ")}, fields ${gkPctFields.join(", ")}`);
+// Bank structure: 60 Current Affairs items, each with a
+// 4-digit year in EN Q and EN E (EN unchanged by rewrite).
+const gkCA = gk.filter((q) => q.topic === "GK — Current Affairs");
+const gkCABad = gkCA.filter((q) => !(/\b\d{4}\b/.test(q.question) && /\b\d{4}\b/.test(q.explanation)));
+check("U2 gk: 60 Current Affairs items, each with a 4-digit year in EN question and EN explanation", gkCA.length === 60 && gkCABad.length === 0, `CA ${gkCA.length}, bad ${gkCABad.slice(0, 3).map((q) => q.id).join(", ")}`);
+const gkById = new Map(gk.map((q) => [q.id, q]));
+check("U2 gk: explanationUrdu null in all 500; no explanationEn field anywhere", gk.every((q) => q.explanationUrdu === null) && gk.every((q) => !("explanationEn" in q)));
+check("U2 gk: exact-field pins — GKN-016E motto in Urdu script, GKN-083Q/E مظفر آباد, GKN-089E قراردادِ لاہور, GKN-178Q مرکزی علاقے, GKN-242E گیٹ (GATT transliteration), GKN-387Q اس سے پہلے کی, GKN-358Q جیولن تھرو کی دوری, GKN-027E فیصد, GKN-066E 7,708, GKN-028 honorifics on all 4 options + explanation",
+  gkById.get("GKN-016").explanation_ur === "پاکستان کا قومی نعرہ 'ایمان، اتحاد، تنظیم' ہے۔" &&
+  gkById.get("GKN-083").question_ur.includes("مظفر آباد") && gkById.get("GKN-083").explanation_ur.includes("مظفر آباد") &&
+  gkById.get("GKN-089").explanation_ur.includes("قراردادِ لاہور") &&
+  gkById.get("GKN-178").question_ur.includes("مرکزی علاقے") &&
+  gkById.get("GKN-242").explanation_ur.includes("گیٹ") &&
+  gkById.get("GKN-387").question_ur.includes("اس سے پہلے کی") &&
+  gkById.get("GKN-358").question_ur.includes("جیولن تھرو کی دوری") &&
+  gkById.get("GKN-027").explanation_ur.includes("فیصد") &&
+  gkById.get("GKN-066").explanation_ur.includes("7,708") &&
+  gkById.get("GKN-028").options_ur.every((o) => o.includes("رضی اللہ عنہ")) && gkById.get("GKN-028").explanation_ur.includes("رضی اللہ عنہ"));
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");
