@@ -172,7 +172,7 @@
  },
  {
   "id": "PAK-004",
-  "question_ur": "قائداعظم نے اپنے چودہ نکات کس سال پیش کیے؟",
+  "question_ur": "قائد اعظم نے اپنے چودہ نکات کس سال پیش کیے؟",
   "question_roman": "Quaid-e-Azam ne apne Chaudah Nikat kis saal pesh kiye?",
   "options_ur": [
    "1927",
@@ -405,7 +405,7 @@
   "options_ur": [
    "لیاقت علی خان",
    "خواجہ ناظم الدین",
-   "قائداعظم محمد علی جناح",
+   "قائد اعظم محمد علی جناح",
    "اسکندر مرزا"
   ],
   "options_roman": [
@@ -414,7 +414,7 @@
    "Quaid-e-Azam Muhammad Ali Jinnah",
    "Iskander Mirza"
   ],
-  "explanation_ur": "قائداعظم پہلے گورنر جنرل تھے۔",
+  "explanation_ur": "قائد اعظم پہلے گورنر جنرل تھے۔",
   "explanation_roman": "Quaid-e-Azam was the first Governor-General. Pehle Governor-General Quaid-e-Azam the.",
   "post": [
    "zamungkor",
@@ -459,7 +459,7 @@
  },
  {
   "id": "PAK-009",
-  "question_ur": "پاکستان کے پہلے وزیراعظم کون تھے؟",
+  "question_ur": "پاکستان کے پہلے وزیر اعظم کون تھے؟",
   "question_roman": "Pakistan ke pehle Wazir-e-Azam kaun the?",
   "options_ur": [
    "خواجہ ناظم الدین",
@@ -473,7 +473,7 @@
    "Muhammad Ali Bogra",
    "Chaudhry Muhammad Ali"
   ],
-  "explanation_ur": "لیاقت علی خان پہلے وزیراعظم تھے۔",
+  "explanation_ur": "لیاقت علی خان پہلے وزیر اعظم تھے۔",
   "explanation_roman": "Liaquat Ali Khan was the first Prime Minister. Pehle Wazir-e-Azam Liaquat Ali Khan the.",
   "post": [
    "zamungkor",
@@ -516,7 +516,7 @@
  },
  {
   "id": "PAK-010",
-  "question_ur": "قراردادِ مقاصد دستور ساز اسمبلی نے کس سال منظور کی؟",
+  "question_ur": "قرارداد مقاصد دستور ساز اسمبلی نے کس سال منظور کی؟",
   "question_roman": "Objectives Resolution Constituent Assembly ne kis saal manzoor ki?",
   "options_ur": [
    "1947",
@@ -530,7 +530,7 @@
    "1949",
    "1950"
   ],
-  "explanation_ur": "قراردادِ مقاصد مارچ 1949 میں منظور ہوئی۔",
+  "explanation_ur": "قرارداد مقاصد مارچ 1949 میں منظور ہوئی۔",
   "explanation_roman": "The Objectives Resolution was passed in March 1949. Qarardad-e-Maqasid 1949 mein manzoor hui.",
   "post": [
    "zamungkor",
@@ -573,7 +573,7 @@
  },
  {
   "id": "PAK-011",
-  "question_ur": "قائداعظم محمد علی جناح کس تاریخ کو پیدا ہوئے؟",
+  "question_ur": "قائد اعظم محمد علی جناح کس تاریخ کو پیدا ہوئے؟",
   "question_roman": "Quaid-e-Azam Muhammad Ali Jinnah kis tareekh ko paida hue?",
   "options_ur": [
    "25 دسمبر 1876",
@@ -587,7 +587,7 @@
    "14 August 1876",
    "11 September 1876"
   ],
-  "explanation_ur": "قائداعظم 25 دسمبر 1876 کو کراچی میں پیدا ہوئے۔",
+  "explanation_ur": "قائد اعظم 25 دسمبر 1876 کو کراچی میں پیدا ہوئے۔",
   "explanation_roman": "Quaid-e-Azam was born on 25 December 1876 in Karachi. Quaid-e-Azam 25 December 1876 ko Karachi mein paida hue.",
   "post": [
    "zamungkor",
@@ -801,7 +801,7 @@
  },
  {
   "id": "PAK-015",
-  "question_ur": "تحریکِ خلافت کس سال شروع ہوئی؟",
+  "question_ur": "تحریک خلافت کس سال شروع ہوئی؟",
   "question_roman": "Khilafat Tehreek kis saal shuru hui?",
   "options_ur": [
    "1916",
@@ -815,7 +815,7 @@
    "1919",
    "1921"
   ],
-  "explanation_ur": "تحریکِ خلافت 1919 میں شروع ہوئی۔",
+  "explanation_ur": "تحریک خلافت 1919 میں شروع ہوئی۔",
   "explanation_roman": "The Khilafat Movement started in 1919. Khilafat Tehreek 1919 mein shuru hui.",
   "post": [
    "zamungkor",
@@ -1713,7 +1713,7 @@
  },
  {
   "id": "PAK-031",
-  "question_ur": "پاکستان کے کس وزیرِ اعظم نے تین مرتبہ وزیرِ اعظم کے طور پر خدمات انجام دیں؟",
+  "question_ur": "پاکستان کے کس وزیر اعظم نے تین مرتبہ وزیر اعظم کے طور پر خدمات انجام دیں؟",
   "question_roman": "Pakistan ke kis Wazir-e-Azam ne teen martaba Wazir-e-Azam ke tor par khidmat anjam di?",
   "options_ur": [
    "ذوالفقار علی بھٹو",
@@ -1727,7 +1727,7 @@
    "Imran Khan",
    "Shaukat Aziz"
   ],
-  "explanation_ur": "نواز شریف تین مرتبہ وزیرِ اعظم رہے۔",
+  "explanation_ur": "نواز شریف تین مرتبہ وزیر اعظم رہے۔",
   "explanation_roman": "Nawaz Sharif served as Prime Minister three times. Nawaz Sharif teen martaba Wazir-e-Azam rahe.",
   "post": [
    "zamungkor",
@@ -1770,7 +1770,7 @@
  },
  {
   "id": "PAK-032",
-  "question_ur": "2018 سے 2022 تک پاکستان کے وزیرِ اعظم کون تھے؟",
+  "question_ur": "2018 سے 2022 تک پاکستان کے وزیر اعظم کون تھے؟",
   "question_roman": "2018 se 2022 tak Pakistan ke Wazir-e-Azam kaun the?",
   "options_ur": [
    "نواز شریف",
@@ -1784,7 +1784,7 @@
    "Imran Khan",
    "Shehbaz Sharif"
   ],
-  "explanation_ur": "عمران خان 2018 سے 2022 تک وزیرِ اعظم رہے۔",
+  "explanation_ur": "عمران خان 2018 سے 2022 تک وزیر اعظم رہے۔",
   "explanation_roman": "Imran Khan was Prime Minister from 2018 to 2022. Imran Khan 2018 se 2022 tak Wazir-e-Azam rahe.",
   "post": [
    "zamungkor",
@@ -2397,7 +2397,7 @@
  },
  {
   "id": "PAK-043",
-  "question_ur": "پاکستان نے اقوامِ متحدہ میں کس تاریخ کو شمولیت اختیار کی؟",
+  "question_ur": "پاکستان نے اقوام متحدہ میں کس تاریخ کو شمولیت اختیار کی؟",
   "question_roman": "Pakistan ne Aqwam-e-Muttahida mein kis tareekh ko shamooliyat ikhtiyar ki?",
   "options_ur": [
    "14 اگست 1947",
@@ -2411,7 +2411,7 @@
    "23 March 1948",
    "1 January 1948"
   ],
-  "explanation_ur": "پاکستان نے 30 ستمبر 1947 کو اقوامِ متحدہ میں شمولیت اختیار کی۔",
+  "explanation_ur": "پاکستان نے 30 ستمبر 1947 کو اقوام متحدہ میں شمولیت اختیار کی۔",
   "explanation_roman": "Pakistan joined the UN on 30 September 1947. Pakistan 30 September 1947 ko UN ka member bana.",
   "post": [
    "zamungkor",
@@ -2515,7 +2515,7 @@
   "question_roman": "Pakistan ka qawmi parcham kis ne design kiya?",
   "options_ur": [
    "امیر الدین قدوائی",
-   "قائدِ اعظم",
+   "قائد اعظم",
    "لیاقت علی خان",
    "حفیظ جالندھری"
   ],
@@ -2736,7 +2736,7 @@
  },
  {
   "id": "PAK-049",
-  "question_ur": "جب قائد اعظم نے ہندوؤں اور مسلمانوں کو دو قومیں قرار دیا تو سب سے زیادہ کن فرقوں پر زور دیا گیا؟",
+  "question_ur": "جب قائد اعظم نے ہندوؤں اور مسلمانوں کو دو قومیں قرار دیا تو انہوں نے سب سے زیادہ کن فرقوں پر زور دیا؟",
   "question_roman": "Jab Quaid-e-Azam ne Hinduon aur Musalmanon ko do qaumein qarar diya to sab se zyada kin farqon par zor diya gaya?",
   "options_ur": [
    "قد اور جسمانی طاقت کے فرق پر",
@@ -2848,11 +2848,11 @@
  },
  {
   "id": "PAK-051",
-  "question_ur": "علامہ اقبال کو مصور پاکستان کہا جاتا ہے کیونکہ اقبال نے تحریک پاکستان کو کیا دیا؟",
+  "question_ur": "علامہ اقبال کو مصور پاکستان کہا جاتا ہے کیونکہ انہوں نے تحریک پاکستان کو کیا دیا؟",
   "question_roman": "Allama Iqbal ko Musawwir-e-Pakistan kaha jata hai kyunke Iqbal ne Tehreek-e-Pakistan ko kya diya?",
   "options_ur": [
    "ریلوے کی توسیع کا تفصیلی منصوبہ",
-   "علیحدہ مسلم وطن کا وژن اور تصور",
+   "علیحدہ مسلم وطن کا ویژن اور تصور",
    "نئی ریاست کے لیے فوجی منصوبہ",
    "غیر ملکی ریاستوں کے ساتھ تجارتی معاہدہ"
   ],
@@ -2862,7 +2862,7 @@
    "Nai riyasat ke liye fauji mansuba",
    "Ghair mulki riyasaton ke sath tijarti muahida"
   ],
-  "explanation_ur": "اقبال کو مصور پاکستان اس لیے کہا جاتا ہے کہ اقبال نے اپنی فکر اور شاعری کے ذریعے علیحدہ مسلم وطن کا وژن اور تصور دیا۔",
+  "explanation_ur": "اقبال کو مصور پاکستان اس لیے کہا جاتا ہے کہ انہوں نے اپنی فکر اور شاعری کے ذریعے علیحدہ مسلم وطن کا ویژن اور تصور دیا۔",
   "explanation_roman": "Iqbal ko Musawwir-e-Pakistan is liye kaha jata hai ke Iqbal ne apni fikr aur shayari ke zariye alag Muslim watan ka vision aur tasawwur diya.",
   "post": [
    "zamungkor",
@@ -3184,7 +3184,7 @@
  },
  {
   "id": "PAK-057",
-  "question_ur": "قائد اعظم نے یہ دعویٰ مسترد کیا کہ ہندوستان کے لوگ ایک قوم تھے، کیونکہ قائد اعظم کیا مانتے تھے؟",
+  "question_ur": "قائد اعظم نے یہ دعویٰ مسترد کیا کہ ہندوستان کے لوگ ایک قوم تھے، کیونکہ وہ کیا مانتے تھے؟",
   "question_roman": "Quaid-e-Azam ne yeh dawa mustarad kiya ke Hindustan ke log aik qaum thay, kyunke Quaid-e-Azam kya mante thay?",
   "options_ur": [
    "ہندوستان کی مشترکہ حکمرانی کی کوئی تاریخ نہیں تھی",
@@ -3198,7 +3198,7 @@
    "Hindustan mein rasm-o-rawaj ya aqeede ka koi farq nahi tha",
    "Hindu aur Musalman alag shanakht wali do alag qaumein thay"
   ],
-  "explanation_ur": "جناح نے ایک قوم ہونے کے دعوے کو مسترد کیا کیونکہ جناح مانتے تھے کہ ہندو اور مسلمان الگ شناخت والی دو الگ قومیں تھے۔",
+  "explanation_ur": "جناح نے ایک قوم ہونے کے دعوے کو مسترد کیا کیونکہ وہ مانتے تھے کہ ہندو اور مسلمان الگ شناخت والی دو الگ قومیں تھے۔",
   "explanation_roman": "Jinnah ne aik qaum hone ke dawe ko mustarad kiya kyunke Jinnah mante thay ke Hindu aur Musalman alag shanakht wali do alag qaumein thay.",
   "post": [
    "zamungkor",
@@ -3357,7 +3357,7 @@
   "options_ur": [
    "نئی ریاست کی پہلی ریلوے لائن بنانا",
    "نئی ریاست کی پہلی تجارتی کتاب لکھنا",
-   "علیحدہ مسلم وطن کا فلسفیانہ وژن پیش کرنا",
+   "علیحدہ مسلم وطن کا فلسفیانہ ویژن پیش کرنا",
    "نئی ریاست کے پہلے ڈاک ٹکٹ ڈیزائن کرنا"
   ],
   "options_roman": [
@@ -3366,7 +3366,7 @@
    "Alag Muslim watan ka falsafiyana vision pesh karna",
    "Nai riyasat ke pehle daak ticket design karna"
   ],
-  "explanation_ur": "اقبال نے علیحدہ مسلم وطن کا فلسفیانہ وژن پیش کیا، جو پاکستان کی نظریاتی بنیاد بنا۔",
+  "explanation_ur": "اقبال نے علیحدہ مسلم وطن کا فلسفیانہ ویژن پیش کیا، جو پاکستان کی نظریاتی بنیاد بنا۔",
   "explanation_roman": "Iqbal ne alag Muslim watan ka falsafiyana vision pesh kiya, jo Pakistan ki nazriyati bunyad bana.",
   "post": [
    "zamungkor",
@@ -3758,7 +3758,7 @@
    "Muhammad Ali Jinnah",
    "Liaquat Ali Khan"
   ],
-  "explanation_ur": "چوہدری رحمت علی نے 1933 میں پاکستان کا نام تجویز کیا تھا، اقبال کے خطبہ الہ آباد دینے کے بعد جس میں یہ نام استعمال نہیں ہوا تھا۔",
+  "explanation_ur": "اقبال کے خطبہ الہ آباد دینے کے بعد، جس میں یہ نام استعمال نہیں ہوا تھا، چوہدری رحمت علی نے 1933 میں پاکستان کا نام تجویز کیا تھا۔",
   "explanation_roman": "Chaudhry Rahmat Ali ne 1933 mein Pakistan ka naam tajweez kiya tha, Iqbal ke Khutba-e-Allahabad dene ke baad jis mein yeh naam istemal nahi hua tha.",
   "post": [
    "zamungkor",
@@ -4374,7 +4374,7 @@
    "Liaquat Ali Khan",
    "Chaudhry Muhammad Ali"
   ],
-  "explanation_ur": "لیاقت علی خان، جو پہلے وزیراعظم تھے، نے قرارداد مقاصد دستور ساز اسمبلی میں پیش کی تھی۔",
+  "explanation_ur": "لیاقت علی خان، جو پہلے وزیر اعظم تھے، نے قرارداد مقاصد دستور ساز اسمبلی میں پیش کی تھی۔",
   "explanation_roman": "Liaquat Ali Khan, jo pehle Wazir-e-Azam thay, ne Qarardad-e-Maqasid Dastur Saz Assembly mein pesh ki thi.",
   "post": [
    "zamungkor",
@@ -4640,7 +4640,7 @@
  },
  {
   "id": "PAK-083",
-  "question_ur": "1948 میں ڈھاکہ میں قائد اعظم محمد علی جناح نے اعلان کیا تھا کہ پاکستان کی سرکاری زبان کون سی زبان ہوگی؟",
+  "question_ur": "1948 میں ڈھاکہ میں قائد اعظم محمد علی جناح نے اعلان کیا تھا کہ پاکستان کی سرکاری زبان کون سی ہوگی؟",
   "question_roman": "1948 mein Dhaka mein Quaid-e-Azam Muhammad Ali Jinnah ne elan kiya tha ke Pakistan ki sarkari zaban kaun si zaban hogi?",
   "options_ur": [
    "بنگالی",
@@ -4710,7 +4710,7 @@
    "Kyunkay yeh sirf sarkari record ke liye istemal hoti hai",
    "Kyunkay is ka apna koi adab nahi hai"
   ],
-  "explanation_ur": "اردو کو ایک متحد کرنے والی زبان اس لیے کہا جاتا ہے کیونکہ یہ مختلف صوبوں کے لوگوں کے درمیان رابطے کا ایک مشترکہ ذریعہ ہے۔",
+  "explanation_ur": "اردو کو ایک متحد کرنے والی زبان کہا جاتا ہے، کیونکہ یہ مختلف صوبوں کے لوگوں کے درمیان رابطے کا ایک مشترکہ ذریعہ ہے۔",
   "explanation_roman": "Urdu ko aik muttahid karne wali zaban is liye kaha jata hai kyunkay yeh mukhtalif soobon ke logon ke darmiyan rabtay ka aik mushtarka zariya hai.",
   "post": [
    "zamungkor",
@@ -4822,7 +4822,7 @@
    "Tijarti choki",
    "Fauji camp"
   ],
-  "explanation_ur": "لفظ اردو ترکی زبان کے ایک لفظ سے آیا ہے جس کا مطلب فوجی کیمپ ہے، اور یہ اس کی کیمپ کی زبان کے طور پر ابتدا کو ظاہر کرتا ہے۔",
+  "explanation_ur": "لفظ اردو ترکی زبان کے ایک لفظ سے آیا ہے جس کا مطلب فوجی کیمپ ہے، اور یہ کیمپ کی زبان کے طور پر اس کی ابتدا کو ظاہر کرتا ہے۔",
   "explanation_roman": "Lafz Urdu Turki zaban ke aik lafz se aaya hai jis ka matlab fauji camp hai, aur yeh is ki camp ki zaban ke tor par ibtida ko zahir karta hai.",
   "post": [
    "zamungkor",
@@ -5316,7 +5316,7 @@
   "question_roman": "Meerut mein tayinat sipahiyon ne 10 May 1857 ko British hukumat ke khilaf baghawat ki. Is baghawat se kis jang ka aaghaz hua?",
   "options_ur": [
    "تحریک خلافت",
-   "تحریک ہندوستان چھوڑو",
+   "ہندوستان چھوڑ دو تحریک",
    "جنگ آزادی",
    "تحریک عدم تعاون"
   ],
@@ -5550,7 +5550,7 @@
    "Lord Dalhousie",
    "Lord Curzon"
   ],
-  "explanation_ur": "لارڈ ڈلہوزی نے 1856 میں اودھ کا الحاق کیا، اس اقدام کو 1857 کی بغاوت کی ایک وجہ سمجھا جاتا ہے۔",
+  "explanation_ur": "لارڈ ڈلہوزی نے 1856 میں اودھ کا الحاق کیا؛ اس اقدام کو 1857 کی بغاوت کی ایک وجہ سمجھا جاتا ہے۔",
   "explanation_roman": "Lord Dalhousie ne 1856 mein Awadh ka ilhaq kiya, is iqdam ko 1857 ki baghawat ki aik wajah samjha jata hai.",
   "post": [
    "zamungkor",
@@ -5760,7 +5760,7 @@
  },
  {
   "id": "PAK-103",
-  "question_ur": "کمپنی کی حکومت کا خاتمہ ناکام بغاوت کا ایک بڑا نتیجہ تھا۔ 1858 میں ہندوستان کا براہ راست کنٹرول کس اتھارٹی نے سنبھالا؟",
+  "question_ur": "کمپنی کی حکومت کا خاتمہ ناکام بغاوت کا ایک بڑا نتیجہ تھا۔ 1858 میں ہندوستان پر براہ راست کنٹرول کس نے سنبھالا؟",
   "question_roman": "Company ki hukumat ka khatma nakam baghawat ka aik bara natija tha. 1858 mein Hindustan ka barah-e-rast control kis authority ne sambhala?",
   "options_ur": [
    "برطانوی تاج",
@@ -5872,7 +5872,7 @@
  },
  {
   "id": "PAK-105",
-  "question_ur": "سائنٹیفک سوسائٹی، جو مغربی کتب کو اردو میں ترجمہ کرنے کے لیے قائم کی گئی تھی، سر سید نے کس سال قائم کی؟",
+  "question_ur": "سر سید نے مغربی کتب کو اردو میں ترجمہ کرنے کے لیے سائنٹیفک سوسائٹی کس سال قائم کی؟",
   "question_roman": "Scientific Society, jo maghribi kutub ko Urdu mein tarjuma karne ke liye qaim ki gayi thi, Sir Syed ne kis saal qaim ki?",
   "options_ur": [
    "1854",
@@ -6054,7 +6054,7 @@
    "Asbab-e-Baghawat-e-Hind",
    "Loyal Muhammadans of India"
   ],
-  "explanation_ur": "اسباب بغاوت ہند، جو 1859 میں لکھی گئی، میں بغاوت کی وجوہات بیان کی گئیں اور مسلمانوں کا الزام سے دفاع کیا گیا۔",
+  "explanation_ur": "اسباب بغاوت ہند، جو 1859 میں لکھی گئی، میں بغاوت کی وجوہات بیان کی گئیں اور الزامات کے خلاف مسلمانوں کا دفاع کیا گیا۔",
   "explanation_roman": "Asbab-e-Baghawat-e-Hind, jo 1859 mein likhi gayi, mein baghawat ki wajuhat bayan ki gayin aur Musalmanon ka ilzam se difa kiya gaya.",
   "post": [
    "zamungkor",
@@ -6264,7 +6264,7 @@
  },
  {
   "id": "PAK-112",
-  "question_ur": "اردو ہندی تنازع 1867 میں اس وقت شروع ہوا جب عدالتوں میں اردو کی جگہ ہندی لانے کا مطالبہ اٹھا۔ اس مطالبے کے پہلی بار اٹھنے والے شہر کا نام بتائیں۔",
+  "question_ur": "اردو ہندی تنازع 1867 میں اس وقت شروع ہوا جب عدالتوں میں اردو کی جگہ ہندی لانے کا مطالبہ اٹھا۔ یہ مطالبہ پہلی بار کس شہر میں اٹھا؟",
   "question_roman": "Urdu-Hindi tanaza 1867 mein us waqt shuru hua jab adalaton mein Urdu ki jagah Hindi lane ka mutalba utha. Is mutalbe ke pehli bar uthne wale shehar ka naam batayen.",
   "options_ur": [
    "لکھنؤ",
@@ -6660,8 +6660,8 @@
   "question_roman": "Taqseem-e-Bengal ke Hindu mukhalifeen ne ehtijaj ki kaun si tehreek shuru ki?",
   "options_ur": [
    "سودیشی تحریک",
-   "عدم تعاون کی تحریک",
-   "سول نافرمانی کی تحریک",
+   "عدم تعاون تحریک",
+   "سول نافرمانی تحریک",
    "ہندوستان چھوڑ دو تحریک"
   ],
   "options_roman": [
@@ -6670,7 +6670,7 @@
    "Civil Disobedience Movement",
    "Quit India Movement"
   ],
-  "explanation_ur": "ہندو مخالفین نے سودیشی تحریک شروع کی اور تقسیم کے خلاف احتجاج میں برطانوی اشیا کا بائیکاٹ کیا۔",
+  "explanation_ur": "ہندو مخالفین نے سودیشی تحریک شروع کی اور تقسیم کے خلاف احتجاج میں برطانوی سامان کا بائیکاٹ کیا۔",
   "explanation_roman": "Hindu mukhalifeen ne Swadeshi Tehreek shuru ki aur taqseem ke khilaf ehtijaj mein Bartanvi ashya ka boycott kiya.",
   "post": [
    "zamungkor",
@@ -6824,7 +6824,7 @@
  },
  {
   "id": "PAK-122",
-  "question_ur": "1906 میں شملہ وفد کی طرف سے پیش کیا جانے والا سب سے بڑا مطالبہ کیا تھا؟",
+  "question_ur": "1906 میں شملہ وفد کی طرف سے پیش کیا جانے والا اہم ترین مطالبہ کیا تھا؟",
   "question_roman": "1906 mein Simla Deputation ki taraf se pesh kiya jane wala sab se bara mutalba kya tha?",
   "options_ur": [
    "تمام برادریوں کے لیے مشترکہ انتخاب",
@@ -6838,7 +6838,7 @@
    "Musalmanon ke liye judagana intikhab",
    "Fauri taur par alag Muslim riyasat"
   ],
-  "explanation_ur": "شملہ وفد کا سب سے بڑا مطالبہ مسلمانوں کے لیے جداگانہ انتخاب تھا۔",
+  "explanation_ur": "شملہ وفد کا اہم ترین مطالبہ مسلمانوں کے لیے جداگانہ انتخاب تھا۔",
   "explanation_roman": "Simla Deputation ka sab se bara mutalba Musalmanon ke liye judagana intikhab tha.",
   "post": [
    "zamungkor",
@@ -6885,7 +6885,7 @@
   "options_ur": [
    "انڈین نیشنل کانگریس",
    "آل انڈیا مسلم لیگ",
-   "محمدن ایجوکیشنل کانفرنس",
+   "محمڈن ایجوکیشنل کانفرنس",
    "ہندو مہاسبھا"
   ],
   "options_roman": [
@@ -7006,7 +7006,7 @@
    "Aligarh",
    "Dhaka"
   ],
-  "explanation_ur": "آل انڈیا مسلم لیگ دسمبر 1906 میں ڈھاکہ میں محمدن ایجوکیشنل کانفرنس کے اجلاس کے دوران قائم ہوئی۔",
+  "explanation_ur": "آل انڈیا مسلم لیگ دسمبر 1906 میں ڈھاکہ میں محمڈن ایجوکیشنل کانفرنس کے اجلاس کے دوران قائم ہوئی۔",
   "explanation_roman": "All-India Muslim League December 1906 mein Dhaka mein Muhammadan Educational Conference ke ijlas ke doran qayam hui.",
   "post": [
    "zamungkor",
@@ -7277,7 +7277,7 @@
   "options_ur": [
    "تمام برادریوں کے لیے مشترکہ انتخاب",
    "الگ مسلم وطن",
-   "برطانوی اشیا کا بائیکاٹ",
+   "برطانوی سامان کا بائیکاٹ",
    "مسلمانوں کے لیے جداگانہ انتخاب"
   ],
   "options_roman": [
@@ -7384,7 +7384,7 @@
  },
  {
   "id": "PAK-132",
-  "question_ur": "لکھنؤ معاہدے کے تحت پنجاب کی قانون ساز اسمبلی میں مسلمانوں کے لیے کتنی نشستیں مقرر کی گئیں؟",
+  "question_ur": "لکھنؤ معاہدے کے تحت پنجاب کی قانون ساز اسمبلی میں مسلمانوں کے لیے نشستوں کا کتنا حصہ مقرر کیا گیا تھا؟",
   "question_roman": "Lucknow Pact ke tehat Punjab ki qanoon saz assembly mein Musalmanon ke liye kitni nashistein muqarrar ki gayeen?",
   "options_ur": [
    "50%",
@@ -7566,7 +7566,7 @@
    "Khilafat-e-Usmania ka tahaffuz",
    "Taqseem-e-Bengal ki mansukhi"
   ],
-  "explanation_ur": "تحریک خلافت کا مقصد خلافت عثمانیہ اور سلطان ترکی کی مذہبی حیثیت کا تحفظ تھا جو پہلی جنگ عظیم کے بعد خطرے میں تھی۔",
+  "explanation_ur": "تحریک خلافت کا مقصد پہلی جنگ عظیم کے بعد خلافت عثمانیہ اور سلطان ترکی کی مذہبی حیثیت کا تحفظ تھا۔",
   "explanation_roman": "Tehreek-e-Khilafat ka maqsad Khilafat-e-Usmania aur Sultan-e-Turkey ki mazhabi haisiyat ka tahaffuz tha jo Pehli Jang-e-Azeem ke baad khatre mein thi.",
   "post": [
    "zamungkor",
@@ -7669,7 +7669,7 @@
   "options_ur": [
    "سول نافرمانی تحریک",
    "عدم تعاون تحریک",
-   "ہندوستان چھوڑو تحریک",
+   "ہندوستان چھوڑ دو تحریک",
    "سودیشی تحریک"
   ],
   "options_roman": [
@@ -7893,7 +7893,7 @@
   "options_ur": [
    "ڈومینین حیثیت",
    "مکمل آزادی",
-   "صرف صوبائی خودمختاری",
+   "صرف صوبائی خود مختاری",
    "ایک الگ مسلم ریاست"
   ],
   "options_roman": [
@@ -7958,7 +7958,7 @@
    "Ke woh sirf markazi muqannina par lagu hon",
    "Ke unhein khatm kar diya jaye"
   ],
-  "explanation_ur": "نہرو رپورٹ نے جداگانہ انتخابات کو مسترد کر دیا اور ان صوبوں میں مسلمانوں کے لیے نشستوں کے تحفظ کے ساتھ مشترکہ انتخابات کی تجویز پیش کی جہاں وہ اقلیت میں تھے۔",
+  "explanation_ur": "نہرو رپورٹ نے جداگانہ انتخابات کو مسترد کر دیا اور ان صوبوں میں جہاں مسلمان اقلیت میں تھے، ان کے لیے نشستیں مخصوص کرنے کے ساتھ مشترکہ انتخابات کی تجویز پیش کی۔",
   "explanation_roman": "Nehru Report ne judagana intikhabat ko mustarad kar diya aur un subon mein Musalmanon ke liye nashiston ke tahaffuz ke sath mushtarka intikhabat ki tajweez pesh ki jahan woh aqliyat mein thay.",
   "post": [
    "zamungkor",
@@ -8126,7 +8126,7 @@
    "Nehru Report",
    "Communal Award"
   ],
-  "explanation_ur": "جناح نے چودہ نکات کو نہرو رپورٹ کے جواب میں مسلمانوں کے تحفظات اور مطالبات کے طور پر پیش کیا۔",
+  "explanation_ur": "جناح نے نہرو رپورٹ کے جواب میں چودہ نکات پیش کیے، جن میں مسلمانوں کے تحفظات اور مطالبات بیان کیے گئے تھے۔",
   "explanation_roman": "Jinnah ne Chaudah Nukat ko Nehru Report ke jawab mein Musalmanon ke tahaffuzat aur mutalbat ke tor par pesh kiya.",
   "post": [
    "zamungkor",
@@ -8228,7 +8228,7 @@
   "question_roman": "Chaudah Nukat ne Hindustan ke liye kis qisam ke aain ki tajweez pesh ki?",
   "options_ur": [
    "مضبوط مرکز کے ساتھ ایک وحدانی آئین",
-   "صوبائی خودمختاری کے ساتھ ایک وفاقی آئین",
+   "صوبائی خود مختاری کے ساتھ ایک وفاقی آئین",
    "ایک صدارتی آئین",
    "نوابی ریاستوں کا ایک اتحاد"
   ],
@@ -8238,7 +8238,7 @@
    "Aik sadarati aain",
    "Nawabi riyasaton ka aik ittihad"
   ],
-  "explanation_ur": "چودہ نکات نے ایک وفاقی آئین کی تجویز پیش کی جس میں صوبوں کو خودمختاری حاصل ہوتی اور باقی اختیارات صوبوں کے پاس رہتے۔",
+  "explanation_ur": "چودہ نکات نے ایک وفاقی آئین کی تجویز پیش کی جس میں صوبوں کو خود مختاری حاصل ہوتی اور باقی اختیارات صوبوں کے پاس رہتے۔",
   "explanation_roman": "Chaudah Nukat ne aik wafaqi aain ki tajweez pesh ki jis mein subon ko khudmukhtari hasil hoti aur baqi ikhtiyarat subon ke paas rehte.",
   "post": [
    "zamungkor",
@@ -8574,7 +8574,7 @@
    "Pasmanda tabqat samet aqliyaton ko",
    "Sirf Europiyon ko"
   ],
-  "explanation_ur": "1932 میں اعلان کردہ فرقہ وارانہ ایوارڈ نے پسماندہ طبقات سمیت اقلیتوں تک جداگانہ انتخابات کو بڑھا دیا۔",
+  "explanation_ur": "1932 میں اعلان کردہ فرقہ وارانہ ایوارڈ نے پسماندہ طبقات سمیت اقلیتوں کو جداگانہ انتخابات دے دیے۔",
   "explanation_roman": "1932 mein elan kardah Communal Award ne pasmanda tabqat samet aqliyaton tak judagana intikhabat ko barha diya.",
   "post": [
    "zamungkor",
@@ -8742,7 +8742,7 @@
    "British sube aur nawabi riyasatein",
    "British sube aur ghair mulki ilaqe"
   ],
-  "explanation_ur": "اس ایکٹ میں آل انڈیا فیڈریشن تجویز کی گئی تھی جس میں برطانوی صوبے اور فیڈریشن میں شامل ہونے والی نوابی ریاستیں شامل ہوتیں۔",
+  "explanation_ur": "اس ایکٹ میں آل انڈیا فیڈریشن تجویز کی گئی تھی جس میں برطانوی صوبے اور شامل ہونے والی نوابی ریاستیں ہوتیں۔",
   "explanation_roman": "Act mein All-India Federation tajweez ki gayi thi jismein British sube aur federation mein shaamil hone wali nawabi riyasatein shaamil hoti.",
   "post": [
    "zamungkor",
@@ -8854,7 +8854,7 @@
    "Khawaja Nazimuddin",
    "A. K. Fazlul Haq"
   ],
-  "explanation_ur": "فضل الحق نے انتخابات کے بعد بنگال میں بننے والی اتحادی حکومت کی قیادت کی اور صوبے کے پریمیئر کے طور پر خدمت انجام دی۔",
+  "explanation_ur": "فضل الحق نے انتخابات کے بعد بنگال میں بننے والی اتحادی حکومت کی قیادت کی اور صوبے کے پریمیئر رہے۔",
   "explanation_roman": "Fazlul Haq ne intikhabat ke baad Bengal mein banne wali ittehadi hukumat ki qayadat ki aur sube ke Premier ke tor par khidmat anjaam di.",
   "post": [
    "zamungkor",
@@ -8952,7 +8952,7 @@
  },
  {
   "id": "PAK-160",
-  "question_ur": "1940 میں مسلم لیگ کے سالانہ اجلاس میں قرارداد لاہور کس نے پیش کی؟",
+  "question_ur": "1940 میں مسلم لیگ کے سالانہ اجلاس میں قراردادِ لاہور کس نے پیش کی؟",
   "question_roman": "1940 mein Muslim League ke salana ijlas mein Qarardad-e-Lahore kis ne paish ki?",
   "options_ur": [
    "محمد علی جناح",
@@ -9008,7 +9008,7 @@
  },
  {
   "id": "PAK-161",
-  "question_ur": "1940 کی قرارداد لاہور کی تائید کس رہنما نے کی تھی؟",
+  "question_ur": "1940 کی قراردادِ لاہور کی تائید کس رہنما نے کی تھی؟",
   "question_roman": "1940 ki Qarardad-e-Lahore ki taaid kis rehnuma ne ki thi?",
   "options_ur": [
    "اے کے فضل الحق",
@@ -9022,7 +9022,7 @@
    "Chaudhry Khaliquzzaman",
    "Muhammad Ali Jinnah"
   ],
-  "explanation_ur": "خلیق الزماں نے قرارداد کی تائید کی، جب فضل الحق نے اسے لاہور کے اجلاس میں پیش کیا تھا۔",
+  "explanation_ur": "فضل الحق کے لاہور کے اجلاس میں قرارداد پیش کرنے کے بعد خلیق الزماں نے اس کی تائید کی۔",
   "explanation_roman": "Khaliquzzaman ne qarardad ki taaid ki, jab Fazlul Haq ne use Lahore ke ijlas mein paish kiya tha.",
   "post": [
    "zamungkor",
@@ -9064,7 +9064,7 @@
  },
  {
   "id": "PAK-162",
-  "question_ur": "لاہور میں کس مقام پر وہ سالانہ اجلاس ہوا تھا جس میں 1940 میں قرارداد لاہور منظور کی گئی تھی؟",
+  "question_ur": "لاہور میں کس مقام پر وہ سالانہ اجلاس ہوا تھا جس میں 1940 میں قراردادِ لاہور منظور کی گئی تھی؟",
   "question_roman": "Lahore mein kis maqam par woh salana ijlas hua tha jismein 1940 mein Qarardad-e-Lahore manzoor ki gayi thi?",
   "options_ur": [
    "بادشاہی مسجد",
@@ -9120,7 +9120,7 @@
  },
  {
   "id": "PAK-163",
-  "question_ur": "1940 کی قرارداد لاہور کے مطابق شمال مغربی اور مشرقی زونوں کے مسلم اکثریتی علاقوں سے کیا بننا تھا؟",
+  "question_ur": "1940 کی قراردادِ لاہور کے مطابق شمال مغربی اور مشرقی زونوں کے مسلم اکثریتی علاقوں سے کیا بننا تھا؟",
   "question_roman": "1940 ki Qarardad-e-Lahore ke mutabiq shamal maghrabi aur mashriqi zonon ke Muslim aksariyati ilaqon se kya banna tha?",
   "options_ur": [
    "آزاد ریاستیں",
@@ -9176,7 +9176,7 @@
  },
  {
   "id": "PAK-164",
-  "question_ur": "ہندو پریس نے 1940 کی قرارداد لاہور کو کون سا نام دیا تھا؟",
+  "question_ur": "ہندو پریس نے 1940 کی قراردادِ لاہور کو کون سا نام دیا تھا؟",
   "question_roman": "Hindu press ne 1940 ki Qarardad-e-Lahore ko kaun sa naam diya tha?",
   "options_ur": [
    "قرارداد لکھنؤ",
@@ -9190,7 +9190,7 @@
    "Delhi Resolution",
    "Allahabad Resolution"
   ],
-  "explanation_ur": "ہندو پریس نے قرارداد لاہور کو قرارداد پاکستان کہا، کیونکہ اس میں مسلمانوں کے لیے الگ وطن کا مطالبہ کیا گیا تھا۔",
+  "explanation_ur": "ہندو پریس نے قراردادِ لاہور کو قرارداد پاکستان کہا، کیونکہ اس میں مسلمانوں کے لیے الگ وطن کا مطالبہ کیا گیا تھا۔",
   "explanation_roman": "Hindu press ne Qarardad-e-Lahore ko Pakistan Resolution kaha, kyunke ismein Musalmanon ke liye alag watan ka mutalba kiya gaya tha.",
   "post": [
    "zamungkor",
@@ -9302,7 +9302,7 @@
    "Markazi hukumat ke baghair subai khud mukhtari",
    "Aaeen banane ke haq ke saath dominion ka darja"
   ],
-  "explanation_ur": "کرپس تجاویز میں جنگ کے بعد ڈومینین کا درجہ اور جنگ کے بعد منتخب ہونے والی آئین ساز باڈی کا وعدہ کیا گیا تھا۔",
+  "explanation_ur": "کرپس تجاویز میں جنگ کے بعد ڈومینین کا درجہ اور جنگ کے بعد منتخب ہونے والی آئین ساز مجلس کا وعدہ کیا گیا تھا۔",
   "explanation_roman": "Cripps tajaweez mein jang ke baad dominion ka darja aur jang ke baad muntakhib hone wali aaeen saaz body ka waada kiya gaya tha.",
   "post": [
    "zamungkor",
@@ -9792,7 +9792,7 @@
  },
  {
   "id": "PAK-175",
-  "question_ur": "1947 میں پاکستان آنے والے مسلمان مہاجرین کو پاکستان سٹڈیز کی کتابوں میں عام طور پر کس نام سے جانا جاتا ہے؟",
+  "question_ur": "1947 میں پاکستان آنے والے مسلمان مہاجرین کو مطالعہ پاکستان کی کتابوں میں عام طور پر کس نام سے جانا جاتا ہے؟",
   "question_roman": "1947 mein Pakistan aane wale Musalman migrants ko Pakistan Studies ki kitabon mein aam tor par kis naam se jana jata hai?",
   "options_ur": [
    "مہاجر",
@@ -9960,7 +9960,7 @@
  },
  {
   "id": "PAK-178",
-  "question_ur": "پاکستان آنے والے مہاجرین کو بڑی حد تک اس متروکہ جائیداد پر آباد کیا گیا جسے بھارت جانے والا کون سا گروہ پیچھے چھوڑ گیا تھا؟",
+  "question_ur": "پاکستان آنے والے مہاجرین کو بڑی حد تک متروکہ جائیداد پر آباد کیا گیا، جو بھارت جانے والے کس گروہ نے پیچھے چھوڑی تھی؟",
   "question_roman": "Pakistan aane wale Muhajireen ko bari had tak us matrooka jaidad par aabad kiya gaya jise Bharat jaane wala kaun sa giroh peeche chhod gaya tha?",
   "options_ur": [
    "برطانوی افسران جو ملازمت سے ریٹائر ہو گئے تھے",
@@ -10128,7 +10128,7 @@
  },
  {
   "id": "PAK-181",
-  "question_ur": "آزادی کے فوراً بعد کراچی کی آبادی بہت تیزی سے بڑھی، اس کی بنیادی وجہ شہر میں کس گروہ کے لوگوں کا آباد ہونا تھی؟",
+  "question_ur": "آزادی کے فوراً بعد کراچی کی آبادی بہت تیزی سے بڑھی، کیونکہ شہر میں کس گروہ کے لوگ بڑی تعداد میں آباد ہوئے تھے؟",
   "question_roman": "Azadi ke fauran baad Karachi ki aabadi bohat tezi se barhi, is ki bunyadi wajah sheher mein kis giroh ke logon ka aabad hona thi?",
   "options_ur": [
    "برطانوی سرکاری افسران",
@@ -10464,7 +10464,7 @@
  },
  {
   "id": "PAK-187",
-  "question_ur": "آئی آئی چندریگر کو پاکستان کی پہلی کابینہ میں کن وزارتوں کا چارج دیا گیا تھا؟",
+  "question_ur": "آئی آئی چندریگر کو پاکستان کی پہلی کابینہ میں کن وزارتوں کی ذمہ داری سونپی گئی تھی؟",
   "question_roman": "I. I. Chundrigar ko Pakistan ki pehli cabinet mein kin wazaraton ka charge diya gaya tha?",
   "options_ur": [
    "تجارت اور صنعتیں",
@@ -10520,7 +10520,7 @@
  },
  {
   "id": "PAK-188",
-  "question_ur": "آزادی کے بعد حکومت پاکستان کے پہلے سیکرٹری جنرل کے طور پر کس نے خدمات انجام دیں؟",
+  "question_ur": "آزادی کے بعد حکومت پاکستان کے پہلے سیکرٹری جنرل کون تھے؟",
   "question_roman": "Azadi ke baad Hukoomat-e-Pakistan ke pehle Secretary General ke tor par kis ne khidmat anjaam di?",
   "options_ur": [
    "غلام محمد",
@@ -10590,7 +10590,7 @@
    "Pakistan ya Bharat mein mulazmat ka intikhab karna",
    "Fauran musallah afwaj mein shaamil ho jana"
   ],
-  "explanation_ur": "تقسیم کے وقت سول سرکاری ملازمین کو پاکستان یا بھارت میں ملازمت کا انتخاب کرنے کا اختیار دیا گیا تھا۔",
+  "explanation_ur": "تقسیم کے وقت سول سروس کے ملازمین کو پاکستان یا بھارت میں ملازمت کا انتخاب کرنے کا اختیار دیا گیا تھا۔",
   "explanation_roman": "Taqseem ke waqt civil sarkari mulazmeen ko Pakistan ya Bharat mein mulazmat ka intikhab karne ka ikhtiyar diya gaya tha.",
   "post": [
    "zamungkor",
@@ -11094,7 +11094,7 @@
    "11 September 1948",
    "14 August 1948"
   ],
-  "explanation_ur": "خان قلات نے 27 مارچ 1948 کو الحاق پر دستخط کیے اور قلات پاکستان کا حصہ بن گیا۔",
+  "explanation_ur": "قلات کے خان نے 27 مارچ 1948 کو الحاق پر دستخط کیے اور قلات پاکستان کا حصہ بن گیا۔",
   "explanation_roman": "Khan-e-Qalat ne 27 March 1948 ko ilhaq par dastakhat kiye, aur Kalat Pakistan ka hissa ban gaya.",
   "post": [
    "zamungkor",
@@ -11472,7 +11472,7 @@
  },
  {
   "id": "PAK-205",
-  "question_ur": "اقوام متحدہ کے ذریعے طے پانے والی کشمیر میں جنگ بندی کس تاریخ سے نافذ ہوئی؟",
+  "question_ur": "اقوام متحدہ کے ذریعے طے پانے والی کشمیر کی جنگ بندی کس تاریخ سے نافذ ہوئی؟",
   "question_roman": "Aqwam-e-Muttahida ke zariye tay pane wali Kashmir mein jang bandi kis tareekh se nafiz hui?",
   "options_ur": [
    "1 جنوری 1948",
@@ -11976,7 +11976,7 @@
  },
  {
   "id": "PAK-214",
-  "question_ur": "آئین ساز اسمبلی نے پہلا آئین کس تاریخ کو منظور کیا؟",
+  "question_ur": "دستور ساز اسمبلی نے پہلا آئین کس تاریخ کو منظور کیا؟",
   "question_roman": "Aain Saaz Assembly ne pehla Aain kis tareekh ko manzoor kiya?",
   "options_ur": [
    "29 فروری 1956",
@@ -11990,7 +11990,7 @@
    "14 October 1955",
    "7 October 1958"
   ],
-  "explanation_ur": "آئین ساز اسمبلی نے 29 فروری 1956 کو آئین منظور کیا، اور یہ 23 مارچ 1956 کو نافذ ہوا۔",
+  "explanation_ur": "دستور ساز اسمبلی نے 29 فروری 1956 کو آئین منظور کیا، اور یہ 23 مارچ 1956 کو نافذ ہوا۔",
   "explanation_roman": "Aain Saaz Assembly ne 29 February 1956 ko Aain manzoor kiya, aur yeh 23 March 1956 ko nafiz hua.",
   "post": [
    "zamungkor",
@@ -12035,8 +12035,8 @@
   "question_ur": "1956 کا آئین کس اسمبلی نے تیار کیا؟",
   "question_roman": "1956 ka Aain kis Assembly ne tayyar kiya?",
   "options_ur": [
-   "پہلی آئین ساز اسمبلی",
-   "دوسری آئین ساز اسمبلی",
+   "پہلی دستور ساز اسمبلی",
+   "دوسری دستور ساز اسمبلی",
    "پہلی قومی اسمبلی",
    "اسلامی نظریاتی کونسل"
   ],
@@ -12046,7 +12046,7 @@
    "Pehli Qaumi Assembly",
    "Islami Nazriyati Council"
   ],
-  "explanation_ur": "1956 کا آئین دوسری آئین ساز اسمبلی نے تیار کیا۔",
+  "explanation_ur": "1956 کا آئین دوسری دستور ساز اسمبلی نے تیار کیا۔",
   "explanation_roman": "1956 ka Aain Doosri Aain Saaz Assembly ne tayyar kiya.",
   "post": [
    "zamungkor",
@@ -12312,7 +12312,7 @@
  },
  {
   "id": "PAK-220",
-  "question_ur": "1956 کے آئین نے اسلام کے ان احکام کے خلاف قوانین بنانے سے منع کیا جو کن ذرائع میں دیے گئے ہیں؟",
+  "question_ur": "1956 کے آئین نے کن ذرائع میں دیے گئے اسلام کے احکام کے خلاف قوانین بنانے سے منع کیا؟",
   "question_roman": "1956 ke Aain ne Islam ke un ahkam ke khilaf qawaneen banane se mana kiya jo kin zaraye mein diye gaye hain?",
   "options_ur": [
    "قرآن اور سنت",
@@ -12382,7 +12382,7 @@
    "Teen aiwan",
    "Chaar aiwan"
   ],
-  "explanation_ur": "1956 کے آئین میں ایک ایوانی مقننہ کا انتظام تھا، جس کا واحد ایوان قومی اسمبلی تھا۔",
+  "explanation_ur": "1956 کے آئین میں یک ایوانی مقننہ کا انتظام تھا، جس کا واحد ایوان قومی اسمبلی تھا۔",
   "explanation_roman": "1956 ke Aain mein ek aiwani muqannina ka intezam tha, jis ka wahid aiwan Qaumi Assembly tha.",
   "post": [
    "zamungkor",
@@ -12662,7 +12662,7 @@
    "Mashriqi Pakistan",
    "Maghribi Pakistan"
   ],
-  "explanation_ur": "ون یونٹ کے تحت مغربی پاکستان کے صوبوں اور ریاستوں کو مغربی پاکستان نام کے ایک صوبے میں ضم کر دیا گیا۔",
+  "explanation_ur": "ون یونٹ کے تحت مغربی پاکستان کے صوبوں اور ریاستوں کو مغربی پاکستان نامی ایک صوبے میں ضم کر دیا گیا۔",
   "explanation_roman": "One Unit ke tehat Maghribi Pakistan ke soobon aur riyasaton ko Maghribi Pakistan naam ke ek soobe mein zam kar diya gaya.",
   "post": [
    "zamungkor",
@@ -12872,7 +12872,7 @@
  },
  {
   "id": "PAK-230",
-  "question_ur": "1962 کے آئین کے تحت سربراہ مملکت اور سربراہ حکومت دونوں کا کردار کس عہدے کے پاس تھا؟",
+  "question_ur": "1962 کے آئین کے تحت کون سا عہدہ سربراہ مملکت اور سربراہ حکومت دونوں تھا؟",
   "question_roman": "1962 ke Constitution ke tehat sarbarah-e-mumlikat aur sarbarah-e-hukumat dono ka kirdar kis uhde ke paas tha?",
   "options_ur": [
    "صدر",
@@ -12886,7 +12886,7 @@
    "Governor-General",
    "Speaker of the National Assembly"
   ],
-  "explanation_ur": "1962 کے آئین میں صدارتی نظام حکومت دیا گیا تھا، جس میں صدر سربراہ مملکت اور سربراہ حکومت دونوں تھا۔",
+  "explanation_ur": "1962 کے آئین میں صدارتی طرز حکومت قائم کی گئی تھی، جس میں صدر سربراہ مملکت اور سربراہ حکومت دونوں تھا۔",
   "explanation_roman": "1962 ke Constitution mein presidential form of government diya gaya tha, jis mein President head of state aur head of government dono tha.",
   "post": [
    "zamungkor",
@@ -12942,7 +12942,7 @@
    "Ek aiwan",
    "Chaar aiwan"
   ],
-  "explanation_ur": "1962 کے آئین میں یک ایوانی مقننہ دی گئی تھی، جو صرف ایک ایوان، قومی اسمبلی، پر مشتمل تھی۔",
+  "explanation_ur": "1962 کے آئین میں یک ایوانی مقننہ کا انتظام تھا، جس کا واحد ایوان قومی اسمبلی تھا۔",
   "explanation_roman": "1962 ke Constitution mein unicameral legislature di gayi thi, jo sirf ek aiwan, National Assembly, par mushtamil thi.",
   "post": [
    "zamungkor",
@@ -13096,7 +13096,7 @@
  },
  {
   "id": "PAK-234",
-  "question_ur": "1962 کے آئین میں ریاست کو پہلی بار نافذ ہونے پر کیا نام دیا گیا تھا؟",
+  "question_ur": "1962 کے آئین کے پہلی بار نافذ ہونے پر ریاست کو کیا نام دیا گیا تھا؟",
   "question_roman": "1962 ke Constitution mein riyasat ko pehli baar nafiz hone par kya naam diya gaya tha?",
   "options_ur": [
    "اسلامی جمہوریہ پاکستان",
@@ -13656,7 +13656,7 @@
  },
  {
   "id": "PAK-244",
-  "question_ur": "1970 کے لیگل فریم ورک آرڈر میں عام انتخابات کے لیے ووٹنگ کا کون سا نظام مقرر کیا گیا تھا؟",
+  "question_ur": "1970 کے لیگل فریم ورک آرڈر میں عام انتخابات کے لیے رائے دہی کا کون سا نظام مقرر کیا گیا تھا؟",
   "question_roman": "1970 ke Legal Framework Order mein aam intikhabat ke liye voting ka kaun sa nizam muqarrar kiya gaya tha?",
   "options_ur": [
    "بالغ رائے دہی",
@@ -13894,7 +13894,7 @@
    "Aik confederation",
    "Khudmukhtar riyasaton ki aik union"
   ],
-  "explanation_ur": "1973 کا آئین حکومت کی وفاقی اور پارلیمانی شکل فراہم کرتا ہے، جس میں اختیارات وفاق اور صوبوں کے درمیان تقسیم ہیں۔",
+  "explanation_ur": "1973 کا آئین وفاقی اور پارلیمانی طرز حکومت قائم کرتا ہے، جس میں اختیارات وفاق اور صوبوں کے درمیان تقسیم ہیں۔",
   "explanation_roman": "1973 ka Aain hukumat ki wafaqi aur parlimani shakal faraham karta hai, jis mein ikhtiyarat Wafaq aur Subon ke darmiyan taqseem hain.",
   "post": [
    "zamungkor",
@@ -14118,7 +14118,7 @@
    "Council of Islamic Ideology tamam qawaneen banaye gi",
    "Tamam maujuda qawaneen foran mansukh ho jate hain"
   ],
-  "explanation_ur": "1973 کے آئین کا آرٹیکل 227 یہ فراہم کرتا ہے کہ قرآن اور سنت میں بیان کردہ اسلام کے احکام کے منافی کوئی قانون نافذ نہیں کیا جائے گا۔",
+  "explanation_ur": "1973 کے آئین کے آرٹیکل 227 میں کہا گیا ہے کہ قرآن اور سنت میں بیان کردہ اسلام کے احکام کے منافی کوئی قانون نافذ نہیں کیا جائے گا۔",
   "explanation_roman": "1973 ke Aain ka Article 227 yeh faraham karta hai ke Quran aur Sunnah mein bayan kardah Islam ke ahkam ke munafi koi qanoon nafiz nahi kiya jaye ga.",
   "post": [
    "zamungkor",
@@ -14219,7 +14219,7 @@
   "question_ur": "تیرہویں ترمیم نے 1973 کے آئین کے تحت صدر کا کون سا اختیار ختم کیا؟",
   "question_roman": "Tehrwin Tarmeem ne 1973 ke Aain ke tehat Sadar ka kaun sa ikhtiyar khatam kiya?",
   "options_ur": [
-   "وزیراعظم کی تقرری کا اختیار",
+   "وزیر اعظم کی تقرری کا اختیار",
    "معافی دینے کا اختیار",
    "پارلیمنٹ طلب کرنے کا اختیار",
    "قومی اسمبلی تحلیل کرنے کا اختیار"
@@ -14720,7 +14720,7 @@
  },
  {
   "id": "PAK-263",
-  "question_ur": "محمد علی جناح کس سال میں اپنی وفات تک گورنر جنرل کے عہدے پر رہے؟",
+  "question_ur": "محمد علی جناح کس سال اپنی وفات تک گورنر جنرل کے عہدے پر رہے؟",
   "question_roman": "Muhammad Ali Jinnah kis saal mein apni wafat tak Governor-General ke office par rahe?",
   "options_ur": [
    "1948",
@@ -14949,7 +14949,7 @@
   "options_ur": [
    "پاکستان کے صدر",
    "پاکستان کے گورنر جنرل",
-   "پاکستان کے وزیراعظم",
+   "پاکستان کے وزیر اعظم",
    "پاکستان کے چیف جسٹس"
   ],
   "options_roman": [
@@ -16736,7 +16736,7 @@
  },
  {
   "id": "PAK-299",
-  "question_ur": "پاکستان میں یوم دفاع 6 ستمبر کو اس جنگ کی یاد میں منایا جاتا ہے جو کس سال لڑی گئی تھی؟",
+  "question_ur": "پاکستان میں یوم دفاع 6 ستمبر کو کس سال کی جنگ کی یاد میں منایا جاتا ہے؟",
   "question_roman": "Pakistan mein Youm-e-Difa 6 September ko us jang ki yaad mein manaya jata hai jo kis saal lari gayi thi?",
   "options_ur": [
    "1948",
@@ -18024,7 +18024,7 @@
  },
  {
   "id": "PAK-322",
-  "question_ur": "پنجاب کا نام پانچ دریاؤں کی سرزمین کے معنی میں ہے۔ کون سا گروہ پانچوں دریاؤں کے نام درست بتاتا ہے؟",
+  "question_ur": "پنجاب کے معنی پانچ دریاؤں کی سرزمین ہیں۔ کون سا گروہ پانچوں دریاؤں کے نام درست بتاتا ہے؟",
   "question_roman": "Punjab ka naam paanch daryaon ki sarzameen ke maani mein hai. Kaun sa group paanchon daryaon ke naam durust batata hai?",
   "options_ur": [
    "سندھ، جہلم، چناب، راوی اور ستلج",
@@ -18262,7 +18262,7 @@
    "Sutlej",
    "Indus"
   ],
-  "explanation_ur": "دریائے جہلم تریموں کے مقام پر دریائے چناب میں ملتا ہے جو پنجاب کے ضلع جھنگ کے قریب ہے۔",
+  "explanation_ur": "دریائے جہلم پنجاب کے ضلع جھنگ کے قریب تریموں کے مقام پر دریائے چناب میں ملتا ہے۔",
   "explanation_roman": "Darya-e-Jhelum Trimmu ke maqam par Darya-e-Chenab mein milta hai jo Punjab ke zila Jhang ke qareeb hai.",
   "post": [
    "zamungkor",
@@ -18654,7 +18654,7 @@
    "Ravi",
    "Indus"
   ],
-  "explanation_ur": "کشمور کے قریب گڈو بیراج اور حیدر آباد کے قریب کوٹری بیراج دونوں دریائے سندھ پر بنائے گئے ہیں۔",
+  "explanation_ur": "کشمور کے قریب گڈو بیراج اور حیدرآباد کے قریب کوٹری بیراج دونوں دریائے سندھ پر بنائے گئے ہیں۔",
   "explanation_roman": "Kashmore ke qareeb Guddu Barrage aur Hyderabad ke qareeb Kotri Barrage dono Darya-e-Sindh par banaye gaye hain.",
   "post": [
    "zamungkor",
@@ -20432,7 +20432,7 @@
  },
  {
   "id": "PAK-365",
-  "question_ur": "کون سی غذائی فصل پاکستان کے لوگوں کی اہم ترین غذا ہے؟",
+  "question_ur": "کون سی غذائی فصل پاکستان کے لوگوں کی بنیادی غذا ہے؟",
   "question_roman": "Kaun si ghizai fasal Pakistan ke logon ki aham tareen ghiza hai?",
   "options_ur": [
    "چاول",
@@ -20446,7 +20446,7 @@
    "Gandum",
    "Bajra"
   ],
-  "explanation_ur": "گندم پاکستان کے لوگوں کی اہم ترین غذا ہے اور زیادہ تر گھروں میں روٹی کی صورت میں کھائی جاتی ہے۔",
+  "explanation_ur": "گندم پاکستان کے لوگوں کی بنیادی غذا ہے اور زیادہ تر گھروں میں روٹی کی صورت میں کھائی جاتی ہے۔",
   "explanation_roman": "Gandum Pakistan ke logon ki aham tareen ghiza hai aur ziyada tar gharon mein roti ki surat mein khayi jati hai.",
   "post": [
    "zamungkor",
@@ -20774,7 +20774,7 @@
    "خلیج بنگال",
    "بحیرہ عرب",
    "بحیرہ احمر",
-   "بحیرہ کیسپین"
+   "بحیرہ قزوین"
   ],
   "options_roman": [
    "Khaleej Bengal",
@@ -21048,7 +21048,7 @@
  },
  {
   "id": "PAK-376",
-  "question_ur": "سیالکوٹ نے کن دو اشیا کی تیاری کی وجہ سے دنیا بھر میں شہرت حاصل کی ہے؟",
+  "question_ur": "سیالکوٹ نے کن دو چیزوں کی تیاری کی وجہ سے دنیا بھر میں شہرت حاصل کی ہے؟",
   "question_roman": "Sialkot ne kin do ashya ki tayyari ki wajah se duniya bhar mein shohrat hasil ki hai?",
   "options_ur": [
    "چینی اور سیمنٹ",
@@ -21276,7 +21276,7 @@
   "question_roman": "Pakistan apne daramdi bill ka sab se bara hissa kis cheez par kharch karta hai?",
   "options_ur": [
    "مشینری",
-   "غذائی اشیا",
+   "خوراک",
    "ادویات",
    "پیٹرولیم مصنوعات"
   ],
@@ -21328,7 +21328,7 @@
  },
  {
   "id": "PAK-381",
-  "question_ur": "پاکستان سے برآمد ہونے والی اشیا کا سب سے بڑا خریدار کون سا ملک ہے؟",
+  "question_ur": "پاکستان کی برآمدات کا سب سے بڑا خریدار کون سا ملک ہے؟",
   "question_roman": "Pakistan se baramad hone wali ashya ka sab se bara kharidar kaun sa mulk hai?",
   "options_ur": [
    "چین",
@@ -21342,7 +21342,7 @@
    "United States",
    "Saudi Arabia"
   ],
-  "explanation_ur": "امریکہ پاکستان کی برآمدات کی سب سے بڑی منڈی ہے اور کسی بھی دوسرے ملک کے مقابلے میں پاکستان کی زیادہ اشیا خریدتا ہے۔",
+  "explanation_ur": "امریکہ پاکستان کی برآمدات کی سب سے بڑی منڈی ہے اور کسی بھی دوسرے ملک کے مقابلے میں پاکستان کی زیادہ برآمدات خریدتا ہے۔",
   "explanation_roman": "United States Pakistan ki baramadat ki sab se bari mandi hai aur kisi bhi dusre mulk ke muqable mein Pakistan ki zyada ashya kharidta hai.",
   "post": [
    "zamungkor",
@@ -21510,7 +21510,7 @@
    "Khyber Pakhtunkhwa",
    "Balochistan"
   ],
-  "explanation_ur": "گوادر بندرگاہ بلوچستان میں واقع ہے، بحیرہ عرب کے ساحل پر پاکستان کے جنوب مغرب میں۔",
+  "explanation_ur": "گوادر بندرگاہ پاکستان کے جنوب مغرب میں بحیرہ عرب کے ساحل پر بلوچستان میں واقع ہے۔",
   "explanation_roman": "Gwadar Port Balochistan mein waqe hai, Bahira Arab ke sahil par Pakistan ke janub maghrib mein.",
   "post": [
    "zamungkor",
@@ -21664,7 +21664,7 @@
  },
  {
   "id": "PAK-387",
-  "question_ur": "ایم 2 موٹروے پر سفر کرنے والے مسافر کن دو شہروں کے درمیان سفر کرتے ہیں؟",
+  "question_ur": "ایم 2 موٹروے پر مسافر کن دو شہروں کے درمیان سفر کرتے ہیں؟",
   "question_roman": "M-2 Motorway par safar karne wale musafir kin do shehron ke darmiyan safar karte hain?",
   "options_ur": [
    "پشاور اور اسلام آباد",
@@ -22056,7 +22056,7 @@
  },
  {
   "id": "PAK-394",
-  "question_ur": "گوادر بندرگاہ جو سی پیک کا جنوبی سرا ہے کس صوبے میں واقع ہے؟",
+  "question_ur": "گوادر بندرگاہ، جو سی پیک کا جنوبی سرا ہے، کس صوبے میں واقع ہے؟",
   "question_roman": "Gwadar Port, jo CPEC ka janubi sira hai, kis sube mein waqe hai?",
   "options_ur": [
    "سندھ",
@@ -22518,7 +22518,7 @@
    "1950",
    "1948"
   ],
-  "explanation_ur": "پاکستان نے اپنے پہلے سکے 1948 میں جاری کیے، آزادی کے پہلے سال میں۔",
+  "explanation_ur": "پاکستان نے اپنے پہلے سکے 1948 میں جاری کیے، جو آزادی کے بعد کا پہلا سال تھا۔",
   "explanation_roman": "Pakistan ne apne pehle sikke 1948 mein jari kiye, azadi ke pehle saal mein.",
   "post": [
    "zamungkor",
@@ -22728,7 +22728,7 @@
  },
  {
   "id": "PAK-406",
-  "question_ur": "وقت کے ساتھ اشیا اور خدمات کی قیمتوں میں عام اضافے کو کیا کہا جاتا ہے؟",
+  "question_ur": "وقت کے ساتھ سامان اور خدمات کی قیمتوں میں عام اضافے کو کیا کہا جاتا ہے؟",
   "question_roman": "Waqt ke sath ashya aur khidmat ki qeematon mein aam izafe ko kya kaha jata hai?",
   "options_ur": [
    "افراط زر",
@@ -23022,7 +23022,7 @@
    "2.90%",
    "3.20%"
   ],
-  "explanation_ur": "2023 کی مردم شماری میں پاکستان کی آبادی کی سالانہ شرح نمو 2.55% بتائی گئی۔",
+  "explanation_ur": "2023 کی مردم شماری میں پاکستان کی آبادی کی سالانہ شرح نمو 2.55 فیصد بتائی گئی۔",
   "explanation_roman": "2023 ki mardum shumari mein Pakistan ki aabadi ki salana sharah namu 2.55% batayi gayi.",
   "post": [
    "zamungkor",
@@ -23078,7 +23078,7 @@
    "38.8%",
    "44.1%"
   ],
-  "explanation_ur": "2023 کی مردم شماری کے مطابق آبادی کا 38.8% شہری علاقوں میں رہتا تھا، جبکہ باقی آبادی دیہی علاقوں میں رہتی تھی۔",
+  "explanation_ur": "2023 کی مردم شماری کے مطابق آبادی کا 38.8 فیصد شہری علاقوں میں رہتا تھا، جبکہ باقی آبادی دیہی علاقوں میں رہتی تھی۔",
   "explanation_roman": "2023 ki mardum shumari ke mutabiq aabadi ka 38.8% shehri ilaqon mein rehta tha, jabke baqi aabadi dehi ilaqon mein rehti thi.",
   "post": [
    "zamungkor",
@@ -23176,7 +23176,7 @@
  },
  {
   "id": "PAK-414",
-  "question_ur": "اردو کا رسم الخط کس رسم الخط کے خاندان سے تعلق رکھتا ہے؟",
+  "question_ur": "اردو کا رسم الخط کس خاندان سے تعلق رکھتا ہے؟",
   "question_roman": "Urdu ka rasm-ul-khat kis rasm-ul-khat ke khandan se talluq rakhta hai?",
   "options_ur": [
    "فارسی عربی",
@@ -23190,7 +23190,7 @@
    "Latin",
    "Cyrillic"
   ],
-  "explanation_ur": "اردو ایک ایسے رسم الخط میں لکھی جاتی ہے جس کا تعلق فارسی عربی رسم الخط کے خاندان سے ہے۔",
+  "explanation_ur": "اردو فارسی عربی خاندان کے رسم الخط میں لکھی جاتی ہے۔",
   "explanation_roman": "Urdu aik aise rasm-ul-khat mein likhi jati hai jis ka talluq Perso-Arabic rasm-ul-khat ke khandan se hai.",
   "post": [
    "zamungkor",
@@ -23918,7 +23918,7 @@
    "Lahore",
    "Quetta"
   ],
-  "explanation_ur": "بسنت پتنگ بازی کا موسم بہار کا تہوار ہے، جو روایتی طور پر لاہور سے منسلک ہے، جو پنجاب کا دارالحکومت ہے۔",
+  "explanation_ur": "بسنت پتنگ بازی کا موسم بہار کا تہوار ہے، جو روایتی طور پر پنجاب کے دارالحکومت لاہور سے منسلک ہے۔",
   "explanation_roman": "Basant patang bazi ka mausam-e-bahar ka tehwar hai, jo riwayati tor par Lahore se munsalik hai, jo Punjab ka dar-ul-hukumat hai.",
   "post": [
    "zamungkor",
@@ -24758,7 +24758,7 @@
    "University of Peshawar",
    "University of Sindh"
   ],
-  "explanation_ur": "جامعہ پنجاب لاہور میں 1882 میں قائم ہوئی اور پاکستان کی قدیم ترین جامعہ ہے۔",
+  "explanation_ur": "جامعہ پنجاب لاہور میں 1882 میں قائم ہوئی اور پاکستان کی سب سے قدیم جامعہ ہے۔",
   "explanation_roman": "University of the Punjab Lahore mein 1882 mein qaim hui aur Pakistan ki qadeem tareen university hai.",
   "post": [
    "zamungkor",
@@ -24814,7 +24814,7 @@
    "58.91%",
    "43.92%"
   ],
-  "explanation_ur": "2023 کی مردم شماری میں 10 سال اور اس سے زیادہ عمر کے لوگوں میں خواندگی کی شرح 60.65% ریکارڈ کی گئی۔",
+  "explanation_ur": "2023 کی مردم شماری میں 10 سال اور اس سے زیادہ عمر کے لوگوں میں خواندگی کی شرح 60.65 فیصد ریکارڈ کی گئی۔",
   "explanation_roman": "2023 ki Mardum Shumari mein 10 saal aur us se zyada umar ke logon mein khwandagi ki sharah 60.65% record ki gayi.",
   "post": [
    "zamungkor",
@@ -25038,7 +25038,7 @@
    "Aik Masihi aksariyati mulk",
    "Aik Hindu aksariyati mulk"
   ],
-  "explanation_ur": "بے نظیر بھٹو 1988 میں وزیراعظم بنیں اور مسلم اکثریتی ملک میں جمہوری حکومت کی سربراہ منتخب ہونے والی پہلی خاتون تھیں۔",
+  "explanation_ur": "بے نظیر بھٹو 1988 میں وزیر اعظم بنیں اور مسلم اکثریتی ملک میں جمہوری حکومت کی سربراہ منتخب ہونے والی پہلی خاتون تھیں۔",
   "explanation_roman": "Benazir Bhutto 1988 mein Wazir-e-Azam banein aur Muslim aksariyati mulk mein jamhoori hukumat ki sarbarah muntakhab hone wali pehli khatoon thin.",
   "post": [
    "zamungkor",
@@ -25304,12 +25304,12 @@
  },
  {
   "id": "PAK-452",
-  "question_ur": "پاکستان اسٹڈیز کی نصابی کتابوں کے مطابق، کون سا اصول پاکستان کو دوسری قوموں کے ساتھ امن سے رہنے کی رہنمائی کرتا ہے؟",
+  "question_ur": "مطالعہ پاکستان کی نصابی کتابوں کے مطابق، کون سا اصول پاکستان کو دوسری قوموں کے ساتھ امن سے رہنے کی رہنمائی کرتا ہے؟",
   "question_roman": "Pakistan Studies ki kitabon ke mutabiq, kaun sa usool Pakistan ko dusri qaumon ke sath aman se rehne ki rehnumai karta hai?",
   "options_ur": [
    "عالمی معاملات سے الگ رہنا",
    "دوسری ریاستوں میں مداخلت",
-   "پر امن بقا",
+   "پرامن بقائے باہمی",
    "ہمسایہ ریاستوں پر حکمرانی"
   ],
   "options_roman": [
@@ -25318,7 +25318,7 @@
    "Pur aman baqa",
    "Hamsaya riyasaton par hukumat karna"
   ],
-  "explanation_ur": "پر امن بقا کا مطلب دوسری قوموں کے ساتھ امن سے رہنا ہے، اور نصابی کتابوں میں اسے پاکستان کی خارجہ پالیسی کا رہنما اصول بتایا گیا ہے۔",
+  "explanation_ur": "پرامن بقائے باہمی کا مطلب دوسری قوموں کے ساتھ امن سے رہنا ہے، اور نصابی کتابوں میں اسے پاکستان کی خارجہ پالیسی کا رہنما اصول بتایا گیا ہے۔",
   "explanation_roman": "Pur aman baqa ka matlab dusri qaumon ke sath aman se rehna hai, aur kitabon mein ise Pakistan ki kharja policy ka rehnuma usool bataya gaya hai.",
   "post": [
    "zamungkor",
@@ -27488,7 +27488,7 @@
  },
  {
   "id": "PAK-491",
-  "question_ur": "ہر سال پاکستانی مسلمان حج کے لیے مکہ جاتے ہیں، یہ سفر پاکستان کو کس ملک سے قریب سے جوڑتا ہے؟",
+  "question_ur": "ہر سال پاکستانی زائرین حج کے لیے مکہ جاتے ہیں، یہ سفر پاکستان کو کس ملک سے قریب سے جوڑتا ہے؟",
   "question_roman": "Har saal Pakistani Musalman Hajj ke liye Makkah jate hain, yeh safar Pakistan ko kis mulk se qareeb se jorta hai?",
   "options_ur": [
    "ترکی",

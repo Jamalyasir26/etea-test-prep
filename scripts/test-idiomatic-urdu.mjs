@@ -5,9 +5,10 @@
 // the Islamiyat pilot bank (500 items, U1), the Tajweed bank
 // (500 items, U2 subject 1), the Arabic bank (500 items, U2
 // subject 2), the Urdu bank (500 items, U2 subject 3), the
-// English bank (500 items, U2 subject 4) and the Maths bank
-// (500 items, U2 subject 5).
-// The other 8 banks keep their pre-U1 _ur
+// English bank (500 items, U2 subject 4), the Maths bank
+// (500 items, U2 subject 5) and the Pak Studies bank
+// (500 items, U2 subject 6).
+// The other 7 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -803,6 +804,167 @@ for (const q of mat) {
   }
 }
 check("U2 maths: % never added in any _ur field; 79 total kept (43 prose % → فیصد)", matPctBad.length === 0 && matPctTotal === 79, `added in ${matPctBad.slice(0, 3).join(", ")}, total ${matPctTotal}`);
+
+// ---------- §3G Pak Studies bank (U2 subject 6) ----------
+// U2 rewrote the Pak Studies _ur fields (118 of 3000 field-values
+// changed; 91/500 items incl. 6 coordinator-normalization-only items).
+// Dates, census figures, constitutional articles/amendments, and
+// place/person names are the TESTED MATERIAL: digit rule is STRICT on
+// questions/options (all 500) and explanations (PAK-046..500); the
+// PAK-001..045 explanations keep the stage5e sub/super invariant
+// (mixed-explanation echo: EN repeats each date twice, _ur once).
+// Never "correct" a date, figure, or name. Dates stay day + Urdu
+// month + year with digits preserved. Comma figures keep the EN
+// format EVERYWHERE including prose (8,611 / 80,000) — the
+// verbatim-option rule requires 40,000 in options and Q/E figures
+// must stay consistent with the options as tested material; this
+// overrides guide §6.2 (flagged for owner). Latin rule is an
+// ALLOWLIST: single letters + K2 + CENTO/NATO/SEATO/RCD — the
+// PAK-473 bare-acronym options stay Latin, byte-identical. Prose %
+// → فیصد (PAK-411/412/443 explanations); % survives only in the 16
+// bare-number options. Izafat is a PER-PHRASE convention in this
+// bank, not a global rule: قراردادِ لاہور keeps its zer (guide
+// §1.3), while قرارداد مقاصد / تحریک خلافت / اقوام متحدہ take the
+// dominant zer-less forms (21×/13×/19×) — the tension is flagged
+// for the owner. Splits KEPT (same EN, different Urdu grammar or
+// register — not spelling variants): جداگانہ انتخاب (29×
+// substring = 15 singular-only + 14 plural) vs جداگانہ انتخابات;
+// مشترکہ انتخاب (7× substring = 5 + 2 plural); قرآن و سنت (1×,
+// fixed phrase) vs قرآن اور سنت (9×); ووٹنگ (1×, activity sense)
+// vs رائے دہی (4×, franchise sense); مقننہ (12×, generic) vs
+// قانون ساز اسمبلی (4×, specific assemblies); فیڈریشن (4×, EN
+// noun "federation") vs وفاق/وفاقی (different words); معاہدہ سندھ
+// طاس (2×, sole form — the standard-order question is an owner
+// call); مظفر آباد spaced (3×, sole form; asymmetry with joined
+// حیدرآباد noted, no action); کس سال میں (8×) alongside کس سال
+// (both grammatical). Sole forms kept: مجلس شوریٰ, معاہدۂ لکھنؤ,
+// قرارداد پاکستان, باغ جناح, کوہ نمک, مفکر/مصور پاکستان, تحریک
+// علی گڑھ, خلافت عثمانیہ. بنیادی جمہوریت پسند kept as-is (5×,
+// established; flagged). The محمدن spelling survives ONLY inside
+// the transliterated book title in PAK-108O3. No echo-gloss cases
+// were found in this bank; no honorifics added.
+const pak = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/pakstudies.json"), "utf8"));
+check("U2 pakstudies: 500 items", pak.length === 500, `got ${pak.length}`);
+const pakIdsOk = pak.every((q, i) => q.id === `PAK-${String(i + 1).padStart(3, "0")}`);
+check("U2 pakstudies: IDs PAK-001..PAK-500 in order", pakIdsOk);
+const pakPairs = [];
+for (const q of pak) {
+  pakPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => pakPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  pakPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const PAK_BANNED = [...CONTENT_BANNED, "چنیں", "مونث", "قائداعظم", "وزیراعظم", "وژن", "خودمختاری", "کیسپین"];
+const pakBanned = bannedHits(pakPairs, PAK_BANNED);
+check("U2 pakstudies: no banned glossary/variant/transliteration terms in any _ur field (token-aware)", pakBanned.length === 0, pakBanned.slice(0, 5).join(", "));
+const PAK_PHRASES = ["درج ذیل", "قرارداد لاہور", "قائدِ اعظم", "وزیرِ اعظم", "قراردادِ مقاصد", "تحریکِ خلافت", "اقوامِ متحدہ", "پر امن بقا", "آئین ساز باڈی", "آئین ساز اسمبلی", "ایک ایوانی", "پاکستان اسٹڈیز", "پاکستان سٹڈیز", "پاک اسٹڈیز", "بحیرہ کیسپین", "حیدر آباد", "قدیم ترین", "ہندوستان چھوڑو"];
+const pakPhrases = pakPairs.filter(([, v]) => PAK_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 pakstudies: no banned phrases in any _ur field (variant spellings, zer-forms, dropped terms)", pakPhrases.length === 0, pakPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const pakEmdash = pakPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 pakstudies: no em-dash in any _ur field", pakEmdash.length === 0, pakEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const pakMarker = pakPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 pakstudies: no '[Auto-Translated]' literal in any _ur field", pakMarker.length === 0, pakMarker.slice(0, 3).map(([l]) => l).join(", "));
+const pakMojibake = pakPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 pakstudies: no U+FFFD in any _ur field", pakMojibake.length === 0, pakMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const pakIndic = pakPairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 pakstudies: no Urdu-Indic digits in any _ur field", pakIndic.length === 0, pakIndic.slice(0, 3).map(([l]) => l).join(", "));
+const pakEllipsis = pakPairs.filter(([, v]) => (v ?? "").includes("...") || (v ?? "").includes("…"));
+check("U2 pakstudies: no ellipsis runs in any _ur field", pakEllipsis.length === 0, pakEllipsis.slice(0, 3).map(([l]) => l).join(", "));
+let pakDigitBad = [];
+for (const q of pak) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) pakDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) pakDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (Number(q.id.slice(4)) > 45 && !sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) pakDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 pakstudies: digit preservation STRICT on questions/options (all 500) + explanations (PAK-046..500)", pakDigitBad.length === 0, pakDigitBad.slice(0, 5).join(", "));
+function multisetSub(a, b) {
+  const mA = {}; a.forEach((x) => { mA[x] = (mA[x] || 0) + 1; });
+  const mB = {}; b.forEach((x) => { mB[x] = (mB[x] || 0) + 1; });
+  return Object.entries(mA).every(([k, v]) => v <= (mB[k] || 0));
+}
+let pakSubBad = [];
+for (const q of pak.slice(0, 45)) {
+  const urD = digitRuns(q.explanation_ur), enD = digitRuns(q.explanationEn ?? ""), fullD = digitRuns(q.explanation ?? "");
+  if (!multisetSub(enD, urD) || !multisetSub(urD, fullD)) pakSubBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 pakstudies: PAK-001..045 explanations keep the stage5e sub/super digit invariant (explanationEn ⊆ _ur ⊆ full mixed explanation)", pakSubBad.length === 0, pakSubBad.slice(0, 5).join(", "));
+// Latin allowlist: single letters (K in K2) + CENTO/NATO/SEATO/RCD, nothing else.
+const PAK_LATIN_ALLOWED = new Set(["cento", "nato", "seato", "rcd"]);
+let pakLatinBad = [];
+for (const [loc, val] of pakPairs) {
+  for (const w of ((val ?? "").match(/[A-Za-z]+/g) || [])) {
+    const lw = w.toLowerCase();
+    if (lw.length > 1 && !PAK_LATIN_ALLOWED.has(lw)) pakLatinBad.push(`${loc}:${w}`);
+  }
+}
+check("U2 pakstudies: Latin allowlist — every multi-letter Latin word in _ur is CENTO/NATO/SEATO/RCD", pakLatinBad.length === 0, pakLatinBad.slice(0, 5).join(" | "));
+let pakPunctBad = [], pakCommaBad = [], pakSpaceBad = [];
+for (const q of pak) {
+  const fields = [["question_ur", q.question_ur], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o]), ["explanation_ur", q.explanation_ur]];
+  for (const [loc, val] of fields) {
+    const p = (val ?? "").replace(/\d\.\d/g, " ");
+    if (/[.?;]/.test(p)) pakPunctBad.push(`${q.id}:${loc}`);
+    const stripped = (val ?? "").replace(/\d,\d/g, " ");
+    if (stripped.includes(",")) pakCommaBad.push(`${q.id}:${loc}`);
+    if (/ [،؟؛۔]/.test(val ?? "")) pakSpaceBad.push(`${q.id}:${loc}`);
+  }
+}
+check("U2 pakstudies: no Latin . ? ; punctuation outside decimals (digit.digit)", pakPunctBad.length === 0, pakPunctBad.slice(0, 5).join(", "));
+check("U2 pakstudies: Latin comma only between digits (comma figures)", pakCommaBad.length === 0, pakCommaBad.slice(0, 5).join(", "));
+check("U2 pakstudies: no space before Urdu punctuation", pakSpaceBad.length === 0, pakSpaceBad.slice(0, 5).join(", "));
+const pakHonor = pakPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 pakstudies: no Latin honorific abbreviations in any _ur field", pakHonor.length === 0, pakHonor.slice(0, 3).map(([l]) => l).join(", "));
+const pakArCodepoints = pakPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 pakstudies: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", pakArCodepoints.length === 0, pakArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+let pakEnScriptRuns = 0;
+for (const q of pak) {
+  pakEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { pakEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 pakstudies: zero Arabic-script runs in English fields (measured baseline)", pakEnScriptRuns === 0, `got ${pakEnScriptRuns}`);
+const pakUrText = pakPairs.map(([, v]) => v ?? "").join("\n");
+const pakCount = (t) => pakUrText.split(t).length - 1;
+check("U2 pakstudies: glossary terms present (آئین, ترمیم, قرارداد, مردم شماری, تحریک, دستور ساز اسمبلی, جداگانہ انتخاب, مشترکہ انتخاب, بنیادی جمہوریت پسند, دریائے سندھ)",
+  ["آئین", "ترمیم", "قرارداد", "مردم شماری", "تحریک", "دستور ساز اسمبلی", "جداگانہ انتخاب", "مشترکہ انتخاب", "بنیادی جمہوریت پسند", "دریائے سندھ"].every((t) => pakUrText.includes(t)));
+check("U2 pakstudies: glossary terms present (اقوام متحدہ, عالمی بینک, تنظیم تعاون اسلامی, گورنر جنرل, مارشل لا, ڈومینین, خریف, ربیع, سطح مرتفع, مینگروو, مندرجہ ذیل, مطالعہ پاکستان, پرامن بقائے باہمی, آئین ساز مجلس, یک ایوانی, رائے دہی, بحیرہ قزوین, حیدرآباد, بنیادی غذا, خود مختاری, فیصد)",
+  ["اقوام متحدہ", "عالمی بینک", "تنظیم تعاون اسلامی", "گورنر جنرل", "مارشل لا", "ڈومینین", "خریف", "ربیع", "سطح مرتفع", "مینگروو", "مندرجہ ذیل", "مطالعہ پاکستان", "پرامن بقائے باہمی", "آئین ساز مجلس", "یک ایوانی", "رائے دہی", "بحیرہ قزوین", "حیدرآباد", "بنیادی غذا", "خود مختاری", "فیصد"].every((t) => pakUrText.includes(t)));
+check("U2 pakstudies: exact counts — قائد اعظم 16×, وزیر اعظم 72×, قراردادِ لاہور 8×, ویژن 9×, مطالعہ پاکستان 4×, پرامن بقائے باہمی 2×, مندرجہ ذیل 1× (substring counts)",
+  pakCount("قائد اعظم") === 16 && pakCount("وزیر اعظم") === 72 && pakCount("قراردادِ لاہور") === 8 && pakCount("ویژن") === 9 && pakCount("مطالعہ پاکستان") === 4 && pakCount("پرامن بقائے باہمی") === 2 && pakCount("مندرجہ ذیل") === 1,
+  `قائد اعظم ${pakCount("قائد اعظم")}, وزیر اعظم ${pakCount("وزیر اعظم")}, قراردادِ لاہور ${pakCount("قراردادِ لاہور")}, ویژن ${pakCount("ویژن")}, مطالعہ پاکستان ${pakCount("مطالعہ پاکستان")}, پرامن بقائے باہمی ${pakCount("پرامن بقائے باہمی")}, مندرجہ ذیل ${pakCount("مندرجہ ذیل")}`);
+check("U2 pakstudies: exact counts — قرارداد مقاصد 21×, تحریک خلافت 13×, اقوام متحدہ 19×, دستور ساز اسمبلی 18×, آئین ساز مجلس 1×, یک ایوانی 2×, خود مختاری 7×, ہندوستان چھوڑ دو تحریک 6×",
+  pakCount("قرارداد مقاصد") === 21 && pakCount("تحریک خلافت") === 13 && pakCount("اقوام متحدہ") === 19 && pakCount("دستور ساز اسمبلی") === 18 && pakCount("آئین ساز مجلس") === 1 && pakCount("یک ایوانی") === 2 && pakCount("خود مختاری") === 7 && pakCount("ہندوستان چھوڑ دو تحریک") === 6,
+  `قرارداد مقاصد ${pakCount("قرارداد مقاصد")}, تحریک خلافت ${pakCount("تحریک خلافت")}, اقوام متحدہ ${pakCount("اقوام متحدہ")}, دستور ساز اسمبلی ${pakCount("دستور ساز اسمبلی")}, آئین ساز مجلس ${pakCount("آئین ساز مجلس")}, یک ایوانی ${pakCount("یک ایوانی")}, خود مختاری ${pakCount("خود مختاری")}, ہندوستان چھوڑ دو تحریک ${pakCount("ہندوستان چھوڑ دو تحریک")}`);
+check("U2 pakstudies: exact counts — بحیرہ قزوین 2×, حیدرآباد 4×, بنیادی جمہوریت پسند 5×, بنیادی غذا 2×, فیصد 5×, جداگانہ انتخاب 29× (substring) + جداگانہ انتخابات 14×, مشترکہ انتخاب 7× (substring) + مشترکہ انتخابات 2×",
+  pakCount("بحیرہ قزوین") === 2 && pakCount("حیدرآباد") === 4 && pakCount("بنیادی جمہوریت پسند") === 5 && pakCount("بنیادی غذا") === 2 && pakCount("فیصد") === 5 && pakCount("جداگانہ انتخاب") === 29 && pakCount("جداگانہ انتخابات") === 14 && pakCount("مشترکہ انتخاب") === 7 && pakCount("مشترکہ انتخابات") === 2,
+  `بحیرہ قزوین ${pakCount("بحیرہ قزوین")}, حیدرآباد ${pakCount("حیدرآباد")}, بنیادی جمہوریت پسند ${pakCount("بنیادی جمہوریت پسند")}, بنیادی غذا ${pakCount("بنیادی غذا")}, فیصد ${pakCount("فیصد")}, جداگانہ انتخاب ${pakCount("جداگانہ انتخاب")}, جداگانہ انتخابات ${pakCount("جداگانہ انتخابات")}, مشترکہ انتخاب ${pakCount("مشترکہ انتخاب")}, مشترکہ انتخابات ${pakCount("مشترکہ انتخابات")}`);
+check("U2 pakstudies: exact counts, kept splits — قرآن و سنت 1× vs قرآن اور سنت 9×, ووٹنگ 1× vs رائے دہی 4×, محمڈن 8× vs محمدن 1× (title only), معاہدہ سندھ طاس 2×, مقننہ 12× vs قانون ساز اسمبلی 4×, فیڈریشن 4×, مظفر آباد 3×",
+  pakCount("قرآن و سنت") === 1 && pakCount("قرآن اور سنت") === 9 && pakCount("ووٹنگ") === 1 && pakCount("رائے دہی") === 4 && pakCount("محمڈن") === 8 && pakCount("محمدن") === 1 && pakCount("معاہدہ سندھ طاس") === 2 && pakCount("مقننہ") === 12 && pakCount("قانون ساز اسمبلی") === 4 && pakCount("فیڈریشن") === 4 && pakCount("مظفر آباد") === 3,
+  `قرآن و سنت ${pakCount("قرآن و سنت")}, قرآن اور سنت ${pakCount("قرآن اور سنت")}, ووٹنگ ${pakCount("ووٹنگ")}, رائے دہی ${pakCount("رائے دہی")}, محمڈن ${pakCount("محمڈن")}, محمدن ${pakCount("محمدن")}, معاہدہ سندھ طاس ${pakCount("معاہدہ سندھ طاس")}, مقننہ ${pakCount("مقننہ")}, قانون ساز اسمبلی ${pakCount("قانون ساز اسمبلی")}, فیڈریشن ${pakCount("فیڈریشن")}, مظفر آباد ${pakCount("مظفر آباد")}`);
+check("U2 pakstudies: exact counts, sole forms — مجلس شوریٰ 1×, معاہدۂ لکھنؤ 2×, قرارداد پاکستان 2×, باغ جناح 1×, کوہ نمک 3×, مفکر پاکستان 2×, مصور پاکستان 2×, تحریک علی گڑھ 4×, خلافت عثمانیہ 2×",
+  pakCount("مجلس شوریٰ") === 1 && pakCount("معاہدۂ لکھنؤ") === 2 && pakCount("قرارداد پاکستان") === 2 && pakCount("باغ جناح") === 1 && pakCount("کوہ نمک") === 3 && pakCount("مفکر پاکستان") === 2 && pakCount("مصور پاکستان") === 2 && pakCount("تحریک علی گڑھ") === 4 && pakCount("خلافت عثمانیہ") === 2,
+  `مجلس شوریٰ ${pakCount("مجلس شوریٰ")}, معاہدۂ لکھنؤ ${pakCount("معاہدۂ لکھنؤ")}, قرارداد پاکستان ${pakCount("قرارداد پاکستان")}, باغ جناح ${pakCount("باغ جناح")}, کوہ نمک ${pakCount("کوہ نمک")}, مفکر پاکستان ${pakCount("مفکر پاکستان")}, مصور پاکستان ${pakCount("مصور پاکستان")}, تحریک علی گڑھ ${pakCount("تحریک علی گڑھ")}, خلافت عثمانیہ ${pakCount("خلافت عثمانیہ")}`);
+check("U2 pakstudies: exact counts — مارشل لا 12×, برصغیر 3×, دو قومی 6×, گورنر جنرل 18×, شملہ 22×, ڈھاکہ 23×, کوئٹہ 5×, راولپنڈی 10×, فیصل آباد 3×, اسلام آباد 21×, لاڑکانہ 3×",
+  pakCount("مارشل لا") === 12 && pakCount("برصغیر") === 3 && pakCount("دو قومی") === 6 && pakCount("گورنر جنرل") === 18 && pakCount("شملہ") === 22 && pakCount("ڈھاکہ") === 23 && pakCount("کوئٹہ") === 5 && pakCount("راولپنڈی") === 10 && pakCount("فیصل آباد") === 3 && pakCount("اسلام آباد") === 21 && pakCount("لاڑکانہ") === 3,
+  `مارشل لا ${pakCount("مارشل لا")}, برصغیر ${pakCount("برصغیر")}, دو قومی ${pakCount("دو قومی")}, گورنر جنرل ${pakCount("گورنر جنرل")}, شملہ ${pakCount("شملہ")}, ڈھاکہ ${pakCount("ڈھاکہ")}, کوئٹہ ${pakCount("کوئٹہ")}, راولپنڈی ${pakCount("راولپنڈی")}, فیصل آباد ${pakCount("فیصل آباد")}, اسلام آباد ${pakCount("اسلام آباد")}, لاڑکانہ ${pakCount("لاڑکانہ")}`);
+check("U2 pakstudies: exact counts — آئین 99×, ترمیم 16×, مردم شماری 16×, دریائے سندھ 23×, عالمی بینک 5×, تنظیم تعاون اسلامی 6×, ڈومینین 14×, خریف 3×, ربیع 5×, سطح مرتفع 5×, مینگروو 3×, دو قومی نظریہ 5×",
+  pakCount("آئین") === 99 && pakCount("ترمیم") === 16 && pakCount("مردم شماری") === 16 && pakCount("دریائے سندھ") === 23 && pakCount("عالمی بینک") === 5 && pakCount("تنظیم تعاون اسلامی") === 6 && pakCount("ڈومینین") === 14 && pakCount("خریف") === 3 && pakCount("ربیع") === 5 && pakCount("سطح مرتفع") === 5 && pakCount("مینگروو") === 3 && pakCount("دو قومی نظریہ") === 5,
+  `آئین ${pakCount("آئین")}, ترمیم ${pakCount("ترمیم")}, مردم شماری ${pakCount("مردم شماری")}, دریائے سندھ ${pakCount("دریائے سندھ")}, عالمی بینک ${pakCount("عالمی بینک")}, تنظیم تعاون اسلامی ${pakCount("تنظیم تعاون اسلامی")}, ڈومینین ${pakCount("ڈومینین")}, خریف ${pakCount("خریف")}, ربیع ${pakCount("ربیع")}, سطح مرتفع ${pakCount("سطح مرتفع")}, مینگروو ${pakCount("مینگروو")}, دو قومی نظریہ ${pakCount("دو قومی نظریہ")}`);
+// % rule: prose % → فیصد (3 explanations); the 16 kept are the
+// bare-number options of PAK-132/411/412/443 (4 each). No % in any
+// question or explanation. No % may ever be ADDED in _ur.
+let pakPctBad = [], pakPctTotal = 0, pakPctQE = 0;
+for (const q of pak) {
+  const qe = (q.question_ur.match(/%/g) || []).length + (q.explanation_ur.match(/%/g) || []).length;
+  pakPctQE += qe;
+  const fields = [[q.question, q.question_ur], [q.explanation, q.explanation_ur], ...q.options.map((o, i) => [o, q.options_ur[i]])];
+  for (const [en, ur] of fields) {
+    const ce = (en.match(/%/g) || []).length, cu = (ur.match(/%/g) || []).length;
+    pakPctTotal += cu;
+    if (cu > ce) pakPctBad.push(q.id);
+  }
+}
+check("U2 pakstudies: % never added in any _ur field; 16 total, all in bare-number options, 0 in questions/explanations", pakPctBad.length === 0 && pakPctTotal === 16 && pakPctQE === 0, `added in ${pakPctBad.slice(0, 3).join(", ")}, total ${pakPctTotal}, Q/E ${pakPctQE}`);
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");
