@@ -8,9 +8,10 @@
 // English bank (500 items, U2 subject 4), the Maths bank
 // (500 items, U2 subject 5), the Pak Studies bank
 // (500 items, U2 subject 6), the Pedagogy bank
-// (500 items, U2 subject 7) and the Science bank
-// (500 items, U2 subject 8).
-// The other 5 banks keep their pre-U1 _ur
+// (500 items, U2 subject 7), the Science bank
+// (500 items, U2 subject 8) and the Social Studies bank
+// (500 items, U2 subject 9).
+// The other 4 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -1325,6 +1326,187 @@ for (const q of sci) {
   }
 }
 check("U2 science: % never added in any _ur field; 0 total in the whole bank", sciPctBad.length === 0 && sciPctTotal === 0, `added in ${sciPctBad.slice(0, 3).join(", ")}, total ${sciPctTotal}`);
+
+// ---------- §3J Social Studies bank (U2 subject 9) ----------
+// U2 rewrote the Social Studies _ur fields (90 of 3000
+// field-values changed; 66/500 items). Dates, census figures,
+// constitutional articles/amendments, and place/person names
+// are the TESTED MATERIAL: digit rule is STRICT on every field
+// (all 500 questions, options, and explanations — baseline
+// measured 0 digit-multiset mismatches). explanationUrdu is
+// null in all 500. Latin rule is an ALLOWLIST: single letters
+// (K inside K2) + exactly OIC, ECO, ASEAN, SAARC, UNESCO,
+// UNICEF, FAO, WHO, GDP, IMF, PKR (guide §5.1 acronyms —
+// bare-acronym options, "What does X stand for?" Q+E, and the
+// PKR gloss mirroring EN). Latin comma survives ONLY in the
+// SS-010E figure (8,611 — the digit-group multiset requires
+// the comma). No % anywhere in _ur (فیصد 10×).
+// Normalizations: وزیرِ اعظم/وزیراعظم→وزیر اعظم,
+// قائدِ اعظم→قائد اعظم, قراردادِ پاکستان→قرارداد پاکستان,
+// قراردادِ مقاصد→قرارداد مقاصد, مجلسِ دستور ساز→دستور ساز
+// اسمبلی, محمدن→محمڈن (all Pak Studies alignment, parent
+// mandate), جب کہ→جبکہ, تقریبا→تقریباً, درج ذیل→مندرجہ ذیل,
+// ہجرت→نقل مکانی, ووٹرز→ووٹر/ووٹروں, ججز→ججوں/جج,
+// گرین وچ→گرینچ, درجے/درجہ→ڈگری (longitude degrees only;
+// درجہ survives only inside درجہ حرارت), قرآن مجید→قرآن پاک
+// (guide §2J), گلیشیر بالترو→بالترو گلیشیر; SS-024E em-dash
+// split; "best described/shows" calques restructured (SS-187/
+// 260/309/343). Splits KEPT (different EN, sense, cluster, or
+// grammar — not spelling variants): اشیا (economics "goods",
+// EN-correspondence pinned below — DELIBERATE divergence from
+// the Pak Studies suite-ban: every SS occurrence maps to EN
+// "goods") vs سامان (cargo/carried goods); خودمختاری
+// (sovereignty) vs خود مختاری (autonomy); ووٹنگ (polling) vs
+// رائے دہی (secret ballot); معاشرتی (community) vs سماجی
+// (social); دفعات (1973 Constitution articles/provisions) vs
+// آرٹیکل (UDHR articles); ناقابل تجدید (in-bank pair with
+// قابل تجدید — cross-bank tension with Science غیر قابل تجدید,
+// flagged); طول بلد/عرض بلد (zer-less sole forms); بحیرہ
+// (proper sea names) vs سمندر (generic); روپیہ (nominative) vs
+// روپے (oblique); داخلی تجارت vs اندرونی نقل مکانی vs
+// اندرونی حصے; محصول (historical tax) vs ٹیکس; کارکن vs
+// مزدور; کسان (person) vs کاشتکاری (activity); دستور (WHO
+// constitution) vs آئین; فیڈریشنوں (sporting) vs وفاق;
+// سینیٹرز/سپلائرز/ہائی کورٹس kept (native targets 0× / Pak
+// Studies keep precedent); گردش for both rotation and
+// revolution (qualifiers carry the distinction); کس سال میں
+// kept alongside کس سال (Pak Studies precedent). SS-329
+// options flipped to masculine agreement (وقت, EN "it" = the
+// time). Flagged facts mirrored, not resolved: SS-121,
+// SS-316/318/319/320/327/328/329, SS-424, SS-456.
+const ss = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/socialstudies.json"), "utf8"));
+check("U2 socialstudies: 500 items", ss.length === 500, `got ${ss.length}`);
+const ssIdsOk = ss.every((q, i) => q.id === `SS-${String(i + 1).padStart(3, "0")}`);
+check("U2 socialstudies: IDs SS-001..SS-500 in order", ssIdsOk);
+const ssPairs = [];
+for (const q of ss) {
+  ssPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => ssPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  ssPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+// اشیا is DELIBERATELY excluded from the banned list for this
+// bank (brief §2 Keeps): every token occurrence maps to EN
+// "goods" (economics cluster). The EN-correspondence check
+// below pins that instead of banning the term.
+const SS_BANNED = [...CONTENT_BANNED.filter((t) => t !== "اشیا"), "چنیں", "مونث", "مؤنث", "وزیراعظم", "تقریبا", "فورا", "محمدن", "ہجرت", "ووٹرز", "ججز", "درجے"];
+const ssBanned = bannedHits(ssPairs, SS_BANNED);
+check("U2 socialstudies: no banned glossary/variant/transliteration terms in any _ur field (token-aware; اشیا excepted, EN-pinned below)", ssBanned.length === 0, ssBanned.slice(0, 5).join(", "));
+const SS_PHRASES = ["درج ذیل", "جب کہ", "ایک دفعہ", "بہتر طور پر", "بہتر بیان", "قراردادِ مقاصد", "قراردادِ پاکستان", "مجلسِ دستور ساز", "قائدِ اعظم", "وزیرِ اعظم", "گرین وچ", "قرآن مجید"];
+const ssPhrases = ssPairs.filter(([, v]) => SS_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 socialstudies: no banned phrases in any _ur field (variant spellings, dropped terms, calques)", ssPhrases.length === 0, ssPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const ssEmdash = ssPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 socialstudies: no em-dash in any _ur field", ssEmdash.length === 0, ssEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const ssMarker = ssPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 socialstudies: no '[Auto-Translated]' literal in any _ur field", ssMarker.length === 0, ssMarker.slice(0, 3).map(([l]) => l).join(", "));
+const ssMojibake = ssPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 socialstudies: no U+FFFD in any _ur field", ssMojibake.length === 0, ssMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const ssIndic = ssPairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 socialstudies: no Urdu-Indic digits in any _ur field", ssIndic.length === 0, ssIndic.slice(0, 3).map(([l]) => l).join(", "));
+const ssEllipsis = ssPairs.filter(([, v]) => (v ?? "").includes("...") || (v ?? "").includes("…"));
+check("U2 socialstudies: no ellipsis runs in any _ur field", ssEllipsis.length === 0, ssEllipsis.slice(0, 3).map(([l]) => l).join(", "));
+let ssDigitBad = [];
+for (const q of ss) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) ssDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) ssDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) ssDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 socialstudies: digit preservation STRICT on every field (all 500 questions, options, explanations)", ssDigitBad.length === 0, ssDigitBad.slice(0, 5).join(", "));
+// Latin allowlist: single letters + OIC/ECO/ASEAN/SAARC/UNESCO/UNICEF/FAO/WHO/GDP/IMF/PKR (guide §5.1 acronyms), nothing else.
+const SS_LATIN_ALLOWED = new Set(["oic", "eco", "asean", "saarc", "unesco", "unicef", "fao", "who", "gdp", "imf", "pkr"]);
+let ssLatinBad = [];
+const ssLatinWords = {};
+for (const [loc, val] of ssPairs) {
+  for (const w of ((val ?? "").match(/[A-Za-z]+/g) || [])) {
+    const lw = w.toLowerCase();
+    if (lw.length > 1) {
+      ssLatinWords[w] = (ssLatinWords[w] || 0) + 1;
+      if (!SS_LATIN_ALLOWED.has(lw)) ssLatinBad.push(`${loc}:${w}`);
+    }
+  }
+}
+check("U2 socialstudies: Latin allowlist — every multi-letter Latin word in _ur is OIC, ECO, ASEAN, SAARC, UNESCO, UNICEF, FAO, WHO, GDP, IMF, or PKR", ssLatinBad.length === 0, ssLatinBad.slice(0, 5).join(" | "));
+check("U2 socialstudies: Latin inventory exact — OIC 11×, ECO 10×, ASEAN 10×, SAARC 9×, UNESCO 6×, UNICEF 5×, FAO 5×, WHO 4×, GDP 2×, IMF 2×, PKR 1× (65 multi-letter words total)",
+  ssLatinWords["OIC"] === 11 && ssLatinWords["ECO"] === 10 && ssLatinWords["ASEAN"] === 10 && ssLatinWords["SAARC"] === 9 && ssLatinWords["UNESCO"] === 6 && ssLatinWords["UNICEF"] === 5 && ssLatinWords["FAO"] === 5 && ssLatinWords["WHO"] === 4 && ssLatinWords["GDP"] === 2 && ssLatinWords["IMF"] === 2 && ssLatinWords["PKR"] === 1 && Object.keys(ssLatinWords).length === 11,
+  JSON.stringify(ssLatinWords));
+let ssPunctBad = [], ssCommaBad = [], ssSpaceBad = [];
+const ssCommaFields = [];
+for (const q of ss) {
+  const fields = [["question_ur", q.question_ur], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o]), ["explanation_ur", q.explanation_ur]];
+  for (const [loc, val] of fields) {
+    const p = (val ?? "").replace(/\d\.\d/g, " ");
+    if (/[.?;]/.test(p)) ssPunctBad.push(`${q.id}:${loc}`);
+    const c = (val ?? "").replace(/\d,\d/g, " ");
+    if (c.includes(",")) ssCommaBad.push(`${q.id}:${loc}`);
+    if ((val ?? "").includes(",")) ssCommaFields.push(`${q.id}:${loc}`);
+    if (/ [،؟؛۔]/.test(val ?? "")) ssSpaceBad.push(`${q.id}:${loc}`);
+  }
+}
+check("U2 socialstudies: no Latin . ? ; punctuation outside decimals (digit.digit)", ssPunctBad.length === 0, ssPunctBad.slice(0, 5).join(", "));
+check("U2 socialstudies: Latin comma ONLY between digits, in exactly the 1 SS-010E field (8,611 figure)", ssCommaBad.length === 0 && ssCommaFields.length === 1 && ssCommaFields[0] === "SS-010:explanation_ur", `${ssCommaBad.slice(0, 3).join(", ")} / ${ssCommaFields.join(", ")}`);
+check("U2 socialstudies: no space before Urdu punctuation", ssSpaceBad.length === 0, ssSpaceBad.slice(0, 5).join(", "));
+const ssHonor = ssPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 socialstudies: no Latin honorific abbreviations in any _ur field", ssHonor.length === 0, ssHonor.slice(0, 3).map(([l]) => l).join(", "));
+const ssArCodepoints = ssPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 socialstudies: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", ssArCodepoints.length === 0, ssArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+let ssEnScriptRuns = 0;
+for (const q of ss) {
+  ssEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { ssEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 socialstudies: zero Arabic-script runs in English fields (measured baseline)", ssEnScriptRuns === 0, `got ${ssEnScriptRuns}`);
+const ssUrText = ssPairs.map(([, v]) => v ?? "").join("\n");
+const ssCount = (t) => ssUrText.split(t).length - 1;
+check("U2 socialstudies: glossary terms present (وزیر اعظم, قائد اعظم, قرارداد پاکستان, قرارداد مقاصد, دستور ساز اسمبلی, محمڈن, جبکہ, تقریباً, مندرجہ ذیل, نقل مکانی, ووٹر, ووٹروں, ججوں, گرینچ, ڈگری, درجہ حرارت, قرآن پاک, بالترو گلیشیر, فیصد, فوراً)",
+  ["وزیر اعظم", "قائد اعظم", "قرارداد پاکستان", "قرارداد مقاصد", "دستور ساز اسمبلی", "محمڈن", "جبکہ", "تقریباً", "مندرجہ ذیل", "نقل مکانی", "ووٹر", "ووٹروں", "ججوں", "گرینچ", "ڈگری", "درجہ حرارت", "قرآن پاک", "بالترو گلیشیر", "فیصد", "فوراً"].every((t) => ssUrText.includes(t)));
+check("U2 socialstudies: glossary terms present (آئین, مردم شماری, اقوام متحدہ, خط استوا, قطب شمالی, قطب جنوبی, سطح مرتفع, صحرا, طول بلد, عرض بلد, تجارت, حکومت, کونسل, صدر دفتر, سینیٹ, پارلیمنٹ, سپریم کورٹ, ہائی کورٹ, چیف جسٹس, سیاسی جماعت, عالمی ادارہ صحت, دریائے سندھ, دو قومی نظریہ, قومی اسمبلی, عالمی بینک, میونسپل, یونیسکو, یونیسیف, پاکستان بیورو آف سٹیٹسٹکس, تنظیم تعاون اسلامی, نصف النہار, نصف کرہ)",
+  ["آئین", "مردم شماری", "اقوام متحدہ", "خط استوا", "قطب شمالی", "قطب جنوبی", "سطح مرتفع", "صحرا", "طول بلد", "عرض بلد", "تجارت", "حکومت", "کونسل", "صدر دفتر", "سینیٹ", "پارلیمنٹ", "سپریم کورٹ", "ہائی کورٹ", "چیف جسٹس", "سیاسی جماعت", "عالمی ادارہ صحت", "دریائے سندھ", "دو قومی نظریہ", "قومی اسمبلی", "عالمی بینک", "میونسپل", "یونیسکو", "یونیسیف", "پاکستان بیورو آف سٹیٹسٹکس", "تنظیم تعاون اسلامی", "نصف النہار", "نصف کرہ"].every((t) => ssUrText.includes(t)));
+check("U2 socialstudies: exact counts, normalizations — وزیر اعظم 10×, قائد اعظم 1×, قرارداد پاکستان 2×, قرارداد مقاصد 4×, دستور ساز اسمبلی 1×, محمڈن 1×, جبکہ 28×, تقریباً 30×, مندرجہ ذیل 7×, نقل مکانی 12×, ووٹر 19× (incl. ووٹروں 8×), ووٹروں 8×, جج 8× (incl. ججوں 7×), ججوں 7×, گرینچ 33×, ڈگری 61×, درجہ حرارت 9×, قرآن پاک 3×, بالترو گلیشیر 2×, فیصد 10×, ایک بار 2×, کس سال میں 2×, فوراً 2×, بہترین وضاحت 5×, بہترین انداز 1×, بنیادی طور پر 87×, عام طور پر 21× (substring counts)",
+  ssCount("وزیر اعظم") === 10 && ssCount("قائد اعظم") === 1 && ssCount("قرارداد پاکستان") === 2 && ssCount("قرارداد مقاصد") === 4 && ssCount("دستور ساز اسمبلی") === 1 && ssCount("محمڈن") === 1 && ssCount("جبکہ") === 28 && ssCount("تقریباً") === 30 && ssCount("مندرجہ ذیل") === 7 && ssCount("نقل مکانی") === 12 && ssCount("ووٹر") === 19 && ssCount("ووٹروں") === 8 && ssCount("جج") === 8 && ssCount("ججوں") === 7 && ssCount("گرینچ") === 33 && ssCount("ڈگری") === 61 && ssCount("درجہ حرارت") === 9 && ssCount("قرآن پاک") === 3 && ssCount("بالترو گلیشیر") === 2 && ssCount("فیصد") === 10 && ssCount("ایک بار") === 2 && ssCount("کس سال میں") === 2 && ssCount("فوراً") === 2 && ssCount("بہترین وضاحت") === 5 && ssCount("بہترین انداز") === 1 && ssCount("بنیادی طور پر") === 87 && ssCount("عام طور پر") === 21,
+  `وزیر اعظم ${ssCount("وزیر اعظم")}, قائد اعظم ${ssCount("قائد اعظم")}, قرارداد پاکستان ${ssCount("قرارداد پاکستان")}, قرارداد مقاصد ${ssCount("قرارداد مقاصد")}, دستور ساز اسمبلی ${ssCount("دستور ساز اسمبلی")}, محمڈن ${ssCount("محمڈن")}, جبکہ ${ssCount("جبکہ")}, تقریباً ${ssCount("تقریباً")}, مندرجہ ذیل ${ssCount("مندرجہ ذیل")}, نقل مکانی ${ssCount("نقل مکانی")}, ووٹر ${ssCount("ووٹر")}, ووٹروں ${ssCount("ووٹروں")}, جج ${ssCount("جج")}, ججوں ${ssCount("ججوں")}, گرینچ ${ssCount("گرینچ")}, ڈگری ${ssCount("ڈگری")}, درجہ حرارت ${ssCount("درجہ حرارت")}, قرآن پاک ${ssCount("قرآن پاک")}, بالترو گلیشیر ${ssCount("بالترو گلیشیر")}, فیصد ${ssCount("فیصد")}, ایک بار ${ssCount("ایک بار")}, کس سال میں ${ssCount("کس سال میں")}, فوراً ${ssCount("فوراً")}, بہترین وضاحت ${ssCount("بہترین وضاحت")}, بہترین انداز ${ssCount("بہترین انداز")}, بنیادی طور پر ${ssCount("بنیادی طور پر")}, عام طور پر ${ssCount("عام طور پر")}`);
+check("U2 socialstudies: exact counts, institutions/places — آئین 48×, مردم شماری 52×, اقوام متحدہ 29×, خط استوا 32×, قطب شمالی 9×, قطب جنوبی 7×, سطح مرتفع 14×, صحرا 25×, طول بلد 22×, عرض بلد 17×, تجارت 56×, حکومت 79×, کونسل 46×, صدر دفتر 25×, سینیٹ 14×, پارلیمنٹ 7×, سپریم کورٹ 9×, ہائی کورٹ 6×, چیف جسٹس 5×, سیاسی جماعت 8×, عالمی ادارہ صحت 5×, دریائے سندھ 5×, دو قومی نظریہ 2×, اسمبلی 44×, گورنر جنرل 2×, قومی اسمبلی 16×, عالمی بینک 5×, میونسپل 4×, یونیسکو 4×, یونیسیف 2×, پاکستان بیورو آف سٹیٹسٹکس 4×, حیدرآباد 1×, شملہ 2×, کوئٹہ 2×, لاڑکانہ 1×, تنظیم تعاون اسلامی 4×, نصف النہار 14×, نصف کرہ 28× (substring counts)",
+  ssCount("آئین") === 48 && ssCount("مردم شماری") === 52 && ssCount("اقوام متحدہ") === 29 && ssCount("خط استوا") === 32 && ssCount("قطب شمالی") === 9 && ssCount("قطب جنوبی") === 7 && ssCount("سطح مرتفع") === 14 && ssCount("صحرا") === 25 && ssCount("طول بلد") === 22 && ssCount("عرض بلد") === 17 && ssCount("تجارت") === 56 && ssCount("حکومت") === 79 && ssCount("کونسل") === 46 && ssCount("صدر دفتر") === 25 && ssCount("سینیٹ") === 14 && ssCount("پارلیمنٹ") === 7 && ssCount("سپریم کورٹ") === 9 && ssCount("ہائی کورٹ") === 6 && ssCount("چیف جسٹس") === 5 && ssCount("سیاسی جماعت") === 8 && ssCount("عالمی ادارہ صحت") === 5 && ssCount("دریائے سندھ") === 5 && ssCount("دو قومی نظریہ") === 2 && ssCount("اسمبلی") === 44 && ssCount("گورنر جنرل") === 2 && ssCount("قومی اسمبلی") === 16 && ssCount("عالمی بینک") === 5 && ssCount("میونسپل") === 4 && ssCount("یونیسکو") === 4 && ssCount("یونیسیف") === 2 && ssCount("پاکستان بیورو آف سٹیٹسٹکس") === 4 && ssCount("حیدرآباد") === 1 && ssCount("شملہ") === 2 && ssCount("کوئٹہ") === 2 && ssCount("لاڑکانہ") === 1 && ssCount("تنظیم تعاون اسلامی") === 4 && ssCount("نصف النہار") === 14 && ssCount("نصف کرہ") === 28,
+  `آئین ${ssCount("آئین")}, مردم شماری ${ssCount("مردم شماری")}, اقوام متحدہ ${ssCount("اقوام متحدہ")}, خط استوا ${ssCount("خط استوا")}, قطب شمالی ${ssCount("قطب شمالی")}, قطب جنوبی ${ssCount("قطب جنوبی")}, سطح مرتفع ${ssCount("سطح مرتفع")}, صحرا ${ssCount("صحرا")}, طول بلد ${ssCount("طول بلد")}, عرض بلد ${ssCount("عرض بلد")}, تجارت ${ssCount("تجارت")}, حکومت ${ssCount("حکومت")}, کونسل ${ssCount("کونسل")}, صدر دفتر ${ssCount("صدر دفتر")}, سینیٹ ${ssCount("سینیٹ")}, پارلیمنٹ ${ssCount("پارلیمنٹ")}, سپریم کورٹ ${ssCount("سپریم کورٹ")}, ہائی کورٹ ${ssCount("ہائی کورٹ")}, چیف جسٹس ${ssCount("چیف جسٹس")}, سیاسی جماعت ${ssCount("سیاسی جماعت")}, عالمی ادارہ صحت ${ssCount("عالمی ادارہ صحت")}, دریائے سندھ ${ssCount("دریائے سندھ")}, دو قومی نظریہ ${ssCount("دو قومی نظریہ")}, اسمبلی ${ssCount("اسمبلی")}, گورنر جنرل ${ssCount("گورنر جنرل")}, قومی اسمبلی ${ssCount("قومی اسمبلی")}, عالمی بینک ${ssCount("عالمی بینک")}, میونسپل ${ssCount("میونسپل")}, یونیسکو ${ssCount("یونیسکو")}, یونیسیف ${ssCount("یونیسیف")}, پاکستان بیورو آف سٹیٹسٹکس ${ssCount("پاکستان بیورو آف سٹیٹسٹکس")}, حیدرآباد ${ssCount("حیدرآباد")}, شملہ ${ssCount("شملہ")}, کوئٹہ ${ssCount("کوئٹہ")}, لاڑکانہ ${ssCount("لاڑکانہ")}, تنظیم تعاون اسلامی ${ssCount("تنظیم تعاون اسلامی")}, نصف النہار ${ssCount("نصف النہار")}, نصف کرہ ${ssCount("نصف کرہ")}`);
+check("U2 socialstudies: exact counts, kept splits — خودمختاری 2×, خود مختاری 2×, ووٹنگ 2×, رائے دہی 2×, جداگانہ انتخابات 2×, فیڈریشنوں 1×, وفاق 37×, مقننہ 1×, دستور 3×, معاشرتی 7×, سماجی 23×, ناقابل تجدید 3×, قابل تجدید 5× (incl. ناقابل 3×), بحیرہ 8×, سمندر 35×, روپیہ 2×, روپے 1×, داخلی تجارت 2×, اندرونی نقل مکانی 2×, اندرونی حصے 4×, محصول 2×, ٹیکس 29×, کارکن 2×, مزدور 11×, دیہات 11×, گاؤں 17×, کسان 12×, کاشتکاری 14×, رائے دہندگان کی فہرست 3×, سینیٹرز 1×, سپلائرز 1×, ہائی کورٹس 1×, دفعات 8×, آرٹیکل 4×, سامان 13×, گردش 2×, سربراہِ مملکت 2×, جی ایم ٹی 2×, کنویکشنل 2×, سائیکلونک 1×, ریلیف 1×, فوارے 3×, برادری 10×, کاروبار 8×, ویمنز 2×, کینٹربری ٹیلز 2×, شاہ مکھی 2×, ویژن 2×, پرامن 9×, نامی 3× (substring counts)",
+  ssCount("خودمختاری") === 2 && ssCount("خود مختاری") === 2 && ssCount("ووٹنگ") === 2 && ssCount("رائے دہی") === 2 && ssCount("جداگانہ انتخابات") === 2 && ssCount("فیڈریشنوں") === 1 && ssCount("وفاق") === 37 && ssCount("مقننہ") === 1 && ssCount("دستور") === 3 && ssCount("معاشرتی") === 7 && ssCount("سماجی") === 23 && ssCount("ناقابل تجدید") === 3 && ssCount("قابل تجدید") === 5 && ssCount("بحیرہ") === 8 && ssCount("سمندر") === 35 && ssCount("روپیہ") === 2 && ssCount("روپے") === 1 && ssCount("داخلی تجارت") === 2 && ssCount("اندرونی نقل مکانی") === 2 && ssCount("اندرونی حصے") === 4 && ssCount("محصول") === 2 && ssCount("ٹیکس") === 29 && ssCount("کارکن") === 2 && ssCount("مزدور") === 11 && ssCount("دیہات") === 11 && ssCount("گاؤں") === 17 && ssCount("کسان") === 12 && ssCount("کاشتکاری") === 14 && ssCount("رائے دہندگان کی فہرست") === 3 && ssCount("سینیٹرز") === 1 && ssCount("سپلائرز") === 1 && ssCount("ہائی کورٹس") === 1 && ssCount("دفعات") === 8 && ssCount("آرٹیکل") === 4 && ssCount("سامان") === 13 && ssCount("گردش") === 2 && ssCount("سربراہِ مملکت") === 2 && ssCount("جی ایم ٹی") === 2 && ssCount("کنویکشنل") === 2 && ssCount("سائیکلونک") === 1 && ssCount("ریلیف") === 1 && ssCount("فوارے") === 3 && ssCount("برادری") === 10 && ssCount("کاروبار") === 8 && ssCount("ویمنز") === 2 && ssCount("کینٹربری ٹیلز") === 2 && ssCount("شاہ مکھی") === 2 && ssCount("ویژن") === 2 && ssCount("پرامن") === 9 && ssCount("نامی") === 3,
+  `خودمختاری ${ssCount("خودمختاری")}, خود مختاری ${ssCount("خود مختاری")}, ووٹنگ ${ssCount("ووٹنگ")}, رائے دہی ${ssCount("رائے دہی")}, جداگانہ انتخابات ${ssCount("جداگانہ انتخابات")}, فیڈریشنوں ${ssCount("فیڈریشنوں")}, وفاق ${ssCount("وفاق")}, مقننہ ${ssCount("مقننہ")}, دستور ${ssCount("دستور")}, معاشرتی ${ssCount("معاشرتی")}, سماجی ${ssCount("سماجی")}, ناقابل تجدید ${ssCount("ناقابل تجدید")}, قابل تجدید ${ssCount("قابل تجدید")}, بحیرہ ${ssCount("بحیرہ")}, سمندر ${ssCount("سمندر")}, روپیہ ${ssCount("روپیہ")}, روپے ${ssCount("روپے")}, داخلی تجارت ${ssCount("داخلی تجارت")}, اندرونی نقل مکانی ${ssCount("اندرونی نقل مکانی")}, اندرونی حصے ${ssCount("اندرونی حصے")}, محصول ${ssCount("محصول")}, ٹیکس ${ssCount("ٹیکس")}, کارکن ${ssCount("کارکن")}, مزدور ${ssCount("مزدور")}, دیہات ${ssCount("دیہات")}, گاؤں ${ssCount("گاؤں")}, کسان ${ssCount("کسان")}, کاشتکاری ${ssCount("کاشتکاری")}, رائے دہندگان کی فہرست ${ssCount("رائے دہندگان کی فہرست")}, سینیٹرز ${ssCount("سینیٹرز")}, سپلائرز ${ssCount("سپلائرز")}, ہائی کورٹس ${ssCount("ہائی کورٹس")}, دفعات ${ssCount("دفعات")}, آرٹیکل ${ssCount("آرٹیکل")}, سامان ${ssCount("سامان")}, گردش ${ssCount("گردش")}, سربراہِ مملکت ${ssCount("سربراہِ مملکت")}, جی ایم ٹی ${ssCount("جی ایم ٹی")}, کنویکشنل ${ssCount("کنویکشنل")}, سائیکلونک ${ssCount("سائیکلونک")}, ریلیف ${ssCount("ریلیف")}, فوارے ${ssCount("فوارے")}, برادری ${ssCount("برادری")}, کاروبار ${ssCount("کاروبار")}, ویمنز ${ssCount("ویمنز")}, کینٹربری ٹیلز ${ssCount("کینٹربری ٹیلز")}, شاہ مکھی ${ssCount("شاہ مکھی")}, ویژن ${ssCount("ویژن")}, پرامن ${ssCount("پرامن")}, نامی ${ssCount("نامی")}`);
+check("U2 socialstudies: exact counts, economy/society/geography — کثافت 9×, شرح پیدائش 5×, شرح اموات 3×, شرح نمو 12×, برآمدات 5×, درآمدات 6×, بجٹ 3×, کرنسی 13×, بینک 43×, زراعت 6×, ثقافت 13×, ورثہ 2×, تہذیب 2×, شہریت 3×, فرائض 3×, انصاف 12×, عدلیہ 7×, قانون 45×, امن 33×, سفارت 2×, خارجہ 9×, زبان 48×, خاندان 29×, نقشہ 27×, پیمانہ 6×, جزیرہ 14×, جھیل 28×, پہاڑ 44×, وادی 27×, بندرگاہ 5×, جنگل 13×, آبادی 73×, زمین 77×, موسم 41×, آب و ہوا 5×, حقوق 50× (substring counts)",
+  ssCount("کثافت") === 9 && ssCount("شرح پیدائش") === 5 && ssCount("شرح اموات") === 3 && ssCount("شرح نمو") === 12 && ssCount("برآمدات") === 5 && ssCount("درآمدات") === 6 && ssCount("بجٹ") === 3 && ssCount("کرنسی") === 13 && ssCount("بینک") === 43 && ssCount("زراعت") === 6 && ssCount("ثقافت") === 13 && ssCount("ورثہ") === 2 && ssCount("تہذیب") === 2 && ssCount("شہریت") === 3 && ssCount("فرائض") === 3 && ssCount("انصاف") === 12 && ssCount("عدلیہ") === 7 && ssCount("قانون") === 45 && ssCount("امن") === 33 && ssCount("سفارت") === 2 && ssCount("خارجہ") === 9 && ssCount("زبان") === 48 && ssCount("خاندان") === 29 && ssCount("نقشہ") === 27 && ssCount("پیمانہ") === 6 && ssCount("جزیرہ") === 14 && ssCount("جھیل") === 28 && ssCount("پہاڑ") === 44 && ssCount("وادی") === 27 && ssCount("بندرگاہ") === 5 && ssCount("جنگل") === 13 && ssCount("آبادی") === 73 && ssCount("زمین") === 77 && ssCount("موسم") === 41 && ssCount("آب و ہوا") === 5 && ssCount("حقوق") === 50,
+  `کثافت ${ssCount("کثافت")}, شرح پیدائش ${ssCount("شرح پیدائش")}, شرح اموات ${ssCount("شرح اموات")}, شرح نمو ${ssCount("شرح نمو")}, برآمدات ${ssCount("برآمدات")}, درآمدات ${ssCount("درآمدات")}, بجٹ ${ssCount("بجٹ")}, کرنسی ${ssCount("کرنسی")}, بینک ${ssCount("بینک")}, زراعت ${ssCount("زراعت")}, ثقافت ${ssCount("ثقافت")}, ورثہ ${ssCount("ورثہ")}, تہذیب ${ssCount("تہذیب")}, شہریت ${ssCount("شہریت")}, فرائض ${ssCount("فرائض")}, انصاف ${ssCount("انصاف")}, عدلیہ ${ssCount("عدلیہ")}, قانون ${ssCount("قانون")}, امن ${ssCount("امن")}, سفارت ${ssCount("سفارت")}, خارجہ ${ssCount("خارجہ")}, زبان ${ssCount("زبان")}, خاندان ${ssCount("خاندان")}, نقشہ ${ssCount("نقشہ")}, پیمانہ ${ssCount("پیمانہ")}, جزیرہ ${ssCount("جزیرہ")}, جھیل ${ssCount("جھیل")}, پہاڑ ${ssCount("پہاڑ")}, وادی ${ssCount("وادی")}, بندرگاہ ${ssCount("بندرگاہ")}, جنگل ${ssCount("جنگل")}, آبادی ${ssCount("آبادی")}, زمین ${ssCount("زمین")}, موسم ${ssCount("موسم")}, آب و ہوا ${ssCount("آب و ہوا")}, حقوق ${ssCount("حقوق")}`);
+// اشیا EN-correspondence: token اشیا occurs in exactly 36
+// fields, and EVERY one maps to EN "goods" (economics
+// cluster). Substring count 42 includes معاشیات (1×) and
+// multi-occurrence fields.
+let ssAshyaFields = 0, ssAshyaBad = [];
+for (const q of ss) {
+  const fields = [[q.question, q.question_ur], ...q.options.map((o, i) => [o, q.options_ur[i]]), [q.explanation, q.explanation_ur]];
+  for (const [en, ur] of fields) {
+    if (tokens(ur).includes("اشیا")) {
+      ssAshyaFields += 1;
+      if (!/goods/i.test(en)) ssAshyaBad.push(q.id);
+    }
+  }
+}
+check("U2 socialstudies: اشیا token in exactly 36 fields, every one with EN 'goods'", ssAshyaFields === 36 && ssAshyaBad.length === 0, `fields ${ssAshyaFields}, bad ${ssAshyaBad.slice(0, 3).join(", ")}`);
+check("U2 socialstudies: اشیا substring count 42× (incl. معاشیات 1×)", ssCount("اشیا") === 42 && ssCount("معاشیات") === 1, `اشیا ${ssCount("اشیا")}, معاشیات ${ssCount("معاشیات")}`);
+let ssDarjaBad = [];
+for (const [loc, val] of ssPairs) {
+  if (tokens(val).includes("درجہ") && !(val ?? "").includes("درجہ حرارت")) ssDarjaBad.push(loc);
+}
+check("U2 socialstudies: درجہ survives ONLY inside درجہ حرارت (9×)", ssDarjaBad.length === 0 && ssCount("درجہ حرارت") === 9, ssDarjaBad.slice(0, 3).join(", "));
+// % rule: 0 % in any Social Studies _ur field (فیصد 10× in prose).
+// No % may ever be ADDED in _ur.
+let ssPctBad = [], ssPctTotal = 0;
+for (const q of ss) {
+  const fields = [[q.question, q.question_ur], [q.explanation, q.explanation_ur], ...q.options.map((o, i) => [o, q.options_ur[i]])];
+  for (const [en, ur] of fields) {
+    const ce = (en.match(/%/g) || []).length, cu = (ur.match(/%/g) || []).length;
+    ssPctTotal += cu;
+    if (cu > ce) ssPctBad.push(q.id);
+  }
+}
+check("U2 socialstudies: % never added in any _ur field; 0 total in the whole bank", ssPctBad.length === 0 && ssPctTotal === 0, `added in ${ssPctBad.slice(0, 3).join(", ")}, total ${ssPctTotal}`);
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");

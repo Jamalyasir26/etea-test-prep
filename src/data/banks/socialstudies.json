@@ -1,7 +1,7 @@
 [
  {
   "id": "SS-001",
-  "question_ur": "قراردادِ پاکستان لاہور میں کس سال منظور ہوئی تھی؟",
+  "question_ur": "قرارداد پاکستان لاہور میں کس سال منظور ہوئی تھی؟",
   "question_roman": "Qarardad-e-Pakistan Lahore mein kis saal manzoor hui thi?",
   "options_ur": [
    "1930",
@@ -15,7 +15,7 @@
    "1942",
    "1946"
   ],
-  "explanation_ur": "قراردادِ پاکستان 23 مارچ 1940 کو لاہور میں (منٹو پارک) منظور ہوئی تھی۔",
+  "explanation_ur": "قرارداد پاکستان 23 مارچ 1940 کو لاہور میں (منٹو پارک) منظور ہوئی تھی۔",
   "explanation_roman": "Qarardad-e-Pakistan 23 March 1940 ko Lahore mein (Minto Park) manzoor hui thi.",
   "post": [
    "tt",
@@ -64,7 +64,7 @@
    "Muhammad Ali Jinnah",
    "Sardar Abdur Rab Nishtar"
   ],
-  "explanation_ur": "قائدِ اعظم محمد علی جناح پاکستان کے پہلے گورنر جنرل تھے۔",
+  "explanation_ur": "قائد اعظم محمد علی جناح پاکستان کے پہلے گورنر جنرل تھے۔",
   "explanation_roman": "Quaid-e-Azam Muhammad Ali Jinnah Pakistan ke pehle Governor-General thay.",
   "post": [
    "tt",
@@ -99,7 +99,7 @@
  },
  {
   "id": "SS-003",
-  "question_ur": "پاکستان کے پہلے وزیرِ اعظم کے طور پر کس رہنما نے خدمات انجام دیں؟",
+  "question_ur": "پاکستان کے پہلے وزیر اعظم کے طور پر کس رہنما نے خدمات انجام دیں؟",
   "question_roman": "Pakistan ke pehle Wazir-e-Azam ke tor par kis rehnuma ne khidmat anjaam di?",
   "options_ur": [
    "لیاقت علی خان",
@@ -113,7 +113,7 @@
    "Muhammad Ali Bogra",
    "Chaudhry Muhammad Ali"
   ],
-  "explanation_ur": "لیاقت علی خان پاکستان کے پہلے وزیرِ اعظم تھے۔",
+  "explanation_ur": "لیاقت علی خان پاکستان کے پہلے وزیر اعظم تھے۔",
   "explanation_roman": "Liaquat Ali Khan Pakistan ke pehle Wazir-e-Azam thay.",
   "post": [
    "tt",
@@ -148,7 +148,7 @@
  },
  {
   "id": "SS-004",
-  "question_ur": "مجلسِ دستور ساز نے قراردادِ مقاصد کس سال منظور کی تھی؟",
+  "question_ur": "دستور ساز اسمبلی نے قرارداد مقاصد کس سال منظور کی تھی؟",
   "question_roman": "Majlis-e-Dastoor Saaz ne Qarardad-e-Maqasid kis saal manzoor ki thi?",
   "options_ur": [
    "1947",
@@ -162,7 +162,7 @@
    "1949",
    "1956"
   ],
-  "explanation_ur": "قراردادِ مقاصد 12 مارچ 1949 کو منظور ہوئی تھی۔",
+  "explanation_ur": "قرارداد مقاصد 12 مارچ 1949 کو منظور ہوئی تھی۔",
   "explanation_roman": "Qarardad-e-Maqasid 12 March 1949 ko manzoor hui thi.",
   "post": [
    "tt",
@@ -690,7 +690,7 @@
   "question_ur": "پاکستان کے سربراہِ مملکت کون ہیں؟",
   "question_roman": "Pakistan ke sarbarah-e-mumlikat kaun hain?",
   "options_ur": [
-   "وزیرِ اعظم",
+   "وزیر اعظم",
    "صدر",
    "چیف جسٹس",
    "قومی اسمبلی کے اسپیکر"
@@ -1142,7 +1142,7 @@
    "Majmooi taraqqiyati programme",
    "Aamoomi taraqqiyati mansooba"
   ],
-  "explanation_ur": "GDP کا مطلب مجموعی ملکی پیداوار ہے — کسی ملک میں پیدا ہونے والی اشیا اور خدمات کی کل قیمت۔",
+  "explanation_ur": "GDP کا مطلب مجموعی ملکی پیداوار ہے، یعنی کسی ملک میں پیدا ہونے والی اشیا اور خدمات کی کل قیمت۔",
   "explanation_roman": "GDP ka matlab Majmooi Mulki Paidawar hai — kisi mulk mein paida hone wali ashya aur khidmat ki kul qeemat.",
   "post": [
    "tt",
@@ -1629,7 +1629,7 @@
    "Distance",
    "Longitude"
   ],
-  "explanation_ur": "نصف النہار طول بلد کی لکیریں ہیں۔ وہ قطب سے قطب تک چلتی ہیں اور قطبین پر ملتی ہیں، اور وہ بتاتی ہیں کہ کوئی جگہ نصف النہار اول سے کتنی مشرق یا مغرب میں ہے۔",
+  "explanation_ur": "نصف النہار طول بلد کی لکیریں ہیں۔ وہ قطب سے قطب تک چلتی ہیں اور قطبین پر ملتی ہیں، اور وہ بتاتی ہیں کہ کوئی جگہ نصف النہار اول سے مشرق یا مغرب کی طرف کتنی دور ہے۔",
   "explanation_roman": "Meridians longitude ki lines hain. Woh pole se pole tak chalti hain aur poles par milti hain, aur woh batati hain ke koi jagah Prime Meridian se kitni mashriq ya maghrib mein hai.",
   "post": [
    "tt",
@@ -1869,7 +1869,7 @@
    "Tropic of Cancer",
    "Equator"
   ],
-  "explanation_ur": "دائرہ قطب شمالی خط استوا کے شمال میں 66.5 ڈگری پر واقع ہے، قطب شمالی کے علاقے کے گرد۔",
+  "explanation_ur": "دائرہ قطب شمالی قطب شمالی کے علاقے کے گرد خط استوا کے شمال میں 66.5 ڈگری پر واقع ہے۔",
   "explanation_roman": "Arctic Circle Equator ke shumaal mein 66.5 degrees par waqeh hai, North Pole ke ilaqe ke gird.",
   "post": [
    "tt",
@@ -1917,7 +1917,7 @@
    "66.5 degrees south",
    "90 degrees north"
   ],
-  "explanation_ur": "دائرہ قطب جنوبی خط استوا کے جنوب میں 66.5 ڈگری پر واقع ہے، قطب جنوبی کے علاقے کے گرد۔",
+  "explanation_ur": "دائرہ قطب جنوبی قطب جنوبی کے علاقے کے گرد خط استوا کے جنوب میں 66.5 ڈگری پر واقع ہے۔",
   "explanation_roman": "Antarctic Circle Equator ke junoob mein 66.5 degrees par waqeh hai, South Pole ke ilaqe ke gird.",
   "post": [
    "tt",
@@ -2191,7 +2191,7 @@
  },
  {
   "id": "SS-046",
-  "question_ur": "نصف النہار اول گرین وچ سے گزرتا ہے، گرین وچ انگلینڈ کے کس شہر میں واقع ہے؟",
+  "question_ur": "نصف النہار اول گرینچ سے گزرتا ہے، گرینچ انگلینڈ کے کس شہر میں واقع ہے؟",
   "question_roman": "Prime Meridian Greenwich se guzarta hai, Greenwich England ke kis sheher mein waqeh hai?",
   "options_ur": [
    "لندن",
@@ -2205,7 +2205,7 @@
    "Oxford",
    "Liverpool"
   ],
-  "explanation_ur": "گرین وچ انگلینڈ کے شہر لندن میں واقع ہے، اور نصف النہار اول گرین وچ سے گزرتا ہے۔",
+  "explanation_ur": "گرینچ انگلینڈ کے شہر لندن میں واقع ہے، اور نصف النہار اول گرینچ سے گزرتا ہے۔",
   "explanation_roman": "Greenwich England ke sheher London mein waqeh hai, aur Prime Meridian Greenwich se guzarta hai.",
   "post": [
    "tt",
@@ -2482,10 +2482,10 @@
   "question_ur": "بین الاقوامی تاریخ کی لکیر بنیادی طور پر طول بلد کی کس لکیر پر چلتی ہے؟",
   "question_roman": "International Date Line bunyadi tor par tool-e-balad ki kis lakeer par chalti hai?",
   "options_ur": [
-   "طول بلد 180 درجے",
-   "طول بلد 90 درجے مشرق",
-   "طول بلد 0 درجے",
-   "طول بلد 90 درجے مغرب"
+   "طول بلد 180 ڈگری",
+   "طول بلد 90 ڈگری مشرق",
+   "طول بلد 0 ڈگری",
+   "طول بلد 90 ڈگری مغرب"
   ],
   "options_roman": [
    "Tool-e-balad 180 darje",
@@ -2493,7 +2493,7 @@
    "Tool-e-balad 0 darje",
    "Tool-e-balad 90 darje maghrib"
   ],
-  "explanation_ur": "بین الاقوامی تاریخ کی لکیر بنیادی طور پر طول بلد 180 درجے کے ساتھ ساتھ چلتی ہے، جو زمین پر گرینچ کے مخالف جانب ہے۔",
+  "explanation_ur": "بین الاقوامی تاریخ کی لکیر بنیادی طور پر طول بلد 180 ڈگری کے ساتھ ساتھ چلتی ہے، جو زمین پر گرینچ کے مخالف جانب ہے۔",
   "explanation_roman": "International Date Line bunyadi tor par 180 darje tool-e-balad ke sath sath chalti hai, jo zameen par Greenwich ke mukhalif janib hai.",
   "post": [
    "tt",
@@ -2719,7 +2719,7 @@
  },
  {
   "id": "SS-057",
-  "question_ur": "طول بلد میں 1 درجے کے فرق والے دو قصبوں کے مقامی وقت میں کتنے منٹ کا فرق ہوتا ہے؟",
+  "question_ur": "طول بلد میں 1 ڈگری کے فرق والے دو قصبوں کے مقامی وقت میں کتنے منٹ کا فرق ہوتا ہے؟",
   "question_roman": "Tool-e-balad mein 1 darje ke farq wale do qasbon ke muqami waqt mein kitne minute ka farq hota hai?",
   "options_ur": [
    "2 منٹ",
@@ -2733,7 +2733,7 @@
    "10 minute",
    "15 minute"
   ],
-  "explanation_ur": "طول بلد کا ہر 1 درجہ وقت میں 4 منٹ کے فرق کے برابر ہوتا ہے۔",
+  "explanation_ur": "طول بلد کا ہر 1 ڈگری وقت میں 4 منٹ کے فرق کے برابر ہوتا ہے۔",
   "explanation_roman": "Tool-e-balad ka har 1 darja waqt mein 4 minute ke farq ke barabar hota hai.",
   "post": [
    "tt",
@@ -2767,7 +2767,7 @@
  },
  {
   "id": "SS-058",
-  "question_ur": "طول بلد میں 15 درجے کے فرق والی جگہوں کے مقامی وقت میں کتنا فرق ہوتا ہے؟",
+  "question_ur": "طول بلد میں 15 ڈگری کے فرق والی جگہوں کے مقامی وقت میں کتنا فرق ہوتا ہے؟",
   "question_roman": "Tool-e-balad mein 15 darje ke farq wali jaghon ke muqami waqt mein kitna farq hota hai?",
   "options_ur": [
    "30 منٹ",
@@ -2781,7 +2781,7 @@
    "4 ghante",
    "1 ghanta"
   ],
-  "explanation_ur": "طول بلد میں 15 درجے کا فرق وقت میں 1 گھنٹے کے فرق کے برابر ہوتا ہے۔",
+  "explanation_ur": "طول بلد میں 15 ڈگری کا فرق وقت میں 1 گھنٹے کے فرق کے برابر ہوتا ہے۔",
   "explanation_roman": "Tool-e-balad mein 15 darje ka farq waqt mein 1 ghante ke farq ke barabar hota hai.",
   "post": [
    "tt",
@@ -3295,7 +3295,7 @@
  },
  {
   "id": "SS-069",
-  "question_ur": "1 سینٹی میٹر سے 1 کلومیٹر کے پیمانے والے نقشے پر دو قصبے نقشے پر 5 سینٹی میٹر کے فاصلے پر ہیں۔ قصبوں کے درمیان اصل فاصلہ کتنا ہے؟",
+  "question_ur": "1 سینٹی میٹر سے 1 کلومیٹر کے پیمانے والے نقشے پر دو قصبے 5 سینٹی میٹر کے فاصلے پر ہیں۔ قصبوں کے درمیان اصل فاصلہ کتنا ہے؟",
   "question_roman": "1 centimetre se 1 kilometre ke paimane wale naqshe par do qasbe naqshe par 5 centimetre ke fasle par hain. Qasbon ke darmiyan asal fasla kitna hai?",
   "options_ur": [
    "3 کلومیٹر",
@@ -5071,7 +5071,7 @@
  },
  {
   "id": "SS-106",
-  "question_ur": "گلیشیر بالترو جو قطبی علاقوں سے باہر سب سے لمبے گلیشیروں میں سے ایک ہے، کس پہاڑی سلسلے میں پایا جاتا ہے؟",
+  "question_ur": "بالترو گلیشیر جو قطبی علاقوں سے باہر سب سے لمبے گلیشیروں میں سے ایک ہے، کس پہاڑی سلسلے میں پایا جاتا ہے؟",
   "question_roman": "Glacier Baltoro jo qutbi ilaqon se bahar sab se lambe glacieron mein se aik hai, kis pahari silsilay mein paya jata hai?",
   "options_ur": [
    "قراقرم",
@@ -5085,7 +5085,7 @@
    "Hindu Kush",
    "Sulaiman Range"
   ],
-  "explanation_ur": "گلیشیر بالترو شمالی پاکستان میں قراقرم کے پہاڑی سلسلے میں واقع ہے۔",
+  "explanation_ur": "بالترو گلیشیر شمالی پاکستان میں قراقرم کے پہاڑی سلسلے میں واقع ہے۔",
   "explanation_roman": "Glacier Baltoro shumali Pakistan mein Karakoram ke pahari silsilay mein waqay hai.",
   "post": [
    "tt",
@@ -5887,7 +5887,7 @@
  },
  {
   "id": "SS-123",
-  "question_ur": "ایشیا کا سب سے طویل دریا درج ذیل میں سے کون سا ہے؟",
+  "question_ur": "ایشیا کا سب سے طویل دریا مندرجہ ذیل میں سے کون سا ہے؟",
   "question_roman": "Asia ka sab se taweel darya darj-e-zail mein se kaun sa hai?",
   "options_ur": [
    "گنگا",
@@ -5983,7 +5983,7 @@
  },
  {
   "id": "SS-125",
-  "question_ur": "درج ذیل جھیلوں میں سے دنیا کی سب سے گہری جھیل کون سی ہے؟",
+  "question_ur": "مندرجہ ذیل جھیلوں میں سے دنیا کی سب سے گہری جھیل کون سی ہے؟",
   "question_roman": "Darj-e-zail jheelon mein se duniya ki sab se gehri jheel kaun si hai?",
   "options_ur": [
    "جھیل ٹانگانیکا",
@@ -6477,7 +6477,7 @@
    "Mausam",
    "Monsoon"
   ],
-  "explanation_ur": "آب و ہوا کسی جگہ کے طویل عرصے کے اوسط موسم کو کہتے ہیں، جب کہ موسمی حالت قلیل مدتی حالات کو بیان کرتی ہے۔",
+  "explanation_ur": "آب و ہوا کسی جگہ کے طویل عرصے کے اوسط موسم کو کہتے ہیں، جبکہ موسمی حالت قلیل مدتی حالات کو بیان کرتی ہے۔",
   "explanation_roman": "Aab o hawa kisi jagah ke taweel arsay ke ausat mausam ko kehte hain, jab ke mausami halat qaleel muddati halaat ko bayan karti hai.",
   "post": [
    "tt",
@@ -6607,7 +6607,7 @@
  },
  {
   "id": "SS-138",
-  "question_ur": "خط استوا کے قریب علاقوں پر سورج کی روشنی قطبین کے قریب علاقوں سے زیادہ براہ راست پڑتی ہے۔ خط استوا کے قریب درجہ حرارت پر اس کا عام نتیجہ کیا ہوتا ہے؟",
+  "question_ur": "خط استوا کے قریب علاقوں پر سورج کی روشنی قطبین کے قریب علاقوں سے زیادہ براہ راست پڑتی ہے۔ اس وجہ سے خط استوا کے قریب درجہ حرارت عام طور پر کیسا رہتا ہے؟",
   "question_roman": "Khatt-e-istiwa ke qareeb ilaqon par Suraj ki roshni qutbain ke qareeb ilaqon se zyada braah raast parti hai. Khatt-e-istiwa ke qareeb darja hararat par is ka aam nateeja kya hota hai?",
   "options_ur": [
    "درجہ حرارت سارا سال بہت سرد رہتا ہے",
@@ -6717,7 +6717,7 @@
    "Muatadil ilaqa",
    "Pahari ilaqa"
   ],
-  "explanation_ur": "خط استوا والا علاقہ سارا سال گرم رہتا ہے کیونکہ سورج کی روشنی سارا سال تقریبا براہ راست پڑتی ہے، اس لیے موسمی تبدیلی کم ہوتی ہے۔",
+  "explanation_ur": "خط استوا والا علاقہ سارا سال گرم رہتا ہے کیونکہ سورج کی روشنی سارا سال تقریباً براہ راست پڑتی ہے، اس لیے موسمی تبدیلی کم ہوتی ہے۔",
   "explanation_roman": "Khatt-e-istiwa wala ilaqa sara saal garam rehta hai kyunke Suraj ki roshni sara saal taqreeban braah raast parti hai, is liye mausami tabdeeli kam hoti hai.",
   "post": [
    "tt",
@@ -6751,7 +6751,7 @@
  },
  {
   "id": "SS-141",
-  "question_ur": "شمالی نصف کرہ میں موسم گرما کے دوران معتدل علاقے میں دنوں کا راتوں سے عام موازنہ کیسا ہوتا ہے؟",
+  "question_ur": "شمالی نصف کرہ میں موسم گرما کے دوران معتدل علاقے میں دن راتوں کے مقابلے میں عام طور پر کیسے ہوتے ہیں؟",
   "question_roman": "Shumali nisf kurah mein mausam garma ke dauran muatadil ilaqay mein dinon ka raton se aam mawazna kaisa hota hai?",
   "options_ur": [
    "دن راتوں سے چھوٹے ہوتے ہیں",
@@ -6813,7 +6813,7 @@
    "Barish ke saaye wali janib",
    "Aanay wali hawa ke samnay wali janib"
   ],
-  "explanation_ur": "بارش زیادہ تر ہوا کے سامنے والی جانب ہوتی ہے، جہاں نم ہوا اٹھ کر ٹھنڈی ہوتی ہے، جب کہ محفوظ دوسری جانب زیادہ خشک رہتی ہے۔",
+  "explanation_ur": "بارش زیادہ تر ہوا کے سامنے والی جانب ہوتی ہے، جہاں نم ہوا اٹھ کر ٹھنڈی ہوتی ہے، جبکہ محفوظ دوسری جانب زیادہ خشک رہتی ہے۔",
   "explanation_roman": "Barish zyada tar hawa ke samnay wali janib hoti hai, jahan nam hawa uth kar thandi hoti hai, jab ke mehfooz doosri janib zyada khushk rehti hai.",
   "post": [
    "tt",
@@ -7005,7 +7005,7 @@
    "Hydrogen",
    "Oxygen"
   ],
-  "explanation_ur": "آکسیجن نائٹروجن کے بعد ہوا میں دوسری سب سے زیادہ مقدار والی گیس ہے، جب کہ کاربن ڈائی آکسائیڈ اور دوسری گیسیں بہت کم مقدار میں ہوتی ہیں۔",
+  "explanation_ur": "آکسیجن نائٹروجن کے بعد ہوا میں دوسری سب سے زیادہ مقدار والی گیس ہے، جبکہ کاربن ڈائی آکسائیڈ اور دوسری گیسیں بہت کم مقدار میں ہوتی ہیں۔",
   "explanation_roman": "Oxygen nitrogen ke baad hawa mein doosri sab se zyada miqdar wali gas hai, jab ke carbon dioxide aur doosri gasain bohat kam miqdar mein hoti hain.",
   "post": [
    "tt",
@@ -7039,7 +7039,7 @@
  },
  {
   "id": "SS-147",
-  "question_ur": "جغرافیہ کی کتابوں میں فضا کو بنیادی تہوں میں تقسیم کیا گیا ہے، جن کی ابتدا نیچے سے ٹروپوسفیئر سے ہوتی ہے۔ مجموعی طور پر بنیادی تہیں کتنی ہیں؟",
+  "question_ur": "جغرافیہ کی کتابوں میں فضا کو بنیادی تہوں میں تقسیم کیا گیا ہے، جن میں سب سے نیچے ٹروپوسفیئر ہے۔ مجموعی طور پر بنیادی تہیں کتنی ہیں؟",
   "question_roman": "Geography ki kitabon mein faza ko bunyadi tehon mein taqseem kiya gaya hai, jin ki ibtida neechay se troposphere se hoti hai. Majmooi tor par bunyadi tehein kitni hain?",
   "options_ur": [
    "5 تہیں",
@@ -8818,7 +8818,7 @@
   "question_ur": "اسلامی دفعات کے تحت ریاست کو کن مضامین کی تعلیم لازمی بنانے کے لیے اقدامات کرنا ضروری ہیں؟",
   "question_roman": "Islami dafaat ke tehat riyasat ko kin mazameen ki taleem laazmi banane ke liye iqdamat karna zaroori hain?",
   "options_ur": [
-   "قرآن مجید اور اسلامیات",
+   "قرآن پاک اور اسلامیات",
    "عربی اور فارسی ادب",
    "اسلامی تاریخ اور جغرافیہ",
    "عربی صرف و نحو اور شاعری"
@@ -8829,7 +8829,7 @@
    "Islami tareekh aur geography",
    "Arbi sarf-o-nahw aur shairi"
   ],
-  "explanation_ur": "1973 کے آئین کی اسلامی دفعات کے تحت ریاست کو قرآن مجید اور اسلامیات کی تعلیم لازمی بنانے کے لیے اقدامات کرنا ضروری ہیں۔",
+  "explanation_ur": "1973 کے آئین کی اسلامی دفعات کے تحت ریاست کو قرآن پاک اور اسلامیات کی تعلیم لازمی بنانے کے لیے اقدامات کرنا ضروری ہیں۔",
   "explanation_roman": "1973 ke Aeen ki Islami dafaat ke tehat riyasat ko Quran Majeed aur Islamiat ki taleem laazmi banane ke liye iqdamat karna zaroori hain.",
   "post": [
    "tt",
@@ -8925,7 +8925,7 @@
    "Senate ke qawaid",
    "Soobon ki policy"
   ],
-  "explanation_ur": "وفاقی شرعی عدالت قوانین کا جائزہ لے کر فیصلہ کرتی ہے کہ آیا کوئی قانون قرآن مجید اور سنت میں دیے گئے اسلام کے احکام کے خلاف ہے یا نہیں۔",
+  "explanation_ur": "وفاقی شرعی عدالت قوانین کا جائزہ لے کر فیصلہ کرتی ہے کہ آیا کوئی قانون قرآن پاک اور سنت میں دیے گئے اسلام کے احکام کے خلاف ہے یا نہیں۔",
   "explanation_roman": "Wifaqi Shariat Court qawaneen ka jaiza le kar faisla karti hai ke aaya koi qanoon Quran Majeed aur Sunnat mein diye gaye Islam ke ahkaam ke khilaf hai ya nahi.",
   "post": [
    "tt",
@@ -8959,7 +8959,7 @@
  },
  {
   "id": "SS-187",
-  "question_ur": "بنیادی حقوق کے برعکس، پالیسی کے اصولوں کو بہترین طور پر کیا کہا جا سکتا ہے؟",
+  "question_ur": "بنیادی حقوق کے برعکس، پالیسی کے اصولوں سے کیا مراد ہے؟",
   "question_roman": "Bunyadi huqooq ke baraks, Policy ke Usoolon ko behtareen tor par kya kaha ja sakta hai?",
   "options_ur": [
    "ایسے قوانین جن کا نفاذ عدالتوں کو کرنا ضروری ہے",
@@ -9679,7 +9679,7 @@
  },
  {
   "id": "SS-202",
-  "question_ur": "ایک شہری جس کے ساتھ کسی سرکاری محکمے میں ناانصافی ہو، وہ کس دفتر میں شکایت کر سکتا ہے؟",
+  "question_ur": "ایک شہری جس کے ساتھ کسی سرکاری محکمے نے ناانصافی کی ہو، وہ کس دفتر میں شکایت کر سکتا ہے؟",
   "question_roman": "Aik shehri jis ke sath kisi sarkari mehkme mein na-insafi ho, woh kis daftar mein shikayat kar sakta hai?",
   "options_ur": [
    "محتسب",
@@ -9885,7 +9885,7 @@
    "Doosron ke liye apne tamam huqooq chhor dena",
    "Sirf khandan ke afrad ke liye huqooq ka mutalba karna"
   ],
-  "explanation_ur": "حقوق کے ساتھ دوسروں کے حقوق کا احترام کرنے کی ذمہ داری بھی آتی ہے، جب کہ انسان اپنے حقوق سے فائدہ اٹھاتا ہے۔",
+  "explanation_ur": "حقوق کے ساتھ دوسروں کے حقوق کا احترام کرنے کی ذمہ داری بھی آتی ہے، جبکہ انسان اپنے حقوق سے فائدہ اٹھاتا ہے۔",
   "explanation_roman": "Huqooq ke sath doosron ke huqooq ka ehtiram karne ki zimma-dari bhi aati hai, jab ke insan apne huqooq se faida uthata hai.",
   "post": [
    "tt",
@@ -10111,7 +10111,7 @@
  },
  {
   "id": "SS-211",
-  "question_ur": "وادی سندھ کی مہریں مٹی پر دبا کر زیادہ تر کس کام کے لیے استعمال کی جاتی تھیں؟",
+  "question_ur": "وادی سندھ کی مہریں مٹی کے ٹکڑوں پر دبا کر زیادہ تر کس کام کے لیے استعمال کی جاتی تھیں؟",
   "question_roman": "Waadi Sindh ki mohrein mitti par daba kar zyada tar kis kaam ke liye istemal ki jati thin?",
   "options_ur": [
    "بادشاہوں اور ملکہوں کے نام درج کرنا",
@@ -10605,7 +10605,7 @@
    "Mehsool ke tor par jama kiya gaya ghalla zakheera karna",
    "Tajiron ke liye bazaar ke tor par kaam karna"
   ],
-  "explanation_ur": "اسٹوپا ایک گول گنبد نما یادگار ہے جو مقدس آثار رکھنے کے لیے بنائی جاتی تھی، اور بدھ مت کے پیروکار اسٹوپوں کو عبادت اور زیارت کی جگہ کے طور پر جاتے تھے۔",
+  "explanation_ur": "اسٹوپا ایک گول گنبد نما یادگار ہے جو مقدس آثار رکھنے کے لیے بنائی جاتی تھی، اور بدھ مت کے پیروکار عبادت اور زیارت کے لیے اسٹوپوں میں جاتے تھے۔",
   "explanation_roman": "Stupa aik gol gunbad numa yaadgar hai jo muqaddas aasaar rakhne ke liye banayi jati thi, aur Buddh mat ke pairokaron stupon ko ibadat aur ziyarat ki jagah ke tor par jate thay.",
   "post": [
    "tt",
@@ -10882,7 +10882,7 @@
   "question_ur": "ابتدائی مسلم علاقوں میں عربی حکومت، تجارت اور تعلیم کی مشترکہ زبان بن گئی۔ ایسی مشترکہ زبان نے مختلف علاقوں کے لوگوں کو بنیادی طور پر کیا کرنے میں مدد دی؟",
   "question_roman": "Ibtidai Muslim ilaqon mein Arbi hakumat, tijarat aur taleem ki mushtaraka zaban ban gayi. Aisi mushtaraka zaban ne mukhtalif ilaqon ke logon ko bunyadi tor par kya karne mein madad di?",
   "options_ur": [
-   "ایک دوسرے کے ساتھ کتابیں، خیالات اور تجارت کا تبادلہ کرنا",
+   "ایک دوسرے کے ساتھ کتابیں اور خیالات بانٹنا اور تجارت کرنا",
    "ہر علاقے کو تمام باہر والوں کے لیے بند رکھنا",
    "شہروں کے درمیان سفر کرنا بھول جانا",
    "لکھے ہوئے الفاظ کی بجائے صرف تصویریں استعمال کرنا"
@@ -11373,7 +11373,7 @@
    "Karkhane ke godam ka design",
    "Islami fun aur mehal ki tameerat"
   ],
-  "explanation_ur": "الحمرا غرناطہ میں محلوں کا ایک مجموعہ ہے جس کے صحن، پانی کی خصوصیات اور آرائش اسپین میں مسلم معماروں اور فنکاروں کی مہارت ظاہر کرتے ہیں۔",
+  "explanation_ur": "الحمرا غرناطہ میں محلوں کا ایک مجموعہ ہے جس کے صحن، فوارے اور آرائش اسپین میں مسلم معماروں اور فنکاروں کی مہارت ظاہر کرتے ہیں۔",
   "explanation_roman": "Alhambra Granada mein mehlon ka ek majmua hai jis ke sehan, pani ki khususiyat aur araish Spain mein Muslim mimaron aur fankaron ki maharat zahir karte hain.",
   "post": [
    "tt",
@@ -11743,7 +11743,7 @@
  },
  {
   "id": "SS-245",
-  "question_ur": "علی گڑھ کے محمدن اینگلو اورینٹل کالج میں طلبہ کے لیے کس دو قسم کی تعلیم کو یکجا کیا گیا تھا؟",
+  "question_ur": "علی گڑھ کے محمڈن اینگلو اورینٹل کالج میں طلبہ کے لیے کس دو قسم کی تعلیم کو یکجا کیا گیا تھا؟",
   "question_roman": "Aligarh ke Muhammadan Anglo-Oriental College mein talaba ke liye kis do qisam ki taleem ko yakja kiya gaya tha?",
   "options_ur": [
    "فوجی اور طبی تعلیم",
@@ -12429,7 +12429,7 @@
    "Shumal mein pahari dehat mein",
    "Kaam ke liye karkhanon wale qasbon aur shehron mein"
   ],
-  "explanation_ur": "نئے کارخانوں میں قصبوں میں ملازمتیں ملتی تھیں، اس لیے بڑی تعداد میں دیہاتی کارخانوں والے قصبوں اور شہروں میں منتقل ہو گئے، اور وہ تیزی سے بڑھنے لگے۔",
+  "explanation_ur": "قصبوں کے نئے کارخانوں میں ملازمتیں ملتی تھیں، اس لیے بڑی تعداد میں دیہاتی کارخانوں والے قصبوں اور شہروں میں منتقل ہو گئے، اور وہ تیزی سے بڑھنے لگے۔",
   "explanation_roman": "Naye karkhanon mein qasbon mein mulazmatein milti theen, is liye bari tadad mein dehati karkhanon wale qasbon aur shehron mein muntaqil ho gaye, aur woh teezi se barhne lage.",
   "post": [
    "tt",
@@ -12463,7 +12463,7 @@
  },
  {
   "id": "SS-260",
-  "question_ur": "یورپ میں نشاۃ ثانیہ کو کس چیز میں دلچسپی کے احیا کے طور پر بہتر طور پر بیان کیا جا سکتا ہے؟",
+  "question_ur": "یورپ میں نشاۃ ثانیہ کس چیز میں دلچسپی کا احیا تھا؟",
   "question_roman": "Europe mein Renaissance ko kis cheez mein dilchaspi ke ehya ke tor par behtar tor par bayan kiya ja sakta hai?",
   "options_ur": [
    "فوجی فتح اور سلطنت کی تعمیر",
@@ -13293,7 +13293,7 @@
    "Mehnat",
    "Karobar"
   ],
-  "explanation_ur": "سرمایہ سے مراد وہ اوزار، مشینیں اور عمارتیں ہیں جو مزدوروں کو اشیا اور خدمات پیدا کرنے میں مدد کرتی ہیں۔",
+  "explanation_ur": "سرمایہ سے مراد وہ اوزار، مشینیں اور عمارتیں ہیں جو مزدوروں کو اشیا اور خدمات پیدا کرنے میں مدد کرتے ہیں۔",
   "explanation_roman": "Sarmaya se muraad woh auzaar, machinein aur imaratein hain jo mazdooron ko ashya aur khidmaat paida karne mein madad karti hain.",
   "post": [
    "tt",
@@ -13917,7 +13917,7 @@
    "Sahil ke sath mahi geeri",
    "Tijarat, naql o hamal aur tawanai ke rabte"
   ],
-  "explanation_ur": "چین پاکستان اقتصادی راہداری ایک اقتصادی راہداری ہے جو پاکستان اور چین کے درمیان تجارت، نقل و حمل اور توانائی کے روابط کو بہتر بنانے کے لیے بنائی گئی ہے۔",
+  "explanation_ur": "چین پاکستان اقتصادی راہداری پاکستان اور چین کے درمیان تجارت، نقل و حمل اور توانائی کے روابط کو بہتر بنانے کے لیے بنائی گئی ہے۔",
   "explanation_roman": "China-Pakistan Economic Corridor (CPEC) aik iqtisadi rahdari hai jo Pakistan aur China ke darmiyan tijarat, naql o hamal aur tawanai ke rabton ko behtar banane ke liye banayi gayi hai.",
   "post": [
    "tt",
@@ -14239,7 +14239,7 @@
  },
  {
   "id": "SS-297",
-  "question_ur": "دکانیں ہر چیز کی قیمت روپے میں ظاہر کرتی ہیں۔ اس طرح اشیا کی قدر ظاہر کرنے کے لیے پیسے کا استعمال پیسے کی کس حیثیت سے کام کرنا کہلاتا ہے؟",
+  "question_ur": "دکانیں ہر چیز کی قیمت روپے میں ظاہر کرتی ہیں۔ اس طرح اشیا کی قدر ظاہر کرنے میں پیسہ کس حیثیت سے کام کر رہا ہوتا ہے؟",
   "question_roman": "Dukanein har cheez ki qeemat rupay mein zahir karti hain. Is tarah ashiya ki qadar zahir karnay ke liye paisay ka istemal paisay ki kis haisiyat se kaam karna kehlata hai?",
   "options_ur": [
    "مبادلے کا ذریعہ",
@@ -14815,7 +14815,7 @@
  },
  {
   "id": "SS-309",
-  "question_ur": "سماجی علوم میں مردم شماری کو کس کی سرکاری گنتی کے طور پر بہتر بیان کیا جاتا ہے؟",
+  "question_ur": "سماجی علوم میں مردم شماری کس کی سرکاری گنتی ہے؟",
   "question_roman": "Social Studies mein mardum shumari ko kis ki sarkari ginti ke tor par behtar bayan kiya jata hai?",
   "options_ur": [
    "ملک کے صرف ووٹروں کی گنتی",
@@ -15501,7 +15501,7 @@
    "Growth rate",
    "Population density"
   ],
-  "explanation_ur": "شرح پیدائش 1 سال میں ہر 1000 افراد کے لیے زندہ پیدائشیں گنتی ہے، اس لیے اس سے مختلف حجم کی آبادیوں کا منصفانہ موازنہ ہو سکتا ہے۔",
+  "explanation_ur": "شرح پیدائش 1 سال میں ہر 1000 افراد کے لیے زندہ پیدائشوں کی تعداد ہے، اس لیے اس سے مختلف حجم کی آبادیوں کا منصفانہ موازنہ ہو سکتا ہے۔",
   "explanation_roman": "Birth rate 1 saal mein har 1000 afraad ke liye zinda paidaishen ginti hai, is liye is se mukhtalif hajm ki aabadiyon ka munsifana mawazna ho sakta hai.",
   "post": [
    "tt",
@@ -15549,7 +15549,7 @@
    "Death rate",
    "Population density"
   ],
-  "explanation_ur": "شرح اموات 1 سال میں ہر 1000 افراد کے لیے اموات گنتی ہے، اس لیے اس سے ظاہر ہوتا ہے کہ آبادی اموات کے ذریعے کتنی تیزی سے افراد کھوتی ہے۔",
+  "explanation_ur": "شرح اموات 1 سال میں ہر 1000 افراد کے لیے اموات کی تعداد ہے، اس لیے اس سے ظاہر ہوتا ہے کہ آبادی اموات کے ذریعے کتنی تیزی سے افراد کھوتی ہے۔",
   "explanation_roman": "Death rate 1 saal mein har 1000 afraad ke liye amwaat ginti hai, is liye is se zahir hota hai ke aabadi amwaat ke zariye kitni tezi se afraad khoti hai.",
   "post": [
    "tt",
@@ -15583,11 +15583,11 @@
  },
  {
   "id": "SS-325",
-  "question_ur": "1 سال میں ایک قصبے میں اموات سے زیادہ زندہ پیدائشیں درج ہوتی ہیں، جب کہ کوئی بھی قصبے میں آتا یا اس سے باہر نہیں جاتا۔ اموات کو نکالنے کے بعد پیدائشوں سے ہونے والے اضافے کو کس اصطلاح سے بیان کیا جاتا ہے؟",
+  "question_ur": "1 سال میں ایک قصبے میں اموات سے زیادہ زندہ پیدائشیں درج ہوتی ہیں، جبکہ کوئی بھی قصبے میں آتا یا اس سے باہر نہیں جاتا۔ اموات کو نکالنے کے بعد پیدائشوں سے ہونے والے اضافے کو کس اصطلاح سے بیان کیا جاتا ہے؟",
   "question_roman": "1 saal mein aik qasbe mein amwaat se zyada zinda paidaishen darj hoti hain, jab ke koi bhi qasbe mein aata ya us se bahar nahi jata. Amwaat ko nikalne ke baad paidaishon se hone wale izafe ko kis istilah se bayan kiya jata hai?",
   "options_ur": [
    "کثافت آبادی",
-   "ہجرت سے اضافہ",
+   "نقل مکانی سے اضافہ",
    "دوگنا ہونے کی مدت",
    "فطری اضافہ"
   ],
@@ -15597,7 +15597,7 @@
    "Doubling time",
    "Natural increase"
   ],
-  "explanation_ur": "فطری اضافہ پیدائشوں سے اموات کو نکال کر حاصل ہوتا ہے، جس میں ہجرت شامل نہیں ہوتی، اس لیے اموات سے زیادہ پیدائشوں کا مطلب ہے کہ آبادی فطری طور پر بڑھتی ہے۔",
+  "explanation_ur": "فطری اضافہ پیدائشوں سے اموات کو نکال کر حاصل ہوتا ہے، جس میں نقل مکانی شامل نہیں ہوتی، اس لیے اموات سے زیادہ پیدائشوں کا مطلب ہے کہ آبادی فطری طور پر بڑھتی ہے۔",
   "explanation_roman": "Natural increase paidaishon se amwaat ko nikal kar hasil hota hai, jis mein hijrat shamil nahi hoti, is liye amwaat se zyada paidaishon ka matlab hai ke aabadi fitri tor par barhti hai.",
   "post": [
    "tt",
@@ -15778,10 +15778,10 @@
   "question_ur": "تقریباً 2.55 فیصد شرح نمو 2023 کی مردم شماری میں بتائی گئی۔ اگر شرح نمو اس شرح سے زیادہ بڑھ جائے تو آبادی کو دوگنا ہونے کے لیے درکار وقت کا کیا ہوتا ہے؟",
   "question_roman": "Taqreeban 2.55 percent sharah namo 2023 ki mardum shumari mein batayi gayi. Agar sharah namo is sharah se zyada barh jaye to aabadi ko dogna hone ke liye darkar waqt ka kya hota hai?",
   "options_ur": [
-   "یہ طویل ہو جاتی ہے",
-   "یہ مختصر ہو جاتی ہے",
-   "یہ ویسی ہی رہتی ہے",
-   "یہ صفر ہو جاتی ہے"
+   "یہ طویل ہو جاتا ہے",
+   "یہ مختصر ہو جاتا ہے",
+   "یہ ویسا ہی رہتا ہے",
+   "یہ صفر ہو جاتا ہے"
   ],
   "options_roman": [
    "Yeh taweel ho jati hai",
@@ -15885,7 +15885,7 @@
    "Har umar ke giroh mein barabar tadaad",
    "Aane walon se zyada jane wale afraad"
   ],
-  "explanation_ur": "چوڑی بنیاد کا مطلب ہے بہت سے بچے اور کم عمر افراد، جب کہ تنگ چوٹی کا مطلب ہے تھوڑے بزرگ افراد، اس لیے اہرام کم عمر آبادی کی ساخت ظاہر کرتا ہے۔",
+  "explanation_ur": "چوڑی بنیاد کا مطلب ہے بہت سے بچے اور کم عمر افراد، جبکہ تنگ چوٹی کا مطلب ہے تھوڑے بزرگ افراد، اس لیے اہرام کم عمر آبادی کی ساخت ظاہر کرتا ہے۔",
   "explanation_roman": "Chauri bunyad ka matlab hai bohat se bachay aur kam umar afraad, jab ke tang choti ka matlab hai thore buzurg afraad, is liye ahraam kam umar aabadi ki saakht zahir karta hai.",
   "post": [
    "tt",
@@ -15923,7 +15923,7 @@
   "question_roman": "Aabadi mein bachay aur buzurg afraad aam tor par khorak, dekh bhaal aur aamdani ki madad ke liye kaam karne ki umar ke baligh afraad par inhisar karte hain. Umri saakht ke mutalay mein bachon aur buzurg afraad ko kya shumar kiya jata hai?",
   "options_ur": [
    "کام کرنے والی آبادی",
-   "ہجرت کرنے والی آبادی",
+   "نقل مکانی کرنے والی آبادی",
    "زیر کفالت آبادی",
    "شہری آبادی"
   ],
@@ -15967,7 +15967,7 @@
  },
  {
   "id": "SS-333",
-  "question_ur": "ایک قصبے میں ہر سال کم بچے پیدا ہوتے ہیں، جب کہ اموات کی تعداد ویسی ہی رہتی ہے اور ہجرت میں تبدیلی نہیں ہوتی۔ آبادی کی نمو کا کیا ہوتا ہے؟",
+  "question_ur": "ایک قصبے میں ہر سال کم بچے پیدا ہوتے ہیں، جبکہ اموات کی تعداد ویسی ہی رہتی ہے اور نقل مکانی میں تبدیلی نہیں ہوتی۔ آبادی کی نمو کا کیا ہوتا ہے؟",
   "question_roman": "Aik qasbe mein har saal kam bachay paida hote hain, jab ke amwaat ki tadaad waisi hi rehti hai aur hijrat mein tabdeeli nahi hoti. Aabadi ki namo ka kya hota hai?",
   "options_ur": [
    "یہ تیز ہو جاتی ہے",
@@ -16447,7 +16447,7 @@
  },
  {
   "id": "SS-343",
-  "question_ur": "بلوچستان تمام صوبوں میں سب سے بڑے رقبے پر پھیلا ہوا ہے، پھر بھی پنجاب میں زیادہ لوگ رہتے ہیں۔ اس فرق سے سب سے بہتر طور پر کیا پتہ چلتا ہے کہ آبادی کا حجم کس چیز پر منحصر ہے؟",
+  "question_ur": "بلوچستان تمام صوبوں میں سب سے بڑے رقبے پر پھیلا ہوا ہے، پھر بھی پنجاب میں زیادہ لوگ رہتے ہیں۔ یہ فرق سب سے اچھی طرح کیا ظاہر کرتا ہے کہ آبادی کا حجم کس چیز پر منحصر ہے؟",
   "question_roman": "Balochistan tamam sobon mein sab se bare raqbe par phaila hua hai, phir bhi Punjab mein ziyada log rehte hain. Is farq se sab se behtar tor par kya pata chalta hai ke aabadi ka hajm kis cheez par munhasir hai?",
   "options_ur": [
    "صرف زمین کا رقبہ",
@@ -18271,7 +18271,7 @@
  },
  {
   "id": "SS-381",
-  "question_ur": "بسنٹ کے دوران رنگ برنگے پتنگ آسمان پر بھر جاتے ہیں اور بہت سے لوگ پیلے کپڑے پہنتے ہیں۔ یہ تہوار پنجاب میں روایتی طور پر کس موسم کا استقبال کرتا ہے؟",
+  "question_ur": "بسنٹ کے دوران آسمان رنگ برنگے پتنگوں سے بھر جاتا ہے اور بہت سے لوگ پیلے کپڑے پہنتے ہیں۔ یہ تہوار پنجاب میں روایتی طور پر کس موسم کا استقبال کرتا ہے؟",
   "question_roman": "Basant ke dauran rang barangay patang aasman par bhar jate hain aur bohat se log peele kapde pehente hain. Yeh tehwar Punjab mein rawayati tor par kis mausam ka istiqbal karta hai?",
   "options_ur": [
    "موسم سرما",
@@ -18463,7 +18463,7 @@
  },
  {
   "id": "SS-385",
-  "question_ur": "لاہور میں شالیمار باغ میں سیڑھی دار لان، بہتے ہوئے فوارے، پانی کی نہریں اور سنگ مرمر کی عمارتیں موجود ہیں۔ یہ باغ مغل ورثے کی کس قسم کی جگہ کی بنیادی مثال ہے؟",
+  "question_ur": "لاہور میں شالیمار باغ میں سیڑھی دار لان، بہتے ہوئے فوارے، پانی کی نہریں اور سنگ مرمر کی عمارتیں موجود ہیں۔ یہ باغ بنیادی طور پر مغل ورثے کی کس قسم کی جگہ کی مثال ہے؟",
   "question_roman": "Lahore mein Shalimar Bagh mein seedhi dar lawn, behte hue fawware, pani ki nehrein aur sang marmar ki imaratein maujood hain. Yeh bagh Mughal virse ki kis qism ki jagah ki bunyadi misaal hai?",
   "options_ur": [
    "ایک فوجی قلعہ",
@@ -18607,7 +18607,7 @@
  },
  {
   "id": "SS-388",
-  "question_ur": "خیبر پختونخوا کی درج ذیل قدیم جگہوں میں سے صرف ایک جگہ یونیسکو کی عالمی ورثہ فہرست میں شامل ہے۔ اس فہرست میں کون سی جگہ شامل ہے؟",
+  "question_ur": "خیبر پختونخوا کی مندرجہ ذیل قدیم جگہوں میں سے صرف ایک جگہ یونیسکو کی عالمی ورثہ فہرست میں شامل ہے۔ اس فہرست میں کون سی جگہ شامل ہے؟",
   "question_roman": "Khyber Pakhtunkhwa ki darj zail qadeem jaghon mein se sirf aik jagah UNESCO ki Aalmi Virsa Fehrist mein shamil hai. Is fehrist mein kaun si jagah shamil hai?",
   "options_ur": [
    "تخت بھائی",
@@ -18799,7 +18799,7 @@
  },
  {
   "id": "SS-392",
-  "question_ur": "اجرک ایک بلاک پرنٹ والا کپڑا ہے جس پر گہرے سرخ، نیلے اور سفید نقش ہوتے ہیں، اسے شال کے طور پر پہنا جاتا ہے اور احترام کی علامت کے طور پر تحفہ دیا جاتا ہے۔ اجرک کس صوبے کی ثقافت سے سب سے زیادہ قریبی طور پر منسلک ہے؟",
+  "question_ur": "اجرک ایک بلاک پرنٹ والا کپڑا ہے جس پر گہرے سرخ، نیلے اور سفید نقش ہوتے ہیں، اسے شال کے طور پر پہنا جاتا ہے اور احترام کی علامت کے طور پر تحفہ دیا جاتا ہے۔ اجرک کس صوبے کی ثقافت سے سب سے گہرا تعلق رکھتا ہے؟",
   "question_roman": "Ajrak aik block print wala kapda hai jis par gehre surkh, neele aur safed naqsh hote hain, use shawl ke tor par pehna jata hai aur ehtiram ki alamat ke tor par tohfa diya jata hai. Ajrak kis soobe ki saqafat se sab se zyada qareebi tor par munsalik hai?",
   "options_ur": [
    "سندھ",
@@ -18895,7 +18895,7 @@
  },
  {
   "id": "SS-394",
-  "question_ur": "نصرت فتح علی خان ہارمونیم اور تالیوں کے ساتھ عقیدت کے گیت پیش کرتے تھے، اور گلوکاروں کے ایک گروپ کی قیادت میں طویل اور پرجوش پیشکشیں دیتے تھے۔ وہ عقیدت کی موسیقی کی کس شکل کے لیے دنیا بھر میں مشہور ہوئے؟",
+  "question_ur": "نصرت فتح علی خان ہارمونیم اور تالیوں کے ساتھ عقیدت کے گیت پیش کرتے تھے، اور گلوکاروں کے ایک گروپ کی قیادت کرتے ہوئے طویل اور پرجوش پیشکشیں دیتے تھے۔ وہ عقیدت کی موسیقی کی کس شکل کے لیے دنیا بھر میں مشہور ہوئے؟",
   "question_roman": "Nusrat Fateh Ali Khan harmonium aur taliyon ke saath aqeedat ke geet pesh karte the, aur gulukaron ke aik group ki qayadat mein taweel aur purjosh peshkashen dete the. Woh aqeedat ki mausiqi ki kis shakl ke liye duniya bhar mein mashhoor hue?",
   "options_ur": [
    "غزل گائیکی",
@@ -19426,7 +19426,7 @@
   "question_ur": "مقامی حکومت کا ادارہ، جیسے میونسپل کمیٹی، اپنی آمدنی کا بڑا حصہ کس ذریعے سے حاصل کرتا ہے؟",
   "question_roman": "Maqami hukumat ka idara, jaise municipal committee, apni aamdani ka bara hissa kis zariye se haasil karta hai?",
   "options_ur": [
-   "بندرگاہوں پر وصول ہونے والی کسٹم ڈیوٹی",
+   "بندرگاہوں پر وصول ہونے والی کسٹم ڈیوٹی سے",
    "مقامی بازاروں کی فیسوں اور جائیداد پر ٹیکسوں سے",
    "پورے ملک میں تنخواہوں پر وصول ہونے والے انکم ٹیکس سے",
    "اسٹیٹ بینک کے منافع سے"
@@ -19855,12 +19855,12 @@
  },
  {
   "id": "SS-414",
-  "question_ur": "پاکستان میں ووٹرز قومی اسمبلی کے ارکان کو کس طریقے سے منتخب کرتے ہیں؟",
+  "question_ur": "پاکستان میں ووٹر قومی اسمبلی کے ارکان کو کس طریقے سے منتخب کرتے ہیں؟",
   "question_roman": "Pakistan mein voters Qaumi Assembly ke arkaan ko kis tareeqay se muntakhib karte hain?",
   "options_ur": [
    "صدر کی طرف سے تقرری",
    "سینیٹ کی طرف سے انتخاب",
-   "ووٹرز کے ذریعے براہ راست انتخاب",
+   "ووٹروں کے ذریعے براہ راست انتخاب",
    "صوبائی اسمبلیوں کے ذریعے انتخاب"
   ],
   "options_roman": [
@@ -19869,7 +19869,7 @@
    "Voters ke zariye barah-e-raast intikhab",
    "Soobai Assemblies ke zariye intikhab"
   ],
-  "explanation_ur": "ووٹرز عام انتخابات میں قومی اسمبلی کے ارکان کو براہ راست منتخب کرتے ہیں۔",
+  "explanation_ur": "ووٹر عام انتخابات میں قومی اسمبلی کے ارکان کو براہ راست منتخب کرتے ہیں۔",
   "explanation_roman": "Voters aam intikhabat mein Qaumi Assembly ke arkaan ko barah-e-raast muntakhib karte hain.",
   "post": [
    "tt",
@@ -19906,8 +19906,8 @@
   "question_ur": "پاکستان میں سینیٹ کے ارکان کا انتخاب بنیادی طور پر کون کرتا ہے؟",
   "question_roman": "Pakistan mein Senate ke arkaan ka intikhab bunyadi tor par kaun karta hai?",
   "options_ur": [
-   "براہ راست انتخاب میں ووٹرز",
-   "سپریم کورٹ کے ججز",
+   "براہ راست انتخاب میں ووٹر",
+   "سپریم کورٹ کے ججوں",
    "سیاسی جماعتوں کے سربراہان",
    "صوبائی اسمبلیوں کے ارکان"
   ],
@@ -19957,7 +19957,7 @@
    "صرف سرکاری افسران",
    "خواتین اور اقلیتی برادریاں",
    "پاکستان آنے والے غیر ملکی مہمان",
-   "صرف ریٹائرڈ ججز"
+   "صرف ریٹائرڈ جج"
   ],
   "options_roman": [
    "Sirf sarkari afsaran",
@@ -19999,7 +19999,7 @@
  },
  {
   "id": "SS-417",
-  "question_ur": "وہ انتخابی علاقہ جس سے ووٹرز اسمبلی کے لیے ایک رکن منتخب کرتے ہیں، کیا کہلاتا ہے؟",
+  "question_ur": "وہ انتخابی علاقہ جس سے ووٹر اسمبلی کے لیے ایک رکن منتخب کرتے ہیں، کیا کہلاتا ہے؟",
   "question_roman": "Woh intikhabi ilaqa jis se voters assembly ke liye aik rukn muntakhib karte hain, kya kehlata hai?",
   "options_ur": [
    "حلقہ انتخاب",
@@ -20013,7 +20013,7 @@
    "Secretariat",
    "Municipality"
   ],
-  "explanation_ur": "حلقہ انتخاب وہ انتخابی علاقہ ہے جس کے ووٹرز اسمبلی کے لیے ایک رکن منتخب کرتے ہیں۔",
+  "explanation_ur": "حلقہ انتخاب وہ انتخابی علاقہ ہے جس کے ووٹر اسمبلی کے لیے ایک رکن منتخب کرتے ہیں۔",
   "explanation_roman": "Halqa-e-intikhab woh intikhabi ilaqa hai jis ke voters assembly ke liye aik rukn muntakhib karte hain.",
   "post": [
    "tt",
@@ -20109,7 +20109,7 @@
    "School register",
    "Raaye dahindagan ki fehrist"
   ],
-  "explanation_ur": "رائے دہندگان کی فہرست کسی علاقے کے رجسٹرڈ ووٹرز کی سرکاری فہرست ہے، اور الیکشن کمیشن اسے انتخابات کے لیے تیار کرتا ہے۔",
+  "explanation_ur": "رائے دہندگان کی فہرست کسی علاقے کے رجسٹرڈ ووٹروں کی سرکاری فہرست ہے، اور الیکشن کمیشن اسے انتخابات کے لیے تیار کرتا ہے۔",
   "explanation_roman": "Raaye dahindagan ki fehrist kisi ilaqay ke registered voters ki sarkaari fehrist hai, aur Election Commission usay intikhabat ke liye tayyar karta hai.",
   "post": [
    "tt",
@@ -20157,7 +20157,7 @@
    "Mardum shumari ka survey",
    "Adalat ki samaat"
   ],
-  "explanation_ur": "عام انتخابات پورے ملک میں ہوتے ہیں تاکہ ووٹرز اسمبلیوں کے ارکان کا انتخاب کر سکیں۔",
+  "explanation_ur": "عام انتخابات پورے ملک میں ہوتے ہیں تاکہ ووٹر اسمبلیوں کے ارکان کا انتخاب کر سکیں۔",
   "explanation_roman": "Aam intikhabat pooray mulk mein hotay hain taake voters assemblies ke arkaan ka intikhab kar sakein.",
   "post": [
    "tt",
@@ -20301,7 +20301,7 @@
    "Adalati hukum",
    "Manshoor"
   ],
-  "explanation_ur": "منشور ان پالیسیوں اور وعدوں کو بیان کرتا ہے جو ایک سیاسی جماعت ووٹرز کو پیش کرتی ہے۔",
+  "explanation_ur": "منشور ان پالیسیوں اور وعدوں کو بیان کرتا ہے جو ایک سیاسی جماعت ووٹروں کو پیش کرتی ہے۔",
   "explanation_roman": "Manshoor un policies aur waadon ko bayan karta hai jo aik siyasi jamaat voters ko paish karti hai.",
   "post": [
    "tt",
@@ -20434,10 +20434,10 @@
   "question_ur": "سیاسی جماعتوں اور امیدواروں کو انتخابی نشانات کیوں دیے جاتے ہیں؟",
   "question_roman": "Siyasi jamaaton aur umeedwaaron ko intikhabi nishanaat kyun diye jatay hain?",
   "options_ur": [
-   "تاکہ ووٹرز بیلٹ پیپر پر انہیں آسانی سے پہچان سکیں",
+   "تاکہ ووٹر بیلٹ پیپر پر انہیں آسانی سے پہچان سکیں",
    "تاکہ جماعتیں عوامی جلسے کرنے سے بچ سکیں",
    "تاکہ امیدوار کاغذات نامزدگی جمع کرانے سے بچ سکیں",
-   "تاکہ ووٹرز کو ووٹ ڈالنے کے لیے فیس دینی پڑے"
+   "تاکہ ووٹروں کو ووٹ ڈالنے کے لیے فیس دینی پڑے"
   ],
   "options_roman": [
    "Taake voters ballot paper par unhein aasani se pehchan sakein",
@@ -20445,7 +20445,7 @@
    "Taake umeedwaar kaghzat-e-namzadgi jama karanay se bach sakein",
    "Taake voters ko vote daalnay ke liye fees deni paray"
   ],
-  "explanation_ur": "انتخابی نشانات ووٹرز کو بیلٹ پیپر پر جماعت یا امیدوار کو پہچاننے میں مدد دیتے ہیں، بشمول ان ووٹرز کے جو پڑھ نہیں سکتے۔",
+  "explanation_ur": "انتخابی نشانات ووٹروں کو بیلٹ پیپر پر جماعت یا امیدوار کو پہچاننے میں مدد دیتے ہیں، بشمول ان ووٹروں کے جو پڑھ نہیں سکتے۔",
   "explanation_roman": "Intikhabi nishanaat voters ko ballot paper par jamaat ya umeedwaar ko pehchannay mein madad dete hain, bashamool un voters ke jo parh nahi saktay.",
   "post": [
    "tt",
@@ -20578,7 +20578,7 @@
   "question_ur": "پارلیمنٹ سے منظور ہونے والا بل کس کی توثیق کے بعد قانون بن جاتا ہے؟",
   "question_roman": "Parliament se manzoor hone wala bill kis ki tauseeq ke baad qanoon ban jata hai?",
   "options_ur": [
-   "وزیراعظم",
+   "وزیر اعظم",
    "صدر",
    "چیف جسٹس",
    "اسپیکر"
@@ -20629,7 +20629,7 @@
    "صدر",
    "چیف جسٹس",
    "قومی اسمبلی کا اسپیکر",
-   "وزیراعظم"
+   "وزیر اعظم"
   ],
   "options_roman": [
    "Sadr",
@@ -20637,7 +20637,7 @@
    "Qaumi Assembly ka Speaker",
    "Wazir-e-Azam"
   ],
-  "explanation_ur": "وزیراعظم وفاقی کابینہ کا سربراہ ہوتا ہے اور اس کے اجلاسوں کی صدارت کرتا ہے۔",
+  "explanation_ur": "وزیر اعظم وفاقی کابینہ کا سربراہ ہوتا ہے اور اس کے اجلاسوں کی صدارت کرتا ہے۔",
   "explanation_roman": "Wazir-e-Azam Wifaqi Cabinet ka sarbarah hota hai aur us ke ijlason ki sadarat karta hai.",
   "post": [
    "tt",
@@ -22255,7 +22255,7 @@
  },
  {
   "id": "SS-464",
-  "question_ur": "اس ادارے کا صدر دفتر کس شہر میں ہے جو عالمی ثقافتی ورثے کے مقامات کی حفاظت کرتا ہے اور تعلیم و ثقافت کو فروغ دیتا ہے؟",
+  "question_ur": "عالمی ثقافتی ورثے کے مقامات کی حفاظت کرنے اور تعلیم و ثقافت کو فروغ دینے والے ادارے کا صدر دفتر کس شہر میں ہے؟",
   "question_roman": "Us idare ka sadar daftar kis sheher mein hai jo aalmi saqafati virse ke maqamat ki hifazat karta hai aur taleem o saqafat ko farogh deta hai?",
   "options_ur": [
    "جنیوا",
@@ -23325,7 +23325,7 @@
    "Mashriqi sarhad par",
    "Junubi samandar ke kinare"
   ],
-  "explanation_ur": "انقرہ ترکی کے وسطی اناطولیہ سطح مرتفع پر ملک کے اندرونی حصے میں واقع ہے، ساحل سے دور ہے۔",
+  "explanation_ur": "انقرہ ترکی کے وسطی سطح مرتفع اناطولیہ پر ملک کے اندرونی حصے میں واقع ہے اور ساحل سے دور ہے۔",
   "explanation_roman": "Ankara Turkey ke wasti Anatolia satah murtafa par mulk ke androoni hisse mein waqay hai, sahil se door hai.",
   "post": [
    "tt",
