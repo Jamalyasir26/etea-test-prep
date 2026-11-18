@@ -289,12 +289,18 @@ if (fs.existsSync(BACKUP)) {
     curPed[30].id === "PED-031" && curPed[499].id === "PED-500");
   const backupSciRaw = fs.readFileSync(join(BACKUP, "src/data/banks/science.json"), "utf8");
   const curSciRaw = fs.readFileSync(join(ROOT, "src/data/banks/science.json"), "utf8");
-  const backupSciPrefix = backupSciRaw.slice(0, -2); // strip trailing "\n]" — science.json has NO trailing newline (like pedagogy.json)
   const backupSci = JSON.parse(backupSciRaw);
   const curSci = JSON.parse(curSciRaw);
-  check("Phase 1 science.json: backup bytes are an exact prefix (30 items untouched) + 470 appended",
-    curSciRaw.startsWith(backupSciPrefix + ",") && backupSci.length === 30 && curSci.length === 500 &&
-    JSON.stringify(curSci.slice(0, 30)) === JSON.stringify(backupSci) &&
+  // U2-Science: science _ur fields were rewritten idiomatically
+  // in 127 of 500 items (229 of 3000 field-values), so the
+  // byte-prefix assertion no longer applies. The non-_ur fields
+  // of the 30 backup items must still match exactly (verified
+  // field-by-field, same pattern as the U1 islamiyat and U2
+  // tajweed/arabic/urdu/english/maths/pakstudies/pedagogy
+  // adjudications above); append pins stay.
+  check("Phase 1 science.json (U2 _ur rewrite): non-_ur fields of 30 backup items untouched + 470 appended",
+    backupSci.length === 30 && curSci.length === 500 &&
+    JSON.stringify(curSci.slice(0, 30).map(stripUrFields)) === JSON.stringify(backupSci.map(stripUrFields)) &&
     curSci[30].id === "SCI-031" && curSci[499].id === "SCI-500");
   const backupSsRaw = fs.readFileSync(join(BACKUP, "src/data/banks/socialstudies.json"), "utf8");
   const curSsRaw = fs.readFileSync(join(ROOT, "src/data/banks/socialstudies.json"), "utf8");

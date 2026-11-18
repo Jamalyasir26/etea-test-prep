@@ -7,9 +7,10 @@
 // subject 2), the Urdu bank (500 items, U2 subject 3), the
 // English bank (500 items, U2 subject 4), the Maths bank
 // (500 items, U2 subject 5), the Pak Studies bank
-// (500 items, U2 subject 6) and the Pedagogy bank
-// (500 items, U2 subject 7).
-// The other 6 banks keep their pre-U1 _ur
+// (500 items, U2 subject 6), the Pedagogy bank
+// (500 items, U2 subject 7) and the Science bank
+// (500 items, U2 subject 8).
+// The other 5 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -1141,6 +1142,189 @@ for (const q of ped) {
   }
 }
 check("U2 pedagogy: % never added in any _ur field; 8 total, all in bare-number options, 0 in questions/explanations", pedPctBad.length === 0 && pedPctTotal === 8 && pedPctQE === 0, `added in ${pedPctBad.slice(0, 3).join(", ")}, total ${pedPctTotal}, Q/E ${pedPctQE}`);
+
+// ---------- §3I Science bank (U2 subject 8) ----------
+// U2 rewrote the Science _ur fields (229 of 3000 field-values
+// changed; 127/500 items incl. 1 coordinator-normalization-only
+// item, SCI-489). Scientific terms, chemical symbols/formulas,
+// units and numbers are the TESTED MATERIAL: digit rule is
+// STRICT on every field (all 500 questions, options, and
+// explanations — baseline measured 0 digit-multiset mismatches,
+// including 0 against explanationEn for the original 30).
+// SCI-001..030 are the Phase 1 originals: stored `explanation`
+// is a pure Roman-Urdu original, English lives in
+// `explanationEn` (30 items); U2 took meaning from
+// `explanationEn`. explanationUrdu is null in all 500.
+// Latin rule is an ALLOWLIST: single letters (x, V, I, R, H,
+// O) + exactly CO (inside CO2), NaCl, Fe, Na, pH — chemical
+// symbols/formulas only. The SCI-016..030 Latin residue (~100
+// words) was fully rewritten to Urdu (molecule→مالیکیول,
+// Evaporation→تبخیر, Mercury→عطارد, Arctic Ocean→بحر منجمد
+// شمالی, SI→ایس آئی, vacuum→خلا, Iron→لوہا, Heater→ہیٹر).
+// Latin comma survives ONLY in the SCI-352 digit-group figures
+// (5 fields: 300,000 / 150,000 / 200,000 / 250,000 — the
+// digit-group multiset requires the comma); every other Latin
+// . / , became ۔ / ، (the SCI-401..418 pocket). No % anywhere
+// in _ur (فیصد 5×). Splits KEPT (same EN, different sense,
+// cluster, or grammar — not spelling variants): کرنٹ (63×,
+// Electricity cluster) vs برقی رو (5×, Measurement cluster
+// 360/371/372); سیل (13×: seal animal 192 + electric cell
+// 304/317/318/333 + solar cell 474) vs خلیہ (biology);
+// ایسڈ (27×, only inside specific acid names) vs تیزاب (16×,
+// generic); فنگس (9×, fungus) vs پھپھوندی (4×, mould);
+// مزاحمت (13×, technical) vs رکاوٹ (4×, generic barrier);
+// اساس (8×, chemical base) vs قلوی (4×, alkaline);
+// سیریز/پیرالل سرکٹ vs سلسلہ وار/متوازی (adverbial); نمو
+// (12×, growth) vs افزائش (1×, breeding); طاقت (11×, power)
+// vs قوت (60×, force); مادہ (26×, matter) vs مواد (9×,
+// material); پگھلنا (verb) vs پگھلاؤ (noun); آئرن (7×,
+// nutrient/option-label + compound names آئرن سلفائیڈ/سلفیٹ)
+// vs لوہا/لوہے (16×/17×, metal/material — within-item
+// distinction in SCI-224Q); گروپ (8×, ONLY blood groups,
+// SCI-054) vs گروہ (22×, everything else); ارتعاش (3×) vs
+// تھرتھراہٹ (3×, 3:3 tie, crosses clusters at SCI-472E);
+// بانڈ (12×, bond-type terms) vs بندھنوں (1×, generic
+// chemical bonds, SCI-278E); آبی بخارات (5×, condensation
+// cluster) vs پانی کے بخارات (7×, transpiration + humidity);
+// تھایامین (2×, EN thiamine, vitamin) vs تھائمین (2×, EN
+// thymine, DNA base — DIFFERENT EN words, not a split);
+// سیٹلائٹ (1×, bare EN "Satellite" distractor, SCI-400O2 —
+// سیارہ would collide with "planet") vs سیارہ/سیارے/سیاروں
+// (planet/satellite compounds قدرتی/مصنوعی سیارہ);
+// فائبر آپٹک (2×, EN "fibre optic") vs آپٹکل فائبر (2×, EN
+// "optical fibre"). تبخیر (22×) renders BOTH EN "evaporation"
+// and EN "transpiration" (no within-item collision; no
+// attested alternative — flagged for owner). Normalizations:
+// فوٹو سنتھیسز→ضیائی تالیف, پروڈیوسر→پیدا کنندہ,
+// ہربیوور→سبزی خور, گوئٹر→گلھڑ, سالمہ→مالیکیول,
+// فریکوئنسی→تعدد, سلفرک→سلفیورک, فارن ہائیٹ→فارن ہائٹ,
+// تقریبا→تقریباً, فورا→فوراً, جب کہ→جبکہ, اگاؤ→جرمینیشن,
+// زیرگی→پولینیشن, پھول والے→پھول دار, غذائی سلسلہ→غذائی
+// زنجیر, اسکیلیٹل→ڈھانچے کا عضلہ, کارڈیک→دل کا عضلہ,
+// تھائروکسین→تھائی راکسین, نشوونما کا ہارمون→نمو کا ہارمون,
+// خونی خلیہ→خون کا خلیہ, شمسی پینل→سولر پینل,
+// بجلی کی موٹر→برقی موٹر (coordinator, 6:1). Echo-glosses
+// dropped: (سلیوا), (vacuum), Iron (لوہا), (ہربیوور).
+// "Best described" calques restructured per guide §3.2
+// (SCI-217/391/403/468). Fidelity fixes: SCI-009E ہضم شدہ
+// restored, SCI-281Q شیلفوں (was الماریوں), SCI-458O3
+// جوار بھاٹا کی توانائی (was wave energy), SCI-087O3
+// ارادی عضلہ (was رضاکارانہ). Flagged facts mirrored, not
+// resolved: SCI-054/078/292/293/297/301/352/410/414/449/450.
+const sci = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/science.json"), "utf8"));
+check("U2 science: 500 items", sci.length === 500, `got ${sci.length}`);
+const sciIdsOk = sci.every((q, i) => q.id === `SCI-${String(i + 1).padStart(3, "0")}`);
+check("U2 science: IDs SCI-001..SCI-500 in order", sciIdsOk);
+const sciPairs = [];
+for (const q of sci) {
+  sciPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => sciPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  sciPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const SCI_BANNED = [...CONTENT_BANNED, "چنیں", "مونث", "مؤنث", "فوٹو", "سنتھیسز", "پروڈیوسر", "ہربیوور", "گوئٹر", "سالمہ", "فریکوئنسی", "سلفرک", "تقریبا", "فورا", "سلیوا", "اسکیلیٹل", "کارڈیک", "تھائروکسین", "اگاؤ", "زیرگی", "خونی"];
+const sciBanned = bannedHits(sciPairs, SCI_BANNED);
+check("U2 science: no banned glossary/variant/transliteration terms in any _ur field (token-aware)", sciBanned.length === 0, sciBanned.slice(0, 5).join(", "));
+const SCI_PHRASES = ["درج ذیل", "فارن ہائیٹ", "جب کہ", "ایک دفعہ", "بہتر طور پر", "بہتر بیان", "نشوونما کا ہارمون", "پھول والے", "غذائی سلسلہ", "شمسی پینل", "بجلی کی موٹر"];
+const sciPhrases = sciPairs.filter(([, v]) => SCI_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 science: no banned phrases in any _ur field (variant spellings, dropped terms, calques)", sciPhrases.length === 0, sciPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const sciEmdash = sciPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 science: no em-dash in any _ur field", sciEmdash.length === 0, sciEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const sciMarker = sciPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 science: no '[Auto-Translated]' literal in any _ur field", sciMarker.length === 0, sciMarker.slice(0, 3).map(([l]) => l).join(", "));
+const sciMojibake = sciPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 science: no U+FFFD in any _ur field", sciMojibake.length === 0, sciMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const sciIndic = sciPairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 science: no Urdu-Indic digits in any _ur field", sciIndic.length === 0, sciIndic.slice(0, 3).map(([l]) => l).join(", "));
+const sciEllipsis = sciPairs.filter(([, v]) => (v ?? "").includes("...") || (v ?? "").includes("…"));
+check("U2 science: no ellipsis runs in any _ur field", sciEllipsis.length === 0, sciEllipsis.slice(0, 3).map(([l]) => l).join(", "));
+let sciDigitBad = [];
+for (const q of sci) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) sciDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) sciDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) sciDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 science: digit preservation STRICT on every field (all 500 questions, options, explanations)", sciDigitBad.length === 0, sciDigitBad.slice(0, 5).join(", "));
+// Latin allowlist: single letters + CO/NaCl/Fe/Na/pH (chemical symbols/formulas), nothing else.
+const SCI_LATIN_ALLOWED = new Set(["co", "nacl", "fe", "na", "ph"]);
+let sciLatinBad = [];
+const sciLatinWords = {};
+for (const [loc, val] of sciPairs) {
+  for (const w of ((val ?? "").match(/[A-Za-z]+/g) || [])) {
+    const lw = w.toLowerCase();
+    if (lw.length > 1) {
+      sciLatinWords[w] = (sciLatinWords[w] || 0) + 1;
+      if (!SCI_LATIN_ALLOWED.has(lw)) sciLatinBad.push(`${loc}:${w}`);
+    }
+  }
+}
+check("U2 science: Latin allowlist — every multi-letter Latin word in _ur is CO, NaCl, Fe, Na, or pH", sciLatinBad.length === 0, sciLatinBad.slice(0, 5).join(" | "));
+check("U2 science: Latin inventory exact — CO 3×, NaCl 3×, Fe 3×, Na 3×, pH 4× (16 multi-letter words total)",
+  sciLatinWords["CO"] === 3 && sciLatinWords["NaCl"] === 3 && sciLatinWords["Fe"] === 3 && sciLatinWords["Na"] === 3 && sciLatinWords["pH"] === 4 && Object.keys(sciLatinWords).length === 5,
+  JSON.stringify(sciLatinWords));
+let sciPunctBad = [], sciCommaBad = [], sciSpaceBad = [];
+const sciCommaFields = [];
+for (const q of sci) {
+  const fields = [["question_ur", q.question_ur], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o]), ["explanation_ur", q.explanation_ur]];
+  for (const [loc, val] of fields) {
+    const p = (val ?? "").replace(/\d\.\d/g, " ");
+    if (/[.?;]/.test(p)) sciPunctBad.push(`${q.id}:${loc}`);
+    const c = (val ?? "").replace(/\d,\d/g, " ");
+    if (c.includes(",")) sciCommaBad.push(`${q.id}:${loc}`);
+    if ((val ?? "").includes(",")) sciCommaFields.push(`${q.id}:${loc}`);
+    if (/ [،؟؛۔]/.test(val ?? "")) sciSpaceBad.push(`${q.id}:${loc}`);
+  }
+}
+check("U2 science: no Latin . ? ; punctuation outside decimals (digit.digit)", sciPunctBad.length === 0, sciPunctBad.slice(0, 5).join(", "));
+check("U2 science: Latin comma ONLY between digits, in exactly the 5 SCI-352 fields", sciCommaBad.length === 0 && sciCommaFields.length === 5 && sciCommaFields.every((l) => l.startsWith("SCI-352:")), `${sciCommaBad.slice(0, 3).join(", ")} / ${sciCommaFields.join(", ")}`);
+check("U2 science: no space before Urdu punctuation", sciSpaceBad.length === 0, sciSpaceBad.slice(0, 5).join(", "));
+const sciHonor = sciPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 science: no Latin honorific abbreviations in any _ur field", sciHonor.length === 0, sciHonor.slice(0, 3).map(([l]) => l).join(", "));
+const sciArCodepoints = sciPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 science: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", sciArCodepoints.length === 0, sciArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+let sciEnScriptRuns = 0;
+for (const q of sci) {
+  sciEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { sciEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 science: zero Arabic-script runs in English fields (measured baseline)", sciEnScriptRuns === 0, `got ${sciEnScriptRuns}`);
+const sciUrText = sciPairs.map(([, v]) => v ?? "").join("\n");
+const sciCount = (t) => sciUrText.split(t).length - 1;
+check("U2 science: glossary terms present (ضیائی تالیف, خلیہ, مالیکیول, ایٹم, عضو, وٹامن, کشش ثقل, تبخیر, تکثیف, انجماد, پگھلاؤ, گلھڑ, پیدا کنندہ, سبزی خور, تعدد, سلفیورک, فارن ہائٹ, جبکہ, فوراً, تقریباً)",
+  ["ضیائی تالیف", "خلیہ", "مالیکیول", "ایٹم", "عضو", "وٹامن", "کشش ثقل", "تبخیر", "تکثیف", "انجماد", "پگھلاؤ", "گلھڑ", "پیدا کنندہ", "سبزی خور", "تعدد", "سلفیورک", "فارن ہائٹ", "جبکہ", "فوراً", "تقریباً"].every((t) => sciUrText.includes(t)));
+check("U2 science: glossary terms present (بحر منجمد شمالی, بحر اوقیانوس, بحر الکاہل, بحر ہند, ایس آئی, اکائی, نیوٹن, پاسکل, جول, واٹ, ہائیڈروجن, آکسیجن, نائٹروجن, کاربن ڈائی آکسائیڈ, قابل تجدید, پن بجلی, فوسل ایندھن, موصل, آئینہ, عدسہ)",
+  ["بحر منجمد شمالی", "بحر اوقیانوس", "بحر الکاہل", "بحر ہند", "ایس آئی", "اکائی", "نیوٹن", "پاسکل", "جول", "واٹ", "ہائیڈروجن", "آکسیجن", "نائٹروجن", "کاربن ڈائی آکسائیڈ", "قابل تجدید", "پن بجلی", "فوسل ایندھن", "موصل", "آئینہ", "عدسہ"].every((t) => sciUrText.includes(t)));
+check("U2 science: exact counts — ضیائی تالیف 25×, خلیہ 26×, خلیات 43×, خلیوں 12×, مالیکیول 20×, ایٹم 27× (incl. ایٹموں 7×), عضو 16×, وٹامن 44×, کشش ثقل 19×, تبخیر 22×, تکثیف 7×, انجماد 6×, پگھلاؤ 6×, ابال 2×, گلھڑ 6×, پیدا کنندہ 14×, سبزی خور 9×, تعدد 3×, سلفیورک 2×, فارن ہائٹ 14× (substring counts)",
+  sciCount("ضیائی تالیف") === 25 && sciCount("خلیہ") === 26 && sciCount("خلیات") === 43 && sciCount("خلیوں") === 12 && sciCount("مالیکیول") === 20 && sciCount("ایٹم") === 27 && sciCount("ایٹموں") === 7 && sciCount("عضو") === 16 && sciCount("وٹامن") === 44 && sciCount("کشش ثقل") === 19 && sciCount("تبخیر") === 22 && sciCount("تکثیف") === 7 && sciCount("انجماد") === 6 && sciCount("پگھلاؤ") === 6 && sciCount("ابال") === 2 && sciCount("گلھڑ") === 6 && sciCount("پیدا کنندہ") === 14 && sciCount("سبزی خور") === 9 && sciCount("تعدد") === 3 && sciCount("سلفیورک") === 2 && sciCount("فارن ہائٹ") === 14,
+  `ضیائی تالیف ${sciCount("ضیائی تالیف")}, خلیہ ${sciCount("خلیہ")}, خلیات ${sciCount("خلیات")}, خلیوں ${sciCount("خلیوں")}, مالیکیول ${sciCount("مالیکیول")}, ایٹم ${sciCount("ایٹم")}, ایٹموں ${sciCount("ایٹموں")}, عضو ${sciCount("عضو")}, وٹامن ${sciCount("وٹامن")}, کشش ثقل ${sciCount("کشش ثقل")}, تبخیر ${sciCount("تبخیر")}, تکثیف ${sciCount("تکثیف")}, انجماد ${sciCount("انجماد")}, پگھلاؤ ${sciCount("پگھلاؤ")}, ابال ${sciCount("ابال")}, گلھڑ ${sciCount("گلھڑ")}, پیدا کنندہ ${sciCount("پیدا کنندہ")}, سبزی خور ${sciCount("سبزی خور")}, تعدد ${sciCount("تعدد")}, سلفیورک ${sciCount("سلفیورک")}, فارن ہائٹ ${sciCount("فارن ہائٹ")}`);
+check("U2 science: exact counts — جبکہ 53×, فوراً 6×, تقریباً 15×, فیصد 5×, جرمینیشن 5×, پولینیشن 7×, پھول دار 4×, غذائی زنجیر 13×, ڈھانچے کا عضلہ 3×, دل کا عضلہ 4×, تھائی راکسین 3×, نمو کا ہارمون 3×, خون کا خلیہ 2×, سولر پینل 4×, ہوائی توانائی 6×, نمکیات 6×, برقی موٹر 8×, بہترین وضاحت 4×, بہترین تعریف 1×, بہترین طور پر 1×, مائٹوکونڈریا 6×, ایک بار 5×",
+  sciCount("جبکہ") === 53 && sciCount("فوراً") === 6 && sciCount("تقریباً") === 15 && sciCount("فیصد") === 5 && sciCount("جرمینیشن") === 5 && sciCount("پولینیشن") === 7 && sciCount("پھول دار") === 4 && sciCount("غذائی زنجیر") === 13 && sciCount("ڈھانچے کا عضلہ") === 3 && sciCount("دل کا عضلہ") === 4 && sciCount("تھائی راکسین") === 3 && sciCount("نمو کا ہارمون") === 3 && sciCount("خون کا خلیہ") === 2 && sciCount("سولر پینل") === 4 && sciCount("ہوائی توانائی") === 6 && sciCount("نمکیات") === 6 && sciCount("برقی موٹر") === 8 && sciCount("بہترین وضاحت") === 4 && sciCount("بہترین تعریف") === 1 && sciCount("بہترین طور پر") === 1 && sciCount("مائٹوکونڈریا") === 6 && sciCount("ایک بار") === 5,
+  `جبکہ ${sciCount("جبکہ")}, فوراً ${sciCount("فوراً")}, تقریباً ${sciCount("تقریباً")}, فیصد ${sciCount("فیصد")}, جرمینیشن ${sciCount("جرمینیشن")}, پولینیشن ${sciCount("پولینیشن")}, پھول دار ${sciCount("پھول دار")}, غذائی زنجیر ${sciCount("غذائی زنجیر")}, ڈھانچے کا عضلہ ${sciCount("ڈھانچے کا عضلہ")}, دل کا عضلہ ${sciCount("دل کا عضلہ")}, تھائی راکسین ${sciCount("تھائی راکسین")}, نمو کا ہارمون ${sciCount("نمو کا ہارمون")}, خون کا خلیہ ${sciCount("خون کا خلیہ")}, سولر پینل ${sciCount("سولر پینل")}, ہوائی توانائی ${sciCount("ہوائی توانائی")}, نمکیات ${sciCount("نمکیات")}, برقی موٹر ${sciCount("برقی موٹر")}, بہترین وضاحت ${sciCount("بہترین وضاحت")}, بہترین تعریف ${sciCount("بہترین تعریف")}, بہترین طور پر ${sciCount("بہترین طور پر")}, مائٹوکونڈریا ${sciCount("مائٹوکونڈریا")}, ایک بار ${sciCount("ایک بار")}`);
+check("U2 science: exact counts, kept splits A — کرنٹ 63×, برقی رو 5×, سیل 13×, ایسڈ 27×, تیزاب 16×, فنگس 9×, پھپھوندی 4×, مزاحمت 13×, رکاوٹ 4×, اساس 8×, قلوی 4×, سیریز 1×, پیرالل 1×, سلسلہ وار 1×, متوازی 6×, نمو 12×, افزائش 1×, طاقت 11×, قوت 60×, مادہ 26×, مواد 9×, پگھلنا 2×",
+  sciCount("کرنٹ") === 63 && sciCount("برقی رو") === 5 && sciCount("سیل") === 13 && sciCount("ایسڈ") === 27 && sciCount("تیزاب") === 16 && sciCount("فنگس") === 9 && sciCount("پھپھوندی") === 4 && sciCount("مزاحمت") === 13 && sciCount("رکاوٹ") === 4 && sciCount("اساس") === 8 && sciCount("قلوی") === 4 && sciCount("سیریز") === 1 && sciCount("پیرالل") === 1 && sciCount("سلسلہ وار") === 1 && sciCount("متوازی") === 6 && sciCount("نمو") === 12 && sciCount("افزائش") === 1 && sciCount("طاقت") === 11 && sciCount("قوت") === 60 && sciCount("مادہ") === 26 && sciCount("مواد") === 9 && sciCount("پگھلنا") === 2,
+  `کرنٹ ${sciCount("کرنٹ")}, برقی رو ${sciCount("برقی رو")}, سیل ${sciCount("سیل")}, ایسڈ ${sciCount("ایسڈ")}, تیزاب ${sciCount("تیزاب")}, فنگس ${sciCount("فنگس")}, پھپھوندی ${sciCount("پھپھوندی")}, مزاحمت ${sciCount("مزاحمت")}, رکاوٹ ${sciCount("رکاوٹ")}, اساس ${sciCount("اساس")}, قلوی ${sciCount("قلوی")}, سیریز ${sciCount("سیریز")}, پیرالل ${sciCount("پیرالل")}, سلسلہ وار ${sciCount("سلسلہ وار")}, متوازی ${sciCount("متوازی")}, نمو ${sciCount("نمو")}, افزائش ${sciCount("افزائش")}, طاقت ${sciCount("طاقت")}, قوت ${sciCount("قوت")}, مادہ ${sciCount("مادہ")}, مواد ${sciCount("مواد")}, پگھلنا ${sciCount("پگھلنا")}`);
+check("U2 science: exact counts, kept splits B — آئرن 7×, لوہا 16×, لوہے 17×, گروپ 8× (incl. گروپوں 1×), گروہ 22×, ارتعاش 3×, تھرتھراہٹ 3×, بانڈ 12×, بندھن 1×, آبی بخارات 5×, پانی کے بخارات 7×, تھایامین 2×, تھائمین 2×, سیٹلائٹ 1×, سیارہ 26×, سیارے 10×, سیاروں 8×, فائبر آپٹک 2×, آپٹکل فائبر 2×, پوٹینشل ڈفرنس 3×, مقناطیس بنانا 1×, یونیورسل ڈونر 2×, طلبہ 1×, ناقابل ہضم 2×, مرکزی غدود 2×",
+  sciCount("آئرن") === 7 && sciCount("لوہا") === 16 && sciCount("لوہے") === 17 && sciCount("گروپ") === 8 && sciCount("گروپوں") === 1 && sciCount("گروہ") === 22 && sciCount("ارتعاش") === 3 && sciCount("تھرتھراہٹ") === 3 && sciCount("بانڈ") === 12 && sciCount("بندھن") === 1 && sciCount("آبی بخارات") === 5 && sciCount("پانی کے بخارات") === 7 && sciCount("تھایامین") === 2 && sciCount("تھائمین") === 2 && sciCount("سیٹلائٹ") === 1 && sciCount("سیارہ") === 26 && sciCount("سیارے") === 10 && sciCount("سیاروں") === 8 && sciCount("فائبر آپٹک") === 2 && sciCount("آپٹکل فائبر") === 2 && sciCount("پوٹینشل ڈفرنس") === 3 && sciCount("مقناطیس بنانا") === 1 && sciCount("یونیورسل ڈونر") === 2 && sciCount("طلبہ") === 1 && sciCount("ناقابل ہضم") === 2 && sciCount("مرکزی غدود") === 2,
+  `آئرن ${sciCount("آئرن")}, لوہا ${sciCount("لوہا")}, لوہے ${sciCount("لوہے")}, گروپ ${sciCount("گروپ")}, گروپوں ${sciCount("گروپوں")}, گروہ ${sciCount("گروہ")}, ارتعاش ${sciCount("ارتعاش")}, تھرتھراہٹ ${sciCount("تھرتھراہٹ")}, بانڈ ${sciCount("بانڈ")}, بندھن ${sciCount("بندھن")}, آبی بخارات ${sciCount("آبی بخارات")}, پانی کے بخارات ${sciCount("پانی کے بخارات")}, تھایامین ${sciCount("تھایامین")}, تھائمین ${sciCount("تھائمین")}, سیٹلائٹ ${sciCount("سیٹلائٹ")}, سیارہ ${sciCount("سیارہ")}, سیارے ${sciCount("سیارے")}, سیاروں ${sciCount("سیاروں")}, فائبر آپٹک ${sciCount("فائبر آپٹک")}, آپٹکل فائبر ${sciCount("آپٹکل فائبر")}, پوٹینشل ڈفرنس ${sciCount("پوٹینشل ڈفرنس")}, مقناطیس بنانا ${sciCount("مقناطیس بنانا")}, یونیورسل ڈونر ${sciCount("یونیورسل ڈونر")}, طلبہ ${sciCount("طلبہ")}, ناقابل ہضم ${sciCount("ناقابل ہضم")}, مرکزی غدود ${sciCount("مرکزی غدود")}`);
+check("U2 science: exact counts, planets/oceans/units — عطارد 11×, زہرہ 14×, مشتری 10×, مریخ 13×, زحل 5×, نیپچون 4×, یورینس 2×, بحر منجمد شمالی 3×, بحر اوقیانوس 2×, بحر الکاہل 3×, بحر ہند 2×, نیوٹن 18×, پاسکل 7×, جول 22×, واٹ 14×, ایس آئی 22×, اکائی 45×, ہائیڈروجن 20×, آکسیجن 65×, نائٹروجن 15×, کاربن ڈائی آکسائیڈ 27×, قابل تجدید 7×, غیر قابل تجدید 4×, پن بجلی 2×, فوسل ایندھن 3×, موصل 13×, انسولیٹر 2×, آئینہ 20×, عدسہ 24×, انعکاس 18×, انعطاف 4×, مدار 12×, فضا 20×",
+  sciCount("عطارد") === 11 && sciCount("زہرہ") === 14 && sciCount("مشتری") === 10 && sciCount("مریخ") === 13 && sciCount("زحل") === 5 && sciCount("نیپچون") === 4 && sciCount("یورینس") === 2 && sciCount("بحر منجمد شمالی") === 3 && sciCount("بحر اوقیانوس") === 2 && sciCount("بحر الکاہل") === 3 && sciCount("بحر ہند") === 2 && sciCount("نیوٹن") === 18 && sciCount("پاسکل") === 7 && sciCount("جول") === 22 && sciCount("واٹ") === 14 && sciCount("ایس آئی") === 22 && sciCount("اکائی") === 45 && sciCount("ہائیڈروجن") === 20 && sciCount("آکسیجن") === 65 && sciCount("نائٹروجن") === 15 && sciCount("کاربن ڈائی آکسائیڈ") === 27 && sciCount("قابل تجدید") === 7 && sciCount("غیر قابل تجدید") === 4 && sciCount("پن بجلی") === 2 && sciCount("فوسل ایندھن") === 3 && sciCount("موصل") === 13 && sciCount("انسولیٹر") === 2 && sciCount("آئینہ") === 20 && sciCount("عدسہ") === 24 && sciCount("انعکاس") === 18 && sciCount("انعطاف") === 4 && sciCount("مدار") === 12 && sciCount("فضا") === 20,
+  `عطارد ${sciCount("عطارد")}, زہرہ ${sciCount("زہرہ")}, مشتری ${sciCount("مشتری")}, مریخ ${sciCount("مریخ")}, زحل ${sciCount("زحل")}, نیپچون ${sciCount("نیپچون")}, یورینس ${sciCount("یورینس")}, بحر منجمد شمالی ${sciCount("بحر منجمد شمالی")}, بحر اوقیانوس ${sciCount("بحر اوقیانوس")}, بحر الکاہل ${sciCount("بحر الکاہل")}, بحر ہند ${sciCount("بحر ہند")}, نیوٹن ${sciCount("نیوٹن")}, پاسکل ${sciCount("پاسکل")}, جول ${sciCount("جول")}, واٹ ${sciCount("واٹ")}, ایس آئی ${sciCount("ایس آئی")}, اکائی ${sciCount("اکائی")}, ہائیڈروجن ${sciCount("ہائیڈروجن")}, آکسیجن ${sciCount("آکسیجن")}, نائٹروجن ${sciCount("نائٹروجن")}, کاربن ڈائی آکسائیڈ ${sciCount("کاربن ڈائی آکسائیڈ")}, قابل تجدید ${sciCount("قابل تجدید")}, غیر قابل تجدید ${sciCount("غیر قابل تجدید")}, پن بجلی ${sciCount("پن بجلی")}, فوسل ایندھن ${sciCount("فوسل ایندھن")}, موصل ${sciCount("موصل")}, انسولیٹر ${sciCount("انسولیٹر")}, آئینہ ${sciCount("آئینہ")}, عدسہ ${sciCount("عدسہ")}, انعکاس ${sciCount("انعکاس")}, انعطاف ${sciCount("انعطاف")}, مدار ${sciCount("مدار")}, فضا ${sciCount("فضا")}`);
+check("U2 science: exact counts, gap keeps — ڈی این اے 15×, آر این اے 4×, سٹومیٹا 3×, گیمیٹ 9×, مٹر 10×, چکنائی 21×, سائز 8×, ریڈنگ 3×, کائی 51×, خمیر 10×, کرسٹ 5×, مینٹل 5×, کور 13×, ٹروپوسفیئر 4×, موثریت 1×, جوار بھاٹا 3×, سگنل 21×, ونڈ ٹربائن 4×, ٹربائن 10×, جنریٹر 6×, لیور 5×, وولٹیج 27×, ایمپیئر 17×, اوہم 19×, سرکٹ 20×, بیٹری 10×, مقناطیس 53×, مقناطیسی 23×, ایپکس 3×, فرٹیلائزیشن 14×, ہیموگلوبن 3×, انیمیا 2×, بیری بیری 4×, اسپوتنک 2×, چوڑیاں 2×, شیلف 5×, نمک 35×, نمکین 4×",
+  sciCount("ڈی این اے") === 15 && sciCount("آر این اے") === 4 && sciCount("سٹومیٹا") === 3 && sciCount("گیمیٹ") === 9 && sciCount("مٹر") === 10 && sciCount("چکنائی") === 21 && sciCount("سائز") === 8 && sciCount("ریڈنگ") === 3 && sciCount("کائی") === 51 && sciCount("خمیر") === 10 && sciCount("کرسٹ") === 5 && sciCount("مینٹل") === 5 && sciCount("کور") === 13 && sciCount("ٹروپوسفیئر") === 4 && sciCount("موثریت") === 1 && sciCount("جوار بھاٹا") === 3 && sciCount("سگنل") === 21 && sciCount("ونڈ ٹربائن") === 4 && sciCount("ٹربائن") === 10 && sciCount("جنریٹر") === 6 && sciCount("لیور") === 5 && sciCount("وولٹیج") === 27 && sciCount("ایمپیئر") === 17 && sciCount("اوہم") === 19 && sciCount("سرکٹ") === 20 && sciCount("بیٹری") === 10 && sciCount("مقناطیس") === 53 && sciCount("مقناطیسی") === 23 && sciCount("ایپکس") === 3 && sciCount("فرٹیلائزیشن") === 14 && sciCount("ہیموگلوبن") === 3 && sciCount("انیمیا") === 2 && sciCount("بیری بیری") === 4 && sciCount("اسپوتنک") === 2 && sciCount("چوڑیاں") === 2 && sciCount("شیلف") === 5 && sciCount("نمک") === 35 && sciCount("نمکین") === 4,
+  `ڈی این اے ${sciCount("ڈی این اے")}, آر این اے ${sciCount("آر این اے")}, سٹومیٹا ${sciCount("سٹومیٹا")}, گیمیٹ ${sciCount("گیمیٹ")}, مٹر ${sciCount("مٹر")}, چکنائی ${sciCount("چکنائی")}, سائز ${sciCount("سائز")}, ریڈنگ ${sciCount("ریڈنگ")}, کائی ${sciCount("کائی")}, خمیر ${sciCount("خمیر")}, کرسٹ ${sciCount("کرسٹ")}, مینٹل ${sciCount("مینٹل")}, کور ${sciCount("کور")}, ٹروپوسفیئر ${sciCount("ٹروپوسفیئر")}, موثریت ${sciCount("موثریت")}, جوار بھاٹا ${sciCount("جوار بھاٹا")}, سگنل ${sciCount("سگنل")}, ونڈ ٹربائن ${sciCount("ونڈ ٹربائن")}, ٹربائن ${sciCount("ٹربائن")}, جنریٹر ${sciCount("جنریٹر")}, لیور ${sciCount("لیور")}, وولٹیج ${sciCount("وولٹیج")}, ایمپیئر ${sciCount("ایمپیئر")}, اوہم ${sciCount("اوہم")}, سرکٹ ${sciCount("سرکٹ")}, بیٹری ${sciCount("بیٹری")}, مقناطیس ${sciCount("مقناطیس")}, مقناطیسی ${sciCount("مقناطیسی")}, ایپکس ${sciCount("ایپکس")}, فرٹیلائزیشن ${sciCount("فرٹیلائزیشن")}, ہیموگلوبن ${sciCount("ہیموگلوبن")}, انیمیا ${sciCount("انیمیا")}, بیری بیری ${sciCount("بیری بیری")}, اسپوتنک ${sciCount("اسپوتنک")}, چوڑیاں ${sciCount("چوڑیاں")}, شیلف ${sciCount("شیلف")}, نمک ${sciCount("نمک")}, نمکین ${sciCount("نمکین")}`);
+// % rule: 0 % in any Science _ur field (فیصد 5× in prose).
+// No % may ever be ADDED in _ur.
+let sciPctBad = [], sciPctTotal = 0;
+for (const q of sci) {
+  const fields = [[q.question, q.question_ur], [q.explanation, q.explanation_ur], ...q.options.map((o, i) => [o, q.options_ur[i]])];
+  for (const [en, ur] of fields) {
+    const ce = (en.match(/%/g) || []).length, cu = (ur.match(/%/g) || []).length;
+    sciPctTotal += cu;
+    if (cu > ce) sciPctBad.push(q.id);
+  }
+}
+check("U2 science: % never added in any _ur field; 0 total in the whole bank", sciPctBad.length === 0 && sciPctTotal === 0, `added in ${sciPctBad.slice(0, 3).join(", ")}, total ${sciPctTotal}`);
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");

@@ -15,7 +15,7 @@
    "Rickets",
    "Beriberi"
   ],
-  "explanation_ur": "وٹامن سی کی کمی سے اسکروی ہوتا ہے — مسوڑھوں سے خون آنا اس کی ایک علامت ہے۔",
+  "explanation_ur": "وٹامن سی کی کمی سے اسکروی ہوتا ہے۔ مسوڑھوں سے خون آنا اس کی ایک علامت ہے۔",
   "explanation_roman": "Vitamin C ki kami se scurvy hota hai — masoorhon se khoon aana is ki aik alamat hai.",
   "post": [
    "pst",
@@ -109,7 +109,7 @@
    "Vitamin D",
    "Vitamin K"
   ],
-  "explanation_ur": "وٹامن اے کی کمی سے رات کو دیکھنا مشکل ہو جاتا ہے — اسے رات کا اندھا پن کہتے ہیں۔",
+  "explanation_ur": "وٹامن اے کی کمی سے رات کو دیکھنا مشکل ہو جاتا ہے۔ اسے رات کا اندھا پن کہتے ہیں۔",
   "explanation_roman": "Vitamin A ki kami se raat ko dekhna mushkil ho jata hai — isay night blindness kehte hain.",
   "post": [
    "pst",
@@ -156,7 +156,7 @@
    "Fats",
    "Water"
   ],
-  "explanation_ur": "کواشیورکور پروٹین کی کمی سے ہوتا ہے — بچوں کی نشوونما رک جاتی ہے اور پیٹ پھول سکتا ہے۔",
+  "explanation_ur": "کواشیورکور پروٹین کی کمی سے ہوتا ہے۔ بچوں کی نشوونما رک جاتی ہے اور پیٹ پھول سکتا ہے۔",
   "explanation_roman": "Kwashiorkor protein ki kami se hota hai — bachon ki nashonuma ruk jati hai aur pait phool sakta hai.",
   "post": [
    "pst",
@@ -193,7 +193,7 @@
   "question_roman": "Jism mein iron ki kami se kaun si bemari hoti hai?",
   "options_ur": [
    "اسکروی",
-   "گوئٹر",
+   "گلھڑ",
    "انیمیا",
    "رکٹس"
   ],
@@ -250,7 +250,7 @@
    "Calcium",
    "Sodium"
   ],
-  "explanation_ur": "کیلشیم ہڈیوں اور دانتوں کو مضبوط بناتا ہے — دودھ اور دہی کیلشیم کے اچھے ذریعے ہیں۔",
+  "explanation_ur": "کیلشیم ہڈیوں اور دانتوں کو مضبوط بناتا ہے۔ دودھ اور دہی کیلشیم کے اچھے ذریعے ہیں۔",
   "explanation_roman": "Calcium haddiyon aur daanton ko mazboot banata hai — doodh aur dahi calcium ke achay zariye hain.",
   "post": [
    "pst",
@@ -286,9 +286,9 @@
   "question_ur": "پٹھوں کی کون سی قسم ہڈیوں سے جڑی ہوتی ہے اور ہمارے بازوؤں اور ٹانگوں کو حرکت دینے میں مدد کرتی ہے؟",
   "question_roman": "Muscle ki kaun si qisam haddiyon se juri hoti hai aur hamaray bazoon aur tangon ko harkat denay mein madad karti hai?",
   "options_ur": [
-   "اسکیلیٹل عضلہ",
+   "ڈھانچے کا عضلہ",
    "غیر ارادی عضلہ",
-   "کارڈیک عضلہ",
+   "دل کا عضلہ",
    "ہموار عضلہ"
   ],
   "options_roman": [
@@ -297,7 +297,7 @@
    "Cardiac muscle",
    "Smooth muscle"
   ],
-  "explanation_ur": "اسکیلیٹل عضلات ہڈیوں سے جڑے ہوتے ہیں اور ہماری مرضی سے حرکت کرتے ہیں۔",
+  "explanation_ur": "ڈھانچے کے عضلات ہڈیوں سے جڑے ہوتے ہیں اور ہماری مرضی سے حرکت کرتے ہیں۔",
   "explanation_roman": "Skeletal muscles haddiyon se juray hotay hain aur hamari marzi se harkat karte hain.",
   "post": [
    "pst",
@@ -344,7 +344,7 @@
    "Mouth",
    "Small intestine"
   ],
-  "explanation_ur": "ہضم منہ سے شروع ہوتا ہے — دانت کھانا چباتے ہیں اور تھوک (سلیوا) اسے نرم کرتا ہے۔",
+  "explanation_ur": "ہضم منہ سے شروع ہوتا ہے۔ دانت کھانا چباتے ہیں اور تھوک اسے نرم کرتا ہے۔",
   "explanation_roman": "Hazaam munh se shuru hota hai — daant khana cheenjte hain aur thook (saliva) usay naram karta hai.",
   "post": [
    "pst",
@@ -391,7 +391,7 @@
    "Large intestine",
    "Small intestine"
   ],
-  "explanation_ur": "چھوٹی آنت میں کھانے کے غذائی اجزا خون میں جذب ہوتے ہیں۔",
+  "explanation_ur": "چھوٹی آنت میں ہضم شدہ کھانے کے غذائی اجزا خون میں جذب ہوتے ہیں۔",
   "explanation_roman": "Chhoti aant (small intestine) mein khane ke ghizai ajza khoon mein jazb hotay hain.",
   "post": [
    "pst",
@@ -430,7 +430,7 @@
    "تنفس",
    "ہضم",
    "پولینیشن",
-   "فوٹو سنتھیسز"
+   "ضیائی تالیف"
   ],
   "options_roman": [
    "Respiration",
@@ -438,7 +438,7 @@
    "Pollination",
    "Photosynthesis"
   ],
-  "explanation_ur": "فوٹو سنتھیسز میں پودا دھوپ، پانی اور کاربن ڈائی آکسائیڈ سے کھانا بناتا ہے اور آکسیجن خارج کرتا ہے۔",
+  "explanation_ur": "ضیائی تالیف میں پودا دھوپ، پانی اور کاربن ڈائی آکسائیڈ سے کھانا بناتا ہے اور آکسیجن خارج کرتا ہے۔",
   "explanation_roman": "Photosynthesis mein poda dhoop, pani aur carbon dioxide se khana banata hai aur oxygen kharij karta hai.",
   "post": [
    "pst",
@@ -471,7 +471,7 @@
  },
  {
   "id": "SCI-011",
-  "question_ur": "پتوں میں کون سا سبز مادہ دھوپ کو فوٹو سنتھیسز کے لیے جذب کرتا ہے؟",
+  "question_ur": "پتوں میں کون سا سبز مادہ دھوپ کو ضیائی تالیف کے لیے جذب کرتا ہے؟",
   "question_roman": "Patton mein kaun sa sabz pigment photosynthesis ke liye dhoop ko jazb karta hai?",
   "options_ur": [
    "کیروٹین",
@@ -524,7 +524,7 @@
    "فرٹیلائزیشن",
    "پولینیشن",
    "جرمینیشن",
-   "فوٹو سنتھیسز"
+   "ضیائی تالیف"
   ],
   "options_roman": [
    "Fertilisation",
@@ -532,7 +532,7 @@
    "Germination",
    "Photosynthesis"
   ],
-  "explanation_ur": "پولینیشن میں پولن ایک پھول سے دوسرے پھول تک پہنچتا ہے — مکھیاں اور ہوا اس میں مدد کرتی ہیں۔",
+  "explanation_ur": "پولینیشن میں پولن ایک پھول سے دوسرے پھول تک پہنچتا ہے۔ مکھیاں اور ہوا اس میں مدد کرتی ہیں۔",
   "explanation_roman": "Pollination mein pollen aik phool se doosray phool tak pohanchta hai — makhiyan aur hawa is mein madad karte hain.",
   "post": [
    "pst",
@@ -565,7 +565,7 @@
  },
  {
   "id": "SCI-013",
-  "question_ur": "غذائی زنجیر میں کس جاندار کو پروڈیوسر کہا جاتا ہے؟",
+  "question_ur": "غذائی زنجیر میں کس جاندار کو پیدا کنندہ کہا جاتا ہے؟",
   "question_roman": "Food chain mein kis jandar ko producer kaha jata hai?",
   "options_ur": [
    "ایک بکری",
@@ -579,7 +579,7 @@
    "Aik sabz poda",
    "Aik sher"
   ],
-  "explanation_ur": "پروڈیوسر وہ ہے جو اپنا کھانا خود بناتا ہے — سبز پودے غذائی زنجیر کے پروڈیوسر ہیں۔",
+  "explanation_ur": "پیدا کنندہ وہ ہے جو اپنا کھانا خود بناتا ہے۔ سبز پودے غذائی زنجیر کے پیدا کنندہ ہیں۔",
   "explanation_roman": "Producer woh hai jo apna khana khud banata hai — sabz poday food chain ke producer hain.",
   "post": [
    "pst",
@@ -612,7 +612,7 @@
  },
  {
   "id": "SCI-014",
-  "question_ur": "ان میں سے کون سا جانور سبزی خور (ہربیوور) ہے؟",
+  "question_ur": "ان میں سے کون سا جانور سبزی خور ہے؟",
   "question_roman": "In janwaron mein se kaun sa janwar herbivore hai?",
   "options_ur": [
    "سانپ",
@@ -626,7 +626,7 @@
    "Bakri",
    "Sher"
   ],
-  "explanation_ur": "ہربیوور صرف پودے کھاتا ہے — بکری گھاس اور پتے کھاتی ہے، اس لیے ہربیوور ہے۔",
+  "explanation_ur": "سبزی خور صرف پودے کھاتا ہے۔ بکری گھاس اور پتے کھاتی ہے، اس لیے سبزی خور ہے۔",
   "explanation_roman": "Herbivore sirf poday khata hai — bakri ghaas aur pattay khati hai, is liye herbivore hai.",
   "post": [
    "pst",
@@ -720,7 +720,7 @@
    "O2",
    "H2O"
   ],
-  "explanation_ur": "پانی H2O ہے — ایک molecule میں hydrogen کے 2 atoms اور oxygen کا 1 atom ہوتا ہے۔",
+  "explanation_ur": "پانی H2O ہے۔ ایک مالیکیول میں ہائیڈروجن کے 2 ایٹم اور آکسیجن کا 1 ایٹم ہوتا ہے۔",
   "explanation_roman": "Pani H2O hai — aik molecule mein hydrogen ke 2 atoms aur oxygen ka 1 atom hota hai.",
   "post": [
    "pst",
@@ -753,13 +753,13 @@
  },
  {
   "id": "SCI-017",
-  "question_ur": "چیزوں کے جلنے کے لیے کون سی gas درکار ہوتی ہے؟",
+  "question_ur": "چیزوں کے جلنے کے لیے کون سی گیس درکار ہوتی ہے؟",
   "question_roman": "Cheezon ke jalne ke liye kaun si gas zaroori hoti hai?",
   "options_ur": [
-   "Hydrogen",
-   "Oxygen",
-   "Carbon dioxide",
-   "Nitrogen"
+   "ہائیڈروجن",
+   "آکسیجن",
+   "کاربن ڈائی آکسائیڈ",
+   "نائٹروجن"
   ],
   "options_roman": [
    "Hydrogen",
@@ -767,7 +767,7 @@
    "Carbon dioxide",
    "Nitrogen"
   ],
-  "explanation_ur": "آگ جلنے کے لیے oxygen ضروری ہے — oxygen کے بغیر آگ بجھ جاتی ہے۔",
+  "explanation_ur": "آگ جلنے کے لیے آکسیجن ضروری ہے۔ آکسیجن کے بغیر آگ بجھ جاتی ہے۔",
   "explanation_roman": "Aag jalnay ke liye oxygen zaroori hai — oxygen ke baghair aag bujh jati hai.",
   "post": [
    "pst",
@@ -800,13 +800,13 @@
  },
  {
   "id": "SCI-018",
-  "question_ur": "liquid کے gas میں تبدیل ہونے کو کیا کہتے ہیں؟",
+  "question_ur": "مائع کے گیس میں تبدیل ہونے کو کیا کہتے ہیں؟",
   "question_roman": "Liquid ke gas mein tabdeel hone ko kya kehte hain?",
   "options_ur": [
-   "Evaporation",
-   "Condensation",
-   "Freezing",
-   "Melting"
+   "تبخیر",
+   "تکثیف",
+   "انجماد",
+   "پگھلاؤ"
   ],
   "options_roman": [
    "Evaporation",
@@ -814,7 +814,7 @@
    "Freezing",
    "Melting"
   ],
-  "explanation_ur": "Evaporation میں liquid gas میں بدل جاتا ہے — جیسے دھوپ میں پانی سوکھ جاتا ہے۔",
+  "explanation_ur": "تبخیر میں مائع گیس میں بدل جاتا ہے۔ جیسے دھوپ میں پانی سوکھ جاتا ہے۔",
   "explanation_roman": "Evaporation mein liquid gas mein badal jata hai — jaisay dhoop mein pani sookh jata hai.",
   "post": [
    "pst",
@@ -850,10 +850,10 @@
   "question_ur": "کون سا سیارہ سورج کے سب سے قریب ہے؟",
   "question_roman": "Kaun sa sayyara Suraj ke sab se qareeb hai?",
   "options_ur": [
-   "Mercury",
-   "Earth",
-   "Venus",
-   "Mars"
+   "عطارد",
+   "زمین",
+   "زہرہ",
+   "مریخ"
   ],
   "options_roman": [
    "Mercury",
@@ -861,7 +861,7 @@
    "Venus",
    "Mars"
   ],
-  "explanation_ur": "Mercury سورج کے سب سے قریب سیارہ ہے، اس لیے وہ سب سے چھوٹا orbit رکھتا ہے۔",
+  "explanation_ur": "عطارد سورج کے سب سے قریب سیارہ ہے، اس لیے اس کا مدار سب سے چھوٹا ہوتا ہے۔",
   "explanation_roman": "Mercury Suraj ke sab se qareeb sayyara hai, is liye woh sab se chhota orbit rakhta hai.",
   "post": [
    "pst",
@@ -897,10 +897,10 @@
   "question_ur": "نظام شمسی میں سب سے گرم سیارہ کون سا ہے؟",
   "question_roman": "Nizam-e-shamsi mein sab se garam sayyara kaun sa hai?",
   "options_ur": [
-   "Mars",
-   "Venus",
-   "Mercury",
-   "Jupiter"
+   "مریخ",
+   "زہرہ",
+   "عطارد",
+   "مشتری"
   ],
   "options_roman": [
    "Mars",
@@ -908,7 +908,7 @@
    "Mercury",
    "Jupiter"
   ],
-  "explanation_ur": "Venus سب سے گرم سیارہ ہے — اس کی گھنی ہوا گرمی کو قید کر لیتی ہے۔",
+  "explanation_ur": "زہرہ سب سے گرم سیارہ ہے۔ اس کی گھنی فضا گرمی کو قید کر لیتی ہے۔",
   "explanation_roman": "Venus sab se garam sayyara hai — us ki ghani hawa garmi ko qaid kar leti hai.",
   "post": [
    "pst",
@@ -944,10 +944,10 @@
   "question_ur": "نظام شمسی کا سب سے بڑا سیارہ کون سا ہے؟",
   "question_roman": "Nizam-e-shamsi ka sab se bara sayyara kaun sa hai?",
   "options_ur": [
-   "Saturn",
-   "Jupiter",
-   "Earth",
-   "Neptune"
+   "زحل",
+   "مشتری",
+   "زمین",
+   "نیپچون"
   ],
   "options_roman": [
    "Saturn",
@@ -955,7 +955,7 @@
    "Earth",
    "Neptune"
   ],
-  "explanation_ur": "Jupiter نظام شمسی کا سب سے بڑا سیارہ ہے۔",
+  "explanation_ur": "مشتری نظام شمسی کا سب سے بڑا سیارہ ہے۔",
   "explanation_roman": "Jupiter nizam-e-shamsi ka sab se bara sayyara hai.",
   "post": [
    "pst",
@@ -991,10 +991,10 @@
   "question_ur": "دنیا کا سب سے بڑا سمندر کون سا ہے؟",
   "question_roman": "Duniya ka sab se bara samandar kaun sa hai?",
   "options_ur": [
-   "Arctic Ocean",
-   "Atlantic Ocean",
-   "Pacific Ocean",
-   "Indian Ocean"
+   "بحر منجمد شمالی",
+   "بحر اوقیانوس",
+   "بحر الکاہل",
+   "بحر ہند"
   ],
   "options_roman": [
    "Arctic Ocean",
@@ -1002,7 +1002,7 @@
    "Pacific Ocean",
    "Indian Ocean"
   ],
-  "explanation_ur": "Pacific Ocean دنیا کا سب سے بڑا سمندر ہے۔",
+  "explanation_ur": "بحر الکاہل دنیا کا سب سے بڑا سمندر ہے۔",
   "explanation_roman": "Pacific Ocean duniya ka sab se bara samandar hai.",
   "post": [
    "pst",
@@ -1035,13 +1035,13 @@
  },
  {
   "id": "SCI-023",
-  "question_ur": "ان میں سے کون سا renewable source of energy ہے؟",
+  "question_ur": "ان میں سے کون سا توانائی کا قابل تجدید ذریعہ ہے؟",
   "question_roman": "In mein se kaun sa renewable source of energy hai?",
   "options_ur": [
-   "Petrol",
+   "پٹرول",
    "کوئلہ",
-   "Natural gas",
-   "Solar energy"
+   "قدرتی گیس",
+   "شمسی توانائی"
   ],
   "options_roman": [
    "Petrol",
@@ -1049,7 +1049,7 @@
    "Natural gas",
    "Solar energy"
   ],
-  "explanation_ur": "Solar energy renewable ہے — سورج کی روشنی ختم نہیں ہوتی، جب کہ کوئلہ اور petrol ایک دن ختم ہو جائیں گے۔",
+  "explanation_ur": "شمسی توانائی قابل تجدید ہے۔ سورج کی روشنی ختم نہیں ہوتی، جبکہ کوئلہ اور پٹرول ایک دن ختم ہو جائیں گے۔",
   "explanation_roman": "Solar energy renewable hai — Suraj ki roshni khatam nahi hoti, jab ke koyla aur petrol aik din khatam ho jayenge.",
   "post": [
    "pst",
@@ -1082,12 +1082,12 @@
  },
  {
   "id": "SCI-024",
-  "question_ur": "ان میں سے کون سا non-renewable source of energy ہے؟",
+  "question_ur": "ان میں سے کون سا توانائی کا غیر قابل تجدید ذریعہ ہے؟",
   "question_roman": "In mein se kaun sa non-renewable source of energy hai?",
   "options_ur": [
-   "Wind energy",
-   "Solar energy",
-   "Hydroelectric energy",
+   "ہوائی توانائی",
+   "شمسی توانائی",
+   "پن بجلی",
    "کوئلہ"
   ],
   "options_roman": [
@@ -1096,7 +1096,7 @@
    "Hydroelectric energy",
    "Koyla"
   ],
-  "explanation_ur": "کوئلہ fossil fuel ہے اور non-renewable ہے — ایک دفعہ استعمال ہو جائے تو دوبارہ نہیں بنتا۔",
+  "explanation_ur": "کوئلہ فوسل ایندھن ہے اور غیر قابل تجدید ہے۔ ایک بار استعمال ہو جائے تو دوبارہ نہیں بنتا۔",
   "explanation_roman": "Koyla fossil fuel hai aur non-renewable hai — aik dafa istemal ho jaye to dobara nahi banta.",
   "post": [
    "pst",
@@ -1129,13 +1129,13 @@
  },
  {
   "id": "SCI-025",
-  "question_ur": "Force کی SI unit کیا ہے؟",
+  "question_ur": "قوت کی ایس آئی اکائی کیا ہے؟",
   "question_roman": "Force ki SI unit kya hai?",
   "options_ur": [
-   "Pascal",
-   "Newton",
-   "Joule",
-   "Watt"
+   "پاسکل",
+   "نیوٹن",
+   "جول",
+   "واٹ"
   ],
   "options_roman": [
    "Pascal",
@@ -1143,7 +1143,7 @@
    "Joule",
    "Watt"
   ],
-  "explanation_ur": "Force کی SI unit Newton ہے — اس کا نام scientist Isaac Newton کے نام پر رکھا گیا ہے۔",
+  "explanation_ur": "قوت کی ایس آئی اکائی نیوٹن ہے۔ اس کا نام سائنس دان آئزک نیوٹن کے نام پر رکھا گیا ہے۔",
   "explanation_roman": "Force ki SI unit Newton hai — is ka naam scientist Isaac Newton ke naam par rakha gaya hai.",
   "post": [
    "pst",
@@ -1179,8 +1179,8 @@
   "question_ur": "آواز ان میں سے کس کے ذریعے سفر نہیں کر سکتی؟",
   "question_roman": "Awaz in mein se kis ke zariye safar nahi kar sakti?",
   "options_ur": [
-   "Iron",
-   "Vacuum",
+   "لوہا",
+   "خلا",
    "پانی",
    "ہوا"
   ],
@@ -1190,7 +1190,7 @@
    "Pani",
    "Hawa"
   ],
-  "explanation_ur": "آواز کو سفر کے لیے کوئی medium چاہیے ہوتا ہے — خلا (vacuum) میں آواز نہیں چل سکتی۔",
+  "explanation_ur": "آواز کو سفر کے لیے کوئی واسطہ چاہیے ہوتا ہے۔ خلا میں آواز سفر نہیں کر سکتی۔",
   "explanation_roman": "Awaz ko safar ke liye koi medium chahiye hota hai — khala (vacuum) mein awaz nahi chal sakti.",
   "post": [
    "pst",
@@ -1223,13 +1223,13 @@
  },
  {
   "id": "SCI-027",
-  "question_ur": "ان میں سے کون سی چیز بجلی کی اچھی conductor ہے؟",
+  "question_ur": "ان میں سے کون سی چیز بجلی کی اچھی موصل ہے؟",
   "question_roman": "In mein se kaun si cheez bijli ki achi conductor hai?",
   "options_ur": [
-   "Rubber",
+   "ربڑ",
    "لکڑی",
-   "Plastic",
-   "Copper"
+   "پلاسٹک",
+   "تانبا"
   ],
   "options_roman": [
    "Rubber",
@@ -1237,7 +1237,7 @@
    "Plastic",
    "Copper"
   ],
-  "explanation_ur": "Copper بجلی کا اچھا conductor ہے، اس لیے تاریں اکثر copper کی بنی ہوتی ہیں۔",
+  "explanation_ur": "تانبا بجلی کا اچھا موصل ہے، اس لیے تاریں اکثر تانبے کی بنی ہوتی ہیں۔",
   "explanation_roman": "Copper bijli ka acha conductor hai, is liye taarain aksar copper ki bani hoti hain.",
   "post": [
    "pst",
@@ -1274,7 +1274,7 @@
   "question_roman": "Hum cheezon ko is liye dekh patay hain kyun ke roshni:",
   "options_ur": [
    "ان سے تباہ ہو جاتی ہے",
-   "ان سے reflect ہوتی ہے",
+   "ان سے منعکس ہوتی ہے",
    "ان سے رک جاتی ہے",
    "ان میں جذب ہو جاتی ہے"
   ],
@@ -1284,7 +1284,7 @@
    "Un se ruk jati hai",
    "Un mein jazb ho jati hai"
   ],
-  "explanation_ur": "روشنی چیزوں سے ٹکرا کر ہماری آنکھوں تک reflect ہوتی ہے، تبھی ہم انہیں دیکھ پاتے ہیں۔",
+  "explanation_ur": "روشنی چیزوں سے ٹکرا کر ہماری آنکھوں تک منعکس ہوتی ہے، تبھی ہم انہیں دیکھ پاتے ہیں۔",
   "explanation_roman": "Roshni cheezon se takra kar hamari aankhon tak reflect hoti hai, tabhi hum unhein dekh patay hain.",
   "post": [
    "pst",
@@ -1317,13 +1317,13 @@
  },
  {
   "id": "SCI-029",
-  "question_ur": "کون سا material گرمی کا اچھا conductor ہے؟",
+  "question_ur": "کون سا مواد گرمی کا اچھا موصل ہے؟",
   "question_roman": "Kaun sa material garmi ka acha conductor hai?",
   "options_ur": [
-   "Iron",
+   "لوہا",
    "کپڑا",
    "لکڑی",
-   "Plastic"
+   "پلاسٹک"
   ],
   "options_roman": [
    "Iron",
@@ -1331,7 +1331,7 @@
    "Lakri",
    "Plastic"
   ],
-  "explanation_ur": "Iron (لوہا) گرمی کا اچھا conductor ہے — گرم برتن کا لوہے کا handle جلدی گرم ہو جاتا ہے۔",
+  "explanation_ur": "لوہا گرمی کا اچھا موصل ہے۔ گرم برتن کا لوہے کا دستہ جلدی گرم ہو جاتا ہے۔",
   "explanation_roman": "Iron (loha) garmi ka acha conductor hai — garam bartan ka lohay ka handle jaldi garam ho jata hai.",
   "post": [
    "pst",
@@ -1364,13 +1364,13 @@
  },
  {
   "id": "SCI-030",
-  "question_ur": "کون سا آلہ electrical energy کو light energy میں بدل دیتا ہے؟",
+  "question_ur": "کون سا آلہ برقی توانائی کو روشنی کی توانائی میں بدل دیتا ہے؟",
   "question_roman": "Kaun si device electrical energy ko light energy mein badal deti hai?",
   "options_ur": [
    "پنکھا",
-   "Electric bulb",
-   "Heater",
-   "Motor"
+   "بجلی کا بلب",
+   "ہیٹر",
+   "موٹر"
   ],
   "options_roman": [
    "Pankha",
@@ -1378,7 +1378,7 @@
    "Heater",
    "Motor"
   ],
-  "explanation_ur": "Electric bulb بجلی کی energy کو روشنی میں بدل دیتا ہے۔",
+  "explanation_ur": "بجلی کا بلب برقی توانائی کو روشنی کی توانائی میں بدل دیتا ہے۔",
   "explanation_roman": "Electric bulb bijli ki energy ko roshni mein badal deta hai.",
   "post": [
    "pst",
@@ -1553,7 +1553,7 @@
   "question_roman": "Asabi nizam mein paighamat khususi khaliyon ke zariye pahunchaye jate hain. Paigham pahunchane wale aik asabi khaliye ko kya kehte hain?",
   "options_ur": [
    "عضلاتی خلیہ",
-   "خونی خلیہ",
+   "خون کا خلیہ",
    "نیورون",
    "ہڈی کا خلیہ"
   ],
@@ -1871,7 +1871,7 @@
  },
  {
   "id": "SCI-041",
-  "question_ur": "کسی گرم چیز کو چھونے سے ہاتھ فورا پیچھے ہٹ جاتا ہے، اس سے پہلے کہ کوئی فیصلہ کیا جائے۔ اس اچانک خودکار ردعمل کو کیا کہتے ہیں؟",
+  "question_ur": "کسی گرم چیز کو چھونے سے ہاتھ فوراً پیچھے ہٹ جاتا ہے، اس سے پہلے کہ کوئی فیصلہ کیا جائے۔ اس اچانک خودکار ردعمل کو کیا کہتے ہیں؟",
   "question_roman": "Kisi garam cheez ko chhune se haath foran peeche hat jata hai, is se pehle ke koi faisla kiya jaye. Is achanak khudkar rad-e-amal ko kya kehte hain?",
   "options_ur": [
    "ایک ارادی عمل",
@@ -1917,7 +1917,7 @@
  },
  {
   "id": "SCI-042",
-  "question_ur": "اضطراری عمل میں پیغام حرام مغز تک جاتا ہے اور جواب فورا واپس آ جاتا ہے، دماغ کا انتظار کیے بغیر۔ اضطراری ردعمل کو کون سا حصہ کنٹرول کرتا ہے؟",
+  "question_ur": "اضطراری عمل میں پیغام حرام مغز تک جاتا ہے اور جواب فوراً واپس آ جاتا ہے، دماغ کا انتظار کیے بغیر۔ اضطراری ردعمل کو کون سا حصہ کنٹرول کرتا ہے؟",
   "question_roman": "Reflex action mein paigham spinal cord tak jata hai aur jawab foran wapas aa jata hai, dimagh ka intizar kiye baghair. Reflex rad-e-amal ko kaun sa hissa control karta hai?",
   "options_ur": [
    "حرام مغز",
@@ -3070,7 +3070,7 @@
   "question_ur": "معدہ ایک طاقتور تیزاب بناتا ہے جو کھانے میں موجود جراثیم کو ختم کرتا ہے اور ہاضمے میں مدد دیتا ہے۔ معدہ کون سا تیزاب بناتا ہے؟",
   "question_roman": "Maida aik taqatwar tezab banata hai jo khane mein maujood jaraseem ko khatam karta hai aur hazme mein madad deta hai. Maida kaun sa tezab banata hai?",
   "options_ur": [
-   "سلفرک ایسڈ",
+   "سلفیورک ایسڈ",
    "نائٹرک ایسڈ",
    "ایسٹک ایسڈ",
    "ہائیڈروکلورک ایسڈ"
@@ -3254,9 +3254,9 @@
   "question_ur": "لبلبہ ایک ہارمون بناتا ہے جو خون میں شکر کی سطح کو قابو میں رکھتا ہے۔ اس ہارمون کو کیا کہتے ہیں؟",
   "question_roman": "Lablaba aik hormone banata hai jo khoon mein shakkar ki satah ko qaabu mein rakhta hai. Is hormone ko kya kehte hain?",
   "options_ur": [
-   "تھائروکسین",
+   "تھائی راکسین",
    "ایڈرینالین",
-   "نشوونما کا ہارمون",
+   "نمو کا ہارمون",
    "انسولین"
   ],
   "options_roman": [
@@ -3993,7 +3993,7 @@
    "ڈھانچے کا عضلہ",
    "دل کا عضلہ",
    "ہموار عضلہ",
-   "رضاکارانہ عضلہ"
+   "ارادی عضلہ"
   ],
   "options_roman": [
    "Skeletal muscle",
@@ -5289,7 +5289,7 @@
    "Teen",
    "Chaar"
   ],
-  "explanation_ur": "مائٹوسس میں ایک اصل خلیہ دو نئے خلیوں میں تقسیم ہوتا ہے جو اصل خلیے جیسے ہوتے ہیں۔",
+  "explanation_ur": "مائٹوسس میں ایک اصل خلیہ دو نئے خلیوں میں تقسیم ہوتا ہے جو اصل خلیے سے بالکل ایک جیسے ہوتے ہیں۔",
   "explanation_roman": "Mitosis mein aik asal khaliya do naye khaliyon mein taqseem hota hai jo asal khaliye jaise hote hain.",
   "post": [
    "pst",
@@ -5965,7 +5965,7 @@
  },
  {
   "id": "SCI-130",
-  "question_ur": "میسنجر آر این اے ڈی این اے سے نقل شدہ ہدایات رائبوسوم تک کن مادوں کے بنانے کے لیے لے جاتا ہے؟",
+  "question_ur": "میسنجر آر این اے ڈی این اے سے نقل شدہ ہدایات رائبوسوم تک کن مادوں کو بنانے کے لیے لے جاتا ہے؟",
   "question_roman": "Messenger RNA DNA se naqal shudah hidayat ribosome tak kin maddon ke banane ke liye le jata hai?",
   "options_ur": [
    "چکنائیاں",
@@ -6195,7 +6195,7 @@
  },
  {
   "id": "SCI-135",
-  "question_ur": "کسی خصوصیت کے لیے کسی جاندار کے پاس موجود جینوں کا مکمل مجموعہ، چاہے وہ خصوصیت دیکھی جا سکے یا نہیں، اس جاندار کا کیا کہلاتا ہے؟",
+  "question_ur": "کسی خصوصیت کے لیے کسی جاندار کے پاس موجود جینوں کا مکمل مجموعہ، چاہے وہ خصوصیت دیکھی جا سکے یا نہیں، کیا کہلاتا ہے؟",
   "question_roman": "Kisi khasoosiyat ke liye kisi jandar ke paas mojood genes ka mukammal majmooa, chahe woh khasoosiyat dekhi ja sakay ya nahi, us jandar ka kya kehlata hai?",
   "options_ur": [
    "جینوٹائپ",
@@ -6241,7 +6241,7 @@
  },
  {
   "id": "SCI-136",
-  "question_ur": "کسی جاندار کی قابل مشاہدہ خصوصیات، جیسے مٹر کے پودے کا لمبا قد جو دیکھا اور ماپا جا سکتا ہے، کو کیا کہا جاتا ہے؟",
+  "question_ur": "کسی جاندار کی قابل مشاہدہ خصوصیات، جیسے مٹر کے پودے کا لمبا قد جو دیکھا اور ماپا جا سکتا ہے، کیا کہلاتی ہیں؟",
   "question_roman": "Kisi jandar ki qaabil-e-mushahida khasoosiyaat, jaise matar ke poday ka lamba qad jo dekha aur maapa ja sakta hai, ko kya kaha jata hai?",
   "options_ur": [
    "جینوٹائپ",
@@ -6439,7 +6439,7 @@
    "Asexual reproduction",
    "Cross pollination"
   ],
-  "explanation_ur": "بغیر بیجوں کے اور گیمیٹوں کے ملاپ کے بغیر، ایک والد پودے کے حصے سے نیا پودا اگانا غیر جنسی تولید ہے، اور نیا پودا عام طور پر اپنے والد سے ایک جیسا ہوتا ہے۔",
+  "explanation_ur": "بغیر بیجوں اور گیمیٹوں کے ملاپ کے، ایک والد پودے کے حصے سے نیا پودا اگانا غیر جنسی تولید ہے، اور نیا پودا عام طور پر اپنے والد سے ایک جیسا ہوتا ہے۔",
   "explanation_roman": "Baghair beejon ke aur gametes ke milaap ke baghair, aik walid poday ke hissay se naya poda ugana asexual reproduction hai, aur naya poda aam tor par apne walid se aik jaisa hota hai.",
   "post": [
    "pst",
@@ -6885,7 +6885,7 @@
  },
  {
   "id": "SCI-150",
-  "question_ur": "اگر پتے کے ارد گرد کاربن ڈائی آکسائیڈ کی فراہمی تیزی سے کم ہو جائے جب کہ روشنی تیز رہے، تو ضیائی تالیف کی شرح کے ساتھ کیا ہونے کا زیادہ امکان ہے؟",
+  "question_ur": "اگر پتے کے ارد گرد کاربن ڈائی آکسائیڈ کی فراہمی تیزی سے کم ہو جائے جبکہ روشنی تیز رہے، تو ضیائی تالیف کی شرح کے ساتھ کیا ہونے کا زیادہ امکان ہے؟",
   "question_roman": "Agar patte ke ird gird carbon dioxide ki farahami tezi se kam ho jaye jab ke roshni tez rahe, to photosynthesis ki sharah ke saath kya hone ka zyada imkaan hai?",
   "options_ur": [
    "وہ تیزی سے بڑھ جاتی ہے",
@@ -6991,7 +6991,7 @@
    "Sirf raat ko",
    "Sirf sardiyon mein"
   ],
-  "explanation_ur": "پودے توانائی خارج کرنے کے لیے ہر وقت تنفس کرتے ہیں، جب کہ ضیائی تالیف صرف اس وقت ہوتی ہے جب روشنی موجود ہو۔",
+  "explanation_ur": "پودے توانائی خارج کرنے کے لیے ہر وقت تنفس کرتے ہیں، جبکہ ضیائی تالیف صرف اس وقت ہوتی ہے جب روشنی موجود ہو۔",
   "explanation_roman": "Pode tawanai kharij karne ke liye har waqt tanaffus karte hain, jab ke photosynthesis sirf us waqt hoti hai jab roshni mojood ho.",
   "post": [
    "pst",
@@ -7120,8 +7120,8 @@
   "options_ur": [
    "تبخیر",
    "ضیائی تالیف",
-   "اگاؤ",
-   "زیرگی"
+   "جرمینیشن",
+   "پولینیشن"
   ],
   "options_roman": [
    "Tabkheer",
@@ -7210,10 +7210,10 @@
   "question_ur": "تبخیر ایک لمبے پودے کو پانی اس کے سب سے اوپر والے پتوں تک پہنچانے میں کس طرح مدد کرتی ہے؟",
   "question_roman": "Tabkheer aik lambe pode ko pani is ke sab se oopar wale patton tak pahunchane mein kis tarah madad karti hai?",
   "options_ur": [
-   "یہ جڑوں کو مٹی میں زیادہ گہرا دھکیلتا ہے",
-   "یہ صرف پودے کے پھولوں کو ٹھنڈا کرتا ہے",
-   "یہ جڑوں سے پانی کو اوپر کی طرف کھینچتا ہے",
-   "یہ بیجوں کے اندر خوراک ذخیرہ کرتا ہے"
+   "یہ جڑوں کو مٹی میں زیادہ گہرا دھکیلتی ہے",
+   "یہ صرف پودے کے پھولوں کو ٹھنڈا کرتی ہے",
+   "یہ جڑوں سے پانی کو اوپر کی طرف کھینچتی ہے",
+   "یہ بیجوں کے اندر خوراک ذخیرہ کرتی ہے"
   ],
   "options_roman": [
    "Yeh jaron ko mitti mein zyada gehra dhakelta hai",
@@ -7299,7 +7299,7 @@
  },
  {
   "id": "SCI-159",
-  "question_ur": "پھول والے پودے میں جڑوں کا بنیادی کام کیا ہے؟",
+  "question_ur": "پھول دار پودے میں جڑوں کا بنیادی کام کیا ہے؟",
   "question_roman": "Phool wale pode mein jaron ka bunyadi kaam kya hai?",
   "options_ur": [
    "مٹی سے پانی اور معدنیات جذب کرنا",
@@ -7851,7 +7851,7 @@
  },
  {
   "id": "SCI-171",
-  "question_ur": "ریچھ پودوں سے بیریاں اور جڑیں کھاتا ہے، اور مچھلی بھی کھاتا ہے۔ پودے اور جانور دونوں کھانے سے ریچھ کس قسم کا خوراک کھانے والا بنتا ہے؟",
+  "question_ur": "ریچھ پودوں سے بیریاں اور جڑیں کھاتا ہے، اور مچھلی بھی کھاتا ہے۔ پودے اور جانور دونوں کھانے والا ریچھ کس قسم کا جانور کہلاتا ہے؟",
   "question_roman": "Reechh podon se beriyan aur jarein khata hai, aur machhli bhi khata hai. Pode aur janwar dono khane se reechh kis qism ka khana khane wala banta hai?",
   "options_ur": [
    "ہمہ خور",
@@ -8081,7 +8081,7 @@
  },
  {
   "id": "SCI-176",
-  "question_ur": "چمگادڑ رات کی ہوا میں اڑتی ہے، پھر بھی یہ پرندہ نہیں ہے۔ چمگادڑ ممالیہ جانوروں کے ساتھ تعلق رکھتی ہے کیونکہ یہ کیا کرتی ہے؟",
+  "question_ur": "چمگادڑ رات کی ہوا میں اڑتی ہے، پھر بھی یہ پرندہ نہیں ہے۔ چمگادڑ ممالیہ جانوروں سے تعلق رکھتی ہے کیونکہ یہ کیا کرتی ہے؟",
   "question_roman": "Chamgadar raat ki hawa mein urti hai, phir bhi yeh parinda nahi hai. Chamgadar mammal janwaron ke sath taalluq rakhti hai kyunke yeh kya karti hai?",
   "options_ur": [
    "یہ رات میں کیڑوں کا شکار کرتی ہے",
@@ -8541,7 +8541,7 @@
  },
  {
   "id": "SCI-186",
-  "question_ur": "گاڑیوں اور کارخانوں سے نکلنے والا دھواں ہوا میں مل جاتا ہے اور جانداروں کو نقصان پہنچاتا ہے۔ ہوا میں دھوئیں کی اس نقصان دہ آمیزش کو آلودگی کی کس قسم کی مثال کہا جاتا ہے؟",
+  "question_ur": "گاڑیوں اور کارخانوں سے نکلنے والا دھواں ہوا میں مل جاتا ہے اور جانداروں کو نقصان پہنچاتا ہے۔ ہوا میں دھوئیں کی یہ نقصان دہ آمیزش آلودگی کی کس قسم کی مثال ہے؟",
   "question_roman": "Gariyon aur karkhanon se nikalne wala dhuan hawa mein mil jata hai aur jandaron ko nuqsan pahunchata hai. Hawa mein dhuen ki is nuqsan deh aamezish ko aloodgi ki kis qisam ki misaal kaha jata hai?",
   "options_ur": [
    "پانی کی آلودگی",
@@ -8777,7 +8777,7 @@
    "پانی کا چکر",
    "ضیائی تالیف",
    "گرین ہاؤس اثر",
-   "غذائی سلسلہ"
+   "غذائی زنجیر"
   ],
   "options_roman": [
    "Pani ka chakkar",
@@ -8909,7 +8909,7 @@
  },
  {
   "id": "SCI-194",
-  "question_ur": "ایک طالب علم اتنا ہی دودھ ایک لمبے گلاس میں ڈالتا ہے اور پھر ایک چوڑے پیالے میں ڈالتا ہے۔ دونوں برتنوں میں دودھ کے بارے میں کون سا بیان درست ہے؟",
+  "question_ur": "ایک طالب علم دودھ کی اتنی ہی مقدار ایک لمبے گلاس میں ڈالتا ہے اور پھر ایک چوڑے پیالے میں ڈالتا ہے۔ دونوں برتنوں میں دودھ کے بارے میں کون سا بیان درست ہے؟",
   "question_roman": "Aik student itna hi doodh aik lambay glass mein dalta hai aur phir aik choray piyalay mein dalta hai. Dono bartano mein doodh ke baray mein kaun sa bayan durust hai?",
   "options_ur": [
    "اس کی شکل مقرر ہے لیکن حجم مقرر نہیں ہے",
@@ -9558,7 +9558,7 @@
   "options_ur": [
    "وہ مضبوط ہو جاتی ہیں",
    "وہ بالکل ویسی ہی رہتی ہیں",
-   "وہ فورا غائب ہو جاتی ہیں",
+   "وہ فوراً غائب ہو جاتی ہیں",
    "وہ کمزور ہو جاتی ہیں"
   ],
   "options_roman": [
@@ -9875,7 +9875,7 @@
  },
  {
   "id": "SCI-215",
-  "question_ur": "کاربن ڈائی آکسائیڈ، سونا، آکسیجن اور نائٹروجن میں سے وہ مادہ کون سا ہے جو عنصر نہیں بلکہ مرکب ہے؟",
+  "question_ur": "کاربن ڈائی آکسائیڈ، سونا، آکسیجن اور نائٹروجن میں سے کون سا مادہ مرکب ہے؟",
   "question_roman": "Carbon dioxide, sona, oxygen aur nitrogen mein se woh madda kaun sa hai jo element nahi balkay compound hai?",
   "options_ur": [
    "سونا",
@@ -9967,7 +9967,7 @@
  },
  {
   "id": "SCI-217",
-  "question_ur": "آمیزے میں ملائے گئے مادے اپنی خصوصیات برقرار رکھتے ہیں اور عام طور پر طبیعی طریقوں سے الگ کیے جا سکتے ہیں۔ آمیزے کے بارے میں کون سا بیان درست ہے؟",
+  "question_ur": "آمیزے میں ملائے گئے مادے اپنی خصوصیات برقرار رکھتے ہیں اور عام طور پر طبیعی طریقوں سے الگ کیے جا سکتے ہیں۔ کون سا بیان آمیزے کی بہترین وضاحت کرتا ہے؟",
   "question_roman": "Mixture mein milaye gaye madday apni khususiyat barqarar rakhtay hain aur aam tor par physical tareeqon se alag kiye ja saktay hain. Mixture ke baray mein kaun sa bayan durust hai?",
   "options_ur": [
    "اس کے اجزا اپنی خصوصیات برقرار رکھتے ہیں",
@@ -10795,7 +10795,7 @@
  },
  {
   "id": "SCI-235",
-  "question_ur": "تیزاب اور اساس آپس میں تعامل کر کے ایک دوسرے کا اثر ختم کر دیتے ہیں۔ اس تعامل سے کون سی دو چیزیں بنتی ہیں؟",
+  "question_ur": "تیزاب اور اساس آپس میں تعامل کر کے ایک دوسرے کا اثر ختم کر دیتے ہیں۔ اس تعامل سے کون سے دو مادے بنتے ہیں؟",
   "question_roman": "Acid aur base aapas mein react kar ke aik dusre ka asar khatam kar dete hain. Is reaction se kaun si do cheezein banti hain?",
   "options_ur": [
    "ہائیڈروجن اور آکسیجن",
@@ -11255,7 +11255,7 @@
  },
  {
   "id": "SCI-245",
-  "question_ur": "دوری جدول کے گروپ 18 کے عناصر کس نام سے جانے جاتے ہیں؟",
+  "question_ur": "دوری جدول کے گروہ 18 کے عناصر کس نام سے جانے جاتے ہیں؟",
   "question_roman": "Periodic table ke Group 18 ke elements kis naam se jane jate hain?",
   "options_ur": [
    "نوبل گیسیں",
@@ -11393,7 +11393,7 @@
  },
  {
   "id": "SCI-248",
-  "question_ur": "عام کھانے کا نمک کن دو عناصر کا مرکب ہے؟",
+  "question_ur": "عام نمک کن دو عناصر کا مرکب ہے؟",
   "question_roman": "Aam khane ka namak kin do elements ka compound hai?",
   "options_ur": [
    "سوڈیم اور آکسیجن",
@@ -11531,7 +11531,7 @@
  },
  {
   "id": "SCI-251",
-  "question_ur": "لکڑی کا ایک ڈبہ کھردری فرش پر پھسلتا ہے۔ رگڑ حرکت کرتے ڈبے پر کس سمت میں عمل کرتی ہے؟",
+  "question_ur": "لکڑی کا ایک ڈبہ کھردرے فرش پر پھسلتا ہے۔ رگڑ حرکت کرتے ڈبے پر کس سمت میں عمل کرتی ہے؟",
   "question_roman": "Lakri ka aik dabba khurdari farsh par phisalta hai. Friction harkat karte dabbe par kis samt mein amal karti hai?",
   "options_ur": [
    "حرکت کی سمت میں",
@@ -12313,7 +12313,7 @@
  },
  {
   "id": "SCI-268",
-  "question_ur": "حرکت کے مطالعے میں سمتی رفتار رفتار سے کس طرح مختلف ہے؟",
+  "question_ur": "حرکت کے مطالعے میں رفتار اور سمتی رفتار میں کیا فرق ہے؟",
   "question_roman": "Harkat ke mutalay mein velocity speed se kis tarah mukhtalif hai?",
   "options_ur": [
    "سمتی رفتار کی کوئی مقدار نہیں ہوتی",
@@ -12543,7 +12543,7 @@
  },
  {
   "id": "SCI-273",
-  "question_ur": "ایک ٹرالی پر قوت عمل کرتی ہے جس کی کمیت 4 کلوگرام ہے اور اسے 3 میٹر فی سیکنڈ مربع کا اسراع دیتی ہے۔ ٹرالی پر قوت کتنی بڑی ہے؟",
+  "question_ur": "4 کلوگرام کمیت والی ٹرالی پر ایک قوت عمل کرتی ہے اور اسے 3 میٹر فی سیکنڈ مربع کا اسراع دیتی ہے۔ ٹرالی پر قوت کتنی بڑی ہے؟",
   "question_roman": "Aik trolley par force amal karti hai jis ka mass 4 kilogram hai aur use 3 metre per second squared ki acceleration deti hai. Trolley par force kitni barri hai?",
   "options_ur": [
    "12 نیوٹن",
@@ -12695,7 +12695,7 @@
    "5 Joules",
    "50 Joules"
   ],
-  "explanation_ur": "کام قوت کو فاصلے سے ضرب دینے سے ملتا ہے، اس لیے 10 کو 5 سے ضرب دینے سے 50 جول ملتا ہے۔",
+  "explanation_ur": "کام قوت کو فاصلے سے ضرب دینے سے ملتا ہے، اس لیے 10 کو 5 سے ضرب دینے سے 50 جول ملتے ہیں۔",
   "explanation_roman": "Kaam force ko faaslay se zarb dene se milta hai, is liye 10 ko 5 se zarb dene se 50 Joules milta hai.",
   "post": [
    "pst",
@@ -12727,7 +12727,7 @@
  },
  {
   "id": "SCI-277",
-  "question_ur": "ایک طالب علم ایک بھاری بیگ کو ہاتھوں میں ایک لمبے وقت تک بغیر ہلائے تھامے رکھتا ہے۔ علمی معنوں میں طالب علم بیگ پر کتنا کام کرتا ہے؟",
+  "question_ur": "ایک طالب علم ایک بھاری بیگ کو ہاتھوں میں ایک لمبے وقت تک بغیر ہلائے تھامے رکھتا ہے۔ سائنسی معنوں میں طالب علم بیگ پر کتنا کام کرتا ہے؟",
   "question_roman": "Aik taalib ilm aik bhaari bag ko haathon mein aik lambe waqt tak baghair hilaye thaame rakhta hai. Ilmi maano mein taalib ilm bag par kitna kaam karta hai?",
   "options_ur": [
    "کوئی کام نہیں، کیونکہ بیگ حرکت نہیں کرتا",
@@ -12865,7 +12865,7 @@
  },
  {
   "id": "SCI-280",
-  "question_ur": "5 کلوگرام کمیت والی ایک اینٹ کو 2 میٹر کی بلندی تک اٹھایا جاتا ہے۔ کشش ثقل کو تقریبا 10 میٹر فی سیکنڈ مربع لیتے ہوئے، اینٹ کتنی کشش ثقل کی مخفی توانائی حاصل کرتی ہے؟",
+  "question_ur": "5 کلوگرام کمیت والی ایک اینٹ کو 2 میٹر کی بلندی تک اٹھایا جاتا ہے۔ کشش ثقل کو تقریباً 10 میٹر فی سیکنڈ مربع لیتے ہوئے، اینٹ کتنی کشش ثقل کی مخفی توانائی حاصل کرتی ہے؟",
   "question_roman": "5 kilogram mass wali aik eent ko 2 metre ki bulandi tak uthaya jata hai. Gravity ko taqreeban 10 metre per second squared lete hue, eent kitni gravitational potential energy haasil karti hai?",
   "options_ur": [
    "17 جول",
@@ -12911,7 +12911,7 @@
  },
  {
   "id": "SCI-281",
-  "question_ur": "دو ایک جیسی کتابیں الماریوں میں رکھی ہیں۔ ایک کتاب اونچی شیلف پر ہے اور دوسری نیچی شیلف پر ہے۔ کس کتاب میں زیادہ کشش ثقل کی مخفی توانائی ہے؟",
+  "question_ur": "دو ایک جیسی کتابیں شیلفوں پر رکھی ہیں۔ ایک کتاب اونچی شیلف پر ہے اور دوسری نیچی شیلف پر ہے۔ کس کتاب میں زیادہ کشش ثقل کی مخفی توانائی ہے؟",
   "question_roman": "Do aik jaisi kitaabein almaariyon mein rakhi hain. Aik kitaab unchi shelf par hai aur dusri neeche shelf par hai. Kis kitaab mein zyada gravitational potential energy hai?",
   "options_ur": [
    "اونچی شیلف پر رکھی کتاب",
@@ -13003,7 +13003,7 @@
  },
  {
   "id": "SCI-283",
-  "question_ur": "ایک گیند بلندی سے گرائی جاتی ہے اور زمین کی طرف گرتی ہے۔ گیند کے گرتے ہوئے اس کی مخفی توانائی اور حرکی توانائی کو کیا ہوتا ہے؟",
+  "question_ur": "ایک گیند بلندی سے گرائی جاتی ہے اور زمین کی طرف گرتی ہے۔ گیند کے گرتے ہوئے اس کی مخفی توانائی اور حرکی توانائی میں کیا تبدیلی آتی ہے؟",
   "question_roman": "Aik gaind bulandi se girayi jati hai aur zameen ki taraf girti hai. Gaind ke girte hue us ki potential energy aur kinetic energy ko kya hota hai?",
   "options_ur": [
    "مخفی توانائی بڑھتی ہے اور حرکی توانائی کم ہوتی ہے",
@@ -13063,7 +13063,7 @@
    "Yeh aadhi reh jati hai",
    "Yeh chaar guna barri ho jati hai"
   ],
-  "explanation_ur": "حرکی توانائی رفتار کو رفتار سے ضرب دینے پر منحصر ہوتی ہے، اس لیے رفتار دگنی ہونے سے توانائی دو کو دو سے ضرب دینے کے برابر بڑھتی ہے، جو چار گنا توانائی دیتی ہے۔",
+  "explanation_ur": "حرکی توانائی رفتار کو رفتار سے ضرب دینے پر منحصر ہوتی ہے، اس لیے رفتار دگنی ہونے پر توانائی دو ضرب دو یعنی چار گنا ہو جاتی ہے۔",
   "explanation_roman": "Kinetic energy speed ko speed se zarb dene par munhasir hoti hai, is liye speed dugni hone se energy do ko do se zarb dene ke baraabar barhti hai, jo chaar guna energy deti hai.",
   "post": [
    "pst",
@@ -13155,7 +13155,7 @@
    "Radiation",
    "Evaporation"
   ],
-  "explanation_ur": "ایصال حرارت میں حرارت ٹھوس جسم کے ایک حصے سے دوسرے حصے تک پہنچتی ہے، جب کہ ٹھوس جسم خود حرکت نہیں کرتا۔",
+  "explanation_ur": "ایصال حرارت میں حرارت ٹھوس جسم کے ایک حصے سے دوسرے حصے تک پہنچتی ہے، جبکہ ٹھوس جسم خود حرکت نہیں کرتا۔",
   "explanation_roman": "Conduction mein garmi thos jism ke aik hissay se dosray hissay tak pahunchti hai, jab ke thos jism khud harkat nahi karta.",
   "post": [
    "pst",
@@ -13376,7 +13376,7 @@
   "options_ur": [
    "اچانک سکڑ جاتا ہے",
    "شیشے سے زیادہ پھیل جاتا ہے",
-   "فورا پگھل جاتا ہے",
+   "فوراً پگھل جاتا ہے",
    "شیشے سے زیادہ نرم ہو جاتا ہے"
   ],
   "options_roman": [
@@ -13463,13 +13463,13 @@
  },
  {
   "id": "SCI-293",
-  "question_ur": "معیاری دباؤ پر خالص پانی فارن ہائیٹ پیمانے پر کس درجہ حرارت پر ابلتا ہے؟",
+  "question_ur": "معیاری دباؤ پر خالص پانی فارن ہائٹ پیمانے پر کس درجہ حرارت پر ابلتا ہے؟",
   "question_roman": "Mayari dabao par khalis pani Fahrenheit paimanay par kis darja hararat par ubalta hai?",
   "options_ur": [
-   "100 ڈگری فارن ہائیٹ",
-   "32 ڈگری فارن ہائیٹ",
-   "212 ڈگری فارن ہائیٹ",
-   "180 ڈگری فارن ہائیٹ"
+   "100 ڈگری فارن ہائٹ",
+   "32 ڈگری فارن ہائٹ",
+   "212 ڈگری فارن ہائٹ",
+   "180 ڈگری فارن ہائٹ"
   ],
   "options_roman": [
    "100 degrees Fahrenheit",
@@ -13477,7 +13477,7 @@
    "212 degrees Fahrenheit",
    "180 degrees Fahrenheit"
   ],
-  "explanation_ur": "فارن ہائیٹ پیمانے پر معیاری دباؤ پر خالص پانی 212 ڈگری فارن ہائیٹ پر ابلتا ہے۔",
+  "explanation_ur": "فارن ہائٹ پیمانے پر معیاری دباؤ پر خالص پانی 212 ڈگری فارن ہائٹ پر ابلتا ہے۔",
   "explanation_roman": "Fahrenheit paimanay par mayari dabao par khalis pani 212 degrees Fahrenheit par ubalta hai.",
   "post": [
    "pst",
@@ -13523,7 +13523,7 @@
    "Jism ka wazan",
    "Jism ki raftar"
   ],
-  "explanation_ur": "درجہ حرارت بتاتا ہے کہ کوئی جسم کتنا گرم یا ٹھنڈا ہے، جب کہ حرارت وہ کل توانائی ہے جو درجہ حرارت کے فرق کی وجہ سے منتقل ہوتی ہے۔",
+  "explanation_ur": "درجہ حرارت بتاتا ہے کہ کوئی جسم کتنا گرم یا ٹھنڈا ہے، جبکہ حرارت وہ کل توانائی ہے جو درجہ حرارت کے فرق کی وجہ سے منتقل ہوتی ہے۔",
   "explanation_roman": "Darja hararat batata hai ke koi jism kitna garam ya thanda hai, jab ke garmi woh kul tawanai hai jo darja hararat ke farq ki wajah se muntaqil hoti hai.",
   "post": [
    "pst",
@@ -13647,7 +13647,7 @@
  },
  {
   "id": "SCI-297",
-  "question_ur": "عام درجہ حرارت پر ہوا میں آواز تقریبا کس رفتار سے سفر کرتی ہے؟",
+  "question_ur": "عام درجہ حرارت پر ہوا میں آواز تقریباً کس رفتار سے سفر کرتی ہے؟",
   "question_roman": "Aam darja hararat par hawa mein awaz taqreeban kis raftar se safar karti hai?",
   "options_ur": [
    "150 میٹر فی سیکنڈ",
@@ -13661,7 +13661,7 @@
    "1500 metres per second",
    "300000 kilometres per second"
   ],
-  "explanation_ur": "ہوا میں آواز تقریبا 340 میٹر فی سیکنڈ کی رفتار سے سفر کرتی ہے۔",
+  "explanation_ur": "ہوا میں آواز تقریباً 340 میٹر فی سیکنڈ کی رفتار سے سفر کرتی ہے۔",
   "explanation_roman": "Hawa mein awaz taqreeban 340 metres per second ki raftar se safar karti hai.",
   "post": [
    "pst",
@@ -13785,10 +13785,10 @@
  },
  {
   "id": "SCI-300",
-  "question_ur": "جب ڈھول کو زیادہ زور سے بجایا جاتا ہے تو اس کی آواز زیادہ بلند ہو جاتی ہے۔ زیادہ بلند آواز اس لیے پیدا ہوتی ہے کیونکہ ڈھول کی جھلی کی تھرتھراہٹ میں کس چیز کی زیادتی ہوتی ہے؟",
+  "question_ur": "جب ڈھول کو زیادہ زور سے بجایا جاتا ہے تو اس کی آواز زیادہ بلند ہو جاتی ہے۔ زیادہ بلند آواز اس لیے پیدا ہوتی ہے کیونکہ ڈھول کی جھلی کی تھرتھراہٹ میں کون سی مقدار بڑھ جاتی ہے؟",
   "question_roman": "Jab dhol ko zyada zor se bajaya jata hai to us ki awaz zyada buland ho jati hai. Zyada buland awaz is liye paida hoti hai kyunke dhol ki jhilli ki thartharahat mein kis cheez ki ziyadti hoti hai?",
   "options_ur": [
-   "فریکوئنسی",
+   "تعدد",
    "طول موج",
    "رفتار",
    "ایمپلیٹیوڈ"
@@ -13937,7 +13937,7 @@
    "Ampere",
    "Watt"
   ],
-  "explanation_ur": "برقی کرنٹ کو ایمپیئر میں ناپا جاتا ہے، جبکہ وولٹ وولٹیج اور اوہم مزاحمت کو ناپتا ہے۔",
+  "explanation_ur": "برقی کرنٹ کو ایمپیئر میں ناپا جاتا ہے، جبکہ وولٹیج کو وولٹ میں اور مزاحمت کو اوہم میں ناپا جاتا ہے۔",
   "explanation_roman": "Electric current ko Ampere mein naapa jata hai, jabke Volt voltage aur Ohm resistance ko naapta hai.",
   "post": [
    "pst",
@@ -14521,7 +14521,7 @@
  },
  {
   "id": "SCI-316",
-  "question_ur": "ایک طالب علم سرکٹ میں خلا چھوڑ کر اسے مختلف چیزوں سے جوڑ کر جانچتا ہے۔ کون سی چیز بلب کو روشن ہونے دے گی؟",
+  "question_ur": "ایک طالب علم سرکٹ میں خالی جگہ چھوڑتا ہے اور اس جگہ کو مختلف چیزوں سے جوڑ کر جانچتا ہے۔ کون سی چیز بلب کو روشن ہونے دے گی؟",
   "question_roman": "Aik talib-e-ilm circuit mein khala chhor kar use mukhtalif cheezon se jor kar jaanchta hai. Kaun si cheez bulb ko roshan hone degi?",
   "options_ur": [
    "لوہے کی کیل",
@@ -15211,7 +15211,7 @@
  },
  {
   "id": "SCI-331",
-  "question_ur": "جب ایک مقناطیس کو تار کی کنڈلی کے اندر اور باہر حرکت دی جائے تو کنڈلی میں برقی کرنٹ پیدا ہو جاتا ہے۔ کرنٹ کے اس پیدا ہونے کو کیا کہتے ہیں؟",
+  "question_ur": "جب ایک مقناطیس کو تار کی کنڈلی کے اندر اور باہر حرکت دی جائے تو کنڈلی میں برقی کرنٹ پیدا ہو جاتا ہے۔ کرنٹ پیدا ہونے کے اس عمل کو کیا کہتے ہیں؟",
   "question_roman": "Jab aik magnet ko taar ki coil ke andar aur bahar harkat di jaye to coil mein electric current paida ho jata hai. Current ke is paida hone ko kya kehte hain?",
   "options_ur": [
    "ایصال",
@@ -15685,7 +15685,7 @@
    "Muqar aaina",
    "Muqar adsa"
   ],
-  "explanation_ur": "محدب آئینہ روشنی کی شعاعوں کو پھیلانے والا آئینہ ہے جو شعاعوں کو پھیلاتا ہے اور چھوٹی تصویر بناتا ہے، جس سے وسیع تر نظارہ ملتا ہے، اس لیے یہ گاڑی کے سائیڈ آئینے کے طور پر استعمال ہوتا ہے۔",
+  "explanation_ur": "محدب آئینہ شعاعوں کو پھیلانے والا آئینہ ہے جو چھوٹی تصویر بناتا ہے، جس سے وسیع تر نظارہ ملتا ہے، اس لیے یہ گاڑی کے سائیڈ آئینے کے طور پر استعمال ہوتا ہے۔",
   "explanation_roman": "Muhaddab aaina roshni ki shuaon ko phelane wala aaina hai jo shuaon ko phelata hai aur chhoti tasveer banata hai, jis se wasee tar nazara milta hai, is liye yeh gari ke side aaine ke tor par istemal hota hai.",
   "post": [
    "pst",
@@ -15777,7 +15777,7 @@
    "Muqar adsa",
    "Muhaddab aaina"
   ],
-  "explanation_ur": "مقعر عدسہ روشنی کی شعاعوں کو پھیلانے والا عدسہ ہے جو شعاعوں کو پھیلاتا ہے، اور یہ نزدیک بینی کو درست کرنے والی عینک میں استعمال ہوتا ہے، جس میں دور کی چیزیں دھندلی نظر آتی ہیں۔",
+  "explanation_ur": "مقعر عدسہ شعاعوں کو پھیلانے والا عدسہ ہے، اور یہ نزدیک بینی کو درست کرنے والی عینک میں استعمال ہوتا ہے، جس میں دور کی چیزیں دھندلی نظر آتی ہیں۔",
   "explanation_roman": "Muqar adsa roshni ki shuaon ko phelane wala adsa hai jo shuaon ko phelata hai, aur yeh nazdeek beeni ko durust karne wali ainak mein istemal hota hai, jis mein door ki cheezein dhundli nazar aati hain.",
   "post": [
    "pst",
@@ -15809,7 +15809,7 @@
  },
  {
   "id": "SCI-344",
-  "question_ur": "عدسے کی نصابی خاکوں میں عدسے کے بصری مرکز سے اس نقطے تک ایک خاص فاصلہ دکھایا جاتا ہے جہاں متوازی شعاعیں عدسے سے گزرنے کے بعد ملتی ہیں۔ اس فاصلے کو کیا کہتے ہیں؟",
+  "question_ur": "عدسے کے نصابی خاکوں میں عدسے کے بصری مرکز سے اس نقطے تک ایک خاص فاصلہ دکھایا جاتا ہے جہاں متوازی شعاعیں عدسے سے گزرنے کے بعد ملتی ہیں۔ اس فاصلے کو کیا کہتے ہیں؟",
   "question_roman": "Adse ki nisabi khakon mein adse ke basri markaz se is nuqte tak aik khaas fasla dikhaya jata hai jahan mutawazi shuaein adse se guzarne ke baad milti hain. Is fasle ko kya kehte hain?",
   "options_ur": [
    "خم کا رداس",
@@ -15961,7 +15961,7 @@
    "Hamwar aaina",
    "Prism"
   ],
-  "explanation_ur": "آنکھ کا قدرتی عدسہ محدب عدسہ ہے جو آنے والی روشنی کو موڑتا ہے اور اسے شبکیہ پر مرکوز کرتا ہے، اور قریب اور دور کی چیزوں پر توجہ مرکوز کرنے کے لیے شکل بدلتا ہے۔",
+  "explanation_ur": "آنکھ کا قدرتی عدسہ محدب عدسہ ہے جو آنے والی روشنی کو موڑتا ہے اور اسے شبکیہ پر مرکوز کرتا ہے، اور قریب اور دور کی چیزوں پر مرکوز کرنے کے لیے شکل بدلتا ہے۔",
   "explanation_roman": "Aankh ka qudrati adsa muhaddab adsa hai jo aane wali roshni ko morta hai aur use retina par markooz karta hai, aur qareeb aur door ki cheezon par tawajjoh markooz karne ke liye shakal badalta hai.",
   "post": [
    "pst",
@@ -16315,7 +16315,7 @@
  },
  {
   "id": "SCI-355",
-  "question_ur": "ایک دکان دار چاول کا تھیلا تولتا ہے۔ تھیلے کی کمیت بتانے کے لیے کون سی ایس آئی اکائی ہے؟",
+  "question_ur": "ایک دکان دار چاول کا تھیلا تولتا ہے۔ تھیلے کی کمیت کون سی ایس آئی اکائی بتاتی ہے؟",
   "question_roman": "Aik dukandar chawal ka thaila tolta hai. Thaile ki kamiyat batane ke liye kaun si SI ikai hai?",
   "options_ur": [
    "میٹر",
@@ -16683,7 +16683,7 @@
  },
  {
   "id": "SCI-363",
-  "question_ur": "طاقت کام کرنے کی شرح ہے۔ طاقت ناپنے کی ایس آئی اکائی کون سی ہے؟",
+  "question_ur": "طاقت کام کرنے کی شرح ہے۔ طاقت کس ایس آئی اکائی میں ناپی جاتی ہے؟",
   "question_roman": "Taqat kaam karne ki sharah hai. Taqat napne ki SI ikai kaun si hai?",
   "options_ur": [
    "واٹ",
@@ -17971,7 +17971,7 @@
  },
  {
   "id": "SCI-391",
-  "question_ur": "چاند زمین کے گرد گھومتا ہے اور اسے بہتر طور پر کہا جاتا ہے:",
+  "question_ur": "چاند زمین کے گرد گھومتا ہے۔ چاند کی بہترین تعریف ہے:",
   "question_roman": "Chand Earth ke gird ghoomta hai aur use behtar tor par kaha jata hai:",
   "options_ur": [
    "سیارہ",
@@ -18247,7 +18247,7 @@
  },
  {
   "id": "SCI-397",
-  "question_ur": "سورج کے گرد زمین کا ایک مکمل چکر، جسے گردش کہا جاتا ہے، تقریبا یہ وقت لیتا ہے:",
+  "question_ur": "سورج کے گرد زمین کا ایک مکمل چکر، جسے گردش کہا جاتا ہے، تقریباً یہ وقت لیتا ہے:",
   "question_roman": "Suraj ke gird Earth ka aik mukammal chakar, jise revolution kaha jata hai, taqreeban yeh waqt leta hai:",
   "options_ur": [
    "30 دن",
@@ -18261,7 +18261,7 @@
    "365 din",
    "700 din"
   ],
-  "explanation_ur": "زمین سورج کے گرد ایک گردش مکمل کرنے میں تقریبا 365 دن لیتی ہے اور یہ مدت ایک سال ہے۔",
+  "explanation_ur": "زمین سورج کے گرد ایک گردش مکمل کرنے میں تقریباً 365 دن لیتی ہے اور یہ مدت ایک سال ہے۔",
   "explanation_roman": "Earth Suraj ke gird aik revolution mukammal karne mein taqreeban 365 din leti hai aur yeh muddat aik saal hai.",
   "post": [
    "pst",
@@ -18445,7 +18445,7 @@
    "Yeh sirf thandi chattan se bana hai",
    "Yeh har roz zameen ke gird ghoomta hai"
   ],
-  "explanation_ur": "ستارہ گرم گیسوں کا ایک بہت بڑا گولا ہے جو اپنی روشنی اور حرارت خود پیدا کرتا ہے, جبکہ سیارہ روشنی منعکس کرتا ہے.",
+  "explanation_ur": "ستارہ گرم گیسوں کا ایک بہت بڑا گولا ہے جو اپنی روشنی اور حرارت خود پیدا کرتا ہے، جبکہ سیارہ روشنی منعکس کرتا ہے۔",
   "explanation_roman": "Sitarah garam gaison ka aik bohat bara gola hai jo apni roshni aur hararat khud paida karta hai, jabkeh sayyarah roshni munakis karta hai.",
   "post": [
    "pst",
@@ -18477,7 +18477,7 @@
  },
  {
   "id": "SCI-402",
-  "question_ur": "صاف رات میں ستارے آسمان میں ٹمٹماتے ہوئے نظر آتے ہیں. اس ٹمٹماہٹ کی بنیادی وجہ کیا ہے؟",
+  "question_ur": "صاف رات میں ستارے آسمان میں ٹمٹماتے ہوئے نظر آتے ہیں۔ اس ٹمٹماہٹ کی بنیادی وجہ کیا ہے؟",
   "question_roman": "Saaf raat mein sitaray aasman mein timtimatay hue nazar aatay hain. Is timtimahat ki bunyadi wajah kya hai?",
   "options_ur": [
    "ستاروں کا آسمان میں بہت تیزی سے حرکت کرنا",
@@ -18491,7 +18491,7 @@
    "Badalon ka bar bar sitaron ko dhampna",
    "Chand ka waqfay waqfay se sitaron ki roshni ko rokna"
   ],
-  "explanation_ur": "ستاروں کی روشنی فضا میں حرکت کرتی ہوا کی تہوں سے گزرتے ہوئے مڑ جاتی ہے, اور اس سے ستارے ٹمٹماتے ہوئے نظر آتے ہیں.",
+  "explanation_ur": "ستاروں کی روشنی فضا میں حرکت کرتی ہوا کی تہوں سے گزرتے ہوئے مڑ جاتی ہے، اور اس سے ستارے ٹمٹماتے ہوئے نظر آتے ہیں۔",
   "explanation_roman": "Sitaron ki roshni faza mein harkat karti hawa ki tehon se guzartay hue mur jati hai, aur is se sitaray timtimatay hue nazar aatay hain.",
   "post": [
    "pst",
@@ -18523,12 +18523,12 @@
  },
  {
   "id": "SCI-403",
-  "question_ur": "کہکشاں کو کشش ثقل سے جڑے ہوئے کس چیز کے بہت بڑے گروہ کے طور پر بہتر بیان کیا جاتا ہے؟",
+  "question_ur": "کہکشاں کس چیز کا بہت بڑا گروہ ہے جو کشش ثقل سے جڑا ہوا ہے؟",
   "question_roman": "Kehkashan ko kashish-e-saql se juray hue kis cheez ke bohat baray giroh ke tor par behtar bayan kiya jata hai?",
   "options_ur": [
    "ایک سیارے کے گرد چاند",
    "زمین کی فضا میں بادل",
-   "خلا میں ستارے, گیس اور گرد",
+   "خلا میں ستارے، گیس اور گرد",
    "صرف سورج کے قریب تیرتی چٹانیں"
   ],
   "options_roman": [
@@ -18537,7 +18537,7 @@
    "Khala mein sitaray, gas aur gard",
    "Sirf suraj ke qareeb tairti chatanain"
   ],
-  "explanation_ur": "کہکشاں ستاروں, گیس اور گرد کا ایک بہت بڑا گروہ ہے جو کشش ثقل سے جڑا ہوا ہے.",
+  "explanation_ur": "کہکشاں ستاروں، گیس اور گرد کا ایک بہت بڑا گروہ ہے جو کشش ثقل سے جڑا ہوا ہے۔",
   "explanation_roman": "Kehkashan sitaron, gas aur gard ka aik bohat bara giroh hai jo kashish-e-saql se jura hua hai.",
   "post": [
    "pst",
@@ -18569,7 +18569,7 @@
  },
  {
   "id": "SCI-404",
-  "question_ur": "سورج اور اس کے سیارے ایک بڑی کہکشاں سے تعلق رکھتے ہیں جو رات کے آسمان میں روشنی کی پٹی کی طرح نظر آتی ہے. اس کہکشاں کا نام کیا ہے؟",
+  "question_ur": "سورج اور اس کے سیارے ایک بڑی کہکشاں سے تعلق رکھتے ہیں جو رات کے آسمان میں روشنی کی پٹی کی طرح نظر آتی ہے۔ اس کہکشاں کا نام کیا ہے؟",
   "question_roman": "Suraj aur is ke sayyaray aik bari kehkashan se talluq rakhtay hain jo raat ke aasman mein roshni ki patti ki tarah nazar aati hai. Is kehkashan ka naam kya hai?",
   "options_ur": [
    "اینڈرومیڈا کہکشاں",
@@ -18583,7 +18583,7 @@
    "Triangulum Galaxy",
    "Milky Way Galaxy"
   ],
-  "explanation_ur": "نظام شمسی ملکی وے کہکشاں سے تعلق رکھتا ہے, جو رات کے آسمان میں روشنی کی روشن پٹی کے طور پر نظر آتی ہے.",
+  "explanation_ur": "نظام شمسی ملکی وے کہکشاں سے تعلق رکھتا ہے، جو رات کے آسمان میں روشنی کی ایک چمکدار پٹی کی طرح نظر آتی ہے۔",
   "explanation_roman": "Nizam-e-shamsi Milky Way Galaxy se talluq rakhta hai, jo raat ke aasman mein roshni ki roshan patti ke tor par nazar aati hai.",
   "post": [
    "pst",
@@ -18615,7 +18615,7 @@
  },
  {
   "id": "SCI-405",
-  "question_ur": "نوری سال فلکیات دان خلا میں بہت بڑے فاصلوں کو ناپنے کے لیے استعمال کرتے ہیں. ایک نوری سال کس چیز کو ناپتا ہے؟",
+  "question_ur": "فلکیات دان نوری سال خلا میں بہت بڑے فاصلوں کو ناپنے کے لیے استعمال کرتے ہیں۔ ایک نوری سال کس چیز کو ناپتا ہے؟",
   "question_roman": "Noori saal falkiyat dan khala mein bohat baray faslon ko napnay ke liye istemal kartay hain. Aik noori saal kis cheez ko napta hai?",
   "options_ur": [
    "وہ فاصلہ جو روشنی ایک سال میں طے کرتی ہے",
@@ -18629,7 +18629,7 @@
    "Aik second mein roshni ki raftar",
    "Door ke sitaray ki chamak"
   ],
-  "explanation_ur": "ایک نوری سال وہ فاصلہ ہے جو روشنی ایک سال میں طے کرتی ہے, اس لیے یہ فاصلے کی اکائی ہے, وقت کی اکائی نہیں ہے.",
+  "explanation_ur": "ایک نوری سال وہ فاصلہ ہے جو روشنی ایک سال میں طے کرتی ہے، اس لیے یہ فاصلے کی اکائی ہے، وقت کی اکائی نہیں ہے۔",
   "explanation_roman": "Aik noori saal woh fasla hai jo roshni aik saal mein tay karti hai, is liye yeh faslay ki ikai hai, waqt ki ikai nahi hai.",
   "post": [
    "pst",
@@ -18661,7 +18661,7 @@
  },
  {
   "id": "SCI-406",
-  "question_ur": "مواصلاتی سگنل, موسمی تصاویر اور رہنمائی کے سگنل ان چیزوں سے زمین تک پہنچتے ہیں جو لوگوں نے مدار میں رکھی ہیں. مدار میں لوگوں کی بنائی ہوئی ان چیزوں کو کیا کہتے ہیں؟",
+  "question_ur": "مواصلاتی سگنل، موسمی تصاویر اور رہنمائی کے سگنل ان چیزوں سے زمین تک پہنچتے ہیں جو لوگوں نے مدار میں رکھی ہیں۔ مدار میں لوگوں کی بنائی ہوئی ان چیزوں کو کیا کہتے ہیں؟",
   "question_roman": "Mawaslati signal, mausami tasaveer aur rehnumai ke signal un cheezon se zameen tak pohanchte hain jo logon ne madar mein rakhi hain. Madar mein logon ki banai hui in cheezon ko kya kehte hain?",
   "options_ur": [
    "قدرتی چاند",
@@ -18675,7 +18675,7 @@
    "Girtay hue shahabiye",
    "Door ke sayyarche"
   ],
-  "explanation_ur": "مصنوعی سیارے لوگوں کی بنائی ہوئی چیزیں ہیں جو مواصلات, موسم کے مطالعے اور رہنمائی کے لیے زمین کے گرد مدار میں رکھے جاتے ہیں.",
+  "explanation_ur": "مصنوعی سیارے لوگوں کی بنائی ہوئی چیزیں ہیں جو مواصلات، موسم کے مطالعے اور رہنمائی کے لیے زمین کے گرد مدار میں رکھے جاتے ہیں۔",
   "explanation_roman": "Masnooi sayyaray logon ki banai hui cheezain hain jo mawasilat, mausam ke mutalay aur rehnumai ke liye zameen ke gird madar mein rakhay jatay hain.",
   "post": [
    "pst",
@@ -18707,7 +18707,7 @@
  },
  {
   "id": "SCI-407",
-  "question_ur": "ایک ڈرائیور کسی انجان جگہ تک پہنچنے کے لیے فون پر ہدایات پر عمل کرتا ہے. کون سا نظام مصنوعی سیاروں کو استعمال کر کے فون کی درست جگہ معلوم کرتا ہے؟",
+  "question_ur": "ایک ڈرائیور کسی انجان جگہ تک پہنچنے کے لیے فون پر ہدایات پر عمل کرتا ہے۔ کون سا نظام مصنوعی سیاروں کو استعمال کر کے فون کی درست جگہ معلوم کرتا ہے؟",
   "question_roman": "Aik driver kisi anjan jagah tak pohanchnay ke liye phone par hidayat par amal karta hai. Kaun sa nizam masnooi sayyaron ko istemal kar ke phone ki durust jagah maloom karta hai?",
   "options_ur": [
    "ریڈیو نشریاتی نظام",
@@ -18721,7 +18721,7 @@
    "Global Positioning System",
    "Weather forecasting system"
   ],
-  "explanation_ur": "گلوبل پوزیشننگ سسٹم مدار میں موجود مصنوعی سیاروں کے سگنل استعمال کر کے زمین پر وصول کنندہ کی درست جگہ معلوم کرتا ہے.",
+  "explanation_ur": "گلوبل پوزیشننگ سسٹم مدار میں موجود مصنوعی سیاروں کے سگنل استعمال کر کے زمین پر وصول کنندہ کی درست جگہ معلوم کرتا ہے۔",
   "explanation_roman": "Global Positioning System madar mein mojood masnooi sayyaron ke signal istemal kar ke zameen par wasool kanandah ki durust jagah maloom karta hai.",
   "post": [
    "pst",
@@ -18753,7 +18753,7 @@
  },
  {
   "id": "SCI-408",
-  "question_ur": "ایک فلکیات دان مدھم ستاروں اور دور کے سیاروں کو تفصیل سے دیکھنا چاہتا ہے. کون سا آلہ فلکیات دان کو دور کی چیزوں کو زیادہ واضح طور پر دیکھنے میں مدد دیتا ہے؟",
+  "question_ur": "ایک فلکیات دان مدھم ستاروں اور دور کے سیاروں کو تفصیل سے دیکھنا چاہتا ہے۔ کون سا آلہ فلکیات دان کو دور کی چیزوں کو زیادہ واضح طور پر دیکھنے میں مدد دیتا ہے؟",
   "question_roman": "Aik falkiyat dan madham sitaron aur door ke sayyaron ko tafseel se dekhna chahta hai. Kaun sa aala falkiyat dan ko door ki cheezon ko ziyada wazeh tor par dekhnay mein madad deta hai?",
   "options_ur": [
    "خوردبین",
@@ -18767,7 +18767,7 @@
    "Barometer",
    "Telescope"
   ],
-  "explanation_ur": "دوربین دور کی چیزوں سے روشنی جمع کرتی ہے اور ان کی تصویر کو بڑا کرتی ہے, اس لیے مدھم ستارے اور سیارے زیادہ تفصیل سے دیکھے جا سکتے ہیں.",
+  "explanation_ur": "دوربین دور کی چیزوں سے روشنی جمع کرتی ہے اور ان کی تصویر کو بڑا کرتی ہے، اس لیے مدھم ستارے اور سیارے زیادہ تفصیل سے دیکھے جا سکتے ہیں۔",
   "explanation_roman": "Telescope door ki cheezon se roshni jama karti hai aur un ki tasveer ko bara karti hai, is liye madham sitaray aur sayyaray ziyada tafseel se dekhay ja saktay hain.",
   "post": [
    "pst",
@@ -18799,7 +18799,7 @@
  },
  {
   "id": "SCI-409",
-  "question_ur": "خلائی تحقیق کا آغاز زمین کے گرد مدار میں لوگوں کی بنائی ہوئی پہلی چیز کے اجراء سے ہوا. کون سی چیز پہلا مصنوعی سیارہ تھی؟",
+  "question_ur": "خلائی تحقیق کا آغاز اس وقت ہوا جب لوگوں کی بنائی ہوئی پہلی چیز زمین کے گرد مدار میں بھیجی گئی۔ کون سی چیز پہلا مصنوعی سیارہ تھی؟",
   "question_roman": "Khalai tehqeeq ka aghaz zameen ke gird madar mein logon ki banai hui pehli cheez ke ijra se hua. Kaun si cheez pehla masnooi sayyarah thi?",
   "options_ur": [
    "اسپوتنک 1",
@@ -18813,7 +18813,7 @@
    "Hubble telescope",
    "Apollo spacecraft"
   ],
-  "explanation_ur": "اسپوتنک 1 زمین کے گرد مدار میں رکھا جانے والا پہلا مصنوعی سیارہ تھا, اور اس نے خلائی تحقیق کے آغاز کی نشاندہی کی.",
+  "explanation_ur": "اسپوتنک 1 زمین کے گرد مدار میں رکھا جانے والا پہلا مصنوعی سیارہ تھا، اور اس نے خلائی تحقیق کے آغاز کی نشاندہی کی۔",
   "explanation_roman": "Sputnik 1 zameen ke gird madar mein rakha janay wala pehla masnooi sayyarah tha, aur is ne khalai tehqeeq ke aghaz ki nishandahi ki.",
   "post": [
    "pst",
@@ -18845,13 +18845,13 @@
  },
  {
   "id": "SCI-410",
-  "question_ur": "زمین کی سطح کا زیادہ تر حصہ پانی ہے, جبکہ باقی حصہ خشکی ہے. زمین کی سطح کا تقریبا کتنا حصہ سمندروں سے ڈھکا ہوا ہے؟",
+  "question_ur": "زمین کی سطح کا زیادہ تر حصہ پانی ہے، جبکہ باقی حصہ خشکی ہے۔ زمین کی سطح کا تقریباً کتنا حصہ سمندروں سے ڈھکا ہوا ہے؟",
   "question_roman": "Zameen ki satah ka ziyada tar hissa pani hai, jabkeh baqi hissa khushki hai. Zameen ki satah ka taqreeban kitna hissa samandaron se dhaka hua hai?",
   "options_ur": [
-   "تقریبا 29 فیصد",
-   "تقریبا 71 فیصد",
-   "تقریبا 50 فیصد",
-   "تقریبا 90 فیصد"
+   "تقریباً 29 فیصد",
+   "تقریباً 71 فیصد",
+   "تقریباً 50 فیصد",
+   "تقریباً 90 فیصد"
   ],
   "options_roman": [
    "Taqreeban 29 percent",
@@ -18859,7 +18859,7 @@
    "Taqreeban 50 percent",
    "Taqreeban 90 percent"
   ],
-  "explanation_ur": "زمین کی سطح کا تقریبا 71 فیصد سمندروں سے ڈھکا ہوا ہے, اور باقی حصہ خشکی ہے.",
+  "explanation_ur": "زمین کی سطح کا تقریباً 71 فیصد سمندروں سے ڈھکا ہوا ہے، اور باقی حصہ خشکی ہے۔",
   "explanation_roman": "Zameen ki satah ka taqreeban 71 percent samandaron se dhaka hua hai, aur baqi hissa khushki hai.",
   "post": [
    "pst",
@@ -18891,7 +18891,7 @@
  },
  {
   "id": "SCI-411",
-  "question_ur": "سمندر سائز میں بہت مختلف ہوتے ہیں. سائز میں سب سے چھوٹا سمندر کون سا ہے؟",
+  "question_ur": "سمندر سائز میں بہت مختلف ہوتے ہیں۔ سائز میں سب سے چھوٹا سمندر کون سا ہے؟",
   "question_roman": "Samandar size mein bohat mukhtalif hotay hain. Size mein sab se chhota samandar kaun sa hai?",
   "options_ur": [
    "بحر اوقیانوس",
@@ -18905,7 +18905,7 @@
    "Arctic Ocean",
    "Pacific Ocean"
   ],
-  "explanation_ur": "بحر منجمد شمالی سائز میں سب سے چھوٹا سمندر ہے, اور یہ قطب شمالی کے گرد واقع ہے.",
+  "explanation_ur": "بحر منجمد شمالی سائز میں سب سے چھوٹا سمندر ہے، اور یہ قطب شمالی کے گرد واقع ہے۔",
   "explanation_roman": "Arctic Ocean size mein sab se chhota samandar hai, aur yeh North Pole ke gird waqay hai.",
   "post": [
    "pst",
@@ -18937,7 +18937,7 @@
  },
  {
   "id": "SCI-412",
-  "question_ur": "پاکستان کے جنوب میں ایک سمندر کے ساتھ ساحلی پٹی ہے, اور بندرگاہی شہر کراچی اس ساحل پر واقع ہے. پاکستان کے جنوب میں کون سا سمندر واقع ہے؟",
+  "question_ur": "پاکستان کے جنوب میں ایک سمندر کے ساتھ ساحلی پٹی ہے، اور بندرگاہی شہر کراچی اس ساحل پر واقع ہے۔ پاکستان کے جنوب میں کون سا سمندر واقع ہے؟",
   "question_roman": "Pakistan ke janub mein aik samandar ke sath sahili patti hai, aur bandargahi shehar Karachi is sahil par waqay hai. Pakistan ke janub mein kaun sa samandar waqay hai?",
   "options_ur": [
    "بحیرہ احمر",
@@ -18951,7 +18951,7 @@
    "Caspian Sea",
    "Arabian Sea"
   ],
-  "explanation_ur": "بحیرہ عرب پاکستان کے جنوب میں واقع ہے, اور کراچی اس کے ساحل پر واقع ہے.",
+  "explanation_ur": "بحیرہ عرب پاکستان کے جنوب میں واقع ہے، اور کراچی اس کے ساحل پر واقع ہے۔",
   "explanation_roman": "Arabian Sea Pakistan ke janub mein waqay hai, aur Karachi is ke sahil par waqay hai.",
   "post": [
    "pst",
@@ -18983,10 +18983,10 @@
  },
  {
   "id": "SCI-413",
-  "question_ur": "ایک طالب علم سمندر کے پانی کا ایک قطرہ چکھتا ہے اور اسے نمکین پاتا ہے. سمندر کے پانی کو بنیادی طور پر نمکین کیا چیز بناتی ہے؟",
+  "question_ur": "ایک طالب علم سمندر کے پانی کا ایک قطرہ چکھتا ہے اور اسے نمکین پاتا ہے۔ سمندر کا پانی بنیادی طور پر کس چیز کی وجہ سے نمکین ہوتا ہے؟",
   "question_roman": "Aik talib-e-ilm samandar ke pani ka aik qatra chakhta hai aur isay namkeen pata hai. Samandar ke pani ko bunyadi tor par namkeen kya cheez banati hai?",
   "options_ur": [
-   "پانی میں حل شدہ نمک",
+   "پانی میں حل شدہ نمکیات",
    "پانی میں ملی ہوئی ریت",
    "پانی پر سورج کی روشنی کی گرمی",
    "پانی میں پھنسے ہوئے ہوا کے بلبلے"
@@ -18997,7 +18997,7 @@
    "Pani par suraj ki roshni ki garmi",
    "Pani mein phansay hue hawa ke bulbule"
   ],
-  "explanation_ur": "سمندر کے پانی میں چٹانوں اور خشکی سے دھل کر آنے والے حل شدہ نمک ہوتے ہیں, اور یہ نمک اسے نمکین ذائقہ دیتے ہیں.",
+  "explanation_ur": "سمندر کے پانی میں چٹانوں اور خشکی سے دھل کر آنے والے حل شدہ نمکیات ہوتے ہیں، اور یہ نمکیات اسے نمکین ذائقہ دیتے ہیں۔",
   "explanation_roman": "Samandar ke pani mein chatanon aur khushki se dhul kar aanay walay hal shudah namak hotay hain, aur yeh namak isay namkeen zaiqa detay hain.",
   "post": [
    "pst",
@@ -19029,7 +19029,7 @@
  },
  {
   "id": "SCI-414",
-  "question_ur": "ساحل پر سمندر کی سطح دن کے دوران باقاعدہ انداز میں بلند اور پست ہوتی ہے. ان جوار بھاٹا کی بنیادی وجہ کیا ہے؟",
+  "question_ur": "ساحل پر سمندر کی سطح دن کے دوران باقاعدہ انداز میں بلند اور پست ہوتی ہے۔ ان جوار بھاٹا کی بنیادی وجہ کیا ہے؟",
   "question_roman": "Sahil par samandar ki satah din ke doran baqaida andaz mein buland aur past hoti hai. In jawar bhata ki bunyadi wajah kya hai?",
   "options_ur": [
    "خشکی پر چلنے والی تیز ہوائیں",
@@ -19043,7 +19043,7 @@
    "Zameen ke markaz ki garmi",
    "Guzartay hue jahazon se bannay wali lehrain"
   ],
-  "explanation_ur": "جوار بھاٹا بنیادی طور پر سمندروں کے پانی پر چاند کی کشش ثقل کی وجہ سے پیدا ہوتے ہیں.",
+  "explanation_ur": "جوار بھاٹا بنیادی طور پر سمندروں کے پانی پر چاند کی کشش ثقل کی وجہ سے پیدا ہوتے ہیں۔",
   "explanation_roman": "Jawar bhata bunyadi tor par samandaron ke pani par chand ki kashish-e-saql ki wajah se paida hotay hain.",
   "post": [
    "pst",
@@ -19075,13 +19075,13 @@
  },
  {
   "id": "SCI-415",
-  "question_ur": "زمین باہر سے مرکز تک تہوں سے بنی ہے. کون سی ترتیب زمین کی تہوں کو باہر سے اندر تک ترتیب سے دکھاتی ہے؟",
+  "question_ur": "زمین باہر سے مرکز تک تہوں سے بنی ہے۔ کون سی ترتیب زمین کی تہوں کو باہر سے اندر تک دکھاتی ہے؟",
   "question_roman": "Zameen bahar se markaz tak tehon se bani hai. Kaun si tarteeb zameen ki tehon ko bahar se andar tak tarteeb se dikhati hai?",
   "options_ur": [
-   "کور, مینٹل, کرسٹ",
-   "مینٹل, کور, کرسٹ",
-   "کرسٹ, مینٹل, کور",
-   "کرسٹ, کور, مینٹل"
+   "کور، مینٹل، کرسٹ",
+   "مینٹل، کور، کرسٹ",
+   "کرسٹ، مینٹل، کور",
+   "کرسٹ، کور، مینٹل"
   ],
   "options_roman": [
    "Core, mantle, crust",
@@ -19089,7 +19089,7 @@
    "Crust, mantle, core",
    "Crust, core, mantle"
   ],
-  "explanation_ur": "باہر سے اندر تک, زمین میں کرسٹ ہے, پھر مینٹل ہے, اور پھر مرکز میں کور ہے.",
+  "explanation_ur": "زمین کی سب سے باہر والی تہہ کرسٹ ہے، پھر مینٹل ہے، اور مرکز میں کور ہے۔",
   "explanation_roman": "Bahar se andar tak, zameen mein crust hai, phir mantle hai, aur phir markaz mein core hai.",
   "post": [
    "pst",
@@ -19121,7 +19121,7 @@
  },
  {
   "id": "SCI-416",
-  "question_ur": "موسمی واقعات جیسے بارش, ہوا اور بادل فضا کے سب سے نچلے حصے میں ہوتے ہیں. فضا کی کون سی تہہ سب سے نچلی تہہ ہے؟",
+  "question_ur": "موسمی واقعات جیسے بارش، ہوا اور بادل فضا کے سب سے نچلے حصے میں ہوتے ہیں۔ فضا کی کون سی تہہ سب سے نچلی تہہ ہے؟",
   "question_roman": "Mausami waqiyat jaisay barish, hawa aur badal faza ke sab se nichlay hissay mein hotay hain. Faza ki kaun si teh sab se nichli teh hai?",
   "options_ur": [
    "اسٹریٹوسفیئر",
@@ -19135,7 +19135,7 @@
    "Thermosphere",
    "Troposphere"
   ],
-  "explanation_ur": "ٹروپوسفیئر فضا کی سب سے نچلی تہہ ہے, اور تقریبا تمام موسم اسی تہہ میں ہوتا ہے.",
+  "explanation_ur": "ٹروپوسفیئر فضا کی سب سے نچلی تہہ ہے، اور تقریباً تمام موسم اسی تہہ میں ہوتا ہے۔",
   "explanation_roman": "Troposphere faza ki sab se nichli teh hai, aur taqreeban tamam mausam isi teh mein hota hai.",
   "post": [
    "pst",
@@ -19167,7 +19167,7 @@
  },
  {
   "id": "SCI-417",
-  "question_ur": "زمین سے بہت اوپر اوزون گیس کی ایک تہہ سورج کی نقصان دہ بالائے بنفشی شعاعوں کو جذب کرتی ہے. فضا کی کس تہہ میں اوزون کی تہہ پائی جاتی ہے؟",
+  "question_ur": "زمین سے بہت اوپر اوزون گیس کی ایک تہہ سورج کی نقصان دہ بالائے بنفشی شعاعوں کو جذب کرتی ہے۔ فضا کی کس تہہ میں اوزون کی تہہ پائی جاتی ہے؟",
   "question_roman": "Zameen se bohat oopar ozone gas ki aik teh suraj ki nuqsan deh balaye banafshi shuaon ko jazb karti hai. Faza ki kis teh mein ozone ki teh payi jati hai?",
   "options_ur": [
    "اسٹریٹوسفیئر",
@@ -19181,7 +19181,7 @@
    "Mesosphere",
    "Exosphere"
   ],
-  "explanation_ur": "اوزون کی تہہ اسٹریٹوسفیئر میں پائی جاتی ہے, جہاں اوزون گیس سورج کی نقصان دہ بالائے بنفشی شعاعوں کو جذب کرتی ہے.",
+  "explanation_ur": "اوزون کی تہہ اسٹریٹوسفیئر میں پائی جاتی ہے، جہاں اوزون گیس سورج کی نقصان دہ بالائے بنفشی شعاعوں کو جذب کرتی ہے۔",
   "explanation_roman": "Ozone ki teh stratosphere mein payi jati hai, jahan ozone gas suraj ki nuqsan deh balaye banafshi shuaon ko jazb karti hai.",
   "post": [
    "pst",
@@ -19213,7 +19213,7 @@
  },
  {
   "id": "SCI-418",
-  "question_ur": "دوسری تہوں کے اوپر, فضا آہستہ آہستہ بیرونی خلا میں مدغم ہو جاتی ہے. فضا کی کون سی تہہ سب سے بیرونی تہہ ہے؟",
+  "question_ur": "دوسری تہوں کے اوپر، فضا آہستہ آہستہ بیرونی خلا میں مدغم ہو جاتی ہے۔ فضا کی کون سی تہہ سب سے بیرونی تہہ ہے؟",
   "question_roman": "Doosri tehon ke oopar, faza aahista aahista bairooni khala mein mudgham ho jati hai. Faza ki kaun si teh sab se bairooni teh hai?",
   "options_ur": [
    "ٹروپوسفیئر",
@@ -19227,7 +19227,7 @@
    "Stratosphere",
    "Mesosphere"
   ],
-  "explanation_ur": "ایگزوسفیئر فضا کی سب سے بیرونی تہہ ہے, اور یہ آہستہ آہستہ بیرونی خلا میں مدغم ہو جاتی ہے.",
+  "explanation_ur": "ایگزوسفیئر فضا کی سب سے بیرونی تہہ ہے، اور یہ آہستہ آہستہ بیرونی خلا میں مدغم ہو جاتی ہے۔",
   "explanation_roman": "Exosphere faza ki sab se bairooni teh hai, aur yeh aahista aahista bairooni khala mein mudgham ho jati hai.",
   "post": [
    "pst",
@@ -19443,7 +19443,7 @@
  },
  {
   "id": "SCI-423",
-  "question_ur": "دودھ کو تھوڑی دیر کے لیے گرم کیا جاتا ہے اور پھر نقصان دہ جراثیم کو مارنے کے لیے جلدی ٹھنڈا کیا جاتا ہے۔ دودھ کے علاج کے اس طریقے کو کیا کہتے ہیں؟",
+  "question_ur": "دودھ کو تھوڑی دیر کے لیے گرم کیا جاتا ہے اور پھر نقصان دہ جراثیم کو مارنے کے لیے جلدی ٹھنڈا کیا جاتا ہے۔ دودھ کو اس طرح گرم کر کے ٹھنڈا کرنے کے طریقے کو کیا کہتے ہیں؟",
   "question_roman": "Doodh ko thori dair ke liye garam kiya jata hai aur phir nuqsan deh jaraseem ko marne ke liye jaldi thanda kiya jata hai. Doodh ke ilaj ke is tareeqe ko kya kehte hain?",
   "options_ur": [
    "پاسچرائزیشن",
@@ -19719,7 +19719,7 @@
  },
  {
   "id": "SCI-429",
-  "question_ur": "نومولود بچے کو پیدائش کے فورا بعد بی سی جی ویکسین دی جاتی ہے۔ بی سی جی ویکسین بچے کو کس بیماری سے بچاتی ہے؟",
+  "question_ur": "نومولود بچے کو پیدائش کے فوراً بعد بی سی جی ویکسین دی جاتی ہے۔ بی سی جی ویکسین بچے کو کس بیماری سے بچاتی ہے؟",
   "question_roman": "Naumaulood bache ko paidaish ke foran baad BCG vaccine di jati hai. BCG vaccine bache ko kis beemari se bachati hai?",
   "options_ur": [
    "خسرہ",
@@ -19765,7 +19765,7 @@
  },
  {
   "id": "SCI-430",
-  "question_ur": "تقریبا ہر خلیے کے اندر ڈی این اے وہ ہدایات رکھتا ہے جو یہ طے کرتی ہیں کہ جاندار کیسے بڑھتا ہے اور وہ اپنے والدین سے کون سی خصوصیات وراثت میں پاتا ہے۔ خلیے میں ڈی این اے کا بنیادی کام کیا ہے؟",
+  "question_ur": "تقریباً ہر خلیے کے اندر ڈی این اے وہ ہدایات رکھتا ہے جو یہ طے کرتی ہیں کہ جاندار کیسے بڑھتا ہے اور وہ اپنے والدین سے کون سی خصوصیات وراثت میں پاتا ہے۔ خلیے میں ڈی این اے کا بنیادی کام کیا ہے؟",
   "question_roman": "Taqreeban har khaliye ke andar DNA woh hidayaat rakhta hai jo yeh tay karti hain ke jandar kaise barhta hai aur woh apne walidain se kon si khususiyaat virasat mein pata hai. Khaliye mein DNA ka bunyadi kaam kya hai?",
   "options_ur": [
    "خلیے کے لیے توانائی پیدا کرنا",
@@ -19825,7 +19825,7 @@
    "Diribonucleic acid",
    "Dual nucleic acid"
   ],
-  "explanation_ur": "ڈی این اے کا پورا نام ڈی آکسی رائبو نیوکلک ایسڈ ہے، یہ وہ سالمہ ہے جو جانداروں میں وراثتی معلومات رکھتا ہے۔",
+  "explanation_ur": "ڈی این اے کا پورا نام ڈی آکسی رائبو نیوکلک ایسڈ ہے، یہ وہ مالیکیول ہے جو جانداروں میں وراثتی معلومات رکھتا ہے۔",
   "explanation_roman": "DNA ka poora naam deoxyribonucleic acid hai, yeh woh salma hai jo jandaron mein wirasati maloomat rakhta hai.",
   "post": [
    "pst",
@@ -20550,10 +20550,10 @@
   "question_ur": "وٹامنز کا وہ گروہ جو جسم کو غذا سے توانائی حاصل کرنے میں مدد کرتا ہے اور اعصاب کو درست طریقے سے کام کرنے میں مدد دیتا ہے، اسے کس گروہ کے نام سے جانا جاتا ہے؟",
   "question_roman": "Vitamins ka woh group jo jism ko ghiza se tawanai hasil karne mein madad karta hai aur aasaab ko durust tareeqe se kaam karne mein madad deta hai, use kis group ke naam se jana jata hai?",
   "options_ur": [
-   "وٹامن سی گروہ",
+   "وٹامن سی کا گروہ",
    "وٹامن بی کمپلیکس",
-   "وٹامن ڈی گروہ",
-   "وٹامن کے گروہ"
+   "وٹامن ڈی کا گروہ",
+   "وٹامن کے کا گروہ"
   ],
   "options_roman": [
    "Vitamin C group",
@@ -20874,7 +20874,7 @@
   "options_ur": [
    "وٹامنوں کا ذخیرہ",
    "اینٹی باڈیز کا ذریعہ",
-   "سرخ خلیوں کو بنانے والی",
+   "سرخ خلیے بنانے والا",
    "جراثیم کو روکنے والی رکاوٹ"
   ],
   "options_roman": [
@@ -20929,7 +20929,7 @@
    "Platelets",
    "Blood plasma"
   ],
-  "explanation_ur": "خون کے سفید خلیے جسم کا دفاع کرتے ہیں، وہ جسم میں داخل ہونے والے جراثیم کو گھیر کر تباہ کر دیتے ہیں۔",
+  "explanation_ur": "خون کے سفید خلیے جسم میں داخل ہونے والے جراثیم کو گھیر کر تباہ کر کے جسم کا دفاع کرتے ہیں۔",
   "explanation_roman": "White blood cells jism ka difa karte hain, woh jism mein dakhil hone wale jaraseem ko gher kar tabah kar dete hain.",
   "post": [
    "pst",
@@ -20961,7 +20961,7 @@
  },
  {
   "id": "SCI-456",
-  "question_ur": "جسم کا کسی جرثومے سے سامنا ہونے کے بعد، جسم خاص پروٹین بناتا ہے جو اس جرثومے کو پہچانتے ہیں اور اس پر حملہ کرتے ہیں اگر وہ دوبارہ آئے۔ ان پروٹین کو کیا کہا جاتا ہے؟",
+  "question_ur": "جسم کا کسی جرثومے سے سامنا ہونے کے بعد، جسم خاص پروٹین بناتا ہے جو اگر وہ جرثومہ دوبارہ آئے تو اسے پہچانتے ہیں اور اس پر حملہ کرتے ہیں۔ ان پروٹین کو کیا کہا جاتا ہے؟",
   "question_roman": "Jism ka kisi jarsoome se samna hone ke baad, jism khaas proteins banata hai jo is jarsoome ko pehchante hain aur is par hamla karte hain agar woh dobara aaye. In proteins ko kya kaha jata hai?",
   "options_ur": [
    "اینزائمز",
@@ -21059,7 +21059,7 @@
    "شمسی توانائی",
    "ہوائی توانائی",
    "زمینی حرارتی توانائی",
-   "سمندری لہروں کی توانائی"
+   "جوار بھاٹا کی توانائی"
   ],
   "options_roman": [
    "Solar energy",
@@ -21145,7 +21145,7 @@
  },
  {
   "id": "SCI-460",
-  "question_ur": "کوئلہ، تیل اور قدرتی گیس کو فوسل ایندھن اس لیے کہا جاتا ہے کیونکہ یہ جانداروں کی باقیات سے کتنے طویل عرصے میں بنے تھے؟",
+  "question_ur": "کوئلہ، تیل اور قدرتی گیس کو فوسل ایندھن اس لیے کہا جاتا ہے کیونکہ یہ جانداروں کی باقیات سے کتنے عرصے میں بنے تھے؟",
   "question_roman": "Koila, tail aur qudrati gas ko fossil fuel is liye kaha jata hai kyunke yeh jandaron ki baqiyat se kitne taweel arse mein bane thay?",
   "options_ur": [
    "چند دن",
@@ -21194,7 +21194,7 @@
   "question_ur": "پن بجلی گھر میں، تیزی سے بہتا ہوا دریائی پانی بنیادی طور پر کس حصے کو گھمانے کے لیے استعمال ہوتا ہے جس سے بجلی پیدا کرنے میں مدد ملتی ہے؟",
   "question_roman": "Pan bijli ghar mein, tezi se behta hua daryai pani bunyadi tor par kis hisse ko ghumane ke liye istemal hota hai jis se bijli paida karne mein madad milti hai?",
   "options_ur": [
-   "ایک شمسی پینل",
+   "ایک سولر پینل",
    "ایک ٹربائن",
    "ایک بیٹری",
    "ایک مقناطیس"
@@ -21251,7 +21251,7 @@
    "Non-renewable",
    "Reusable"
   ],
-  "explanation_ur": "غیر قابل تجدید ایندھن قدرت کی جانب سے دوبارہ بننے کی رفتار سے زیادہ تیزی سے استعمال ہوتے ہیں، اس لیے استعمال کے ساتھ ان کی فراہمی کم ہوتی جاتی ہے۔",
+  "explanation_ur": "غیر قابل تجدید ایندھن قدرت کے دوبارہ بنانے کی رفتار سے زیادہ تیزی سے استعمال ہوتے ہیں، اس لیے استعمال کے ساتھ ان کی فراہمی کم ہوتی جاتی ہے۔",
   "explanation_roman": "Ghair qabil tajdeed eendhan qudrat ki janib se dobara banne ki raftaar se zyada tezi se istemal hote hain, is liye istemal ke sath un ki farahami kam hoti jati hai.",
   "post": [
    "pst",
@@ -21421,7 +21421,7 @@
  },
  {
   "id": "SCI-466",
-  "question_ur": "ایک ڈھلوانی راستہ جو بھاری ڈبے کو ٹرک پر چڑھانے کے لیے استعمال ہوتا ہے اس میں ڈبے کو سیدھا اوپر اٹھانے کے مقابلے میں کم قوت درکار ہوتی ہے، اور یہ راستہ کس سادہ مشین کی مثال ہے؟",
+  "question_ur": "ایک ڈھلوانی راستہ جو بھاری ڈبے کو ٹرک پر چڑھانے کے لیے استعمال ہوتا ہے، اس پر ڈبے کو سیدھا اوپر اٹھانے کے مقابلے میں کم قوت درکار ہوتی ہے، اور یہ راستہ کس سادہ مشین کی مثال ہے؟",
   "question_roman": "Aik dhalwani rasta jo bhari dabbe ko truck par charhane ke liye istemal hota hai is mein dabbe ko seedha oopar uthane ke muqable mein kam quwwat darkaar hoti hai, aur yeh rasta kis saada machine ki misaal hai?",
   "options_ur": [
    "ایک پلّی",
@@ -21467,7 +21467,7 @@
  },
  {
   "id": "SCI-467",
-  "question_ur": "کلہاڑی کی دھار اور باورچی خانے کی چھری دونوں ایک تیز کنارے کی طرف تنگ ہوتی ہیں جو لکڑی کو چیرتی ہے یا کھانا کاٹتی ہے، اور یہ شکل کس سادہ مشین کے طور پر کام کرتی ہے؟",
+  "question_ur": "کلہاڑی کی دھار اور باورچی خانے کی چھری دونوں ایک تیز کنارے کی طرف تنگ ہوتی ہیں، جو لکڑی کو چیرتا ہے یا کھانا کاٹتا ہے، اور یہ شکل کس سادہ مشین کے طور پر کام کرتی ہے؟",
   "question_roman": "Kulhari ki dhaar aur bawarchi khane ki chhuri dono aik tez kinare ki taraf tang hoti hain jo lakri ko cheerti hai ya khana kaatti hai, aur yeh shakal kis saada machine ke tor par kaam karti hai?",
   "options_ur": [
    "ایک پچر",
@@ -21513,7 +21513,7 @@
  },
  {
   "id": "SCI-468",
-  "question_ur": "پیچ کے جسم کے گرد گھومتی ہوئی چوڑیاں اسے گھمانے پر لکڑی کو مضبوطی سے پکڑنے دیتی ہیں، اور پیچ کو ڈھلوانی سطح کے کس شکل کے گرد لپٹے ہونے کے طور پر بہتر بیان کیا جاتا ہے؟",
+  "question_ur": "پیچ کے جسم کے گرد گھومتی ہوئی چوڑیاں اسے گھمانے پر لکڑی کو مضبوطی سے پکڑنے دیتی ہیں، اور پیچ کس شکل کے گرد لپٹی ہوئی ڈھلوانی سطح ہوتا ہے؟",
   "question_roman": "Peech ke jism ke gird ghoomti hui chooriyan use ghumane par lakri ko mazbooti se pakarne deti hain, aur peech ko dhalwani satah ke kis shakal ke gird lapte hone ke tor par behtar bayan kiya jata hai?",
   "options_ur": [
    "ایک کرہ",
@@ -21605,7 +21605,7 @@
  },
  {
   "id": "SCI-470",
-  "question_ur": "چھت والا پنکھا اپنے بلیڈ گھماتا ہے جب اس کی موٹر سے بجلی گزرتی ہے، تو پنکھا بنیادی طور پر برقی توانائی کو توانائی کی کس شکل میں تبدیل کرتا ہے؟",
+  "question_ur": "چھت والے پنکھے کی موٹر سے بجلی گزرنے پر پنکھا اپنے بلیڈ گھماتا ہے، اس لیے پنکھا بنیادی طور پر برقی توانائی کو توانائی کی کس شکل میں تبدیل کرتا ہے؟",
   "question_roman": "Chhat wala pankha apne blade ghumata hai jab is ki motor se bijli guzarti hai, to pankha bunyadi tor par barqi tawanai ko tawanai ki kis shakal mein tabdeel karta hai?",
   "options_ur": [
    "حرارتی توانائی",
@@ -21838,7 +21838,7 @@
   "question_ur": "پہاڑی پر لگی ونڈ ٹربائن اس وقت بجلی پیدا کرتی ہے جب اس کے بلیڈ گھومتے ہیں۔ ٹربائن کس شکل کی توانائی کو برقی توانائی میں بدلتی ہے؟",
   "question_roman": "Pahari par lagi wind turbine us waqt bijli paida karti hai jab us ke blade ghoomtay hain. Turbine kis shakal ki tawanai ko barqi tawanai mein badalti hai?",
   "options_ur": [
-   "ہوا کی توانائی",
+   "ہوائی توانائی",
    "حرارتی توانائی",
    "روشنی کی توانائی",
    "آواز کی توانائی"
@@ -21849,7 +21849,7 @@
    "Roshni ki tawanai",
    "Aawaz ki tawanai"
   ],
-  "explanation_ur": "چلتی ہوا ونڈ ٹربائن کے بلیڈ گھماتی ہے، اور ٹربائن ہوا کی توانائی کو برقی توانائی میں بدلتی ہے۔",
+  "explanation_ur": "چلتی ہوا ونڈ ٹربائن کے بلیڈ گھماتی ہے، اور ٹربائن ہوائی توانائی کو برقی توانائی میں بدلتی ہے۔",
   "explanation_roman": "Chalti hawa wind turbine ke blade ghumati hai, aur turbine hawa ki tawanai ko barqi tawanai mein badalti hai.",
   "post": [
    "pst",
@@ -21927,7 +21927,7 @@
  },
  {
   "id": "SCI-477",
-  "question_ur": "گھر میں موجود ریڈیو سیٹ ریڈیو اسٹیشن سے جڑی کسی تار کے بغیر پروگرام وصول کرتا ہے۔ ہوا کے ذریعے ریڈیو سگنل کس قسم کی لہریں لے جاتی ہیں؟",
+  "question_ur": "گھر میں موجود ریڈیو سیٹ ریڈیو اسٹیشن سے جڑی کسی تار کے بغیر پروگرام وصول کرتا ہے۔ کس قسم کی لہریں ریڈیو سگنل ہوا کے ذریعے لے جاتی ہیں؟",
   "question_roman": "Ghar mein mojood radio set radio station se juri kisi taar ke baghair programme wasool karta hai. Hawa ke zariye radio signal kis qisam ki lehrein le jati hain?",
   "options_ur": [
    "پانی کی لہریں",
@@ -22341,7 +22341,7 @@
  },
  {
   "id": "SCI-486",
-  "question_ur": "ٹیلی ویژن کا ریموٹ کنٹرول بغیر کسی تار کے ٹیلی ویژن کو نادیدہ اشارے بھیجتا ہے۔ یہ اشارے کس قسم کی شعاعوں کے ذریعے پہنچتے ہیں؟",
+  "question_ur": "ٹیلی ویژن کا ریموٹ کنٹرول بغیر کسی تار کے ٹیلی ویژن کو نادیدہ سگنل بھیجتا ہے۔ یہ سگنل کس قسم کی شعاعوں کے ذریعے پہنچتے ہیں؟",
   "question_roman": "Television ka remote control baghair kisi taar ke television ko nadida isharay bhejta hai. Yeh isharay kis qisam ki shuaon ke zariye pohanchte hain?",
   "options_ur": [
    "آواز کی لہریں",
@@ -22483,7 +22483,7 @@
   "question_roman": "James Watt ibtedai karkhanon ko taqat dene wali kis machine ki design behtar banane ke liye mashhoor hua?",
   "options_ur": [
    "پٹرول انجن",
-   "بجلی کی موٹر",
+   "برقی موٹر",
    "بھاپ کا انجن",
    "ونڈ ٹربائن"
   ],
@@ -22617,7 +22617,7 @@
  },
  {
   "id": "SCI-492",
-  "question_ur": "صاف دن میں آسمان نیلا نظر آتا ہے، اس کی بنیادی وجہ یہ ہے کہ ہوا کے ذرات سورج کی روشنی کا کون سا حصہ سب سے زیادہ بکھیرتے ہیں؟",
+  "question_ur": "صاف دن میں آسمان نیلا نظر آتا ہے۔ ہوا کے ذرات سورج کی روشنی کا کون سا حصہ سب سے زیادہ بکھیرتے ہیں؟",
   "question_roman": "Saaf din mein aasman neela nazar aata hai, is ki bunyadi wajah ye hai ke hawa ke zarrat suraj ki roshni ka kaun sa hissa sab se zyada bikherte hain?",
   "options_ur": [
    "سرخ روشنی",
@@ -22709,7 +22709,7 @@
  },
  {
   "id": "SCI-494",
-  "question_ur": "باہر پڑی ہوئی لوہے کی کیل کو زنگ لگ جاتا ہے کیونکہ لوہا آکسیجن کے ساتھ کس دوسرے مادے کی موجودگی میں رد عمل کرتا ہے؟",
+  "question_ur": "باہر پڑی ہوئی لوہے کی کیل کو زنگ لگ جاتا ہے۔ لوہا آکسیجن کے ساتھ کس دوسرے مادے کی موجودگی میں رد عمل کرتا ہے؟",
   "question_roman": "Bahar pari hui lohe ki keel ko zang lag jata hai kyunke loha oxygen ke sath kis dusre madde ki mojoodgi mein react karta hai?",
   "options_ur": [
    "خشک ریت",
@@ -22755,7 +22755,7 @@
  },
  {
   "id": "SCI-495",
-  "question_ur": "لوہے کے دروازے پر رنگ کرنے سے زنگ روکنے میں مدد ملتی ہے، اس کی بنیادی وجہ یہ ہے کہ رنگ کن مادوں کو لوہے کی سطح سے دور رکھتا ہے؟",
+  "question_ur": "لوہے کے دروازے پر رنگ کرنے سے زنگ روکنے میں مدد ملتی ہے۔ رنگ کن مادوں کو لوہے کی سطح سے دور رکھتا ہے؟",
   "question_roman": "Lohe ke darwaze par rang karne se zang rokne mein madad milti hai, is ki bunyadi wajah ye hai ke rang kin maddon ko lohe ki satah se door rakhta hai?",
   "options_ur": [
    "سورج کی روشنی اور گرمی",
@@ -22801,7 +22801,7 @@
  },
  {
   "id": "SCI-496",
-  "question_ur": "کھلے برتن کے مقابلے میں پریشر ککر میں کھانا زیادہ جلدی پکتا ہے کیونکہ اندر زیادہ دباؤ پانی کی کس خصوصیت کو بڑھا دیتا ہے؟",
+  "question_ur": "کھلے برتن کے مقابلے میں پریشر ککر میں کھانا زیادہ جلدی پکتا ہے۔ اندر کا زیادہ دباؤ پانی کی کس خصوصیت کو بڑھا دیتا ہے؟",
   "question_roman": "Khule bartan ke muqable mein pressure cooker mein khana zyada jaldi pakta hai kyunke andar zyada dabao pani ki kis khususiyat ko barha deta hai?",
   "options_ur": [
    "جمنے کا نقطہ",
@@ -22847,7 +22847,7 @@
  },
  {
   "id": "SCI-497",
-  "question_ur": "پکانے والے برتن کو ڈھکن سے ڈھانپنے سے کھانا تیزی سے پکنے میں مدد ملتی ہے، اس کی بنیادی وجہ یہ ہے کہ ڈھکن برتن کے اندر کیا روک لیتا ہے؟",
+  "question_ur": "پکانے والے برتن کو ڈھکن سے ڈھانپنے سے کھانا تیزی سے پکنے میں مدد ملتی ہے۔ ڈھکن برتن کے اندر کیا روک لیتا ہے؟",
   "question_roman": "Pakane wale bartan ko dhakkan se dhanpne se khana tezi se pakne mein madad milti hai, is ki bunyadi wajah ye hai ke dhakkan bartan ke andar kya rok leta hai?",
   "options_ur": [
    "گرمی اور بھاپ",
@@ -22893,7 +22893,7 @@
  },
  {
   "id": "SCI-498",
-  "question_ur": "چکنی گندگی صابن سے ہاتھوں سے سادہ پانی کی نسبت زیادہ آسانی سے دھل جاتی ہے کیونکہ صابن پانی کو چکنائی کے ساتھ کیا کرنے میں مدد دیتا ہے؟",
+  "question_ur": "صابن سے دھونے پر چکنی گندگی ہاتھوں سے سادہ پانی کی نسبت زیادہ آسانی سے دھل جاتی ہے۔ صابن پانی کو چکنائی کے ساتھ کیا کرنے میں مدد دیتا ہے؟",
   "question_roman": "Chikni gandagi sabun se hathon se sada pani ki nisbat zyada aasani se dhul jati hai kyunke sabun pani ko chiknai ke sath kya karne mein madad deta hai?",
   "options_ur": [
    "چکنائی کو جمانا",
@@ -22939,7 +22939,7 @@
  },
  {
   "id": "SCI-499",
-  "question_ur": "پانی کے گلاس میں رکھا ہوا برف کا ٹکڑا سطح پر تیرتا ہے کیونکہ مائع پانی کے مقابلے میں برف کی کون سی خصوصیت ہوتی ہے؟",
+  "question_ur": "پانی کے گلاس میں رکھا ہوا برف کا ٹکڑا سطح پر تیرتا ہے۔ مائع پانی کے مقابلے میں برف کی کون سی خصوصیت ہوتی ہے؟",
   "question_roman": "Pani ke glass mein rakha hua barf ka tukra satah par tairta hai kyunke liquid pani ke muqable mein barf ki kaun si khususiyat hoti hai?",
   "options_ur": [
    "زیادہ وزن",
@@ -22985,7 +22985,7 @@
  },
  {
   "id": "SCI-500",
-  "question_ur": "گرج چمک کے طوفان کے دوران بجلی کی چمک گرج سے پہلے نظر آتی ہے کیونکہ آواز کے مقابلے میں روشنی ہوا میں کس طرح سفر کرتی ہے؟",
+  "question_ur": "گرج چمک کے طوفان کے دوران بجلی کی چمک گرج سے پہلے نظر آتی ہے۔ آواز کے مقابلے میں روشنی ہوا میں کس طرح سفر کرتی ہے؟",
   "question_roman": "Garaj chamak ke toofan ke doran bijli ki chamak garaj se pehle nazar aati hai kyunke awaz ke muqable mein roshni hawa mein kis tarah safar karti hai?",
   "options_ur": [
    "آواز سے زیادہ آہستہ",
