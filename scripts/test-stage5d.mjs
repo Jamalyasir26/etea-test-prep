@@ -195,8 +195,29 @@ function digitRuns(s) { return (s.match(/[0-9]+/g) || []).sort(); }
 function sameMultiset(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
 function opCounts(s) {
   const m = {};
-  const t = s.replace(/(?<=[A-Za-z\u0600-\u06FF])-(?=[A-Za-z\u0600-\u06FF])/g, "");
+  // Word hyphens excluded — incl. digit-letter compound adjectives
+  // ("24-hour", "45-degree", "64-bit"): verified 2026-11-18, every
+  // digit-letter hyphen in every bank is a compound adjective, never a
+  // minus sign, so the lookbehind includes digits.
+  const t = s.replace(/(?<=[A-Za-z0-9\u0600-\u06FF])-(?=[A-Za-z\u0600-\u06FF])/g, "");
   for (const ch of t) if ("=+-*/×÷%√\u2212".includes(ch)) m[ch] = (m[ch] || 0) + 1;
+  return m;
+}
+// Order-insensitive multiset equality: JSON.stringify on the raw count
+// objects is insertion-order-sensitive, so a reordered-but-identical
+// operator multiset (U2 MAT-158Q) falsely failed. Compare per-key.
+function sameOps(a, b) {
+  const ka = Object.keys(a).sort(), kb = Object.keys(b).sort();
+  return JSON.stringify(ka) === JSON.stringify(kb) && ka.every((k) => a[k] === b[k]);
+}
+// U2-Maths: prose % becomes فیصد in _ur (43 of 122 % signs; the 79
+// remaining are calculation lines, bare-number options and value
+// references — pinned exactly in test-idiomatic-urdu.mjs §3F, incl.
+// the no-new-% rule). _ur operator comparisons therefore exclude %;
+// _roman comparisons keep it (roman untouched: 122 == 122).
+function opCountsNoPct(s) {
+  const m = opCounts(s);
+  delete m["%"];
   return m;
 }
 // U1 ruling 1 (NOTE _ur fields only; MCQ checks above stay strict):
@@ -232,16 +253,32 @@ for (const q of scopeQs) {
 }
 for (const q of BY_SUBJECT.maths) {
   for (const [src, dst] of [["question", "question_ur"], ["question", "question_roman"], ["explanation", "explanation_ur"], ["explanation", "explanation_roman"]]) {
-    if (JSON.stringify(opCounts(q[src])) !== JSON.stringify(opCounts(q[dst]))) opBad.push(`${q.id}:${dst}`);
+    const isUr = dst.endsWith("_ur");
+    const enCounts = isUr ? opCountsNoPct(q[src]) : opCounts(q[src]);
+    const dstCounts = isUr ? opCountsNoPct(q[dst]) : opCounts(q[dst]);
+    // MAT-023 exemption (D4-style, conditioned): EN "Let years = t" is
+    // rendered as Urdu prose "فرض کریں سالوں کی تعداد t ہے" — the
+    // definitional "=" is legitimately absorbed into prose. Accepted
+    // ONLY if the equation chain is byte-identical and the ONLY delta
+    // is exactly one fewer "=".
+    const mat023 = q.id === "MAT-023" && dst === "explanation_ur" &&
+      q[dst].includes("36 + t = 3(6 + t) => 36 + t = 18 + 3t => 18 = 2t => t = 9") &&
+      (enCounts["="] || 0) === (dstCounts["="] || 0) + 1 &&
+      Object.keys(enCounts).every((k) => k === "=" || enCounts[k] === dstCounts[k]) &&
+      Object.keys(dstCounts).every((k) => k === "=" || dstCounts[k] === enCounts[k]);
+    if (!sameOps(enCounts, dstCounts) && !mat023) opBad.push(`${q.id}:${dst}`);
   }
   q.options.forEach((opt, i) => {
     for (const k of ["options_ur", "options_roman"]) {
-      if (JSON.stringify(opCounts(opt)) !== JSON.stringify(opCounts(q[k][i]))) opBad.push(`${q.id}:${k}[${i}]`);
+      const isUr = k === "options_ur";
+      const enCounts = isUr ? opCountsNoPct(opt) : opCounts(opt);
+      const dstCounts = isUr ? opCountsNoPct(q[k][i]) : opCounts(q[k][i]);
+      if (!sameOps(enCounts, dstCounts)) opBad.push(`${q.id}:${k}[${i}]`);
     }
   });
 }
 check("5D digit runs unchanged in every translated MCQ field (all 3 banks)", digitBad.length === 0, digitBad.slice(0, 5).join(", "));
-check("5D Maths operator counts unchanged in every translated field (word hyphens excluded)", opBad.length === 0, opBad.slice(0, 5).join(", "));
+check("5D Maths operator counts unchanged in every translated field (word hyphens excluded; U2 _ur: % excluded, MAT-023 definitional = exempted)", opBad.length === 0, opBad.slice(0, 5).join(", "));
 // Pure numeric/expression Maths options stay verbatim in both languages.
 const PURE_EXPR = /^[\d\s\/\.\+\-=\%\(\)xX\:\^\u2212]+$/;
 let pureBad = [];

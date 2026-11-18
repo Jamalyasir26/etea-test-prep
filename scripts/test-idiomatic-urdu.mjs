@@ -4,9 +4,10 @@
 // (700 STRINGS keys), notes/flashcards/plan/mocks (content.json _ur),
 // the Islamiyat pilot bank (500 items, U1), the Tajweed bank
 // (500 items, U2 subject 1), the Arabic bank (500 items, U2
-// subject 2), the Urdu bank (500 items, U2 subject 3) and the
-// English bank (500 items, U2 subject 4).
-// The other 9 banks keep their pre-U1 _ur
+// subject 2), the Urdu bank (500 items, U2 subject 3), the
+// English bank (500 items, U2 subject 4) and the Maths bank
+// (500 items, U2 subject 5).
+// The other 8 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -648,6 +649,160 @@ check("U2 english: exact counts — شکل 31× (inflected forms), صورت 44×
   engCount(/شکل/g) === 31 && engCount(/صورت/g) === 44, `شکل ${engCount(/شکل/g)}, صورت ${engCount(/صورت/g)}`);
 check("U2 english: Latin tense names present in _ur (past simple, present perfect, past participle)",
   ["past simple", "present perfect", "past participle"].every((t) => engQEText.toLowerCase().includes(t)));
+
+// ---------- §3F Maths bank (U2 subject 5) ----------
+// U2 rewrote the Maths _ur fields (691 of 3000 field-values changed;
+// 275/500 items incl. 6 coordinator-normalization-only items).
+// Numbers, equations, expressions and units are the TESTED MATERIAL:
+// digit rule is STRICT on every field (2914/3000 fields carry digits;
+// baseline measured 0 digit-multiset mismatches). Equations stay
+// byte-identical. Latin rule is an ALLOWLIST: single letters (variables,
+// labels) + the §3.1 set (SI units, function names, acronyms, variable
+// products, Rs.) — no other Latin word may appear. Spelled-out English
+// units in prose are gone (degrees→ڈگری 285×, years→سال, hours→گھنٹے,
+// minutes→منٹ, seconds→سیکنڈ, days→دن, litres→لیٹر, sq→مربع,
+// cubic→مکعب, square root→جذر المربع). Percentages in prose→فیصد;
+// % survives only in calculation lines, bare-number options, and value
+// references (MAT-082/083). Splits KEPT: تناسب (proportion, MAT-130
+// only) vs نسبت (ratio); احاطہ (perimeter) vs محیط (circumference);
+// مفرد (prime) vs مرکب (composite); عاد (number factors/divisors) vs
+// عامل/عوامل (algebraic factors); مجموعہ = sum only (55×) vs سیٹ = set
+// (60×) — the transliterated set family (سیٹ/یونین/انٹرسیکشن/ذیلی سیٹ)
+// is kept because مجموعہ never means set and تقاطع already means
+// cross-multiplication; زاویہ ارتفاع/انخفاض vs اونچائی (height);
+// چت/پٹ/اکا for head/tail/ace (gap decisions, flagged for owner).
+// ڈھلان is the single slope term (ڈھلوان normalized away, 6×).
+// Coordinate compounds are hyphenated (x-محور, x-مختصہ, x-مقطع).
+// The ؟ placeholder in number series (MAT-476..485) is a symbol
+// standing for a number: "31، ؟" spacing is correct typography and
+// exempt from the no-space-before-؟ rule; the Latin ? placeholder in
+// MAT-164/169 questions is kept (inconsistent with ؟ — flagged).
+const mat = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/maths.json"), "utf8"));
+check("U2 maths: 500 items", mat.length === 500, `got ${mat.length}`);
+const matIdsOk = mat.every((q, i) => q.id === `MAT-${String(i + 1).padStart(3, "0")}`);
+check("U2 maths: IDs MAT-001..MAT-500 in order", matIdsOk);
+const matPairs = [];
+for (const q of mat) {
+  matPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => matPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  matPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const MAT_BANNED = [...CONTENT_BANNED, "چنیں", "مونث", "زوج", "فرد", "فریکشن", "نیومیریٹر", "ڈینومینیٹر", "فیکٹر", "ملٹیپل", "پرائم", "ایوریج", "میڈین", "موڈ", "پروبیبلٹی", "فنکشن", "ٹین", "سائن", "کوسائن", "رداس", "ڈھلوان"];
+const matBanned = bannedHits(matPairs, MAT_BANNED);
+check("U2 maths: no banned glossary/variant/transliteration terms in any _ur field (token-aware)", matBanned.length === 0, matBanned.slice(0, 5).join(", "));
+const MAT_PHRASES = ["درج ذیل", "مربع جذر", "مطابق نمونہ", "مستقل رقم"];
+const matPhrases = matPairs.filter(([, v]) => MAT_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 maths: no banned phrases in any _ur field (درج ذیل, مربع جذر, مطابق نمونہ, مستقل رقم)", matPhrases.length === 0, matPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const matEmdash = matPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 maths: no em-dash in any _ur field", matEmdash.length === 0, matEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const matMarker = matPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 maths: no '[Auto-Translated]' literal in any _ur field", matMarker.length === 0, matMarker.slice(0, 3).map(([l]) => l).join(", "));
+const matMojibake = matPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 maths: no U+FFFD in any _ur field", matMojibake.length === 0, matMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const matIndic = matPairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 maths: no Urdu-Indic digits in any _ur field", matIndic.length === 0, matIndic.slice(0, 3).map(([l]) => l).join(", "));
+const matEllipsis = matPairs.filter(([, v]) => (v ?? "").includes("..."));
+check("U2 maths: no ellipsis runs in any _ur field", matEllipsis.length === 0, matEllipsis.slice(0, 3).map(([l]) => l).join(", "));
+let matDigitBad = [];
+for (const q of mat) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) matDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) matDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) matDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 maths: digit preservation STRICT on all fields (questions/options/explanations)", matDigitBad.length === 0, matDigitBad.slice(0, 5).join(", "));
+// Latin allowlist: single letters + the §3.1 set, nothing else.
+const MAT_LATIN_ALLOWED = new Set(["cm", "km", "kg", "tan", "sin", "cos", "sec", "cosec", "cot", "log", "pi", "lcm", "hcf", "sas", "sss", "asa", "ssa", "rhs", "abc", "def", "pqr", "xyz", "lmn", "stu", "kx", "mx", "rs"]);
+let matLatinBad = [];
+for (const [loc, val] of matPairs) {
+  for (const w of ((val ?? "").match(/[A-Za-z]+/g) || [])) {
+    const lw = w.toLowerCase();
+    if (lw.length > 1 && !MAT_LATIN_ALLOWED.has(lw)) matLatinBad.push(`${loc}:${w}`);
+  }
+}
+check("U2 maths: Latin allowlist — every multi-letter Latin word in _ur is a unit/function/acronym/label", matLatinBad.length === 0, matLatinBad.slice(0, 5).join(" | "));
+// Punctuation: Latin . ? ; only in the §5 exceptions (decimals, Rs.,
+// a.m./p.m., and ? where the English field itself has ?); Latin comma
+// only inside bracketed notation (depth-aware: (), [], {} incl. nested
+// matrices and sets); no space before Urdu punctuation except the
+// standalone ؟ series placeholder.
+function matStripBrackets(s) {
+  let out = "", depth = 0;
+  for (const ch of s) {
+    if (ch === "(" || ch === "[" || ch === "{") depth++;
+    else if (ch === ")" || ch === "]" || ch === "}") depth = Math.max(0, depth - 1);
+    else if (depth === 0) out += ch;
+  }
+  return out;
+}
+let matPunctBad = [], matCommaBad = [], matSpaceBad = [];
+for (const q of mat) {
+  const fields = [["question_ur", q.question_ur, q.question], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o, q.options[i]]), ["explanation_ur", q.explanation_ur, q.explanation]];
+  for (const [loc, val, en] of fields) {
+    let p = (val ?? "").replace(/\d\.\d/g, " ").replace(/Rs\./gi, " ").replace(/a\.m\./gi, " ").replace(/p\.m\./gi, " ");
+    if ((en ?? "").includes("?")) p = p.replace(/\?/g, " ");
+    if (p.match(/[.?;]/g)) matPunctBad.push(`${q.id}:${loc}`);
+    if (matStripBrackets(p).includes(",")) matCommaBad.push(`${q.id}:${loc}`);
+    const placeholderFree = (val ?? "").replace(/(^|[\s،])؟(?=[\s،:۔]|$)/g, "$1X");
+    if (/ [،؟؛۔]/.test(placeholderFree)) matSpaceBad.push(`${q.id}:${loc}`);
+  }
+}
+check("U2 maths: no Latin . ? ; punctuation outside the §5 exceptions", matPunctBad.length === 0, matPunctBad.slice(0, 5).join(", "));
+check("U2 maths: no Latin comma outside bracketed notation", matCommaBad.length === 0, matCommaBad.slice(0, 5).join(", "));
+check("U2 maths: no space before Urdu punctuation (standalone ؟ series placeholder exempt)", matSpaceBad.length === 0, matSpaceBad.slice(0, 5).join(", "));
+const matHonor = matPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 maths: no Latin honorific abbreviations in any _ur field", matHonor.length === 0, matHonor.slice(0, 3).map(([l]) => l).join(", "));
+const matArCodepoints = matPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 maths: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", matArCodepoints.length === 0, matArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+let matEnScriptRuns = 0;
+for (const q of mat) {
+  matEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { matEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 maths: zero Arabic-script runs in English fields (measured baseline; verbatim check vacuous)", matEnScriptRuns === 0, `got ${matEnScriptRuns}`);
+const matLatinQ = matPairs.filter(([, v]) => (v ?? "").includes("?")).map(([l]) => l);
+check("U2 maths: Latin ? placeholder only in MAT-164 + MAT-169 questions",
+  JSON.stringify(matLatinQ.sort()) === JSON.stringify(["MAT-164:question_ur", "MAT-169:question_ur"]), matLatinQ.join(", "));
+const matUrText = matPairs.map(([, v]) => v ?? "").join("\n");
+const matCount = (t) => matUrText.split(t).length - 1;
+check("U2 maths: ؟ series placeholder typography — '، ؟' 10×, no '،؟', '؟ کی جگہ' 1×",
+  matCount("، ؟") === 10 && matCount("،؟") === 0 && matCount("؟ کی جگہ") === 1,
+  `، ؟ ${matCount("، ؟")}, ،؟ ${matCount("،؟")}, ؟ کی جگہ ${matCount("؟ کی جگہ")}`);
+const matToks = matPairs.flatMap(([, v]) => tokens(v));
+const matTokCount = (t) => matToks.filter((x) => x === t).length;
+check("U2 maths: glossary terms present (ڈگری, جذر المربع, جذر المکعب, ضریب, ثابت جملہ, ہم جنس, استوانہ, ذوزنقہ, نصف قطر, ڈھلان)",
+  ["ڈگری", "جذر المربع", "جذر المکعب", "ضریب", "ثابت جملہ", "ہم جنس", "استوانہ", "ذوزنقہ", "نصف قطر", "ڈھلان"].every((t) => matUrText.includes(t)));
+check("U2 maths: glossary terms present (x-محور, x-مختصہ, x-مقطع, چت, پٹ, اکا, زاویہ ارتفاع, زاویہ انخفاض, 24 گھنٹے والی گھڑی, اعشاری عدد)",
+  ["x-محور", "x-مختصہ", "x-مقطع", "چت", "پٹ", "اکا", "زاویہ ارتفاع", "زاویہ انخفاض", "24 گھنٹے والی گھڑی", "اعشاری عدد"].every((t) => matUrText.includes(t)));
+check("U2 maths: exact counts — ڈگری 285×, فیصد 59×, سال 92×, گھنٹے 63×, منٹ 20×, سیکنڈ 8×, دن 16×, لیٹر 6× (substring counts)",
+  matCount("ڈگری") === 285 && matCount("فیصد") === 59 && matCount("سال") === 92 && matCount("گھنٹے") === 63 && matCount("منٹ") === 20 && matCount("سیکنڈ") === 8 && matCount("دن") === 16 && matCount("لیٹر") === 6,
+  `ڈگری ${matCount("ڈگری")}, فیصد ${matCount("فیصد")}, سال ${matCount("سال")}, گھنٹے ${matCount("گھنٹے")}, منٹ ${matCount("منٹ")}, سیکنڈ ${matCount("سیکنڈ")}, دن ${matCount("دن")}, لیٹر ${matCount("لیٹر")}`);
+check("U2 maths: exact counts — جذر المربع 41×, جذر المکعب 2×, ضریب 8×, ثابت جملہ 6×, ہم جنس 2×, استوانہ 2×, ذوزنقہ 1×, ڈھلان 17×, نصف قطر 18×",
+  matCount("جذر المربع") === 41 && matCount("جذر المکعب") === 2 && matCount("ضریب") === 8 && matCount("ثابت جملہ") === 6 && matCount("ہم جنس") === 2 && matCount("استوانہ") === 2 && matCount("ذوزنقہ") === 1 && matCount("ڈھلان") === 17 && matCount("نصف قطر") === 18,
+  `جذر المربع ${matCount("جذر المربع")}, جذر المکعب ${matCount("جذر المکعب")}, ضریب ${matCount("ضریب")}, ثابت جملہ ${matCount("ثابت جملہ")}, ہم جنس ${matCount("ہم جنس")}, استوانہ ${matCount("استوانہ")}, ذوزنقہ ${matCount("ذوزنقہ")}, ڈھلان ${matCount("ڈھلان")}, نصف قطر ${matCount("نصف قطر")}`);
+check("U2 maths: exact counts — مربع cm 67×, مربع m 9×, مکعب cm 15×, x-محور 7×, y-محور 10×, x-مختصہ 10×, y-مختصہ 1×, x-مقطع 5×, y-مقطع 5×",
+  matCount("مربع cm") === 67 && matCount("مربع m") === 9 && matCount("مکعب cm") === 15 && matCount("x-محور") === 7 && matCount("y-محور") === 10 && matCount("x-مختصہ") === 10 && matCount("y-مختصہ") === 1 && matCount("x-مقطع") === 5 && matCount("y-مقطع") === 5,
+  `مربع cm ${matCount("مربع cm")}, مربع m ${matCount("مربع m")}, مکعب cm ${matCount("مکعب cm")}, x-محور ${matCount("x-محور")}, y-محور ${matCount("y-محور")}, x-مختصہ ${matCount("x-مختصہ")}, y-مختصہ ${matCount("y-مختصہ")}, x-مقطع ${matCount("x-مقطع")}, y-مقطع ${matCount("y-مقطع")}`);
+check("U2 maths: exact counts, token-aware splits — تناسب 1× vs نسبت 15×, احاطہ 14× vs محیط 8×, مجموعہ 55× vs سیٹ 60×, عاد 9× vs عوامل 3× + عامل 2×",
+  matTokCount("تناسب") === 1 && matTokCount("نسبت") === 15 && matTokCount("احاطہ") === 14 && matTokCount("محیط") === 8 && matTokCount("مجموعہ") === 55 && matTokCount("سیٹ") === 60 && matTokCount("عاد") === 9 && matTokCount("عوامل") === 3 && matTokCount("عامل") === 2,
+  `تناسب ${matTokCount("تناسب")}, نسبت ${matTokCount("نسبت")}, احاطہ ${matTokCount("احاطہ")}, محیط ${matTokCount("محیط")}, مجموعہ ${matTokCount("مجموعہ")}, سیٹ ${matTokCount("سیٹ")}, عاد ${matTokCount("عاد")}, عوامل ${matTokCount("عوامل")}, عامل ${matTokCount("عامل")}`);
+check("U2 maths: exact counts — چت 12×, پٹ 11×, اکا 2× (token-aware; اکائی/بچتا substrings excluded), زاویہ ارتفاع 7×, زاویہ انخفاض 4×, جانچ 27×, اعشاری عدد 2×",
+  matTokCount("چت") === 12 && matTokCount("پٹ") === 11 && matTokCount("اکا") === 2 && matCount("زاویہ ارتفاع") === 7 && matCount("زاویہ انخفاض") === 4 && matCount("جانچ") === 27 && matCount("اعشاری عدد") === 2,
+  `چت ${matTokCount("چت")}, پٹ ${matTokCount("پٹ")}, اکا ${matTokCount("اکا")}, زاویہ ارتفاع ${matCount("زاویہ ارتفاع")}, زاویہ انخفاض ${matCount("زاویہ انخفاض")}, جانچ ${matCount("جانچ")}, اعشاری عدد ${matCount("اعشاری عدد")}`);
+// % rule: prose % → فیصد (43 of 122 EN % signs removed); the 79 kept
+// are calculation lines, bare-number options and value references
+// (MAT-082/083). No % may ever be ADDED in _ur.
+let matPctBad = [], matPctTotal = 0;
+for (const q of mat) {
+  const fields = [[q.question, q.question_ur], [q.explanation, q.explanation_ur], ...q.options.map((o, i) => [o, q.options_ur[i]])];
+  for (const [en, ur] of fields) {
+    const ce = (en.match(/%/g) || []).length, cu = (ur.match(/%/g) || []).length;
+    matPctTotal += cu;
+    if (cu > ce) matPctBad.push(q.id);
+  }
+}
+check("U2 maths: % never added in any _ur field; 79 total kept (43 prose % → فیصد)", matPctBad.length === 0 && matPctTotal === 79, `added in ${matPctBad.slice(0, 3).join(", ")}, total ${matPctTotal}`);
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");

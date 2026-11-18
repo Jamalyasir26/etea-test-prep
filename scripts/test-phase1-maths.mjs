@@ -182,18 +182,34 @@ check("Phase1 new items: exact 23-key schema, fixed fields, all-6-fields, 4 dist
   check("Phase1 new items: digits preserved across all 3 languages", digBad.length === 0, digBad.slice(0, 5).join(", "));
   const guardBad = news.filter((q) => ruHits(q.explanation) >= 2).map((q) => `${q.id}(${ruHits(q.explanation)})`);
   check("Phase1 new items: F02 guard — English explanations have <2 Roman-Urdu detector hits", guardBad.length === 0, guardBad.slice(0, 5).join(", "));
+  // U2-Maths: spelled-out units in _ur options are translated per the
+  // brief §3.2 unit map (days→دن, sq cm→مربع cm, cubic cm→مکعب cm,
+  // degrees→ڈگری, years→سال, hours→گھنٹے, minutes→منٹ, seconds→سیکنڈ,
+  // litres→لیٹر); 4-digit 24-hour clock readings drop "hours" (bare
+  // reading, brief §3.2). Verified: the map reproduces all 1562
+  // verbatim-classified options' _ur forms exactly (248 differ from EN,
+  // all unit substitutions, numeric parts identical). _roman stays
+  // byte-identical. The numeric part is still pinned exactly — the
+  // expected _ur option is EN with the unit map applied, nothing else.
+  const U2_UNIT_MAP = [["cubic cm", "مکعب cm"], ["sq cm", "مربع cm"], ["degrees", "ڈگری"], ["degree", "ڈگری"], ["years", "سال"], ["year", "سال"], ["hours", "گھنٹے"], ["hour", "گھنٹہ"], ["minutes", "منٹ"], ["minute", "منٹ"], ["seconds", "سیکنڈ"], ["second", "سیکنڈ"], ["days", "دن"], ["day", "دن"], ["litres", "لیٹر"], ["litre", "لیٹر"]];
+  function expectedUrOption(o) {
+    if (/^\d{4} hours$/.test(o.trim())) return o.trim().slice(0, 4);
+    let s = o;
+    for (const [en, ur] of U2_UNIT_MAP) s = s.replace(new RegExp(`\\b${en}\\b`, "gi"), ur);
+    return s;
+  }
   const urOptBad = [];
   for (const q of news) {
     q.options.forEach((o, j) => {
       if (isVerbatimOption(o)) {
-        if (q.options_ur[j] !== o) urOptBad.push(q.id + ":ur-opt" + j);
+        if (q.options_ur[j] !== expectedUrOption(o)) urOptBad.push(q.id + ":ur-opt" + j);
         if (q.options_roman[j] !== o) urOptBad.push(q.id + ":roman-opt" + j);
       } else if (!AR.test(q.options_ur[j])) {
         urOptBad.push(q.id + ":ur-opt" + j + "-word");
       }
     });
   }
-  check("Phase1 new items: numeric options byte-identical across languages; word options translated in _ur", urOptBad.length === 0, urOptBad.slice(0, 5).join(", "));
+  check("Phase1 new items: numeric options byte-identical in _roman, unit-mapped in _ur (U2); word options translated in _ur", urOptBad.length === 0, urOptBad.slice(0, 5).join(", "));
   const numDup = [];
   for (const q of news) {
     const vals = q.options.map(parseNumeric);
