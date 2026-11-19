@@ -11,10 +11,11 @@
 // (500 items, U2 subject 7), the Science bank
 // (500 items, U2 subject 8), the Social Studies bank
 // (500 items, U2 subject 9), the GK bank
-// (500 items, U2 subject 10) and the IT bank
-// (500 items, U2 subject 11).
-// The other 2 banks keep their pre-U1 _ur
-// wording until U2 and are NOT covered here (except the
+// (500 items, U2 subject 10), the IT bank
+// (500 items, U2 subject 11) and the PE bank
+// (500 items, U2 subject 12).
+// The other 1 bank keeps its pre-U1 _ur
+// wording until U2 and is NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
 import fs from "node:fs";
@@ -2319,6 +2320,292 @@ check("U2 it: exact-field pins, normalizations + splits — 306O1/E گیٹ وے,
   itById.get("ITC-485").question_ur.includes("Close") &&
   itById.get("ITC-252").options_ur[3].includes("سطر") &&
   itById.get("ITC-252").question_ur.includes("سطروں") && itById.get("ITC-252").explanation_ur.includes("سطروں"));
+
+// ---------- §3M PE bank (U2 subject 12) ----------
+// U2 rewrote the PE _ur fields (533 of 3000
+// field-values changed; 326/500 items; Q 176, O 110,
+// E 247; 174 items unchanged, already idiomatic).
+// File order is the Phase 1 order: the 10 legacy
+// DRW-011..DRW-020 drawing cross-ref items first,
+// then PE-001..PE-490 (PE-001..036 original +
+// PE-037..490 Phase 1 append). The DRW-011..020 gap
+// in drawing.json is deliberate (no collision) and
+// the items are NOT renumbered or moved.
+// explanationUrdu is null in all 500; explanationEn
+// in exactly DRW-011/012/016/019 + PE-001 (the 5
+// mixed-explanation originals, echo-dedup per U1
+// ruling 1). Digit rule is STRICT on every field vs
+// EN (digitRuns + sameMultiset, same helpers as §3L),
+// with the relaxedDigitOk echo carve-out for exactly
+// the 4 echo explanations (DRW-011/012/019, PE-001:
+// EN carries the digit twice — English sentence +
+// Roman echo — _ur states it once). Latin rule is
+// the U2-PE central validator's allowlist (30 words:
+// acronyms CPR/ATP-PC/FIFA/IOC/ICC/FITT/WHO/SMART/
+// FIBA/DRABC/DOMS/CGF/POA/ODI/T20/VO2/BMI/WADA/PRICE/
+// IPC/EPOC/RICE/FIH + km/m/max/key/U) + single
+// letters; km and m are 0x after N2 (PE-026
+// "4x100 m" -> "4x100 میٹر"); the only remaining
+// single-letter Latin is x (dimension/event
+// separator, e.g. 29x16, 4x100). Verbatim-shaped
+// options (phase1-pe isTechVerbatim, copied here —
+// do not drift) stay byte-identical; 0 violations,
+// so NO exact-mapping carve-out was needed (unlike
+// IT). Colon frames KEPT at PE-022/PE-030 (EN Q
+// ends with ":" in both; options are fragments).
+// Splits KEPT (different EN, sense, cluster, or
+// grammar — not spelling variants): پوائنٹس 14
+// fields (tennis/table-tennis/badminton/kabaddi
+// points — DELIBERATE divergence from guide نمبر,
+// flagged); پٹھا 27× vs عضلہ 3× (PE-034 gloss +
+// PE-123 heart muscle only); قوت = Power-as-
+// component label (7 option fields) vs طاقت =
+// descriptive power/strength (PE-102/103 "great
+// power" -> طاقت; PE-160 E MUST differ — power vs
+// strength in one sentence — قوت vs طاقت); جال 29×
+// (net in play phrases + goal nets) vs نیٹ token
+// in exactly PE-003E + PE-017Q/E (net as object/
+// height — P1a's deliberate choice, flagged);
+// تحریک 11× = EN "movement/impulse" (Olympic
+// Movement, gymnastics movement, nerve impulses)
+// vs ترغیب 16× = EN "motivation" vs حوصلہ 5× =
+// EN "encourage" (different senses, no conflict);
+// اشیا KEPT for EN "items/things" physical only
+// (4 fields; DELIBERATE divergence from Pak
+// Studies/GK ban, Social Studies precedent);
+// اسکور 12× for EN "score/scoring" (DELIBERATE
+// cross-bank divergence — IT bans اسکور, PE keeps
+// it, flagged); ٹارگٹ ہارٹ ریٹ زون kept Latin
+// in exactly PE-174Q/E (tested label; plain
+// "ہارٹ ریٹ" normalized to دل کی دھڑکن
+// everywhere else, N6). Coinages/judgment calls
+// flagged for owner confirmation: غیر کھلاڑیانہ
+// رویہ (PE-331, unsportsmanlike), آسن (PE-065E +
+// PE-202, yoga postures), باربل (PE-160Q, fresh
+// transliteration), مساج (PE-207E; مالش 0×),
+// فضلہ اجزا (PE-213E/216, waste products;
+// فضلہ مادے 0×), واپسی (reversibility) + جمود
+// (plateau), خودکار collision (PE-142E: the
+// autonomous stage AND "automatic" share one
+// word — no attested alternative). Normalizations
+// N1–N6 (coordinator, asserted counts):
+// N1 PE-131Q فزیالوجی -> فعلیات; N2 PE-026Q
+// "4x100 m" -> "4x100 میٹر"; N3 PE-385Q/E
+// رکاوٹ -> ہرڈل (P4b recommendation; PE-349
+// already ہرڈل); N4 جب کہ -> جبکہ PE-312O0/E +
+// PE-316E (74× dominant); N5 وارننگ -> انتباہ
+// PE-310O0/O1/E + PE-347O0 (same EN "warning"
+// as PE-024 card-warning انتباہ); N6 ہارٹ ریٹ ->
+// دل کی دھڑکن PE-009Q/E, PE-118E, PE-119Q/E,
+// PE-121Q, PE-126E (26× dominant). Flagged facts
+// mirrored, not resolved: all S21–S23
+// measurements (kho-kho 29×16, kabaddi sizes,
+// basketball FIBA 28×15 vs NBA, football 105×68,
+// cricket/hockey ball 0.1 g lower bound),
+// PE-111 (DOMS/lactic-acid distractor), PE-138,
+// PE-147 (WHO BMI bands), PE-407/408 (DRABC vs
+// DRSABCD), CPR 30:2 + 100–120/min, Rescue 1122,
+// PE-309, PE-489 (Serena years), PE-490 (PT Usha)
+// — see VERIFY-u2-pe.md §8.
+const pe = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/pe.json"), "utf8"));
+check("U2 pe: 500 items", pe.length === 500, `got ${pe.length}`);
+const peIdsOk = pe.slice(0, 10).every((q, i) => q.id === `DRW-${String(11 + i).padStart(3, "0")}`) &&
+  pe.slice(10).every((q, i) => q.id === `PE-${String(i + 1).padStart(3, "0")}`);
+check("U2 pe: file order DRW-011..DRW-020 then PE-001..PE-490", peIdsOk);
+const pePairs = [];
+for (const q of pe) {
+  pePairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => pePairs.push([`${q.id}:options_ur[${i}]`, o]));
+  pePairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const peUrText = pePairs.map(([, v]) => v ?? "").join("\n");
+const peCount = (t) => peUrText.split(t).length - 1;
+const peTokens = (s) => tokens(s);
+// Banned terms, token-aware (فورا/تقریبا checked as
+// tokens: as substrings they live inside فوراً/تقریباً,
+// so a substring check would false-positive 31×/17×).
+const PE_BANNED = ["مونث", "مؤنث", "پیڈاگوجی", "سورۃ", "وزیراعظم", "محمدن", "ووٹرز", "ججز", "سکرین", "پریکٹس", "فورا", "تقریبا"];
+const peBanned = bannedHits(pePairs, PE_BANNED);
+check("U2 pe: no banned glossary/variant terms in any _ur field (token-aware; اسکور NOT banned — 12× for EN 'score', deliberate cross-bank divergence from IT; اشیا/اشیاء see below)", peBanned.length === 0, peBanned.slice(0, 5).join(", "));
+const PE_PHRASES = ["درج ذیل", "جب کہ", "ورلڈ ہیلتھ", "ویٹ ٹریننگ", "فزیالوجی", "وارننگ", "ابتدائی طبی مدد", "کول ڈاؤن", "فضلہ مادے", "مالش", "قلبی وعائی", "اشیاء", "میڈل"];
+const pePhrases = pePairs.filter(([, v]) => PE_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 pe: no banned phrases in any _ur field (درج ذیل/جب کہ/ورلڈ ہیلتھ/ویٹ ٹریننگ/فزیالوجی/وارننگ/ابتدائی طبی مدد/کول ڈاؤن/فضلہ مادے/مالش/قلبی وعائی/اشیاء/میڈل — medal is تمغے/تمغوں)", pePhrases.length === 0, pePhrases.slice(0, 3).map(([l]) => l).join(", "));
+const peEmdash = pePairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 pe: no em-dash in any _ur field", peEmdash.length === 0, peEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const peMarker = pePairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 pe: no '[Auto-Translated]' literal in any _ur field", peMarker.length === 0, peMarker.slice(0, 3).map(([l]) => l).join(", "));
+const peMojibake = pePairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 pe: no U+FFFD in any _ur field", peMojibake.length === 0, peMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const peIndic = pePairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 pe: no Urdu-Indic digits in any _ur field", peIndic.length === 0, peIndic.slice(0, 3).map(([l]) => l).join(", "));
+const peYehKaf = pePairs.filter(([, v]) => /[\u064A\u0643]/.test(v ?? ""));
+check("U2 pe: no Arabic yeh/kaf (U+064A/U+0643) in any _ur field", peYehKaf.length === 0, peYehKaf.slice(0, 3).map(([l]) => l).join(", "));
+const pePct = pePairs.filter(([, v]) => (v ?? "").includes("%"));
+check("U2 pe: no % in any _ur field", pePct.length === 0, pePct.slice(0, 3).map(([l]) => l).join(", "));
+const peQmark = pePairs.filter(([, v]) => (v ?? "").includes("?"));
+check("U2 pe: no Latin ? in any _ur field", peQmark.length === 0, peQmark.slice(0, 3).map(([l]) => l).join(", "));
+const peSemi = pePairs.filter(([, v]) => (v ?? "").includes(";"));
+check("U2 pe: no Latin ; in any _ur field", peSemi.length === 0, peSemi.slice(0, 3).map(([l]) => l).join(", "));
+const peDotBad = pePairs.filter(([, v]) => (v ?? "").replace(/\d+\.\d+/g, " ").includes("."));
+check("U2 pe: no Latin . outside decimal numbers in any _ur field", peDotBad.length === 0, peDotBad.slice(0, 3).map(([l]) => l).join(", "));
+const peDashFields = pePairs.filter(([, v]) => (v ?? "").includes("–")).map(([l]) => l);
+let peDashBad = [];
+for (const [loc, v] of pePairs) {
+  for (const m of (v ?? "").matchAll(/–/g)) {
+    const i = m.index;
+    if (!/\d/.test(v[i - 1] || "") || !/\d/.test(v[i + 1] || "")) peDashBad.push(loc);
+  }
+}
+check("U2 pe: en-dash ONLY in PE-030 options (4 fields, between digits — resting heart-rate ranges)", peDashFields.length === 4 && peDashFields.every((f) => f.startsWith("PE-030:options_ur")) && peDashBad.length === 0, `${peDashFields.join(", ")} / bad ${peDashBad.join(", ")}`);
+// Digit rule STRICT on every field, echo carve-out for exactly the 4 echo explanations.
+const PE_ECHO_IDS = new Set(["DRW-011", "DRW-012", "DRW-019", "PE-001"]);
+let peDigitBad = [];
+for (const q of pe) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) peDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) peDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) {
+    if (!(PE_ECHO_IDS.has(q.id) && relaxedDigitOk(q.explanation, q.explanation_ur))) peDigitBad.push(`${q.id}:explanation_ur`);
+  }
+}
+check("U2 pe: digit preservation STRICT on every field (500 questions, options, explanations; echo carve-out ONLY for DRW-011/012/019 + PE-001 explanations)", peDigitBad.length === 0, peDigitBad.slice(0, 5).join(", "));
+// Latin allowlist (U2-PE central validator, ported exactly).
+const PE_LATIN_ALLOW = new Set([
+  "CPR", "ATP-PC", "FIFA", "IOC", "ICC", "FITT", "WHO", "SMART", "FIBA", "DRABC",
+  "DOMS", "CGF", "POA", "ODI", "T20", "VO2", "BMI", "WADA", "PRICE", "IPC", "EPOC",
+  "RICE", "FIH", "km", "m", "max", "key", "U",
+]);
+function peLatinViolations(s) {
+  let t = s.replace(/\b(VO2|T20)\b/g, " ");
+  t = t.replace(/\d+\s*x\s*\d+/g, " ").replace(/\d+\.\d+/g, " ").replace(/\d+/g, " ");
+  const bad = [];
+  for (const w of t.match(/[A-Za-z][A-Za-z0-9.'-]*/g) || []) {
+    if (w.length === 1) continue;
+    if (!PE_LATIN_ALLOW.has(w)) bad.push(w);
+  }
+  return [...new Set(bad)];
+}
+const peLatinBad = [];
+for (const [loc, v] of pePairs) {
+  const lv = peLatinViolations(v ?? "");
+  if (lv.length) peLatinBad.push(`${loc}:${lv.join(",")}`);
+}
+check("U2 pe: no Latin outside the 30-word allowlist in any _ur field (acronyms + km/m/max/key/U + single letters; km/m 0× after N2)", peLatinBad.length === 0, peLatinBad.slice(0, 5).join(", "));
+// Verbatim options (phase1-pe isTechVerbatim, copied exactly — do not drift).
+const PE_PURE_EXPR = /^[\d\s\/\.\+\-=\%\(\)xX\:\^\u2212,]+$/;
+function peIsTechVerbatim(opt) {
+  const t = opt.trim();
+  if (PE_PURE_EXPR.test(t)) return true;
+  if (/^([A-Z]{1,6}|\d+)(,\s*([A-Z]{1,6}|\d+))*$/.test(t)) return true;
+  return false;
+}
+const peVerbatimBad = [];
+for (const q of pe) {
+  q.options.forEach((o, j) => {
+    if (peIsTechVerbatim(o) && q.options_ur[j] !== o) peVerbatimBad.push(`${q.id}:opt${j}`);
+  });
+}
+check("U2 pe: verbatim-shaped options byte-identical (no exact-mapping carve-out needed — 0 violations)", peVerbatimBad.length === 0, peVerbatimBad.slice(0, 5).join(", "));
+check("U2 pe: explanationUrdu null in all 500; explanationEn in exactly DRW-011/012/016/019 + PE-001",
+  pe.every((q) => q.explanationUrdu === null) &&
+  pe.filter((q) => q.explanationEn).map((q) => q.id).join(",") === "DRW-011,DRW-012,DRW-016,DRW-019,PE-001");
+let peEnScriptRuns = 0;
+for (const q of pe) {
+  peEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { peEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 pe: zero Arabic-script runs in English fields", peEnScriptRuns === 0, `got ${peEnScriptRuns}`);
+let peFormBad = [];
+for (const q of pe) {
+  const byNorm = new Map();
+  for (const f of [q.question_ur, ...q.options_ur, q.explanation_ur]) {
+    for (const r of f.match(AR_RUN) || []) {
+      const nn = r.normalize("NFKC");
+      if (byNorm.has(nn) && byNorm.get(nn) !== r) peFormBad.push(q.id);
+      else byNorm.set(nn, r);
+    }
+  }
+}
+check("U2 pe: repeated Urdu script forms byte-identical within each item (NFKC)", peFormBad.length === 0, [...new Set(peFormBad)].slice(0, 5).join(", "));
+const peById = new Map(pe.map((q) => [q.id, q]));
+check("U2 pe: colon frames kept at PE-022 + PE-030 (EN Q ends with ':' in both; options are fragments)",
+  peById.get("PE-022").question.endsWith(":") && peById.get("PE-022").question_ur.endsWith(":") &&
+  peById.get("PE-030").question.endsWith(":") && peById.get("PE-030").question_ur.endsWith(":"));
+check("U2 pe: normalization pins — PE-131Q ورزش کی فعلیات (N1); PE-026Q 4x100 میٹر ریلے (N2)",
+  peById.get("PE-131").question_ur === "ورزش کی فعلیات میں VO2 max سے کیا مراد ہے؟" &&
+  peById.get("PE-026").question_ur === "4x100 میٹر ریلے ٹیم میں کتنے دوڑنے والے ہوتے ہیں؟");
+function peCountsCheck(name, pairs) {
+  const bad = pairs.filter(([t, n]) => peCount(t) !== n);
+  check(name, bad.length === 0, bad.map(([t, n]) => `${t} ${peCount(t)}!=${n}`).join(", "));
+}
+peCountsCheck("U2 pe: exact counts, core guide + units — جسمانی تعلیم 48×, ورزش 158×, کھیل 392× (incl. کھیلوں 109×), کھلاڑی 326×, میدان 38×, وارم اپ 52×, کولنگ ڈاؤن 18×, میٹر 252× (incl. کلومیٹر 6×), فٹ 88× (incl. فٹنس 45× + فٹ بال 35× + bare فٹ 8×), انچ 23×, گز 53×, منٹ 131×, سیکنڈ 27×, گرام 80×, دل کی دھڑکن 33×, پٹھا 28×, عضلہ 4×, فٹنس 45×, کوچ 27×, ریفری 14×, امپائر 15×, کپتان 12×, گول کیپر 20×, پینلٹی 23×, فاؤل 15×, آف سائیڈ 12×, تمغے 9×, تمغوں 3×, طلائی 6×, لیور 21×, فلکرم 6×, کوشش 36×, بوجھ 25× (substring counts)",
+  [["جسمانی تعلیم", 48], ["ورزش", 158], ["کھیل", 392], ["کھلاڑی", 326], ["میدان", 38], ["وارم اپ", 52], ["کولنگ ڈاؤن", 18], ["میٹر", 252], ["فٹ", 88], ["انچ", 23], ["گز", 53], ["منٹ", 131], ["سیکنڈ", 27], ["گرام", 80], ["دل کی دھڑکن", 33], ["پٹھا", 28], ["عضلہ", 4], ["فٹنس", 45], ["کوچ", 27], ["ریفری", 14], ["امپائر", 15], ["کپتان", 12], ["گول کیپر", 20], ["پینلٹی", 23], ["فاؤل", 15], ["آف سائیڈ", 12], ["تمغے", 9], ["تمغوں", 3], ["طلائی", 6], ["لیور", 21], ["فلکرم", 6], ["کوشش", 36], ["بوجھ", 25]]);
+peCountsCheck("U2 pe: exact counts, adjudicated terms — ترغیب 16×, تحریک 11×, حوصلہ 5×, ہرڈل 10×, رکاوٹ 2×, اشیا 4×, پوائنٹس 18×, نمبر 5×, قوت 9×, طاقت 58×, ابتدائی طبی امداد 15×, انتباہ 8×, فعلیات 3×, مندرجہ ذیل 4×, جبکہ 77×, عالمی ادارہ صحت 2×, آسن 3×, وزن کی تربیت 2×, فضلہ اجزا 3×, مساج 1×, سیال 14×, قلبی عروقی 7×, غیر کھلاڑیانہ 2×, چربی سے پاک 2×, ہدایت اور کنٹرول 3×, ٹارگٹ ہارٹ ریٹ زون 2×, جسمانی خواندگی 2×, جاگنگ 14×, فٹ بالر 8×, لیکٹک ایسڈ 15×, سیٹ 13×, خودکار 7×, ادراکی 7×, ربطی 6×, باربل 1×, واپسی 14×, جمود 3×, موٹر لرننگ 2×, کاربوہائیڈریٹ 15×, گلائیکوجن 5×, الیکٹرولائٹس 5×, پروٹین 8×, وٹامن 5×, فائبر 3×, سپلیمنٹ 7×, اسکور 12×, جال 29× (substring counts; فوراً 31 fields + تقریباً 17 fields pinned token-level below, NOT as substrings)",
+  [["ترغیب", 16], ["تحریک", 11], ["حوصلہ", 5], ["ہرڈل", 10], ["رکاوٹ", 2], ["اشیا", 4], ["پوائنٹس", 18], ["نمبر", 5], ["قوت", 9], ["طاقت", 58], ["ابتدائی طبی امداد", 15], ["انتباہ", 8], ["فعلیات", 3], ["مندرجہ ذیل", 4], ["جبکہ", 77], ["عالمی ادارہ صحت", 2], ["آسن", 3], ["وزن کی تربیت", 2], ["فضلہ اجزا", 3], ["مساج", 1], ["سیال", 14], ["قلبی عروقی", 7], ["غیر کھلاڑیانہ", 2], ["چربی سے پاک", 2], ["ہدایت اور کنٹرول", 3], ["ٹارگٹ ہارٹ ریٹ زون", 2], ["جسمانی خواندگی", 2], ["جاگنگ", 14], ["فٹ بالر", 8], ["لیکٹک ایسڈ", 15], ["سیٹ", 13], ["خودکار", 7], ["ادراکی", 7], ["ربطی", 6], ["باربل", 1], ["واپسی", 14], ["جمود", 3], ["موٹر لرننگ", 2], ["کاربوہائیڈریٹ", 15], ["گلائیکوجن", 5], ["الیکٹرولائٹس", 5], ["پروٹین", 8], ["وٹامن", 5], ["فائبر", 3], ["سپلیمنٹ", 7], ["اسکور", 12], ["جال", 29]]);
+function peTokenFields(tok) {
+  const out = [];
+  for (const q of pe) {
+    const fields = [["question_ur", q.question_ur], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o]), ["explanation_ur", q.explanation_ur]];
+    for (const [loc, val] of fields) if (peTokens(val).includes(tok)) out.push(`${q.id}:${loc}`);
+  }
+  return out;
+}
+const peSetEq = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
+check("U2 pe: فوراً token in exactly 31 fields + تقریباً token in exactly 17 fields (bare فورا/تقریبا tokens 0× — substring counts would false-positive)",
+  peTokenFields("فوراً").length === 31 && peTokenFields("فورا").length === 0 &&
+  peTokenFields("تقریباً").length === 17 && peTokenFields("تقریبا").length === 0,
+  `فوراً ${peTokenFields("فوراً").length} فورا ${peTokenFields("فورا").length} تقریباً ${peTokenFields("تقریباً").length} تقریبا ${peTokenFields("تقریبا").length}`);
+check("U2 pe: ہرڈل in exactly 6 fields (PE-349Q/O2/O3/E + PE-385Q/E, every one EN 'hurdle(s)'); رکاوٹ in exactly PE-412E + PE-413E (EN 'obstacle/blocked', NOT hurdles)",
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("ہرڈل")).map(([l]) => l),
+    ["PE-349:question_ur", "PE-349:options_ur[2]", "PE-349:options_ur[3]", "PE-349:explanation_ur", "PE-385:question_ur", "PE-385:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("رکاوٹ")).map(([l]) => l),
+    ["PE-412:explanation_ur", "PE-413:explanation_ur"]),
+  `ہرڈل ${pePairs.filter(([, v]) => (v ?? "").includes("ہرڈل")).map(([l]) => l).join(", ")} / رکاوٹ ${pePairs.filter(([, v]) => (v ?? "").includes("رکاوٹ")).map(([l]) => l).join(", ")}`);
+check("U2 pe: اشیا in exactly 4 fields (PE-390E shared items, PE-393O2/E damaged items, PE-398E falling objects — all EN physical 'items/things'; deliberate divergence from Pak Studies/GK ban, SS precedent)",
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("اشیا")).map(([l]) => l),
+    ["PE-390:explanation_ur", "PE-393:options_ur[2]", "PE-393:explanation_ur", "PE-398:explanation_ur"]),
+  pePairs.filter(([, v]) => (v ?? "").includes("اشیا")).map(([l]) => l).join(", "));
+check("U2 pe: ہارٹ ریٹ in exactly PE-174Q/E (inside ٹارگٹ ہارٹ ریٹ زون, the kept tested label); دل کی دھڑکن 33× everywhere else",
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("ہارٹ ریٹ")).map(([l]) => l),
+    ["PE-174:question_ur", "PE-174:explanation_ur"]) && peCount("دل کی دھڑکن") === 33,
+  `ہارٹ ریٹ ${pePairs.filter(([, v]) => (v ?? "").includes("ہارٹ ریٹ")).map(([l]) => l).join(", ")} / دل کی دھڑکن ${peCount("دل کی دھڑکن")}`);
+check("U2 pe: پوائنٹس in exactly 14 fields (PE-013Q/E, PE-015Q/E, PE-016Q/E, PE-341Q/O0/O2/O3/E, PE-344O0/E, PE-442O1 — tennis/table-tennis/badminton/kabaddi points; deliberate divergence from guide نمبر, flagged)",
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("پوائنٹس")).map(([l]) => l),
+    ["PE-013:question_ur", "PE-013:explanation_ur", "PE-015:question_ur", "PE-015:explanation_ur", "PE-016:question_ur", "PE-016:explanation_ur", "PE-341:question_ur", "PE-341:options_ur[0]", "PE-341:options_ur[2]", "PE-341:options_ur[3]", "PE-341:explanation_ur", "PE-344:options_ur[0]", "PE-344:explanation_ur", "PE-442:options_ur[1]"]),
+  pePairs.filter(([, v]) => (v ?? "").includes("پوائنٹس")).map(([l]) => l).join(", "));
+check("U2 pe: قوت = Power-as-component in exactly 7 option fields (PE-151O0, PE-157O2, PE-158O1, PE-160O0–O3); PE-160E contrasts قوت (power) vs طاقت (strength) in one sentence; PE-390O1 قوت مدافعت = EN 'resistance'",
+  peSetEq(["PE-151:options_ur[0]", "PE-157:options_ur[2]", "PE-158:options_ur[1]", "PE-160:options_ur[0]", "PE-160:options_ur[1]", "PE-160:options_ur[2]", "PE-160:options_ur[3]"].filter((f) => pePairs.some(([l, v]) => l === f && (v ?? "").includes("قوت"))),
+    ["PE-151:options_ur[0]", "PE-157:options_ur[2]", "PE-158:options_ur[1]", "PE-160:options_ur[0]", "PE-160:options_ur[1]", "PE-160:options_ur[2]", "PE-160:options_ur[3]"]) &&
+  peById.get("PE-160").explanation_ur.includes("قوت کو ظاہر کرتا ہے، جو تیزی سے لگائی گئی طاقت ہے") &&
+  peById.get("PE-390").options_ur[1].includes("قوت مدافعت"));
+check("U2 pe: motor-learning stages — ادراکی/ربطی/خودکار in exactly PE-142O0–O3+E + PE-143O0/O1/O2+E (خودکار also = 'automatic' in PE-142E — collision flagged, no attested alternative)",
+  peSetEq(peTokenFields("ادراکی"), ["PE-142:options_ur[0]", "PE-142:options_ur[1]", "PE-142:options_ur[2]", "PE-142:options_ur[3]", "PE-142:explanation_ur", "PE-143:options_ur[2]", "PE-143:explanation_ur"]) &&
+  peSetEq(peTokenFields("ربطی"), ["PE-142:options_ur[0]", "PE-142:options_ur[1]", "PE-142:options_ur[2]", "PE-142:options_ur[3]", "PE-142:explanation_ur", "PE-143:options_ur[1]"]) &&
+  peSetEq(peTokenFields("خودکار"), ["PE-142:options_ur[0]", "PE-142:options_ur[1]", "PE-142:options_ur[2]", "PE-142:options_ur[3]", "PE-142:explanation_ur", "PE-143:options_ur[0]"]) &&
+  peById.get("PE-142").explanation_ur.includes("خودکار مرحلے سے، جب مہارت زیادہ مشق شدہ اور خودکار ہو جاتی ہے"),
+  `ادراکی ${peTokenFields("ادراکی").join(", ")} / ربطی ${peTokenFields("ربطی").join(", ")} / خودکار ${peTokenFields("خودکار").join(", ")}`);
+check("U2 pe: PE-147 verbatim digit-range options byte-identical + WHO name عالمی ادارہ صحت (WHO) in Q+E (BMI bands 18.5–24.9/25.0–29.9 mirrored, not resolved)",
+  JSON.stringify(peById.get("PE-147").options_ur) === JSON.stringify(peById.get("PE-147").options) &&
+  peById.get("PE-147").question_ur.includes("عالمی ادارہ صحت (WHO)") &&
+  peById.get("PE-147").explanation_ur.includes("عالمی ادارہ صحت (WHO)"));
+check("U2 pe: kept-split field sets — نیٹ token exactly PE-003E + PE-017Q/E (جال 29× elsewhere, flagged); آسن exactly PE-065E + PE-202O3/E; فضلہ اجزا exactly PE-213E + PE-216O2/E; مساج exactly PE-207E; باربل exactly PE-160Q; غیر کھلاڑیانہ exactly PE-331Q/E; چربی سے پاک exactly PE-153Q/E; ہدایت اور کنٹرول exactly PE-450E + PE-459O2/E; عالمی ادارہ صحت exactly PE-147Q/E; وزن کی تربیت exactly PE-229Q + PE-237O0; قلبی عروقی exactly 7 fields (PE-149O0/E, PE-153O0, PE-154Q/E, PE-155O1, PE-159O3); تمغے exactly 9 fields; انتباہ exactly 8 fields (PE-024O0/E, PE-310O0/O1/E, PE-347O0, PE-400Q, PE-427E); واپسی reversibility exactly PE-167O0 + PE-169O3/E + PE-170O3 + PE-172O0; جمود exactly PE-172O2 + PE-173O2/E",
+  peSetEq(peTokenFields("نیٹ"), ["PE-003:explanation_ur", "PE-017:question_ur", "PE-017:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("آسن")).map(([l]) => l), ["PE-065:explanation_ur", "PE-202:options_ur[3]", "PE-202:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("فضلہ اجزا")).map(([l]) => l), ["PE-213:explanation_ur", "PE-216:options_ur[2]", "PE-216:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("مساج")).map(([l]) => l), ["PE-207:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("باربل")).map(([l]) => l), ["PE-160:question_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("غیر کھلاڑیانہ")).map(([l]) => l), ["PE-331:question_ur", "PE-331:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("چربی سے پاک")).map(([l]) => l), ["PE-153:question_ur", "PE-153:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("ہدایت اور کنٹرول")).map(([l]) => l), ["PE-450:explanation_ur", "PE-459:options_ur[2]", "PE-459:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("عالمی ادارہ صحت")).map(([l]) => l), ["PE-147:question_ur", "PE-147:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("وزن کی تربیت")).map(([l]) => l), ["PE-229:question_ur", "PE-237:options_ur[0]"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("قلبی عروقی")).map(([l]) => l), ["PE-149:options_ur[0]", "PE-149:explanation_ur", "PE-153:options_ur[0]", "PE-154:question_ur", "PE-154:explanation_ur", "PE-155:options_ur[1]", "PE-159:options_ur[3]"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("تمغے")).map(([l]) => l), ["PE-047:options_ur[3]", "PE-073:options_ur[0]", "PE-255:explanation_ur", "PE-478:question_ur", "PE-478:explanation_ur", "PE-479:question_ur", "PE-479:explanation_ur", "PE-485:question_ur", "PE-485:explanation_ur"]) &&
+  peSetEq(pePairs.filter(([, v]) => (v ?? "").includes("انتباہ")).map(([l]) => l), ["PE-024:options_ur[0]", "PE-024:explanation_ur", "PE-310:options_ur[0]", "PE-310:options_ur[1]", "PE-310:explanation_ur", "PE-347:options_ur[0]", "PE-400:question_ur", "PE-427:explanation_ur"]) &&
+  ["PE-167:options_ur[0]", "PE-169:options_ur[3]", "PE-169:explanation_ur", "PE-170:options_ur[3]", "PE-172:options_ur[0]"].every((f) => peTokenFields("واپسی").includes(f)) &&
+  peSetEq(peTokenFields("جمود"), ["PE-172:options_ur[2]", "PE-173:options_ur[2]", "PE-173:explanation_ur"]),
+  `نیٹ ${peTokenFields("نیٹ").join(", ")} / انتباہ ${pePairs.filter(([, v]) => (v ?? "").includes("انتباہ")).map(([l]) => l).join(", ")} / واپسی ${peTokenFields("واپسی").join(", ")}`);
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");
