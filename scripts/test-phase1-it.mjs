@@ -29,6 +29,12 @@
 //    audit + nastaliq audit;
 //  - topic coverage matches the §3.12 map (report.md) fill plan, with the
 //    existing 60 classified by content via the embedded ID map;
+//  - U2 adjudication (2026-11-18): the technical-token rule keeps
+//    byte-identity for verbatim-shaped options EXCEPT 27 brief-ordered
+//    translations (ITC-288..292/298/299/329/465/469), pinned by exact
+//    equality in U2_IT_EXACT_MAP below — stricter, never a weakening.
+//    The full 31-entry map (incl. ITC-010, existing-60) is pinned by
+//    §3L of test-idiomatic-urdu.mjs.
 //  - manifest counts match the bank; no other bank touched; fixed
 //    ZamungKor mock ID lists still resolve and stay disjoint.
 import { readFileSync, readdirSync } from "node:fs";
@@ -91,6 +97,24 @@ function isTechVerbatim(opt) {
   if (/^([A-Z]{1,6}|\d+)(,\s*([A-Z]{1,6}|\d+))*$/.test(t)) return true;
   return false;
 }
+// U2-IT exact map: verbatim-shaped options whose translation is
+// BRIEF-ORDERED (NOTE (d) network-type expansions; NOTE (e) unit
+// names are ITC-010, existing-60, out of scope here; ای کامرس gap
+// pin; فلپ فلاپ pins). Exact equality — stricter than
+// byte-identity, never a weakening. All other verbatim options
+// stay byte-identical. In-scope subset of the §3L EXACT_MAP.
+const U2_IT_EXACT_MAP = {
+  "ITC-329": { 2: "ای کامرس" },
+  "ITC-465": { 2: "فلپ فلاپ سرکٹ" },
+  "ITC-469": { 2: "فلپ فلاپ" },
+  "ITC-288": ["وائیڈ ایریا نیٹ ورک (WAN)", "لوکل ایریا نیٹ ورک (LAN)", "میٹروپولیٹن ایریا نیٹ ورک (MAN)", "پرسنل ایریا نیٹ ورک (PAN)"],
+  "ITC-289": ["لوکل ایریا نیٹ ورک (LAN)", "میٹروپولیٹن ایریا نیٹ ورک (MAN)", "پرسنل ایریا نیٹ ورک (PAN)", "وائیڈ ایریا نیٹ ورک (WAN)"],
+  "ITC-290": ["میٹروپولیٹن ایریا نیٹ ورک (MAN)", "لوکل ایریا نیٹ ورک (LAN)", "وائیڈ ایریا نیٹ ورک (WAN)", "پرسنل ایریا نیٹ ورک (PAN)"],
+  "ITC-291": ["وائیڈ ایریا نیٹ ورک (WAN)", "میٹروپولیٹن ایریا نیٹ ورک (MAN)", "پرسنل ایریا نیٹ ورک (PAN)", "کیمپس ایریا نیٹ ورک (CAN)"],
+  "ITC-292": ["پرسنل ایریا نیٹ ورک (PAN)", "کیمپس ایریا نیٹ ورک (CAN)", "وائیڈ ایریا نیٹ ورک (WAN)", "میٹروپولیٹن ایریا نیٹ ورک (MAN)"],
+  "ITC-298": { 0: "پیئر ٹو پیئر ماڈل", 1: "کلائنٹ سرور ماڈل" },
+  "ITC-299": { 0: "لوکل ایریا نیٹ ورک (LAN)", 3: "پرسنل ایریا نیٹ ورک (PAN)" },
+};
 
 const bank = JSON.parse(read("src/data/banks/it.json"));
 const existing = bank.slice(0, 60);
@@ -212,12 +236,16 @@ check("Phase1 new items: exact 23-key schema, fixed fields, all-6-fields, 4 dist
   for (const q of news) {
     q.options.forEach((o, j) => {
       if (isTechVerbatim(o)) {
-        if (q.options_ur[j] !== o) techBad.push(q.id + ":ur-opt" + j);
+        const em = U2_IT_EXACT_MAP[q.id];
+        const want = Array.isArray(em) ? em[j] : (em && em[j]);
+        if (want !== undefined) {
+          if (q.options_ur[j] !== want) techBad.push(q.id + ":ur-opt" + j + ":exact");
+        } else if (q.options_ur[j] !== o) techBad.push(q.id + ":ur-opt" + j);
         if (q.options_roman[j] !== o) techBad.push(q.id + ":roman-opt" + j);
       }
     });
   }
-  check("Phase1 new items: technical-token options byte-identical across languages (shortcuts/extensions/tags/addresses/lists)", techBad.length === 0, techBad.slice(0, 5).join(", "));
+  check("Phase1 new items: technical-token options byte-identical across languages (shortcuts/extensions/tags/addresses/lists), except 27 U2 brief-ordered translations at exact equality", techBad.length === 0, techBad.slice(0, 5).join(", "));
   const numDup = [];
   for (const q of news) {
     const vals = q.options.map(parseNumeric);

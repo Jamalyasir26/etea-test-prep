@@ -10,9 +10,10 @@
 // (500 items, U2 subject 6), the Pedagogy bank
 // (500 items, U2 subject 7), the Science bank
 // (500 items, U2 subject 8), the Social Studies bank
-// (500 items, U2 subject 9) and the GK bank
-// (500 items, U2 subject 10).
-// The other 3 banks keep their pre-U1 _ur
+// (500 items, U2 subject 9), the GK bank
+// (500 items, U2 subject 10) and the IT bank
+// (500 items, U2 subject 11).
+// The other 2 banks keep their pre-U1 _ur
 // wording until U2 and are NOT covered here (except the
 // whole-tree mojibake scan in §5).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
@@ -1764,6 +1765,560 @@ check("U2 gk: exact-field pins — GKN-016E motto in Urdu script, GKN-083Q/E م�
   gkById.get("GKN-027").explanation_ur.includes("فیصد") &&
   gkById.get("GKN-066").explanation_ur.includes("7,708") &&
   gkById.get("GKN-028").options_ur.every((o) => o.includes("رضی اللہ عنہ")) && gkById.get("GKN-028").explanation_ur.includes("رضی اللہ عنہ"));
+
+// ---------- §3L IT bank (U2 subject 11) ----------
+// U2 rewrote the IT _ur fields (2235 of 3000
+// field-values changed; 493/500 items; 7 unchanged:
+// ITC-458..463 + ITC-485, all Latin gate/button items).
+// Bank split (Phase 1 + Phase 4 provenance, untouched
+// since): ITC-001..030 keep ai-generated source +
+// explanationEn + pure-Roman stored explanations (U2 took
+// meaning from explanationEn); ITC-031..060 keep Phase 4
+// provenance; ITC-061..500 are the Phase 1 append.
+// explanationUrdu is null in all 500; explanationEn in
+// exactly ITC-001..030. Digit rule is STRICT on every
+// field vs EN; explanations of ITC-001..030 also vs
+// explanationEn (baseline measured 0 mismatches on both).
+// Latin rule is stripCode + allowlist (ported from the
+// U2-IT central validator): code spans, HTML tags, quoted
+// literals, formulas/cell refs, extensions/URLs/emails,
+// shortcuts stripped; KEEP_PHRASES (exact UI labels);
+// remaining Latin words must be all-caps acronyms/units,
+// single letters, NAMES (products/keys/languages/code
+// tokens), or field-scoped EXCEPTIONS (documented keeps).
+// Verbatim-shaped options (suite isTechVerbatim + brief
+// single-token rule) stay byte-identical and are exempt
+// from per-field checks, EXCEPT the 31 EXACT_MAP entries
+// (brief-ordered translations, exact equality). Logic-gate
+// exception (guide §5.2): in ITC-458..464 ONLY, Latin
+// gate/input/output stay; ITC-306 "gateway" is a network
+// device -> گیٹ وے. Latin ? is 0 fields; Latin ;
+// survives ONLY in ITC-147O0 (verbatim ";" option);
+// Latin comma in exactly the 20 inventoried fields; % in
+// exactly ITC-028O3 (verbatim option), prose uses فیصد
+// (1×). Splits KEPT (different EN, sense, cluster, or
+// grammar — not spelling variants): COPY 5-way (verb ->
+// نقل کرنا; clipboard ops -> کاپی family; cache/stored
+// copies -> کاپی; backup copies -> نقل/نقلیں; Mail-Merge
+// copies -> کاپی; print copies -> نقل); PRINT 2-way
+// (printer-as-agent -> پرنٹ کرنا; program output +
+// physical production -> چھاپنا); LINE 4-way (text lines
+// -> لکیر; book lines -> سطر, ITC-252 only, flagged;
+// underline stroke -> خط, ITC-254/255; technical/
+// compound/code lines -> لائن); SYSTEM (generic ->
+// نظام; 10 compound names -> سسٹم, residual pinned);
+// قدر = technical "value" vs قیمت = price/cost/paid;
+// جدول generic vs "Table" Latin only at ITC-246;
+// فنکشن for programming (DELIBERATE divergence from
+// Maths تفاعل, whose EN was the mathematical function);
+// اشیا KEPT for EN "goods"/"items sold" (3 fields;
+// DELIBERATE divergence from Pak Studies/GK ban, Social
+// Studies precedent); authentication -> آتھنٹیکیشن vs
+// validation -> توثیق vs verification/verify -> تصدیق;
+// ونڈو (OS window) vs کھڑکی (physical window, 2 fields)
+// vs ونڈوز (Windows OS transliteration, 8× — Latin
+// "Windows" also kept elsewhere, flagged); فل ONLY in
+// the technical full-backup sense (6 fields); گروہ ONLY
+// at ITC-117 (EN "group" of data) vs گروپ elsewhere;
+// Mail Merge Latin at ITC-248 vs میل مرج at ITC-249;
+// نیٹکٹ (439), سرقہ (440), ایرگونومکس noun (444) vs
+// ایرگونومک adjective (096), انٹیجر (354),
+// کمبینیشنل/سیکوینشل (465/466), انکریمنٹل/ڈیفرینشل
+// (489), سپروائزڈ/ان سپروائزڈ/رینفورسمنٹ لرننگ (448),
+// تسلسل/انتخاب/تکرار (337) — all flagged for owner
+// confirmation. Normalizations: ITC-118 options reverted
+// to verbatim Latin pairings; ITC-246 options added
+// (feature names + کی خصوصیت); ITC-249 Mail Merge ->
+// میل مرج; ITC-232/284 clipboard نقل -> کاپی + چسپاں
+// -> پیسٹ; ITC-256 Dictionary/Translator restored to
+// Latin; ITC-321 options reverted to EN field labels;
+// ITC-489 "System Restore" proper casing; ITC-439
+// Netiquette -> نیٹکٹ + سامان -> اشیا; بائٹ -> بائٹس
+// plurals (151/154/155); ITC-471/472 نصب -> انسٹال +
+// صارف -> گاہک (cloud-customer sense); ITC-482 روشنی
+// -> چمک; ITC-492 نقلیں -> نقلی مشقیں; ITC-314 بیک اپ
+// کاپیاں -> بیک اپ نقلیں; ITC-440 Plagiarism -> سرقہ;
+// ITC-444 ergonomics -> ایرگونومکس; ڈیبگنگ -> ڈی بگنگ;
+// ITC-483 ویب سائٹیں -> ویب سائٹس; فورا -> فوراً;
+// round-2: شیئر family (6 fields), مصنوعہ (215),
+// سیل (251), پاور کیبل (414), پروسیس/پروسیسنگ (8),
+// پرنٹ/چھاپنا (7), مستقل کاپی (079O3), گروپ (448),
+// پوائنٹنگ ڈیوائس (005E), جوابی پرچے (099O2),
+// صحت کے ریکارڈز (476E), 449E fidelity + 473Q grammar
+// fixes. Flagged facts mirrored, not resolved:
+// ITC-184/185, ITC-255, ITC-118, ITC-147, ITC-424,
+// ITC-246 + ~90 worker-flagged values (see
+// VERIFY-u2-it.md §8).
+const it = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/it.json"), "utf8"));
+check("U2 it: 500 items", it.length === 500, `got ${it.length}`);
+const itIdsOk = it.every((q, i) => q.id === `ITC-${String(i + 1).padStart(3, "0")}`);
+check("U2 it: IDs ITC-001..ITC-500 in order", itIdsOk);
+const itPairs = [];
+for (const q of it) {
+  itPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => itPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  itPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+// Validator tokenizer (validate-it-slices.cjs): the suite
+// TOK_SPLIT splits on more separators, so the banned check
+// uses the validator's tokenizer for exact parity.
+const itTokens = (s) => (s ?? "").split(/[\s،؛۔؟:()\[\]""''«»]+/).filter(Boolean);
+const IT_BANNED = ["پیڈاگوجی", "پریکٹس", "اسکور", "موکس", "سورۃ", "چنیں", "مونث", "مؤنث", "وزیراعظم", "تقریبا", "فورا", "محمدن", "ووٹرز", "ججز"];
+const itBanned = [];
+const itPrefixBad = [];
+for (const [loc, val] of itPairs) {
+  for (const tok of itTokens(val)) {
+    if (IT_BANNED.includes(tok)) itBanned.push(`${loc}:${tok}`);
+    else if (tok === "سکرین" || tok.startsWith("سکرین")) itPrefixBad.push(`${loc}:سکرین`);
+    else if (tok === "سپیکر" || tok.startsWith("سپیکر")) itPrefixBad.push(`${loc}:سپیکر`);
+    else if (tok === "ٹیبل" || (tok.startsWith("ٹیبل") && !tok.startsWith("ٹیبلیٹ"))) itPrefixBad.push(`${loc}:ٹیبل`);
+  }
+}
+check("U2 it: no banned glossary/variant terms in any _ur field (token-aware; اشیا/اشیاء NOT banned — SS precedent, EN 'goods'/'items sold'; سکرین/سپیکر/ٹیبل prefix forms banned, ٹیبلیٹ exempt)", itBanned.length === 0 && itPrefixBad.length === 0, [...itBanned, ...itPrefixBad].slice(0, 5).join(", "));
+const IT_PHRASES = ["درج ذیل", "جب کہ", "ایک دفعہ", "بہتر طور پر", "بہتر بیان", "قرآن مجید", "حیدر آباد", "ہارڈ کاپی", "سافٹ کاپی"];
+const itPhrases = itPairs.filter(([, v]) => IT_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 it: no banned phrases in any _ur field (calques, variant spellings, hard/soft copy)", itPhrases.length === 0, itPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const itEmdash = itPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 it: no em-dash in any _ur field", itEmdash.length === 0, itEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const itMarker = itPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 it: no '[Auto-Translated]' literal in any _ur field", itMarker.length === 0, itMarker.slice(0, 3).map(([l]) => l).join(", "));
+const itMojibake = itPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 it: no U+FFFD in any _ur field", itMojibake.length === 0, itMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const itIndic = itPairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 it: no Urdu-Indic digits in any _ur field", itIndic.length === 0, itIndic.slice(0, 3).map(([l]) => l).join(", "));
+const itEllipsis = itPairs.filter(([, v]) => (v ?? "").includes("...") || (v ?? "").includes("…"));
+check("U2 it: no ellipsis runs in any _ur field", itEllipsis.length === 0, itEllipsis.slice(0, 3).map(([l]) => l).join(", "));
+let itDigitBad = [];
+for (const q of it) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) itDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) itDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) itDigitBad.push(`${q.id}:explanation_ur`);
+  if (q.explanationEn && !sameMultiset(digitRuns(q.explanationEn), digitRuns(q.explanation_ur))) itDigitBad.push(`${q.id}:explanation_ur:en`);
+}
+check("U2 it: digit preservation STRICT on every field (all 500 questions, options, explanations; ITC-001..030 explanations also vs explanationEn)", itDigitBad.length === 0, itDigitBad.slice(0, 5).join(", "));
+// Verbatim options: suite isTechVerbatim (copied EXACTLY
+// from scripts/test-phase1-it.mjs — do not drift) + brief
+// single-token code/password rule; EXACT_MAP carve-outs
+// (brief-ordered translations, exact equality).
+const IT_PURE_EXPR = /^[\d\s\/\.\+\-=\%\(\)xX\:\^\u2212,]+$/;
+const IT_FORMULA = /^(?=.*\d)[A-Za-z0-9()]+$/;
+function itIsTechVerbatim(opt) {
+  const t = opt.trim();
+  if (IT_PURE_EXPR.test(t) || IT_FORMULA.test(t)) return true;
+  const nospace = t.replace(/\s+/g, "");
+  if (/[+.<>\/\\@#:;=\-_()\[\]{}]/.test(nospace) && /^[A-Za-z0-9+.<>\/\\@#:;=\-_()\[\]{}%]+$/.test(nospace)) return true;
+  if (/^([A-Z]{1,6}|\d+)(,\s*([A-Z]{1,6}|\d+))*$/.test(t)) return true;
+  return false;
+}
+function itIsBriefVerbatim(opt) {
+  const t = opt.trim();
+  if (/\s/.test(t)) return false;
+  if (!/^[A-Za-z0-9!'"~`$&*?^@#%:;=\-_+.<>\/\\()\[\]{}]+$/.test(t)) return false;
+  if (/[0-9]/.test(t) && /[^A-Za-z0-9]/.test(t)) return true;
+  if (/[!'\"~`$&*?^]/.test(t)) return true;
+  return false;
+}
+const itIsVerbatim = (opt) => itIsTechVerbatim(opt) || itIsBriefVerbatim(opt);
+const IT_EXACT_MAP = {
+  "ITC-010": ["ٹیرا بائٹ (TB)", "کلو بائٹ (KB)", "میگا بائٹ (MB)", "گیگا بائٹ (GB)"],
+  "ITC-329": { 2: "ای کامرس" },
+  "ITC-465": { 2: "فلپ فلاپ سرکٹ" },
+  "ITC-469": { 2: "فلپ فلاپ" },
+  "ITC-288": ["وائیڈ ایریا نیٹ ورک (WAN)", "لوکل ایریا نیٹ ورک (LAN)", "میٹروپولیٹن ایریا نیٹ ورک (MAN)", "پرسنل ایریا نیٹ ورک (PAN)"],
+  "ITC-289": ["لوکل ایریا نیٹ ورک (LAN)", "میٹروپولیٹن ایریا نیٹ ورک (MAN)", "پرسنل ایریا نیٹ ورک (PAN)", "وائیڈ ایریا نیٹ ورک (WAN)"],
+  "ITC-290": ["میٹروپولیٹن ایریا نیٹ ورک (MAN)", "لوکل ایریا نیٹ ورک (LAN)", "وائیڈ ایریا نیٹ ورک (WAN)", "پرسنل ایریا نیٹ ورک (PAN)"],
+  "ITC-291": ["وائیڈ ایریا نیٹ ورک (WAN)", "میٹروپولیٹن ایریا نیٹ ورک (MAN)", "پرسنل ایریا نیٹ ورک (PAN)", "کیمپس ایریا نیٹ ورک (CAN)"],
+  "ITC-292": ["پرسنل ایریا نیٹ ورک (PAN)", "کیمپس ایریا نیٹ ورک (CAN)", "وائیڈ ایریا نیٹ ورک (WAN)", "میٹروپولیٹن ایریا نیٹ ورک (MAN)"],
+  "ITC-298": { 0: "پیئر ٹو پیئر ماڈل", 1: "کلائنٹ سرور ماڈل" },
+  "ITC-299": { 0: "لوکل ایریا نیٹ ورک (LAN)", 3: "پرسنل ایریا نیٹ ورک (PAN)" },
+};
+let itVerbatimBad = [];
+for (const q of it) {
+  const verbatimOpt = q.options.map((o) => itIsVerbatim(o));
+  q.options.forEach((o, j) => {
+    const em = IT_EXACT_MAP[q.id];
+    const want = Array.isArray(em) ? em[j] : (em && em[j]);
+    if (want !== undefined) {
+      if (q.options_ur[j] !== want) itVerbatimBad.push(`${q.id}:opt${j}:exact`);
+      return;
+    }
+    if (verbatimOpt[j] && q.options_ur[j] !== o) itVerbatimBad.push(`${q.id}:opt${j}`);
+  });
+}
+check("U2 it: verbatim-shaped options byte-identical (suite + brief rules) except 31 EXACT_MAP entries at exact equality", itVerbatimBad.length === 0, itVerbatimBad.slice(0, 5).join(", "));
+// Latin allowlist machinery, ported from the U2-IT central
+// validator (validate-it-slices.cjs): stripCode,
+// KEEP_PHRASES, NAMES, EXCEPTIONS (ITC-374 merged — the
+// validator file carries a duplicate key whose second
+// entry subsumes the first).
+const IT_KEEP_PHRASES = [
+  "Prevention of Electronic Crimes Act",
+  "Rehearse Timings", "Conditional Formatting", "Find and Replace",
+  "Disk Defragmenter", "Windows Security", "Slide Sorter", "Slide Master",
+  "Reading View", "Outline View", "Normal View", "Recycle Bin",
+  "Control Panel", "File Explorer", "Task Manager", "Print Preview",
+  "User Accounts", "Windows Update", "System Restore", "Disk Cleanup",
+  "Virtual Machine", "Data Validation", "Track Changes", "Freeze Panes",
+  "Save As", "Safe Mode", "Home tab", "Insert tab", "Mail Merge",
+  "Drop Cap", "Page Number", "Text Box", "Small Caps", "Word Count",
+  "Spell Check", "Fill Handle", "Caps Lock", "Num Lock", "Page Up",
+  "Page Down", "Blu-ray", "Wi-Fi", "MS-DOS",
+  "MS Office", "MS Word", "MS Excel",
+  "Device Manager", "End task", "Empty Recycle Bin", "Replace All",
+  "Font Color", "Switch user", "Sign out", "Draft View",
+  "Office Clipboard",
+  "Normal view", "Slide Sorter view", "Reading view", "Outline view",
+].sort((a, b) => b.length - a.length);
+const IT_NAMES = new Set([
+  "Microsoft", "Windows", "Google", "Chrome", "Linux", "Unix", "JavaScript",
+  "Facebook", "IBM", "Word", "Excel", "PowerPoint", "Access", "Outlook",
+  "OneNote", "Teams", "OneDrive", "SharePoint", "WordArt", "Notepad",
+  "WordPad", "Paint", "Edge", "Opera", "Firefox", "Safari", "Android",
+  "Bing", "Yahoo", "Wikipedia", "Amazon", "Daraz", "Photoshop", "AutoCAD",
+  "MATLAB", "Norton", "McAfee", "Kaspersky", "Avast", "Intel", "Dell",
+  "Apple", "Samsung", "Nokia", "Sony", "Canon", "Epson", "Huawei",
+  "Xiaomi", "PTCL", "Jazz", "Telenor", "Zong", "Ufone", "Cortana",
+  "ChatGPT", "Ethernet", "Unicode", "YouTube", "Twitter", "Instagram",
+  "WhatsApp", "LinkedIn", "Skype", "Nvidia", "Oracle", "Cisco", "Adobe",
+  "Thesaurus", "Taskbar",
+  "IaaS", "PaaS", "SaaS", "NVMe", "PCIe",
+  "Python", "Java", "Perl", "Swift", "Kotlin", "Rust", "Scala", "Pascal",
+  "Ruby",
+  "Ctrl", "Alt", "Shift", "Del", "Esc", "Tab", "Win", "Fn", "Enter",
+  "Backspace", "Spacebar", "Delete",
+  "WiFi", "macOS", "iOS", "IPv4", "IPv6", "microSD", "GHz", "MHz", "KHz",
+  "Hz", "Kbps", "Mbps", "Gbps", "KBps", "MBps", "GBps",
+  "href", "src", "alt", "ul", "ol", "img", "onclick",
+  "true", "false", "True", "False", "Rs",
+]);
+const IT_ALL_CAPS = /^[A-Z0-9]{2,}$/;
+function itStripCode(s) {
+  let r = s;
+  r = r.replace(/<[^<>]*>/g, " ");
+  r = r.replace(/"[^"]*"/g, " ");
+  r = r.replace(/'[^']*'/g, " ");
+  r = r.replace(/=[A-Za-z]+\([^)]*\)/g, " ");
+  r = r.replace(/(?<!\.)\b[A-Za-z]{1,3}\d+(:[A-Za-z]{1,3}\d+)?\b/g, " ");
+  r = r.replace(/\b[1-4]GL\b/g, " ");
+  r = r.replace(/\b[\w.+-]+@[\w-]+(\.[\w-]+)+\b/g, " ");
+  r = r.replace(/\b(https?:\/\/|www\.)\S+/g, " ");
+  r = r.replace(/\b[\w-]+\.(docx|xlsx|pptx|ppsx|txt|jpg|jpeg|png|gif|bat|exe|zip|pdf|mp3|mp4|html|css|js|doc|csv|ppt|xls)\b/gi, " ");
+  r = r.replace(/(?<![A-Za-z0-9])\.(docx|xlsx|pptx|ppsx|txt|jpg|jpeg|png|gif|bat|exe|zip|pdf|mp3|mp4|html|css|js|doc|csv|ppt|xls)\b/gi, " ");
+  r = r.replace(/\b(Ctrl|Alt|Shift|Win)\s*\+\s*[A-Za-z0-9+]+/g, " ");
+  r = r.replace(/\bRs\./g, "Rs");
+  r = r.replace(/\bM\.2\b/g, " ");
+  for (const p of IT_KEEP_PHRASES) r = r.split(p).join(" ");
+  return r;
+}
+const IT_GATE_IDS = new Set(["ITC-458", "ITC-459", "ITC-460", "ITC-461", "ITC-462", "ITC-463", "ITC-464"]);
+const IT_EXCEPTIONS = {
+  "ITC-055": { "options_ur[0]": ["System"], "options_ur[1]": ["Secure"], "options_ur[2]": ["Server"], "options_ur[3]": ["Signal"], "explanation_ur": ["Secure"] },
+  "ITC-058": { "options_ur[1]": ["password"] },
+  "ITC-386": { "options_ur[0]": ["Date", "Time"], "options_ur[1]": ["Text"], "options_ur[2]": ["Number"], "options_ur[3]": ["Yes", "No"], "explanation_ur": ["Date", "Time", "Text", "Number", "Yes", "No"] },
+  "ITC-375": { "options_ur[1]": ["head"] },
+  "ITC-374": { "options_ur[0]": ["id"], "explanation_ur": ["color", "font", "size", "id"] },
+  "ITC-378": { "explanation_ur": ["if"] },
+  "ITC-354": { "explanation_ur": ["char"] },
+  "ITC-402": { "question_ur": ["Total", "Price", "Quantity"], "explanation_ur": ["Total", "Price", "Quantity"] },
+  "ITC-448": { "question_ur": ["cat", "dog"] },
+  "ITC-405": { "question_ur": ["Vs"], "explanation_ur": ["Vs"] },
+  "ITC-338": { "question_ur": ["total"], "explanation_ur": ["total"] },
+  "ITC-244": { "options_ur[3]": ["Styles"] },
+  "ITC-250": { "options_ur[0]": ["Margins"], "options_ur[1]": ["Columns"], "explanation_ur": ["Columns"] },
+  "ITC-246": { "options_ur[0]": ["Columns"], "options_ur[1]": ["Table"], "options_ur[2]": [], "options_ur[3]": [], "explanation_ur": ["Columns"] },
+  "ITC-256": { "options_ur[1]": ["Dictionary"], "options_ur[3]": ["Translator"] },
+  "ITC-285": { "options_ur[1]": ["Help"], "explanation_ur": ["Redo", "Undo"] },
+  "ITC-230": { "explanation_ur": ["Lock"] },
+  "ITC-226": { "question_ur": ["Restore"], "explanation_ur": ["Restore"] },
+  "ITC-485": { "question_ur": ["Close"] },
+  "ITC-232": { "options_ur[0]": ["Home"], "options_ur[1]": ["Insert"], "options_ur[2]": ["View"], "options_ur[3]": ["Review"] },
+  "ITC-243": { "options_ur[0]": ["Home"], "options_ur[1]": ["View"], "options_ur[2]": ["Insert"], "options_ur[3]": ["Review"] },
+  "ITC-268": { "explanation_ur": ["AutoFill"] },
+  "ITC-263": { "options_ur[0]": ["Fail"], "options_ur[3]": ["Pass"], "explanation_ur": ["Pass"] },
+  "ITC-356": { "question_ur": ["Pass", "Fail"], "explanation_ur": ["Pass", "Fail"] },
+  "ITC-113": { "explanation_ur": ["LEDs"] },
+  "ITC-217": { "options_ur[3]": ["exFAT"] },
+  "ITC-218": { "options_ur[2]": ["exFAT"], "explanation_ur": ["exFAT"] },
+  "ITC-257": { "options_ur[0]": ["Spelling"], "options_ur[3]": ["Zoom"] },
+  "ITC-283": { "explanation_ur": ["Space"] },
+  "ITC-321": { "options_ur[0]": ["Subject"], "options_ur[1]": ["Attachment"], "options_ur[3]": ["Signature"] },
+  "ITC-359": { "question_ur": ["Welcome"] },
+  "ITC-370": { "options_ur[3]": ["title"], "explanation_ur": ["title"] },
+  "ITC-371": { "options_ur[2]": ["title"], "explanation_ur": ["title"] },
+  "ITC-464": { "question_ur": ["logic"], "explanation_ur": ["Logic"] },
+  "ITC-284": { "explanation_ur": ["Office"] },
+};
+for (const id of Object.keys(IT_EXCEPTIONS)) for (const loc of Object.keys(IT_EXCEPTIONS[id])) IT_EXCEPTIONS[id][loc] = new Set(IT_EXCEPTIONS[id][loc]);
+let itLatinBad = [], itGateBad = [], itPunctBad = [];
+for (const q of it) {
+  const verbatimOpt = q.options.map((o) => itIsVerbatim(o));
+  const fields = [["question_ur", q.question_ur, false], ...q.options_ur.map((o, j) => [`options_ur[${j}]`, o, verbatimOpt[j]]), ["explanation_ur", q.explanation_ur, false]];
+  for (const [loc, val, isVerb] of fields) {
+    if (isVerb) continue;
+    const gateProbe = itStripCode(val).replace(/Bill Gates/gi, " ");
+    if (!IT_GATE_IDS.has(q.id) && /\b(gates?|inputs?|outputs?)\b/i.test(gateProbe)) itGateBad.push(`${q.id}:${loc}`);
+    const stripped = itStripCode(val);
+    const exc = (IT_EXCEPTIONS[q.id] && IT_EXCEPTIONS[q.id][loc]) || null;
+    for (const w of (stripped.match(/[A-Za-z]+/g) || [])) {
+      if (w.length === 1) continue;
+      if (IT_GATE_IDS.has(q.id) && /^(gates?|inputs?|outputs?)$/i.test(w)) continue;
+      if (IT_ALL_CAPS.test(w)) continue;
+      if (IT_NAMES.has(w)) continue;
+      if (exc && exc.has(w)) continue;
+      itLatinBad.push(`${q.id}:${loc}:${w}`);
+    }
+    const p = stripped.replace(/\d+(?:\.\d+)+/g, " ");
+    if (/[?;]/.test(p)) itPunctBad.push(`${q.id}:${loc}:?;`);
+    if (/\./.test(p)) itPunctBad.push(`${q.id}:${loc}:dot`);
+    const c = stripped.replace(/\d,\d/g, " ");
+    if (/,/.test(c)) itPunctBad.push(`${q.id}:${loc}:comma`);
+  }
+}
+check("U2 it: Latin allowlist on stripped non-verbatim fields — all-caps acronyms/units, single letters, NAMES, or field-scoped EXCEPTIONS only (verbatim options exempt; gate words exempt inside ITC-458..464)", itLatinBad.length === 0, itLatinBad.slice(0, 5).join(" | "));
+check("U2 it: Latin gate/input/output ONLY in gate items ITC-458..464 (Bill Gates person name excluded from the probe)", itGateBad.length === 0, itGateBad.slice(0, 5).join(", "));
+const itGateUseBad = [];
+for (const q of it) {
+  if (!IT_GATE_IDS.has(q.id)) continue;
+  for (const [loc, val] of [["question_ur", q.question_ur], ["explanation_ur", q.explanation_ur]]) {
+    if (!/\bgates?\b/i.test(val)) itGateUseBad.push(`${q.id}:${loc}:gate`);
+    if (q.id !== "ITC-464") {
+      if (!/\binputs?\b/i.test(val)) itGateUseBad.push(`${q.id}:${loc}:input`);
+      if (!/\boutputs?\b/i.test(val)) itGateUseBad.push(`${q.id}:${loc}:output`);
+    }
+  }
+}
+check("U2 it: gate items ITC-458..464 actually USE the Latin exception — gate(s) in Q+E of all 7, input(s)/output(s) in Q+E of ITC-458..463", itGateUseBad.length === 0, itGateUseBad.slice(0, 5).join(", "));
+check("U2 it: no Latin ? ; punctuation and no Latin . outside dotted-number runs; Latin comma ONLY between digits (stripped non-verbatim fields)", itPunctBad.length === 0, itPunctBad.slice(0, 5).join(", "));
+const IT_COMMA_FIELDS = new Set([
+  "ITC-043:options_ur[0]", "ITC-043:options_ur[1]", "ITC-043:options_ur[2]", "ITC-043:options_ur[3]", "ITC-043:explanation_ur",
+  "ITC-044:options_ur[2]", "ITC-044:options_ur[3]", "ITC-044:explanation_ur",
+  "ITC-155:options_ur[0]", "ITC-155:options_ur[1]", "ITC-155:options_ur[2]", "ITC-155:options_ur[3]", "ITC-155:explanation_ur",
+  "ITC-184:options_ur[0]", "ITC-184:options_ur[2]", "ITC-184:explanation_ur",
+  "ITC-185:options_ur[0]", "ITC-185:options_ur[3]", "ITC-185:explanation_ur",
+  "ITC-263:question_ur",
+]);
+const itCommaFields = itPairs.filter(([, v]) => (v ?? "").includes(",")).map(([l]) => l);
+check("U2 it: Latin comma in exactly the 20 inventoried fields (043 ×5, 044 ×3, 155 ×5, 184 ×3, 185 ×3, 263Q formula)", itCommaFields.length === 20 && itCommaFields.every((f) => IT_COMMA_FIELDS.has(f)), itCommaFields.join(", "));
+const itSemiFields = itPairs.filter(([, v]) => (v ?? "").includes(";")).map(([l]) => l);
+const itQuestFields = itPairs.filter(([, v]) => (v ?? "").includes("?")).map(([l]) => l);
+check("U2 it: Latin ; in exactly ITC-147:options_ur[0] (verbatim ';' option); Latin ? in zero fields", itSemiFields.length === 1 && itSemiFields[0] === "ITC-147:options_ur[0]" && itQuestFields.length === 0, `; ${itSemiFields.join(",")} ? ${itQuestFields.join(",")}`);
+let itPctBad = [], itPctFields = [];
+for (const q of it) {
+  const fields = [[q.question, q.question_ur], [q.explanation, q.explanation_ur], ...q.options.map((o, i) => [o, q.options_ur[i]])];
+  for (const [en, ur] of fields) {
+    const ce = (en.match(/%/g) || []).length, cu = (ur.match(/%/g) || []).length;
+    if (cu > 0) itPctFields.push(q.id);
+    if (cu > ce) itPctBad.push(q.id);
+  }
+}
+const itUrText = itPairs.map(([, v]) => v ?? "").join("\n");
+const itCount = (t) => itUrText.split(t).length - 1;
+check("U2 it: % never added in any _ur field; exactly 1 % field, ITC-028O3 (verbatim option); فیصد 1×", itPctBad.length === 0 && itPctFields.length === 1 && itPctFields[0] === "ITC-028" && itCount("فیصد") === 1, `added in ${itPctBad.slice(0, 3).join(", ")}, fields ${itPctFields.join(", ")}`);
+const itSpaceBad = itPairs.filter(([, v]) => / [،؟؛۔]/.test(v ?? ""));
+check("U2 it: no space before Urdu punctuation", itSpaceBad.length === 0, itSpaceBad.slice(0, 3).map(([l]) => l).join(", "));
+const itSymBad = itPairs.filter(([, v]) => /[√π°²³×÷≤≥•]/.test(v ?? ""));
+check("U2 it: no banned non-ASCII symbols (√ π ° ² ³ × ÷ ≤ ≥ •) in any _ur field", itSymBad.length === 0, itSymBad.slice(0, 3).map(([l]) => l).join(", "));
+const itHonor = itPairs.filter(([, v]) => HONOR_ABBR.test(v ?? ""));
+check("U2 it: no Latin honorific abbreviations in any _ur field", itHonor.length === 0, itHonor.slice(0, 3).map(([l]) => l).join(", "));
+const itCompact = itPairs.filter(([, v]) => (v ?? "").includes("ؓ"));
+check("U2 it: no ؓ compact honorific in any _ur field", itCompact.length === 0, itCompact.slice(0, 3).map(([l]) => l).join(", "));
+const itArCodepoints = itPairs.filter(([, v]) => (v ?? "").includes(String.fromCharCode(0x064a)) || (v ?? "").includes(String.fromCharCode(0x0643)));
+check("U2 it: no Arabic yeh/kaf codepoints (U+064A/U+0643) in any _ur field", itArCodepoints.length === 0, itArCodepoints.slice(0, 3).map(([l]) => l).join(", "));
+const IT_AR = /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]/;
+const itNoScript = it.filter((q) => !IT_AR.test(q.question_ur) || !IT_AR.test(q.explanation_ur)).map((q) => q.id);
+check("U2 it: _ur question + explanation carry Urdu script in all 500 (options carry NO script requirement — Phase 1 convention)", itNoScript.length === 0, itNoScript.slice(0, 5).join(", "));
+const itVerbatimExpl = it.filter((q) => q.explanation_ur === q.explanation || (q.explanationEn && q.explanation_ur === q.explanationEn)).map((q) => q.id);
+check("U2 it: explanations are translated, not verbatim copies of the English explanation or explanationEn", itVerbatimExpl.length === 0, itVerbatimExpl.slice(0, 5).join(", "));
+const IT_AR_RUN = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+/g;
+const itFormBad = [];
+for (const q of it) {
+  const byNorm = new Map();
+  for (const v of [q.question_ur, ...q.options_ur, q.explanation_ur]) {
+    for (const r of (v.match(IT_AR_RUN) || []).filter((x) => x.trim().length > 0)) {
+      const nn = r.normalize("NFKC");
+      if (byNorm.has(nn) && byNorm.get(nn) !== r) itFormBad.push(q.id);
+      else byNorm.set(nn, r);
+    }
+  }
+}
+check("U2 it: repeated Urdu script forms byte-identical within each item (NFKC)", itFormBad.length === 0, [...new Set(itFormBad)].slice(0, 5).join(", "));
+let itEnScriptRuns = 0;
+for (const q of it) {
+  itEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { itEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 it: zero Arabic-script runs in English fields (measured baseline)", itEnScriptRuns === 0, `got ${itEnScriptRuns}`);
+check("U2 it: explanationUrdu null in all 500; explanationEn in exactly ITC-001..ITC-030",
+  it.every((q) => q.explanationUrdu === null) &&
+  it.filter((q) => q.explanationEn).length === 30 &&
+  it.filter((q) => q.explanationEn).every((q, i) => q.id === `ITC-${String(i + 1).padStart(3, "0")}`));
+check("U2 it: glossary terms present (guide §2I + core: کمپیوٹر, فائل, پروگرام, ویب سائٹ, انٹرنیٹ, ان پٹ, آؤٹ پٹ, براؤزر, سرچ انجن, ہارڈ ویئر, سافٹ ویئر, ڈیٹا, صارف, متن, دستاویز, کنٹرول, اسکرین, فارم, صفحہ, فارمیٹ, نظام, پرنٹر, مشین, ویڈیو, ڈیجیٹل, ریکارڈ, لائن, آن لائن, فہرست, ڈرائیو, بٹن, اکاؤنٹ, ڈسک, ڈیوائس, ونڈو, نیٹ ورک, پاس ورڈ, ذخیرہ, جدول, کیبل, مانیٹر, سگنل, قدر, قیمت, چابی, غلطی, مندرجہ ذیل, جبکہ, تقریباً, فوراً, فیصد)",
+  ["کمپیوٹر", "فائل", "پروگرام", "ویب سائٹ", "انٹرنیٹ", "ان پٹ", "آؤٹ پٹ", "براؤزر", "سرچ انجن", "ہارڈ ویئر", "سافٹ ویئر", "ڈیٹا", "صارف", "متن", "دستاویز", "کنٹرول", "اسکرین", "فارم", "صفحہ", "فارمیٹ", "نظام", "پرنٹر", "مشین", "ویڈیو", "ڈیجیٹل", "ریکارڈ", "لائن", "آن لائن", "فہرست", "ڈرائیو", "بٹن", "اکاؤنٹ", "ڈسک", "ڈیوائس", "ونڈو", "نیٹ ورک", "پاس ورڈ", "ذخیرہ", "جدول", "کیبل", "مانیٹر", "سگنل", "قدر", "قیمت", "چابی", "غلطی", "مندرجہ ذیل", "جبکہ", "تقریباً", "فوراً", "فیصد"].every((t) => itUrText.includes(t)));
+check("U2 it: glossary terms present (gap pins + compounds + splits: میموری, کوڈ, ڈیٹا بیس, سلائیڈ, بائنری, پروسیسر, ٹوپولوجی, بیک اپ, لوپ, چارٹ, کیش, سرور, فنکشن, پروسیسنگ, ہیکساڈیسیمل, فولڈر, متغیر, کالم, کریکٹر, ڈیسک ٹاپ, ڈسپلے, کلاؤڈ, اسپریڈ شیٹ, فونٹ, شارٹ کٹ, کی بورڈ, کمانڈ, اسمبلی, بلاک, یوٹیلیٹی, ایپلی کیشن, ایکسٹینشن, ای میل, ماؤس, اسپیکر, آپریٹنگ سسٹم, وائرس, میلویئر, فشنگ, فائر وال, کوکی, پکسل, مدر بورڈ, پورٹ, چپ, رجسٹر, الگورتھم, فلو چارٹ, توثیق, تصدیق, آتھنٹیکیشن, خفیہ کاری, لاگ ان, ڈاؤن لوڈ, بک مارک, ٹیب, لنک, آئیکن, پوائنٹر, مصنوعی ذہانت, مشین لرننگ, ورچوئل رئیلٹی, انٹرنیٹ آف تھنگز, نیورل نیٹ ورک, ایکسپرٹ سسٹم, کمپیوٹر ویژن, روبوٹ, سینسر, ایمبیڈڈ, کمپائلر, انٹرپریٹر, راؤٹر, سوئچ, پروٹوکول, ایریا نیٹ ورک, ڈیٹا بس, کنٹرول بس, بس ٹوپولوجی, بار کوڈ, ٹرانزسٹر, مائیکروفون, پروجیکٹر, پلاٹر, اسکینر, لیزر پرنٹر, تھرمل پرنٹر, ریفریش ریٹ, ریزولوشن, ڈومین نیم, کلائنٹ, پرائمری کی, فری ویئر, شیئر ویئر, ملکیتی, اوپن سورس, نقل, کاپی, لکیر, سطر, گیٹ وے, ترتیبات, سسٹم, اشیا, چھاپنا, پرنٹ کرنا, پروسیس, شیئر, جانچ, مصنوعہ, مصنوعات, ماخذ, مجموعہ, پیٹرن, نجی, پرائیویٹ, پبلک, طریقہ, منطق, سیل, میل, ہسٹری, مرحلہ, قواعد, روشنی, خریداری, صحت, بحال, لوڈ, تربیت, رینج, پاور, بجلی, فزیکل, کیس, کام, ریفریش, کلاس, سروس, خدمات, اسٹائل, حفاظت, گروپ, نشان, علامت, گاہک, چمک, انسٹال, ہیڈر, فوٹر, ڈی بگنگ, نیٹکٹ, سرقہ, ایرگونومکس, فلپ فلاپ, کمبینیشنل, سیکوینشل, انکریمنٹل, ڈیفرینشل, سپروائزڈ, انٹیجر, بائٹس, بائٹ, ونڈوز, کاپی رائٹ, سلائیڈ شو, فلٹر)",
+  ["میموری", "کوڈ", "ڈیٹا بیس", "سلائیڈ", "بائنری", "پروسیسر", "ٹوپولوجی", "بیک اپ", "لوپ", "چارٹ", "کیش", "سرور", "فنکشن", "پروسیسنگ", "ہیکساڈیسیمل", "فولڈر", "متغیر", "کالم", "کریکٹر", "ڈیسک ٹاپ", "ڈسپلے", "کلاؤڈ", "اسپریڈ شیٹ", "فونٹ", "شارٹ کٹ", "کی بورڈ", "کمانڈ", "اسمبلی", "بلاک", "یوٹیلیٹی", "ایپلی کیشن", "ایکسٹینشن", "ای میل", "ماؤس", "اسپیکر", "آپریٹنگ سسٹم", "وائرس", "میلویئر", "فشنگ", "فائر وال", "کوکی", "پکسل", "مدر بورڈ", "پورٹ", "چپ", "رجسٹر", "الگورتھم", "فلو چارٹ", "توثیق", "تصدیق", "آتھنٹیکیشن", "خفیہ کاری", "لاگ ان", "ڈاؤن لوڈ", "بک مارک", "ٹیب", "لنک", "آئیکن", "پوائنٹر", "مصنوعی ذہانت", "مشین لرننگ", "ورچوئل رئیلٹی", "انٹرنیٹ آف تھنگز", "نیورل نیٹ ورک", "ایکسپرٹ سسٹم", "کمپیوٹر ویژن", "روبوٹ", "سینسر", "ایمبیڈڈ", "کمپائلر", "انٹرپریٹر", "راؤٹر", "سوئچ", "پروٹوکول", "ایریا نیٹ ورک", "ڈیٹا بس", "کنٹرول بس", "بس ٹوپولوجی", "بار کوڈ", "ٹرانزسٹر", "مائیکروفون", "پروجیکٹر", "پلاٹر", "اسکینر", "لیزر پرنٹر", "تھرمل پرنٹر", "ریفریش ریٹ", "ریزولوشن", "ڈومین نیم", "کلائنٹ", "پرائمری کی", "فری ویئر", "شیئر ویئر", "ملکیتی", "اوپن سورس", "نقل", "کاپی", "لکیر", "سطر", "گیٹ وے", "ترتیبات", "سسٹم", "اشیا", "چھاپنا", "پرنٹ کرنا", "پروسیس", "شیئر", "جانچ", "مصنوعہ", "مصنوعات", "ماخذ", "مجموعہ", "پیٹرن", "نجی", "پرائیویٹ", "پبلک", "طریقہ", "منطق", "سیل", "میل", "ہسٹری", "مرحلہ", "قواعد", "روشنی", "خریداری", "صحت", "بحال", "لوڈ", "تربیت", "رینج", "پاور", "بجلی", "فزیکل", "کیس", "کام", "ریفریش", "کلاس", "سروس", "خدمات", "اسٹائل", "حفاظت", "گروپ", "نشان", "علامت", "گاہک", "چمک", "انسٹال", "ہیڈر", "فوٹر", "ڈی بگنگ", "نیٹکٹ", "سرقہ", "ایرگونومکس", "فلپ فلاپ", "کمبینیشنل", "سیکوینشل", "انکریمنٹل", "ڈیفرینشل", "سپروائزڈ", "انٹیجر", "بائٹس", "بائٹ", "ونڈوز", "کاپی رائٹ", "سلائیڈ شو", "فلٹر"].every((t) => itUrText.includes(t)));
+function itCountsCheck(name, pairs) {
+  const bad = pairs.filter(([t, n]) => itCount(t) !== n);
+  check(name, bad.length === 0, bad.map(([t, n]) => `${t} ${itCount(t)}!=${n}`).join(", "));
+}
+itCountsCheck("U2 it: exact counts, core guide + dominants — کمپیوٹر 333×, فائل 237×, پروگرام 183×, ویب سائٹ 42×, انٹرنیٹ 64×, ان پٹ 27×, آؤٹ پٹ 16×, براؤزر 37×, سرچ انجن 5×, ہارڈ ویئر 42×, سافٹ ویئر 98×, ڈیٹا 305×, صارف 109×, متن 92×, دستاویز 61×, کنٹرول 64×, ویب 87× (incl. ویب سائٹ 42×), پرنٹ 101×, کارڈ 129×, زبان 48×, پتہ 45× (incl. پتہ چلنا idiom 1×), قطار 54×, اسکرین 69×, فارم 66×, صفحہ 19×, صفحات 27×, فارمیٹ 31×, نظام 61×, بٹ 97× (incl. بٹن 15×), پرنٹر 51×, مشین 40×, ویڈیو 26×, ڈیجیٹل 44×, ریکارڈ 98×, لائن 76×, آن لائن 26×, فہرست 38×, ربن 10×, فون 51× (incl. ہیڈ فون 5×), ڈرائیو 69×, بٹن 15×, اکاؤنٹ 22×, ڈسک 66×, ڈیوائس 85× (incl. ڈیوائسز 10×), ونڈو 26× (incl. ونڈوز 8×), نیٹ ورک 129×, پاس ورڈ 39×, ذخیرہ 33×, جدول 52×, کیبل 37×, مانیٹر 30×, سگنل 36×, مینیو 2×, قدر 100×, قیمت 11×, چابی 19×, چابیاں 7×, غلطی 34× (substring counts)",
+  [["کمپیوٹر", 333], ["فائل", 237], ["پروگرام", 183], ["ویب سائٹ", 42], ["انٹرنیٹ", 64], ["ان پٹ", 27], ["آؤٹ پٹ", 16], ["براؤزر", 37], ["سرچ انجن", 5], ["ہارڈ ویئر", 42], ["سافٹ ویئر", 98], ["ڈیٹا", 305], ["صارف", 109], ["متن", 92], ["دستاویز", 61], ["کنٹرول", 64], ["ویب", 87], ["پرنٹ", 101], ["کارڈ", 129], ["زبان", 48], ["پتہ", 45], ["قطار", 54], ["اسکرین", 69], ["فارم", 66], ["صفحہ", 19], ["صفحات", 27], ["فارمیٹ", 31], ["نظام", 61], ["بٹ", 97], ["پرنٹر", 51], ["مشین", 40], ["ویڈیو", 26], ["ڈیجیٹل", 44], ["ریکارڈ", 98], ["لائن", 76], ["آن لائن", 26], ["فہرست", 38], ["ربن", 10], ["فون", 51], ["ڈرائیو", 69], ["بٹن", 15], ["اکاؤنٹ", 22], ["ڈسک", 66], ["ڈیوائس", 85], ["ونڈو", 26], ["نیٹ ورک", 129], ["پاس ورڈ", 39], ["ذخیرہ", 33], ["جدول", 52], ["کیبل", 37], ["مانیٹر", 30], ["سگنل", 36], ["مینیو", 2], ["قدر", 100], ["قیمت", 11], ["چابی", 19], ["چابیاں", 7], ["غلطی", 34]]);
+itCountsCheck("U2 it: exact counts, gap pins + system internals — میموری 96×, کوڈ 103× (incl. سورس کوڈ 14× + مشین کوڈ 9× + سیوڈو کوڈ 3× + بار کوڈ 9×), ڈیٹا بیس 48×, سلائیڈ 64×, بائنری 55×, اعشاری 23×, پروسیسر 41×, ٹوپولوجی 32×, بیک اپ 37×, لوپ 31×, چارٹ 38×, کیش 65×, فیلڈ 24×, ریڈر 23×, سرور 30×, ڈرائیور 22×, فنکشن 19×, پروسیسنگ 19×, ہیکساڈیسیمل 20×, فولڈر 23×, متغیر 20×, کالم 30×, کریکٹر 28×, یونٹ 28×, ڈیسک ٹاپ 15×, ڈسپلے 17×, کلاؤڈ 15×, اسپریڈ شیٹ 15×, فونٹ 15×, شارٹ کٹ 13×, کی بورڈ 28×, کمانڈ 18×, اسمبلی 12×, بلاک 19×, یوٹیلیٹی 15×, ایپلی کیشن 19×, ایپ 37× (incl. ایپلی کیشن 19×), ایکسٹینشن 21×, ای میل 26×, ماؤس 6×, اسپیکر 15×, آپریٹنگ سسٹم 63×, وائرس 20×, ورم 7×, ٹروجن 2×, میلویئر 9×, فشنگ 7×, اسپام 1×, فائر وال 3×, کوکی 13×, پکسل 9×, مدر بورڈ 4×, پورٹ 19×, سلاٹ 9×, چپ 18× (incl. چپٹی 2×), رجسٹر 17×, ہدایت 16×, الگورتھم 10×, فلو چارٹ 10×, سیوڈو کوڈ 3×, سنٹیکس 2×, کوری 12×, توثیق 9×, تصدیق 11×, آتھنٹیکیشن 5×, خفیہ کاری 7×, لاگ ان 5×, ڈاؤن لوڈ 17×, اپ لوڈ 3×, بک مارک 4×, ٹیب 14×, ہائپر لنک 1×, لنک 27× (incl. ہائپر لنک 1×), آئیکن 3×, کرسر 1×, پوائنٹر 6×, ڈائیلاگ 2× (substring counts)",
+  [["میموری", 96], ["کوڈ", 103], ["ڈیٹا بیس", 48], ["سلائیڈ", 64], ["بائنری", 55], ["اعشاری", 23], ["پروسیسر", 41], ["ٹوپولوجی", 32], ["بیک اپ", 37], ["لوپ", 31], ["چارٹ", 38], ["کیش", 65], ["فیلڈ", 24], ["ریڈر", 23], ["سرور", 30], ["ڈرائیور", 22], ["فنکشن", 19], ["پروسیسنگ", 19], ["ہیکساڈیسیمل", 20], ["فولڈر", 23], ["متغیر", 20], ["کالم", 30], ["کریکٹر", 28], ["یونٹ", 28], ["ڈیسک ٹاپ", 15], ["ڈسپلے", 17], ["کلاؤڈ", 15], ["اسپریڈ شیٹ", 15], ["فونٹ", 15], ["شارٹ کٹ", 13], ["کی بورڈ", 28], ["کمانڈ", 18], ["اسمبلی", 12], ["بلاک", 19], ["یوٹیلیٹی", 15], ["ایپلی کیشن", 19], ["ایپ", 37], ["ایکسٹینشن", 21], ["ای میل", 26], ["ماؤس", 6], ["اسپیکر", 15], ["آپریٹنگ سسٹم", 63], ["وائرس", 20], ["ورم", 7], ["ٹروجن", 2], ["میلویئر", 9], ["فشنگ", 7], ["اسپام", 1], ["فائر وال", 3], ["کوکی", 13], ["پکسل", 9], ["مدر بورڈ", 4], ["پورٹ", 19], ["سلاٹ", 9], ["چپ", 18], ["رجسٹر", 17], ["ہدایت", 16], ["الگورتھم", 10], ["فلو چارٹ", 10], ["سیوڈو کوڈ", 3], ["سنٹیکس", 2], ["کوری", 12], ["توثیق", 9], ["تصدیق", 11], ["آتھنٹیکیشن", 5], ["خفیہ کاری", 7], ["لاگ ان", 5], ["ڈاؤن لوڈ", 17], ["اپ لوڈ", 3], ["بک مارک", 4], ["ٹیب", 14], ["ہائپر لنک", 1], ["لنک", 27], ["آئیکن", 3], ["کرسر", 1], ["پوائنٹر", 6], ["ڈائیلاگ", 2]]);
+itCountsCheck("U2 it: exact counts, AI/cloud/network + compounds — مصنوعی ذہانت 20×, مشین لرننگ 7×, ورچوئل رئیلٹی 4×, آگمینٹڈ رئیلٹی 4×, مکسڈ رئیلٹی 4×, انٹرنیٹ آف تھنگز 5×, نیورل نیٹ ورک 3×, ایکسپرٹ سسٹم 3×, کمپیوٹر ویژن 4×, پیٹرن ریکگنیشن 4×, قدرتی زبان 5×, روبوٹ 4×, ڈرون 3×, سینسر 18×, ایکچوایٹر 6×, ایمبیڈڈ 12×, وان نیومن 3×, سورس کوڈ 14×, مشین کوڈ 9×, اسمبلی زبان 8×, پروگرامنگ زبان 4×, کمپائلر 11×, انٹرپریٹر 7×, اسمبلر 5×, ایڈیٹر 1×, بگ 7×, بوٹ 14×, ری اسٹارٹ 1×, سلیپ 1×, ہائبرنیٹ 1×, ایڈمنسٹریٹر 5×, اجازت 20×, رسائی 19×, اینٹی وائرس 5×, راؤٹر 8×, سوئچ 9×, ہب 6×, برج 4×, ریپیٹر 4×, موڈیم 4×, بینڈ وڈتھ 3×, لیٹنسی 3×, پیکٹ 7×, پروٹوکول 15×, ایریا نیٹ ورک 29×, ڈیٹا بس 5×, کنٹرول بس 6×, ایڈریس بس 5×, بس ٹوپولوجی 6×, کنٹرول یونٹ 2×, ورڈ پروسیسر 5×, بار کوڈ 9×, ٹرانزسٹر 5×, لائٹ پین 2×, ٹچ پیڈ 3×, ٹریک بال 3×, جوائے اسٹک 4×, ویب کیم 4×, مائیکروفون 7×, ہیڈ فون 5×, پروجیکٹر 3×, پلاٹر 7×, اسکینر 6×, لیزر پرنٹر 5×, انک جیٹ 4×, ڈاٹ میٹرکس 5×, تھرمل پرنٹر 6×, ریفریش ریٹ 4×, ریزولوشن 3×, ڈومین نیم 4×, کلائنٹ 5×, پرائمری کی 4×, فارن کی 2×, پبلک ڈومین 2×, فری ویئر 6×, شیئر ویئر 6×, ملکیتی 5×, اوپن سورس 4×, ڈیٹا سورس 2×, فائل سسٹم 9×, ڈومین نیم سسٹم 2×, سسٹم سافٹ ویئر 6× (substring counts)",
+  [["مصنوعی ذہانت", 20], ["مشین لرننگ", 7], ["ورچوئل رئیلٹی", 4], ["آگمینٹڈ رئیلٹی", 4], ["مکسڈ رئیلٹی", 4], ["انٹرنیٹ آف تھنگز", 5], ["نیورل نیٹ ورک", 3], ["ایکسپرٹ سسٹم", 3], ["کمپیوٹر ویژن", 4], ["پیٹرن ریکگنیشن", 4], ["قدرتی زبان", 5], ["روبوٹ", 4], ["ڈرون", 3], ["سینسر", 18], ["ایکچوایٹر", 6], ["ایمبیڈڈ", 12], ["وان نیومن", 3], ["سورس کوڈ", 14], ["مشین کوڈ", 9], ["اسمبلی زبان", 8], ["پروگرامنگ زبان", 4], ["کمپائلر", 11], ["انٹرپریٹر", 7], ["اسمبلر", 5], ["ایڈیٹر", 1], ["بگ", 7], ["بوٹ", 14], ["ری اسٹارٹ", 1], ["سلیپ", 1], ["ہائبرنیٹ", 1], ["ایڈمنسٹریٹر", 5], ["اجازت", 20], ["رسائی", 19], ["اینٹی وائرس", 5], ["راؤٹر", 8], ["سوئچ", 9], ["ہب", 6], ["برج", 4], ["ریپیٹر", 4], ["موڈیم", 4], ["بینڈ وڈتھ", 3], ["لیٹنسی", 3], ["پیکٹ", 7], ["پروٹوکول", 15], ["ایریا نیٹ ورک", 29], ["ڈیٹا بس", 5], ["کنٹرول بس", 6], ["ایڈریس بس", 5], ["بس ٹوپولوجی", 6], ["کنٹرول یونٹ", 2], ["ورڈ پروسیسر", 5], ["بار کوڈ", 9], ["ٹرانزسٹر", 5], ["لائٹ پین", 2], ["ٹچ پیڈ", 3], ["ٹریک بال", 3], ["جوائے اسٹک", 4], ["ویب کیم", 4], ["مائیکروفون", 7], ["ہیڈ فون", 5], ["پروجیکٹر", 3], ["پلاٹر", 7], ["اسکینر", 6], ["لیزر پرنٹر", 5], ["انک جیٹ", 4], ["ڈاٹ میٹرکس", 5], ["تھرمل پرنٹر", 6], ["ریفریش ریٹ", 4], ["ریزولوشن", 3], ["ڈومین نیم", 4], ["کلائنٹ", 5], ["پرائمری کی", 4], ["فارن کی", 2], ["پبلک ڈومین", 2], ["فری ویئر", 6], ["شیئر ویئر", 6], ["ملکیتی", 5], ["اوپن سورس", 4], ["ڈیٹا سورس", 2], ["فائل سسٹم", 9], ["ڈومین نیم سسٹم", 2], ["سسٹم سافٹ ویئر", 6]]);
+itCountsCheck("U2 it: exact counts, kept splits I — نقل 74× (incl. منتقل 23× + نقلی 16× + نقلیں 12× + نقل و حرکت 1×), کاپی 32× (incl. کاپیاں 4× + کاپی رائٹ 5×), کاپیاں 4×, نقلیں 12×, لکیر 22×, لکیریں 2×, سطر 3× (incl. سطروں 2×), سطروں 2×, لائنیں 3×, کھڑکی 2×, گیٹ وے 2×, ترتیبات 17×, سسٹم 90×, توسیع 2×, خاکہ 2×, اشیا 3×, چیز 53×, چیزیں 9×, چھاپنا 8×, پرنٹ کرنا 5×, پروسیس 82× (incl. پروسیسنگ 19× + پروسیسر 41×), کارروائی 9×, شیئر 35×, بانٹنا 4×, مشترکہ 17×, اشتراک 2×, جانچ 79×, چیک کر 3×, مصنوعہ 1×, مصنوعے 5×, مصنوعات 4×, ماخذ 5×, ذریعہ 5×, مجموعہ 21×, نمونہ 5×, پیٹرن 12× (incl. پیٹرنز 7× + پیٹرن ریکگنیشن 4×), پیٹرنز 7×, سلسلہ 2×, تسلسل 2×, نجی 21×, عوامی 5×, پرائیویٹ 13×, پبلک 15×, طریقہ 16×, میتھڈز 1×, منطق 7×, لاجک 2×, سیل 56×, خانہ 1×, میل 44× (incl. ای میل 26×), پوائنٹس 3×, نقطے 3×, نقطہ 1×, ہسٹری 2×, سابقہ ریکارڈ 2×, ویژن 6×, بصارت 1×, مرحلہ 5×, قدم 18×, درجہ 15× (incl. مندرجہ ذیل 7×), اصول 9×, قواعد 14×, کمیونیکیشن 4×, لائٹ 14×, روشنی 12×, شاپنگ 1×, خریداری 3×, صحت 2×, بحال 15×, ریسٹور 2×, لوڈ 29×, تربیت 5×, ٹریننگ 1× (substring counts)",
+  [["نقل", 74], ["کاپی", 32], ["کاپیاں", 4], ["نقلیں", 12], ["لکیر", 22], ["لکیریں", 2], ["سطر", 3], ["سطروں", 2], ["لائنیں", 3], ["کھڑکی", 2], ["گیٹ وے", 2], ["ترتیبات", 17], ["سسٹم", 90], ["توسیع", 2], ["خاکہ", 2], ["اشیا", 3], ["چیز", 53], ["چیزیں", 9], ["چھاپنا", 8], ["پرنٹ کرنا", 5], ["پروسیس", 82], ["کارروائی", 9], ["شیئر", 35], ["بانٹنا", 4], ["مشترکہ", 17], ["اشتراک", 2], ["جانچ", 79], ["چیک کر", 3], ["مصنوعہ", 1], ["مصنوعے", 5], ["مصنوعات", 4], ["ماخذ", 5], ["ذریعہ", 5], ["مجموعہ", 21], ["نمونہ", 5], ["پیٹرن", 12], ["پیٹرنز", 7], ["سلسلہ", 2], ["تسلسل", 2], ["نجی", 21], ["عوامی", 5], ["پرائیویٹ", 13], ["پبلک", 15], ["طریقہ", 16], ["میتھڈز", 1], ["منطق", 7], ["لاجک", 2], ["سیل", 56], ["خانہ", 1], ["میل", 44], ["پوائنٹس", 3], ["نقطے", 3], ["نقطہ", 1], ["ہسٹری", 2], ["سابقہ ریکارڈ", 2], ["ویژن", 6], ["بصارت", 1], ["مرحلہ", 5], ["قدم", 18], ["درجہ", 15], ["اصول", 9], ["قواعد", 14], ["کمیونیکیشن", 4], ["لائٹ", 14], ["روشنی", 12], ["شاپنگ", 1], ["خریداری", 3], ["صحت", 2], ["بحال", 15], ["ریسٹور", 2], ["لوڈ", 29], ["تربیت", 5], ["ٹریننگ", 1]]);
+itCountsCheck("U2 it: exact counts, kept splits II + flags — پورا 11×, مقفل 4×, رینج 11×, انتباہ 4×, خبردار 1×, پاور 9×, بجلی 26×, فزیکل 6×, جسمانی 5×, طبعی 1×, کیس 27×, کام 182×, جابز 4×, ریفریش 10×, تازہ 4×, آبجیکٹ 7×, کلاس 20×, سروس 11×, خدمات 12×, خدمت 3×, شرح 1×, انداز 11×, اسٹائل 23×, اسٹائلز 9×, اسٹیٹس 3×, حفاظت 17×, سیکیورٹی 4×, پلیس ہولڈر 4×, ٹیکسٹ باکس 1×, زوم 1×, گروپ 12×, گروہ 2×, نشان 18×, علامت 12×, علامتیں 5×, اشارہ 5×, پوائنٹنگ 2×, گاہک 20×, چمک 7×, انسٹال 16×, نصب 1×, ہیڈر 8×, فوٹر 5×, مندرجہ ذیل 7×, جبکہ 120×, تقریباً 2×, فوراً 16×, فیصد 1×, ڈی بگنگ 3×, نیٹکٹ 2×, سرقہ 2×, ایرگونومکس 1×, ایرگونومک 3× (incl. ایرگونومکس 1×), فلپ فلاپ 4×, کمبینیشنل 2×, سیکوینشل 3×, انکریمنٹل 2×, ڈیفرینشل 2×, سپروائزڈ 4× (incl. ان سپروائزڈ 2×), ان سپروائزڈ 2×, رینفورسمنٹ 1×, انٹیجر 2×, بائٹس 10×, بائٹ 36× (incl. بائٹس 10×) (substring counts)",
+  [["پورا", 11], ["مقفل", 4], ["رینج", 11], ["انتباہ", 4], ["خبردار", 1], ["پاور", 9], ["بجلی", 26], ["فزیکل", 6], ["جسمانی", 5], ["طبعی", 1], ["کیس", 27], ["کام", 182], ["جابز", 4], ["ریفریش", 10], ["تازہ", 4], ["آبجیکٹ", 7], ["کلاس", 20], ["سروس", 11], ["خدمات", 12], ["خدمت", 3], ["شرح", 1], ["انداز", 11], ["اسٹائل", 23], ["اسٹائلز", 9], ["اسٹیٹس", 3], ["حفاظت", 17], ["سیکیورٹی", 4], ["پلیس ہولڈر", 4], ["ٹیکسٹ باکس", 1], ["زوم", 1], ["گروپ", 12], ["گروہ", 2], ["نشان", 18], ["علامت", 12], ["علامتیں", 5], ["اشارہ", 5], ["پوائنٹنگ", 2], ["گاہک", 20], ["چمک", 7], ["انسٹال", 16], ["نصب", 1], ["ہیڈر", 8], ["فوٹر", 5], ["مندرجہ ذیل", 7], ["جبکہ", 120], ["تقریباً", 2], ["فوراً", 16], ["فیصد", 1], ["ڈی بگنگ", 3], ["نیٹکٹ", 2], ["سرقہ", 2], ["ایرگونومکس", 1], ["ایرگونومک", 3], ["فلپ فلاپ", 4], ["کمبینیشنل", 2], ["سیکوینشل", 3], ["انکریمنٹل", 2], ["ڈیفرینشل", 2], ["سپروائزڈ", 4], ["ان سپروائزڈ", 2], ["رینفورسمنٹ", 1], ["انٹیجر", 2], ["بائٹس", 10], ["بائٹ", 36]]);
+itCountsCheck("U2 it: exact counts, general vocab + swamp decompositions — نمائش 1×, مرکزی 27×, سینٹرل 2×, مین 46×, فریم 13×, ڈیزائن 11×, ماڈل 11×, پلیٹ فارم 8×, مواد 15×, رابطہ 7×, کنکشن 22×, ڈیوائسز 10×, جائز 4×, درست 57×, سرٹیفکیٹ 2×, دفتر 16×, حملہ آور 5×, مقابلے 6×, کیبلوں 1×, کیبلنگ 3×, استعمال 262×, ٹچ 11×, ٹائپ 10×, گیم 7×, لیپ ٹاپ 11×, ٹیکنالوجی 6×, دکان 10×, بینک 19×, کمپنی 8×, گاہکوں 5×, اسکول 7×, طالب علم 10×, استاد 3×, کتاب 12×, اخبار 3×, تصویر 54×, آواز 28×, موسیقی 4×, کھیل 3×, ایڈریس 8×, سلائیڈ شو 11×, کل رقم 1×, مقررہ حد 2×, چیک آؤٹ 1×, چیک بک 1×, فلٹر 11×, ان لاک 2×, ونڈوز 8×, کاپی رائٹ 5×, پتہ چل 1×, ایڈریس بار 1×, چپٹی 2×, نقل و حرکت 1×, منتقل 23×, نقلی 16× (substring counts; bare کل/ریٹ/فل/لاک/حد/شو/بس substrings deliberately NOT pinned — substring swamps)",
+  [["نمائش", 1], ["مرکزی", 27], ["سینٹرل", 2], ["مین", 46], ["فریم", 13], ["ڈیزائن", 11], ["ماڈل", 11], ["پلیٹ فارم", 8], ["مواد", 15], ["رابطہ", 7], ["کنکشن", 22], ["ڈیوائسز", 10], ["جائز", 4], ["درست", 57], ["سرٹیفکیٹ", 2], ["دفتر", 16], ["حملہ آور", 5], ["مقابلے", 6], ["کیبلوں", 1], ["کیبلنگ", 3], ["استعمال", 262], ["ٹچ", 11], ["ٹائپ", 10], ["گیم", 7], ["لیپ ٹاپ", 11], ["ٹیکنالوجی", 6], ["دکان", 10], ["بینک", 19], ["کمپنی", 8], ["گاہکوں", 5], ["اسکول", 7], ["طالب علم", 10], ["استاد", 3], ["کتاب", 12], ["اخبار", 3], ["تصویر", 54], ["آواز", 28], ["موسیقی", 4], ["کھیل", 3], ["ایڈریس", 8], ["سلائیڈ شو", 11], ["کل رقم", 1], ["مقررہ حد", 2], ["چیک آؤٹ", 1], ["چیک بک", 1], ["فلٹر", 11], ["ان لاک", 2], ["ونڈوز", 8], ["کاپی رائٹ", 5], ["پتہ چل", 1], ["ایڈریس بار", 1], ["چپٹی", 2], ["نقل و حرکت", 1], ["منتقل", 23], ["نقلی", 16]]);
+const IT_ZERO_SUBSTRINGS = ["سامان", "ہیلتھ", "فونٹس", "تفاعل", "صارف نام", "لاگ آؤٹ", "ٹول بار", "ڈیبگر", "شٹ ڈاؤن", "بلوٹوتھ", "ہاٹ اسپاٹ", "بمقابلہ", "خلیہ", "ڈیبگنگ", "ویب سائٹیں", "پروڈکٹ", "فلم", "ری بوٹ", "چیک کرنا"];
+const itZeroBad = IT_ZERO_SUBSTRINGS.filter((t) => itCount(t) !== 0);
+const IT_ZERO_TOKENS = ["ہیکر", "ہیکرز", "تار", "تاروں"];
+const itZeroTokBad = [];
+for (const [loc, val] of itPairs) {
+  for (const tok of tokens(val)) if (IT_ZERO_TOKENS.includes(tok)) itZeroTokBad.push(`${loc}:${tok}`);
+}
+check("U2 it: zero-count pins — سامان/ہیلتھ/فونٹس/تفاعل/صارف نام/لاگ آؤٹ/ٹول بار/ڈیبگر/شٹ ڈاؤن/بلوٹوتھ/ہاٹ اسپاٹ/بمقابلہ/خلیہ/ڈیبگنگ/ویب سائٹیں/پروڈکٹ/فلم/ری بوٹ/چیک کرنا 0× as substrings; ہیکر/ہیکرز/تار/تاروں 0× as tokens (تار substring lives inside رفتار, hence token-level)", itZeroBad.length === 0 && itZeroTokBad.length === 0, [...itZeroBad, ...itZeroTokBad].slice(0, 5).join(", "));
+// EN-correspondence: سسٹم occurs ONLY inside the 10
+// compound names (strip longest-first, residual 0).
+const IT_SYSTEM_COMPOUNDS = ["ڈیٹا بیس مینجمنٹ سسٹم", "لرننگ مینجمنٹ سسٹم", "ڈومین نیم سسٹم", "یونائیٹڈ سسٹم بورڈ", "آپریٹنگ سسٹم", "ایکسپرٹ سسٹم", "سسٹم سافٹ ویئر", "فائل سسٹم", "سسٹم ڈرائیو", "سسٹم ٹیسٹنگ"].sort((a, b) => b.length - a.length);
+let itSysResidual = itUrText;
+for (const c of IT_SYSTEM_COMPOUNDS) itSysResidual = itSysResidual.split(c).join(" ");
+check("U2 it: سسٹم occurs ONLY inside the 10 compound names (آپریٹنگ سسٹم 63×, فائل سسٹم 9×, سسٹم سافٹ ویئر 6×, ایکسپرٹ سسٹم 3×, ڈومین نیم سسٹم 2×, سسٹم ڈرائیو 2×, سسٹم ٹیسٹنگ 2×, ڈیٹا بیس مینجمنٹ سسٹم 1×, لرننگ مینجمنٹ سسٹم 1×, یونائیٹڈ سسٹم بورڈ 1× = 90×; residual 0)", itSysResidual.split("سسٹم").length - 1 === 0, `residual ${itSysResidual.split("سسٹم").length - 1}`);
+// EN-correspondence: ونڈو (OS window) in exactly 23
+// fields, every one with EN "window" (E fields use
+// explanationEn when present); کھڑکی (physical window)
+// in exactly 2 fields; گیٹ وے in exactly 2 fields.
+const IT_WINDOW_FIELDS = new Set(["ITC-020:question_ur", "ITC-020:explanation_ur", "ITC-026:options_ur[3]", "ITC-032:explanation_ur", "ITC-095:options_ur[1]", "ITC-194:explanation_ur", "ITC-227:question_ur", "ITC-227:explanation_ur", "ITC-229:question_ur", "ITC-229:explanation_ur", "ITC-230:explanation_ur", "ITC-231:question_ur", "ITC-231:explanation_ur", "ITC-274:question_ur", "ITC-285:options_ur[1]", "ITC-287:explanation_ur", "ITC-368:question_ur", "ITC-388:options_ur[3]", "ITC-411:options_ur[3]", "ITC-412:explanation_ur", "ITC-415:explanation_ur", "ITC-415:options_ur[1]", "ITC-485:question_ur"]);
+let itWindowFields = [], itWindowBad = [], itKhirkiFields = [], itKhirkiBad = [], itGatewayFields = [], itGatewayBad = [];
+for (const q of it) {
+  const fields = [["question_ur", q.question, q.question_ur], ...q.options.map((o, i) => [`options_ur[${i}]`, o, q.options_ur[i]]), ["explanation_ur", q.explanationEn ?? q.explanation, q.explanation_ur]];
+  for (const [loc, en, ur] of fields) {
+    const key = `${q.id}:${loc}`;
+    if ((ur ?? "").includes("ونڈو")) {
+      itWindowFields.push(key);
+      if (!/window/i.test(en)) itWindowBad.push(key);
+    }
+    if (tokens(ur).includes("کھڑکی")) {
+      itKhirkiFields.push(key);
+      if (!/window/i.test(en)) itKhirkiBad.push(key);
+    }
+    if ((ur ?? "").includes("گیٹ وے")) {
+      itGatewayFields.push(key);
+      if (!/gateway/i.test(en)) itGatewayBad.push(key);
+    }
+  }
+}
+check("U2 it: ونڈو in exactly the 23 inventoried fields, every one with EN 'window'; کھڑکی token in exactly ITC-454:options_ur[2] + ITC-455:options_ur[1] (physical window); گیٹ وے in exactly ITC-306:options_ur[1] + ITC-306:explanation_ur (EN 'gateway')",
+  itWindowFields.length === 23 && itWindowFields.every((f) => IT_WINDOW_FIELDS.has(f)) && itWindowBad.length === 0 &&
+  itKhirkiFields.length === 2 && itKhirkiFields.includes("ITC-454:options_ur[2]") && itKhirkiFields.includes("ITC-455:options_ur[1]") && itKhirkiBad.length === 0 &&
+  itGatewayFields.length === 2 && itGatewayFields.includes("ITC-306:options_ur[1]") && itGatewayFields.includes("ITC-306:explanation_ur") && itGatewayBad.length === 0,
+  `window ${itWindowFields.length} bad ${itWindowBad.join(",")} / khirki ${itKhirkiFields.join(",")} / gateway ${itGatewayFields.join(",")}`);
+// EN-correspondence: token-level pins for the swamp
+// terms — فل (technical full-backup sense only),
+// گروہ (ITC-117 only), سطر/سطروں (ITC-252 only), خط
+// (letter + stroke senses, 9 fields), ریٹ (refresh/data
+// rate only), چیک کر (look-at sense, 3 fields).
+function itTokenFields(tok) {
+  const out = [];
+  for (const q of it) {
+    const fields = [["question_ur", q.question_ur], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o]), ["explanation_ur", q.explanation_ur]];
+    for (const [loc, val] of fields) if (tokens(val).includes(tok)) out.push(`${q.id}:${loc}`);
+  }
+  return out;
+}
+const itFullTok = itTokenFields("فل");
+const itGirohTok = itTokenFields("گروہ");
+const itSatrTok = itTokenFields("سطر");
+const itSatronTok = itTokenFields("سطروں");
+const itKhatTok = itTokenFields("خط");
+const itRateTok = itTokenFields("ریٹ");
+const itCheckKarFields = itPairs.filter(([, v]) => (v ?? "").includes("چیک کر")).map(([l]) => l);
+const itSetEq = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
+check("U2 it: فل token in exactly 6 fields (309E, 467Q/E, 489Q/O0/E); گروہ token in exactly ITC-117Q/E; سطر token in exactly ITC-252O3 + سطروں token in exactly ITC-252Q/E; خط token in exactly 9 fields (248Q/O0, 249O0/E, 254Q/E, 255Q/E, 259Q); ریٹ token in exactly 4 fields (115Q/E, 163Q/E); 'چیک کر' in exactly 3 fields (189Q, 496E, 499E)",
+  itSetEq(itFullTok, ["ITC-309:explanation_ur", "ITC-467:question_ur", "ITC-467:explanation_ur", "ITC-489:question_ur", "ITC-489:options_ur[0]", "ITC-489:explanation_ur"]) &&
+  itSetEq(itGirohTok, ["ITC-117:question_ur", "ITC-117:explanation_ur"]) &&
+  itSetEq(itSatrTok, ["ITC-252:options_ur[3]"]) && itSetEq(itSatronTok, ["ITC-252:question_ur", "ITC-252:explanation_ur"]) &&
+  itSetEq(itKhatTok, ["ITC-248:question_ur", "ITC-248:options_ur[0]", "ITC-249:options_ur[0]", "ITC-249:explanation_ur", "ITC-254:question_ur", "ITC-254:explanation_ur", "ITC-255:question_ur", "ITC-255:explanation_ur", "ITC-259:question_ur"]) &&
+  itSetEq(itRateTok, ["ITC-115:question_ur", "ITC-115:explanation_ur", "ITC-163:question_ur", "ITC-163:explanation_ur"]) &&
+  itSetEq(itCheckKarFields, ["ITC-189:question_ur", "ITC-496:explanation_ur", "ITC-499:explanation_ur"]),
+  `فل ${itFullTok.join(",")} / گروہ ${itGirohTok.join(",")} / سطر ${itSatrTok.join(",")} سطروں ${itSatronTok.join(",")} / خط ${itKhatTok.join(",")} / ریٹ ${itRateTok.join(",")} / چیک کر ${itCheckKarFields.join(",")}`);
+const itById = new Map(it.map((q) => [q.id, q]));
+check("U2 it: exact-field pins, expansions + keeps — 026Q/032Q/040Q acronym questions, 032E/040E/054E/056E/081E/082E/112E/113E/174E/039E/041E E-spelled expansions, 302Q/381Q/491Q/175Q/178Q Q-spelled expansions, 054Q/056Q مخفف questions, 040O1 یونائیٹڈ سسٹم بورڈ distractor, 055/321/386/246 options byte-exact, 489O3 System Restore, 402Q/E Total/Price/Quantity, 448Q cat/dog, 405Q/E Vs, 338Q/E total, 248O0 Mail Merge Latin, 249 میل مرج 2×, 118Q USB pairings, 147O0 ';'",
+  itById.get("ITC-026").question_ur === "WWW کا مطلب کیا ہے؟" &&
+  itById.get("ITC-032").question_ur === "GUI کا مطلب کیا ہے؟" &&
+  itById.get("ITC-040").question_ur === "USB کا مطلب کیا ہے؟" &&
+  itById.get("ITC-054").question_ur.includes("URL کس کا مخفف ہے") &&
+  itById.get("ITC-056").question_ur.includes("CC کس کا مخفف ہے") &&
+  itById.get("ITC-032").explanation_ur.includes("گرافکل یوزر انٹرفیس") &&
+  itById.get("ITC-040").explanation_ur.includes("یونیورسل سیریل بس") &&
+  itById.get("ITC-054").explanation_ur.includes("یونیفارم ریسورس لوکیٹر (URL)") &&
+  itById.get("ITC-056").explanation_ur.includes("کاربن کاپی (CC)") &&
+  itById.get("ITC-081").explanation_ur.includes("میموری ایڈریس رجسٹر") &&
+  itById.get("ITC-082").explanation_ur.includes("میموری ڈیٹا رجسٹر") &&
+  itById.get("ITC-112").explanation_ur.includes("لکوڈ کرسٹل ڈسپلے") &&
+  itById.get("ITC-113").explanation_ur.includes("آرگینک لائٹ ایمیٹنگ ڈائیوڈ") &&
+  itById.get("ITC-174").explanation_ur.includes("ریوولیوشنز پر منٹ") &&
+  itById.get("ITC-039").explanation_ur.includes("ویژول ڈسپلے یونٹ (VDU)") &&
+  itById.get("ITC-041").explanation_ur.includes("سالڈ اسٹیٹ ڈرائیو (SSD)") &&
+  itById.get("ITC-302").question_ur.includes("نیٹ ورک انٹرفیس کارڈ (NIC)") &&
+  itById.get("ITC-381").question_ur.includes("ڈیٹا بیس مینجمنٹ سسٹم (DBMS)") &&
+  itById.get("ITC-491").question_ur.includes("لرننگ مینجمنٹ سسٹم (LMS)") &&
+  itById.get("ITC-175").question_ur.includes("سالڈ اسٹیٹ ڈرائیو (SSD)") &&
+  itById.get("ITC-178").question_ur.includes("کمپیکٹ ڈسک (CD)") &&
+  itById.get("ITC-040").options_ur[1] === "یونائیٹڈ سسٹم بورڈ" &&
+  JSON.stringify(itById.get("ITC-055").options_ur) === JSON.stringify(["System", "Secure", "Server", "Signal"]) &&
+  JSON.stringify(itById.get("ITC-321").options_ur) === JSON.stringify(["Subject", "Attachment", "BCC", "Signature"]) &&
+  JSON.stringify(itById.get("ITC-386").options_ur) === JSON.stringify(["Date/Time", "Text", "Number", "Yes/No"]) &&
+  JSON.stringify(itById.get("ITC-246").options_ur) === JSON.stringify(["Columns کی خصوصیت", "Table کی خصوصیت", "Text Box کی خصوصیت", "Drop Cap کی خصوصیت"]) &&
+  itById.get("ITC-489").options_ur[3] === "System Restore" &&
+  itById.get("ITC-402").question_ur.includes("Total") && itById.get("ITC-402").question_ur.includes("Price") && itById.get("ITC-402").question_ur.includes("Quantity") &&
+  itById.get("ITC-402").explanation_ur.includes("Total") && itById.get("ITC-402").explanation_ur.includes("Price") && itById.get("ITC-402").explanation_ur.includes("Quantity") &&
+  itById.get("ITC-448").question_ur.includes("cat") && itById.get("ITC-448").question_ur.includes("dog") &&
+  itById.get("ITC-405").question_ur.includes("Vs") && itById.get("ITC-405").explanation_ur.includes("Vs") &&
+  itById.get("ITC-338").question_ur.includes("total") && itById.get("ITC-338").explanation_ur.includes("total") &&
+  itById.get("ITC-248").options_ur[0].includes("Mail Merge") &&
+  [itById.get("ITC-249").question_ur, ...itById.get("ITC-249").options_ur, itById.get("ITC-249").explanation_ur].join(" ").split("میل مرج").length - 1 === 2 &&
+  itById.get("ITC-118").question_ur.includes("USB 2.0 اور USB 3.0") && itById.get("ITC-118").question_ur.includes("نسخہ اور رفتار کا کون سا جوڑا درست ہے؟") &&
+  itById.get("ITC-147").options_ur[0] === ";");
+check("U2 it: exact-field pins, normalizations + splits — 306O1/E گیٹ وے, 368Q ونڈو, 251O2/E سیل, 215O3/E مصنوعے, 414O0/E پاور کیبل, 099O2 جوابی پرچے, 476E صحت کے ریکارڈز, 448O0/E گروپ, 079O3 مستقل کاپی, 109Q/199Q پرنٹ کرتا ہے, 350Q چھاپتا ہے, 454O2/E چھاپنا, 069Q/077Q/092O0/449Q پروسیس, 477O1/480E/491E/328O1 شیئر, 476O2 شیئر کرنا, 005E پوائنٹنگ ڈیوائس, 449E ڈھیلے انداز میں متاثر, 473Q مشینوں میں, 492Q نقلی مشقیں, 439Q/E نیٹکٹ, 440E سرقہ, 444Q ایرگونومکس, 284E کاپی شدہ + Office Clipboard, 232E کاپی کرنا اور پیسٹ کرنا, 093O3 تیر والی چابیوں, 472E گاہک + انسٹال, 155E 1,048,576 بائٹس, 483Q ویب سائٹس, 228E ترتیبات ایپ, 485Q Close, 252O3 سطر, 252Q/E سطروں",
+  itById.get("ITC-306").options_ur[1].includes("گیٹ وے") && itById.get("ITC-306").explanation_ur.includes("گیٹ وے") &&
+  itById.get("ITC-368").question_ur.includes("ونڈو") &&
+  itById.get("ITC-251").options_ur[2].includes("سیل") && itById.get("ITC-251").explanation_ur.includes("سیل") &&
+  itById.get("ITC-215").options_ur[3].includes("مصنوعے") && itById.get("ITC-215").explanation_ur.includes("مصنوعے") &&
+  itById.get("ITC-414").options_ur[0].includes("پاور کیبل") && itById.get("ITC-414").explanation_ur.includes("پاور کیبلیں") &&
+  itById.get("ITC-099").options_ur[2].includes("جوابی پرچے") &&
+  itById.get("ITC-476").explanation_ur.includes("صحت کے ریکارڈز") &&
+  itById.get("ITC-448").options_ur[0].includes("گروپ") && itById.get("ITC-448").explanation_ur.includes("گروپوں") &&
+  itById.get("ITC-079").options_ur[3].includes("مستقل کاپی") &&
+  itById.get("ITC-109").question_ur.includes("پرنٹ کرتا ہے") && itById.get("ITC-199").question_ur.includes("پرنٹ کرتا ہے") &&
+  itById.get("ITC-350").question_ur.includes("چھاپتا ہے") &&
+  itById.get("ITC-454").options_ur[2].includes("چھاپنا") && itById.get("ITC-454").explanation_ur.includes("چھاپنا") &&
+  itById.get("ITC-069").question_ur.includes("پروسیس") && itById.get("ITC-077").question_ur.includes("پروسیس") &&
+  itById.get("ITC-092").options_ur[0].includes("پروسیس") && itById.get("ITC-449").question_ur.includes("پروسیس") &&
+  itById.get("ITC-477").options_ur[1].includes("شیئر") && itById.get("ITC-480").explanation_ur.includes("شیئر") &&
+  itById.get("ITC-491").explanation_ur.includes("شیئر") && itById.get("ITC-328").options_ur[1].includes("شیئر") &&
+  itById.get("ITC-476").options_ur[2].includes("شیئر کرنا") &&
+  itById.get("ITC-005").explanation_ur.includes("پوائنٹنگ ڈیوائس") &&
+  itById.get("ITC-449").explanation_ur.includes("ڈھیلے انداز میں متاثر") &&
+  itById.get("ITC-473").question_ur.includes("مشینوں میں") &&
+  itById.get("ITC-492").question_ur.includes("نقلی مشقیں") &&
+  itById.get("ITC-439").question_ur.includes("نیٹکٹ") && itById.get("ITC-439").explanation_ur.includes("نیٹکٹ") &&
+  itById.get("ITC-440").explanation_ur.includes("سرقہ") &&
+  itById.get("ITC-444").question_ur.includes("ایرگونومکس") &&
+  itById.get("ITC-284").explanation_ur.includes("کاپی شدہ") && itById.get("ITC-284").explanation_ur.includes("Office Clipboard") &&
+  itById.get("ITC-232").explanation_ur.includes("کاپی کرنا اور پیسٹ کرنا") &&
+  itById.get("ITC-093").options_ur[3].includes("تیر والی چابیوں") &&
+  itById.get("ITC-472").explanation_ur.includes("گاہک") && itById.get("ITC-472").explanation_ur.includes("انسٹال") &&
+  itById.get("ITC-155").explanation_ur.includes("1,048,576 بائٹس") &&
+  itById.get("ITC-483").question_ur.includes("ویب سائٹس") &&
+  itById.get("ITC-228").explanation_ur.includes("ترتیبات ایپ") &&
+  itById.get("ITC-485").question_ur.includes("Close") &&
+  itById.get("ITC-252").options_ur[3].includes("سطر") &&
+  itById.get("ITC-252").question_ur.includes("سطروں") && itById.get("ITC-252").explanation_ur.includes("سطروں"));
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");
