@@ -365,12 +365,18 @@ if (fs.existsSync(BACKUP)) {
     curPe[46].id === "PE-037" && curPe[499].id === "PE-490");
   const backupDrwRaw = fs.readFileSync(join(BACKUP, "src/data/banks/drawing.json"), "utf8");
   const curDrwRaw = fs.readFileSync(join(ROOT, "src/data/banks/drawing.json"), "utf8");
-  const backupDrwPrefix = backupDrwRaw.slice(0, -3); // strip trailing "\n]\n"
   const backupDrw = JSON.parse(backupDrwRaw);
   const curDrw = JSON.parse(curDrwRaw);
-  check("Phase 1 drawing.json: backup bytes are an exact prefix (50 items untouched) + 450 appended",
-    curDrwRaw.startsWith(backupDrwPrefix + ",") && backupDrw.length === 50 && curDrw.length === 500 &&
-    JSON.stringify(curDrw.slice(0, 50)) === JSON.stringify(backupDrw) &&
+  // U2-Drawing: drawing _ur fields were rewritten idiomatically in 284
+  // of 500 items (480 of 3000 field-values), so the byte-prefix
+  // assertion no longer applies. The non-_ur fields of the 50 backup
+  // items (DRW-001..010 + DRW-021..060) must still match exactly
+  // (verified field-by-field, same pattern as the U1 islamiyat and U2
+  // tajweed/arabic/urdu/english/maths/pakstudies/pedagogy/science/
+  // socialstudies/gk/it/pe adjudications above); append pins stay.
+  check("Phase 1 drawing.json (U2 _ur rewrite): non-_ur fields of 50 backup items untouched + 450 appended",
+    backupDrw.length === 50 && curDrw.length === 500 &&
+    JSON.stringify(curDrw.slice(0, 50).map(stripUrFields)) === JSON.stringify(backupDrw.map(stripUrFields)) &&
     curDrw[50].id === "DRW-061" && curDrw[499].id === "DRW-510");
   const backupContent = JSON.parse(fs.readFileSync(join(BACKUP, "src/data/content.json"), "utf8"));
   const curContent = JSON.parse(fs.readFileSync(join(ROOT, "src/data/content.json"), "utf8"));

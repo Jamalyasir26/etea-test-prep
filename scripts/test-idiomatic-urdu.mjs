@@ -12,11 +12,12 @@
 // (500 items, U2 subject 8), the Social Studies bank
 // (500 items, U2 subject 9), the GK bank
 // (500 items, U2 subject 10), the IT bank
-// (500 items, U2 subject 11) and the PE bank
-// (500 items, U2 subject 12).
-// The other 1 bank keeps its pre-U1 _ur
-// wording until U2 and is NOT covered here (except the
-// whole-tree mojibake scan in §5).
+// (500 items, U2 subject 11), the PE bank
+// (500 items, U2 subject 12) and the Drawing bank
+// (500 items, U2 subject 13 — the final U2 subject).
+// All 14 banks are now rewritten; no bank keeps its
+// pre-U1 _ur wording (the whole-tree mojibake scan
+// in §5 still covers every bank).
 // Run: node scripts/test-idiomatic-urdu.mjs  (exit 0 = all pass)
 import fs from "node:fs";
 import { dirname, join } from "node:path";
@@ -2606,6 +2607,275 @@ check("U2 pe: kept-split field sets — نیٹ token exactly PE-003E + PE-017Q/E
   ["PE-167:options_ur[0]", "PE-169:options_ur[3]", "PE-169:explanation_ur", "PE-170:options_ur[3]", "PE-172:options_ur[0]"].every((f) => peTokenFields("واپسی").includes(f)) &&
   peSetEq(peTokenFields("جمود"), ["PE-172:options_ur[2]", "PE-173:options_ur[2]", "PE-173:explanation_ur"]),
   `نیٹ ${peTokenFields("نیٹ").join(", ")} / انتباہ ${pePairs.filter(([, v]) => (v ?? "").includes("انتباہ")).map(([l]) => l).join(", ")} / واپسی ${peTokenFields("واپسی").join(", ")}`);
+
+// ---------- §3N Drawing bank (U2 subject 13 — FINAL) ----------
+// U2 rewrote the Drawing _ur fields (480 of 3000 field-values changed;
+// 284/500 items; Q 151, O 111, E 218; 216 items unchanged, already
+// idiomatic). File order is the Phase 1 order: DRW-001..010 +
+// DRW-021..060 (the original 50) + DRW-061..DRW-510 (Phase 1 append);
+// the DRW-011..020 gap lives in pe.json (deliberate, no collision).
+// explanationUrdu is null in all 500; explanationEn in exactly
+// DRW-001..005, DRW-021, DRW-024, DRW-025 (the 8 mixed-explanation
+// originals; _ur already deduped — no echo work needed, unlike PE's
+// 4 echo explanations). Digit rule is STRICT on every field vs EN
+// (digitRuns + sameMultiset, same helpers as §3M): the final bank is
+// strict-clean with 0 mismatches, so NO comma-strip carve-out is
+// needed — DRW-055/468 list commas are Urdu ، in _ur and the digit
+// runs match exactly. Latin rule is the U2-Drawing central
+// validator's allowlist (PNCA + HB + single letters; digit-strip
+// reduces the pencil-grade tokens 6B/2H/8B/2B to single letters):
+// B/H are pencil grades (DRW-052/258), HB the middle grade
+// (DRW-052/053), PNCA the institution acronym (DRW-411, 2 fields).
+// Verbatim-shaped options (phase1-drawing isTechVerbatim, copied
+// here — do not drift) stay byte-identical; 0 violations, so NO
+// exact-mapping carve-out was needed (unlike IT). N9 (coordinator,
+// this file): the pre-merge backup ALREADY had فوکل پوائنٹ at
+// DRW-162E/O0/O1 + DRW-163O3/E; the D2b worker regressed them to
+// مرکزی نقطہ and N3 fixed O0/O1 only — N9 restores the E + all of
+// DRW-163 and normalizes DRW-187E (whose EN is "…or a focal point",
+// not "important part" as the N3 note claimed — the "important part"
+// is rendered separately as اہم حصہ earlier in the same sentence).
+// Splits KEPT (different EN, sense, cluster, or grammar — not
+// spelling variants): لینڈ اسکیپ 7× (EN "landscape" as genre —
+// DRW-028/059/086/298/305) vs منظر کشی 6× (EN "landscape painting"
+// as activity/genre — DRW-023/061/187/199; bare منظر 92 token-fields
+// for scene/view contexts, e.g. DRW-228); ثالثی 2× (EN "tertiary",
+// DRW-049) vs درمیانی رنگ 11× (EN "intermediate" — different EN
+// words, NOT a conflict); ردھم 47 occurrences / 34 token-fields
+// (EN "rhythm") vs تال 5 genuine occurrences in 4 fields (EN "beat"
+// — DRW-180E/184E/192Q/E; the 6th substring hit is تالاب, pool,
+// DRW-316Q); مصوری 29× (painting as art/genre) vs پینٹنگ 90× (a
+// painting / painting activity — sense split); اوور لیپنگ 7
+// occurrences / 6 fields (defined technical term, DRW-125–129)
+// vs آگے پیچھے 2× (DRW-293 arrangement description — kept,
+// flagged); اشیا 14× physical-things only EXCEPT DRW-371O1 (EN
+// "goods" for sale — SS precedent, flagged; Pak Studies/GK ban
+// diverges); ترکیب 27× vs کمپوزیشن 0×; کور شیڈو 10× vs کاسٹ شیڈو
+// 17× (distinct shadow types); ویلیو 39× / ٹون 87× / ٹنٹ 5× /
+// شیڈ 78× (27 inside شیڈو + 51 standalone) / ہیو 7× uniform;
+// scripts نسخ 4× / کوفی 6× / ثلث 6 token-fields (script; the 30
+// substring hits are mostly مثلث, triangle, 24×) / نستعلیق 4×
+// uniform (Latin 0×); اہرام 16× vs ہرم 0×; فیٹ اوور لین 2× kept;
+// زندہ ماڈل کی ڈرائنگ 1× kept; ویکٹر 2× (D4b correction, ویسٹر
+// 0×). مرکزی نقطہ survives ONLY in DRW-006O2 (EN "Centre point");
+// مرکزی نقطے (oblique) survives ONLY in DRW-075Q/E + DRW-134Q/E
+// (EN "central point" — different EN from "focal point"). Flagged
+// facts mirrored, not resolved: DRW-507 (livelihood + truck-art
+// comparison), DRW-508 (art therapy), DRW-404, all artist names
+// S24–S27 (Chughtai, Sadequain, Shakir Ali, Gulgee incl. bronze
+// claim, Zainul Abedin, Anna Molka Ahmed, Monet, Van Gogh, Cezanne,
+// Picasso + Braque, Dali, Warhol, Leonardo/Mona Lisa,
+// Michelangelo/Sistine), calligraphy script attributions +
+// aniconism wordings, Feldman criticism order, Lowenfeld stages
+// (no ages), technical-drawing conventions, pyramid Roman "Haram"
+// misread risk, intermediate-vs-tertiary colour naming — see
+// VERIFY-u2-drawing.md §8.
+const drw = JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks/drawing.json"), "utf8"));
+check("U2 drawing: 500 items", drw.length === 500, `got ${drw.length}`);
+const drwExpectedIds = [...Array.from({ length: 10 }, (_, i) => `DRW-${String(i + 1).padStart(3, "0")}`), ...Array.from({ length: 490 }, (_, i) => `DRW-${String(i + 21).padStart(3, "0")}`)];
+check("U2 drawing: IDs DRW-001..010 + DRW-021..DRW-510 in file order (DRW-011..020 gap intentional — those IDs live in pe.json)",
+  JSON.stringify(drw.map((q) => q.id)) === JSON.stringify(drwExpectedIds));
+const drwPairs = [];
+for (const q of drw) {
+  drwPairs.push([`${q.id}:question_ur`, q.question_ur]);
+  q.options_ur.forEach((o, i) => drwPairs.push([`${q.id}:options_ur[${i}]`, o]));
+  drwPairs.push([`${q.id}:explanation_ur`, q.explanation_ur]);
+}
+const drwUrText = drwPairs.map(([, v]) => v ?? "").join("\n");
+const drwCount = (t) => drwUrText.split(t).length - 1;
+function drwTokenFields(tok) {
+  const out = [];
+  for (const q of drw) {
+    const fields = [["question_ur", q.question_ur], ...q.options_ur.map((o, i) => [`options_ur[${i}]`, o]), ["explanation_ur", q.explanation_ur]];
+    for (const [loc, val] of fields) if (tokens(val).includes(tok)) out.push(`${q.id}:${loc}`);
+  }
+  return out;
+}
+const drwSetEq = (a, b) => a.length === b.length && a.every((x) => b.includes(x));
+// Banned terms, token-aware (فورا/تقریبا checked as tokens: as
+// substrings they live inside فوراً/تقریباً + تقریبات, so a substring
+// check would false-positive). اشیا is NOT banned — kept 14× (see
+// header). تم is NOT banned: subject-matter uses (63 substring
+// occurrences, incl. تمہارا/تمہاری forms).
+const DRW_BANNED = ["مونث", "مؤنث", "پیڈاگوجی", "سورۃ", "پریکٹس", "اسکور", "موکس", "اشیاء", "ٹیکسچر", "کمپوزیشن", "ویسٹر", "ہرم", "فورا", "تقریبا"];
+const drwBanned = bannedHits(drwPairs, DRW_BANNED);
+check("U2 drawing: no banned glossary/variant terms in any _ur field (token-aware; اشیا NOT banned — kept 14×, SS precedent; تم NOT banned — subject-matter)", drwBanned.length === 0, drwBanned.slice(0, 5).join(", "));
+const DRW_PHRASES = ["درج ذیل", "جب کہ", "مرکزی سایہ", "عمل کی لکیر", "نقشہ نویس", "لینڈ اسکیپ پینٹنگ"];
+const drwPhrases = drwPairs.filter(([, v]) => DRW_PHRASES.some((p) => (v ?? "").includes(p)));
+check("U2 drawing: no banned phrases in any _ur field (درج ذیل/جب کہ/مرکزی سایہ/عمل کی لکیر/نقشہ نویس/لینڈ اسکیپ پینٹنگ — all normalized away, N1/N2/N4/N5/N7)", drwPhrases.length === 0, drwPhrases.slice(0, 3).map(([l]) => l).join(", "));
+const drwEmdash = drwPairs.filter(([, v]) => (v ?? "").includes("—"));
+check("U2 drawing: no em-dash in any _ur field", drwEmdash.length === 0, drwEmdash.slice(0, 3).map(([l]) => l).join(", "));
+const drwMarker = drwPairs.filter(([, v]) => (v ?? "").includes("[Auto-Translated]"));
+check("U2 drawing: no '[Auto-Translated]' literal in any _ur field", drwMarker.length === 0, drwMarker.slice(0, 3).map(([l]) => l).join(", "));
+const drwMojibake = drwPairs.filter(([, v]) => (v ?? "").includes("�"));
+check("U2 drawing: no U+FFFD in any _ur field", drwMojibake.length === 0, drwMojibake.slice(0, 3).map(([l]) => l).join(", "));
+const drwIndic = drwPairs.filter(([, v]) => /[۰-۹]/.test(v ?? ""));
+check("U2 drawing: no Urdu-Indic digits in any _ur field", drwIndic.length === 0, drwIndic.slice(0, 3).map(([l]) => l).join(", "));
+const drwYehKaf = drwPairs.filter(([, v]) => /[\u064A\u0643]/.test(v ?? ""));
+check("U2 drawing: no Arabic yeh/kaf (U+064A/U+0643) in any _ur field", drwYehKaf.length === 0, drwYehKaf.slice(0, 3).map(([l]) => l).join(", "));
+const drwPct = drwPairs.filter(([, v]) => (v ?? "").includes("%"));
+check("U2 drawing: no % in any _ur field", drwPct.length === 0, drwPct.slice(0, 3).map(([l]) => l).join(", "));
+const drwQmark = drwPairs.filter(([, v]) => (v ?? "").includes("?"));
+check("U2 drawing: no Latin ? in any _ur field", drwQmark.length === 0, drwQmark.slice(0, 3).map(([l]) => l).join(", "));
+const drwSemi = drwPairs.filter(([, v]) => (v ?? "").includes(";"));
+check("U2 drawing: no Latin ; in any _ur field", drwSemi.length === 0, drwSemi.slice(0, 3).map(([l]) => l).join(", "));
+const drwDotBad = drwPairs.filter(([, v]) => (v ?? "").replace(/\d+\.\d+/g, " ").includes("."));
+check("U2 drawing: no Latin . outside decimal numbers in any _ur field (only 1:1.618 golden-ratio decimals, DRW-195O1/E)", drwDotBad.length === 0, drwDotBad.slice(0, 3).map(([l]) => l).join(", "));
+const drwEndash = drwPairs.filter(([, v]) => (v ?? "").includes("–"));
+check("U2 drawing: no en-dash in any _ur field", drwEndash.length === 0, drwEndash.slice(0, 3).map(([l]) => l).join(", "));
+// Digit rule STRICT on every field — the final bank is strict-clean
+// (0 mismatches); no echo carve-out (unlike PE) and no comma-strip
+// carve-out: DRW-055/468 list commas are Urdu ، in _ur and the digit
+// runs match exactly.
+let drwDigitBad = [];
+for (const q of drw) {
+  if (!sameMultiset(digitRuns(q.question), digitRuns(q.question_ur))) drwDigitBad.push(`${q.id}:question_ur`);
+  q.options.forEach((o, i) => {
+    if (!sameMultiset(digitRuns(o), digitRuns(q.options_ur[i]))) drwDigitBad.push(`${q.id}:options_ur[${i}]`);
+  });
+  if (!sameMultiset(digitRuns(q.explanation), digitRuns(q.explanation_ur))) drwDigitBad.push(`${q.id}:explanation_ur`);
+}
+check("U2 drawing: digit preservation STRICT on every field (500 questions, options, explanations; no carve-outs)", drwDigitBad.length === 0, drwDigitBad.slice(0, 5).join(", "));
+// Latin allowlist (U2-Drawing central validator, ported exactly:
+// PNCA + HB + single letters; digit-strip reduces 6B/2H/8B/2B).
+const DRW_LATIN_ALLOW = new Set(["PNCA", "HB"]);
+function drwLatinViolations(s) {
+  let t = s.replace(/\d+\s*x\s*\d+/g, " ").replace(/\d+\.\d+/g, " ").replace(/\d+/g, " ");
+  const bad = [];
+  for (const w of t.match(/[A-Za-z][A-Za-z0-9.'-]*/g) || []) {
+    if (w.length === 1) continue;
+    if (!DRW_LATIN_ALLOW.has(w)) bad.push(w);
+  }
+  return [...new Set(bad)];
+}
+const drwLatinBad = [];
+for (const [loc, v] of drwPairs) {
+  const lv = drwLatinViolations(v ?? "");
+  if (lv.length) drwLatinBad.push(`${loc}:${lv.join(",")}`);
+}
+check("U2 drawing: no Latin outside the allowlist in any _ur field (PNCA + HB + single letters; B/H pencil grades, 6B/2H/8B/2B grade tokens)", drwLatinBad.length === 0, drwLatinBad.slice(0, 5).join(", "));
+// Verbatim options (phase1-drawing isTechVerbatim, copied exactly — do not drift).
+const DRW_PURE_EXPR = /^[\d\s\/\.\+\-=\%\(\)xX\:\^\u2212,]+$/;
+function drwIsTechVerbatim(opt) {
+  const t = opt.trim();
+  if (DRW_PURE_EXPR.test(t)) return true;
+  if (/^([A-Z]{1,6}|\d+)(,\s*([A-Z]{1,6}|\d+))*$/.test(t)) return true;
+  return false;
+}
+const drwVerbatimBad = [];
+for (const q of drw) {
+  q.options.forEach((o, j) => {
+    if (drwIsTechVerbatim(o) && q.options_ur[j] !== o) drwVerbatimBad.push(`${q.id}:opt${j}`);
+  });
+}
+check("U2 drawing: verbatim-shaped options byte-identical (no exact-mapping carve-out needed — 0 violations)", drwVerbatimBad.length === 0, drwVerbatimBad.slice(0, 5).join(", "));
+check("U2 drawing: explanationUrdu null in all 500; explanationEn in exactly DRW-001..005 + DRW-021 + DRW-024 + DRW-025",
+  drw.every((q) => q.explanationUrdu === null) &&
+  drw.filter((q) => q.explanationEn).map((q) => q.id).join(",") === "DRW-001,DRW-002,DRW-003,DRW-004,DRW-005,DRW-021,DRW-024,DRW-025");
+let drwEnScriptRuns = 0;
+for (const q of drw) {
+  drwEnScriptRuns += (q.question.match(AR_RUN) || []).length + (q.explanation.match(AR_RUN) || []).length;
+  q.options.forEach((o) => { drwEnScriptRuns += (o.match(AR_RUN) || []).length; });
+}
+check("U2 drawing: zero Arabic-script runs in English fields", drwEnScriptRuns === 0, `got ${drwEnScriptRuns}`);
+let drwFormBad = [];
+for (const q of drw) {
+  const byNorm = new Map();
+  for (const f of [q.question_ur, ...q.options_ur, q.explanation_ur]) {
+    for (const r of f.match(AR_RUN) || []) {
+      const nn = r.normalize("NFKC");
+      if (byNorm.has(nn) && byNorm.get(nn) !== r) drwFormBad.push(q.id);
+      else byNorm.set(nn, r);
+    }
+  }
+}
+check("U2 drawing: repeated Urdu script forms byte-identical within each item (NFKC)", drwFormBad.length === 0, [...new Set(drwFormBad)].slice(0, 5).join(", "));
+const drwById = new Map(drw.map((q) => [q.id, q]));
+check("U2 drawing: normalization pins N1 + N2 — DRW-277O2/E کور شیڈو; DRW-029Q + DRW-087O1 بناوٹ",
+  drwById.get("DRW-277").options_ur[2] === "ہلکا خاکہ بنائیں، درمیانی ٹون بھریں، کور شیڈو ڈالیں، ہائی لائٹ کو ہلکا رکھیں، پھر کاسٹ شیڈو ڈالیں" &&
+  drwById.get("DRW-277").explanation_ur.includes("کور شیڈو گولائی دیتا ہے") &&
+  drwById.get("DRW-029").question_ur === "ڈرائنگ میں بناوٹ کیا ظاہر کرتی ہے؟" &&
+  drwById.get("DRW-087").options_ur[1] === "بناوٹ");
+check("U2 drawing: normalization pins N3 + N4 + N5 + N7 — DRW-162O0/O1 فوکل پوائنٹ; DRW-304O3/E حرکت کی لکیر; DRW-117O2/E جبکہ; DRW-463Q ڈرافٹسمین",
+  drwById.get("DRW-162").options_ur[0] === "آنکھ کو کوئی واضح فوکل پوائنٹ نہیں ملتا اور وہ کہیں ٹھہرے بغیر گھومتی رہتی ہے" &&
+  drwById.get("DRW-162").options_ur[1] === "آنکھ معمول سے زیادہ جلدی فوکل پوائنٹ ڈھونڈ لیتی ہے" &&
+  drwById.get("DRW-304").options_ur[3] === "حرکت کی لکیر کے ساتھ جسم اور سر کو سادہ شکلوں میں بنانا" &&
+  drwById.get("DRW-304").explanation_ur.startsWith("حرکت کی لکیر کے ساتھ جسم اور سر کو سادہ شکلوں میں بنانے سے") &&
+  drwById.get("DRW-117").options_ur[2].includes("جبکہ") &&
+  drwById.get("DRW-117").explanation_ur.includes("جبکہ") &&
+  drwById.get("DRW-463").question_ur.includes("ڈرافٹسمین"));
+check("U2 drawing: normalization pin N8 (echo-merge, U1 §4.3) — DRW-001/002/004/021 explanations carry BOTH the EN first-sentence fact and the Roman-echo fact",
+  drwById.get("DRW-001").explanation_ur === "بنیادی رنگ تین ہیں: سرخ، نیلا اور پیلا۔ انہیں دوسرے رنگ ملا کر نہیں بنایا جا سکتا۔" &&
+  drwById.get("DRW-002").explanation_ur === "سرخ اور پیلے سے نارنجی بنتا ہے، جو ایک ثانوی رنگ ہے۔" &&
+  drwById.get("DRW-004").explanation_ur === "سرخ اور نیلے سے جامنی بنتا ہے، جو ایک ثانوی رنگ ہے۔" &&
+  drwById.get("DRW-021").explanation_ur === "نیلا، سبز اور جامنی ٹھنڈے رنگ ہیں، جو پانی، آسمان اور سائے کی یاد دلاتے ہیں۔");
+check("U2 drawing: normalization pin N9 — DRW-162E + DRW-163O3/E + DRW-187E use فوکل پوائنٹ (EN 'focal point'; restores the pre-merge backup wording the D2b worker had regressed to مرکزی نقطہ)",
+  drwById.get("DRW-162").explanation_ur.includes("واضح فوکل پوائنٹ کے بغیر") &&
+  drwById.get("DRW-163").options_ur[3] === "آنکھ کو فوکل پوائنٹ کی طرف لے جا کر" &&
+  drwById.get("DRW-163").explanation_ur.includes("فوکل پوائنٹ تک لے جاتی ہیں") &&
+  drwById.get("DRW-187").explanation_ur.includes("یا فوکل پوائنٹ۔") &&
+  !drwById.get("DRW-162").explanation_ur.includes("مرکزی نقط") &&
+  !drwById.get("DRW-163").explanation_ur.includes("مرکزی نقط") &&
+  !drwById.get("DRW-187").explanation_ur.includes("مرکزی نقط"));
+function drwCountsCheck(name, pairs) {
+  const bad = pairs.filter(([t, n]) => drwCount(t) !== n);
+  check(name, bad.length === 0, bad.map(([t, n]) => `${t} ${drwCount(t)}!=${n}`).join(", "));
+}
+drwCountsCheck("U2 drawing: exact counts, core guide + media/materials — ڈرائنگ 215×, مصور 76×, خاکہ 27×, لکیر 275×, رنگ 648×, روشنی 64×, سایہ 18×, تناسب 32×, نسبت 3×, برش 56×, کینوس 16×, پنسل 45×, چارکول 14×, پیسٹل 18×, واٹر کلر 24×, ایکریلک 4×, شکل 322×, صورت 20×, فارم 45×, سطح 162×, مواد 40×, تکنیک 22×, انداز 34×, موضوع 61×, توازن 67×, تضاد 55×, تکرار 16×, حرکت 44×, سیٹ اسکوائر 12×, مثلث 24×, افق 29×, افق کی لکیر 11×, ایک نقطہ 5×, دو نقطہ 2×, تین نقطہ 4×, پرسپیکٹیو 1×, مخروط 14×, مکعب 10×, سلنڈر 3×, بیضوی 5×, مستطیل 9×, دائرہ 14×, مربع 20×, گلیزنگ 9×, اسکمبلنگ 6×, فروٹیج 3×, امپاسٹو 3×, ٹیمپرا 4×, جیسو 2×, پرائمر 1×, تارپین 1×, السی کا تیل 4×, عربی گوند 1×, مخلوط ذرائع 2×, یک رنگی 7×, چمڑے جیسی سخت 6×, ہڈی کی طرح خشک 7×, سالوینٹ 1×, کیوریٹر 2×, کنزرویٹر 2×, گرم رنگ 16×, ٹھنڈے رنگ 11×, بنیادی رنگ 22×, ثانوی رنگ 9×, تکمیلی رنگ 20×, خطاطی 9×, پورٹریٹ 28×, اسٹل لائف 7×, تصویر 151×, زور 44×, مرکز 49×, گہرائی 34×, فاصلہ 12×, حجم 14×, چمک 53×, شفاف 20×, روشن 107×, گہرا 91×, ہلکا 45×, درمیانی 27×, دھندلا 3× (substring counts)",
+  [["ڈرائنگ", 215], ["مصور", 76], ["خاکہ", 27], ["لکیر", 275], ["رنگ", 648], ["روشنی", 64], ["سایہ", 18], ["تناسب", 32], ["نسبت", 3], ["برش", 56], ["کینوس", 16], ["پنسل", 45], ["چارکول", 14], ["پیسٹل", 18], ["واٹر کلر", 24], ["ایکریلک", 4], ["شکل", 322], ["صورت", 20], ["فارم", 45], ["سطح", 162], ["مواد", 40], ["تکنیک", 22], ["انداز", 34], ["موضوع", 61], ["توازن", 67], ["تضاد", 55], ["تکرار", 16], ["حرکت", 44], ["سیٹ اسکوائر", 12], ["مثلث", 24], ["افق", 29], ["افق کی لکیر", 11], ["ایک نقطہ", 5], ["دو نقطہ", 2], ["تین نقطہ", 4], ["پرسپیکٹیو", 1], ["مخروط", 14], ["مکعب", 10], ["سلنڈر", 3], ["بیضوی", 5], ["مستطیل", 9], ["دائرہ", 14], ["مربع", 20], ["گلیزنگ", 9], ["اسکمبلنگ", 6], ["فروٹیج", 3], ["امپاسٹو", 3], ["ٹیمپرا", 4], ["جیسو", 2], ["پرائمر", 1], ["تارپین", 1], ["السی کا تیل", 4], ["عربی گوند", 1], ["مخلوط ذرائع", 2], ["یک رنگی", 7], ["چمڑے جیسی سخت", 6], ["ہڈی کی طرح خشک", 7], ["سالوینٹ", 1], ["کیوریٹر", 2], ["کنزرویٹر", 2], ["گرم رنگ", 16], ["ٹھنڈے رنگ", 11], ["بنیادی رنگ", 22], ["ثانوی رنگ", 9], ["تکمیلی رنگ", 20], ["خطاطی", 9], ["پورٹریٹ", 28], ["اسٹل لائف", 7], ["تصویر", 151], ["زور", 44], ["مرکز", 49], ["گہرائی", 34], ["فاصلہ", 12], ["حجم", 14], ["چمک", 53], ["شفاف", 20], ["روشن", 107], ["گہرا", 91], ["ہلکا", 45], ["درمیانی", 27], ["دھندلا", 3]]);
+drwCountsCheck("U2 drawing: exact counts, adjudicated terms — لینڈ اسکیپ 7×, منظر کشی 6×, منظر 126× (incl. منظر کشی 6× + bare منظر 92 token-fields), ثالثی 2×, درمیانی رنگ 11×, ردھم 47× (34 token-fields), تال 6× (5 genuine + 1 تالاب, pinned token-level below), مصوری 29×, پینٹنگ 90×, اوور لیپنگ 7× (6 fields, DRW-125E double), آگے پیچھے 2×, اشیا 14×, ترکیب 27×, کور شیڈو 10×, کاسٹ شیڈو 17×, ویلیو 39×, ٹون 87×, ٹنٹ 5×, شیڈ 78× (27 inside شیڈو + 51 standalone), شیڈو 27×, ہیو 7× (5 fields, DRW-248E double), بناوٹ 64×, فوکل پوائنٹ 13×, مرکزی نقطہ 1× (DRW-006O2 only), مرکزی نقطے 4× (DRW-075/134 only), ڈرافٹسمین 8×, فیٹ اوور لین 2×, زندہ ماڈل کی ڈرائنگ 1×, ویکٹر 2×, نسخ 4×, کوفی 6×, ثلث 30× (24 inside مثلث + 6 script, pinned token-level below), مثلث 24×, نستعلیق 4×, اہرام 16×, مندرجہ ذیل 1×, جبکہ 81× (substring counts)",
+  [["لینڈ اسکیپ", 7], ["منظر کشی", 6], ["منظر", 126], ["ثالثی", 2], ["درمیانی رنگ", 11], ["ردھم", 47], ["تال", 6], ["مصوری", 29], ["پینٹنگ", 90], ["اوور لیپنگ", 7], ["آگے پیچھے", 2], ["اشیا", 14], ["ترکیب", 27], ["کور شیڈو", 10], ["کاسٹ شیڈو", 17], ["ویلیو", 39], ["ٹون", 87], ["ٹنٹ", 5], ["شیڈ", 78], ["شیڈو", 27], ["ہیو", 7], ["بناوٹ", 64], ["فوکل پوائنٹ", 13], ["مرکزی نقطہ", 1], ["مرکزی نقطے", 4], ["ڈرافٹسمین", 8], ["فیٹ اوور لین", 2], ["زندہ ماڈل کی ڈرائنگ", 1], ["ویکٹر", 2], ["نسخ", 4], ["کوفی", 6], ["ثلث", 30], ["مثلث", 24], ["نستعلیق", 4], ["اہرام", 16], ["مندرجہ ذیل", 1], ["جبکہ", 81]]);
+check("U2 drawing: فوراً token in exactly 4 fields + تقریباً token in exactly 19 fields (bare فورا/تقریبا tokens 0× — substring counts would false-positive on فوراً/تقریباً/تقریبات)",
+  drwTokenFields("فوراً").length === 4 && drwTokenFields("فورا").length === 0 &&
+  drwTokenFields("تقریباً").length === 19 && drwTokenFields("تقریبا").length === 0,
+  `فوراً ${drwTokenFields("فوراً").length} فورا ${drwTokenFields("فورا").length} تقریباً ${drwTokenFields("تقریباً").length} تقریبا ${drwTokenFields("تقریبا").length}`);
+check("U2 drawing: ردھم in exactly 34 token-fields (47 occurrences; DRW-180E–184E each carry it twice — rhythm cluster, EN 'rhythm' throughout)",
+  drwTokenFields("ردھم").length === 34,
+  `ردھم token-fields ${drwTokenFields("ردھم").length}`);
+check("U2 drawing: تال token in exactly 4 fields (DRW-180E, DRW-184E, DRW-192Q/E — all EN 'beat'; the 6th substring hit is تالاب, pool, DRW-316Q)",
+  drwSetEq(drwTokenFields("تال"), ["DRW-180:explanation_ur", "DRW-184:explanation_ur", "DRW-192:question_ur", "DRW-192:explanation_ur"]),
+  drwTokenFields("تال").join(", "));
+check("U2 drawing: ثلث token (Thuluth script) in exactly 6 fields (DRW-379O1/E, DRW-381Q/E, DRW-382O1/E; the other 24 substring hits are مثلث, triangle)",
+  drwSetEq(drwTokenFields("ثلث"), ["DRW-379:options_ur[1]", "DRW-379:explanation_ur", "DRW-381:question_ur", "DRW-381:explanation_ur", "DRW-382:options_ur[1]", "DRW-382:explanation_ur"]),
+  drwTokenFields("ثلث").join(", "));
+check("U2 drawing: شیڈ standalone token in exactly 10 fields (DRW-024O1, DRW-025O1/E, DRW-037Q, DRW-048E, DRW-106Q, DRW-107Q, DRW-108Q, DRW-110Q, DRW-250O2; the other 27 substring hits are inside شیڈو)",
+  drwSetEq(drwTokenFields("شیڈ"), ["DRW-024:options_ur[1]", "DRW-025:options_ur[1]", "DRW-025:explanation_ur", "DRW-037:question_ur", "DRW-048:explanation_ur", "DRW-106:question_ur", "DRW-107:question_ur", "DRW-108:question_ur", "DRW-110:question_ur", "DRW-250:options_ur[2]"]),
+  drwTokenFields("شیڈ").join(", "));
+check("U2 drawing: kept-split field sets — لینڈ اسکیپ exactly 7 fields; منظر کشی exactly 6 fields; ثالثی exactly DRW-049Q/E; درمیانی رنگ exactly 11 fields; اوور لیپنگ exactly 6 fields (DRW-125–129); آگے پیچھے exactly DRW-293O1/E; اشیا exactly 14 fields (13 EN physical 'objects/things' + DRW-371O1 EN commercial 'goods', SS precedent, flagged); کور شیڈو exactly 10 fields; کاسٹ شیڈو exactly 17 fields; فیٹ اوور لین exactly DRW-325Q/E; زندہ ماڈل کی ڈرائنگ exactly DRW-337O3; ویکٹر exactly DRW-403Q/E; فوکل پوائنٹ exactly 13 fields (N3 + N9); مرکزی نقط- prefix exactly 5 fields (DRW-006O2 Centre point + DRW-075Q/E + DRW-134Q/E central point); ہیو exactly 5 fields; ٹنٹ exactly 5 fields",
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("لینڈ اسکیپ")).map(([l]) => l),
+    ["DRW-028:question_ur", "DRW-028:explanation_ur", "DRW-059:question_ur", "DRW-086:options_ur[1]", "DRW-298:question_ur", "DRW-298:explanation_ur", "DRW-305:options_ur[3]"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("منظر کشی")).map(([l]) => l),
+    ["DRW-023:question_ur", "DRW-061:question_ur", "DRW-187:question_ur", "DRW-187:explanation_ur", "DRW-199:question_ur", "DRW-199:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("ثالثی")).map(([l]) => l),
+    ["DRW-049:question_ur", "DRW-049:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("درمیانی رنگ")).map(([l]) => l),
+    ["DRW-210:explanation_ur", "DRW-212:explanation_ur", "DRW-213:question_ur", "DRW-213:explanation_ur", "DRW-214:explanation_ur", "DRW-215:question_ur", "DRW-215:explanation_ur", "DRW-216:question_ur", "DRW-216:explanation_ur", "DRW-219:question_ur", "DRW-219:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("اوور لیپنگ")).map(([l]) => l),
+    ["DRW-125:options_ur[1]", "DRW-125:explanation_ur", "DRW-126:options_ur[0]", "DRW-127:options_ur[1]", "DRW-128:options_ur[0]", "DRW-129:options_ur[0]"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("آگے پیچھے")).map(([l]) => l),
+    ["DRW-293:options_ur[1]", "DRW-293:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("اشیا")).map(([l]) => l),
+    ["DRW-079:question_ur", "DRW-079:explanation_ur", "DRW-293:question_ur", "DRW-293:options_ur[0]", "DRW-293:options_ur[1]", "DRW-293:options_ur[2]", "DRW-293:options_ur[3]", "DRW-293:explanation_ur", "DRW-294:question_ur", "DRW-294:explanation_ur", "DRW-371:options_ur[1]", "DRW-425:options_ur[3]", "DRW-425:explanation_ur", "DRW-428:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("کور شیڈو")).map(([l]) => l),
+    ["DRW-108:question_ur", "DRW-108:explanation_ur", "DRW-109:question_ur", "DRW-109:options_ur[0]", "DRW-109:options_ur[1]", "DRW-109:options_ur[2]", "DRW-109:options_ur[3]", "DRW-109:explanation_ur", "DRW-277:options_ur[2]", "DRW-277:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("کاسٹ شیڈو")).map(([l]) => l),
+    ["DRW-038:question_ur", "DRW-038:explanation_ur", "DRW-109:question_ur", "DRW-109:options_ur[0]", "DRW-109:options_ur[1]", "DRW-109:options_ur[2]", "DRW-109:options_ur[3]", "DRW-109:explanation_ur", "DRW-277:options_ur[0]", "DRW-277:options_ur[1]", "DRW-277:options_ur[2]", "DRW-277:options_ur[3]", "DRW-277:explanation_ur", "DRW-278:options_ur[1]", "DRW-278:options_ur[2]", "DRW-278:explanation_ur", "DRW-279:question_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("فیٹ اوور لین")).map(([l]) => l),
+    ["DRW-325:question_ur", "DRW-325:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("زندہ ماڈل کی ڈرائنگ")).map(([l]) => l),
+    ["DRW-337:options_ur[3]"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("ویکٹر")).map(([l]) => l),
+    ["DRW-403:question_ur", "DRW-403:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("فوکل پوائنٹ")).map(([l]) => l),
+    ["DRW-006:options_ur[3]", "DRW-154:options_ur[3]", "DRW-154:explanation_ur", "DRW-158:explanation_ur", "DRW-159:explanation_ur", "DRW-160:options_ur[0]", "DRW-160:explanation_ur", "DRW-162:options_ur[0]", "DRW-162:options_ur[1]", "DRW-162:explanation_ur", "DRW-163:options_ur[3]", "DRW-163:explanation_ur", "DRW-187:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("مرکزی نقط")).map(([l]) => l),
+    ["DRW-006:options_ur[2]", "DRW-075:question_ur", "DRW-075:explanation_ur", "DRW-134:question_ur", "DRW-134:explanation_ur"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("ہیو")).map(([l]) => l),
+    ["DRW-024:options_ur[3]", "DRW-025:options_ur[3]", "DRW-248:question_ur", "DRW-248:explanation_ur", "DRW-250:options_ur[3]"]) &&
+  drwSetEq(drwPairs.filter(([, v]) => (v ?? "").includes("ٹنٹ")).map(([l]) => l),
+    ["DRW-024:options_ur[0]", "DRW-024:explanation_ur", "DRW-025:options_ur[0]", "DRW-048:explanation_ur", "DRW-250:options_ur[1]"]),
+  `فوکل پوائنٹ ${drwPairs.filter(([, v]) => (v ?? "").includes("فوکل پوائنٹ")).map(([l]) => l).join(", ")} / مرکزی نقط ${drwPairs.filter(([, v]) => (v ?? "").includes("مرکزی نقط")).map(([l]) => l).join(", ")} / اشیا ${drwPairs.filter(([, v]) => (v ?? "").includes("اشیا")).map(([l]) => l).join(", ")}`);
+
 
 // ---------- §4 C2 flag-8 punctuation pins ----------
 const analysisSrc = fs.readFileSync(join(ROOT, "src/app/analysis/page.tsx"), "utf8");
