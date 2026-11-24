@@ -137,6 +137,9 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 // match the backup exactly outside the Phase 1 + Phase 2 + Phase 3 + Phase 4 deltas
 // (byte-prefix for the banks, parsed-diff for content.json, function-strip
 // for tracking.ts).
+// Phase A exception (documented, narrow): src/data/banks/pastpapers.json
+// gained ONLY the 480 appended items PPT-021..PPT-500 (first 20 byte-identical
+// to the backup; provenance split paper 329 / textbook 151).
 if (fs.existsSync(BACKUP)) {
   const contentPaths = [
     ...BANK_KEYS.map((k) => `src/data/banks/${k}.json`),
@@ -144,9 +147,9 @@ if (fs.existsSync(BACKUP)) {
     "src/data/content.json",
     "src/data/quran-examples.json",
   ];
-  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/banks/maths.json", "src/data/banks/pakstudies.json", "src/data/banks/pedagogy.json", "src/data/banks/science.json", "src/data/banks/socialstudies.json", "src/data/banks/gk.json", "src/data/banks/it.json", "src/data/banks/pe.json", "src/data/banks/drawing.json", "src/data/content.json"]);
+  const PHASE1_CHANGED = new Set(["src/data/banks/islamiyat.json", "src/data/banks/tajweed.json", "src/data/banks/arabic.json", "src/data/banks/english.json", "src/data/banks/urdu.json", "src/data/banks/maths.json", "src/data/banks/pakstudies.json", "src/data/banks/pedagogy.json", "src/data/banks/science.json", "src/data/banks/socialstudies.json", "src/data/banks/gk.json", "src/data/banks/it.json", "src/data/banks/pe.json", "src/data/banks/drawing.json", "src/data/banks/pastpapers.json", "src/data/content.json"]);
   const changed = contentPaths.filter((p) => !PHASE1_CHANGED.has(p) && sha(join(ROOT, p)) !== sha(join(BACKUP, p)));
-  check("bank/note/audio content byte-identical to backup except the fifteen Phase 1 files", changed.length === 0, changed.join(", "));
+  check("bank/note/audio content byte-identical to backup except the fifteen Phase 1 files + pastpapers.json (Phase A)", changed.length === 0, changed.join(", "));
   // Phase 2 tracking.ts: the ONLY permitted delta is gradeButtonLabel
   // (its JSDoc + body). Strip that one function from both files; the
   // remainders must be byte-identical, and the Roman names must exist
@@ -436,6 +439,8 @@ if (fs.existsSync(BACKUP)) {
     backupContent.counts.bySubject.find((r) => r[0] === "Physical Education")[1];
   reverted.counts.bySubject.find((r) => r[0] === "Drawing")[1] =
     backupContent.counts.bySubject.find((r) => r[0] === "Drawing")[1];
+  reverted.counts.bySubject.find((r) => r[0] === "Past-Paper Topics")[1] =
+    backupContent.counts.bySubject.find((r) => r[0] === "Past-Paper Topics")[1];
   reverted.bySubject.islamiyat = backupContent.bySubject.islamiyat;
   reverted.bySubject.tajweed = backupContent.bySubject.tajweed;
   reverted.bySubject.arabic = backupContent.bySubject.arabic;
@@ -450,6 +455,7 @@ if (fs.existsSync(BACKUP)) {
   reverted.bySubject.it = backupContent.bySubject.it;
   reverted.bySubject.pe = backupContent.bySubject.pe;
   reverted.bySubject.drawing = backupContent.bySubject.drawing;
+  reverted.bySubject.pastpapers = backupContent.bySubject.pastpapers;
   // Phase 2 revert (documented, narrow): strip ONLY the _ur/_roman
   // translation fields added to flashcards, plan tuples, and mock defs.
   // The remaining English fields must match the backup exactly.
@@ -471,12 +477,12 @@ if (fs.existsSync(BACKUP)) {
     delete m.note_ur;
     delete m.note_roman;
   }
-  check("Phase 1 + Phase 2 + Phase 3 + Phase 4 + U1 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing indexes + Phase 2 translation fields + the 8 Phase 3 mock defs + the 150 Phase 4 notes + U1 _ur rewrites differ from backup",
+  check("Phase 1 + Phase 2 + Phase 3 + Phase 4 + U1 + Phase A content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing/pastpapers indexes + Phase 2 translation fields + the 8 Phase 3 mock defs + the 150 Phase 4 notes + U1 _ur rewrites + the 480 Phase A past-paper items differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
     curContent.counts.mocks === 28 && curContent.mocks.length === 28 && JSON.stringify(curOnlyMockIds) === JSON.stringify(PHASE3_NEW_MOCK_IDS) &&
     curContent.counts.notes === 301 &&
     Object.entries(PHASE4_NEW_PER_SUBJECT).every(([s, a]) => curContent.notes[s].length === backupContent.notes[s].length + a) &&
-    curContent.counts.total === 7040 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500 && curContent.bySubject.socialstudies.length === 500 && curContent.bySubject.gk.length === 500 && curContent.bySubject.it.length === 500 && curContent.bySubject.pe.length === 500 && curContent.bySubject.drawing.length === 500);
+    curContent.counts.total === 7520 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500 && curContent.bySubject.socialstudies.length === 500 && curContent.bySubject.gk.length === 500 && curContent.bySubject.it.length === 500 && curContent.bySubject.pe.length === 500 && curContent.bySubject.drawing.length === 500 && curContent.bySubject.pastpapers.length === 500);
 } else {
   info("pre-lazyload backup not found — content byte-compare skipped");
 }
@@ -547,7 +553,7 @@ check(
   "loadAllQuestions order == old static QUESTIONS order (bank order + file order)",
   JSON.stringify(allLoaded.map((q) => q.id)) === JSON.stringify(QUESTIONS.map((q) => q.id)),
 );
-check("loadAllQuestions total is 7040", allLoaded.length === 7040, `got ${allLoaded.length}`);
+check("loadAllQuestions total is 7520", allLoaded.length === 7520, `got ${allLoaded.length}`);
 check("loadBank of an unknown key returns [] (never throws)", JSON.stringify(await data.loadBank("no_such_bank")) === "[]");
 check(
   "BANK_COUNTS matches the bank files exactly",
@@ -559,7 +565,7 @@ check(
 );
 check(
   "ID_BANK maps every id to its bank",
-  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 7040,
+  QUESTIONS.every((q) => banks.ID_BANK[q.id] === q.subjectKey) && Object.keys(banks.ID_BANK).length === 7520,
 );
 
 // ---------- (e) availability: manifest == old computation == built ----------

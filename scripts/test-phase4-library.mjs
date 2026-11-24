@@ -87,13 +87,13 @@ const notesTotal = Object.values(NOTES).flat().length;
 check("P4L notes total 301", notesTotal === 301, `got ${notesTotal}`);
 const contentJson = readJson("src/data/content.json");
 check(
-  "P4L content.json counts: total 7040, notes 301, cards 70, tracks 19, mocks 28",
-  contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70 && contentJson.counts.tracks === 19 && contentJson.counts.mocks === 28,
+  "P4L content.json counts: total 7520, notes 301, cards 70, tracks 19, mocks 28",
+  contentJson.counts.total === 7520 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70 && contentJson.counts.tracks === 19 && contentJson.counts.mocks === 28,
   JSON.stringify(contentJson.counts),
 );
 check(
-  "P4L VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
-  VISIBLE_COUNTS.total === 7040 && VISIBLE_COUNTS.notes === 301 && VISIBLE_COUNTS.cards === 70,
+  "P4L VISIBLE_COUNTS 7520/301/70, 12 tracks / 24 mocks",
+  VISIBLE_COUNTS.total === 7520 && VISIBLE_COUNTS.notes === 301 && VISIBLE_COUNTS.cards === 70,
 );
 
 // --------------------------------- §3 original 151 notes byte-identical

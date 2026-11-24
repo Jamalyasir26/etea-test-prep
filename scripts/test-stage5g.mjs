@@ -66,12 +66,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5G bank total 7040 MCQs", QUESTIONS.length === 7040, `got ${QUESTIONS.length}`);
+check("5G bank total 7520 MCQs", QUESTIONS.length === 7520, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5G notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check(
-  "5G VISIBLE_COUNTS 7040/301/70, 12 tracks / 24 mocks",
-  VISIBLE_COUNTS.total === 7040 &&
+  "5G VISIBLE_COUNTS 7520/301/70, 12 tracks / 24 mocks",
+  VISIBLE_COUNTS.total === 7520 &&
     VISIBLE_COUNTS.notes === 301 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -79,7 +79,7 @@ check(
   JSON.stringify(VISIBLE_COUNTS),
 );
 check("5G drawing bank 500 items (50 + 450 Phase 1)", BY_SUBJECT.drawing.length === 500, `got ${BY_SUBJECT.drawing.length}`);
-check("5G pastpapers bank still 20 items", BY_SUBJECT.pastpapers.length === 20, `got ${BY_SUBJECT.pastpapers.length}`);
+check("5G pastpapers bank 500 items (20 legacy + 480 Phase A)", BY_SUBJECT.pastpapers.length === 500, `got ${BY_SUBJECT.pastpapers.length}`);
 check("5G pastpapers_reworded bank still 20 items", BY_SUBJECT.pastpapers_reworded.length === 20, `got ${BY_SUBJECT.pastpapers_reworded.length}`);
 check("5G Drawing/PE notes still 29 (24 + 5 Phase 4)", NOTES["Drawing/PE"].length === 29, `got ${NOTES["Drawing/PE"].length}`);
 
@@ -89,7 +89,7 @@ const MCQ_ORIG_KEYS = new Set([
   "id", "post", "subject", "subjectKey", "topic", "question", "options", "correctIndex",
   "explanation", "explanationEn", "explanationLang", "explanationUrdu", "difficulty",
   "pastPaperRef", "verified", "source", "reviewStatus", "reviewedBy", "reviewedAt",
-  "conceptId", "syllabusClause", "sourceKind", "ur", "roman",
+  "conceptId", "syllabusClause", "sourceKind", "provenance", "ur", "roman",
   // Pre-existing provenance key on 10 drawing items (DRW-021–DRW-030) —
   // present in the pre-Stage-5 backup, not added by 5G (same allowance
   // as 5E/5F).
@@ -113,7 +113,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["drawing", "drawing", 500], ["pastpapers", "pastpapers", 20], ["pastpapers_reworded", "pastpapers_reworded", 20]]) {
+for (const [bankKey, label, expected] of [["drawing", "drawing", 500], ["pastpapers", "pastpapers", 500], ["pastpapers_reworded", "pastpapers_reworded", 20]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -173,9 +173,10 @@ check(
   BY_SUBJECT.drawing.filter((q) => q.explanationEn && q.explanation_roman !== q.explanation.split("Roman Urdu: ")[1]).map((q) => q.id).join(", "),
 );
 check(
-  "5G pastpapers: exactly PPT-001 carries explanationEn",
-  BY_SUBJECT.pastpapers.filter((q) => q.explanationEn).length === 1 &&
-    BY_SUBJECT.pastpapers.filter((q) => q.explanationEn)[0].id === "PPT-001",
+  "5G pastpapers: legacy PPT-001 is the only legacy item with explanationEn; all 480 Phase A items carry explanationEn (= explanation)",
+  BY_SUBJECT.pastpapers.slice(0, 20).filter((q) => q.explanationEn).length === 1 &&
+    BY_SUBJECT.pastpapers.slice(0, 20).filter((q) => q.explanationEn)[0].id === "PPT-001" &&
+    BY_SUBJECT.pastpapers.slice(20).every((q) => q.explanationEn && q.explanationEn === q.explanation),
 );
 check(
   "5G pastpapers_reworded: no explanationEn items (plain English explanations translated to both)",
@@ -542,7 +543,7 @@ for (const [bankKey, label] of [["drawing", "Drawing"], ["pastpapers", "Past Pap
 }
 check("5G quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5G content.json counts unchanged", contentJson.counts.total === 7040 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
+check("5G content.json counts unchanged", contentJson.counts.total === 7520 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
 
 // --------------------------------- §10 past-paper disclosure labels (FINAL)
 // The disclosure lives in `pastPaperRef`, rendered by the existing
@@ -554,9 +555,12 @@ check("5G content.json counts unchanged", contentJson.counts.total === 7040 && c
 // the label text (the badge owns it).
 const ORIG_LABEL = "Original practice question based on past-paper topics — not the actual paper";
 const REWORDED_LABEL = "Same concept as a past-paper question, reworded in a different style — not the actual paper";
+const TB_LABEL = "Original practice question based on textbook topics — not from a past paper";
 check(
-  "5G pastPaperRef: all 20 pastpapers items carry the exact original label",
-  BY_SUBJECT.pastpapers.every((q) => q.pastPaperRef === ORIG_LABEL),
+  "5G pastPaperRef: pastpapers items carry exactly one of the two (a) labels (349 original + 151 textbook)",
+  BY_SUBJECT.pastpapers.every((q) => q.pastPaperRef === ORIG_LABEL || q.pastPaperRef === TB_LABEL) &&
+    BY_SUBJECT.pastpapers.filter((q) => q.pastPaperRef === ORIG_LABEL).length === 349 &&
+    BY_SUBJECT.pastpapers.filter((q) => q.pastPaperRef === TB_LABEL).length === 151,
 );
 check(
   "5G pastPaperRef: all 20 reworded items carry the exact reworded label",
@@ -590,7 +594,7 @@ check(
 );
 // Whole-bank final completeness, independent of the per-bank loops above.
 check(
-  "5G FINAL: all 7040 questions carry complete translation triples in both languages",
+  "5G FINAL: all 7520 questions carry complete translation triples in both languages",
   QUESTIONS.every((q) => tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid),
   `untranslated=${QUESTIONS.filter((q) => !(tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid)).map((q) => q.id).slice(0, 5).join(",")}`,
 );

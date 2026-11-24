@@ -35,6 +35,13 @@ export type Question = {
   explanationLang?: "roman";
   difficulty: string;
   pastPaperRef: string | null;
+  // Past-paper expansion (Option 3, 2026-11-24) — machine provenance for
+  // the past-paper banks. "past-paper-concept" = one of the ~315 paper
+  // concepts; "textbook-topic" = textbook/DCTE topic-map fill, which must
+  // NEVER wear a past-paper label. Absent = legacy item (the original 20
+  // per bank, all paper-concept by construction). topicBadge() below
+  // renders a distinct badge per provenance; see also conceptId.
+  provenance?: "past-paper-concept" | "textbook-topic";
   verified: boolean;
   source: string;
   // Phase 2 review labels (additive). Absent reviewStatus means "draft"
@@ -871,10 +878,49 @@ export function reviewStatusBadge(status: string | undefined | null, lang: Conte
  *  verbatim); the Urdu detail is the matching Urdu disclosure, and
  *  the Roman detail (Phase 2) is the matching Roman Urdu disclosure.
  *  The label always says "Topic-inspired" first, so the item can never be
- *  mistaken for an actual past paper. */
+ *  mistaken for an actual past paper.
+ *  Past-paper expansion (Option 3, 2026-11-24): textbook-topic fill items
+ *  carry a pastPaperRef containing "textbook" and get their own
+ *  "Textbook-topic" label in all three languages, so they can never be
+ *  mistaken for past-paper items. The textbook check runs FIRST because a
+ *  reworded textbook ref contains both "reworded" and "textbook". */
 export function topicBadge(pastPaperRef: string | null | undefined, lang: ContentLang = "en"): BadgeInfo | null {
   if (!pastPaperRef) return null;
   const reworded = pastPaperRef.includes("reworded");
+  const textbook = pastPaperRef.includes("textbook");
+  if (textbook) {
+    if (lang === "ur") {
+      return reworded
+        ? {
+            label: "نصابی موضوع سے · دوبارہ لکھا گیا",
+            detail: "نصابی موضوع کے سوال کا وہی تصور، مختلف انداز میں دوبارہ لکھا گیا — پاسٹ پیپر سے نہیں۔",
+            tone: "topic",
+          }
+        : {
+            label: "نصابی موضوع سے · اصل",
+            detail: "نصابی موضوعات پر مبنی اصل مشقی سوال — پاسٹ پیپر سے نہیں۔",
+            tone: "topic",
+          };
+    }
+    if (lang === "roman") {
+      return reworded
+        ? {
+            label: "Nisabi mauzu se · Dobara likha gaya",
+            detail: "Nisabi mauzu ke sawal ka wohi tasawwur, mukhtalif andaaz mein dobara likha gaya — past paper se nahi.",
+            tone: "topic",
+          }
+        : {
+            label: "Nisabi mauzu se · Asal",
+            detail: "Nisabi mauzuon par mabni asal mashqi sawal — past paper se nahi.",
+            tone: "topic",
+          };
+    }
+    return {
+      label: reworded ? "Textbook-topic · Reworded" : "Textbook-topic · Original",
+      detail: pastPaperRef,
+      tone: "topic",
+    };
+  }
   if (lang === "ur") {
     return reworded
       ? {
