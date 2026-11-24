@@ -66,12 +66,12 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // --------------------------------- §2 counts unchanged
-check("5G bank total 7520 MCQs", QUESTIONS.length === 7520, `got ${QUESTIONS.length}`);
+check("5G bank total 8000 MCQs", QUESTIONS.length === 8000, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).flat().length;
 check("5G notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check(
-  "5G VISIBLE_COUNTS 7520/301/70, 12 tracks / 24 mocks",
-  VISIBLE_COUNTS.total === 7520 &&
+  "5G VISIBLE_COUNTS 8000/301/70, 12 tracks / 24 mocks",
+  VISIBLE_COUNTS.total === 8000 &&
     VISIBLE_COUNTS.notes === 301 &&
     VISIBLE_COUNTS.cards === 70 &&
     VISIBLE_COUNTS.tracks === 12 &&
@@ -80,7 +80,7 @@ check(
 );
 check("5G drawing bank 500 items (50 + 450 Phase 1)", BY_SUBJECT.drawing.length === 500, `got ${BY_SUBJECT.drawing.length}`);
 check("5G pastpapers bank 500 items (20 legacy + 480 Phase A)", BY_SUBJECT.pastpapers.length === 500, `got ${BY_SUBJECT.pastpapers.length}`);
-check("5G pastpapers_reworded bank still 20 items", BY_SUBJECT.pastpapers_reworded.length === 20, `got ${BY_SUBJECT.pastpapers_reworded.length}`);
+check("5G pastpapers_reworded bank 500 items (20 legacy + 480 Phase B)", BY_SUBJECT.pastpapers_reworded.length === 500, `got ${BY_SUBJECT.pastpapers_reworded.length}`);
 check("5G Drawing/PE notes still 29 (24 + 5 Phase 4)", NOTES["Drawing/PE"].length === 29, `got ${NOTES["Drawing/PE"].length}`);
 
 // --------------------------------- §3 MCQ field completeness (all-or-none per language)
@@ -113,7 +113,7 @@ function tripleComplete(q, lang) {
     te.trim().length > 0;
   return { allPresent, nonePresent, valid };
 }
-for (const [bankKey, label, expected] of [["drawing", "drawing", 500], ["pastpapers", "pastpapers", 500], ["pastpapers_reworded", "pastpapers_reworded", 20]]) {
+for (const [bankKey, label, expected] of [["drawing", "drawing", 500], ["pastpapers", "pastpapers", 500], ["pastpapers_reworded", "pastpapers_reworded", 500]]) {
   let badShape = [];
   let badKeys = [];
   let urSet = [];
@@ -179,8 +179,9 @@ check(
     BY_SUBJECT.pastpapers.slice(20).every((q) => q.explanationEn && q.explanationEn === q.explanation),
 );
 check(
-  "5G pastpapers_reworded: no explanationEn items (plain English explanations translated to both)",
-  BY_SUBJECT.pastpapers_reworded.every((q) => !q.explanationEn),
+  "5G pastpapers_reworded: legacy 20 carry no explanationEn; all 480 Phase B items carry explanationEn (= explanation)",
+  BY_SUBJECT.pastpapers_reworded.slice(0, 20).every((q) => !q.explanationEn) &&
+    BY_SUBJECT.pastpapers_reworded.slice(20).every((q) => q.explanationEn && q.explanationEn === q.explanation),
 );
 const ppt001 = BY_SUBJECT.pastpapers.find((q) => q.id === "PPT-001");
 check(
@@ -200,7 +201,7 @@ check(
     !ppt001.explanation_ur.includes("The name Muhammad is mentioned"),
 );
 check(
-  "5G items without explanationEn (492 drawing + 19 pastpapers + 20 reworded) have plain English explanations translated to both",
+  "5G items without explanationEn (492 drawing + 19 pastpapers + 20 reworded legacy) have plain English explanations translated to both",
   scopeQs.filter((q) => !q.explanationEn).length === 531 &&
     scopeQs.filter((q) => !q.explanationEn).every((q) => q.explanation_ur && q.explanation_roman),
 );
@@ -543,7 +544,7 @@ for (const [bankKey, label] of [["drawing", "Drawing"], ["pastpapers", "Past Pap
 }
 check("5G quran-examples.json untouched: no translation keys", !/_ur|_roman/.test(read("src/data/quran-examples.json")));
 const contentJson = readJson("src/data/content.json");
-check("5G content.json counts unchanged", contentJson.counts.total === 7520 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
+check("5G content.json counts unchanged", contentJson.counts.total === 8000 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70);
 
 // --------------------------------- §10 past-paper disclosure labels (FINAL)
 // The disclosure lives in `pastPaperRef`, rendered by the existing
@@ -555,6 +556,7 @@ check("5G content.json counts unchanged", contentJson.counts.total === 7520 && c
 // the label text (the badge owns it).
 const ORIG_LABEL = "Original practice question based on past-paper topics — not the actual paper";
 const REWORDED_LABEL = "Same concept as a past-paper question, reworded in a different style — not the actual paper";
+const TB_REWORDED_LABEL = "Same concept as a textbook-topic question, reworded in a different style — not from a past paper";
 const TB_LABEL = "Original practice question based on textbook topics — not from a past paper";
 check(
   "5G pastPaperRef: pastpapers items carry exactly one of the two (a) labels (349 original + 151 textbook)",
@@ -563,8 +565,10 @@ check(
     BY_SUBJECT.pastpapers.filter((q) => q.pastPaperRef === TB_LABEL).length === 151,
 );
 check(
-  "5G pastPaperRef: all 20 reworded items carry the exact reworded label",
-  BY_SUBJECT.pastpapers_reworded.every((q) => q.pastPaperRef === REWORDED_LABEL),
+  "5G pastPaperRef: reworded items carry exactly one of the two reworded labels (349 paper + 151 textbook)",
+  BY_SUBJECT.pastpapers_reworded.every((q) => q.pastPaperRef === REWORDED_LABEL || q.pastPaperRef === TB_REWORDED_LABEL) &&
+    BY_SUBJECT.pastpapers_reworded.filter((q) => q.pastPaperRef === REWORDED_LABEL).length === 349 &&
+    BY_SUBJECT.pastpapers_reworded.filter((q) => q.pastPaperRef === TB_REWORDED_LABEL).length === 151,
 );
 check(
   "5G pastPaperRef: all drawing items carry null (no disclosure)",
@@ -594,7 +598,7 @@ check(
 );
 // Whole-bank final completeness, independent of the per-bank loops above.
 check(
-  "5G FINAL: all 7520 questions carry complete translation triples in both languages",
+  "5G FINAL: all 8000 questions carry complete translation triples in both languages",
   QUESTIONS.every((q) => tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid),
   `untranslated=${QUESTIONS.filter((q) => !(tripleComplete(q, "ur").valid && tripleComplete(q, "roman").valid)).map((q) => q.id).slice(0, 5).join(",")}`,
 );

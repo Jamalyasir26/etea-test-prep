@@ -55,12 +55,12 @@ const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 const BY_ID = Object.fromEntries(QUESTIONS.map((q) => [q.id, q]));
 
 // --- totals ---
-check("4B1 bank total 7520 MCQs", QUESTIONS.length === 7520, `got ${QUESTIONS.length}`);
+check("4B1 bank total 8000 MCQs", QUESTIONS.length === 8000, `got ${QUESTIONS.length}`);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("4B1 notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check("4B1 flashcards still 70", FLASHCARDS.length === 70, `got ${FLASHCARDS.length}`);
-check("4B1 VISIBLE_COUNTS 7520/301/70, 12 tracks / 24 mocks",
-  VISIBLE_COUNTS.total === 7520 && VISIBLE_COUNTS.notes === 301 && VISIBLE_COUNTS.cards === 70 &&
+check("4B1 VISIBLE_COUNTS 8000/301/70, 12 tracks / 24 mocks",
+  VISIBLE_COUNTS.total === 8000 && VISIBLE_COUNTS.notes === 301 && VISIBLE_COUNTS.cards === 70 &&
   VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 24, JSON.stringify(VISIBLE_COUNTS));
 check("4B1 IT bank 500 items (Phase 1: original 60 + 440 new)", BY_SUBJECT.it.length === 500, `got ${BY_SUBJECT.it.length}`);
 check("4B1 PE bank 500 items (Phase 1: original 46 + 454 new)", BY_SUBJECT.pe.length === 500, `got ${BY_SUBJECT.pe.length}`);
@@ -106,7 +106,7 @@ check("4B1 zero items marked official anywhere",
   QUESTIONS.every((q) => q.sourceKind !== "official"));
 
 // --- F02 guards unchanged ---
-check("4B1 explanationEn count now 604 (Phase A: 124 legacy + 480 pastpapers)", QUESTIONS.filter((q) => q.explanationEn).length === 604);
+check("4B1 explanationEn count now 1084 (Phase A: 124 legacy + 480 pastpapers; Phase B: +480 reworded)", QUESTIONS.filter((q) => q.explanationEn).length === 1084);
 check("4B1 roman-marker count still 196", QUESTIONS.filter((q) => q.explanationLang === "roman").length === 196);
 check("4B1 pendingEnglishExplanations still 196", (await pendingEnglishExplanations()).length === 196);
 // Exact RU detector (same set + tokeniser as test-step3b-audit2.mjs).
@@ -205,8 +205,8 @@ check("4B1 DM + Qari rows untouched by this batch", (() => {
   return !blockFor("dm").includes("Phase 4B1") && !blockFor("qari").includes("Phase 4B1");
 })());
 const contentJson = JSON.parse(read("src/data/content.json"));
-check("4B1 content.json counts: total 7520, IT 500, PE 500, notes 301, cards 70",
-  contentJson.counts.total === 7520 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70 &&
+check("4B1 content.json counts: total 8000, IT 500, PE 500, notes 301, cards 70",
+  contentJson.counts.total === 8000 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70 &&
   contentJson.counts.bySubject.find((r) => r[0] === "IT")[1] === 500 &&
   contentJson.counts.bySubject.find((r) => r[0] === "Physical Education")[1] === 500);
 check("4B1 content.json bySubject index matches banks (it 500 / pe 500)",

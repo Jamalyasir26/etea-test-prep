@@ -227,8 +227,8 @@ const LABEL_TO_MAP = {
   const counts = {};
   for (const [, k, v] of countsBlock.matchAll(/"([a-z_]+)":\s*(\d+)/g)) counts[k] = Number(v);
   const sum = Object.values(counts).reduce((a, b) => a + b, 0);
-  check("Phase1 manifest BANK_COUNTS: english 500, 16 banks, total 7520",
-    counts.english === 500 && Object.keys(counts).length === 16 && sum === 7520,
+  check("Phase1 manifest BANK_COUNTS: english 500, 16 banks, total 8000",
+    counts.english === 500 && Object.keys(counts).length === 16 && sum === 8000,
     `english=${counts.english} sum=${sum}`);
   const trustedBlock = man.slice(man.indexOf("BANK_TRUSTED"), man.indexOf("};", man.indexOf("BANK_TRUSTED")));
   const trusted = {};
@@ -239,12 +239,12 @@ const LABEL_TO_MAP = {
   const missing = expectIds.filter((id) => !idBlock.includes(`"${id}": "english"`));
   check("Phase1 manifest ID_BANK maps all ENG-001..ENG-500 to english", missing.length === 0, missing.slice(0, 5).join(", "));
   const idCount = (idBlock.match(/": "/g) || []).length;
-  check("Phase1 manifest ID_BANK holds 7520 ids", idCount === 7520, `got ${idCount}`);
+  check("Phase1 manifest ID_BANK holds 8000 ids", idCount === 8000, `got ${idCount}`);
 }
 
 // ---------- §8 no-other-bank scope + content.json counts ----------
 {
-  const EXPECTED_OTHER = { arabic: 500, drawing: 500, pe: 500, gk: 500, islamiyat: 500, it: 500, maths: 500, pakstudies: 500, pastpapers: 500, pastpapers_reworded: 20, pedagogy: 500, science: 500, socialstudies: 500, tajweed: 500, urdu: 500 };
+  const EXPECTED_OTHER = { arabic: 500, drawing: 500, pe: 500, gk: 500, islamiyat: 500, it: 500, maths: 500, pakstudies: 500, pastpapers: 500, pastpapers_reworded: 500, pedagogy: 500, science: 500, socialstudies: 500, tajweed: 500, urdu: 500 };
   const badBanks = [];
   for (const [k, n] of Object.entries(EXPECTED_OTHER)) {
     const len = JSON.parse(read(`src/data/banks/${k}.json`)).length;
@@ -257,8 +257,8 @@ const LABEL_TO_MAP = {
     const label = { arabic: "Arabic", drawing: "Drawing", pe: "Physical Education", gk: "GK", islamiyat: "Islamiyat", it: "IT", maths: "Maths", pakstudies: "Pak Studies", pastpapers: "Past-Paper Topics", pastpapers_reworded: "Past-Paper Topics (Reworded)", pedagogy: "Pedagogy", science: "General Science", socialstudies: "Social Studies", tajweed: "Tajweed", urdu: "Urdu" }[k];
     return bySubj[label] === n;
   });
-  check("Phase1 content.json counts: total 7520, English 500, other rows unchanged, 301/70/19/28",
-    content.counts.total === 7520 && bySubj.English === 500 && otherRowsOk &&
+  check("Phase1 content.json counts: total 8000, English 500, other rows unchanged, 301/70/19/28",
+    content.counts.total === 8000 && bySubj.English === 500 && otherRowsOk &&
     content.counts.notes === 301 && content.counts.cards === 70 && content.counts.tracks === 19 && content.counts.mocks === 28,
     `total=${content.counts.total} english=${bySubj.English}`);
 }

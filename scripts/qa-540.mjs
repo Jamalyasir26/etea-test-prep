@@ -1,6 +1,6 @@
 // qa-540.mjs — structural + consistency-heuristic QA for the ETEA Prep banks.
 // NOTE: the filename is historical — it dates from when the bank held 540
-// items. The active total is now 7520 (Phase A past-papers added 480 to the 7040 left by U2; Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455, Phase 1 Urdu added 455, Phase 1 Maths added 455, Phase 1 Pak Studies added 455, Phase 1 Pedagogy added 470, Phase 1 Science added 470, Phase 1 Social Studies added 470, Phase 1 GK added 470, Phase 1 IT added 440, Phase 1 PE added 454 and Phase 1 Drawing added 450 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
+// items. The active total is now 8000 (Phase B reworded twins added 480 to the 7520 left by Phase A; Phase A past-papers added 480 to the 7040 left by U2; Phase 1 Islamiyat added 395, Phase 1 Tajweed added 418, Phase 1 Arabic added 420, Phase 1 English added 455, Phase 1 Urdu added 455, Phase 1 Maths added 455, Phase 1 Pak Studies added 455, Phase 1 Pedagogy added 470, Phase 1 Science added 470, Phase 1 Social Studies added 470, Phase 1 GK added 470, Phase 1 IT added 440, Phase 1 PE added 454 and Phase 1 Drawing added 450 to the 763-item base left by Phase 4B2, which had added 62: 30 Drawing + 32 Tajweed); the name is kept so existing
 // references (`npm run qa`, QA-540.md, VERIFY-phase2.md) keep working.
 // Plain node, no dependencies. Run: npm run qa  (node scripts/qa-540.mjs)
 // Exit code 0 = all checks pass; 1 = any check fails.
@@ -8,7 +8,7 @@
 // SCOPE: this is STRUCTURAL + consistency-heuristic QA only. It checks counts,
 // option shape, ID uniqueness, near-duplicate stems, the PED-009 regression and
 // mock-composition consistency. It does NOT declare the bank subject-matter
-// verified — full subject verification of all 7520 items is out of scope.
+// verified — full subject verification of all 8000 items is out of scope.
 //
 // Bank layout note: drawing_pe.json is LEGACY — kept on disk, superseded by
 // drawing.json (DRW-001..DRW-010 + DRW-021..DRW-060 + DRW-061..DRW-510) + pe.json (DRW-011..020 + PE-001..PE-490).
@@ -26,10 +26,10 @@ const CONTENT_PATH = join(ROOT, "src/data/content.json");
 // Expected ACTIVE per-bank counts (drawing_pe.json excluded — legacy).
 const EXPECTED = {
   arabic: 500, drawing: 500, pe: 500, english: 500, gk: 500, islamiyat: 500,
-  it: 500, maths: 500, pakstudies: 500, pastpapers: 500, pastpapers_reworded: 20,
+  it: 500, maths: 500, pakstudies: 500, pastpapers: 500, pastpapers_reworded: 500,
   pedagogy: 500, science: 500, socialstudies: 500, tajweed: 500, urdu: 500,
 };
-const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 7520
+const EXPECTED_TOTAL = Object.values(EXPECTED).reduce((a, b) => a + b, 0); // 8000
 const LEGACY_FILE = "drawing_pe.json";
 
 const results = []; // { name, pass, detail }
@@ -308,9 +308,9 @@ const content = loadJson(CONTENT_PATH);
 
   // content.json counts agree with the banks.
   const counts = content.counts || {};
-  check("content.json counts.total = 7520 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
+  check("content.json counts.total = 8000 (active)", counts.total === EXPECTED_TOTAL, `got ${counts.total}`);
   const bySubjectSum = (counts.bySubject || []).reduce((s, [, n]) => s + n, 0);
-  check("content.json counts.bySubject sums to 7520", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
+  check("content.json counts.bySubject sums to 8000", bySubjectSum === EXPECTED_TOTAL, `got ${bySubjectSum}`);
   const bySubject = content.bySubject || {};
   const indexBad = [];
   for (const [key, expected] of Object.entries(EXPECTED)) {

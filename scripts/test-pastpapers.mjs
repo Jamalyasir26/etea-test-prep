@@ -1,5 +1,7 @@
 // Past-papers bank tests — Phase A: pastpapers 20 -> 500 MCQs
-// (PPT-021..PPT-500), Option 3 (owner decision 2026-11-24): multiple
+// (PPT-021..PPT-500) + Phase B: pastpapers_reworded 20 -> 500 MCQs
+// (PPR-021..PPR-500, 1:1 reworded twins of PPT-021..PPT-500),
+// Option 3 (owner decision 2026-11-24): multiple
 // items per concept + textbook-map fill with an ACCURATE label.
 // Plain node, no dependencies. Run: node scripts/test-pastpapers.mjs
 // (exit 0 = all pass). Locks:
@@ -34,6 +36,14 @@
 //    (each index 100..140 — coordinator rotation N-PPT-1; the workers'
 //    first drafts put 250/480 at index 0);
 //  - manifest + content.json counts match the bank (500 / total 7520).
+//  - Phase B (PPR): 500 items, ID sequence complete (PPR-001..PPR-500),
+//    first 20 legacy byte-identical to the pre-merge backup; new items
+//    are 1:1 twins of PPT-021..PPT-500 (same tested fact, same correct
+//    answer, reworded question + explanation, same option set in a
+//    different order, provenance/conceptId/sourceKind/syllabusClause/
+//    source inherited verbatim); labels 349 paper-reworded + 151
+//    textbook-reworded; correctIndex balanced on the 480 new items;
+//  - manifest + content.json counts match both banks (500/500, total 8000).
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -211,8 +221,8 @@ check(
 const content = readJson("src/data/content.json");
 const bySubj = Object.fromEntries(content.counts.bySubject);
 check(
-  "PPT content.json counts: total 7520, Past-Paper Topics 500, Reworded still 20",
-  content.counts.total === 7520 && bySubj["Past-Paper Topics"] === 500 && bySubj["Past-Paper Topics (Reworded)"] === 20,
+  "PPT content.json counts: total 8000, Past-Paper Topics 500, Reworded 500",
+  content.counts.total === 8000 && bySubj["Past-Paper Topics"] === 500 && bySubj["Past-Paper Topics (Reworded)"] === 500,
 );
 check(
   "PPT content.json bySubject.pastpapers index holds PPT-001..PPT-500",
@@ -225,9 +235,9 @@ const countsBlock = man.slice(man.indexOf("BANK_COUNTS"), man.indexOf("};", man.
 const counts = {};
 for (const [, k, v] of countsBlock.matchAll(/"([a-z_]+)":\s*(\d+)/g)) counts[k] = Number(v);
 check(
-  "PPT manifest BANK_COUNTS: pastpapers 500, reworded 20, total 7520",
-  counts.pastpapers === 500 && counts.pastpapers_reworded === 20 &&
-    Object.values(counts).reduce((a, b) => a + b, 0) === 7520,
+  "PPT manifest BANK_COUNTS: pastpapers 500, reworded 500, total 8000",
+  counts.pastpapers === 500 && counts.pastpapers_reworded === 500 &&
+    Object.values(counts).reduce((a, b) => a + b, 0) === 8000,
   `pastpapers=${counts.pastpapers}`,
 );
 
@@ -251,12 +261,20 @@ const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 const { topicBadge } = data;
 const REWORDED_LABEL = "Same concept as a past-paper question, reworded in a different style — not the actual paper";
+const REWORDED_TB_LABEL = "Same concept as a textbook-topic question, reworded in a different style — not from a past paper";
 check(
   "PPT topicBadge: textbook label takes the textbook branch FIRST (en/ur/roman)",
   topicBadge(TB_LABEL, "en").detail === TB_LABEL &&
     topicBadge(TB_LABEL, "ur").label.includes("نصابی") &&
     topicBadge(TB_LABEL, "roman").label.toLowerCase().includes("nisabi"),
   JSON.stringify(topicBadge(TB_LABEL, "ur")),
+);
+check(
+  "PPT topicBadge: textbook-reworded label takes the textbook branch FIRST (not reworded)",
+  topicBadge(REWORDED_TB_LABEL, "en").detail === REWORDED_TB_LABEL &&
+    topicBadge(REWORDED_TB_LABEL, "ur").label.includes("نصابی") &&
+    topicBadge(REWORDED_TB_LABEL, "roman").label.toLowerCase().includes("nisabi"),
+  JSON.stringify(topicBadge(REWORDED_TB_LABEL, "ur")),
 );
 check(
   "PPT topicBadge: original label takes the original branch (not textbook)",
@@ -268,6 +286,129 @@ check(
   topicBadge(REWORDED_LABEL, "en").detail === REWORDED_LABEL &&
     topicBadge(REWORDED_LABEL, "ur").label.includes("دوبارہ لکھا گیا") &&
     topicBadge(null) === null,
+);
+
+// ---------- §9 Phase B: reworded bank (PPR) ----------
+const BANK_B = readJson("src/data/banks/pastpapers_reworded.json");
+const LEGACY_B = JSON.parse(readFileSync("/home/hatch/workspace/pastpapers/pre-merge-pastpapers-reworded.json", "utf8"));
+const NEW_B = BANK_B.slice(20);
+const TB_REWORDED_LABEL = "Same concept as a textbook-topic question, reworded in a different style — not from a past paper";
+check("PPR bank 500 items", BANK_B.length === 500, `got ${BANK_B.length}`);
+check(
+  "PPR ID sequence complete PPR-001..PPR-500 in file order",
+  BANK_B.every((q, i) => q.id === `PPR-${String(i + 1).padStart(3, "0")}`),
+);
+check(
+  "PPR first 20 legacy items byte-identical to pre-merge backup (no provenance)",
+  JSON.stringify(BANK_B.slice(0, 20)) === JSON.stringify(LEGACY_B) &&
+    BANK_B.slice(0, 20).every((q) => !("provenance" in q)),
+);
+check(
+  "PPR legacy 20 all carry the exact paper reworded label",
+  BANK_B.slice(0, 20).every((q) => q.pastPaperRef === REWORDED_LABEL),
+);
+check(
+  "PPR new items: exact 28-key schema in BRIEF order",
+  NEW_B.every((q) => JSON.stringify(Object.keys(q)) === JSON.stringify(NEW_KEYS)),
+  NEW_B.filter((q) => JSON.stringify(Object.keys(q)) !== JSON.stringify(NEW_KEYS)).map((q) => q.id).slice(0, 5).join(","),
+);
+check(
+  "PPR new items: trilingual triples complete + draft/unverified + explanationEn == explanation",
+  NEW_B.every(
+    (q) =>
+      typeof q.question_ur === "string" && q.question_ur.trim() &&
+      typeof q.question_roman === "string" && q.question_roman.trim() &&
+      Array.isArray(q.options_ur) && q.options_ur.length === 4 && q.options_ur.every((s) => typeof s === "string" && s.trim()) &&
+      Array.isArray(q.options_roman) && q.options_roman.length === 4 && q.options_roman.every((s) => typeof s === "string" && s.trim()) &&
+      typeof q.explanation_ur === "string" && q.explanation_ur.trim() &&
+      typeof q.explanation_roman === "string" && q.explanation_roman.trim() &&
+      q.reviewStatus === "draft" && q.verified === false &&
+      q.reviewedBy === null && q.reviewedAt === null &&
+      q.explanationUrdu === null && q.explanationEn === q.explanation,
+  ),
+);
+check(
+  "PPR new items: subject/subjectKey/topic/post convention",
+  NEW_B.every(
+    (q) =>
+      q.subject === "Past-Paper Topics (Reworded)" && q.subjectKey === "pastpapers_reworded" &&
+      q.topic === "Past-Paper Topics (Reworded)" &&
+      JSON.stringify(q.post) === JSON.stringify(["zamungkor", "tt", "at", "qari"]),
+  ),
+);
+// Twin pairing: every new item's provenance fields == its PPT twin's.
+const twinById = new Map(BANK.map((q) => [q.id, q]));
+const pairBad = [];
+for (const q of NEW_B) {
+  const t = twinById.get(`PPT-${q.id.split("-")[1]}`);
+  if (!t) { pairBad.push(`${q.id}: no twin`); continue; }
+  for (const f of ["provenance", "conceptId", "sourceKind", "syllabusClause", "source"]) {
+    if (q[f] !== t[f]) pairBad.push(`${q.id}:${f}`);
+  }
+}
+check("PPR provenance inheritance: provenance/conceptId/sourceKind/syllabusClause/source == twin's", pairBad.length === 0, pairBad.slice(0, 5).join(" | "));
+const paperB = NEW_B.filter((q) => q.provenance === "past-paper-concept");
+const tbB = NEW_B.filter((q) => q.provenance === "textbook-topic");
+check("PPR provenance split paper 329 / textbook 151 (mirrors bank (a))", paperB.length === 329 && tbB.length === 151, `paper=${paperB.length} tb=${tbB.length}`);
+check(
+  "PPR labels: 349 paper-reworded + 151 textbook-reworded, no other pastPaperRef",
+  BANK_B.filter((q) => q.pastPaperRef === REWORDED_LABEL).length === 349 &&
+    BANK_B.filter((q) => q.pastPaperRef === TB_REWORDED_LABEL).length === 151 &&
+    BANK_B.every((q) => q.pastPaperRef === REWORDED_LABEL || q.pastPaperRef === TB_REWORDED_LABEL),
+);
+check(
+  "PPR label/provenance agree (paper items carry REWORDED_LABEL, textbook items carry TB_REWORDED_LABEL)",
+  NEW_B.every(
+    (q) =>
+      (q.provenance === "past-paper-concept" && q.pastPaperRef === REWORDED_LABEL) ||
+      (q.provenance === "textbook-topic" && q.pastPaperRef === TB_REWORDED_LABEL),
+  ),
+);
+// Wording + order difference vs the twin.
+const notReworded = [];
+const orderSame = [];
+const setDiff = [];
+const correctDiff = [];
+for (const q of NEW_B) {
+  const t = twinById.get(`PPT-${q.id.split("-")[1]}`);
+  if (normQ(q.question) === normQ(t.question)) notReworded.push(q.id);
+  if (normQ(q.explanation) === normQ(t.explanation)) notReworded.push(`${q.id}:explanation`);
+  if (JSON.stringify(q.options) === JSON.stringify(t.options)) orderSame.push(q.id);
+  if (JSON.stringify([...q.options].sort()) !== JSON.stringify([...t.options].sort())) setDiff.push(q.id);
+  if (q.options[q.correctIndex] !== t.options[t.correctIndex]) correctDiff.push(q.id);
+}
+check("PPR questions + explanations differ from twins (normalized)", notReworded.length === 0, notReworded.slice(0, 5).join(" | "));
+check("PPR option order differs from twin's", orderSame.length === 0, orderSame.slice(0, 5).join(" | "));
+check("PPR option set identical to twin's (reordered, not reworded)", setDiff.length === 0, setDiff.slice(0, 5).join(" | "));
+check("PPR correct option text identical to twin's", correctDiff.length === 0, correctDiff.slice(0, 5).join(" | "));
+// Dedupe inside bank (b) + against all other banks (the paired twin is the
+// only allowed same-fact item; its question text differs, so the normalized
+// check below does not collide with it).
+const seenQB = new Map();
+let dupQB = [];
+for (const q of BANK_B) {
+  const k = normQ(q.question);
+  if (seenQB.has(k)) dupQB.push(`${q.id} vs ${seenQB.get(k)}`);
+  else seenQB.set(k, q.id);
+}
+check("PPR no duplicate EN questions inside the bank (normalized)", dupQB.length === 0, dupQB.slice(0, 5).join(" | "));
+const otherQsB = new Map();
+for (const k of ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"]) {
+  for (const q of readJson(`src/data/banks/${k}.json`)) otherQsB.set(normQ(q.question), `${q.id} (${k})`);
+}
+const crossDupB = NEW_B.filter((q) => otherQsB.has(normQ(q.question))).map((q) => `${q.id} vs ${otherQsB.get(normQ(q.question))}`);
+check("PPR no duplicate EN questions against the other 15 banks (normalized)", crossDupB.length === 0, crossDupB.slice(0, 5).join(" | "));
+const distB = [0, 1, 2, 3].map((i) => NEW_B.filter((q) => q.correctIndex === i).length);
+check(
+  "PPR correctIndex balanced on new items (each index 100..140)",
+  distB.every((n) => n >= 100 && n <= 140),
+  `dist=${distB.join("/")}`,
+);
+check(
+  "PPR content.json bySubject.pastpapers_reworded index holds PPR-001..PPR-500",
+  content.bySubject.pastpapers_reworded.length === 500 &&
+    content.bySubject.pastpapers_reworded[0] === "PPR-001" &&
+    content.bySubject.pastpapers_reworded[499] === "PPR-500",
 );
 
 if (failures > 0) {

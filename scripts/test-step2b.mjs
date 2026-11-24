@@ -223,7 +223,7 @@ const BY_SUBJECT = Object.fromEntries(BANK_KEYS.map((k) => [k, JSON.parse(fs.rea
 const QUESTIONS = BANK_KEYS.flatMap((k) => BY_SUBJECT[k]);
 
 // Counts as of Phase 4B1 (Step 2b itself added none; 4B1 added 56 MCQs + 21 notes).
-check("counts: 7520 MCQs", QUESTIONS.length === 7520, `got ${QUESTIONS.length}`);
+check("counts: 8000 MCQs", QUESTIONS.length === 8000, `got ${QUESTIONS.length}`);
 check(
   "counts: 301 notes",
   Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 301,

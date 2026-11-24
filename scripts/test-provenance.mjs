@@ -54,7 +54,7 @@ const REVIEWED15 = [
 
 // 1. Backward compat: the bank loads at full size and items without the
 // new fields get no badge (null) instead of crashing.
-check("bank loads: 7520 MCQs", QUESTIONS.length === 7520, `got ${QUESTIONS.length}`);
+check("bank loads: 8000 MCQs", QUESTIONS.length === 8000, `got ${QUESTIONS.length}`);
 const legacy = QUESTIONS.find((q) => !q.sourceKind);
 check("legacy items exist without sourceKind", !!legacy);
 check("legacy item gets no badge", provenanceBadge(legacy) === null);
@@ -131,9 +131,26 @@ for (const q of QUESTIONS) {
 }
 let crossSubject = [];
 for (const [cid, qs] of byConcept) {
-  if (new Set(qs.map((q) => q.subjectKey)).size > 1) crossSubject.push(cid);
+  const keys = new Set(qs.map((q) => q.subjectKey));
+  // Phase B exception (documented, narrow): past-paper twins share their
+  // conceptId across the two past-paper banks by design (BRIEF.md §0:
+  // "Phase B twin reuses it"). Only the {pastpapers, pastpapers_reworded}
+  // pair may share; any other cross-subject sharing still fails.
+  if (keys.size > 1 && !(keys.size === 2 && keys.has("pastpapers") && keys.has("pastpapers_reworded"))) crossSubject.push(cid);
 }
-check("no conceptId spans two subjects", crossSubject.length === 0, crossSubject.join(","));
+check("no conceptId spans two subjects (except past-paper twin pairs)", crossSubject.length === 0, crossSubject.join(","));
+const twinShared = [...byConcept].filter(([, qs]) => {
+  const keys = new Set(qs.map((q) => q.subjectKey));
+  return keys.size === 2 && keys.has("pastpapers") && keys.has("pastpapers_reworded");
+});
+check(
+  "Phase B twin sharing: exactly the 451 new conceptIds span pastpapers + pastpapers_reworded (29 second-item concepts at 4 items each, 422 at 2)",
+  twinShared.length === 451 &&
+    twinShared.filter(([, qs]) => qs.length === 4).length === 29 &&
+    twinShared.filter(([, qs]) => qs.length === 2).length === 422 &&
+    twinShared.every(([, qs]) => qs.filter((q) => q.subjectKey === "pastpapers").length === qs.filter((q) => q.subjectKey === "pastpapers_reworded").length),
+  `shared=${twinShared.length}`,
+);
 check(
   "passive-voice group shares one id (4 items)",
   (byConcept.get("english-passive-voice") ?? []).length === 4,

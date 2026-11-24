@@ -237,7 +237,7 @@ const { displayExplanation, pendingEnglishExplanations } = data;
 const BANK_KEYS = ["arabic", "drawing", "english", "gk", "islamiyat", "it", "maths", "pakstudies", "pastpapers", "pastpapers_reworded", "pe", "pedagogy", "science", "socialstudies", "tajweed", "urdu"];
 const QUESTIONS = BANK_KEYS.flatMap((k) => JSON.parse(fs.readFileSync(join(ROOT, "src/data/banks", `${k}.json`), "utf8")));
 
-check("F02 bank still 7520 MCQs", QUESTIONS.length === 7520);
+check("F02 bank still 8000 MCQs", QUESTIONS.length === 8000);
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("F02 notes still 301", notesTotal === 301);
 check("F02 flashcards still 70", FLASHCARDS.length === 70);
@@ -246,7 +246,7 @@ check("F02 visible mocks now 24 (Phase 3)", VISIBLE_MOCKS.length === 24);
 
 const withEn = QUESTIONS.filter((q) => typeof q.explanationEn === "string" && q.explanationEn.length > 0);
 const marked = QUESTIONS.filter((q) => q.explanationLang === "roman");
-check("F02 exactly 604 items carry explanationEn (Phase A: 124 legacy + 480 pastpapers)", withEn.length === 604, String(withEn.length));
+check("F02 exactly 1084 items carry explanationEn (Phase A: 124 legacy + 480 pastpapers; Phase B: +480 reworded)", withEn.length === 1084, String(withEn.length));
 check("F02 exactly 196 items carry the roman marker", marked.length === 196, String(marked.length));
 check("F02 no item has BOTH explanationEn and the marker", QUESTIONS.every((q) => !(q.explanationEn && q.explanationLang)));
 const enByBank = {};
@@ -258,6 +258,7 @@ check("F02 EN by bank: drawing 8", enByBank.drawing === 8);
 check("F02 EN by bank: pe 5", enByBank.pe === 5);
 check("F02 EN by bank: english 5", enByBank.english === 5);
 check("F02 EN by bank: pastpapers 481 (Phase A: PPT-001 + 480 new)", enByBank.pastpapers === 481);
+check("F02 EN by bank: pastpapers_reworded 480 (Phase B: 480 new; legacy 0)", enByBank.pastpapers_reworded === 480);
 const mkByBank = {};
 for (const q of marked) mkByBank[q.subjectKey] = (mkByBank[q.subjectKey] || 0) + 1;
 check("F02 markers by bank: islamiyat 90", mkByBank.islamiyat === 90);
