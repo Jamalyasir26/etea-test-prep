@@ -540,7 +540,10 @@ export default function Analysis() {
         <div>
           {last14.map((d) => (
             <div key={d.date} style={{ display: "flex", alignItems: "center", gap: 8, margin: "4px 0" }}>
-              <span dir="ltr" style={{ width: 96 }}>
+              {/* UI/UX2 M41 — the 5-char "MM-DD" fragment no longer
+                  takes a fixed 96px; auto width with a 56px floor
+                  leaves the bar more room at 360px. */}
+              <span dir="ltr" style={{ width: "auto", minWidth: 56 }}>
                 {d.date.slice(5)}
               </span>
               {/* Step 2a — the bar is decorative: the fraction + attempts
@@ -579,10 +582,21 @@ export default function Analysis() {
           </thead>
           <tbody>
             {stats.mockHistory.slice(0, 20).map((m) => (
+              // UI/UX2 M44 — attempt rows are keyboard-accessible
+              // (tab stop + button role + Enter/Space opens the
+              // detail, as a click does) and 44px tall.
               <tr
                 key={m.id}
                 onClick={() => setSelected(m)}
-                style={{ cursor: "pointer" }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelected(m);
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                style={{ cursor: "pointer", height: 44 }}
                 title={t("clickDetailTitle")}
               >
                 <td dir="auto">{formatStoredDate(m.date, lang)}</td>
@@ -623,10 +637,19 @@ export default function Analysis() {
           </thead>
           <tbody>
             {recent.map((a) => (
+              // UI/UX2 M44 — see the mock-history rows above.
               <tr
                 key={a.id}
                 onClick={() => setSelected(a)}
-                style={{ cursor: "pointer" }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelected(a);
+                  }
+                }}
+                tabIndex={0}
+                role="button"
+                style={{ cursor: "pointer", height: 44 }}
                 title={t("clickDetailTitle")}
               >
                 <td dir="auto">{formatStoredDate(a.date, lang)}</td>
@@ -704,10 +727,13 @@ export default function Analysis() {
                   {selected.itemRecords.map((r, i) => (
                     <tr key={r.questionId}>
                       <td>{i + 1}</td>
-                      <td dir="auto">{r.question}</td>
+                      {/* UI/UX2 M42 — the unbounded question/answer
+                          columns get a 320px max-width + wrapping, so
+                          horizontal scrolling distance stays bounded. */}
+                      <td dir="auto" style={{ maxWidth: 320, overflowWrap: "break-word" }}>{r.question}</td>
                       <td dir="auto">{r.topic}</td>
-                      <td dir="auto">{r.firstAnswer ?? "—"}</td>
-                      <td dir="auto">{r.finalAnswer ?? "—"}</td>
+                      <td dir="auto" style={{ maxWidth: 320, overflowWrap: "break-word" }}>{r.firstAnswer ?? "—"}</td>
+                      <td dir="auto" style={{ maxWidth: 320, overflowWrap: "break-word" }}>{r.finalAnswer ?? "—"}</td>
                       <td>{r.correct ? "✅" : "❌"}</td>
                       <td dir="ltr">{r.mode}</td>
                       <td dir="ltr">{r.keyVersion}</td>

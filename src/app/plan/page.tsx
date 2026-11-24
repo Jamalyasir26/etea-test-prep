@@ -140,12 +140,16 @@ export default function PlanPage() {
             </>
           )}
           {" · "}
-          {/* Stage 1 P1 Tier 4 (B03) — the progress fraction isolated LTR:
-              it rendered reversed ("63/0") in RTL (Urdu) mode. */}
-          <span dir="ltr">
-            {doneCount}/{totalTasks}
-          </span>{" "}
-          {t("tasksDone")}
+          {/* UI/UX2 M45 — fraction + label share one dir="auto" span
+              (the LTR fraction stays isolated inside it), so the gap
+              between "0/63" and "کام مکمل" cannot collapse or attach
+              to the wrong side in RTL. */}
+          <span dir="auto">
+            <span dir="ltr">
+              {doneCount}/{totalTasks}
+            </span>{" "}
+            {t("tasksDone")}
+          </span>
         </span>
         <button className="secondary" onClick={generateAiPlan} disabled={busy}>
           {t("generateAiPlan")}
@@ -266,9 +270,12 @@ export default function PlanPage() {
               // language; the id and the link still derive from the
               // ENGLISH text above, never from the translation.
               const taskView = resolvePlanTaskText(task, lang);
+              // UI/UX2 M46 — the whole label row is the hit area:
+              // min-height 44px with centered alignment, so a
+              // one-line task row is a 44px tap target.
               return (
-                <label key={id} style={{ display: "flex", gap: 8, alignItems: "flex-start", padding: "6px 0" }}>
-                  <input type="checkbox" checked={!!checked[id]} onChange={() => toggle(id)} style={{ marginTop: 6 }} />
+                <label key={id} style={{ display: "flex", gap: 8, alignItems: "center", minHeight: 44, padding: "6px 0" }}>
+                  <input type="checkbox" checked={!!checked[id]} onChange={() => toggle(id)} />
                   <span>
                     {/* Step 2a (RTL) — duration isolated. */}
                     <b>

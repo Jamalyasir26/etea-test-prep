@@ -94,7 +94,13 @@ check("SW3 guard: policy note stays dir=ltr", qr.includes('<span dir="ltr">{scor
 check("SW3 guard: quiz timer stays dir=ltr", qr.includes('<span dir="ltr">{mm}:{ss}</span>'));
 
 // ---- SW4: .alert borders are logical (border-inline-start) ----
-check("SW4: .alert uses border-inline-start", css.includes("border-inline-start: 6px solid var(--amber);"));
+// W4 (UI/UX Program 2) — deliberate assertion update: the light alert
+// border colour changed var(--amber) -> #b45309 (brand amber is 2.10:1
+// vs a white card, below the 3:1 non-text bar; #b45309 is 5.02:1).
+// The logical-property intent this pin exists for is unchanged, and the
+// dark override keeps brand amber (7.41:1 vs the dark card).
+check("SW4: .alert uses border-inline-start", css.includes("border-inline-start: 6px solid #b45309;"));
+check("SW4: dark .alert keeps brand amber borders", css.includes('[data-theme="dark"] .alert { border-color: var(--amber); border-inline-start-color: var(--amber); }'));
 check("SW4: .alert.red/.green use border-inline-start-color", css.includes("border-inline-start-color: var(--red);") && css.includes("border-inline-start-color: var(--green);"));
 check("SW4: no physical border-left remains in globals.css", !css.includes("border-left"));
 
@@ -167,7 +173,11 @@ check(
   "SW12: player title reuses the rendered pieces (no new strings)",
   player.includes("const labelTitle = errored") && player.includes('t("quranAudioUnavailable")') && player.includes('tf("quranAyahRef"') && player.includes("Mishary Alafasy"),
 );
-check("SW12: topbar brand link can shrink + brand text truncates", topbar.includes("tw:flex tw:min-w-0 tw:items-center") && topbar.includes('<span dir="ltr" className="tw:min-w-0 tw:truncate">ETEA Prep Library</span>'));
+// UI/UX2 (W3 M02) — DELIBERATE assertion update: the brand span gained
+// tw:max-[400px]:hidden (brand text hides below 400px so the offline
+// badge + select + theme toggle fit at 360px; the icon stays). The
+// shrink + truncate behaviour this check exists to verify is unchanged.
+check("SW12: topbar brand link can shrink + brand text truncates", topbar.includes("tw:flex tw:min-w-0 tw:min-h-11 tw:items-center") && topbar.includes('<span dir="ltr" className="tw:min-w-0 tw:truncate tw:max-[400px]:hidden">ETEA Prep Library</span>'));
 check("SW12: IssueForm button row wraps", !qr.includes('style={{ display: "flex", gap: 8 }}') && count(qr, /display: "flex", gap: 8, flexWrap: "wrap"/g) === 4);
 check("SW12: shadcn Badge drops nowrap + overflow-hidden", !badge.includes("tw:whitespace-nowrap") && !badge.includes("tw:overflow-hidden"));
 check("SW12: Badge keeps its other base utilities", badge.includes("tw:inline-flex") && badge.includes("tw:shrink-0") && badge.includes("tw:rounded-full"));
@@ -179,6 +189,21 @@ check("SW13: next task resolves through the plan resolver", home.includes("nextT
 check("SW13: no raw English tuple read remains for nextTask", !home.includes("nextTask = tasks[ti][1];"));
 check("SW13: task id still hashes the English fields", home.includes("planTaskId(PLAN21[di][0], tasks[ti][0], tasks[ti][1])"));
 check("SW13: both next-task render sites keep dir=auto", count(home, /<span dir="auto">\{nextTask\}<\/span>/g) === 2);
+
+// ---- W4 (UI/UX Program 2) — mobile-audit globals.css items ----
+// M09 (P2, a): mobile .container bottom padding 120px -> 48px. The 72px
+// .quran-player-spacer now covers the sticky player; the footer is the
+// only .container user, so the two allowances stacked to ~192px.
+check("W4 M09: mobile .container padding-bottom is 48px", css.includes(".container { padding-bottom: 48px; }"));
+check("W4 M09: old 120px mobile allowance is gone", !css.includes(".container { padding-bottom: 120px; }"));
+check("W4 M09: desktop .container padding unchanged", css.includes(".container { max-width: 1020px; margin: 0 auto; padding: 0 16px 96px; }"));
+check("W4 M09: 72px player spacer still present (it covers the player now)", css.includes("height: 72px;"));
+// M30 (P2, b; U1 F1.4): RTL-only heading line-height 1.5 for wrapped
+// Urdu headings. The base 1.3 rule must stay byte-identical (LTR
+// rendering unchanged); the RTL rule must be scoped to [dir="rtl"].
+check("W4 M30: RTL heading line-height 1.5 rule present", css.includes('[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { line-height: 1.5; }'));
+check("W4 M30: base heading rule still line-height 1.3", css.includes("h1, h2, h3 {\n  font-family: var(--font-sans-arabic), \"Noto Sans Arabic\", system-ui, sans-serif;\n  line-height: 1.3; margin: 0.4em 0;\n}"));
+check("W4 M30: no LTR heading line-height override", !css.includes('[dir="ltr"] h1'));
 
 console.log(failures === 0 ? `\nAll UI/UX safe-wins tests passed.` : `\n${failures} FAILURE(S)`);
 process.exit(failures === 0 ? 0 : 1);

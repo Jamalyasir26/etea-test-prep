@@ -42,7 +42,26 @@ export function DueForecastChart({ cards, state }: { cards: FlashCardLite[]; sta
   // U1 (F3.2) — theme-aware ticks: #94a3b8 fails on light cards
   // (2.56:1); the site's own --muted passes (5.57:1). Dark keeps #94a3b8.
   const tick = { fill: theme === "dark" ? "#94a3b8" : "#5a6b70", fontSize: 12 } as const;
+  // UI/UX2 (scope addition, M07 follow-through) — the bar fill is
+  // theme-aware, matching the --chart-2 token W4 fixed in globals.css:
+  // light #b45309 is 5.02:1 vs the white card, dark #f5a10b is 7.41:1
+  // vs the dark card (#182628). The old hardcoded fill="#F5A10B" was
+  // 2.10:1 in light mode, so the token fix alone never reached the
+  // rendered bars.
+  const barFill = theme === "dark" ? "#f5a10b" : "#b45309";
   const data = forecastDue(cards, state, new Date(), 7);
+  // UI/UX2 M39 — mirror the accuracy chart's empty state: when every
+  // bucket is 0 (all cards graded, none due within 7 days), say so
+  // honestly instead of rendering empty axes plus a table of zeros.
+  // (A fresh user is unaffected — new cards count toward today.)
+  if (data.every((d) => d.due === 0)) {
+    return (
+      <div className="card">
+        <h3>{t("chartDueForecast")}</h3>
+        <p className="muted">{t("chartNoData")}</p>
+      </div>
+    );
+  }
   return (
     <div className="card">
       <h3>{t("chartDueForecast")}</h3>
@@ -55,12 +74,20 @@ export function DueForecastChart({ cards, state }: { cards: FlashCardLite[]; sta
             <XAxis dataKey="label" tick={tick} />
             <YAxis tick={tick} allowDecimals={false} />
             <Tooltip contentStyle={TOOLTIP_STYLE} labelFormatter={(label) => `${label}`} />
-            <Bar dataKey="due" name={t("chartDueWord")} fill="#F5A10B" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="due" name={t("chartDueWord")} fill={barFill} radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
+      {/* UI/UX2 M10 — the summary is a 44px tap target (min-height +
+          centered flex, the audit's sketch applied inline because the
+          global summary rule lives in globals.css, owned by W4). */}
+      {/* UI/UX2 M38 — the data table uses the same labelled,
+          keyboard-accessible .table-scroll region as the other tables
+          on the site. */}
       <details>
-        <summary>{t("chartViewData")}</summary>
+        <summary style={{ minHeight: 44, display: "flex", alignItems: "center" }}>{t("chartViewData")}</summary>
+        <p className="muted">{t("tableScrollHint")}</p>
+        <div className="table-scroll" role="region" aria-label={t("chartDueForecast")} tabIndex={0}>
         <table>
           <thead>
             <tr>
@@ -77,6 +104,7 @@ export function DueForecastChart({ cards, state }: { cards: FlashCardLite[]; sta
             ))}
           </tbody>
         </table>
+        </div>
       </details>
     </div>
   );
@@ -90,6 +118,15 @@ export function AccuracyTrendChart({ daily }: { daily: DailyPoint[] }) {
   // light line #0f766e passes (5.47:1) where #14b8a6 fails (2.49:1).
   const tick = { fill: theme === "dark" ? "#94a3b8" : "#5a6b70", fontSize: 12 } as const;
   const lineStroke = theme === "dark" ? "#14b8a6" : "#0f766e";
+  // UI/UX2 (scope addition) — same theme-aware bar fill as
+  // DueForecastChart above. The questions bar keeps translucency so
+  // it stays a background to the accuracy line, but at 0.8 opacity,
+  // not 0.35: the effective (blended-over-card) contrast at 0.8 is
+  // light 3.54:1 / dark 5.21:1, both passing the 3:1 non-text bar.
+  // At the old 0.35 it was light 1.30:1 / dark 2.04:1; even 0.7 would
+  // still fail in light mode (2.95:1). The line renders after the
+  // bars, so it stays on top.
+  const barFill = theme === "dark" ? "#f5a10b" : "#b45309";
   const points = daily
     .slice(-14)
     .filter((d) => d.total > 0)
@@ -118,13 +155,17 @@ export function AccuracyTrendChart({ daily }: { daily: DailyPoint[] }) {
             <YAxis yAxisId="left" tick={tick} allowDecimals={false} />
             <YAxis yAxisId="right" orientation="right" tick={tick} domain={[0, 100]} />
             <Tooltip contentStyle={TOOLTIP_STYLE} />
-            <Bar yAxisId="left" dataKey="questions" name={t("chartQuestionsWord")} fill="#F5A10B" fillOpacity={0.35} radius={[4, 4, 0, 0]} />
+            <Bar yAxisId="left" dataKey="questions" name={t("chartQuestionsWord")} fill={barFill} fillOpacity={0.8} radius={[4, 4, 0, 0]} />
             <Line yAxisId="right" type="monotone" dataKey="accuracy" name={t("chartAccuracyWord")} stroke={lineStroke} strokeWidth={2} dot={{ r: 3 }} />
           </ComposedChart>
         </ResponsiveContainer>
       </div>
+      {/* UI/UX2 M10/M38 — see DueForecastChart above: 44px summary +
+          labelled .table-scroll region for the data table. */}
       <details>
-        <summary>{t("chartViewData")}</summary>
+        <summary style={{ minHeight: 44, display: "flex", alignItems: "center" }}>{t("chartViewData")}</summary>
+        <p className="muted">{t("tableScrollHint")}</p>
+        <div className="table-scroll" role="region" aria-label={t("chartAccuracyTrend")} tabIndex={0}>
         <table>
           <thead>
             <tr>
@@ -145,6 +186,7 @@ export function AccuracyTrendChart({ daily }: { daily: DailyPoint[] }) {
             ))}
           </tbody>
         </table>
+        </div>
       </details>
     </div>
   );

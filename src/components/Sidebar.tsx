@@ -201,7 +201,7 @@ export default function Sidebar({
       <div className="tw:flex tw:items-center tw:gap-2 tw:px-3 tw:py-3">
         <Link
           href="/"
-          className="tw:flex tw:min-w-0 tw:flex-1 tw:items-center tw:gap-2 tw:rounded-md tw:px-1 tw:py-1 tw:font-semibold tw:text-foreground tw:no-underline"
+          className="tw:flex tw:min-w-0 tw:min-h-11 tw:flex-1 tw:items-center tw:gap-2 tw:rounded-md tw:px-1 tw:py-1 tw:font-semibold tw:text-foreground tw:no-underline"
           aria-label={collapsed ? "ETEA Prep Library" : undefined}
           onClick={onCloseMobile}
         >

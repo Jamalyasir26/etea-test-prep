@@ -99,6 +99,7 @@
     "test:phase4library": "node scripts/test-phase4-library.mjs",
     "test:phase4organize": "node scripts/test-phase4-organize.mjs",
     "test:uiux": "node scripts/test-uiux.mjs",
+    "test:uiux2": "node scripts/test-uiux2.mjs",
     "test:idiomaticurdu": "node scripts/test-idiomatic-urdu.mjs"
   },
   "version": "3.0.0"

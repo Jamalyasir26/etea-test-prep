@@ -109,7 +109,12 @@ check("flashcards: FSRS state-line due value wrapped in lri()", flash.includes('
 const analysis = read("src/app/analysis/page.tsx");
 check("analysis: title cells dir=auto", (analysis.match(/<td dir="auto">\{[am]\.title\}<\/td>/g) ?? []).length === 2);
 check("analysis: date cells dir=auto (localized), kind/mode/time cells dir=ltr", analysis.includes('<td dir="auto">{formatStoredDate(m.date, lang)}</td>') && analysis.includes('<td dir="auto">{formatStoredDate(a.date, lang)}</td>') && analysis.includes('<td dir="ltr">{a.kind}</td>') && analysis.includes('<td dir="ltr">{r.mode}</td>') && analysis.includes('<td dir="ltr">{fmtMs(r.responseMs)}</td>'));
-check("analysis: item question/answers dir=auto", analysis.includes('<td dir="auto">{r.question}</td>') && analysis.includes('<td dir="auto">{r.firstAnswer ?? "—"}</td>'));
+// UI/UX2 (W3 M42) — DELIBERATE assertion update: the question/first-
+// answer cells gained style={{ maxWidth: 320, overflowWrap:
+// "break-word" }} (bounding the 10-column table's scroll distance).
+// The dir="auto" isolation this check exists to verify is unchanged;
+// only the exact-cell pin now includes the style attribute.
+check("analysis: item question/answers dir=auto", analysis.includes('<td dir="auto" style={{ maxWidth: 320, overflowWrap: "break-word" }}>{r.question}</td>') && analysis.includes('<td dir="auto" style={{ maxWidth: 320, overflowWrap: "break-word" }}>{r.firstAnswer ?? "—"}</td>'));
 check("analysis: status message dir=auto", analysis.includes('<p dir="auto" className="muted" role="status">')); // U1 SW11: role="status" added; dir="auto" isolation unchanged
 check("analysis: quarantine keys wrapped in lri()", analysis.includes("keys: lri("));
 

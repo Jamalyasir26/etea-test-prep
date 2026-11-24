@@ -176,7 +176,10 @@ check(
 // single-button form, so it is replaced by the two branch checks below.
 check(
   "B05: card surface is a native button with type=button + flip handler (reduced-motion branch)",
-  /<button type="button" className="card flashcard" onClick=\{\(\) => setFlipped\(!flipped\)\} aria-pressed=\{flipped\}>/.test(flashcards),
+  // UI/UX2 M33 — the reduced-motion button gained style={{ textAlign:
+  // "start" }} (long backs align start, not center). The native
+  // button + type + flip handler + aria-pressed are all still present.
+  /<button type="button" className="card flashcard"( style=\{\{ textAlign: "start" \}\})? onClick=\{\(\) => setFlipped\(!flipped\)\} aria-pressed=\{flipped\}>/.test(flashcards),
 );
 check(
   "B05: 3D flip surface is a native motion.button with type=button + flip handler",

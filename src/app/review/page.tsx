@@ -12,9 +12,11 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   MOCKS,
+  VISIBLE_MOCKS,
   ZAM_FIXED,
   displayExplanation,
   effectiveReviewStatus,
+  resolveMockView,
   reviewAttribution,
   type Question,
 } from "@/lib/data";
@@ -42,16 +44,21 @@ function structuralOf(qid: string): { status: StructuralStatus; issues: string[]
   return STRUCTURAL[qid] ?? { status: "pass", issues: [] };
 }
 
-const MOCK_FILTERS: { value: string; labelKey: string }[] = [
-  { value: "zam1+zam2", labelKey: "mockFilterZam12" },
-  { value: "zam1", labelKey: "mockFilterZam1" },
-  { value: "zam2", labelKey: "mockFilterZam2" },
-  { value: "zam3", labelKey: "mockFilterZam3" },
-  { value: "tt-B", labelKey: "mockFilterTTB" },
-  { value: "qari-B", labelKey: "mockFilterQariB" },
-  { value: "at-B", labelKey: "mockFilterATB" },
-  { value: "all", labelKey: "mockFilterAll" },
-];
+// UI/UX2 M05 — the filter list is generated from VISIBLE_MOCKS
+// (24 visible mocks) plus the zam1+zam2 combined pool and "all", so
+// every reachable mock is filterable instead of only the pre-Phase-3
+// set. The seven pre-existing dedicated labels are kept verbatim;
+// mocks without one use their resolved (translated) mock title —
+// existing data strings, no new i18n keys. mockPool() already handles
+// every dynamic mock generically, so no pool logic changes.
+const MOCK_FILTER_LABEL_KEY: Record<string, string> = {
+  zam1: "mockFilterZam1",
+  zam2: "mockFilterZam2",
+  zam3: "mockFilterZam3",
+  "tt-B": "mockFilterTTB",
+  "qari-B": "mockFilterQariB",
+  "at-B": "mockFilterATB",
+};
 
 function mockPool(mockId: string, questions: Question[], byId: Map<string, Question>): Question[] {
   if (mockId === "all") return questions;
@@ -155,6 +162,22 @@ export default function ReviewDashboard() {
     setMounted(true);
   }, []);
   const [mockFilter, setMockFilter] = useState("zam1+zam2");
+  // UI/UX2 M05 — filters generated from VISIBLE_MOCKS (see the
+  // MOCK_FILTER_LABEL_KEY note above): combined pool first, then one
+  // entry per visible mock, then "all".
+  const mockFilters = useMemo(
+    () => [
+      { value: "zam1+zam2", label: t("mockFilterZam12") },
+      ...VISIBLE_MOCKS.map((m) => ({
+        value: m.id,
+        label: MOCK_FILTER_LABEL_KEY[m.id]
+          ? t(MOCK_FILTER_LABEL_KEY[m.id])
+          : resolveMockView(m, lang).title,
+      })),
+      { value: "all", label: t("mockFilterAll") },
+    ],
+    [t, lang],
+  );
   const [postFilter, setPostFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
   const [structuralFilter, setStructuralFilter] = useState("all");
@@ -333,8 +356,8 @@ export default function ReviewDashboard() {
         <label>
           {t("mockFilterLabel")}{" "}
           <select aria-label={t("mockFilterLabel")} value={mockFilter} onChange={(e) => { setMockFilter(e.target.value); setVisible(25); }}>
-            {MOCK_FILTERS.map((f) => (
-              <option key={f.value} value={f.value}>{t(f.labelKey)}</option>
+            {mockFilters.map((f) => (
+              <option key={f.value} value={f.value}>{f.label}</option>
             ))}
           </select>
         </label>

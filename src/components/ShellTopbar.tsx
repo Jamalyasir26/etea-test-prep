@@ -39,10 +39,10 @@ export default function ShellTopbar({ onOpenMobile, mobileOpen, toggleRef }: She
         </Button>
         <Link
           href="/"
-          className="tw:flex tw:min-w-0 tw:items-center tw:gap-2 tw:font-semibold tw:text-foreground tw:no-underline tw:md:hidden"
+          className="tw:flex tw:min-w-0 tw:min-h-11 tw:items-center tw:gap-2 tw:font-semibold tw:text-foreground tw:no-underline tw:md:hidden"
         >
           <BookOpen className="tw:size-5 tw:shrink-0 tw:text-brand-teal tw:dark:text-[#7fd4d8]" aria-hidden="true" />
-          <span dir="ltr" className="tw:min-w-0 tw:truncate">ETEA Prep Library</span>
+          <span dir="ltr" className="tw:min-w-0 tw:truncate tw:max-[400px]:hidden">ETEA Prep Library</span>
         </Link>
         <div className="tw:ms-auto tw:flex tw:items-center tw:gap-2">
           {/* Stage 4A (PWA) — honest offline badge, mount-gated so the

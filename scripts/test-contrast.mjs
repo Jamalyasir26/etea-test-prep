@@ -89,7 +89,26 @@ function contrast(a, b) {
 
 // ---- the report's exact values must be present, verbatim ----
 const exactValues = [
-  ["light", "--border", "#a9b8b9"],
+  ["light", "--border", "#7a8b8c"],
+  // W4 (UI/UX Program 2) — deliberate value change: --border was #a9b8b9
+  // (2.05:1 vs a white card, below the 3:1 non-text bar); #7a8b8c is
+  // 3.56:1. Dark --border #587276 already passes and is unchanged.
+  ["light", "--chart-2", "#b45309"],
+  // W4 — light chart amber was brand #f5a10b (2.10:1 vs a white card,
+  // below 3:1 non-text; U1 audit F3.3); #b45309 is 5.02:1. Brand --amber
+  // is unchanged; dark --chart-2 keeps #f5a10b (7.41:1).
+  ["dark", "--chart-2", "#f5a10b"],
+  ["light", "--yellow", "#7a4b00"],
+  ["dark", "--yellow", "#ffd166"],
+  // W4 — --yellow aligned to --status-warning-text (same warning meaning;
+  // was #8a6d00 / #ffd54f). The token is unused, so nothing renders
+  // differently.
+  ["light", "--on-amber", "#1b272b"],
+  ["dark", "--on-amber", "#1b272b"],
+  ["light", "--status-info-bg", "#dbeafe"],
+  ["light", "--status-info-text", "#1e40af"],
+  ["dark", "--status-info-bg", "#172554"],
+  ["dark", "--status-info-text", "#bfdbfe"],
   ["light", "--selected-bg", "#d9f0ef"],
   ["light", "--status-warning-bg", "#fff4d6"],
   ["light", "--status-warning-text", "#7a4b00"],
@@ -201,6 +220,123 @@ for (const [theme, claimed] of [
   check(`disabled pair (${theme}) >= 3:1`, ratio >= 3, `computed ${ratio.toFixed(4)}`);
 }
 
+// ---- W4 (UI/UX Program 2) — brand guard: every passing brand colour
+// is byte-identical to its pre-W4 value. Any change here is a brand
+// decision, not a contrast fix, and must be reported, never silent. ----
+const brandGuard = [
+  ["light", "teal", "#09555e"],
+  ["light", "teal-dark", "#07424a"],
+  ["light", "paper", "#fdfbf1"],
+  ["light", "amber", "#f5a10b"],
+  ["light", "ink", "#1b272b"],
+  ["light", "muted", "#5a6b70"],
+  ["light", "card", "#ffffff"],
+  ["light", "line", "#dfe7e5"],
+  ["light", "green", "#1e7d46"],
+  ["light", "red", "#b3261e"],
+  ["dark", "paper", "#10191c"],
+  ["dark", "ink", "#e8efef"],
+  ["dark", "muted", "#9fb3b5"],
+  ["dark", "card", "#182628"],
+  ["dark", "line", "#2c3f42"],
+  ["dark", "green", "#4cc38a"],
+  ["dark", "red", "#ff8a80"],
+  ["dark", "border", "#587276"],
+];
+for (const [theme, name, want] of brandGuard) {
+  const map = theme === "light" ? light : dark;
+  const got = (map[name] ?? "").toLowerCase();
+  check(`W4 brand guard: --${name} (${theme}) unchanged ${want}`, got === want, `got "${got}"`);
+}
+
+// ---- W4 — changed pairs: computed ratios, AA thresholds ----
+// (a) Dark accent foreground: --color-accent-foreground now maps to
+// --on-amber (was var(--ink)). Dark ink on amber failed at 1.81:1;
+// dark ink #1b272b on amber passes at 7.28:1. Light is unchanged
+// (light --ink IS #1b272b), so the light pair is pinned identical.
+check(
+  "W4: accent mapping uses --on-amber, not --ink",
+  css.includes("--color-accent-foreground: var(--on-amber);") && !css.includes("--color-accent-foreground: var(--ink);"),
+);
+for (const theme of ["light", "dark"]) {
+  const map = theme === "light" ? light : dark;
+  const ratio = contrast(hex(map, "on-amber"), hex(map, "amber"));
+  console.log(`  W4 ${theme} accent-fg (--on-amber) on amber: ${ratio.toFixed(2)}`);
+  check(`W4: accent foreground (${theme}) >= 4.5:1`, ratio >= 4.5, `computed ${ratio.toFixed(4)}`);
+}
+// (b) Chart colours, all five, both themes vs the card surface (3:1
+// non-text). Light chart-2 is the changed one (#b45309, 5.02:1).
+for (const theme of ["light", "dark"]) {
+  const map = theme === "light" ? light : dark;
+  for (let i = 1; i <= 5; i++) {
+    const ratio = contrast(hex(map, `chart-${i}`), hex(map, "card"));
+    console.log(`  W4 ${theme} chart-${i} vs card: ${ratio.toFixed(2)}`);
+    check(`W4: chart-${i} (${theme}) >= 3:1 vs card`, ratio >= 3, `computed ${ratio.toFixed(4)}`);
+  }
+}
+// (c) Component-boundary token --border vs card + paper, both themes
+// (3:1 non-text). Light changed #a9b8b9 -> #7a8b8c; dark unchanged.
+for (const theme of ["light", "dark"]) {
+  const map = theme === "light" ? light : dark;
+  for (const bg of ["card", "paper"]) {
+    const ratio = contrast(hex(map, "border"), hex(map, bg));
+    console.log(`  W4 ${theme} --border vs ${bg}: ${ratio.toFixed(2)}`);
+    check(`W4: --border (${theme}) >= 3:1 vs ${bg}`, ratio >= 3, `computed ${ratio.toFixed(4)}`);
+  }
+}
+// The boundary token must actually be wired to the interactive controls.
+check("W4: legacy form controls use --border", css.includes("border: 1px solid var(--border); border-radius: 8px;"));
+check("W4: .opt border uses --border", css.includes("border: 1px solid var(--border);"));
+check("W4: shadcn --color-input maps to --border", css.includes("--color-input: var(--border);"));
+check("W4: shadcn --color-border stays --line (containers/hairlines)", css.includes("--color-border: var(--line);"));
+// (d) Alert border: light #b45309 vs card (was brand amber, 2.10:1);
+// dark keeps brand amber vs the dark card.
+const alertLight = contrast("#b45309", hex(light, "card"));
+console.log(`  W4 light alert border #b45309 vs card: ${alertLight.toFixed(2)}`);
+check("W4: light alert border >= 3:1 vs card", alertLight >= 3, `computed ${alertLight.toFixed(4)}`);
+const alertDark = contrast(hex(dark, "amber"), hex(dark, "card"));
+console.log(`  W4 dark alert border amber vs card: ${alertDark.toFixed(2)}`);
+check("W4: dark alert border >= 3:1 vs card", alertDark >= 3, `computed ${alertDark.toFixed(4)}`);
+check(
+  "W4: dark alert override present",
+  css.includes('[data-theme="dark"] .alert { border-color: var(--amber); border-inline-start-color: var(--amber); }'),
+);
+// (e) Option hover border in dark mode: #7fd4d8 vs dark card (was teal,
+// 1.84:1). Light hover (teal vs white card) already passed.
+const optHoverDark = contrast("#7fd4d8", hex(dark, "card"));
+console.log(`  W4 dark .opt:hover #7fd4d8 vs card: ${optHoverDark.toFixed(2)}`);
+check("W4: dark .opt:hover border >= 3:1 vs card", optHoverDark >= 3, `computed ${optHoverDark.toFixed(4)}`);
+check("W4: dark .opt:hover override present", css.includes('[data-theme="dark"] .opt:hover { border-color: #7fd4d8; }'));
+const optHoverLight = contrast(hex(light, "teal"), hex(light, "card"));
+check("W4: light .opt:hover border >= 3:1 vs card", optHoverLight >= 3, `computed ${optHoverLight.toFixed(4)}`);
+// (f) Info pair (new) + yellow/warning alignment, both themes.
+for (const theme of ["light", "dark"]) {
+  const map = theme === "light" ? light : dark;
+  const info = contrast(hex(map, "status-info-text"), hex(map, "status-info-bg"));
+  console.log(`  W4 ${theme} info pair: ${info.toFixed(2)}`);
+  check(`W4: info pair (${theme}) >= 4.5:1`, info >= 4.5, `computed ${info.toFixed(4)}`);
+  check(
+    `W4: --yellow equals --status-warning-text (${theme})`,
+    hex(map, "yellow") === hex(map, "status-warning-text"),
+  );
+}
+check("W4: .sbadge-info rule present", css.includes(".sbadge-info { background: var(--status-info-bg); color: var(--status-info-text); }"));
+// (g) The old failing values, reproduced so the suite can still fail:
+// dark accent-fg 1.81:1, light chart-2 amber 2.10:1, light border
+// #a9b8b9 2.05:1, dark opt:hover teal 1.84:1, light alert amber 2.10:1.
+const oldW4 = [
+  ["dark accent-fg (ink on amber)", contrast("#e8efef", "#f5a10b"), 1.81],
+  ["light chart-2 (amber on card)", contrast("#f5a10b", "#ffffff"), 2.1],
+  ["light --border #a9b8b9 on card", contrast("#a9b8b9", "#ffffff"), 2.05],
+  ["dark .opt:hover (teal on card)", contrast("#09555e", "#182628"), 1.84],
+  ["light alert border (amber on card)", contrast("#f5a10b", "#ffffff"), 2.1],
+];
+for (const [label, ratio, want] of oldW4) {
+  console.log(`  W4 old ${label}: ${ratio.toFixed(2)} (must stay ≈${want}, i.e. failing)`);
+  check(`W4 old value reproduced: ${label}`, Math.abs(ratio - want) < 0.03, `computed ${ratio.toFixed(4)}`);
+  check(`W4 old pair still fails its threshold: ${label}`, ratio < (label.includes("accent") ? 4.5 : 3));
+}
+
 // ---- the old 2.22:1 badge regression (Tier 4 B04) ----
 // White on the old dark-green badge colour FAILS at 2.22:1 — the value
 // is reproduced here so the regression stays visible, and the CURRENT
@@ -214,6 +350,42 @@ check(
   "current dark success pair passes where the old pair failed",
   contrast(hex(dark, "status-success-text"), hex(dark, "status-success-bg")) >= 4.5,
 );
+
+// (h) UI/UX2 W3 — rendered chart bars (AnalysisCharts.tsx): the due
+// bar is the solid theme-aware fill; the questions bar is the same
+// fill at 0.8 opacity, blended over the card. Effective ratios must
+// pass 3:1 non-text in both themes. Before: hardcoded #F5A10B solid
+// (light 2.10:1) and @0.35 (light 1.30:1, dark 2.04:1).
+function blend(hexFg, hexBg, opacity) {
+  const ch = (h) => [0, 2, 4].map((i) => parseInt(h.slice(1 + i, 3 + i), 16));
+  const [fr, fg, fb] = ch(hexFg);
+  const [br, bg, bb] = ch(hexBg);
+  const mix = (f, b) => Math.round(f * opacity + b * (1 - opacity));
+  const toHex = (v) => v.toString(16).padStart(2, "0");
+  return `#${toHex(mix(fr, br))}${toHex(mix(fg, bg))}${toHex(mix(fb, bb))}`;
+}
+const chartsSrc = fs.readFileSync(join(ROOT, "src/components/AnalysisCharts.tsx"), "utf8");
+check("W3: no hardcoded #F5A10B bar fill remains in the charts", !/<Bar[^>]*fill="#F5A10B"/.test(chartsSrc));
+check(
+  "W3: questions bar opacity is 0.8, not 0.35",
+  chartsSrc.includes("fillOpacity={0.8}") && !chartsSrc.includes("fillOpacity={0.35}"),
+);
+for (const theme of ["light", "dark"]) {
+  const map = theme === "light" ? light : dark;
+  const fill = theme === "light" ? "#b45309" : "#f5a10b";
+  const solid = contrast(fill, hex(map, "card"));
+  console.log(`  W3 ${theme} chart due bar ${fill} vs card: ${solid.toFixed(2)}`);
+  check(`W3: chart due bar (${theme}) >= 3:1 vs card`, solid >= 3, `computed ${solid.toFixed(4)}`);
+  const eff = blend(fill, hex(map, "card"), 0.8);
+  const effRatio = contrast(eff, hex(map, "card"));
+  console.log(`  W3 ${theme} chart questions bar ${fill} @0.8 (eff ${eff}) vs card: ${effRatio.toFixed(2)}`);
+  check(`W3: chart questions bar @0.8 (${theme}) >= 3:1 vs card`, effRatio >= 3, `computed ${effRatio.toFixed(4)}`);
+  check(
+    `W3: chart bar fill (${theme}) equals the --chart-2 token`,
+    fill === hex(map, "chart-2"),
+    `fill ${fill} vs token ${hex(map, "chart-2")}`,
+  );
+}
 
 console.log(failures === 0 ? `\nAll contrast tests passed.` : `\n${failures} FAILURE(S)`);
 process.exit(failures === 0 ? 0 : 1);

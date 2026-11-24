@@ -219,7 +219,10 @@ export default function Home() {
         <div className="card">
           <h2>{t("startHereHeading")}</h2>
           <p className="muted">{returning ? t("startHereReturning") : t("startHereFresh")}</p>
-          <p>
+          {/* UI/UX2 M15 — the three actions share one flex row (gap +
+              wrap) instead of one paragraph, so no action strands
+              alone on a line at 360px. */}
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             {resumeAction ? (
               <Link className="btn" href={resumeAction.href}>
                 <span dir="auto">{resumeAction.label}</span>
@@ -228,18 +231,18 @@ export default function Home() {
               <Link className="btn" href="/practice">
                 {t("startHerePractice")}
               </Link>
-            )}{" "}
+            )}
             {/* Fresh learners choose a mock; returning learners review
                 due cards — the middle action follows the variant. */}
             <Link className="btn secondary" href={returning ? "/flashcards" : "/mock"}>
               {returning ? t("startHereCards") : t("startHereMock")}
-            </Link>{" "}
+            </Link>
             <Link className="btn secondary" href="/plan">
               {returning ? t("startHereContinuePlan") : t("startHerePlan")}
             </Link>
-          </p>
+          </div>
           <p className="muted">
-            <span dir="ltr">
+            <span dir="auto">
               {tf("cardsDueNew", { due: buckets.due, fresh: buckets.fresh })}
             </span>
             {nextTask ? (
@@ -294,11 +297,16 @@ export default function Home() {
         </div>
       ) : (
         <div className="alert red">
+          {/* UI/UX2 M14 — compact form: the button sits in its own
+              paragraph (as the full form does), so it never wraps
+              mid-paragraph flush against the banner text at 360px. */}
           <b>{t("correctionsHeading")}</b>{" "}
-          <span dir="ltr">{PATTERN_BANNER}</span>{" "}
-          <button className="secondary" onClick={() => setCorrectionsExpanded(true)}>
-            {t("correctionsShowFull")}
-          </button>
+          <span dir="ltr">{PATTERN_BANNER}</span>
+          <p>
+            <button className="secondary" onClick={() => setCorrectionsExpanded(true)}>
+              {t("correctionsShowFull")}
+            </button>
+          </p>
         </div>
       )}
 
@@ -398,7 +406,7 @@ export default function Home() {
                 </p>
                 <p className="tw:m-0 tw:text-sm tw:text-muted-foreground">{t("cardsDueLabel")}</p>
                 <p className="tw:m-0 tw:text-xs tw:text-muted-foreground">
-                  <span dir="ltr">
+                  <span dir="auto">
                     {tf("cardsDueNew", { due: buckets.due, fresh: buckets.fresh })}
                   </span>
                 </p>

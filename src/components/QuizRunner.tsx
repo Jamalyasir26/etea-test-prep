@@ -195,7 +195,7 @@ function IssueForm({ qid, subject }: { qid: string; subject?: string }) {
           placeholder={t("correctionPlaceholder")}
         />
       </label>
-      <label style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: 8 }}>
+      <label style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: 8, minHeight: 44 }}>
         <input
           type="checkbox"
           checked={noCorrection}
@@ -507,6 +507,7 @@ export default function QuizRunner({
     shownAtRef.current = {};
     const fresh = Date.now();
     setStartTs(fresh);
+    setNow(fresh);
     setDeadlineTs(timed ? fresh + minutes * 60 * 1000 : null);
     setAnswers({});
     setFirstPass({});
@@ -526,7 +527,7 @@ export default function QuizRunner({
     if (!s) return;
     submittedRef.current = false;
     shownAtRef.current = {};
-    setStartTs(s.optionSeed);
+    setNow(Date.now());
     setDeadlineTs(s.deadlineTs ?? null);
     setAnswers(s.answers ?? {});
     setFirstPass(s.firstPass ?? {});
@@ -645,6 +646,7 @@ export default function QuizRunner({
     shownAtRef.current = {};
     const fresh = Date.now();
     setStartTs(fresh);
+    setNow(fresh);
     setDeadlineTs(timed ? fresh + minutes * 60 * 1000 : null);
     setAnswers({});
     setFirstPass({});
@@ -1210,11 +1212,6 @@ export default function QuizRunner({
             <button
               key={i}
               className={cls}
-              style={
-                mode === "mock" && isPicked
-                  ? { borderColor: "var(--teal)", borderWidth: 2 }
-                  : undefined
-              }
               aria-pressed={isPicked}
               onClick={() => choose(i)}
               disabled={mode === "practice" && revealed}

@@ -284,7 +284,7 @@ function PracticeInner() {
         </button>
         {mode !== "revise" && (
           <>
-            <label>
+            <label style={{ display: "flex", gap: 6, alignItems: "center", minHeight: 44 }}>
               <input
                 type="checkbox"
                 checked={timedEnabled}
@@ -380,7 +380,14 @@ function PracticeInner() {
       ) : reviseQuestions === null ? (
         <p className="muted" role="status">{t("loading")}</p>
       ) : reviseQuestions.length === 0 ? (
-        <p>{t("reviseEmpty")}</p>
+        <>
+          <p>{t("reviseEmpty")}</p>
+          <p>
+            <button className="secondary" onClick={() => setMode("standard")}>
+              {t("practiceModeStandard")}
+            </button>
+          </p>
+        </>
       ) : (
         <QuizRunner
           key={`revise-${queueHash}-${count}`}

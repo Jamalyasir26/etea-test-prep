@@ -269,8 +269,10 @@ function FlashcardsInner() {
           {/* Step 2b — New / Due reviews / Session total as SEPARATE
               numbers: the composition snapshot (this session's queue)
               plus the session's own reviewed/recalled counts. */}
-          {t("flashNewLabel")}: <b>{composition.fresh}</b> · {t("flashDueReviewsLabel")}:{" "}
-          <b>{composition.due}</b> · {t("sessionLabel")}{" "}
+          {/* UI/UX2 M32 — the two composition numbers are isolated
+              LTR, matching their session-count siblings in this line. */}
+          {t("flashNewLabel")}: <span dir="ltr"><b>{composition.fresh}</b></span> · {t("flashDueReviewsLabel")}:{" "}
+          <span dir="ltr"><b>{composition.due}</b></span> · {t("sessionLabel")}{" "}
           <span dir="ltr">
             {session.total}
           </span>{" "}
@@ -382,7 +384,10 @@ function FlashcardsInner() {
               Card content stays dir="auto" (English, Urdu and Roman
               card text all flow correctly). */}
           {reduceMotion ? (
-            <button type="button" className="card flashcard" onClick={() => setFlipped(!flipped)} aria-pressed={flipped}>
+            // UI/UX2 M33 — long backs align start, not center: a median
+            // back wraps to ~5 lines at 360px, and centered ragged
+            // edges on both sides hurt readability.
+            <button type="button" className="card flashcard" style={{ textAlign: "start" }} onClick={() => setFlipped(!flipped)} aria-pressed={flipped}>
               <span dir="auto">{flipped ? (cardView?.back ?? card.back) : (cardView?.front ?? card.front)}</span>
             </button>
           ) : (
@@ -392,13 +397,17 @@ function FlashcardsInner() {
                 className="card flashcard flip-inner"
                 onClick={() => setFlipped(!flipped)}
                 aria-pressed={flipped}
-                animate={{ rotateY: flipped ? 180 : 0 }}
+                // UI/UX2 M34 — the flip mirrors in RTL: Urdu mode
+                // rotates toward -180 (the back face sits at +180, and
+                // -180 is the same orientation, so the back still
+                // lands face-up); LTR keeps +180 as before.
+                animate={{ rotateY: flipped ? (lang === "ur" ? -180 : 180) : 0 }}
                 transition={{ duration: 0.45, ease: "easeInOut" }}
               >
-                <span dir="auto" className="flip-face flip-front" aria-hidden={flipped}>
+                <span dir="auto" className="flip-face flip-front" style={{ textAlign: "start" }} aria-hidden={flipped}>
                   {cardView?.front ?? card.front}
                 </span>
-                <span dir="auto" className="flip-face flip-back" aria-hidden={!flipped}>
+                <span dir="auto" className="flip-face flip-back" style={{ textAlign: "start" }} aria-hidden={!flipped}>
                   {cardView?.back ?? card.back}
                 </span>
               </motion.button>
@@ -420,10 +429,27 @@ function FlashcardsInner() {
           ) : null}
         </div>
       ) : (
-        <p>
-          {t("noCardsDue")}
-          {cram ? "" : ` ${t("noCardsDueHint")}`}
-        </p>
+        // UI/UX2 M37 — the none-due empty state gets an action: when
+        // cram is off, one button turns it on and restarts the session
+        // with future-due cards (existing cramLabel string, no new
+        // wording). When cram is already on and still nothing is due,
+        // there is genuinely nothing to review, so no button shows.
+        <div>
+          <p>
+            {t("noCardsDue")}
+            {cram ? "" : ` ${t("noCardsDueHint")}`}
+          </p>
+          {!cram && (
+            <button
+              onClick={() => {
+                setCram(true);
+                startSession(category, true, state);
+              }}
+            >
+              {t("cramLabel")}
+            </button>
+          )}
+        </div>
       )}
     </div>
   );

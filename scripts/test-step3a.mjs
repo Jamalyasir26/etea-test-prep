@@ -630,9 +630,16 @@ check(
 );
 check(
   "review: mock filters reference visible mocks only",
-  ["zam1", "zam2", "zam3", "tt-B", "qari-B", "at-B"].every((id) =>
-    reviewPage.includes(`"${id}"`),
-  ) && !["\"jc\"", "\"co\"", "\"pc\"", "\"forest\""].some((s) => reviewPage.includes(s)),
+  // UI/UX2 M05 — filters are now GENERATED from VISIBLE_MOCKS (24
+  // visible mocks) + the zam1+zam2 pool + "all", so the literal mock
+  // ids no longer appear in this file. The guard keeps its intent:
+  // no hidden-mock literal (jc/co/pc/forest) may appear, and the
+  // generation source must be VISIBLE_MOCKS.
+  reviewPage.includes("VISIBLE_MOCKS.map") &&
+    reviewPage.includes('"zam1+zam2"') &&
+    !["\"jc\"", "\"co\"", "\"pc\"", "\"forest\""].some((s) =>
+      reviewPage.includes(s),
+    ),
 );
 check(
   "analysis: TRACKS used only as a name lookup, never listed",

@@ -237,7 +237,12 @@ check("AppShell wraps pages in PageFade keyed by pathname", read("src/components
 // ---- 12b. 3D flashcard flip ----
 const flashSrc = read("src/app/flashcards/page.tsx");
 const flipCss = read("src/app/globals.css");
-check("flashcards page rotates the card on the Y axis", flashSrc.includes("rotateY: flipped ? 180 : 0"));
+// UI/UX2 (W3 M34) — DELIBERATE assertion update: the flip now mirrors
+// in RTL — Urdu mode rotates toward -180, LTR keeps +180 (the back
+// face sits at +180, and -180 is the same orientation, so the back
+// still lands face-up). The Y-axis rotation this check exists to
+// verify is unchanged.
+check("flashcards page rotates the card on the Y axis", flashSrc.includes('rotateY: flipped ? (lang === "ur" ? -180 : 180) : 0'));
 check("flip keeps native button semantics + reports pressed state", flashSrc.includes("motion.button") && flashSrc.includes("aria-pressed={flipped}"));
 check("flip hides the non-visible face from screen readers", flashSrc.includes("aria-hidden={flipped}") && flashSrc.includes("aria-hidden={!flipped}"));
 check("flip is skipped when reduced motion is preferred", flashSrc.includes("useReducedMotion") && flashSrc.includes("reduceMotion ?"));
@@ -344,7 +349,13 @@ check(
   "legacy --muted keeps its TEXT colours; the surface mapping uses --muted-surface",
   cssSrc.includes("--muted: #5a6b70") && cssSrc.includes("--muted: #9fb3b5") && cssSrc.includes("--color-muted: var(--muted-surface)"),
 );
-check("charts use theme-safe series colours (readable on both themes)", chartsSrc.includes('"#F5A10B"') && chartsSrc.includes('"#14b8a6"'));
+// UI/UX2 (W3 scope addition) — DELIBERATE assertion update: the old pin
+// required the hardcoded fill "#F5A10B" (light 2.10:1 vs the white card,
+// failing M07). The rendered bars are now theme-aware — light #b45309
+// (5.02:1) / dark #f5a10b (7.41:1), matching the --chart-2 token W4
+// fixed — so the pin now requires both theme-aware fills. The "#14b8a6"
+// half (dark accuracy line) is unchanged.
+check("charts use theme-safe series colours (readable on both themes)", chartsSrc.includes('"#b45309"') && chartsSrc.includes('"#f5a10b"') && chartsSrc.includes('"#14b8a6"'));
 check("new part-2 i18n keys exist with ur", ["planProgressLabel", "chartDueForecast", "chartAccuracyTrend", "chartNoData", "chartDueWord", "chartAccuracyWord", "chartQuestionsWord"].every((k) => {
   const i18n = read("src/lib/i18n.tsx");
   return i18n.includes(`${k}: {`) && i18n.includes("ur:");

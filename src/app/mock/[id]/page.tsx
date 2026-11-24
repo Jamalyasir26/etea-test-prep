@@ -157,6 +157,20 @@ function MockRunInner() {
       </div>
     );
   }
+  // UIUX2 M04 — an empty trusted mock is a dead end without this:
+  // the list page disables the trusted CTA, but the direct URL still
+  // works, so show the message plus the way back (existing strings).
+  if (questions.length === 0) {
+    return (
+      <div>
+        <h1>{view.title}</h1>
+        <p>{t("noQuestions")}</p>
+        <p>
+          <Link href="/mock">{t("backToMocks")}</Link>
+        </p>
+      </div>
+    );
+  }
   const disclosureExtra = (
     <>
       <p>
@@ -172,28 +186,36 @@ function MockRunInner() {
       </ul>
     </>
   );
+  // UIUX2 M27 — the success path had no in-page way back; render the
+  // existing back-to-mocks link above the runner (same link as the
+  // not-found / error branches above).
   return (
-    <QuizRunner
-      key={scope}
-      title={view.title}
-      questions={questions}
-      minutes={mock.minutes}
-      mode="mock"
-      mockId={mock.id}
-      trackId={mock.track}
-      note={
-        <>
-          {note} {scoringNote}
-        </>
-      }
-      trustedOnly={trustedOnly}
-      scoring={scoring}
-      allItemsVerified={allItemsVerified}
-      sessionScope={scope}
-      questionSeed={questionSeed}
-      disclosureExtra={disclosureExtra}
-      patternLabel={mock.variant}
-    />
+    <div>
+      <p>
+        <Link href="/mock">{t("backToMocks")}</Link>
+      </p>
+      <QuizRunner
+        key={scope}
+        title={view.title}
+        questions={questions}
+        minutes={mock.minutes}
+        mode="mock"
+        mockId={mock.id}
+        trackId={mock.track}
+        note={
+          <>
+            {note} {scoringNote}
+          </>
+        }
+        trustedOnly={trustedOnly}
+        scoring={scoring}
+        allItemsVerified={allItemsVerified}
+        sessionScope={scope}
+        questionSeed={questionSeed}
+        disclosureExtra={disclosureExtra}
+        patternLabel={mock.variant}
+      />
+    </div>
   );
 }
 

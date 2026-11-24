@@ -147,7 +147,23 @@ function LibraryInner() {
           <span dir="auto">{tf("libraryMatchCount", { n: notes.length, total: scoped.length })}</span>
         )}
       </p>
-      {notes.length === 0 && <p>{t("noNotesMatch")}</p>}
+      {/* UI/UX2 M28 — the no-match state gets an action: clear the
+          query and broaden to all subjects (the existing
+          searchAllSubjects string — no new wording). */}
+      {notes.length === 0 && (
+        <p>
+          {t("noNotesMatch")}{" "}
+          <button
+            className="secondary"
+            onClick={() => {
+              setQuery("");
+              setSubject(ALL_SUBJECTS);
+            }}
+          >
+            {t("searchAllSubjects")}
+          </button>
+        </p>
+      )}
       {notes.map((e, noteIndex) => {
         const n = e.note;
         const isHidden = hidden[e.key] ?? true;

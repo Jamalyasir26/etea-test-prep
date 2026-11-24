@@ -112,9 +112,16 @@ check(
   "(b) canAdvance rules still mock-aware",
   qr.includes('mode === "mock" || revealed'),
 );
+// UI/UX Program 2 (M03) — the mock-only picked inline style was
+// DELIBERATELY deleted: it overrode U1's dark `.opt.picked` border
+// (1.84:1 in dark mode). Both modes now share the neutral `.opt.picked`
+// class before reveal (see the "in both modes" comment above the
+// `cls += " picked"` branch). The guard now pins the unified style.
 check(
-  "(b) mock picked style still mock-only",
-  qr.includes("mode === \"mock\" && isPicked"),
+  "(b) picked style is the shared .opt.picked class in both modes (M03)",
+  !qr.includes('mode === "mock" && isPicked') &&
+    qr.includes('cls += " picked"') &&
+    qr.includes("Neutral \"picked\" style in both modes before reveal"),
 );
 check(
   "(b) pre-start disclosure still shows duration from `minutes`",
