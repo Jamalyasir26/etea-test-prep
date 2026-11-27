@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-11-17T07:51:07.791Z",
+  "generatedAt": "2026-11-27T17:59:46.835Z",
   "scope": [
     "zam1",
-    "zam2"
+    "zam2",
+    "zam4",
+    "zam5"
   ],
   "counts": {
-    "total": 200,
-    "pass": 186,
-    "needsReview": 14,
+    "total": 320,
+    "pass": 293,
+    "needsReview": 27,
     "problem": 0
   },
   "items": {
@@ -836,6 +838,512 @@
       "issues": []
     },
     "PED-020": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-091": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-092": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-093": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-094": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-095": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-096": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ISL-097": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-098": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-099": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-100": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-101": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-102": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ISL-103": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-104": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-105": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-106": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-107": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-108": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-109": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-110": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-031": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-032": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-033": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "PED-034": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "PED-035": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-036": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-037": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-038": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-039": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-040": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-041": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-042": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-043": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-044": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-045": {
+      "status": "pass",
+      "issues": []
+    },
+    "SCI-001": {
+      "status": "pass",
+      "issues": []
+    },
+    "SCI-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "SCI-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "SCI-004": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "SCI-005": {
+      "status": "pass",
+      "issues": []
+    },
+    "SCI-006": {
+      "status": "pass",
+      "issues": []
+    },
+    "SCI-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "SCI-008": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "SCI-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "SCI-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-001": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-004": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-005": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-006": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-008": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-046": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-047": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-048": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-049": {
+      "status": "pass",
+      "issues": []
+    },
+    "PAK-050": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-001": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-002": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-003": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-004": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "TAJ-005": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-006": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-007": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-008": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-009": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-010": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-011": {
+      "status": "pass",
+      "issues": []
+    },
+    "TAJ-464": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-111": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-112": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ISL-113": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "ISL-114": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-115": {
+      "status": "pass",
+      "issues": []
+    },
+    "ISL-116": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-046": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-047": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-048": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-049": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-050": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-051": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-052": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-053": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-054": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-055": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-056": {
+      "status": "pass",
+      "issues": []
+    },
+    "MAT-057": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-046": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-047": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-048": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-049": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "PED-050": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "PED-051": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "PED-052": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-053": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-054": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-055": {
+      "status": "needs-review",
+      "issues": [
+        "explanation does not mention the correct answer text — owner to confirm it matches"
+      ]
+    },
+    "PED-056": {
+      "status": "pass",
+      "issues": []
+    },
+    "PED-057": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-011": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-012": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-013": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-014": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-015": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-016": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-017": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-018": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-019": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-020": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-021": {
+      "status": "pass",
+      "issues": []
+    },
+    "SS-022": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-046": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-047": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-048": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-049": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-050": {
+      "status": "pass",
+      "issues": []
+    },
+    "URD-051": {
       "status": "pass",
       "issues": []
     }

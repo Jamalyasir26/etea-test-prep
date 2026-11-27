@@ -242,7 +242,7 @@ const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("F02 notes still 301", notesTotal === 301);
 check("F02 flashcards still 70", FLASHCARDS.length === 70);
 check("F02 visible tracks still 12", VISIBLE_TRACKS.length === 12);
-check("F02 visible mocks now 24 (Phase 3)", VISIBLE_MOCKS.length === 24);
+check("F02 visible mocks now 26 (ZamungKor 891)", VISIBLE_MOCKS.length === 26);
 
 const withEn = QUESTIONS.filter((q) => typeof q.explanationEn === "string" && q.explanationEn.length > 0);
 const marked = QUESTIONS.filter((q) => q.explanationLang === "roman");

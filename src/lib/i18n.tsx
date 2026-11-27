@@ -34,6 +34,7 @@ const STRINGS: Record<string, StrEntry> = {
   library: { en: "Library", roman: "Library", ur: "لائبریری" },
   practice: { en: "Practice", roman: "Mashq", ur: "مشق" },
   mocks: { en: "Mock Tests", roman: "Mock Tests", ur: "موک ٹیسٹ" },
+  zamungkor: { en: "ZamungKor 2026", roman: "ZamungKor 2026", ur: "زمونگ کور 2026" },
   flashcards: { en: "Flashcards", roman: "Flashcards", ur: "فلیش کارڈز" },
   tutor: { en: "AI Tutor", roman: "AI Ustad", ur: "اے آئی استاد" },
   plan: { en: "Study Plan", roman: "Mutalaa Mansooba", ur: "مطالعے کا منصوبہ" },
@@ -586,6 +587,63 @@ const STRINGS: Record<string, StrEntry> = {
     en: "All mocks are practice mocks, not official ETEA papers.",
     roman: "Tamam mocks practice mocks hain, official ETEA papers nahi.",
     ur: "تمام موک مشقی موک ہیں، سرکاری ETEA پرچے نہیں۔",
+  },
+
+  // ---- ZamungKor section ----
+  zamSectionTitle: {
+    en: "ZamungKor 2026 — Current Preparation",
+    roman: "ZamungKor 2026 — Maujooda Tayyari",
+    ur: "زمونگ کور 2026 — موجودہ تیاری",
+  },
+  zamSectionIntro: {
+    en: "Two halves, kept separate. The current half follows the official ETEA Project 891 syllabus. The previous half keeps the old proxy pattern exactly as it was — it is not the current pattern.",
+    roman: "Do hisse, alag alag. Maujooda hissa ETEA Project 891 ke official syllabus par hai. Pichla hissa purane proxy pattern ko bilkul waisa hi rakhta hai jaisa tha — ye maujooda pattern nahi hai.",
+    ur: "دو حصے، الگ الگ۔ موجودہ حصہ ETEA پروجیکٹ 891 کے سرکاری نصاب پر مبنی ہے۔ پچھلا حصہ پرانے متبادل پیٹرن کو بالکل ویسا ہی رکھتا ہے جیسا تھا — یہ موجودہ پیٹرن نہیں ہے۔",
+  },
+  zamSectionCurrentHeading: {
+    en: "Current — official syllabus (Project 891)",
+    roman: "Maujooda — official syllabus (Project 891)",
+    ur: "موجودہ — سرکاری نصاب (پروجیکٹ 891)",
+  },
+  zamSectionCurrentBadge: {
+    en: "Official syllabus — Project 891",
+    roman: "Official syllabus — Project 891",
+    ur: "سرکاری نصاب — پروجیکٹ 891",
+  },
+  zamSectionCurrentNote: {
+    en: "Composition confirmed from the official ETEA Project 891 course-content PNG. Each paper is 60 questions. The 45-minute duration and computer-based format are the owner's decision, NOT stated by ETEA — confirm on your roll-number slip.",
+    roman: "Tarkeeb ETEA Project 891 ke official course-content PNG se confirmed hai. Har paper 60 sawalat ka hai. 45 minute ka waqt aur computer-based format malik ka faisla hai, ETEA ne nahi likha — apni roll-number slip par confirm karein.",
+    ur: "ترکیب ETEA پروجیکٹ 891 کے سرکاری کورس مواد (PNG) سے مصدقہ ہے۔ ہر پرچہ 60 سوالات کا ہے۔ 45 منٹ کا وقت اور کمپیوٹر پر مبنی امتحان مالک کا فیصلہ ہے، ETEA نے یہ نہیں لکھا — اپنی رول نمبر سلپ پر تصدیق کریں۔",
+  },
+  zamSectionPreviousHeading: {
+    en: "Previous — proxy pattern (superseded)",
+    roman: "Pichla — proxy pattern (khatm shuda)",
+    ur: "پچھلا — متبادل پیٹرن (ختم شدہ)",
+  },
+  zamSectionPreviousBadge: {
+    en: "Previous pattern — proxy",
+    roman: "Pichla pattern — proxy",
+    ur: "پچھلا پیٹرن — متبادل",
+  },
+  zamSectionPreviousNote: {
+    en: "The pattern used before the official syllabus was published: Islamiyat 30, English 15, Urdu 15, Pak Studies 15, Maths 15, Pedagogy 10 — 100 questions, 100 minutes. It comes from the user-supplied Merged-Districts table (NOT VERIFIED) and is superseded by the official syllabus. Kept unchanged for reference and revision.",
+    roman: "Official syllabus shaya hone se pehle wala pattern: Islamiyat 30, English 15, Urdu 15, Pak Studies 15, Maths 15, Pedagogy 10 — 100 sawalat, 100 minute. Ye user-supplied Merged-Districts table se hai (NOT VERIFIED) aur official syllabus se khatm ho gaya hai. Hawale aur revision ke liye bilkul waisa hi rakha gaya hai.",
+    ur: "سرکاری نصاب شائع ہونے سے پہلے والا پیٹرن: اسلامیات 30، انگریزی 15، اردو 15، مطالعہ پاکستان 15، ریاضی 15، تدریسیات 10 — 100 سوالات، 100 منٹ۔ یہ صارف کی دی ہوئی ضم شدہ اضلاع والی جدول سے ہے (تصدیق نہیں ہوئی) اور سرکاری نصاب سے ختم ہو گیا ہے۔ حوالے اور دہرائی کے لیے اسے بالکل ویسا ہی رکھا گیا ہے۔",
+  },
+  zamSectionSyllabusLink: {
+    en: "Official syllabus — Project 891 course content (PNG)",
+    roman: "Official syllabus — Project 891 course content (PNG)",
+    ur: "سرکاری نصاب — پروجیکٹ 891 کورس مواد (PNG)",
+  },
+  zamSectionViewLedger: {
+    en: "Coverage ledger (Vacancies page)",
+    roman: "Coverage ledger (Vacancies page)",
+    ur: "احاطہ جدول (آسامیوں کا صفحہ)",
+  },
+  zamSectionOpenLink: {
+    en: "Open the ZamungKor section — current and previous preparation, kept separate",
+    roman: "ZamungKor section kholein — maujooda aur pichli tayyari, alag alag",
+    ur: "زمونگ کور سیکشن کھولیں — موجودہ اور پچھلی تیاری، الگ الگ",
   },
   mockProv1: {
     en: "Mocks are provisional practice built from unreviewed AI-generated questions.",
@@ -1431,9 +1489,9 @@ const STRINGS: Record<string, StrEntry> = {
   },
   mockLabelProxy: { en: "Proxy", roman: "Mutabadil", ur: "متبادل" },
   mockLabelProxyDetail: {
-    en: "A proxy mock: practises the pattern from practice items — not an official paper, and ZamungKor has no published syllabus.",
-    roman: "Proxy mock: practice items se pattern ki mashq karwata hai — official paper nahi, aur ZamungKor ka koi shaya shuda syllabus nahi.",
-    ur: "متبادل موک: مشقی سوالات سے پیٹرن کی مشق کرواتا ہے۔ یہ سرکاری پرچہ نہیں ہے، اور زمونگ کور کا کوئی شائع شدہ نصاب نہیں۔",
+    en: "A proxy mock: practises the pattern from practice items — not an official paper.",
+    roman: "Proxy mock: practice items se pattern ki mashq karwata hai — official paper nahi.",
+    ur: "متبادل موک: مشقی سوالات سے پیٹرن کی مشق کرواتا ہے۔ یہ سرکاری پرچہ نہیں ہے۔",
   },
   mockLabelReviewedSubset: { en: "Reviewed subset", roman: "Jaiza shuda hissa", ur: "جائزہ شدہ حصہ" },
   mockLabelReviewedSubsetDetail: {

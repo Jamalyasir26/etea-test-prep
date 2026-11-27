@@ -114,7 +114,7 @@ const tones = new Set([
   topicBadge("Original practice question based on past-paper topics — not the actual paper").tone,
 ]);
 check("six distinct meanings map to six distinct tones", tones.size === 6, [...tones].join(","));
-check("CORRECTIONS_VERSION is 1", CORRECTIONS_VERSION === 1);
+check("CORRECTIONS_VERSION is 2 (bumped for the ZamungKor 891 syllabus notice)", CORRECTIONS_VERSION === 2);
 
 // ---------------------------------------------------------------- §2
 // Badge components + application sites.

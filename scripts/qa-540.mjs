@@ -292,6 +292,13 @@ const content = loadJson(CONTENT_PATH);
   check("trusted-only count for ZamungKor Mock 1 + Mock 2 is 15 (owner-reviewed at bank level)", zam12Trusted.length === 15,
     `${zam12Trusted.length} trusted: ${zam12Trusted.slice().sort().join(", ")}`);
 
+  // ZamungKor 891 (W2 §3.2): the two new 45-min notes label the timer as
+  // the owner's decision, not ETEA's — and name the 891 source.
+  const zam45 = ["zam4", "zam5"].map((id) => mocks[id]);
+  check("ZamungKor 891 notes label the 45-min timer as the owner's decision (not ETEA's)",
+    zam45.every((m) => m && /owner's decision/i.test(m.note || "") && /891/.test(m.note || "")),
+    zam45.map((m) => `${m?.id}: ${(m?.note || "").slice(0, 80)}…`).join(" | "));
+
   // Every comp key used by any mock / compB / compMD / compA must resolve to a bank
   // (or be the legacy drawing_pe key, which no active comp should use any more).
   const bankKeys = new Set(Object.keys(banks));

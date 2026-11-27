@@ -88,11 +88,11 @@ check("P4L notes total 301", notesTotal === 301, `got ${notesTotal}`);
 const contentJson = readJson("src/data/content.json");
 check(
   "P4L content.json counts: total 8000, notes 301, cards 70, tracks 19, mocks 28",
-  contentJson.counts.total === 8000 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70 && contentJson.counts.tracks === 19 && contentJson.counts.mocks === 28,
+  contentJson.counts.total === 8000 && contentJson.counts.notes === 301 && contentJson.counts.cards === 70 && contentJson.counts.tracks === 19 && contentJson.counts.mocks === 30,
   JSON.stringify(contentJson.counts),
 );
 check(
-  "P4L VISIBLE_COUNTS 8000/301/70, 12 tracks / 24 mocks",
+  "P4L VISIBLE_COUNTS 8000/301/70, 12 tracks / 26 mocks",
   VISIBLE_COUNTS.total === 8000 && VISIBLE_COUNTS.notes === 301 && VISIBLE_COUNTS.cards === 70,
 );
 

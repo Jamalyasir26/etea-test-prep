@@ -11,14 +11,14 @@
 // service-worker cache, no code bug; this suite pins the code side.)
 // Plain node, no dependencies. Run: node scripts/test-phase4-organize.mjs
 // (exit 0 = all pass). Locks:
-//  - all 28 mock defs carry non-empty title_ur/title_roman/note_ur/
+//  - all 30 mock defs carry non-empty title_ur/title_roman/note_ur/
 //    note_roman (the completeness premise the resolver relies on);
-//  - VISIBLE_MOCKS is exactly the 24 known ids;
+//  - VISIBLE_MOCKS is exactly the 26 known ids;
 //  - resolveMockView returns translated=true with non-empty Urdu/Roman
-//    title+note (equal to the stored _ur/_roman fields) for ALL 24
+//    title+note (equal to the stored _ur/_roman fields) for ALL 26
 //    visible mocks in BOTH ur and roman;
 //  - the English view returns translated=false with the English
-//    title/note for ALL 24 visible mocks;
+//    title/note for ALL 26 visible mocks;
 //  - the resolver never mutates a def, and a def with a missing/blank
 //    field falls back to the WHOLE English metadata (never a mix);
 //  - list-page wiring: titles render from resolveMockView(m, lang) at
@@ -50,7 +50,7 @@ const content = readJson("src/data/content.json");
 const mocks = content.mocks;
 
 // ---- §1 data completeness (the resolver's premise) ----
-check("mocks: 28 defs", mocks.length === 28, `got ${mocks.length}`);
+check("mocks: 30 defs", mocks.length === 30, `got ${mocks.length}`);
 const TRANSLATION_KEYS = ["title_ur", "title_roman", "note_ur", "note_roman"];
 check(
   "mocks: title/note translations present + non-empty on every def",
@@ -94,12 +94,12 @@ const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 
 const VISIBLE_IDS = [
-  "zam1", "zam2", "zam3", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
+  "zam1", "zam2", "zam3", "zam4", "zam5", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
   "ctit-B", "ctit-A", "dm-B", "dm-2", "pet-B", "pet-2", "qari-B", "qari-MD",
   "swse", "swse-2", "sst-kppsc", "sst-kppsc-2", "sst-etea", "sst-etea-2",
 ];
 check(
-  "mocks: visible set is exactly the 24 known ids",
+  "mocks: visible set is exactly the 26 known ids",
   JSON.stringify(data.VISIBLE_MOCKS.map((m) => m.id).sort()) === JSON.stringify([...VISIBLE_IDS].sort()),
   data.VISIBLE_MOCKS.map((m) => m.id).join(","),
 );
@@ -108,7 +108,7 @@ const byId = Object.fromEntries(mocks.map((m) => [m.id, m]));
 
 // ---- §3 the core pin: translated in ur + roman, plain in en ----
 check(
-  "resolveMockView ur: translated=true, non-empty Urdu title+note, equal to stored fields (all 24 visible)",
+  "resolveMockView ur: translated=true, non-empty Urdu title+note, equal to stored fields (all 26 visible)",
   visible.every((m) => {
     const v = data.resolveMockView(m, "ur");
     const stored = byId[m.id];
@@ -128,7 +128,7 @@ check(
     .join(","),
 );
 check(
-  "resolveMockView roman: translated=true, non-empty Roman title+note, equal to stored fields (all 24 visible)",
+  "resolveMockView roman: translated=true, non-empty Roman title+note, equal to stored fields (all 26 visible)",
   visible.every((m) => {
     const v = data.resolveMockView(m, "roman");
     const stored = byId[m.id];
@@ -148,7 +148,7 @@ check(
     .join(","),
 );
 check(
-  "resolveMockView en: translated=false, English title+note (all 24 visible)",
+  "resolveMockView en: translated=false, English title+note (all 26 visible)",
   visible.every((m) => {
     const v = data.resolveMockView(m, "en");
     return v.translated === false && v.title === m.title && v.note === m.note;

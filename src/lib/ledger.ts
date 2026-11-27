@@ -6,14 +6,19 @@
 // - Weightages come ONLY from the official documents named in the
 //   owner-supplied improvement report: ETEA PDF 453 (ESED Version B),
 //   the ETEA 2020 course-content PDF (SST-ETEA), ETEA PDF 435 (Social
-//   Welfare — PROVISIONAL, see below), and the KPPSC 5th Schedule Feb
-//   2026 (SST-KPPSC). The weightage table is written out explicitly per
+//   Welfare — PROVISIONAL, see below), the KPPSC 5th Schedule Feb
+//   2026 (SST-KPPSC), and the ETEA Project 891 course-content PNG
+//   (ZamungKor composition only). The weightage table is written out explicitly per
 //   post from the report's table — it is NOT copied from COMP_B, whose
 //   CT entry (pakstudies 10) disagrees with the report's CT row
-//   (Social Studies 10); see VERIFY-step3a.md. ZamungKor has NO
-//   published syllabus: its row shows the proxy pattern the fixed
-//   mocks actually use (verified against the ZAM_FIXED id lists),
-//   labelled proxy / NOT VERIFIED.
+//   (Social Studies 10); see VERIFY-step3a.md. ZamungKor's composition
+//   is confirmed from the official ETEA Project 891 course-content PNG;
+//   its row shows the two 60-question papers (Theology + Qari). The
+//   60-question total, 45-minute duration and computer-based format
+//   are the owner's decision, NOT in the ETEA document, and are stated
+//   as such in the row's text fields. The previous proxy pattern is
+//   preserved in ZamungKor Mocks 1–3 and is labelled superseded in the
+//   ZamungKor section — it no longer appears in the ledger.
 // - Time / marks / language / negative-marking: stated ONLY where an
 //   official source states them; everywhere else the label is
 //   "Unknown". KPPSC −0.25 negative marking stays labelled UNVERIFIED
@@ -22,12 +27,13 @@
 //   real banks at module load — never hardcoded. A subject with no
 //   bank (the SST 60-question/60% subject portion) counts zero and
 //   drives the Partial status.
-// - "Last verified" is 11 Nov 2026 for every row: the date the
-//   research pass read these sources live. The ledger intro tells the
-//   user to re-check their own advertisement.
+// - "Last verified" is 11 Nov 2026 for every row except ZamungKor,
+//   re-verified 27 Nov 2026 against the Project 891 PNG (per-row
+//   `lastVerified` on the def; see below).
 //
 // Coverage rule (mechanical, documented — see coverageFor):
-// - "unpublished" pattern (ZamungKor) -> Proxy.
+// - No row uses 'unpublished' today; the rule stays for a future post
+//   with no published pattern.
 // - "provisional" pattern (Social Welfare / PDF 435, whose primary
 //   text the report pass did not directly verify) -> Partial.
 // - "confirmed" pattern + every blueprint subject has >=1 note AND
@@ -43,9 +49,11 @@
 //
 // "Source Confirmed" (the green official tone) is used ONLY for rows
 // whose pattern source is a named official document: PDF 453, the
-// 2020 PDF, and the KPPSC 5th Schedule. Social Welfare is Provisional
-// (PDF 435 not directly verified in the report pass) and ZamungKor is
-// Official-scope-unavailable — neither gets the green badge.
+// 2020 PDF, the KPPSC 5th Schedule, and the ETEA Project 891
+// course-content PNG (ZamungKor composition only — its time/format
+// half is owner-decided and labelled in the row). Social Welfare is
+// Provisional (PDF 435 not directly verified in the report pass) and
+// does not get the green badge.
 
 import { FLASHCARDS, NOTES, TRACKS, VISIBLE_MOCKS, VISIBLE_TRACKS, type Track } from "./data";
 import { BANK_COUNTS, BANK_TRUSTED } from "./banks";
@@ -204,6 +212,8 @@ const KPPSC_SCHEDULE_URL =
 export type LedgerDef = {
   trackId: string;
   pattern: LedgerPatternState;
+  /** Per-row re-verification date; defaults to LAST_VERIFIED when omitted. */
+  lastVerified?: string;
   sourceLabel: string;
   sourceUrl: string | null;
   totalLabel: string;
@@ -224,8 +234,8 @@ export type LedgerDef = {
 
 /** The per-post ledger definitions. Weightages are the report's
  *  official table (PDF 453 / 2020 PDF / PDF 435 / KPPSC schedule);
- *  ZamungKor's proxy weightage is the distribution the fixed mocks
- *  actually use (verified against the ZAM_FIXED id lists). */
+ *  ZamungKor's weightage is the official Project 891 composition (two
+ *  papers); the previous proxy weightage no longer appears here. */
 const LEDGER_DEFS: LedgerDef[] = [
   {
     trackId: "tt",
@@ -481,26 +491,31 @@ const LEDGER_DEFS: LedgerDef[] = [
   },
   {
     trackId: "zamungkor",
-    pattern: "unpublished",
-    sourceLabel: "etea.online — Project 891 listing + advert INF(P)5368/26",
-    sourceUrl: "https://etea.online/",
-    totalLabel: "Unknown — no published syllabus",
-    timeLabel: "Unknown — no published syllabus.",
-    languageLabel: "Unknown — no published syllabus.",
-    negativeMarkingLabel: "Unknown — no published syllabus.",
+    pattern: "confirmed",
+    lastVerified: "27 Nov 2026",
+    sourceLabel: "ETEA Project 891 — course content PNG (official-hosted)",
+    sourceUrl: "https://etea.online/advertisement/course_content/891_7f36d7dbbeb4261f575eea5659ff5f4f.png",
+    totalLabel: "60 MCQs per paper (Theology + Qari — 2 papers)",
+    timeLabel: "45 min — owner's decision (CBT); NOT in the ETEA document — confirm on your roll-number slip.",
+    languageLabel: UNKNOWN_LANGUAGE,
+    negativeMarkingLabel: UNKNOWN_NEGATIVE,
     patternNote:
-      "NO published syllabus (etea.online: Weightage/Syllabus = “Not Available”). The weightage below is the proxy pattern the fixed mocks actually use — the user-supplied Merged-Districts table (NOT VERIFIED). The track guidance names the ESED TT pattern as the closest proxy.",
+      "Composition confirmed from the official ETEA Project 891 course-content PNG — Theology and Qari blocks as tabulated below. The 60-question total, 45-minute duration and computer-based format are the owner's decision, NOT stated in the ETEA document — confirm on your roll-number slip. The Qari combined block (Tajweed/Hifz + Islamiyat 18) is split 12 Tajweed / 6 Islamiyat by the implementer following the ESED Qari 20/10 precedent — that split is not ETEA's. The previous proxy pattern is preserved in ZamungKor Mocks 1–3 (see the ZamungKor section); it is superseded.",
     weightage: [
-      w("islamiyat", "30 Q"),
-      w("english", "15 Q"),
-      w("urdu", "15 Q"),
-      w("pakstudies", "15 Q"),
-      w("maths", "15 Q"),
-      w("pedagogy", "10 Q"),
+      w("islamiyat", "20 Q"),
+      w("pedagogy", "15 Q"),
+      w("science", "10 Q"),
+      w("socialstudies", "10 Q"),
+      w("pakstudies", "5 Q"),
+      w("tajweedIslamiyat", "18 Q"),
+      w("maths", "12 Q"),
+      w("pedagogy", "12 Q"),
+      w("socialstudies", "12 Q"),
+      w("urdu", "6 Q"),
     ],
     sharedMockIds: [],
-    missing: "Official syllabus — none published; proxy pattern only.",
-    nextAction: "Watch etea.online for the project notice; prepare on the TT proxy pattern meanwhile.",
+    missing: "No missing blueprint subject.",
+    nextAction: "Practise the Theology and Qari mocks in the ZamungKor section; verify draft items in the new Science / Social Studies / Tajweed / Pedagogy slots via /review — those banks have no owner-reviewed items yet.",
   },
 ];
 
@@ -630,7 +645,7 @@ export function ledgerRowFor(trackId: string): LedgerRow | null {
     bps: track.bps,
     sourceLabel: def.sourceLabel,
     sourceUrl: def.sourceUrl,
-    lastVerified: LAST_VERIFIED,
+    lastVerified: def.lastVerified ?? LAST_VERIFIED,
     sourceState: sourceStateFor(def.pattern),
     totalLabel: def.totalLabel,
     timeLabel: def.timeLabel,

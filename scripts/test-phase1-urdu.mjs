@@ -279,7 +279,7 @@ const LABEL_TO_MAP = {
   });
   check("Phase1 content.json counts: total 8000, Urdu 500, other rows unchanged, 301/70/19/28",
     content.counts.total === 8000 && bySubj.Urdu === 500 && otherRowsOk &&
-    content.counts.notes === 301 && content.counts.cards === 70 && content.counts.tracks === 19 && content.counts.mocks === 28,
+    content.counts.notes === 301 && content.counts.cards === 70 && content.counts.tracks === 19 && content.counts.mocks === 30,
     `total=${content.counts.total} urdu=${bySubj.Urdu}`);
 }
 
@@ -303,7 +303,7 @@ const LABEL_TO_MAP = {
     }
   }
   check("Phase1 fixed ZamungKor mock lists: all ids resolve, lists disjoint",
-    lists.length === 3 && unresolved.length === 0 && overlap.length === 0,
+    lists.length === 5 && unresolved.length === 0 && overlap.length === 0,
     `lists=${lists.length} unresolved=${unresolved.slice(0, 3).join(",")} overlap=${overlap.slice(0, 3).join(",")}`);
   console.log(`INFO  Phase1 zamFixed lists: ${lists.map(([n, ids]) => `${n}=${ids.length}`).join(" ")}`);
 }

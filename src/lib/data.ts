@@ -54,7 +54,7 @@ export type Question = {
   // concept (e.g. all passive-voice items share one id); syllabusClause
   // maps the item to a section of a named pattern document for study
   // organisation — it is NOT a claim that any specific advert uses that
-  // pattern (ZamungKor has no published syllabus). sourceKind is never
+  // pattern (the ZamungKor syllabus is now published — see the ZamungKor section; the clause remains a study-organisation map, not an advert claim). sourceKind is never
   // "official" unless the item genuinely comes from an official source.
   conceptId?: string;
   syllabusClause?: string;
@@ -342,7 +342,7 @@ export const PATTERN_BANNER =
   "ETEA sets paper composition per project. Always verify against your specific advertisement / roll number slip.";
 
 export const CORRECTIONS = [
-  "ZamungKor 2026 (Project 891, last date 20 Nov 2026): NO BPS, NO published syllabus — 30 posts, 16 titles, 1-year contract on fixed pay. Never call it BPS-16/BPS-12.",
+  "ZamungKor 2026 (Project 891, last date 20 Nov 2026): NO BPS — 30 posts, 16 titles, 1-year contract on fixed pay. Never call it BPS-16/BPS-12. The official syllabus is now published (ETEA Project 891 course content): Theology and Qari papers are 60 questions each — see the ZamungKor section. The 45-minute duration and computer-based format are the owner's decision, NOT stated by ETEA.",
   "ESED Theology Teacher (TT) is BPS-15. BPS-16 Religious/Theology Teacher is a separate Social Welfare post (Jan 2025).",
   "SST is two exams: ETEA 100 MCQs vs KPPSC 45 MCQs — never merge them.",
 ];
@@ -352,7 +352,7 @@ export const CORRECTIONS = [
 // CORRECTIONS line or the PATTERN_BANNER changes, so the full notice
 // shows again on the next visit. The notice is never removed —
 // acknowledgement only compacts it, with a reopen control.
-export const CORRECTIONS_VERSION = 1;
+export const CORRECTIONS_VERSION = 2;
 
 // ---------- deterministic shuffle (stable per seed) ----------
 export function mulberry32(seed: number) {

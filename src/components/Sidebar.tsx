@@ -36,6 +36,7 @@ import {
   Layers,
   Link2,
   PenLine,
+  ScrollText,
   X,
   type LucideIcon,
 } from "lucide-react";
@@ -64,6 +65,7 @@ const LINKS: { href: string; key: string; Icon: LucideIcon; group: NavGroup | nu
   { href: "/library", key: "library", Icon: BookOpen, group: "study" },
   { href: "/practice", key: "practice", Icon: PenLine, group: "study" },
   { href: "/mock", key: "mocks", Icon: FileText, group: "study" },
+  { href: "/zamungkor", key: "zamungkor", Icon: ScrollText, group: "study" },
   { href: "/flashcards", key: "flashcards", Icon: Layers, group: "study" },
   { href: "/tutor", key: "tutor", Icon: GraduationCap, group: "study" },
   { href: "/plan", key: "plan", Icon: CalendarDays, group: "progress" },

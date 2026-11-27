@@ -1,18 +1,18 @@
-// Phase 2 mocks tests — all 28 mock definitions carry flat
+// Phase 2 mocks tests — all 30 mock definitions carry flat
 // _ur/_roman translations of title + note; selection behaviour is
 // UNTOUCHED (variant codes, comps, fixed ID lists, minutes, totals,
-// seeds). Visibility is unchanged (24 visible / 4 hidden). Plain
+// seeds). Visibility is unchanged (26 visible / 4 hidden). Plain
 // node, no dependencies. Run: node scripts/test-phase2-mocks.mjs
 // (exit 0 = all pass). Locks:
-//  - 28 mocks, title_ur/title_roman/note_ur/note_roman present +
+//  - 30 mocks, title_ur/title_roman/note_ur/note_roman present +
 //    non-empty on every def (visible AND hidden — one structure);
 //  - digit preservation: the multiset of digit-groups in each
 //    translated title/note equals the English one (counts, minutes,
 //    pattern numbers can never drift in translation);
 //  - selection shape intact: every dynamic mock's comp sums to its
 //    total; every fixed mock references an existing zamFixed list;
-//    the 3 fixed lists stay disjoint (re-asserted here, owned by
-//    test-step3a); visible set is exactly the 24 known ids;
+//    the 5 fixed lists stay disjoint (re-asserted here, owned by
+//    test-step3a); visible set is exactly the 26 known ids;
 //  - resolveMockView item-level fallback + never-mutates;
 //  - page wiring: list/detail/track pages render the resolved view
 //    with the badge only when translated; variant stays verbatim;
@@ -42,7 +42,7 @@ const ARABIC = /[\u0600-\u06FF]/;
 const digitGroups = (s) => (s.match(/\d+(?:\.\d+)?/g) || []).sort().join(",");
 
 // ---- §1 completeness ----
-check("mocks: 28 defs", mocks.length === 28, `got ${mocks.length}`);
+check("mocks: 30 defs", mocks.length === 30, `got ${mocks.length}`);
 check(
   "mocks: title/note translations present + non-empty on every def",
   mocks.every(
@@ -85,20 +85,24 @@ check(
     .join(","),
 );
 check(
-  "mocks: every fixed mock references an existing 100-ID zamFixed list",
+  "mocks: every fixed mock references its own zamFixed list (length == its total)",
   mocks
     .filter((m) => m.fixed)
-    .every((m) => Array.isArray(content.zamFixed[m.fixed]) && content.zamFixed[m.fixed].length === 100),
+    .every((m) => Array.isArray(content.zamFixed[m.fixed]) && content.zamFixed[m.fixed].length === m.total),
+  mocks
+    .filter((m) => m.fixed)
+    .map((m) => `${m.id}:${content.zamFixed[m.fixed]?.length}/${m.total}`)
+    .join(","),
 );
 const fixedLists = mocks.filter((m) => m.fixed).map((m) => content.zamFixed[m.fixed]);
 const allFixedIds = fixedLists.flat();
 check(
-  "mocks: the 3 fixed lists stay disjoint (300 unique ids)",
-  new Set(allFixedIds).size === 300,
+  "mocks: the 5 fixed lists stay disjoint (420 unique ids)",
+  new Set(allFixedIds).size === 420,
   `got ${new Set(allFixedIds).size}`,
 );
 const EXPECTED_VARIANTS = {
-  zam1: "proxy", zam2: "proxy", zam3: "proxy",
+  zam1: "proxy", zam2: "proxy", zam3: "proxy", zam4: "891", zam5: "891",
   "tt-B": "B", "tt-MD": "MD", "at-B": "B", "at-MD": "MD", "pst-B": "B",
   "pst-A": "A", "ct-B": "B",
   "ctit-B": "B", "ctit-A": "A", "dm-B": "B", "dm-2": "B", "pet-B": "B", "pet-2": "B",
@@ -144,12 +148,12 @@ const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 
 const VISIBLE_IDS = [
-  "zam1", "zam2", "zam3", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
+  "zam1", "zam2", "zam3", "zam4", "zam5", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
   "ctit-B", "ctit-A", "dm-B", "dm-2", "pet-B", "pet-2", "qari-B", "qari-MD",
   "swse", "swse-2", "sst-kppsc", "sst-kppsc-2", "sst-etea", "sst-etea-2",
 ];
 check(
-  "mocks: visible set is exactly the 24 known ids",
+  "mocks: visible set is exactly the 26 known ids",
   JSON.stringify(data.VISIBLE_MOCKS.map((m) => m.id).sort()) === JSON.stringify([...VISIBLE_IDS].sort()),
   data.VISIBLE_MOCKS.map((m) => m.id).join(","),
 );
@@ -164,7 +168,7 @@ check(
   })(),
 );
 check(
-  "resolveMockView ur/roman: translated fields, translated=true (all 28)",
+  "resolveMockView ur/roman: translated fields, translated=true (all 30)",
   mocks.every((m) => {
     const u = data.resolveMockView(m, "ur");
     const r = data.resolveMockView(m, "roman");

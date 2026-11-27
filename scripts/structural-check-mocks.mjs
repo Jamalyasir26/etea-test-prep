@@ -1,5 +1,6 @@
 // Structural check for the verification queue (Stage 1 P0.2, mock-first).
-// Checks every item in ZamungKor Mock 1 + Mock 2 (200 items) for:
+// Checks every item in ZamungKor Mock 1 + Mock 2 + Mock 4 + Mock 5
+// (320 items: 100 + 100 + 60 + 60) for:
 //   HARD (status "problem"): not exactly 4 options, an empty option,
 //     duplicate options, correctIndex out of range, empty/short
 //     explanation, empty question text, duplicate question text in the set.
@@ -36,7 +37,18 @@ function norm(s) {
   return String(s ?? "").toLowerCase().replace(/[^a-z0-9\u0600-\u06ff]+/g, " ").trim().replace(/\s+/g, " ");
 }
 
-const SCOPE = ["zam1", "zam2"];
+// Sign-preserving variant, used ONLY for the duplicate-options check:
+// "-" is meaningful in maths options ("-13" vs "13" are different
+// options). The plain norm() strips it, which false-flagged MAT-055 /
+// MAT-056 / MAT-057 in zam5 ("-13"/"13", "-4"/"4", "-24"/"24").
+// Everywhere else the plain norm() stays, so the old scope's soft
+// flags are unchanged (hyphenated answers like "Al-Taubah" still match
+// explanations that write "At-Taubah").
+function normKeepSign(s) {
+  return String(s ?? "").toLowerCase().replace(/[^a-z0-9\-\u0600-\u06ff]+/g, " ").trim().replace(/\s+/g, " ");
+}
+
+const SCOPE = ["zam1", "zam2", "zam4", "zam5"];
 const ids = [];
 for (const m of SCOPE) ids.push(...content.zamFixed[m]);
 console.log(`Scope: ${SCOPE.join(" + ")} = ${ids.length} items`);
@@ -74,7 +86,7 @@ for (const id of ids) {
     issues.push(`options: expected 4, found ${Array.isArray(q.options) ? q.options.length : "not an array"}`);
     hard = true;
   } else {
-    const opts = q.options.map((o) => norm(o));
+    const opts = q.options.map((o) => normKeepSign(o));
     if (opts.some((o) => o.length === 0)) {
       issues.push("options: an empty option");
       hard = true;
@@ -141,7 +153,7 @@ const out = {
 };
 writeFileSync(join(ROOT, "src/data/structural-checks.json"), JSON.stringify(out, null, 2) + "\n", "utf8");
 
-console.log(`\nStructural check — ZamungKor Mock 1 + Mock 2 (${ids.length} items):`);
+console.log(`\nStructural check — ZamungKor Mocks 1 + 2 + 4 + 5 (${ids.length} items):`);
 console.log(`  pass:          ${pass}`);
 console.log(`  needs-review:  ${needsReview} (soft: explanation does not name the correct answer)`);
 console.log(`  problem:       ${problem} (hard structural failure)`);

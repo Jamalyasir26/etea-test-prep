@@ -12,9 +12,9 @@
 //    unverified assumption);
 //  - trilingual fields present + non-empty on all 8, with
 //    digit-group preservation (same method as test-phase2-mocks);
-//  - the 3 fixed ZamungKor lists stay 3 x 100, pairwise disjoint,
+//  - the 5 fixed ZamungKor lists stay 100/100/100/60/60, pairwise disjoint,
 //    every id existing in the banks (re-asserted here);
-//  - visible set is exactly the 24 known ids; every visible track
+//  - visible set is exactly the 26 known ids; every visible track
 //    has >= 1 mock; every visible mock is FULL at current bank
 //    sizes (mockAvailableCount from the BANK_COUNTS manifest,
 //    cross-checked against an independent recomputation from the
@@ -86,11 +86,11 @@ const STANDING_UR = "یہ متوقع پیٹرن ہے، کیونکہ ETEA نے 20
 const STANDING_RO = "Expected pattern — ETEA ne 2026 ka official syllabus publish nahi kiya hai.";
 
 // ---- §1 the 8 new defs: existence, shape, frozen English text ----
-check("phase3: 28 defs, counts.mocks is 28", mocks.length === 28 && content.counts.mocks === 28, `defs=${mocks.length} counts=${content.counts.mocks}`);
+check("phase3: 30 defs, counts.mocks is 30", mocks.length === 30 && content.counts.mocks === 30, `defs=${mocks.length} counts=${content.counts.mocks}`);
 check(
-  "phase3: mock order is exactly the BRIEF order (8 insertions at the frozen positions)",
+  "phase3: mock order is exactly the BRIEF order (8 insertions at the frozen positions) + zam4/zam5 after zam3",
   eq(mocks.map((m) => m.id), [
-    "zam1", "zam2", "zam3", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
+    "zam1", "zam2", "zam3", "zam4", "zam5", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
     "ctit-B", "ctit-A", "dm-B", "dm-2", "pet-B", "pet-2", "qari-B", "qari-MD",
     "swse", "swse-2", "sst-kppsc", "sst-kppsc-2", "sst-etea", "sst-etea-2",
     "jc", "co", "pc", "forest",
@@ -197,19 +197,18 @@ for (const k of BANK_KEYS) {
   bankSizes[k] = items.length;
   for (const q of items) bankIds.add(q.id);
 }
+const ZAM_LENGTHS = { zam1: 100, zam2: 100, zam3: 100, zam4: 60, zam5: 60 };
 check(
-  "phase3: zamFixed is exactly 3 lists x 100",
-  eq(Object.keys(content.zamFixed).sort(), ["zam1", "zam2", "zam3"]) &&
-    ["zam1", "zam2", "zam3"].every((k) => content.zamFixed[k].length === 100),
+  "phase3: zamFixed is exactly 5 lists (100/100/100/60/60)",
+  eq(Object.keys(content.zamFixed).sort(), ["zam1", "zam2", "zam3", "zam4", "zam5"]) &&
+    Object.entries(ZAM_LENGTHS).every(([k, n]) => content.zamFixed[k].length === n),
   Object.entries(content.zamFixed).map(([k, v]) => `${k}:${v.length}`).join(", "),
 );
-const zamAll = ["zam1", "zam2", "zam3"].flatMap((k) => content.zamFixed[k]);
+const zamAll = Object.keys(ZAM_LENGTHS).flatMap((k) => content.zamFixed[k]);
 check(
-  "phase3: the 3 fixed lists are pairwise disjoint (300 unique ids)",
-  new Set(zamAll).size === 300 &&
-    new Set(content.zamFixed.zam1).size === 100 &&
-    new Set(content.zamFixed.zam2).size === 100 &&
-    new Set(content.zamFixed.zam3).size === 100,
+  "phase3: the 5 fixed lists are pairwise disjoint (420 unique ids)",
+  new Set(zamAll).size === 420 &&
+    Object.entries(ZAM_LENGTHS).every(([k, n]) => new Set(content.zamFixed[k]).size === n),
   `unique=${new Set(zamAll).size}`,
 );
 check(
@@ -218,8 +217,8 @@ check(
   zamAll.filter((id) => !bankIds.has(id)).slice(0, 5).join(","),
 );
 check(
-  "phase3: every fixed mock references an existing 100-ID zamFixed list",
-  mocks.filter((m) => m.fixed).every((m) => Array.isArray(content.zamFixed[m.fixed]) && content.zamFixed[m.fixed].length === 100),
+  "phase3: every fixed mock references its own zamFixed list (length == its total)",
+  mocks.filter((m) => m.fixed).every((m) => Array.isArray(content.zamFixed[m.fixed]) && content.zamFixed[m.fixed].length === m.total),
 );
 
 // ---- §6 real data.ts (tsc harness — same as test-phase2-mocks §3) ----
@@ -250,12 +249,12 @@ const require = createRequire(import.meta.url);
 const data = require(join(OUT, "lib/data.js"));
 
 const VISIBLE_IDS = [
-  "zam1", "zam2", "zam3", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
+  "zam1", "zam2", "zam3", "zam4", "zam5", "tt-B", "tt-MD", "at-B", "at-MD", "pst-B", "pst-A", "ct-B",
   "ctit-B", "ctit-A", "dm-B", "dm-2", "pet-B", "pet-2", "qari-B", "qari-MD",
   "swse", "swse-2", "sst-kppsc", "sst-kppsc-2", "sst-etea", "sst-etea-2",
 ];
 check(
-  "phase3: visible set is exactly the 24 known ids",
+  "phase3: visible set is exactly the 26 known ids",
   eq(data.VISIBLE_MOCKS.map((m) => m.id).sort(), [...VISIBLE_IDS].sort()),
   data.VISIBLE_MOCKS.map((m) => m.id).join(","),
 );
@@ -265,8 +264,8 @@ check(
   data.VISIBLE_TRACKS.filter((t) => !data.VISIBLE_MOCKS.some((m) => m.track === t.id)).map((t) => t.id).join(","),
 );
 check(
-  "phase3: VISIBLE_COUNTS.mocks is 24, COUNTS.mocks is 28",
-  data.VISIBLE_COUNTS.mocks === 24 && data.COUNTS.mocks === 28,
+  "phase3: VISIBLE_COUNTS.mocks is 26, COUNTS.mocks is 30",
+  data.VISIBLE_COUNTS.mocks === 26 && data.COUNTS.mocks === 30,
   JSON.stringify({ visible: data.VISIBLE_COUNTS.mocks, full: data.COUNTS.mocks }),
 );
 check(
@@ -286,7 +285,7 @@ function independentAvailable(mock) {
 }
 const visibleMocks = data.VISIBLE_MOCKS;
 check(
-  "phase3: mockAvailableCount == independent bank-file recomputation (all 24 visible)",
+  "phase3: mockAvailableCount == independent bank-file recomputation (all 26 visible)",
   visibleMocks.every((m) => data.mockAvailableCount(m) === independentAvailable(m)),
   visibleMocks.filter((m) => data.mockAvailableCount(m) !== independentAvailable(m)).map((m) => m.id).join(","),
 );
@@ -296,7 +295,7 @@ check(
   visibleMocks.filter((m) => data.mockAvailableCount(m) !== m.total).map((m) => `${m.id}:${data.mockAvailableCount(m)}/${m.total}`).join(", "),
 );
 check(
-  "phase3: mockLabelsSync coverage is full/proxy (never partial) for all 24 visible",
+  "phase3: mockLabelsSync coverage is full/proxy (never partial) for all 26 visible",
   visibleMocks.every((m) => {
     const s = data.mockLabelsSync(m);
     return s.coverage === (m.variant === "proxy" ? "proxy" : "full") && s.available === m.total;

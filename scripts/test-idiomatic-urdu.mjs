@@ -1,7 +1,7 @@
 // U1 idiomatic Urdu + UI/UX: glossary consistency, digit preservation,
 // placeholder preservation, no-literal-marker audit, and the C2 flag-8
 // punctuation pins. Scoped to the REWRITTEN surfaces only: chrome
-// (700 STRINGS keys), notes/flashcards/plan/mocks (content.json _ur),
+// (712 STRINGS keys: 700 + 12 ZamungKor section keys), notes/flashcards/plan/mocks (content.json _ur),
 // the Islamiyat pilot bank (500 items, U1), the Tajweed bank
 // (500 items, U2 subject 1), the Arabic bank (500 items, U2
 // subject 2), the Urdu bank (500 items, U2 subject 3), the
@@ -124,10 +124,10 @@ function placeholders(s) {
 }
 
 // ---------- §1 chrome ----------
-// U1 rewrote all 700 ur values; key count is pinned by test-i18n/test-phase2.
-check("U1 chrome: 700 STRINGS keys", keys.length === 700, `got ${keys.length}`);
+// U1 rewrote all 700 ur values (+ 12 ZamungKor section keys added later, not U1-rewritten); key count is pinned by test-i18n/test-phase2.
+check("U1 chrome: 712 STRINGS keys (700 + 12 ZamungKor section keys)", keys.length === 712, `got ${keys.length}`);
 const phBad = keys.filter((k) => JSON.stringify(placeholders(STRINGS[k].en)) !== JSON.stringify(placeholders(STRINGS[k].ur)));
-check("U1 chrome: placeholder multisets identical en vs ur (all 700 keys)", phBad.length === 0, phBad.slice(0, 5).join(", "));
+check("U1 chrome: placeholder multisets identical en vs ur (all 712 keys)", phBad.length === 0, phBad.slice(0, 5).join(", "));
 const chromePairs = keys.map((k) => [`chrome:${k}`, STRINGS[k].ur]);
 // Word-boundary-aware: tokens, never substrings — معاشیات must NOT trip
 // the اشیا ban (guard pinned below with live معاشیات occurrences).

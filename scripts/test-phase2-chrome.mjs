@@ -18,7 +18,10 @@
 //  - API codes: every `code:` in the 4 routes is in API_ERROR_KEYS;
 //    both clients render through apiErrorText; the `error` string is
 //    still present for backward compatibility;
-//  - Roman sweep residual: exactly the 35 documented keep-list keys
+//  - Roman sweep residual: exactly the 39 documented keep-list keys
+//    (35 original + 4 ZamungKor section keys whose Roman is English
+//    by design: zamungkor, zamSectionCurrentBadge,
+//    zamSectionSyllabusLink, zamSectionViewLedger)
 //    still have roman === en (borrowings/codes/names whose Urdu
 //    counterparts are themselves transliterations);
 //  - date call sites: no toLocaleString() in src; toLocaleDateString
@@ -312,13 +315,14 @@ const KEEP_LIST = [
   "mockWord", "mocks", "mocksCount", "modeWord", "offlineMcqLabel", "offlineNoteLabel",
   "passWord", "patternHeading", "prestartPatternLabel", "pwaOfflineBadge", "quranPlayerLabel",
   "scoringDefaultOption", "sessionLabel", "structuralPass", "tracks",
+  "zamSectionCurrentBadge", "zamSectionSyllabusLink", "zamSectionViewLedger", "zamungkor",
 ];
 const residual = Object.entries(STRINGS)
   .filter(([, v]) => v.roman === v.en)
   .map(([k]) => k)
   .sort();
 check(
-  "chrome: roman===en residual is exactly the 35-key documented keep-list",
+  "chrome: roman===en residual is exactly the 39-key documented keep-list",
   JSON.stringify(residual) === JSON.stringify([...KEEP_LIST].sort()),
   `extra: ${residual.filter((k) => !KEEP_LIST.includes(k)).join(",")} | missing: ${KEEP_LIST.filter((k) => !residual.includes(k)).join(",")}`,
 );

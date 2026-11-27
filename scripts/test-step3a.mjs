@@ -79,7 +79,7 @@ const EXPECTED_HIDDEN_TRACKS = [
 const EXPECTED_HIDDEN_MOCKS = ["jc", "co", "pc", "forest"];
 
 check("full data intact: 19 tracks", data.TRACKS.length === 19, `got ${data.TRACKS.length}`);
-check("full data intact: 28 mocks", data.MOCKS.length === 28, `got ${data.MOCKS.length}`);
+check("full data intact: 30 mocks", data.MOCKS.length === 30, `got ${data.MOCKS.length}`);
 check("full data intact: 5 vacancies", data.VACANCIES.length === 5, `got ${data.VACANCIES.length}`);
 check(
   "teaching list: exactly the 12 named ids",
@@ -103,7 +103,7 @@ check(
   data.VISIBLE_TRACKS.length + EXPECTED_HIDDEN_TRACKS.length === 19 &&
     EXPECTED_HIDDEN_TRACKS.every((id) => data.TRACKS.some((t) => t.id === id)),
 );
-check("visible mocks: 24", data.VISIBLE_MOCKS.length === 24, `got ${data.VISIBLE_MOCKS.length}`);
+check("visible mocks: 26", data.VISIBLE_MOCKS.length === 26, `got ${data.VISIBLE_MOCKS.length}`);
 for (const id of EXPECTED_HIDDEN_MOCKS) {
   check(
     `hidden mock ${id}: absent from VISIBLE_MOCKS, present in MOCKS`,
@@ -143,17 +143,17 @@ check(
   JSON.stringify(data.VISIBLE_VACANCIES.map((v) => v.post)),
 );
 check(
-  "VISIBLE_COUNTS: 12 tracks / 24 mocks, bank counts as of Phase 4B1",
+  "VISIBLE_COUNTS: 12 tracks / 26 mocks, bank counts as of Phase 4B1",
   data.VISIBLE_COUNTS.tracks === 12 &&
-    data.VISIBLE_COUNTS.mocks === 24 &&
+    data.VISIBLE_COUNTS.mocks === 26 &&
     data.VISIBLE_COUNTS.total === 8000 &&
     data.VISIBLE_COUNTS.notes === 301 &&
     data.VISIBLE_COUNTS.cards === 70,
   JSON.stringify(data.VISIBLE_COUNTS),
 );
 check(
-  "COUNTS keeps full-bank figures (19 / 28)",
-  data.COUNTS.tracks === 19 && data.COUNTS.mocks === 28,
+  "COUNTS keeps full-bank figures (19 / 30)",
+  data.COUNTS.tracks === 19 && data.COUNTS.mocks === 30,
 );
 
 // ------------------------------------------------------- §2 SST split (real)
@@ -192,8 +192,8 @@ check(
   mockE.scoring === undefined,
 );
 check(
-  "visible mocks: 22 of 24 scoring-unknown, only sst-kppsc + sst-kppsc-2 have configs",
-  data.VISIBLE_MOCKS.filter((m) => !m.scoring).length === 22 &&
+  "visible mocks: 24 of 26 scoring-unknown, only sst-kppsc + sst-kppsc-2 have configs",
+  data.VISIBLE_MOCKS.filter((m) => !m.scoring).length === 24 &&
     data.VISIBLE_MOCKS.filter((m) => m.scoring).map((m) => m.id).join() === "sst-kppsc,sst-kppsc-2",
 );
 
@@ -348,12 +348,16 @@ const EXPECTED_WEIGHTAGE = {
     ["GK (Pak Studies + Islamiat)", "10%"],
   ],
   zamungkor: [
-    ["Islamiyat", "30 Q"],
-    ["English", "15 Q"],
-    ["Urdu", "15 Q"],
-    ["Pak Studies", "15 Q"],
-    ["Maths", "15 Q"],
-    ["Pedagogy", "10 Q"],
+    ["Islamiyat", "20 Q"],
+    ["Pedagogy", "15 Q"],
+    ["General Science", "10 Q"],
+    ["Social Studies", "10 Q"],
+    ["Pak Studies", "5 Q"],
+    ["Tajweed/Hifz + Islamiyat (combined block)", "18 Q"],
+    ["Maths", "12 Q"],
+    ["Pedagogy", "12 Q"],
+    ["Social Studies", "12 Q"],
+    ["Urdu", "6 Q"],
   ],
 };
 
@@ -377,7 +381,11 @@ check(
 for (const row of rows) {
   const p = `ledger ${row.trackId}`;
   check(`${p}: name/bps/source non-empty`, Boolean(row.trackName && row.bps && row.sourceLabel));
-  check(`${p}: last verified 11 Nov 2026`, row.lastVerified === "11 Nov 2026", row.lastVerified);
+  check(
+    `${p}: last verified (27 Nov 2026 for zamungkor, 11 Nov 2026 for the other 11 rows)`,
+    row.lastVerified === (row.trackId === "zamungkor" ? "27 Nov 2026" : "11 Nov 2026"),
+    row.lastVerified,
+  );
   check(
     `${p}: admin labels non-empty`,
     Boolean(row.totalLabel && row.timeLabel && row.languageLabel && row.negativeMarkingLabel),
@@ -398,8 +406,19 @@ for (const row of rows) {
     JSON.stringify(row.subjects.map((s) => [s.label, s.weightLabel])),
   );
   // Weights sum to the paper total (100 Q, or 100% for KPPSC).
+  // ZamungKor is two 60-question papers, not one 100-question paper:
+  // the first five rows are Theology (60) and the last five are Qari (60).
   const nums = row.subjects.map((s) => parseInt(s.weightLabel, 10));
-  check(`${p}: weights sum to 100`, nums.reduce((a, b) => a + b, 0) === 100, nums.join("+"));
+  if (row.trackId === "zamungkor") {
+    check(
+      `${p}: weights sum per paper (Theology 60 + Qari 60)`,
+      nums.slice(0, 5).reduce((a, b) => a + b, 0) === 60 &&
+        nums.slice(5).reduce((a, b) => a + b, 0) === 60,
+      nums.join("+"),
+    );
+  } else {
+    check(`${p}: weights sum to 100`, nums.reduce((a, b) => a + b, 0) === 100, nums.join("+"));
+  }
   // Counts re-derived independently from the raw files.
   for (const s of row.subjects) {
     const m = TEST_MAP[s.label];
@@ -415,8 +434,18 @@ for (const row of rows) {
     );
   }
   // Bank-review totals: no double counting across subject rows.
-  const sumMcqs = row.subjects.reduce((a, s) => a + s.mcqs, 0);
-  check(`${p}: totalMcqs equals sum of subject rows`, row.totalMcqs === sumMcqs, `${row.totalMcqs} vs ${sumMcqs}`);
+  // totalMcqs is the DEDUPED bank-key sum (W2 §10.4 trap): ZamungKor's
+  // subject rows list Pedagogy and Social Studies twice (once per
+  // paper), so the naive row sum is 5000 while the ledger correctly
+  // dedupes the bank keys to 4000. Assert against the deduped sum for
+  // every row (for the other rows the deduped sum equals the row sum).
+  const dedupedBanks = [...new Set(row.subjects.flatMap((s) => TEST_MAP[s.label]?.banks ?? []))];
+  const dedupedMcqs = dedupedBanks.reduce((a, k) => a + (bankSize[k] ?? 0), 0);
+  check(
+    `${p}: totalMcqs equals the deduped bank-key sum`,
+    row.totalMcqs === dedupedMcqs,
+    `${row.totalMcqs} vs deduped ${dedupedMcqs} (row sum ${row.subjects.reduce((a, s) => a + s.mcqs, 0)})`,
+  );
   check(`${p}: trustedInBank within total`, row.trustedInBank >= 0 && row.trustedInBank <= row.totalMcqs);
 }
 
@@ -424,22 +453,21 @@ const byId = Object.fromEntries(rows.map((r) => [r.trackId, r]));
 const coverageCounts = {};
 for (const r of rows) coverageCounts[r.coverage] = (coverageCounts[r.coverage] ?? 0) + 1;
 check(
-  "ledger coverage distribution: 8 exact / 1 proxy / 3 partial / 0 unknown",
-  coverageCounts.exact === 8 &&
-    coverageCounts.proxy === 1 &&
+  "ledger coverage distribution: 9 exact / 0 proxy / 3 partial / 0 unknown",
+  coverageCounts.exact === 9 &&
+    (coverageCounts.proxy ?? 0) === 0 &&
     coverageCounts.partial === 3 &&
     (coverageCounts.unknown ?? 0) === 0,
   JSON.stringify(coverageCounts),
 );
 check(
-  "ledger exact rows are the 8 ESED posts",
+  "ledger exact rows are zamungkor + the 8 ESED posts (track order)",
   JSON.stringify(rows.filter((r) => r.coverage === "exact").map((r) => r.trackId)) ===
-    JSON.stringify(["tt", "at", "pst", "ct", "ctit", "dm", "pet", "qari"]),
+    JSON.stringify(["zamungkor", "tt", "at", "pst", "ct", "ctit", "dm", "pet", "qari"]),
 );
 check(
-  "ledger proxy row is ZamungKor only",
-  JSON.stringify(rows.filter((r) => r.coverage === "proxy").map((r) => r.trackId)) ===
-    JSON.stringify(["zamungkor"]),
+  "ledger has no proxy row (zamungkor is confirmed now)",
+  rows.filter((r) => r.coverage === "proxy").length === 0,
 );
 check(
   "ledger partial rows are swse + both SST",
@@ -449,8 +477,8 @@ check(
 const sourceCounts = {};
 for (const r of rows) sourceCounts[r.sourceState] = (sourceCounts[r.sourceState] ?? 0) + 1;
 check(
-  "ledger source states: 10 confirmed / 1 provisional / 1 unavailable",
-  sourceCounts.confirmed === 10 && sourceCounts.provisional === 1 && sourceCounts.unavailable === 1,
+  "ledger source states: 11 confirmed / 1 provisional / 0 unavailable",
+  sourceCounts.confirmed === 11 && sourceCounts.provisional === 1 && (sourceCounts.unavailable ?? 0) === 0,
   JSON.stringify(sourceCounts),
 );
 check(
@@ -465,13 +493,47 @@ check(
     byId.swse.sourceLabel !== byId.tt.sourceLabel &&
     byId.swse.totalLabel !== byId.zamungkor.totalLabel,
 );
+const ZAM_PNG_URL =
+  "https://etea.online/advertisement/course_content/891_7f36d7dbbeb4261f575eea5659ff5f4f.png";
 check(
-  "zamungkor: proxy, unavailable source, unknown total, NOT VERIFIED note",
-  byId.zamungkor.coverage === "proxy" &&
-    byId.zamungkor.sourceState === "unavailable" &&
-    byId.zamungkor.totalLabel.includes("Unknown") &&
-    (byId.zamungkor.patternNote ?? "").includes("NOT VERIFIED") &&
-    (byId.zamungkor.patternNote ?? "").includes("Not Available"),
+  "zamungkor: confirmed pattern, exact coverage, confirmed source (891 PNG)",
+  byId.zamungkor.coverage === "exact" &&
+    byId.zamungkor.sourceState === "confirmed" &&
+    byId.zamungkor.sourceUrl === ZAM_PNG_URL &&
+    byId.zamungkor.sourceLabel.includes("891") &&
+    byId.zamungkor.lastVerified === "27 Nov 2026",
+  JSON.stringify({
+    coverage: byId.zamungkor.coverage,
+    sourceState: byId.zamungkor.sourceState,
+    sourceUrl: byId.zamungkor.sourceUrl,
+    lastVerified: byId.zamungkor.lastVerified,
+  }),
+);
+check(
+  "zamungkor: per-paper totals + owner's-decision time, not ETEA's",
+  byId.zamungkor.totalLabel.includes("60 MCQs per paper") &&
+    byId.zamungkor.timeLabel.includes("owner's decision") &&
+    (byId.zamungkor.patternNote ?? "").includes("owner's decision") &&
+    (byId.zamungkor.patternNote ?? "").includes("NOT stated in the ETEA document"),
+  `${byId.zamungkor.totalLabel} | ${byId.zamungkor.timeLabel}`,
+);
+check(
+  "zamungkor: pattern note carries the 12 Tajweed / 6 Islamiyat implementer split + superseded proxy",
+  (byId.zamungkor.patternNote ?? "").includes("12 Tajweed / 6 Islamiyat") &&
+    (byId.zamungkor.patternNote ?? "").includes("superseded"),
+);
+check(
+  "zamungkor: 5 own mocks (zam1-5), deduped totalMcqs 4000, trustedInBank 6",
+  byId.zamungkor.mocks.length === 5 &&
+    JSON.stringify(byId.zamungkor.mocks.map((m) => m.id)) ===
+      JSON.stringify(["zam1", "zam2", "zam3", "zam4", "zam5"]) &&
+    byId.zamungkor.totalMcqs === 4000 &&
+    byId.zamungkor.trustedInBank === 6,
+  JSON.stringify({
+    mocks: byId.zamungkor.mocks.map((m) => m.id),
+    totalMcqs: byId.zamungkor.totalMcqs,
+    trustedInBank: byId.zamungkor.trustedInBank,
+  }),
 );
 check(
   "sst-etea: partial, subject row is all zero",
@@ -513,25 +575,35 @@ check(
     byId.qari.subjects[0].notes === noteCount.Tajweed + noteCount.Islamiyat,
   JSON.stringify(byId.qari.subjects[0]),
 );
-// ZamungKor proxy weightage = the actual fixed-mock distributions.
-for (const key of ["zam1", "zam2", "zam3"]) {
+// ZamungKor 891: the new fixed lists match the ledger's two papers
+// (Theology zam4, Qari zam5). The OLD lists (zam1/2/3) keep the proxy
+// composition and no longer match the ledger weightage — that is the
+// point of the separate section, so they are NOT asserted here.
+const zamDist = (key) => {
   const dist = {};
   for (const id of content.zamFixed[key]) {
     const q = bankById[id];
     const k = q ? q.subjectKey : "MISSING";
     dist[k] = (dist[k] ?? 0) + 1;
   }
-  check(
-    `zamungkor proxy: ${key} distribution matches the ledger weightage`,
-    dist.islamiyat === 30 &&
-      dist.english === 15 &&
-      dist.urdu === 15 &&
-      dist.pakstudies === 15 &&
-      dist.maths === 15 &&
-      dist.pedagogy === 10,
-    JSON.stringify(dist),
-  );
-}
+  return dist;
+};
+check(
+  "zamungkor 891: zam4 distribution is Theology (ISL 20, PED 15, SCI 10, SS 10, PAK 5)",
+  (() => {
+    const d = zamDist("zam4");
+    return d.islamiyat === 20 && d.pedagogy === 15 && d.science === 10 && d.socialstudies === 10 && d.pakstudies === 5;
+  })(),
+  JSON.stringify(zamDist("zam4")),
+);
+check(
+  "zamungkor 891: zam5 distribution is Qari (TAJ 12, ISL 6, MAT 12, PED 12, SS 12, URD 6)",
+  (() => {
+    const d = zamDist("zam5");
+    return d.tajweed === 12 && d.islamiyat === 6 && d.maths === 12 && d.pedagogy === 12 && d.socialstudies === 12 && d.urdu === 6;
+  })(),
+  JSON.stringify(zamDist("zam5")),
+);
 // coverageFor unit tests — every branch.
 const fullRows = [{ label: "X", notes: 1, mcqs: 1, cards: 0 }];
 check(

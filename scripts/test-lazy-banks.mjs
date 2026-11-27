@@ -129,7 +129,8 @@ if (fs.existsSync(join(BACKUP, "public/sw.js"))) {
 // Phase 3 exception (documented, narrow): tracking.ts gained ONLY a
 // one-line comment change on the deadlineTs field ("(mock only)" ->
 // "(timed runs: mock + timed practice)", W3 timed mode; no code change),
-// and content.json gained ONLY the 8 new mock defs + counts.mocks 20 -> 28.
+// and content.json gained ONLY the 8 new mock defs + counts.mocks 20 -> 28
+// (Phase 3), then the 2 ZamungKor 891 mock defs + counts.mocks 28 -> 30.
 // Phase 4 exception (documented, narrow): content.json gained ONLY the
 // 150 appended notes (per-subject tails beyond the backup lengths) +
 // counts.notes 151 -> 301; public/sw.js gained ONLY the CACHE_VERSION
@@ -392,7 +393,19 @@ if (fs.existsSync(BACKUP)) {
   // original 20 defs must match the backup exactly after the Phase 2
   // translation-field strip below.
   const PHASE3_NEW_MOCK_IDS = ["pst-A", "ct-B", "ctit-A", "dm-2", "pet-2", "swse-2", "sst-kppsc-2", "sst-etea-2"];
-  reverted.mocks = reverted.mocks.filter((m) => !PHASE3_NEW_MOCK_IDS.includes(m.id));
+  // ZamungKor 891 revert (documented, narrow): drop ONLY the 2 new
+  // mock defs + their zamFixed lists, restore the zamungkor track
+  // pattern, and drop the 891 PNG links tuple. The backup predates
+  // the official 891 syllabus, so none of these exist in it.
+  const ZAM891_NEW_MOCK_IDS = ["zam4", "zam5"];
+  const ZAM891_PNG_URL =
+    "https://etea.online/advertisement/course_content/891_7f36d7dbbeb4261f575eea5659ff5f4f.png";
+  reverted.mocks = reverted.mocks.filter((m) => !PHASE3_NEW_MOCK_IDS.includes(m.id) && !ZAM891_NEW_MOCK_IDS.includes(m.id));
+  delete reverted.zamFixed.zam4;
+  delete reverted.zamFixed.zam5;
+  reverted.tracks.find((t) => t.id === "zamungkor").pattern =
+    backupContent.tracks.find((t) => t.id === "zamungkor").pattern;
+  reverted.links = reverted.links.filter(([, url]) => url !== ZAM891_PNG_URL);
   reverted.counts.mocks = backupContent.counts.mocks;
   const curOnlyMockIds = curContent.mocks.map((m) => m.id).filter((id) => !backupContent.mocks.some((b) => b.id === id));
   // Phase 4 revert (documented, narrow): drop ONLY the 150 appended
@@ -483,9 +496,9 @@ if (fs.existsSync(BACKUP)) {
     delete m.note_ur;
     delete m.note_roman;
   }
-  check("Phase 1 + Phase 2 + Phase 3 + Phase 4 + U1 + Phase A + Phase B content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing/pastpapers/pastpapers_reworded indexes + Phase 2 translation fields + the 8 Phase 3 mock defs + the 150 Phase 4 notes + U1 _ur rewrites + the 480 Phase A past-paper items + the 480 Phase B reworded twins differ from backup",
+  check("Phase 1 + Phase 2 + Phase 3 + Phase 4 + U1 + Phase A + Phase B + ZamungKor 891 content.json: only counts + bySubject.islamiyat/tajweed/arabic/english/urdu/maths/pakstudies/pedagogy/science/socialstudies/gk/it/pe/drawing/pastpapers/pastpapers_reworded indexes + Phase 2 translation fields + the 8 Phase 3 mock defs + the 150 Phase 4 notes + U1 _ur rewrites + the 480 Phase A past-paper items + the 480 Phase B reworded twins + the 2 ZamungKor 891 mock defs + zamFixed.zam4/zam5 + the zamungkor track pattern + the 891 PNG links tuple differ from backup",
     JSON.stringify(reverted) === JSON.stringify(backupContent) &&
-    curContent.counts.mocks === 28 && curContent.mocks.length === 28 && JSON.stringify(curOnlyMockIds) === JSON.stringify(PHASE3_NEW_MOCK_IDS) &&
+    curContent.counts.mocks === 30 && curContent.mocks.length === 30 && JSON.stringify(curOnlyMockIds) === JSON.stringify([...ZAM891_NEW_MOCK_IDS, ...PHASE3_NEW_MOCK_IDS]) &&
     curContent.counts.notes === 301 &&
     Object.entries(PHASE4_NEW_PER_SUBJECT).every(([s, a]) => curContent.notes[s].length === backupContent.notes[s].length + a) &&
     curContent.counts.total === 8000 && curContent.bySubject.islamiyat.length === 500 && curContent.bySubject.tajweed.length === 500 && curContent.bySubject.arabic.length === 500 && curContent.bySubject.english.length === 500 && curContent.bySubject.urdu.length === 500 && curContent.bySubject.maths.length === 500 && curContent.bySubject.pakstudies.length === 500 && curContent.bySubject.pedagogy.length === 500 && curContent.bySubject.science.length === 500 && curContent.bySubject.socialstudies.length === 500 && curContent.bySubject.gk.length === 500 && curContent.bySubject.it.length === 500 && curContent.bySubject.pe.length === 500 && curContent.bySubject.drawing.length === 500 && curContent.bySubject.pastpapers.length === 500 && curContent.bySubject.pastpapers_reworded.length === 500);
@@ -595,7 +608,7 @@ for (const m of data.MOCKS) {
     availBad.push(m.id);
   }
 }
-check("mockAvailableCount == old fs computation == built questions (all 28 mocks, incl. trusted)", availOk, availBad.join(", "));
+check("mockAvailableCount == old fs computation == built questions (all 30 mocks, incl. trusted)", availOk, availBad.join(", "));
 check(
   "mockLabelsSync matches async labels on coverage/availability (trusted: 0 first-paint fallback)",
   data.MOCKS.every((m) => {

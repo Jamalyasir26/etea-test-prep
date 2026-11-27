@@ -59,9 +59,9 @@ check("4B1 bank total 8000 MCQs", QUESTIONS.length === 8000, `got ${QUESTIONS.le
 const notesTotal = Object.values(NOTES).reduce((n, arr) => n + arr.length, 0);
 check("4B1 notes total 301", notesTotal === 301, `got ${notesTotal}`);
 check("4B1 flashcards still 70", FLASHCARDS.length === 70, `got ${FLASHCARDS.length}`);
-check("4B1 VISIBLE_COUNTS 8000/301/70, 12 tracks / 24 mocks",
+check("4B1 VISIBLE_COUNTS 8000/301/70, 12 tracks / 26 mocks",
   VISIBLE_COUNTS.total === 8000 && VISIBLE_COUNTS.notes === 301 && VISIBLE_COUNTS.cards === 70 &&
-  VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 24, JSON.stringify(VISIBLE_COUNTS));
+  VISIBLE_COUNTS.tracks === 12 && VISIBLE_COUNTS.mocks === 26, JSON.stringify(VISIBLE_COUNTS));
 check("4B1 IT bank 500 items (Phase 1: original 60 + 440 new)", BY_SUBJECT.it.length === 500, `got ${BY_SUBJECT.it.length}`);
 check("4B1 PE bank 500 items (Phase 1: original 46 + 454 new)", BY_SUBJECT.pe.length === 500, `got ${BY_SUBJECT.pe.length}`);
 check("4B1 IT/Computer notes 24 (17 + 7 Phase 4)", NOTES["IT/Computer"].length === 24, `got ${NOTES["IT/Computer"].length}`);

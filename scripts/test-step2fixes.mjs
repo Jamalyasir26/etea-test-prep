@@ -138,7 +138,7 @@ check("counts: 8000 MCQs", QUESTIONS.length === 8000, `got ${QUESTIONS.length}`)
 check("counts: 301 notes", Object.values(data.NOTES).reduce((s, l) => s + l.length, 0) === 301);
 check("counts: 70 flashcards", data.FLASHCARDS.length === 70, `got ${data.FLASHCARDS.length}`);
 check("counts: 19 tracks", data.TRACKS.length === 19, `got ${data.TRACKS.length}`);
-check("counts: 28 mocks", data.MOCKS.length === 28, `got ${data.MOCKS.length}`);
+check("counts: 30 mocks", data.MOCKS.length === 30, `got ${data.MOCKS.length}`);
 
 // The page's exact set construction: shuffled bank slice, seeded by
 // subject-round-seed.

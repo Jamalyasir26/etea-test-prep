@@ -43,6 +43,11 @@ export default function TrackDetail() {
         <p dir="auto">{tr.elig}</p>
         <h3>{t("patternHeading")}</h3>
         <p dir="auto">{tr.pattern}</p>
+        {tr.id === "zamungkor" && (
+          <p>
+            <Link href="/zamungkor">{t("zamSectionOpenLink")}</Link>
+          </p>
+        )}
         <p>
           {/* Step 2a — semantic confidence badge (see tracks list). */}
           <TrackConfidenceBadge conf={tr.conf} />
